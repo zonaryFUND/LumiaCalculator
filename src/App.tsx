@@ -16,7 +16,7 @@ function App({}: AppProps) {
   // Return the App component.
   return (
     <div className="App">
-      <Subject subjectName="Eleven" />
+      <Subject subject="eleven" />
     </div>
   );
 }

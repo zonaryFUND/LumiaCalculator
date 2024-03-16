@@ -2,12 +2,14 @@
 export default {
   mount: {
     public: { url: '/', static: true },
-    src: '/dist'
+    src: '/dist',
+    '../resources': '/dist/resources'
   },
   alias: {
     dict: './src/dictionary',
     components: './src/components',
-    '@app': './src'
+    '@app': './src',
+    resources: '../resources'
   },
   plugins: [
     '@snowpack/plugin-react-refresh',
