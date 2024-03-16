@@ -1,6 +1,8 @@
 import Decimal from "decimal.js";
+import Status from "dict/status.json";
+import { SubjectID } from "./subject";
 
-export type BaseStatus = {
+type BaseStatusType = {
     maxHP: Decimal,
     maxHPperLevel: Decimal,
     maxSP: Decimal,
@@ -16,3 +18,10 @@ export type BaseStatus = {
     attackSpeed: Decimal,
     movementSpeed: Decimal
 };
+
+export function baseStatus(id: SubjectID): BaseStatusType {
+    const raw = (Status as {[index: string]: any})[id];
+    return Object.keys(raw).reduce((prev, key) => {
+        return {...prev, [key]: new Decimal(raw[key])};
+    }, {}) as BaseStatusType;
+}

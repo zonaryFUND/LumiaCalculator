@@ -1,7 +1,7 @@
 import * as React from "react";
-import Status from "dict/status.json";
-import baseStatus from "@app/entity/translate/base-status";
 import Decimal from "decimal.js";
+import { baseStatus } from "@app/entity/base-status";
+import { SubjectID } from "@app/entity/subject";
 
 type Status = {
     maxHP: Decimal
@@ -20,13 +20,16 @@ type Response = {
     onLevelSliderChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-export default function(subjectName: string): Response {
+export default function(subject: SubjectID): Response {
     const [level, setLevel] = React.useState(1);
     const [decimalLevel, levelM1] = React.useMemo(() => [new Decimal(level), new Decimal(level - 1)], [level]);
-    const status = React.useMemo(() => baseStatus((Status as {[index: string]: any})[subjectName] as any), [subjectName]);
+    const status = React.useMemo(() => baseStatus(subject), [subject]);
     const onLevelSliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setLevel(+event.target.value);
     }, []);
+
+
+    console.log(status)
 
     return {
         status: {

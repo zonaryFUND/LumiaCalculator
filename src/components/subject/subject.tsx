@@ -1,19 +1,22 @@
 import * as React from "react"
+import { SubjectID } from "@app/entity/subject";
 import useStatus from "./use-status"
+import { ImageURL } from "./image";
 
 type Props = {
-    subjectName: string
+    subject: SubjectID
 }
 
 const subject: React.FC<Props> = props => {
     const {
         status, 
         onLevelSliderChange
-    } = useStatus(props.subjectName);
+    } = useStatus(props.subject);
 
     return (
         <section>
-            <h3>{props.subjectName}</h3>
+            <h3>{props.subject}</h3>
+            <img src={ImageURL(props.subject)} />
             <table>
                 <tbody>
                     <tr><td>最大体力</td><td>{status.maxHP.toNumber()}</td></tr>
