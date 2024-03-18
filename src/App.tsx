@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.styl';
 import Subject from "components/subject/subject";
 
 interface AppProps {}
@@ -16,7 +15,7 @@ function App({}: AppProps) {
   // Return the App component.
   return (
     <div className="App">
-      <Subject subject="eleven" />
+      <Subject />
     </div>
   );
 }

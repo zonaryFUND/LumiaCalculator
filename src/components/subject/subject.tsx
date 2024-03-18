@@ -1,32 +1,51 @@
-import * as React from "react"
-import { SubjectID } from "@app/entity/subject";
-import useStatus from "./use-status"
+import * as React from "react";
+import { useToggle } from "react-use";
+import { SubjectID, name } from "@app/entity/subject";
+import useStatus from "./use-status";
 import { ImageURL } from "./image";
+import SubjectsList from "./subjects-list";
+import EquipmentSlot from "./equipment-slot";
 
 type Props = {
-    subject: SubjectID
+    //subject: SubjectID
 }
 
 const subject: React.FC<Props> = props => {
+    const [subject, setSubject] = React.useState<SubjectID | null>("jackie");
+    const subjectName = React.useMemo(() => subject ? name(subject, "jp") : null, [subject]);
     const {
         status, 
         onLevelSliderChange
-    } = useStatus(props.subject);
+    } = useStatus(subject);
+
+    const [showingCharacters, toggleShowingCharacters] = useToggle(false);
+    const selectSubjectFromList = React.useCallback((subject: SubjectID) => {
+        setSubject(subject);
+        toggleShowingCharacters(false);
+    }, []);
 
     return (
         <section>
-            <h3>{props.subject}</h3>
-            <img src={ImageURL(props.subject)} />
+            <div>
+                <div onClick={toggleShowingCharacters}>
+                    <img src={subject ? ImageURL(subject) : undefined} />
+                    <h3>{subjectName}</h3>
+                </div>
+                <EquipmentSlot slot="weapon" />
+                {
+                    showingCharacters ? <SubjectsList onSelect={selectSubjectFromList} /> : null
+                }
+            </div>
             <table>
                 <tbody>
-                    <tr><td>最大体力</td><td>{status.maxHP.toNumber()}</td></tr>
-                    <tr><td>最大スタミナ</td><td>{status.maxSP.toNumber()}</td></tr>
-                    <tr><td>体力再生</td><td>{status.hpReg.toNumber()}</td></tr>
-                    <tr><td>スタミナ再生</td><td>{status.spReg.toNumber()}</td></tr>
-                    <tr><td>攻撃力</td><td>{status.attackPower.toNumber()}</td></tr>
-                    <tr><td>防御力</td><td>{status.armor.toNumber()}</td></tr>
-                    <tr><td>攻撃速度</td><td>{status.attackSpeed.toNumber()}</td></tr>
-                    <tr><td>移動速度</td><td>{status.movementSpeed.toNumber()}</td></tr>
+                    <tr><td>最大体力</td><td>{status ? status.maxHP.toNumber() : "-"}</td></tr>
+                    <tr><td>最大スタミナ</td><td>{status ? status.maxSP.toNumber() : "-"}</td></tr>
+                    <tr><td>体力再生</td><td>{status ? status.hpReg.toNumber() : "-"}</td></tr>
+                    <tr><td>スタミナ再生</td><td>{status ? status.spReg.toNumber() : "-"}</td></tr>
+                    <tr><td>攻撃力</td><td>{status ? status.attackPower.toNumber() : "-"}</td></tr>
+                    <tr><td>防御力</td><td>{status ? status.armor.toNumber() : "-"}</td></tr>
+                    <tr><td>攻撃速度</td><td>{status ? status.attackSpeed.toNumber() : "-"}</td></tr>
+                    <tr><td>移動速度</td><td>{status ? status.movementSpeed.toNumber() : "-"}</td></tr>
                 </tbody>
             </table>
             <label>

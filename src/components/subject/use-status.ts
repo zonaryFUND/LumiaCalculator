@@ -15,24 +15,21 @@ type Status = {
 }
 
 type Response = {
-    status: Status
+    status?: Status
     level: number
     onLevelSliderChange: React.ChangeEventHandler<HTMLInputElement>
 }
 
-export default function(subject: SubjectID): Response {
+export default function(subject: SubjectID | null): Response {
     const [level, setLevel] = React.useState(1);
     const [decimalLevel, levelM1] = React.useMemo(() => [new Decimal(level), new Decimal(level - 1)], [level]);
-    const status = React.useMemo(() => baseStatus(subject), [subject]);
+    const status = React.useMemo(() => subject ? baseStatus(subject) : null, [subject]);
     const onLevelSliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setLevel(+event.target.value);
     }, []);
 
-
-    console.log(status)
-
     return {
-        status: {
+        status: status ? {
             maxHP: status.maxHP.add(status.maxHPperLevel.times(levelM1)),
             maxSP: status.maxSP.add(status.maxSPperLevel.times(levelM1)),
             hpReg: status.hpRegeneration.add(status.hpRegenPerLevel.times(levelM1)),
@@ -41,7 +38,7 @@ export default function(subject: SubjectID): Response {
             armor: status.armor.add(status.armorPerLevel.times(levelM1)),
             attackSpeed: status.attackSpeed,
             movementSpeed: status.movementSpeed
-        },
+        } : undefined,
         level,
         onLevelSliderChange
     }

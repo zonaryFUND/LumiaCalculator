@@ -20,8 +20,8 @@ export default {
         /* Yarn PnP workaround: see https://www.npmjs.com/package/@snowpack/plugin-typescript */
         ...(process.versions.pnp ? { tsc: 'yarn pnpify tsc' } : {}),
       },
-      'snowpack-plugin-stylus'
     ],
+    'snowpack-plugin-stylus',
   ],
   routes: [
     /* Enable an SPA Fallback in development: */

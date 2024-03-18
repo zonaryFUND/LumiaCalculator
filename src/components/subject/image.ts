@@ -8,8 +8,8 @@ import fiora from "resources/subjects/fiora.png"
 import nadine from "resources/subjects/nadine.png"
 import zahir from "resources/subjects/zahir.png"
 import hart from "resources/subjects/hart.png"
-import isol from "resources/subjects/li dailin.png"
-import lidailin from "resources/subjects/li dailin.png"
+import isol from "resources/subjects/isol.png"
+import li_dailin from "resources/subjects/li_dailin.png"
 
 import yuki from "resources/subjects/yuki.png"
 import hyejin from "resources/subjects/hyejin.png"
@@ -68,9 +68,9 @@ import tazia from "resources/subjects/tazia.png"
 
 import irem from "resources/subjects/irem.png"
 import theodore from "resources/subjects/theodore.png"
-import lyann from "resources/subjects/ly anh.png"
+import ly_anh from "resources/subjects/ly_anh.png"
 import vanya from "resources/subjects/vanya.png"
-import debimarlene from "resources/subjects/debimarlene.png"
+import debi_marlene from "resources/subjects/debi_marlene.png"
 import arda from "resources/subjects/arda.png"
 import abigail from "resources/subjects/abigail.png"
 import alonso from "resources/subjects/alonso.png"
@@ -81,13 +81,13 @@ import kenneth from "resources/subjects/kenneth.png"
 import katja from "resources/subjects/katja.png"
 
 export const SubjectImage = {
-    jackie, aya, hyunwoo, magnus, fiora, nadine, zahir, hart, isol, lidailin,
+    jackie, aya, hyunwoo, magnus, fiora, nadine, zahir, hart, isol, li_dailin,
     yuki, hyejin, xiukai, sissela, chiara, adriana, silvia, shoichi, emma, lenox,
     rozzi, luke, cathy, adela, bernice, barbara, alex, sua, leon, eleven,
     rio, william, nicky, nathapon, jan, eva, daniel, jenny, camilo, chloe,
     johann, bianca, celine, echion, mai, aiden, laura, tia, felix, elena,
     priya, adina, markus, karla, estelle, piolo, martina, haze, isaac, tazia,
-    irem, theodore, lyann, vanya, debimarlene, arda, abigail, alonso, leni, tsubame, 
+    irem, theodore, ly_anh, vanya, debi_marlene, arda, abigail, alonso, leni, tsubame, 
     kenneth, katja
 }
 
