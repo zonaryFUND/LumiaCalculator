@@ -2,9 +2,10 @@ import * as React from "react";
 import { useToggle } from "react-use";
 import { SubjectID, name } from "@app/entity/subject";
 import useStatus from "./use-status";
-import { ImageURL } from "./image";
 import SubjectsList from "./subjects-list";
 import EquipmentSlot from "./equipment-slot";
+import Item from "components/items/item";
+import Images from "@app/resources/image";
 
 type Props = {
     //subject: SubjectID
@@ -28,13 +29,19 @@ const subject: React.FC<Props> = props => {
         <section>
             <div>
                 <div onClick={toggleShowingCharacters}>
-                    <img src={subject ? ImageURL(subject) : undefined} />
+                    <img src={subject ? Images.subject[subject] : undefined} />
                     <h3>{subjectName}</h3>
                 </div>
-                <EquipmentSlot slot="weapon" />
                 {
                     showingCharacters ? <SubjectsList onSelect={selectSubjectFromList} /> : null
                 }
+                <div>
+                    <EquipmentSlot slot="weapon" />
+                    <EquipmentSlot slot="head" />
+                    <EquipmentSlot slot="chest" />
+                    <EquipmentSlot slot="arm" />
+                    <EquipmentSlot slot="leg" />
+                </div>
             </div>
             <table>
                 <tbody>

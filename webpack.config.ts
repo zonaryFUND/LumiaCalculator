@@ -2,6 +2,7 @@ import * as path from "path";
 import * as webpack from "webpack";
 import "webpack-dev-server";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const config: webpack.Configuration = {
     entry: {

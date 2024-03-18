@@ -2,7 +2,7 @@ import { WeaponTypeID } from "./equipment"
 
 export const Gloves = [
     "one_inch_punch", "divine_fist", "bloodwing_knuckles", "frost_petal_hand", "buddha_s_palm", 
-    "brasil_gauntlet", "white_claw_punch", "imperial_silk_gloves", "mask_of_the_phenix", "permafrost",
+    "brasil_gauntlet", "white_claw_punch", "imperial_silk_gloves", "mark_of_the_phoenix", "permafrost",
     "bloody_hand", "bloody_hand_crimson", "bloody_hand_dawn"
 ]
 export type GloveID = typeof Gloves[number];
@@ -50,7 +50,7 @@ export const Crossbows = [
 export type CrossbowID = typeof Crossbows[number]
 
 export const Pistols = [
-    "elegance", "electron_blaster", "magnum-boa", "glock_48", "stapede", "devil_s_marksman", "molten_malachite",
+    "elegance", "electron_blaster", "magnum-boa", "glock_48", "stempede", "devil_s_marksman", "molten_malachite",
     "kelte", "altair", "high_noon", "high_noon_crimson", "high_noon_dawn"
 ]
 export type PistolID = typeof Pistols[number]
@@ -91,7 +91,7 @@ export const TwoHandedSwords = [
 export type TwoHandedSwordID = typeof TwoHandedSwords[number]
 
 export const DualSwords = [
-    "divine_dual_swords", "asura", "deadly_butterfly", "dioscuri", "starsteel_twin_swords", "lioigor_zahr",
+    "divine_dual_swords", "asura", "deadly_butterfly", "dioscuri", "starsteel_twin_swords", "lloigor_zahr",
     "spring_and_autumn", "phantom_blade", "phantom_blade_crimson", "phantom_blade_dawn"
 ]
 export type DualSwordID = typeof DualSwords[number]
@@ -114,7 +114,7 @@ export const Rapiers = [
 export type RapierID = typeof Rapiers[number]
 
 export const Guitars = [
-    "bohemian", "stairwaytoheaven", "purplehaze", "satisfaction", "thewall", "teenspirit", "wonderfultonight",
+    "bohemian", "stairway_to_heaven", "purple_haze", "satisfaction", "the_wall", "teen_spirit", "wonderful_tonight",
     "cpt_pepper", "heartbreaker", "heartbreaker_crimson", "heartbreaker_dawn"
 ]
 export type GuitarID = typeof Guitars[number]
@@ -132,14 +132,18 @@ export const Arcanas = [
 export type ArcanaID = typeof Arcanas[number]
 
 export const VFProsthetics = [
-    "deathadder_queen", "black_mamba_king", "alpha_sidewinder", "deathadder_queen_mt", "deathadde_rqueen_fc",
+    "deathadder_queen", "black_mamba_king", "alpha_sidewinder", "deathadder_queen_mt", "deathadder_queen_fc",
     "black_mamba_king_tl", "black_mamba_king_fc", "alpha_sidewinder_ml" ,"alpha_sidewinder_fc",
     "deathadder_queen_vbs", "black_mamba_king_vbs", "alpha_sidewinder_vbs"
 ]
 export type VFProstheticID = typeof VFProsthetics[number]
 
-export type WeaponID = GloveID | TonfaID | BatID | WhipID | ThrowID | ShurikenID | BowID | CrossbowID |PistolID | AssaultRifleID | SniperRifleID | HammerID | AxeID | DaggerID | TwoHandedSwordID | DualSwordID | SpearID | NunchakuID | RapierID |
+export type WeaponID = GloveID | TonfaID | BatID | WhipID | ThrowID | ShurikenID | BowID | CrossbowID | PistolID | AssaultRifleID | SniperRifleID | HammerID | AxeID | DaggerID | TwoHandedSwordID | DualSwordID | SpearID | NunchakuID | RapierID |
 GuitarID | CameraID | ArcanaID | VFProstheticID
+export const Weapons = [
+    ...Gloves, ...Tonfas, ...Bats, ...Whips, ...Throws, ...Shurikens, ...Bows, ...Crossbows, ...Pistols, ...AssaultRifles, ...SniperRifles, ...Hammers, ...Axes, ...Daggers, ...TwoHandedSwords, ...DualSwords, ...Spears, ...Nunchakus, ...Rapiers,
+    ...Guitars, ...Cameras, ...Arcanas, ...VFProsthetics
+]
 
 export function WeaponIDsForType(type: WeaponTypeID): string[] {
     switch (type) {

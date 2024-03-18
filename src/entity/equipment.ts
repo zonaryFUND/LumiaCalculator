@@ -3,3 +3,4 @@ export type WeaponTypeID = "vf_prosthetic" | "arcane" | "camera" | "guitar" | "g
     "axe" | "whip" | "two-handed_sword"
 
 export type ArmorTypeID = "chest" | "head" | "arm" | "leg"
+

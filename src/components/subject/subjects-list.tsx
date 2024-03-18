@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Subjects, SubjectID, name } from "@app/entity/subject";
-import { ImageURL } from "./image";
 import style from "./subjects-list.module.styl";
+import Images from "@app/resources/image";
 
 type Props = {
     onSelect: (subject: SubjectID) => void
@@ -14,7 +14,7 @@ const subjectsList: React.FC<Props> = props => (
         <ul>
             {idAndNames.map(tuple => (
                 <li key={tuple.id} onClick={() => props.onSelect(tuple.id)}>
-                    <img src={ImageURL(tuple.id)} />
+                    <img src={Images.subject[tuple.id]} />
                     <p>{tuple.name}</p>
                 </li>
             ))}

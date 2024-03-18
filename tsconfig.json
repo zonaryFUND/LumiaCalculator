@@ -14,7 +14,7 @@
     },
     "strict": true,
     "skipLibCheck": true,
-    "types": ["node"],
+    "types": ["node", "webpack-env"],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
