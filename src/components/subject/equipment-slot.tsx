@@ -4,17 +4,25 @@ import EquipmentList from "./equipment-list";
 import style from "./equipment-slot.module.styl";
 import { useToggle } from "react-use";
 import Item from "components/items/item";
+import { EquipmentContext, SubjectContext } from "./subject-context";
 
 type Props = {
     slot: "weapon" | ArmorTypeID 
 }
 
 const equipmentSlot: React.FC<Props> = props => {
-    const [showSelection, toggleSelection] = useToggle(false);
+    const [showSelection, setSelection] = React.useState(false);
+    const subjectContext = React.useContext(SubjectContext)!;
+    const equipmentContext = React.useContext(EquipmentContext)!;
+    const onClick = React.useCallback(() => {
+        if (props.slot == "weapon" && subjectContext.value == null) return;
+        setSelection(prev => !prev);
+    }, [subjectContext.value]);
+    
 
     return (
-        <div className={style.slot} onClick={toggleSelection}>
-            <Item slot={props.slot} />
+        <div className={style.slot} onClick={onClick}>
+            <Item itemID={equipmentContext.value[props.slot]} slot={props.slot} />
             {showSelection ? <EquipmentList slot={props.slot} /> : null}
         </div>
     );

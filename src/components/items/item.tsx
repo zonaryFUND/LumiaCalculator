@@ -1,11 +1,12 @@
-import { ArmorTypeID } from "@app/entity/equipment";
+import { ArmorTypeID, equipmentStatus } from "@app/entity/equipment";
 import { EquipmentID } from "@app/entity/equipment-id";
 import Images from "@app/resources/image";
 import * as React from "react";
+import style from "./item.module.styl";
 
 type Props = {
     slot: "weapon" | ArmorTypeID
-    itemID?: EquipmentID
+    itemID: EquipmentID | null
 }
 
 const item: React.FC<Props> = props => {
@@ -28,8 +29,17 @@ const item: React.FC<Props> = props => {
         return Items[props.itemID];
     }, [props.itemID]);
 
+    const className = React.useMemo(() => {
+        if (props.itemID == undefined) return undefined;
+        switch (equipmentStatus(props.itemID).tier) {
+            case "epic":        return style.epic;
+            case "legendary":   return style.legendary;
+            case "mythic":      return style.mythic;
+        }
+    }, [props.itemID])
+
     return (
-        <img src={src} />
+        <img className={className} src={src} />
     )
 }
 

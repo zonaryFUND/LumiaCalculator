@@ -147,7 +147,7 @@ export const Weapons = [
 
 export function WeaponIDsForType(type: WeaponTypeID): string[] {
     switch (type) {
-        case "arcane": return Arcanas;
+        case "arcana": return Arcanas;
         case "assault_rifle": return AssaultRifles;
         case "axe": return Axes;
         case "bat": return Bats;
