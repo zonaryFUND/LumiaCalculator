@@ -22,7 +22,11 @@ const equipmentSlot: React.FC<Props> = props => {
 
     return (
         <div className={style.slot} onClick={onClick}>
-            <Item itemID={equipmentContext.value[props.slot]} slot={props.slot} />
+            {
+                equipmentContext.value[props.slot] ?
+                <Item itemID={equipmentContext.value[props.slot]} slot={props.slot} /> :
+                null
+            }
             {showSelection ? <EquipmentList slot={props.slot} /> : null}
         </div>
     );

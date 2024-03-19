@@ -1,7 +1,7 @@
+import * as React from "react";
 import { ArmorTypeID, equipmentStatus } from "@app/entity/equipment";
 import { EquipmentID } from "@app/entity/equipment-id";
 import Images from "@app/resources/image";
-import * as React from "react";
 import style from "./item.module.styl";
 
 type Props = {
@@ -39,7 +39,14 @@ const item: React.FC<Props> = props => {
     }, [props.itemID])
 
     return (
-        <img className={className} src={src} />
+        <div 
+            className={`${className} ${style.base}`} 
+            data-tooltip-id="weapon" 
+            data-tooltip-delay-hide={10000}
+            data-tooltip-content={props.itemID}
+        >
+            <img src={src} />
+        </div>
     )
 }
 

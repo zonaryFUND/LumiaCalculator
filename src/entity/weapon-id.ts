@@ -67,7 +67,7 @@ export const SniperRifles = [
 export type SniperRifleID = typeof SniperRifles[number]
 
 export const Hammers = [
-    "fang_mace", "hammer_of_dagda", "hammer_of_thor", "weight_of_the_world", "bookmaster", "eveningstar",
+    "fang_mace", "hammer_of_dagda", "hammer_of_thor", "weight_of_the_world", "bookmaster", "evening_star",
     "squeaky_hammer", "peacebringer", "peacebringer_crimson", "peacebringer_dawn"
 ]
 export type HammerID = typeof Hammers[number]

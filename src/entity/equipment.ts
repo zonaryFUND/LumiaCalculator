@@ -42,6 +42,7 @@ export type EquipmentStatus = {
     attackRange?: Decimal
     vision?: Decimal
     tenacity?: Decimal
+    healingPower?: Decimal
     ammo?: Decimal
     option?: String
 }
@@ -73,7 +74,7 @@ export function equipmentStatus(id: EquipmentID): EquipmentStatus {
     const status = [
         "attackPower", "attackSpeed", "criticalChance", "criticalDamage", "skillAmplification", "ampRatio", "adaptiveStatus", "cooldownReduction", "cdrCap", "defense",
         "skillDamageReduction", "omnisyphon", "lifeSteal", "maxHP", "maxSP", "hpRegeneration", "spRegeneration", "armorPenetrationRatio", "armorPenetration",
-        "movementSpeed", "attackRange", "vision", "tenacity", "ammo"
+        "healingPower", "movementSpeed", "attackRange", "vision", "tenacity", "ammo"
     ].reduce((prev, key) => {
         if (raw[key] == undefined) return prev;
         (prev as {[id: string]: any})[key] = new Decimal(raw[key]);
@@ -96,4 +97,34 @@ export function weaponBaseStatus(id: WeaponTypeID): WeaponBaseStatus {
     return Object.keys(raw).reduce((prev, key) => {
         return {...prev, [key]: new Decimal(raw[key])};
     }, {}) as WeaponBaseStatus;
+}
+
+import WeaponName from "dict/weapon-name.json";
+import ArmorName from "dict/armor-name.json";
+import { Language, NameType } from "./language";
+
+export function name(id: EquipmentID, language: Language): string {
+    return ({...WeaponName, ...ArmorName} as {[index: string]: NameType})[id][language]
+}
+
+const tier: any = {
+    epic: {
+        jp: "英雄"
+    },
+    legendary: {
+        jp: "伝説"
+    },
+    mythic: {
+        jp: "神話"
+    }
+}
+
+export function tierName(id: string, language: Language): string {
+    return tier[id][language];
+}
+
+import EquipmentTypeName from "dict/equipment-type-name.json";
+
+export function typeName(id: WeaponTypeID | ArmorTypeID, language: Language): string {
+    return (EquipmentTypeName as {[index: string]: NameType})[id][language]
 }

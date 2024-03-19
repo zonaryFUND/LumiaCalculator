@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './App.styl';
+import style from './App.styl';
+import { Tooltip } from "react-tooltip";
+import ItemTooltip from "components/tooltip/item-tooltip";
 import Subject from "components/subject/subject";
 
 interface AppProps {}
@@ -16,6 +18,11 @@ function App({}: AppProps) {
   return (
     <div className="App">
       <Subject />
+      <Tooltip 
+        id="weapon"
+        className={`${style.tooltip}`}
+        render={({ content, activeAnchor }) => content ? <ItemTooltip itemID={content}/> : null}
+      />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { Language, NameType } from "./language";
+
 export const Subjects = [
     "jackie", "aya", "hyunwoo" , "magnus" , "fiora" , "nadine" , "zahir" , "hart" , "isol" , "li_dailin" , 
     "yuki" , "hyejin" , "xiukai" , "sissela" , "chiara" , "adriana" , "silvia" , "shoichi" , "emma" , "lenox" ,
@@ -12,12 +14,6 @@ export const Subjects = [
 export type SubjectID = typeof Subjects[number];
 
 import Name from "dict/subject-name.json";
-
-type Language = "jp"
-
-type NameType = {
-    jp: string
-}
 
 export function name(id: SubjectID, language: Language): string {
     return (Name as {[index: string]: NameType})[id][language]
