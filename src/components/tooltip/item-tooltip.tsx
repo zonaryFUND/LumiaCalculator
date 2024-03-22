@@ -3,6 +3,7 @@ import { EquipmentID } from "@app/entity/equipment-id";
 import Images from "@app/resources/image";
 import { equipmentStatus, name, tierName, typeName } from "@app/entity/equipment";
 import Options from "./options";
+import Skill from "./skill";
 import style from "./item-tooltip.module.styl";
 
 type Props = {
@@ -31,6 +32,13 @@ const itemTooltip: React.FC<Props> = props => {
         return Items[props.itemID];
     }, [props.itemID]);
 
+    const ammo = (() => {
+        if (status.ammo == undefined) return null;
+        return <p className={style.ammo}><span>装弾数: </span>{`${status.ammo}発`}</p>
+    })();
+
+    console.log(status.option)
+
     return (
         <div className={`${style.tooltip} ${style[status.tier]}`}>
             <header>
@@ -42,6 +50,8 @@ const itemTooltip: React.FC<Props> = props => {
                 <img src={src} />
             </header>
             <Options {...status} />
+            {ammo}
+            {status.option ? status.option.map(op => <Skill key={op.id} {...op} />) : null}
         </div>
     )
 }

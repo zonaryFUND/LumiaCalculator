@@ -16,11 +16,12 @@ function App({}: AppProps) {
   }, [count, setCount]);
   // Return the App component.
   return (
-    <div className="App">
+    <div className={style.App}>
       <Subject />
       <Tooltip 
         id="weapon"
         className={`${style.tooltip}`}
+        events={["click"]}
         render={({ content, activeAnchor }) => content ? <ItemTooltip itemID={content}/> : null}
       />
     </div>

@@ -21,8 +21,9 @@ const subjectsList: React.FC<Props> = props => {
             case "arm":     return Arms;
             case "leg":     return Legs;
             case "weapon":
-                if (subjectContext?.value == null) return [];
-                return mastery(subjectContext.value).map(m => m.weapon).flatMap(weaponType => WeaponIDsForType(weaponType));
+                //if (subjectContext?.value == null) return [];
+                //return mastery(subjectContext.value).map(m => m.weapon).flatMap(weaponType => WeaponIDsForType(weaponType));
+                return Weapons
         }
     }, [props.slot, subjectContext?.value])
 

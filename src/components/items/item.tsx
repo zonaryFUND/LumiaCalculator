@@ -42,7 +42,7 @@ const item: React.FC<Props> = props => {
         <div 
             className={`${className} ${style.base}`} 
             data-tooltip-id="weapon" 
-            data-tooltip-delay-hide={10000}
+            data-tooltip-delay-hide={1000000}
             data-tooltip-content={props.itemID}
         >
             <img src={src} />

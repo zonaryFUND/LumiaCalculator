@@ -44,7 +44,7 @@ export type EquipmentStatus = {
     tenacity?: Decimal
     healingPower?: Decimal
     ammo?: Decimal
-    option?: String
+    option?: EquipmentAbility[]
 }
 
 var equipmentCache = {} as {[id: string]: EquipmentStatus}
@@ -69,7 +69,7 @@ export function equipmentStatus(id: EquipmentID): EquipmentStatus {
         type: raw.type,
         tier: raw.tier,
         perLevelStatus,
-        option: raw.option
+        option: raw.option ? parseEquipmentAbility(raw.option) : undefined
     }
     const status = [
         "attackPower", "attackSpeed", "criticalChance", "criticalDamage", "skillAmplification", "ampRatio", "adaptiveStatus", "cooldownReduction", "cdrCap", "defense",
@@ -124,6 +124,7 @@ export function tierName(id: string, language: Language): string {
 }
 
 import EquipmentTypeName from "dict/equipment-type-name.json";
+import { EquipmentAbility, parseEquipmentAbility } from "./equipment-ability";
 
 export function typeName(id: WeaponTypeID | ArmorTypeID, language: Language): string {
     return (EquipmentTypeName as {[index: string]: NameType})[id][language]
