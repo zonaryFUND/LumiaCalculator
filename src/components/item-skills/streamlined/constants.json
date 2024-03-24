@@ -1,0 +1,7 @@
+{
+    "time_bound": 4,
+    "threshold": 3,
+    "duration": 3,
+    "ms": 20,
+    "cooldown": 12
+}

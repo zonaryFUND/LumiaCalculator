@@ -29,6 +29,10 @@ import Verdict from "components/item-skills/verdict";
 import Encourage from "components/item-skills/encourage";
 import Bloodpact from "components/item-skills/bloodpact";
 import ElectricShock from "components/item-skills/electric-shock";
+import PhotonLauncher from "components/item-skills/photon_launcher";
+import Circulation from "components/item-skills/circulation";
+import Streamlined from "components/item-skills/streamlined";
+import Pulverization from "components/item-skills/pulverization";
 
 const skill: React.FC<EquipmentAbility> = props => {
     const text = (() => {
@@ -91,6 +95,14 @@ const skill: React.FC<EquipmentAbility> = props => {
                 return <Bloodpact />;
             case "electric_shock":
                 return <ElectricShock values={props.values} />;
+            case "photon_launcher":
+                return <PhotonLauncher values={props.values} />;
+            case "circulation":
+                return <Circulation values={props.values} />;
+            case "streamlined":
+                return <Streamlined />;
+            case "pulverization":
+                return <Pulverization />;
             default: return null;
         }
     })();

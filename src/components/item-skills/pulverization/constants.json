@@ -1,0 +1,9 @@
+{
+    "duration": 5,
+    "max_stack": 5,
+    "armor": 5,
+    "ms": {
+        "duration": 2,
+        "effect": 0.06
+    }
+}
