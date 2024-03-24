@@ -9,7 +9,7 @@ type Props = {
 const Value: React.FC<Props> = props => {
     return (
         <>
-            <span className={style.level}>キャラクターレベル＊{props.values.dmg.perLevel}</span>
+            <span className={style.level}>キャラクターレベル * {props.values.dmg.perLevel}</span>
             {props.values.dmg.amp ? <span className={style.amp}>(+スキル増幅の{props.values.dmg.amp}％)</span> : null}
         </>
     )
