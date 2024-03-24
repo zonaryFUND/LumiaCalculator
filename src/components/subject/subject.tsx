@@ -7,6 +7,7 @@ import EquipmentSlot from "./equipment-slot";
 import Item from "components/items/item";
 import Images from "@app/resources/image";
 import { Equipment, EquipmentContext, SubjectContext } from "./subject-context";
+import style from "./subject.module.styl";
 
 type Props = {
     //subject: SubjectID
@@ -43,8 +44,8 @@ const subject: React.FC<Props> = props => {
     return (
         <section>
             <div>
-                <div onClick={toggleShowingCharacters}>
-                    <img src={subject.value ? Images.subject[subject.value] : undefined} />
+                <div  onClick={toggleShowingCharacters}>
+                    <img className={style.subject} src={subject.value ? Images.subject[subject.value] : undefined} />
                     <h3>{subjectName}</h3>
                 </div>
                 {

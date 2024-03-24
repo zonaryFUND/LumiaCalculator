@@ -37,8 +37,6 @@ const itemTooltip: React.FC<Props> = props => {
         return <p className={style.ammo}><span>装弾数: </span>{`${status.ammo}発`}</p>
     })();
 
-    console.log(status.option)
-
     return (
         <div className={`${style.tooltip} ${style[status.tier]}`}>
             <header>

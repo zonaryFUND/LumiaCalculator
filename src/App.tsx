@@ -21,7 +21,6 @@ function App({}: AppProps) {
       <Tooltip 
         id="weapon"
         className={`${style.tooltip}`}
-        events={["click"]}
         render={({ content, activeAnchor }) => content ? <ItemTooltip itemID={content}/> : null}
       />
     </div>

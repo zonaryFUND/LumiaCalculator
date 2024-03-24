@@ -1,4 +1,5 @@
 import * as React from "react";
+import style from "../item-skills.styl";
 
 type Props = {
     values: any
@@ -6,7 +7,7 @@ type Props = {
 
 const Value: React.FC<Props> = props => {
     return (
-        <span>現在体力の{props.values.dmg.enemyHP}％</span>
+        <span className={style.maxhp}>現在体力の{props.values.dmg.enemyHP}％</span>
     )
 };
 

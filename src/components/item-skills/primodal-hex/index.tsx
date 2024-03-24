@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "../item-skills.styl";
-import Constants from "./constants";
+import Constants from "./constants.json";
 
 type Props = {
     values: any

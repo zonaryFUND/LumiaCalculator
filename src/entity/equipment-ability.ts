@@ -28,5 +28,6 @@ import Dict from "dict/equipment-ability-name.json"
 import { Language, NameType } from "./language";
 
 export function name(id: EquipmentAbilityID, language: Language): string {
+    console.log(id)
     return (Dict as {[index: string]: NameType})[id][language]
 }
