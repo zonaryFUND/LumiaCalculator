@@ -25,6 +25,10 @@ import FlameBarrier from "components/item-skills/flame-barrier";
 import Reflection from "components/item-skills/reflection";
 import Vanguard from "components/item-skills/vanguard";
 import Debilitation  from "components/item-skills/debilitation";
+import Verdict from "components/item-skills/verdict";
+import Encourage from "components/item-skills/encourage";
+import Bloodpact from "components/item-skills/bloodpact";
+import ElectricShock from "components/item-skills/electric-shock";
 
 const skill: React.FC<EquipmentAbility> = props => {
     const text = (() => {
@@ -79,6 +83,14 @@ const skill: React.FC<EquipmentAbility> = props => {
                 return <Vanguard />;
             case "debilitation":
                 return <Debilitation />;
+            case "verdict":
+                return <Verdict />;
+            case "encourage":
+                return <Encourage />;
+            case "bloodpact":
+                return <Bloodpact />;
+            case "electric_shock":
+                return <ElectricShock values={props.values} />;
             default: return null;
         }
     })();

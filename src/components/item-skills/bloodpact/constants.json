@@ -1,0 +1,13 @@
+{
+    "threshold": 40,
+    "guard_duration": 2.5,
+    "shield": {
+        "base": 150,
+        "perLevel": 10
+    },
+    "tenacity": 50,
+    "adaptive_duration": 8,
+    "adaptive": 15,
+    "heal": 12,
+    "cooldown": 50
+}
