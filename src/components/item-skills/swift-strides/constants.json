@@ -1,4 +1,5 @@
 {
-    "distance_per_stack": 0.2,
-    "max_stack": 100
+    "distance_per_stack": 0.04,
+    "max_stack": 100,
+    "ms": 0.1   
 }

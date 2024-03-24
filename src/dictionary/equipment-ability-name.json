@@ -1,1 +1,101 @@
-{"primodal_hex":{"jp":"呪い"},"vigor":{"jp":"情熱"},"magnetic_midnight":{"jp":"チャージ - 閃光"},"smolder":{"jp":"発火"},"lichs_grasp":{"jp":"寒波"},"zephyr":{"jp":"迅速 - そよ風"},"healing_reduction_weak":{"jp":"治癒減少 - 弱"},"charge_carrier":{"jp":"迅速 - プラズマ"},"biotic_infusion":{"jp":"意念"},"in_full_bloom":{"jp":"満開"},"swift_strides":{"jp":"軽い足取り"},"double_tap":{"jp":"最後の一発 - ダブルタップ"},"last_word":{"jp":"最後の一発 - 魔弾"},"lead_shell":{"jp":"鉄丸"},"rudra_embodied":{"jp":"迅速 - ルドラの短剣"},"streamlined":{"jp":"迅速"},"swift_strides_vf":{"jp":"軽い足取り"},"biotic_infusion_vf":{"jp":"意念"},"flame_barrior_vf":{"jp":"炎の結界"},"necrosis":{"jp":"毒蛇の猛毒"},"flame_barrier":{"jp":"炎の結界"},"reflection":{"jp":"リフレクション"},"vanguard":{"jp":"悟り - 先鋒"},"debilitation":{"jp":"腐敗"},"verdict":{"jp":"悟り - 宣告"},"encourage":{"jp":"激励"},"bloodpact":{"jp":"セカンドウインド - 血の契約"},"electric_shock":{"jp":"電撃"},"photon_launcher":{"jp":"フォトンランチャー"},"circulation":{"jp":"情熱 - 循環"},"pulverization":{"jp":"粉砕"},"healing_reduction_strong":{"jp":"治癒減少 - 強"}}
+{
+    "primodal_hex": {
+        "jp": "呪い"
+    },
+    "vigor": {
+        "jp": "情熱"
+    },
+    "magnetic_midnight": {
+        "jp": "チャージ - 閃光"
+    },
+    "smolder": {
+        "jp": "発火"
+    },
+    "lichs_grasp": {
+        "jp": "寒波"
+    },
+    "zephyr": {
+        "jp": "迅速 - そよ風"
+    },
+    "healing_reduction_weak": {
+        "jp": "治癒減少 - 弱"
+    },
+    "charge_carrier": {
+        "jp": "迅速 - プラズマ"
+    },
+    "biotic_infusion": {
+        "jp": "意念"
+    },
+    "in_full_bloom": {
+        "jp": "満開"
+    },
+    "swift_strides": {
+        "jp": "軽い足取り"
+    },
+    "double_tap": {
+        "jp": "最後の一発 - ダブルタップ"
+    },
+    "last_word": {
+        "jp": "最後の一発 - 魔弾"
+    },
+    "lead_shell": {
+        "jp": "鉄丸"
+    },
+    "rudra_embodied": {
+        "jp": "迅速 - ルドラの短剣"
+    },
+    "streamlined": {
+        "jp": "迅速"
+    },
+    "swift_strides_vf": {
+        "jp": "軽い足取り"
+    },
+    "biotic_infusion_vf": {
+        "jp": "意念"
+    },
+    "flame_barrier_vf": {
+        "jp": "炎の結界"
+    },
+    "vf_control_enhancement": {
+        "jp": "VF制御強化"
+    },
+    "necrosis": {
+        "jp": "毒蛇の猛毒"
+    },
+    "flame_barrier": {
+        "jp": "炎の結界"
+    },
+    "reflection": {
+        "jp": "リフレクション"
+    },
+    "vanguard": {
+        "jp": "悟り - 先鋒"
+    },
+    "debilitation": {
+        "jp": "腐敗"
+    },
+    "verdict": {
+        "jp": "悟り - 宣告"
+    },
+    "encourage": {
+        "jp": "激励"
+    },
+    "bloodpact": {
+        "jp": "セカンドウインド - 血の契約"
+    },
+    "electric_shock": {
+        "jp": "電撃"
+    },
+    "photon_launcher": {
+        "jp": "フォトンランチャー"
+    },
+    "circulation": {
+        "jp": "情熱 - 循環"
+    },
+    "pulverization": {
+        "jp": "粉砕"
+    },
+    "healing_reduction_strong": {
+        "jp": "治癒減少 - 強"
+    }
+}

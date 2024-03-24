@@ -13,6 +13,13 @@ import InFullBloom from "components/item-skills/in-full-bloom";
 import SwiftStrides from "components/item-skills/swift-strides";
 import DoubleTap from "components/item-skills/double-tap";
 import LastWord from "components/item-skills/last-word";
+import LeadShell from "components/item-skills/lead-shell";
+import RudraEmbodied from "components/item-skills/rudra-embodied";
+import SwiftStridesVF from "components/item-skills/swift-strides-vf";
+import VFControlEnhancement from "components/item-skills/vf-control-enhancement";
+import BioticInfusionVF from "components/item-skills/biotic-infusion-vf";
+import Nerosis from "components/item-skills/necrosis";
+import FlameBarrierVF from "components/item-skills/flame-barrier-vf";
 
 const skill: React.FC<EquipmentAbility> = props => {
     const text = (() => {
@@ -45,6 +52,20 @@ const skill: React.FC<EquipmentAbility> = props => {
                 return <DoubleTap />;
             case "last_word":
                 return <LastWord />;
+            case "lead_shell":
+                return <LeadShell />;
+            case "rudra_embodied":
+                return <RudraEmbodied values={props.values} />;
+            case "swift_strides_vf":
+                return <SwiftStridesVF values={props.values} />;
+            case "vf_control_enhancement":
+                return <VFControlEnhancement />;
+            case "biotic_infusion_vf":
+                return <BioticInfusionVF values={props.values} />;
+            case "necrosis":
+                return <Nerosis />;
+            case "flame_barrier_vf":
+                return <FlameBarrierVF values={props.values} />;
             default: return null;
         }
     })();

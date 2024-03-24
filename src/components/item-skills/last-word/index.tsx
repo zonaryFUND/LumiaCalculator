@@ -12,7 +12,7 @@ const Value: React.FC = _ => (
 const description: React.FC = _ => (
     <p>
         最後の弾丸で加える基本攻撃が攻撃力が<Value />に値する追加スキルダメージを与え、
-        与えたダメージの<span className={style.bold}>{Constants.lifesteal_ratio}％</span>を体力に回復します。
+        与えたダメージの<span className={style.emphasis}>{Constants.lifesteal_ratio}％</span>を体力に回復します。
     </p> 
 );
 
