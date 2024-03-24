@@ -1,0 +1,8 @@
+{
+    "threshold": 4,
+    "damage": {
+        "base": 100,
+        "perLevel": 8
+    },
+    "cooldown": 1
+}

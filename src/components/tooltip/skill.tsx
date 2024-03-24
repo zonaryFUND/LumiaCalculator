@@ -9,6 +9,10 @@ import Zephyr from "components/item-skills/zephyr";
 import HealingReduction from "components/item-skills/healing-reduction";
 import ChargeCarrier from "components/item-skills/charge-carrier";
 import BioticInfusion from "components/item-skills/biotic-infusion";
+import InFullBloom from "components/item-skills/in-full-bloom";
+import SwiftStrides from "components/item-skills/swift-strides";
+import DoubleTap from "components/item-skills/double-tap";
+import LastWord from "components/item-skills/last-word";
 
 const skill: React.FC<EquipmentAbility> = props => {
     const text = (() => {
@@ -33,7 +37,14 @@ const skill: React.FC<EquipmentAbility> = props => {
                 return <ChargeCarrier />;
             case "biotic_infusion":
                 return <BioticInfusion values={props.values} />;
-                
+            case "in_full_bloom":
+                return <InFullBloom />;
+            case "swift_strides":
+                return <SwiftStrides values={props.values} />;
+            case "double_tap":
+                return <DoubleTap />;
+            case "last_word":
+                return <LastWord />;
             default: return null;
         }
     })();
