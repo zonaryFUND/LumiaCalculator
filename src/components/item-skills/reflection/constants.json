@@ -1,0 +1,9 @@
+{
+    "healing-reduction": {
+        "duration": 4,
+        "effect": 40
+    },
+    "time_bound": 4,
+    "threshold": 600,
+    "cooldown": 3
+}

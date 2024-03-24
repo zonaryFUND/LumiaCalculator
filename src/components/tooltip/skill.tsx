@@ -21,6 +21,11 @@ import BioticInfusionVF from "components/item-skills/biotic-infusion-vf";
 import Nerosis from "components/item-skills/necrosis";
 import FlameBarrierVF from "components/item-skills/flame-barrier-vf";
 
+import FlameBarrier from "components/item-skills/flame-barrier";
+import Reflection from "components/item-skills/reflection";
+import Vanguard from "components/item-skills/vanguard";
+import Debilitation  from "components/item-skills/debilitation";
+
 const skill: React.FC<EquipmentAbility> = props => {
     const text = (() => {
         switch (props.id) {
@@ -66,6 +71,14 @@ const skill: React.FC<EquipmentAbility> = props => {
                 return <Nerosis />;
             case "flame_barrier_vf":
                 return <FlameBarrierVF values={props.values} />;
+            case "flame_barrier":
+                return <FlameBarrier values={props.values} />;
+            case "reflection":
+                return <Reflection values={props.values} />;
+            case "vanguard":
+                return <Vanguard />;
+            case "debilitation":
+                return <Debilitation />;
             default: return null;
         }
     })();
