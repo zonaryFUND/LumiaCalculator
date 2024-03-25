@@ -1,38 +1,38 @@
 .tooltip
-    width: 350px
+    width: 500px
     font-weight: bold
 
-    >*
-        padding-left: 24px
-
-    header
+    .header
         display: flex
         position: relative
         justify-content: space-between
         align-items: center
+        padding: 0 24px
 
-        >div
+        div
             padding: 20px 0 24px
+        
+        h1
+            font-size: 20px
+            margin: 0 0 12px
+            line-height: 20px
 
-    header::before
+        p,li
+            font-size: 15px
+            margin: 0
+            margin-block-start: 5px
+            line-height: 15px
+
+    .header::before
         display: block
         position: absolute
         content: ""
         width: 4px
-        left: 8px
+        left: 12px
         top: 24px
         bottom: 24px
 
-    h1
-        font-size: 20px
-        margin: 0 0 12px
-        line-height: 20px
 
-    p,li
-        font-size: 15px
-        margin: 0
-        margin-block-start: 5px
-        line-height: 15px
 
     p:last-child
         color: rgb(172,172,172)
@@ -40,25 +40,12 @@
     img
         width: 128px
         height: 71px
-    
-    ul
-        li
-            color: rgb(0, 200, 0)
-            font-size: 18px
-            line-height: 18px
-
-        span
-            color: yellow
-
-    .ammo
-        font-size: 19px
-        line-height: 20px
 
 .epic
-    header
+    .header
         background: linear-gradient(90deg, rgba(50,31,78,0), rgba(50,31,78,255))
 
-    header::before
+    .header::before
         background-color: rgb(153,59,218)
 
     p:not(:last-child)
@@ -66,21 +53,43 @@
         
 
 .legendary
-    header
+    .header
         background: linear-gradient(90deg, rgba(124,91,46,0), rgba(124,91,46,255))
 
-    header::before
+    .header::before
         background-color: rgb(218,169,42)
     
     p:not(:last-child)
         color: rgb(250,211,55)
 
 .mythic
-    header
+    .header
         background: linear-gradient(90deg, rgba(76,26,28,0), rgba(76,26,28,255))
 
-    header::before
+    .header::before
         background-color: rgb(194,31,32)
     
-    p:not(:last-child)
+    .p:not(:last-child)
         color: rgb(227,34,34)
+
+.content    
+    padding: 0 12px 12px
+
+    *
+        font-size: 18px
+        line-height: 22px
+
+    ul
+        padding-left: 12px
+
+        li
+            color: rgb(0, 200, 0)
+
+        span
+            color: rgb(255,255,0)
+
+    .ammo
+        padding-left: 12px
+
+        span
+            color: rgb(255,255,0)

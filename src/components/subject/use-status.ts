@@ -5,6 +5,7 @@ import { SubjectID } from "@app/entity/subject";
 import { Equipment, StateProps } from "./subject-context";
 import { EquipmentStatus, PerLevelStatus, WeaponTypeID, equipmentStatus, weaponBaseStatus } from "@app/entity/equipment";
 import { mastery } from "@app/entity/mastery";
+import useSubjectConfig, { Response as ConfigResponse } from "./use-subject-config";
 
 type Status = {
     maxHP: Decimal
@@ -37,14 +38,7 @@ type Status = {
     visionRange: Decimal
 }
 
-type Response = {
-    subject: StateProps<SubjectID | null>
-    equipment: StateProps<Equipment>
-    status?: Status
-    level: StateProps<number>
-    weaponMastery: StateProps<number>
-    movementMastery: StateProps<number>
-}
+type Response = ConfigResponse & { status?: Status }
 
 function sumDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Decimal {
     return status
@@ -65,18 +59,15 @@ function maxDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Deci
 }
 
 export default function(): Response {
-    const [subject, setSubject] = React.useState<SubjectID | null>(null);
+    const {
+        subject: [subject, setSubject],
+        equipment: [equipment, setEquipment],
+        level: [level, setLevel],
+        weaponMastery: [weaponMastery, setWeaponMastery],
+        movementMastery: [movementMastery, setMovementMastery]
+    } = useSubjectConfig();
+
     const baseStatus = React.useMemo(() => subject ? getBaseStatus(subject) : null, [subject]);
-
-    const [level, setLevel] = React.useState(1);
-
-    const [weaponMastery, setWeaponMastery] = React.useState(1);
-
-    const [movementMastery, setMovementMastery] = React.useState(1);
-
-    const [equipment, setEquipment] = React.useState({
-        weapon: null, chest: null, head: null, arm: null, leg: null
-    } as Equipment)
 
     const masteryFactor = React.useMemo(() => {
         if (!subject || equipment.weapon == null) return undefined;
@@ -155,11 +146,11 @@ export default function(): Response {
     }, [baseStatus, level, equipment, weaponMastery, movementMastery])
 
     return {
-        subject: { value: subject, setValue: setSubject },
-        equipment: { value: equipment, setValue: setEquipment },
+        subject: [subject, setSubject],
+        equipment: [equipment, setEquipment],
         status,
-        level: { value: level, setValue: setLevel },
-        weaponMastery: { value: weaponMastery, setValue: setWeaponMastery },
-        movementMastery: { value: movementMastery, setValue: setMovementMastery }
+        level: [level, setLevel],
+        weaponMastery: [weaponMastery, setWeaponMastery],
+        movementMastery: [movementMastery, setMovementMastery]
     }
 }

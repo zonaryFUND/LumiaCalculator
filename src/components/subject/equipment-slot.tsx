@@ -12,19 +12,19 @@ type Props = {
 
 const equipmentSlot: React.FC<Props> = props => {
     const [showSelection, setSelection] = React.useState(false);
-    const subjectContext = React.useContext(SubjectContext)!;
-    const equipmentContext = React.useContext(EquipmentContext)!;
+    const [subject] = React.useContext(SubjectContext)!;
+    const [equipment] = React.useContext(EquipmentContext)!;
     const onClick = React.useCallback(() => {
-        if (props.slot == "weapon" && subjectContext.value == null) return;
+        if (props.slot == "weapon" && subject == null) return;
         setSelection(prev => !prev);
-    }, [subjectContext.value]);
+    }, [subject]);
     
 
     return (
         <div className={style.slot} onClick={onClick}>
             {
-                equipmentContext.value[props.slot] ?
-                <Item itemID={equipmentContext.value[props.slot]} slot={props.slot} /> :
+                equipment[props.slot] ?
+                <Item itemID={equipment[props.slot]} slot={props.slot} /> :
                 null
             }
             {showSelection ? <EquipmentList slot={props.slot} /> : null}

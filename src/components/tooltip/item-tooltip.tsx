@@ -39,7 +39,7 @@ const itemTooltip: React.FC<Props> = props => {
 
     return (
         <div className={`${style.tooltip} ${style[status.tier]}`}>
-            <header>
+            <header className={style.header}>
                 <div>
                     <h1>{itemName}</h1>
                     <p>{tierName(status.tier, "jp")}</p>
@@ -47,9 +47,11 @@ const itemTooltip: React.FC<Props> = props => {
                 </div>
                 <img src={src} />
             </header>
-            <Options {...status} />
-            {ammo}
-            {status.option ? status.option.map(op => <Skill key={op.id} {...op} />) : null}
+            <div className={style.content}>
+                <Options {...status} />
+                {ammo}
+                {status.option ? status.option.map(op => <Skill key={op.id} {...op} />) : null}
+            </div>
         </div>
     )
 }

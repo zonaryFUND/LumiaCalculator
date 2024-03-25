@@ -3,10 +3,10 @@ import { SubjectID } from "@app/entity/subject";
 import { WeaponID } from "@app/entity/weapon-id";
 import * as React from "react";
 
-export type StateProps<T> = {
-    value: T
-    setValue: React.Dispatch<React.SetStateAction<T>>
-}
+export type StateProps<T> = [
+    T,
+    React.Dispatch<React.SetStateAction<T>>
+]
 
 export const SubjectContext = React.createContext<StateProps<SubjectID | null> | undefined>(undefined);
 export const LevelContext = React.createContext<StateProps<number> | undefined>(undefined);

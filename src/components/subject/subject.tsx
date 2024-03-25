@@ -15,44 +15,44 @@ type Props = {
 
 const subject: React.FC<Props> = props => {
     const {
-        subject,
-        equipment,
+        subject: [subject, setSubject],
+        equipment: [equipment, setEquipment],
         status,
-        level,
-        weaponMastery,
-        movementMastery
+        level: [level, setLevel],
+        weaponMastery: [weaponMastery, setWeaponMastery],
+        movementMastery: [movementMastery, setMovementMastery]
     } = useStatus();
-    const subjectName = React.useMemo(() => subject.value ? name(subject.value, "jp") : null, [subject]);
+    const subjectName = React.useMemo(() => subject ? name(subject, "jp") : null, [subject]);
 
 
     const [showingCharacters, toggleShowingCharacters] = useToggle(false);
     const selectSubjectFromList = React.useCallback((id: SubjectID) => {
-        subject.setValue(id);
+        setSubject(id);
         toggleShowingCharacters(false);
     }, []);
 
     const onLevelSliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
-        level.setValue(+event.target.value);
+        setLevel(+event.target.value);
     }, []);
     const onWeaponMasterySliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
-        weaponMastery.setValue(+event.target.value);
+        setWeaponMastery(+event.target.value);
     }, []);
     const onMovementMasterySliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
-        movementMastery.setValue(+event.target.value);
+        setMovementMastery(+event.target.value);
     }, []);
 
     return (
         <section>
             <div>
                 <div  onClick={toggleShowingCharacters}>
-                    <img className={style.subject} src={subject.value ? Images.subject[subject.value] : undefined} />
+                    <img className={style.subject} src={subject ? Images.subject[subject] : undefined} />
                     <h3>{subjectName}</h3>
                 </div>
                 {
                     showingCharacters ? <SubjectsList onSelect={selectSubjectFromList} /> : null
                 }
-                <SubjectContext.Provider value={subject}>
-                <EquipmentContext.Provider value={equipment}>
+                <SubjectContext.Provider value={[subject, setSubject]}>
+                <EquipmentContext.Provider value={[equipment, setEquipment]}>
                     <div>
                         <EquipmentSlot slot="weapon" />
                         <EquipmentSlot slot="chest" />
@@ -88,15 +88,15 @@ const subject: React.FC<Props> = props => {
                 </tbody>
             </table>
             <label>
-                {`レベル${level.value}`}
+                {`レベル${level}`}
                 <input type="range" min="1" defaultValue={1} max="20" step="1" onChange={onLevelSliderChange}/>
             </label>
             <label>
-                {`武器熟練度${weaponMastery.value}`}
+                {`武器熟練度${weaponMastery}`}
                 <input type="range" min="1" defaultValue={1} max="20" step="1" onChange={onWeaponMasterySliderChange}/>
             </label>
             <label>
-                {`移動熟練度${movementMastery.value}`}
+                {`移動熟練度${movementMastery}`}
                 <input type="range" min="1" defaultValue={1} max="20" step="1" onChange={onMovementMasterySliderChange}/>
             </label>
         </section>

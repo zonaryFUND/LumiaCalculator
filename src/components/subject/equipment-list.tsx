@@ -13,7 +13,7 @@ type Props = {
 }
 
 const subjectsList: React.FC<Props> = props => {
-    const subjectContext = React.useContext(SubjectContext);
+    const [subject, setSubject] = React.useContext(SubjectContext)!;
     const IDs = React.useMemo(() => {
         switch (props.slot) {
             case "head":    return Heads;
@@ -21,15 +21,14 @@ const subjectsList: React.FC<Props> = props => {
             case "arm":     return Arms;
             case "leg":     return Legs;
             case "weapon":
-                //if (subjectContext?.value == null) return [];
-                //return mastery(subjectContext.value).map(m => m.weapon).flatMap(weaponType => WeaponIDsForType(weaponType));
-                return Weapons
+                if (subject == null) return [];
+                return mastery(subject).map(m => m.weapon).flatMap(weaponType => WeaponIDsForType(weaponType));
         }
-    }, [props.slot, subjectContext?.value])
+    }, [props.slot, subject])
 
-    const context = React.useContext(EquipmentContext);
+    const [equipment, setEquipment] = React.useContext(EquipmentContext)!;
     const onClick = React.useCallback((id: EquipmentID) => {
-        context?.setValue(prev => ({...prev, [props.slot]: id}))
+        setEquipment(prev => ({...prev, [props.slot]: id}))
     }, [props.slot]);
 
     return (

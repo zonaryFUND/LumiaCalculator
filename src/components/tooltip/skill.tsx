@@ -1,5 +1,7 @@
 import { EquipmentAbility, name } from "@app/entity/equipment-ability";
 import * as React from "react";
+import style from "./skill.module.styl";
+
 import PrimodalHex from "components/item-skills/primodal-hex";
 import Vigor from "components/item-skills/vigor";
 import MagneticMidnight from "components/item-skills/magnetic-midnight";
@@ -108,7 +110,7 @@ const skill: React.FC<EquipmentAbility> = props => {
     })();
 
     return (
-        <div>
+        <div className={style.skill}>
             <header>
                 <h2>固有装備効果</h2>
             </header>
