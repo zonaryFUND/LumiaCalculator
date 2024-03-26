@@ -2,6 +2,7 @@ import { ArmID, ChestID, HeadID, LegID } from "@app/entity/armor-id";
 import { SubjectID } from "@app/entity/subject";
 import { WeaponID } from "@app/entity/weapon-id";
 import * as React from "react";
+import { Status } from "./use-status";
 
 export type StateProps<T> = [
     T,
@@ -20,3 +21,4 @@ export type Equipment = {
 }
 
 export const EquipmentContext = React.createContext<StateProps<Equipment> | undefined>(undefined);
+export const StatusContext = React.createContext<Status | undefined>(undefined);

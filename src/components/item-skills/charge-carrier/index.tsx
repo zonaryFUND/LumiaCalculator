@@ -1,6 +1,6 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import style from "../item-skills.styl";
+import style from "components/tooltip/tooltip.module.styl";
 
 const Value: React.FC = _ => (
     <span className={style.level}>キャラクターレベル * {Constants.ms_per_level}％</span>

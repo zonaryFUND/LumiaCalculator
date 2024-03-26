@@ -24,13 +24,27 @@ const armImages = importImages(armContext);
 const legContext = require.context("resources/armors/leg", true, /\.png$/);
 const legImages = importImages(legContext);
 
+const skillImagesContext = require.context("resources/skills", true, /\.png$/);
+const skillImages = skillImagesContext.keys().reduce((images: any, path) => {
+    const pathComponents = path.split("/");
+    const [subjectID, image] = pathComponents.slice(pathComponents.length - 2);
+    const imageName = image.split(".")[0];
+    images[subjectID] = {
+        ...images[subjectID],
+        [imageName]: skillImagesContext(path)
+    }
+    return images
+}, {}) as any;
+
+
 const Images = {
     subject: subjectImages,
     weapon: weaponImages,
     chest: chestImages,
     head: headImages,
     arm: armImages,
-    leg: legImages
+    leg: legImages,
+    skill: skillImages
 }
 
 export default Images;

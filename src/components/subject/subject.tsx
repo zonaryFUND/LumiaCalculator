@@ -4,10 +4,14 @@ import { SubjectID, name } from "@app/entity/subject";
 import useStatus from "./use-status";
 import SubjectsList from "./subjects-list";
 import EquipmentSlot from "./equipment-slot";
-import Item from "components/items/item";
 import Images from "@app/resources/image";
-import { Equipment, EquipmentContext, SubjectContext } from "./subject-context";
+import { Equipment, EquipmentContext, StatusContext, SubjectContext } from "./subject-context";
 import style from "./subject.module.styl";
+import { SubjectSkills } from "components/subjects/skills";
+import { Tooltip } from "react-tooltip";
+import ItemTooltip from "components/tooltip/item-tooltip";
+import SubjectSkillTooltip from "components/tooltip/subject-skill-tooltip";
+import damage, { FormulaContext } from "components/subjects/damage";
 
 type Props = {
     //subject: SubjectID
@@ -20,10 +24,11 @@ const subject: React.FC<Props> = props => {
         status,
         level: [level, setLevel],
         weaponMastery: [weaponMastery, setWeaponMastery],
-        movementMastery: [movementMastery, setMovementMastery]
+        movementMastery: [movementMastery, setMovementMastery],
+        skillLevels: [skillLevels, setSkillLevels]
     } = useStatus();
     const subjectName = React.useMemo(() => subject ? name(subject, "jp") : null, [subject]);
-
+    const [damageInFormula, toggleDamageInFormula] = useToggle(false);
 
     const [showingCharacters, toggleShowingCharacters] = useToggle(false);
     const selectSubjectFromList = React.useCallback((id: SubjectID) => {
@@ -40,9 +45,14 @@ const subject: React.FC<Props> = props => {
     const onMovementMasterySliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setMovementMastery(+event.target.value);
     }, []);
+    const onFormulaCheckboxChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
+        toggleDamageInFormula()
+    }, []);
 
     return (
-        <section>
+        <StatusContext.Provider value={status}>
+        <FormulaContext.Provider value={damageInFormula}>
+        <section className={style.base}>
             <div>
                 <div  onClick={toggleShowingCharacters}>
                     <img className={style.subject} src={subject ? Images.subject[subject] : undefined} />
@@ -62,6 +72,8 @@ const subject: React.FC<Props> = props => {
                     </div>
                 </EquipmentContext.Provider>
                 </SubjectContext.Provider>
+                <label><input type="checkbox" defaultChecked={damageInFormula} onChange={toggleDamageInFormula} />スキルダメージを計算式で表記する</label>
+                {subject ? SubjectSkills[subject].default() : null}
             </div>
             <table>
                 <tbody>
@@ -99,7 +111,24 @@ const subject: React.FC<Props> = props => {
                 {`移動熟練度${movementMastery}`}
                 <input type="range" min="1" defaultValue={1} max="20" step="1" onChange={onMovementMasterySliderChange}/>
             </label>
+            <Tooltip 
+                id="weapon"
+                className={`${style.tooltip}`}
+                render={({ content, activeAnchor }) => content ? <ItemTooltip itemID={content}/> : null}
+            />
+            <Tooltip 
+                id="subject-skill"
+                className={`${style.tooltip}`}
+                delayHide={1000000}
+                render={({ content, activeAnchor }) => {
+                    if (!content) return null;
+                    const [subject, skill] = content?.split("-");
+                    return <SubjectSkillTooltip id={subject} skill={skill as any} />
+                }}
+            />
         </section>
+        </FormulaContext.Provider>
+        </StatusContext.Provider>
     )
 }
 

@@ -29,7 +29,7 @@ const options: React.FC<EquipmentStatus> = props => {
     const skillAmp = withTemplate("スキル増幅 +<1>", props.skillAmplification);
     const maxHP = withTemplate("最大体力 +<1>", props.maxHP);
     const maxSP = withTemplate("最大スタミナ +<1>", props.maxSP);
-    const perLevelAmp = props.perLevelStatus?.type == "aa_amp" ?
+    const perLevelAmp = props.perLevelStatus?.type == "skill_amp" ?
         withTemplate("レベル比例スキル増幅 +<1>.0~<2>.0", props.perLevelStatus.value, props.perLevelStatus.value.times(20)) : null;
     const perLevelMHP = props.perLevelStatus?.type == "max_hp" ?
         withTemplate("レベル比例最大体力 +<1>.0~<2>.0", props.perLevelStatus.value, props.perLevelStatus.value.times(20)) : null;

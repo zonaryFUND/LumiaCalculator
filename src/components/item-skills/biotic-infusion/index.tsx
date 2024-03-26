@@ -1,6 +1,6 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import style from "../item-skills.styl";
+import style from "components/tooltip/tooltip.module.styl";
 
 type Props = {
     values: any
@@ -10,7 +10,7 @@ const Value: React.FC<Props> = props => {
     function elem(obj: any): React.ReactElement | null {
         return (
             obj.enemyMaxHP ? <span className={style.maxhp}>敵の最大体力の{obj.enemyMaxHP}％</span> :
-            obj.amp ? <span className={style.amp}>スキル増幅の{obj.dmg.amp}％</span> :
+            obj.amp ? <span className={style.amp}>スキル増幅の{obj.amp}％</span> :
             obj.perLevel ? <>{obj.base}<span className={style.level}>(+キャラクターレベル * {obj.perLevel})</span></> :
             null    
         );

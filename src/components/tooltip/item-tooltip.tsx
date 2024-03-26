@@ -4,6 +4,7 @@ import Images from "@app/resources/image";
 import { equipmentStatus, name, tierName, typeName } from "@app/entity/equipment";
 import Options from "./options";
 import Skill from "./skill";
+import baseStyle from "./tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
 
 type Props = {
@@ -38,7 +39,7 @@ const itemTooltip: React.FC<Props> = props => {
     })();
 
     return (
-        <div className={`${style.tooltip} ${style[status.tier]}`}>
+        <div className={`${baseStyle.base} ${style.tooltip} ${style[status.tier]}`}>
             <header className={style.header}>
                 <div>
                     <h1>{itemName}</h1>

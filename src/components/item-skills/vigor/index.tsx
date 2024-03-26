@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "../item-skills.styl";
+import style from "components/tooltip/tooltip.module.styl";
 
 type Props = {
     values: any

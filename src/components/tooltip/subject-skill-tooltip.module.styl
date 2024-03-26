@@ -1,0 +1,60 @@
+.tooltip
+    width: 800px
+
+    .main
+        padding: 20px
+
+        header
+            display: flex
+            margin-left: -8px
+
+            >:first-child
+                margin-right: 24px
+
+            >:last-child
+                flex-grow: 1
+
+            img
+                width: 80px
+                height: 80px
+
+            .name
+                display: flex
+                position: relative
+                justify-content: space-between
+                font-size: 20px
+                line-height: 20px
+
+                *
+                    color: rgb(255,182,46)
+                    margin-block: 0
+
+                >:last-child
+                    text-align: right
+
+            h1::before
+                display: block
+                position: absolute
+                content: ""
+                width: 4px
+                left: -12px
+                top: 0
+                bottom: 0
+                background-color: rgb(83,120,134)
+
+
+            .cooldown
+                font-size: 16px
+                line-height: 20px
+
+            >div
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+
+        p
+            margin: 20px 0 0
+
+    .values
+        background: black
+        padding: 16px 20px 20px
