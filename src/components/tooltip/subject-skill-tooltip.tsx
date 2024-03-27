@@ -42,15 +42,30 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
         return info.sp_cost;
     })()
     const baseCooldown = (() => {
-        if (info.cooldown == undefined) return 0;
+        if (info.cooldown == undefined) return undefined;
         if (Array.isArray(info.cooldown)) return info.cooldown[props.status.skillLevels[props.skill]];
         return info.cooldown;
     })()
+    const baseCharge = (() => {
+        if (info.charge == undefined) return undefined;
+        if (Array.isArray(info.charge.time)) return info.charge.time[props.status.skillLevels[props.skill]];
+        return info.charge.time;
+    })();
 
     return (
         <div className={style.cooldown}>
             {spCost != null ? <>スタミナ {spCost}<br /></> : null}
-            <>クールダウン{new Decimal(baseCooldown).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</>
+            {spCost == null ? <>コストなし<br /></> : null}
+            {
+                baseCooldown != null ?
+                <>クールダウン{new Decimal(baseCooldown).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</> :
+                null
+            }
+            {
+                baseCharge != null ?
+                <>チャージ時間{new Decimal(baseCharge).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</> :
+                null
+            }
         </div>
     );
 };
@@ -90,9 +105,6 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     </div>
                 ) : null
             }
-            <div className="">
-
-            </div>
         </div>
     );
 };

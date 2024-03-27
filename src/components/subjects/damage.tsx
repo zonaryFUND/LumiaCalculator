@@ -14,6 +14,8 @@ type Props = {
         attack?: Value,
         additionalAttack?: Value,
         additionalMaxHP?: Value
+        amp?: Value
+        targetHP?: Value
     }
 }
 
@@ -37,10 +39,17 @@ const damage: React.FC<Props> = props => {
                 {props.constants.attack ? <span className={style.attack}>(+攻撃力の{current(skillLevel, props.constants.attack)}％)</span> : null}
                 {props.constants.additionalAttack ? <span className={style.attack}>(+追加攻撃力の{current(skillLevel, props.constants.additionalAttack)}％)</span> : null}
                 {props.constants.additionalMaxHP ? <span className={style.maxhp}>(+追加体力の{current(skillLevel, props.constants.additionalMaxHP)}％)</span> : null}
+                {props.constants.amp ? <span className={style.amp}>(+スキル増幅の{current(skillLevel, props.constants.amp)}％)</span> : null}
+                {props.constants.targetHP ? <span className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP)}％)</span> : null}
             </>
         );
     } else {
-        return <span className={style.emphasis}>{skillDamage(status, skillLevel, props.constants).toString()}</span>
+        return (
+            <>
+               <span className={style.emphasis}>{skillDamage(status, skillLevel, props.constants).toString()}</span>
+               {props.constants.targetHP ? <span className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP)}％)</span> : null}
+            </>
+        );
     }
 }
 
