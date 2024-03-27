@@ -20,7 +20,7 @@ const config: webpack.Configuration = {
                 test: /\.(png|svg|mp3)$/,
                 loader: "file-loader",
                 options: {
-                    name: "[name].[ext]",
+                    name: "[path][name].[ext]",
                     outputPath: "assets/",
                     esModule: false
                 }

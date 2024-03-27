@@ -1,0 +1,53 @@
+{
+    "Q": {
+        "damage": {
+            "base": [60,100,140,180,220],
+            "attack": 70
+        },
+        "cooldown": [10,9,8,7,6],
+        "sp_cost": [65,70,75,80,85]
+    },
+    "W": {
+        "damage": {
+            "base": [20,35,50,65,80],
+            "attack": 65
+        },
+        "cooldown_reduction": 25,
+        "cooldown": [9,7.5,6,4.5,3],
+        "sp_cost": 50
+    },
+    "E": {
+        "time_bound": 2.5,
+        "damage": {
+            "base": [50,80,110,140,170],
+            "attack": 60
+        },
+        "stun": 0.65,
+        "cooldown": [15,14,13,12,11],
+        "sp_cost": 75
+    },
+    "R": {
+        "damage": {
+            "base": [60,110,160],
+            "attack": 100
+        },
+        "additionalDamage": {
+            "stack": [3,6,9],
+            "attack": 6
+        },
+        "slow": 99,
+        "cooldown": [80,65,50],
+        "sp_cost": [60,80,100]
+    },
+    "T": {
+        "threshold": 3,
+        "damage": {
+            "base": [20,50,80],
+            "attack": 55
+        },
+        "movement_speed": [5,15,25],
+        "duration": 2,
+        "heal": [100,175,250],
+        "animal": 70
+    }
+}

@@ -30,7 +30,7 @@ const q: React.FC<Status> = status => {
 export default q;
 
 export const values: ValuesProps = {
-    additionalInfo: `チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの${Constants.common.return_cooldown}％が返されます。`,
+    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}％が返されます。</>,
     parameters: [
         {title: "ダメージ量", values: Constants.Q.damage.base},
         {title: "[強化時]ハンマーダメージ比例追加ダメージ量", values: Constants.Q.additional_damage, percent: true},

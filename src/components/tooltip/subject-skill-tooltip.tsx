@@ -10,7 +10,7 @@ import Decimal from "decimal.js";
 import { FormulaContext } from "components/subjects/damage";
 import Values from "components/subjects/values";
 
-const skillsContext = require.context("components/subjects", true, /\.\/.*\/[q|w|e|r|t]\.tsx$/);
+const skillsContext = require.context("components/subjects", true, /\.\/.*\/(q|w|e|r|t|skills)\.tsx$/);
 const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
     const pathComponents = path.split("/");
     const [subject, skill] = pathComponents.slice(pathComponents.length - 2);
@@ -58,12 +58,19 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
 const subjectSkillTooltip: React.FC<Props> = props => {
     const formula = React.useContext(FormulaContext)!;
     const status = React.useContext(StatusContext)!;
+    const src = React.useMemo(() => {
+        const standard = Images.skill[props.id][props.skill];
+        if (SkillsDescription[props.id].SKILLS.SkillImage) {
+            return SkillsDescription[props.id].SKILLS.SkillImage(props.skill) || standard;
+        }
+        return standard;
+    }, [props.id, props.skill]);
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip}`}>
             <div className={style.main}>
                 <header>
-                    <img src={Images.skill[props.id][props.skill]} />
+                    <img src={src} />
                     <div>
                         <div className={style.name}>
                             <h1>{(Name as any)[props.id][props.skill].jp} （レベル {status.skillLevels[props.skill] + 1}）</h1>
@@ -73,7 +80,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     </div>
                 </header>
                 <p>
-                {SkillsDescription[props.id][props.skill].default(status)}
+                {React.createElement(SkillsDescription[props.id][props.skill].default, status)}
                 </p>
             </div>
             {

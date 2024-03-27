@@ -20,7 +20,7 @@ const t: React.FC<Status> = status => {
 export default t;
 
 export const values: ValuesProps = {
-    additionalInfo: "Elevenバーガーは敵が踏んだ場合、つぶされます。",
+    additionalInfo: <>Elevenバーガーは敵が踏んだ場合、つぶされます。</>,
     parameters: [
         {title: "Elevenバーガー回復量", values: Constants.T.heal, percent: true}
     ]
