@@ -4,7 +4,7 @@ export const Chests = [
     "cardinal_robes", "sunset_armor", "covert_agent_uniform", "optical_camouflage_suit", "rocker_s_jacket", "crusader_armor", "amazoness_armor", "dragon_dobok",
     "commander_s_armor", "butler_s_suit", "eod_suit", "tuxedo", "high_priest_robes", "changpao", "turnout_coat", "mythril_armor", "battle_suit", "blazing_dress",
     "mythril_crop", "kabana", "holy_orders", "áo_dài", "phantom_jacket", "guardian_suit", "elegant_gown", "beautiful_garnment", "specter", "blood_cloak",
-    "omertà", "shooting_star_jacket", "couturier", "tactical_armor", "elf_dress", "bikini", "queen_of_hearts", "burgundy_47"
+    "omertà", "shooting_star_jacket", "couturier", "tactical_armor", "elf_dress", "titan_armor", "bikini", "queen_of_hearts", "burgundy_47"
 ]
 export type ChestID = typeof Chests[number];
 
@@ -26,8 +26,8 @@ export type ArmID = typeof Arms[number]
 
 export const Legs = [
     "hiking_boots", "glacier_crampons", "feather_boots", "marverick_runner", "straitjacket_sneakers", "bucephalus", "eod_boots", "white_rhinos",
-    "tachyon_brace", "scv", "mythril_boots", "glacial_shoes", "iron_maiden", "boots_of_hermes", "blade_boots", "alexander", "legs_of_steel",
-    "taproot", "red_shoes"
+    "tachyon_brace", "scv", "stellar_steps", "mythril_boots", "glacial_shoes", "iron_maiden", "boots_of_hermes", "blade_boots", "alexander", "legs_of_steel",
+    "galaxy_steps", "wild_walkers", "taproot", "red_shoes"
 ]
 export type LegID = typeof Legs[number]
 
