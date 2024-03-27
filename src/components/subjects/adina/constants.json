@@ -1,0 +1,105 @@
+{
+    "Q": {
+        "damage": {
+            "base": [50,75,100,125,150],
+            "amp": 50
+        },
+        "sun": {
+            "base": 20,
+            "amp": 15
+        },
+        "moon": 0.7,
+        "star": {
+            "duration": 4,
+            "movement_speed": 8
+        },
+        "conjunction": {
+            "duration": 2,
+            "damage": {
+                "targetMaxHP": 6
+            }
+        },
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": [6,5.5,5,4.5,4]
+    },
+    "W": {
+        "damage": {
+            "base": [60,80,100,120,140],
+            "amp": 65
+        },
+        "slow": {
+            "duration": 1.2,
+            "effect": 35
+        },
+        "sun": {
+            "base": 20,
+            "amp": 15
+        },
+        "moon": 1.25,
+        "star": {
+            "duration": 1.5,
+            "shield": {
+                "base": [60,90,120,150,180],
+                "amp": 45
+            }
+        },
+        "conjunction": {
+            "stun": 1.25,
+            "slow": {
+                "duration": 2.5,
+                "effect": 50
+            }
+        },
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [9,8.5,8,7.5,7]
+    },
+    "E": {
+        "damage": {
+            "base": [40,60,80,100,120],
+            "amp": 45
+        },
+        "drop_damage": {
+            "base": [40,60,80,100,120],
+            "amp": 45
+        },
+        "sun": {
+            "base": 10,
+            "amp": 10
+        },
+        "moon": 1,
+        "star": 50,
+        "conjunction": 4,
+        "sp_cost": [80,90,100,110,120],
+        "cooldown": [10,9.5,9,8.5,8]
+    },
+    "R": {
+        "sun_conjunction": {
+            "base": [90,150,210,270],
+            "amp": 95
+        },
+        "moon_conjunction": {
+            "base": [50,90,130,170],
+            "amp": 45
+        },
+        "star_conjunction": {
+            "hp": {
+                "base": [22,42,62,82],
+                "amp": 6
+            },
+            "sp": {
+                "base": [30,50,70,90],
+                "amp": 8
+            }
+        },
+        "cooldown": {
+            "constant": 0.1
+        }
+    },
+    "T": {
+        "duration": 3,
+        "movement_speed": {
+            "base": [4,7,10],
+            "amp": 1
+        }
+    }
+}

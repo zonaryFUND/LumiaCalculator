@@ -46,7 +46,9 @@
         "stack_duration": 6,
         "max_stack": 3,
         "damage_increase_per_stack": 17,
-        "cooldown": 0.7,
+        "cooldown": {
+            "constant": 0.7
+        },
         "sp_cost": 50,
         "stack_retain_range": 10,
         "reuse_limit": 1.2
