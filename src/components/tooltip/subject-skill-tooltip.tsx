@@ -80,11 +80,11 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     </div>
                 </header>
                 <p>
-                {React.createElement(SkillsDescription[props.id][props.skill].default, status)}
+                    {React.createElement(SkillsDescription[props.id][props.skill].default, status)}
                 </p>
             </div>
             {
-                formula ? (
+                formula && SkillsDescription[props.id][props.skill].values != undefined ? (
                     <div className={style.values}>
                         <Values {...SkillsDescription[props.id][props.skill].values} skillLevel={status.skillLevels[props.skill]} />
                     </div>

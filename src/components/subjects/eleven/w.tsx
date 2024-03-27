@@ -24,7 +24,7 @@ const w: React.FC<Status> = status => {
                 <span>{damage.times(Constants.W.additional_damage[status.skillLevels.W]).dividedBy(100).toString()}</span>
             }
             のスキルダメージを追加で与えます。また、{Constants.W.damage_reduction_duration}秒間Elevenが受ける最終ダメージが
-            {Constants.W.damage_reduction}減少します。
+            {Constants.W.damage_reduction[status.skillLevels.W]}％減少します。
         </>
     );
 }

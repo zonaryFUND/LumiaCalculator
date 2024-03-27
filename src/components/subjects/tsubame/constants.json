@@ -1,0 +1,60 @@
+{
+    "Q": {
+        "amount": 3,
+        "damage": {
+            "base": [70,120,170,220,270],
+            "attack": 90
+        },
+        "slow_duration": 1,
+        "slow": 30,
+        "additional_stack": 1,
+        "cooldown": [5,4.5,4,3.5,3,2,5],
+        "sp_cost": [30,35,40,45,50]
+    },
+    "W": {
+        "movement_speed": [25,30,35,40,45],
+        "ms_duration": [1.6,1.7,1.8,1.9,2],
+        "attack_speed_count": 2,
+        "attack_speed": [30,35,40,45,50],
+        "as_duration": 3,
+        "cooldown": [15,14,13,12,11],
+        "sp_cost": [100,80,60,40,20]
+    },
+    "E": {
+        "cooldown_reduction": [1,2,3,4,5],
+        "duration": 0.7,
+        "cooldown": [18,16.5,15,13.5,12],
+        "sp_cost": [100,90,80,70,60]
+    },
+    "R": {
+        "mark_duration": 6,
+        "max_mark": 3,
+        "damage": {
+            "base": [10,30,50,70,90],
+            "attack": 90,
+            "enemyMaxHP": {
+                "base": [1,1.25,1.5,1.75,2],
+                "additionalAttack": 0.08
+            }
+        },
+        "heal": {
+            "base": [20,45,70,95,120],
+            "additionalAttack": 100
+        },
+        "w_cdr": 50,
+        "t_cdr": 30,
+        "stack_duration": 6,
+        "max_stack": 3,
+        "damage_increase_per_stack": 17,
+        "cooldown": 0.7,
+        "sp_cost": 50,
+        "stack_retain_range": 10,
+        "reuse_limit": 1.2
+    },
+    "T": {
+        "range": 4.5,
+        "attack_per_critical_chance": 0.4,
+        "attack_per_critical_damage": 0.8,
+        "dummy_duration": 5
+    }
+}

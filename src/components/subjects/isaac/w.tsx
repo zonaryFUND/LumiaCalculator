@@ -4,7 +4,7 @@ import { Status } from "components/subject/use-status";
 import Damage, { FormulaContext } from "../damage";
 import { ValuesProps } from "../values";
 
-const q: React.FC<Status> = status => {
+const w: React.FC<Status> = status => {
     return (
         <>
             アイザックが武器の硬度を上げて次の基本攻撃または基本スキルを強化し、<Damage skill="W" constants={Constants.W.damage} />のスキルダメージを追加で与えます。
@@ -13,7 +13,7 @@ const q: React.FC<Status> = status => {
     );
 }
 
-export default q;
+export default w;
 
 export const values: ValuesProps = {
     additionalInfo: <>クールダウン減少が適用される基本スキルは<span>強奪(R)、硬化(W)、武器スキル</span>以外のスキルです。</>,

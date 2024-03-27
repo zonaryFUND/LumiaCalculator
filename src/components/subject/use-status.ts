@@ -13,6 +13,7 @@ export type Status = SubjectConfig & {
     spReg: Decimal
 
     attackPower: Decimal
+    additionalAttackPower: Decimal
     basicAttackAmp: Decimal
     attackSpeed: Decimal
     criticalChance: Decimal
@@ -84,9 +85,9 @@ export default function(): Response {
         const perLevelAAAmp = perLevel.filter(s => s.type == "aa_amp").reduce((prev, current) => prev.add(current.value), new Decimal(0));
         const perLevelSkillAmp = perLevel.filter(s => s.type == "skill_amp").reduce((prev, current) => prev.add(current.value), new Decimal(0));
 
+        const equipBaseAttack = sumDecimalEquipmentStatus("attackPower", inSlot).add(perLevelAttack.times(level));
         const baseAttackPower = baseStatus.attackPower.add(baseStatus.apPerLevel.times(level - 1))
-            .add(sumDecimalEquipmentStatus("attackPower", inSlot))
-            .add(perLevelAttack.times(level))
+            .add(equipBaseAttack)
             .add(masteryFactor?.type == "attack_power" ? masteryFactor.value.times(weaponMastery) : 0);
 
         const skillAmpBase = perLevelSkillAmp.times(level).add(sumDecimalEquipmentStatus("skillAmplification", inSlot));
@@ -117,6 +118,7 @@ export default function(): Response {
         })();
 
         const additionalMaxHP = sumDecimalEquipmentStatus("maxHP", inSlot).add(perLevelMaxHP.times(level))
+        const additionalAttackPower = addAdaptiveToAttackPower ? (equipBaseAttack.add(adaptiveStatus)) : equipBaseAttack
 
         return {
             maxHP: baseStatus.maxHP.add(baseStatus.maxHPperLevel.times(level - 1)).add(additionalMaxHP),
@@ -124,7 +126,8 @@ export default function(): Response {
             maxSP: baseStatus.maxSP.add(baseStatus.maxSPperLevel.times(level - 1)).add(sumDecimalEquipmentStatus("maxSP", inSlot)),
             hpReg: baseStatus.hpRegeneration.add(baseStatus.hpRegenPerLevel.times(level - 1)).add(sumDecimalEquipmentStatus("hpRegeneration", inSlot)),
             spReg: baseStatus.spRegeneration.add(baseStatus.spRegenPerLevel.times(level - 1)).add(sumDecimalEquipmentStatus("spRegeneration", inSlot)),
-            attackPower,                
+            attackPower,
+            additionalAttackPower,                
             basicAttackAmp,
             attackSpeed,
             criticalChance: sumDecimalEquipmentStatus("criticalChance", inSlot).clamp(0, 100),

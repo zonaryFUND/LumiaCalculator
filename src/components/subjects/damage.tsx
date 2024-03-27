@@ -12,6 +12,7 @@ type Props = {
     constants: {
         base: Value,
         attack?: Value,
+        additionalAttack?: Value,
         additionalMaxHP?: Value
     }
 }
@@ -34,6 +35,7 @@ const damage: React.FC<Props> = props => {
             <>
                 <span className={style.emphasis}>{current(skillLevel, props.constants.base)}</span>
                 {props.constants.attack ? <span className={style.attack}>(+攻撃力の{current(skillLevel, props.constants.attack)}％)</span> : null}
+                {props.constants.additionalAttack ? <span className={style.attack}>(+追加攻撃力の{current(skillLevel, props.constants.additionalAttack)}％)</span> : null}
                 {props.constants.additionalMaxHP ? <span className={style.maxhp}>(+追加体力の{current(skillLevel, props.constants.additionalMaxHP)}％)</span> : null}
             </>
         );
