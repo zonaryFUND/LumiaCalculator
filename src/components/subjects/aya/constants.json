@@ -53,6 +53,8 @@
             "amp": 25
         },
         "cooldown_reduction": 1,
-        "cooldown": 30
+        "cooldown": {
+            "constants" :30
+        }
     }
 }

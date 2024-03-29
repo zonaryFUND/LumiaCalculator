@@ -1,0 +1,75 @@
+{
+    "Q": {
+        "damage": {
+            "base": [50,90,130,170,210],
+            "amp": 80
+        },
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "W": {
+        "damage": {
+            "base": [60,75,90,105,120],
+            "amp": 30
+        },
+        "slow": {
+            "duration": 0.3,
+            "effect": 50
+        },
+        "duration": 1,
+        "vanish_damage": {
+            "base": [50,80,110,140,170],
+            "amp": 60
+        },
+        "stun": 1,
+        "sp_cost": [90,100,110,120,130],
+        "cooldown": [14,13,12,11,10]
+    },
+    "E": {
+        "damage": {
+            "base": [80,110,140,170,200],
+            "amp": 50
+        },
+        "sp_cost": 80,
+        "cooldown": [14,13,12,11,10]
+    },
+    "R": {
+        "duration": 12,
+        "Q": {
+            "second_time": 0.5,
+            "damage": {
+                "base": [160,240,320],
+                "amp": 80
+            },
+            "cooldown_reduction": 50
+        },
+        "W": {
+            "bind": [0.8,1,1.2],
+            "duration": 5,
+            "damage": {
+                "base": [100,140,180],
+                "amp": 40
+            },
+            "slow": {
+                "duration": 0.3,
+                "effect": 50
+            }   
+        },
+        "E": {
+            "range": [3,4,5],
+            "duration": 8
+        },
+        "sp_cost": [160,120,80],
+        "cooldown": [20,18,16]
+    },
+    "T": {
+        "max_stack": [5,4,3],
+        "heal": {
+            "base": [80,140,200],
+            "amp": 20
+        },
+        "cooldown": {
+            "constant": 7
+        }
+    }
+}

@@ -57,6 +57,9 @@
         "range": 4.5,
         "attack_per_critical_chance": 0.4,
         "attack_per_critical_damage": 0.8,
-        "dummy_duration": 5
+        "dummy_duration": 5,
+        "cooldown": {
+            "constant": 20
+        }
     }
 }

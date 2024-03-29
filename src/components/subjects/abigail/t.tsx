@@ -23,6 +23,6 @@ export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.T.damage.base},
         {title: "防御力減少量", values: Constants.T.defense_reduction.effect},
-        {title: "クールダウン", values: Constants.T.cooldown}
+        {title: "クールダウン", values: Constants.T.cooldown.constant}
     ]
 }

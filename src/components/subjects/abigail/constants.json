@@ -66,6 +66,8 @@
             "effect": [5,10,15]
         },
         "cooldown_reduction": 2,
-        "cooldown": [16,11,6]
+        "cooldown": {
+            "constant": [16,11,6]
+        }
     }
 }
