@@ -28,7 +28,7 @@ const subject: React.FC<Props> = props => {
     const subjectConfig = {
         subject, equipment, level, weaponMastery, movementMastery, skillLevels
     }
-    const status = useStatus();
+    const status = useStatus(subjectConfig);
 
     const subjectName = React.useMemo(() => subject ? name(subject, "jp") : null, [subject]);
     const [damageInFormula, toggleDamageInFormula] = useToggle(false);

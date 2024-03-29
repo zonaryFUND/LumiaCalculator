@@ -3,8 +3,9 @@ import Decimal from "decimal.js";
 import { baseStatus as getBaseStatus } from "@app/entity/base-status";
 import { EquipmentStatus, PerLevelStatus, WeaponTypeID, equipmentStatus, weaponBaseStatus } from "@app/entity/equipment";
 import { mastery } from "@app/entity/mastery";
-import useSubjectConfig, { Response as ConfigResponse } from "./use-subject-config";
-import { Status, StatusProps, from } from "./status";
+import useSubjectConfig, { Response as ConfigResponse, SubjectConfig } from "./use-subject-config";
+import { Status, StatusOverride, StatusProps, from } from "./status";
+import { SubjectStatusOverride } from "components/subjects/status-override";
 
 type Response = ConfigResponse & { status?: Status }
 
@@ -26,23 +27,16 @@ function maxDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Deci
     );
 }
 
-export default function(): Status | undefined {
-    const {
-        subject: [subject, setSubject],
-        equipment: [equipment, setEquipment],
-        level: [level, setLevel],
-        weaponMastery: [weaponMastery, setWeaponMastery],
-        movementMastery: [movementMastery, setMovementMastery],
-        skillLevels: [skillLevels, setSkillLevels]
-    } = useSubjectConfig();
+export default function(config: SubjectConfig): Status | undefined {
+    const { subject, equipment, level, weaponMastery, movementMastery, skillLevels } = config;
 
     const baseStatus = React.useMemo(() => subject ? getBaseStatus(subject) : null, [subject]);
 
-    const masteryFactor = React.useMemo(() => {
+    const masteryFactor = (() => {
         if (!subject || equipment.weapon == null) return undefined;
         const weaponType = equipmentStatus(equipment.weapon).type;
         return mastery(subject).find(m => m.weapon == weaponType)
-    }, [subject, equipment.weapon]);
+    })();
 
     if (!baseStatus) return undefined;
 
@@ -59,6 +53,7 @@ export default function(): Status | undefined {
             skillAmp: sum("skill_amp"),
         }
     })();
+
     const baseAttackPower = baseStatus.attackPower.add(baseStatus.apPerLevel.times(level - 1))
             .add(masteryFactor?.type == "attack_power" ? masteryFactor.value.times(weaponMastery) : 0)
     const baseAdditionalAttackPower = sumDecimalEquipmentStatus("attackPower", inSlot).add(perLevel.attack.times(level));
@@ -90,7 +85,7 @@ export default function(): Status | undefined {
     
         baseAttackPower,
         baseAdditionalAttackPower,
-        attackSpeed: attackSpeed,
+        attackSpeed,
         criticalChance: sumDecimalEquipmentStatus("criticalChance", inSlot).clamp(0, 100),
         criticalDamage: sumDecimalEquipmentStatus("criticalDamage", inSlot),
         basicAttackAmp,        
@@ -119,5 +114,10 @@ export default function(): Status | undefined {
         visionRange: sumDecimalEquipmentStatus("vision", inSlot).add(8.5)
     }
 
-    return from(base);
+    const override: StatusOverride | null = React.useMemo(() => {
+        if (!subject) return null;
+        return SubjectStatusOverride[subject] ? SubjectStatusOverride[subject].default : null
+    }, [subject]);
+
+    return override ? from(override(base)) : from(base);
 }

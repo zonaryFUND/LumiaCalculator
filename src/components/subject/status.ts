@@ -38,11 +38,12 @@ export type StatusProps = {
     visionRange: Decimal
 }
 
+export type StatusOverride =  (props: StatusProps) => StatusProps;
+
 export type Status = StatusProps & {
     attackPower: Decimal
     additionalAttackPower: Decimal
     skillAmp: Decimal
-    override: (f: (props: StatusProps) => StatusProps) => Status
 }
 
 export function from(props: StatusProps): Status {
@@ -58,7 +59,6 @@ export function from(props: StatusProps): Status {
             props.baseAdditionalAttackPower,
         skillAmp: addAdaptiveToAttack ? 
             comparedAmp : 
-            props.baseSkillAmp.add(props.adaptiveStatus.times(2)).times(props.skillAmpMultiplier.add(100).dividedBy(100)),
-        override: f => from(f(props))
+            props.baseSkillAmp.add(props.adaptiveStatus.times(2)).times(props.skillAmpMultiplier.add(100).dividedBy(100))
     }
 }

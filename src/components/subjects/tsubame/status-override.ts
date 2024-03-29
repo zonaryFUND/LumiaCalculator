@@ -6,6 +6,6 @@ export default function(status: Status): Status {
     const critDamage = status.criticalDamage.times(Constants.T.attack_per_critical_damage);
     return {
         ...status,
-        baseAttackPower: status.baseAttackPower.add(critChance).add(critDamage)
+        baseAdditionalAttackPower: status.baseAdditionalAttackPower.add(critChance).add(critDamage)
     };
 }

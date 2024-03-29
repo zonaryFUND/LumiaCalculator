@@ -44,7 +44,7 @@ const options: React.FC<EquipmentStatus> = props => {
     const omnisyphon = withTemplate("ダメージ吸血 +<1>%", props.omnisyphon);
     const lifeSteal = withTemplate("生命力吸収 +<1>%", props.lifeSteal);
     const skillDamageReduction = withTemplate("スキルダメージ減少 +<1>%", props.skillDamageReduction);
-    const perLevelAAAmp = props.perLevelStatus?.type == "attack_power" ? 
+    const perLevelAAAmp = props.perLevelStatus?.type == "aa_amp" ? 
         withTemplate("レベル比例基本攻撃増幅 +<1>.0~<2>.0%", props.perLevelStatus.value, props.perLevelStatus.value.times(20)) : null;
     const armorPenetration = withTemplate("防御貫通 +<1>", props.armorPenetration);
     const armorPenetrationRatio = withTemplate("防御貫通 +<1>%", props.armorPenetrationRatio);
