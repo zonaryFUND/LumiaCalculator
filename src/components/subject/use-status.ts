@@ -1,6 +1,6 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import { baseStatus as getBaseStatus } from "@app/entity/base-status";
+import { BaseBasicAttackRange, baseStatus as getBaseStatus } from "@app/entity/base-status";
 import { EquipmentStatus, PerLevelStatus, WeaponTypeID, equipmentStatus, weaponBaseStatus } from "@app/entity/equipment";
 import { mastery } from "@app/entity/mastery";
 import useSubjectConfig, { Response as ConfigResponse, SubjectConfig } from "./use-subject-config";
@@ -58,11 +58,20 @@ export default function(config: SubjectConfig): Status | undefined {
             .add(masteryFactor?.type == "attack_power" ? masteryFactor.value.times(weaponMastery) : 0)
     const baseAdditionalAttackPower = sumDecimalEquipmentStatus("attackPower", inSlot).add(perLevel.attack.times(level));
 
-    const attackSpeed = (() => {
-        const weaponTypeID = equipment.weapon ? equipmentStatus(equipment.weapon).type as WeaponTypeID : null
+    const weaponTypeID = equipment.weapon ? equipmentStatus(equipment.weapon).type as WeaponTypeID : null
+    const attackSpeed = (() => {        
         const base = baseStatus.attackSpeed.add(weaponTypeID ? weaponBaseStatus(weaponTypeID).attackSpeed : 0);
-        const multiplier = sumDecimalEquipmentStatus("attackSpeed", inSlot).add(masteryFactor ? masteryFactor.attackSpeed.times(weaponMastery) : 0);
-        return base.times(multiplier.add(100)).dividedBy(100).clamp(0, 2.5);
+        const additional = sumDecimalEquipmentStatus("attackSpeed", inSlot).add(masteryFactor ? masteryFactor.attackSpeed.times(weaponMastery) : 0);
+        
+        return {
+            base, additional,
+            calculated: base.times(additional.add(100)).dividedBy(100)
+        };
+    })();
+
+    const basicAttackRange = (() => {
+        const weaponRange = new Decimal(weaponTypeID ? weaponBaseStatus(weaponTypeID).range : 0);
+        return BaseBasicAttackRange.add(weaponRange).add(maxDecimalEquipmentStatus("attackRange", inSlot));
     })();
 
     const basicAttackAmp = perLevel.basicAttackAmp.times(level).add(masteryFactor?.type == "basic_attack_amp" ? masteryFactor.value.times(weaponMastery) : 0);
@@ -110,7 +119,7 @@ export default function(config: SubjectConfig): Status | undefined {
         tenacity: maxDecimalEquipmentStatus("tenacity", inSlot),
         
         movementSpeed: baseStatus.movementSpeed.add(sumDecimalEquipmentStatus("movementSpeed", inSlot)).add(new Decimal(movementMastery).times(new Decimal(0.005))),
-        basicAttackRange: maxDecimalEquipmentStatus("attackRange", inSlot),
+        basicAttackRange,
         visionRange: sumDecimalEquipmentStatus("vision", inSlot).add(8.5)
     }
 
@@ -119,5 +128,5 @@ export default function(config: SubjectConfig): Status | undefined {
         return SubjectStatusOverride[subject] ? SubjectStatusOverride[subject].default : null
     }, [subject]);
 
-    return override ? from(override(base)) : from(base);
+    return override ? from(override(base, config), base) : from(base);
 }

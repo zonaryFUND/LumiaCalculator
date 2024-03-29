@@ -8,6 +8,7 @@ import Decimal from "decimal.js";
 import Values from "components/subjects/values";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
+import { SubjectSkillProps } from "components/subjects/props";
 
 const skillsContext = require.context("components/subjects", true, /\.\/.*\/(q|w|e|r|t|skills)\.tsx$/);
 const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
@@ -50,6 +51,7 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
     })()
     const constantCooldown = (() => {
         if (info.cooldown == undefined || info.cooldown.constant == undefined) return null;
+        if (Array.isArray(info.cooldown.constant)) return info.cooldown.constant[props.config.skillLevels[props.skill]];
         return info.cooldown.constant;
     })();
     const baseCharge = (() => {
@@ -104,7 +106,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     </div>
                 </header>
                 <p>
-                    {React.createElement(SkillsDescription[props.id][props.skill].default, status)}
+                    {React.createElement(SkillsDescription[props.id][props.skill].default, props)}
                 </p>
             </div>
             {

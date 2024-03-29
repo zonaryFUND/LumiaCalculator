@@ -1,17 +1,73 @@
 {
     "Q": {
-
+        "pawn_damage": {
+            "base": [40,85,130,175,220],
+            "amp": 65
+        },
+        "movement_speed": [4,5,6,7,8],
+        "queen_damage": {
+            "base": [50,95,140,185,230],
+            "amp": 70
+        },
+        "stun": 1,
+        "stack_reset": 6,
+        "duration": 8,
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": {
+            "constant": [2.75,2.5,2.25,2,1.75]
+        }
     },
     "W": {
-
+        "damage": {
+            "base": [20,60,100,140,180],
+            "amp": 85
+        },
+        "pawn_queen": {
+            "damage": 40,
+            "airborne": 0.75
+        },
+        "rook": {
+            "damage": 40,
+            "airborne": 1.25
+        },
+        "duration": 8,
+        "sp_cost": [90,100,110,120,130],
+        "cooldown": [13,12,11,10,9]
     },
     "E": {
-
+        "damage": {
+            "base": [20,75,130,185,240],
+            "amp": 80
+        },
+        "pawn_queen": 40,
+        "knight": {
+            "damage": 40,
+            "slow": {
+                "duration": 1.5,
+                "effect": 40
+            }
+        },
+        "reuse": 4,
+        "duration": 8,
+        "sp_cost": [70,85,100,115,130],
+        "cooldown": [17,15.5,14,12.5,11]
     },
     "R": {
-
+        "channel": 2,
+        "damage": {
+            "base": [150,275,400],
+            "amp": 95
+        },
+        "per_piece": {
+            "enemyMaxHP": 3
+        },
+        "other_pieces": 40,
+        "sp_cost": 90,
+        "cooldown": [80,70,60]
     },
     "T": {
-        
+        "additional_attack_range": 2.5,
+        "attack_speed": 0.66,
+        "amp_per_as": [0.1, 0.365, 0.6]
     }
 }

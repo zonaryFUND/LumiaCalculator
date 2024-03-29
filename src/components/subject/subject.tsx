@@ -12,11 +12,7 @@ import ItemTooltip from "components/tooltip/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 import useSubjectConfig from "./use-subject-config";
 
-type Props = {
-    //subject: SubjectID
-}
-
-const subject: React.FC<Props> = props => {
+const subject: React.FC = _ => {
     const {
         subject: [subject, setSubject],
         equipment: [equipment, setEquipment],
@@ -80,7 +76,7 @@ const subject: React.FC<Props> = props => {
                     <tr><td>スタミナ再生</td><td>{status ? status.spReg.toNumber() : "-"}</td></tr>
                     <tr><td>攻撃力</td><td>{status ? status.attackPower.toNumber() : "-"}</td></tr>
                     <tr><td>基本攻撃増幅</td><td>{status ? `${status.basicAttackAmp.toNumber()}%` : "-"}</td></tr>
-                    <tr><td>攻撃速度</td><td>{status ? status.attackSpeed.toNumber() : "-"}</td></tr>
+                    <tr><td>攻撃速度</td><td>{status ? status.attackSpeed.calculated.toNumber() : "-"}</td></tr>
                     <tr><td>致命打確率</td><td>{status ? `${status.criticalChance.toNumber()}%` : "-"}</td></tr>
                     <tr><td>致命打ダメージ上昇量</td><td>{status ? `${status.criticalDamage.toNumber()}%` : "-"}</td></tr>
                     <tr><td>スキル増幅</td><td>{status ? status.skillAmp.toNumber() : "-"}</td></tr>
@@ -120,7 +116,7 @@ const subject: React.FC<Props> = props => {
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
                     const [subject, skill] = content?.split("-");
-                    return 
+                    return (
                         <SubjectSkillTooltip 
                             id={subject} 
                             skill={skill as any} 
@@ -128,6 +124,7 @@ const subject: React.FC<Props> = props => {
                             status={status!} 
                             config={subjectConfig!} 
                         />
+                    );
                 }}
             />
         </section>

@@ -1,4 +1,5 @@
 import Decimal from "decimal.js";
+import { SubjectConfig } from "./use-subject-config";
 
 export type StatusProps = {
     baseMaxHP: Decimal
@@ -9,7 +10,11 @@ export type StatusProps = {
 
     baseAttackPower: Decimal
     baseAdditionalAttackPower: Decimal
-    attackSpeed: Decimal
+    attackSpeed: {
+        base: Decimal
+        additional: Decimal
+        calculated: Decimal
+    }
     criticalChance: Decimal
     criticalDamage: Decimal
     basicAttackAmp: Decimal
@@ -38,15 +43,16 @@ export type StatusProps = {
     visionRange: Decimal
 }
 
-export type StatusOverride =  (props: StatusProps) => StatusProps;
+export type StatusOverride =  (props: StatusProps, config: SubjectConfig) => StatusProps;
 
 export type Status = StatusProps & {
     attackPower: Decimal
     additionalAttackPower: Decimal
     skillAmp: Decimal
+    withoutOverride?: StatusProps
 }
 
-export function from(props: StatusProps): Status {
+export function from(props: StatusProps, withoutOverride?: StatusProps): Status {
     const comparedAttack = props.baseAttackPower.add(props.baseAdditionalAttackPower);
     const comparedAmp = props.baseSkillAmp.times(props.skillAmpMultiplier.add(100).dividedBy(100));
     const addAdaptiveToAttack = props.baseAttackPower.greaterThan(comparedAmp);
@@ -59,6 +65,7 @@ export function from(props: StatusProps): Status {
             props.baseAdditionalAttackPower,
         skillAmp: addAdaptiveToAttack ? 
             comparedAmp : 
-            props.baseSkillAmp.add(props.adaptiveStatus.times(2)).times(props.skillAmpMultiplier.add(100).dividedBy(100))
+            props.baseSkillAmp.add(props.adaptiveStatus.times(2)).times(props.skillAmpMultiplier.add(100).dividedBy(100)),
+        withoutOverride
     }
 }
