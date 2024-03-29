@@ -1,16 +1,16 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { Status } from "components/subject/use-status";
 import { ValuesProps } from "../values";
 import Damage from "../damage";
+import { SubjectSkillProps } from "../props";
 
-const t: React.FC<Status> = status => {
+const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            同じ敵を{Constants.T.threshold}回攻撃するたびに<Damage skill="T" constants={Constants.T.damage} />の
-            追加スキルダメージを与え、移動速度が{Constants.T.movement_speed[status.skillLevels.T]}％増加した後、
+            同じ敵を{Constants.T.threshold}回攻撃するたびに<Damage {...props} skill="T" constants={Constants.T.damage} />の
+            追加スキルダメージを与え、移動速度が{Constants.T.movement_speed[props.config.skillLevels.T]}％増加した後、
             {Constants.T.duration}秒かけて元通りになります。
-            与えた搾取ダメージ量の{Constants.T.heal[status.skillLevels.T]}％を体力に回復します。
+            与えた搾取ダメージ量の{Constants.T.heal[props.config.skillLevels.T]}％を体力に回復します。
             野生動物の場合、回復効果が{Constants.T.animal}％に減少します。
         </>
     );

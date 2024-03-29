@@ -1,14 +1,14 @@
-import { Status } from "components/subject/use-status";
 import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "../props";
 
-const w: React.FC<Status> = status => (
+const w: React.FC<SubjectSkillProps> = props => (
     <>
-        つばめが忍び足でより素早く動き、移動速度が{Constants.W.movement_speed[status.skillLevels.W]}％増加しては
-        徐々に{Constants.W.ms_duration[status.skillLevels.W]}秒間徐々に減少します。<br />
+        つばめが忍び足でより素早く動き、移動速度が{Constants.W.movement_speed[props.config.skillLevels.W]}％増加しては
+        徐々に{Constants.W.ms_duration[props.config.skillLevels.W]}秒間徐々に減少します。<br />
         {Constants.W.as_duration}秒間次に行う{Constants.W.attack_speed_count}回の基本攻撃の攻撃速度が
-        {Constants.W.attack_speed[status.skillLevels.W]}％増加します。
+        {Constants.W.attack_speed[props.config.skillLevels.W]}％増加します。
     </>
 );
 

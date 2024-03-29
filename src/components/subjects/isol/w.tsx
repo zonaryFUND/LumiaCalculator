@@ -1,14 +1,14 @@
-import { Status } from "components/subject/use-status";
 import * as React from "react";
 import Constants from "./constants.json";
 import Damage from "../damage";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "../props";
 
-const w: React.FC<Status> = status => (
+const w: React.FC<SubjectSkillProps> = props => (
     <>
         アイソルが{Constants.W.duration}秒間前方に銃を乱射して
-        {Constants.W.tick}ごとに<Damage skill="W" constants={Constants.W.damage} />のスキルダメージを与え、
-        対象の防御力を{Constants.W.defense_decline[status.skillLevels.W]}ずつ減少させます。
+        {Constants.W.tick}ごとに<Damage {...props} skill="W" constants={Constants.W.damage} />のスキルダメージを与え、
+        対象の防御力を{Constants.W.defense_decline[props.config.skillLevels.W]}ずつ減少させます。
         防御力減少は{Constants.W.defense_decline_duration}秒間維持され、
         最大{Constants.W.defense_decline_max}回まで適用されます。
     </>

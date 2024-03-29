@@ -1,19 +1,17 @@
-import { Status } from "components/subject/use-status";
 import * as React from "react";
 import Constants from "./constants.json";
-import { FormulaContext } from "../damage";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "../props";
 
-const t: React.FC<Status> = status => {
-    const formula = React.useContext(FormulaContext);
-    const attack = status.criticalChance.times(0.4).add(status.criticalDamage.times(0.8))
+const t: React.FC<SubjectSkillProps> = props => {
+    const attack = props.status.criticalChance.times(0.4).add(props.status.criticalDamage.times(0.8))
 
     return (
         <>
             つばめは基本攻撃の射程距離が<span className={style.emphasis}>{Constants.T.range}</span>に固定され、
             基本攻撃に致命打が発生しない代わりに
             {
-                formula ?
+                props.showEquation ?
                 <>
                     致命打確率1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>と
                     致命打ダメージ増加量1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>

@@ -1,14 +1,13 @@
 import { SubjectID } from "@app/entity/subject";
 import * as React from "react";
 import Name from "dict/skill-name.json";
-import { StatusContext } from "components/subject/subject-context";
-import baseStyle from "./tooltip.module.styl";
+import baseStyle from "../tooltip.module.styl";
 import style from "./subject-skill-tooltip.module.styl";
 import Images from "@app/resources/image";
-import { Status } from "components/subject/use-status";
 import Decimal from "decimal.js";
-import { FormulaContext } from "components/subjects/damage";
 import Values from "components/subjects/values";
+import { SubjectConfig } from "components/subject/use-subject-config";
+import { Status } from "components/subject/status";
 
 const skillsContext = require.context("components/subjects", true, /\.\/.*\/(q|w|e|r|t|skills)\.tsx$/);
 const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
@@ -32,18 +31,21 @@ export const SkillsConstant = constContext.keys().reduce((consts: any, path) => 
 type Props = {
     id: SubjectID
     skill: "Q" | "W" | "E" | "R" | "T"
+    showEquation: boolean
+    config: SubjectConfig
+    status: Status
 }
 
 const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
     const info = SkillsConstant[props.id][props.skill];
     const spCost = (() => {
         if (info.sp_cost == undefined) return null;
-        if (Array.isArray(info.sp_cost)) return info.sp_cost[props.status.skillLevels[props.skill]];
+        if (Array.isArray(info.sp_cost)) return info.sp_cost[props.config.skillLevels[props.skill]];
         return info.sp_cost;
     })()
     const baseCooldown = (() => {
         if (info.cooldown == undefined || info.cooldown.constant) return null;
-        if (Array.isArray(info.cooldown)) return info.cooldown[props.status.skillLevels[props.skill]];
+        if (Array.isArray(info.cooldown)) return info.cooldown[props.config.skillLevels[props.skill]];
         return info.cooldown;
     })()
     const constantCooldown = (() => {
@@ -52,7 +54,7 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
     })();
     const baseCharge = (() => {
         if (info.charge == undefined) return undefined;
-        if (Array.isArray(info.charge.time)) return info.charge.time[props.status.skillLevels[props.skill]];
+        if (Array.isArray(info.charge.time)) return info.charge.time[props.config.skillLevels[props.skill]];
         return info.charge.time;
     })();
 
@@ -80,8 +82,6 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
 };
 
 const subjectSkillTooltip: React.FC<Props> = props => {
-    const formula = React.useContext(FormulaContext)!;
-    const status = React.useContext(StatusContext)!;
     const src = React.useMemo(() => {
         const standard = Images.skill[props.id][props.skill];
         if (SkillsDescription[props.id].SKILLS.SkillImage) {
@@ -97,10 +97,10 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     <img src={src} />
                     <div>
                         <div className={style.name}>
-                            <h1>{(Name as any)[props.id][props.skill].jp} （レベル {status.skillLevels[props.skill] + 1}）</h1>
+                            <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[props.skill] + 1}）</h1>
                             <p>[{props.skill}]</p>
                         </div>
-                        <ConsumptionAndCooldown {...props} status={status} />
+                        <ConsumptionAndCooldown {...props} />
                     </div>
                 </header>
                 <p>
@@ -108,9 +108,9 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                 </p>
             </div>
             {
-                formula && SkillsDescription[props.id][props.skill].values != undefined ? (
+                props.showEquation && SkillsDescription[props.id][props.skill].values != undefined ? (
                     <div className={style.values}>
-                        <Values {...SkillsDescription[props.id][props.skill].values} skillLevel={status.skillLevels[props.skill]} />
+                        <Values {...SkillsDescription[props.id][props.skill].values} skillLevel={props.config.skillLevels[props.skill]} />
                     </div>
                 ) : null
             }

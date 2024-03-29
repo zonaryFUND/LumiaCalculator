@@ -1,13 +1,11 @@
 import * as React from "react";
 import skillDamage from "./skill-damage";
-import { StatusContext } from "components/subject/subject-context";
 import style from "components/tooltip/tooltip.module.styl";
-
-export const FormulaContext = React.createContext(false);
+import { SubjectSkillProps } from "./props";
 
 type Value = number | number[]
 
-type Props = {
+type Props = SubjectSkillProps & {
     skill: "Q" | "W" | "E" | "R" | "T"
     constants: {
         base: Value,
@@ -28,11 +26,8 @@ function current(skillLevel: number, value: Value): number {
 }
 
 const damage: React.FC<Props> = props => {
-    const status = React.useContext(StatusContext)!;
-    const formula = React.useContext(FormulaContext);
-    const skillLevel = status.skillLevels[props.skill]
-
-    if (formula) {
+    const skillLevel = props.config.skillLevels[props.skill];
+    if (props.showEquation) {
         return (
             <>
                 <span className={style.emphasis}>{current(skillLevel, props.constants.base)}</span>
@@ -46,7 +41,7 @@ const damage: React.FC<Props> = props => {
     } else {
         return (
             <>
-               <span className={style.emphasis}>{skillDamage(status, skillLevel, props.constants).toString()}</span>
+               <span className={style.emphasis}>{skillDamage(props.status, skillLevel, props.constants).toString()}</span>
                {props.constants.targetHP ? <span className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP)}％)</span> : null}
             </>
         );

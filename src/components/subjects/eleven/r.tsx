@@ -1,22 +1,21 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage, { FormulaContext } from "../damage";
-import { Status } from "components/subject/use-status";
+import Damage from "../damage";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "../props";
 
-const r: React.FC<Status> = status => {
-    const formula = React.useContext(FormulaContext)!;
-
+const r: React.FC<SubjectSkillProps> = props => {
+    const maxHP = props.status.baseMaxHP.add(props.status.additionalMaxHP);
     return (
         <>
             Elevenが{Constants.R.duration}秒間
             {
-                formula ? 
-                <>{Constants.R.heal[status.skillLevels.R]}％</> :
-                <span>{status.maxHP.times(Constants.R.heal[status.skillLevels.R]).dividedBy(100).toString()}</span>
+                props.showEquation ? 
+                <>{Constants.R.heal[props.config.skillLevels.R]}％</> :
+                <span>{maxHP.times(Constants.R.heal[props.config.skillLevels.R]).dividedBy(100).toString()}</span>
             }
             の体力を回復し、
-            {Constants.R.duration}秒ごとに周りの敵に<Damage skill="R" constants={Constants.R.damage} />のスキルダメージを与えます。
+            {Constants.R.duration}秒ごとに周りの敵に<Damage {...props} skill="R" constants={Constants.R.damage} />のスキルダメージを与えます。
         </>
     );
 }

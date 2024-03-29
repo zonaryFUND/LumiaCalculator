@@ -1,13 +1,13 @@
-import { Status } from "components/subject/use-status";
 import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "../props";
 
-const e: React.FC<Status> = status => (
+const e: React.FC<SubjectSkillProps> = props => (
     <>
         <span className={style.level}>持続効果</span>：<span className={style.emphasis}>変わり身の術</span>の
-        クールダウンが{Constants.E.cooldown_reduction[status.skillLevels.E]}秒減少します。<br />
+        クールダウンが{Constants.E.cooldown_reduction[props.config.skillLevels.E]}秒減少します。<br />
         <br />
         つばめが指定した方向に空中回転しながら隠密状態になります。隠密状態は{Constants.E.duration}秒間維持され、
         空中回転する間、対象指定不可状態になります。<br />

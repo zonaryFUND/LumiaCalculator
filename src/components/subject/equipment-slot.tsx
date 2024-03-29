@@ -2,32 +2,32 @@ import { ArmorTypeID } from "@app/entity/equipment";
 import * as React from "react";
 import EquipmentList from "./equipment-list";
 import style from "./equipment-slot.module.styl";
-import { useToggle } from "react-use";
 import Item from "components/items/item";
-import { EquipmentContext, SubjectContext } from "./subject-context";
+import { SubjectID } from "@app/entity/subject";
+import { Equipment } from "./use-subject-config";
 
 type Props = {
     slot: "weapon" | ArmorTypeID 
+    subject: SubjectID | null
+    equipment: [Equipment, React.Dispatch<React.SetStateAction<Equipment>>]
 }
 
 const equipmentSlot: React.FC<Props> = props => {
     const [showSelection, setSelection] = React.useState(false);
-    const [subject] = React.useContext(SubjectContext)!;
-    const [equipment] = React.useContext(EquipmentContext)!;
     const onClick = React.useCallback(() => {
-        if (props.slot == "weapon" && subject == null) return;
+        if (props.slot == "weapon" && props.subject == null) return;
         setSelection(prev => !prev);
-    }, [subject]);
+    }, [props.subject]);
     
 
     return (
         <div className={style.slot} onClick={onClick}>
             {
-                equipment[props.slot] ?
-                <Item itemID={equipment[props.slot]} slot={props.slot} /> :
+                props.equipment[0][props.slot] ?
+                <Item itemID={props.equipment[0][props.slot]} slot={props.slot} /> :
                 null
             }
-            {showSelection ? <EquipmentList slot={props.slot} /> : null}
+            {showSelection ? <EquipmentList slot={props.slot} subject={props.subject} equipment={props.equipment} /> : null}
         </div>
     );
 };

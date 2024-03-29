@@ -1,11 +1,22 @@
 import * as React from "react";
 import { SubjectID } from "@app/entity/subject";
-import { Equipment, StateProps } from "./subject-context";
 import { useLocalStorage } from "react-use";
+import { WeaponID } from "@app/entity/weapon-id";
+import { ArmID, ChestID, HeadID, LegID } from "@app/entity/armor-id";
+
+export type Equipment = {
+    weapon: WeaponID | null
+    chest: ChestID | null
+    head: HeadID | null
+    arm: ArmID | null
+    leg: LegID | null
+}
 
 export type SkillLevels = {
     Q: number, W: number, E: number, R: number, T: number
 }
+
+type StateProps<T> = [T, React.Dispatch<React.SetStateAction<T>>]
 
 export type Response = {
     subject: StateProps<SubjectID | null>

@@ -5,13 +5,12 @@ import useStatus from "./use-status";
 import SubjectsList from "./subjects-list";
 import EquipmentSlot from "./equipment-slot";
 import Images from "@app/resources/image";
-import { Equipment, EquipmentContext, StatusContext, SubjectContext } from "./subject-context";
 import style from "./subject.module.styl";
 import { SubjectSkills } from "components/subjects/skills";
 import { Tooltip } from "react-tooltip";
 import ItemTooltip from "components/tooltip/item-tooltip";
-import SubjectSkillTooltip from "components/tooltip/subject-skill-tooltip";
-import damage, { FormulaContext } from "components/subjects/damage";
+import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
+import useSubjectConfig from "./use-subject-config";
 
 type Props = {
     //subject: SubjectID
@@ -21,12 +20,16 @@ const subject: React.FC<Props> = props => {
     const {
         subject: [subject, setSubject],
         equipment: [equipment, setEquipment],
-        status,
         level: [level, setLevel],
         weaponMastery: [weaponMastery, setWeaponMastery],
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels]
-    } = useStatus();
+    } = useSubjectConfig();
+    const subjectConfig = {
+        subject, equipment, level, weaponMastery, movementMastery, skillLevels
+    }
+    const status = useStatus();
+
     const subjectName = React.useMemo(() => subject ? name(subject, "jp") : null, [subject]);
     const [damageInFormula, toggleDamageInFormula] = useToggle(false);
 
@@ -50,8 +53,6 @@ const subject: React.FC<Props> = props => {
     }, []);
 
     return (
-        <StatusContext.Provider value={status}>
-        <FormulaContext.Provider value={damageInFormula}>
         <section className={style.base}>
             <div>
                 <div  onClick={toggleShowingCharacters}>
@@ -61,23 +62,19 @@ const subject: React.FC<Props> = props => {
                 {
                     showingCharacters ? <SubjectsList onSelect={selectSubjectFromList} /> : null
                 }
-                <SubjectContext.Provider value={[subject, setSubject]}>
-                <EquipmentContext.Provider value={[equipment, setEquipment]}>
-                    <div>
-                        <EquipmentSlot slot="weapon" />
-                        <EquipmentSlot slot="chest" />
-                        <EquipmentSlot slot="head" />
-                        <EquipmentSlot slot="arm" />
-                        <EquipmentSlot slot="leg" />
-                    </div>
-                </EquipmentContext.Provider>
-                </SubjectContext.Provider>
+                <div>
+                    <EquipmentSlot slot="weapon" subject={subject!} equipment={[equipment, setEquipment]} />
+                    <EquipmentSlot slot="chest" subject={subject!} equipment={[equipment, setEquipment]} />
+                    <EquipmentSlot slot="head" subject={subject!} equipment={[equipment, setEquipment]} />
+                    <EquipmentSlot slot="arm" subject={subject!} equipment={[equipment, setEquipment]} />
+                    <EquipmentSlot slot="leg" subject={subject!} equipment={[equipment, setEquipment]} />
+                </div>
                 <label><input type="checkbox" defaultChecked={damageInFormula} onChange={toggleDamageInFormula} />スキルダメージを計算式で表記する</label>
                 {subject ? SubjectSkills[subject].default() : null}
             </div>
             <table>
                 <tbody>
-                    <tr><td>最大体力</td><td>{status ? status.maxHP.toNumber() : "-"}</td></tr>
+                    <tr><td>最大体力</td><td>{status ? status.baseMaxHP.add(status.additionalMaxHP).toNumber() : "-"}</td></tr>
                     <tr><td>最大スタミナ</td><td>{status ? status.maxSP.toNumber() : "-"}</td></tr>
                     <tr><td>体力再生</td><td>{status ? status.hpReg.toNumber() : "-"}</td></tr>
                     <tr><td>スタミナ再生</td><td>{status ? status.spReg.toNumber() : "-"}</td></tr>
@@ -123,12 +120,17 @@ const subject: React.FC<Props> = props => {
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
                     const [subject, skill] = content?.split("-");
-                    return <SubjectSkillTooltip id={subject} skill={skill as any} />
+                    return 
+                        <SubjectSkillTooltip 
+                            id={subject} 
+                            skill={skill as any} 
+                            showEquation={damageInFormula}
+                            status={status!} 
+                            config={subjectConfig!} 
+                        />
                 }}
             />
         </section>
-        </FormulaContext.Provider>
-        </StatusContext.Provider>
     )
 }
 

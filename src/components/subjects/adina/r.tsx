@@ -1,19 +1,18 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage, { FormulaContext } from "../damage";
+import Damage from "../damage";
 import style from "./adina.module.styl";
-import { Status } from "components/subject/use-status";
 import { ValuesProps } from "../values";
 import skillDamage from "../skill-damage";
 import baseStyle from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "../props";
 
-const r: React.FC<Status> = status => {
-    const formula = React.useContext(FormulaContext);
+const r: React.FC<SubjectSkillProps> = props => {
     const moonHeal = (() => {
-        if (formula) {
+        if (props.showEquation) {
             return <>(ダメージ量の{Constants.E.star}％)</>;
         } else {
-            const damage = skillDamage(status, status.skillLevels.E, Constants.E.damage);
+            const damage = skillDamage(props.status, props.config.skillLevels.E, Constants.E.damage);
             return <>{damage.dividedBy(2).toString()}</>;
         }
     })();

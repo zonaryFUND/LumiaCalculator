@@ -1,22 +1,20 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
-import { Status } from "components/subject/use-status";
 import { ValuesProps } from "../values";
-import { FormulaContext } from "../damage";
+import { SubjectSkillProps } from "../props";
 
-const t: React.FC<Status> = status => {
-    const formula = React.useContext(FormulaContext);
+const t: React.FC<SubjectSkillProps> = props => {
     const ms = (() => {
-        const base = Constants.T.movement_speed.base[status.skillLevels.T];
+        const base = Constants.T.movement_speed.base[props.config.skillLevels.T];
         const amp = Constants.T.movement_speed.amp;
-        if (formula) {
+        if (props.showEquation) {
             return <>
                 {base}％
                 <span className={style.amp}>(+スキル増幅の{amp}％)</span>
             </>
         } else {
-            return <>{status.skillAmp.times(amp).dividedBy(100).add(base).toString()}％</>
+            return <>{props.status.skillAmp.times(amp).dividedBy(100).add(base).toString()}％</>
         }
     })();
 

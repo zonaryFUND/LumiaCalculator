@@ -1,5 +1,5 @@
+import { Status } from "components/subject/status";
 import Decimal from "decimal.js";
-import { Status } from "../subject/use-status";
 
 export default function skillDamage(status: Status, skillLevel: number, dictionary: any): Decimal {
     return ["base", "attack", "additionalAttack", "amp", "maxHP", "additionalMaxHP"].reduce((prev, key) => {
@@ -16,7 +16,8 @@ export default function skillDamage(status: Status, skillLevel: number, dictiona
             case "amp":
                 return prev.add(status.skillAmp.times(skillValue).dividedBy(100));
             case "maxHP":
-                return prev.add(status.maxHP.times(skillValue).dividedBy(100));
+                const maxHP = status.baseMaxHP.add(status.additionalMaxHP);
+                return prev.add(maxHP.times(skillValue).dividedBy(100));
             case "additionalMaxHP":
                 return prev.add(status.additionalMaxHP.times(skillValue).dividedBy(100));
         }
