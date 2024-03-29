@@ -1,0 +1,58 @@
+{
+    "Q": {
+        "first_damage": {
+            "attack": 100,
+            "basicAttackAmp": 100
+        },
+        "second_damage": {
+            "base": [40,70,100,130,160],
+            "attack": 30,
+            "amp": 80
+        },
+        "attack_speed": {
+            "duration": 5,
+            "effect": [40,45,50,55,60]
+        },
+        "threshold": 1,
+        "sp_cost": 50,
+        "cooldown": [11,10,9,8,7]
+    },
+    "W": {
+        "duration": 1.8,
+        "bullets": 6,
+        "damage": {
+            "base": [20,30,40,50,60],
+            "attack": 50,
+            "amp": [35,40,45,50,55]
+        },
+        "per_as": 30,
+        "max_bullets": 8,
+        "sp_cost": [80,90,100,110,120],
+        "cooldown": [11,10,9,8,7]
+    },
+    "E": {
+        "cooldown_reduction": [20,25,30,35,40],
+        "sp_cost": [85,90,95,100,105],
+        "cooldown": [19,17,15,13,11]
+    },
+    "R": {
+        "damage": {
+            "base": [120,240,360],
+            "attack": 20,
+            "amp": 100
+        },
+        "fear": 1.25,
+        "sp_cost": 150,
+        "cooldown": [80,60,40]
+    },
+    "T": {
+        "duration": 1.5,
+        "shield": {
+            "base": [50,75,100],
+            "attack": 40,
+            "amp": 25
+        },
+        "cooldown_reduction": 1,
+        "cooldown": 30
+    }
+}
