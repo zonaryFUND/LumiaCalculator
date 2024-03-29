@@ -1,0 +1,60 @@
+{
+    "Q": {
+        "duration": 2,
+        "tick": 0.25,
+        "damage": {
+            "base": [10,20.30,40,50],
+            "amp": [20,22,24,26,28]
+        },
+        "sp_cost": [15,25,35,45,55],
+        "cooldown": 5
+    },
+    "W": {
+        "duration": 5,
+        "flame_duration": 5,
+        "slow": 30,
+        "sp_cost": 30,
+        "cooldown": {
+            "constant": 0.3
+        },
+        "charge": {
+            "time": [15,14,13,12,11],
+            "max": 2
+        }
+    },
+    "E": {
+        "tick": 0.5,
+        "damage": {
+            "base": [10,22,34,46,58],
+            "amp": 18
+        },
+        "slow": 30,
+        "duration": 5,
+        "sp_cost": 40,
+        "cooldown": [19,18,17,16,15]
+    },
+    "R": {
+        "damage": {
+            "base": [60,120,180],
+            "amp": 35
+        },
+        "duration": 5,
+        "sp_cost": [25,45,65],
+        "cooldown": {
+            "constant": 1
+        },
+        "charge": {
+            "time": [26,23,20],
+            "max": 3
+        }
+    },
+    "T": {
+        "duration": 4,
+        "damage": {
+            "base": [12,24,36],
+            "amp": 32
+        },
+        "defense_reduction": [12,16,20],
+        "immune": 7
+    }
+}

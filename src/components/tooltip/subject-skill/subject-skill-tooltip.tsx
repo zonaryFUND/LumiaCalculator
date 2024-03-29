@@ -55,9 +55,14 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
         return info.cooldown.constant;
     })();
     const baseCharge = (() => {
-        if (info.charge == undefined) return undefined;
+        if (info.charge == undefined) return null;
         if (Array.isArray(info.charge.time)) return info.charge.time[props.config.skillLevels[props.skill]];
         return info.charge.time;
+    })();
+    const chargeExpression = (() => {
+        if (baseCharge == null) return null;
+        const base = <>チャージ時間{new Decimal(baseCharge).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</>;
+        return baseCooldown || constantCooldown ? <>({base})</> : base;
     })();
 
     return (
@@ -74,11 +79,7 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
                 <>クールダウン{constantCooldown}秒</> :
                 null
             }
-            {
-                baseCharge != null ?
-                <>チャージ時間{new Decimal(baseCharge).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</> :
-                null
-            }
+            {chargeExpression}
         </div>
     );
 };
