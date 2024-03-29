@@ -8,8 +8,9 @@ const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             アデラが指定した位置にポーンを配置して敵に
-            <Damage skill="Q" constants={Constants.Q.pawn_damage} {...props} />のスキルダメージを与えます。
-            ポーンを使用するたびにスタックを獲得し、3スタックになると移動速度が{Constants.Q.movement_speed[props.config.skillLevels.Q]}
+            <Damage skill="Q" constants={Constants.Q.pawn_damage} {...props} />
+            のスキルダメージを与えます。ポーンを使用するたびにスタックを獲得し、3スタックになると移動速度が
+            {Constants.Q.movement_speed[props.config.skillLevels.Q]}
             増加します。次のスキルを使用する時、クイーンを配置して
             <Damage skill="Q" constants={Constants.Q.queen_damage} {...props} />のスキルダメージを与え、
             {Constants.Q.stun}秒間気絶させます。<br />

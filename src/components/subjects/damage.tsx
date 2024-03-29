@@ -60,7 +60,7 @@ const damage: React.FC<Props> = props => {
     } else {
         return (
             <>
-               <span className={style.emphasis}>{skillDamage(props.status, skillLevel, props.constants).toString()}</span>
+               <span className={style.emphasis}>{skillDamage(props.status, props.config.level, skillLevel, props.constants).toString()}</span>
                {props.constants.targetHP ? <span className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP)}％)</span> : null}
             </>
         );

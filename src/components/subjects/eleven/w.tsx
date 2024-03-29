@@ -7,7 +7,7 @@ import { ValuesProps } from "../values";
 import { SubjectSkillProps } from "../props";
 
 const w: React.FC<SubjectSkillProps> = props => {
-    const damage = skillDamage(props.status, props.config.skillLevels.W, Constants.W.damage)
+    const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.W, Constants.W.damage)
     const taunt = Constants.W.taunt[props.config.skillLevels.W];
     const enhancedTaunt = Constants.W.enhanced_taunt[props.config.skillLevels.W];
 

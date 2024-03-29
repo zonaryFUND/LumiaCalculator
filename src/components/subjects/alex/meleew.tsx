@@ -6,7 +6,8 @@ import { ValuesProps } from "../values";
 
 const meleeW: React.FC<SubjectSkillProps> = props => (
     <>
-        アレックスが指定した地点にプラズママインを発射して範囲内の敵に<Damage skill="W" constants={Constants.MeleeW.damage} {...props} />のスキルダメージを与え、中心部に引っ張ります。
+        アレックスが指定した地点にプラズママインを発射して範囲内の敵に<Damage skill="W" constants={Constants.MeleeW.damage} {...props} />
+        のスキルダメージを与え、中心部に引っ張ります。
     </>
 );
 

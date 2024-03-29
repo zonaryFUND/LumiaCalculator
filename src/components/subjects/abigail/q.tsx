@@ -7,9 +7,10 @@ import { ValuesProps } from "../values";
 const q: React.FC<SubjectSkillProps> = props => (
     <>
         アビゲイルがデスサイズを振り回します。1回目の回転は
-        <Damage skill="Q" constants={Constants.Q.first_damage} {...props} />のスキルダメージを与え、
-        2回目の回転は<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />のスキルダメージを与えます。
-        バイナリスピンをキャストするときは移動速度が{Constants.Q.movement_speed.duration}秒間
+        <Damage skill="Q" constants={Constants.Q.first_damage} {...props} />
+        のスキルダメージを与え、2回目の回転は<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />
+        のスキルダメージを与えます。バイナリスピンをキャストするときは移動速度が
+        {Constants.Q.movement_speed.duration}秒間
         {Constants.Q.movement_speed.effect}%増加します。
     </>
 );

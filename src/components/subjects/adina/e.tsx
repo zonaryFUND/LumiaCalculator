@@ -12,7 +12,7 @@ const e: React.FC<SubjectSkillProps> = props => {
         if (props.showEquation) {
             return <>(ダメージ量の{Constants.E.star}％)</>;
         } else {
-            const damage = skillDamage(props.status, props.config.skillLevels.E, Constants.E.damage);
+            const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.E, Constants.E.damage);
             return <>{damage.dividedBy(2).toString()}</>;
         }
     })();
@@ -31,9 +31,9 @@ const e: React.FC<SubjectSkillProps> = props => {
             <span className={baseStyle.emphasis}>{moonHeal}</span>回復させます。<br />
             <br />
             <span className={style.star}>星コンジャンクション効果</span>：
-            星が連続になると、落下した星が{Constants.E.conjunction}秒間星雲を残し、
-            毎秒味方の体力を<Damage {...props} skill="R" constants={Constants.R.star_conjunction.hp} />、
-            スタミナを<Damage {...props} skill="R" constants={Constants.R.star_conjunction.sp} />ずつ回復させます。
+            星が連続になると、落下した星が{Constants.E.conjunction}秒間星雲を残し、毎秒味方の体力を
+            <Damage {...props} skill="R" constants={Constants.R.star_conjunction.hp} />
+            、スタミナを<Damage {...props} skill="R" constants={Constants.R.star_conjunction.sp} />ずつ回復させます。
         </>
     )
 }

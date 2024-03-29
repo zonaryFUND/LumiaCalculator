@@ -7,10 +7,10 @@ import style from "components/tooltip/tooltip.module.styl";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
-        アドリアナはスキルでダメージを与えると敵を燃やし、<span className={style.emphasis}>火傷</span>状態にさせます。
-        火傷状態の敵は{Constants.T.duration}秒<Damage skill="T" constants={Constants.T.damage} {...props}/>
-        のスキルダメージを受け、持続時間の間防御力が{Constants.T.defense_reduction[props.config.skillLevels.T]}％減少します。
-        火傷状態の敵は{Constants.T.immune}秒間再び火傷状態になりません。
+        アドリアナはスキルでダメージを与えると敵を燃やし、<span className={style.emphasis}>火傷</span>
+        状態にさせます。火傷状態の敵は{Constants.T.duration}秒<Damage skill="T" constants={Constants.T.damage} {...props}/>
+        のスキルダメージを受け、持続時間の間防御力が{Constants.T.defense_reduction[props.config.skillLevels.T]}
+        ％減少します。火傷状態の敵は{Constants.T.immune}秒間再び火傷状態になりません。
     </>
 )
 

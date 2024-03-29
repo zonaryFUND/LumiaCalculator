@@ -9,8 +9,8 @@ const e: React.FC<SubjectSkillProps> = props => {
         <>
             アイザックが素早く突進し、{Constants.E.time_bound}秒間次のスキルを準備します。<br />
             <br />
-            再使用：前方の敵を引き寄せてシールドを破壊し、<Damage {...props} skill="E" constants={Constants.E.damage} />の
-            スキルダメージを与えて{Constants.E.stun}秒間気絶させます。
+            再使用：前方の敵を引き寄せてシールドを破壊し、<Damage {...props} skill="E" constants={Constants.E.damage} />
+            のスキルダメージを与えて{Constants.E.stun}秒間気絶させます。
         </>
     );
 }

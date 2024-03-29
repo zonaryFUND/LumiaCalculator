@@ -8,13 +8,13 @@ const t: React.FC<SubjectSkillProps> = props => {
 
     return (
         <>
-            つばめは基本攻撃の射程距離が<span className={style.emphasis}>{Constants.T.range}</span>に固定され、
-            基本攻撃に致命打が発生しない代わりに
+            つばめは基本攻撃の射程距離が<span className={style.emphasis}>{Constants.T.range}</span>
+            に固定され、基本攻撃に致命打が発生しない代わりに
             {
                 props.showEquation ?
                 <>
-                    致命打確率1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>と
-                    致命打ダメージ増加量1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>
+                    致命打確率1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>
+                    と致命打ダメージ増加量1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>
                     の攻撃力が増加します。                    
                 </>
                 :

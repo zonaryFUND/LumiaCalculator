@@ -16,8 +16,8 @@ const q: React.FC<SubjectSkillProps> = props => {
             <span className={style.sun}>太陽</span>：ダメージ量が<Damage {...props} skill="Q" constants={Constants.Q.sun} />
             増加します。<br />
             <span className={style.moon}>月</span>：1人のみ的中され、{Constants.Q.moon}秒間気絶させます。<br />
-            <span className={style.star}>星</span>：彗星が素早く飛んでいき、
-            経路上に{Constants.Q.star.duration}秒間尾を残して味方の移動速度を
+            <span className={style.star}>星</span>：彗星が素早く飛んでいき、経路上に
+            {Constants.Q.star.duration}秒間尾を残して味方の移動速度を
             {Constants.Q.star.movement_speed}増加させます。<br />
             <br />
             <span className={style.sun}>太陽コンジャンクション効果</span>：

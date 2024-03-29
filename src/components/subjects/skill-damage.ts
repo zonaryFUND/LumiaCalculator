@@ -1,14 +1,16 @@
 import { Status } from "components/subject/status";
 import Decimal from "decimal.js";
 
-export default function skillDamage(status: Status, skillLevel: number, dictionary: any): Decimal {
-    return ["base", "attack", "additionalAttack", "amp", "maxHP", "additionalMaxHP"].reduce((prev, key) => {
+export default function skillDamage(status: Status, level: number, skillLevel: number, dictionary: any): Decimal {
+    return ["base", "perLevel", "attack", "additionalAttack", "amp", "maxHP", "additionalMaxHP"].reduce((prev, key) => {
         if (dictionary[key] == undefined) return prev;
         const skillValue = new Decimal(Array.isArray(dictionary[key]) ? dictionary[key][skillLevel] : dictionary[key]);
 
         switch (key) { 
             case "base":
                 return skillValue;
+            case "perLevel":
+                return prev.add(skillValue.times(level));
             case "attack":
                 return prev.add(status.attackPower.times(skillValue).dividedBy(100));
             case "additionalAttack":

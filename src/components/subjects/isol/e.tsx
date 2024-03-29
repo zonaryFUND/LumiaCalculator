@@ -6,8 +6,8 @@ import { SubjectSkillProps } from "../props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-        アイソルが前転しながら移動します。
-        移動後{Constants.E.hide_duration[props.config.skillLevels.E]}秒間隠密状態になります。移動以外の行動をすると隠密状態が解除されます。
+        アイソルが前転しながら移動します。移動後
+        {Constants.E.hide_duration[props.config.skillLevels.E]}秒間隠密状態になります。移動以外の行動をすると隠密状態が解除されます。
         {Constants.E.attack_duration}秒間1回目の基本攻撃ダメージは
         <Damage {...props} skill="E" constants={Constants.E.damage} />のスキルダメージを追加で与えます。
     </>

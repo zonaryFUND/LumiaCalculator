@@ -12,7 +12,7 @@ const r: React.FC<SubjectSkillProps> = props => {
         if (props.showEquation) {
             return <>(ダメージ量の{Constants.E.star}％)</>;
         } else {
-            const damage = skillDamage(props.status, props.config.skillLevels.E, Constants.E.damage);
+            const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.E, Constants.E.damage);
             return <>{damage.dividedBy(2).toString()}</>;
         }
     })();
@@ -21,19 +21,17 @@ const r: React.FC<SubjectSkillProps> = props => {
         <>
             <span className={baseStyle.level}>使用効果</span>：
             <span className={baseStyle.emphasis}>水晶玉の予言</span><br />
-            水晶玉のスロット(体力バーの下、2番目のスロット)に入った天体を保存した天体と交換し、
-            予見された運命を変えます。<br />
+            水晶玉のスロット(体力バーの下、2番目のスロット)に入った天体を保存した天体と交換し、予見された運命を変えます。<br />
             <br />
             <span className={baseStyle.level}>持続効果</span>：
             <span className={baseStyle.emphasis}>コンジャンクション</span>
-            の2番目と3番目のスロットに同じ天体が連続して並ぶと、強力なコンジャンクションスキルが使用できます。
-            コンジャンクションスキルの一部効果はこのスキルのレベルで強化されます。<br />
-            <span className={style.sun}>太陽x2</span>：
-            ルミナリー(Q)スキルが強化され、ダメージ量が増加します。<br />
-            <span className={style.moon}>月x2</span>：
-            トライン・アスペクト(W)スキルが強化され、ダメージ量が増加します。<br />
-            <span className={style.star}>星x2</span>：
-            ポール・ディグニティ(E)スキルが強化され、持続回復量が増加します。<br />
+            の2番目と3番目のスロットに同じ天体が連続して並ぶと、強力なコンジャンクションスキルが使用できます。コンジャンクションスキルの一部効果はこのスキルのレベルで強化されます。<br />
+            <span className={style.sun}>太陽x2</span>
+            ：ルミナリー(Q)スキルが強化され、ダメージ量が増加します。<br />
+            <span className={style.moon}>月x2</span>
+            ：トライン・アスペクト(W)スキルが強化され、ダメージ量が増加します。<br />
+            <span className={style.star}>星x2</span>
+            ：ポール・ディグニティ(E)スキルが強化され、持続回復量が増加します。<br />
             <br />
             <br />
             コンジャンクションスキルは<span className={baseStyle.emphasis}>スターゲイザー(P)</span>ごとに一度だけ使用できます。

@@ -13,9 +13,8 @@ const r: React.FC<SubjectSkillProps> = props => {
 
     return (
         <>
-            アイザックが指定した地点を強く叩きつけて<Damage {...props} skill="R" constants={Constants.R.damage} />のスキルダメージを与え、
-            搾取刻印のない敵を範囲の外に押し出します。
-            対象の搾取刻印スタックに比例して、
+            アイザックが指定した地点を強く叩きつけて<Damage {...props} skill="R" constants={Constants.R.damage} />
+            のスキルダメージを与え、搾取刻印のない敵を範囲の外に押し出します。対象の搾取刻印スタックに比例して、
             {
                 props.showEquation ?
                 <>
@@ -25,8 +24,7 @@ const r: React.FC<SubjectSkillProps> = props => {
                 :
                 <span className={style.emphasis}>対象の失った体力の{least.toString()}％ ～ {max.toString()}％</span>
             }
-            に値する追加スキルダメージを与え、
-            しばらくの間移動速度を{Constants.R.slow}％減少させます。
+            に値する追加スキルダメージを与え、しばらくの間移動速度を{Constants.R.slow}％減少させます。
         </>
     );
 }

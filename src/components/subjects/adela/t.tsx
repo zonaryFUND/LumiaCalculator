@@ -9,8 +9,9 @@ import { additionalAmp } from "./status-override";
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            アデラの基本攻撃の射程が{Constants.T.additional_attack_range}増加する代わりに攻撃速度が固定されます。
-            攻撃速度が0.01増加するとスキル増幅が{Constants.T.amp_per_as[props.config.skillLevels.T]}増加します。<br />
+            アデラの基本攻撃の射程が{Constants.T.additional_attack_range}
+            増加する代わりに攻撃速度が固定されます。攻撃速度が0.01増加するとスキル増幅が
+            {Constants.T.amp_per_as[props.config.skillLevels.T]}増加します。<br />
             <br />
             現在のスキル増幅：{additionalAmp(props.status, props.config).toString()}
         </>

@@ -7,8 +7,9 @@ import { SubjectSkillProps } from "../props";
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            アイザックが武器の硬度を上げて次の基本攻撃または基本スキルを強化し、<Damage {...props} skill="W" constants={Constants.W.damage} />のスキルダメージを追加で与えます。
-            このスキルで強化された基本攻撃または基本スキルが搾取を発動させた場合、基本スキルのクールダウンが{Constants.W.cooldown_reduction}％減少します。
+            アイザックが武器の硬度を上げて次の基本攻撃または基本スキルを強化し、<Damage {...props} skill="W" constants={Constants.W.damage} />
+            のスキルダメージを追加で与えます。このスキルで強化された基本攻撃または基本スキルが搾取を発動させた場合、基本スキルのクールダウンが
+            {Constants.W.cooldown_reduction}％減少します。
         </>
     );
 }

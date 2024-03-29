@@ -43,20 +43,19 @@ const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             <span className={style.level}>持続効果</span>：つばめの基本攻撃に命中された敵は
-            {Constants.R.mark_duration}秒間維持される刻印が刻まれます。
-            刻印は最大{Constants.R.max_mark}スタックまで刻まれ、最大スタックになった対象はつばめに視界を共有します。<br />
+            {Constants.R.mark_duration}秒間維持される刻印が刻まれます。刻印は最大
+            {Constants.R.max_mark}スタックまで刻まれ、最大スタックになった対象はつばめに視界を共有します。<br />
             <br />
-            刻印が最大スタックになった敵対象が射程距離の中にいる場合に使用できます。
-            刻印が最大スタックになった敵対象がいる方向に向かって素早く移動し、刻まれた刻印を切り落として
+            刻印が最大スタックになった敵対象が射程距離の中にいる場合に使用できます。刻印が最大スタックになった敵対象がいる方向に向かって素早く移動し、刻まれた刻印を切り落として
             {damage}のスキルダメージを与え、<Damage {...props} skill="R" constants={Constants.R.heal} />の体力を回復します。<br />
             <br />
             敵実験体にダメージを与えた場合、<span className={style.emphasis}>忍び足</span>のクールダウンは
             {Constants.R.w_cdr}％、<span className={style.emphasis}>変わり身の術</span>のクールダウンは
             {Constants.R.t_cdr}％減少し、{Constants.R.stack_duration}秒間
             <span className={style.emphasis}>刻まれた戦闘感覚</span>を呼び起こします。<br />
-            <span className={style.emphasis}>刻まれた戦闘感覚</span>は最大{Constants.R.max_stack}回まで
-            スタックされ、1スタックあたり<span className={style.emphasis}>秘技 - 生死の刻印</span>の
-            ダメージ量が{Constants.R.damage_increase_per_stack}％増加します。<br />
+            <span className={style.emphasis}>刻まれた戦闘感覚</span>は最大{Constants.R.max_stack}
+            回までスタックされ、1スタックあたり<span className={style.emphasis}>秘技 - 生死の刻印</span>
+            のダメージ量が{Constants.R.damage_increase_per_stack}％増加します。<br />
             <br />
             <span className={style.emphasis}>身代わり</span>を対象にして使用する場合、
             <span className={style.emphasis}>身代わり</span>の位置に素早く移動し、位置を入れ替えます。

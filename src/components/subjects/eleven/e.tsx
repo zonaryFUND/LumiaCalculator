@@ -7,14 +7,14 @@ import { ValuesProps } from "../values";
 import { SubjectSkillProps } from "../props";
 
 const e: React.FC<SubjectSkillProps> = props => {
-    const damage = skillDamage(props.status, props.config.skillLevels.W, Constants.W.damage)
+    const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.W, Constants.W.damage)
 
     return (
         <>
-            Elevenがハンバーガーフォークに乗って指定した地点にジャンプし、
-            敵に<Damage {...props} skill="E" constants={Constants.E.damage} />のスキルダメージを与えます。
-            ジャンプする間、Elevenはすべての妨害効果免疫状態になります。
-            チャージ時間に応じてジャンプできる距離が増え、{Constants.common.charge_max}秒以上チャージした場合、スキルが強化されます。<br />
+            Elevenがハンバーガーフォークに乗って指定した地点にジャンプし、敵に
+            <Damage {...props} skill="E" constants={Constants.E.damage} />
+            のスキルダメージを与えます。ジャンプする間、Elevenはすべての妨害効果免疫状態になります。チャージ時間に応じてジャンプできる距離が増え、
+            {Constants.common.charge_max}秒以上チャージした場合、スキルが強化されます。<br />
             <br />
             <span className={style.enhance}>強化</span>：
             {

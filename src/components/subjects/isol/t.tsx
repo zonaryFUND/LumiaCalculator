@@ -6,8 +6,7 @@ import { SubjectSkillProps } from "../props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
-        アイソルが設置したトラップが敵に的中する場合、
-        アイソルは{Constants.T.duration}秒間
+        アイソルが設置したトラップが敵に的中する場合、アイソルは{Constants.T.duration}秒間
         <span className={style.attack}>攻撃力{Constants.T.attack[props.config.skillLevels.T]}</span>または
         <span className={style.amp}>スキル増幅{Constants.T.amp[props.config.skillLevels.T]}</span>
         が増加します。
