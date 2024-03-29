@@ -30,12 +30,26 @@ const damage: React.FC<Props> = props => {
     if (props.showEquation) {
         return (
             <>
-                <span className={style.emphasis}>{current(skillLevel, props.constants.base)}</span>
-                {props.constants.attack ? <span className={style.attack}>(+攻撃力の{current(skillLevel, props.constants.attack)}％)</span> : null}
-                {props.constants.additionalAttack ? <span className={style.attack}>(+追加攻撃力の{current(skillLevel, props.constants.additionalAttack)}％)</span> : null}
-                {props.constants.additionalMaxHP ? <span className={style.maxhp}>(+追加体力の{current(skillLevel, props.constants.additionalMaxHP)}％)</span> : null}
-                {props.constants.amp ? <span className={style.amp}>(+スキル増幅の{current(skillLevel, props.constants.amp)}％)</span> : null}
-                {props.constants.targetHP ? <span className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP)}％)</span> : null}
+                {
+                    Object.keys(props.constants).map(key => {
+                        const value = (props.constants as any)[key];
+                        if (value == undefined) return null;
+                        switch (key) {
+                            case "base":
+                                return <span key={key} className={style.emphasis}>{current(skillLevel, props.constants.base!)}</span>;
+                            case "attack":
+                                return <span key={key} className={style.attack}>(+攻撃力の{current(skillLevel, props.constants.attack!)}％)</span>;
+                            case "additionalAttack":
+                                return <span key={key} className={style.attack}>(+追加攻撃力の{current(skillLevel, props.constants.additionalAttack!)}％)</span>;
+                            case "additionalMaxHP":
+                                return <span key={key} className={style.maxhp}>(+追加体力の{current(skillLevel, props.constants.additionalMaxHP!)}％)</span>;                                
+                            case "amp":
+                                return <span key={key} className={style.amp}>(+スキル増幅の{current(skillLevel, props.constants.amp!)}％)</span>;
+                            case "targetHP":
+                                return <span key={key} className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP!)}％)</span>;
+                        }
+                    })
+                }
             </>
         );
     } else {

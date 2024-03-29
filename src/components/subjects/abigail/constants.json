@@ -1,0 +1,71 @@
+{
+    "Q": {
+        "first_damage": {
+            "base": [20,35,50,65,80],
+            "amp":20
+        },
+        "second_damage": {
+            "base": [50,80,110,140,170],
+            "amp": 30
+        },
+        "movement_speed": {
+            "duration": 0.5,
+            "effect": 10
+        },
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": [10,8.5,7,5.5,4]
+    },
+    "W": {
+        "damage": {
+            "base": [40,75,110,145,180],
+            "targetHP": 6,
+            "amp": 2
+        },
+        "shield": {
+            "duration": 2.5,
+            "amount": {
+                "base": [50,75,100,125,150],
+                "amp": 30
+            }
+        },
+        "additional_shield": 20,
+        "additional_shield_max": 40,
+        "coordinates": 5,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [12,11,10,9,8]
+    },
+    "E": {
+        "damage": {
+            "base": [50,80,110,140,170],
+            "amp": 35
+        },
+        "sp_cost": [20,25,30,35,40],
+        "cooldown": [14,13.5,13,12.5,12]
+    },
+    "R": {
+        "untargetable": 0.7,
+        "damage": {
+            "base": [150,275,400],
+            "amp": 80
+        },
+        "slow": {
+            "duration": 0.2,
+            "effect": 90
+        },
+        "coordinates": 5,
+        "sp_cost": 100,
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "damage": {
+            "base": [30,65,100],
+            "amp": 40
+        },
+        "defense_reduction": {
+            "duration": 4,
+            "effect": [5,10,15]
+        },
+        "cooldown_reduction": 2,
+        "cooldown": [16,11,6]
+    }
+}
