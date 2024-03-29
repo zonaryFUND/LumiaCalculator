@@ -20,6 +20,7 @@ const t: React.FC<SubjectSkillProps> = props => (
 export default t;
 
 export const values: ValuesProps = {
+    additionalInfo: <>発掘統裁で生成した沈黙エリアは野生動物やボスモンスターには沈黙効果を与えません。</>,
     parameters: [
         {title: "体力回復量", values: Constants.T.heal.base},
         {title: "[考古学的分析]必要精髄スタック", values: Constants.T.max_stack}

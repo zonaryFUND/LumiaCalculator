@@ -12,6 +12,8 @@ type Props = SubjectSkillProps & {
         attack?: Value,
         basicAttackAmp?: Value,
         additionalAttack?: Value,
+        defense?: Value
+        maxHP?: Value
         additionalMaxHP?: Value
         amp?: Value
         targetHP?: Value
@@ -46,6 +48,10 @@ const damage: React.FC<Props> = props => {
                                 return <span key={key} className={style.attack}>* (基本攻撃増幅)</span>;
                             case "additionalAttack":
                                 return <span key={key} className={style.attack}>{left}追加攻撃力の{current(skillLevel, props.constants.additionalAttack!)}％{right}</span>;
+                            case "defense":
+                                return <span key={key} className={style.defense}>{left}防御力の{current(skillLevel, props.constants.defense!)}％{right}</span>;
+                            case "maxHP":
+                                return <span key={key} className={style.maxhp}>{left}最大体力の{current(skillLevel, props.constants.maxHP!)}％{right}</span>;
                             case "additionalMaxHP":
                                 return <span key={key} className={style.maxhp}>{left}追加体力の{current(skillLevel, props.constants.additionalMaxHP!)}％{right}</span>;                                
                             case "amp":

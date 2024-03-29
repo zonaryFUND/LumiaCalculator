@@ -8,10 +8,78 @@
         "near_movement_speed": [20,22.5,25,27.5,30],
         "basic_attack_damage": {
             "perLevel": 10,
-            "targetMaxHP": 9
+            "targetMaxHP": [9,9.5,10,10.5,11]
         },
         "stun": 0.6,
         "sp_cost": [30,35,40,45,50],
         "cooldown": [7,6.5,6,5.5,5]
+    },
+    "W": {
+        "duration": 2.5,
+        "damage_reduction": 80,
+        "waves": 5,
+        "damage": {
+            "base": [30,35,40,45,50],
+            "amp": 25,
+            "additionalMaxHP": 5
+        },
+        "final_damage": {
+            "base": [80,120,160,200,240],
+            "amp": 50,
+            "additionalMaxHP": 15
+        },
+        "self_slow": 15,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [14,13,12,11,10]
+    },
+    "E": {
+        "damage": {
+            "base": [60,90,120,150,180],
+            "defense": 20, 
+            "maxHP": 7
+        },
+        "bind": [0.9,1,1.1,1.2,1.3],
+        "sp_cost": [75,80,85,90,95],
+        "cooldown": [14,13,12,11,10]
+    },
+    "R": {
+        "damage": {
+            "base": [70,160,250],
+            "amp": 50
+        },
+        "tick": 0.5,
+        "heal": {
+            "base": 40,
+            "maxHP": [4,5,6]
+        },
+        "damage_on_time": {
+            "base": [16,20,24],
+            "amp": 15
+        },
+        "slow": 50,
+        "final_damage": {
+            "min": {
+                "base": [100,150,200],
+                "amp": 50,
+                "additionalMaxHP": 4
+            },
+            "max": {
+                "base": [200,300,400],
+                "amp": 100,
+                "additionalMaxHP": 8
+            }
+        },
+        "sp_cost": 120,
+        "cooldown": [80,70,60]
+    },
+    "T": {
+        "immune": 0.1,
+        "cooldown": {
+            "constant": [18,13,8]
+        },
+        "heal": {
+            "base": [30,50,70],
+            "maxHP": [3,5,7]
+        }
     }
 }
