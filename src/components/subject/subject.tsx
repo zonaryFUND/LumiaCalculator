@@ -11,6 +11,7 @@ import { Tooltip } from "react-tooltip";
 import ItemTooltip from "components/tooltip/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 import useSubjectConfig from "./use-subject-config";
+import { equipmentStatus } from "@app/entity/equipment";
 
 const subject: React.FC = _ => {
     const {
@@ -66,7 +67,7 @@ const subject: React.FC = _ => {
                     <EquipmentSlot slot="leg" subject={subject!} equipment={[equipment, setEquipment]} />
                 </div>
                 <label><input type="checkbox" defaultChecked={damageInFormula} onChange={toggleDamageInFormula} />スキルダメージを計算式で表記する</label>
-                {subject ? SubjectSkills[subject].default() : null}
+                {subject ? SubjectSkills[subject].default(equipment.weapon ? equipmentStatus(equipment.weapon).type : "") : null}
             </div>
             <table>
                 <tbody>

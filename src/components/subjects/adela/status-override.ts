@@ -1,7 +1,6 @@
 import { StatusProps } from "components/subject/status";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
-import { baseStatus } from "@app/entity/base-status";
 import { SubjectConfig } from "components/subject/use-subject-config";
 
 export function additionalAmp(status: StatusProps, config: SubjectConfig): Decimal {

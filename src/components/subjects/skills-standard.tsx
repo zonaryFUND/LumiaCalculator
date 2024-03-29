@@ -10,7 +10,7 @@ type Props = {
     skillImage?: SkillImage 
 }
 
-const Skill: React.FC<{id: SubjectID, skill: "Q" | "W" | "E" | "R" | "T", skillImage?: SkillImage}> = props => {
+export const Skill: React.FC<{id: SubjectID, skill: "Q" | "W" | "E" | "R" | "T", skillImage?: SkillImage}> = props => {
     const src = (() => {
         const standard = Images.skill[props.id][props.skill];
         return props.skillImage ? (props.skillImage(props.skill) || standard) : standard 

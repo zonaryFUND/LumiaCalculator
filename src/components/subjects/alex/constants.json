@@ -1,0 +1,113 @@
+{
+    "common": {
+        "q_stack_max_as": 20,
+        "e_as": [10,12,14,16,18]
+    },
+    "MeleeQ": {
+        "damage": {
+            "base": [60,85,110,135,150],
+            "attack": 80
+        },
+        "attack_up": {
+            "duration": 20,
+            "effect": 7,
+            "max_stack": 2
+        },
+        "sp_cost": 50,
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "MeleeW": {
+        "damage": {
+            "base": [60,95,130,165,200],
+            "attack": 80
+        },
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": [11,10.5,10,9.5,9]
+    },
+    "MeleeE": {
+        "duration": 5,
+        "taunt": 0.65,
+        "weapon_swap": 4,
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": 12
+    },
+    "RangeQ": {
+        "damage": {
+            "base": [60,85,110,135,160],
+            "attack": 75
+        },
+        "attack_up": {
+            "duration": 20,
+            "effect": 4,
+            "max_stack": 2
+        },
+        "sp_cost": 50,
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "RangeW": {
+        "damage": {
+            "base": [70,100,130,160,190],
+            "attack": 70
+        },
+        "duration": [2,2.5,3,3.5,4,4],
+        "range": 0.5,
+        "sp_cost": [25,35,45,55,65],
+        "cooldown": [13,12.5,12,11.5,11]
+    },
+    "RangeE": {
+        "damage": {
+            "base": [80,105,130,155,180],
+            "attack": 70
+        },
+        "slow": {
+            "duration": 1,
+            "effect": [30,35,40,45,50]
+        },
+        "weapon_swap": 4,
+        "sp_cost": 90,
+        "cooldown": 12
+    },
+    "R": {
+        "first_damage": {
+            "outer": {
+                "base": [80,150,220],
+                "attack": 60
+            },
+            "center": {
+                "base": [100,180,260],
+                "attack": 75
+            }
+        },
+        "first_slow": {
+            "duration": 0.6,
+            "effect": 40
+        },
+        "later_damage": {
+            "outer": {
+                "base": [30,40,50],
+                "attack": 30
+            },
+            "center": {
+                "base": [30,60,90],
+                "attack": 45
+            },
+            "tick": 0.69,
+            "amount": 10
+        },
+        "later_slow": {
+            "duration": 0.6,
+            "effect": 20
+        },
+        "sp_cost": 100,
+        "cooldown": [90,75,60]
+    },
+    "T": {
+        "hide_duration": 4,
+        "movement_speed": {
+            "area": 8,
+            "duration": 2,
+            "effect": [2,5,8]
+        },
+        "defense": [5,10,15]
+    }
+}

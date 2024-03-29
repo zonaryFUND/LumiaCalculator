@@ -8,15 +8,14 @@ import Decimal from "decimal.js";
 import Values from "components/subjects/values";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
-import { SubjectSkillProps } from "components/subjects/props";
 
-const skillsContext = require.context("components/subjects", true, /\.\/.*\/(q|w|e|r|t|skills)\.tsx$/);
+const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*[qwert]|skills)\.tsx$/);
 const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
     const pathComponents = path.split("/");
     const [subject, skill] = pathComponents.slice(pathComponents.length - 2);
     skills[subject] = {
         ...skills[subject],
-        [skill.split(".")[0].toUpperCase()]: skillsContext(path)
+        [skill.split(".")[0]]: skillsContext(path)
     };
     return skills;
 }, {}) as any
@@ -31,32 +30,32 @@ export const SkillsConstant = constContext.keys().reduce((consts: any, path) => 
 
 type Props = {
     id: SubjectID
-    skill: "Q" | "W" | "E" | "R" | "T"
+    skill: string
     showEquation: boolean
     config: SubjectConfig
     status: Status
 }
 
-const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
+const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Status}> = props => {
     const info = SkillsConstant[props.id][props.skill];
     const spCost = (() => {
         if (info.sp_cost == undefined) return null;
-        if (Array.isArray(info.sp_cost)) return info.sp_cost[props.config.skillLevels[props.skill]];
+        if (Array.isArray(info.sp_cost)) return info.sp_cost[props.skillLevel];
         return info.sp_cost;
     })()
     const baseCooldown = (() => {
         if (info.cooldown == undefined || info.cooldown.constant) return null;
-        if (Array.isArray(info.cooldown)) return info.cooldown[props.config.skillLevels[props.skill]];
+        if (Array.isArray(info.cooldown)) return info.cooldown[props.skillLevel];
         return info.cooldown;
     })()
     const constantCooldown = (() => {
         if (info.cooldown == undefined || info.cooldown.constant == undefined) return null;
-        if (Array.isArray(info.cooldown.constant)) return info.cooldown.constant[props.config.skillLevels[props.skill]];
+        if (Array.isArray(info.cooldown.constant)) return info.cooldown.constant[props.skillLevel];
         return info.cooldown.constant;
     })();
     const baseCharge = (() => {
         if (info.charge == undefined) return null;
-        if (Array.isArray(info.charge.time)) return info.charge.time[props.config.skillLevels[props.skill]];
+        if (Array.isArray(info.charge.time)) return info.charge.time[props.skillLevel];
         return info.charge.time;
     })();
     const chargeExpression = (() => {
@@ -87,11 +86,13 @@ const ConsumptionAndCooldown: React.FC<Props & {status: Status}> = props => {
 const subjectSkillTooltip: React.FC<Props> = props => {
     const src = React.useMemo(() => {
         const standard = Images.skill[props.id][props.skill];
-        if (SkillsDescription[props.id].SKILLS.SkillImage) {
-            return SkillsDescription[props.id].SKILLS.SkillImage(props.skill) || standard;
+        if (SkillsDescription[props.id].skills.SkillImage) {
+            return SkillsDescription[props.id].skills.SkillImage(props.skill) || standard;
         }
         return standard;
     }, [props.id, props.skill]);
+
+    const skillIDForLevel = React.useMemo(() => props.skill.slice(-1) as "Q" | "W" | "E" | "R" | "T", [props.skill]);
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip}`}>
@@ -100,20 +101,24 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     <img src={src} />
                     <div>
                         <div className={style.name}>
-                            <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[props.skill] + 1}）</h1>
-                            <p>[{props.skill}]</p>
+                            <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[skillIDForLevel] + 1}）</h1>
+                            <p>[{skillIDForLevel}]</p>
                         </div>
-                        <ConsumptionAndCooldown {...props} />
+                        <ConsumptionAndCooldown {...props} skillLevel={props.config.skillLevels[skillIDForLevel]} />
                     </div>
                 </header>
                 <p>
-                    {React.createElement(SkillsDescription[props.id][props.skill].default, props)}
+                    {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, {
+                        showEquation: props.showEquation,
+                        config: props.config,
+                        status: props.status
+                    })}
                 </p>
             </div>
             {
-                props.showEquation && SkillsDescription[props.id][props.skill].values != undefined ? (
+                props.showEquation && SkillsDescription[props.id][props.skill.toLowerCase()].values != undefined ? (
                     <div className={style.values}>
-                        <Values {...SkillsDescription[props.id][props.skill].values} skillLevel={props.config.skillLevels[props.skill]} />
+                        <Values {...SkillsDescription[props.id][props.skill.toLowerCase()].values} skillLevel={props.config.skillLevels[skillIDForLevel]} />
                     </div>
                 ) : null
             }
