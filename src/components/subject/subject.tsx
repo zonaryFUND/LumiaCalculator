@@ -22,6 +22,7 @@ const subject: React.FC = _ => {
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels]
     } = useSubjectConfig();
+
     const subjectConfig = {
         subject, equipment, level, weaponMastery, movementMastery, skillLevels
     }
@@ -45,10 +46,7 @@ const subject: React.FC = _ => {
     const onMovementMasterySliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setMovementMastery(+event.target.value);
     }, []);
-    const onFormulaCheckboxChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
-        toggleDamageInFormula()
-    }, []);
-
+    
     return (
         <section className={style.base}>
             <div>
@@ -95,15 +93,15 @@ const subject: React.FC = _ => {
             </table>
             <label>
                 {`レベル${level}`}
-                <input type="range" min="1" defaultValue={1} max="20" step="1" onChange={onLevelSliderChange}/>
+                <input type="range" min="1" value={level} max="20" step="1" onChange={onLevelSliderChange}/>
             </label>
             <label>
                 {`武器熟練度${weaponMastery}`}
-                <input type="range" min="1" defaultValue={1} max="20" step="1" onChange={onWeaponMasterySliderChange}/>
+                <input type="range" min="1" value={weaponMastery} max="20" step="1" onChange={onWeaponMasterySliderChange}/>
             </label>
             <label>
                 {`移動熟練度${movementMastery}`}
-                <input type="range" min="1" defaultValue={1} max="20" step="1" onChange={onMovementMasterySliderChange}/>
+                <input type="range" min="1" value={movementMastery} max="20" step="1" onChange={onMovementMasterySliderChange}/>
             </label>
             <Tooltip 
                 id="weapon"

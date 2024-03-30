@@ -9,7 +9,7 @@ import Values from "components/subjects/values";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
 
-const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*[qwert]|skills)\.tsx$/);
+const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*[qwert]2?|skills)\.tsx$/);
 const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
     const pathComponents = path.split("/");
     const [subject, skill] = pathComponents.slice(pathComponents.length - 2);
@@ -43,6 +43,11 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
         if (Array.isArray(info.sp_cost)) return info.sp_cost[props.skillLevel];
         return info.sp_cost;
     })()
+    const hpCost =(() => {
+        if (info.hp_cost == undefined) return null;
+        if (Array.isArray(info.hp_cost)) return info.hp_cost[props.skillLevel];
+        return info.hp_cost;
+    })()
     const baseCooldown = (() => {
         if (info.cooldown == undefined || info.cooldown.constant) return null;
         if (Array.isArray(info.cooldown)) return info.cooldown[props.skillLevel];
@@ -67,7 +72,8 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
     return (
         <div className={style.cooldown}>
             {spCost != null ? <>スタミナ {spCost}<br /></> : null}
-            {spCost == null ? <>コストなし<br /></> : null}
+            {hpCost != null ? <>体力 {hpCost}<br /></> : null}
+            {spCost == null && hpCost == null ? <>コストなし<br /></> : null}
             {
                 baseCooldown != null ?
                 <>クールダウン{new Decimal(baseCooldown).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</> :
@@ -92,7 +98,10 @@ const subjectSkillTooltip: React.FC<Props> = props => {
         return standard;
     }, [props.id, props.skill]);
 
-    const skillIDForLevel = React.useMemo(() => props.skill.slice(-1) as "Q" | "W" | "E" | "R" | "T", [props.skill]);
+    const skillIDForLevel = React.useMemo(() => {
+        const target = props.skill.endsWith("2") ? props.skill.slice(0, props.skill.length - 1) : props.skill;
+        return target.slice(-1) as "Q" | "W" | "E" | "R" | "T"
+    }, [props.skill]);
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip}`}>

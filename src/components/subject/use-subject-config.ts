@@ -45,7 +45,6 @@ export default function(): Response {
         movementMastery: 1,
         skillLevels: { Q: 0, W: 0, E: 0, R: 0, T: 0 }
     })
-
     const [subject, setSubject] = React.useState<SubjectID | null>(config?.subject || null);
     const [level, setLevel] = React.useState(config?.level || 1);
     const [weaponMastery, setWeaponMastery] = React.useState(config?.weaponMastery || 1);
@@ -58,7 +57,7 @@ export default function(): Response {
     React.useEffect(() => {
         setConfig({ subject, equipment, level, weaponMastery, movementMastery, skillLevels });
     }, [subject, level, weaponMastery, movementMastery, equipment]);
-
+    
     return {
         subject: [subject, setSubject],
         equipment: [equipment, setEquipment],

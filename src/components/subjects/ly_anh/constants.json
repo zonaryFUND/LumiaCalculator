@@ -1,0 +1,122 @@
+{
+    "LyAnhQ": {
+        "damage": {
+            "base": [40,70,100,130,160],
+            "attack": 60
+        },
+        "on_hit_cooldown": 1,
+        "thrash": 30,
+        "hp_cost": 4,
+        "cooldown": [5,4.5,4,3.5,3]
+    },
+    "GhostQ": {
+        "damage": {
+            "base": [40,75,110,145,180],
+            "attack": 70
+        },
+        "bind": 0.6,
+        "thrash": {
+            "hit": 20,
+            "miss": 10
+        },
+        "hp_cost": [20,25,30,35,40],
+        "cooldown": [14,13,12,11,10]
+    },
+    "LyAnhW": {
+        "damage": {
+            "base": [5,45,85,125,165],
+            "attack": 50
+        },
+        "slow": {
+            "duration": 1.2,
+            "effect": 55
+        },
+        "thrash": 30,
+        "hp_cost": 4,
+        "cooldown": [11,10,9,8,7]
+    },
+    "GhostW": {
+        "damage": {
+            "base": [10,40,70,100,130],
+            "attack": 65
+        },
+        "movement_speed": {
+            "duration": 1,
+            "effect": 30
+        },
+        "qe_cooldown_reduction": 1,
+        "max_stack": 3,
+        "thrash": {
+            "hit": 20,
+            "miss": 10
+        },
+        "hp_cost": 4,
+        "cooldown": 1
+    },
+    "LyAnhE": {
+        "damage": {
+            "base": [20,40,60,80,100],
+            "attack": 60
+        },
+        "on_hit_cooldown": 1,
+        "thrash": 20,
+        "hp_cost": 4,
+        "cooldown": [16,15,14,13,12]
+    },
+    "GhostE": {
+        "first_damage": {
+            "base": [30,55,80,105,130],
+            "attack": 25
+        },
+        "second_damage": {
+            "base": [10,40,70,100,130],
+            "attack": 30
+        },
+        "thrash": {
+            "hit": 20,
+            "miss": 10
+        },
+        "hp_cost": [20,25,30,35,40],
+        "cooldown": [14,13,12,11,10]
+    },
+    "LyAnhR": {
+        "thrash_decline": 25,
+        "range": 15,
+        "damage": {
+            "base": [200,300,400],
+            "attack": 60
+        },
+        "maxhp": [222,333,444],
+        "movement_speed": 20,
+        "attack_damage": {
+            "attack": 100
+        },
+        "attack_speed": [10,13,15],
+        "max_stack": 7,
+        "fear_count": 5,
+        "fear": [1,1.3,1.6],
+        "fear_range": 2,
+        "fear_immune": 3,
+        "hp_on_death": [100,200,300],
+        "cooldown": [76,60,44]
+    },
+    "LyAnhR2": {},
+    "LyAnhT": {
+        "thrash_decline": 50,
+        "human_basic_attack": {
+            "attack": 80
+        },
+        "possessed_basic_attack": {
+            "attack": 90
+        },
+        "ghost_basic_attack": {
+            "attack": 100
+        },
+        "additional_damage": {
+            "attack": [6,13,20]
+        },
+        "possesed_heal": 100,
+        "ghost_heal": 200,
+        "thrash": 20
+    }
+}

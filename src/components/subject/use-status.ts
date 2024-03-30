@@ -54,6 +54,7 @@ export default function(config: SubjectConfig): Status | undefined {
         }
     })();
 
+    console.log({masteryFactor, weaponMastery})
     const baseAttackPower = baseStatus.attackPower.add(baseStatus.apPerLevel.times(level - 1))
             .add(masteryFactor?.type == "attack_power" ? masteryFactor.value.times(weaponMastery) : 0)
     const baseAdditionalAttackPower = sumDecimalEquipmentStatus("attackPower", inSlot).add(perLevel.attack.times(level));
@@ -123,10 +124,10 @@ export default function(config: SubjectConfig): Status | undefined {
         visionRange: sumDecimalEquipmentStatus("vision", inSlot).add(8.5)
     }
 
-    const override: StatusOverride | null = React.useMemo(() => {
+    const override: StatusOverride | null = (() => {
         if (!subject) return null;
         return SubjectStatusOverride[subject] ? SubjectStatusOverride[subject].default : null
-    }, [subject]);
+    })();
 
     return override ? from(override(base, config), base) : from(base);
 }
