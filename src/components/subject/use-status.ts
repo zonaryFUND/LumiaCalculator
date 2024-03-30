@@ -54,7 +54,6 @@ export default function(config: SubjectConfig): Status | undefined {
         }
     })();
 
-    console.log({masteryFactor, weaponMastery})
     const baseAttackPower = baseStatus.attackPower.add(baseStatus.apPerLevel.times(level - 1))
             .add(masteryFactor?.type == "attack_power" ? masteryFactor.value.times(weaponMastery) : 0)
     const baseAdditionalAttackPower = sumDecimalEquipmentStatus("attackPower", inSlot).add(perLevel.attack.times(level));

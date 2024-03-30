@@ -1,0 +1,96 @@
+{
+    "common": {
+        "fish": 10,
+        "fish_max": 2
+    },
+    "IremQ": {
+        "damage": {
+            "base": [50,70,90,110,130],
+            "amp": 50
+        },
+        "ratio": 0.25,
+        "max_ratio_count": 3,
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "CatQ": {
+        "damage": {
+            "base": [30,60,90,120,150],
+            "amp": 55
+        },
+        "bind": 0.75,
+        "rush": {
+            "tick": 0.1,
+            "amount": 5
+        },
+        "rush_damage": {
+            "base": [6,9,12,15,18],
+            "amp": 5
+        },
+        "additional_damage": 100,
+        "sp_cost": 50,
+        "cooldown": [5.5,5,4.5,4,3.5]
+    },
+    "IremW": {
+        "slow": 20,
+        "charge": 1,
+        "damage": {
+            "base": [40,80,120,160,200],
+            "amp": 70
+        },
+        "charm": [0.8,0.9,1,1.1,1.2],
+        "slow_remain": 1,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [15,14.5,14,13.5,13]
+    },
+    "CatW": {
+        "damage": {
+            "base": [40,80,120,160,200],
+            "amp": 70
+        },
+        "airborne": 0.8,
+        "cooldown_reduction": 1,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": 9
+    },
+    "IremE": {
+        "sp_cost": [80,90,100,110,120],
+        "cooldown": [20,19,18,17,16]
+    },
+    "CatE": {
+        "damage": {
+            "base": [40,80,120,160,200],
+            "amp": 70
+        },
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [10,9,8,7,6]
+    },
+    "IremR": {
+        "damage": {
+            "base": [10,50,90,130],
+            "amp": [25,30,35,40]
+        },
+        "bell": 4,
+        "range_penalty": 1,
+        "cooldown": {
+            "constant": 1.5
+        }
+    },
+    "CatR": {
+        "shield": {
+            "base": [40,65,90,115],
+            "amp": 30
+        },
+        "shield_duration": 2.5,
+        "cooldown": {
+            "constant": 1.5
+        }
+    },
+    "T": {
+        "vision": [0.75,1,1.25],
+        "stay": 15,
+        "attack_speed": [10,20,30],
+        "defense": [2,5,8],
+        "fish_food": 10
+    }
+}

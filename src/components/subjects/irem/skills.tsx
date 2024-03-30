@@ -8,9 +8,9 @@ type Props = {
 
 const TooltipImage: React.FC<Props> = props => (
     <img 
-        src={Images.skill.ly_anh[props.src]} 
+        src={Images.skill.irem[props.src]} 
         data-tooltip-id="subject-skill"
-        data-tooltip-content={`ly_anh-${props.src}`}
+        data-tooltip-content={`irem-${props.src}`}
     />
 )
 
@@ -18,23 +18,23 @@ export default function() {
     return  (
         <ul className={style.skills}>
             <li>
-                <TooltipImage src="LyAnhQ" />
-                <TooltipImage src="GhostQ" />
+                <TooltipImage src="IremQ" />
+                <TooltipImage src="CatQ" />
             </li>
             <li>
-                <TooltipImage src="LyAnhW" />
-                <TooltipImage src="GhostW" />
+                <TooltipImage src="IremW" />
+                <TooltipImage src="CatW" />
             </li>
             <li>
-                <TooltipImage src="LyAnhE" />
-                <TooltipImage src="GhostE" />
+                <TooltipImage src="IremE" />
+                <TooltipImage src="CatE" />
             </li>
             <li>
-                <TooltipImage src="LyAnhR" />
-                <TooltipImage src="LyAnhR2" />
+                <TooltipImage src="IremR" />
+                <TooltipImage src="CatR" />
             </li>
             <li>
-                <TooltipImage src="LyAnhT" />
+                <TooltipImage src="T" />
             </li>
         </ul>
     )
