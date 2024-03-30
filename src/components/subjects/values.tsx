@@ -5,7 +5,7 @@ export type ValuesProps = {
     additionalInfo?: React.ReactElement
     parameters: {
         title: string
-        values: number[]
+        values: (number | string)[]
         percent?: boolean
     }[]
 }

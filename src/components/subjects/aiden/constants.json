@@ -1,0 +1,96 @@
+{
+    "Q": {
+        "damage": {
+            "base": [80,110,140,170,200],
+            "attack": 75,
+            "basicAttackAmp": 100
+        },
+        "cooldown_reduction": 1.5,
+        "range_damage": {
+            "base": [50,85,120,155,190],
+            "attack": 70,
+            "basicAttackAmp": 100
+        },
+        "slow": {
+            "duration": 0.45,
+            "effect": [25,30,35,40,45]
+        },
+        "range_cooldown_reduction": 50,
+        "sp_cost": 20,
+        "range_sp_cost": [20,25,30,35,40],
+        "cooldown": {
+            "constant": [5,4.5,4,3.5,3]
+        }
+    },
+    "W": {
+        "damage": {
+            "base": [40,50,60,70,80],
+            "attack": 50
+        },
+        "max_multiplier": 2,
+        "slow": {
+            "duration": 0.65,
+            "effect": 45
+        },
+        "field_duration": 2.5,
+        "field_damage": {
+            "base": [50,80,110,140,170],
+            "attack": 50
+        },
+        "bind": [0.7,0.8,0.9,1,1.1],
+        "sp_cost": 75,
+        "cooldown": [15,14,13,12,11]
+    },
+    "E": {
+        "damage": {
+            "base": [15,30,45,60,75],
+            "attack": 20
+        },
+        "movement_speed": {
+            "duration": 2,
+            "effect": [5,8,11,14,17]
+        },
+        "rush_damage": {
+            "base": [55,85,115,145,175],
+            "attack": 55
+        },
+        "sp_cost": 50,
+        "cooldown": [16,15,14,13,12]
+    },
+    "R": {
+        "first_damage": {
+            "base": [40,65,90],
+            "attack": 60
+        },
+        "first_slow": {
+            "duration": 1,
+            "effect": 40
+        },
+        "center_damage": {
+            "base": [80,130,180],
+            "attack": 110
+        },
+        "stun": 1,
+        "second_damage": {
+            "base": [70,105,140],
+            "attack": 70
+        },
+        "second_slow": {
+            "duration": 1,
+            "effect": 40
+        },
+        "sp_cost": 120,
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "duration": 10,
+        "attack_speed": 0.2,
+        "critical_damage": 30,
+        "critical_chance_convert": [0.2,0.3,0.4],
+        "range": [4,4.5,5],
+        "movement_speed": {
+            "duration": 2,
+            "effect": [7,10,13]
+        }
+    }
+}
