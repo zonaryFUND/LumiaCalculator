@@ -12,6 +12,7 @@ import ItemTooltip from "components/tooltip/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 import useSubjectConfig from "./use-subject-config";
 import { equipmentStatus } from "@app/entity/equipment";
+import SkillsStandard from "components/subjects/skills-standard";
 
 const subject: React.FC = _ => {
     const {
@@ -46,6 +47,13 @@ const subject: React.FC = _ => {
     const onMovementMasterySliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setMovementMastery(+event.target.value);
     }, []);
+
+    const subjectSkills = React.useMemo(() => {
+        if (subject == null) return null;
+        const skills = SubjectSkills[subject];
+        if (skills == undefined) return <SkillsStandard id={subject} />;
+        return React.createElement(SubjectSkills[subject].default, equipment.weapon ? equipmentStatus(equipment.weapon).type : "")
+    }, [subject]);
     
     return (
         <section className={style.base}>
@@ -65,7 +73,7 @@ const subject: React.FC = _ => {
                     <EquipmentSlot slot="leg" subject={subject!} equipment={[equipment, setEquipment]} />
                 </div>
                 <label><input type="checkbox" defaultChecked={damageInFormula} onChange={toggleDamageInFormula} />スキルダメージを計算式で表記する</label>
-                {subject ? SubjectSkills[subject].default(equipment.weapon ? equipmentStatus(equipment.weapon).type : "") : null}
+                {subjectSkills}
             </div>
             <table>
                 <tbody>

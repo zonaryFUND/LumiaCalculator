@@ -92,7 +92,7 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
 const subjectSkillTooltip: React.FC<Props> = props => {
     const src = React.useMemo(() => {
         const standard = Images.skill[props.id][props.skill];
-        if (SkillsDescription[props.id].skills.SkillImage) {
+        if (SkillsDescription[props.id].skills && SkillsDescription[props.id].skills.SkillImage) {
             return SkillsDescription[props.id].skills.SkillImage(props.skill) || standard;
         }
         return standard;

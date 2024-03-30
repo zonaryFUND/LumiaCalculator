@@ -1,0 +1,64 @@
+{
+    "common": {
+        "ball_duration": 4  
+    },
+    "Q": {
+        "duration": 4,
+        "attack_speed": [70,80,90,100,110],
+        "damage": {
+            "attack": [105,108,111,114,117],
+            "basicAttackAmp": 100
+        },
+        "extend_duration": 1,
+        "sp_cost": [10,20,30,40,50],
+        "cooldown": 6
+    },
+    "W": {
+        "damage": {
+            "base": [50,80,110,140,170],
+            "attack": 70
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": 30
+        },
+        "stun": 1,
+        "mound_duration": 5,
+        "range": 0.5,
+        "sp_cost": 70,
+        "cooldown": 13
+    },
+    "E": {
+        "duration": 3,
+        "defense": [10,14,18,22,26],
+        "sp_cost": [60,45,30,15,0],
+        "cooldown": 0
+    },
+    "R": {
+        "damage": {
+            "base": [150,250,350],
+            "attack": 50
+        },
+        "slow": {
+            "duration": 2,
+            "effect": 40
+        },
+        "slow_center": {
+            "duration": 2,
+            "effect": 60
+        },
+        "sp_cost": [100,110,120],
+        "cooldown": [60,50,40]
+    },
+    "T": {
+        "cooldown": {
+            "constant": 1.5
+        },
+        "movement_speed": [12,16,20],
+        "damage": {
+            "attack": [110,120,130],
+            "basicAttackAmp": 100
+        },
+        "duration": 12
+    }
+}
