@@ -21,11 +21,12 @@ const subject: React.FC = _ => {
         level: [level, setLevel],
         weaponMastery: [weaponMastery, setWeaponMastery],
         movementMastery: [movementMastery, setMovementMastery],
-        skillLevels: [skillLevels, setSkillLevels]
+        skillLevels: [skillLevels, setSkillLevels],
+        gauge: [gauge, setGauge]
     } = useSubjectConfig();
 
     const subjectConfig = {
-        subject, equipment, level, weaponMastery, movementMastery, skillLevels
+        subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge
     }
     const status = useStatus(subjectConfig);
 
@@ -47,13 +48,17 @@ const subject: React.FC = _ => {
     const onMovementMasterySliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setMovementMastery(+event.target.value);
     }, []);
+    const onSubjectUniqueGaugeSliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
+        setGauge(+event.target.value);
+    }, []);
+
 
     const subjectSkills = React.useMemo(() => {
         if (subject == null) return null;
         const skills = SubjectSkills[subject];
         if (skills == undefined) return <SkillsStandard id={subject} />;
-        return React.createElement(SubjectSkills[subject].default, equipment.weapon ? equipmentStatus(equipment.weapon).type : "")
-    }, [subject]);
+        return React.createElement(SubjectSkills[subject].default, {weapon: equipment.weapon})
+    }, [subject, equipment.weapon]);
     
     return (
         <section className={style.base}>
@@ -110,6 +115,10 @@ const subject: React.FC = _ => {
             <label>
                 {`移動熟練度${movementMastery}`}
                 <input type="range" min="1" value={movementMastery} max="20" step="1" onChange={onMovementMasterySliderChange}/>
+            </label>
+            <label>
+                {`実験体固有ゲージ${gauge}`}
+                <input type="range" min="0" value={gauge} max="100" step="1" onChange={onSubjectUniqueGaugeSliderChange}/>
             </label>
             <Tooltip 
                 id="weapon"

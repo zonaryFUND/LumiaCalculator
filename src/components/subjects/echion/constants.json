@@ -1,0 +1,115 @@
+{
+    "Q": {
+        "first_damage": {
+            "base": [20,35,50,65,80],
+            "attack": 50
+        },
+        "second": 2,
+        "second_damage": {
+            "base": [20,45,70,95,120],
+            "attack": 70
+        },
+        "slow": {
+            "duration": 1,
+            "effect": [10,15,20,25,30]
+        },
+        "vf_gauge": [[10,14],[11,16],[12,18],[13,20],[14,22]],
+        "cooldown": 5
+    },
+    "W": {
+        "gauge_max_consumption": 50,
+        "shield": {
+            "base": [50,65,80,95,110],
+            "attack": 20
+        },
+        "multiplier": 300,
+        "return_threshold": 100,
+        "return_gauge": [60,70,80,90,100],
+        "cooldown": [10,9.5,9,8.5,8]
+    },
+    "E": {
+        "damage": {
+            "base": [20,35,50,65,80],
+            "attack": 30
+        },
+        "mark": 6,
+        "vf_gauge": [15,16,17,18,19],
+        "cooldown": [17,16,15,14,13]
+    },
+    "R": {
+        "damage_amp_per_vf": [0.6,0.9,1.2,1.5],
+        "overflow": 9,
+        "movement_speed": 5,
+        "area_damage_tick": 0.5,
+        "area_damage": {
+            "base": [6,10,14,18],
+            "attack": 5
+        },
+        "kill_extend": 5,
+        "overload": 12,
+        "range_penalty": 0.3,
+        "extend": 1,
+        "cooldown_reduction": 0.5
+    },
+    "R0_1": {
+        "damage": {
+            "base": [95,180,225,270],
+            "attack": 80
+        },
+        "cooldown": {
+            "constant": 3.5
+        }
+    },
+    "R1": {
+        "damage": {
+            "base": [75,165,205,250],
+            "attack": 80
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 90
+        },
+        "skill_damage_add": [30,40,50,60],
+        "cooldown": {
+            "constant": 3.5
+        }
+    },
+    "R2": {
+        "damage": {
+            "base": [60,150,205,260],
+            "attack": 80,
+            "additionalMaxHP": 10
+        },
+        "second": 0.85,
+        "second_damage": [55,70,85,100],
+        "airborne": 0.75,
+        "skill_lifesteal": [30,35,40,45],
+        "cooldown": {
+            "constant": 4.5
+        }
+    },
+    "R3": {
+        "damage": {
+            "base": [70,160,205,250],
+            "attack": 80
+        },
+        "attack_speed": [8,10,12,14]
+    },
+    "T0": {
+        "upgrade": 1
+    },
+    "T1_2": {
+        "w_cooldown_reduction": 40
+    },
+    "T2_2": {
+        "additional_gauge": 3,
+        "overflow_extend": 4
+    },
+    "T3_2": {
+        "attack_speed_duration": 5,
+        "damage": {
+            "attack": 35,
+            "basicAttackAmp": 100
+        }
+    }
+}

@@ -39,3 +39,7 @@ export default function() {
         </ul>
     )
 }
+
+export function idForLevel(skill: string): string {
+    return skill.slice(skill.length - 1);
+}

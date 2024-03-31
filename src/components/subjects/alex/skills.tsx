@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Skill } from "../skills-standard";
 import style from "components/subjects/skills-standard.modue.styl";
-import { WeaponTypeID } from "@app/entity/equipment";
 import Images from "@app/resources/image";
+import { WeaponID } from "@app/entity/weapon-id";
+import { equipmentStatus } from "@app/entity/equipment";
 
-export default function(weaponType: WeaponTypeID) {
-    const skills = weaponType == "two-handed_sword" || weaponType == "tonfa" ?
+export default function(props: {weapon: WeaponID | null}) {
+    const type = props.weapon == null ? null : equipmentStatus(props.weapon).type;
+    const skills = type == "two-handed_sword" || type == "tonfa" ?
         ["MeleeQ", "MeleeW", "MeleeE", "R", "T"] :
         ["RangeQ", "RangeW", "RangeE", "R", "T"]
 
@@ -24,4 +25,8 @@ export default function(weaponType: WeaponTypeID) {
             }
         </ul>
     )
+}
+
+export function idForLevel(skill: string): string {
+    return skill.slice(skill.length - 1);
 }

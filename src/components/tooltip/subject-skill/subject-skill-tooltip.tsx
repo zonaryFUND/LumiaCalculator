@@ -9,7 +9,7 @@ import Values from "components/subjects/values";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
 
-const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*[qwert]2?|skills)\.tsx$/);
+const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*)\.tsx$/);
 const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
     const pathComponents = path.split("/");
     const [subject, skill] = pathComponents.slice(pathComponents.length - 2);
@@ -49,9 +49,16 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
         return info.hp_cost;
     })()
     const baseCooldown = (() => {
-        if (info.cooldown == undefined || info.cooldown.constant) return null;
-        if (Array.isArray(info.cooldown)) return info.cooldown[props.skillLevel];
-        return info.cooldown;
+        const beforeOverride = (() => {
+            if (info.cooldown == undefined || info.cooldown.constant) return null;
+            if (Array.isArray(info.cooldown)) return info.cooldown[props.skillLevel];
+            return info.cooldown;
+        })();
+        if (SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride) {
+            return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config)(new Decimal(beforeOverride));
+        } else {
+            return beforeOverride;
+        }
     })()
     const constantCooldown = (() => {
         if (info.cooldown == undefined || info.cooldown.constant == undefined) return null;
@@ -99,9 +106,10 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     }, [props.id, props.skill]);
 
     const skillIDForLevel = React.useMemo(() => {
-        const target = props.skill.endsWith("2") ? props.skill.slice(0, props.skill.length - 1) : props.skill;
-        return target.slice(-1) as "Q" | "W" | "E" | "R" | "T"
-    }, [props.skill]);
+        const def = SkillsDescription[props.id].skills
+        if (def == undefined || def.idForLevel == undefined) return props.skill as "Q" | "W" | "E" | "R" | "T";
+        return def.idForLevel(props.skill) as "Q" | "W" | "E" | "R" | "T";
+    }, [props.id, props.skill]);
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip}`}>
