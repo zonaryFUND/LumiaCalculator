@@ -1,0 +1,75 @@
+{
+    "Q": {
+        "first_damage": {
+            "base": [25,40,55,70,85],
+            "defense": 30,
+            "amp": 25
+        },
+        "second_damage": {
+            "base": [45,70,9,120,145],
+            "defense": 45,
+            "amp": 35
+        },
+        "cooldown_reduction": 50,
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": [8,7,6,5,4]
+    },
+    "W": {
+        "damage": {
+            "base": [50,70,90,110,130],
+            "additionalMaxHP": 10,
+            "amp": 50
+        },
+        "q_cooldown_reduction": 20,
+        "defense": 30,
+        "enhanced_cooldown_reduction": 50,
+        "sp_cost": [40,45,50,55,60],
+        "cooldown": {
+            "constant": 0.65
+        },
+        "charge": {
+            "time": [16,15,14,13,12],
+            "max": 2
+        }
+    },
+    "E": {
+        "stepsequence_recovery": 4,
+        "stepsequence_recovery_on_ice": 8,
+        "stepsequence_cost": 50,
+        "damage": {
+            "base": [60,95,130,165,200],
+            "additionalMaxHP": 20,
+            "amp": 80
+        },
+        "sp_cost": 50,
+        "cooldown": 5
+    },
+    "R": {
+        "center_damage": {
+            "base": [100,200,300],
+            "defense": 50,
+            "amp": 60
+        },
+        "outer_damage": {
+            "base": [80,160,240],
+            "defense": 30,
+            "amp": 30
+        },
+        "sp_cost": 100,
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "chill": 20,
+        "slow": 20,
+        "frozen": 120,
+        "stun": 1.1,
+        "damage": {
+            "base": [30,65,100],
+            "defense": 20,
+            "amp": 20
+        },
+        "cooldown": {
+            "constant": [10,8,6]
+        }
+    }
+}
