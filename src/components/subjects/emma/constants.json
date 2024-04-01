@@ -1,0 +1,80 @@
+{
+    "Q": {
+        "damage": {
+            "base": [40,70,1200,130,160],
+            "amp": 75
+        },
+        "duration": 7,
+        "cooldown_reduction": 15,
+        "slow": {
+            "duration": 2,
+            "effect": 40
+        },
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": 5
+    },
+    "W": {
+        "before_blast": 0.5,
+        "damage": {
+            "base": [80,125,170,215,260],
+            "amp": 75
+        },
+        "duration": 7,
+        "cooldown_reduction": 25,
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": [11,10.5,10,9.5,9]
+    },
+    "E": {
+        "heal": [22,24,26,28,30],
+        "morph": [0.6,0.7,0.8,0.9,1],
+        "damage": {
+            "base": [20,40,60,80,100],
+            "amp": 40
+        },
+        "movement_speed": 1.6,
+        "sp_cost": 70,
+        "cooldown": 14
+    },
+    "R": {
+        "Q": {
+            "damage": {
+                "base": [150,200,250],
+                "amp": 90
+            },
+            "bind": 1.5
+        },
+        "W": {
+            "damage": {
+                "base": [200,280,360],
+                "amp": 130
+            }
+        },
+        "E": {
+            "morph": 1.5,
+            "damage": {
+                "base": [40,70,100],
+                "amp": 40
+            },
+            "movement_speed": 1.6
+        },
+        "sp_cost": 100,
+        "cooldown": {
+            "constant": [9,8,7]
+        }
+    },
+    "T": {
+        "attack_speed": 40,
+        "damage": {
+            "amp": [30,40,50],
+            "maxSP": 8
+        },
+        "shield": {
+            "base": [20,25,30],
+            "amp": [20,25,30],
+            "maxSP": 10
+        },
+        "cooldown": {
+            "constant": [12,9,6]
+        }
+    }
+}
