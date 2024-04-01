@@ -1,0 +1,102 @@
+{
+    "Q": {
+        "damage": {
+            "base": [50,80,110,140,170],
+            "amp": 30,
+            "maxHP": 6
+        },
+        "stun": 0.6,
+        "sp_cost": [20,25,30,35,40],
+        "cooldown": 7
+    },
+    "W": {
+        "damage": {
+            "base": [20,40,60,80,100],
+            "amp": 45
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 20
+        },
+        "sp_cost": [15,20,25,30,35],
+        "cooldown": [6.5,6,5.5,5,4.5]
+    },
+    "W2": {
+        "duration": 2,
+        "tick": 0.25,
+        "damage": {
+            "base": [9,18,27,36,45],
+            "amp": 25,
+            "maxHP": 0.5
+        },
+        "slow_max": 32,
+        "sp_cost": 50,
+        "cooldown": 7
+    },
+    "E": {
+        "duration": 4,
+        "invulnerable": 0.5,
+        "damage_reduction": 40,
+        "ally_damage_reduction": [13,16,19,22,25],
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": [14,13,12,11]
+    },
+    "E2": {
+        "damage": {
+            "base": [40,65,90,115,140],
+            "amp": 60,
+            "maxHP": 10
+        },
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": 2
+    },
+    "R": {
+        "self": {
+            "shield": {
+                "base": [100,150,200],
+                "amp": 50,
+                "lostHP": 15
+            },
+            "duration": 2.5,
+            "channel": 0.55,
+            "damage": {
+                "base": [70,150,230],
+                "amp": 40,
+                "maxHP": 10
+            },
+            "slow": {
+                "duration": 1,
+                "effect": 50
+            }
+        },
+        "ally": {
+            "shield": {
+                "base": [100,200,300],
+                "amp": 50,
+                "targetLostHP": 10
+            },
+            "duration": 2.5,
+            "channel": 3,
+            "range": 5,
+            "damage": {
+                "base": [70,150,230],
+                "maxHP": 10
+            },
+            "airborne": 0.75
+        },
+        "sp_cost": [90,100,110],
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "range": 8,
+        "hp_regen": [40,60,80],
+        "revive": [1,1.5,2],
+        "additional_heal": {
+            "base": [5,10,15],
+            "amp": 3
+        },
+        "cooldown": {
+            "constant": [140,130,120]
+        }
+    }
+}
