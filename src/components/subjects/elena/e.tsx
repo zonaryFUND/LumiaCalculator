@@ -8,7 +8,7 @@ import style from "components/tooltip/tooltip.module.styl";
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            <span className={style.level}>持続効果</span>: エレナは1秒ごとに{Constants.E.stepsequence_recovery}の
+            <span className={style.level}>持続効果</span>：エレナは1秒ごとに{Constants.E.stepsequence_recovery}の
             <span className={style.emphasis}>ステップシークエンス</span>を回復します。氷床地帯では1秒ごとに{Constants.E.stepsequence_recovery_on_ice}
             の<span className={style.emphasis}>ステップシークエンス</span>を回復します。<br />
             <br />

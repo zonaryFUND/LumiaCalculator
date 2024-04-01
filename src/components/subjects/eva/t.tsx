@@ -7,7 +7,7 @@ import { SubjectSkillProps } from "../props";
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            テレキネシス: エヴァはレベル6から箱、釣り、採集、復活、航空補給箱などを遠距離で操作できます。戦闘中には航空補給箱、隕石、生命の木獲得または実験体や動物のみ遠距離で操作できます。<br />
+            テレキネシス：エヴァはレベル6から箱、釣り、採集、復活、航空補給箱などを遠距離で操作できます。戦闘中には航空補給箱、隕石、生命の木獲得または実験体や動物のみ遠距離で操作できます。<br />
             <br />
             エヴァは{Constants.T.cooldown.constant}秒ごとに次の基本攻撃の射程距離が{Constants.T.basic_attack_range}増加し、
             <Damage skill="T" constants={Constants.T.damage} {...props} />のスキルダメージを与えます。<br />

@@ -54,16 +54,29 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
             if (Array.isArray(info.cooldown)) return info.cooldown[props.skillLevel];
             return info.cooldown;
         })();
+        if (beforeOverride == null) {
+            return null;
+        }
         if (SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride) {
-            return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config)(new Decimal(beforeOverride));
+            return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config, props.status)(new Decimal(beforeOverride));
         } else {
             return beforeOverride;
         }
     })()
     const constantCooldown = (() => {
-        if (info.cooldown == undefined || info.cooldown.constant == undefined) return null;
-        if (Array.isArray(info.cooldown.constant)) return info.cooldown.constant[props.skillLevel];
-        return info.cooldown.constant;
+        const beforeOverride = (() => {
+            if (info.cooldown == undefined || info.cooldown.constant == undefined) return null;
+            if (Array.isArray(info.cooldown.constant)) return info.cooldown.constant[props.skillLevel];
+            return info.cooldown.constant;
+        })()
+        if (beforeOverride == null) {
+            return null;
+        }
+        if (SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride) {
+            return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config, props.status)(new Decimal(beforeOverride));
+        } else {
+            return beforeOverride;
+        }
     })();
     const baseCharge = (() => {
         if (info.charge == undefined) return null;
@@ -88,7 +101,7 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
             }
             {
                 constantCooldown != null ?
-                <>クールダウン{constantCooldown}秒</> :
+                <>クールダウン{constantCooldown.toString()}秒</> :
                 null
             }
             {chargeExpression}

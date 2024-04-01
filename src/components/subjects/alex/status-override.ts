@@ -8,13 +8,13 @@ export default function(status: StatusProps, config: SubjectConfig): StatusProps
     const isMelee = equipmentType == "tonfa" || equipmentType == "two-handed_sword"
 
     const as = Constants.common.e_as[config.skillLevels.E];
-    const additional = status.attackSpeed.additional.add(as)
+    const additional = status.attackSpeed.multiplier.add(as)
     const def = Constants.T.defense[config.skillLevels.T];
     return {
         ...status,
         attackSpeed: {
             base: status.attackSpeed.base,
-            additional,
+            multiplier: additional,
             calculated: status.attackSpeed.base.times(additional.add(100)).dividedBy(100)
         },
         defense: isMelee ? status.defense.add(def) : status.defense

@@ -14,7 +14,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             が少しずつ貯まる間、敵は移動速度が{Constants.T.slow}％減少し、冷気が{Constants.T.frozen}まで貯まった場合、敵は{Constants.T.stun}
             秒間気絶し、<span className={style.emphasis}>氷結</span>状態になります。<br />
             <br />
-            <span className={style.emphasis}>氷結</span>: エレナまたはエレナの味方から攻撃されると
+            <span className={style.emphasis}>氷結</span>：エレナまたはエレナの味方から攻撃されると
             <Damage skill="T" constants={Constants.T.damage} {...props} />の追加スキルダメージを受けて<span className={style.emphasis}>氷結</span>状態が解除されます。
         </>
     );

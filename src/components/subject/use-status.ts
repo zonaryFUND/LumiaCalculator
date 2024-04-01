@@ -60,12 +60,11 @@ export default function(config: SubjectConfig): Status | undefined {
 
     const weaponTypeID = equipment.weapon ? equipmentStatus(equipment.weapon).type as WeaponTypeID : null
     const attackSpeed = (() => {        
-        const base = baseStatus.attackSpeed.add(weaponTypeID ? weaponBaseStatus(weaponTypeID).attackSpeed : 0);
-        const additional = sumDecimalEquipmentStatus("attackSpeed", inSlot).add(masteryFactor ? masteryFactor.attackSpeed.times(weaponMastery) : 0);
-        
+        const base = baseStatus.attackSpeed.add(weaponTypeID ? weaponBaseStatus(weaponTypeID).attackSpeed : 0).round2();
+        const multiplier = sumDecimalEquipmentStatus("attackSpeed", inSlot).add(masteryFactor ? masteryFactor.attackSpeed.times(weaponMastery) : 0);
         return {
-            base, additional,
-            calculated: base.times(additional.add(100)).dividedBy(100)
+            base, multiplier,
+            calculated: base.times(multiplier.add(100)).round().dividedBy(100)
         };
     })();
 

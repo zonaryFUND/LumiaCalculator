@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import style from './App.styl';
 import Subject from "components/subject/subject";
+import Decimal from 'decimal.js';
 
 interface AppProps {}
 

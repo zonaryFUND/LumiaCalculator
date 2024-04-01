@@ -12,7 +12,7 @@ export type StatusProps = {
     baseAdditionalAttackPower: Decimal
     attackSpeed: {
         base: Decimal
-        additional: Decimal
+        multiplier: Decimal
         calculated: Decimal
     }
     criticalChance: Decimal
