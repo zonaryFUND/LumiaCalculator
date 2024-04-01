@@ -11,7 +11,7 @@ const q: React.FC<SubjectSkillProps> = props => (
         のスキルダメージを与え、2回目の回転は<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />
         のスキルダメージを与えます。バイナリスピンをキャストするときは移動速度が
         {Constants.Q.movement_speed.duration}秒間
-        {Constants.Q.movement_speed.effect}%増加します。
+        {Constants.Q.movement_speed.effect}％増加します。
     </>
 );
 

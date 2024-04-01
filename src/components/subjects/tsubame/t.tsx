@@ -13,8 +13,8 @@ const t: React.FC<SubjectSkillProps> = props => {
             {
                 props.showEquation ?
                 <>
-                    致命打確率1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>
-                    と致命打ダメージ増加量1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>
+                    致命打確率1％あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>
+                    と致命打ダメージ増加量1％あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>
                     の攻撃力が増加します。                    
                 </>
                 :

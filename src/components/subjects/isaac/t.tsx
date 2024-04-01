@@ -23,6 +23,6 @@ export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.T.damage.base},
         {title: "体力回復量(％)", values: Constants.T.heal, percent: true},
-        {title: "移動速度増加量(%)", values: Constants.T.movement_speed, percent: true}
+        {title: "移動速度増加量(％)", values: Constants.T.movement_speed, percent: true}
     ]
 }

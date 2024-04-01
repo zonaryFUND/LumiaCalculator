@@ -3,6 +3,7 @@ import Constants from "./constants.json";
 import Damage from "../damage";
 import { ValuesProps } from "../values";
 import { SubjectSkillProps } from "../props";
+import style from "components/tooltip/tooltip.module.styl";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
@@ -17,7 +18,7 @@ const w: React.FC<SubjectSkillProps> = props => {
 export default w;
 
 export const values: ValuesProps = {
-    additionalInfo: <>クールダウン減少が適用される基本スキルは<span>強奪(R)、硬化(W)、武器スキル</span>以外のスキルです。</>,
+    additionalInfo: <>クールダウン減少が適用される基本スキルは<span className={style.emphasis}>強奪(R)、硬化(W)、武器スキル</span>以外のスキルです。</>,
     parameters: [
         {title: "ダメージ量", values: Constants.W.damage.base},
         {title: "クールダウン", values: Constants.W.cooldown}

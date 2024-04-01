@@ -8,7 +8,7 @@ import style from "components/tooltip/tooltip.module.styl";
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            <span className={style.level}>持続効果</span>: エマはスタミナを消耗するたびに、消費したスタミナの
+            <span className={style.level}>持続効果</span>：エマはスタミナを消耗するたびに、消費したスタミナの
             {Constants.E.heal[props.config.skillLevels.E]}％だけ体力を回復します。<br />
             <br />
             エマが指定した敵にマジックビームを飛ばして敵を{Constants.E.morph[props.config.skillLevels.E]}
