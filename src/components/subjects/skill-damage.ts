@@ -2,7 +2,7 @@ import { Status } from "components/subject/status";
 import Decimal from "decimal.js";
 
 export default function skillDamage(status: Status, level: number, skillLevel: number, dictionary: any): Decimal {
-    return ["base", "perLevel", "attack", "additionalAttack", "amp", "maxHP", "additionalMaxHP"].reduce((prev, key) => {
+    return ["base", "perLevel", "attack", "additionalAttack", "amp", "maxHP", "additionalMaxHP", "criticalChance"].reduce((prev, key) => {
         if (dictionary[key] == undefined) return prev;
         const skillValue = new Decimal(Array.isArray(dictionary[key]) ? dictionary[key][skillLevel] : dictionary[key]);
 
@@ -22,6 +22,8 @@ export default function skillDamage(status: Status, level: number, skillLevel: n
                 return prev.add(maxHP.times(skillValue).dividedBy(100));
             case "additionalMaxHP":
                 return prev.add(status.additionalMaxHP.times(skillValue).dividedBy(100));
+            case "criticalChance":
+                return prev.addPercent(status.criticalChance.percent(skillValue));
         }
 
         return prev;

@@ -1,0 +1,82 @@
+{
+    "Q": {
+        "damage": {
+            "attack": [105,115,125,135,145]
+        },
+        "max": 2,
+        "range": 9,
+        "duration": 2.5,
+        "second_damage": {
+            "attack": [94,103,112,121,130]
+        },
+        "cooldown": {
+            "constant": 0.75
+        }
+    },
+    "W": {
+        "damage": {
+            "base": [80,100,120,140,160],
+            "attack": 20,
+            "amp": 75,
+            "criticalChance": 65
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 35
+        },
+        "gauge": [30,35,40,45,50],
+        "e_cooldown_reduction": [0.5,0,75,1,1.25,1.5],
+        "damage_reduction": 20,
+        "sp_cost": 60,
+        "cooldown": {
+            "constant": 2.5
+        }
+    },
+    "E": {
+        "damage": {
+            "base": [60,100,140,180,220],
+            "attack": 50,
+            "amp": 60
+        },
+        "sp_cost": [45,55,65,75,85],
+        "cooldown": [20,19,18,17,16]
+    },
+    "R": {
+        "range": 5,
+        "first_damage": {
+            "base": [50,100,150],
+            "attack": 50,
+            "amp": 70
+        },
+        "slow": [40,45,50],
+        "duration": 3,
+        "second_damage": {
+            "base": [70,155,240],
+            "attack": 80,
+            "amp": 90
+        },
+        "stun": 1,
+        "sp_cost": [90,120,150],
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "max_attack_speed": 1.1,
+        "amp_conversion": 1.2,
+        "charge_time": [14,12,10],
+        "damage": {
+            "base": [5,10,15],
+            "attack": 3,
+            "amp": 3
+        },
+        "full_charge_damage": {
+            "base": [10,25,40],
+            "attack": 100,
+            "amp": 35,
+            "targetMaxHP": [4,7,10]
+        },
+        "slow": {
+            "duration": 0.3,
+            "effect": 90
+        }
+    }
+}
