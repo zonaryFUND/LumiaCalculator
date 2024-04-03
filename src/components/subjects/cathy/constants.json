@@ -1,0 +1,82 @@
+{
+    "Q": {
+        "additional_damage": {
+            "amp": 50
+        },
+        "damage": {
+            "base": [40,70,100,130,160],
+            "amp": 80
+        },
+        "cooldown_reduction": [40,45,50,55,60],
+        "cast_acceleration_attack_speed": 1,
+        "dual_sword": 110,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": 16
+    },
+    "W": {
+        "inner_damage": {
+            "base": [30,45,60,75,90],
+            "amp": 60
+        },
+        "outer_damage": {
+            "base": [50,100,150,200,250],
+            "amp": 85
+        },
+        "slow": {
+            "duration": 2,
+            "effect": 30
+        },
+        "sp_cost": [70,75,80,85,90],
+        "cooldown": [12,11.5,11,10.5,10]
+    },
+    "E": {
+        "damage": {
+            "base": [30,40,50,60,70],
+            "amp": 25
+        },
+        "bind": 0.45,
+        "stun": 1.2,
+        "knockback_damage": {
+            "base": [30,50,70,90,110],
+            "amp": 45
+        },
+        "sp_cost": 70,
+        "cooldown": [15,14,13,12,11]
+    },
+    "R": {
+        "heal_duration": 4,
+        "heal": {
+            "targetMaxHP": 5,
+            "amp": 4
+        },
+        "min_damage": {
+            "base": [100,1750,250],
+            "amp": 70
+        },
+        "max_damage_ratio": 2,
+        "max_damage_target_hp": 30,
+        "sp_cost": [120,135,150],
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "wound_duration": 4,
+        "wound": {
+            "amp": 18
+        },
+        "max_stack": 3,
+        "critical_wound": {
+            "targetMaxHP": 4,
+            "amp": 22
+        },
+        "healing_reduction": 60,
+        "shield_duration": 2,
+        "shield": {
+            "base": [50,100,150],
+            "amp": 35
+        },
+        "movement_speed": [3,8,13],
+        "cooldown": {
+            "constant": 16
+        }
+    }
+}

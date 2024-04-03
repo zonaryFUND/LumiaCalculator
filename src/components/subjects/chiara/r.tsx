@@ -13,7 +13,7 @@ const r: React.FC<SubjectSkillProps> = props => (
         <Damage skill="R" constants={Constants.R.heal} {...props} />の体力を回復し、暴走ゲージを
         {Constants.R.gauge_gain}獲得します。暴走中のキアラは審判を下すことができます。<br />
         <br />
-        審判:対象の位置に素早く落下し、<Damage skill="R" constants={Constants.R.finish_damage} {...props} />
+        審判：対象の位置に素早く落下し、<Damage skill="R" constants={Constants.R.finish_damage} {...props} />
         の固定ダメージを与えます。対象の烙印スタック1あたりダメージ量が{Constants.R.additional_damage_per_stack}
         ％増加します。審判で実験体を倒した場合には暴走状態が初期化されて審判を再び使用することができます。実験体を倒せなかった場合、暴走状態が終了されます。
     </>
