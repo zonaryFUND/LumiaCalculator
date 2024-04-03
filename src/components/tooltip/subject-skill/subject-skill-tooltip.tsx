@@ -5,9 +5,10 @@ import baseStyle from "../tooltip.module.styl";
 import style from "./subject-skill-tooltip.module.styl";
 import Images from "@app/resources/image";
 import Decimal from "decimal.js";
-import Values from "components/subjects/values";
+import Values, { ValuesProps } from "components/subjects/values";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
+import { SubjectSkillProps } from "components/subjects/props";
 
 const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*)\.tsx$/);
 export const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
@@ -111,6 +112,12 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
 };
 
 const subjectSkillTooltip: React.FC<Props> = props => {
+    const subjectSkillsProps: SubjectSkillProps = {
+        showEquation: props.showEquation,
+        config: props.config,
+        status: props.status
+    }
+
     const src = React.useMemo(() => {
         const standard = Images.skill[props.id][props.skill];
         if (SkillsDescription[props.id].skills && SkillsDescription[props.id].skills.SkillImage) {
@@ -124,6 +131,13 @@ const subjectSkillTooltip: React.FC<Props> = props => {
         if (def == undefined || def.idForLevel == undefined) return props.skill as "Q" | "W" | "E" | "R" | "T";
         return def.idForLevel(props.skill) as "Q" | "W" | "E" | "R" | "T";
     }, [props.id, props.skill]);
+
+    const valuesProps: ValuesProps = (() => {
+        if (!props.showEquation) return null;
+        const values = SkillsDescription[props.id][props.skill.toLowerCase()].values
+        if (values == undefined) return null;
+        return typeof values === "function" ? values(subjectSkillsProps) : values;
+    })();
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip}`}>
@@ -139,17 +153,13 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     </div>
                 </header>
                 <p>
-                    {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, {
-                        showEquation: props.showEquation,
-                        config: props.config,
-                        status: props.status
-                    })}
+                    {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, subjectSkillsProps)}
                 </p>
             </div>
             {
-                props.showEquation && SkillsDescription[props.id][props.skill.toLowerCase()].values != undefined ? (
+                valuesProps ? (
                     <div className={style.values}>
-                        <Values {...SkillsDescription[props.id][props.skill.toLowerCase()].values} skillLevel={props.config.skillLevels[skillIDForLevel]} />
+                        <Values {...valuesProps} skillLevel={props.config.skillLevels[skillIDForLevel]} />
                     </div>
                 ) : null
             }

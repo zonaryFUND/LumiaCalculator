@@ -1,5 +1,6 @@
 import * as React from "react";
 import style from "./values.module.styl";
+import { SubjectSkillProps } from "./props";
 
 export type ValuesProps = {
     additionalInfo?: React.ReactElement
@@ -9,6 +10,8 @@ export type ValuesProps = {
         percent?: boolean
     }[]
 }
+
+export type ValuesPropsGenerator = (props: SubjectSkillProps) => ValuesProps;
 
 const values: React.FC<ValuesProps & {skillLevel: number}> = props => (
     <>
@@ -38,5 +41,6 @@ const values: React.FC<ValuesProps & {skillLevel: number}> = props => (
         </ul>
     </>
 );
+
 
 export default values;
