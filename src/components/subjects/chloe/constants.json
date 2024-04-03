@@ -1,0 +1,85 @@
+{
+    "nina": {
+        "base_attack": 10,
+        "base_defense": 30,
+        "attack_speed": 1
+    },
+    "Q": {
+        "damage": {
+            "base": [70,90,110,130,150],
+            "summoned_attack": 90
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": [10,15,20,25,30]
+        },
+        "sp_cost": [70,75,80,85,90],
+        "cooldown": 5
+    },
+    "W": {
+        "damage": {
+            "base": [15,24,33,42,51],
+            "attack": 5
+        },
+        "slow": 30,
+        "duration": 3,
+        "drop_damage": {
+            "base": [20,40,60,80,100],
+            "attack": 80
+        },
+        "drop_slow": {
+            "duration": 1,
+            "effect": [30,35,40,45,50]
+        },
+        "nina_damage": {
+            "base": [40,80,120,160,200],
+            "summoned_attack": 70
+        },
+        "airborne": 0.5,
+        "movement_speed": {
+            "duration": 2,
+            "effect": 30
+        },
+        "sp_cost": [90,95,100,105,110],
+        "cooldown": [15,14,13,12,11]
+    },
+    "E": {
+        "first_damage": {
+            "base": [40,55,70,85,100],
+            "attack": 40
+        },
+        "reuse": 1,
+        "second_damage": {
+            "base": [50,80,110,140,170],
+            "summoned_attack": 60
+        },
+        "sp_cost": [80,85,90,95,100],
+        "cooldown": [16,15,14,13,12]
+    },
+    "R": {
+        "duration": 6,
+        "summoned_attack_speed": [20,25,30],
+        "nina_movement_speed": [20,25,30],
+        "we_cooldown_reduction": 30,
+        "damage": [42,72,102],
+        "damage_max_multipler": 2.5,
+        "attacked_damage": 70,
+        "linked_damage": 60,
+        "sp_cost": [80,70,60],
+        "cooldown": [75,65,55]
+    },
+    "T": {
+        "damage": {
+            "base": [20,50,80],
+            "summoned_attack": 50
+        },
+        "nina_revive": [20,18,16],
+        "nina_revive_cost": 30,
+        "nina_revive_hp": 80,
+        "base_chloe_status_ratio": 60,
+        "per_level_chloe_status_ratio": 2,
+        "nina_attack": [5,10,15],
+        "nina_defense": [10,30,50],
+        "nina_maxhp": [200,300,400]
+    }
+}

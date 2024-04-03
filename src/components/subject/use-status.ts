@@ -3,11 +3,9 @@ import Decimal from "decimal.js";
 import { BaseBasicAttackRange, baseStatus as getBaseStatus } from "@app/entity/base-status";
 import { EquipmentStatus, PerLevelStatus, WeaponTypeID, equipmentStatus, weaponBaseStatus } from "@app/entity/equipment";
 import { mastery } from "@app/entity/mastery";
-import useSubjectConfig, { Response as ConfigResponse, SubjectConfig } from "./use-subject-config";
+import { SubjectConfig } from "./use-subject-config";
 import { Status, StatusOverride, StatusProps, from } from "./status";
 import { SubjectStatusOverride } from "components/subjects/status-override";
-
-type Response = ConfigResponse & { status?: Status }
 
 function sumDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Decimal {
     return status
@@ -127,5 +125,5 @@ export default function(config: SubjectConfig): Status | undefined {
         return SubjectStatusOverride[subject] ? SubjectStatusOverride[subject].default : null
     })();
 
-    return override ? from(override(base, config), base) : from(base);
+    return override ? from(override(base, config), config, base) : from(base, config);
 }

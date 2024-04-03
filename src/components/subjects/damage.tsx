@@ -22,7 +22,9 @@ type Props = SubjectSkillProps & {
         targetLostHP?: Value
         maxSP?: Value
         criticalChance?: Value
+        summoned_attack?: Value
     }
+    summonedName?: string
 }
 
 function current(skillLevel: number, value: Value): Decimal.Value {
@@ -73,6 +75,8 @@ const damage: React.FC<Props> = props => {
                                 return <span key={key} className={style.critical}>+{
                                     props.status.criticalChance.percent(current(skillLevel, props.constants.criticalChance!)).toString()
                                 }％ = (致命打確率の{current(skillLevel, props.constants.criticalChance!).toString()}％)</span>;
+                            case "summoned_attack":
+                                return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(skillLevel, props.constants.summoned_attack!).toString()}％{right}</span>;
                         }
                     })
                 }

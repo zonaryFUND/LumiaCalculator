@@ -12,18 +12,20 @@ export default function skillDamage(status: Status, level: number, skillLevel: n
             case "perLevel":
                 return prev.add(skillValue.times(level));
             case "attack":
-                return prev.add(status.attackPower.times(skillValue).dividedBy(100));
+                return prev.add(status.attackPower.percent(skillValue));
             case "additionalAttack":
-                return prev.add(status.additionalAttackPower.times(skillValue).dividedBy(100));
+                return prev.add(status.additionalAttackPower.percent(skillValue));
             case "amp":
-                return prev.add(status.skillAmp.times(skillValue).dividedBy(100));
+                return prev.add(status.skillAmp.percent(skillValue));
             case "maxHP":
                 const maxHP = status.baseMaxHP.add(status.additionalMaxHP);
-                return prev.add(maxHP.times(skillValue).dividedBy(100));
+                return prev.add(maxHP.percent(skillValue));
             case "additionalMaxHP":
-                return prev.add(status.additionalMaxHP.times(skillValue).dividedBy(100));
+                return prev.add(status.additionalMaxHP.percent(skillValue));
             case "criticalChance":
                 return prev.addPercent(status.criticalChance.percent(skillValue));
+            case "summoned_attack":
+                return prev.add(status.summonedStatus!.attackPower.percent(skillValue));
         }
 
         return prev;
