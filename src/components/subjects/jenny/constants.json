@@ -1,0 +1,68 @@
+{
+    "Q": {
+        "count": 3,
+        "damage": {
+            "base": [50,60,70,80,90],
+            "amp": 30
+        },
+        "cooldown_reduction": 0.5,
+        "buff_duration": 6,
+        "max_stack": 3,
+        "red_attack_speed": 3,
+        "black_movement_speed": 2,
+        "sp_cost": [80,85,90,95,100],
+        "cooldown": [9,8.5,8,7.5,7]
+    },
+    "W": {
+        "first_damage": {
+            "base": [30,55,80,105,130],
+            "amp": 35
+        },
+        "slow": {
+            "duration": 0.25,
+            "effect": 30
+        },
+        "second_damage": {
+            "base": [30,55,80,105,130],
+            "amp": 35
+        },
+        "sp_cost": 100,
+        "cooldown": 20
+    },
+    "E": {
+        "cooldown_reduction": 1,
+        "count": 3,
+        "damage": {
+            "base": [30,70,110,150,190],
+            "amp": 45
+        },
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": {
+            "constant": [13,12,11,10,9]
+        }
+    },
+    "R": {
+        "slow": [30,35,40],
+        "duration": 2,
+        "damage": {
+            "base": [100,200,300],
+            "amp": 70
+        },
+        "charm": 1.25,
+        "sp_cost": [100,125,150],
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "buff_duration": 6,
+        "attack_speed": [40,60,80],
+        "movement_speed": 3,
+        "act_duration": 3,
+        "hp": {
+            "base": 100,
+            "maxHP": [2,11,20]
+        },
+        "cooldown": {
+            "constant": 120
+        }
+    }
+}
