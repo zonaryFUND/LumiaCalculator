@@ -1,0 +1,95 @@
+{
+    "HumanQ": {
+        "damage": {
+            "base": [60,90,120,150,180],
+            "amp": 50
+        },
+        "heal": {
+            "base": [20,40,60,80,100],
+            "amp": 20
+        },
+        "fuel_gain": 20,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [6,5.5,5,4.5,4]
+    },
+    "HumanW": {
+        "damage": {
+            "base": [80,105,130,155,180],
+            "amp": 70
+        },
+        "slow": {
+            "duration": 2,
+            "effect": 25
+        },
+        "fuel_gain": 5,
+        "sp_cost": [35,40,45,50,55],
+        "cooldown": [14,13,12,11,10]
+    },
+    "HumanE": {
+        "min_damage": {
+            "base": [110,130,150,170,190],
+            "amp": 50
+        },
+        "max_damage": {
+            "base": [242,286,330,374,418],
+            "amp": 110
+        },
+        "knockback_threshold": 3,
+        "fuel_gain": {
+            "min": 4,
+            "max": 49
+        },
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [14,13.5,13,12.5,12]
+    },
+    "HumanR": {
+        "fuel_consumption": 16,
+        "movement_speed": [0.3,0.375,0.45],
+        "defense": [14,22,30],
+        "ms_penalty": {
+            "duration": 2,
+            "effect": [-30,-15,0]
+        },
+        "threshold": 50,
+        "cooldown": [8,6,4]
+    },
+    "BikeQ": {
+        "damage": {
+            "base": [50,75,100,125,150],
+            "amp": 65
+        },
+        "cooldown": [3.5,3,2.5,2,1.5]
+    },
+    "BikeW": {
+        "damage": {
+            "base": [60,100,140,180,220],
+            "amp": 70
+        },
+        "airborne": 0.65,
+        "cooldown": [8,7.5,7,6.5,6]
+    },
+    "BikeE": {
+        "damage": {
+            "base": [40,70,100,130,160],
+            "amp": 60
+        },
+        "ms_max_damage": [42,70,98,126,154],
+        "cooldown": [13,12,11,10,9]
+    },
+    "BikeR": {
+        "duration": 5,
+        "damage": {
+            "base": [20,60,100],
+            "attack": 100,
+            "amp": 50
+        }
+    },
+    "T": {
+        "attack_speed": [0.3,0.65,1],
+        "max_fuel": 1,
+        "area_threshold": 10,
+        "max_attack_speed": 10,
+        "max_skill_amp": 5,
+        "fuel_consumption": 1
+    }
+}

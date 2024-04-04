@@ -1,0 +1,70 @@
+{
+    "Q": {
+        "damage": {
+            "base": [100,150,200,250,300],
+            "amp": 60,
+            "maxHP": 8
+        },
+        "slow": [30,35,40,45,50],
+        "hp_cost": [40,45,50,55,60],
+        "cooldown": 7
+    },
+    "W": {
+        "heal": {
+            "base": [20,55,90,125,160],
+            "maxHP": 6,
+            "stack": 1
+        },
+        "defense": {
+            "duration": 2,
+            "effect": [15,17,19,21,23]
+        },
+        "cooldown": [15,14,13,12,11]
+    },
+    "E": {
+        "first_damage": {
+            "base": [50,75,100,125,150],
+            "amp": 60,
+            "maxHP": 6
+        },
+        "airborne": 0.8,
+        "reuse": 3,
+        "second_damage": {
+            "base": [60,95,130,165,200],
+            "amp": 70,
+            "maxHP": 9
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": [30,32.5,35,37.5,40]
+        },
+        "hp_cost": 30,
+        "cooldown": [18,16,14,12,10]
+    },
+    "R": {
+        "duration": 3,
+        "count": 6,
+        "damage": {
+            "base": [50,95,140],
+            "amp": 40,
+            "maxHP": 5
+        },
+        "slow": {
+            "duration": 0.3,
+            "effect": [30,40,50]
+        },
+        "hp_cost": [50,75,100],
+        "cooldown": [80,70,60]
+    },
+    "T": {
+        "food": 20,
+        "max_stack": 100,
+        "stack_gain": {
+            "uncommon": 4,
+            "rare": 7,
+            "epic": 10,
+            "legendary": 12
+        },
+        "max_hp": [1,2,3]
+    }
+}

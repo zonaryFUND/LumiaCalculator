@@ -13,7 +13,6 @@ import { SubjectSkillProps } from "components/subjects/props";
 const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*)\.tsx$/);
 export const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
     const pathComponents = path.split("/");
-    console.log(pathComponents)
     const [subject, skill] = pathComponents.slice(pathComponents.length - 2);
     skills[subject] = {
         ...skills[subject],

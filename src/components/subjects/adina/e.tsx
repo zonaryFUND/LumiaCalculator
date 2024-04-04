@@ -12,7 +12,7 @@ const e: React.FC<SubjectSkillProps> = props => {
         if (props.showEquation) {
             return <>(ダメージ量の{Constants.E.star}％)</>;
         } else {
-            const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.E, Constants.E.damage);
+            const damage = skillDamage(props.status, props.config, "E", Constants.E.damage);
             return <>{damage.dividedBy(2).toString()}</>;
         }
     })();

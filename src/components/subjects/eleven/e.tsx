@@ -7,7 +7,7 @@ import { ValuesProps } from "../values";
 import { SubjectSkillProps } from "../props";
 
 const e: React.FC<SubjectSkillProps> = props => {
-    const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.W, Constants.W.damage)
+    const damage = skillDamage(props.status, props.config, "W", Constants.W.damage)
 
     return (
         <>

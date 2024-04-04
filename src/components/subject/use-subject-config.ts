@@ -26,6 +26,7 @@ export type Response = {
     movementMastery: StateProps<number>
     skillLevels: StateProps<SkillLevels>
     gauge: StateProps<number>
+    stack: StateProps<number>
 }
 
 export type SubjectConfig = {
@@ -36,6 +37,7 @@ export type SubjectConfig = {
     movementMastery: number,
     skillLevels: SkillLevels
     gauge: number
+    stack: number
 }
 
 export default function(): Response {
@@ -46,7 +48,8 @@ export default function(): Response {
         weaponMastery: 1,
         movementMastery: 1,
         skillLevels: { Q: 0, W: 0, E: 0, R: 0, T: 0 },
-        gauge: 0
+        gauge: 0,
+        stack: 0
     })
     const [subject, setSubject] = React.useState<SubjectID | null>(config?.subject || null);
     const [level, setLevel] = React.useState(config?.level || 1);
@@ -57,9 +60,10 @@ export default function(): Response {
     } as Equipment)
     const [skillLevels, setSkillLevels] = React.useState(config?.skillLevels || { Q: 1, W: 1, E: 1, R: 1, T: 1 });
     const [gauge, setGauge] = React.useState(0);
+    const [stack, setStack] = React.useState(0);
 
     React.useEffect(() => {
-        setConfig({ subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge });
+        setConfig({ subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge, stack });
     }, [subject, level, weaponMastery, movementMastery, equipment, gauge]);
     
     return {
@@ -69,6 +73,7 @@ export default function(): Response {
         weaponMastery: [weaponMastery, setWeaponMastery],
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels],
-        gauge: [gauge, setGauge]
+        gauge: [gauge, setGauge],
+        stack: [stack, setStack]
     }
 }

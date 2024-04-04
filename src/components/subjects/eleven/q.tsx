@@ -7,7 +7,7 @@ import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "../props";
 
 const q: React.FC<SubjectSkillProps> = props => {
-    const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.Q, Constants.Q.damage)
+    const damage = skillDamage(props.status, props.config, "Q", Constants.Q.damage)
     const slow = Constants.Q.slow[props.config.skillLevels.Q]
 
     return (

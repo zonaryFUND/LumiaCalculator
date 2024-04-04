@@ -11,7 +11,7 @@ const BasicAttackDamage: React.FC<SubjectSkillProps> = props => {
         if (props.showEquation) {
             return <span className={style.emphasis}>(アロンソのレベル比例{Constants.Q.basic_attack_damage.perLevel})</span>
         } else {
-            const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.Q, Constants.Q.basic_attack_damage);
+            const damage = skillDamage(props.status, props.config, "Q", Constants.Q.basic_attack_damage);
             return <span className={style.emphasis}>{damage.toString()}</span>
         }
     })();

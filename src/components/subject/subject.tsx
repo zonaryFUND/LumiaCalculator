@@ -13,6 +13,7 @@ import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-
 import useSubjectConfig from "./use-subject-config";
 import { equipmentStatus } from "@app/entity/equipment";
 import SkillsStandard from "components/subjects/skills-standard";
+import { SubjectStackInfo } from "components/subjects/stack";
 
 const subject: React.FC = _ => {
     const {
@@ -22,11 +23,12 @@ const subject: React.FC = _ => {
         weaponMastery: [weaponMastery, setWeaponMastery],
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels],
-        gauge: [gauge, setGauge]
+        gauge: [gauge, setGauge],
+        stack: [stack, setStack]
     } = useSubjectConfig();
 
     const subjectConfig = {
-        subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge
+        subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge, stack
     }
     const status = useStatus(subjectConfig);
 
@@ -51,6 +53,9 @@ const subject: React.FC = _ => {
     const onSubjectUniqueGaugeSliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setGauge(+event.target.value);
     }, []);
+    const onSubjectStackSliderChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
+        setStack(+event.target.value);
+    }, []);
 
 
     const subjectSkills = React.useMemo(() => {
@@ -59,6 +64,18 @@ const subject: React.FC = _ => {
         if (skills == undefined) return <SkillsStandard id={subject} />;
         return React.createElement(SubjectSkills[subject].default, {weapon: equipment.weapon})
     }, [subject, equipment.weapon]);
+
+    const subjectStack = React.useMemo(() => {
+        if (subject == null) return null;
+        const stackInfo = SubjectStackInfo[subject];
+        if (stackInfo == undefined) return null;
+        return (
+            <label>
+                {`${stackInfo.StackName}${stack}`}
+                <input type="range" min="0" value={stack} max={stackInfo.MaxStack} step="1" onChange={onSubjectStackSliderChange}/>
+            </label>
+        )
+    }, [subject, stack]);
     
     return (
         <section className={style.base}>
@@ -137,6 +154,7 @@ const subject: React.FC = _ => {
                 {`実験体固有ゲージ${gauge}`}
                 <input type="range" min="0" value={gauge} max="100" step="1" onChange={onSubjectUniqueGaugeSliderChange}/>
             </label>
+            {subjectStack}
             <Tooltip 
                 id="weapon"
                 className={`${style.tooltip}`}

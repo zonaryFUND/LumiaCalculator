@@ -1,22 +1,11 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
 import style from "./adina.module.styl";
 import { ValuesProps } from "../values";
-import skillDamage from "../skill-damage";
 import baseStyle from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "../props";
 
 const r: React.FC<SubjectSkillProps> = props => {
-    const moonHeal = (() => {
-        if (props.showEquation) {
-            return <>(ダメージ量の{Constants.E.star}％)</>;
-        } else {
-            const damage = skillDamage(props.status, props.config.level, props.config.skillLevels.E, Constants.E.damage);
-            return <>{damage.dividedBy(2).toString()}</>;
-        }
-    })();
-    
     return (
         <>
             <span className={baseStyle.level}>使用効果</span>：

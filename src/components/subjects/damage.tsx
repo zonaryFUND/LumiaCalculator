@@ -23,8 +23,10 @@ type Props = SubjectSkillProps & {
         maxSP?: Value
         criticalChance?: Value
         summoned_attack?: Value
+        stack?: Value
     }
     summonedName?: string
+    stackName?: string
 }
 
 function current(skillLevel: number, value: Value): Decimal.Value {
@@ -77,6 +79,8 @@ const damage: React.FC<Props> = props => {
                                 }％ = (致命打確率の{current(skillLevel, props.constants.criticalChance!).toString()}％)</span>;
                             case "summoned_attack":
                                 return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(skillLevel, props.constants.summoned_attack!).toString()}％{right}</span>;
+                            case "stack":
+                                return <span key={key} className={style.strong}>{left}{props.stackName}スタック数{right}</span>;
                         }
                     })
                 }
@@ -85,7 +89,7 @@ const damage: React.FC<Props> = props => {
     } else {
         return (
             <>
-               <span className={style.emphasis}>{skillDamage(props.status, props.config.level, skillLevel, props.constants).toString()}</span>
+               <span className={style.emphasis}>{skillDamage(props.status, props.config, props.skill, props.constants).toString()}</span>
                {props.constants.targetHP ? <span className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP)}％)</span> : null}
                {props.constants.lostHP ? <span className={style.losthp}>(+失った体力の{current(skillLevel, props.constants.lostHP)}％)</span> : null}
                {props.constants.targetLostHP ? <span className={style.losthp}>(+対象の失った体力の{current(skillLevel, props.constants.targetLostHP)}％)</span> : null}
