@@ -5,6 +5,7 @@ declare module 'decimal.js' {
         round2(this: Decimal): Decimal
         percent(this: Decimal, value: Decimal.Value): Decimal
         addPercent(this: Decimal, value: Decimal.Value): Decimal
+        subPercent(this: Decimal, value: Decimal.Value): Decimal
     }
 }
   
@@ -32,5 +33,14 @@ Object.defineProperty(Decimal.prototype, "addPercent", {
     writable: false,
     value: function (this: Decimal, value: Decimal.Value) {
         return this.times(new Decimal(100).add(value)).dividedBy(100);
+    }
+})
+
+Object.defineProperty(Decimal.prototype, "subPercent", {
+    configurable: false,
+    enumerable: false,
+    writable: false,
+    value: function (this: Decimal, value: Decimal.Value) {
+        return this.times(new Decimal(100).sub(value)).dividedBy(100);
     }
 })

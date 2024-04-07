@@ -37,57 +37,39 @@ type Props = {
     status: Status
 }
 
+function valueOrElement(value: number | number[], index: number): number {
+    if (Array.isArray(value)) return value[index];
+    return value;
+}
+
 const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Status}> = props => {
     const info = SkillsConstant[props.id][props.skill];
-    const spCost = (() => {
-        if (info.sp_cost == undefined) return null;
-        if (Array.isArray(info.sp_cost)) return info.sp_cost[props.skillLevel];
-        return info.sp_cost;
-    })()
-    const hpCost =(() => {
-        if (info.hp_cost == undefined) return null;
-        if (Array.isArray(info.hp_cost)) return info.hp_cost[props.skillLevel];
-        return info.hp_cost;
-    })()
-    const baseCooldown = (() => {
-        const beforeOverride = (() => {
-            if (info.cooldown == undefined || info.cooldown.constant) return null;
-            if (Array.isArray(info.cooldown)) return info.cooldown[props.skillLevel];
-            return info.cooldown;
-        })();
-        if (beforeOverride == null) {
-            return null;
-        }
-        if (SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride) {
-            return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config, props.status)(new Decimal(beforeOverride));
+    const spCost = info.sp_cost == undefined ? null : valueOrElement(info.sp_cost, props.skillLevel);
+    const hpCost = info.hp_cost == undefined ? null : valueOrElement(info.hp_cost, props.skillLevel);
+
+    const cooldown = (() => {
+        if (info.cooldown == undefined) return null;
+
+        if (info.cooldown.constant != undefined) {
+            return valueOrElement(info.cooldown.constant, props.skillLevel);
         } else {
-            return beforeOverride;
-        }
-    })()
-    const constantCooldown = (() => {
-        const beforeOverride = (() => {
-            if (info.cooldown == undefined || info.cooldown.constant == undefined) return null;
-            if (Array.isArray(info.cooldown.constant)) return info.cooldown.constant[props.skillLevel];
-            return info.cooldown.constant;
-        })()
-        if (beforeOverride == null) {
-            return null;
-        }
-        if (SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride) {
-            return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config, props.status)(new Decimal(beforeOverride));
-        } else {
-            return beforeOverride;
+            const baseValue = valueOrElement(info.cooldown, props.skillLevel);
+            return new Decimal(baseValue).subPercent(props.status.cooldownReduction).toString();
         }
     })();
-    const baseCharge = (() => {
+
+    const charge = (() => {
         if (info.charge == undefined) return null;
-        if (Array.isArray(info.charge.time)) return info.charge.time[props.skillLevel];
-        return info.charge.time;
-    })();
-    const chargeExpression = (() => {
-        if (baseCharge == null) return null;
-        const base = <>チャージ時間{new Decimal(baseCharge).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</>;
-        return baseCooldown || constantCooldown ? <>({base})</> : base;
+        console.log(info.charge)
+        const charge = (() => {
+            if (info.charge.time.constant != undefined) {
+                return valueOrElement(info.charge.time.constant, props.skillLevel);
+            } else {
+                const baseValue = valueOrElement(info.charge.time, props.skillLevel);
+                return new Decimal(baseValue).subPercent(props.status.cooldownReduction).toString();
+            }
+        })();
+        return cooldown ? <>(チャージ時間{charge}秒)</> : <>チャージ時間{charge}秒</>;
     })();
 
     return (
@@ -96,16 +78,11 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
             {hpCost != null ? <>体力 {hpCost}<br /></> : null}
             {spCost == null && hpCost == null ? <>コストなし<br /></> : null}
             {
-                baseCooldown != null ?
-                <>クールダウン{new Decimal(baseCooldown).times(new Decimal(100).sub(props.status.cooldownReduction)).dividedBy(100).toString()}秒</> :
+                cooldown != null ?
+                <>クールダウン{cooldown}秒</> :
                 null
             }
-            {
-                constantCooldown != null ?
-                <>クールダウン{constantCooldown.toString()}秒</> :
-                null
-            }
-            {chargeExpression}
+            {charge}
         </div>
     );
 };
@@ -148,7 +125,8 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                             <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[skillIDForLevel] + 1}）</h1>
                             <p>[{skillIDForLevel}]</p>
                         </div>
-                        <ConsumptionAndCooldown {...props} skill={skillIDForLevel} skillLevel={props.config.skillLevels[skillIDForLevel]} />
+                        <ConsumptionAndCooldown {...props} skill={skillIDForLevel
+                        } skillLevel={props.config.skillLevels[skillIDForLevel]} />
                     </div>
                 </header>
                 <p>
