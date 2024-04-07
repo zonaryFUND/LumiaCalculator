@@ -21,7 +21,7 @@
     "W": {
         "shield_duration": 2.5,
         "shield": {
-            "basel": [100,125,150,175,200],
+            "base": [100,125,150,175,200],
             "amp": 35
         },
         "blind_duration": [1,1.1,1.2,1.3,1.4],
@@ -55,36 +55,72 @@
         "sp_cost": 110,
         "cooldown": [20,18.5,17,15.5,14]
     },
-    "R": {
-        "Q": {
-            "damage": {
-                "base": [180,230,280],
-                "amp": 90
-            },
-            "bookmark_duration": 5,
-            "bookmark_damage": {
-                "base": [50,100,150],
-                "amp": 50
-            },
-            "stun": 0.75,
-            "slow": {
-                "duration": 1,
-                "effect": [50,60,70]
-            },
-            "center_multiplier": 30
+    "RQ": {
+        "damage": {
+            "base": [180,230,280],
+            "amp": 90
         },
-        "W": {
-            "shield": {
-                "basel": [],
-                "amp": 35
-            },
-            "blind_duration": [1,1.1,1.2,1.3,1.4],
-            "damage": {
-                "base": [30,60,90,120,150],
-                "amp": 30
-            },
-            "sp_cost": 100,
-            "cooldown": [20,19,18,17,16]
+        "bookmark_duration": 5,
+        "bookmark_damage": {
+            "base": [50,100,150],
+            "amp": 50
+        },
+        "stun": 0.75,
+        "slow": {
+            "duration": 1,
+            "effect": [50,60,70]
+        },
+        "center_multiplier": 30
+    },
+    "RW": {
+        "shield_duration": 2.5,
+        "shield": {
+            "base": [100,200,300],
+            "amp": 35
+        },
+        "blind_duration": [1,1.2,1.4],
+        "damage": {
+            "base": [50,100,150],
+            "amp": 30
         }
+    },
+    "RE": {
+        "damage": {
+            "base": [125,190,255],
+            "amp": 60
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 50
+        },
+        "bookmark_damage": {
+            "base": [170,260,350],
+            "amp": 85
+        },
+        "heal": {
+            "base": [40,80,120],
+            "amp": 30
+        },
+        "heal_max_multiplier": 1.5,
+        "heal_max_hp": 40,
+        "cooldown_reduction": 20
+    },
+    "R": {
+        "cooldown": [46,33,20]
+    },
+    "T": {
+        "damage": {
+            "base": [40,100,160],
+            "amp": 50
+        },
+        "aoe_range": 2,
+        "aoe_damage": {
+            "base": [20,50,80],
+            "amp": 25
+        },
+        "heal": 55,
+        "max_stack": 3,
+        "attack_speed": 40,
+        "cooldown_reduction": 1.5
     }
 }
