@@ -24,6 +24,7 @@ const r: React.FC<SubjectSkillProps> = props => (
 export default r;
 
 export const values: ValuesProps = {
+    additionalInfo: <>近くにある空の爆弾が優先的に融合されます。</>,
     parameters: [
         {title: "ダメージ量", values: Constants.R.damage.base},
         {title: "消費", values: Constants.R.sp_cost}

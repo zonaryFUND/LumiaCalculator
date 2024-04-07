@@ -1,0 +1,64 @@
+{
+    "Q": {
+        "damage": {
+            "base": [20,35,50,65,80],
+            "attack": 60
+        },
+        "count": 3,
+        "bac": 40,
+        "enhanced_damage": {
+            "base": [20,40,60,80,100],
+            "attack": 70
+        },
+        "cooldown": [11,10.5,10,9.5,9]
+    },
+    "W": {
+        "cast": 0.8,
+        "bac": 45,
+        "damage_reduction": [40,45,50,55,60],
+        "cooldown_reduction": 0.5,
+        "basic_attack_amp": 0.2,
+        "cooldown": [9,8,7,6,5]
+    },
+    "E": {
+        "damage": {
+            "base": [80,135,190,245,300],
+            "attack": 85
+        },
+        "slow": {
+            "duration": 2,
+            "effect": [25,27.5,30,32.5,35],
+            "enhanced_effect": [45,50,55,60,65]
+        },
+        "bac": 40,
+        "cooldown": [10,9.5,9,8.5,8]
+    },
+    "R": {
+        "supression": 1.2,
+        "count": 4,
+        "min_damage": {
+            "base": [30,80,130],
+            "attack": 50
+        },
+        "max_damage": {
+            "base": [45,120,195],
+            "attack": 75
+        },
+        "bac_ratio": 50,
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "attack_speed": 30,
+        "damage": {
+            "attack": [30,40,50],
+            "basicAttackAmp": 1
+        },
+        "threshold": 40,
+        "max": 100,
+        "drunk_duration": 5,
+        "alcohol_drink": {
+            "duration": 15,
+            "attack": 1
+        }
+    }
+}

@@ -28,6 +28,10 @@ const q: React.FC<SubjectSkillProps> = props => (
 export default q;
 
 export const values: ValuesProps = {
+    additionalInfo: <>
+        ガラス破片は{Constants.Q.glass_duration}秒間維持されます。<br />
+        スパーダ で一度押し出された対象は{Constants.Q.knockback_immune}秒間スパーダに当たっても押し出されません。
+    </>,
     parameters: [
         {title: "ダメージ量", values: Constants.Q.damage.base},
         {title: "[スパーダ]ダメージ量", values: Constants.Q.spada_damage.base},
