@@ -29,6 +29,7 @@
         "vision_decrease": 2,
         "duration": 7,
         "stored_damage": [8,11,14,17,20],
+        "blast_duration": 2.5,
         "damage": {
             "base": [20,30,40,50,60],
             "attack": 60
@@ -64,6 +65,7 @@
             "attack": 40
         },
         "finish_multiplier_max": 200,
+        "window_after_w_blast": 1,
         "sp_cost": [80,90,100],
         "cooldown": [70,60,50]
     },
