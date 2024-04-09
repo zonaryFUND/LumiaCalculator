@@ -38,7 +38,7 @@
     "GhostW": {
         "damage": {
             "base": [10,40,70,100,130],
-            "attack": 65
+            "attack": 70
         },
         "movement_speed": {
             "duration": 1,

@@ -30,7 +30,7 @@
             "effect": 25
         },
         "sp_cost": 60,
-        "cooldown": [13,12,11,10,9]
+        "cooldown": [12,11,10,9,8]
     },
     "R": {
         "first_damage": {

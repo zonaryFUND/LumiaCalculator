@@ -75,7 +75,7 @@
             "targetMaxHP": [4,7,10]
         },
         "slow": {
-            "duration": 0.3,
+            "duration": 0.5,
             "effect": 90
         }
     }

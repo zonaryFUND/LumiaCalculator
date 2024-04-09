@@ -28,7 +28,7 @@
     },
     "R": {
         "damage": {
-            "base": [60,110,160],
+            "base": [80,140,200],
             "attack": 100
         },
         "additionalDamage": {

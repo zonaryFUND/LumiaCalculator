@@ -42,8 +42,8 @@
         "movement_speed": 5,
         "area_damage_tick": 0.5,
         "area_damage": {
-            "base": [6,10,14,18],
-            "attack": 5
+            "base": [8,12,16,20],
+            "attack": 6
         },
         "kill_extend": 5,
         "overload": 12,

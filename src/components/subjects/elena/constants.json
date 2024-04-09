@@ -65,7 +65,7 @@
         "stun": 1.1,
         "damage": {
             "base": [30,65,100],
-            "defense": 20,
+            "defense": 35,
             "amp": 20
         },
         "cooldown": {
