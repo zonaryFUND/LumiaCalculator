@@ -8,7 +8,7 @@ export const Subjects = [
     "johann" , "bianca" , "celine" , "echion" , "mai" , "aiden" , "laura" , "tia" , "felix" , "elena" ,
     "priya" , "adina" , "markus" , "karla" , "estelle" , "piolo" , "martina" , "haze" , "isaac" , "tazia" ,
     "irem" , "theodore" , "ly_anh" , "vanya" , "debi_marlene" , "arda" , "abigail" , "alonso" , "leni" , "tsubame" ,
-    "kenneth" , "katja"
+    "kenneth" , "katja", "charlotte"
 ];
 
 export type SubjectID = typeof Subjects[number];

@@ -1,1 +1,754 @@
-{"eleven":[{"weapon":"hammer","type":"basic_attack_amp","value":3.2,"attackSpeed":4}],"isaac":[{"weapon":"tonfa","type":"skill_amp","value":1.5,"attackSpeed":3}],"isol":[{"weapon":"assault_rifle","type":"basic_attack_amp","value":1.5,"attackSpeed":4.2},{"weapon":"pistol","type":"skill_amp","value":4.4,"attackSpeed":4.5}],"adina":[{"weapon":"arcana","type":"skill_amp","value":4.4,"attackSpeed":2.5}],"adela":[{"weapon":"rapier","type":"skill_amp","value":4.5,"attackSpeed":2.5},{"weapon":"bat","type":"skill_amp","value":4.2,"attackSpeed":4}],"adriana":[{"weapon":"throw","type":"skill_amp","value":4.2,"attackSpeed":1.5}],"abigail":[{"weapon":"axe","type":"skill_amp","value":4.2,"attackSpeed":3.9}],"aya":[{"weapon":"pistol","type":"skill_amp","value":4.4,"attackSpeed":3.5},{"weapon":"assault_rifle","type":"basic_attack_amp","value":1.2,"attackSpeed":3.5},{"weapon":"sniper_rifle","type":"skill_amp","value":5,"attackSpeed":2.5}],"arda":[{"weapon":"arcana","type":"skill_amp","value":4.6,"attackSpeed":2.5}],"alex":[{"weapon":"tonfa","type":"basic_attack_amp","value":0.9,"attackSpeed":2.6},{"weapon":"two-handed_sword","type":"basic_attack_amp","value":1.1,"attackSpeed":3.3},{"weapon":"shuriken","type":"basic_attack_amp","value":1.2,"attackSpeed":2},{"weapon":"pistol","type":"basic_attack_amp","value":1,"attackSpeed":3.3}],"alonso":[{"weapon":"glove","type":"skill_amp","value":4,"attackSpeed":2.3}],"ly_anh":[{"weapon":"dagger","type":"attack_power","value":1,"attackSpeed":3.1}],"irem":[{"weapon":"throw","type":"skill_amp","value":4.6,"attackSpeed":1.6}],"vanya":[{"weapon":"arcana","type":"skill_amp","value":4.6,"attackSpeed":2.5}],"william":[{"weapon":"throw","type":"basic_attack_amp","value":1.6,"attackSpeed":3.1}],"aiden":[{"weapon":"two-handed_sword","type":"basic_attack_amp","value":2.1,"attackSpeed":4}],"eva":[{"weapon":"throw","type":"skill_amp","value":4.1,"attackSpeed":2}],"echion":[{"weapon":"vf_prosthetic","type":"basic_attack_amp","value":1,"attackSpeed":3}],"estelle":[{"weapon":"axe","type":"skill_amp","value":4.2,"attackSpeed":3.7}],"emma":[{"weapon":"shuriken","type":"skill_amp","value":4.5,"attackSpeed":2},{"weapon":"arcana","type":"skill_amp","value":4.1,"attackSpeed":2.5}],"elena":[{"weapon":"rapier","type":"skill_amp","value":4.5,"attackSpeed":2.5}],"karla":[{"weapon":"crossbow","type":"skill_amp","value":3.8,"attackSpeed":2.2}],"katja":[{"weapon":"sniper_rifle","type":"basic_attack_amp","value":2.1,"attackSpeed":4}],"camilo":[{"weapon":"dual_swords","type":"basic_attack_amp","value":2.2,"attackSpeed":2.6},{"weapon":"rapier","type":"basic_attack_amp","value":1.3,"attackSpeed":2}],"chiara":[{"weapon":"rapier","type":"skill_amp","value":4.1,"attackSpeed":3.2}],"cathy":[{"weapon":"dagger","type":"skill_amp","value":4.2,"attackSpeed":2.7},{"weapon":"dual_swords","type":"skill_amp","value":4.1,"attackSpeed":3}],"chloe":[{"weapon":"shuriken","type":"basic_attack_amp","value":1.6,"attackSpeed":2.7}],"kenneth":[{"weapon":"axe","type":"basic_attack_amp","value":1,"attackSpeed":3}],"zahir":[{"weapon":"throw","type":"skill_amp","value":4.6,"attackSpeed":3},{"weapon":"shuriken","type":"skill_amp","value":3.8,"attackSpeed":2}],"xiukai":[{"weapon":"spear","type":"skill_amp","value":3.9,"attackSpeed":3},{"weapon":"dagger","type":"skill_amp","value":4.5,"attackSpeed":5}],"jenny":[{"weapon":"pistol","type":"skill_amp","value":4.6,"attackSpeed":3.3}],"sissela":[{"weapon":"shuriken","type":"skill_amp","value":3.8,"attackSpeed":3.2},{"weapon":"throw","type":"skill_amp","value":4.7,"attackSpeed":3}],"jackie":[{"weapon":"dagger","type":"basic_attack_amp","value":3.5,"attackSpeed":4.1},{"weapon":"two-handed_sword","type":"basic_attack_amp","value":3,"attackSpeed":3.6},{"weapon":"axe","type":"basic_attack_amp","value":1.7,"attackSpeed":2},{"weapon":"dual_swords","type":"basic_attack_amp","value":1.3,"attackSpeed":3.4}],"silvia":[{"weapon":"pistol","type":"skill_amp","value":3.9,"attackSpeed":2.5}],"sua":[{"weapon":"hammer","type":"skill_amp","value":4.6,"attackSpeed":3},{"weapon":"bat","type":"skill_amp","value":4,"attackSpeed":3}],"celine":[{"weapon":"throw","type":"skill_amp","value":4.2,"attackSpeed":2}],"li_dailin":[{"weapon":"glove","type":"basic_attack_amp","value":1.7,"attackSpeed":4.8},{"weapon":"nunchaku","type":"basic_attack_amp","value":2.4,"attackSpeed":4.7}],"tazia":[{"weapon":"shuriken","type":"skill_amp","value":4.3,"attackSpeed":2.9}],"daniel":[{"weapon":"dagger","type":"basic_attack_amp","value":2.8,"attackSpeed":2.7}],"tsubame":[{"weapon":"shuriken","type":"basic_attack_amp","value":1.2,"attackSpeed":4.5}],"tia":[{"weapon":"bat","type":"skill_amp","value":4.5,"attackSpeed":3}],"theodore":[{"weapon":"sniper_rifle","type":"skill_amp","value":4.1,"attackSpeed":3}],"debi_marlene":[{"weapon":"two-handed_sword","type":"basic_attack_amp","value":2.1,"attackSpeed":3}],"nathapon":[{"weapon":"camera","type":"skill_amp","value":4.4,"attackSpeed":2}],"nadine":[{"weapon":"bow","type":"skill_amp","value":4.6,"attackSpeed":3.4},{"weapon":"crossbow","type":"basic_attack_amp","value":1.6,"attackSpeed":3.8}],"nicky":[{"weapon":"glove","type":"skill_amp","value":4,"attackSpeed":3.9}],"hart":[{"weapon":"guitar","type":"basic_attack_amp","value":1.5,"attackSpeed":3.1}],"barbara":[{"weapon":"bat","type":"skill_amp","value":4.4,"attackSpeed":3}],"bernice":[{"weapon":"sniper_rifle","type":"basic_attack_amp","value":2,"attackSpeed":2.7}],"bianca":[{"weapon":"arcana","type":"skill_amp","value":4.4,"attackSpeed":2.5}],"piolo":[{"weapon":"nunchaku","type":"skill_amp","value":4.2,"attackSpeed":2.5}],"hyunwoo":[{"weapon":"glove","type":"basic_attack_amp","value":2.5,"attackSpeed":3.9},{"weapon":"tonfa","type":"skill_amp","value":4.6,"attackSpeed":2.6}],"fiora":[{"weapon":"rapier","type":"skill_amp","value":4.1,"attackSpeed":3},{"weapon":"two-handed_sword","type":"skill_amp","value":4.8,"attackSpeed":3.7},{"weapon":"spear","type":"skill_amp","value":4.8,"attackSpeed":3.4}],"felix":[{"weapon":"spear","type":"basic_attack_amp","value":2.4,"attackSpeed":4}],"priya":[{"weapon":"guitar","type":"skill_amp","value":4,"attackSpeed":2}],"haze":[{"weapon":"assault_rifle","type":"skill_amp","value":4.6,"attackSpeed":3}],"hyejin":[{"weapon":"bow","type":"skill_amp","value":4.6,"attackSpeed":3.2},{"weapon":"shuriken","type":"skill_amp","value":4.6,"attackSpeed":4}],"markus":[{"weapon":"axe","type":"basic_attack_amp","value":1.7,"attackSpeed":3},{"weapon":"hammer","type":"basic_attack_amp","value":3,"attackSpeed":4}],"mai":[{"weapon":"whip","type":"skill_amp","value":4.4,"attackSpeed":3.6}],"magnus":[{"weapon":"hammer","type":"skill_amp","value":4.5,"attackSpeed":0.8},{"weapon":"bat","type":"basic_attack_amp","value":4,"attackSpeed":4}],"martina":[{"weapon":"camera","type":"basic_attack_amp","value":1.4,"attackSpeed":2.2}],"jan":[{"weapon":"glove","type":"basic_attack_amp","value":1.8,"attackSpeed":3.9},{"weapon":"tonfa","type":"skill_amp","value":4.5,"attackSpeed":2.6}],"johann":[{"weapon":"arcana","type":"skill_amp","value":4.6,"attackSpeed":2.5}],"laura":[{"weapon":"whip","type":"skill_amp","value":4.1,"attackSpeed":2.8}],"luke":[{"weapon":"bat","type":"basic_attack_amp","value":1.3,"attackSpeed":4}],"leon":[{"weapon":"glove","type":"skill_amp","value":4.4,"attackSpeed":4.1},{"weapon":"tonfa","type":"skill_amp","value":4.8,"attackSpeed":3}],"leni":[{"weapon":"pistol","type":"skill_amp","value":4.2,"attackSpeed":3.5}],"lenox":[{"weapon":"whip","type":"skill_amp","value":4.4,"attackSpeed":2.8}],"rozzi":[{"weapon":"pistol","type":"basic_attack_amp","value":1.4,"attackSpeed":4.5}],"shoichi":[{"weapon":"dagger","type":"skill_amp","value":4.2,"attackSpeed":2.7}],"yuki":[{"weapon":"two-handed_sword","type":"basic_attack_amp","value":2.3,"attackSpeed":2.8},{"weapon":"dual_swords","type":"basic_attack_amp","value":2.2,"attackSpeed":3.4}]}
+{
+	"eleven": [
+		{
+			"weapon": "hammer",
+			"type": "basic_attack_amp",
+			"value": 3.2,
+			"attackSpeed": 4
+		}
+	],
+	"isaac": [
+		{
+			"weapon": "tonfa",
+			"type": "skill_amp",
+			"value": 1.5,
+			"attackSpeed": 3
+		}
+	],
+	"isol": [
+		{
+			"weapon": "assault_rifle",
+			"type": "basic_attack_amp",
+			"value": 1.5,
+			"attackSpeed": 4.2
+		},
+		{
+			"weapon": "pistol",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 4.5
+		}
+	],
+	"adina": [
+		{
+			"weapon": "arcana",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 2.5
+		}
+	],
+	"adela": [
+		{
+			"weapon": "rapier",
+			"type": "skill_amp",
+			"value": 4.5,
+			"attackSpeed": 2.5
+		},
+		{
+			"weapon": "bat",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 4
+		}
+	],
+	"adriana": [
+		{
+			"weapon": "throw",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 1.5
+		}
+	],
+	"abigail": [
+		{
+			"weapon": "axe",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 3.9
+		}
+	],
+	"aya": [
+		{
+			"weapon": "pistol",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 3.5
+		},
+		{
+			"weapon": "assault_rifle",
+			"type": "basic_attack_amp",
+			"value": 1.2,
+			"attackSpeed": 3.5
+		},
+		{
+			"weapon": "sniper_rifle",
+			"type": "skill_amp",
+			"value": 5,
+			"attackSpeed": 2.5
+		}
+	],
+	"arda": [
+		{
+			"weapon": "arcana",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 2.5
+		}
+	],
+	"alex": [
+		{
+			"weapon": "tonfa",
+			"type": "basic_attack_amp",
+			"value": 0.9,
+			"attackSpeed": 2.6
+		},
+		{
+			"weapon": "two-handed_sword",
+			"type": "basic_attack_amp",
+			"value": 1.1,
+			"attackSpeed": 3.3
+		},
+		{
+			"weapon": "shuriken",
+			"type": "basic_attack_amp",
+			"value": 1.2,
+			"attackSpeed": 2
+		},
+		{
+			"weapon": "pistol",
+			"type": "basic_attack_amp",
+			"value": 1,
+			"attackSpeed": 3.3
+		}
+	],
+	"alonso": [
+		{
+			"weapon": "glove",
+			"type": "skill_amp",
+			"value": 4,
+			"attackSpeed": 2.3
+		}
+	],
+	"ly_anh": [
+		{
+			"weapon": "dagger",
+			"type": "attack_power",
+			"value": 1,
+			"attackSpeed": 3.1
+		}
+	],
+	"irem": [
+		{
+			"weapon": "throw",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 1.6
+		}
+	],
+	"vanya": [
+		{
+			"weapon": "arcana",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 2.5
+		}
+	],
+	"william": [
+		{
+			"weapon": "throw",
+			"type": "basic_attack_amp",
+			"value": 1.6,
+			"attackSpeed": 3.1
+		}
+	],
+	"aiden": [
+		{
+			"weapon": "two-handed_sword",
+			"type": "basic_attack_amp",
+			"value": 2.1,
+			"attackSpeed": 4
+		}
+	],
+	"eva": [
+		{
+			"weapon": "throw",
+			"type": "skill_amp",
+			"value": 4.1,
+			"attackSpeed": 2
+		}
+	],
+	"echion": [
+		{
+			"weapon": "vf_prosthetic",
+			"type": "basic_attack_amp",
+			"value": 1,
+			"attackSpeed": 3
+		}
+	],
+	"estelle": [
+		{
+			"weapon": "axe",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 3.7
+		}
+	],
+	"emma": [
+		{
+			"weapon": "shuriken",
+			"type": "skill_amp",
+			"value": 4.5,
+			"attackSpeed": 2
+		},
+		{
+			"weapon": "arcana",
+			"type": "skill_amp",
+			"value": 4.1,
+			"attackSpeed": 2.5
+		}
+	],
+	"elena": [
+		{
+			"weapon": "rapier",
+			"type": "skill_amp",
+			"value": 4.5,
+			"attackSpeed": 2.5
+		}
+	],
+	"karla": [
+		{
+			"weapon": "crossbow",
+			"type": "skill_amp",
+			"value": 3.8,
+			"attackSpeed": 2.2
+		}
+	],
+	"katja": [
+		{
+			"weapon": "sniper_rifle",
+			"type": "basic_attack_amp",
+			"value": 2.1,
+			"attackSpeed": 4
+		}
+	],
+	"camilo": [
+		{
+			"weapon": "dual_swords",
+			"type": "basic_attack_amp",
+			"value": 2.2,
+			"attackSpeed": 2.6
+		},
+		{
+			"weapon": "rapier",
+			"type": "basic_attack_amp",
+			"value": 1.3,
+			"attackSpeed": 2
+		}
+	],
+	"chiara": [
+		{
+			"weapon": "rapier",
+			"type": "skill_amp",
+			"value": 4.1,
+			"attackSpeed": 3.2
+		}
+	],
+	"cathy": [
+		{
+			"weapon": "dagger",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 2.7
+		},
+		{
+			"weapon": "dual_swords",
+			"type": "skill_amp",
+			"value": 4.1,
+			"attackSpeed": 3
+		}
+	],
+	"chloe": [
+		{
+			"weapon": "shuriken",
+			"type": "basic_attack_amp",
+			"value": 1.6,
+			"attackSpeed": 2.7
+		}
+	],
+	"kenneth": [
+		{
+			"weapon": "axe",
+			"type": "basic_attack_amp",
+			"value": 1,
+			"attackSpeed": 3
+		}
+	],
+	"zahir": [
+		{
+			"weapon": "throw",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 3
+		},
+		{
+			"weapon": "shuriken",
+			"type": "skill_amp",
+			"value": 3.8,
+			"attackSpeed": 2
+		}
+	],
+	"xiukai": [
+		{
+			"weapon": "spear",
+			"type": "skill_amp",
+			"value": 3.9,
+			"attackSpeed": 3
+		},
+		{
+			"weapon": "dagger",
+			"type": "skill_amp",
+			"value": 4.5,
+			"attackSpeed": 5
+		}
+	],
+	"jenny": [
+		{
+			"weapon": "pistol",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 3.3
+		}
+	],
+	"sissela": [
+		{
+			"weapon": "shuriken",
+			"type": "skill_amp",
+			"value": 3.8,
+			"attackSpeed": 3.2
+		},
+		{
+			"weapon": "throw",
+			"type": "skill_amp",
+			"value": 4.7,
+			"attackSpeed": 3
+		}
+	],
+	"jackie": [
+		{
+			"weapon": "dagger",
+			"type": "basic_attack_amp",
+			"value": 3.5,
+			"attackSpeed": 4.1
+		},
+		{
+			"weapon": "two-handed_sword",
+			"type": "basic_attack_amp",
+			"value": 3,
+			"attackSpeed": 3.6
+		},
+		{
+			"weapon": "axe",
+			"type": "basic_attack_amp",
+			"value": 1.7,
+			"attackSpeed": 2
+		},
+		{
+			"weapon": "dual_swords",
+			"type": "basic_attack_amp",
+			"value": 1.3,
+			"attackSpeed": 3.4
+		}
+	],
+	"silvia": [
+		{
+			"weapon": "pistol",
+			"type": "skill_amp",
+			"value": 3.9,
+			"attackSpeed": 2.5
+		}
+	],
+	"sua": [
+		{
+			"weapon": "hammer",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 3
+		},
+		{
+			"weapon": "bat",
+			"type": "skill_amp",
+			"value": 4,
+			"attackSpeed": 3
+		}
+	],
+	"celine": [
+		{
+			"weapon": "throw",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 2
+		}
+	],
+	"li_dailin": [
+		{
+			"weapon": "glove",
+			"type": "basic_attack_amp",
+			"value": 1.7,
+			"attackSpeed": 4.8
+		},
+		{
+			"weapon": "nunchaku",
+			"type": "basic_attack_amp",
+			"value": 2.4,
+			"attackSpeed": 4.7
+		}
+	],
+	"tazia": [
+		{
+			"weapon": "shuriken",
+			"type": "skill_amp",
+			"value": 4.3,
+			"attackSpeed": 2.9
+		}
+	],
+	"daniel": [
+		{
+			"weapon": "dagger",
+			"type": "basic_attack_amp",
+			"value": 2.8,
+			"attackSpeed": 2.7
+		}
+	],
+	"tsubame": [
+		{
+			"weapon": "shuriken",
+			"type": "basic_attack_amp",
+			"value": 1.2,
+			"attackSpeed": 4.5
+		}
+	],
+	"tia": [
+		{
+			"weapon": "bat",
+			"type": "skill_amp",
+			"value": 4.5,
+			"attackSpeed": 3
+		}
+	],
+	"theodore": [
+		{
+			"weapon": "sniper_rifle",
+			"type": "skill_amp",
+			"value": 4.1,
+			"attackSpeed": 3
+		}
+	],
+	"debi_marlene": [
+		{
+			"weapon": "two-handed_sword",
+			"type": "basic_attack_amp",
+			"value": 2.1,
+			"attackSpeed": 3
+		}
+	],
+	"nathapon": [
+		{
+			"weapon": "camera",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 2
+		}
+	],
+	"nadine": [
+		{
+			"weapon": "bow",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 3.4
+		},
+		{
+			"weapon": "crossbow",
+			"type": "basic_attack_amp",
+			"value": 1.6,
+			"attackSpeed": 3.8
+		}
+	],
+	"nicky": [
+		{
+			"weapon": "glove",
+			"type": "skill_amp",
+			"value": 4,
+			"attackSpeed": 3.9
+		}
+	],
+	"hart": [
+		{
+			"weapon": "guitar",
+			"type": "basic_attack_amp",
+			"value": 1.5,
+			"attackSpeed": 3.1
+		}
+	],
+	"barbara": [
+		{
+			"weapon": "bat",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 3
+		}
+	],
+	"bernice": [
+		{
+			"weapon": "sniper_rifle",
+			"type": "basic_attack_amp",
+			"value": 2,
+			"attackSpeed": 2.7
+		}
+	],
+	"bianca": [
+		{
+			"weapon": "arcana",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 2.5
+		}
+	],
+	"piolo": [
+		{
+			"weapon": "nunchaku",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 2.5
+		}
+	],
+	"hyunwoo": [
+		{
+			"weapon": "glove",
+			"type": "basic_attack_amp",
+			"value": 2.5,
+			"attackSpeed": 3.9
+		},
+		{
+			"weapon": "tonfa",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 2.6
+		}
+	],
+	"fiora": [
+		{
+			"weapon": "rapier",
+			"type": "skill_amp",
+			"value": 4.1,
+			"attackSpeed": 3
+		},
+		{
+			"weapon": "two-handed_sword",
+			"type": "skill_amp",
+			"value": 4.8,
+			"attackSpeed": 3.7
+		},
+		{
+			"weapon": "spear",
+			"type": "skill_amp",
+			"value": 4.8,
+			"attackSpeed": 3.4
+		}
+	],
+	"felix": [
+		{
+			"weapon": "spear",
+			"type": "basic_attack_amp",
+			"value": 2.4,
+			"attackSpeed": 4
+		}
+	],
+	"priya": [
+		{
+			"weapon": "guitar",
+			"type": "skill_amp",
+			"value": 4,
+			"attackSpeed": 2
+		}
+	],
+	"haze": [
+		{
+			"weapon": "assault_rifle",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 3
+		}
+	],
+	"hyejin": [
+		{
+			"weapon": "bow",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 3.2
+		},
+		{
+			"weapon": "shuriken",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 4
+		}
+	],
+	"markus": [
+		{
+			"weapon": "axe",
+			"type": "basic_attack_amp",
+			"value": 1.7,
+			"attackSpeed": 3
+		},
+		{
+			"weapon": "hammer",
+			"type": "basic_attack_amp",
+			"value": 3,
+			"attackSpeed": 4
+		}
+	],
+	"mai": [
+		{
+			"weapon": "whip",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 3.6
+		}
+	],
+	"magnus": [
+		{
+			"weapon": "hammer",
+			"type": "skill_amp",
+			"value": 4.5,
+			"attackSpeed": 0.8
+		},
+		{
+			"weapon": "bat",
+			"type": "basic_attack_amp",
+			"value": 4,
+			"attackSpeed": 4
+		}
+	],
+	"martina": [
+		{
+			"weapon": "camera",
+			"type": "basic_attack_amp",
+			"value": 1.4,
+			"attackSpeed": 2.2
+		}
+	],
+	"jan": [
+		{
+			"weapon": "glove",
+			"type": "basic_attack_amp",
+			"value": 1.8,
+			"attackSpeed": 3.9
+		},
+		{
+			"weapon": "tonfa",
+			"type": "skill_amp",
+			"value": 4.5,
+			"attackSpeed": 2.6
+		}
+	],
+	"johann": [
+		{
+			"weapon": "arcana",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 2.5
+		}
+	],
+	"laura": [
+		{
+			"weapon": "whip",
+			"type": "skill_amp",
+			"value": 4.1,
+			"attackSpeed": 2.8
+		}
+	],
+	"luke": [
+		{
+			"weapon": "bat",
+			"type": "basic_attack_amp",
+			"value": 1.3,
+			"attackSpeed": 4
+		}
+	],
+	"leon": [
+		{
+			"weapon": "glove",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 4.1
+		},
+		{
+			"weapon": "tonfa",
+			"type": "skill_amp",
+			"value": 4.8,
+			"attackSpeed": 3
+		}
+	],
+	"leni": [
+		{
+			"weapon": "pistol",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 3.5
+		}
+	],
+	"lenox": [
+		{
+			"weapon": "whip",
+			"type": "skill_amp",
+			"value": 4.4,
+			"attackSpeed": 2.8
+		}
+	],
+	"rozzi": [
+		{
+			"weapon": "pistol",
+			"type": "basic_attack_amp",
+			"value": 1.4,
+			"attackSpeed": 4.5
+		}
+	],
+	"shoichi": [
+		{
+			"weapon": "dagger",
+			"type": "skill_amp",
+			"value": 4.2,
+			"attackSpeed": 2.7
+		}
+	],
+	"yuki": [
+		{
+			"weapon": "two-handed_sword",
+			"type": "basic_attack_amp",
+			"value": 2.3,
+			"attackSpeed": 2.8
+		},
+		{
+			"weapon": "dual_swords",
+			"type": "basic_attack_amp",
+			"value": 2.2,
+			"attackSpeed": 3.4
+		}
+	],
+	"rio": [
+		{
+			"weapon": "bow",
+			"type": "basic_attack_amp",
+			"value": 1.5,
+			"attackSpeed": 3.3
+		}
+	],
+	"charlotte": [
+		{
+			"weapon": "arcana",
+			"type": "skill_amp",
+			"value": 4.6,
+			"attackSpeed": 2.5
+		}
+	]
+}
