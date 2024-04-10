@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Skill } from "../skills-standard";
-import style from "components/subjects/skills-standard.modue.styl";
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps } from "../skills-standard";
 import { WeaponID } from "@app/entity/weapon-id";
 
-export default function(props: {weapon: WeaponID | null}) {
+export default function(props: {weapon: WeaponID | null} & SkillsStandardProps) {
     const type = (() => {
         if (props.weapon == null) return "0";
         if (props.weapon.includes("sidewinder")) {
@@ -19,13 +18,17 @@ export default function(props: {weapon: WeaponID | null}) {
     })();
 
     return (
-        <ul className={style.skills}>
+        <SkillsParent {...props}>
             <Skill id="echion" skill="Q" />
             <Skill id="echion" skill="W" />
             <Skill id="echion" skill="E" />
             <Skill id="echion" skill={`R${type == "0" ? "0_1" : type}`} />
-            <Skill id="echion" skill={`T${type == "0" ? type : `${type}_2`}`} /> 
-        </ul>
+            <Skill id="echion" skill={`T${type == "0" ? type : `${type}_2`}`} />
+            <li><SkillLevelConfigurator skill="Q" /></li>
+            <li><SkillLevelConfigurator skill="W" /></li>
+            <li><SkillLevelConfigurator skill="E" /></li>
+            <li><SkillLevelConfigurator skill="R" max={4} /></li>
+        </SkillsParent>
     )
 }
 

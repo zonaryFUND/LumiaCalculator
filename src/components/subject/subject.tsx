@@ -31,7 +31,7 @@ const subject: React.FC = _ => {
         subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge, stack
     }
     const status = useStatus(subjectConfig);
-
+    
     const subjectName = React.useMemo(() => subject ? name(subject, "jp") : null, [subject]);
     const [damageInFormula, toggleDamageInFormula] = useToggle(false);
 
@@ -61,9 +61,12 @@ const subject: React.FC = _ => {
     const subjectSkills = React.useMemo(() => {
         if (subject == null) return null;
         const skills = SubjectSkills[subject];
-        if (skills == undefined) return <SkillsStandard id={subject} />;
-        return React.createElement(SubjectSkills[subject].default, {weapon: equipment.weapon})
-    }, [subject, equipment.weapon]);
+        if (skills == undefined || skills.default == undefined) {
+            const skillImage = skills == undefined ? undefined : skills.SkillImage;
+            return <SkillsStandard id={subject} {...{skillLevels, setSkillLevels, skillImage}} />;
+        }
+        return React.createElement(SubjectSkills[subject].default, {weapon: equipment.weapon, skillLevels, setSkillLevels})
+    }, [subject, equipment.weapon, skillLevels]);
 
     const subjectStack = React.useMemo(() => {
         if (subject == null) return null;

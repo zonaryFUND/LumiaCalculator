@@ -54,7 +54,7 @@
         },
         "cooldown_reduction": 1,
         "cooldown": {
-            "constants" :30
+            "constant" :30
         }
     }
 }

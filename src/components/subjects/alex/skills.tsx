@@ -3,15 +3,16 @@ import style from "components/subjects/skills-standard.modue.styl";
 import Images from "@app/resources/image";
 import { WeaponID } from "@app/entity/weapon-id";
 import { equipmentStatus } from "@app/entity/equipment";
+import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps } from "../skills-standard";
 
-export default function(props: {weapon: WeaponID | null}) {
+export default function(props: {weapon: WeaponID | null} & SkillsStandardProps) {
     const type = props.weapon == null ? null : equipmentStatus(props.weapon).type;
     const skills = type == "two-handed_sword" || type == "tonfa" ?
         ["MeleeQ", "MeleeW", "MeleeE", "R", "T"] :
         ["RangeQ", "RangeW", "RangeE", "R", "T"]
 
     return (
-        <ul className={style.skills}>
+        <SkillsParent {...props}>
             {
                 skills.map(skill => (
                     <li
@@ -20,10 +21,11 @@ export default function(props: {weapon: WeaponID | null}) {
                         data-tooltip-content={`alex-${skill}`}
                     >
                         <img src={Images.skill.alex[skill]} />
+                        <SkillLevelConfigurator skill={skill.slice(skill.length - 1) as any} />
                     </li>
                 ))
             }
-        </ul>
+        </SkillsParent>
     )
 }
 

@@ -6,7 +6,3 @@ export function SkillImage(id: string): string | undefined {
     if (id == "E") return E1;
     return undefined;
 }
-
-export default function() {
-    return <SkillsStandard id="isaac" skillImage={SkillImage} />
-}

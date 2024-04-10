@@ -1,6 +1,6 @@
 import * as React from "react";
 import Images from "@app/resources/image";
-import style from "../skills-standard.modue.styl";
+import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps } from "../skills-standard";
 
 type Props = {
     src: string
@@ -14,9 +14,9 @@ const TooltipImage: React.FC<Props> = props => (
     />
 )
 
-export default function() {
+export default function(props: SkillsStandardProps) {
     return  (
-        <ul className={style.skills}>
+        <SkillsParent {...props}>
             <li>
                 <TooltipImage src="IremQ" />
                 <TooltipImage src="CatQ" />
@@ -36,7 +36,12 @@ export default function() {
             <li>
                 <TooltipImage src="T" />
             </li>
-        </ul>
+            <li><SkillLevelConfigurator skill="Q" /></li>
+            <li><SkillLevelConfigurator skill="W" /></li>
+            <li><SkillLevelConfigurator skill="E" /></li>
+            <li><SkillLevelConfigurator skill="R" /></li>
+            <li><SkillLevelConfigurator skill="T" /></li>
+        </SkillsParent>
     )
 }
 
