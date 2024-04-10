@@ -40,5 +40,9 @@ export function cooldownOverride(config: SubjectConfig, status: Status): (base: 
     const additionalAttackSpeed = status.attackSpeed.calculated.minus(baseAttackSpeed)
 
     // NOTE: This multiplier is an estimated value.
-    return base => base.sub(additionalAttackSpeed.times(2.545).clamp(0, Constants.Q.cooldown_reduction_max)).round2()
+    // The cooldown reduction of Q peaks when his attack speed reaches 1.49 (base plus 1.38), 
+    // at which point it becomes 30% of the original cooldown.
+    // Assuming that the attack speed at which cooldowns saturate is 1.375 before rounding, rather than the displayed value of 1.38, 
+    // cooldown aligns much better with in-game displayed values.
+    return base => base.subPercent(additionalAttackSpeed.clamp(0, 1.375).times(70).dividedBy(1.375)).round2()
 }
