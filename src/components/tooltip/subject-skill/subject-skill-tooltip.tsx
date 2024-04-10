@@ -50,17 +50,23 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
     const cooldown = (() => {
         if (info.cooldown == undefined) return null;
 
-        if (info.cooldown.constant != undefined) {
-            return valueOrElement(info.cooldown.constant, props.skillLevel);
-        } else {
-            const baseValue = valueOrElement(info.cooldown, props.skillLevel);
-            return new Decimal(baseValue).subPercent(props.status.cooldownReduction).toString();
+        const base = (() => {
+            if (info.cooldown.constant != undefined) {
+                return new Decimal(valueOrElement(info.cooldown.constant, props.skillLevel));
+            } else {
+                const baseValue = valueOrElement(info.cooldown, props.skillLevel);
+                return new Decimal(baseValue).subPercent(props.status.cooldownReduction);
+            }
+        })();
+
+        if (SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride == undefined) {
+            return base.toString();
         }
+        return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config, props.status)(base).toString();
     })();
 
     const charge = (() => {
         if (info.charge == undefined) return null;
-        console.log(info.charge)
         const charge = (() => {
             if (info.charge.time.constant != undefined) {
                 return valueOrElement(info.charge.time.constant, props.skillLevel);

@@ -1,0 +1,124 @@
+{
+    "DebiQ": {
+        "damage": {
+            "base": [50,75,100,125,150],
+            "additionalAttack": 75
+        },
+        "attack_speed": {
+            "duration": 5,
+            "effect": [9,10.5,12,13.5,15]
+        },
+        "max_stack": 4,
+        "cooldown": 4
+    },
+    "DebiW": {
+        "damage": {
+            "base": [40,70,100,130,160],
+            "additionalAttack": 60,
+            "targetMaxHP": [6,6.5,7,7.5,8]
+        },
+        "cooldown": 11
+    },
+    "E": {
+        "movement_speed": {
+            "duration": 1.5,
+            "effect": 20
+        }
+    },
+    "DebiE": {
+        "damage": {
+            "base": [30,65,100,135,170],
+            "additionalAttack": 70
+        },
+        "slow_after": 1.5,
+        "slow": {
+            "duration": 0.75,
+            "effect": 20
+        },
+        "debi_remain": 5, 
+        "second_damage": {
+            "base": [30,70,110,150,190],
+            "additionalAttack": 70
+        },
+        "airborne": 0.5,
+        "cooldown": {
+            "constant": [17,15.5,14,12.5,11]
+        }
+    },
+    "MarleneQ": {
+        "damage": {
+            "base": [50,75,100,125,150],
+            "additionalAttack": 70
+        },
+        "attack_speed": {
+            "duration": 5,
+            "effect": [9,10.5,12,13.5,15]
+        },
+        "max_stack": 4,
+        "cooldown": 4.5
+    },
+    "MarleneW": {
+        "projectiles": {
+            "base": [3,4,5,6,7]
+        },
+        "damage": {
+            "base": [15,30,45,60,75],
+            "additionalAttack": 45
+        },
+        "t_stack_projectiles": 2,
+        "multiple_hit": 25,
+        "max_projectile": 7,
+        "cooldown": 11
+    },
+    "MarleneE": {
+        "damage": {
+            "base": [30,70,110,150,190],
+            "additionalAttack": 70
+        },
+        "airborne": 0.5,
+        "marlene_remain": 5,
+        "second_damage": {
+            "base": [30,65,100,135,170],
+            "additionalAttack": 70
+        },
+        "slow_after": 1.5,
+        "slow": {
+            "duration": 0.75,
+            "effect": 20
+        },
+        "cooldown": {
+            "constant": [17,15.5,14,12.5,11]
+        }
+    },
+    "R": {
+        "damage": {
+            "base": [100,200,300],
+            "additionalAttack": 100
+        },
+        "second_damage_count": 5,
+        "second_damage": {
+            "base": [5,10,15],
+            "additionalAttack": 10
+        },
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "debi_defense": [5,10,15],
+        "marlene_range": 4,
+        "basic_attack_damage": 75,
+        "max_stack": 5,
+        "damage": {
+            "base": [10,25,40],
+            "additionalAttack": 70,
+            "criticalChance": 50
+        },
+        "movement_speed": {
+            "duration": 3,
+            "effect": [1,2,3]
+        },
+        "max_ms_stack": 5,
+        "e_cooldown_reduction": 0.5,
+        "color_change_e_cdr": 1,
+        "critical_damage_to_chance": 1
+    }
+}

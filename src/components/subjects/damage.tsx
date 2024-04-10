@@ -20,6 +20,7 @@ type Props = SubjectSkillProps & {
         targetHP?: Value
         lostHP?: Value
         targetLostHP?: Value
+        targetMaxHP?: Value
         maxSP?: Value
         criticalChance?: Value
         summoned_attack?: Value
@@ -67,6 +68,8 @@ const damage: React.FC<Props> = props => {
                                 return <span key={key} className={style.amp}>{left}スキル増幅の{current(skillLevel, props.constants.amp!).toString()}％{right}</span>;
                             case "targetHP":
                                 return <span key={key} className={style.maxhp}>{left}対象の現在体力の{current(skillLevel, props.constants.targetHP!).toString()}％{right}</span>;
+                            case "targetMaxHP":
+                                return <span key={key} className={style.maxhp}>{left}対象の最大体力の{current(skillLevel, props.constants.targetMaxHP!).toString()}％{right}</span>;
                             case "lostHP":
                                 return <span key={key} className={style.losthp}>{left}失った体力の{current(skillLevel, props.constants.lostHP!).toString()}％{right}</span>;
                             case "targetLostHP":
@@ -93,6 +96,7 @@ const damage: React.FC<Props> = props => {
                {props.constants.targetHP ? <span className={style.maxhp}>(+対象の現在体力の{current(skillLevel, props.constants.targetHP)}％)</span> : null}
                {props.constants.lostHP ? <span className={style.losthp}>(+失った体力の{current(skillLevel, props.constants.lostHP)}％)</span> : null}
                {props.constants.targetLostHP ? <span className={style.losthp}>(+対象の失った体力の{current(skillLevel, props.constants.targetLostHP)}％)</span> : null}
+               {props.constants.targetMaxHP ? <span className={style.maxhp}>(+対象の最大体力の{current(skillLevel, props.constants.targetMaxHP)}％)</span> : null}
             </>
         );
     }
