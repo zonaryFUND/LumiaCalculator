@@ -1,0 +1,96 @@
+{
+    "Q": {
+        "damage": {
+            "base": [60,90,120,150,180],
+            "amp": 45
+        },
+        "y": {
+            "blast_range": 1.5,
+            "slow": {
+                "duration": 1,
+                "effect": 20
+            }
+        },
+        "r": {
+            "slow": {
+                "duration": 1,
+                "effect": 20
+            }
+        },
+        "b": {
+            "slow": {
+                "duration": 1,
+                "effect": 10
+            },
+            "center_addition": {
+                "base": [60,90,120,150,180]
+            },
+            "center_slow": {
+                "duration": 1,
+                "effect": 60
+            }
+        },
+        "sp_cost": 70,
+        "cooldown": {
+            "constant": 0.5
+        }
+    },
+    "W": {
+        "y": [8.5,7,5.5],
+        "r": [6.5,5,3.5],
+        "b": [7.5,6,4.5],
+        "sp_cost": 30,
+        "cooldown": {
+            "constant": 0.02
+        }
+    },
+    "E": {
+        "damage": {
+            "base": [40,90,140,190,240],
+            "amp": 80
+        },
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": {
+            "constant": [14,13,12,11,10]
+        }
+    },
+    "R": {
+        "damage": {
+            "base": [150,250,350],
+            "amp": 90
+        },
+        "stun": [0.7,0.9,1.1],
+        "stun_enhance": 0.5,
+        "sp_cost": [80,90,100],
+        "cooldown": [90,70,50]
+    },
+    "T": {
+        "cooldown_conversion": 12,
+        "yr": {
+            "damage": {
+                "base": [60,120,180,240,300],
+                "amp": 170
+            },
+            "duration": 1.6,
+            "count": 4
+        },
+        "rb": {
+            "heal": 100,
+            "movement_speed": {
+                "duration": 1.5,
+                "effect": [10,13,16,19,22]
+            },
+            "damage": {
+                "base": [45,75,105,135,165],
+                "amp": 135
+            }
+        },
+        "by": {
+            "damage": {
+                "base": [40,75,110,145,190],
+                "amp": 95
+            },
+            "bind": 1.25
+        }
+    }
+}

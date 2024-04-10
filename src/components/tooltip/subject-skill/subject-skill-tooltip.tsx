@@ -108,6 +108,12 @@ const subjectSkillTooltip: React.FC<Props> = props => {
         return def.idForLevel(props.skill) as "Q" | "W" | "E" | "R" | "T";
     }, [props.id, props.skill]);
 
+    const skillIDForConsumption = React.useMemo(() => {
+        const def = SkillsDescription[props.id].skills
+        if (def == undefined || def.idForConsumption == undefined) return props.skill;
+        return def.idForConsumption(props.skill);
+    }, [props.id, props.skill]);
+
     const valuesProps: ValuesProps = (() => {
         if (!props.showEquation) return null;
         const values = SkillsDescription[props.id][props.skill.toLowerCase()].values
@@ -125,7 +131,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                             <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[skillIDForLevel] + 1}）</h1>
                             <p>[{skillIDForLevel}]</p>
                         </div>
-                        <ConsumptionAndCooldown {...props} skill={props.skill} skillLevel={props.config.skillLevels[skillIDForLevel]} />
+                        <ConsumptionAndCooldown {...props} skill={skillIDForConsumption} skillLevel={props.config.skillLevels[skillIDForLevel]} />
                     </div>
                 </header>
                 <p>
