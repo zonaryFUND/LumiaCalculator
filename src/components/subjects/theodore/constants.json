@@ -1,0 +1,73 @@
+{
+    "Q": {
+        "channeling": 1.5,
+        "movement_speed_penalty": 20,
+        "damage": {
+            "base": [50,85,120,155,190],
+            "amp": 70
+        },
+        "heal_duration": 2.5,
+        "heal": {
+            "base": [45,75,105,135,165],
+            "amp": 30
+        },
+        "screen_damage": {
+            "base": [50,90,130,170,210],
+            "amp": 70
+        },
+        "screen_heal": {
+            "base": [45,75,105,135,165],
+            "amp": 30
+        },
+        "sp_cost": [60,70,80,90,100],
+        "cooldown": [13,12,11,10,9]
+    },
+    "W": {
+        "duration": 7,
+        "damage": {
+            "base": [25,35,45,55,65],
+            "amp": 30
+        },
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": [12,11.5,11,10.5,10]
+    },
+    "E": {
+        "range_increase": 1,
+        "slow": {
+            "duration": 2,
+            "effect": [2,4,6,8,10]
+        },
+        "target_duration": 4,
+        "damage": {
+            "base": [30,60,90,120,150],
+            "amp": 80
+        },
+        "bind": [0.9,0.95,1,1.05,1.1],
+        "sp_cost": [45,50,55,60,65],
+        "cooldown": [14,13,12,11,10]
+    },
+    "R": {
+        "duration": 4,
+        "movement_speed": [40,45,50],
+        "damage": {
+            "base": [100,230,360],
+            "amp": 90
+        },
+        "hypercharge_duration": 9,
+        "attack_speed": [40,90,140],
+        "hypercharge_q_charge": 0.5,
+        "sp_cost": [120,150,180],
+        "cooldown": [75,60,45]
+    },
+    "T": {
+        "hide": 2.5,
+        "movement_speed": [5,10,15],
+        "shield_duration": 2.5,
+        "shield": [10,17,24],
+        "q_cooldown_reduction": [20,40,60],
+        "cooldown_reduction": [2,6,10],
+        "cooldown": {
+            "constant": [10,8,6]
+        }
+    }
+}
