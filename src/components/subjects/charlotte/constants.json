@@ -18,7 +18,7 @@
             "amp": 25
         },
         "sp_cost": 50,
-        "cooldown": [10,9,8,7,6]
+        "cooldown": [9.5,8.5,7.5,6.5,5.5]
     },
     "E": {
         "shield_duration": 2.5,
@@ -33,7 +33,7 @@
         "channeling": 1.5,
         "duration": 2,
         "sp_cost": 150,
-        "cooldown": [130,100,70]
+        "cooldown": [120,90,60]
     },
     "T": {
         "ally_losthp_threshold": 25,
