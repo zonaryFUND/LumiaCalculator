@@ -1,0 +1,70 @@
+{
+    "Q": {
+        "cast": 2,
+        "movement_speed_penalty": 20,
+        "max_range": 2,
+        "max_range_on_some_stack": {
+            "threshold": 50,
+            "value": 2.5
+        },
+        "min_damage": {
+            "base": [60,90,120,150,180],
+            "additionalAttack": 100,
+            "amp": 60,
+            "stack": 1
+        },
+        "max_damage": {
+            "base": [120,180,240,300,360],
+            "additionalAttack": 200,
+            "amp": 120,
+            "stack": 1
+        },
+        "payback": 50,
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": 7
+    },
+    "W": {
+        "second_time_bound": 5,
+        "damage": {
+            "base": [80,120,160,200,240],
+            "additionalAttack": 100,
+            "amp": 75
+        },
+        "movement_speed": [30,35,40,45,50],
+        "attack_speed": 30,
+        "vision": 5,
+        "multiple_stepped_multipler": 30,
+        "duration": 45,
+        "max_trap": 3,
+        "sp_cost": 50,
+        "cooldown": [14,13,12,11,10]
+    },
+    "E": {
+        "duration": 8,
+        "wire_length": 11,
+        "attack_speed": [20,30,40,50,60],
+        "sp_cost": [70,75,80,85,90],
+        "cooldown": [20,18.5,17,15.5,14]
+    },
+    "R": {
+        "duration": [10,11,12],
+        "count": 3,
+        "damage": {
+            "base": [90,140,190],
+            "additionalAttack": 90,
+            "amp": 80,
+            "stack": 1
+        },
+        "attack_speed": 10,
+        "movement_speed": 40,
+        "sp_cost": 150,
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "chicken": [1,1,2],
+        "bat_boar": [1,2,3],
+        "hound_wolf": [2,3,4],
+        "bear": [4,5,6],
+        "subject": [6,8,10]
+    }
+}
