@@ -1,0 +1,89 @@
+{
+    "common": {
+        "basic_attack_range": 4
+    },
+    "Q": {
+        "damage": {
+            "base": [70,110,150,190,230],
+            "attack": 90
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": [10,15,20,25,30]
+        },
+        "enhanced_damage": {
+            "base": [100,1450,190,235,280],
+            "attack": 90
+        },
+        "enhanced_slow": {
+            "duration": 1.5,
+            "effect": [30,35,40,45,50]
+        },
+        "sp_cost": 60,
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "W": {
+        "duration": [20,25,30,35,40],
+        "damage_duration": 3,
+        "damage": {
+            "base": [30,60,90,120,150],
+            "attack": 45
+        },
+        "bind": 1,
+        "setup": [1,2,2,3,3],
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": {
+            "constant": 1
+        },
+        "charge": {
+            "time": [18,17,16,15,14],
+            "max": [2,2,3,3,4]
+        }
+    },
+    "E": {
+        "mark_duration": 6,
+        "movement_speed": [8,10,12,14,16],
+        "q_cooldown_reduction": 0.5,
+        "r_cooldown_reduction": 1,
+        "duration": 8,
+        "vision": [2,2.5,3,3.5,4],
+        "marking_period": 6,
+        "sp_cost": [60,70,80,90,100],
+        "cooldown": [14,12,10,8,6]
+    },
+    "R": {
+        "first_damage": {
+            "base": [150,200,250],
+            "attack": 70
+        },
+        "bind": 1.25,
+        "second_damage": {
+            "base": [80,120,160],
+            "attack": 30
+        },
+        "spread_range": 2,
+        "max_spread": 3,
+        "sp_cost": [120,150,180],
+        "cooldown": [85,70,55]
+    },
+    "T": {
+        "bullet": [2,3,4],
+        "min_damage": {
+            "attack": 100,
+            "basicAttackAmp": 100
+        },
+        "max_damage": {
+            "attack": [110,120,130],
+            "basicAttackAmp": 100
+        },
+        "min_second_damage": {
+            "attack": 75,
+            "basicAttackAmp": 100
+        },
+        "max_second_damage": {
+            "attack": [82,90,97],
+            "basicAttackAmp": 100
+        },
+        "reload": [1.8,1.4,1]
+    }
+}
