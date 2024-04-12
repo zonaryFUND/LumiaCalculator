@@ -885,5 +885,22 @@
 		"T": {
 			"jp": "短気"
 		}
+	},
+	"hart": {
+		"Q": {
+			"jp": "Delay"
+		},
+		"W": {
+			"jp": "Overdrive"
+		},
+		"E": {
+			"jp": "Flanger"
+		},
+		"R": {
+			"jp": "Peacemaker"
+		},
+		"T": {
+			"jp": "Feedback"
+		}
 	}
 }
