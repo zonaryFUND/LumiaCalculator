@@ -1,0 +1,64 @@
+{
+    "common": {
+        "attackSpeed": 0.66
+    },
+    "Q": {
+        "damage": {
+            "base": [50,85,120,155,190],
+            "amp": 70
+        },
+        "sp_cost": 70,
+        "cooldown": [5,4.5,4,3.5,3]       
+    },
+    "W": {
+        "damage": {
+            "base": [20,40,60,80,100],
+            "amp": 25
+        },
+        "slow": 40,
+        "finish_damage": {
+            "base": [50,85,120,155,190],
+            "amp": 80
+        },
+        "bind": 1.6,
+        "sp_cost": 100,
+        "cooldown": [14,13,12,11,10]
+    },
+    "E": {
+        "first_damage": {
+            "base": [20,40,60,80,100],
+            "amp": 35
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 50
+        },
+        "pull": {
+            "from": 1.5,
+            "until": 3.5
+        },
+        "second_damage": {
+            "base": [20,40,60,80,100],
+            "amp": 35
+        },
+        "pull_basic_attack_range": 10,
+        "mark_remain_range": 8,
+        "sp_cost": 50,
+        "cooldown": [14,13,12,11,10]
+    },
+    "R": {
+        "cast": 1.35,
+        "statis": 2.5,
+        "sp_cost": [120,110,100],
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "damage": {
+            "base": [10,40,70],
+            "attackSpeed": 20,
+            "amp": 55
+        },
+        "stack_damage_amp": [4,7,10],
+        "max_stack": 3
+    }
+}

@@ -25,6 +25,7 @@ type Props = SubjectSkillProps & {
         criticalChance?: Value
         summoned_attack?: Value
         stack?: Value
+        attackSpeed?: Value
     }
     summonedName?: string
     stackName?: string
@@ -84,6 +85,9 @@ const damage: React.FC<Props> = props => {
                                 return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(skillLevel, props.constants.summoned_attack!).toString()}％{right}</span>;
                             case "stack":
                                 return <span key={key} className={style.strong}>{left}{props.stackName}スタック数{right}</span>;
+                            case "attackSpeed":
+                                return <span key={key} className={style.attackspeed}>{left}攻撃速度の{current(skillLevel, props.constants.attackSpeed!).toString()}％{right}</span>;
+
                         }
                     })
                 }
