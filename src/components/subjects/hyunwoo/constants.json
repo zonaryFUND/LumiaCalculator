@@ -1,0 +1,79 @@
+{
+    "Q": {
+        "damage": {
+            "base": [50,100,150,200,250],
+            "additionalAttack": 40,
+            "amp": 85
+        },
+        "slow": {
+            "duration": 2,
+            "effect": 40
+        },
+        "movement_speed": {
+            "duration": 2,
+            "effect": [6,7,8,9,10]
+        },
+        "sp_cost": [40,45,50,55,60],
+        "cooldown": [9,8,7,6,5]
+    },
+    "W": {
+        "duration": 2.5,
+        "defense": {
+            "base": [4,13,22,31,40],
+            "defense": 10
+        },
+        "cc_immune": 1,
+        "sp_cost": 50,
+        "cooldown": [18,17,16,15,14]
+    },
+    "E": {
+        "damage": {
+            "base": 0,
+            "additionalAttack": 70,
+            "amp": 55,
+            "targetHP": [5,8,11,14,17]
+        },
+        "wall_damage": {
+            "base": [60,95,130,165,200],
+            "additionalAttack": 55,
+            "amp": 90
+        },
+        "stun": 1.2,
+        "sp_cost": [70,75,80,85,90],
+        "cooldown": [14,13,12,11,10]
+    },
+    "R": {
+        "max_charge": 1.2,
+        "min_damage": {
+            "base": [100,140,180],
+            "additionalAttack": 35,
+            "amp": 75
+        },
+        "max_damage": {
+            "base": [300,420,540],
+            "additionalAttack": 105,
+            "amp": 225
+        },
+        "defense_down": {
+            "duration": 6,
+            "effect": [16,23,30]
+        },
+        "stun": 0.5,
+        "max_later_delay": 0.35,
+        "cooldown_payback": 50,
+        "sp_cost": 150,
+        "cooldown": [60,50,40]
+    },
+    "T": {
+        "stack_threshold": [10,9,8],
+        "damage": {
+            "base": [40,65,90],
+            "attack": 35,
+            "amp": 40
+        },
+        "heal": {
+            "maxHP": [7,11,15]
+        },
+        "w_cooldown_reduction": 2
+    }
+}
