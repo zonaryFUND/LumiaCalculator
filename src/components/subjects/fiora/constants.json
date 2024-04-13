@@ -1,0 +1,65 @@
+{
+    "Q": {
+        "damage": {
+            "base": [80,110,140,170,200],
+            "amp": 60
+        },
+        "additional_damage": {
+            "base": [50,95,140,185,230],
+            "amp": 30
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": 30
+        },
+        "sp_cost": [40,45,50,55,60],
+        "cooldown": [8,7,6,5,4]
+    },
+    "W": {
+        "damage": {
+            "base": [40,75,110,145,180],
+            "amp": 35
+        },
+        "sp_cost": 50,
+        "cooldown": [7,6,5,4,3]
+    },
+    "E": {
+        "damage": {
+            "base": [70,105,140,175,210],
+            "amp": 50
+        },
+        "reuse": 4,
+        "sp_cost": 100,
+        "cooldown": 9
+    },
+    "R": {
+        "damage": {
+            "base": [80,130,180],
+            "amp": 40
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 70
+        },
+        "finish_damage": {
+            "base": [160,260,360],
+            "amp": 80
+        },
+        "stun": 0.75,
+        "sp_cost": 150,
+        "cooldown": [70,60,50]
+    },
+    "T": {
+        "max_stack": 4,
+        "damage": {
+            "base": [10,40,70],
+            "amp": 35
+        },
+        "movement_speed": {
+            "duration": 1.5,
+            "effect": [5,10,15]
+        },
+        "q_cooldown_reduction": 80,
+        "cooldown_reduction": 40
+    }
+}
