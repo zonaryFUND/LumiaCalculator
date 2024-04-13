@@ -1,0 +1,101 @@
+{
+    "Q": {
+        "first_damage": {
+            "base": [40,80,120,160,200],
+            "amp": 50
+        },
+        "second_damage": {
+            "base": [10,40,70,100,130],
+            "amp": 45,
+            "targetMaxHP": 5
+        },
+        "bind": 1,
+        "hp_cost_percent": 5,
+        "cooldown": [10,9,8,7,6]
+    },
+    "W": {
+        "max_duration": 3,
+        "damage_reduction": [60,65,70,75,80],
+        "heal_tick": 0.5,
+        "heal": 3.5,
+        "enhance_threshold": 50,
+        "cooldown_reduction": {
+            "per": 1.5,
+            "value": 1
+        },
+        "cooldown": [14,13,12,11,10]
+    },
+    "E": {
+        "additional_cost": {
+            "per": 0.2,
+            "value": 2
+        },
+        "max_charge": 1,
+        "charge_remain": 3,
+        "min_damage": {
+            "base": [30,55,80,105,130],
+            "amp": 55
+        },
+        "max_damage": {
+            "base": [60,110,160,210,260],
+            "amp": 110
+        },
+        "heal": {
+            "base": [40,50,60,70,80],
+            "amp": 35
+        },
+        "multiple_hit_heal_amp": 40,
+        "hp_cost_percent": 5,
+        "cooldown": [16,14,12,10,8]
+    },
+    "R": {
+        "first_damage": {
+            "base": [50,100,150],
+            "amp": 45,
+            "targetMaxHP": 8
+        },
+        "slow": {
+            "duration": 2,
+            "effect": 50
+        },
+        "omnicyphon_amp": [20,30,40],
+        "min_damage": {
+            "base": [50,100,150],
+            "amp": 60
+        },
+        "max_damage": {
+            "base": [100,200,300],
+            "amp": 120
+        },
+        "heal": {
+            "base": [100,150,200],
+            "amp": 50,
+            "lostHP": 10
+        },
+        "multiple_hit_heal_amp": 40,
+        "hp_cost_percent": 10,
+        "cooldown": [90,75,60]
+    },
+    "T": {
+        "damage": {
+            "base": [30,65,100],
+            "amp": 35,
+            "targetMaxHP": 3
+        },
+        "slow": {
+            "duration": 2,
+            "effect": [5,10,15]
+        },
+        "blood_conversion": {
+            "skill_damage": 12,
+            "lost_hp": 20
+        },
+        "max_blood": 35,
+        "blood_heal_tick": 1,
+        "blood_consumption": 10,
+        "blood_heal_ratio": 100,
+        "cooldown": {
+            "constant": [9,7,5]
+        }
+    }
+}

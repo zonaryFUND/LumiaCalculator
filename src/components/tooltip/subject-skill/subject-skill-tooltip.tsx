@@ -46,6 +46,7 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
     const info = SkillsConstant[props.id][props.skill];
     const spCost = info.sp_cost == undefined ? null : valueOrElement(info.sp_cost, props.skillLevel);
     const hpCost = info.hp_cost == undefined ? null : valueOrElement(info.hp_cost, props.skillLevel);
+    const hpPercentCost = info.hp_cost_percent == undefined ? null : valueOrElement(info.hp_cost_percent, props.skillLevel);
 
     const cooldown = (() => {
         if (info.cooldown == undefined) return null;
@@ -82,7 +83,8 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
         <div className={style.cooldown}>
             {spCost != null ? <>スタミナ {spCost}<br /></> : null}
             {hpCost != null ? <>体力 {hpCost}<br /></> : null}
-            {spCost == null && hpCost == null ? <>コストなし<br /></> : null}
+            {hpPercentCost != null ? <>現在体力 {hpPercentCost}％<br /></> : null}
+            {spCost == null && hpCost == null && hpPercentCost == null ? <>コストなし<br /></> : null}
             {
                 cooldown != null ?
                 <>クールダウン{cooldown}秒</> :
