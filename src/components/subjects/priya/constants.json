@@ -1,0 +1,77 @@
+{
+    "Q": {
+        "damage": {
+            "base": [40,70,100,130,160],
+            "amp": 70
+        },
+        "charge_reduction": 50,
+        "bloomed_damage": {
+            "base": [40,60,80,100,120],
+            "amp": 50
+        },
+        "sp_cost": [70,65,60,55,50],
+        "cooldown": {
+            "constant": 1
+        },
+        "charge": {
+            "time": [12,11,10,9,8],
+            "max": 2
+        }
+    },
+    "W": {
+        "movement_speed": {
+            "duration": 1,
+            "effect": [12,14,16,18,20],
+            "ally_effect": [10,11,12,13,14]
+        },
+        "damage": {
+            "base": [60,100,140,180,220],
+            "amp": 60
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 30
+        },
+        "basic_attack_flower": 6,
+        "shield_duration": 2.5,
+        "shield": {
+            "base": [50,75,100,125,150]
+        },
+        "sp_cost": 65,
+        "cooldown": [15,14,13,12,11]
+    },
+    "E": {
+        "damage": {
+            "base": [60,90,120,150,180],
+            "amp": 50
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 70
+        },
+        "bind": 1,
+        "movement_speed": 12,
+        "sp_cost": [70,65,60,55,50],
+        "cooldown": 11
+    },
+    "R": {
+        "unstoppable": 1,
+        "damage_reduction": 40,
+        "first_damage": {
+            "base": [80,150,220],
+            "amp": 50
+        },
+        "echo_damage": {
+            "base": [80,150,220],
+            "amp": 60
+        },
+        "dance": 1,
+        "heal": [4,7,10],
+        "sp_cost": [100,120,140],
+        "cooldown": [80,70,60]
+    },
+    "T": {
+        "bloom": 1,
+        "flower_duration": 10
+    }
+}
