@@ -19,7 +19,7 @@ const BasicAttackDamage: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             {base}
-            <span>(+対象の最大体力の{Constants.Q.basic_attack_damage.targetMaxHP}％)</span>
+            <span>(+対象の最大体力の{Constants.Q.basic_attack_damage.targetMaxHP[props.config.skillLevels.Q]}％)</span>
         </>
     )
 }

@@ -5,7 +5,7 @@ import Decimal from "decimal.js";
 export default function skillDamage(status: Status, config: SubjectConfig, skill: "Q" | "W" | "E" | "R" | "T", dictionary: any): Decimal {
     
     const skillLevel = config.skillLevels[skill];
-    return ["base", "perLevel", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "additionalMaxHP", "criticalChance", "summoned_attack", "stack"].reduce((prev, key) => {
+    return ["base", "perLevel", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "additionalMaxHP", "criticalChance", "summoned_attack", "stack", "level"].reduce((prev, key) => {
         if (dictionary[key] == undefined) return prev;
         const skillValue = new Decimal(Array.isArray(dictionary[key]) ? dictionary[key][skillLevel] : dictionary[key]);
 
@@ -33,6 +33,8 @@ export default function skillDamage(status: Status, config: SubjectConfig, skill
                 return prev.add(status.summonedStatus!.attackPower.percent(skillValue));
             case "stack":
                 return prev.add(config.stack);
+            case "level":
+                return prev.add(skillValue.times(config.level));
         }
 
         return prev;

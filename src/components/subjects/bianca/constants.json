@@ -58,7 +58,7 @@
             "duration": 2,
             "effect": 50
         },
-        "omnicyphon_amp": [20,30,40],
+        "omnisyphon_amp": [20,30,40],
         "min_damage": {
             "base": [50,100,150],
             "amp": 60

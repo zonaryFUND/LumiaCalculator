@@ -1,0 +1,81 @@
+{
+    "Q": {
+        "damage": {
+            "base": [55,80,105,130,155],
+            "attack_speed": 65
+        },
+        "enhanced_damage": {
+            "base": [60,90,120,150,180],
+            "attack": 70,
+            "level": 3
+        },
+        "airborne": 0.075,
+        "stack_damage_conversion": [2,4,6,8,10],
+        "stack_airborne_extend": 0.075,
+        "sp_cost": [50,55,60,65,70]
+    },
+    "W": {
+        "damage": {
+            "base": [70,100,130,160,190],
+            "attack": 50
+        },
+        "enhanced_damage": {
+            "base": [80,120,160,200,240],
+            "attack": 60,
+            "level": 3
+        },
+        "bind": 0.5,
+        "stack_bind_extend": 10,
+        "sp_cost": 80
+    },
+    "E": {
+        "damage": {
+            "base": [19,38,57,76,95],
+            "attack": 50
+        },
+        "enhanced_damage": {
+            "base": [22,44,66,88,110],
+            "attack": 50,
+            "level": 3
+        },
+        "cooldown_reduction": 1,
+        "omnisyphon": {
+            "duration": 4,
+            "effect": {
+                "perStack": 1,
+                "attack": 5 
+            }
+        },
+        "sp_cost": [40,50,60,70,80]
+    },
+    "R": {
+        "min_damage": {
+            "base": [120,180,240],
+            "attack": 100
+        },
+        "max_damage": {
+            "base": [360,540,720],
+            "attack": 200
+        },
+        "stun": 1,
+        "stack_gain": 4,
+        "sp_cost": [120,150,180],
+        "cooldown": [60,50,40]
+    },
+    "T": {
+        "damage": {
+            "attack": [20,25,30],
+            "basicAttackAmp": 100
+        },
+        "shared_cooldown": [10,9,8],
+        "max_stack": 10,
+        "stack_cooldown_reduction": 0.8,
+        "shield": {
+            "duration": 2.5,
+            "effect": {
+                "perStack": 5,
+                "attack": 50
+            }
+        }
+    }
+}
