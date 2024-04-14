@@ -1,0 +1,66 @@
+{
+    "Q": {
+        "damage": {
+            "base": [40,80,120,160,200],
+            "defense": 40,
+            "amp": 40,
+            "maxHP": 7
+        },
+        "duration":5,
+        "slow": {
+            "duration": 1,
+            "effect": [10,15,20,25,30]
+        },
+        "sp_cost": [70,65,60,55,50],
+        "cooldown": [5,4.5,4,3.5,3]
+    },
+    "W": {
+        "duration": 1.25,
+        "basic_attack_damage": 1,
+        "movement_speed": [8,11,14,17,20],
+        "defense": [12,14,16,18,20],
+        "damage": {
+            "base": [100,140,180,220,260],
+            "amp": 45,
+            "defense": 30
+        },
+        "cooldown": {
+            "constant": 4
+        },
+        "charge_time_reduction": 1,
+        "charge": {
+            "time": [28,26.5,25,23.5,22],
+            "max": 2
+        }
+    },
+    "E": {
+        "shield_duration": 2.5,
+        "shield": {
+            "base": [60,100,140,180,220],
+            "defense": 30,
+            "amp": 40
+        },
+        "damage": {
+            "base": [60,100,140,180,220],
+            "amp": 50,
+            "defense": 45
+        },
+        "taunt": [0.8,0.9,1,1.1,1.2],
+        "reuse": 3,
+        "sp_cost": [65,70,75,80,85],
+        "cooldown": [20,29,18,17,16]
+    },
+    "R": {
+        "supression": 0.5,
+        "heal": {
+            "base": [50,100,150],
+            "amp": 50,
+            "defense": 50
+        },
+        "sp_cost": [100,120,140],
+        "cooldown": [90,75,60]
+    },
+    "T": {
+        "defense_damage": [25,30,35]
+    }
+}
