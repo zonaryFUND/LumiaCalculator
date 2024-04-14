@@ -1,0 +1,51 @@
+{
+    "Q": {
+        "damage": {
+            "base": [60,90,120,150,180],
+            "amp": 85
+        },
+        "cooldown_reduction": 60,
+        "sp_cost": 60,
+        "cooldown": [7,6,5,4,3]
+    },
+    "W": {
+        "slow": 35,
+        "launch": 1,
+        "damage": {
+            "base": [70,100,130,160,190],
+            "amp": 80
+        },
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": [14,13,12,11,10]
+    },
+    "E": {
+        "damage": {
+            "base": [100,140,180,220,260],
+            "amp": 80
+        },
+        "sp_cost": [80,75,70,65,60],
+        "cooldown": [18,16.5,15,13.5,12]
+    },
+    "R": {
+        "first_damage": {
+            "base": [50,100,150],
+            "amp": 25
+        },
+        "duration": 15,
+        "card_damage": {
+            "base": [50,110,170],
+            "amp": 50
+        },
+        "movement_speed_penalty": 10,
+        "sp_cost": 100,
+        "cooldown": [80,70,60]
+    },
+    "T": {
+        "fear": [0.9,1,1.1],
+        "damage": {
+            "amp": [10,25,40]
+        },
+        "fear_immune": 8,
+        "minimum_additional_damage": 1
+    }
+}
