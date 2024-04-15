@@ -1,0 +1,156 @@
+{
+    "Q": {
+        "damage": {
+            "base": [60,75,90,105,120],
+            "attack": 60
+        },
+        "cooldown_reduction": 30,
+        "movement_speed": {
+            "duration": [1.8,1.9,2,2.1,2.2],
+            "effect": [10,15,20,25,30]
+        },
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "Q2": {
+        "damage": {
+            "base": [60,80,100,120,140],
+            "attack": 70
+        },
+        "cooldown_reduction": 30,
+        "movement_speed": {
+            "duration": [1.8,1.9,2,2.1,2.2],
+            "effect": [10,15,20,25,30]
+        },
+        "attack_speed": {
+            "duration" :3,
+            "effect": [30,35,40,45,50]
+        },
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "W": {
+        "duration" :12,
+        "damage": {
+            "base": [90,120,150,180,210],
+            "attack": 70
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 99
+        },
+        "max_set": 2,
+        "cooldown": {
+            "constant": 1
+        },
+        "sp_cost": [50,60,70,80,90],
+        "charge": {
+            "time": [14,13,12,11,10],
+            "max": 2
+        }
+    },
+    "W2": {
+        "duration" :12,
+        "damage": {
+            "base": [90,120,150,180,210],
+            "attack": 90
+        },
+        "bind": 1,
+        "max_set": 3,
+        "cooldown": {
+            "constant": 1
+        },
+        "sp_cost": [50,60,70,80,90],
+        "charge": {
+            "time": [14,13,12,11,10],
+            "max": 3
+        }
+    },
+    "E": {
+        "duration": 7,
+        "movement_speed": 12,
+        "slow": {
+            "duration": 1,
+            "effect": 15
+        },
+        "sp_cost": 90,
+        "cooldown": [22,20,18,16,14]
+    },
+    "E2": {
+        "duration": 5,
+        "movement_speed": 12,
+        "damage": {
+            "base": [50,80,110,140,170],
+            "attack": 40
+        },
+        "stun": 1,
+        "heal": [16,28,40,52,64],
+        "sp_cost": 90,
+        "cooldown": [22,20,18,16,14]
+    },
+    "R": {
+        "duration": 4,
+        "recording_movement_speed": 10,
+        "recorded_movement_speed": {
+            "duration" :3,
+            "effect": 30
+        },
+        "max_stack": 5,
+        "multiple_subject_recording_time": 1.2,
+        "multiple_subject_mastery": 1300,
+        "dead_body_recording_time": 2,
+        "dead_body_mastery": 650,
+        "max_dead_body_stack": 3,
+        "reshooting_prohibit": 60,
+        "sp_cost": 100,
+        "cooldown": [30,20,1]
+    },
+    "R2": {
+        "defense_reduction": 15,
+        "duration": 1.5,
+        "first_outer_damage": {
+            "base": [10,15,20],
+            "attack": 3
+        },
+        "first_center_damage": {
+            "base": [20,25,30],
+            "attack": 7
+        },
+        "second_outer_damage": {
+            "base": [100,200,300],
+            "attack": 70
+        },
+        "second_center_damage": {
+            "base": [200,325,450],
+            "attack": 110
+        },
+        "stun_extend_per_hit": 0.1,
+        "sp_cost": 100,
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "damage": {
+            "attack": 20,
+            "basicAttackAmp": 100
+        },
+        "battery_charge": 0.5,
+        "attack_speed_conversion": {
+            "from": 50,
+            "to": 15
+        },
+        "engagement_ping_range": 30,
+        "mark_threshold": 4,
+        "mark_damage": {
+            "base": 50,
+            "attack": [55,65,75]
+        },
+        "broadcasting_damage": {
+            "attack": 60,
+            "basicAttackAmp": 100
+        },
+        "broadcasting_mark_damage": {
+            "base": [60,70,80],
+            "attack": [70,80,90]
+        }
+    }
+}
