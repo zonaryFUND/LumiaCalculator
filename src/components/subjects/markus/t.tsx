@@ -33,6 +33,7 @@ const t: React.FC<SubjectSkillProps> = props => {
 export default t;
 
 export const values: ValuesProps = {
+    additionalInfo: <>ショック状態の対象者から視界が提供されます。すでにショック状態の対象は条件を満たしてもショック状態になりません。</>,
     parameters: [
         {title: "ショックダメージ量", values: Constants.T.damage.base},
         {title: "突進ダメージ", values: Constants.T.additional_damage.base}
