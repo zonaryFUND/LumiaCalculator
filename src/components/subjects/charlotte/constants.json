@@ -14,7 +14,7 @@
     },
     "W": {
         "heal": {
-            "base": [40,55,70,85,100],
+            "base": [40,60,80,100,120],
             "amp": 25
         },
         "sp_cost": 50,
@@ -33,7 +33,7 @@
         "channeling": 1.5,
         "duration": 2,
         "sp_cost": 150,
-        "cooldown": [130,100,70]
+        "cooldown": [100,80,60]
     },
     "T": {
         "ally_losthp_threshold": 25,
