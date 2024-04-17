@@ -86,7 +86,11 @@ const damage: React.FC<Props> = props => {
                             case "stack":
                                 return <span key={key} className={style.strong}>{left}{props.stackName}スタック数{right}</span>;
                             case "level":
-                                return <span key={key} className={style.level}>{left}キャラクターレベル*{current(skillLevel, props.constants.level!).toString()}{right}</span>
+                                if (props.config.subject == "leni") {
+                                    return <span key={key} className={style.level}>{left}レニのレベル <span className={style.emphasis}>* {current(skillLevel, props.constants.level!).toString()}</span>{right}</span>
+                                } else {
+                                    return <span key={key} className={style.level}>{left}キャラクターレベル*{current(skillLevel, props.constants.level!).toString()}{right}</span>
+                                }
                         }
                     })
                 }
