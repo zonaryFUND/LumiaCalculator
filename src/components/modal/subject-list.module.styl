@@ -1,0 +1,109 @@
+.subjects
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    position: absolute
+    background: var(--base)
+    max-width: 1024px
+    height: 80vh
+    margin: auto
+    inset: 0
+    border-radius: 16px
+    overflow: hidden
+
+    >*
+        padding: 16px
+
+    header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 1px solid lightgray
+        padding: 0 0 16px
+        margin: 16px 16px 0
+
+        h1
+            font-size: 2rem
+
+    .segment
+        --highlight-x-pos: 12px
+        display: flex
+        justify-content: space-between
+        background: var(--bg)
+        box-shadow: 0 0 5px rgba(0,0,0,0.5)
+        border-radius: 10px
+        padding: 12px
+        position: relative
+
+        label
+            cursor: pointer
+            width: 200px
+            text-align: center
+            color: var(--main)
+            transition: color 0.25s ease
+            z-index: 1
+
+        .active
+            color: var(--bg)
+
+        input
+            display: none
+
+    .segment::before
+        content: ''
+        background: var(--c4)
+        position: absolute
+        border-radius:8px
+        width: 200px
+        top: 8px
+        bottom: 8px
+        left: var(--highlight-x-pos)
+        z-index: 0
+        transition: left 0.25s ease
+
+    .content
+        flex: 1
+        overflow-y: scroll
+        border-radius: 8px
+
+    ul
+        display: grid
+        place-content: start
+        grid-template-columns: repeat(auto-fill, 130px)
+        justify-content: space-between
+        row-gap: 12px
+
+    li
+        display: inline-flex
+        flex-direction: column
+        justify-content: center
+        text-align: center
+        cursor: pointer
+        background: var(--bg)
+        border-radius: 8px
+        overflow: hidden
+        box-shadow: 0 0 5px rgba(0,0,0,0.5)
+
+        img
+            aspect-ratio: 122/160
+
+        p
+            color: var(--main)
+            font-size: 1rem
+            font-weight: bold
+
+    .selected
+        background: var(--c2)
+        box-shadow: none
+
+        p
+            color: white
+
+    h3
+        font-size: 1.5rem
+
+    section:not(:last-child)
+        margin-bottom: 16px
+
+.a
+    height: 100px

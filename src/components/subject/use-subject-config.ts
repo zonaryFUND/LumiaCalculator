@@ -19,10 +19,11 @@ export type SkillLevels = {
 type StateProps<T> = [T, React.Dispatch<React.SetStateAction<T>>]
 
 export type Response = {
-    subject: StateProps<SubjectID | null>
+    subject: StateProps<SubjectID>
     equipment: StateProps<Equipment>
     level: StateProps<number>
     weaponMastery: StateProps<number>
+    defenseMastery: StateProps<number>
     movementMastery: StateProps<number>
     skillLevels: StateProps<SkillLevels>
     gauge: StateProps<number>
@@ -30,10 +31,11 @@ export type Response = {
 }
 
 export type SubjectConfig = {
-    subject: SubjectID | null, 
+    subject: SubjectID, 
     equipment: Equipment, 
     level: number, 
     weaponMastery: number, 
+    defenseMastery: number,
     movementMastery: number,
     skillLevels: SkillLevels
     gauge: number
@@ -42,18 +44,20 @@ export type SubjectConfig = {
 
 export default function(): Response {
     const [config, setConfig, removeConfig] = useLocalStorage<SubjectConfig>("main-subject-config", {
-        subject: null,
+        subject: "eleven",
         equipment: { weapon: null, chest: null, head: null, arm: null, leg: null },
         level: 1,
         weaponMastery: 1,
+        defenseMastery: 1,
         movementMastery: 1,
         skillLevels: { Q: 0, W: 0, E: 0, R: 0, T: 0 },
         gauge: 0,
         stack: 0
     })
-    const [subject, setSubject] = React.useState<SubjectID | null>(config?.subject || null);
+    const [subject, setSubject] = React.useState<SubjectID>(config!.subject);
     const [level, setLevel] = React.useState(config?.level || 1);
     const [weaponMastery, setWeaponMastery] = React.useState(config?.weaponMastery || 1);
+    const [defenseMastery, setDefenseMastery] = React.useState(config?.defenseMastery || 1);
     const [movementMastery, setMovementMastery] = React.useState(config?.weaponMastery || 1);
     const [equipment, setEquipment] = React.useState(config?.equipment || {
         weapon: null, chest: null, head: null, arm: null, leg: null
@@ -63,7 +67,7 @@ export default function(): Response {
     const [stack, setStack] = React.useState(0);
 
     React.useEffect(() => {
-        setConfig({ subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge, stack });
+        setConfig({ subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack });
     }, [subject, level, weaponMastery, movementMastery, equipment, gauge]);
     
     return {
@@ -71,6 +75,7 @@ export default function(): Response {
         equipment: [equipment, setEquipment],
         level: [level, setLevel],
         weaponMastery: [weaponMastery, setWeaponMastery],
+        defenseMastery: [defenseMastery, setDefenseMastery],
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels],
         gauge: [gauge, setGauge],

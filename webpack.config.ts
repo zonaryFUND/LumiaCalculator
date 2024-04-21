@@ -59,7 +59,8 @@ const config: webpack.Configuration = {
             "@app": path.resolve(__dirname, "./src"),
             "dict": path.resolve(__dirname, "./src/dictionary"),
             "components": path.resolve(__dirname, "./src/components"),
-            "resources": path.resolve(__dirname, "../resources")
+            "resources": path.resolve(__dirname, "../resources"),
+            "util": path.resolve(__dirname, "./src/util")
         }
     }
 };

@@ -21,6 +21,7 @@ const subject: React.FC = _ => {
         equipment: [equipment, setEquipment],
         level: [level, setLevel],
         weaponMastery: [weaponMastery, setWeaponMastery],
+        defenseMastery: [defenseMastery],
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels],
         gauge: [gauge, setGauge],
@@ -28,7 +29,7 @@ const subject: React.FC = _ => {
     } = useSubjectConfig();
 
     const subjectConfig = {
-        subject, equipment, level, weaponMastery, movementMastery, skillLevels, gauge, stack
+        subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack
     }
     const status = useStatus(subjectConfig);
     

@@ -1,0 +1,53 @@
+.selection
+    display: flex
+    align-items: center
+    justify-content: space-between
+    cursor: pointer
+    border: 1px solid var(--main)
+    position: relative
+    border-radius: 4px
+    padding: 5px 10px 2px
+    font-size: 20px
+    vertical-align: middle
+    margin-top: 7px
+    height: 40px
+    box-sizing: border-box
+    
+    p
+        font-size: 14px
+        line-height: 14px
+        background: var(--bg)
+        position: absolute
+        pointer-events: none
+        top: -7px
+        left: 10px
+        padding: 0 2px
+
+    span
+        display: block
+
+.overlay
+    position: fixed
+    inset: 0
+    background: transparent
+
+.options
+    position: absolute
+    padding: 0
+    max-height: 400px
+    box-shadow: 0 0 5px rgba(0,0,0,0.5)
+    overflow-y: scroll
+
+    li
+        font-size: 20px
+        padding: 5px 10px 2px
+        height: 40px
+        background: var(--bg)
+        text-align: left
+
+    li:hover
+        background-color: lightgray
+    
+    .selected
+        color: white
+        background: var(--c2)
