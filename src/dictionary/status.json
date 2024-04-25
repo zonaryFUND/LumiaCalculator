@@ -28,7 +28,7 @@
 		"apPerLevel": 4.3,
 		"armor": 51,
 		"armorPerLevel": 2.2,
-		"attackSpeed": 0.045,
+		"attackSpeed": 0.05,
 		"movementSpeed": 3.5
 	},
 	"adina": {
@@ -53,7 +53,7 @@
 		"maxSP": 500,
 		"maxSPperLevel": 9,
 		"hpRegeneration": 0.75,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 4.4,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 38,
@@ -69,7 +69,7 @@
 		"maxSP": 500,
 		"maxSPperLevel": 14,
 		"hpRegeneration": 1.53,
-		"hpRegenPerLevel": 0.077,
+		"hpRegenPerLevel": 0.08,
 		"spRegeneration": 3.2,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 38,
@@ -93,7 +93,7 @@
 		"armor": 44,
 		"armorPerLevel": 2.6,
 		"attackSpeed": 0.14,
-		"movementSpeed": 3.4499999999999997
+		"movementSpeed": 3.45
 	},
 	"alonso": {
 		"maxHP": 910,
@@ -109,7 +109,7 @@
 		"armor": 47,
 		"armorPerLevel": 2.8,
 		"attackSpeed": 0.1,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"arda": {
 		"maxHP": 850,
@@ -173,7 +173,7 @@
 		"armor": 45,
 		"armorPerLevel": 3.1,
 		"attackSpeed": 0.2,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"bianca": {
 		"maxHP": 810,
@@ -197,7 +197,7 @@
 		"maxSP": 440,
 		"maxSPperLevel": 25,
 		"hpRegeneration": 2.25,
-		"hpRegenPerLevel": 0.113,
+		"hpRegenPerLevel": 0.11,
 		"spRegeneration": 4.3,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 34,
@@ -213,7 +213,7 @@
 		"maxSP": 500,
 		"maxSPperLevel": 20,
 		"hpRegeneration": 1.8,
-		"hpRegenPerLevel": 0.135,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 29,
@@ -229,7 +229,7 @@
 		"maxSP": 480,
 		"maxSPperLevel": 25,
 		"hpRegeneration": 0.75,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 3.5,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 35,
@@ -269,7 +269,7 @@
 		"armor": 46,
 		"armorPerLevel": 2.2,
 		"attackSpeed": 0.12,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"chloe": {
 		"maxHP": 820,
@@ -277,7 +277,7 @@
 		"maxSP": 480,
 		"maxSPperLevel": 25,
 		"hpRegeneration": 1.2,
-		"hpRegenPerLevel": 0.075,
+		"hpRegenPerLevel": 0.08,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 35,
@@ -285,7 +285,7 @@
 		"armor": 46,
 		"armorPerLevel": 2.3,
 		"attackSpeed": 0.04,
-		"movementSpeed": 3.4499999999999997
+		"movementSpeed": 3.45
 	},
 	"daniel": {
 		"maxHP": 860,
@@ -293,7 +293,7 @@
 		"maxSP": 410,
 		"maxSPperLevel": 26,
 		"hpRegeneration": 1.53,
-		"hpRegenPerLevel": 0.077,
+		"hpRegenPerLevel": 0.08,
 		"spRegeneration": 4.4,
 		"spRegenPerLevel": 0.05,
 		"attackPower": 30,
@@ -325,7 +325,7 @@
 		"maxSP": 430,
 		"maxSPperLevel": 12,
 		"hpRegeneration": 1.13,
-		"hpRegenPerLevel": 0.135,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 2.1,
 		"spRegenPerLevel": 0.01,
 		"attackPower": 42,
@@ -341,7 +341,7 @@
 		"maxSP": 430,
 		"maxSPperLevel": 20,
 		"hpRegeneration": 2.04,
-		"hpRegenPerLevel": 0.051,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 37,
@@ -357,7 +357,7 @@
 		"maxSP": 420,
 		"maxSPperLevel": 16,
 		"hpRegeneration": 1.5,
-		"hpRegenPerLevel": 0.105,
+		"hpRegenPerLevel": 0.11,
 		"spRegeneration": 3.5,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 35,
@@ -365,7 +365,7 @@
 		"armor": 47,
 		"armorPerLevel": 2.5,
 		"attackSpeed": 0.11,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"emma": {
 		"maxHP": 802,
@@ -389,7 +389,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 15,
 		"hpRegeneration": 1.7,
-		"hpRegenPerLevel": 0.111,
+		"hpRegenPerLevel": 0.11,
 		"spRegeneration": 4.2,
 		"spRegenPerLevel": 0.05,
 		"attackPower": 42,
@@ -405,7 +405,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 26,
 		"hpRegeneration": 0.9,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 4.4,
 		"spRegenPerLevel": 0.05,
 		"attackPower": 32,
@@ -437,7 +437,7 @@
 		"maxSP": 430,
 		"maxSPperLevel": 13,
 		"hpRegeneration": 1.8,
-		"hpRegenPerLevel": 0.135,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 40,
@@ -485,7 +485,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 26,
 		"hpRegeneration": 1.2,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 30,
@@ -549,7 +549,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 21,
 		"hpRegeneration": 0.75,
-		"hpRegenPerLevel": 0.034,
+		"hpRegenPerLevel": 0.03,
 		"spRegeneration": 3.1,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 41,
@@ -565,7 +565,7 @@
 		"maxSP": 430,
 		"maxSPperLevel": 15,
 		"hpRegeneration": 1.28,
-		"hpRegenPerLevel": 0.077,
+		"hpRegenPerLevel": 0.08,
 		"spRegeneration": 3.2,
 		"spRegenPerLevel": 0.02,
 		"attackPower": 43,
@@ -613,7 +613,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 25,
 		"hpRegeneration": 1.2,
-		"hpRegenPerLevel": 0.075,
+		"hpRegenPerLevel": 0.08,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 39,
@@ -637,7 +637,7 @@
 		"armor": 45,
 		"armorPerLevel": 2.6,
 		"attackSpeed": 0.03,
-		"movementSpeed": 3.4499999999999997
+		"movementSpeed": 3.45
 	},
 	"katja": {
 		"maxHP": 830,
@@ -661,7 +661,7 @@
 		"maxSP": 430,
 		"maxSPperLevel": 22,
 		"hpRegeneration": 1.02,
-		"hpRegenPerLevel": 0.136,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 30,
@@ -677,7 +677,7 @@
 		"maxSP": 440,
 		"maxSPperLevel": 15,
 		"hpRegeneration": 1.28,
-		"hpRegenPerLevel": 0.077,
+		"hpRegenPerLevel": 0.08,
 		"spRegeneration": 3.1,
 		"spRegenPerLevel": 0.02,
 		"attackPower": 28,
@@ -685,7 +685,7 @@
 		"armor": 51,
 		"armorPerLevel": 2.8,
 		"attackSpeed": 0.12,
-		"movementSpeed": 3.4499999999999997
+		"movementSpeed": 3.45
 	},
 	"leni": {
 		"maxHP": 880,
@@ -709,7 +709,7 @@
 		"maxSP": 380,
 		"maxSPperLevel": 19,
 		"hpRegeneration": 1.8,
-		"hpRegenPerLevel": 0.113,
+		"hpRegenPerLevel": 0.11,
 		"spRegeneration": 3.3,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 32,
@@ -725,7 +725,7 @@
 		"maxSP": 420,
 		"maxSPperLevel": 16,
 		"hpRegeneration": 2.48,
-		"hpRegenPerLevel": 0.158,
+		"hpRegenPerLevel": 0.16,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 31,
@@ -741,7 +741,7 @@
 		"maxSP": 420,
 		"maxSPperLevel": 16,
 		"hpRegeneration": 2.48,
-		"hpRegenPerLevel": 0.158,
+		"hpRegenPerLevel": 0.16,
 		"spRegeneration": 2.1,
 		"spRegenPerLevel": 0.01,
 		"attackPower": 27,
@@ -757,7 +757,7 @@
 		"maxSP": 420,
 		"maxSPperLevel": 15,
 		"hpRegeneration": 2.25,
-		"hpRegenPerLevel": 0.135,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 3.2,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 33,
@@ -781,7 +781,7 @@
 		"armor": 47,
 		"armorPerLevel": 3.2,
 		"attackSpeed": 0.12,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"magnus": {
 		"maxHP": 1010,
@@ -789,7 +789,7 @@
 		"maxSP": 410,
 		"maxSPperLevel": 14,
 		"hpRegeneration": 1.7,
-		"hpRegenPerLevel": 0.085,
+		"hpRegenPerLevel": 0.09,
 		"spRegeneration": 3.2,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 44,
@@ -797,7 +797,7 @@
 		"armor": 50,
 		"armorPerLevel": 2.5,
 		"attackSpeed": 0.16,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"mai": {
 		"maxHP": 895,
@@ -805,7 +805,7 @@
 		"maxSP": 440,
 		"maxSPperLevel": 16,
 		"hpRegeneration": 2.25,
-		"hpRegenPerLevel": 0.113,
+		"hpRegenPerLevel": 0.11,
 		"spRegeneration": 2.9,
 		"spRegenPerLevel": 0.02,
 		"attackPower": 30,
@@ -821,7 +821,7 @@
 		"maxSP": 430,
 		"maxSPperLevel": 13,
 		"hpRegeneration": 1.02,
-		"hpRegenPerLevel": 0.136,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 37,
@@ -829,7 +829,7 @@
 		"armor": 42,
 		"armorPerLevel": 3.5,
 		"attackSpeed": 0.12,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"martina": {
 		"maxHP": 950,
@@ -853,7 +853,7 @@
 		"maxSP": 350,
 		"maxSPperLevel": 13,
 		"hpRegeneration": 0.6,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 3.1,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 32,
@@ -869,7 +869,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 26,
 		"hpRegeneration": 0.9,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 4.4,
 		"spRegenPerLevel": 0.05,
 		"attackPower": 35,
@@ -885,7 +885,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 26,
 		"hpRegeneration": 1.35,
-		"hpRegenPerLevel": 0.135,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 3.4,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 32,
@@ -909,7 +909,7 @@
 		"armor": 49,
 		"armorPerLevel": 3.1,
 		"attackSpeed": 0.11,
-		"movementSpeed": 3.5999999999999996
+		"movementSpeed": 3.6
 	},
 	"priya": {
 		"maxHP": 855,
@@ -981,7 +981,7 @@
 		"maxSP": 440,
 		"maxSPperLevel": 22,
 		"hpRegeneration": 0.6,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 3.5,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 30,
@@ -1013,7 +1013,7 @@
 		"maxSP": 480,
 		"maxSPperLevel": 18,
 		"hpRegeneration": 1.58,
-		"hpRegenPerLevel": 0.135,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 3.4,
 		"spRegenPerLevel": 0.04,
 		"attackPower": 39,
@@ -1061,7 +1061,7 @@
 		"maxSP": 500,
 		"maxSPperLevel": 15,
 		"hpRegeneration": 1.79,
-		"hpRegenPerLevel": 0.068,
+		"hpRegenPerLevel": 0.07,
 		"spRegeneration": 3.1,
 		"spRegenPerLevel": 0.02,
 		"attackPower": 39,
@@ -1101,7 +1101,7 @@
 		"armor": 51,
 		"armorPerLevel": 2.6,
 		"attackSpeed": 0.12,
-		"movementSpeed": 3.4499999999999997
+		"movementSpeed": 3.45
 	},
 	"william": {
 		"maxHP": 845,
@@ -1125,7 +1125,7 @@
 		"maxSP": 420,
 		"maxSPperLevel": 14,
 		"hpRegeneration": 2.25,
-		"hpRegenPerLevel": 0.135,
+		"hpRegenPerLevel": 0.14,
 		"spRegeneration": 2.1,
 		"spRegenPerLevel": 0.01,
 		"attackPower": 40,
@@ -1141,7 +1141,7 @@
 		"maxSP": 410,
 		"maxSPperLevel": 20,
 		"hpRegeneration": 1.58,
-		"hpRegenPerLevel": 0.113,
+		"hpRegenPerLevel": 0.11,
 		"spRegeneration": 3.6,
 		"spRegenPerLevel": 0.03,
 		"attackPower": 33,
@@ -1157,7 +1157,7 @@
 		"maxSP": 400,
 		"maxSPperLevel": 26,
 		"hpRegeneration": 0.9,
-		"hpRegenPerLevel": 0.045,
+		"hpRegenPerLevel": 0.05,
 		"spRegeneration": 4.4,
 		"spRegenPerLevel": 0.05,
 		"attackPower": 28,
@@ -1165,6 +1165,6 @@
 		"armor": 47,
 		"armorPerLevel": 2.5,
 		"attackSpeed": 0.11,
-		"movementSpeed": 3.4499999999999997
+		"movementSpeed": 3.45
 	}
 }

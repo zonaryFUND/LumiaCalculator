@@ -8,15 +8,18 @@
     display: flex
     gap: 8px
 
-    >div
+    .right
         display: flex
         flex-direction: column 
         justify-content: space-between
         flex: 1
 
     img
-        cursor: pointer
+        cursor: pointer        
+        box-shadow: 0 0 5px rgba(0,0,0,0.5)
         width: 100px
+        background: var(--c5)
+        border-radius: 4px
 
 .mastery
     display: flex
@@ -32,3 +35,7 @@
 
 .equipment
     text-align: center
+    margin-right: -2px
+    
+    >*
+        margin-right: 2px

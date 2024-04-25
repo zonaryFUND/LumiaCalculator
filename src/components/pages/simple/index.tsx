@@ -1,12 +1,16 @@
 import * as React from "react";
 import common from "@app/common.styl";
-import style from "./index.styl";
+
+import style from "./index.module.styl";
 import useSubjectConfig from "components/subject/use-subject-config";
 import useStatus from "components/subject/use-status";
 
 import Subject from "./subject";
 import BuffDebuffs from "./buff-debuffs";
 import Damage from "./damage";
+
+import { Tooltip } from "react-tooltip";
+import ItemTooltip from "components/tooltip/item-tooltip";
 
 const index: React.FC = props => {
     const [buildName, setBuildName] = React.useState<string | null>(null)
@@ -41,6 +45,7 @@ const index: React.FC = props => {
                     <Subject 
                         subject={[subject, setSubject]} 
                         level={[level, setLevel]}
+                        skillLevels={[skillLevels, setSkillLevels]}
                         weaponMastery={[weaponMastery, setWeaponMastery]}
                         defenseMastery={[defenseMastery, setDefenseMastery]}
                         movementMastery={[movementMastery, setMovementMastery]}
@@ -49,7 +54,12 @@ const index: React.FC = props => {
                     <BuffDebuffs />
                     <Damage />
                 </div>
-                </div>
+            </div>
+            <Tooltip 
+                id="weapon"
+                className={style.tooltip}
+                render={({ content, activeAnchor }) => content ? <ItemTooltip itemID={content}/> : null}
+            />
         </main>
     )
 };

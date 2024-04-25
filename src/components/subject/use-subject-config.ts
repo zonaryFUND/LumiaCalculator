@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SubjectID } from "@app/entity/subject";
-import { useLocalStorage } from "react-use";
+import { useLocalStorage, usePrevious } from "react-use";
 import { WeaponID } from "@app/entity/weapon-id";
 import { ArmID, ChestID, HeadID, LegID } from "@app/entity/armor-id";
 
@@ -65,6 +65,12 @@ export default function(): Response {
     const [skillLevels, setSkillLevels] = React.useState(config?.skillLevels || { Q: 1, W: 1, E: 1, R: 1, T: 1 });
     const [gauge, setGauge] = React.useState(0);
     const [stack, setStack] = React.useState(0);
+
+    const prevSubject = usePrevious(subject);
+    React.useEffect(() => {
+        if (prevSubject == undefined) return;
+        setEquipment({ weapon: null, chest: null, head: null, arm: null, leg: null });
+    }, [subject])
 
     React.useEffect(() => {
         setConfig({ subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack });

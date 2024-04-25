@@ -2,6 +2,10 @@ import * as React from "react";
 import { Subjects, SubjectID, name } from "@app/entity/subject";
 import style from "./subject-list.module.styl";
 import Images from "@app/resources/image";
+import SegmentedControl from "components/common/segmented-control";
+import { useLocalStorage } from "react-use";
+import common from "@app/common.styl";
+import { styles } from "@app/util/style";
 
 type Props = {
     current: SubjectID
@@ -16,7 +20,7 @@ type SubjectProps = {
 
 const Subject: React.FC<SubjectProps> = props => (
     <li 
-        className={props.selected ? style.selected : undefined} 
+        className={styles(props.selected ? style.selected : undefined, common.hover)} 
         key={props.id} 
         onClick={() => props.onSelect(props.id)}
     >
@@ -30,7 +34,8 @@ const StandardList: React.FC<Props> = props => (
     <ul>
         {
             SortedSubjects.map(id => (
-                <Subject 
+                <Subject
+                    key={id}
                     id={id} 
                     onSelect={props.onSelect} 
                     selected={props.current == id}
@@ -102,56 +107,19 @@ const SectionedList: React.FC<Props> = props => (
 )
 
 const subjectsList: React.FC<Props> = props => {
-    const [aiueo, setAiueo] = React.useState(false);
-    const onChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
-        setAiueo(event.target.value == "dictionary")
-    }, []);
-    const controlRef = React.useRef<HTMLDivElement>(null)
-    const inGameRef = React.useRef<HTMLLabelElement>(null);
-    const dictRef = React.useRef<HTMLLabelElement>(null);
-    React.useEffect(() => {
-        const x = (aiueo ? dictRef : inGameRef).current?.offsetLeft;
-        controlRef.current?.style.setProperty("--highlight-x-pos", `${x}px`)
-    }, [aiueo]);
+    const [sort, setSort] = useLocalStorage("subject-list-sort", "in-game");
 
     return (
         <>
             <header>
                 <h1>実験体選択</h1>
-                <div className={style.segment} ref={controlRef}>
-                    <label 
-                        className={aiueo ? undefined : style.active}
-                        ref={inGameRef}
-                    >
-                        ゲーム内表示順
-                        <input 
-                            type="radio" 
-                            name="subjects-sort"
-                            value="in-game"
-                            checked={!aiueo} 
-                            onChange={onChange}
-                        />
-                    </label>
-                    <label 
-                        className={aiueo ? style.active : undefined}
-                        ref={dictRef}
-                    >
-                        日本語辞書順
-                        <input 
-                            type="radio"
-                            name="subjects-sort"
-                            value="dictionary"
-                            checked={aiueo} 
-                            onChange={onChange}
-                        />
-                    </label>
-                </div>
+                <SegmentedControl name="subjects-sort" value={[sort, setSort]} segments={[{title: "ゲーム内表示順", value: "in-game"}, {title: "日本語辞書順", value: "dictionary"}]} />
             </header>
             <div className={style.content}>
                 {   
-                    aiueo ?
-                    <SectionedList {...props} /> :
-                    <StandardList {...props} />
+                    sort == "in-game" ?
+                    <StandardList {...props} /> :
+                    <SectionedList {...props} />
                 }
             </div>
         </>

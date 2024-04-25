@@ -1,0 +1,74 @@
+.status
+    padding: 8px
+
+.parent
+    font-size: 14px
+    font-weight: bold
+    border: 1px solid var(--c4)
+    border-radius: 4px
+    
+    table
+        width: 100%
+        border-spacing: 0
+        border-collapse: separate
+
+    tr
+        border: 1px black solid
+
+    thead
+        font-size: 12px
+        height: 30px
+        
+        th:first-child
+            text-align: left
+
+    tbody
+        td:not(:first-child)
+            text-align: right
+
+        tr
+            height: 28px
+
+    .separator
+        background: var(--base)
+        font-size: 13px
+
+    td
+        padding: 2px 4px
+
+.basic-attack-reduction
+    position: relative
+    >:last-child
+        display: block
+        position: absolute
+        top: 0.45em
+        left: 0.35em
+        font-size: 0.6em
+
+.basic-attack-amp
+    position: relative
+    >:last-child
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 0.5em
+
+.attack-speed
+    position: relative
+    >:last-child
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 0.5em
+        transform: scale(-1, 1)
+
+.critical-damage
+    position: relative
+    >:last-child
+        display: block
+        position: absolute
+        top: -0.2em
+        left: -0.2em
+        font-size: 0.5em

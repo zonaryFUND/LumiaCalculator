@@ -2,12 +2,22 @@ import Decimal from "decimal.js";
 
 declare module 'decimal.js' {
     interface Decimal {
+        floor2(this: Decimal): Decimal
         round2(this: Decimal): Decimal
         percent(this: Decimal, value: Decimal.Value): Decimal
         addPercent(this: Decimal, value: Decimal.Value): Decimal
         subPercent(this: Decimal, value: Decimal.Value): Decimal
     }
 }
+
+Object.defineProperty(Decimal.prototype, "floor2", {
+    configurable: false,
+    enumerable: false,
+    writable: false,
+    value: function (this: Decimal) {
+        return this.times(100).floor().dividedBy(100)
+    }
+})
   
 Object.defineProperty(Decimal.prototype, "round2", {
     configurable: false,

@@ -1,0 +1,45 @@
+.segment
+    --highlight-x-pos: 12px
+    --highlight-width: 0px
+    display: flex
+    justify-content: space-between
+    background: var(--bg)
+    box-shadow: 0 0 5px rgba(0,0,0,0.5)
+    border-radius: 10px
+    padding: 8px 12px
+    position: relative
+
+    label
+        cursor: pointer
+        padding: 4px 16px
+        font-size: 16px
+        text-align: center
+        color: var(--main)
+        border-radius: 8px
+        z-index: 1
+
+    label.transition
+        transition: color,background 0.25s ease
+
+    label:hover
+        background: rgba(0,0,0,0.2)
+
+    .active
+        color: var(--bg)
+
+    input
+        display: none
+
+.segment::before
+    content: ''
+    background: var(--c4)
+    position: absolute
+    border-radius: 8px
+    width: var(--highlight-width)
+    top: 8px
+    bottom: 8px
+    left: var(--highlight-x-pos)
+    z-index: 0
+
+.segment.transition::before
+    transition: left 0.25s ease

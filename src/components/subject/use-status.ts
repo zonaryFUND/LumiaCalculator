@@ -25,18 +25,16 @@ function maxDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Deci
     );
 }
 
-export default function(config: SubjectConfig): Status | undefined {
+export default function(config: SubjectConfig): Status {
     const { subject, equipment, level, weaponMastery, movementMastery, skillLevels } = config;
 
-    const baseStatus = React.useMemo(() => subject ? getBaseStatus(subject) : null, [subject]);
+    const baseStatus = React.useMemo(() => getBaseStatus(subject), [subject]);
 
     const masteryFactor = (() => {
         if (!subject || equipment.weapon == null) return undefined;
         const weaponType = equipmentStatus(equipment.weapon).type;
         return mastery(subject).find(m => m.weapon == weaponType)
     })();
-
-    if (!baseStatus) return undefined;
 
     const inSlot = Object.values(equipment).filter(v => v != null).map(id => equipmentStatus(id!));
     const perLevel = (() => {
@@ -58,11 +56,11 @@ export default function(config: SubjectConfig): Status | undefined {
 
     const weaponTypeID = equipment.weapon ? equipmentStatus(equipment.weapon).type as WeaponTypeID : null
     const attackSpeed = (() => {        
-        const base = baseStatus.attackSpeed.add(weaponTypeID ? weaponBaseStatus(weaponTypeID).attackSpeed : 0).round2();
+        const base = baseStatus.attackSpeed.add(weaponTypeID ? weaponBaseStatus(weaponTypeID).attackSpeed : 0);
         const multiplier = sumDecimalEquipmentStatus("attackSpeed", inSlot).add(masteryFactor ? masteryFactor.attackSpeed.times(weaponMastery) : 0);
         return {
-            base, multiplier,
-            calculated: base.times(multiplier.add(100)).round().dividedBy(100)
+            base: base.round2(), multiplier,
+            calculated: base.floor2().times(multiplier.add(100)).round().dividedBy(100)
         };
     })();
 
@@ -105,6 +103,8 @@ export default function(config: SubjectConfig): Status | undefined {
         cooldownReduction,
     
         defense: baseStatus.armor.add(baseStatus.armorPerLevel.times(level - 1)).add(sumDecimalEquipmentStatus("defense", inSlot)),
+        basicAttackReduction: new Decimal(0.9).times(config.defenseMastery),
+        skillReduction: new Decimal(0.7).times(config.defenseMastery).add(sumDecimalEquipmentStatus("skillDamageReduction", inSlot)),
     
         omnisyphon: sumDecimalEquipmentStatus("omnisyphon", inSlot),
         lifeSteal: sumDecimalEquipmentStatus("lifeSteal", inSlot),
@@ -115,7 +115,7 @@ export default function(config: SubjectConfig): Status | undefined {
         healPower: sumDecimalEquipmentStatus("healingPower", inSlot),
         tenacity: maxDecimalEquipmentStatus("tenacity", inSlot),
         
-        movementSpeed: baseStatus.movementSpeed.add(sumDecimalEquipmentStatus("movementSpeed", inSlot)).add(new Decimal(movementMastery).times(new Decimal(0.005))),
+        movementSpeed: baseStatus.movementSpeed.add(sumDecimalEquipmentStatus("movementSpeed", inSlot)).add(new Decimal(movementMastery).times(new Decimal(5).dividedBy(1000))).round2(),
         basicAttackRange,
         visionRange: sumDecimalEquipmentStatus("vision", inSlot).add(8.5)
     }
