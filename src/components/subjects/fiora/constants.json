@@ -52,8 +52,8 @@
     "T": {
         "max_stack": 4,
         "damage": {
-            "base": [10,40,70],
-            "amp": 35
+            "base": [20,60,100],
+            "amp": 40
         },
         "movement_speed": {
             "duration": 1.5,

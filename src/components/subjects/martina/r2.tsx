@@ -12,7 +12,7 @@ const r: React.FC<SubjectSkillProps> = props => {
             <Damage skill="R" constants={Constants.R2.first_center_damage} {...props} />のスキルダメージを与えます。<br />
             <br />
             録画持続時間が終了する時、スキル範囲の端の敵には<Damage skill="R" constants={Constants.R2.second_outer_damage} {...props} />のスキルダメージを与え、中央の敵には
-            <Damage skill="R" constants={Constants.R2.second_center_damage} {...props} />のスキルダメージを与えて気絶させます。気絶時間はスキル持続時間の間スキルで受けたダメージの回数に比例して{Constants.R2.stun_extend_per_hit}秒ずつ増加します。
+            <Damage skill="R" constants={Constants.R2.second_center_damage} {...props} />のスキルダメージを与えて{Constants.R2.stun}秒間気絶させます。
         </>
     );
 }

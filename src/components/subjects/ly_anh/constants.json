@@ -113,7 +113,7 @@
             "attack": 100
         },
         "additional_damage": {
-            "attack": [6,13,20]
+            "attack": [8,15,22]
         },
         "possesed_heal": 100,
         "ghost_heal": 200,

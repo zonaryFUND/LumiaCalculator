@@ -54,7 +54,7 @@
             "summoned_attack": 60
         },
         "sp_cost": [80,85,90,95,100],
-        "cooldown": [16,15,14,13,12]
+        "cooldown": [13,12.5,12,11,5,11]
     },
     "R": {
         "duration": 6,
@@ -71,7 +71,7 @@
     "T": {
         "damage": {
             "base": [20,50,80],
-            "summoned_attack": 50
+            "summoned_attack": 60
         },
         "nina_revive": [20,18,16],
         "nina_revive_cost": 30,

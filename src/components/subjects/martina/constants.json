@@ -124,7 +124,7 @@
             "base": [200,325,450],
             "attack": 110
         },
-        "stun_extend_per_hit": 0.1,
+        "stun": 0.7,
         "sp_cost": 100,
         "cooldown": [80,65,50]
     },

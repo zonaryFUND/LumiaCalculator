@@ -79,7 +79,7 @@
     "CatR": {
         "shield": {
             "base": [40,65,90,115],
-            "amp": 30
+            "amp": 35
         },
         "shield_duration": 2.5,
         "cooldown": {

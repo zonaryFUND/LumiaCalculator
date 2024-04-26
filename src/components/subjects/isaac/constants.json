@@ -42,7 +42,7 @@
     "T": {
         "threshold": 3,
         "damage": {
-            "base": [20,50,80],
+            "base": [30,65,100],
             "attack": 55
         },
         "movement_speed": [5,15,25],

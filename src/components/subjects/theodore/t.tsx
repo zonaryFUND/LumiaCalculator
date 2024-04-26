@@ -13,8 +13,7 @@ const t: React.FC<SubjectSkillProps> = props => (
         <br />
         テオドールが敵実験体に基本攻撃を的中させると<span className={style.emphasis}>エネルギー砲</span>のクールダウンが
         {Constants.T.q_cooldown_reduction[props.config.skillLevels.T]}％減少し、他の基本スキルのクールダウンが
-        {Constants.T.cooldown_reduction[props.config.skillLevels.T]}％減少します。<br />
-        実験体以外の対象に基本攻撃を的中させた場合、クールダウン減少効果は半分のみ適用されます。
+        {Constants.T.cooldown_reduction[props.config.skillLevels.T]}％減少します。
     </>
 );
 

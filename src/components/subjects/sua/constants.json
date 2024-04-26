@@ -2,7 +2,7 @@
     "Q": {
         "damage": {
             "base": [60,100,140,180,220],
-            "amp": 70
+            "amp": 65
         },
         "bookmark_duration": 5,
         "bookmark_damage": {
@@ -58,7 +58,7 @@
     "RQ": {
         "damage": {
             "base": [180,230,280],
-            "amp": 90
+            "amp": 80
         },
         "bookmark_duration": 5,
         "bookmark_damage": {

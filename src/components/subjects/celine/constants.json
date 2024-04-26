@@ -35,7 +35,7 @@
         "max_level": 4,
         "cooldown_increase": 1.25,
         "damage": {
-            "base": [30,45,60,75,90],
+            "base": [50,60,70,80,90],
             "amp": 40
         },
         "slow": {

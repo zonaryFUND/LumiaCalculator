@@ -2,7 +2,7 @@
     "Q": {
         "damage": {
             "base": [40,70,100,130,160],
-            "attack": 80
+            "attack": 90
         },
         "time_bound": 2,
         "cooldown_reduction": 2,

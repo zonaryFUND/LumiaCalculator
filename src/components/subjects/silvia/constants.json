@@ -51,7 +51,7 @@
             "effect": [-30,-15,0]
         },
         "threshold": 50,
-        "cooldown": [8,6,4]
+        "cooldown": [6,5,4]
     },
     "BikeQ": {
         "damage": {

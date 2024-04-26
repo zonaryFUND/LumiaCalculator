@@ -85,7 +85,7 @@
         "shield_duration": 4,
         "shield": {
             "base": [40,90,140],
-            "amp": 40
+            "amp": 45
         },
         "cooldown_reduction": 1,
         "attack_speed": [20,30,40],

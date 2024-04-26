@@ -40,9 +40,9 @@
     },
     "E": {
         "damage": {
-            "base": [30,45,60,75,90],
+            "base": [40,55,70,85,100],
             "additionalAttack": 80,
-            "amp": 50
+            "amp": 55
         },
         "heal": {
             "min": 50,

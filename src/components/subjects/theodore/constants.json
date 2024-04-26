@@ -4,7 +4,7 @@
         "movement_speed_penalty": 20,
         "damage": {
             "base": [50,85,120,155,190],
-            "amp": 70
+            "amp": 75
         },
         "heal_duration": 2.5,
         "heal": {
@@ -13,7 +13,7 @@
         },
         "screen_damage": {
             "base": [50,90,130,170,210],
-            "amp": 70
+            "amp": 75
         },
         "screen_heal": {
             "base": [45,75,105,135,165],
@@ -29,7 +29,7 @@
             "amp": 30
         },
         "sp_cost": [30,35,40,45,50],
-        "cooldown": [12,11.5,11,10.5,10]
+        "cooldown": [11,10.5,10,9.5,9]
     },
     "E": {
         "range_increase": 1,

@@ -31,7 +31,7 @@
     },
     "R": {
         "channeling": 1.5,
-        "duration": 2,
+        "duration": 1.5,
         "sp_cost": 150,
         "cooldown": [100,80,60]
     },
