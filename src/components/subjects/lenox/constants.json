@@ -1,0 +1,69 @@
+{
+    "Q": {
+        "damage": {
+            "base": [80,115,150,185,220],
+            "amp": 50
+        },
+        "additional_damage": {
+            "maxHP": [3,5,7,9,11]
+        },
+        "cooldown_reduction": 0.5,
+        "max_stack": 2,
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": 3
+    },
+    "W": {
+        "first_damage": {
+            "base": [20,35,50,65,80],
+            "amp": 35
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": 20
+        },
+        "second_damage": {
+            "base": [50,75,100,125,150],
+            "amp": 60
+        },
+        "sp_cost": [60,70,80,90,100],
+        "cooldown": [18,16.5,15,13.5,12]
+    },
+    "E": {
+        "damage": {
+            "base": [60,115,170,225,280],
+            "amp": 50
+        },
+        "slow": {
+            "duration": 1.25,
+            "effect": [30,35,40,45,50]
+        },
+        "sp_cost": [60,65,70,76,80],
+        "cooldown": 7
+    },
+    "R": {
+        "damage": {
+            "base": [70,135,200],
+            "amp": 40
+        },
+        "duration": [4,4.5,5],
+        "tick": 0.23,
+        "move_damage": [5,15,25],
+        "enhanced_move_damage": [20,40,60],
+        "sp_cost": [100,120,140],
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "shield": {
+            "maxHP": [6,10,14]
+        },
+        "duration": 5,
+        "fishing": {
+            "common": 85,
+            "uncommon": 14,
+            "rare": 1
+        },
+        "cooldown": {
+            "constant": [18,13,8]
+        }
+    }
+}

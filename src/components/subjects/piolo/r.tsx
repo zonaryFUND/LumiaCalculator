@@ -1,0 +1,32 @@
+import * as React from "react";
+import Constants from "./constants.json";
+import Damage from "../damage";
+import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "../props";
+import style from "components/tooltip/tooltip.module.styl";
+
+const r: React.FC<SubjectSkillProps> = props => {
+    return (
+        <>
+            <span className={style.level}>持続効果</span>：<span className={style.emphasis}>打ち下ろし</span>、
+            <span className={style.emphasis}>振り回し</span>、<span className={style.emphasis}>打ち上げ</span>が活性化するたびに[気合]を1つ獲得します。<br />
+            非戦闘状態では[気合]が{Constants.R.focus_disappear}秒ごとに1つずつ消えます。<br />
+            <br />
+            [気合]を1つ消耗してキャストした方向に突進します。貫通させた対象には<Damage skill="R" constants={Constants.R.damage} {...props} />のスキルダメージを与えます。実験体に的中した場合、
+            {Constants.R.shield_duration}秒間<Damage skill="R" constants={Constants.R.shield} {...props} />のダメージを吸収できるシールドを獲得します。<br />
+            スキルを使用した後に基本攻撃をすると武器スキルとパニッシャー以外のスキルクールダウンが{Constants.R.cooldown_reduction}秒減少します。[鍛練の成果]を保有している場合、攻撃速度が
+            {Constants.R.attack_speed[props.config.skillLevels.R]}％増加します。
+        </>
+    );
+}
+
+export default r;
+
+export const values: ValuesProps = {
+    additionalInfo: <>シールドが維持される間にスキルが的中しても新しくシールドを獲得しません。シールドの 持続時間のみ更新されます。</>,
+    parameters: [
+        {title: "ダメージ量", values: Constants.R.damage.base},
+        {title: "攻撃速度増加量(％)", values: Constants.R.attack_speed, percent: true},
+        {title: "シールド吸収量", values: Constants.R.shield.base}
+    ]
+}

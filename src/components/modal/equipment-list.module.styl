@@ -1,0 +1,78 @@
+.list
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    position: absolute
+    background: var(--base)
+    max-width: 600px
+    height: 80vh
+    margin: auto
+    inset: 0
+    border-radius: 16px
+    overflow: hidden
+    box-shadow: 0 0 25px rgba(0,0,0,0.5)
+
+    >*
+        padding: 16px
+
+    header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 1px solid lightgray
+        padding: 0 0 16px
+        margin: 16px 16px 0
+
+        h1
+            font-size: 2rem
+
+    .content
+        flex: 1
+        overflow-y: scroll
+        border-radius: 8px
+
+    ul
+        display: grid
+        place-content: start
+        grid-template-columns: repeat(auto-fill, 76px)
+        column-gap: 12px
+        row-gap: 16px
+        align-items: start
+    
+
+    .blank
+        width: 74px
+        margin-bottom: 48px
+
+    li,.blank
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
+        justify-content: center
+
+        p
+            position: relative
+            font-size: 12px
+            text-align: center
+
+    .selected::before
+        content: ""
+        position: absolute
+        inset: -4px
+        background: var(--c2)
+        grid-row: 1 / -1
+    
+    .selected
+        p
+            font-weight: bold
+            color: var(--bg)
+
+    h3
+        font-size: 1.5rem
+
+    section:not(:last-child)
+        margin-bottom: 16px
+
+.list:focus
+    outline: 0

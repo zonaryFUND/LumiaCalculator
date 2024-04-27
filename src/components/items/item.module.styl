@@ -1,10 +1,25 @@
 .base
+    width: 74px
+    height: 41px
+    position: relative
+    box-shadow: 0 0 3px rgba(0,0,0,0.5)
+
     img
-        width: 64px
-        height: 35.5px
+        margin-top: 2px
+        width: calc(100% - 4px)
+        height: calc(100% - 4px)
+        position: relative
+
+.epic::before,.legendary::before,.mythic::before
+    display: block
+    content: ''
+    position: absolute
+    inset: 2px
+    background: linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.5))
+
 .epic
-    background-color: purple    
+    background-color: rgb(142,115,191)
 .legendary
-    background-color: yellow
+    background-color: rgb(166,143,75)
 .mythic
-    background-color: red
+    background-color: rgb(173,77,77)

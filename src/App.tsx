@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import style from './App.styl';
-import Subject from "components/subject/subject";
-import Decimal from 'decimal.js';
+import Modal from "react-modal"
+import Simple from "components/pages/simple";
+import { Tooltip } from "react-tooltip";
+import ItemTooltip from 'components/tooltip/item-tooltip';
+import SubjectSkillTooltip from 'components/tooltip/subject-skill/subject-skill-tooltip';
 
 interface AppProps {}
 
+
 function App({}: AppProps) {
+  React.useLayoutEffect(() => {
+    Modal.setAppElement("#root");
+  });
+
   // Create the count state.
   const [count, setCount] = useState(0);
   // Create the counter (+1 every second).
@@ -15,9 +22,9 @@ function App({}: AppProps) {
   }, [count, setCount]);
   // Return the App component.
   return (
-    <div className={style.App}>
-      <Subject />
-    </div>
+    <>
+      <Simple />
+    </>
   );
 }
 

@@ -1,0 +1,78 @@
+{
+    "Q": {
+        "Q1_damage": {
+            "base": [30,60,90,120,150],
+            "amp": 40
+        },
+        "Q1_thril": 30,
+        "reuse": 4,
+        "Q2_damage": {
+            "base": [50,80,110,140,170],
+            "amp": 45
+        },
+        "Q2_thril": 30,
+        "Q3_first_damage": {
+            "base": [50,80,110,140,170],
+            "amp": 40
+        },
+        "Q3_second_damage": {
+            "base": [50,80,110,140,170],
+            "amp": 50
+        },
+        "Q3_thril": 30,
+        "sp_cost": [50,45,40,35,30],
+        "cooldown": 1
+    },
+    "W": {
+        "hit_slow": 30,
+        "hit_damage": {
+            "base": [40,75,110,145,180],
+            "amp": 35
+        },
+        "target": 1,
+        "target_damage": {
+            "base": [40,75,110,145,180],
+            "amp": 35
+        },
+        "target_slow": {
+            "duration": 1,
+            "effect": 30
+        },
+        "defense_decrease": {
+            "duration": 6,
+            "effect": [15,17,19,21,23]
+        },
+        "thril": 30,
+        "sp_cost": 100,
+        "cooldown": [14,13,12,11,10]
+    },
+    "E": {
+        "r_combo_distance": 3,
+        "cost": [70,65,60,55,50],
+        "cooldown": {
+            "constant": 0.5
+        }
+    },
+    "R": {
+        "first_damage": {
+            "base": [60,100,140],
+            "amp": 25
+        },
+        "second_damage": {
+            "base": [200,340,480],
+            "amp": 100
+        },
+        "airborne": 1,
+        "sp_cost": [80,100,120],
+        "cooldown": [50,40,30]
+    },
+    "T": {
+        "thril": 2,
+        "threshold": 8,
+        "damage": {
+            "base": [25,70,115],
+            "amp": 30
+        },
+        "unavailable_range": 1.5
+    }
+}

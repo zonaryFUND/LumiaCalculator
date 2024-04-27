@@ -1,0 +1,60 @@
+{
+    "Q": {
+        "damage": {
+            "base": [70,110,150,190,230],
+            "additionalAttack": 115,
+            "amp": 95
+        },
+        "slow": {
+            "duration": 2,
+            "effect": [40,45,50,55,60]
+        },
+        "sp_cost": [90,100,110,120,130],
+        "cooldown": [12,11,10,9,8]
+    },
+    "W": {
+        "duration": 4,
+        "damage": {
+            "base": [30,35,40,45,50],
+            "additionalAttack": 50,
+            "amp": 20,
+            "defence": 15
+        },
+        "count": [8,8,10,10,12],
+        "cooldown_reduction": 0.75,
+        "tenacity": 50,
+        "sp_cost": [80,90,100,110,120],
+        "cooldown": 14
+    },
+    "E": {
+        "damage": {
+            "base": [40,90,140,190,240],
+            "additionalAttack": 65,
+            "amp": 60,
+            "targetMaxHP": 10
+        },
+        "knockback": 3,
+        "stun": [0.7,0.85,1,1.15,1.3],
+        "sp_cost": [80,90,100,110,120],
+        "cooldown": [11,10,9,8,7]
+    },
+    "R": {
+        "duration": 7,
+        "max_speed": 2,
+        "damage": {
+            "base": [110,230,350],
+            "additionalAttack": 150,
+            "amp": 85,
+            "targetHP": 30
+        },
+        "sp_cost": [100,150,200],
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "basic_attack_hit_stack": 1,
+        "skill_hit_stack": 2,
+        "defense": [1,2,3],
+        "max_stack": 12,
+        "hpRegen": [3,4,5]
+    }
+}

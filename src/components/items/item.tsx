@@ -3,6 +3,7 @@ import { ArmorTypeID, equipmentStatus } from "@app/entity/equipment";
 import { EquipmentID } from "@app/entity/equipment-id";
 import Images from "@app/resources/image";
 import style from "./item.module.styl";
+import { styles } from "@app/util/style";
 
 type Props = {
     slot: "weapon" | ArmorTypeID
@@ -39,12 +40,14 @@ const item: React.FC<Props> = props => {
     }, [props.itemID])
 
     return (
-        <div 
-            className={`${className} ${style.base}`} 
+        <div
+            className={styles(className, style.base)} 
             data-tooltip-id="weapon" 
             data-tooltip-content={props.itemID}
         >
-            <img src={src} />
+            <img 
+                src={src} 
+            />
         </div>
     )
 }

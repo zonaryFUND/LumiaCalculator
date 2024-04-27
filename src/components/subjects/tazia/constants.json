@@ -2,7 +2,7 @@
     "Q": {
         "collect_charge": 80,
         "damage": {
-            "base": [25,40,55,70,85],
+            "base": [40,55,70,85,100],
             "amp": 40
         },
         "spada_damage": {
@@ -33,7 +33,7 @@
             "amp": 55
         },
         "sp_cost": 100,
-        "cooldown": [24,22,20,18,16]
+        "cooldown": [20,19,18,17,16]
     },
     "E": {
         "shield_duration": 2.5,

@@ -1,0 +1,76 @@
+.subjects
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    position: absolute
+    background: var(--base)
+    max-width: 1024px
+    height: 80vh
+    margin: auto
+    inset: 0
+    border-radius: 16px
+    overflow: hidden
+    box-shadow: 0 0 25px rgba(0,0,0,0.5)
+    
+
+    >*
+        padding: 16px
+
+    header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border-bottom: 1px solid lightgray
+        padding: 0 0 16px
+        margin: 16px 16px 0
+
+        h1
+            font-size: 2rem
+
+    .content
+        flex: 1
+        overflow-y: scroll
+
+    ul
+        display: grid
+        place-content: start
+        grid-template-columns: repeat(auto-fill, 80px)
+        justify-content: space-between
+        column-gap: 8px
+        row-gap: 12px
+
+    li
+        display: inline-flex
+        flex-direction: column
+        justify-content: center
+        text-align: center
+        cursor: pointer
+        background: var(--bg)
+        border-radius: 8px
+        overflow: hidden
+        box-shadow: 0 0 5px rgba(0,0,0,0.5)
+
+        img
+            aspect-ratio: 122/160
+
+        p
+            color: var(--main)
+            font-size: 12px
+            font-weight: bold
+            flex: 1
+
+    .selected
+        background: var(--c5)
+        box-shadow: none
+
+        p
+            color: white
+
+    h3
+        font-size: 1.5rem
+
+    section:not(:last-child)
+        margin-bottom: 16px
+
+.subjects:focus
+    outline: 0

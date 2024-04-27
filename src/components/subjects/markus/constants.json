@@ -1,0 +1,70 @@
+{
+    "Q": {
+        "count": 3,
+        "attack_speed": [28,41,54,67,80],
+        "damage": {
+            "base": [15,25,35,45,55],
+            "additionalMaxHP": 18
+        },
+        "heal": 200,
+        "duration": 5,
+        "movement_speed": {
+            "duration": 2,
+            "effect": [2,4,6,8,10]
+        },
+        "sp_cost": [40,35,30,25,20],
+        "cooldown": [7,6,5,4,3]
+    },
+    "W": {
+        "damage": {
+            "base": [60,115,170,225,280],
+            "attack": 60,
+            "additionalMaxHP": 10
+        },
+        "airborne": 1,
+        "r_combo_knockback": 3,
+        "sp_cost": [70,80,90,100,110],
+        "cooldown": [12,11,10,9,8]
+    },
+    "E": {
+        "distance": 5,
+        "damage": {
+            "base": [80,125,170,215,260],
+            "attack": 70
+        },
+        "knockback": 4,
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": [11,10,9,8,7]
+    },
+    "R": {
+        "tectonic_rift": 3,
+        "damage": {
+            "base": [150,300,450],
+            "attack": 70
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 75
+        },
+        "cooldown_reduction": 3,
+        "sp_cost": [100,120,140],
+        "cooldown": [70,60,50]
+    },
+    "T": {
+        "damage": {
+            "base": [20,40,60],
+            "additionalMaxHP": 8
+        },
+        "stun": 0.5,
+        "slow": {
+            "duration": 2,
+            "effect": 30
+        },
+        "shock": 4,
+        "shock_range": 6.5,
+        "additional_damage": {
+            "base": [30,60,90],
+            "attack": 70
+        }
+    }
+}

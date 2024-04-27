@@ -1,0 +1,81 @@
+{
+    "Q": {
+        "damage": {
+            "base": [80,115,150,185,220],
+            "amp": 70
+        },
+        "enhanced_damage": {
+            "base": [120,165,210,255,300],
+            "amp": 110
+        },
+        "bind": 1.25,
+        "heal": {
+            "base": [20,35,50,65,80],
+            "amp": 20
+        },
+        "enhanced_heal": {
+            "base": [40,60,80,100,120],
+            "amp": 30
+        },
+        "sp_cost": 50,
+        "cooldown": [11,10,9,8,7]
+    },
+    "W": {
+        "duration": 6,
+        "slow": 35,
+        "attack_speed": [30,35,40,45,50],
+        "mastery_conversion": 60,
+        "effect_remain": 3,
+        "cooldown_reduction": 50,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [18,17,16,15,14]
+    },
+    "E": {
+        "movement_speed": {
+            "duration": 3,
+            "effect": {
+                "base": [4,6,8,10,12],
+                "amp": 1
+            }
+        },
+        "damage": {
+            "base": [50,80,110,140,170],
+            "amp": 45
+        },
+        "self_movement_speed": {
+            "base": [5,7.5,10,12.5,15],
+            "amp": 2
+        },
+        "sp_cost": [70,80,90,100,110],
+        "cooldown": [20,18,16,14,12]
+    },
+    "R": {
+        "damage": {
+            "base": [180,240,300],
+            "amp": 70
+        },
+        "heal": {
+            "base": [50,100,150],
+            "lostHP": [5,7.5,10]
+        },
+        "duration": 4,
+        "defense": [15,25,35],
+        "heal_per_sec": {
+            "base": [32,64,96],
+            "amp": 25
+        },
+        "sp_cost": 150,
+        "cooldown": [90,75,60]
+    },
+    "T": {
+        "tenacity": 5,
+        "tenacity_max": 25,
+        "holy_water": 8,
+        "purified_water": 2,
+        "shield": {
+            "base": [30,65,100],
+            "amp": 10
+        },
+        "shield_duration": [2,2.5,3]
+    }
+}

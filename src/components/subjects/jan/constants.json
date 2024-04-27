@@ -1,0 +1,79 @@
+{
+    "Q": {
+        "damage": {
+            "base": [80,110,140,170,200],
+            "additionalAttack": 80,
+            "amp": 60
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 60
+        },
+        "defense_reduction": {
+            "duration": 6,
+            "effect": 30
+        },
+        "Q2_damage": {
+            "base": [65,95,125,155,185],
+            "additionalAttack": 105,
+            "amp": 90
+        },
+        "airborne": 0.85,
+        "sp_cost": 50,
+        "cooldown": [12,11,10,9,8]
+    },
+    "W": {
+        "damage": {
+            "base": [60,90,120,150,180],
+            "additionalAttack": 60,
+            "amp": 80
+        },
+        "stun": 0.5,
+        "enhanced_damage": {
+            "base": [100,135,170,205,240],
+            "additionalAttack": 85,
+            "amp": 90
+        },
+        "enhanced_stun": 1,
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": 17
+    },
+    "E": {
+        "damage": {
+            "base": [40,55,70,85,100],
+            "additionalAttack": 80,
+            "amp": 55
+        },
+        "heal": {
+            "min": 50,
+            "max": 100,
+            "max_threshold_hp": 40
+        },
+        "cooldown_reduction": 40,
+        "sp_cost": 90,
+        "cooldown": [12,11,10,9,8]
+    },
+    "R": {
+        "duration": 6.5,
+        "damage": {
+            "base": [100,200,300],
+            "additionalAttack": 100,
+            "amp": 50
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 40
+        },
+        "kill_stack": 5,
+        "movement_speed": {
+            "duration": 3,
+            "effect": 35
+        },
+        "sp_cost": [60,80,100],
+        "cooldown": [60,50,40]
+    },
+    "T": {
+        "threshold": 5,
+        "cooldown_reduction": [10,20,30]
+    }
+}

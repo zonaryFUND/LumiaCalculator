@@ -29,6 +29,8 @@ export type StatusProps = {
     cooldownReduction: Decimal
 
     defense: Decimal
+    basicAttackReduction: Decimal
+    skillReduction: Decimal
 
     omnisyphon: Decimal
     lifeSteal: Decimal

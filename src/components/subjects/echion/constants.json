@@ -22,7 +22,7 @@
             "base": [50,65,80,95,110],
             "attack": 20
         },
-        "multiplier": 300,
+        "multiplier": 400,
         "return_threshold": 100,
         "return_gauge": [60,70,80,90,100],
         "cooldown": [10,9.5,9,8.5,8]

@@ -1,0 +1,69 @@
+{
+    "Q": {
+        "damage": {
+            "base": [40,70,100,130,160],
+            "attack": 90
+        },
+        "time_bound": 2,
+        "cooldown_reduction": 2,
+        "sp_cost": [60,65,70,75,80],
+        "cooldown": 5
+    },
+    "W": {
+        "damage": {
+            "base": [30,70,110,150,190],
+            "attack": 50
+        },
+        "duration": 4,
+        "defense_down": [10,12,14,16,18],
+        "healing_reduction": 45,
+        "movement_speed": 100,
+        "cooldown_reduction": 3,
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": 6
+    },
+    "E": {
+        "damage": {
+            "base": [30,50,70,90,110],
+            "attack": 50
+        },
+        "stun": 0.3,
+        "sp_cost": [70,80,90,100,110],
+        "cooldown": [20,18.5,17,15.5,14]
+    },
+    "R": {
+        "duration": 3,
+        "slow": 30,
+        "damage": {
+            "base": [60,120,180],
+            "attack": 40
+        },
+        "basic_attack_launch": 5,
+        "additional_damage": [4,7,10],
+        "detonate_slow": {
+            "duration": 1,
+            "effect": 30
+        },
+        "skill_hit": 2,
+        "cooldown_reduction": 50,
+        "movement_speed": {
+            "duration": 1,
+            "effect": 25
+        },
+        "sp_cost": 90,
+        "cooldown": 25
+    },
+    "T": {
+        "duration": 4,
+        "first_damage": {
+            "attack": 60,
+            "basicAttackAmp": 100
+        },
+        "second_damage": {
+            "attack": [45,55,65],
+            "basicAttackAmp": 100
+        },
+        "food": 50,
+        "drink": 20
+    }
+}

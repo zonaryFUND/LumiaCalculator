@@ -1,0 +1,100 @@
+{
+    "Q": {
+        "outer_damage": {
+            "base": [80,110,140,170,200],
+            "amp": 85
+        },
+        "center_damage": {
+            "base": [80,120,160,200,240],
+            "amp": 90
+        },
+        "cooldown": {
+            "constant": 2.5
+        },
+        "sp_cost": 50,
+        "charge": {
+            "time": [10,9,8,7,6],
+            "max": 2
+        }
+    },
+    "Q2": {
+        "cast": 0.5,
+        "damage": {
+            "base": [25,65,105,145,185],
+            "amp": 65,
+            "amp_per_ammo": 3
+        },
+        "sp_cost": 40
+    },
+    "Q3": {
+        "damage": {
+            "base": [40,65,90,115,140],
+            "amp": 45
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 30
+        },
+        "enhance": 50,
+        "sp_cost": 40,
+        "cooldown": {
+            "constant":0.5
+        }
+    },
+    "W": {
+        "damage": {
+            "base": [80,120,160,200,240],
+            "amp": 70
+        },
+        "stun": 0.65,
+        "er_cooldown_reduction": 20,
+        "sp_cost": 70,
+        "cooldown": [16,15,14,13,12]
+    },
+    "E": {
+        "duration": 5,
+        "ammo": 40,
+        "damage": {
+            "base": [5,8,11,14,17],
+            "amp_per": 25
+        },
+        "effect_count": 8,
+        "max_cooldown_reduction": 20,
+        "sp_cost": [40,45,50,55,60],
+        "cooldown": [13,12.5,12,11.5,11]
+    },
+    "R": {
+        "switch_damage": {
+            "base": [30,60,90],
+            "amp": 30
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 50
+        },
+        "duration": 12,
+        "ammo": 4,
+        "movement_speed_penalty": 0.3,
+        "area_damage": {
+            "base": [40,80,120],
+            "amp": 40
+        },
+        "max_cooldown_reduction": 20,
+        "basic_attack_range": 6.5,
+        "attack_speed": 1,
+        "vision": 2,
+        "sp_cost": 80,
+        "cooldown": [30,24,18]
+    },
+    "T": {
+        "swap_time": 0.75,
+        "damage": {
+            "base": [25,55,85],
+            "amp": 50
+        },
+        "movement_speed": {
+            "duration": 1,
+            "effect": [6,15,24]
+        }
+    }
+}

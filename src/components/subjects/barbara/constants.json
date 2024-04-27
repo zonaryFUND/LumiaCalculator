@@ -1,0 +1,100 @@
+{
+    "sentry_gun": {
+        "base_attack": 30,
+        "base_defense": 39,
+        "attack_speed": 0.9
+    },
+    "Q": {
+        "hp": {
+            "base": [50,55,60,65,70],
+            "level": 50
+        },
+        "damage": {
+            "base": [15,30,45,60,75],
+            "amp": 10
+        },
+        "duration": 15,
+        "sentry_damage": {
+            "summoned_attack": 100
+        },
+        "sentry_broken_cooldown_penalty": 20,
+        "sentry_withdraw_cooldown_reduction": 40,
+        "sp_cost": [60,70,80,90,100],
+        "cooldown": 12
+    },
+    "W": {
+        "damage": {
+            "base": [60,100,140,180,220],
+            "amp": 55
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": 20
+        },
+        "target_duration": 3,
+        "sentry_damage": {
+            "base": [60,100,140,180,220],
+            "summoned_attack": 95
+        },
+        "sentry_railgun_ammo": 3,
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": 5
+    },
+    "E": {
+        "duration": 4,
+        "tick": 0.5,
+        "damage": {
+            "base": [2,4,6,8,10],
+            "amp": 10,
+            "targetMaxHP": [2,2.5,3,3.5,4]
+        },
+        "movement_speed": 20,
+        "finish_damage": {
+            "base": [60,80,100,120,140],
+            "amp": 60
+        },
+        "shield": 25,
+        "max_shield": 40,
+        "slow": {
+            "duration": 1,
+            "effect": [30,40,50,60,70]
+        },
+        "sp_cost": [80,90,100,110,120],
+        "cooldown": [18,16.5,15,13.5,12]
+    },
+    "R": {
+        "Q": {
+            "blast_damage": {
+                "base": [60,80,100],
+                "amp": 40
+            },
+            "warp_damage": {
+                "base": [50,100,150],
+                "amp": 50
+            },
+            "attack_speed": {
+                "duration": 4,
+                "effect": 10
+            },
+            "cooldown_reduction": 30
+        },
+        "W": {
+            "duration": 7,
+            "damagen_increase": [5,10,15],
+            "cooldown": [0.35,0.25,0.15]
+        },
+        "E": {
+            "shield_increase": [20,25,30],
+            "damage_reduction": 20,
+            "duration": 6
+        },
+        "sp_cost": 100,
+        "cooldown": [70,55,40]
+    },
+    "T": {
+        "attack_amp": 3,
+        "defense_amp": 1,
+        "attack_speed": [15,20,25],
+        "max_stack": 3
+    }
+}

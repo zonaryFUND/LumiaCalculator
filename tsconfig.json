@@ -10,7 +10,8 @@
       "dict/*": ["./src/dictionary/*"],
       "components/*": ["./src/components/*"],
       "@app/*": ["./src/*"],
-      "resources/*": ["../resources/*"]
+      "resources/*": ["../resources/*"],
+      "util/*": ["./src/util/*"]
     },
     "strict": true,
     "skipLibCheck": true,

@@ -10,8 +10,8 @@
         "duration_enemy": 6,
         "duration_reduction": 0.5,
         "additional_damage": {
-            "base": [10,14,18,22,26],
-            "attack":10,
+            "base": [9,13,17,21,25],
+            "attack":7,
             "amp": 5
         },
         "additional_bind": 0.1,
@@ -38,7 +38,7 @@
         "attack_duration": 5,
         "damage": {
             "base": [40,65,90,115,140],
-            "amp": 50
+            "amp": 60
         },
         "sp_cost": [40,50,60,70,80],
         "cooldown": [15,14,13,12,11]

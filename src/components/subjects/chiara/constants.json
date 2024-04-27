@@ -78,6 +78,6 @@
         "healing_reduction": [11,13,15],
         "duration": 6,
         "max_stack": 4,
-        "movement_speed": [4,6,8]
+        "movement_speed": [4,7,10]
     }
 }

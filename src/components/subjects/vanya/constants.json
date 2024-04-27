@@ -1,0 +1,85 @@
+{
+    "Q": {
+        "damage": {
+            "base": [50,70,90,110,130],
+            "amp": 55
+        },
+        "cooldown_reduction": 40,
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": [11,10,9,8,7]
+    },
+    "W": {
+        "first_damage": {
+            "base": [20,23,26,29,32],
+            "amp": 16
+        },
+        "count": 5,
+        "movement_speed": [25,27.5,30,32.5,35],
+        "untargettable": 1,
+        "second_damage": {
+            "base": [60,95,130,165,200],
+            "amp": 95
+        },
+        "cooldown_increase": 1,
+        "sp_cost": [55,60,65,70,75],
+        "cooldown": 7
+    },
+    "E": {
+        "inner_damage": {
+            "base": [80,110,140,170,200],
+            "amp": 80
+        },
+        "outer_damage": {
+            "base": [90,125,160,195,230],
+            "amp": 80
+        },
+        "slow": {
+            "duration": 2,
+            "effect": 35
+        },
+        "max_cast_time": 0.5,
+        "sp_cost": 60,
+        "cooldown": [16,15,14,13,12]
+    },
+    "R": {
+        "damage": {
+            "base": [70,140,210],
+            "amp": 35
+        },
+        "drowsy": 2.25,
+        "sleep": 2,
+        "wakeup_damage": {
+            "base": [100,180,240],
+            "amp": 65
+        },
+        "sp_cost": 100,
+        "cooldown": [80,65,50]
+    },
+    "T": {
+        "basic_attack_damage": {
+            "base": [20,50,80],
+            "amp": 40
+        },
+        "max_stack": 4,
+        "duration": 3,
+        "damage_over_time": {
+            "base": [30,42,54],
+            "amp": 60
+        },
+        "shield": {
+            "base": [30,65,100],
+            "amp": 35
+        },
+        "shield_decline": {
+            "base": 50,
+            "level": 2
+        },
+        "max_shield": {
+            "base": [70,135,200],
+            "amp": 80
+        },
+        "cooldown": {
+            "constant": [8,6.5,5]
+        }
+    }
+}

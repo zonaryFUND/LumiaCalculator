@@ -6,7 +6,7 @@
         },
         "attack_speed": {
             "duration": 5,
-            "effect": [9,10.5,12,13.5,15]
+            "effect": [8,9,10,11,12]
         },
         "max_stack": 4,
         "cooldown": 4
@@ -52,7 +52,7 @@
         },
         "attack_speed": {
             "duration": 5,
-            "effect": [9,10.5,12,13.5,15]
+            "effect": [8,9,10,11,12]
         },
         "max_stack": 4,
         "cooldown": 4.5
