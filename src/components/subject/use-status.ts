@@ -107,13 +107,15 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
     const additionalHPReg = sumDecimalEquipmentStatus("hpRegeneration", inSlot);
     const additionalDefense = sumDecimalEquipmentStatus("defense", inSlot);
     const additionalSkillDamageReduction = sumDecimalEquipmentStatus("skillDamageReduction", inSlot);
+    const additionalMaxSP = sumDecimalEquipmentStatus("maxSP", inSlot);
+    const additionalSPReg = sumDecimalEquipmentStatus("spRegeneration", inSlot);
 
     const base: StatusProps = {
         baseMaxHP: baseStatus.maxHP.add(baseStatus.maxHPperLevel.times(level - 1)),
         additionalMaxHP: additionalConstMaxHP.add(perLevel.maxHP.times(level)),
-        maxSP: baseStatus.maxSP.add(baseStatus.maxSPperLevel.times(level - 1)).add(sumDecimalEquipmentStatus("maxSP", inSlot)),
+        maxSP: baseStatus.maxSP.add(baseStatus.maxSPperLevel.times(level - 1)).add(additionalMaxSP),
         hpReg: baseStatus.hpRegeneration.add(baseStatus.hpRegenPerLevel.times(level - 1)).addPercent(additionalHPReg),
-        spReg: baseStatus.spRegeneration.add(baseStatus.spRegenPerLevel.times(level - 1)).add(sumDecimalEquipmentStatus("spRegeneration", inSlot)),
+        spReg: baseStatus.spRegeneration.add(baseStatus.spRegenPerLevel.times(level - 1)).addPercent(additionalSPReg),
     
         baseAttackPower,
         baseAdditionalAttackPower,
@@ -172,12 +174,11 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
         additionalSkillDamageReduction,
         maxSP: {
             base: { level1: baseStatus.maxSP, perLevel: baseStatus.maxSPperLevel },
-            additional: { constant: base.additionalMaxHP }
+            additional: { constant: additionalMaxSP }
         },
-
         spReg: {
             base: { level1: baseStatus.spRegeneration, perLevel: baseStatus.spRegenPerLevel },
-            additional: { ratio: base.spReg }
+            additional: { ratio: additionalSPReg }
         }
     }
 

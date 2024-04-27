@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SubjectConfig } from "./use-subject-config";
-import useStatus from "./use-status";
+import useStatus, { DisplayedValues } from "./use-status";
 import { FirstAid, Lightning, Shield, Sword, Plus, Wind, Crosshair, ArrowFatLinesUp, Hourglass, ShieldSlash, Syringe, FirstAidKit, HandFist, SneakerMove, Eye, ArrowFatLineRight, IconContext } from "@phosphor-icons/react"
 import Decimal from "decimal.js";
 import style from "./status-table.module.styl";
@@ -33,19 +33,21 @@ const Column: React.FC<ColumnProps> = props => {
     );
 }
 
-type StandardExpandProps = {
-    base: Decimal
-    perLevel: Decimal
+type StandardExpandProps = DisplayedValues & {
     level: number
-    additional: {
-        constant?: Decimal
-        perLevel?: Decimal
-        ratio?: Decimal
-    }
 }
 
 const StandardExpand: React.FC<StandardExpandProps> = props => {
-    const baseValue = React.useMemo(() => props.base.add(props.perLevel.times(props.level - 1)), [props.base, props.perLevel, props.level]);
+    const { baseValue, displayedBase } = React.useMemo(() => {
+        const value = props.base.perLevel ?
+            props.base.level1.add(props.base.perLevel.times(props.level - 1)) :
+            props.base.level1;
+            
+        return {
+            baseValue: value,
+            displayedBase: <>{props.base.level1.toString()}{props.base.perLevel ? <>+ {props.base.perLevel.times(props.level - 1).toString()} <span>({props.base.perLevel.toString()} x {props.level - 1})</span></> : null} = {value.toString()}</>
+        };
+    }, [props.base.level1, props.base.perLevel, props.level]);
 
     const additional = React.useMemo(() => {
         if (props.additional.constant?.greaterThan(0) || props.additional.perLevel?.greaterThan(0)) {
@@ -73,7 +75,7 @@ const StandardExpand: React.FC<StandardExpandProps> = props => {
 
     return (
         <table className={style.inner}>
-            <tr><td>実験体</td><td>{props.base.toString()} + {props.perLevel.times(props.level - 1).toString()} <span>({props.perLevel.toString()} x {props.level - 1})</span> = {baseValue.toString()}</td></tr>
+            <tr><td>実験体</td><td>{displayedBase}</td></tr>
             <tr><td>追加値</td><td>{additional}</td></tr>
         </table>
     );
@@ -87,7 +89,6 @@ const criticalDamage = <span className={style["critical-damage"]}><Crosshair /><
 
 const status: React.FC<SubjectConfig> = props => {
     const [status, displayed] = useStatus(props);
-    const baseStatus = React.useMemo(() => getBaseStatus(props.subject), [props.subject]);
 
     return (
         <IconContext.Provider value={{size: 18}}>
@@ -108,13 +109,13 @@ const status: React.FC<SubjectConfig> = props => {
                     <tbody>
                         <tr className={style.separator}><td colSpan={2}><div><p>耐久</p><p>実効体力: {displayed.effectiveHP.toString()}</p></div></td></tr>
                         <Column name={<><FirstAid weight="fill" />最大体力</>} value={status.maxHP}>
-                            <StandardExpand base={displayed.maxHP.base.level1} perLevel={displayed.maxHP.base.perLevel!} level={props.level} additional={displayed.maxHP.additional} />
+                            <StandardExpand {...displayed.maxHP} level={props.level} />
                         </Column>
                         <Column name={<><FirstAid />体力再生</>} value={status.hpReg}>
-                            <StandardExpand base={baseStatus.hpRegeneration} perLevel={baseStatus.hpRegenPerLevel} level={props.level} additional={displayed.hpReg.additional} />
+                            <StandardExpand {...displayed.hpReg} level={props.level} />
                         </Column>
                         <Column name={<><Shield />防御力</>} value={status.defense}>
-                            <StandardExpand base={baseStatus.armor} perLevel={baseStatus.armorPerLevel} level={props.level} additional={displayed.defense.additional} />
+                            <StandardExpand {...displayed.defense} level={props.level} />
                         </Column>
                         <Column name={<>{basicAttackRecuction}基本攻撃ダメージ減少</>} value={status.basicAttackReduction} percent>
                             <table className={style.inner}>
@@ -130,8 +131,12 @@ const status: React.FC<SubjectConfig> = props => {
                     </tbody>
                     <tbody>
                         <tr className={style.separator}><td colSpan={2}>スタミナ</td></tr>
-                        <Column name={<><Lightning weight="fill" />最大スタミナ</>} value={status.maxSP} />
-                        <Column name={<><Lightning />スタミナ再生</>} value={status.spReg} />
+                        <Column name={<><Lightning weight="fill" />最大スタミナ</>} value={status.maxSP}>
+                            <StandardExpand {...displayed.maxSP} level={props.level} />
+                        </Column>
+                        <Column name={<><Lightning />スタミナ再生</>} value={status.spReg}>
+                            <StandardExpand {...displayed.spReg} level={props.level} />
+                        </Column>
                     </tbody>
                     <tbody>
                         <tr className={style.separator}><td colSpan={2}>基本攻撃系ステータス</td></tr>
