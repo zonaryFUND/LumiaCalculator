@@ -59,8 +59,8 @@
             "amp": 35
         },
         "enhanced_damage": {
-            "base": [150,300,450],
-            "amp": 80
+            "base": [100,200,300],
+            "amp": 100
         },
         "airborne": 1.1,
         "sp_cost": [120,100,80],

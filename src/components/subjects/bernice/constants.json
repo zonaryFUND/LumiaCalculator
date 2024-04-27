@@ -4,15 +4,15 @@
     },
     "Q": {
         "damage": {
-            "base": [70,110,150,190,230],
-            "attack": 90
+            "base": [60,95,130,165,200],
+            "attack": 80
         },
         "slow": {
             "duration": 1.5,
             "effect": [10,15,20,25,30]
         },
         "enhanced_damage": {
-            "base": [100,1450,190,235,280],
+            "base": [90,130,170,210,250],
             "attack": 90
         },
         "enhanced_slow": {
@@ -44,7 +44,7 @@
         "mark_duration": 6,
         "movement_speed": [8,10,12,14,16],
         "q_cooldown_reduction": 0.5,
-        "r_cooldown_reduction": 1,
+        "r_cooldown_reduction": 0.5,
         "duration": 8,
         "vision": [2,2.5,3,3.5,4],
         "marking_period": 6,
