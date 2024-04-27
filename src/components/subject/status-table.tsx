@@ -1,11 +1,12 @@
 import * as React from "react";
 import { SubjectConfig } from "./use-subject-config";
 import useStatus from "./use-status";
-import { FirstAid, Lightning, Shield, Sword, Plus, Wind, Crosshair, ArrowFatLinesUp, Hourglass, ShieldSlash, Syringe, FirstAidKit, HandFist, SneakerMove, Eye, ArrowFatLineRight } from "@phosphor-icons/react"
+import { FirstAid, Lightning, Shield, Sword, Plus, Wind, Crosshair, ArrowFatLinesUp, Hourglass, ShieldSlash, Syringe, FirstAidKit, HandFist, SneakerMove, Eye, ArrowFatLineRight, IconContext } from "@phosphor-icons/react"
 import Decimal from "decimal.js";
 import style from "./status-table.module.styl";
 import { useToggle } from "react-use";
 import { BaseBasicAttackRange, baseStatus as getBaseStatus } from "@app/entity/base-status";
+import { BasicAttackReductionPerMastery, SkillReductionPerMastery } from "./standard-values";
 
 type ColumnProps = {
     name: React.ReactElement
@@ -17,22 +18,15 @@ type ColumnProps = {
 const Column: React.FC<ColumnProps> = props => {
     const [expand, toggleExpand] = useToggle(false);
 
-    if (props.value.isZero()) return null;
-
     return (
         <>
             <tr onClick={toggleExpand}>
-                <td>{props.name}</td>
-                <td>{props.value.toString() + (props.percent ? "％" : "")}</td>
-                <td>0</td>
-                <td>{props.value.toString() + (props.percent ? "％" : "")}</td>
+                <td className={style.label}>{props.name}</td>
+                <td className={style.value}>{props.value.toString() + (props.percent ? "％" : "")}</td>
             </tr>  
             {
-                expand && props.children ?
-                <tr data-tooltip={props.expandTooltip ? "attack-speed-desc" : undefined} data-tooltip-content={props.expandTooltip}>
-                    <td colSpan={4}>{props.children}</td>
-                </tr>
-                :
+                expand && props.children ? 
+                <tr className={style.expand}><td colSpan={2}>{props.children}</td></tr> :
                 null
             }
         </>
@@ -43,12 +37,47 @@ type StandardExpandProps = {
     base: Decimal
     perLevel: Decimal
     level: number
-    additional: Decimal
+    additional: {
+        constant?: Decimal
+        perLevel?: Decimal
+        ratio?: Decimal
+    }
 }
 
-const StandardExpand: React.FC<StandardExpandProps> = props => (
-    <>基礎値 {props.base.toString()} + 成長 {props.perLevel.times(props.level - 1).toString()} ({props.perLevel.toString()} x {props.level - 1}) + 追加値 {props.additional.toString()}</>
-);
+const StandardExpand: React.FC<StandardExpandProps> = props => {
+    const baseValue = React.useMemo(() => props.base.add(props.perLevel.times(props.level - 1)), [props.base, props.perLevel, props.level]);
+
+    const additional = React.useMemo(() => {
+        if (props.additional.constant?.greaterThan(0) || props.additional.perLevel?.greaterThan(0)) {
+            const constant = props.additional.constant?.greaterThan(0) ? <>{props.additional.constant.toString()}</> : null
+            const perLevel = props.additional.perLevel?.greaterThan(0) ? <>{props.additional.perLevel.times(props.level).toString()} <span>({props.additional.perLevel.toString()} x {props.level})</span></> : null
+            return (
+                <>
+                    {constant}
+                    {constant && perLevel ? " + " : null}
+                    {perLevel}
+                    <> = {(props.additional.constant || new Decimal(0)).add((props.additional.perLevel || new Decimal (0)).times(props.level)).toString()}</>
+                </>
+            );
+        } else if (props.additional.ratio?.greaterThan(0)) {
+            return (
+                <>
+                    {props.additional.ratio.toString()}％
+                    <> = {baseValue.percent(props.additional.ratio).toString()}</>
+                </> 
+            );
+        } else {
+            return <>0</>;
+        }
+    }, [props.additional]);
+
+    return (
+        <table className={style.inner}>
+            <tr><td>実験体</td><td>{props.base.toString()} + {props.perLevel.times(props.level - 1).toString()} <span>({props.perLevel.toString()} x {props.level - 1})</span> = {baseValue.toString()}</td></tr>
+            <tr><td>追加値</td><td>{additional}</td></tr>
+        </table>
+    );
+}
 
 const basicAttackRecuction = <span className={style["basic-attack-reduction"]}><Shield /><Sword /></span>
 const skillRecuction = <span className={style["basic-attack-reduction"]}><Shield /><ArrowFatLinesUp /></span>
@@ -57,10 +86,11 @@ const attackSpeed = <span className={style["attack-speed"]}><Sword /><Wind weigh
 const criticalDamage = <span className={style["critical-damage"]}><Crosshair /><Plus weight="bold" /></span>
 
 const status: React.FC<SubjectConfig> = props => {
-    const status = useStatus(props);
+    const [status, displayed] = useStatus(props);
     const baseStatus = React.useMemo(() => getBaseStatus(props.subject), [props.subject]);
 
     return (
+        <IconContext.Provider value={{size: 18}}>
         <section className={style.status}>
             <h3>ステータス</h3>
             <div className={style.parent}>
@@ -68,34 +98,43 @@ const status: React.FC<SubjectConfig> = props => {
                     <colgroup>
                         <col />
                         <col />
-                        <col />
-                        <col />
                     </colgroup>
                     <thead>
                         <tr>
                             <th>名称</th>
-                            <th>平常値</th>
-                            <th>変化量</th>
-                            <th>合計</th>
+                            <th>値</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className={style.separator}><td colSpan={4}>耐久</td></tr>
+                        <tr className={style.separator}><td colSpan={2}><div><p>耐久</p><p>実効体力: {displayed.effectiveHP.toString()}</p></div></td></tr>
                         <Column name={<><FirstAid weight="fill" />最大体力</>} value={status.maxHP}>
-                            <StandardExpand base={baseStatus.maxHP} perLevel={baseStatus.maxHPperLevel} level={props.level} additional={status.additionalMaxHP} />
+                            <StandardExpand base={displayed.maxHP.base.level1} perLevel={displayed.maxHP.base.perLevel!} level={props.level} additional={displayed.maxHP.additional} />
                         </Column>
                         <Column name={<><FirstAid />体力再生</>} value={status.hpReg}>
-                            <StandardExpand base={baseStatus.hpRegeneration} perLevel={baseStatus.hpRegenPerLevel} level={props.level} additional={status.hpReg} />
+                            <StandardExpand base={baseStatus.hpRegeneration} perLevel={baseStatus.hpRegenPerLevel} level={props.level} additional={displayed.hpReg.additional} />
                         </Column>
-                        <Column name={<><Shield />防御力</>} value={status.defense} />
-                        <Column name={<>{basicAttackRecuction}基本攻撃ダメージ減少</>} value={status.basicAttackReduction} percent />
-                        <Column name={<>{skillRecuction}スキルダメージ減少</>} value={status.skillReduction} percent />
-
-                        <tr className={style.separator}><td colSpan={4}>スタミナ</td></tr>
+                        <Column name={<><Shield />防御力</>} value={status.defense}>
+                            <StandardExpand base={baseStatus.armor} perLevel={baseStatus.armorPerLevel} level={props.level} additional={displayed.defense.additional} />
+                        </Column>
+                        <Column name={<>{basicAttackRecuction}基本攻撃ダメージ減少</>} value={status.basicAttackReduction} percent>
+                            <table className={style.inner}>
+                                <tr><td>実験体</td><td><span>({BasicAttackReductionPerMastery}％ x 防御熟練度{props.defenseMastery})</span> = {status.basicAttackReduction.toString()}％</td></tr>
+                            </table>
+                        </Column>
+                        <Column name={<>{skillRecuction}スキルダメージ減少</>} value={status.skillReduction} percent>
+                            <table className={style.inner}>
+                                <tr><td>実験体</td><td><span>({SkillReductionPerMastery}％ x 防御熟練度{props.defenseMastery})</span> = {new Decimal(SkillReductionPerMastery).times(props.defenseMastery).toString()}％</td></tr>
+                                <tr><td>追加値</td><td>{displayed.additionalSkillDamageReduction.toString()}％</td></tr>
+                            </table>
+                        </Column>
+                    </tbody>
+                    <tbody>
+                        <tr className={style.separator}><td colSpan={2}>スタミナ</td></tr>
                         <Column name={<><Lightning weight="fill" />最大スタミナ</>} value={status.maxSP} />
                         <Column name={<><Lightning />スタミナ再生</>} value={status.spReg} />
-
-                        <tr className={style.separator}><td colSpan={4}>基本攻撃系ステータス</td></tr>
+                    </tbody>
+                    <tbody>
+                        <tr className={style.separator}><td colSpan={2}>基本攻撃系ステータス</td></tr>
                         <Column name={<><Sword />攻撃力</>} value={status.attackPower} />
                         <Column name={<>{basicAttackAmp}基本攻撃増幅</>} value={status.basicAttackAmp} percent />
                         <Column name={<>{attackSpeed}攻撃速度</>} value={status.attackSpeed.calculated} expandTooltip="基本攻撃速度は内部値を3桁目で四捨五入した値が表示されます。最終的な値の計算には3桁目を切り捨てた値が使われます。意図は不明です。">
@@ -103,21 +142,25 @@ const status: React.FC<SubjectConfig> = props => {
                         </Column>
                         <Column name={<><Crosshair />致命打確率</>} value={status.criticalChance} percent />
                         <Column name={<>{criticalDamage}致命打ダメージ上昇量</>} value={status.criticalDamage} percent />
-
-                        <tr className={style.separator}><td colSpan={4}>スキル系ステータス</td></tr>
+                    </tbody>
+                    <tbody>
+                        <tr className={style.separator}><td colSpan={2}>スキル系ステータス</td></tr>
                         <Column name={<><ArrowFatLinesUp weight="fill" />スキル増幅</>} value={status.skillAmp} percent />
                         <Column name={<><Hourglass />クールダウン減少</>} value={status.cooldownReduction} percent />
-
-                        <tr><td>防御貫通</td></tr>
+                    </tbody>
+                    <tbody>
+                        <tr className={style.separator}><td colSpan={2}>防御貫通</td></tr>
                         <Column name={<><Syringe />防御貫通(定数)</>} value={status.armorPenetration} />
                         <Column name={<><Syringe />防御貫通(％)</>} value={status.armorPenetrationRatio} percent />
-
-                        <tr className={style.separator}><td colSpan={4}>回復系ステータス</td></tr>
+                    </tbody>
+                    <tbody>
+                        <tr className={style.separator}><td colSpan={2}>回復系ステータス</td></tr>
                         <Column name={<><Syringe />生命力吸収</>} value={status.lifeSteal} percent />
                         <Column name={<><Syringe />ダメージ吸血</>} value={status.omnisyphon} percent />
                         <Column name={<><FirstAidKit />与える回復増加</>} value={status.healPower} percent />
-
-                        <tr className={style.separator}><td colSpan={4}>その他</td></tr>
+                    </tbody>
+                    <tbody>
+                        <tr className={style.separator}><td colSpan={2}>その他</td></tr>
                         <Column name={<><HandFist />行動妨害体制</>} value={status.tenacity} percent />
                         <Column name={<><SneakerMove />移動速度</>} value={status.movementSpeed} />
                         <Column name={<><Eye />視界範囲</>} value={status.visionRange} />
@@ -127,6 +170,7 @@ const status: React.FC<SubjectConfig> = props => {
                 </table>
             </div>
         </section>
+        </IconContext.Provider>
     )
 }
 

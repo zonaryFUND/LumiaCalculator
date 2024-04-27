@@ -31,7 +31,7 @@ const subject: React.FC = _ => {
     const subjectConfig = {
         subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack
     }
-    const status = useStatus(subjectConfig);
+    const [status] = useStatus(subjectConfig);
     
     const subjectName = React.useMemo(() => subject ? name(subject, "jp") : null, [subject]);
     const [damageInFormula, toggleDamageInFormula] = useToggle(false);
@@ -81,7 +81,9 @@ const subject: React.FC = _ => {
         )
     }, [subject, stack]);
     
-    return (
+    return ( 
+        <>
+        {/*
         <section className={style.base}>
             <div>
                 <div  onClick={toggleShowingCharacters}>
@@ -183,6 +185,8 @@ const subject: React.FC = _ => {
                 }}
             />
         </section>
+        */}
+        </>
     )
 }
 

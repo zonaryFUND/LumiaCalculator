@@ -6,6 +6,29 @@ import { mastery } from "@app/entity/mastery";
 import { SubjectConfig } from "./use-subject-config";
 import { Status, StatusOverride, StatusProps, from } from "./status";
 import { SubjectStatusOverride } from "components/subjects/status-override";
+import { BasicAttackReductionPerMastery, SkillReductionPerMastery } from "./standard-values";
+
+export type DisplayedValues = {
+    base: {
+        level1: Decimal
+        perLevel?: Decimal
+    }
+    additional: {
+        constant?: Decimal
+        perLevel?: Decimal
+        ratio?: Decimal
+    }
+}
+
+type DisplayedStatusValues = {
+    effectiveHP: Decimal
+    maxHP: DisplayedValues
+    hpReg: DisplayedValues
+    defense: DisplayedValues
+    additionalSkillDamageReduction: Decimal
+    maxSP: DisplayedValues
+    spReg: DisplayedValues
+}
 
 function sumDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Decimal {
     return status
@@ -25,7 +48,7 @@ function maxDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Deci
     );
 }
 
-export default function(config: SubjectConfig): Status {
+export default function(config: SubjectConfig): [Status, DisplayedStatusValues] {
     const { subject, equipment, level, weaponMastery, movementMastery, skillLevels } = config;
 
     const baseStatus = React.useMemo(() => getBaseStatus(subject), [subject]);
@@ -80,11 +103,16 @@ export default function(config: SubjectConfig): Status {
         return sum.clamp(0, cdrMax);
     })();
 
+    const additionalConstMaxHP = sumDecimalEquipmentStatus("maxHP", inSlot);
+    const additionalHPReg = sumDecimalEquipmentStatus("hpRegeneration", inSlot);
+    const additionalDefense = sumDecimalEquipmentStatus("defense", inSlot);
+    const additionalSkillDamageReduction = sumDecimalEquipmentStatus("skillDamageReduction", inSlot);
+
     const base: StatusProps = {
         baseMaxHP: baseStatus.maxHP.add(baseStatus.maxHPperLevel.times(level - 1)),
-        additionalMaxHP: sumDecimalEquipmentStatus("maxHP", inSlot).add(perLevel.maxHP.times(level)),
+        additionalMaxHP: additionalConstMaxHP.add(perLevel.maxHP.times(level)),
         maxSP: baseStatus.maxSP.add(baseStatus.maxSPperLevel.times(level - 1)).add(sumDecimalEquipmentStatus("maxSP", inSlot)),
-        hpReg: baseStatus.hpRegeneration.add(baseStatus.hpRegenPerLevel.times(level - 1)).add(sumDecimalEquipmentStatus("hpRegeneration", inSlot)),
+        hpReg: baseStatus.hpRegeneration.add(baseStatus.hpRegenPerLevel.times(level - 1)).addPercent(additionalHPReg),
         spReg: baseStatus.spRegeneration.add(baseStatus.spRegenPerLevel.times(level - 1)).add(sumDecimalEquipmentStatus("spRegeneration", inSlot)),
     
         baseAttackPower,
@@ -102,9 +130,9 @@ export default function(config: SubjectConfig): Status {
         cdrMax,
         cooldownReduction,
     
-        defense: baseStatus.armor.add(baseStatus.armorPerLevel.times(level - 1)).add(sumDecimalEquipmentStatus("defense", inSlot)),
-        basicAttackReduction: new Decimal(0.9).times(config.defenseMastery),
-        skillReduction: new Decimal(0.7).times(config.defenseMastery).add(sumDecimalEquipmentStatus("skillDamageReduction", inSlot)),
+        defense: baseStatus.armor.add(baseStatus.armorPerLevel.times(level - 1)).add(additionalDefense),
+        basicAttackReduction: new Decimal(BasicAttackReductionPerMastery).times(config.defenseMastery),
+        skillReduction: new Decimal(SkillReductionPerMastery).times(config.defenseMastery).add(additionalSkillDamageReduction),
     
         omnisyphon: sumDecimalEquipmentStatus("omnisyphon", inSlot),
         lifeSteal: sumDecimalEquipmentStatus("lifeSteal", inSlot),
@@ -125,5 +153,36 @@ export default function(config: SubjectConfig): Status {
         return SubjectStatusOverride[subject] ? SubjectStatusOverride[subject].default : null
     })();
 
-    return override ? from(override(base, config), config, base) : from(base, config);
+    const calculated = override ? from(override(base, config), config, base) : from(base, config);
+
+    const displayed: DisplayedStatusValues = {
+        effectiveHP: calculated.maxHP.times(calculated.defense.add(100).dividedBy(100)),
+        maxHP: {
+            base: { level1: baseStatus.maxHP, perLevel: baseStatus.maxHPperLevel },
+            additional: { constant: additionalConstMaxHP, perLevel: perLevel.maxHP }
+        },
+        hpReg: {
+            base: { level1: baseStatus.hpRegeneration, perLevel: baseStatus.hpRegenPerLevel },
+            additional: { ratio: additionalHPReg }
+        },
+        defense: {
+            base: { level1: baseStatus.armor, perLevel: baseStatus.armorPerLevel },
+            additional: { constant: additionalDefense }
+        },
+        additionalSkillDamageReduction,
+        maxSP: {
+            base: { level1: baseStatus.maxSP, perLevel: baseStatus.maxSPperLevel },
+            additional: { constant: base.additionalMaxHP }
+        },
+
+        spReg: {
+            base: { level1: baseStatus.spRegeneration, perLevel: baseStatus.spRegenPerLevel },
+            additional: { ratio: base.spReg }
+        }
+    }
+
+    return [
+        calculated,
+        displayed
+    ];
 }

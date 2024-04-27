@@ -12,8 +12,20 @@
         border-spacing: 0
         border-collapse: separate
 
-    tr
-        border: 1px black solid
+    td
+        border-bottom: 1px solid rgba(0,0,0,0.1)
+
+    .label
+        height: 28px
+
+        >*
+            vertical-align: middle
+
+        svg:first-child
+            margin-top: -2px
+
+    .value
+        font-size: 16px
 
     thead
         font-size: 12px
@@ -32,18 +44,34 @@
     .separator
         background: var(--base)
         font-size: 13px
+        div
+            display: flex
+            justify-content: space-between
+            width: 100%
+        
 
     td
         padding: 2px 4px
+
+    .expand
+        text-align: right
+        >td
+            padding: 0
+
+    .inner
+        td
+            border: none
+        span
+            font-size: 10px
 
 .basic-attack-reduction
     position: relative
     >:last-child
         display: block
         position: absolute
-        top: 0.45em
-        left: 0.35em
-        font-size: 0.6em
+        top: -3px
+        left: 0
+        transform: scale(0.6)
 
 .basic-attack-amp
     position: relative
@@ -52,7 +80,7 @@
         position: absolute
         top: 0
         left: 0
-        font-size: 0.5em
+        transform: scale(0.6)
 
 .attack-speed
     position: relative
