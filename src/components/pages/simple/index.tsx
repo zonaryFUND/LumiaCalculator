@@ -35,7 +35,7 @@ const index: React.FC = props => {
         <main className={style.simple}>
             <div className={style.parent}>
                 <header className={style.storage}>
-                    <h1>保存名：{buildName || "-----"}</h1>
+                    <h1>保存名：{buildName ?? "-----"}</h1>
                     <div>
                         <button className={`${common["system-button"]} ${common["button-medium"]}`}>ロード</button>
                         <button className={`${common["system-button"]} ${common["button-medium"]}`}>{buildName == null ? "新規保存" : "上書き保存"}</button>

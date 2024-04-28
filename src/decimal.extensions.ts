@@ -2,6 +2,7 @@ import Decimal from "decimal.js";
 
 declare module 'decimal.js' {
     interface Decimal {
+        cut(this: Decimal, digit: number, method: "round" | "floor"): Decimal
         floor2(this: Decimal): Decimal
         round2(this: Decimal): Decimal
         percent(this: Decimal, value: Decimal.Value): Decimal
@@ -9,6 +10,16 @@ declare module 'decimal.js' {
         subPercent(this: Decimal, value: Decimal.Value): Decimal
     }
 }
+
+Object.defineProperty(Decimal.prototype, "cut", {
+    configurable: false,
+    enumerable: false,
+    writable: false,
+    value: function (this: Decimal, digit: number, method: "round" | "floor") {
+        const pre = this.times(10**digit);
+        return (method == "round" ? pre.round() : pre.floor()).dividedBy(10**digit);
+    }
+})
 
 Object.defineProperty(Decimal.prototype, "floor2", {
     configurable: false,

@@ -10,7 +10,7 @@
 	"isaac": [
 		{
 			"weapon": "tonfa",
-			"type": "skill_amp",
+			"type": "basic_attack_amp",
 			"value": 1.5,
 			"attackSpeed": 3
 		}

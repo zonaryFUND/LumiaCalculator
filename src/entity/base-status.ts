@@ -25,5 +25,3 @@ export function baseStatus(id: SubjectID): BaseStatusType {
         return {...prev, [key]: new Decimal(raw[key])};
     }, {}) as BaseStatusType;
 }
-
-export const BaseBasicAttackRange = new Decimal(0.4);

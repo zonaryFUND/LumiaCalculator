@@ -64,6 +64,7 @@ export type Status = StatusProps & {
     attackPower: Decimal
     additionalAttackPower: Decimal
     skillAmp: Decimal
+    addAdaptiveTo: "attack" | "amp"
     withoutOverride?: StatusProps
     summonedStatus?: SummonedStatus
 }
@@ -80,9 +81,10 @@ export function from(props: StatusProps, config: SubjectConfig, withoutOverride?
         additionalAttackPower: addAdaptiveToAttack ? 
             props.baseAdditionalAttackPower.add(props.adaptiveStatus) :
             props.baseAdditionalAttackPower,
-        skillAmp: addAdaptiveToAttack ? 
+        skillAmp: (addAdaptiveToAttack ? 
             comparedAmp : 
-            props.baseSkillAmp.add(props.adaptiveStatus.times(2)).times(props.skillAmpMultiplier.add(100).dividedBy(100)),
+            props.baseSkillAmp.add(props.adaptiveStatus.times(2)).times(props.skillAmpMultiplier.add(100).dividedBy(100))).floor(),
+        addAdaptiveTo: addAdaptiveToAttack ? "attack" : "amp",
         withoutOverride
     }
 
@@ -93,5 +95,5 @@ export function from(props: StatusProps, config: SubjectConfig, withoutOverride?
         return status.default(subjectStatus, config);
     })();
 
-    return {...subjectStatus, summonedStatus}
+    return {...subjectStatus as any, summonedStatus}
 }

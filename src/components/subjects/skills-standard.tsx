@@ -44,7 +44,7 @@ type SkillProps = {
 export const Skill: React.FC<SkillProps> = props => {
     const src = (() => {
         const standard = Images.skill[props.id][props.skill];
-        return props.skillImage ? (props.skillImage(props.skill) || standard) : standard 
+        return props.skillImage ? (props.skillImage(props.skill) ?? standard) : standard 
     })();
 
     return (

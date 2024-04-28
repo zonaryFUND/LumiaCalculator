@@ -1,12 +1,12 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import { BaseBasicAttackRange, baseStatus as getBaseStatus } from "@app/entity/base-status";
+import { baseStatus as getBaseStatus } from "@app/entity/base-status";
 import { EquipmentStatus, PerLevelStatus, WeaponTypeID, equipmentStatus, weaponBaseStatus } from "@app/entity/equipment";
 import { mastery } from "@app/entity/mastery";
 import { SubjectConfig } from "./use-subject-config";
 import { Status, StatusOverride, StatusProps, from } from "./status";
 import { SubjectStatusOverride } from "components/subjects/status-override";
-import { BasicAttackReductionPerMastery, SkillReductionPerMastery } from "./standard-values";
+import { BaseBasicAttackRange, BaseCooldownCap, BaseVision, BasicAttackReductionPerMastery, SkillReductionPerMastery } from "./standard-values";
 
 export type DisplayedValues = {
     base: {
@@ -20,6 +20,10 @@ export type DisplayedValues = {
     }
 }
 
+export type MasteryValues = {
+    perMastery?: Decimal
+}
+
 type DisplayedStatusValues = {
     effectiveHP: Decimal
     maxHP: DisplayedValues
@@ -28,6 +32,35 @@ type DisplayedStatusValues = {
     additionalSkillDamageReduction: Decimal
     maxSP: DisplayedValues
     spReg: DisplayedValues
+    
+    attackPower: DisplayedValues & MasteryValues
+    basicAttackAmp: {
+        perLevel?: Decimal
+    } & MasteryValues
+
+    attackSpeed: {
+        subject: Decimal,
+        weapon: Decimal,
+        perMastery: Decimal,
+        additional: Decimal
+    }
+
+    skillAmp: {
+        equipmentRatio: Decimal
+        perMastery?: Decimal
+    }
+
+    movementSpeed: {
+        base: Decimal
+        additional: Decimal
+    }
+
+    additionalVision: Decimal
+
+    basicAttackRange: {
+        weapon: Decimal
+        additional: Decimal
+    }
 }
 
 function sumDecimalEquipmentStatus(key: string, status: EquipmentStatus[]): Decimal {
@@ -74,17 +107,29 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
     })();
 
     const baseAttackPower = baseStatus.attackPower.add(baseStatus.apPerLevel.times(level - 1))
-            .add(masteryFactor?.type == "attack_power" ? masteryFactor.value.times(weaponMastery) : 0)
-    const baseAdditionalAttackPower = sumDecimalEquipmentStatus("attackPower", inSlot).add(perLevel.attack.times(level));
+            .add(masteryFactor?.type == "attack_power" ? masteryFactor.value.times(weaponMastery) : 0).floor()
+    const additionalConstantAttackPower = sumDecimalEquipmentStatus("attackPower", inSlot);
+    const baseAdditionalAttackPower = additionalConstantAttackPower.add(perLevel.attack.times(level));
 
     const weaponTypeID = equipment.weapon ? equipmentStatus(equipment.weapon).type as WeaponTypeID : null
-    const attackSpeed = (() => {        
-        const base = baseStatus.attackSpeed.add(weaponTypeID ? weaponBaseStatus(weaponTypeID).attackSpeed : 0);
-        const multiplier = sumDecimalEquipmentStatus("attackSpeed", inSlot).add(masteryFactor ? masteryFactor.attackSpeed.times(weaponMastery) : 0);
-        return {
-            base: base.round2(), multiplier,
-            calculated: base.floor2().times(multiplier.add(100)).round().dividedBy(100)
-        };
+    const [attackSpeed, displayedAttackSpeed] = (() => {        
+        const weapon = weaponTypeID ? weaponBaseStatus(weaponTypeID).attackSpeed : 0;
+        const base = baseStatus.attackSpeed.add(weapon).floor2();
+        const perMastery = masteryFactor ? masteryFactor.attackSpeed.times(weaponMastery) : 0;
+        const multiplier = sumDecimalEquipmentStatus("attackSpeed", inSlot).add(perMastery);
+        return [
+            {
+                base:  base, 
+                multiplier,
+                calculated: base.addPercent(multiplier).round2()
+            },
+            {
+                subject: baseStatus.attackSpeed,
+                weapon: new Decimal(weapon),
+                perMastery: new Decimal(perMastery),
+                additional: sumDecimalEquipmentStatus("attackSpeed", inSlot)
+            }
+        ];
     })();
 
     const basicAttackRange = (() => {
@@ -94,10 +139,11 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
 
     const basicAttackAmp = perLevel.basicAttackAmp.times(level).add(masteryFactor?.type == "basic_attack_amp" ? masteryFactor.value.times(weaponMastery) : 0);
     const baseSkillAmp = perLevel.skillAmp.times(level).add(sumDecimalEquipmentStatus("skillAmplification", inSlot));
-    const skillAmpMultiplier = maxDecimalEquipmentStatus("ampRatio", inSlot)
+    const equipmentRatio = maxDecimalEquipmentStatus("ampRatio", inSlot);
+    const skillAmpMultiplier = equipmentRatio
         .add(masteryFactor?.type == "skill_amp" ? masteryFactor.value.times(weaponMastery) : 0).round();
 
-    const cdrMax = maxDecimalEquipmentStatus("cdrCap", inSlot).add(30)
+    const cdrMax = maxDecimalEquipmentStatus("cdrCap", inSlot).add(BaseCooldownCap)
     const cooldownReduction = (() => {
         const sum = sumDecimalEquipmentStatus("cooldownReduction", inSlot);
         return sum.clamp(0, cdrMax);
@@ -109,12 +155,15 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
     const additionalSkillDamageReduction = sumDecimalEquipmentStatus("skillDamageReduction", inSlot);
     const additionalMaxSP = sumDecimalEquipmentStatus("maxSP", inSlot);
     const additionalSPReg = sumDecimalEquipmentStatus("spRegeneration", inSlot);
+    const additionalMovementSpeed = sumDecimalEquipmentStatus("movementSpeed", inSlot);
+    const additionalVision = sumDecimalEquipmentStatus("vision", inSlot);
+    const additionalRange = maxDecimalEquipmentStatus("attackRange", inSlot);
 
     const base: StatusProps = {
         baseMaxHP: baseStatus.maxHP.add(baseStatus.maxHPperLevel.times(level - 1)),
         additionalMaxHP: additionalConstMaxHP.add(perLevel.maxHP.times(level)),
         maxSP: baseStatus.maxSP.add(baseStatus.maxSPperLevel.times(level - 1)).add(additionalMaxSP),
-        hpReg: baseStatus.hpRegeneration.add(baseStatus.hpRegenPerLevel.times(level - 1)).addPercent(additionalHPReg),
+        hpReg: baseStatus.hpRegeneration.add(baseStatus.hpRegenPerLevel.times(level - 1)).round2().addPercent(additionalHPReg),
         spReg: baseStatus.spRegeneration.add(baseStatus.spRegenPerLevel.times(level - 1)).addPercent(additionalSPReg),
     
         baseAttackPower,
@@ -132,7 +181,7 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
         cdrMax,
         cooldownReduction,
     
-        defense: baseStatus.armor.add(baseStatus.armorPerLevel.times(level - 1)).add(additionalDefense),
+        defense: baseStatus.armor.add(baseStatus.armorPerLevel.times(level - 1)).add(additionalDefense).floor(),
         basicAttackReduction: new Decimal(BasicAttackReductionPerMastery).times(config.defenseMastery),
         skillReduction: new Decimal(SkillReductionPerMastery).times(config.defenseMastery).add(additionalSkillDamageReduction),
     
@@ -145,9 +194,9 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
         healPower: sumDecimalEquipmentStatus("healingPower", inSlot),
         tenacity: maxDecimalEquipmentStatus("tenacity", inSlot),
         
-        movementSpeed: baseStatus.movementSpeed.add(sumDecimalEquipmentStatus("movementSpeed", inSlot)).add(new Decimal(movementMastery).times(new Decimal(5).dividedBy(1000))).round2(),
+        movementSpeed: baseStatus.movementSpeed.add(additionalMovementSpeed).add(new Decimal(movementMastery).times(new Decimal(5).dividedBy(1000))).floor2(),
         basicAttackRange,
-        visionRange: sumDecimalEquipmentStatus("vision", inSlot).add(8.5)
+        visionRange: additionalVision.add(BaseVision)
     }
 
     const override: StatusOverride | null = (() => {
@@ -179,6 +228,29 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
         spReg: {
             base: { level1: baseStatus.spRegeneration, perLevel: baseStatus.spRegenPerLevel },
             additional: { ratio: additionalSPReg }
+        },
+        attackPower: {
+            base: { level1: baseStatus.attackPower, perLevel: baseStatus.apPerLevel },
+            additional: { constant: additionalConstantAttackPower, perLevel: perLevel.attack },
+            perMastery: masteryFactor?.type == "attack_power" ? masteryFactor.value : undefined
+        },
+        basicAttackAmp: {
+            perLevel: perLevel.basicAttackAmp,
+            perMastery: masteryFactor?.type == "basic_attack_amp" ? masteryFactor.value : undefined
+        },
+        attackSpeed: displayedAttackSpeed,
+        skillAmp: {
+            equipmentRatio,
+            perMastery: masteryFactor?.type == "skill_amp" ? masteryFactor.value : undefined
+        },
+        movementSpeed: {
+            base: baseStatus.movementSpeed,
+            additional: additionalMovementSpeed
+        },
+        additionalVision,
+        basicAttackRange: {
+            weapon: new Decimal(weaponTypeID ? weaponBaseStatus(weaponTypeID).range : 0),
+            additional: additionalRange
         }
     }
 

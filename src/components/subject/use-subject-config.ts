@@ -55,14 +55,14 @@ export default function(): Response {
         stack: 0
     })
     const [subject, setSubject] = React.useState<SubjectID>(config!.subject);
-    const [level, setLevel] = React.useState(config?.level || 1);
-    const [weaponMastery, setWeaponMastery] = React.useState(config?.weaponMastery || 1);
-    const [defenseMastery, setDefenseMastery] = React.useState(config?.defenseMastery || 1);
-    const [movementMastery, setMovementMastery] = React.useState(config?.weaponMastery || 1);
-    const [equipment, setEquipment] = React.useState(config?.equipment || {
+    const [level, setLevel] = React.useState(config?.level ?? 1);
+    const [weaponMastery, setWeaponMastery] = React.useState(config?.weaponMastery ?? 1);
+    const [defenseMastery, setDefenseMastery] = React.useState(config?.defenseMastery ?? 1);
+    const [movementMastery, setMovementMastery] = React.useState(config?.weaponMastery ?? 1);
+    const [equipment, setEquipment] = React.useState(config?.equipment ?? {
         weapon: null, chest: null, head: null, arm: null, leg: null
     } as Equipment)
-    const [skillLevels, setSkillLevels] = React.useState(config?.skillLevels || { Q: 1, W: 1, E: 1, R: 1, T: 1 });
+    const [skillLevels, setSkillLevels] = React.useState(config?.skillLevels ?? { Q: 1, W: 1, E: 1, R: 1, T: 1 });
     const [gauge, setGauge] = React.useState(0);
     const [stack, setStack] = React.useState(0);
 

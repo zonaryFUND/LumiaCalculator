@@ -19,7 +19,7 @@ const selection: React.FC<Props> = props => {
     }, [])
 
     const onAfterOpen: Modal.OnAfterOpenCallback = React.useCallback(obj => {
-        const top = (ref.current?.offsetHeight || 0) * (props.value[0] - 1);
+        const top = (ref.current?.offsetHeight ?? 0) * (props.value[0] - 1);
         obj?.contentEl.scrollTo({ top })
     }, [props.value[0]])    
 

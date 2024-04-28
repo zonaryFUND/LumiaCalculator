@@ -15,7 +15,7 @@ export default function(status: StatusProps, config: SubjectConfig): StatusProps
         attackSpeed: {
             base: status.attackSpeed.base,
             multiplier: additional,
-            calculated: status.attackSpeed.base.times(additional.add(100)).dividedBy(100)
+            calculated: status.attackSpeed.base.addPercent(additional)
         },
         defense: isMelee ? status.defense.add(def) : status.defense
     };
