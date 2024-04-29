@@ -2,6 +2,7 @@ import { Status, StatusProps, SummonedStatus } from "components/subject/status";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
+import { Language } from "@app/entity/language";
 
 export default function(barbaraStatus: Status, config: SubjectConfig): SummonedStatus {
     return {
@@ -13,5 +14,12 @@ export default function(barbaraStatus: Status, config: SubjectConfig): SummonedS
         skillAmp: new Decimal(0),
         armorPenetration: new Decimal(0),
         armorPenetrationRatio: new Decimal(0)
+    }
+}
+
+export function name(language: Language): string {
+    switch (language) {
+        case "jp":
+            return "セントリーガン";
     }
 }

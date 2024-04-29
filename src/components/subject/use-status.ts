@@ -26,6 +26,7 @@ export type MasteryValues = {
 
 type DisplayedStatusValues = {
     effectiveHP: Decimal
+    summonedEffectiveHP?: Decimal
     maxHP: DisplayedValues
     hpReg: DisplayedValues
     defense: DisplayedValues
@@ -208,6 +209,7 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
 
     const displayed: DisplayedStatusValues = {
         effectiveHP: calculated.maxHP.times(calculated.defense.add(100).dividedBy(100)),
+        summonedEffectiveHP: calculated.summonedStatus ? calculated.summonedStatus.maxHP.times(calculated.summonedStatus.defense.add(100).dividedBy(100)) : undefined,
         maxHP: {
             base: { level1: baseStatus.maxHP, perLevel: baseStatus.maxHPperLevel },
             additional: { constant: additionalConstMaxHP, perLevel: perLevel.maxHP }

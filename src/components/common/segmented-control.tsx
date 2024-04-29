@@ -11,6 +11,9 @@ type Props = {
         value: string
     }[]
     value: StateProps<string | undefined>
+    style?: {
+        verticalPadding?: number
+    }
 }
 
 const segmentedControl: React.FC<Props> = props => {
@@ -23,15 +26,21 @@ const segmentedControl: React.FC<Props> = props => {
         controlRef.current?.style.setProperty("--highlight-x-pos", `${event.target.parentElement?.offsetLeft}px`);
     }, []);
 
+    const property = React.useMemo(() => {
+        return {
+            "--vertical-padding": props.style?.verticalPadding ? `${props.style.verticalPadding}px` : `8px`
+        }
+    }, [props.style])
+
     React.useLayoutEffect(() => {
         const defaultLabel = controlRef.current?.getElementsByClassName(style.active)[0] as HTMLElement;
         controlRef.current?.style.setProperty("--highlight-width", `${defaultLabel?.offsetWidth}px`);
         controlRef.current?.style.setProperty("--highlight-x-pos", `${defaultLabel?.offsetLeft}px`);
         setTransition(true);
-    }, [])
+    }, [props.segments])
 
     return (
-        <div className={styles(style.segment, transition ? style.transition : undefined)} ref={controlRef}>
+        <div className={styles(style.segment, transition ? style.transition : undefined)} style={property as React.CSSProperties} ref={controlRef}>
             {
                 props.segments.map(segment => (
                     <label key={segment.value} className={styles(segment.value == props.value[0] ? style.active : undefined, transition ? style.transition : undefined)}>
