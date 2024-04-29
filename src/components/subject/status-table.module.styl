@@ -12,16 +12,19 @@
         border-spacing: 0
         border-collapse: separate
 
+    tr
+        transition: background 0.25s ease
+
     td
         border-bottom: 1px solid rgba(0,0,0,0.1)
 
     .label
         height: 28px
 
-        >*
+        *
             vertical-align: middle
 
-        svg:first-child
+        >:first-child
             margin-top: -2px
 
     .value
@@ -41,56 +44,68 @@
         tr
             height: 28px
 
+    .zero
+        color: rgba(0,0,0,0.3)
+
     .separator
-        background: var(--base)
+        background: var(--c4)
         font-size: 13px
+        color: white
+        cursor: pointer
         div
             display: flex
             justify-content: space-between
             width: 100%
-        
 
     td
         padding: 2px 4px
 
     .expand
         text-align: right
+        background-color: rgba(0,0,0,0.05)
         >td
             padding: 0
 
+    >table>tbody>tr:not(.separator):hover
+        background: rgba(0,0,0,0.05)
+
+
 .basic-attack-reduction
+    display: inline-block
+    position: relative
+    >:last-child
+        display: block
+        position: absolute
+        top: 2px
+        left: 0
+        transform: scale(0.6)
+
+.basic-attack-amp
+    display: inline-block
+    position: relative
+    >:last-child
+        display: block
+        position: absolute
+        top: -4px
+        left: -4px
+        transform: scale(0.6)
+
+.attack-speed
+    display: inline-block
     position: relative
     >:last-child
         display: block
         position: absolute
         top: -3px
-        left: 0
-        transform: scale(0.6)
-
-.basic-attack-amp
-    position: relative
-    >:last-child
-        display: block
-        position: absolute
-        top: 0
-        left: 0
-        transform: scale(0.6)
-
-.attack-speed
-    position: relative
-    >:last-child
-        display: block
-        position: absolute
-        top: 0
-        left: 0
-        font-size: 0.5em
-        transform: scale(-1, 1)
+        left: -4px
+        transform: scale(-0.5, 0.5)
 
 .critical-damage
+    display: inline-block
     position: relative
     >:last-child
         display: block
         position: absolute
-        top: -0.2em
-        left: -0.2em
-        font-size: 0.5em
+        top: -6px
+        left: -6px
+        transform: scale(0.6)
