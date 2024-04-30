@@ -2,12 +2,22 @@ import { Status } from "components/subject/status";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import Decimal from "decimal.js";
 
-export default function skillDamage(status: Status, config: SubjectConfig, skill: "Q" | "W" | "E" | "R" | "T", dictionary: any): Decimal {
-    
-    const skillLevel = config.skillLevels[skill];
+export function skillLevel(skill: "Q" | "W" | "E" | "R" | "T" | "D", config: SubjectConfig): number {
+    if (skill == "D") {
+        return config.weaponMastery < 10 ? 0 :
+        config.weaponMastery < 15 ? 1 : 
+        2; 
+    }
+
+    return config.skillLevels[skill]
+}
+
+export default function skillDamage(status: Status, config: SubjectConfig, skill: "Q" | "W" | "E" | "R" | "T" | "D", dictionary: any): Decimal {
+    const level = skillLevel(skill, config)
+
     return ["base", "perLevel", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "additionalMaxHP", "criticalChance", "summoned_attack", "stack"].reduce((prev, key) => {
         if (dictionary[key] == undefined) return prev;
-        const skillValue = new Decimal(Array.isArray(dictionary[key]) ? dictionary[key][skillLevel] : dictionary[key]);
+        const skillValue = new Decimal(Array.isArray(dictionary[key]) ? dictionary[key][level] : dictionary[key]);
 
         switch (key) { 
             case "base":

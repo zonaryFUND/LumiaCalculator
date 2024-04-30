@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SubjectConfig } from "./use-subject-config";
-import useStatus from "./use-status";
+import { DisplayedStatusValues } from "./use-status";
 import { FirstAid, Lightning, Shield, Sword, Plus, Wind, Crosshair, 
     ArrowFatLinesUp, Hourglass, ShieldSlash, Drop, FirstAidKit, 
     HandFist, SneakerMove, Eye, ArrowFatLineRight, IconContext,
@@ -23,6 +23,7 @@ import useStatusToggle from "./use-status-toggle";
 import SegmentedControl from "components/common/segmented-control";
 import { name } from "@app/entity/subject";
 import { SummonedStatus } from "components/subjects/summoned-status";
+import { Status } from "./status";
 
 type ColumnProps = {
     name: React.ReactElement
@@ -60,8 +61,8 @@ const basicAttackAmp = <span className={style["basic-attack-amp"]}><Sword /><Plu
 const attackSpeed = <span className={style["attack-speed"]}><Sword /><Wind weight="bold" /></span>
 const criticalDamage = <span className={style["critical-damage"]}><Crosshair /><Plus weight="bold" /></span>
 
-const status: React.FC<SubjectConfig> = props => {
-    const [status, displayed] = useStatus(props);
+const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}> = props => {
+    const [status, displayed] = props.status;
     const toggle = useStatusToggle();
     const subjectName = React.useMemo(() => name(props.subject, "jp"), [props.subject]);
     const summonedName = React.useMemo(() => {
@@ -89,7 +90,7 @@ const status: React.FC<SubjectConfig> = props => {
             </header>
             <div className={style.parent}>
                 {
-                    shownStatus[0] == "subject" && status.summonedStatus ?
+                    shownStatus[0] == "subject" || status.summonedStatus == undefined ?
                     <table>
                         <colgroup>
                             <col />

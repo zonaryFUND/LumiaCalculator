@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps } from "../skills-standard";
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
 import { WeaponID } from "@app/entity/weapon-id";
 
 export default function(props: {weapon: WeaponID | null} & SkillsStandardProps) {
@@ -24,6 +24,7 @@ export default function(props: {weapon: WeaponID | null} & SkillsStandardProps) 
             <Skill id="echion" skill="E" />
             <Skill id="echion" skill={`R${type == "0" ? "0_1" : type}`} />
             <Skill id="echion" skill={`T${type == "0" ? type : `${type}_2`}`} />
+            <WeaponSkill id="vf_prosthetic" />
             <li><SkillLevelConfigurator skill="Q" /></li>
             <li><SkillLevelConfigurator skill="W" /></li>
             <li><SkillLevelConfigurator skill="E" /></li>

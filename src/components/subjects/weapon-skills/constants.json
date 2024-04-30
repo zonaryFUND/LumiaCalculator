@@ -1,0 +1,284 @@
+{
+    "vf_prosthetic": {
+        "cast": 1,
+        "threshold": 50,
+        "charge_gauge": 45,
+        "gauge_consumption": 45,
+        "cooldown_reduction": 60,
+        "movement_speed": {
+            "duration": 0.85,
+            "effect": 20
+        },
+        "extend": [1.5,2.5,3.5],
+        "overload_reduction": [5,7,9],
+        "cooldown": [13,12,11]
+    },
+    "arcana": {
+        "count": 3,
+        "damage": {
+            "base": [30,50,70],
+            "amp": 25
+        },
+        "animal_enhance": 50,
+        "cooldown": [30,25,20]
+    },
+    "camera": {
+        "damage": {
+            "base": [50,100,150],
+            "additionalAttack": [60,90,120],
+            "amp": [30,40,50]
+        },
+        "additional_damage": [100,150,200],
+        "vision": 2,
+        "cooldown": 30
+    },
+    "guitar": {
+        "damage": {
+            "base": [80,120,160],
+            "additionalAttack": [100,130,160],
+            "amp": [35,40,45]
+        },
+        "charm": [0.6,0.8,1],
+        "cooldown": 25
+    },
+    "glove": {
+        "damage": {
+            "additionalAttack": 110,
+            "basicAttackAmp": 100,
+            "amp": 30
+        },
+        "additional_damage": [60,80,100],
+        "static_damage": [50,60,70],
+        "cooldown": [9,7,5]
+    },
+    "tonfa": {
+        "duration": 0.75,
+        "reflected_ratio": [20,30,40],
+        "cooldown": [30,25,20]
+    },
+    "bat": {
+        "damage": {
+            "base": [110,220,330],
+            "additionalAttack": 150,
+            "amp": [40,55,70]
+        },
+        "knockback": 4,
+        "stun": 0.8,
+        "cooldown": 25
+    },
+    "rapier": {
+        "damage": {
+            "base": [80,140,200],
+            "additionalAttack": [60,70,80],
+            "amp": [20,35,50]
+        },
+        "cooldown": [30,22,14]
+    },
+    "shuriken": {
+        "count": 12,
+        "duration": 6,
+        "damage": {
+            "base": [60,90,120],
+            "additionalAttack": 50,
+            "amp": [30,40,50]
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": [30,40,50]
+        },
+        "multiple_reduction": 45,
+        "cooldown": 30
+    },
+    "bow": {
+        "after": 2.5,
+        "damage": {
+            "base": [100,200,300],
+            "additionalAttack": 100,
+            "amp": 30
+        },
+        "slow": {
+            "duration": 3,
+            "effect": 25
+        },
+        "center_damage": {
+            "base": [200,400,600],
+            "additionalAttack": 190,
+            "amp": 60
+        },
+        "cooldown": [35,30,25]
+    },
+    "hammer": {
+        "damage": {
+            "base": [205,350,450],
+            "additionalAttack": [70,100,130],
+            "amp":70
+        },
+        "defense_decline": {
+            "duration": 6,
+            "effect": [20,25,30]
+        },
+        "cooldown": [25,20,15]
+    },
+    "pistol": {
+        "duration": 1,
+        "movement_speed": {
+            "base": [35,50,65],
+            "amp": 1
+        },
+        "attack_speed": {
+            "count": 2,
+            "effect": 70
+        },
+        "cooldown": [35,30,25]
+    },
+    "crossbow": {
+        "damage": {
+            "base": [50,100,150],
+            "additionalAttack": [50,60,70],
+            "amp": 30
+        },
+        "stun": 1.25,
+        "cooldown": [40,32,24]
+    },
+    "sniper_rifle": {
+        "duration": 10,
+        "vision": 30,
+        "cripping": {
+            "vision": 6,
+            "damage": {
+                "base": [100,200,300],
+                "additionalAttack": 160,
+                "amp": [30,35,40]
+            },
+            "target_vision": 3,
+            "slow": {
+                "duration": 0.5,
+                "effect": 90
+            }
+        },
+        "dead_to_rights": {
+            "vision": 1.5,
+            "damage": {
+                "base": [150,300,450],
+                "additionalAttack": 180,
+                "amp": [40,45,50]
+            },
+            "max_damage_multiplier": 2
+        },
+        "cooldown": [40,35,30]
+    },
+    "dual_swords": {
+        "first_damage": {
+            "base": [20,30,40],
+            "additionalAttack": [20,30,40],
+            "amp": [5,6,7]
+        },
+        "first_count": 6,
+        "threshold": 4,
+        "reuse": 5,
+        "second_damage": {
+            "base": [100,150,200],
+            "additionalAttack": [100,125,150],
+            "amp": [40,50,60]
+        },
+        "cooldown": [30,25,20]
+    },
+    "nunchaku": {
+        "movement_speed_penalty": 45,
+        "min_damage": {
+            "base": [100,175,250],
+            "additionalAttack": 50,
+            "amp": 40
+        },
+        "max_damage": {
+            "base": [200,350,500],
+            "additionalAttack": 150,
+            "amp": 80
+        },
+        "stun_threshold": 0.8,
+        "stun": 1,
+        "cooldown": [28,24,20]
+    },
+    "spear": {
+        "range": 4,
+        "damage": {
+            "base": [100,155,210],
+            "additionalAttack": [60,90,120],
+            "amp": [35,45,55]
+        },
+        "double_range": 2,
+        "slow": {
+            "duration": 2,
+            "effect": 35
+        },
+        "cooldown": [30,25,20]
+    },
+    "dagger": {
+        "cloak": {
+            "duration": [1,1.5,2],
+            "movement_speed": 20
+        },
+        "dagger": {
+            "damage": {
+                "base": [50,100,150],
+                "additionalAttack": 85,
+                "amp": 25
+            },
+            "static_damage": 10,
+            "slow": {
+                "duration": 1,
+                "effect": [20,35,50]
+            }
+        },
+        "cooldown": [30,25,20]
+    },
+    "throw": {
+        "duration": 2.5,
+        "cooldown": [40,32,24]
+    },
+    "assault_rifle": {
+        "stack_gain": 3,
+        "max_stack": [50,75,100],
+        "stack_reduction_threshold": 6,
+        "stack_reduction": 10,
+        "per_stack": {
+            "duration": 0.1,
+            "basic_attack_addition": 0.1
+        },
+        "attack_speed": [20,35,50],
+        "cooldown": 17
+    },
+    "axe": {
+        "damage": {
+            "base": [70,110,150],
+            "additionalAttack": [100,120,140],
+            "amp": 40,
+            "targetMaxHP": 5
+        },
+        "heal": 50,
+        "animal": 110,
+        "cooldown": [7,6,5]
+    },
+    "whip": {
+        "damage": {
+            "base": [40,70,100],
+            "additionalAttack": 40,
+            "amp": 30
+        },
+        "slow": {
+            "duration": 1,
+            "effect": [25,30,35]
+        },
+        "cooldown": [25,20,15]
+    },
+    "two-handed_sword": {
+        "duration": 0.75,
+        "dash": 3,
+        "damage": {
+            "base": [100,150,200],
+            "additionalAttack": [150,175,200],
+            "amp": 70
+        },
+        "cooldown": 30
+    }
+}

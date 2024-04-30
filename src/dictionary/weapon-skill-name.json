@@ -1,0 +1,71 @@
+{
+	"vf_prosthetic": {
+		"jp": "VF安定化"
+	},
+	"arcana": {
+		"jp": "VF媒介"
+	},
+	"camera": {
+		"jp": "フラッシュ"
+	},
+	"guitar": {
+		"jp": "Love&..."
+	},
+	"glove": {
+		"jp": "アッパーカット"
+	},
+	"tonfa": {
+		"jp": "高速回転"
+	},
+	"bat": {
+		"jp": "フルスイング"
+	},
+	"rapier": {
+		"jp": "閃撃"
+	},
+	"shuriken": {
+		"jp": "鉄菱投擲"
+	},
+	"bow": {
+		"jp": "矢の雨"
+	},
+	"hammer": {
+		"jp": "鎧つぶし"
+	},
+	"pistol": {
+		"jp": "ムービングリロード"
+	},
+	"crossbow": {
+		"jp": "強弩"
+	},
+	"sniper_rifle": {
+		"jp": "狙撃"
+	},
+	"dual_swords": {
+		"jp": "双剣乱舞"
+	},
+	"nunchaku": {
+		"jp": "猛龍過江"
+	},
+	"spear": {
+		"jp": "影突き"
+	},
+	"dagger": {
+		"jp": "マントと短剣"
+	},
+	"throw": {
+		"jp": "煙幕"
+	},
+	"assault_rifle": {
+		"jp": "過熱"
+	},
+	"axe": {
+		"jp": "血の螺旋"
+	},
+	"whip": {
+		"jp": "風裂き"
+	},
+	"two-handed_sword": {
+		"jp": "受け流し"
+	}
+}

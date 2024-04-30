@@ -3,6 +3,7 @@ import style from "./skills-standard.modue.styl";
 import { SubjectID } from "@app/entity/subject";
 import Images from "@app/resources/image";
 import { SkillLevels } from "components/subject/use-subject-config";
+import { WeaponTypeID } from "@app/entity/equipment";
 
 export type SkillImage = (skillID: string) => string | undefined;
 type ConfigurationProps = [SkillLevels, React.Dispatch<React.SetStateAction<SkillLevels>>]
@@ -57,11 +58,32 @@ export const Skill: React.FC<SkillProps> = props => {
     );
 }
 
+type WeaponSkillProps = {
+    id?: WeaponTypeID
+}
+
+export const WeaponSkill: React.FC<WeaponSkillProps> = props => {
+    const src = (() => {
+        if (props.id == undefined) return ""; 
+        return Images.skill.weapon[props.id];
+    })();
+
+    return (
+        <li
+            data-tooltip-id={props.id ? "weapon-skill" : undefined}
+            data-tooltip-content={`${props.id}`}
+        >
+            <img src={src} />
+        </li> 
+    )
+}
+
 export type SkillsStandardProps = {
     id: SubjectID
     skillImage?: SkillImage
     skillLevels: SkillLevels
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
+    weaponType?: WeaponTypeID
 }
 
 export const SkillsParent: React.FC<SkillsStandardProps> = props => (
@@ -80,6 +102,7 @@ const skillsStandard: React.FC<SkillsStandardProps> = props => {
             <Skill id={props.id} skill="E" skillImage={props.skillImage} />
             <Skill id={props.id} skill="R" skillImage={props.skillImage} />
             <Skill id={props.id} skill="T" skillImage={props.skillImage} />
+            <WeaponSkill id={props.weaponType} />
             <SkillLevelConfigurator skill="Q" />    
             <SkillLevelConfigurator skill="W" />    
             <SkillLevelConfigurator skill="E" />    

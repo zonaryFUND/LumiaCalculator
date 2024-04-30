@@ -24,7 +24,7 @@ export type MasteryValues = {
     perMastery?: Decimal
 }
 
-type DisplayedStatusValues = {
+export type DisplayedStatusValues = {
     effectiveHP: Decimal
     summonedEffectiveHP?: Decimal
     maxHP: DisplayedValues
