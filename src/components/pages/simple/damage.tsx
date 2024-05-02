@@ -23,7 +23,6 @@ const damages: React.FC<Props> = props => {
         const skills = SubjectSkills[props.config.subject];
         if (skills == undefined || skills.default == undefined) {
             const skillImage = skills == undefined ? undefined : skills.SkillImage;
-            console.log(props.config.equipment)
             return <SkillsStandard 
                 id={props.config.subject} 
                 skillLevels={props.config.skillLevels}

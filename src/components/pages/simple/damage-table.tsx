@@ -25,17 +25,17 @@ const damageTable: React.FC<Props> = props => {
                         <tr className={table.separator}><td colSpan={3}>実験体スキル</td><td>ダメージ / 効果量</td></tr>
                         {
                             definition.skill.map((array, index) => 
-                                <>
+                                <React.Fragment key={index}>
                                 {
                                     index == 0 ? null :
                                     <tr className={table.border}><td colSpan={4}></td></tr>
                                 }
                                 {
                                     array.map(s => 
-                                        <SkillDamage status={props.status} config={props.config} {...s} />
+                                        <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
                                     )
                                 }
-                                </>
+                                </React.Fragment>
                             )
                         }
                     </tbody>

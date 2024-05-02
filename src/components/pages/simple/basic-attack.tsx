@@ -28,7 +28,7 @@ const basicAttack: React.FC<Props> = props => {
             {
                 props.table.basicAttack.map(def => {
                     if (typeof def === "string") {
-                        return <BasicAttackDamage name="基本攻撃" status={props.status} disableCritical={def == "disable-critical"} />
+                        return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={def == "disable-critical"} />
                     } else {
                         return null
                     }

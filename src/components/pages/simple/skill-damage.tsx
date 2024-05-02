@@ -28,6 +28,7 @@ function levelValue(from: number | number[], level: number): number {
 function equation(damage: any, status: Status, level: number): React.ReactElement[] {
     return (Object.entries(damage) as [string, number | number][]).reduce((prev, [key, value]) => {
         const p = prev.length == 0 ? prev : prev.concat(<> + </>)
+        
         switch (key) {
             case "base":
                 return p.concat(<>{levelValue(value, level)}</>);
@@ -63,33 +64,40 @@ const skillDamage: React.FC<Props> = props => {
         <>{equation(props.damage, props.status, level)} = {value.toString()}</>;
 
     const [additional, expandDescription] = (() => {
-        if (props.damage.targetMaxHP == undefined) return [null, <td colSpan={4}>{baseDamageTr}</td>];
-        const brackets = !value.isZero()
+        const additionalKeys = [
+            {key: "targetMaxHP", text: "対象の最大体力の", ratio: "対象最大体力比"},
+            {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"}
+        ]
+        const tuple = additionalKeys.find(k => props.damage[k.key] != undefined);
+        if (tuple == undefined) {
+            return [null, <td colSpan={4}>{baseDamageTr}</td>]
+        }
 
-        if (typeof props.damage.targetMaxHP === "object") {
-            const ratio = damage(props.status, props.config, props.skill, props.damage.targetMaxHP);
+        const brackets = !value.isZero()
+        if (typeof props.damage[tuple.key] === "object") {
+            const ratio = damage(props.status, props.config, props.skill, props.damage[tuple.key]);
             const multiplied = ratio.percent(multiplier ?? 100);
-            const content = <>対象の最大体力の{multiplied.toString()}％</>
+            const content = <>{tuple.text}{multiplied.toString()}％</>
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
-                <tr><td colSpan={4}>
+                <td colSpan={4}>
                     <InnerTable>
                         <tr><td>基礎値</td><td>{baseDamageTr}</td></tr>
                         <tr>
-                            <td>対象最大体力比</td>
+                            <td>{tuple.ratio}</td>
                             <td>
                                 {
                                     multiplier ? 
                                     <>{ratio.toString()} x {multiplier}％ = {multiplied.toString()}</> :
-                                    <>{equation(props.damage.targetMaxHP, props.status, level)} = {ratio.toString()}</>
+                                    <>{equation(props.damage[tuple.key], props.status, level)} = {ratio.toString()}</>
                                 }％
                             </td>
                         </tr>
                     </InnerTable>
-                </td></tr>
+                </td>
             ]
         } else {
-            const content = <>対象の最大体力の{levelValue(props.damage.targetMaxHP, level)}％</>;
+            const content = <>{tuple.text}{levelValue(props.damage[tuple.key], level)}％</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>{baseDamageTr}</td>
@@ -103,14 +111,7 @@ const skillDamage: React.FC<Props> = props => {
                 <td colSpan={3}>{props.label}</td>
                 <td className={props.type == "heal" ? style.heal : style.skill}>{value.isZero() ? null : value.toString()}{additional}</td>
             </tr>
-            {
-                expand ?
-                (
-                    expandDescription ??
-                    <tr className={table.expand}>{expandDescription}</tr> 
-                )
-                : null
-            }
+            { expand ? <tr className={table.expand}>{expandDescription}</tr> : null }
         </>
     )
 }
