@@ -3,11 +3,13 @@ import style from "./number-selection.module.styl";
 import { StateProps } from "@app/util/state";
 import Modal from "react-modal";
 import { useToggle } from "react-use";
+import { styles } from "@app/util/style";
 
 type Props = {
-    label: string
+    label?: string
     max: number
-    value: StateProps<number>
+    value: [number, (to: number) => void]
+    layout: "config" | "skill"
 }
 
 const selection: React.FC<Props> = props => {
@@ -26,11 +28,12 @@ const selection: React.FC<Props> = props => {
     return (
         <>
             <div 
-                className={style.selection} 
+                className={styles(style.selection, props.layout == "config" ? style.config : style.skill)} 
                 onClick={toggleSelecting}
                 ref={ref}
+                style={{}}
             >
-                <p>{props.label}</p>
+                {props.label ? <p>{props.label}</p> : null}
                 <span>{props.value[0]}</span>            
                 <span className={`material-symbols-outlined ${style.open}`}>expand_more</span>
             </div>

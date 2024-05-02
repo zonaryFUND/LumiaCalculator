@@ -4,20 +4,35 @@
 .parent
     margin: auto
     font-size:  12px
+    max-width: 1240px
 
-.storage
+.header
     display: flex
     justify-content: space-between
-    align-items: center
-    background: white
-    border-radius: 8px
-    position: relative
-    padding: 4px 16px
+    align-items: end
+    gap: 24px
 
-    div
+    .storage
         display: flex
+        justify-content: space-between
+        flex: 1
         gap: 8px
+        background: var(--bg)
 
+    .formula
+        display: flex
+        padding: 4px 8px
+        gap: 12px
+        border-radius: 4px
+        align-items: center
+        background: var(--bg)
+        font-size: 14px
+        font-weight: bold
+        color: var(--lmg)
+        transition: color 0.25s ease
+
+    .on
+        color: var(--main)
 .base
     display: flex
     justify-content: center

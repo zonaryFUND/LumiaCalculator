@@ -12,12 +12,10 @@ export function skillLevel(skill: "Q" | "W" | "E" | "R" | "T" | "D", config: Sub
     return config.skillLevels[skill]
 }
 
-export default function skillDamage(status: Status, config: SubjectConfig, skill: "Q" | "W" | "E" | "R" | "T" | "D", dictionary: any): Decimal {
-    const level = skillLevel(skill, config)
-
+export function skillDamageSimple(status: Status, config: SubjectConfig, dictionary: any): Decimal {
     return ["base", "perLevel", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "additionalMaxHP", "criticalChance", "summoned_attack", "stack"].reduce((prev, key) => {
         if (dictionary[key] == undefined) return prev;
-        const skillValue = new Decimal(Array.isArray(dictionary[key]) ? dictionary[key][level] : dictionary[key]);
+        const skillValue = new Decimal(dictionary[key]);
 
         switch (key) { 
             case "base":
@@ -46,5 +44,16 @@ export default function skillDamage(status: Status, config: SubjectConfig, skill
         }
 
         return prev;
-    }, new Decimal(0));   
+    }, new Decimal(0)); 
+}
+
+export default function skillDamage(status: Status, config: SubjectConfig, skill: "Q" | "W" | "E" | "R" | "T" | "D", dictionary: any): Decimal {
+    const level = skillLevel(skill, config)
+    const sanitizedDict = Object.fromEntries(
+        Object.entries(dictionary).map(([key, value]) => {
+            return [key, Array.isArray(value) ? value[level] : value]
+        })
+    );
+
+    return skillDamageSimple(status, config, sanitizedDict);
 }

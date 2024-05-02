@@ -6,3 +6,4 @@ export const BaseCooldownCap = 30;
 export const MovementSpeedPerMastery = new Decimal(0.005);
 export const BaseVision = 8.5;
 export const BaseBasicAttackRange = new Decimal(0.4);
+export const BaseCriticalDamagePercent = new Decimal(75)

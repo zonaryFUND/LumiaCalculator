@@ -3,9 +3,8 @@ import useBaseValue from "./use-base-value";
 import BaseValue from "./base-value";
 import Additional from "./additional-value";
 import { DisplayedValues, MasteryValues } from "../use-status";
-import MultipliedValue from "./multipled-value";
 import Decimal from "decimal.js";
-import InnerTable from "./inner-table";
+import InnerTable from "components/common/inner-table";
 import Mastery from "./mastery";
 
 type Props = DisplayedValues & MasteryValues & {

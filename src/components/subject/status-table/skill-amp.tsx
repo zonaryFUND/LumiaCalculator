@@ -1,8 +1,7 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import InnerTable from "./inner-table";
+import InnerTable from "components/common/inner-table";
 import Mastery from "./mastery";
-import MultipliedValue from "./multipled-value";
 
 type Props = {
     base: Decimal

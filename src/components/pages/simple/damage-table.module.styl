@@ -1,0 +1,81 @@
+.damage
+    width: 100%
+    padding: 8px
+
+.parent
+    font-size: 14px
+    font-weight: bold
+    border: 1px solid var(--c4)
+    border-radius: 4px
+    
+    table
+        width: 100%
+        border-spacing: 0
+        border-collapse: separate
+
+    tr
+        transition: background 0.25s ease
+
+    td
+        border-bottom: 1px solid rgba(0,0,0,0.1)
+
+    .label
+        height: 28px
+
+        *
+            vertical-align: middle
+
+        >:first-child
+            margin-top: -2px
+
+    .value
+        font-size: 16px
+
+    thead
+        font-size: 12px
+        height: 30px
+        
+        th:first-child
+            text-align: left
+
+    tbody
+        td:not(:first-child)
+            text-align: right
+
+        tr
+            height: 28px
+
+    .zero
+        color: rgba(0,0,0,0.3)
+
+    .separator
+        background: var(--c4)
+        font-size: 13px
+        color: white
+        cursor: pointer
+        div
+            display: flex
+            justify-content: space-between
+            width: 100%
+
+    td
+        padding: 2px 4px
+
+    .expand
+        text-align: right
+        background-color: rgba(0,0,0,0.05)
+        
+        span
+            font-size: 10px    
+
+    >table>tbody>tr:not(.separator):hover
+        background: rgba(0,0,0,0.05)
+
+.basic
+    color: rgb(180,20,25)
+
+.skill
+    color: rgb(125,20,160)
+
+.heal
+    color: rgb(24,150,40)

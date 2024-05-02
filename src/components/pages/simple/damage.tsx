@@ -1,49 +1,49 @@
 import { SubjectID } from "@app/entity/subject";
 import * as React from "react";
-import { StateProps } from "util/state";
 import index from "./index.module.styl";
-import { Equipment, SkillLevels } from "components/subject/use-subject-config";
+import { SkillLevels, SubjectConfig } from "components/subject/use-subject-config";
 import { SubjectSkills } from "components/subjects/skills";
 import SkillsStandard from "components/subjects/skills-standard";
 import { WeaponTypeID, equipmentStatus } from "@app/entity/equipment";
+import style from "./damage.module.styl";
+import { styles } from "@app/util/style";
+
+import { Status } from "components/subject/status";
+import Table from "./damage-table";
 
 type Props = {
-    showEquation: StateProps<boolean>
-    subject: SubjectID
-    equipment: Equipment
-    weaponMastery: number
-    skillLevels: StateProps<SkillLevels>
+    status: Status
+    config: SubjectConfig
+    setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
 }
 
 const damages: React.FC<Props> = props => {
     const subjectSkills = React.useMemo(() => {
-        const skills = SubjectSkills[props.subject];
-        const weaponType = props.equipment.weapon ? (equipmentStatus(props.equipment.weapon).type as WeaponTypeID) : undefined;
+        const skills = SubjectSkills[props.config.subject];
+        const weaponType = props.config.equipment.weapon ? (equipmentStatus(props.config.equipment.weapon).type as WeaponTypeID) : undefined;
         if (skills == undefined || skills.default == undefined) {
             const skillImage = skills == undefined ? undefined : skills.SkillImage;
             return <SkillsStandard 
-                id={props.subject} 
-                {...{skillLevels: props.skillLevels[0], setSkillLevels: props.skillLevels[1], skillImage}} 
+                id={props.config.subject} 
+                skillLevels={props.config.skillLevels}
+                setSkillLevels={props.setSkillLevels}
                 weaponType={weaponType}    
+                skillImage={skillImage}
             />;
         }
-        return React.createElement(SubjectSkills[props.subject].default, {weapon: props.equipment.weapon, skillLevels: props.skillLevels[0], setSkillLevels: props.skillLevels[1]})
-    }, [props.subject, props.equipment.weapon, props.skillLevels]);
-
-    const onChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
-        props.showEquation[1](e.currentTarget.checked);
-    }, []);
+        return React.createElement(SubjectSkills[props.config.subject].default, {weapon: props.config.equipment.weapon, skillLevels: props.config.skillLevels, setSkillLevels: props.setSkillLevels})
+    }, [props.config.subject, props.config.equipment.weapon, props.config.skillLevels]);
 
     return (
-        <div className={index.row}>
+        <div className={styles(index.row, style.damage)}>
             <header>
                 <h1>ダメージ</h1>
-                <label><input type="checkbox" checked={props.showEquation[0]} onChange={onChange} />スキルダメージを計算式で表記する</label>
             </header>
-            <section>
+            <section className={style.skill}>
+                <h3>スキル</h3>
                 {subjectSkills}
             </section>
-
+            <Table status={props.status} config={props.config} />
         </div>
     )
 };

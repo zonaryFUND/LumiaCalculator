@@ -15,6 +15,8 @@ import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-
 import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
 import { useToggle } from "react-use";
 import { WeaponTypeID, equipmentStatus } from "@app/entity/equipment";
+import Switch from "components/common/switch";
+import { styles } from "@app/util/style";
 
 const index: React.FC = props => {
     const [buildName, setBuildName] = React.useState<string | null>(null)
@@ -40,14 +42,24 @@ const index: React.FC = props => {
         return equipmentStatus(equipment.weapon).type;
     }, [equipment.weapon])
 
+    const onEquationInputChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
+        damageInFormula[1](e.currentTarget.checked);
+    }, []);
+
     return (
         <main className={style.simple}>
             <div className={style.parent}>
-                <header className={style.storage}>
-                    <h1>保存名：{buildName ?? "-----"}</h1>
-                    <div>
-                        <button className={`${common["system-button"]} ${common["button-medium"]}`}>ロード</button>
-                        <button className={`${common["system-button"]} ${common["button-medium"]}`}>{buildName == null ? "新規保存" : "上書き保存"}</button>
+                <header className={style.header}>
+                    <div className={style.storage}>
+                        <h1>保存名：{buildName ?? "-----"}</h1>
+                        <div>
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`}>ロード</button>
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`}>{buildName == null ? "新規保存" : "上書き保存"}</button>
+                        </div>
+                    </div>
+                    <div className={styles(style.formula, damageInFormula[0] ? style.on : undefined)}>
+                        <Switch {...damageInFormula} />
+                        <p>ダメージを計算式で表記</p>
                     </div>
                 </header>
                 <div className={style.base}>
@@ -62,7 +74,11 @@ const index: React.FC = props => {
                         status={status}
                     />
                     <BuffDebuffs />
-                    <Damage subject={subject} equipment={equipment} weaponMastery={weaponMastery} skillLevels={[skillLevels, setSkillLevels]} showEquation={damageInFormula} />
+                    <Damage
+                        config={subjectConfig}
+                        status={status[0]}
+                        setSkillLevels={setSkillLevels}
+                    />
                 </div>
             </div>
             <Tooltip 
@@ -90,7 +106,6 @@ const index: React.FC = props => {
             <Tooltip 
                 id="weapon-skill"
                 className={`${style.tooltip}`}
-                delayHide={1000000}
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
                     return (

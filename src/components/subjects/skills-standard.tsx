@@ -4,6 +4,7 @@ import { SubjectID } from "@app/entity/subject";
 import Images from "@app/resources/image";
 import { SkillLevels } from "components/subject/use-subject-config";
 import { WeaponTypeID } from "@app/entity/equipment";
+import Selection from "components/common/number-selection";
 
 export type SkillImage = (skillID: string) => string | undefined;
 type ConfigurationProps = [SkillLevels, React.Dispatch<React.SetStateAction<SkillLevels>>]
@@ -13,25 +14,18 @@ export const SkillLevelConfigurator: React.FC<{skill: "Q" | "W" | "E" | "R" | "T
     const context = React.useContext(ConfigurationContext);
 
     const value = context![0][props.skill];
-    const dec = React.useCallback(() => context![1](prev => ({...prev, [props.skill]: prev[props.skill] - 1})), []);
-    const inc = React.useCallback(() => context![1](prev => ({...prev, [props.skill]: prev[props.skill] + 1})), []);
-
     const max = (() => {
         if (props.max) return props.max;
         return props.skill == "R" || props.skill == "T" ? 3 : 5;
     })();
 
-    const onChange: React.ChangeEventHandler<HTMLSelectElement> = React.useCallback(event => {
-        context![1](prev => ({...prev, [props.skill]: +event.target.value}))
+    const onChange = React.useCallback(to => {
+        context![1](prev => ({...prev, [props.skill]: to - 1}))
     }, [])
 
     return (
         <div className={style.configurator}>
-            <select value={value} onChange={onChange}>
-                {[...Array(max)].map((_, i) => i).map(v => 
-                    <option key={v} value={v}>{v + 1}</option>
-                )}
-            </select>
+            <Selection max={max} value={[value + 1, onChange]} layout="skill" />
         </div>
     )
 }

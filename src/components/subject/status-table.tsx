@@ -12,7 +12,7 @@ import { useToggle } from "react-use";
 import { BaseCooldownCap, BaseVision, BasicAttackReductionPerMastery, SkillReductionPerMastery } from "./standard-values";
 import StandardExpand from "./status-table/standard-expand";
 import AttackPower from "./status-table/attack-power";
-import InnerTable from "./status-table/inner-table";
+import InnerTable from "components/common/inner-table";
 import BasicAttackAmp from "./status-table/basic-attack-amp";
 import AttackSpeed from "./status-table/attack-speed";
 import Mastery from "./status-table/mastery";
@@ -24,6 +24,7 @@ import SegmentedControl from "components/common/segmented-control";
 import { name } from "@app/entity/subject";
 import { SummonedStatus } from "components/subjects/summoned-status";
 import { Status } from "./status";
+import table from "components/common/table.styl";
 
 type ColumnProps = {
     name: React.ReactElement
@@ -43,12 +44,12 @@ const Column: React.FC<ColumnProps> = props => {
     return (
         <>
             <tr className={props.value.isZero() ? style.zero : undefined} onClick={props.prohibitExpand ? undefined : toggleExpand} style={props.hidden ? {display: "none"} : undefined}>
-                <td className={style.label}>{props.name}</td>
-                <td className={style.value}>{props.value.toString() + (props.percent ? "％" : "")}</td>
+                <td className={table.label}>{props.name}</td>
+                <td className={table.value}>{props.value.toString() + (props.percent ? "％" : "")}</td>
             </tr>  
             {
                 expand && props.children ? 
-                <tr className={style.expand}><td colSpan={2}>{props.children}</td></tr> :
+                <tr className={table.expand} style={props.hidden ? {display: "none"} : undefined}><td colSpan={2}>{props.children}</td></tr> :
                 null
             }
         </>
@@ -88,7 +89,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                 }
                 
             </header>
-            <div className={style.parent}>
+            <div className={table["table-base"]}>
                 {
                     shownStatus[0] == "subject" || status.summonedStatus == undefined ?
                     <table>
@@ -97,7 +98,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                             <col />
                         </colgroup>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.toughness[1]}><td colSpan={2}><div><p>耐久 / 実効体力: {displayed.effectiveHP.toString()}</p>{toggle.toughness[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.toughness[1]}><td colSpan={2}><div><p>耐久 / 実効体力: {displayed.effectiveHP.toString()}</p>{toggle.toughness[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><FirstAid weight="fill" />最大体力</>} value={status.maxHP} hidden={toggle.toughness[0]}>
                                 <StandardExpand {...displayed.maxHP} level={props.level} />
                             </Column>
@@ -124,7 +125,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                             </Column>
                         </tbody>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.stamina[1]}><td colSpan={2}><div><p>スタミナ</p>{toggle.stamina[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.stamina[1]}><td colSpan={2}><div><p>スタミナ</p>{toggle.stamina[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><Lightning weight="fill" />最大スタミナ</>} value={status.maxSP} hidden={toggle.stamina[0]}>
                                 <StandardExpand {...displayed.maxSP} level={props.level} />
                             </Column>
@@ -133,7 +134,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                             </Column>
                         </tbody>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.basicAttack[1]}><td colSpan={2}><div><p>基本攻撃</p>{toggle.basicAttack[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.basicAttack[1]}><td colSpan={2}><div><p>基本攻撃</p>{toggle.basicAttack[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><Sword />攻撃力</>} value={status.attackPower} hidden={toggle.basicAttack[0]}>
                                 <AttackPower {...displayed.attackPower} level={props.level} mastery={props.weaponMastery} adaptive={status.addAdaptiveTo == "attack" ? status.adaptiveStatus : undefined} />
                             </Column>
@@ -147,7 +148,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                             <Column name={<>{criticalDamage}致命打ダメージ上昇量</>} value={status.criticalDamage} percent hidden={toggle.basicAttack[0]} />
                         </tbody>
                         <tbody>
-                            <tr className={style.separator}><td colSpan={2} onClick={toggle.skill[1]}><div><p>スキル</p>{toggle.skill[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator}><td colSpan={2} onClick={toggle.skill[1]}><div><p>スキル</p>{toggle.skill[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><ArrowFatLinesUp weight="fill" />スキル増幅</>} value={status.skillAmp} hidden={toggle.skill[0]}>
                                 <SkillAmp base={status.baseSkillAmp} perMastery={displayed.skillAmp.perMastery} mastery={props.weaponMastery} adaptive={status.addAdaptiveTo == "amp" ? status.adaptiveStatus : undefined} equipmentRatio={displayed.skillAmp.equipmentRatio} />
                             </Column>
@@ -158,18 +159,18 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                             </Column>
                         </tbody>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.penetration[1]}><td colSpan={2}><div><p>防御貫通</p>{toggle.penetration[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.penetration[1]}><td colSpan={2}><div><p>防御貫通</p>{toggle.penetration[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><ShieldSlash />防御貫通(定数)</>} value={status.armorPenetration} hidden={toggle.penetration[0]} />
                             <Column name={<><ShieldSlash />防御貫通(％)</>} value={status.armorPenetrationRatio} percent hidden={toggle.penetration[0]} />
                         </tbody>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.heal[1]}><td colSpan={2}><div><p>回復</p>{toggle.heal[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.heal[1]}><td colSpan={2}><div><p>回復</p>{toggle.heal[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><Drop />生命力吸収</>} value={status.lifeSteal} percent hidden={toggle.heal[0]} />
                             <Column name={<><Drop />ダメージ吸血</>} value={status.omnisyphon} percent hidden={toggle.heal[0]} />
                             <Column name={<><FirstAidKit />与える回復増加</>} value={status.healPower} percent hidden={toggle.heal[0]} />
                         </tbody>
                         <tbody>
-                            <tr className={style.separator}onClick={toggle.others[1]}><td colSpan={2}><div><p>その他</p>{toggle.others[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator}onClick={toggle.others[1]}><td colSpan={2}><div><p>その他</p>{toggle.others[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><HandFist />行動妨害体制</>} value={status.tenacity} percent hidden={toggle.others[0]} />
                             <Column name={<><SneakerMove />移動速度</>} value={status.movementSpeed} hidden={toggle.others[0]}>
                                 <MovementSpeed {...displayed.movementSpeed} movementMastery={props.movementMastery} />
@@ -192,19 +193,19 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                             <col />
                         </colgroup>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.toughness[1]}><td colSpan={2}><div><p>耐久 / 実効体力: {displayed.summonedEffectiveHP!.toString()}</p>{toggle.toughness[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.toughness[1]}><td colSpan={2}><div><p>耐久 / 実効体力: {displayed.summonedEffectiveHP!.toString()}</p>{toggle.toughness[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><FirstAid weight="fill" />最大体力</>} value={status.summonedStatus!.maxHP} hidden={false} />
                             <Column name={<><Shield />防御力</>} value={status.summonedStatus!.defense} hidden={false} />
                         </tbody>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.basicAttack[1]}><td colSpan={2}><div><p>攻撃</p>{toggle.basicAttack[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.basicAttack[1]}><td colSpan={2}><div><p>攻撃</p>{toggle.basicAttack[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><Sword />攻撃力</>} value={status.summonedStatus!.attackPower} hidden={false} />
                             <Column name={<>{attackSpeed}攻撃速度</>} value={status.summonedStatus!.attackSpeed} hidden={false} />
                             <Column name={<><Crosshair />致命打確率</>} value={status.summonedStatus!.criticalChance} percent hidden={false} />
                             <Column name={<><ArrowFatLinesUp weight="fill" />スキル増幅</>} value={status.summonedStatus!.skillAmp} hidden={false} />
                         </tbody>
                         <tbody>
-                            <tr className={style.separator} onClick={toggle.penetration[1]}><td colSpan={2}><div><p>防御貫通</p>{toggle.penetration[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <tr className={table.separator} onClick={toggle.penetration[1]}><td colSpan={2}><div><p>防御貫通</p>{toggle.penetration[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><ShieldSlash />防御貫通(定数)</>} value={status.summonedStatus!.armorPenetration} hidden={false} />
                             <Column name={<><ShieldSlash />防御貫通(％)</>} value={status.summonedStatus!.armorPenetrationRatio} percent hidden={false} />
                         </tbody>

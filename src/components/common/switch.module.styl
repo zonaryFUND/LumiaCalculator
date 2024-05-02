@@ -1,0 +1,28 @@
+.switch
+    display: block
+    appearance: none
+    width: 52px
+    height: 32px
+    border-radius: 16px
+    background: var(--lg)
+    position: relative
+    cursor: pointer
+    transition: background 0.25s ease
+
+
+.switch:before
+    position: absolute
+    background: var(--bg)
+    border-radius: 12px
+    content: ""
+    width: 24px
+    height: 24px
+    top: 4px
+    left: 4px
+    transition: left 0.25s ease
+
+.switch:checked
+    background: var(--c1)
+
+.switch:checked:before
+    left: 24px

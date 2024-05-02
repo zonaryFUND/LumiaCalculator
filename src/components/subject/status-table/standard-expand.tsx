@@ -1,10 +1,9 @@
 import React from "react";
 import { DisplayedValues } from "../use-status";
-import style from "./standard-expand.module.styl";
 import useBaseValue from "./use-base-value";
 import BaseValue from "./base-value";
 import Additional from "./additional-value";
-import InnerTable from "./inner-table";
+import InnerTable from "components/common/inner-table";
 
 type Props = DisplayedValues & {
     level: number

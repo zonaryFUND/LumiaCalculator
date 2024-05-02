@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 import * as React from "react";
-import InnerTable from "./inner-table";
+import InnerTable from "components/common/inner-table";
 import Mastery from "./mastery";
 import { MovementSpeedPerMastery } from "../standard-values";
 

@@ -41,7 +41,10 @@
     },
     "R": {
         "duration": 7,
-        "heal": [30, 50, 70],
+        "heal": {
+            "maxHP": [30, 50, 70]
+        },
+        "tick": 0.5,
         "damage": {
             "base": [4, 7, 10],
             "attack": 2,
@@ -51,7 +54,9 @@
         "sp_cost": 70
     },
     "T": {
-        "heal": [2, 4, 6],
+        "heal": {
+            "targetMaxHP": [2, 4, 6]
+        },
         "amount": 2
     }
 }

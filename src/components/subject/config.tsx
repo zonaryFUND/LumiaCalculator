@@ -34,16 +34,16 @@ const config: React.FC<Props> = props => {
                     <img className={common.hover} src={Images.subject[props.subject[0]]} onClick={toggleSelectingSubject} />
                     <div className={style.right}>
                         <h2>{name(props.subject[0], "jp")}</h2>
-                        <Selection max={20} label="Lv" value={props.level} />
+                        <Selection max={20} label="Lv" value={props.level} layout="config" />
                     </div>
                 </div>
                 
                 <div>
                     <h3>熟練度</h3>
                     <div className={style.mastery}>
-                        <Selection max={20} label="武器" value={props.weaponMastery} />
-                        <Selection max={20} label="防御" value={props.defenseMastery} />
-                        <Selection max={20} label="移動" value={props.movementMastery} />
+                        <Selection max={20} label="武器" value={props.weaponMastery} layout="config" />
+                        <Selection max={20} label="防御" value={props.defenseMastery} layout="config" />
+                        <Selection max={20} label="移動" value={props.movementMastery} layout="config" />
                     </div>
                 </div>
 
