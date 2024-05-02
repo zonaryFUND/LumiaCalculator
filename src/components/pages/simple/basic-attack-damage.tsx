@@ -1,4 +1,4 @@
-import { BaseCriticalDamagePercent } from "components/subject/standard-values";
+import { AssaultRifleAttackRatio, BaseCriticalDamagePercent } from "components/subject/standard-values";
 import { Status } from "components/subject/status";
 import Decimal from "decimal.js";
 import * as React from "react";
@@ -24,10 +24,12 @@ const basicAttackDamage: React.FC<Props> = props => {
     const value = React.useMemo(() => {
         if (props.config) {
             return new Decimal(props.config.base ?? 0)
-                .add(props.status.attackPower.percent(props.config.attack ?? 0))
-                .addPercent(props.config.basicAttackAmp ? props.status.basicAttackAmp : 0)
+                    .add(props.status.attackPower.percent(props.config.attack ?? 0))
+                    .floor()
+                    .addPercent(props.config.basicAttackAmp ? props.status.basicAttackAmp : 0)
+                    .floor()
         } else {
-            return props.status.attackPower.addPercent(props.status.basicAttackAmp);
+            return props.status.attackPower.addPercent(props.status.basicAttackAmp).floor();
         }
     }, [props.status.attackPower, props.status.basicAttackAmp, props.config]);
 
@@ -36,7 +38,7 @@ const basicAttackDamage: React.FC<Props> = props => {
     }, [props.status.criticalChance])
 
     const critical = React.useMemo(() => {
-        return value.addPercent(BaseCriticalDamagePercent.add(props.status.criticalDamage))
+        return value.addPercent(BaseCriticalDamagePercent.add(props.status.criticalDamage)).floor()
     }, [value, props.status.criticalDamage]);
 
     const expected = React.useMemo(() => {
@@ -70,6 +72,11 @@ const basicAttackDamage: React.FC<Props> = props => {
                             <td>
                                 <span>攻撃力</span>{props.status.attackPower.toString()}
                                 {
+                                    props.config?.attack ?
+                                    <> x {props.config.attack}％</> :
+                                    null
+                                }
+                                {
                                     props.status.basicAttackAmp.greaterThan(0) ?
                                     <> x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}<br /></>
                                     : null
@@ -80,7 +87,10 @@ const basicAttackDamage: React.FC<Props> = props => {
                             props.disableCritical ? null :
                             <tr>
                                 <td>致命打</td>
-                                <td><><span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>{props.status.criticalDamage.toString()}％ + 175％) = {critical?.toString()}</></td>
+                                <td><>
+                                    <span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>
+                                    {props.status.criticalDamage.toString()}％ + 175％) = {critical?.toString()}
+                                </></td>
                             </tr>
                         }
                     </InnerTable>

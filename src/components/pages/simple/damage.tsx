@@ -15,7 +15,7 @@ type Props = {
     status: Status
     config: SubjectConfig
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
-    weaponType: WeaponTypeID | undefined
+    weaponType?: WeaponTypeID
 }
 
 const damages: React.FC<Props> = props => {
@@ -48,7 +48,7 @@ const damages: React.FC<Props> = props => {
                 <h3>スキル</h3>
                 {subjectSkills}
             </section>
-            <Table status={props.status} config={props.config} />
+            <Table status={props.status} config={props.config} weaponType={props.weaponType} />
         </div>
     )
 };

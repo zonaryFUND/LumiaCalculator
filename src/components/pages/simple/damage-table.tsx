@@ -6,10 +6,12 @@ import { SubjectDamageTable } from "components/subjects/damage-table";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import SkillDamage from "./skill-damage";
 import table from "components/common/table.styl";
+import { WeaponTypeID } from "@app/entity/equipment";
 
 type Props = {
     status: Status
     config: SubjectConfig
+    weaponType?: WeaponTypeID
 }
 
 const damageTable: React.FC<Props> = props => {
@@ -20,7 +22,7 @@ const damageTable: React.FC<Props> = props => {
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
                 <table>
-                    <BasicAttack status={props.status} table={definition} />
+                    <BasicAttack status={props.status} table={definition} weaponType={props.weaponType} />
                     <tbody>
                         <tr className={table.separator}><td colSpan={3}>実験体スキル</td><td>ダメージ / 効果量</td></tr>
                         {

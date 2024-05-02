@@ -40,6 +40,8 @@ function equation(damage: any, status: Status, level: number): React.ReactElemen
                 return p.concat(<><span>追加体力</span>{status.additionalMaxHP.toString()} x {levelValue(value, level)}％</>);
             case "maxHP":
                 return p.concat(<><span>最大体力</span>{status.maxHP.toString()} x {levelValue(value, level)}％</>);
+            case "amp":
+                return p.concat(<><span>スキル増幅</span>{status.skillAmp.toString()} x {levelValue(value, level)}％</>);
         }
         return prev;
     }, [] as React.ReactElement[]);
@@ -66,7 +68,8 @@ const skillDamage: React.FC<Props> = props => {
     const [additional, expandDescription] = (() => {
         const additionalKeys = [
             {key: "targetMaxHP", text: "対象の最大体力の", ratio: "対象最大体力比"},
-            {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"}
+            {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"},
+            {key: "targetHP", text: "対象の現在体力の", ratio: "対象体力比"}
         ]
         const tuple = additionalKeys.find(k => props.damage[k.key] != undefined);
         if (tuple == undefined) {
