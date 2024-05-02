@@ -78,6 +78,7 @@ const index: React.FC = props => {
                         config={subjectConfig}
                         status={status[0]}
                         setSkillLevels={setSkillLevels}
+                        weaponType={weaponTypeID as (WeaponTypeID | undefined)}
                     />
                 </div>
             </div>

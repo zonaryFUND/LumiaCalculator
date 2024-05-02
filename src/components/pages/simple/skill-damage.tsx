@@ -5,6 +5,7 @@ import damage, { skillLevel } from "components/subjects/skill-damage";
 import style from "./damage-table.module.styl";
 import { useToggle } from "react-use";
 import table from "components/common/table.styl";
+import InnerTable from "components/common/inner-table";
 
 type Props = {
     label: string
@@ -32,6 +33,8 @@ function equation(damage: any, status: Status, level: number): React.ReactElemen
                 return p.concat(<>{levelValue(value, level)}</>);
             case "attack":
                 return p.concat(<><span>攻撃力</span>{status.attackPower.toString()} x {levelValue(value, level)}％</>);
+            case "additionalAttack":
+                return p.concat(<><span>追加攻撃力</span>{status.additionalAttackPower.toString()} x {levelValue(value, level)}％</>);
             case "additionalMaxHP":
                 return p.concat(<><span>追加体力</span>{status.additionalMaxHP.toString()} x {levelValue(value, level)}％</>);
             case "maxHP":
@@ -55,11 +58,43 @@ const skillDamage: React.FC<Props> = props => {
         return [base];
     })();
 
-    const additional = (() => {
-        if (props.damage.targetMaxHP == undefined) return null;
+    const baseDamageTr =  base ?
+        <>{base.toString()} x {multiplier}％ = {value.toString()}</> :
+        <>{equation(props.damage, props.status, level)} = {value.toString()}</>;
+
+    const [additional, expandDescription] = (() => {
+        if (props.damage.targetMaxHP == undefined) return [null, <td colSpan={4}>{baseDamageTr}</td>];
         const brackets = !value.isZero()
-        const content = <>対象の最大体力の{levelValue(props.damage.targetMaxHP, level)}％</>
-        return brackets ? <span>+({content})</span> : <span>{content}</span>
+
+        if (typeof props.damage.targetMaxHP === "object") {
+            const ratio = damage(props.status, props.config, props.skill, props.damage.targetMaxHP);
+            const multiplied = ratio.percent(multiplier ?? 100);
+            const content = <>対象の最大体力の{multiplied.toString()}％</>
+            return [
+                brackets ? <span>+({content})</span> : <span>{content}</span>,
+                <tr><td colSpan={4}>
+                    <InnerTable>
+                        <tr><td>基礎値</td><td>{baseDamageTr}</td></tr>
+                        <tr>
+                            <td>対象最大体力比</td>
+                            <td>
+                                {
+                                    multiplier ? 
+                                    <>{ratio.toString()} x {multiplier}％ = {multiplied.toString()}</> :
+                                    <>{equation(props.damage.targetMaxHP, props.status, level)} = {ratio.toString()}</>
+                                }％
+                            </td>
+                        </tr>
+                    </InnerTable>
+                </td></tr>
+            ]
+        } else {
+            const content = <>対象の最大体力の{levelValue(props.damage.targetMaxHP, level)}％</>;
+            return [
+                brackets ? <span>+({content})</span> : <span>{content}</span>,
+                <td colSpan={4}>{baseDamageTr}</td>
+            ]
+        }
     })();
 
     return (
@@ -70,13 +105,10 @@ const skillDamage: React.FC<Props> = props => {
             </tr>
             {
                 expand ?
-                <tr className={table.expand}>
-                    {
-                        base ?
-                        <td colSpan={4}>{base.toString()} x {multiplier}％ = {value.toString()}</td> :
-                        <td colSpan={4}>{equation(props.damage, props.status, level)} = {value.toString()}</td>
-                    }
-                </tr> 
+                (
+                    expandDescription ??
+                    <tr className={table.expand}>{expandDescription}</tr> 
+                )
                 : null
             }
         </>

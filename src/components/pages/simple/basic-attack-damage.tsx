@@ -51,7 +51,7 @@ const basicAttackDamage: React.FC<Props> = props => {
     return (
         <>
             <tr onClick={toggleExpand}>
-                <td>{props.name}</td>
+                <td colSpan={props.disableCritical ? 3 : undefined}>{props.name}</td>
                 <td className={style.basic}>{value.toString()}</td>
                 {
                     props.disableCritical ? null :
@@ -76,10 +76,13 @@ const basicAttackDamage: React.FC<Props> = props => {
                                 }
                             </td>
                         </tr>
-                        <tr>
-                            <td>致命打</td>
-                            <td><><span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>{props.status.criticalDamage.toString()}％ + 175％) = {critical?.toString()}</></td>
-                        </tr>
+                        {
+                            props.disableCritical ? null :
+                            <tr>
+                                <td>致命打</td>
+                                <td><><span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>{props.status.criticalDamage.toString()}％ + 175％) = {critical?.toString()}</></td>
+                            </tr>
+                        }
                     </InnerTable>
                 </td></tr> :
                 null

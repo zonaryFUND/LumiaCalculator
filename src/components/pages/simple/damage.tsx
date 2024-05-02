@@ -15,24 +15,30 @@ type Props = {
     status: Status
     config: SubjectConfig
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
+    weaponType: WeaponTypeID | undefined
 }
 
 const damages: React.FC<Props> = props => {
     const subjectSkills = React.useMemo(() => {
         const skills = SubjectSkills[props.config.subject];
-        const weaponType = props.config.equipment.weapon ? (equipmentStatus(props.config.equipment.weapon).type as WeaponTypeID) : undefined;
         if (skills == undefined || skills.default == undefined) {
             const skillImage = skills == undefined ? undefined : skills.SkillImage;
+            console.log(props.config.equipment)
             return <SkillsStandard 
                 id={props.config.subject} 
                 skillLevels={props.config.skillLevels}
                 setSkillLevels={props.setSkillLevels}
-                weaponType={weaponType}    
+                weaponType={props.weaponType}    
                 skillImage={skillImage}
             />;
         }
-        return React.createElement(SubjectSkills[props.config.subject].default, {weapon: props.config.equipment.weapon, skillLevels: props.config.skillLevels, setSkillLevels: props.setSkillLevels})
-    }, [props.config.subject, props.config.equipment.weapon, props.config.skillLevels]);
+        return React.createElement(SubjectSkills[props.config.subject].default, {
+            id: props.config.subject, 
+            skillLevels: props.config.skillLevels, 
+            setSkillLevels: props.setSkillLevels,
+            weaponType: props.weaponType
+        })
+    }, [props.config.subject, props.weaponType, props.config.skillLevels]);
 
     return (
         <div className={styles(index.row, style.damage)}>

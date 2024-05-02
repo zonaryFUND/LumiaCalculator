@@ -13,8 +13,8 @@ export function StaticDamage(status: Status, skillLevel: number): Decimal {
 }
 
 export function TargetMaxHPDependentDamage(status: Status, skillLevel: number): Decimal {
-    const base = Constants.R.damage.enemyMaxHP.base[skillLevel];
-    return status.additionalAttackPower.times(Constants.R.damage.enemyMaxHP.additionalAttack).add(base);
+    const base = Constants.R.damage.targetMaxHP.base[skillLevel];
+    return status.additionalAttackPower.times(Constants.R.damage.targetMaxHP.additionalAttack).dividedBy(100).add(base);
 }
 
 const r: React.FC<SubjectSkillProps> = props => {
@@ -23,9 +23,9 @@ const r: React.FC<SubjectSkillProps> = props => {
             <span className={style.emphasis}>{Constants.R.damage.base[props.config.skillLevels.R]}</span>
             <span className={style.attack}>(+攻撃力の{Constants.R.damage.attack}％)</span>
             <span className={style.maxhp}>
-                (+対象の最大体力の{Constants.R.damage.enemyMaxHP.base[props.config.skillLevels.R]}％
+                (+対象の最大体力の{Constants.R.damage.targetMaxHP.base[props.config.skillLevels.R]}％
                 <span className={style.maxhp}>
-                    (+追加攻撃力1あたり{Constants.R.damage.enemyMaxHP.additionalAttack}％)    
+                    (+追加攻撃力1あたり{Constants.R.damage.targetMaxHP.additionalAttack * 0.01}％)    
                 </span>                    
                 )
             </span>
@@ -74,7 +74,7 @@ export const values: ValuesProps = {
     </>,
     parameters: [
         {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "最大体力比例ダメージ量", values: Constants.R.damage.enemyMaxHP.base, percent: true},
+        {title: "最大体力比例ダメージ量", values: Constants.R.damage.targetMaxHP.base, percent: true},
         {title: "体力回復量", values: Constants.R.heal.base}
     ]
 }

@@ -2,7 +2,7 @@ export type DamageTable = {
     basicAttack: ({
         label: string
         damage: any
-    } | "standard")[]
+    } | "standard" | "disable-critical")[]
     skill: {
         label: string
         skill: "Q" | "W" | "E" | "R" | "T" | "D"

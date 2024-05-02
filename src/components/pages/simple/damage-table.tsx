@@ -3,7 +3,6 @@ import * as React from "react";
 import BasicAttack from "components/pages/simple/basic-attack";
 import style from "./damage-table.module.styl";
 import { SubjectDamageTable } from "components/subjects/damage-table";
-import { SubjectID } from "@app/entity/subject";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import SkillDamage from "./skill-damage";
 import table from "components/common/table.styl";
@@ -21,7 +20,7 @@ const damageTable: React.FC<Props> = props => {
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
                 <table>
-                    <BasicAttack status={props.status} />
+                    <BasicAttack status={props.status} table={definition} />
                     <tbody>
                         <tr className={table.separator}><td colSpan={3}>実験体スキル</td><td>ダメージ / 効果量</td></tr>
                         {
