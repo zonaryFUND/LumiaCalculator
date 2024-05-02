@@ -14,7 +14,7 @@ type Props = {
     status: Status
     damage: any
     multiplier?: number[] | number
-    type?: "heal" | "shield" | "ms"
+    type?: "heal" | "shield" | "ms" | "true"
 }
 
 function levelValue(from: number | number[], level: number): number {

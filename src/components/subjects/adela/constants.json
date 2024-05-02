@@ -59,7 +59,7 @@
             "amp": 95
         },
         "per_piece": {
-            "enemyMaxHP": 3
+            "targetMaxHP": 3
         },
         "other_pieces": 40,
         "sp_cost": 90,
