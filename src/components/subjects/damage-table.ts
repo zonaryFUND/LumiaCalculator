@@ -1,15 +1,14 @@
+export type SkillDamageProps = {
+    label: string
+    skill: "Q" | "W" | "E" | "R" | "T" | "D"
+    damage: any
+    type?: "heal" | "shield" | "ms" | "true"
+    multiplier?: number | number[]
+}
+
 export type DamageTable = {
-    basicAttack: ({
-        label: string
-        damage: any
-    } | "standard" | "disable-critical")[]
-    skill: {
-        label: string
-        skill: "Q" | "W" | "E" | "R" | "T" | "D"
-        damage: any
-        type?: "heal" | "shield" | "ms" | "true"
-        multiplier?: number | number[]
-    }[][]
+    basicAttack: (SkillDamageProps | "standard" | "disable-critical")[]
+    skill: SkillDamageProps[][]
 }
 
 const context = require.context("./", true, /\.\/.*\/damage-table\.ts$/);

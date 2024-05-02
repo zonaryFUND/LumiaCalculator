@@ -5,9 +5,12 @@ import table from "components/common/table.styl";
 import { DamageTable } from "components/subjects/damage-table";
 import { WeaponTypeID, weaponBaseStatus } from "@app/entity/equipment";
 import { AssaultRifleAttackRatio } from "components/subject/standard-values";
+import SkillDamage from "./skill-damage";
+import { SubjectConfig } from "components/subject/use-subject-config";
 
 type Props = {
     status: Status
+    config: SubjectConfig
     table: DamageTable
     weaponType?: WeaponTypeID
 }
@@ -54,7 +57,7 @@ const basicAttack: React.FC<Props> = props => {
                             return <BasicAttackDamage key="standard" name={name} status={props.status} disableCritical={def == "disable-critical"} />
                         }
                     } else {
-                        return null
+                        return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }
                 })
             }

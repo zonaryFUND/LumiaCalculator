@@ -22,7 +22,7 @@ const damageTable: React.FC<Props> = props => {
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
                 <table>
-                    <BasicAttack status={props.status} table={definition} weaponType={props.weaponType} />
+                    <BasicAttack status={props.status} config={props.config} table={definition} weaponType={props.weaponType} />
                     <tbody>
                         <tr className={table.separator}><td colSpan={3}>実験体スキル</td><td>ダメージ / 効果量</td></tr>
                         {

@@ -6,15 +6,11 @@ import style from "./damage-table.module.styl";
 import { useToggle } from "react-use";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
+import { SkillDamageProps } from "components/subjects/damage-table";
 
-type Props = {
-    label: string
-    skill: "Q" | "W" | "E" | "R" | "T" | "D"
+type Props = SkillDamageProps & {
     config: SubjectConfig
     status: Status
-    damage: any
-    multiplier?: number[] | number
-    type?: "heal" | "shield" | "ms" | "true"
 }
 
 function levelValue(from: number | number[], level: number): number {
