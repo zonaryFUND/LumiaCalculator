@@ -14,7 +14,7 @@ type Props = {
     status: Status
     damage: any
     multiplier?: number[] | number
-    type?: "heal"
+    type?: "heal" | "shield" | "ms"
 }
 
 function levelValue(from: number | number[], level: number): number {
@@ -61,9 +61,13 @@ const skillDamage: React.FC<Props> = props => {
         return [base];
     })();
 
+    const percent = React.useMemo(() => {
+        return props.type == "ms" ? "％" : null
+    }, [props.type])
+
     const baseDamageTr =  base ?
-        <>{base.toString()} x {multiplier}％ = {value.toString()}</> :
-        <>{equation(props.damage, props.status, level)} = {value.toString()}</>;
+        <>{base.toString()} x {multiplier}％ = {value.toString()}{percent}</> :
+        <>{equation(props.damage, props.status, level)} = {value.toString()}{percent}</>;
 
     const [additional, expandDescription] = (() => {
         const additionalKeys = [
@@ -112,7 +116,7 @@ const skillDamage: React.FC<Props> = props => {
         <>
             <tr onClick={value.isZero() ? undefined : toggleExpand}>
                 <td colSpan={3}>{props.label}</td>
-                <td className={props.type == "heal" ? style.heal : style.skill}>{value.isZero() ? null : value.toString()}{additional}</td>
+                <td className={props.type ? style[props.type] : style.skill}>{value.isZero() ? null : value.toString()}{additional}{percent}</td>
             </tr>
             { expand ? <tr className={table.expand}>{expandDescription}</tr> : null }
         </>

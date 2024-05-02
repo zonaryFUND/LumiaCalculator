@@ -7,7 +7,7 @@ export type DamageTable = {
         label: string
         skill: "Q" | "W" | "E" | "R" | "T" | "D"
         damage: any
-        type?: "heal"
+        type?: "heal" | "shield" | "ms"
         multiplier?: number | number[]
     }[][]
 }
