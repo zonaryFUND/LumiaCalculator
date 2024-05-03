@@ -7,6 +7,7 @@ import { useToggle } from "react-use";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
 import { SkillDamageProps } from "components/subjects/damage-table";
+import Decimal from "decimal.js";
 
 type Props = SkillDamageProps & {
     config: SubjectConfig
@@ -21,26 +22,29 @@ function levelValue(from: number | number[], level: number): number {
     }
 }
 
-function equation(damage: any, status: Status, level: number): React.ReactElement[] {
-    return (Object.entries(damage) as [string, number | number][]).reduce((prev, [key, value]) => {
+function equation(damage: any, status: Status, level: number, skillLevel: number): React.ReactElement {
+    const elem = (Object.entries(damage) as [string, number | number][]).reduce((prev, [key, value]) => {
         const p = prev.length == 0 ? prev : prev.concat(<> + </>)
         
         switch (key) {
             case "base":
-                return p.concat(<>{levelValue(value, level)}</>);
+                return p.concat(<>{levelValue(value, skillLevel)}</>);
             case "attack":
-                return p.concat(<><span>攻撃力</span>{status.attackPower.toString()} x {levelValue(value, level)}％</>);
+                return p.concat(<><span>攻撃力</span>{status.attackPower.toString()} x {levelValue(value, skillLevel)}％</>);
             case "additionalAttack":
-                return p.concat(<><span>追加攻撃力</span>{status.additionalAttackPower.toString()} x {levelValue(value, level)}％</>);
+                return p.concat(<><span>追加攻撃力</span>{status.additionalAttackPower.toString()} x {levelValue(value, skillLevel)}％</>);
             case "additionalMaxHP":
-                return p.concat(<><span>追加体力</span>{status.additionalMaxHP.toString()} x {levelValue(value, level)}％</>);
+                return p.concat(<><span>追加体力</span>{status.additionalMaxHP.toString()} x {levelValue(value, skillLevel)}％</>);
             case "maxHP":
-                return p.concat(<><span>最大体力</span>{status.maxHP.toString()} x {levelValue(value, level)}％</>);
+                return p.concat(<><span>最大体力</span>{status.maxHP.toString()} x {levelValue(value, skillLevel)}％</>);
             case "amp":
-                return p.concat(<><span>スキル増幅</span>{status.skillAmp.toString()} x {levelValue(value, level)}％</>);
+                return p.concat(<><span>スキル増幅</span>{status.skillAmp.toString()} x {levelValue(value, skillLevel)}％</>);
+            case "perLevel":
+                return p.concat(<><span>レベル</span>{level} x {levelValue(value, skillLevel)}</>);
         }
         return prev;
     }, [] as React.ReactElement[]);
+    return elem.length > 0 ? <>{elem} = </> : <></>
 }
 
 const skillDamage: React.FC<Props> = props => {
@@ -63,7 +67,7 @@ const skillDamage: React.FC<Props> = props => {
 
     const baseDamageTr =  base ?
         <>{base.toString()} x {multiplier}％ = {value.toString()}{percent}</> :
-        <>{equation(props.damage, props.status, level)} = {value.toString()}{percent}</>;
+        <>{equation(props.damage, props.status, props.config.level, level)}{value.toString()}{percent}</>;
 
     const [additional, expandDescription] = (() => {
         const additionalKeys = [
@@ -78,7 +82,9 @@ const skillDamage: React.FC<Props> = props => {
 
         const brackets = !value.isZero()
         if (typeof props.damage[tuple.key] === "object") {
-            const ratio = damage(props.status, props.config, props.skill, props.damage[tuple.key]);
+            const ratio = Array.isArray(props.damage[tuple.key]) ?
+                new Decimal(props.damage[tuple.key][level]) :
+                damage(props.status, props.config, props.skill, props.damage[tuple.key]);
             const multiplied = ratio.percent(multiplier ?? 100);
             const content = <>{tuple.text}{multiplied.toString()}％</>
             return [
@@ -92,7 +98,7 @@ const skillDamage: React.FC<Props> = props => {
                                 {
                                     multiplier ? 
                                     <>{ratio.toString()} x {multiplier}％ = {multiplied.toString()}</> :
-                                    <>{equation(props.damage[tuple.key], props.status, level)} = {ratio.toString()}</>
+                                    <>{equation(props.damage[tuple.key], props.status, props.config.level, level)}{ratio.toString()}</>
                                 }％
                             </td>
                         </tr>

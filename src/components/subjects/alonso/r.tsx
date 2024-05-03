@@ -24,7 +24,6 @@ const r: React.FC<SubjectSkillProps> = props => (
 export default r;
 
 export const values: ValuesProps = {
-    additionalInfo: <>突進する前に対象が遠くなったり消えた場合には突進せず、クールダウンが一部返されます。</>,
     parameters: [
         {title: "1打ダメージ量", values: Constants.R.damage.base},
         {title: "最大体力比例回復量", values: Constants.R.heal.maxHP, percent: true},
