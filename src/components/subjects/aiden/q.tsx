@@ -17,7 +17,7 @@ const q: React.FC<SubjectSkillProps> = props => (
         <span className={style.emphasis}>電磁砲</span>：指定した方向に1発の弾丸を発射して、的中した敵1人に
         <Damage skill="Q" constants={Constants.Q.range_damage} {...props} />の基本攻撃ダメージを与え、移動速度を
         {Constants.Q.slow.duration}秒間{Constants.Q.slow.effect[props.config.skillLevels.Q]}％減少させます。スキルを的中するとクールダウンが
-        {Constants.Q.cooldown_reduction}％減少します。<br />
+        {Constants.Q.range_cooldown_reduction}％減少します。<br />
         <br />
         このスキルはクールダウン減少の影響を受けません。
     </>

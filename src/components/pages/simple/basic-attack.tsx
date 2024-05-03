@@ -7,6 +7,7 @@ import { WeaponTypeID, weaponBaseStatus } from "@app/entity/equipment";
 import { AssaultRifleAttackRatio } from "components/subject/standard-values";
 import SkillDamage from "./skill-damage";
 import { SubjectConfig } from "components/subject/use-subject-config";
+import Hypercharge from "./aiden-hypercharge";
 
 type Props = {
     status: Status
@@ -33,7 +34,9 @@ const basicAttack: React.FC<Props> = props => {
             }
             {
                 props.table.basicAttack.map(def => {
-                    if (typeof def === "string") {
+                    if (def == "aiden") {
+                        return <Hypercharge status={props.status} config={props.config} />;
+                    } else if (typeof def === "string") {
                         if (props.weaponType == "assault_rifle") {
                             return <BasicAttackDamage 
                                 key="standard" 

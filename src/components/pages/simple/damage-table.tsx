@@ -41,11 +41,19 @@ const damageTable: React.FC<Props> = props => {
                                     <tr className={table.border}><td colSpan={4}></td></tr>
                                 }
                                 {
-                                    array.map(s => 
-                                        s.type == "basic" ?
-                                        <BasicAttackDamage name={s.label} status={props.status} config={s.damage} /> :
-                                        <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
-                                    )
+                                    array.map(s => {
+                                        if (s.type == "critical") {
+                                            const level = (props.config.skillLevels as any)[s.skill];
+                                            const sanitizedDict = Object.fromEntries(
+                                                Object.entries(s.damage).map(([key, value]) => {
+                                                    return [key, Array.isArray(value) ? value[level] : value]
+                                                })
+                                            );
+                                            return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} />;
+                                        }
+                                        
+                                        return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
+                                    })
                                 }
                                 </React.Fragment>
                             )
