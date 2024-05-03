@@ -1,8 +1,10 @@
+import { Status } from "components/subject/status"
+
 export type SkillDamageProps = {
     label: string
     skill: "Q" | "W" | "E" | "R" | "T" | "D"
     damage: any
-    type?: "heal" | "shield" | "ms" | "true"
+    type?: "heal" | "shield" | "ms" | "true" | "basic"
     multiplier?: number | number[]
 }
 
@@ -16,4 +18,4 @@ export const SubjectDamageTable = context.keys().reduce((skills: any, path) => {
     const key = path.substring(2, path.lastIndexOf("/"));
     skills[key] = context(path).default;
     return skills;
-}, {}) as {[id: string]: DamageTable}
+}, {}) as {[id: string]: DamageTable | ((status: Status) => DamageTable)}

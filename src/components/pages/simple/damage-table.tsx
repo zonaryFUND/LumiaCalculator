@@ -5,6 +5,7 @@ import style from "./damage-table.module.styl";
 import { SubjectDamageTable } from "components/subjects/damage-table";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import SkillDamage from "./skill-damage";
+import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { WeaponTypeID } from "@app/entity/equipment";
 
@@ -15,18 +16,25 @@ type Props = {
 }
 
 const damageTable: React.FC<Props> = props => {
-    const definition = React.useMemo(() => SubjectDamageTable[props.config.subject], [props.config.subject]);
+    const definition = React.useMemo(() => {
+        const raw = SubjectDamageTable[props.config.subject];
+        if (typeof raw === "function") {
+            return raw(props.status);
+        } else {
+            raw;
+        }
+    }, [props.config.subject, props.status]);
 
     return (
         <section className={style.damage}>
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
                 <table>
-                    <BasicAttack status={props.status} config={props.config} table={definition} weaponType={props.weaponType} />
+                    <BasicAttack status={props.status} config={props.config} table={definition!} weaponType={props.weaponType} />
                     <tbody>
                         <tr className={table.separator}><td colSpan={3}>実験体スキル</td><td>ダメージ / 効果量</td></tr>
                         {
-                            definition.skill.map((array, index) => 
+                            definition?.skill.map((array, index) => 
                                 <React.Fragment key={index}>
                                 {
                                     index == 0 ? null :
@@ -34,12 +42,14 @@ const damageTable: React.FC<Props> = props => {
                                 }
                                 {
                                     array.map(s => 
+                                        s.type == "basic" ?
+                                        <BasicAttackDamage name={s.label} status={props.status} config={s.damage} /> :
                                         <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
                                     )
                                 }
                                 </React.Fragment>
                             )
-                        }
+                    }
                     </tbody>
                     <tbody>
                         <tr className={table.separator}><td colSpan={3}>武器スキル</td><td>ダメージ / 効果量</td></tr>
