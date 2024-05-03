@@ -5,7 +5,7 @@ import Constants from "./constants.json";
 
 export default function(status: StatusProps, config: SubjectConfig): StatusProps {
     const equipmentType = config.equipment.weapon ? equipmentStatus(config.equipment.weapon).type : null;
-    const isMelee = equipmentType == "tonfa" || equipmentType == "two-handed_sword"
+    const isRange = equipmentType == "pistol" || equipmentType == "shuriken"
 
     const as = Constants.common.e_as[config.skillLevels.E];
     const additional = status.attackSpeed.multiplier.add(as)
@@ -17,6 +17,6 @@ export default function(status: StatusProps, config: SubjectConfig): StatusProps
             multiplier: additional,
             calculated: status.attackSpeed.base.addPercent(additional)
         },
-        defense: isMelee ? status.defense.add(def) : status.defense
+        defense: isRange ? status.defense : status.defense.add(def)
     };
 }

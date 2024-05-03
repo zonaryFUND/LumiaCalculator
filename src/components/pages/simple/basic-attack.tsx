@@ -16,14 +16,6 @@ type Props = {
 }
 
 const basicAttack: React.FC<Props> = props => {
-    const base = React.useMemo(() => {
-        return props.status.attackPower.addPercent(props.status.basicAttackAmp);
-    }, [props.status.attackPower, props.status.basicAttackAmp])
-
-    const critical = React.useMemo(() => {
-        return props.status.attackPower.addPercent(props.status.basicAttackAmp);
-    }, [props.status.attackPower, props.status.basicAttackAmp])
-
     const name = React.useMemo(() => {
         if (props.weaponType == "assault_rifle") {
             return "基本攻撃(3発分)";

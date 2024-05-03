@@ -18,12 +18,12 @@ type Props = {
 const damageTable: React.FC<Props> = props => {
     const definition = React.useMemo(() => {
         const raw = SubjectDamageTable[props.config.subject];
-        if (typeof raw === "function") {
-            return raw(props.status);
+        if (typeof raw === "object") {
+            return raw;
         } else {
-            raw;
+            return raw(props.status, props.weaponType);
         }
-    }, [props.config.subject, props.status]);
+    }, [props.config.subject, props.status, props.weaponType]);
 
     return (
         <section className={style.damage}>

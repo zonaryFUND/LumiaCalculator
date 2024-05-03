@@ -2,12 +2,11 @@ import * as React from "react";
 import style from "components/subjects/skills-standard.modue.styl";
 import Images from "@app/resources/image";
 import { WeaponID } from "@app/entity/weapon-id";
-import { equipmentStatus } from "@app/entity/equipment";
-import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps } from "../skills-standard";
+import { WeaponTypeID, equipmentStatus } from "@app/entity/equipment";
+import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
 
-export default function(props: {weapon: WeaponID | null} & SkillsStandardProps) {
-    const type = props.weapon == null ? null : equipmentStatus(props.weapon).type;
-    const skills = type == "two-handed_sword" || type == "tonfa" ?
+export default function(props: {weaponType?: WeaponID} & SkillsStandardProps) {
+    const skills = props.weaponType == "two-handed_sword" || props.weaponType == "tonfa" ?
         ["MeleeQ", "MeleeW", "MeleeE", "R", "T"] :
         ["RangeQ", "RangeW", "RangeE", "R", "T"]
 
@@ -21,10 +20,15 @@ export default function(props: {weapon: WeaponID | null} & SkillsStandardProps) 
                         data-tooltip-content={`alex-${skill}`}
                     >
                         <img src={Images.skill.alex[skill]} />
-                        <SkillLevelConfigurator skill={skill.slice(skill.length - 1) as any} />
                     </li>
                 ))
             }
+            <WeaponSkill id={props.weaponType} />
+            <SkillLevelConfigurator skill="Q" />
+            <SkillLevelConfigurator skill="W" />
+            <SkillLevelConfigurator skill="E" />
+            <SkillLevelConfigurator skill="R" />
+            <SkillLevelConfigurator skill="T" />
         </SkillsParent>
     )
 }
