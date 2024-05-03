@@ -27,7 +27,7 @@ const basicAttack: React.FC<Props> = props => {
     return (
         <tbody>
             {
-                props.table.basicAttack.includes("standard") ?
+                props.table.basicAttack.includes("standard") || props.table.basicAttack.find(t => (t as any).type == "basic") ?
                 <tr className={table.separator}><td>基本攻撃</td><td>基礎値</td><td>致命打</td><td>期待値</td></tr> :
                 <tr className={table.separator}><td colSpan={3}>基本攻撃</td><td>基礎値</td></tr>
             }
@@ -48,6 +48,8 @@ const basicAttack: React.FC<Props> = props => {
                         } else {
                             return <BasicAttackDamage key="standard" name={name} status={props.status} disableCritical={def == "disable-critical"} />
                         }
+                    } else if (def.type == "basic") {
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={def.damage} />
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }
