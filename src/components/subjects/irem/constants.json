@@ -33,7 +33,7 @@
     },
     "IremW": {
         "slow": 20,
-        "charge": 1,
+        "channel": 1,
         "damage": {
             "base": [40,80,120,160,200],
             "amp": 70
