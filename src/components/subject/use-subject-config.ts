@@ -74,7 +74,7 @@ export default function(): Response {
 
     React.useEffect(() => {
         setConfig({ subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack });
-    }, [subject, level, weaponMastery, movementMastery, equipment, gauge]);
+    }, [subject, level, weaponMastery, movementMastery, equipment, skillLevels, gauge]);
     
     return {
         subject: [subject, setSubject],

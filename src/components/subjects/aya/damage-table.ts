@@ -2,8 +2,8 @@ import { Status } from "components/subject/status";
 import { DamageTable } from "../damage-table";
 import Constants from "./constants.json";
 
-function table(status: Status): DamageTable {
-    const wCount = status.attackSpeed.multiplier.dividedBy(30).floor().clamp(0, Constants.W.max_bullets - Constants.W.bullets).toNumber() + Constants.W.bullets;
+function table(props: {status: Status}): DamageTable {
+    const wCount = props.status.attackSpeed.multiplier.dividedBy(30).floor().clamp(0, Constants.W.max_bullets - Constants.W.bullets).toNumber() + Constants.W.bullets;
 
     return {
         basicAttack: [

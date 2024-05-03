@@ -21,9 +21,9 @@ const damageTable: React.FC<Props> = props => {
         if (typeof raw === "object") {
             return raw;
         } else {
-            return raw(props.status, props.weaponType);
+            return raw({status: props.status, skillLevels: props.config.skillLevels, weaponType: props.weaponType});
         }
-    }, [props.config.subject, props.status, props.weaponType]);
+    }, [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
 
     return (
         <section className={style.damage}>

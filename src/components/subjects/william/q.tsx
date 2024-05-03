@@ -9,7 +9,7 @@ const q: React.FC<SubjectSkillProps> = props => (
     <>
         <span className={style.level}>持続効果</span>：キャッチボールスタックを最大に獲得した状態でスキル使用できます。ウィリアムが
         {Constants.Q.duration}秒間攻撃速度が{Constants.Q.attack_speed[props.config.skillLevels.Q]}
-        増加し、基本攻撃をする時にボールをもう一つ追加で投げて<Damage skill="Q" constants={Constants.Q.damage} {...props} />
+        ％増加し、基本攻撃をする時にボールをもう一つ追加で投げて<Damage skill="Q" constants={Constants.Q.damage} {...props} />
         の基本攻撃ダメージを与えます。野球ボールをキャッチすると最初の攻撃にのみ追加ダメージが適用され、シャドウボールの持続時間が
         {Constants.Q.extend_duration}秒延長されます。
     </>

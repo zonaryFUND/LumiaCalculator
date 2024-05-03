@@ -1,6 +1,7 @@
 import { WeaponTypeID } from "@app/entity/equipment"
 import damageTable from "components/pages/simple/damage-table"
 import { Status } from "components/subject/status"
+import { SkillLevels } from "components/subject/use-subject-config"
 
 export type SkillDamageProps = {
     label: string
@@ -10,7 +11,7 @@ export type SkillDamageProps = {
     multiplier?: number | number[]
 }
 
-type PropsGenerator = (status: Status, weaponType?: WeaponTypeID) => DamageTable;
+type PropsGenerator = (props: {status: Status, skillLevels?: SkillLevels, weaponType?: WeaponTypeID}) => DamageTable;
 
 export type DamageTable = {
     basicAttack: (SkillDamageProps | "standard" | "disable-critical")[]

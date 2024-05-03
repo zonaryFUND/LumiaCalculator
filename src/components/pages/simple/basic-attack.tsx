@@ -49,7 +49,13 @@ const basicAttack: React.FC<Props> = props => {
                             return <BasicAttackDamage key="standard" name={name} status={props.status} disableCritical={def == "disable-critical"} />
                         }
                     } else if (def.type == "basic") {
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={def.damage} />
+                        const level = (props.config.skillLevels as any)[def.skill];
+                        const sanitizedDict = Object.fromEntries(
+                            Object.entries(def.damage).map(([key, value]) => {
+                                return [key, Array.isArray(value) ? value[level] : value]
+                            })
+                        );
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} />
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }

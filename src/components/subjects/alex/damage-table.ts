@@ -3,7 +3,7 @@ import { DamageTable, SkillDamageProps } from "../damage-table";
 import Constants from "./constants.json";
 import { WeaponTypeID } from "@app/entity/equipment";
 
-function table(status: Status, weaponType: WeaponTypeID): DamageTable {
+function table(props: {status: Status, weaponType: WeaponTypeID}): DamageTable {
     const rMax = Constants.R.later_damage.amount;
 
     function common(weaponDependent: SkillDamageProps[][]): DamageTable {
@@ -23,7 +23,7 @@ function table(status: Status, weaponType: WeaponTypeID): DamageTable {
         }
     }
 
-    if (weaponType == "pistol" || weaponType == "shuriken") {
+    if (props.weaponType == "pistol" || props.weaponType == "shuriken") {
         // ranged
         return common([
             [{label: "レンジQ", skill: "Q", damage: Constants.RangeQ.damage}],
