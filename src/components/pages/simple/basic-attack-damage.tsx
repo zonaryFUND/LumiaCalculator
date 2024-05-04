@@ -16,6 +16,7 @@ type Props = {
         attack?: number
         basicAttackAmp?: number
     }
+    multiplier?: number
 }
 
 const basicAttackDamage: React.FC<Props> = props => {
@@ -54,12 +55,12 @@ const basicAttackDamage: React.FC<Props> = props => {
         <>
             <tr onClick={toggleExpand}>
                 <td colSpan={props.disableCritical ? 3 : undefined}>{props.name}</td>
-                <td className={style.basic}>{value.toString()}</td>
+                <td className={style.basic}>{value.percent(props.multiplier ?? 100).toString()}</td>
                 {
                     props.disableCritical ? null :
                     <>
-                        <td className={style.basic}>{showCritical ? critical.toString() : "-"}</td>
-                        <td className={style.basic}>{expected.toString()}</td>
+                        <td className={style.basic}>{showCritical ? critical.percent(props.multiplier ?? 100).toString() : "-"}</td>
+                        <td className={style.basic}>{expected.percent(props.multiplier ?? 100).toString()}</td>
                     </>
                 }
             </tr>
@@ -69,28 +70,40 @@ const basicAttackDamage: React.FC<Props> = props => {
                     <InnerTable>
                         <tr>
                             <td>基本値</td>
-                            <td>
-                                <span>攻撃力</span>{props.status.attackPower.toString()}
-                                {
-                                    props.config?.attack ?
-                                    <> x {props.config.attack}％</> :
-                                    null
-                                }
-                                {
-                                    props.status.basicAttackAmp.greaterThan(0) ?
-                                    <> x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}<br /></>
-                                    : null
-                                }
-                            </td>
+                            {
+                                props.multiplier ?
+                                <td>
+                                    {value.toString()} x {props.multiplier}％ = {value.percent(props.multiplier).toString()}
+                                </td> 
+                                :
+                                <td>
+                                    <span>攻撃力</span>{props.status.attackPower.toString()}
+                                    {
+                                        props.config?.attack ?
+                                        <> x {props.config.attack}％</> :
+                                        null
+                                    }
+                                    {
+                                        props.status.basicAttackAmp.greaterThan(0) ?
+                                        <> x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}<br /></>
+                                        : null
+                                    }
+                                </td>
+                            }
                         </tr>
                         {
                             props.disableCritical ? null :
                             <tr>
                                 <td>致命打</td>
-                                <td><>
-                                    <span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>
-                                    {props.status.criticalDamage.toString()}％ + 175％) = {critical?.toString()}
-                                </></td>
+                                {
+                                    props.multiplier ?
+                                    <td>{critical.toString()} x {props.multiplier}％ = {critical.percent(props.multiplier).toString()}</td>
+                                    :
+                                    <td><>
+                                        <span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>
+                                        {props.status.criticalDamage.toString()}％ + 175％) = {critical?.toString()}
+                                    </></td>
+                                }
                             </tr>
                         }
                     </InnerTable>

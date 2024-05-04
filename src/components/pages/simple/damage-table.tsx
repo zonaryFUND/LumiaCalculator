@@ -55,7 +55,10 @@ const damageTable: React.FC<Props> = props => {
                                                     return [key, Array.isArray(value) ? value[level] : value]
                                                 })
                                             );
-                                            return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} />;
+                                            const multiplier = s.multiplier ?
+                                                (Array.isArray(s.multiplier) ? s.multiplier[level] : s.multiplier) :
+                                                undefined
+                                            return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multiplier={multiplier} />;
                                         }
                                         
                                         return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />

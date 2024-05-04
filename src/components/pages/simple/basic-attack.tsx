@@ -4,7 +4,7 @@ import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { DamageTable } from "components/subjects/damage-table";
 import { WeaponTypeID, weaponBaseStatus } from "@app/entity/equipment";
-import { AssaultRifleAttackRatio } from "components/subject/standard-values";
+import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "components/subject/standard-values";
 import SkillDamage from "./skill-damage";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import Hypercharge from "./aiden-hypercharge";
@@ -17,14 +17,6 @@ type Props = {
 }
 
 const basicAttack: React.FC<Props> = props => {
-    const name = React.useMemo(() => {
-        if (props.weaponType == "assault_rifle") {
-            return "基本攻撃(3発分)";
-        }
-
-        return "基本攻撃";
-    }, [props.weaponType])
-
     return (
         <tbody>
             {
@@ -40,7 +32,7 @@ const basicAttack: React.FC<Props> = props => {
                         if (props.weaponType == "assault_rifle") {
                             return <BasicAttackDamage 
                                 key="standard" 
-                                name={name} 
+                                name="基本攻撃(3発分)" 
                                 status={props.status} 
                                 disableCritical={def == "disable-critical"} 
                                 config={{
@@ -48,8 +40,19 @@ const basicAttack: React.FC<Props> = props => {
                                     basicAttackAmp: 100
                                 }}
                             />
+                        } else if (props.weaponType == "dual_swords") {
+                            return <BasicAttackDamage 
+                                key="standard" 
+                                name="基本攻撃(2発分)"
+                                status={props.status} 
+                                disableCritical={def == "disable-critical"} 
+                                config={{
+                                    attack: DualSwordsAttackRatio.reduce((p, c) => p + c, 0),
+                                    basicAttackAmp: 100
+                                }}
+                            />
                         } else {
-                            return <BasicAttackDamage key="standard" name={name} status={props.status} disableCritical={def == "disable-critical"} />
+                            return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={def == "disable-critical"} />
                         }
                     } else if (def.type == "basic") {
                         const level = (props.config.skillLevels as any)[def.skill];
