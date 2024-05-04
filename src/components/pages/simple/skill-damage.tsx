@@ -133,11 +133,23 @@ const skillDamage: React.FC<Props> = props => {
         }
     })();
 
+    const kenneth = (() => {
+        if (props.type != "kenneth") return null;
+        return "％";
+    })();
+
+    const valueClass = (() => {
+        if (props.type == "kenneth" && props.skill == "T") {
+            return style.heal;
+        }
+        return props.type ? style[props.type] : style.skill;
+    })();
+
     return (
         <>
             <tr onClick={value.isZero() && !objectAdditional ? undefined : toggleExpand}>
                 <td colSpan={3}>{props.label}</td>
-                <td className={props.type ? style[props.type] : style.skill}>{value.isZero() && additional ? null : value.toString()}{additional}{percent}</td>
+                <td className={valueClass}>{value.isZero() && additional ? null : value.toString()}{kenneth}{additional}{percent}</td>
             </tr>
             { expand ? <tr className={table.expand}>{expandDescription}</tr> : null }
         </>

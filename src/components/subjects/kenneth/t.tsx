@@ -7,13 +7,13 @@ import style from "components/tooltip/tooltip.module.styl";
 
 const t: React.FC<SubjectSkillProps> = props => {
     const damage = (() => {
-        const base = Constants.T.damage.base;
-        const attack = Constants.T.damage.attack[props.config.skillLevels.T];
+        const base = Constants.T.damage.targetMaxHP.base;
+        const attack = Constants.T.damage.targetMaxHP.attack[props.config.skillLevels.T];
 
         if (props.showEquation) {
             return <span className={style.maxhp}>対象の最大体力の{base}(+攻撃力の{attack}％)％</span>;
         } else {
-            <span className={style.maxhp}>対象の最大体力の{props.status.attackPower.percent(attack).add(base)}％</span>
+            return <span className={style.maxhp}>対象の最大体力の{props.status.attackPower.percent(attack).add(base).toString()}％</span>
         }
     })();
 
@@ -37,7 +37,7 @@ export const values: ValuesPropsGenerator = props => ({
         野生動物に与えられるダメージ量は最大{Constants.T.animal_max}に制限されます。
     </>,
     parameters: [
-        {title: "合計攻撃力", values: Constants.T.damage.attack, percent: true},
+        {title: "合計攻撃力", values: Constants.T.damage.targetMaxHP.attack, percent: true},
         {title: "最大体力回復量", values: Constants.T.max_heal.base}
     ]
 })
