@@ -63,7 +63,9 @@
         "hide": 2.5,
         "movement_speed": [5,10,15],
         "shield_duration": 2.5,
-        "shield": [10,17,24],
+        "shield": {
+            "maxHP": [10,17,24]
+        },
         "q_cooldown_reduction": [20,40,60],
         "cooldown_reduction": [2,6,10],
         "cooldown": {
