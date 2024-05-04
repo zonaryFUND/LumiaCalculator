@@ -1,7 +1,6 @@
 import { WeaponTypeID } from "@app/entity/equipment";
 import { DamageTable, SkillDamageProps } from "../damage-table";
 import Constants from "./constants.json";
-import skill from "components/tooltip/skill";
 
 const table: DamageTable = {
     basicAttack: [
