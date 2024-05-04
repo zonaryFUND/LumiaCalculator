@@ -21,7 +21,13 @@ const damageTable: React.FC<Props> = props => {
         if (typeof raw === "object") {
             return raw;
         } else {
-            return raw({status: props.status, skillLevels: props.config.skillLevels, weaponType: props.weaponType});
+            return raw({
+                status: props.status, 
+                skillLevels: props.config.skillLevels, 
+                weaponType: props.weaponType, 
+                weapon: props.config.equipment.weapon ?? undefined,
+                gauge: props.config.gauge
+            });
         }
     }, [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
 

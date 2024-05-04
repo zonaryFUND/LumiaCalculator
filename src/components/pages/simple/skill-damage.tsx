@@ -53,11 +53,11 @@ const skillDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
 
     const level = skillLevel(props.skill, props.config);
-    const [value, base, multiplier] = (() => {
+    const [value, base, multiplier, sidewinder] = (() => {
         const base = damage(props.status, props.config, props.skill, props.damage);
-        if (props.multiplier) {
-            const mul = Array.isArray(props.multiplier) ? props.multiplier[level] : props.multiplier;   
-            return [base.percent(mul), base, mul];
+        if (props.multiplier != undefined || props.sidewinder) {
+            const mul = Array.isArray(props.multiplier) ? props.multiplier[level] : props.multiplier;
+            return [base.percent(mul ?? 100).addPercent(props.sidewinder ?? 0), base, mul, props.sidewinder];
         }
 
         return [base];
@@ -68,7 +68,7 @@ const skillDamage: React.FC<Props> = props => {
     }, [props.type])
 
     const baseDamageTr =  base ?
-        <>{base.toString()} x {multiplier}％ = {value.toString()}{percent}</> :
+        <>{base.toString()} x {multiplier}％{sidewinder ? <><span> x (サイドワインダー増幅</span>{sidewinder}％ + 1)</> : null} = {value.toString()}{percent}</> :
         <>{equation(props.damage, props.status, props.config.level, level)}{value.toString()}{percent}</>;
 
     const [additional, expandDescription] = (() => {
@@ -99,7 +99,7 @@ const skillDamage: React.FC<Props> = props => {
                             <td>
                                 {
                                     multiplier ? 
-                                    <>{ratio.toString()} x {multiplier}％ = {multiplied.toString()}</> :
+                                    <>{ratio.toString()} x {multiplier}％ {} = {multiplied.toString()}</> :
                                     <>{equation(props.damage[tuple.key], props.status, props.config.level, level)}{ratio.toString()}</>
                                 }％
                             </td>

@@ -16,7 +16,8 @@ type Props = {
     defenseMastery: StateProps<number>
     movementMastery: StateProps<number>
     equipment: StateProps<Equipment>
-    status: [StatusType, DisplayedStatusValues],
+    status: [StatusType, DisplayedStatusValues]
+    gauge: StateProps<number>
 }
 
 function unpackConfig(props: Props): SubjectConfig {

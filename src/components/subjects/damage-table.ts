@@ -1,7 +1,7 @@
 import { WeaponTypeID } from "@app/entity/equipment"
+import { WeaponID } from "@app/entity/weapon-id"
 import { Status } from "components/subject/status"
 import { SkillLevels } from "components/subject/use-subject-config"
-import * as React from "react"
 
 export type SkillDamageProps = {
     label: string
@@ -9,9 +9,10 @@ export type SkillDamageProps = {
     damage: any
     type?: "heal" | "shield" | "ms" | "true" | "basic" | "critical" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     multiplier?: number | number[]
+    sidewinder?: number
 }
 
-type PropsGenerator = (props: {status: Status, skillLevels?: SkillLevels, weaponType?: WeaponTypeID}) => DamageTable;
+type PropsGenerator = (props: {status: Status, skillLevels?: SkillLevels, weaponType?: WeaponTypeID, weapon?: WeaponID, gauge?: number}) => DamageTable;
 
 export type DamageTable = {
     basicAttack: (SkillDamageProps | "standard" | "disable-critical" | "aiden")[]

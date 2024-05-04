@@ -72,6 +72,7 @@ const index: React.FC = props => {
                         movementMastery={[movementMastery, setMovementMastery]}
                         equipment={[equipment, setEquipment]}
                         status={status}
+                        gauge={[gauge, setGauge]}
                     />
                     <BuffDebuffs />
                     <Damage

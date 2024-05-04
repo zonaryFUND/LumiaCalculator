@@ -35,9 +35,10 @@ const damages: React.FC<Props> = props => {
             id: props.config.subject, 
             skillLevels: props.config.skillLevels, 
             setSkillLevels: props.setSkillLevels,
-            weaponType: props.weaponType
+            weaponType: props.weaponType,
+            weapon: props.config.equipment.weapon
         })
-    }, [props.config.subject, props.weaponType, props.config.skillLevels]);
+    }, [props.config.subject, props.weaponType, props.config.skillLevels, props.config.equipment.weapon]);
 
     return (
         <div className={styles(index.row, style.damage)}>
