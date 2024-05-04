@@ -61,7 +61,8 @@ const basicAttack: React.FC<Props> = props => {
                                 return [key, Array.isArray(value) ? value[level] : value]
                             })
                         );
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} />
+                        const multiplier = Array.isArray(def.multiplier) ? def.multiplier[level] : def.multiplier
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multiplier={multiplier} />
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }

@@ -92,7 +92,8 @@ const skillDamage: React.FC<Props> = props => {
             {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"},
             {key: "lostHP", text: "失った体力の", ratio: "消耗体力比"},
             {key: "targetHP", text: "対象の現在体力の", ratio: "対象体力比"},
-            {key: "lostHPPercent", text: "失った体力1％あたり", ratio: "消耗体力比", removePercent: true} // sissela only for now
+            {key: "lostHPPercent", text: "失った体力1％あたり", ratio: "消耗体力比", removePercent: true}, // sissela only for now
+            {key: "gauge", text: "消耗ゲージの", ratio: "消耗ゲージ比"} // sissela only for now
         ]
         const tuple = additionalKeys.find(k => props.damage[k.key] != undefined);
         if (tuple == undefined) {
@@ -126,7 +127,7 @@ const skillDamage: React.FC<Props> = props => {
                 true
             ]
         } else {
-            const content = <>{tuple.text}{levelValue(props.damage[tuple.key], level)}％</>;
+            const content = <>{tuple.text}{new Decimal(levelValue(props.damage[tuple.key], level)).percent(multiplier ?? 100).toString()}％</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>{baseDamageTr}</td>,

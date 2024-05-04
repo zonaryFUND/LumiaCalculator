@@ -38,11 +38,13 @@
         "count": 4,
         "min_damage": {
             "base": [30,80,130],
-            "attack": 50
+            "attack": 50,
+            "gauge": 50
         },
         "max_damage": {
             "base": [45,120,195],
-            "attack": 75
+            "attack": 75,
+            "gauge": 50
         },
         "bac_ratio": 50,
         "cooldown": [80,65,50]
