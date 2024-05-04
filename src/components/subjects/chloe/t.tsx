@@ -21,12 +21,21 @@ const t: React.FC<SubjectSkillProps> = props => (
 
 export default t;
 
-export const values: ValuesProps = {
-    parameters: [
-        {title: "[ニナ]突きダメージ", values: Constants.T.damage.base},
-        {title: "[ニナ]復活時間", values: Constants.T.nina_revive},
-        {title: "[ニナ]追加攻撃力", values: Constants.T.nina_attack},
-        {title: "[ニナ]追加防御力", values: Constants.T.nina_defense},
-        {title: "[ニナ]追加生命力", values: Constants.T.nina_maxhp}
-    ]
+export function values(props: SubjectSkillProps): ValuesProps {
+    const ratio = props.config.level * Constants.T.per_level_chloe_status_ratio + Constants.T.base_chloe_status_ratio;
+    
+    return {
+        additionalInfo: <>
+            ニナはパッシブレベルが上がるたびに追加能力値を獲得し、クロエの移動速度に比例して二 ナの移動速度が増加します。クロエの攻撃力の{ratio}
+            ％、防御力の{ratio}％、体力の{ratio}％、致命打確率の{ratio}％、スキル増幅の{ratio}
+            ％、防御貫通の{ratio}％がニナに追加で適用されます。(クロエのレベルが1増加するたびに{Constants.T.per_level_chloe_status_ratio}％ずつ増加)
+        </>,
+        parameters: [
+            {title: "[ニナ]突きダメージ", values: Constants.T.damage.base},
+            {title: "[ニナ]復活時間", values: Constants.T.nina_revive},
+            {title: "[ニナ]追加攻撃力", values: Constants.T.nina_attack},
+            {title: "[ニナ]追加防御力", values: Constants.T.nina_defense},
+            {title: "[ニナ]追加生命力", values: Constants.T.nina_maxhp}
+        ]
+    }
 }

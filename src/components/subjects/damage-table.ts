@@ -7,7 +7,7 @@ export type SkillDamageProps = {
     label: string
     skill: "Q" | "W" | "E" | "R" | "T" | "D"
     damage: any
-    type?: "heal" | "shield" | "ms" | "true" | "basic" | "critical" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
+    type?: "heal" | "shield" | "ms" | "true" | "basic" | "critical" | "summoned" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     multiplier?: number | number[]
     sidewinder?: number
 }

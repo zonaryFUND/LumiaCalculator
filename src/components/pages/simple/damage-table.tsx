@@ -8,6 +8,7 @@ import SkillDamage from "./skill-damage";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { WeaponTypeID } from "@app/entity/equipment";
+import { SummonedStatus } from "components/subjects/summoned-status";
 
 type Props = {
     status: Status
@@ -30,6 +31,12 @@ const damageTable: React.FC<Props> = props => {
             });
         }
     }, [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
+
+    const summonedName = React.useMemo(() => {
+        if (SummonedStatus[props.config.subject] == undefined) return null;
+        return SummonedStatus[props.config.subject].name("jp");
+    }, [props.config.subject]);
+    const shownStatus = React.useState<string | undefined>("subject");
 
     return (
         <section className={style.damage}>
@@ -61,7 +68,7 @@ const damageTable: React.FC<Props> = props => {
                                             return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multiplier={multiplier} />;
                                         }
                                         
-                                        return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
+                                        return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} summonedName={summonedName} />
                                     })
                                 }
                                 </React.Fragment>

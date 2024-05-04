@@ -17,39 +17,48 @@ type Props = {
         basicAttackAmp?: number
     }
     multiplier?: number
+    summoned?: boolean
 }
 
 const basicAttackDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
+    const attackPower = React.useMemo(() => {
+        return props.summoned ? props.status.summonedStatus!.attackPower : props.status.attackPower;
+    }, [props.summoned, props.status.attackPower, props.status.summonedStatus?.attackPower])
 
     const value = React.useMemo(() => {
         if (props.config) {
             return new Decimal(props.config.base ?? 0)
-                    .add(props.status.attackPower.percent(props.config.attack ?? 0))
+                    .add(attackPower.percent(props.config.attack ?? 0))
                     .floor()
-                    .addPercent(props.config.basicAttackAmp ? props.status.basicAttackAmp : 0)
+                    .addPercent(props.config.basicAttackAmp && props.summoned != true ? props.status.basicAttackAmp : 0)
                     .floor()
         } else {
-            return props.status.attackPower.addPercent(props.status.basicAttackAmp).floor();
+            return attackPower.addPercent(props.status.basicAttackAmp).floor();
         }
-    }, [props.status.attackPower, props.status.basicAttackAmp, props.config]);
+    }, [attackPower, props.status.basicAttackAmp, props.config]);
 
-    const showCritical = React.useMemo(() => {
-        return props.status.criticalChance.greaterThan(0);
-    }, [props.status.criticalChance])
+    const [criticalChance, showCritical] = React.useMemo(() => {
+        const critical = (props.summoned ? props.status.summonedStatus! : props.status).criticalChance;
+        return [critical, critical.greaterThan(0)];
+    }, [props.summoned, props.status.criticalChance, props.status.summonedStatus?.criticalChance])
+    
+    const criticalDamage = React.useMemo(() => {
+        return props.summoned ? 0 : props.status.criticalDamage;
+    }, [props.summoned, props.status.criticalDamage]);
 
     const critical = React.useMemo(() => {
-        return value.addPercent(BaseCriticalDamagePercent.add(props.status.criticalDamage)).floor()
-    }, [value, props.status.criticalDamage]);
+        return value.addPercent(BaseCriticalDamagePercent.add(criticalDamage)).floor()
+    }, [value, criticalDamage]);
 
     const expected = React.useMemo(() => {
         if (critical) {
-            return value.percent(new Decimal(100).sub(props.status.criticalChance))
-                .add(critical.percent(props.status.criticalChance));
+            return value.percent(new Decimal(100).sub(criticalChance))
+                .add(critical.percent(criticalChance));
         } else {
             return value;
         }
-    }, [value, critical, props.status.criticalChance])
+    }, [value, criticalChance, critical])
 
     return (
         <>
@@ -77,14 +86,14 @@ const basicAttackDamage: React.FC<Props> = props => {
                                 </td> 
                                 :
                                 <td>
-                                    <span>攻撃力</span>{props.status.attackPower.toString()}
+                                    <span>攻撃力</span>{attackPower.toString()}
                                     {
                                         props.config?.attack ?
                                         <> x {props.config.attack}％</> :
                                         null
                                     }
                                     {
-                                        props.status.basicAttackAmp.greaterThan(0) ?
+                                        props.status.basicAttackAmp.greaterThan(0) && props.summoned != true ?
                                         <> x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}<br /></>
                                         : null
                                     }
@@ -101,7 +110,7 @@ const basicAttackDamage: React.FC<Props> = props => {
                                     :
                                     <td><>
                                         <span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>
-                                        {props.status.criticalDamage.toString()}％ + 175％) = {critical?.toString()}
+                                        {criticalDamage.toString()}％ + 175％) = {critical?.toString()}
                                     </></td>
                                 }
                             </tr>

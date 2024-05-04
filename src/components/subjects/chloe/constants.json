@@ -61,7 +61,9 @@
         "summoned_attack_speed": [20,25,30],
         "nina_movement_speed": [20,25,30],
         "we_cooldown_reduction": 30,
-        "damage": [42,72,102],
+        "damage": {
+            "base": [42,72,102]
+        },
         "damage_max_multipler": 2.5,
         "attacked_damage": 70,
         "linked_damage": 60,

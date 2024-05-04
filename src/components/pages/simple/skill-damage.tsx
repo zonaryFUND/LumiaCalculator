@@ -12,6 +12,7 @@ import Decimal from "decimal.js";
 type Props = SkillDamageProps & {
     config: SubjectConfig
     status: Status
+    summonedName: string
 }
 
 function levelValue(from: number | number[], level: number): number {
@@ -22,7 +23,7 @@ function levelValue(from: number | number[], level: number): number {
     }
 }
 
-function equation(damage: any, status: Status, level: number, skillLevel: number): React.ReactElement {
+function equation(damage: any, status: Status, level: number, skillLevel: number, summonedName?: string): React.ReactElement {
     const elem = (Object.entries(damage) as [string, number | number][]).reduce((prev, [key, value]) => {
         const p = (() => {
             if (key == "criticalChance") {
@@ -53,6 +54,8 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
                 return p.concat(<> x (<span>基本攻撃増幅</span>{status.basicAttackAmp.toString()}％ + 1)</>);
             case "criticalChance":
                 return p.concat(<> x (<span>致命打確率</span>{status.criticalChance.toString()}％ x {levelValue(value, skillLevel)})</>)
+            case "summoned_attack":
+                return p.concat(<><span>{summonedName}攻撃力</span>{status.summonedStatus?.attackPower.toString()} x {levelValue(value, skillLevel)}％</>);
         }
         return prev;
     }, [] as React.ReactElement[]);
@@ -61,6 +64,7 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
 
 const skillDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
+    const shownStatus = React.useState<string | undefined>("subject");
 
     const level = skillLevel(props.skill, props.config);
     const [value, base, multiplier, sidewinder] = (() => {
@@ -79,7 +83,7 @@ const skillDamage: React.FC<Props> = props => {
 
     const baseDamageTr =  base ?
         <>{base.toString()} x {multiplier}％{sidewinder ? <><span> x (サイドワインダー増幅</span>{sidewinder}％ + 1)</> : null} = {value.toString()}{percent}</> :
-        <>{equation(props.damage, props.status, props.config.level, level)}{value.toString()}{percent}</>;
+        <>{equation(props.damage, props.status, props.config.level, level, props.summonedName)}{value.toString()}{percent}</>;
 
     const [additional, expandDescription, objectAdditional] = (() => {
         const additionalKeys = [
@@ -111,7 +115,7 @@ const skillDamage: React.FC<Props> = props => {
                                 {
                                     multiplier ? 
                                     <>{ratio.toString()} x {multiplier}％ {} = {multiplied.toString()}</> :
-                                    <>{equation(props.damage[tuple.key], props.status, props.config.level, level)}{ratio.toString()}</>
+                                    <>{equation(props.damage[tuple.key], props.status, props.config.level, level, props.summonedName)}{ratio.toString()}</>
                                 }％
                             </td>
                         </tr>
