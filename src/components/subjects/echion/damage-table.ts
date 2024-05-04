@@ -6,7 +6,6 @@ import Decimal from "decimal.js";
 
 // The ratio of attack of echion's R depends on the level of T, but this application assumes that its always 3.
 function table(props: {skillLevels: SkillLevels, weapon?: WeaponID, gauge: number}): DamageTable {
-    console.log(props)
     const multiplier = new Decimal(Constants.R.damage_amp_per_vf[props.skillLevels.R]).times(props.gauge).add(100).toNumber();
     const sidewinder = props.weapon?.includes("sidewinder") ? Constants.R1.skill_damage_add[props.skillLevels.R] : undefined;
 

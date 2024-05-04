@@ -126,7 +126,7 @@ const skillDamage: React.FC<Props> = props => {
                 true
             ]
         } else {
-            const content = <>{tuple.text}{levelValue(props.damage[tuple.key], level)}</>;
+            const content = <>{tuple.text}{levelValue(props.damage[tuple.key], level)}％</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>{baseDamageTr}</td>,
