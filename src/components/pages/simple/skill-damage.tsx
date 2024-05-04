@@ -91,7 +91,8 @@ const skillDamage: React.FC<Props> = props => {
             {key: "targetMaxHP", text: "対象の最大体力の", ratio: "対象最大体力比"},
             {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"},
             {key: "lostHP", text: "失った体力の", ratio: "消耗体力比"},
-            {key: "targetHP", text: "対象の現在体力の", ratio: "対象体力比"}
+            {key: "targetHP", text: "対象の現在体力の", ratio: "対象体力比"},
+            {key: "lostHPPercent", text: "失った体力1％あたり", ratio: "消耗体力比", removePercent: true} // sissela only for now
         ]
         const tuple = additionalKeys.find(k => props.damage[k.key] != undefined);
         if (tuple == undefined) {
@@ -104,7 +105,7 @@ const skillDamage: React.FC<Props> = props => {
                 new Decimal(props.damage[tuple.key][level]) :
                 damage(props.status, props.config, props.skill, props.damage[tuple.key]);
             const multiplied = ratio.percent(multiplier ?? 100);
-            const content = <>{tuple.text}{multiplied.toString()}％</>
+            const content = <>{tuple.text}{multiplied.toString()}{tuple.removePercent ? null : "％"}</>
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>
@@ -117,7 +118,7 @@ const skillDamage: React.FC<Props> = props => {
                                     multiplier ? 
                                     <>{ratio.toString()} x {multiplier}％ {} = {multiplied.toString()}</> :
                                     <>{equation(props.damage[tuple.key], props.status, props.config.level, level, props.config.stack, props.summonedName)}{ratio.toString()}</>
-                                }％
+                                }{tuple.removePercent ? null : "％"}
                             </td>
                         </tr>
                     </InnerTable>
@@ -125,7 +126,7 @@ const skillDamage: React.FC<Props> = props => {
                 true
             ]
         } else {
-            const content = <>{tuple.text}{levelValue(props.damage[tuple.key], level)}％</>;
+            const content = <>{tuple.text}{levelValue(props.damage[tuple.key], level)}</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>{baseDamageTr}</td>,

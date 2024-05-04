@@ -64,7 +64,7 @@
         "damage": {
             "base": 30,
             "amp": 40,
-            "level": 9
+            "perLevel": 9
         },
         "slow": {
             "duration": 2,
