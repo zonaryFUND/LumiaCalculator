@@ -24,7 +24,15 @@ function levelValue(from: number | number[], level: number): number {
 
 function equation(damage: any, status: Status, level: number, skillLevel: number): React.ReactElement {
     const elem = (Object.entries(damage) as [string, number | number][]).reduce((prev, [key, value]) => {
-        const p = prev.length == 0 && key != "basicAttackAmp" ? prev : prev.concat(<> + </>)
+        const p = (() => {
+            if (key == "criticalChance") {
+                return [<>({prev})</>];
+            }
+            if (prev.length > 0 && key != "basicAttackAmp") {
+                return prev.concat(<> + </>);
+            }
+            return prev;
+        })();
         
         switch (key) {
             case "base":
@@ -42,7 +50,9 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
             case "perLevel":
                 return p.concat(<><span>レベル</span>{level} x {levelValue(value, skillLevel)}</>);
             case "basicAttackAmp":
-                return p.concat(<>x (<span>基本攻撃増幅</span>{status.basicAttackAmp.toString()}％ + 1)</>);
+                return p.concat(<> x (<span>基本攻撃増幅</span>{status.basicAttackAmp.toString()}％ + 1)</>);
+            case "criticalChance":
+                return p.concat(<> x (<span>致命打確率</span>{status.criticalChance.toString()}％ x {levelValue(value, skillLevel)})</>)
         }
         return prev;
     }, [] as React.ReactElement[]);
