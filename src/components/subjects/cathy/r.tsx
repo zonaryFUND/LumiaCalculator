@@ -12,12 +12,12 @@ const maxDamage = {
 
 const r: React.FC<SubjectSkillProps> = props => {
     const heal = (() => {
-        const ampRatio = Constants.R.heal.amp;
-        const hpRatio = Constants.R.heal.targetMaxHP;
+        const ampRatio = Constants.R.heal.targetMaxHP.amp;
+        const hpRatio = Constants.R.heal.targetMaxHP.base;
         if (props.showEquation) {
             return <>最大体力の{hpRatio}％<span className={style.amp}>(+スキル増幅の{ampRatio}％)</span></>
         } else {
-            return <>{props.status.skillAmp.percent(ampRatio).toString()}<span className={style.maxhp}>(+最大体力の{hpRatio}％)</span></>
+            return <>{props.status.skillAmp.percent(ampRatio).toString()}％<span className={style.maxhp}>(+最大体力の{hpRatio}％)</span></>
         }
     })()
 

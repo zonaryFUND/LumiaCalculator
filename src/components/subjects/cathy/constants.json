@@ -46,8 +46,10 @@
     "R": {
         "heal_duration": 4,
         "heal": {
-            "targetMaxHP": 5,
-            "amp": 4
+            "targetMaxHP": {
+                "base": "5",   
+                "amp": 4
+            }
         },
         "min_damage": {
             "base": [100,1750,250],

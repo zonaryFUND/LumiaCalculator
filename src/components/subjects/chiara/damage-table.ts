@@ -18,7 +18,7 @@ const table: DamageTable = {
         ],
         [
             {label: "Wシールド最小値", skill: "W", damage: Constants.W.shield, type: "shield"},
-            {label: "Wシールド最大値", skill: "W", damage: Constants.W.shield, type: "shield", multiplier: 100 + Constants.W.max_shield},
+            {label: `Wシールド最大値(体力${Constants.W.max_shield_hp}％以下)`, skill: "W", damage: Constants.W.shield, type: "shield", multiplier: 100 + Constants.W.max_shield},
             {label: "W爆発ダメージ", skill: "W", damage: Constants.W.damage}
         ],
         [
