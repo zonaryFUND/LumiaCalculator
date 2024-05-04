@@ -14,7 +14,9 @@ const table: DamageTable = {
         [{label: "E", skill: "E", damage: Constants.E.damage}],
         [
             {label: "RQ文字", skill: "R", damage: Constants.R.Q.damage},
-            {label: "RW障壁", skill: "R", damage: Constants.R.W.damage}
+            {label: "RW障壁", skill: "R", damage: Constants.R.W.damage},
+            {label: "RW障壁全ヒット(4)", skill: "R", damage: Constants.R.W.damage, multiplier: 400},
+            {label: "RW内部全ヒット(4)", skill: "R", damage: Constants.W.damage, multiplier: 400}
         ],
         [{label: "T回復", skill: "T", damage: Constants.T.heal, type: "heal"}]
     ]

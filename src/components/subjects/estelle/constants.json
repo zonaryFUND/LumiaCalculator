@@ -92,8 +92,10 @@
         "hp_regen": [40,60,80],
         "revive": [1,1.5,2],
         "additional_heal": {
-            "base": [5,10,15],
-            "amp": 3
+            "targetMaxHP": {
+                "base": [5,10,15],
+                "amp": 3
+            }
         },
         "cooldown": {
             "constant": [140,130,120]

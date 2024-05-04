@@ -18,7 +18,10 @@ function table(props: {skillLevels: SkillLevels, weapon?: WeaponID, gauge: numbe
             ];
         }
         if (props.weapon?.includes("black_mamba")) {
-            return [{label: "Rエンベノミゼーション", skill: "R" as any, damage: Constants.R2.damage}];
+            return [
+                {label: "Rエンベノミゼーション", skill: "R" as any, damage: Constants.R2.damage},
+                {label: "Rエンベノミゼーション2ヒット", skill: "R" as any, damage: Constants.R2.damage, multiplier: 200}
+            ];
         } else if (props.weapon?.includes("deathadder")) {
             return [{label: "Rエンベノミゼーション", skill: "R" as any, damage: Constants.R3.damage}];
         };

@@ -1,7 +1,7 @@
 import { DamageTable } from "../damage-table";
 import Constants from "./constants.json";
 
-const maxQ = Constants.Q.duration / Constants.Q.tick;
+const maxQ = Constants.Q.duration / Constants.Q.tick + 1;
 
 const table: DamageTable = {
     basicAttack: ["standard"],

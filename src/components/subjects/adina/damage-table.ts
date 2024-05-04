@@ -17,7 +17,7 @@ const table: DamageTable = {
             {label: "E", "skill": "E", damage: Constants.E.damage},
             {label: "E(2ヒット)", "skill": "E", damage: Constants.E.damage, multiplier: 200},
             {label: "E太陽追加ダメージ", "skill": "E", damage: Constants.E.sun},
-            {label: "E太陽追加ダメージ(2ヒット分)", "skill": "E", damage: Constants.E.sun, multiplier: 200},
+            {label: "E太陽追加ダメージ(2ヒット)", "skill": "E", damage: Constants.E.sun, multiplier: 200},
             {label: "E星回復", "skill": "E", damage: Constants.E.damage, multiplier: Constants.E.star, type: "heal"},
         ],
         [

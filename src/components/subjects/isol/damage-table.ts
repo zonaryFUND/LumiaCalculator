@@ -1,7 +1,7 @@
 import { DamageTable } from "../damage-table";
 import Constants from "./constants.json";
 
-const maxW = Math.floor(Constants.W.duration / Constants.W.tick);
+const maxW = Math.ceil(Constants.W.duration / Constants.W.tick);
 
 const table: DamageTable = {
     basicAttack: ["standard"],

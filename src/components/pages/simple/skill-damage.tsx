@@ -71,10 +71,11 @@ const skillDamage: React.FC<Props> = props => {
         <>{base.toString()} x {multiplier}％{sidewinder ? <><span> x (サイドワインダー増幅</span>{sidewinder}％ + 1)</> : null} = {value.toString()}{percent}</> :
         <>{equation(props.damage, props.status, props.config.level, level)}{value.toString()}{percent}</>;
 
-    const [additional, expandDescription] = (() => {
+    const [additional, expandDescription, objectAdditional] = (() => {
         const additionalKeys = [
             {key: "targetMaxHP", text: "対象の最大体力の", ratio: "対象最大体力比"},
             {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"},
+            {key: "lostHP", text: "失った体力の", ratio: "消耗体力比"},
             {key: "targetHP", text: "対象の現在体力の", ratio: "対象体力比"}
         ]
         const tuple = additionalKeys.find(k => props.damage[k.key] != undefined);
@@ -93,7 +94,7 @@ const skillDamage: React.FC<Props> = props => {
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>
                     <InnerTable>
-                        <tr><td>基礎値</td><td>{baseDamageTr}</td></tr>
+                        {value.isZero() ? null : <tr><td>基礎値</td><td>{baseDamageTr}</td></tr>}
                         <tr>
                             <td>{tuple.ratio}</td>
                             <td>
@@ -105,20 +106,22 @@ const skillDamage: React.FC<Props> = props => {
                             </td>
                         </tr>
                     </InnerTable>
-                </td>
+                </td>,
+                true
             ]
         } else {
             const content = <>{tuple.text}{levelValue(props.damage[tuple.key], level)}％</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
-                <td colSpan={4}>{baseDamageTr}</td>
+                <td colSpan={4}>{baseDamageTr}</td>,
+                false
             ]
         }
     })();
 
     return (
         <>
-            <tr onClick={value.isZero() ? undefined : toggleExpand}>
+            <tr onClick={value.isZero() && !objectAdditional ? undefined : toggleExpand}>
                 <td colSpan={3}>{props.label}</td>
                 <td className={props.type ? style[props.type] : style.skill}>{value.isZero() ? null : value.toString()}{additional}{percent}</td>
             </tr>
