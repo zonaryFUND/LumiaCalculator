@@ -9,7 +9,7 @@ const t: React.FC<SubjectSkillProps> = props => (
         バニスは基本攻撃をする時、{Constants.T.bullet[props.config.skillLevels.T]}発の弾丸を発射し、基本攻撃の射程距離は変動効果の影響されずに固定されます。<br />
         弾丸は敵に的中した数に比例して
         <Damage skill="T" constants={Constants.T.min_damage} {...props} /> ~ <Damage skill="T" constants={Constants.T.max_damage} {...props} />
-        の基本攻撃ダメージを与えます。バニスの致命打攻撃は致 命打効果の代わりに弾丸を追加で発射し、的中した敵の数に比例して攻撃力の
+        の基本攻撃ダメージを与えます。バニスの致命打攻撃は致命打効果の代わりに弾丸を追加で発射し、的中した敵の数に比例して攻撃力の
         <Damage skill="T" constants={Constants.T.min_second_damage} {...props} /> ~ <Damage skill="T" constants={Constants.T.max_second_damage} {...props} />
         の基本攻撃ダメージを与えます。<br />
         スキルのレベルに応じてリロードの時間が短縮されます。<br />

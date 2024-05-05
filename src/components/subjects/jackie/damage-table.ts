@@ -26,7 +26,8 @@ function table(props: {weaponType?: WeaponTypeID}): DamageTable {
             [
                 {label: "R2最小値", skill: "R", damage: Constants.R.finish_damage},
                 {label: "R2最大値", skill: "R", damage: Constants.R.finish_damage, multiplier: Constants.R.finish_multiplier_max * 100}
-            ]
+            ],
+            [{label: "T出血固定ダメージ", skill: "T", damage: Constants.T.bleeding_damage, type: "true"}]
         ]   
     }   
     }

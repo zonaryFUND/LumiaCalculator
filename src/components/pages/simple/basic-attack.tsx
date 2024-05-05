@@ -22,7 +22,7 @@ const basicAttack: React.FC<Props> = props => {
     return (
         <tbody>
             {
-                props.table.basicAttack.includes("standard") || props.table.basicAttack.find(t => (t as any).type == "basic") ?
+                props.table.basicAttack.includes("standard") || props.table.basicAttack.find(t => (t as any).type == "basic" && (t as any).disableCritical != true) ?
                 <tr className={table.separator}><td>基本攻撃</td><td>基礎値</td><td>致命打</td><td>期待値</td></tr> :
                 <tr className={table.separator}><td colSpan={3}>基本攻撃</td><td>基礎値</td></tr>
             }
@@ -66,7 +66,7 @@ const basicAttack: React.FC<Props> = props => {
                             })
                         );
                         const multiplier = Array.isArray(def.multiplier) ? def.multiplier[level] : def.multiplier
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multiplier={multiplier} />
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multiplier={multiplier} disableCritical={def.disableCritical} />
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }
