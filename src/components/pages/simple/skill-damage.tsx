@@ -29,6 +29,9 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
             if (key == "criticalChance") {
                 return [<>({prev})</>];
             }
+            if (key == "max") {
+                return [<>({prev}, </>];
+            }
             if (prev.length > 0 && key != "basicAttackAmp") {
                 return prev.concat(<> + </>);
             }
@@ -60,6 +63,8 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
                 return p.concat(<><span>スタック</span>{stack} x {levelValue(value, skillLevel)}</>);
             case "additionalAttackSpeed":
                 return p.concat(<><span>追加攻撃速度(％)</span>{status.attackSpeed.multiplier.toString()} x {levelValue(value, skillLevel)}％</>);
+            case "max":
+                return p.concat(<>最大値{levelValue(value, skillLevel)})</>);
         }
         return prev;
     }, [] as React.ReactElement[]);
@@ -154,7 +159,7 @@ const skillDamage: React.FC<Props> = props => {
         <>
             <tr onClick={value.isZero() && !objectAdditional ? undefined : toggleExpand}>
                 <td colSpan={3}>{props.label}</td>
-                <td className={valueClass}>{value.isZero() && additional ? null : value.toString()}{kenneth}{additional}{percent}</td>
+                <td className={valueClass}>{value.isZero() && additional ? null : value.floor().toString()}{kenneth}{additional}{percent}</td>
             </tr>
             { expand ? <tr className={table.expand}>{expandDescription}</tr> : null }
         </>
