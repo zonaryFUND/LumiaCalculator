@@ -8,6 +8,7 @@ export type SkillDamageProps = {
     skill: "Q" | "W" | "E" | "R" | "T" | "D"
     damage: any
     type?: "heal" | "shield" | "ms" | "true" | "basic" | "critical" | "summoned" | "ratio" | "kenneth" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
+    disableCritical?: boolean
     multiplier?: number | number[]
     sidewinder?: number
 }
@@ -15,7 +16,7 @@ export type SkillDamageProps = {
 type PropsGenerator = (props: {status: Status, skillLevels?: SkillLevels, weaponType?: WeaponTypeID, weapon?: WeaponID, gauge?: number}) => DamageTable;
 
 export type DamageTable = {
-    basicAttack: (SkillDamageProps | "standard" | "disable-critical" | "aiden")[]
+    basicAttack: (SkillDamageProps | "standard" | "disable-critical" | "aiden" | "debimarl")[]
     skill: SkillDamageProps[][]
 }
 

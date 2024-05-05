@@ -1,6 +1,6 @@
 import * as React from "react";
 import Images from "@app/resources/image";
-import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps } from "../skills-standard";
+import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
 
 type Props = {
     src: string
@@ -35,6 +35,7 @@ export default function(props: SkillsStandardProps) {
             <li>
                 <TooltipImage src="T" />
             </li>
+            <WeaponSkill id={props.weaponType} />
             <li><SkillLevelConfigurator skill="Q" /></li>
             <li><SkillLevelConfigurator skill="W" /></li>
             <li><SkillLevelConfigurator skill="E" /></li>

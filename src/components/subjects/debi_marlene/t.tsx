@@ -8,7 +8,7 @@ import style from "components/tooltip/tooltip.module.styl";
 const AA: React.FC<SubjectSkillProps> = props => {
     const ratio = Constants.T.basic_attack_damage;
     if (props.showEquation) {
-        return <span className={style.emphasis}>{ratio}％</span>
+        return <span className={style.emphasis}>攻撃力の{ratio}％</span>
     } else {
         return <span className={style.emphasis}>{props.status.attackPower.percent(ratio).toString()}</span>
     }

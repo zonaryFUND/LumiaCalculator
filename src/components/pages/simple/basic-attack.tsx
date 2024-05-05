@@ -8,6 +8,8 @@ import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "components/subje
 import SkillDamage from "./skill-damage";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import Hypercharge from "./aiden-hypercharge";
+import attackPower from "components/subject/status-table/attack-power";
+import DebiMarlConstants from "components/subjects/debi_marlene/constants.json";
 
 type Props = {
     status: Status
@@ -51,6 +53,8 @@ const basicAttack: React.FC<Props> = props => {
                                     basicAttackAmp: 100
                                 }}
                             />
+                        } else if (def == "debimarl") {
+                            return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={true} config={{attack: DebiMarlConstants.T.basic_attack_damage}} />;
                         } else {
                             return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={def == "disable-critical"} />
                         }

@@ -58,6 +58,8 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
                 return p.concat(<><span>{summonedName}攻撃力</span>{status.summonedStatus?.attackPower.toString()} x {levelValue(value, skillLevel)}％</>);
             case "stack":
                 return p.concat(<><span>スタック</span>{stack} x {levelValue(value, skillLevel)}</>);
+            case "additionalAttackSpeed":
+                return p.concat(<><span>追加攻撃速度(％)</span>{status.attackSpeed.multiplier.toString()} x {levelValue(value, skillLevel)}％</>);
         }
         return prev;
     }, [] as React.ReactElement[]);

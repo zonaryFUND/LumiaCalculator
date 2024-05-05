@@ -17,7 +17,6 @@ const table: DamageTable = {
         [{label: "E対象追加ダメージ", skill: "E", damage: Constants.E.damage}],
         [{label: "R", skill: "R", damage: Constants.R.damage}],
         [{label: "Tシールド", skill: "T", damage: Constants.T.shield, type: "shield"}]
-
     ]   
 }
 
