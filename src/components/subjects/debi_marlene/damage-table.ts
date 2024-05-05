@@ -1,10 +1,7 @@
-import { WeaponTypeID } from "@app/entity/equipment";
-import { DamageTable, SkillDamageProps } from "../damage-table";
+import { DamageTable } from "../damage-table";
 import Constants from "./constants.json";
 import { Status } from "components/subject/status";
-import { skillDamageSimple } from "../skill-damage";
 import { SkillLevels } from "components/subject/use-subject-config";
-import config from "webpack.config";
 
 const marlW = {
     base: Constants.MarleneW.projectiles.base,
