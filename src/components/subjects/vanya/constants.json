@@ -72,7 +72,7 @@
         },
         "shield_decline": {
             "base": 50,
-            "level": 2
+            "perLevel": 2
         },
         "max_shield": {
             "base": [70,135,200],
