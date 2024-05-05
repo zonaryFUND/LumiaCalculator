@@ -9,6 +9,10 @@ const config: webpack.Configuration = {
         bundle: "./src/index.tsx"
     },
     target: "web",
+    output: {
+        filename: "[name]-[hash].js",
+        assetModuleFilename: data => data.filename!.slice(3)
+    },
     module: {
         rules: [
             {
@@ -17,13 +21,8 @@ const config: webpack.Configuration = {
                 use: "ts-loader"
             },
             {
-                test: /\.(png|svg|mp3)$/,
-                loader: "file-loader",
-                options: {
-                    name: "[path][name].[ext]",
-                    outputPath: "assets/",
-                    esModule: false
-                }
+                test: /\.(png|svg|mp3)$/i,
+                type: "asset/resource"
             },
             {
                 test: /\.styl$/,
