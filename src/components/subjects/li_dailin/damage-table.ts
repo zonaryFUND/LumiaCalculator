@@ -6,7 +6,7 @@ const table: DamageTable = {
     basicAttack: [
         "standard",
         {label: "W直後基本攻撃(酔い最大)", skill: "W", damage: {attack: 100, basicAttackAmp: 100}, type: "basic", multiplier: 100 + Constants.W.basic_attack_amp * 100},
-        {label: "T追加ダメージ", skill: "T", damage: Constants.T.damage, type: "basic"}
+        {label: "T基本攻撃2撃目", skill: "T", damage: Constants.T.damage, type: "basic"}
     ],
     skill: [
         [

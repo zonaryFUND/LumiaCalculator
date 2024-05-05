@@ -8,7 +8,7 @@ import style from "components/tooltip/tooltip.module.styl";
 const t: React.FC<SubjectSkillProps> = props => {
     const shield = (() => {
         const duration = Constants.T.shield.duration;
-        const base = Constants.T.shield.effect.perStack;
+        const base = Constants.T.shield.effect.consumedStack;
         const attack = Constants.T.shield.effect.attack;
         if (props.showEquation) {
             return <>{duration}秒間<span className={style.emphasis}>消耗した1スタックあたり{base}</span><span className={style.attack}>(+攻撃力の{attack}％)</span></>
