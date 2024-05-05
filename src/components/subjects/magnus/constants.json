@@ -18,7 +18,7 @@
             "base": [30,35,40,45,50],
             "additionalAttack": 50,
             "amp": 20,
-            "defence": 15
+            "defense": 15
         },
         "count": [8,8,10,10,12],
         "cooldown_reduction": 0.75,
