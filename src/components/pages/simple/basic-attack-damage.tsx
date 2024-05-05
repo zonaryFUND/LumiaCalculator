@@ -86,6 +86,11 @@ const basicAttackDamage: React.FC<Props> = props => {
                                 </td> 
                                 :
                                 <td>
+                                    {
+                                        props.config?.base ?
+                                        <>{props.config.base.toString()} + </> :
+                                        null
+                                    }
                                     <span>攻撃力</span>{attackPower.toString()}
                                     {
                                         props.config?.attack ?

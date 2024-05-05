@@ -3,13 +3,14 @@ import * as React from "react";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { DamageTable } from "components/subjects/damage-table";
-import { WeaponTypeID, weaponBaseStatus } from "@app/entity/equipment";
+import { WeaponTypeID } from "@app/entity/equipment";
 import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "components/subject/standard-values";
 import SkillDamage from "./skill-damage";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import Hypercharge from "./aiden-hypercharge";
-import attackPower from "components/subject/status-table/attack-power";
 import DebiMarlConstants from "components/subjects/debi_marlene/constants.json";
+import Rio from "./rio";
+
 
 type Props = {
     status: Status
@@ -55,6 +56,8 @@ const basicAttack: React.FC<Props> = props => {
                             />
                         } else if (def == "debimarl") {
                             return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={true} config={{attack: DebiMarlConstants.T.basic_attack_damage}} />;
+                        } else if (def == "rio") {
+                            return <Rio status={props.status} config={props.config} />;
                         } else {
                             return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={def == "disable-critical"} />
                         }

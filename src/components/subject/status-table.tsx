@@ -171,7 +171,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                         </tbody>
                         <tbody>
                             <tr className={table.separator}onClick={toggle.others[1]}><td colSpan={2}><div><p>その他</p>{toggle.others[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><HandFist />行動妨害体制</>} value={status.tenacity} percent hidden={toggle.others[0]} />
+                            <Column name={<><HandFist />行動妨害耐性</>} value={status.tenacity} percent hidden={toggle.others[0]} />
                             <Column name={<><SneakerMove />移動速度</>} value={status.movementSpeed} hidden={toggle.others[0]}>
                                 <MovementSpeed {...displayed.movementSpeed} movementMastery={props.movementMastery} />
                             </Column>

@@ -16,7 +16,7 @@ export type SkillDamageProps = {
 type PropsGenerator = (props: {status: Status, skillLevels?: SkillLevels, weaponType?: WeaponTypeID, weapon?: WeaponID, gauge?: number}) => DamageTable;
 
 export type DamageTable = {
-    basicAttack: (SkillDamageProps | "standard" | "disable-critical" | "aiden" | "debimarl")[]
+    basicAttack: (SkillDamageProps | "standard" | "disable-critical" | "aiden" | "debimarl" | "rio")[]
     skill: SkillDamageProps[][]
 }
 
