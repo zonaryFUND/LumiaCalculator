@@ -103,7 +103,7 @@ export const Spears = [
 export type SpearID = typeof Spears[number]
 
 export const Nunchakus = [
-    "vibro_nunchaku", "blue_3", "cerberus", "crimson_red_lovers", "hydra", "hydra_crimson", "hydra_dawn"
+    "the_smiting_dragon", "vibro_nunchaku", "blue_3", "cerberus", "crimson_red_lovers", "hydra", "hydra_crimson", "hydra_dawn"
 ]
 export type NunchakuID = typeof Nunchakus[number]
 
