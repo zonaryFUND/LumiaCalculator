@@ -61,6 +61,8 @@
         "cooldown": [90,75,60]
     },
     "T": {
-        "defense_damage": [25,30,35]
+        "damage": {
+            "defense": [25,30,35]
+        }
     }
 }

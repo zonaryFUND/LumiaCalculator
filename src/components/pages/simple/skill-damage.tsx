@@ -49,6 +49,8 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
                 return p.concat(<><span>追加体力</span>{status.additionalMaxHP.toString()} x {levelValue(value, skillLevel)}％</>);
             case "maxHP":
                 return p.concat(<><span>最大体力</span>{status.maxHP.toString()} x {levelValue(value, skillLevel)}％</>);
+            case "defense":
+                return p.concat(<><span>防御力</span>{status.defense.toString()} x {levelValue(value, skillLevel)}％</>);
             case "amp":
                 return p.concat(<><span>スキル増幅</span>{status.skillAmp.toString()} x {levelValue(value, skillLevel)}％</>);
             case "perLevel":

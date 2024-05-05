@@ -13,7 +13,7 @@ export function skillLevel(skill: "Q" | "W" | "E" | "R" | "T" | "D", config: Sub
 }
 
 export function skillDamageSimple(status: Status, config: SubjectConfig, dictionary: any): Decimal {
-    return ["base", "perLevel", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "additionalMaxHP", "criticalChance", "summoned_attack", "stack", "additionalAttackSpeed", "max"].reduce((prev, key) => {
+    return ["base", "perLevel", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "defense", "additionalMaxHP", "criticalChance", "summoned_attack", "stack", "additionalAttackSpeed", "max"].reduce((prev, key) => {
         if (dictionary[key] == undefined) return prev;
         const skillValue = new Decimal(dictionary[key]);
 
@@ -33,6 +33,8 @@ export function skillDamageSimple(status: Status, config: SubjectConfig, diction
             case "maxHP":
                 const maxHP = status.baseMaxHP.add(status.additionalMaxHP);
                 return prev.add(maxHP.percent(skillValue));
+            case "defense":
+                return prev.add(status.defense.percent(skillValue));
             case "additionalMaxHP":
                 return prev.add(status.additionalMaxHP.percent(skillValue));
             case "criticalChance":
