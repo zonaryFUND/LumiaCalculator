@@ -6,7 +6,7 @@ type Props = {
     perLevel?: Decimal
     ratio?: Decimal
     level: number
-    baseValue: Decimal
+    baseValue?: Decimal
 }
 
 const additional: React.FC<Props> = props => {
@@ -29,7 +29,7 @@ const additional: React.FC<Props> = props => {
         return (
             <>
                 {props.ratio.toString()}％
-                <> = {props.baseValue.percent(props.ratio).toString()}</>
+                <> = {props.baseValue?.percent(props.ratio).toString()}</>
             </> 
         );
     } else {

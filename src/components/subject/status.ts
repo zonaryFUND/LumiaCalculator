@@ -11,6 +11,7 @@ export type StatusProps = {
 
     baseAttackPower: Decimal
     baseAdditionalAttackPower: Decimal
+    attackPowerRatio?: Decimal
     attackSpeed: {
         base: Decimal
         multiplier: Decimal
@@ -72,12 +73,12 @@ export type Status = StatusProps & {
 export function from(props: StatusProps, config: SubjectConfig, withoutOverride?: StatusProps): Status {
     const comparedAttack = props.baseAttackPower.add(props.baseAdditionalAttackPower);
     const comparedAmp = props.baseSkillAmp.times(props.skillAmpMultiplier.add(100).dividedBy(100));
-    const addAdaptiveToAttack = props.baseAttackPower.greaterThan(comparedAmp);
+    const addAdaptiveToAttack = comparedAttack.greaterThan(comparedAmp);
     
     const subjectStatus = {
         ...props,
         maxHP: props.baseMaxHP.add(props.additionalMaxHP),
-        attackPower: addAdaptiveToAttack ? comparedAttack.add(props.adaptiveStatus) : comparedAttack,
+        attackPower: (addAdaptiveToAttack ? comparedAttack.add(props.adaptiveStatus) : comparedAttack).addPercent(props.attackPowerRatio ?? 0),
         additionalAttackPower: addAdaptiveToAttack ? 
             props.baseAdditionalAttackPower.add(props.adaptiveStatus) :
             props.baseAdditionalAttackPower,

@@ -47,6 +47,8 @@ export type DisplayedStatusValues = {
     }
 
     skillAmp: {
+        constant: Decimal
+        perLevel: Decimal
         equipmentRatio: Decimal
         perMastery?: Decimal
     }
@@ -139,7 +141,8 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
     })();
 
     const basicAttackAmp = perLevel.basicAttackAmp.times(level).add(masteryFactor?.type == "basic_attack_amp" ? masteryFactor.value.times(weaponMastery) : 0);
-    const baseSkillAmp = perLevel.skillAmp.times(level).add(sumDecimalEquipmentStatus("skillAmplification", inSlot));
+    const constantSkillAmp = sumDecimalEquipmentStatus("skillAmplification", inSlot);
+    const baseSkillAmp = perLevel.skillAmp.times(level).add(constantSkillAmp);
     const equipmentRatio = maxDecimalEquipmentStatus("ampRatio", inSlot);
     const skillAmpMultiplier = equipmentRatio
         .add(masteryFactor?.type == "skill_amp" ? masteryFactor.value.times(weaponMastery) : 0).round();
@@ -242,6 +245,8 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
         },
         attackSpeed: displayedAttackSpeed,
         skillAmp: {
+            constant: constantSkillAmp,
+            perLevel: perLevel.skillAmp,
             equipmentRatio,
             perMastery: masteryFactor?.type == "skill_amp" ? masteryFactor.value : undefined
         },

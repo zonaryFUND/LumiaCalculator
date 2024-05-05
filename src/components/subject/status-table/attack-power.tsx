@@ -11,6 +11,7 @@ type Props = DisplayedValues & MasteryValues & {
     level: number
     mastery: number
     adaptive?: Decimal
+    ratio?: Decimal
 }
 
 const attackPower: React.FC<Props> = props => {
@@ -28,6 +29,11 @@ const attackPower: React.FC<Props> = props => {
             {
                 props.adaptive?.greaterThan(0) ?
                 <tr><td>適応型能力値</td><td>{props.adaptive.toString()}</td></tr> : 
+                null
+            }
+            {
+                props.ratio?.greaterThan(0) ?
+                <tr><td>積算補正値</td><td>{props.ratio.toString()}％</td></tr> : 
                 null
             }
         </InnerTable>

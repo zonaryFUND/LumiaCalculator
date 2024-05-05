@@ -2,9 +2,12 @@ import * as React from "react";
 import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
 import Mastery from "./mastery";
+import Additional from "./additional-value";
 
 type Props = {
-    base: Decimal
+    constant: Decimal
+    perLevel: Decimal
+    level: number
     perMastery?: Decimal
     mastery: number
     equipmentRatio?: Decimal
@@ -14,7 +17,7 @@ type Props = {
 const skillAmp: React.FC<Props> = props => {
     return (
         <InnerTable>
-            <tr><td>追加値</td><td>{props.base.toString()}</td></tr>
+            <tr><td>追加値</td><td><Additional {...props} /></td></tr>
             {
                 props.adaptive?.greaterThan(0) ?
                 <tr><td>適応型能力値</td><td><span>{props.adaptive.toString()} x 2</span> = {props.adaptive.times(2).toString()}</td></tr> : 

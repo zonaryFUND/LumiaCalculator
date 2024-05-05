@@ -136,7 +136,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                         <tbody>
                             <tr className={table.separator} onClick={toggle.basicAttack[1]}><td colSpan={2}><div><p>基本攻撃</p>{toggle.basicAttack[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><Sword />攻撃力</>} value={status.attackPower} hidden={toggle.basicAttack[0]}>
-                                <AttackPower {...displayed.attackPower} level={props.level} mastery={props.weaponMastery} adaptive={status.addAdaptiveTo == "attack" ? status.adaptiveStatus : undefined} />
+                                <AttackPower {...displayed.attackPower} level={props.level} mastery={props.weaponMastery} adaptive={status.addAdaptiveTo == "attack" ? status.adaptiveStatus : undefined} ratio={status.attackPowerRatio} />
                             </Column>
                             <Column name={<>{basicAttackAmp}基本攻撃増幅</>} value={status.basicAttackAmp} percent prohibitExpand={status.basicAttackAmp.isZero()} hidden={toggle.basicAttack[0]}>
                                 <BasicAttackAmp {...displayed.basicAttackAmp} level={props.level} mastery={props.weaponMastery} />
@@ -150,7 +150,7 @@ const status: React.FC<SubjectConfig & {status: [Status, DisplayedStatusValues]}
                         <tbody>
                             <tr className={table.separator}><td colSpan={2} onClick={toggle.skill[1]}><div><p>スキル</p>{toggle.skill[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><ArrowFatLinesUp weight="fill" />スキル増幅</>} value={status.skillAmp} hidden={toggle.skill[0]}>
-                                <SkillAmp base={status.baseSkillAmp} perMastery={displayed.skillAmp.perMastery} mastery={props.weaponMastery} adaptive={status.addAdaptiveTo == "amp" ? status.adaptiveStatus : undefined} equipmentRatio={displayed.skillAmp.equipmentRatio} />
+                                <SkillAmp constant={displayed.skillAmp.constant} perLevel={displayed.skillAmp.perLevel} level={props.level} perMastery={displayed.skillAmp.perMastery} mastery={props.weaponMastery} adaptive={status.addAdaptiveTo == "amp" ? status.adaptiveStatus : undefined} equipmentRatio={displayed.skillAmp.equipmentRatio} />
                             </Column>
                             <Column name={<><Hourglass />クールダウン減少</>} value={status.cooldownReduction} percent prohibitExpand={status.cdrMax.lessThanOrEqualTo(BaseCooldownCap)} hidden={toggle.skill[0]}>
                                 <InnerTable>

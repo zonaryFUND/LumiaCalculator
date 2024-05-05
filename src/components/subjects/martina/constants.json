@@ -106,6 +106,7 @@
         "cooldown": [30,20,1]
     },
     "R2": {
+        "count": 8,
         "defense_reduction": 15,
         "duration": 1.5,
         "first_outer_damage": {
