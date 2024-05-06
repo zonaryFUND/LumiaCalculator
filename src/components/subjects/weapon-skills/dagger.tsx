@@ -17,7 +17,7 @@ const dagger: React.FC<SubjectSkillProps> = props => {
             <br />
             <span className={style.emphasis}>短剣</span><br />
             指定した敵の後ろに移動して<Damage skill="D" constants={Constants.dagger.dagger.damage} {...props} />
-            のスキルダメージと、対象の現在体力{Constants.dagger.dagger.static_damage}％だけの固定ダメージを与え、
+            のスキルダメージと、対象の現在体力{Constants.dagger.dagger.true_damage.targetHP}％だけの固定ダメージを与え、
             {Constants.dagger.dagger.slow.duration}秒間移動速度を{Constants.dagger.dagger.slow.effect[level]}％減少させます。
         </>
     );

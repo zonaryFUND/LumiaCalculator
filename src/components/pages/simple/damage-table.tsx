@@ -2,7 +2,7 @@ import { Status } from "components/subject/status";
 import * as React from "react";
 import BasicAttack from "components/pages/simple/basic-attack";
 import style from "./damage-table.module.styl";
-import { SubjectDamageTable } from "components/subjects/damage-table";
+import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import SkillDamage from "./skill-damage";
 import BasicAttackDamage from "./basic-attack-damage";
@@ -37,6 +37,11 @@ const damageTable: React.FC<Props> = props => {
         return SummonedStatus[props.config.subject].name("jp");
     }, [props.config.subject]);
     const shownStatus = React.useState<string | undefined>("subject");
+
+    const weaponSkill = React.useMemo(() => {
+        if (props.weaponType == undefined) return null;
+        return WeaponSkillDamageTable[props.weaponType];
+    }, [props.weaponType]);
 
     return (
         <section className={style.damage}>
@@ -77,6 +82,11 @@ const damageTable: React.FC<Props> = props => {
                     </tbody>
                     <tbody>
                         <tr className={table.separator}><td colSpan={3}>武器スキル</td><td>ダメージ / 効果量</td></tr>
+                        {
+                            weaponSkill?.map(def => (
+                                <SkillDamage key={def.label} status={props.status} config={props.config} {...def} summonedName={summonedName} />
+                            ))
+                        }
                     </tbody>
                 </table>
             </div>

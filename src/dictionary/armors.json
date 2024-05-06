@@ -933,7 +933,7 @@
 		"criticalChance": "33",
 		"movementSpeed": "0.25"
 	},
-	"mirage_lace_ups": {
+	"mirage_lace-ups": {
 		"type": "leg",
 		"tier": "legendary",
 		"attackPower": "19",

@@ -26,3 +26,11 @@ export const SubjectDamageTable = context.keys().reduce((skills: any, path) => {
     skills[key] = context(path).default;
     return skills;
 }, {}) as {[id: string]: (DamageTable | PropsGenerator)}
+
+const weaponSkillContext = require.context("./", true, /\.\/weapon-skills\/damage-table\/.*\.ts/);
+export const WeaponSkillDamageTable = weaponSkillContext.keys().reduce((skills: any, path) => {
+    const pathComponents = path.split("/");
+    const name = pathComponents[pathComponents.length - 1];
+    skills[name.substring(0, name.length - 3)] = weaponSkillContext(path).default;
+    return skills;
+}, {}) as {[id: string]: SkillDamageProps[]}
