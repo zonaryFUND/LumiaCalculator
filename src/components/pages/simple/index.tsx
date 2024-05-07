@@ -13,12 +13,16 @@ import { Tooltip } from "react-tooltip";
 import ItemTooltip from "components/tooltip/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
-import { useToggle } from "react-use";
+import { useToggle, useWindowSize } from "react-use";
 import { WeaponTypeID, equipmentStatus } from "@app/entity/equipment";
 import Switch from "components/common/switch";
+import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
+import TabSelector from "./tab-selector";
 
 const index: React.FC = props => {
+    const { width } = useWindowSize();
+
     const [buildName, setBuildName] = React.useState<string | null>(null)
     const {
         subject: [subject, setSubject],
@@ -42,14 +46,16 @@ const index: React.FC = props => {
         return equipmentStatus(equipment.weapon).type;
     }, [equipment.weapon])
 
-    const onEquationInputChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
-        damageInFormula[1](e.currentTarget.checked);
-    }, []);
+    const parentRef = React.useRef<HTMLDivElement>(null);
+    const [collapse, setCollapse] = React.useState(false);
+    React.useEffect(() => {
+        setCollapse(width < 996);
+    }, [width]);
 
     return (
-        <main className={style.simple}>
-            <div className={style.parent}>
-                <header className={style.header}>
+        <main className={style.simple} style={{paddingLeft: width > 1400 ? 266 : 80}}>
+            <div className={styles(style.parent, collapse ? style.collapse : undefined)} ref={parentRef}>
+                <header className={style.header} style={collapse ? {flexDirection: "column"} : undefined}>
                     <div className={style.storage}>
                         <h1>保存名：{buildName ?? "-----"}</h1>
                         <div>
@@ -59,10 +65,10 @@ const index: React.FC = props => {
                     </div>
                     <div className={styles(style.formula, damageInFormula[0] ? style.on : undefined)}>
                         <Switch {...damageInFormula} />
-                        <p>ダメージを計算式で表記</p>
+                        <p>ツールチップ詳細表記</p>
                     </div>
                 </header>
-                <div className={style.base}>
+                <CollapseTab collapse={collapse}>
                     <Subject 
                         subject={[subject, setSubject]} 
                         level={[level, setLevel]}
@@ -73,24 +79,28 @@ const index: React.FC = props => {
                         equipment={[equipment, setEquipment]}
                         status={status}
                         gauge={[gauge, setGauge]}
+                        hideHeader={collapse}
                     />
-                    <BuffDebuffs />
+                    <BuffDebuffs hideHeader={collapse} />
                     <Damage
                         config={subjectConfig}
                         status={status[0]}
                         setSkillLevels={setSkillLevels}
                         weaponType={weaponTypeID as (WeaponTypeID | undefined)}
+                        hideHeader={collapse}
                     />
-                </div>
+                </CollapseTab>
             </div>
             <Tooltip 
                 id="weapon"
                 className={style.tooltip}
+                style={{zIndex: 1000}}
                 render={({ content, activeAnchor }) => content ? <ItemTooltip itemID={content}/> : null}
             />
             <Tooltip 
                 id="subject-skill"
                 className={`${style.tooltip}`}
+                style={{zIndex: 1000}}
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
                     const [subject, skill] = content?.split("-");
@@ -108,6 +118,7 @@ const index: React.FC = props => {
             <Tooltip 
                 id="weapon-skill"
                 className={`${style.tooltip}`}
+                style={{zIndex: 1000}}
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
                     return (

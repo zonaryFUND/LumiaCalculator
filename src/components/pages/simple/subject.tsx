@@ -18,6 +18,7 @@ type Props = {
     equipment: StateProps<Equipment>
     status: [StatusType, DisplayedStatusValues]
     gauge: StateProps<number>
+    hideHeader?: boolean
 }
 
 function unpackConfig(props: Props): SubjectConfig {
@@ -31,14 +32,19 @@ function unpackConfig(props: Props): SubjectConfig {
 const subject: React.FC<Props> = props => {
     return (
         <div className={index.row}>
-            <header>
-                <h1>実験体</h1>
-            </header>
-            <Config {...props} />
-            <Status 
-                {...unpackConfig(props)}
-                status={props.status}
-            />
+            {
+                props.hideHeader ? null :
+                <header>
+                    <h1>実験体</h1>
+                </header>
+            }
+            <div className={index.content}>
+                <Config {...props} />
+                <Status 
+                    {...unpackConfig(props)}
+                    status={props.status}
+                />
+            </div>
         </div>
     )
 };

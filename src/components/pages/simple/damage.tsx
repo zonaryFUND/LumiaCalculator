@@ -16,6 +16,7 @@ type Props = {
     config: SubjectConfig
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
     weaponType?: WeaponTypeID
+    hideHeader?: boolean
 }
 
 const damages: React.FC<Props> = props => {
@@ -42,9 +43,12 @@ const damages: React.FC<Props> = props => {
 
     return (
         <div className={styles(index.row, style.damage)}>
-            <header>
-                <h1>ダメージ</h1>
-            </header>
+            {
+                props.hideHeader ? null :
+                <header>
+                    <h1>ダメージ</h1>
+                </header>
+            }
             <section className={style.skill}>
                 <h3>スキル</h3>
                 {subjectSkills}

@@ -10,6 +10,8 @@ import { SubjectConfig } from "components/subject/use-subject-config";
 import Hypercharge from "./aiden-hypercharge";
 import DebiMarlConstants from "components/subjects/debi_marlene/constants.json";
 import Rio from "./rio";
+import { styles } from "@app/util/style";
+import style from "./basic-attack.module.styl";
 
 
 type Props = {
@@ -24,7 +26,7 @@ const basicAttack: React.FC<Props> = props => {
         <tbody>
             {
                 props.table.basicAttack.includes("standard") || props.table.basicAttack.find(t => (t as any).type == "basic" && (t as any).disableCritical != true) ?
-                <tr className={table.separator}><td>基本攻撃</td><td>基礎値</td><td>致命打</td><td>期待値</td></tr> :
+                <tr className={styles(table.separator)}><td>基本攻撃</td><td>基礎値</td><td>致命打</td><td>期待値</td></tr> :
                 <tr className={table.separator}><td colSpan={3}>基本攻撃</td><td>基礎値</td></tr>
             }
             {

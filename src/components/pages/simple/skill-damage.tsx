@@ -160,8 +160,8 @@ const skillDamage: React.FC<Props> = props => {
     return (
         <>
             <tr onClick={value.isZero() && !objectAdditional ? undefined : toggleExpand}>
-                <td colSpan={3}>{props.label}</td>
-                <td className={valueClass}>{value.isZero() && additional ? null : value.floor().toString()}{kenneth}{additional}{percent}</td>
+                <td>{props.label}</td>
+                <td colSpan={3} className={valueClass}>{value.isZero() && additional ? null : value.floor().toString()}{kenneth}{additional}{percent}</td>
             </tr>
             { expand ? <tr className={table.expand}>{expandDescription}</tr> : null }
         </>

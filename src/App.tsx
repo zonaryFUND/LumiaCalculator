@@ -4,6 +4,8 @@ import Simple from "components/pages/simple";
 import { Tooltip } from "react-tooltip";
 import ItemTooltip from 'components/tooltip/item-tooltip';
 import SubjectSkillTooltip from 'components/tooltip/subject-skill/subject-skill-tooltip';
+import Navigation from 'components/pages/navigation/navigation';
+import style from "./App.styl";
 
 interface AppProps {}
 
@@ -23,6 +25,7 @@ function App({}: AppProps) {
   // Return the App component.
   return (
     <>
+      <Navigation />
       <Simple />
     </>
   );

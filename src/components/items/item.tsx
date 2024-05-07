@@ -42,7 +42,7 @@ const item: React.FC<Props> = props => {
     return (
         <div
             className={styles(className, style.base)} 
-            data-tooltip-id="weapon" 
+            data-tooltip-id="weapon"
             data-tooltip-content={props.itemID}
         >
             <img 

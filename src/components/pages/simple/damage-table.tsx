@@ -50,7 +50,7 @@ const damageTable: React.FC<Props> = props => {
                 <table>
                     <BasicAttack status={props.status} config={props.config} table={definition!} weaponType={props.weaponType} />
                     <tbody>
-                        <tr className={table.separator}><td colSpan={3}>実験体スキル</td><td>ダメージ / 効果量</td></tr>
+                        <tr className={table.separator}><td>実験体スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {
                             definition?.skill.map((array, index) => 
                                 <React.Fragment key={index}>
@@ -81,7 +81,7 @@ const damageTable: React.FC<Props> = props => {
                     }
                     </tbody>
                     <tbody>
-                        <tr className={table.separator}><td colSpan={3}>武器スキル</td><td>ダメージ / 効果量</td></tr>
+                        <tr className={table.separator}><td>武器スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {
                             weaponSkill?.map(def => (
                                 <SkillDamage key={def.label} status={props.status} config={props.config} {...def} summonedName={summonedName} />

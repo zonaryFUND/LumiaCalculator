@@ -1,0 +1,67 @@
+.nav
+    top: 0
+    left: 0
+    width: 250px
+    height: 100vh
+    position: fixed
+    color: white
+    background: rgb(20,20,43)
+    padding: 40px 8px 0 12px
+    white-space: nowrap
+    transition: width 0.25s ease
+    z-index: 10
+    box-shadow: 0 0 15px rgba(black, 0.5)
+    overflow: hidden
+
+    h1
+        font-size: 20px
+
+    h2
+        font-size: 15px
+        overflow: hidden
+
+    p
+        font-size: 10px
+
+    hr
+        margin: 20px 0
+
+    a
+        color: rgb(200,200,255)
+
+    h1,.acknowledgements
+        transition: opacity 0.25s ease
+    
+
+.button
+    display: flex
+    flex: 1 100%
+    cursor: pointer
+    align-items: center
+    gap: 16px
+    height: 50px
+    transition: background 0.25s ease
+    color: rgb(200,200,200)
+
+    svg
+        min-width: 40px
+
+.button:hover
+    background: rgba(white, 0.2)
+
+.acknowledgements
+    font-size: 14px
+    overflow: hidden
+    white-space: pre-wrap
+    width: 230px
+
+.small
+    width: 64px
+    h1,.acknowledgements
+        opacity: 0
+        
+.small:hover
+    width: 250px
+    h1,.acknowledgements
+        opacity: 1
+    

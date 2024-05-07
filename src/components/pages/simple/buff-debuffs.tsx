@@ -4,15 +4,18 @@ import { StateProps } from "util/state";
 import index from "./index.module.styl";
 
 type Props = {
-    subject: StateProps<SubjectID>
+    hideHeader?: boolean
 }
 
-const buffDebuffs: React.FC = props => {
+const buffDebuffs: React.FC<Props> = props => {
     return (
         <div className={index.row}>
-            <header>
-                <h1>バフ・デバフ</h1>
-            </header>
+            {
+                props.hideHeader ? null :
+                <header>
+                    <h1>バフ・デバフ</h1>
+                </header>
+            }
             <hr />
         </div>
     )
