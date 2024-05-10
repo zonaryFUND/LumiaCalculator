@@ -22,7 +22,7 @@
     "W": {
         "cooldown_reduction": 1.5,
         "hankyu_damage": {
-            "base": [25,50,75,100,125],
+            "base": [50,70,90,110,130],
             "attack": 90
         },
         "hankyu_slow": {
@@ -31,11 +31,11 @@
         },
         "multiple_hit": 20,
         "daikyu_damage": {
-            "base": [50,70,90,110,130],
+            "base": [90,100,110,120,130],
             "attack": 80
         },
         "daikyu_behind_damage": {
-            "base": [25,35,45,55,65],
+            "base": [45,50,55,60,65],
             "attack": 40
         },
         "daikyu_slow": {

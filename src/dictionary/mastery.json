@@ -77,7 +77,7 @@
 		{
 			"weapon": "assault_rifle",
 			"type": "basic_attack_amp",
-			"value": 1.2,
+			"value": 1.4,
 			"attackSpeed": 3.5
 		},
 		{
@@ -141,7 +141,7 @@
 		{
 			"weapon": "throw",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.8,
 			"attackSpeed": 1.6
 		}
 	],
@@ -198,7 +198,7 @@
 			"weapon": "shuriken",
 			"type": "skill_amp",
 			"value": 4.5,
-			"attackSpeed": 2
+			"attackSpeed": 2.5
 		},
 		{
 			"weapon": "arcana",
@@ -236,7 +236,7 @@
 			"weapon": "dual_swords",
 			"type": "basic_attack_amp",
 			"value": 2.2,
-			"attackSpeed": 2.6
+			"attackSpeed": 3
 		},
 		{
 			"weapon": "rapier",
@@ -263,7 +263,7 @@
 		{
 			"weapon": "dual_swords",
 			"type": "skill_amp",
-			"value": 4.1,
+			"value": 4.4,
 			"attackSpeed": 3
 		}
 	],
@@ -271,7 +271,7 @@
 		{
 			"weapon": "shuriken",
 			"type": "basic_attack_amp",
-			"value": 1.6,
+			"value": 1.4,
 			"attackSpeed": 2.7
 		}
 	],
@@ -293,7 +293,7 @@
 		{
 			"weapon": "shuriken",
 			"type": "skill_amp",
-			"value": 3.8,
+			"value": 4.1,
 			"attackSpeed": 2
 		}
 	],
@@ -469,7 +469,7 @@
 		{
 			"weapon": "crossbow",
 			"type": "basic_attack_amp",
-			"value": 1.6,
+			"value": 1.4,
 			"attackSpeed": 3.8
 		}
 	],
@@ -485,7 +485,7 @@
 		{
 			"weapon": "guitar",
 			"type": "basic_attack_amp",
-			"value": 1.5,
+			"value": 1.7,
 			"attackSpeed": 3.1
 		}
 	],
@@ -501,7 +501,7 @@
 		{
 			"weapon": "sniper_rifle",
 			"type": "basic_attack_amp",
-			"value": 2,
+			"value": 1.8,
 			"attackSpeed": 2.7
 		}
 	],
@@ -717,7 +717,7 @@
 		{
 			"weapon": "dagger",
 			"type": "skill_amp",
-			"value": 4.2,
+			"value": 4,
 			"attackSpeed": 2.7
 		}
 	],

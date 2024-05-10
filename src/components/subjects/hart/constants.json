@@ -30,11 +30,11 @@
     "E": {
         "damage": {
             "base": [50,70,90,110,130],
-            "attack": 50
+            "attack": 60
         },
         "actoss_wall_count": 3,
         "sp_cost": 25,
-        "cooldown": [18,17,16,15,14]
+        "cooldown": [17,16,15,14,13]
     },
     "R": {
         "duration": 5,

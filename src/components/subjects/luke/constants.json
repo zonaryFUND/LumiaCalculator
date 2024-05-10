@@ -32,7 +32,7 @@
         "heal": 15,
         "max_heal": 40,
         "sp_cost": [20,35,50,65,80],
-        "cooldown": 8
+        "cooldown": 7
     },
     "E": {
         "damage": {

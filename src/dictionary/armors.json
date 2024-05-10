@@ -122,7 +122,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[22]",
 		"cooldownReduction": "15",
-		"defense": "33",
+		"defense": "35",
 		"movementSpeed": "0.08"
 	},
 	"battle_suit": {
@@ -130,14 +130,14 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[20]",
 		"cooldownReduction": "15",
-		"defense": "27",
+		"defense": "30",
 		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
 	"blazing_dress": {
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "hp[23]",
-		"defense": "30",
+		"defense": "28",
 		"vision": "1",
 		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":3.5},\"range\":{\"maxHP\":2.5}}]"
 	},
@@ -725,7 +725,7 @@
 	"nightmare_nails": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "80",
+		"skillAmplification": "78",
 		"cooldownReduction": "15",
 		"defense": "9",
 		"option": "healing_reduction_weak"
@@ -854,7 +854,7 @@
 	"cowboy_boots": {
 		"type": "leg",
 		"tier": "epic",
-		"attackPower": "10",
+		"attackPower": "12",
 		"cooldownReduction": "10",
 		"movementSpeed": "0.22"
 	},
@@ -936,7 +936,7 @@
 	"mirage_lace-ups": {
 		"type": "leg",
 		"tier": "legendary",
-		"attackPower": "19",
+		"attackPower": "21",
 		"cooldownReduction": "15",
 		"movementSpeed": "0.25"
 	},

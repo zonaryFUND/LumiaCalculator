@@ -8,19 +8,19 @@
             "blast_range": 1.5,
             "slow": {
                 "duration": 1,
-                "effect": 20
+                "effect": 25
             }
         },
         "r": {
             "slow": {
                 "duration": 1,
-                "effect": 20
+                "effect": 25
             }
         },
         "b": {
             "slow": {
                 "duration": 1,
-                "effect": 10
+                "effect": 15
             },
             "center_addition": {
                 "base": [60,90,120,150,180]
@@ -81,8 +81,8 @@
                 "effect": [10,13,16,19,22]
             },
             "damage": {
-                "base": [45,75,105,135,165],
-                "amp": 135
+                "base": [40,75,110,145,180],
+                "amp": 140
             }
         },
         "by": {

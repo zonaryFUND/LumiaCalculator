@@ -34,15 +34,15 @@
     },
     "R": {
         "first_damage": {
-            "base": [200,350,500],
+            "base": [250,400,550],
             "attack": 140
         },
         "second_damage": {
-            "base": [250,400,550],
+            "base": [300,450,600],
             "attack": 160
         },
         "third_damage": {
-            "base": [300,600,900],
+            "base": [400,700,1000],
             "attack": 200
         },
         "cooldown_return": 35,

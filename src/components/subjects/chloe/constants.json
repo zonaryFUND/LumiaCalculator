@@ -7,7 +7,7 @@
     "Q": {
         "damage": {
             "base": [70,90,110,130,150],
-            "summoned_attack": 90
+            "summoned_attack": 85
         },
         "slow": {
             "duration": 1.5,

@@ -58,7 +58,7 @@
     "T": {
         "basic_attack_damage": {
             "base": [20,50,80],
-            "amp": 40
+            "amp": 45
         },
         "max_stack": 4,
         "duration": 3,
