@@ -20,7 +20,7 @@ const skillAmp: React.FC<Props> = props => {
             <tr><td>追加値</td><td><Additional {...props} /></td></tr>
             {
                 props.adaptive?.greaterThan(0) ?
-                <tr><td>適応型能力値</td><td><span>{props.adaptive.toString()} x 2</span> = {props.adaptive.times(2).toString()}</td></tr> : 
+                <tr><td>適合型能力値</td><td><span>{props.adaptive.toString()} x 2</span> = {props.adaptive.times(2).toString()}</td></tr> : 
                 null
             }
             {

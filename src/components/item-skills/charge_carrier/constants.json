@@ -1,0 +1,12 @@
+{
+    "time_bound": 4,
+    "threshold": 3,
+    "duration": 2,
+    "movement_speed": {
+        "level": 1
+    },
+    "shield": {
+        "base": 150
+    },
+    "cooldown": 12
+}

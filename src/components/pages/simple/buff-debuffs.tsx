@@ -16,7 +16,7 @@ const buffDebuffs: React.FC<Props> = props => {
                     <h1>バフ・デバフ</h1>
                 </header>
             }
-            <hr />
+            <p>作成中</p>
         </div>
     )
 };

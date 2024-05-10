@@ -3,7 +3,7 @@
     "guard_duration": 2.5,
     "shield": {
         "base": 150,
-        "perLevel": 10
+        "level": 10
     },
     "tenacity": 50,
     "adaptive_duration": 8,

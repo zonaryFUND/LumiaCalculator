@@ -1,7 +1,9 @@
 {
     "dmg": {
-        "enemyMaxHPBase": 0.5,
-        "amp": 0.14
+        "targetMaxHP": {
+            "base": 0.5,
+            "amp": 0.14
+        }
     },
     "duration": 3,
     "max_stack": 2

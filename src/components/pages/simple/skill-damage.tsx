@@ -53,7 +53,7 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
                 return p.concat(<><span>防御力</span>{status.defense.toString()} x {levelValue(value, skillLevel)}％</>);
             case "amp":
                 return p.concat(<><span>スキル増幅</span>{status.skillAmp.toString()} x {levelValue(value, skillLevel)}％</>);
-            case "perLevel":
+            case "level":
                 return p.concat(<><span>レベル</span>{level} x {levelValue(value, skillLevel)}</>);
             case "basicAttackAmp":
                 return p.concat(<> x (<span>基本攻撃増幅</span>{status.basicAttackAmp.toString()}％ + 1)</>);
@@ -76,7 +76,7 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
 const skillDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
 
-    const level = skillLevel(props.skill, props.config);
+    const level = props.skill == "item" ? 0 : skillLevel(props.skill, props.config);
     const [value, base, multiplier, sidewinder] = (() => {
         const base = damage(props.status, props.config, props.skill, props.damage);
         if (props.multiplier != undefined || props.sidewinder) {

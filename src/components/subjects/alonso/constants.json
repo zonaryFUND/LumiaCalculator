@@ -7,7 +7,7 @@
         "movement_speed": 15,
         "near_movement_speed": [20,22.5,25,27.5,30],
         "basic_attack_damage": {
-            "perLevel": 10,
+            "level": 10,
             "targetMaxHP": [7,7.5,8,8.5,9]
         },
         "stun": 0.6,

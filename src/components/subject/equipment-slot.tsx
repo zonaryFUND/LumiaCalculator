@@ -30,7 +30,7 @@ const equipmentSlot: React.FC<Props> = props => {
             <div className={styles(style.slot, common["hover-bright"])} onClick={toggleSelecting}>
                 {
                     props.equipment[0][props.slot] ?
-                    <Item itemID={props.equipment[0][props.slot]} slot={props.slot} /> :
+                    <Item itemID={props.equipment[0][props.slot]} slot={props.slot} inSlot={true} /> :
                     <Blank slot={props.slot} />
                 }
             </div>

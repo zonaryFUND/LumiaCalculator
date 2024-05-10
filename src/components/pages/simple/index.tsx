@@ -19,6 +19,7 @@ import Switch from "components/common/switch";
 import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
 import TabSelector from "./tab-selector";
+import { SubjectSkillProps } from "components/subjects/props";
 
 const index: React.FC = props => {
     const { width } = useWindowSize();
@@ -95,7 +96,18 @@ const index: React.FC = props => {
                 id="weapon"
                 className={style.tooltip}
                 style={{zIndex: 1000}}
-                render={({ content, activeAnchor }) => content ? <ItemTooltip itemID={content}/> : null}
+                render={({ content, activeAnchor }) => {
+                    if (!content) return null;
+
+                    const [item, onSlot] = content.split("%");
+                    const props: SubjectSkillProps | undefined = onSlot ? {
+                        showEquation: damageInFormula[0],
+                        config: subjectConfig,
+                        status: status[0]
+                    } : undefined;
+
+                    return <ItemTooltip itemID={item} {...props} />;
+                }}
             />
             <Tooltip 
                 id="subject-skill"

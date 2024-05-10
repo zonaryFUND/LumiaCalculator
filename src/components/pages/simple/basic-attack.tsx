@@ -77,6 +77,7 @@ const basicAttack: React.FC<Props> = props => {
                     }
                 })
             }
+            {props.children}
         </tbody>
     )
 };

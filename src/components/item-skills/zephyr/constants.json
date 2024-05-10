@@ -4,6 +4,8 @@
     "duration": 2,
     "ms": 10,
     "as": 40,
-    "shield": 150,
+    "shield": {
+        "base": 150
+    },
     "cooldown": 12
 }

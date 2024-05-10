@@ -6,8 +6,9 @@ import Options from "./options";
 import Skill from "./skill";
 import baseStyle from "./tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
+import { SubjectSkillProps } from "components/subjects/props";
 
-type Props = {
+type Props = Partial<SubjectSkillProps> & {
     itemID: EquipmentID
 }
 
@@ -51,7 +52,7 @@ const itemTooltip: React.FC<Props> = props => {
             <div className={style.content}>
                 <Options {...status} />
                 {ammo}
-                {status.option ? status.option.map(op => <Skill key={op.id} {...op} />) : null}
+                {status.option ? status.option.map(op => <Skill key={op.id} {...props} id={op.id} values={op.values} />) : null}
             </div>
         </div>
     )

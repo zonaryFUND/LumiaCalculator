@@ -13,14 +13,14 @@ export function skillLevel(skill: "Q" | "W" | "E" | "R" | "T" | "D", config: Sub
 }
 
 export function skillDamageSimple(status: Status, config: SubjectConfig, dictionary: any): Decimal {
-    return ["base", "perLevel", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "defense", "additionalMaxHP", "criticalChance", "summoned_attack", "stack", "additionalAttackSpeed", "max"].reduce((prev, key) => {
+    return ["base", "level", "attack", "additionalAttack", "basicAttackAmp", "amp", "maxHP", "defense", "additionalMaxHP", "criticalChance", "summoned_attack", "stack", "additionalAttackSpeed", "max"].reduce((prev, key) => {
         if (dictionary[key] == undefined) return prev;
         const skillValue = new Decimal(dictionary[key]);
 
         switch (key) { 
             case "base":
                 return skillValue;
-            case "perLevel":
+            case "level":
                 return prev.add(skillValue.times(config.level));
             case "attack":
                 return prev.add(status.attackPower.percent(skillValue));
@@ -53,13 +53,17 @@ export function skillDamageSimple(status: Status, config: SubjectConfig, diction
     }, new Decimal(0)); 
 }
 
-export default function skillDamage(status: Status, config: SubjectConfig, skill: "Q" | "W" | "E" | "R" | "T" | "D", dictionary: any): Decimal {
-    const level = skillLevel(skill, config)
-    const sanitizedDict = Object.fromEntries(
-        Object.entries(dictionary).map(([key, value]) => {
-            return [key, Array.isArray(value) ? value[level] : value]
-        })
-    );
+export default function skillDamage(status: Status, config: SubjectConfig, skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item", dictionary: any): Decimal {
+    if (skill == "item") {
+        return skillDamageSimple(status, config, dictionary);
+    } else {
+        const level = skillLevel(skill, config)
+        const sanitizedDict = Object.fromEntries(
+            Object.entries(dictionary).map(([key, value]) => {
+                return [key, Array.isArray(value) ? value[level] : value]
+            })
+        );
 
-    return skillDamageSimple(status, config, sanitizedDict);
+        return skillDamageSimple(status, config, sanitizedDict);
+    }
 }

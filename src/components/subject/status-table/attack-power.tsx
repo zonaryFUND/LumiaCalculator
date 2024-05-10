@@ -28,7 +28,7 @@ const attackPower: React.FC<Props> = props => {
             }
             {
                 props.adaptive?.greaterThan(0) ?
-                <tr><td>適応型能力値</td><td>{props.adaptive.toString()}</td></tr> : 
+                <tr><td>適合型能力値</td><td>{props.adaptive.toString()}</td></tr> : 
                 null
             }
             {

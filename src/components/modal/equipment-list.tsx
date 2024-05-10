@@ -90,7 +90,7 @@ const subjectsList: React.FC<Props> = props => {
                             {
                                 section.ids.map(id => (
                                 <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot] ? style.selected : undefined)}>
-                                    <Item slot={props.slot} itemID={id} />
+                                    <Item slot={props.slot} itemID={id} inSlot={false} />
                                     <p>{name(id, "jp")}</p>
                                 </li>
                                 ))

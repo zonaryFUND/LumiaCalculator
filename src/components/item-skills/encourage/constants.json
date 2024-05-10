@@ -2,7 +2,7 @@
     "duration": 6,
     "adaptive": {
         "base": 5,
-        "perLevel": 0.5
+        "level": 0.5
     },
     "as": 20
 }

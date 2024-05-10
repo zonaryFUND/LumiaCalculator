@@ -5,7 +5,7 @@ import { SkillLevels } from "components/subject/use-subject-config"
 
 export type SkillDamageProps = {
     label: string
-    skill: "Q" | "W" | "E" | "R" | "T" | "D"
+    skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
     damage: any
     type?: "heal" | "shield" | "ms" | "true" | "basic" | "critical" | "summoned" | "ratio" | "kenneth" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     disableCritical?: boolean

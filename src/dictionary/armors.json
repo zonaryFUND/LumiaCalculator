@@ -13,7 +13,7 @@
 		"perLevelStatus": "hp[20]",
 		"defense": "20",
 		"vision": "1",
-		"option": "flame_barrier[\"dmg\":{\"melee\":{\"enemyMaxHP\":2},\"ranged\":{\"enemyMaxHP\":1.5}}]"
+		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":2},\"range\":{\"maxHP\":1.5}}]"
 	},
 	"covert_agent_uniform": {
 		"type": "chest",
@@ -52,7 +52,7 @@
 		"perLevelStatus": "hp[14]",
 		"cooldownReduction": "10",
 		"defense": "20",
-		"option": "reflection[\"ratio\":4.5,\"dmg\":150]"
+		"option": "reflection[\"ratio\":4.5,\"dmg\":{\"base\":150}]"
 	},
 	"dragon_dobok": {
 		"type": "chest",
@@ -131,7 +131,7 @@
 		"perLevelStatus": "hp[20]",
 		"cooldownReduction": "15",
 		"defense": "27",
-		"option": "reflection[\"ratio\":7.5,\"dmg\":300]"
+		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
 	"blazing_dress": {
 		"type": "chest",
@@ -139,7 +139,7 @@
 		"perLevelStatus": "hp[23]",
 		"defense": "30",
 		"vision": "1",
-		"option": "flame_barrier[\"dmg\":{\"melee\":{\"enemyMaxHP\":3.5},\"ranged\":{\"enemyMaxHP\":2.5}}]"
+		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":3.5},\"range\":{\"maxHP\":2.5}}]"
 	},
 	"mythril_crop": {
 		"type": "chest",
@@ -183,7 +183,7 @@
 		"attackPower": "5",
 		"defense": "30",
 		"vision": "1",
-		"option": "flame_barrier[\"dmg\":{\"melee\":{\"enemyMaxHP\":4},\"ranged\":{\"enemyMaxHP\":3}}]"
+		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":4},\"range\":{\"maxHP\":3}}]"
 	},
 	"guardian_suit": {
 		"type": "chest",
@@ -311,7 +311,7 @@
 		"tier": "epic",
 		"attackPower": "29",
 		"cooldownReduction": "15",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":80,\"slow\":{\"effect\":20,\"duration\":2}]"
+		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
 	},
 	"crystal_tiara": {
 		"type": "head",
@@ -335,7 +335,7 @@
 		"cooldownReduction": "10",
 		"defense": "9",
 		"maxHP": "120",
-		"option": "electric_shock[\"dmg\":{\"melee\":{\"enemyMaxHP\":2,\"levelProp\":{\"from\":20,\"to\":58}},\"ranged\":{\"enemyMaxHP\":1.5,\"levelProp\":{\"from\":20,\"to\":58}}}]"
+		"option": "electric_shock[\"dmg\":{\"melee\":{\"targetMaxHP\":2,\"levelProp\":{\"from\":20,\"to\":58}},\"range\":{\"targetMaxHP\":1.5,\"levelProp\":{\"from\":20,\"to\":58}}}]"
 	},
 	"helm_of_banneret": {
 		"type": "head",
@@ -367,7 +367,7 @@
 		"defense": "13",
 		"maxHP": "200",
 		"spRegeneration": "50",
-		"option": "reflection[\"ratio\":4.5,\"dmg\":150]"
+		"option": "reflection[\"ratio\":4.5,\"dmg\":{\"base\":150}]"
 	},
 	"vigilante": {
 		"type": "head",
@@ -414,7 +414,7 @@
 		"perLevelStatus": "hp[15]",
 		"cooldownReduction": "15",
 		"defense": "20",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":80,\"slow\":{\"effect\":20,\"duration\":2}]"
+		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
 	},
 	"laurel_wreath": {
 		"type": "head",
@@ -439,7 +439,7 @@
 		"adaptiveStatus": "35",
 		"defense": "18",
 		"maxSP": "300",
-		"option": "biotic_infusion[\"dmg\":{\"melee\":{\"enemyMaxHP\":11},\"ranged\":{\"enemyMaxHP\":10}}]"
+		"option": "biotic_infusion[\"dmg\":{\"melee\":{\"targetMaxHP\":11},\"range\":{\"targetMaxHP\":10}}]"
 	},
 	"fallen_pegasus": {
 		"type": "head",
@@ -498,7 +498,7 @@
 		"perLevelStatus": "hp[14]",
 		"defense": "15",
 		"spRegeneration": "50",
-		"option": "reflection[\"ratio\":7.5,\"dmg\":300]"
+		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
 	"twilight": {
 		"type": "head",
@@ -515,7 +515,7 @@
 		"cooldownReduction": "15",
 		"defense": "10",
 		"maxHP": "150",
-		"option": "electric_shock[\"dmg\":{\"melee\":{\"enemyMaxHP\":3.5,\"levelProp\":{\"from\":30,\"to\":106}},\"ranged\":{\"enemyMaxHP\":2.5,\"levelProp\":{\"from\":30,\"to\":106}}}]"
+		"option": "electric_shock[\"dmg\":{\"melee\":{\"targetMaxHP\":3.5,\"levelProp\":{\"from\":30,\"to\":106}},\"range\":{\"targetMaxHP\":2.5,\"levelProp\":{\"from\":30,\"to\":106}}}]"
 	},
 	"celestial_echo": {
 		"type": "head",
@@ -548,7 +548,7 @@
 		"tier": "epic",
 		"defense": "20",
 		"maxHP": "100",
-		"option": "reflection[\"ratio\":4.5,\"dmg\":150]"
+		"option": "reflection[\"ratio\":4.5,\"dmg\":{\"base\":150}]"
 	},
 	"draupnir": {
 		"type": "arm",
@@ -630,7 +630,7 @@
 		"attackSpeed": "30",
 		"skillAmplification": "20",
 		"defense": "6",
-		"option": "circulation[\"dmg\":{\"melee\":{\"base\":10,\"amp\":25},\"ranged\":{\"base\":10,\"amp\":20}},\"as\":10]"
+		"option": "circulation[\"dmg\":{\"melee\":{\"base\":10,\"amp\":25},\"range\":{\"base\":10,\"amp\":20}},\"as\":10]"
 	},
 	"mythril_shield": {
 		"type": "arm",
@@ -646,7 +646,7 @@
 		"attackPower": "25",
 		"attackSpeed": "35",
 		"defense": "20",
-		"option": "electric_shock[\"dmg\":{\"melee\":{\"enemyMaxHP\":3.5,\"levelProp\":{\"from\":30,\"to\":106}},\"ranged\":{\"enemyMaxHP\":2.5,\"levelProp\":{\"from\":30,\"to\":106}}}]"
+		"option": "electric_shock[\"dmg\":{\"melee\":{\"targetMaxHP\":3.5,\"levelProp\":{\"from\":30,\"to\":106}},\"range\":{\"targetMaxHP\":2.5,\"levelProp\":{\"from\":30,\"to\":106}}}]"
 	},
 	"tellurian_timepiece": {
 		"type": "arm",
@@ -654,7 +654,7 @@
 		"attackSpeed": "42",
 		"skillAmplification": "50",
 		"defense": "8",
-		"option": "circulation[\"dmg\":{\"melee\":{\"base\":10,\"amp\":28},\"ranged\":{\"base\":10,\"amp\":23}},\"as\":15]"
+		"option": "circulation[\"dmg\":{\"melee\":{\"base\":10,\"amp\":28},\"range\":{\"base\":10,\"amp\":23}},\"as\":15]"
 	},
 	"bracelet_of_skadi": {
 		"type": "arm",
@@ -671,7 +671,7 @@
 		"attackSpeed": "42",
 		"criticalChance": "35",
 		"defense": "6",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"ad\":50,\"perLevel\":3}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":50,\"level\":3}]"
 	},
 	"auto_arms": {
 		"type": "arm",
@@ -687,7 +687,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[10]",
 		"defense": "30",
-		"option": "reflection[\"ratio\":7.5,\"dmg\":300]"
+		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
 	"tindalos_monarch": {
 		"type": "arm",
@@ -744,7 +744,7 @@
 		"attackPower": "33",
 		"criticalChance": "34",
 		"defense": "13",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":80,\"slow\":{\"effect\":20,\"duration\":2}]"
+		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
 	},
 	"claddagh_ring": {
 		"type": "arm",

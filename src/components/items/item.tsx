@@ -8,6 +8,7 @@ import { styles } from "@app/util/style";
 type Props = {
     slot: "weapon" | ArmorTypeID
     itemID: EquipmentID | null
+    inSlot: boolean
 }
 
 const item: React.FC<Props> = props => {
@@ -43,7 +44,7 @@ const item: React.FC<Props> = props => {
         <div
             className={styles(className, style.base)} 
             data-tooltip-id="weapon"
-            data-tooltip-content={props.itemID}
+            data-tooltip-content={`${props.itemID}${props.inSlot ? "%slot" : ""}`}
         >
             <img 
                 src={src} 

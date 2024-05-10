@@ -9,7 +9,7 @@ import { ValuesProps } from "../values";
 const BasicAttackDamage: React.FC<SubjectSkillProps> = props => {
     const base = (() => {
         if (props.showEquation) {
-            return <span className={style.emphasis}>(アロンソのレベル比例{Constants.Q.basic_attack_damage.perLevel})</span>
+            return <span className={style.emphasis}>(アロンソのレベル比例{Constants.Q.basic_attack_damage.level})</span>
         } else {
             const damage = skillDamage(props.status, props.config, "Q", Constants.Q.basic_attack_damage);
             return <span className={style.emphasis}>{damage.toString()}</span>
@@ -19,7 +19,7 @@ const BasicAttackDamage: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             {base}
-            <span>(+対象の最大体力の{Constants.Q.basic_attack_damage.targetMaxHP[props.config.skillLevels.Q]}％)</span>
+            <span className={style.maxhp}>(+対象の最大体力の{Constants.Q.basic_attack_damage.targetMaxHP[props.config.skillLevels.Q]}％)</span>
         </>
     )
 }

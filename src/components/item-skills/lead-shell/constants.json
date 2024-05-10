@@ -1,8 +1,0 @@
-{
-    "dmg": 100,
-    "slow": {
-        "duration": 0.56,
-        "effect": 99
-    },
-    "cooldown": 4
-}
