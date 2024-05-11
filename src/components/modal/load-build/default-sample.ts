@@ -1,16 +1,18 @@
+import { BuildWithKey } from "@app/storage/build";
 import { SubjectConfig } from "components/subject/use-subject-config";
 
-export const defaultSampleBuilds: [string, number, SubjectConfig][] = [
-    [
-        "サンプル1：フルビルドEleven",
-        0,
-        {
+export const defaultSampleBuilds: BuildWithKey[] = [
+    {
+        name: "サンプル1：フルビルドEleven",
+        key: 0,
+        isPreset: true,
+        config: {
             subject: "eleven",
             equipment: {
                 weapon: "squeaky_hammer",
                 chest: "blazing_dress",
-                head: "mithril_helm",
-                arm: "centipede_s_spauldron",
+                head: "mythril_helm",
+                arm: "centipede_s_pauldron",
                 leg: "boots_of_hermes"
             },
             level: 20,
@@ -18,10 +20,11 @@ export const defaultSampleBuilds: [string, number, SubjectConfig][] = [
             defenseMastery: 20,
             movementMastery: 20,
             skillLevels: {
-                Q: 5, W: 5, E: 5, R: 3, T: 3
+                Q: 4, W: 4, E: 4, R: 2, T: 2
             },
             gauge: 0,
             stack: 0
         }
-    ]
+    }
 ]
+;

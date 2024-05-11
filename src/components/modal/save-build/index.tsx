@@ -11,9 +11,14 @@ const saveBuild: React.FC<Props> = props => {
     const onChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setName(event.currentTarget.value);
     }, []);
+
+    const onDone = React.useCallback(() => {
+        props.onSave(name());
+    }, []);
+
     const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = React.useCallback(event => {
         if (event.nativeEvent.isComposing || event.key != "Enter" || event.currentTarget.value.length == 0) return;
-        props.onSave(name());
+        onDone();
     }, [])
 
     return (
@@ -22,7 +27,7 @@ const saveBuild: React.FC<Props> = props => {
                 <h1>ビルドを保存</h1>
             </header>
             <label>名前：<input value={name()} onChange={onChange} onKeyDown={onKeyDown} /></label>
-            <button disabled={name().length == 0}>保存</button>
+            <button disabled={name().length == 0} onClick={onDone}>保存</button>
         </>
     );
 }

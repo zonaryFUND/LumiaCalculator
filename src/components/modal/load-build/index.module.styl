@@ -31,12 +31,14 @@
         height: 500px
         background: white
         border: 1px solid black
+        overflow-y: scroll
 
     li
         display: flex
         justify-content: space-between
         align-items: center
-        padding: 4px
+        height: 40px
+        padding: 0 8px
         transition: background 0.25s ease
 
         p
@@ -51,9 +53,22 @@
         cursor: pointer
         background: var(--c1)
 
+    .current
+        p:before
+            content: ""      
+            display: inline-block
+            vertical-align: middle
+            width: 8px
+            height: 8px
+            border-radius: 4px
+            background-color: var(--c4)
+            margin: 0 8px
+
     button
         background: transparent
         transition: background 0.25s ease
+        width: 32px
+        height: 32px
     
     button:hover
         background: white

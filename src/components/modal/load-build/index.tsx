@@ -1,23 +1,41 @@
 
 
-import { SavedBuildsKey } from "@app/storage/build";
+import { BuildWithKey, SavedBuildsKey, useBuildStorage } from "@app/storage/build";
 import { SubjectConfig } from "components/subject/use-subject-config";
 import * as React from "react";
 import { useLatest, useLocalStorage } from "react-use";
 import { defaultSampleBuilds } from "./default-sample";
 import { Trash } from "@phosphor-icons/react";
 import style from "./index.module.styl";
+import { styles } from "@app/util/style";
 
 type Props = {
-    currentName?: string
+    currentKey?: number
     onSelect: (build: BuildWithKey) => void
+    onDeleteCurrentBuild: () => void
 }
 
 
 const loadBuild: React.FC<Props> = props => {
-    const [savedBuilds] = useLocalStorage<BuildWithKey[]>(SavedBuildsKey, []);
-    const [selected, setSelected] = React.useState<BuildWithKey | null>(null);
+    const {builds: savedBuilds, delete: deleteBuild } = useBuildStorage();
+    const [selected, setSelected] = React.useState<number | null>(null);
     const latestSelected = useLatest(selected);
+
+    const onClick = React.useCallback((id: number)=> {
+        if (latestSelected.current == id) {
+            const build = defaultSampleBuilds.concat(savedBuilds ?? []).find(b => b.key == id);
+            props.onSelect(build!);
+        } else {
+            setSelected(id);
+        }
+    }, []);
+
+    const onClickDelete = React.useCallback((key: number) => {
+        deleteBuild(key)
+        if (key == props.currentKey) {
+            props.onDeleteCurrentBuild();
+        }
+    }, [props.currentKey])
 
     return (
         <>
@@ -27,13 +45,14 @@ const loadBuild: React.FC<Props> = props => {
             </header>
             <ul>
                 {
-                    defaultSampleBuilds.map((build, i) => (
-                        <li className={(selected ? selected[1] : null) == build[1] ? style.selected : undefined} onClick={() => setSelected(build)}><p>{build[0]}</p></li>
-                    ))
-                }
-                {
                     (savedBuilds ?? []).map((build, i) => (
-                        <li className={(selected ? selected[1] : null) == build[1] ? style.selected : undefined} onClick={() => setSelected(build)}><p>{build[0]}</p><button><Trash size={20} /></button></li>
+                        <li className={styles(selected == build.key ? style.selected : undefined, props.currentKey == build.key ? style.current : undefined)} onClick={() => onClick(build.key)}>
+                            <p>{build.name}</p>
+                            {build.isPreset ? null : <button onClick={event => {
+                                event.stopPropagation();
+                                onClickDelete(build.key);
+                            }}><Trash size={20} /></button>}
+                        </li>
                     ))
                 }
             </ul>

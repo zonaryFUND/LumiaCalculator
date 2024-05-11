@@ -28,6 +28,7 @@ export type Response = {
     skillLevels: StateProps<SkillLevels>
     gauge: StateProps<number>
     stack: StateProps<number>
+    setConfig: (config: SubjectConfig) => void
 }
 
 export type SubjectConfig = {
@@ -85,6 +86,7 @@ export default function(localStorageKey: string): Response {
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels],
         gauge: [gauge, setGauge],
-        stack: [stack, setStack]
+        stack: [stack, setStack],
+        setConfig
     }
 }

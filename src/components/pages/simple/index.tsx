@@ -2,7 +2,7 @@ import * as React from "react";
 import common from "@app/common.styl";
 
 import style from "./index.module.styl";
-import useSubjectConfig from "components/subject/use-subject-config";
+import useSubjectConfig, { SubjectConfig } from "components/subject/use-subject-config";
 import useStatus from "components/subject/use-status";
 
 import Subject from "./subject";
@@ -20,18 +20,18 @@ import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
 import TabSelector from "./tab-selector";
 import { SubjectSkillProps } from "components/subjects/props";
-import { SimpleCurrentConfigKey, useBuildStorage } from "@app/storage/build";
+import { useBuildStorage } from "@app/storage/build";
 import Modal from "react-modal";
 import LoadBuild from "components/modal/load-build";
 import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";
 import saveStyle from "components/modal/save-build/index.module.styl";
 import { name } from "@app/entity/subject";
+import { SimpleCurrentConfigKey, useStorageOnSimple } from "@app/storage/simple";
 
 const index: React.FC = props => {
     const { width } = useWindowSize();
 
-    const [buildName, setBuildName] = React.useState<string | null>(null)
     const {
         subject: [subject, setSubject],
         equipment: [equipment, setEquipment],
@@ -41,7 +41,8 @@ const index: React.FC = props => {
         movementMastery: [movementMastery, setMovementMastery],
         skillLevels: [skillLevels, setSkillLevels],
         gauge: [gauge, setGauge],
-        stack: [stack, setStack]
+        stack: [stack, setStack],
+        setConfig
     } = useSubjectConfig(SimpleCurrentConfigKey);
 
     const subjectConfig = {
@@ -63,17 +64,22 @@ const index: React.FC = props => {
     const [showingLoad, toggleShowingLoad] = useToggle(false);
     const [showingSave, toggleShowingSave] = useToggle(false);
 
-    const { saveNew } = useBuildStorage();
+    const { builds, saveNew } = useBuildStorage();
+    const { currentBuildKey, setCurrentBuildKey } = useStorageOnSimple();
+    const currentBuild = React.useMemo(() => {
+        return builds.find(b => b.key == currentBuildKey);
+    }, [builds.length, currentBuildKey]);
 
     return (
         <main className={style.simple} style={{paddingLeft: width > 1400 ? 266 : 80}}>
             <div className={styles(style.parent, collapse ? style.collapse : undefined)} ref={parentRef}>
                 <header className={style.header} style={collapse ? {flexDirection: "column"} : undefined}>
                     <div className={style.storage}>
-                        <h1>保存名：{buildName ?? "-----"}</h1>
+                        <h1>保存名：{currentBuild?.name ?? "-----"}</h1>
                         <div>
                             <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingLoad}>ロード</button>
-                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>{buildName == null ? "新規保存" : "上書き保存"}</button>
+                            {currentBuild?.isPreset || currentBuild == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>上書き保存</button>}
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>新規保存</button>
                         </div>
                     </div>
                     <div className={styles(style.formula, damageInFormula[0] ? style.on : undefined)}>
@@ -161,8 +167,12 @@ const index: React.FC = props => {
                 className={loadStyle.load}
                 overlayClassName={common["modal-overlay"]}
             >
-                <LoadBuild onSelect={build => {
+                <LoadBuild currentKey={currentBuild?.key} onSelect={build => {
+                    setCurrentBuildKey(build.key);
+                    setConfig(build.config);
                     toggleShowingLoad(false);
+                }} onDeleteCurrentBuild={() => {
+                    setCurrentBuildKey(undefined);
                 }} />
             </Modal>
             <Modal 
@@ -174,7 +184,8 @@ const index: React.FC = props => {
             >
                 <SaveBuild defaultName={name(subject, "jp")} onSave={name => {
                     toggleShowingSave(false);
-                    saveNew(name, subjectConfig);
+                    const key = saveNew(name, subjectConfig);
+                    setCurrentBuildKey(key);
                 }} />
             </Modal>
         </main>
