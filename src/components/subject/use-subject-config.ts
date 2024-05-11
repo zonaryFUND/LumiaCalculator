@@ -42,8 +42,8 @@ export type SubjectConfig = {
     stack: number
 }
 
-export default function(): Response {
-    const [config, setConfig, removeConfig] = useLocalStorage<SubjectConfig>("main-subject-config", {
+export default function(localStorageKey: string): Response {
+    const [config, setConfig, removeConfig] = useLocalStorage<SubjectConfig>(localStorageKey, {
         subject: "eleven",
         equipment: { weapon: null, chest: null, head: null, arm: null, leg: null },
         level: 1,

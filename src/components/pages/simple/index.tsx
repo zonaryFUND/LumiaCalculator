@@ -20,6 +20,13 @@ import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
 import TabSelector from "./tab-selector";
 import { SubjectSkillProps } from "components/subjects/props";
+import { SimpleCurrentConfigKey, useBuildStorage } from "@app/storage/build";
+import Modal from "react-modal";
+import LoadBuild from "components/modal/load-build";
+import loadStyle from "components/modal/load-build/index.module.styl";
+import SaveBuild from "components/modal/save-build";
+import saveStyle from "components/modal/save-build/index.module.styl";
+import { name } from "@app/entity/subject";
 
 const index: React.FC = props => {
     const { width } = useWindowSize();
@@ -35,7 +42,7 @@ const index: React.FC = props => {
         skillLevels: [skillLevels, setSkillLevels],
         gauge: [gauge, setGauge],
         stack: [stack, setStack]
-    } = useSubjectConfig();
+    } = useSubjectConfig(SimpleCurrentConfigKey);
 
     const subjectConfig = {
         subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack
@@ -53,6 +60,11 @@ const index: React.FC = props => {
         setCollapse(width < 996);
     }, [width]);
 
+    const [showingLoad, toggleShowingLoad] = useToggle(false);
+    const [showingSave, toggleShowingSave] = useToggle(false);
+
+    const { saveNew } = useBuildStorage();
+
     return (
         <main className={style.simple} style={{paddingLeft: width > 1400 ? 266 : 80}}>
             <div className={styles(style.parent, collapse ? style.collapse : undefined)} ref={parentRef}>
@@ -60,8 +72,8 @@ const index: React.FC = props => {
                     <div className={style.storage}>
                         <h1>保存名：{buildName ?? "-----"}</h1>
                         <div>
-                            <button className={`${common["system-button"]} ${common["button-medium"]}`}>ロード</button>
-                            <button className={`${common["system-button"]} ${common["button-medium"]}`}>{buildName == null ? "新規保存" : "上書き保存"}</button>
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingLoad}>ロード</button>
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>{buildName == null ? "新規保存" : "上書き保存"}</button>
                         </div>
                     </div>
                     <div className={styles(style.formula, damageInFormula[0] ? style.on : undefined)}>
@@ -142,6 +154,29 @@ const index: React.FC = props => {
                     );
                 }}
             />
+            <Modal 
+                isOpen={showingLoad} 
+                shouldCloseOnOverlayClick
+                onRequestClose={toggleShowingLoad}
+                className={loadStyle.load}
+                overlayClassName={common["modal-overlay"]}
+            >
+                <LoadBuild onSelect={build => {
+                    toggleShowingLoad(false);
+                }} />
+            </Modal>
+            <Modal 
+                isOpen={showingSave} 
+                shouldCloseOnOverlayClick
+                onRequestClose={toggleShowingSave}
+                className={saveStyle.save}
+                overlayClassName={common["modal-overlay"]}
+            >
+                <SaveBuild defaultName={name(subject, "jp")} onSave={name => {
+                    toggleShowingSave(false);
+                    saveNew(name, subjectConfig);
+                }} />
+            </Modal>
         </main>
     )
 };
