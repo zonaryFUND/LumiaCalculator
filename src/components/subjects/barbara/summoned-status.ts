@@ -1,8 +1,8 @@
 import { Status, StatusProps, SummonedStatus } from "components/subject/status";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
-import { Language } from "@app/entity/language";
+import { Language } from "app-types/language";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 export default function(barbaraStatus: Status, config: SubjectConfig): SummonedStatus {
     return {

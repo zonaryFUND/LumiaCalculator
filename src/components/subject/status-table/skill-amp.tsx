@@ -1,7 +1,7 @@
 import * as React from "react";
 import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
-import Mastery from "./mastery";
+import Mastery from "../../status/expand/mastery";
 import Additional from "./additional-value";
 
 type Props = {
@@ -14,6 +14,7 @@ type Props = {
     adaptive?: Decimal
 }
 
+/*
 const skillAmp: React.FC<Props> = props => {
     return (
         <InnerTable>
@@ -38,3 +39,4 @@ const skillAmp: React.FC<Props> = props => {
 }
 
 export default skillAmp;
+*/

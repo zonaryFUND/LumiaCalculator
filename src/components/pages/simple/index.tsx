@@ -1,24 +1,22 @@
+/*
 import * as React from "react";
 import common from "@app/common.styl";
 
 import style from "./index.module.styl";
-import useSubjectConfig, { SubjectConfig } from "components/subject/use-subject-config";
-import useStatus from "components/subject/use-status";
 
-import Subject from "./subject";
-import BuffDebuffs from "./buff-debuffs";
-import Damage from "./damage";
+import Subject from "../../../pages/simple/subject";
+import BuffDebuffs from "../../../pages/simple/buff-debuffs";
 
 import { Tooltip } from "react-tooltip";
 import ItemTooltip from "components/tooltip/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
-import { useToggle, useWindowSize } from "react-use";
-import { WeaponTypeID, equipmentStatus } from "@app/entity/equipment";
+import { useLocalStorage, useToggle, useWindowSize } from "react-use";
+import { equipmentStatus } from "app-types/equipment";
 import Switch from "components/common/switch";
 import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
-import TabSelector from "./tab-selector";
+import TabSelector from "../simple/tab-selector";
 import { SubjectSkillProps } from "components/subjects/props";
 import { useBuildStorage } from "@app/storage/build";
 import Modal from "react-modal";
@@ -26,12 +24,16 @@ import LoadBuild from "components/modal/load-build";
 import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";
 import saveStyle from "components/modal/save-build/index.module.styl";
-import { name } from "@app/entity/subject";
+import { name } from "app-types/subject-static";
 import { SimpleCurrentConfigKey, useStorageOnSimple } from "@app/storage/simple";
-
+import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+*/
+/*
 const index: React.FC = props => {
     const { width } = useWindowSize();
 
+    const { config, saveConfig } = useLocalStorage<SubjectConfig>(SimpleCurrentConfigKey);
     const {
         subject: [subject, setSubject],
         equipment: [equipment, setEquipment],
@@ -193,3 +195,4 @@ const index: React.FC = props => {
 };
 
 export default index;
+*/

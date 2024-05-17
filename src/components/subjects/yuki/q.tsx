@@ -3,7 +3,7 @@ import Constants from "./constants.json";
 import Damage from "../damage";
 import { ValuesProps } from "../values";
 import { SubjectSkillProps } from "../props";
-import { equipmentStatus } from "@app/entity/equipment";
+import { equipmentStatus } from "app-types/equipment";
 
 const q: React.FC<SubjectSkillProps> = props => {
     const weaponType = props.config.equipment.weapon ? equipmentStatus(props.config.equipment.weapon).type : undefined;

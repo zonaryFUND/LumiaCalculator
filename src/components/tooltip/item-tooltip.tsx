@@ -1,12 +1,13 @@
 import * as React from "react";
-import { EquipmentID } from "@app/entity/equipment-id";
+import { EquipmentID } from "app-types/equipment/id";
 import Images from "@app/resources/image";
-import { equipmentStatus, name, tierName, typeName } from "@app/entity/equipment";
+import { equipmentStatus, name, typeName } from "app-types/equipment";
 import Options from "./options";
 import Skill from "./skill";
 import baseStyle from "./tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
 import { SubjectSkillProps } from "components/subjects/props";
+import { tierName } from "app-types/equipment/tier";
 
 type Props = Partial<SubjectSkillProps> & {
     itemID: EquipmentID

@@ -1,0 +1,1 @@
+export type TierID = "epic" | "legendary" | "mythic";

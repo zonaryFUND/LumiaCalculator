@@ -3,16 +3,12 @@ import * as React from "react";
 import BasicAttack from "components/pages/simple/basic-attack";
 import style from "./damage-table.module.styl";
 import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import SkillDamage from "./skill-damage";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
-import { WeaponTypeID, equipmentStatus, meleeOrRange } from "@app/entity/equipment";
 import { SummonedStatus } from "components/subjects/summoned-status";
-import { name as abilityName } from "@app/entity/equipment-ability";
-import { name as equipmentName } from "@app/entity/equipment";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
-
+/*
 type Props = {
     status: Status
     config: SubjectConfig
@@ -153,3 +149,4 @@ const damageTable: React.FC<Props> = props => {
 };
 
 export default damageTable;
+*/

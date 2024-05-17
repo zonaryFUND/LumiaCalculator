@@ -1,4 +1,4 @@
-import { EquipmentStatus } from "@app/entity/equipment";
+import { EquipmentStatus } from "app-types/equipment";
 import Decimal from "decimal.js";
 import * as React from "react";
 

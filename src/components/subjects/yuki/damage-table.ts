@@ -1,4 +1,4 @@
-import { WeaponTypeID } from "@app/entity/equipment";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 import { DamageTable } from "../damage-table";
 import Constants from "./constants.json";
 

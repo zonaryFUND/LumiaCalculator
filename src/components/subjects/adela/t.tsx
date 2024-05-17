@@ -3,7 +3,7 @@ import { SubjectSkillProps } from "../props";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import Decimal from "decimal.js";
-import { baseStatus } from "@app/entity/base-status";
+import { baseStatus } from "app-types/subject-static/base-status";
 import { additionalAmp } from "./status-override";
 
 const t: React.FC<SubjectSkillProps> = props => {

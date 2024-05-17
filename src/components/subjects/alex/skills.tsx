@@ -1,8 +1,7 @@
 import * as React from "react";
 import style from "components/subjects/skills-standard.modue.styl";
 import Images from "@app/resources/image";
-import { WeaponID } from "@app/entity/weapon-id";
-import { WeaponTypeID, equipmentStatus } from "@app/entity/equipment";
+import { WeaponID } from "app-types/equipment/weapon/id";
 import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
 
 export default function(props: {weaponType?: WeaponID} & SkillsStandardProps) {

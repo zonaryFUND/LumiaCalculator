@@ -2,11 +2,11 @@ import * as React from "react";
 import useBaseValue from "./use-base-value";
 import BaseValue from "./base-value";
 import Additional from "./additional-value";
-import { DisplayedValues, MasteryValues } from "../use-status";
 import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
-import Mastery from "./mastery";
+import Mastery from "../../status/expand/mastery";
 
+/*
 type Props = DisplayedValues & MasteryValues & {
     level: number
     mastery: number
@@ -41,3 +41,4 @@ const attackPower: React.FC<Props> = props => {
 }
 
 export default attackPower;
+*/

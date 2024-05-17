@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
-import { WeaponID } from "@app/entity/weapon-id";
+import { WeaponID } from "app-types/equipment/weapon/id";
 
 export default function(props: {weapon: WeaponID | null} & SkillsStandardProps) {
     const type = (() => {

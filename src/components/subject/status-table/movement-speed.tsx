@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import * as React from "react";
 import InnerTable from "components/common/inner-table";
-import Mastery from "./mastery";
+import Mastery from "../../status/expand/mastery";
 import { MovementSpeedPerMastery } from "../standard-values";
 
 type Props = {
@@ -10,6 +10,7 @@ type Props = {
     movementMastery: number
 }
 
+/*
 const movementSpeed: React.FC<Props> = props => (
     <InnerTable>
         <tr><td>基礎値</td><td>{props.base.toString()}</td></tr>
@@ -23,3 +24,4 @@ const movementSpeed: React.FC<Props> = props => (
 )
 
 export default movementSpeed;
+*/

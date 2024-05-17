@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
-import { SubjectConfig } from "./use-subject-config";
 import { SummonedStatus } from "components/subjects/summoned-status";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 export type StatusProps = {
     baseMaxHP: Decimal

@@ -1,8 +1,8 @@
-import { WeaponID } from "@app/entity/weapon-id";
+import { WeaponID } from "app-types/equipment/weapon/id";
 import { DamageTable, SkillDamageProps } from "../damage-table";
 import Constants from "./constants.json";
-import { SkillLevels } from "components/subject/use-subject-config";
 import Decimal from "decimal.js";
+import { SkillLevels } from "app-types/subject-dynamic/config";
 
 // The ratio of attack of echion's R depends on the level of T, but this application assumes that its always 3.
 function table(props: {skillLevels: SkillLevels, weapon?: WeaponID, gauge: number}): DamageTable {

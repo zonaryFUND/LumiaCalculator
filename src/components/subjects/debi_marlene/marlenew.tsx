@@ -4,9 +4,9 @@ import Damage from "../damage";
 import { ValuesProps } from "../values";
 import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
 import Decimal from "decimal.js";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 export function projectileAmount(status: Status): number {
     // NOTE: This multiplier is an estimated value.

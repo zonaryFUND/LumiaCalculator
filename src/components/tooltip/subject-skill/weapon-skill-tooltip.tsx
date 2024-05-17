@@ -1,12 +1,12 @@
 import * as React from "react";
-import Name from "dict/weapon-skill-name.json";
+import Name from "dictionary/weapon-skill-name.json";
 import baseStyle from "../tooltip.module.styl";
 import style from "./subject-skill-tooltip.module.styl";
 import Images from "@app/resources/image";
 import Values, { ValuesProps } from "components/subjects/values";
 import { SubjectSkillProps } from "components/subjects/props";
 import Constant from "components/subjects/weapon-skills/constants.json";
-import { equipmentStatus } from "@app/entity/equipment";
+import { equipmentStatus } from "app-types/equipment";
 import { skillLevel } from "components/subjects/skill-damage";
 
 function valueOrElement(value: number | number[], index: number): number {

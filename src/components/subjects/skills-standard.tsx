@@ -1,10 +1,10 @@
 import * as React from "react";
 import style from "./skills-standard.modue.styl";
-import { SubjectID } from "@app/entity/subject";
+import { SubjectID } from "app-types/subject-static/id";
 import Images from "@app/resources/image";
-import { SkillLevels } from "components/subject/use-subject-config";
-import { WeaponTypeID } from "@app/entity/equipment";
 import Selection from "components/common/number-selection";
+import { SkillLevels } from "app-types/subject-dynamic/config";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 
 export type SkillImage = (skillID: string) => string | undefined;
 type ConfigurationProps = [SkillLevels, React.Dispatch<React.SetStateAction<SkillLevels>>]
@@ -19,7 +19,7 @@ export const SkillLevelConfigurator: React.FC<{skill: "Q" | "W" | "E" | "R" | "T
         return props.skill == "R" || props.skill == "T" ? 3 : 5;
     })();
 
-    const onChange = React.useCallback(to => {
+    const onChange = React.useCallback((to: number) => {
         context![1](prev => ({...prev, [props.skill]: to - 1}))
     }, [])
 
@@ -80,7 +80,7 @@ export type SkillsStandardProps = {
     weaponType?: WeaponTypeID
 }
 
-export const SkillsParent: React.FC<SkillsStandardProps> = props => (
+export const SkillsParent: React.FC<SkillsStandardProps & {children?: React.ReactNode}> = props => (
     <ul className={style.skills}>
         <ConfigurationContext.Provider value={[props.skillLevels, props.setSkillLevels]}>
             {props.children}

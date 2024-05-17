@@ -1,9 +1,9 @@
-import { EquipmentAbility, name } from "@app/entity/equipment-ability";
 import * as React from "react";
 import style from "./skill.module.styl";
 import HealingReduction from "components/item-skills/healing_reduction/tooltip";
 
 import { ItemSkillDefinition, ItemSkillProps } from "components/item-skills/item-skill";
+import { EquipmentAbility, name } from "app-types/equipment/ability";
 
 const skill: React.FC<EquipmentAbility & ItemSkillProps> = props => {
     const description = (() => {

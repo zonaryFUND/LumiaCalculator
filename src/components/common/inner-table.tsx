@@ -1,7 +1,11 @@
 import * as React from "react";
 import style from "./inner-table.module.styl";
 
-const innerTable: React.FC = props => (
+type Props = {
+    children?: React.ReactNode
+}
+
+const innerTable: React.FC<Props> = props => (
     <table className={style.inner}>
         <tbody>
             {props.children}    

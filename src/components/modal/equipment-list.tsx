@@ -1,18 +1,19 @@
 import * as React from "react";
-import Item from "components/items/item";
-import { ArmorTypeID, equipmentStatus, name, typeName } from "@app/entity/equipment";
+import Item from "components/item/item";
+import { equipmentStatus, name, typeName } from "app-types/equipment";
 import style from "./equipment-list.module.styl";
-import { WeaponIDsForType, Weapons } from "@app/entity/weapon-id";
-import { Arms, Chests, HeadID, Heads, Legs } from "@app/entity/armor-id";
-import { EquipmentID } from "@app/entity/equipment-id";
-import { mastery } from "@app/entity/mastery";
-import { SubjectID } from "@app/entity/subject";
-import { Equipment } from "../subject/use-subject-config";
+import { weaponIDsForType, Weapons } from "app-types/equipment/weapon/id";
+import { Arms, Chests, HeadID, Heads, Legs } from "app-types/equipment/armor/id";
+import { EquipmentID } from "app-types/equipment/id";
+import { mastery } from "app-types/subject-static/mastery";
+import { SubjectID } from "app-types/subject-static/id";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
 import { styles } from "@app/util/style";
 import common from "@app/common.styl";
-import Blank from "components/items/blank";
+import Blank from "components/item/blank";
+import { Equipment } from "app-types/subject-dynamic/config";
+import { ArmorTypeID } from "app-types/equipment/armor";
 
 type Props = {
     subject: SubjectID
@@ -59,7 +60,7 @@ const subjectsList: React.FC<Props> = props => {
                     title: names.join("、"), 
                     sections: availableTypes.map((id, i) => ({
                         title: names.length == 1 ? undefined : names[i],
-                        ids: WeaponIDsForType(id)
+                        ids: weaponIDsForType(id)
                     }))
                 }
         }

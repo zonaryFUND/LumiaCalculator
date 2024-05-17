@@ -1,7 +1,7 @@
 import { Status } from "components/subject/status";
 import { DamageTable, SkillDamageProps } from "../damage-table";
 import Constants from "./constants.json";
-import { WeaponTypeID } from "@app/entity/equipment";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 
 function table(props: {status: Status, weaponType: WeaponTypeID}): DamageTable {
     const rMax = Constants.R.later_damage.amount;

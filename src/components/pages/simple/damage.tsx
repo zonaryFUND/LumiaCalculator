@@ -1,16 +1,17 @@
-import { SubjectID } from "@app/entity/subject";
+import { SubjectID } from "app-types/subject-static/id";
 import * as React from "react";
 import index from "./index.module.styl";
-import { SkillLevels, SubjectConfig } from "components/subject/use-subject-config";
 import { SubjectSkills } from "components/subjects/skills";
 import SkillsStandard from "components/subjects/skills-standard";
-import { WeaponTypeID, equipmentStatus } from "@app/entity/equipment";
+import { equipmentStatus } from "app-types/equipment";
 import style from "./damage.module.styl";
 import { styles } from "@app/util/style";
 
 import { Status } from "components/subject/status";
-import Table from "./damage-table";
+import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 
+/*
 type Props = {
     status: Status
     config: SubjectConfig
@@ -59,3 +60,4 @@ const damages: React.FC<Props> = props => {
 };
 
 export default damages;
+*/

@@ -6,8 +6,8 @@ import { useToggle } from "react-use";
 import style from "./damage-table.module.styl";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import Constants from "components/subjects/rio/constants.json";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 type Props = {
     status: Status

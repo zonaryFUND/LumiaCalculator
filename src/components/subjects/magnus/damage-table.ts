@@ -1,4 +1,4 @@
-import { SkillLevels } from "components/subject/use-subject-config";
+import { SkillLevels } from "app-types/subject-dynamic/config";
 import { DamageTable } from "../damage-table";
 import Constants from "./constants.json";
 

@@ -1,14 +1,14 @@
-import { SubjectID } from "@app/entity/subject";
+import { SubjectID } from "app-types/subject-static/id";
 import * as React from "react";
-import Name from "dict/skill-name.json";
+import Name from "dictionary/skill-name.json";
 import baseStyle from "../tooltip.module.styl";
 import style from "./subject-skill-tooltip.module.styl";
 import Images from "@app/resources/image";
 import Decimal from "decimal.js";
 import Values, { ValuesProps } from "components/subjects/values";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
 import { SubjectSkillProps } from "components/subjects/props";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*)\.tsx$/);
 export const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {

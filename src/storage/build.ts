@@ -1,5 +1,5 @@
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { defaultSampleBuilds } from "components/modal/load-build/default-sample";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import { useCallback } from "react";
 import { useLocalStorage } from "react-use";
 

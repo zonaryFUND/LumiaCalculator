@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import * as React from "react";
 import InnerTable from "components/common/inner-table";
-import Mastery from "./mastery";
+import Mastery from "../../status/expand/mastery";
 
 type Props = {
     base: Decimal
@@ -12,6 +12,7 @@ type Props = {
     weaponMastery: number
 }
 
+/*
 const attackSpeed: React.FC<Props> = props => (
     <InnerTable>
         <tr><td>基礎値</td><td><span>実験体</span> {props.subject.toString()} + <span>武器</span> {props.weapon.toString()} = {props.base.toString()}</td></tr>
@@ -25,3 +26,4 @@ const attackSpeed: React.FC<Props> = props => (
 )
 
 export default attackSpeed;
+*/

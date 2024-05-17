@@ -35,7 +35,7 @@ const selection: React.FC<Props> = props => {
             >
                 {props.label ? <p>{props.label}</p> : null}
                 <span>{props.value[0]}</span>            
-                <span className={`material-symbols-outlined ${style.open}`}>expand_more</span>
+                <span className={`material-symbols-outlined`}>expand_more</span>
             </div>
             <Modal 
                 isOpen={selecting} 

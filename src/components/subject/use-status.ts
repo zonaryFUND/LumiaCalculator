@@ -1,13 +1,13 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import { baseStatus as getBaseStatus } from "@app/entity/base-status";
-import { EquipmentStatus, PerLevelStatus, WeaponTypeID, equipmentStatus, weaponBaseStatus } from "@app/entity/equipment";
-import { mastery } from "@app/entity/mastery";
-import { SubjectConfig } from "./use-subject-config";
+import { baseStatus as getBaseStatus } from "app-types/subject-static/base-status";
+import { EquipmentStatus, PerLevelStatus, equipmentStatus } from "app-types/equipment";
+import { mastery } from "app-types/subject-static/mastery";
 import { Status, StatusOverride, StatusProps, from } from "./status";
 import { SubjectStatusOverride } from "components/subjects/status-override";
 import { BaseBasicAttackRange, BaseCooldownCap, BaseVision, BasicAttackReductionPerMastery, SkillReductionPerMastery } from "./standard-values";
 
+/*
 export type DisplayedValues = {
     base: {
         level1: Decimal
@@ -266,3 +266,4 @@ export default function(config: SubjectConfig): [Status, DisplayedStatusValues] 
         displayed
     ];
 }
+*/

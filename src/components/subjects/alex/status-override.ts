@@ -1,7 +1,7 @@
 import { StatusProps } from "components/subject/status";
-import { SubjectConfig } from "components/subject/use-subject-config";
-import { equipmentStatus } from "@app/entity/equipment";
+import { equipmentStatus } from "app-types/equipment";
 import Constants from "./constants.json";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 export default function(status: StatusProps, config: SubjectConfig): StatusProps {
     const equipmentType = config.equipment.weapon ? equipmentStatus(config.equipment.weapon).type : null;

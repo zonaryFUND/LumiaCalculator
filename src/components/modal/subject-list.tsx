@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Subjects, SubjectID, name } from "@app/entity/subject";
+import { Subjects, SubjectID, name } from "app-types/subject-static";
 import style from "./subject-list.module.styl";
 import Images from "@app/resources/image";
 import SegmentedControl from "components/common/segmented-control";

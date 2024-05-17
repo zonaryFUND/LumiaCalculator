@@ -1,7 +1,7 @@
 import { Status } from "components/subject/status";
 import { DamageTable } from "../damage-table";
 import Constants from "./constants.json";
-import { SkillLevels } from "components/subject/use-subject-config";
+import { SkillLevels } from "app-types/subject-dynamic/config";
 
 function table(props: {status: Status, skillLevels: SkillLevels}): DamageTable {
     const qt = Constants.Q.damage.attack[props.skillLevels.Q] + Constants.T.damage.attack[props.skillLevels.T] - 100;

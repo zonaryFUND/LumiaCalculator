@@ -1,5 +1,4 @@
 import { BuildWithKey } from "@app/storage/build";
-import { SubjectConfig } from "components/subject/use-subject-config";
 
 export const defaultSampleBuilds: BuildWithKey[] = [
     {

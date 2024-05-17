@@ -4,9 +4,9 @@ import { SubjectSkillProps } from "../props";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import Decimal from "decimal.js";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import { Status } from "components/subject/status";
-import { baseStatus } from "@app/entity/base-status";
+import { baseStatus } from "app-types/subject-static/base-status";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>

@@ -1,5 +1,5 @@
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { StatusProps } from "components/subject/status";
-import { SubjectConfig } from "components/subject/use-subject-config";
 
 // NOTE:
 // The range of Irem's basic attack is 4.5 in game, but the range of other test subjects with Throw weapons is 5.7.

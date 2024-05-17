@@ -2,7 +2,8 @@ import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
 import { ItemSkillProps } from "../item-skill";
-import { WeaponTypeID, equipmentStatus, meleeOrRange } from "@app/entity/equipment";
+import { equipmentStatus } from "app-types/equipment";
+import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
 
 const Value: React.FC<ItemSkillProps> = props => {
     const perLevel = React.useMemo(() => {

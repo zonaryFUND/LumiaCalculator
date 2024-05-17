@@ -1,7 +1,8 @@
 import * as React from "react";
 import { ItemSkillProps } from "./item-skill";
-import { WeaponTypeID, equipmentStatus, meleeOrRange } from "@app/entity/equipment";
+import { equipmentStatus } from "app-types/equipment";
 import BaseDamage from "components/subjects/damage";
+import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
 
 type Props = {
     baseClassName?: string

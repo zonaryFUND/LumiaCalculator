@@ -1,7 +1,6 @@
 
 
 import { BuildWithKey, SavedBuildsKey, useBuildStorage } from "@app/storage/build";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import * as React from "react";
 import { useLatest, useLocalStorage } from "react-use";
 import { defaultSampleBuilds } from "./default-sample";

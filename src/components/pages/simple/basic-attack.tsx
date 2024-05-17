@@ -3,15 +3,15 @@ import * as React from "react";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { DamageTable } from "components/subjects/damage-table";
-import { WeaponTypeID } from "@app/entity/equipment";
 import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "components/subject/standard-values";
 import SkillDamage from "./skill-damage";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import Hypercharge from "./aiden-hypercharge";
 import DebiMarlConstants from "components/subjects/debi_marlene/constants.json";
 import Rio from "./rio";
 import { styles } from "@app/util/style";
 import style from "./basic-attack.module.styl";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 
 
 type Props = {
@@ -19,6 +19,7 @@ type Props = {
     config: SubjectConfig
     table: DamageTable
     weaponType?: WeaponTypeID
+    children?: React.ReactNode
 }
 
 const basicAttack: React.FC<Props> = props => {

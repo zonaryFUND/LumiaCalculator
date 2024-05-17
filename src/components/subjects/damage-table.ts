@@ -1,7 +1,7 @@
-import { WeaponTypeID } from "@app/entity/equipment"
-import { WeaponID } from "@app/entity/weapon-id"
+import { WeaponTypeID } from "app-types/equipment/weapon"
+import { WeaponID } from "app-types/equipment/weapon/id"
+import { SkillLevels } from "app-types/subject-dynamic/config"
 import { Status } from "components/subject/status"
-import { SkillLevels } from "components/subject/use-subject-config"
 
 export type SkillDamageProps = {
     label: string

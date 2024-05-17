@@ -3,8 +3,8 @@ import Damage from "../damage";
 import Constants from "./constants.json";
 import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import Decimal from "decimal.js";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>

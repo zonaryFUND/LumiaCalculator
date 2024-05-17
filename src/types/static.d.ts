@@ -2,6 +2,8 @@
 /* Use this folder to also add/extend a package d.ts file, if needed. */
 
 /* CSS MODULES */
+type CSSModuleClasses = { readonly [key: string]: string }
+
 declare module '*.module.css' {
   const classes: { [key: string]: string };
   export default classes;
@@ -18,8 +20,9 @@ declare module '*.module.less' {
   const classes: { [key: string]: string };
   export default classes;
 }
-declare module '*.module.styl' {
-  const classes: { [key: string]: string };
+
+declare module '*.styl' {
+  const classes: CSSModuleClasses;
   export default classes;
 }
 
@@ -28,7 +31,7 @@ declare module '*.css';
 declare module '*.scss';
 declare module '*.sass';
 declare module '*.less';
-declare module '*.styl';
+//declare module '*.styl';
 
 /* IMAGES */
 declare module '*.svg' {

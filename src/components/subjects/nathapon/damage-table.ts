@@ -1,6 +1,6 @@
+import { SkillLevels } from "app-types/subject-dynamic/config";
 import { DamageTable, SkillDamageProps } from "../damage-table";
 import Constants from "./constants.json";
-import { SkillLevels } from "components/subject/use-subject-config";
 
 function array(raw: SkillDamageProps, tLevel: number): SkillDamageProps[] {
     const max = Constants.T.max_stack;

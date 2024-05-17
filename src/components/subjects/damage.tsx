@@ -73,10 +73,10 @@ const Damage: React.FC<Props> = props => {
         return (
             <>
                {additionalOnly ? null : <span className={props.className || style.emphasis}>{damage.toString()}</span>}
-               {props.constants.targetHP ? <span className={style.maxhp}>{left}{target}の現在体力の{current(level, props.constants.targetHP)}％{right}</span> : null}
-               {props.constants.lostHP ? <span className={style.losthp}>{left}失った体力の{current(level, props.constants.lostHP)}％{right}</span> : null}
-               {props.constants.targetLostHP ? <span className={style.losthp}>{left}{target}の失った体力の{current(level, props.constants.targetLostHP)}％{right}</span> : null}
-               {props.constants.targetMaxHP ? <span className={style.maxhp}>{left}{target}の最大体力の{current(level, props.constants.targetMaxHP)}％{right}</span> : null}
+               {props.constants.targetHP ? <span className={style.maxhp}>{left}{target}の現在体力の{current(level, props.constants.targetHP).toString()}％{right}</span> : null}
+               {props.constants.lostHP ? <span className={style.losthp}>{left}失った体力の{current(level, props.constants.lostHP).toString()}％{right}</span> : null}
+               {props.constants.targetLostHP ? <span className={style.losthp}>{left}{target}の失った体力の{current(level, props.constants.targetLostHP).toString()}％{right}</span> : null}
+               {props.constants.targetMaxHP ? <span className={style.maxhp}>{left}{target}の最大体力の{current(level, props.constants.targetMaxHP).toString()}％{right}</span> : null}
             </>
         );
     } else {

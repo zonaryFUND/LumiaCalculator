@@ -1,5 +1,5 @@
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "components/subject/status";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import Decimal from "decimal.js";
 
 export function skillLevel(skill: "Q" | "W" | "E" | "R" | "T" | "D", config: SubjectConfig): number {

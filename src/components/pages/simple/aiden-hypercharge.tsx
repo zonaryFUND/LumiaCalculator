@@ -1,5 +1,4 @@
 import { Status } from "components/subject/status";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import * as React from "react";
 import { useToggle } from "react-use";
 import Constants from "components/subjects/aiden/constants.json";
@@ -7,6 +6,7 @@ import { BaseCriticalDamagePercent } from "components/subject/standard-values";
 import InnerTable from "components/common/inner-table";
 import table from "components/common/table.styl";
 import style from "./damage-table.module.styl";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 type Props = {
     status: Status

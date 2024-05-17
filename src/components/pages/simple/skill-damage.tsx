@@ -1,6 +1,5 @@
 import { Status } from "components/subject/status";
 import * as React from "react";
-import { SubjectConfig } from "components/subject/use-subject-config";
 import damage, { skillLevel } from "components/subjects/skill-damage";
 import style from "./damage-table.module.styl";
 import { useToggle } from "react-use";
@@ -8,6 +7,7 @@ import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
 import { SkillDamageProps } from "components/subjects/damage-table";
 import Decimal from "decimal.js";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 type Props = SkillDamageProps & {
     config: SubjectConfig
