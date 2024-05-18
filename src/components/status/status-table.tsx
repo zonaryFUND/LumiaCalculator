@@ -161,8 +161,13 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                         : null
                                     }
                                     {
-                                        props.status.attackPower.overrideAdditional ?
+                                        props.status.attackPower.overrideAdditional?.ratio ?
                                         <tr><td><FormattedMessage id={props.status.attackPower.overrideAdditional.nameKey} /></td><td>{props.status.attackPower.overrideAdditional.ratio?.toString()}%</td></tr>
+                                        : null
+                                    }
+                                    {
+                                        props.status.attackPower.overrideAdditional?.value ?
+                                        <tr><td><FormattedMessage id={props.status.attackPower.overrideAdditional.nameKey} /></td><td>{props.status.attackPower.overrideAdditional.value.toString()}</td></tr>
                                         : null
                                     }
                                 </InnerTable>

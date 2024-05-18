@@ -55,5 +55,7 @@
     "subject.karla.passive-amp": "T超過攻撃速度変換",
     "subject.martina.passive-attack": "T攻撃速度変換",
     "subject.nathapon.passive-attack-speed": "T固定値",
-    "subject.tia.passive-amp": "Tクールダウン変換"
+    "subject.tia.passive-amp": "Tクールダウン変換",
+    "subject.tsubame.passive-attack": "T致命変換",
+    "subject.tsubame.passive-range": "T固定値"
 }
