@@ -223,7 +223,19 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                     }
                                 </InnerTable>
                             </Column>
-                            <Column name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>} value={props.status.criticalChance.calculatedValue} percent hidden={toggle.basicAttack[0]} />
+                            <Column name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>} value={props.status.criticalChance.calculatedValue} percent prohibitExpand={props.status.criticalChance.overrideAdditional == undefined} hidden={toggle.basicAttack[0]}>
+                                <InnerTable>
+                                    <tr><td><FormattedMessage id="app.equipment" /></td><td>{props.status.criticalChance.equipment?.constant?.toString()}%</td></tr>
+                                    {
+                                        props.status.criticalChance.overrideAdditional ?
+                                        <tr>
+                                            <td><FormattedMessage id={props.status.criticalChance.overrideAdditional.nameKey} /></td>
+                                            <td>{props.status.criticalChance.overrideAdditional.value?.toString()}%</td>
+                                        </tr>
+                                        : null
+                                    }
+                                </InnerTable>
+                            </Column>
                             <Column name={<>{criticalDamage}<FormattedMessage id="status.critical-damage" /></>} value={props.status.criticalDamage.calculatedValue} percent hidden={toggle.basicAttack[0]} />
                         </tbody>
                         <tbody>

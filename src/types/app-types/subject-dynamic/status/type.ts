@@ -43,7 +43,7 @@ export type Status = {
     attackPower: StatusValue & AdditionalStatusValue & CalculatedStatusValue
     basicAttackAmp: StatusValue & CalculatedStatusValue
     attackSpeed: StatusValue & AdditionalStatusValue & CalculatedStatusValue
-    criticalChance: CalculatedStatusValue
+    criticalChance: StatusValue & CalculatedStatusValue
     criticalDamage: CalculatedStatusValue
     skillAmp: StatusValue & CalculatedStatusValue
     cooldownReduction: {

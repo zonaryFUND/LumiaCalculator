@@ -105,6 +105,7 @@ export function useStatus(config: SubjectConfig): Status {
         return value ? { constant: value } : undefined;
     })();
     const basicAttackRangeEquipment = maxEquipmentStatus("attackRange", equipments);
+    const criticalChanceEquipment = sumEquipmentStatus("criticalChance", equipments);
 
     const baseValue: StatusBeforeCalculation = {
         maxHP: {
@@ -169,8 +170,14 @@ export function useStatus(config: SubjectConfig): Status {
                 ratio: masteryFactor.attackSpeed
             } : undefined
         },
-        criticalChance: {},
-        criticalDamage: {},
+        criticalChance: {
+            equipment: criticalChanceEquipment ? {
+                constant: criticalChanceEquipment.clamp(0, 100)
+            } : undefined
+        },
+        criticalDamage: {
+            calculatedValue: sumEquipmentStatus("criticalDamage", equipments) ?? new Decimal(0)
+        },
         skillAmp: {
             equipment: {
                 ...equipmentValue("skillAmplification", perLevelStatus.skill_amp),
@@ -237,12 +244,14 @@ export function useStatus(config: SubjectConfig): Status {
             ...overriddenValue.attackSpeed,
             calculatedValue: overriddenValue.attackSpeed.calculatedValue
         } : attackSpeedCalc(overriddenValue.attackSpeed, {mastery: config.weaponMastery}),
-        criticalChance: {
-            calculatedValue: sumEquipmentStatus("criticalChance", equipments) ?? new Decimal(0)
-        },
-        criticalDamage: {
-            calculatedValue: sumEquipmentStatus("criticalDamage", equipments) ?? new Decimal(0)
-        },
+        criticalChance: (() => {
+            const calculated = standardCalc(overriddenValue.criticalChance, {}, 0);
+            return {
+                ...calculated,
+                calculatedValue: calculated.calculatedValue.clamp(0, 100)
+            }
+        })(),
+        criticalDamage: overriddenValue.criticalDamage as any,
         skillAmp: addAdaptiveTo == "amp" ? standardCalc({
             ...ampWithoutAdaptive,
             equipment: {

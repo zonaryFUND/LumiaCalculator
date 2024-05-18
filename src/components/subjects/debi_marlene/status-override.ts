@@ -1,12 +1,15 @@
-import { StatusProps } from "components/subject/status";
 import Constants from "./constants.json";
-import Decimal from "decimal.js";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { StatusOverrideFunc } from "../status-override";
 
-export default function(status: StatusProps, config: SubjectConfig): StatusProps {
-    return {
-        ...status,
-        criticalChance: status.criticalChance.add(status.criticalDamage.times(Constants.T.critical_damage_to_chance)).clamp(0, 100),
-        criticalDamage: new Decimal(0)
-    };
-}
+const f: StatusOverrideFunc = (status, config) => ({
+    ...status,
+    criticalChance: {
+        ...status.criticalChance,
+        overrideAdditional: status.criticalDamage.calculatedValue?.greaterThan(0) ? {
+            nameKey: "subject.debi_marlene.passive-critical-chance",
+            value: status.criticalDamage.calculatedValue.times(Constants.T.critical_damage_to_chance)
+        } : undefined
+    }
+});
+
+export default f;
