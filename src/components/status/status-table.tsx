@@ -309,6 +309,11 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                         </tr>
                                         : null
                                     }
+                                    {
+                                        props.status.basicAttackRange.overrideFix ?
+                                        <tr className={style.fixedvalue}><td><FormattedMessage id={props.status.basicAttackRange.overrideFix.nameKey} /></td><td>{props.status.basicAttackRange.overrideFix.value.toString()}</td></tr>
+                                        : null
+                                    }
                                 </InnerTable>
                             </Column>
                         </tbody>

@@ -271,6 +271,9 @@ export function useStatus(config: SubjectConfig): Status {
         },
         movementSpeed: movementSpeedSpeedCalc(overriddenValue.movementSpeed, {mastery: config.movementMastery}),
         visionRange: standardCalc(overriddenValue.visionRange, {}, 2),
-        basicAttackRange: basicAttackRangeCalc(overriddenValue.basicAttackRange)
+        basicAttackRange: overriddenValue.basicAttackRange.calculatedValue ? {
+            ...overriddenValue.basicAttackRange,
+            calculatedValue: overriddenValue.basicAttackRange.calculatedValue
+        } : basicAttackRangeCalc(overriddenValue.basicAttackRange)
     }
 }

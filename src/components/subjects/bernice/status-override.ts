@@ -1,11 +1,19 @@
-import { StatusProps } from "components/subject/status";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { StatusOverrideFunc } from "../status-override";
 
-export default function(status: StatusProps, config: SubjectConfig): StatusProps {
-    return {
-        ...status,
-        basicAttackRange: new Decimal(Constants.common.basic_attack_range)
-    };
-}
+const range = new Decimal(Constants.common.basic_attack_range);
+
+const f: StatusOverrideFunc = (status, config) => ({
+    ...status,
+    basicAttackRange: {
+        ...status.basicAttackRange,
+        overrideFix: {
+            nameKey: "subject.bernice.passive-attack-range",
+            value: range
+        },
+        calculatedValue: range
+    }
+})
+
+export default f;
