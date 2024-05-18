@@ -1,21 +1,37 @@
-import { StatusProps } from "components/subject/status";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
+import { StatusOverrideFunc } from "../status-override";
+import { attackSpeedCalc } from "app-types/subject-dynamic/status/attack-speed-calculation";
 
-export default function(status: StatusProps): StatusProps {
+const f: StatusOverrideFunc = (status, config) => {
     const threshold = new Decimal(Constants.T.max_attack_speed);
-    if (status.attackSpeed.calculated.greaterThan(threshold)) {
-        const excess = new Decimal(threshold).sub(status.attackSpeed.calculated);
-        const convertedAmp = excess.times(Constants.T.amp_conversion).times(100);
+    const attackSpeed = attackSpeedCalc(status.attackSpeed, {mastery: config.weaponMastery});
+    if (attackSpeed.calculatedValue.greaterThan(threshold)) {
+        const excess = attackSpeed.calculatedValue.sub(threshold).abs();
         return {
             ...status,
             attackSpeed: {
                 ...status.attackSpeed,
-                calculated: threshold
+                overrideFix: {
+                    nameKey: "subject.karla.passive-attack-speed-max",
+                    value: new Decimal(threshold)
+                },
+                calculatedValue: new Decimal(threshold)
             },
-            baseSkillAmp: status.baseSkillAmp.add(convertedAmp)
+            skillAmp: {
+                ...status.skillAmp,
+                overrideAdditional: {
+                    nameKey: "subject.karla.passive-amp",
+                    value: excess.times(Constants.T.amp_conversion).times(100).round()
+                }
+            }
         }
     } else {
-        return status;
+        return {
+            ...status,
+            attackSpeed
+        }
     }
-}
+ }
+
+ export default f;

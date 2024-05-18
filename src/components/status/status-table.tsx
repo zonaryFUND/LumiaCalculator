@@ -242,11 +242,15 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                             <tr className={table.separator}><td colSpan={2} onClick={toggle.skill[1]}><div><p><FormattedMessage id="app.skill" /></p>{toggle.skill[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
                             <Column name={<><ArrowFatLinesUp weight="fill" /><FormattedMessage id="status.skill-amp" /></>} value={props.status.skillAmp.calculatedValue} prohibitExpand={props.status.skillAmp.calculatedValue.isZero()} hidden={toggle.skill[0]}>
                                 <InnerTable>
-                                    <Equipment 
-                                        {...props.status.skillAmp.equipment}
-                                        level={props.level}
-                                        label={<FormattedMessage id="app.constant-value" />}
-                                    />
+                                    {
+                                        props.status.skillAmp.equipment?.constant || props.status.skillAmp.perLevel ?
+                                        <Equipment 
+                                            {...props.status.skillAmp.equipment}
+                                            level={props.level}
+                                            label={<FormattedMessage id="app.constant-value" />}
+                                        /> 
+                                        : null
+                                    }
                                     {
                                         props.status.skillAmp.overrideAdditional ?
                                         <tr>
