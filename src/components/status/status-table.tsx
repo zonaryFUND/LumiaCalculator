@@ -160,6 +160,11 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                         <tr><td><FormattedMessage id="status.adaptive"/></td><td>{props.status.attackPower.equipment.adaptive.toString()}</td></tr>
                                         : null
                                     }
+                                    {
+                                        props.status.attackPower.overrideAdditional ?
+                                        <tr><td><FormattedMessage id={props.status.attackPower.overrideAdditional.nameKey} /></td><td>{props.status.attackPower.overrideAdditional.ratio?.toString()}%</td></tr>
+                                        : null
+                                    }
                                 </InnerTable>
                             </Column>
                             <Column name={<>{basicAttackAmp}<FormattedMessage id="status.basic-attack-amp" /></>} value={props.status.basicAttackAmp.calculatedValue} percent prohibitExpand={props.status.basicAttackAmp.calculatedValue.isZero()} hidden={toggle.basicAttack[0]}>

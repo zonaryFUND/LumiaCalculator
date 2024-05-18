@@ -231,14 +231,13 @@ export function useStatus(config: SubjectConfig): Status {
         basicAttackReduction: defenseMasteryCalc(overriddenValue.basicAttackReduction, {mastery: config.defenseMastery}),
         skillReduction: defenseMasteryCalc(overriddenValue.skillReduction, {mastery: config.defenseMastery}),
         spReg: standardCalc(overriddenValue.spReg, {level: config.level}, 2),
-        attackPower: addAdaptiveTo == "attack" ? attackCalc({
+        attackPower: attackCalc({
             ...attackWithoutAdaptive,
             equipment: {
                 ...equipmentValue("attackPower", perLevelStatus.attack_power),
-                adaptive
+                adaptive: addAdaptiveTo == "attack" ? adaptive : undefined
             }
-        }, {level: config.level, mastery: config.weaponMastery})
-        : attackWithoutAdaptive,
+        }, {level: config.level, mastery: config.weaponMastery}),
         basicAttackAmp: basicAttackAmpCalc(overriddenValue.basicAttackAmp, {level: config.level, mastery: config.weaponMastery}),
         attackSpeed: overriddenValue.attackSpeed.calculatedValue ? {
             ...overriddenValue.attackSpeed,
