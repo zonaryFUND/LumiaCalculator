@@ -7,6 +7,6 @@ export function basicAttackAmpCalc(seedValue: StatusValue, props: { level: numbe
 
     return {
         ...seedValue,
-        value: Decimal.sum(...[equipment, mastery, new Decimal(0)].filter((v): v is Decimal => v !== undefined))
+        calculatedValue: Decimal.sum(...[equipment, mastery, new Decimal(0)].filter((v): v is Decimal => v !== undefined))
     }
 }

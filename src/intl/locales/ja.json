@@ -41,5 +41,7 @@
     "status.heal-power": "与える回復増加",
     "status.tenacity": "行動妨害耐性",
     "status.movement-speed": "移動速度",
-    "status.vision": "視界範囲"
+    "status.vision": "視界範囲",
+
+    "subject.adela.passive-amp": "T増幅変換"
 }

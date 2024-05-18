@@ -13,6 +13,6 @@ export function basicAttackRangeCalc(seedValue: StatusValue): StatusValue & Calc
 
     return {
         ...seedValue,
-        value: constant
+        calculatedValue: constant
     }
 }

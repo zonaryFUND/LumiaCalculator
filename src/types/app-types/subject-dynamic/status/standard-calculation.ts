@@ -23,7 +23,7 @@ export function standardCalc(seedValue: StatusValue, props: { level?: number, ma
 
     return {
         ...seedValue,
-        value: constant
+        calculatedValue: constant
             .add(seedValue.perLevel?.times((props.level ?? 0) - 1) ?? 0)
             .add(seedValue.equipment?.perLevel?.times(props.level ?? 0) ?? 0)
             .add(seedValue.perMastery?.value?.times(props.mastery ?? 0) ?? 0)

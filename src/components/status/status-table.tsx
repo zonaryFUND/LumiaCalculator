@@ -69,8 +69,8 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
     const shownStatus = React.useState<string | undefined>("subject");
 
     const effectiveToughness = React.useMemo(() => {
-        return props.status.maxHP.value.times(props.status.defense.value.add(100).dividedBy(100));
-    }, [props.status.maxHP.value, props.status.defense.value]);
+        return props.status.maxHP.calculatedValue.times(props.status.defense.calculatedValue.add(100).dividedBy(100));
+    }, [props.status.maxHP.calculatedValue, props.status.defense.calculatedValue]);
 
     return (
         <IconContext.Provider value={{size: 18}}>
@@ -97,21 +97,21 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                         </colgroup>
                         <tbody>
                             <tr className={table.separator} onClick={toggle.toughness[1]}><td colSpan={2}><div><p><FormattedMessage id="app.toughness-header" />: {effectiveToughness.toString()}</p>{toggle.toughness[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><FirstAid weight="fill" /><FormattedMessage id="status.maxhp"/></>} value={props.status.maxHP.value} hidden={toggle.toughness[0]}>
+                            <Column name={<><FirstAid weight="fill" /><FormattedMessage id="status.maxhp"/></>} value={props.status.maxHP.calculatedValue} hidden={toggle.toughness[0]}>
                                 <StandardExpand {...props.status.maxHP} level={props.level} digit={0} />
                             </Column>
-                            <Column name={<><FirstAid /><FormattedMessage id="status.hpregen"/></>} value={props.status.hpReg.value} hidden={toggle.toughness[0]}>
+                            <Column name={<><FirstAid /><FormattedMessage id="status.hpregen"/></>} value={props.status.hpReg.calculatedValue} hidden={toggle.toughness[0]}>
                                 <StandardExpand {...props.status.hpReg} level={props.level} digit={2} />
                             </Column>
-                            <Column name={<><Shield /><FormattedMessage id="status.defense"/></>} value={props.status.defense.value} hidden={toggle.toughness[0]}>
+                            <Column name={<><Shield /><FormattedMessage id="status.defense"/></>} value={props.status.defense.calculatedValue} hidden={toggle.toughness[0]}>
                                 <StandardExpand {...props.status.defense} level={props.level} digit={0} />
                             </Column>
-                            <Column name={<>{basicAttackRecuction}<FormattedMessage id="status.basic-attack-damage-reduction" /></>} value={props.status.basicAttackReduction.value} percent hidden={toggle.toughness[0]}>
+                            <Column name={<>{basicAttackRecuction}<FormattedMessage id="status.basic-attack-damage-reduction" /></>} value={props.status.basicAttackReduction.calculatedValue} percent hidden={toggle.toughness[0]}>
                                 <InnerTable>
                                     <Mastery perMastery={props.status.basicAttackReduction.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />
                                 </InnerTable>
                             </Column>
-                            <Column name={<>{skillRecuction}<FormattedMessage id="status.skill-damage-reduction" /></>} value={props.status.skillReduction.value} percent hidden={toggle.toughness[0]}>
+                            <Column name={<>{skillRecuction}<FormattedMessage id="status.skill-damage-reduction" /></>} value={props.status.skillReduction.calculatedValue} percent hidden={toggle.toughness[0]}>
                                 <InnerTable>
                                     <Mastery perMastery={props.status.skillReduction.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />
                                     {props.status.skillReduction.equipment ? <Equipment {...props.status.skillReduction.equipment} level={props.level} percent={true} /> : null} 
@@ -120,16 +120,16 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                         </tbody>
                         <tbody>
                             <tr className={table.separator} onClick={toggle.stamina[1]}><td colSpan={2}><div><p><FormattedMessage id="app.sp" /></p>{toggle.stamina[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><Lightning weight="fill" /><FormattedMessage id="status.maxsp" /></>} value={props.status.maxSP.value} hidden={toggle.stamina[0]}>
+                            <Column name={<><Lightning weight="fill" /><FormattedMessage id="status.maxsp" /></>} value={props.status.maxSP.calculatedValue} hidden={toggle.stamina[0]}>
                                 <StandardExpand {...props.status.maxSP} level={props.level} digit={2} />
                             </Column>
-                            <Column name={<><Lightning /><FormattedMessage id="status.spregen"/></>} value={props.status.spReg.value} hidden={toggle.stamina[0]}>
+                            <Column name={<><Lightning /><FormattedMessage id="status.spregen"/></>} value={props.status.spReg.calculatedValue} hidden={toggle.stamina[0]}>
                                 <StandardExpand {...props.status.spReg} level={props.level} digit={2} />
                             </Column>
                         </tbody>
                         <tbody>
                             <tr className={table.separator} onClick={toggle.basicAttack[1]}><td colSpan={2}><div><p><FormattedMessage id="app.basic-attack" /></p>{toggle.basicAttack[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><Sword /><FormattedMessage id="status.attack-power" /></>} value={props.status.attackPower.value} hidden={toggle.basicAttack[0]}>
+                            <Column name={<><Sword /><FormattedMessage id="status.attack-power" /></>} value={props.status.attackPower.calculatedValue} hidden={toggle.basicAttack[0]}>
                                 <InnerTable>
                                     <BasePlusPerLevel 
                                         {...props.status.attackPower} 
@@ -162,7 +162,7 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                     }
                                 </InnerTable>
                             </Column>
-                            <Column name={<>{basicAttackAmp}<FormattedMessage id="status.basic-attack-amp" /></>} value={props.status.basicAttackAmp.value} percent prohibitExpand={props.status.basicAttackAmp.value.isZero()} hidden={toggle.basicAttack[0]}>
+                            <Column name={<>{basicAttackAmp}<FormattedMessage id="status.basic-attack-amp" /></>} value={props.status.basicAttackAmp.calculatedValue} percent prohibitExpand={props.status.basicAttackAmp.calculatedValue.isZero()} hidden={toggle.basicAttack[0]}>
                                 <InnerTable>
                                     <Mastery perMastery={props.status.basicAttackAmp.perMastery!} name={<FormattedMessage id="status.weapon-mastery" />} mastery={props.weaponMastery} />
                                     {
@@ -176,7 +176,7 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                     }
                                 </InnerTable>
                             </Column>
-                            <Column name={<>{attackSpeed}<FormattedMessage id="status.attack-speed" /></>} value={props.status.attackSpeed.value} hidden={toggle.basicAttack[0]}>
+                            <Column name={<>{attackSpeed}<FormattedMessage id="status.attack-speed" /></>} value={props.status.attackSpeed.calculatedValue} hidden={toggle.basicAttack[0]}>
                                 <InnerTable>
                                     <tr>
                                         <td><FormattedMessage id="app.standard-value" /></td>
@@ -210,18 +210,26 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                     }
                                 </InnerTable>
                             </Column>
-                            <Column name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>} value={props.status.criticalChance.value} percent hidden={toggle.basicAttack[0]} />
-                            <Column name={<>{criticalDamage}<FormattedMessage id="status.critical-damage" /></>} value={props.status.criticalDamage.value} percent hidden={toggle.basicAttack[0]} />
+                            <Column name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>} value={props.status.criticalChance.calculatedValue} percent hidden={toggle.basicAttack[0]} />
+                            <Column name={<>{criticalDamage}<FormattedMessage id="status.critical-damage" /></>} value={props.status.criticalDamage.calculatedValue} percent hidden={toggle.basicAttack[0]} />
                         </tbody>
                         <tbody>
                             <tr className={table.separator}><td colSpan={2} onClick={toggle.skill[1]}><div><p><FormattedMessage id="app.skill" /></p>{toggle.skill[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><ArrowFatLinesUp weight="fill" /><FormattedMessage id="status.skill-amp" /></>} value={props.status.skillAmp.value} prohibitExpand={props.status.skillAmp.value.isZero()} hidden={toggle.skill[0]}>
+                            <Column name={<><ArrowFatLinesUp weight="fill" /><FormattedMessage id="status.skill-amp" /></>} value={props.status.skillAmp.calculatedValue} prohibitExpand={props.status.skillAmp.calculatedValue.isZero()} hidden={toggle.skill[0]}>
                                 <InnerTable>
                                     <Equipment 
                                         {...props.status.skillAmp.equipment}
                                         level={props.level}
                                         label={<FormattedMessage id="app.constant-value" />}
                                     />
+                                    {
+                                        props.status.skillAmp.overrideAdditional ?
+                                        <tr>
+                                            <td><FormattedMessage id={props.status.skillAmp.overrideAdditional.nameKey} /></td>
+                                            <td>{props.status.skillAmp.overrideAdditional.value?.toString()}</td>
+                                        </tr>
+                                        : null
+                                    }
                                     {
                                         props.status.skillAmp.equipment?.adaptive ?
                                         <tr><td><FormattedMessage id="status.adaptive"/></td><td>{props.status.skillAmp.equipment.adaptive.toString()}</td></tr>
@@ -239,7 +247,7 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                     }
                                 </InnerTable>
                             </Column>
-                            <Column name={<><Hourglass /><FormattedMessage id="status.cooldown-reduction" /></>} value={props.status.cooldownReduction.value} percent prohibitExpand={props.status.cooldownReduction.cap.isZero()} hidden={toggle.skill[0]}>
+                            <Column name={<><Hourglass /><FormattedMessage id="status.cooldown-reduction" /></>} value={props.status.cooldownReduction.calculatedValue} percent prohibitExpand={props.status.cooldownReduction.cap.isZero()} hidden={toggle.skill[0]}>
                                 <InnerTable>
                                     <tr><td><FormattedMessage id="status.max-cooldown-reduction" /></td><td>+{props.status.cooldownReduction.cap.toString()}%</td></tr>
                                 </InnerTable>
@@ -247,19 +255,19 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                         </tbody>
                         <tbody>
                             <tr className={table.separator} onClick={toggle.penetration[1]}><td colSpan={2}><div><p><FormattedMessage id="status.armor-penetration" /></p>{toggle.penetration[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><ShieldSlash /><FormattedMessage id="status.armor-penetration-constant" /></>} value={props.status.armorPenetration.value} hidden={toggle.penetration[0]} />
-                            <Column name={<><ShieldSlash /><FormattedMessage id="status.armor-penetration-ratio" /></>} value={props.status.armorPenetrationRatio.value} percent hidden={toggle.penetration[0]} />
+                            <Column name={<><ShieldSlash /><FormattedMessage id="status.armor-penetration-constant" /></>} value={props.status.armorPenetration.calculatedValue} hidden={toggle.penetration[0]} />
+                            <Column name={<><ShieldSlash /><FormattedMessage id="status.armor-penetration-ratio" /></>} value={props.status.armorPenetrationRatio.calculatedValue} percent hidden={toggle.penetration[0]} />
                         </tbody>
                         <tbody>
                             <tr className={table.separator} onClick={toggle.heal[1]}><td colSpan={2}><div><p><FormattedMessage id="app.heal" /></p>{toggle.heal[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><Drop /><FormattedMessage id="status.lifesteal" /></>} value={props.status.lifeSteal.value} percent hidden={toggle.heal[0]} />
-                            <Column name={<><Drop /><FormattedMessage id="status.omnisyphon" /></>} value={props.status.omnisyphon.value} percent hidden={toggle.heal[0]} />
-                            <Column name={<><FirstAidKit /><FormattedMessage id="status.heal-power" /></>} value={props.status.healPower.value} percent hidden={toggle.heal[0]} />
+                            <Column name={<><Drop /><FormattedMessage id="status.lifesteal" /></>} value={props.status.lifeSteal.calculatedValue} percent hidden={toggle.heal[0]} />
+                            <Column name={<><Drop /><FormattedMessage id="status.omnisyphon" /></>} value={props.status.omnisyphon.calculatedValue} percent hidden={toggle.heal[0]} />
+                            <Column name={<><FirstAidKit /><FormattedMessage id="status.heal-power" /></>} value={props.status.healPower.calculatedValue} percent hidden={toggle.heal[0]} />
                         </tbody>
                         <tbody>
                             <tr className={table.separator}onClick={toggle.others[1]}><td colSpan={2}><div><p><FormattedMessage id="app.others" /></p>{toggle.others[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><HandFist /><FormattedMessage id="status.tenacity" /></>} value={props.status.tenacity.value} percent hidden={toggle.others[0]} />
-                            <Column name={<><SneakerMove /><FormattedMessage id="status.movement-speed" /></>} value={props.status.movementSpeed.value} hidden={toggle.others[0]}>
+                            <Column name={<><HandFist /><FormattedMessage id="status.tenacity" /></>} value={props.status.tenacity.calculatedValue} percent hidden={toggle.others[0]} />
+                            <Column name={<><SneakerMove /><FormattedMessage id="status.movement-speed" /></>} value={props.status.movementSpeed.calculatedValue} hidden={toggle.others[0]}>
                                 <InnerTable>
                                     <tr><td><FormattedMessage id="app.subject" /></td><td>{props.status.movementSpeed.base?.toString()}</td></tr>
                                     <Equipment 
@@ -269,13 +277,13 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                     <Mastery perMastery={props.status.movementSpeed.perMastery!} name={<FormattedMessage id="status.movement-mastery" />} mastery={props.movementMastery} />
                                 </InnerTable>
                             </Column>
-                            <Column name={<><Eye /><FormattedMessage id="status.vision" /></>} value={props.status.visionRange.value} prohibitExpand={props.status.visionRange.equipment == undefined} hidden={toggle.others[0]}>
+                            <Column name={<><Eye /><FormattedMessage id="status.vision" /></>} value={props.status.visionRange.calculatedValue} prohibitExpand={props.status.visionRange.equipment == undefined} hidden={toggle.others[0]}>
                                 <InnerTable>
                                     <tr><td><FormattedMessage id="app.standard-value" /></td><td>{props.status.visionRange.base?.toString()}</td></tr>
                                     <tr><td><FormattedMessage id="app.additional-value" /></td><td>{props.status.visionRange.equipment?.constant?.toString()}</td></tr>
                                 </InnerTable>
                             </Column>
-                            <Column name={<><ArrowFatLineRight />基本攻撃射程</>} value={props.status.basicAttackRange.value} prohibitExpand={props.status.basicAttackRange.equipment == undefined} hidden={toggle.others[0]}>
+                            <Column name={<><ArrowFatLineRight />基本攻撃射程</>} value={props.status.basicAttackRange.calculatedValue} prohibitExpand={props.status.basicAttackRange.equipment == undefined} hidden={toggle.others[0]}>
                                 <InnerTable>
                                     <tr><td><FormattedMessage id="app.standard-value" /></td><td>{props.status.basicAttackRange.base?.toString()}</td></tr>
                                     <tr><td><FormattedMessage id="app.weapon" /></td><td>{props.status.basicAttackRange.equipment?.constant?.toString()}</td></tr>

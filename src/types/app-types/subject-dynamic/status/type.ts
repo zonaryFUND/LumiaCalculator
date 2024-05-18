@@ -21,11 +21,11 @@ export type StatusValue = {
 }
 
 export type AdditionalStatusValue = {
-    additional: Decimal
+    additional?: Decimal
 }
 
 export type CalculatedStatusValue = {
-    value: Decimal
+    calculatedValue: Decimal
 }
 
 export type Status = {
@@ -56,3 +56,4 @@ export type Status = {
     basicAttackRange: StatusValue & CalculatedStatusValue
 }
 
+export type StatusBeforeCalculation = { [K in keyof Status]: Status[K] extends infer T & CalculatedStatusValue ? T : never };

@@ -16,7 +16,7 @@ export function movementSpeedSpeedCalc(seedValue: StatusValue, props: { mastery:
         perMastery: {
             value: MovementSpeedPerMastery
         },
-        value: constant
+        calculatedValue: constant
             .add(MovementSpeedPerMastery.times(props.mastery).round2())
     }
 }
