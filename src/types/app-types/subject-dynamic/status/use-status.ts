@@ -161,7 +161,7 @@ export function useStatus(config: SubjectConfig): Status {
         },
         attackSpeed: {
             base: baseStatusValues.attackSpeed,
-            equipment: weaponBaseStatus && attackSpeedEquipment ? {
+            equipment: weaponBaseStatus || attackSpeedEquipment ? {
                 constant: weaponBaseStatus?.attackSpeed,
                 ratio: attackSpeedEquipment
             } : undefined,
@@ -214,13 +214,13 @@ export function useStatus(config: SubjectConfig): Status {
         attackWithoutAdaptive.calculatedValue.greaterThanOrEqualTo(ampWithoutAdaptive.calculatedValue) ? "attack" : "amp";
 
     return {
-        maxHP: maxHPCalc(baseValue.maxHP, {level: config.level}),
-        hpReg: standardCalc(baseValue.hpReg, {level: config.level}, 2),
-        defense: standardCalc(baseValue.defense, {level: config.level}, 0),
-        maxSP: standardCalc(baseValue.maxSP, {level: config.level}, 0),
-        basicAttackReduction: defenseMasteryCalc(baseValue.basicAttackReduction, {mastery: config.defenseMastery}),
-        skillReduction: defenseMasteryCalc(baseValue.skillReduction, {mastery: config.defenseMastery}),
-        spReg: standardCalc(baseValue.spReg, {level: config.level}, 2),
+        maxHP: maxHPCalc(overriddenValue.maxHP, {level: config.level}),
+        hpReg: standardCalc(overriddenValue.hpReg, {level: config.level}, 2),
+        defense: standardCalc(overriddenValue.defense, {level: config.level}, 0),
+        maxSP: standardCalc(overriddenValue.maxSP, {level: config.level}, 0),
+        basicAttackReduction: defenseMasteryCalc(overriddenValue.basicAttackReduction, {mastery: config.defenseMastery}),
+        skillReduction: defenseMasteryCalc(overriddenValue.skillReduction, {mastery: config.defenseMastery}),
+        spReg: standardCalc(overriddenValue.spReg, {level: config.level}, 2),
         attackPower: addAdaptiveTo == "attack" ? attackCalc({
             ...attackWithoutAdaptive,
             equipment: {
@@ -229,8 +229,11 @@ export function useStatus(config: SubjectConfig): Status {
             }
         }, {level: config.level, mastery: config.weaponMastery})
         : attackWithoutAdaptive,
-        basicAttackAmp: basicAttackAmpCalc(baseValue.basicAttackAmp, {level: config.level, mastery: config.weaponMastery}),
-        attackSpeed: attackSpeedCalc(baseValue.attackSpeed, {mastery: config.weaponMastery}),
+        basicAttackAmp: basicAttackAmpCalc(overriddenValue.basicAttackAmp, {level: config.level, mastery: config.weaponMastery}),
+        attackSpeed: overriddenValue.attackSpeed.calculatedValue ? {
+            ...overriddenValue.attackSpeed,
+            calculatedValue: overriddenValue.attackSpeed.calculatedValue
+        } : attackSpeedCalc(overriddenValue.attackSpeed, {mastery: config.weaponMastery}),
         criticalChance: {
             calculatedValue: sumEquipmentStatus("criticalChance", equipments) ?? new Decimal(0)
         },
@@ -245,7 +248,7 @@ export function useStatus(config: SubjectConfig): Status {
             }
         }, {level: config.level, mastery: config.weaponMastery}, 0) : ampWithoutAdaptive,
         cooldownReduction: {
-            ...baseValue.cooldownReduction,
+            ...overriddenValue.cooldownReduction,
             calculatedValue: (sumEquipmentStatus("cooldownReduction", equipments) ?? new Decimal(0)).clamp(0, BaseCooldownCap.add(cdrCap))
         },
         armorPenetration: {
@@ -266,8 +269,8 @@ export function useStatus(config: SubjectConfig): Status {
         tenacity: {
             calculatedValue: maxEquipmentStatus("tenacity", equipments) ?? new Decimal(0)
         },
-        movementSpeed: movementSpeedSpeedCalc(baseValue.movementSpeed, {mastery: config.movementMastery}),
-        visionRange: standardCalc(baseValue.visionRange, {}, 2),
-        basicAttackRange: basicAttackRangeCalc(baseValue.basicAttackRange)
+        movementSpeed: movementSpeedSpeedCalc(overriddenValue.movementSpeed, {mastery: config.movementMastery}),
+        visionRange: standardCalc(overriddenValue.visionRange, {}, 2),
+        basicAttackRange: basicAttackRangeCalc(overriddenValue.basicAttackRange)
     }
 }

@@ -18,6 +18,10 @@ export type StatusValue = {
         value?: Decimal
         ratio?: Decimal
     }
+    overrideFix?: {
+        nameKey: string
+        value: Decimal
+    }
 }
 
 export type AdditionalStatusValue = {
@@ -56,4 +60,4 @@ export type Status = {
     basicAttackRange: StatusValue & CalculatedStatusValue
 }
 
-export type StatusBeforeCalculation = { [K in keyof Status]: Status[K] extends infer T & CalculatedStatusValue ? T : never };
+export type StatusBeforeCalculation = { [K in keyof Status]: Status[K] extends infer T & CalculatedStatusValue ? T & Partial<CalculatedStatusValue> : never };

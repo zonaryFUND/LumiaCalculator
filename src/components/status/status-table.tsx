@@ -208,6 +208,11 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                         <Mastery perMastery={props.status.attackSpeed.perMastery} name={<FormattedMessage id="status.weapon-mastery" />} mastery={props.weaponMastery} />
                                         : null
                                     }
+                                    {
+                                        props.status.attackSpeed.overrideFix ?
+                                        <tr className={style.fixedvalue}><td><FormattedMessage id={props.status.attackSpeed.overrideFix.nameKey} /></td><td>{props.status.attackSpeed.overrideFix.value.toString()}</td></tr>
+                                        : null
+                                    }
                                 </InnerTable>
                             </Column>
                             <Column name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>} value={props.status.criticalChance.calculatedValue} percent hidden={toggle.basicAttack[0]} />
@@ -288,6 +293,14 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                     <tr><td><FormattedMessage id="app.standard-value" /></td><td>{props.status.basicAttackRange.base?.toString()}</td></tr>
                                     <tr><td><FormattedMessage id="app.weapon" /></td><td>{props.status.basicAttackRange.equipment?.constant?.toString()}</td></tr>
                                     {props.status.basicAttackRange.equipment?.ratio ? <tr><td><FormattedMessage id="app.additional-value" /></td><td>{props.status.basicAttackRange.equipment.ratio.toString()}</td></tr> : null}
+                                    {
+                                        props.status.basicAttackRange.overrideAdditional ?
+                                        <tr>
+                                            <td><FormattedMessage id={props.status.basicAttackRange.overrideAdditional.nameKey} /></td>
+                                            <td>{props.status.basicAttackRange.overrideAdditional.value?.toString()}</td>
+                                        </tr>
+                                        : null
+                                    }
                                 </InnerTable>
                             </Column>
                         </tbody>

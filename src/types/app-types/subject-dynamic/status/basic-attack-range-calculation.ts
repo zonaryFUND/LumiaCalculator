@@ -6,7 +6,8 @@ export function basicAttackRangeCalc(seedValue: StatusValue): StatusValue & Calc
         ...[
             seedValue.base,
             seedValue.equipment?.constant,
-            seedValue.equipment?.ratio
+            seedValue.equipment?.ratio,
+            seedValue.overrideAdditional?.value
         ]
         .filter((v): v is Decimal => v !== undefined)
     );

@@ -7,6 +7,7 @@ export function standardCalc(seedValue: StatusValue, props: { level?: number, ma
             seedValue.base,
             seedValue.equipment?.constant,
             seedValue.equipment?.adaptive,
+            seedValue.overrideAdditional?.value,
             new Decimal(0)
         ]
         .filter((v): v is Decimal => v !== undefined)
