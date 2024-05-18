@@ -47,5 +47,6 @@
     "subject.adela.passive-attack-speed": "T固定値",
     "subject.alex.e-attack-speed": "E追加値",
     "subject.alex.passive-defense": "T追加値",
-    "subject.bernice.passive-attack-range": "T固定値"
+    "subject.bernice.passive-attack-range": "T固定値",
+    "subject.celine.passive-amp": "T増幅変換"
 }

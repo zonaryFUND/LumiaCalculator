@@ -11,7 +11,7 @@ const t: React.FC<SubjectSkillProps> = props => (
         のスキルダメージが追加されます。<br />
         <br />
         セリーヌはクールダウン減少ステータスに影響されない代わりに、クールダウン減少ステータスを1％あたり{Constants.T.cooldown_conversion}のスキル増幅に置き換えます。<br />
-        現在増加したスキル増幅:{additionalAmp(props.status).toString()}
+        現在増加したスキル増幅:{/*additionalAmp(props.status).toString()*/}
     </>
 )
 

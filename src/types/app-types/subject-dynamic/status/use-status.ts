@@ -180,7 +180,10 @@ export function useStatus(config: SubjectConfig): Status {
                 ratio: masteryFactor.value
             } : undefined
         },
-        cooldownReduction: { cap: cdrCap },
+        cooldownReduction: { 
+            cap: cdrCap,
+            calculatedValue: (sumEquipmentStatus("cooldownReduction", equipments) ?? new Decimal(0)).clamp(0, BaseCooldownCap.add(cdrCap))
+        },
         armorPenetration: {},
         armorPenetrationRatio: {},
         lifeSteal: {},
@@ -247,10 +250,7 @@ export function useStatus(config: SubjectConfig): Status {
                 adaptive: adaptive?.times(2)
             }
         }, {level: config.level, mastery: config.weaponMastery}, 0) : ampWithoutAdaptive,
-        cooldownReduction: {
-            ...overriddenValue.cooldownReduction,
-            calculatedValue: (sumEquipmentStatus("cooldownReduction", equipments) ?? new Decimal(0)).clamp(0, BaseCooldownCap.add(cdrCap))
-        },
+        cooldownReduction: overriddenValue.cooldownReduction as any,
         armorPenetration: {
             calculatedValue: sumEquipmentStatus("armorPenetration", equipments) ?? new Decimal(0)
         },
