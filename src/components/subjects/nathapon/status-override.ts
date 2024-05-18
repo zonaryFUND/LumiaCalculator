@@ -1,13 +1,18 @@
 import { StatusProps } from "components/subject/status";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
+import { StatusOverrideFunc } from "../status-override";
 
-export default function(status: StatusProps): StatusProps {
-    return {
-        ...status,
-        attackSpeed: {
-            ...status.attackSpeed,
-            calculated: new Decimal(Constants.common.attackSpeed)
-        }
+const f: StatusOverrideFunc = (status, config) => ({
+    ...status,
+    attackSpeed: {
+        ...status.attackSpeed,
+        overrideFix: {
+            nameKey: "subject.nathapon.passive-attack-speed",
+            value: new Decimal(Constants.common.attackSpeed)
+        },
+        calculatedValue: new Decimal(Constants.common.attackSpeed)
     }
-}
+});
+
+export default f;

@@ -53,5 +53,6 @@
     "subject.irem.passive-attack-range": "Rペナルティ",
     "subject.karla.passive-attack-speed-max": "T上限値",
     "subject.karla.passive-amp": "T超過攻撃速度変換",
-    "subject.martina.passive-attack": "T攻撃速度変換"
+    "subject.martina.passive-attack": "T攻撃速度変換",
+    "subject.nathapon.passive-attack-speed": "T固定値"
 }
