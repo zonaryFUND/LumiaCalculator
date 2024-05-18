@@ -196,6 +196,14 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                         </td>
                                     </tr>
                                     {
+                                        props.status.attackSpeed.overrideAdditional ?
+                                        <tr>
+                                            <td><FormattedMessage id={props.status.attackSpeed.overrideAdditional.nameKey} /></td>
+                                            <td>{props.status.attackSpeed.overrideAdditional.ratio?.toString()}%</td>
+                                        </tr>
+                                        : null
+                                    }
+                                    {
                                         props.status.attackSpeed.equipment?.ratio?.greaterThan(0) ?
                                         <tr>
                                             <td><FormattedMessage id="app.equipment" /></td>

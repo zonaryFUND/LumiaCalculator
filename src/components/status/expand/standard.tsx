@@ -29,6 +29,7 @@ const standardExpand: React.FC<Props> = props => {
             }
             {props.equipment && props.equipment.ratio == undefined ? <Equipment {...props.equipment} level={props.level} /> : null}
             {props.equipment?.adaptive ? <tr><td><FormattedMessage id="status.adaptive" /></td><td>{props.equipment.adaptive.toString()}</td></tr> : null}
+            {props.overrideAdditional ? <tr><td><FormattedMessage id={props.overrideAdditional.nameKey} /></td><td>{props.overrideAdditional.value?.toString()}</td></tr> : null}
             {props.equipment && props.equipment.ratio != undefined ? <Ratio ratio={props.equipment.ratio} label={<FormattedMessage id="app.equipment" />} /> : null}
         </InnerTable>
     );
