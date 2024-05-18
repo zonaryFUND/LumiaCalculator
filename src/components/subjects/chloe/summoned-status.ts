@@ -1,10 +1,9 @@
-import { Status, StatusProps, SummonedStatus } from "components/subject/status";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
 import { Language } from "app-types/language";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SummonedStatusFunc } from "../summoned-status";
 
-export default function(chloeStatus: Status, config: SubjectConfig): SummonedStatus {
+const f: SummonedStatusFunc = (chloeStatus, config) => {
     const chloeRatio = Constants.T.base_chloe_status_ratio + Constants.T.per_level_chloe_status_ratio * config.level;
     const chloeTLevel = config.skillLevels.T;
 
@@ -13,20 +12,17 @@ export default function(chloeStatus: Status, config: SubjectConfig): SummonedSta
     const tDefense = Constants.T.nina_defense[chloeTLevel];
 
     return {
-        maxHP: chloeStatus.maxHP.percent(chloeRatio).add(tMaxHP),
-        attackPower: chloeStatus.attackPower.percent(chloeRatio).add(tAttack).add(Constants.nina.base_attack),
-        defense: chloeStatus.defense.percent(chloeRatio).add(tDefense).add(Constants.nina.base_defense),
+        maxHP: chloeStatus.maxHP.calculatedValue.percent(chloeRatio).add(tMaxHP),
+        attackPower: chloeStatus.attackPower.calculatedValue.percent(chloeRatio).add(tAttack).add(Constants.nina.base_attack),
+        defense: chloeStatus.defense.calculatedValue.percent(chloeRatio).add(tDefense).add(Constants.nina.base_defense),
         attackSpeed: new Decimal(Constants.nina.attack_speed),
-        criticalChance: chloeStatus.criticalChance.percent(chloeRatio),
-        skillAmp: chloeStatus.skillAmp.percent(chloeRatio),
-        armorPenetration: chloeStatus.armorPenetration.percent(chloeRatio),
-        armorPenetrationRatio: chloeStatus.armorPenetrationRatio.percent(chloeRatio)
+        criticalChance: chloeStatus.criticalChance.calculatedValue.percent(chloeRatio),
+        skillAmp: chloeStatus.skillAmp.calculatedValue.percent(chloeRatio),
+        armorPenetration: chloeStatus.armorPenetration.calculatedValue.percent(chloeRatio),
+        armorPenetrationRatio: chloeStatus.armorPenetrationRatio.calculatedValue.percent(chloeRatio)
     }
 }
 
-export function name(language: Language): string {
-    switch (language) {
-        case "jp":
-            return "ニナ";
-    }
-}
+export default f;
+
+export const nameKey = "summoned.nina";

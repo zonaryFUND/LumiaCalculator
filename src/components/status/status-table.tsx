@@ -19,7 +19,7 @@ import table from "components/common/table.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import StandardExpand from "./expand/standard";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { BasicAttackReductionPerMastery, SkillReductionPerMastery } from "app-types/subject-dynamic/status/standard-values";
 
 type ColumnProps = {
@@ -62,15 +62,22 @@ const criticalDamage = <span className={style["critical-damage"]}><Crosshair /><
 const status: React.FC<SubjectConfig & {status: Status}> = props => {
     const toggle = useStatusToggle();
     const subjectName = React.useMemo(() => name(props.subject, "jp"), [props.subject]);
+    const intl = useIntl();
     const summonedName = React.useMemo(() => {
-        if (SummonedStatus[props.subject] == undefined) return null;
-        return SummonedStatus[props.subject].name("jp");
+        const module = SummonedStatus[props.subject];
+        if (module == undefined) return undefined;
+        return intl.formatMessage({id: module.nameKey});
     }, [props.subject]);
     const shownStatus = React.useState<string | undefined>("subject");
 
     const effectiveToughness = React.useMemo(() => {
         return props.status.maxHP.calculatedValue.times(props.status.defense.calculatedValue.add(100).dividedBy(100));
     }, [props.status.maxHP.calculatedValue, props.status.defense.calculatedValue]);
+
+    const summonedEffectiveToughness = React.useMemo(() => {
+        if (props.status.summonedStatus == undefined) return null;
+        return props.status.summonedStatus.maxHP.times(props.status.summonedStatus.defense.add(100).dividedBy(100));
+    }, [props.status.summonedStatus?.maxHP, props.status.summonedStatus?.defense]);
 
     return (
         <IconContext.Provider value={{size: 18}}>
@@ -81,7 +88,7 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                     summonedName ?
                     <SegmentedControl 
                         name="summoned-status" 
-                        segments={[{title: subjectName, value: "subject"}, {title: summonedName, value: "summoned"}]} 
+                        segments={[{title: subjectName, value: "subject"}, {title:  summonedName, value: "summoned"}]} 
                         value={shownStatus}
                         style={{verticalPadding: 2}}
                     /> :
@@ -90,6 +97,8 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                 
             </header>
             <div className={table["table-base"]}>
+                {
+                    shownStatus[0] == "subject" ?
                     <table>
                         <colgroup>
                             <col/>
@@ -344,25 +353,6 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                             </Column>
                         </tbody>
                     </table>
-                {
-                    /*
-                        <tbody>
-                            <tr className={table.separator}onClick={toggle.others[1]}><td colSpan={2}><div><p>その他</p>{toggle.others[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><HandFist />行動妨害耐性</>} value={status.tenacity} percent hidden={toggle.others[0]} />
-                            <Column name={<><SneakerMove />移動速度</>} value={status.movementSpeed} hidden={toggle.others[0]}>
-                                <MovementSpeed {...displayed.movementSpeed} movementMastery={props.movementMastery} />
-                            </Column>
-                            <Column name={<><Eye />視界範囲</>} value={status.visionRange} prohibitExpand={displayed.additionalVision.isZero()} hidden={toggle.others[0]}>
-                                <InnerTable>
-                                    <tr><td>基礎値</td><td>{BaseVision}</td></tr>
-                                    <tr><td>追加値</td><td>{displayed.additionalVision.toString()}</td></tr>
-                                </InnerTable>
-                            </Column>
-                            <Column name={<><ArrowFatLineRight />基本攻撃射程</>} value={status.basicAttackRange} prohibitExpand={displayed.basicAttackRange.weapon.isZero()} hidden={toggle.others[0]}>
-                                <BasicAttackRange {...displayed.basicAttackRange} />
-                            </Column>
-                        </tbody>
-                    </table>
                     :
                     <table>
                         <colgroup>
@@ -370,24 +360,23 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                             <col />
                         </colgroup>
                         <tbody>
-                            <tr className={table.separator} onClick={toggle.toughness[1]}><td colSpan={2}><div><p>耐久 / 実効体力: {displayed.summonedEffectiveHP!.toString()}</p>{toggle.toughness[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><FirstAid weight="fill" />最大体力</>} value={status.summonedStatus!.maxHP} hidden={false} />
-                            <Column name={<><Shield />防御力</>} value={status.summonedStatus!.defense} hidden={false} />
+                            <tr className={table.separator} onClick={toggle.toughness[1]}><td colSpan={2}><div><p>耐久 / 実効体力: {summonedEffectiveToughness?.toString()}</p>{toggle.toughness[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+                            <Column name={<><FirstAid weight="fill" />最大体力</>} value={props.status.summonedStatus!.maxHP} hidden={false} />
+                            <Column name={<><Shield />防御力</>} value={props.status.summonedStatus!.defense} hidden={false} />
                         </tbody>
                         <tbody>
                             <tr className={table.separator} onClick={toggle.basicAttack[1]}><td colSpan={2}><div><p>攻撃</p>{toggle.basicAttack[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><Sword />攻撃力</>} value={status.summonedStatus!.attackPower} hidden={false} />
-                            <Column name={<>{attackSpeed}攻撃速度</>} value={status.summonedStatus!.attackSpeed} hidden={false} />
-                            <Column name={<><Crosshair />致命打確率</>} value={status.summonedStatus!.criticalChance} percent hidden={false} />
-                            <Column name={<><ArrowFatLinesUp weight="fill" />スキル増幅</>} value={status.summonedStatus!.skillAmp} hidden={false} />
+                            <Column name={<><Sword />攻撃力</>} value={props.status.summonedStatus!.attackPower} hidden={false} />
+                            <Column name={<>{attackSpeed}攻撃速度</>} value={props.status.summonedStatus!.attackSpeed} hidden={false} />
+                            <Column name={<><Crosshair />致命打確率</>} value={props.status.summonedStatus!.criticalChance} percent hidden={false} />
+                            <Column name={<><ArrowFatLinesUp weight="fill" />スキル増幅</>} value={props.status.summonedStatus!.skillAmp} hidden={false} />
                         </tbody>
                         <tbody>
                             <tr className={table.separator} onClick={toggle.penetration[1]}><td colSpan={2}><div><p>防御貫通</p>{toggle.penetration[0] ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
-                            <Column name={<><ShieldSlash />防御貫通(定数)</>} value={status.summonedStatus!.armorPenetration} hidden={false} />
-                            <Column name={<><ShieldSlash />防御貫通(%)</>} value={status.summonedStatus!.armorPenetrationRatio} percent hidden={false} />
+                            <Column name={<><ShieldSlash />防御貫通(定数)</>} value={props.status.summonedStatus!.armorPenetration} hidden={false} />
+                            <Column name={<><ShieldSlash />防御貫通(%)</>} value={props.status.summonedStatus!.armorPenetrationRatio} percent hidden={false} />
                         </tbody>
                     </table>
-                    */
                 }
             </div>
         </section>

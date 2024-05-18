@@ -32,6 +32,17 @@ export type CalculatedStatusValue = {
     calculatedValue: Decimal
 }
 
+export type SummonedStatus = {
+    maxHP: Decimal
+    attackPower: Decimal
+    defense: Decimal
+    attackSpeed: Decimal
+    criticalChance: Decimal
+    skillAmp: Decimal
+    armorPenetration: Decimal
+    armorPenetrationRatio: Decimal
+}
+
 export type Status = {
     maxHP: StatusValue & AdditionalStatusValue & CalculatedStatusValue
     hpReg: StatusValue & CalculatedStatusValue
@@ -58,6 +69,9 @@ export type Status = {
     movementSpeed: StatusValue & CalculatedStatusValue
     visionRange: StatusValue & CalculatedStatusValue
     basicAttackRange: StatusValue & CalculatedStatusValue
+
+    summonedStatus?: SummonedStatus
 }
 
 export type StatusBeforeCalculation = { [K in keyof Status]: Status[K] extends infer T & CalculatedStatusValue ? T & Partial<CalculatedStatusValue> : never };
+

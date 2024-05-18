@@ -15,6 +15,7 @@ import { WeaponTypeID, weaponTypeStatus } from "app-types/equipment/weapon";
 import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { SubjectStatusOverride } from "components/subjects/status-override";
+import { SummonedStatus } from "components/subjects/summoned-status";
 
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
@@ -223,7 +224,7 @@ export function useStatus(config: SubjectConfig): Status {
     const addAdaptiveTo = adaptive == undefined ? undefined :
         attackWithoutAdaptive.calculatedValue.greaterThanOrEqualTo(ampWithoutAdaptive.calculatedValue) ? "attack" : "amp";
 
-    return {
+    const calculated: Status = {
         maxHP: maxHPCalc(overriddenValue.maxHP, {level: config.level}),
         hpReg: standardCalc(overriddenValue.hpReg, {level: config.level}, 2),
         defense: standardCalc(overriddenValue.defense, {level: config.level}, 0),
@@ -283,5 +284,12 @@ export function useStatus(config: SubjectConfig): Status {
             ...overriddenValue.basicAttackRange,
             calculatedValue: overriddenValue.basicAttackRange.calculatedValue
         } : basicAttackRangeCalc(overriddenValue.basicAttackRange)
+    }
+
+    const summonedStatusFunc = useMemo(() => SummonedStatus[config.subject]?.status, [config.subject]);
+
+    return {
+        ...calculated,
+        summonedStatus: summonedStatusFunc ? summonedStatusFunc(calculated, config) : undefined
     }
 }

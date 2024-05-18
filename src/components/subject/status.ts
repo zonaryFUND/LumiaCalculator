@@ -89,12 +89,14 @@ export function from(props: StatusProps, config: SubjectConfig, withoutOverride?
         withoutOverride
     }
 
+    /*
     const summonedStatus = (() => {
         if (!config.subject) return undefined;
         const status = SummonedStatus[config.subject]
         if (!status) return undefined;
         return status.default(subjectStatus, config);
     })();
+    */
 
-    return {...subjectStatus as any, summonedStatus}
+    return {...subjectStatus as any}
 }
