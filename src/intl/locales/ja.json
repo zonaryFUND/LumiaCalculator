@@ -57,5 +57,6 @@
     "subject.nathapon.passive-attack-speed": "T固定値",
     "subject.tia.passive-amp": "Tクールダウン変換",
     "subject.tsubame.passive-attack": "T致命変換",
-    "subject.tsubame.passive-range": "T固定値"
+    "subject.tsubame.passive-range": "T固定値",
+    "subject.xiukai.passive-maxhp": "Tスタック増加"
 }
