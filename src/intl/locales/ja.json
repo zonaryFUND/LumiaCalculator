@@ -49,5 +49,6 @@
     "subject.alex.passive-defense": "T追加値",
     "subject.bernice.passive-attack-range": "T固定値",
     "subject.celine.passive-amp": "Tクールダウン変換",
-    "subject.debi_marlene.passive-critical-chance": "T致命打ダメージ量変換"
+    "subject.debi_marlene.passive-critical-chance": "T致命打ダメージ量変換",
+    "subject.irem.passive-attack-range": "Rペナルティ"
 }
