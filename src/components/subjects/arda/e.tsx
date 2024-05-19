@@ -1,13 +1,13 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json"
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
         指定した位置にニムルドの石碑を落として範囲内の敵に
-        <Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えて敵を押し出します。
+        <Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて敵を押し出します。
     </>
 );
 

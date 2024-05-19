@@ -1,9 +1,9 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json"
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
@@ -12,8 +12,8 @@ const t: React.FC<SubjectSkillProps> = props => (
         <br />
         <span className={style.emphasis}>考古学的分析</span>：アルダが使用する遺物が敵にダメージを与えるとアルダは
         <span className={style.emphasis}>古代の精髄</span>を獲得します。
-        <span className={style.emphasis}>古代の精髄</span>を{Constants.T.max_stack[props.config.skillLevels.T]}
-        獲得するとランタンから神秘的な力が放出し、自分と周りの味方の体力を<Damage skill="T" constants={Constants.T.heal} {...props} />回復させます。
+        <span className={style.emphasis}>古代の精髄</span>を{Constants.T.max_stack[props.skillLevel]}
+        獲得するとランタンから神秘的な力が放出し、自分と周りの味方の体力を<Value skill="T" ratio={Constants.T.heal} />回復させます。
     </>
 );
 

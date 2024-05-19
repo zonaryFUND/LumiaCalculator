@@ -1,16 +1,16 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json"
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
         指定した地点にバビロンの立方体を召喚します。バビロンの立方体は領域内の敵に
-        <Damage skill="W" constants={Constants.W.damage} {...props} />のスキルダメージを与えて
+        <Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えて
         {Constants.W.slow.duration}秒間敵の移動速度を{Constants.W.slow.effect}減少させます。
         {Constants.W.duration}秒後、バビロンのさいころは消えて周りの領域内の敵に
-        <Damage skill="W" constants={Constants.W.vanish_damage} {...props} />のスキルダメージを与えて
+        <Value skill="W" ratio={Constants.W.vanish_damage} />のスキルダメージを与えて
         {Constants.W.stun}秒間気絶させます。
     </>
 );
