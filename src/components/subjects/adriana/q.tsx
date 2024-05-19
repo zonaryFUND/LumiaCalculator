@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
         アドリアナが指定した方向に{Constants.Q.duration}秒間火炎放射器の炎を発射して
-        {Constants.Q.tick}秒ごとに<Damage skill="Q" constants={Constants.Q.damage} {...props} />
+        {Constants.Q.tick}秒ごとに<Value skill="Q" ratio={Constants.Q.damage} />
         のスキルダメージを与えます。
     </>
 )

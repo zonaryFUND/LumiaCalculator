@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
         <span className={style.level}>持続効果</span>：アドリアナはスキルを使用して火炎地帯を作ることができます。<br />
-        火炎地帯は範囲内の対象に{Constants.E.tick}秒ごとに<Damage skill="E" constants={Constants.E.damage} {...props} />
+        火炎地帯は範囲内の対象に{Constants.E.tick}秒ごとに<Value skill="E" ratio={Constants.E.damage} />
         のスキルダメージを与えて移動速度を{Constants.E.slow}減少させます。<br />
         <br />
         アドリアナが指定した方向へ突進します。<br />
