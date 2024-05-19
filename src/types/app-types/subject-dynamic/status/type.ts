@@ -73,5 +73,5 @@ export type Status = {
     summonedStatus?: SummonedStatus
 }
 
-export type StatusBeforeCalculation = { [K in keyof Status]: Status[K] extends infer T & CalculatedStatusValue ? T & Partial<CalculatedStatusValue> : never };
+export type StatusBeforeCalculation = { [K in keyof Omit<Status, "summonedStatus">]: Status[K] extends infer T & CalculatedStatusValue ? T & Partial<CalculatedStatusValue> : never };
 

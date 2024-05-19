@@ -6,9 +6,8 @@ import { StatusBeforeCalculation } from "app-types/subject-dynamic/status/type";
 
 export function additionalAmp(status: StatusBeforeCalculation, config: SubjectConfig): Decimal {
     const ratio = (status.attackSpeed.equipment?.ratio ?? new Decimal(0)).add(status.attackSpeed.perMastery?.ratio?.times(config.weaponMastery) ?? 0)
-    console.log(status.attackSpeed)
     const value = status.attackSpeed.base!.add(status.attackSpeed.equipment?.constant ?? 0).addPercent(ratio)
-    const additionalAS = value?.sub(Constants.T.attack_speed);
+    const additionalAS = value?.sub(Constants.T.attack_speed).clamp(0, 10000);
     return additionalAS.times(Constants.T.amp_per_as[config.skillLevels.T] * 100) ?? new Decimal(0);
 }
 
