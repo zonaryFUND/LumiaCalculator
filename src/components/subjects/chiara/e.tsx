@@ -1,15 +1,15 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-        キアラが指定した方向へ執着の鎖を放ち的中した敵に<Damage skill="E" constants={Constants.E.damage} {...props} />
+        キアラが指定した方向へ執着の鎖を放ち的中した敵に<Value skill="E" ratio={Constants.E.damage} />
         のスキルダメージを与え鎖で繋ぎます。鎖の連結が{Constants.E.duration}秒以上維持されると
-        <Damage skill="E" constants={Constants.E.second_damage} {...props} />のスキルダメージを対象を
-        {Constants.E.bind[props.config.skillLevels.E]}秒間束縛させます。
+        <Value skill="E" ratio={Constants.E.second_damage} />のスキルダメージを対象を
+        {Constants.E.bind[props.skillLevel]}秒間束縛させます。
     </>
 )
 
