@@ -1,24 +1,23 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const t: React.FC<SubjectSkillProps> = props => {
+    const { showEquation } = useValueContext();
+
     const ms = (() => {
-        /*
-        const base = Constants.T.movement_speed.base[props.config.skillLevels.T];
-        const amp = Constants.T.movement_speed.amp;
-        if (props.showEquation) {
+        if (showEquation) {
             return <>
-                {base}％
-                <span className={style.amp}>(+スキル増幅の{amp}％)</span>
+                {Constants.T.movement_speed.base[props.skillLevel]}%
+                <span className={style.amp}>(+スキル増幅の{Constants.T.movement_speed.amp}%)</span>
             </>
         } else {
-            return <>{props.status.skillAmp.times(amp).dividedBy(100).add(base).toString()}％</>
+            return <><Value skill="T" ratio={Constants.T.movement_speed} />%</>;
         }
-        */
-       return null;
     })();
 
     return (

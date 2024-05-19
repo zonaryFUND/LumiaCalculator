@@ -10,7 +10,7 @@ type Response = {
 }
 
 export function calculateValue(ratio: ValueRatio, status: Status, config: SubjectConfig, source: Source, multiplier?: number): Response {
-    return Object.keys(ratio).reduce((prev: Response, key) => {
+    const values = Object.keys(ratio).reduce((prev: Response, key) => {
         const value = ratio[key as keyof ValueRatio];
         if (value == undefined) return prev;
 
@@ -73,4 +73,6 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
             dynamicValueOnly: prev.dynamicValueOnly && staticValue == undefined  // If there exists at least one or more staticValue keys, always returns false.
         };
     }, {static: new Decimal(0), dynamic: undefined, dynamicValueOnly: true});
+
+    return {...values, static: multiplier ? values.static.percent(multiplier) : values.static}
 }
