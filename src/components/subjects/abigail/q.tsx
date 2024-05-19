@@ -1,17 +1,17 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
         アビゲイルがデスサイズを振り回します。1回目の回転は
-        <Damage skill="Q" constants={Constants.Q.first_damage} {...props} />
-        のスキルダメージを与え、2回目の回転は<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />
+        <Value skill="Q" ratio={Constants.Q.first_damage} />
+        のスキルダメージを与え、2回目の回転は<Value skill="Q" ratio={Constants.Q.second_damage} />
         のスキルダメージを与えます。バイナリスピンをキャストするときは移動速度が
         {Constants.Q.movement_speed.duration}秒間
-        {Constants.Q.movement_speed.effect}％増加します。
+        {Constants.Q.movement_speed.effect}%増加します。
     </>
 );
 

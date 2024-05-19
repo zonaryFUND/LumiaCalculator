@@ -1,15 +1,15 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
-        アビゲイルの次の基本攻撃は<Damage skill="T" constants={Constants.T.damage} {...props} />
+        アビゲイルの次の基本攻撃は<Value skill="T" ratio={Constants.T.damage} />
         の追加スキルダメージを与えて対象の防御力を{Constants.T.defense_reduction.duration}秒間
-        {Constants.T.defense_reduction.effect[props.config.skillLevels.T]}減少させます。<br />
+        {Constants.T.defense_reduction.effect[props.skillLevel]}減少させます。<br />
         スキルを的中させるたびに<span className={style.emphasis}>ティアリングブレード</span>のクールダウンが
         {Constants.T.cooldown_reduction}秒間減少します。<br />
         <br />
