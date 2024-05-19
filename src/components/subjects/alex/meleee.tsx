@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const meleeE: React.FC<SubjectSkillProps> = props => (
     <>
-        <span className={style.level}>持続効果</span>：アレックスの攻撃速度が{Constants.common.e_as[props.config.skillLevels.E]}
-        ％増加し、ホログラムが持続する間は効果が2倍適用されます。<br />
+        <span className={style.level}>持続効果</span>：アレックスの攻撃速度が{Constants.common.e_as[props.skillLevel]}
+        %増加し、ホログラムが持続する間は効果が2倍適用されます。<br />
         <br />
         アレックスが{Constants.MeleeE.duration}秒間維持されるホログラムを生成し、指定した方向へ素早く移動して即時潜入状態になります。<br />
         ホログラムは範囲内の敵に挑発をして{Constants.MeleeE.taunt}秒間自分を攻撃するようにします。<br />

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
@@ -9,10 +9,10 @@ const t: React.FC<SubjectSkillProps> = props => (
         探知範囲外の敵は潜入状態のアレックスを見つけることができません。<br />
         潜入状態になるとき、{Constants.T.movement_speed.area}m以内に敵がいると
         {Constants.T.movement_speed.duration}秒間移動速度が
-        {Constants.T.movement_speed.effect[props.config.skillLevels.T]}％増加します。<br />
+        {Constants.T.movement_speed.effect[props.skillLevel]}%増加します。<br />
         <br />
         アレックスは装備できるすべての武器の熟練度が同時に増加します。<br />
-        トンファー、両手剣などの近接武器を装備すると防御力が{Constants.T.defense[props.config.skillLevels.T]}増加します。
+        トンファー、両手剣などの近接武器を装備すると防御力が{Constants.T.defense[props.skillLevel]}増加します。
     </>
 );
 
