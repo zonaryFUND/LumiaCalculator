@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             カティアが弾丸を発射して初めて的中した敵に
-            <Damage skill="Q" constants={Constants.Q.min_damage} {...props} /> ~ <Damage skill="Q" constants={Constants.Q.max_damage} {...props} />
+            <Value skill="Q" ratio={Constants.Q.min_damage} /> ~ <Value skill="Q" ratio={Constants.Q.max_damage} />
             のスキルダメージを与えます。<br />
             弾丸が飛んで行った距離に比例してダメージ量が増加します。
         </>
