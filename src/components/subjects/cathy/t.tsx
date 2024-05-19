@@ -1,34 +1,26 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
-import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const t: React.FC<SubjectSkillProps> = props => {
-    const criticalWound = (() => {
-        /*
-        const ampRatio = Constants.T.critical_wound.amp;
-        const hpRatio = Constants.T.critical_wound.targetMaxHP;
-        if (props.showEquation) {
-            return <>最大体力の{hpRatio}％<span className={style.amp}>(+スキル増幅の{ampRatio}％)</span></>
-        } else {
-            return <>{props.status.skillAmp.percent(ampRatio).toString()}<span className={style.maxhp}>(+最大体力の{hpRatio}％)</span></>
-        }
-        */
-       return null;
-    })()
+    const { showEquation } = useValueContext();
 
+    const criticalWound = showEquation ?
+        <Value skill="T" ratio={Constants.T.critical_wound} /> :
+        <Value skill="T" ratio={{amp: Constants.T.critical_wound.amp, targetMaxHP: Constants.T.critical_wound.targetMaxHP}} />;
 
     return (
         <>
-            キャッシーが敵にスキルダメージを与えると{Constants.T.wound_duration}秒間<Damage skill="T" constants={Constants.T.wound} {...props} />
+            キャッシーが敵にスキルダメージを与えると{Constants.T.wound_duration}秒間<Value skill="T" ratio={Constants.T.wound} />
             のダメージを与える外傷を付与します。<br />
             外傷が{Constants.T.max_stack}スタックになると、敵は{Constants.T.wound_duration}秒間{criticalWound}
-            のダメージを受ける致命的外傷状態になります。致命的外傷状態の敵は治癒効果が{Constants.T.healing_reduction}％減少します。<br />
-            キャッシーは敵を致命的外傷状態にさせると{Constants.T.shield_duration}秒間<Damage skill="T" constants={Constants.T.shield} {...props} />
-            のダメージを防ぐシールドを獲得し、外傷または致命的外傷状態の敵に向かって移動する時、移動速度が{Constants.T.movement_speed[props.config.skillLevels.T]}
-            ％増加した後徐々に減少します。
+            のダメージを受ける致命的外傷状態になります。致命的外傷状態の敵は治癒効果が{Constants.T.healing_reduction}%減少します。<br />
+            キャッシーは敵を致命的外傷状態にさせると{Constants.T.shield_duration}秒間<Value skill="T" ratio={Constants.T.shield} {...props} />
+            のダメージを防ぐシールドを獲得し、外傷または致命的外傷状態の敵に向かって移動する時、移動速度が{Constants.T.movement_speed[props.skillLevel]}
+            %増加した後徐々に減少します。
         </>
     );
 }

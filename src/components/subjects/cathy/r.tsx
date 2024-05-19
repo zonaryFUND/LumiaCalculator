@@ -1,9 +1,10 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const maxDamage = {
     base: Constants.R.min_damage.base.map(v => v * Constants.R.max_damage_ratio),
@@ -11,18 +12,11 @@ const maxDamage = {
 }
 
 const r: React.FC<SubjectSkillProps> = props => {
-    const heal = (() => {
-        /*
-        const ampRatio = Constants.R.heal.targetMaxHP.amp;
-        const hpRatio = Constants.R.heal.targetMaxHP.base;
-        if (props.showEquation) {
-            return <>最大体力の{hpRatio}％<span className={style.amp}>(+スキル増幅の{ampRatio}％)</span></>
-        } else {
-            return <>{props.status.skillAmp.percent(ampRatio).toString()}％<span className={style.maxhp}>(+最大体力の{hpRatio}％)</span></>
-        }
-        */
-       return null;
-    })()
+    const { showEquation } = useValueContext();
+
+    const heal = showEquation ?
+        <Value skill="R" ratio={Constants.R.heal} /> :
+        <Value skill="R" ratio={{amp: Constants.R.heal.amp, targetMaxHP: Constants.R.heal.targetMaxHP}} />;
 
     return (
         <>
@@ -30,7 +24,7 @@ const r: React.FC<SubjectSkillProps> = props => {
             秒間1秒あたり{heal}ずつ回復させるエリアを生成します。<br />
             <br />
             指定した方向へノコギリを振り回しながら素早く移動し、範囲内の敵に失った体力に比例して
-            <Damage skill="R" constants={Constants.R.min_damage} {...props} /> ~ <Damage skill="R" constants={maxDamage} {...props} />
+            <Value skill="R" ratio={Constants.R.min_damage} /> ~ <Value skill="R" ratio={maxDamage} />
             のスキルダメージを与えてすぐに致命的外傷を付与します。攻撃した範囲に{Constants.R.heal_duration}秒間体力を1秒あたり{heal}ずつ回復させるエリアを生成します。<br />
             <br />
             移動する間、阻止不可状態になります。

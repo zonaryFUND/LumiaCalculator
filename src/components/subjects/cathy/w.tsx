@@ -1,15 +1,15 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
-        キャッシーが前方にノコギリを大きく振り回します。内側の範囲に的中された敵には<Damage skill="W" constants={Constants.W.inner_damage} {...props} />
+        キャッシーが前方にノコギリを大きく振り回します。内側の範囲に的中された敵には<Value skill="W" ratio={Constants.W.inner_damage} />
         のスキルダメージを与えますが、外傷スタックは与えません。外側の範囲に的中された敵は
-        <Damage skill="W" constants={Constants.W.outer_damage} {...props} />のスキルダメージを与えられ、
-        {Constants.W.slow.duration}秒間移動速度が{Constants.W.slow.effect}％減少されます。
+        <Value skill="W" ratio={Constants.W.outer_damage} />のスキルダメージを与えられ、
+        {Constants.W.slow.duration}秒間移動速度が{Constants.W.slow.effect}%減少されます。
     </>
 )
 
