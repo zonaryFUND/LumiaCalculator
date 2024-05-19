@@ -1,13 +1,13 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
         アヤが{Constants.W.duration}秒間一方向に向かって銃を発射し、{Constants.W.bullets}
-        発を連射します。銃弾が的中すると<Damage skill="W" constants={Constants.W.damage} {...props} />のスキルダメージを与えます。<br />
+        発を連射します。銃弾が的中すると<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。<br />
         <br />
         アヤの追加攻撃速度{Constants.W.per_as}あたり発射する弾丸数が最大{Constants.W.max_bullets}発まで増加します。
     </>
