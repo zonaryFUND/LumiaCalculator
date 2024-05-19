@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            エヴァがキャストしながら、指定した方向にVFを放出して範囲内の敵に{Constants.R.tick}秒ごとに<Damage skill="R" constants={Constants.R.damage} {...props} />
+            エヴァがキャストしながら、指定した方向にVFを放出して範囲内の敵に{Constants.R.tick}秒ごとに<Value skill="R" ratio={Constants.R.damage} />
             のスキルダメージを与え、スタックを付与します。{Constants.R.max_stack}スタックになった対象は
-            <Damage skill="R" constants={Constants.R.stack_damage} {...props} />のスキルダメージを受け、スタックが初期化されます。<br />
+            <Value skill="R" ratio={Constants.R.stack_damage} />のスキルダメージを受け、スタックが初期化されます。<br />
             <br />
             VF放出を使用するには最小{Constants.R.min_vf}のバイタルフォースが必要であり、スキルを使用する間
             {Constants.R.tick}秒ごとに{Constants.R.vf_consumption}を消費します。
