@@ -2,11 +2,14 @@ import * as React from "react";
 import style from "./tooltip.module.styl";
 import { FormattedMessage } from "react-intl";
 import { ValueElement, ValueRatio } from "app-types/value-ratio";
+import Decimal from "decimal.js";
+import { useValueContext } from "./value-context";
 
 type Props = {
     id: keyof ValueRatio
     level?: number
     ratio: ValueElement
+    criticalMultiplier?: Decimal
     brackets?: boolean
     override?: {
         format: string
@@ -24,6 +27,7 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
     attack: {key: "app.value.attack", className: style.attack},
     additionalAttack: {key: "app.value.additional-attack", className: style.attack},
     basicAttackAmp: {key: "app.value.basic-attack-amp", className: style.attack},
+    criticalChance: {key: "app.value.critical-chance", className: style.critical},
     amp: {key: "app.value.skill-amp", className: style.amp},
     targetMaxHP: {key: "app.value.target-maxhp", className: style.maxhp},
     targetHP: {key: "app.value.target-hp", className: style.maxhp},
@@ -32,6 +36,7 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
 }
 
 const ValueExpression: React.FC<Props> = props => {
+    const { status } = useValueContext();
     const def = defaultDictionary[props.id];
     const value = (() => {
         if (typeof props.ratio === "number") return props.ratio;
@@ -51,7 +56,8 @@ const ValueExpression: React.FC<Props> = props => {
         <span className={props.override?.className ?? def.className}>
             {
                 props.brackets ? 
-                props.id == "basicAttackAmp" ? "*(" : "(+" 
+                props.id == "basicAttackAmp" ? "*(" : 
+                props.id == "criticalChance" ? `+${status.criticalChance.calculatedValue.percent(value as number).toString()}% = (` : "(+" 
                 : null
             }
             {

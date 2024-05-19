@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
-        指定した地点に巨大なスピアを設置して{Constants.R.range}m範囲内の敵を鎖で縛って<Damage skill="R" constants={Constants.R.first_damage} {...props} />
-        のスキルダメージを与え、移動速度を{Constants.R.slow[props.config.skillLevels.R]}％減少させます。
+        指定した地点に巨大なスピアを設置して{Constants.R.range}m範囲内の敵を鎖で縛って<Value skill="R" ratio={Constants.R.first_damage} />
+        のスキルダメージを与え、移動速度を{Constants.R.slow[props.skillLevel]}%減少させます。
         {Constants.R.duration}秒間、鎖から抜け出せなかった敵は巨大なスピアに引っ張られ、
-        <Damage skill="R" constants={Constants.R.second_damage} {...props} />のスキルダメージを受け、{Constants.R.stun}秒間気絶します。
+        <Value skill="R" ratio={Constants.R.second_damage} />のスキルダメージを受け、{Constants.R.stun}秒間気絶します。
     </>
 );
 

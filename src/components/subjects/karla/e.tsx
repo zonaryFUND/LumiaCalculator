@@ -1,12 +1,12 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-        地面に設置されたスピアを中心に指定した方向にジャンプし、<Damage skill="E" constants={Constants.E.damage} {...props} />
+        地面に設置されたスピアを中心に指定した方向にジャンプし、<Value skill="E" ratio={Constants.E.damage} />
         のスキルダメージを与えます。つながりが切れたスピアに使用すると、再びつながります。
     </>
 );
