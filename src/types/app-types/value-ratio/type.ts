@@ -10,6 +10,7 @@ export type ValueRatio = {
     level?: ValueElement
     maxHP?: ValueElement
     additionalMaxHP?: ValueElement
+    maxSP?: ValueElement
     defense?: ValueElement
     attack?: ValueElement
     additionalAttack?: ValueElement

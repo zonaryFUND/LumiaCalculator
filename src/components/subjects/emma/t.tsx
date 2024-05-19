@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            エマは{Constants.T.cooldown.constant[props.config.skillLevels.T]}秒ごとに基本攻撃する時、攻撃速度が
-            {Constants.T.attack_speed}％増加し、<Damage skill="T" constants={Constants.T.damage} {...props} />
-            の追加スキルダメージを与え、<Damage skill="T" constants={Constants.T.shield} {...props} />のシールドを獲得します。
+            エマは{Constants.T.cooldown.constant[props.skillLevel]}秒ごとに基本攻撃する時、攻撃速度が
+            {Constants.T.attack_speed}%増加し、<Value skill="T" ratio={Constants.T.damage} />
+            の追加スキルダメージを与え、<Value skill="T" ratio={Constants.T.shield} />のシールドを獲得します。
         </>
     );
 }

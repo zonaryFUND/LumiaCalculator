@@ -19,6 +19,7 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
     level: {key: "app.value.level", className: style.level},
     maxHP: {key: "app.value.maxhp", className: style.maxhp},
     additionalMaxHP: {key: "app.value.additional-maxhp", className: style.maxhp},
+    maxSP: {key: "app.value.maxsp", className: style.maxsp},
     defense: {key: "app.value.defense", className: style.defense},
     attack: {key: "app.value.attack", className: style.attack},
     additionalAttack: {key: "app.value.additional-attack", className: style.attack},

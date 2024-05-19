@@ -68,6 +68,7 @@
     "app.value.level": "キャラクターレベル*{ratio}",
     "app.value.maxhp": "最大体力の{ratio}%",
     "app.value.additional-maxhp": "追加体力の{ratio}%",
+    "app.value.maxsp": "最大スタミナの{ratio}%",
     "app.value.defense": "防御力の{ratio}%",
     "app.value.attack": "攻撃力の{ratio}%",
     "app.value.skill-amp": "スキル増幅の{ratio}%",
