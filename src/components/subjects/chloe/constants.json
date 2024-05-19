@@ -7,7 +7,7 @@
     "Q": {
         "damage": {
             "base": [70,90,110,130,150],
-            "summoned_attack": 85
+            "summonedAttack": 85
         },
         "slow": {
             "duration": 1.5,
@@ -33,7 +33,7 @@
         },
         "nina_damage": {
             "base": [40,80,120,160,200],
-            "summoned_attack": 70
+            "summonedAttack": 70
         },
         "airborne": 0.5,
         "movement_speed": {
@@ -51,7 +51,7 @@
         "reuse": 1,
         "second_damage": {
             "base": [50,80,110,140,170],
-            "summoned_attack": 60
+            "summonedAttack": 60
         },
         "sp_cost": [80,85,90,95,100],
         "cooldown": [13,12.5,12,11,5,11]
@@ -73,7 +73,7 @@
     "T": {
         "damage": {
             "base": [20,50,80],
-            "summoned_attack": 60
+            "summonedAttack": 60
         },
         "nina_revive": [20,18,16],
         "nina_revive_cost": 30,

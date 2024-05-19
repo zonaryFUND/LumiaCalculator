@@ -133,32 +133,32 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     })();
 
     return (
-        <div className={`${baseStyle.base} ${style.tooltip}`}>
-            <div className={style.main}>
-                <header>
-                    <img src={src} />
-                    <div>
-                        <div className={style.name}>
-                            <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[skillIDForLevel] + 1}）</h1>
-                            <p>[{skillIDForLevel}]</p>
+        <ValueContext.Provider value={props}>
+            <div className={`${baseStyle.base} ${style.tooltip}`}>
+                <div className={style.main}>
+                    <header>
+                        <img src={src} />
+                        <div>
+                            <div className={style.name}>
+                                <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[skillIDForLevel] + 1}）</h1>
+                                <p>[{skillIDForLevel}]</p>
+                            </div>
+                            <ConsumptionAndCooldown {...props} skill={skillIDForConsumption} skillLevel={props.config.skillLevels[skillIDForLevel]} />
                         </div>
-                        <ConsumptionAndCooldown {...props} skill={skillIDForConsumption} skillLevel={props.config.skillLevels[skillIDForLevel]} />
-                    </div>
-                </header>
-                <p>
-                    <ValueContext.Provider value={props}>
-                        {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, {skillLevel: props.config.skillLevels[skillIDForLevel]})}
-                    </ValueContext.Provider>
-                </p>
+                    </header>
+                    <p>
+                            {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, {skillLevel: props.config.skillLevels[skillIDForLevel]})}
+                    </p>
+                </div>
+                {
+                    valuesProps ? (
+                        <div className={style.values}>
+                            <Values {...valuesProps} skillLevel={props.config.skillLevels[skillIDForLevel]} />
+                        </div>
+                    ) : null
+                }
             </div>
-            {
-                valuesProps ? (
-                    <div className={style.values}>
-                        <Values {...valuesProps} skillLevel={props.config.skillLevels[skillIDForLevel]} />
-                    </div>
-                ) : null
-            }
-        </div>
+        </ValueContext.Provider>
     );
 };
 

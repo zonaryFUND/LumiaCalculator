@@ -12,8 +12,8 @@ type Props = {
     criticalMultiplier?: Decimal
     brackets?: boolean
     override?: {
-        format: string
-        className: string
+        format?: string
+        className?: string
     }
 }
 
@@ -32,7 +32,8 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
     targetMaxHP: {key: "app.value.target-maxhp", className: style.maxhp},
     targetHP: {key: "app.value.target-hp", className: style.maxhp},
     lostHP: {key: "app.value.lost-hp", className: style.losthp},
-    targetLostHP: {key: "app.value.target-lost-hp", className: style.losthp}
+    targetLostHP: {key: "app.value.target-lost-hp", className: style.losthp},
+    summonedAttack: {key: "app.value.summoned-attack", className: style.attack}
 }
 
 const ValueExpression: React.FC<Props> = props => {
@@ -64,10 +65,10 @@ const ValueExpression: React.FC<Props> = props => {
                 props.override ?
                 <>
                 {
-                    props.override.format.split(/({ratio})/)
+                    props.override.format?.split(/({ratio})/)
                         .map(component => {
                             if (component.startsWith("{") && component.endsWith("}")) {
-                                return <span className={props.override?.className}>{value}</span>
+                                return <span className={props.override?.className ?? def.className}>{value}</span>
                             } else {
                                 return component
                             }

@@ -1,22 +1,22 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
-        クロエが刃の刺繍を編んだ縫糸をくるくる回して、範囲内にいる敵に毎秒<Damage skill="W" constants={Constants.W.damage} {...props} />の
-        <span className={style.emphasis}>固定ダメージ</span>を与え、移動速度を{Constants.W.slow}％減少させます。縫糸を回す間、クロエは攻撃命令
+        クロエが刃の刺繍を編んだ縫糸をくるくる回して、範囲内にいる敵に毎秒<Value skill="W" ratio={Constants.W.damage} />の
+        <span className={style.emphasis}>固定ダメージ</span>を与え、移動速度を{Constants.W.slow}%減少させます。縫糸を回す間、クロエは攻撃命令
         <span className={style.emphasis}>(Q)</span>とキルトリッパー<span className={style.emphasis}>(E)</span>スキルを使用できます。<br />
         <br />
         <span className={style.enhance}>再使用</span>：{Constants.W.duration}秒以内にスキルをもう一度使用でき、指定した位置に刃の刺繍を挿し込んで
-        <Damage skill="W" constants={Constants.W.drop_damage} {...props} />のスキルダメージを与え、{Constants.W.drop_slow.duration}
-        秒間敵の移動速度を{Constants.W.drop_slow.effect[props.config.skillLevels.W]}％減少させます。この時ニナは刃の刺繍の位置に瞬間移動して、刃の足を鋭く振り下ろして、
-        <Damage skill="W" constants={Constants.W.nina_damage} {...props} summonedName="ニナ" />のスキルダメージを与え、敵を
-        {Constants.W.airborne}秒間空中に浮かせます。ニナの攻撃以降、刃の刺繍はクロエの方に弾かれ、再び拾うと{Constants.W.movement_speed.duration}
-        秒間クロエの移動速度が{Constants.W.movement_speed.effect}％増加します。
+        <Value skill="W" ratio={Constants.W.drop_damage} />のスキルダメージを与え、{Constants.W.drop_slow.duration}
+        秒間敵の移動速度を{Constants.W.drop_slow.effect[props.skillLevel]}%減少させます。この時ニナは刃の刺繍の位置に瞬間移動して、刃の足を鋭く振り下ろして、
+        <Value skill="W" ratio={Constants.W.nina_damage} overrideExpression={{summonedAttack: {format: "ニナの攻撃力の{ratio}%"}}} />
+        のスキルダメージを与え、敵を{Constants.W.airborne}秒間空中に浮かせます。ニナの攻撃以降、刃の刺繍はクロエの方に弾かれ、再び拾うと
+        {Constants.W.movement_speed.duration}秒間クロエの移動速度が{Constants.W.movement_speed.effect}%増加します。
     </>
 )
 

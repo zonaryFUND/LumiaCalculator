@@ -1,6 +1,7 @@
 import * as React from "react";
 import style from "./values.module.styl";
-import { SubjectSkillProps } from "./props";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { Status } from "app-types/subject-dynamic/status/type";
 
 export type ValuesProps = {
     additionalInfo?: React.ReactElement
@@ -11,7 +12,7 @@ export type ValuesProps = {
     }[]
 }
 
-export type ValuesPropsGenerator = (props: SubjectSkillProps) => ValuesProps;
+export type ValuesPropsGenerator = (props: { config: SubjectConfig, status: Status }) => ValuesProps;
 
 const values: React.FC<ValuesProps & {skillLevel: number}> = props => (
     <>

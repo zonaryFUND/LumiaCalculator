@@ -10,7 +10,7 @@ type Props = {
     ratio: ValueRatio
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
     multiplier?: number
-    overrideExpression?: {[K in keyof ValueRatio]: {format: string, className: string}}
+    overrideExpression?: {[K in keyof ValueRatio]: {format?: string, className?: string}}
 }
 
 const value: React.FC<Props> = props => {
