@@ -1,12 +1,12 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
-        カミロが回転しながら前に突進して<Damage skill="W" constants={Constants.W.damage} {...props} />の基本攻撃ダメージ を最大{Constants.W.count}回与えます。
+        カミロが回転しながら前に突進して<Value skill="W" ratio={Constants.W.damage} />の基本攻撃ダメージを最大{Constants.W.count}回与えます。
     </>
 )
 
