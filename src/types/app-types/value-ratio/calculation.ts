@@ -3,8 +3,14 @@ import Decimal from "decimal.js";
 import { Source, ValueRatio } from "./type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
-export function calculateValue(ratio: ValueRatio, status: Status, config: SubjectConfig, source: Source): Decimal {
-    return Object.keys(ratio).reduce((prev, key) => {
+type Response = { 
+    static: Decimal
+    dynamic?: {[K in keyof ValueRatio]: Decimal}
+    dynamicValueOnly: boolean
+}
+
+export function calculateValue(ratio: ValueRatio, status: Status, config: SubjectConfig, source: Source, multiplier?: number): Response {
+    return Object.keys(ratio).reduce((prev: Response, key) => {
         const value = ratio[key as keyof ValueRatio];
         if (value == undefined) return prev;
 
@@ -12,43 +18,59 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
             if (Array.isArray(value) && source != "item") {
                 return new Decimal(value[source.level]);
             } else if (typeof value == "object") {
-                return calculateValue(value as ValueRatio, status, config, source);
+                return calculateValue(value as ValueRatio, status, config, source).static;
             } else {
                 return new Decimal(value);
             }
         })();
 
-        switch (key) {
-            case "base":
-                return selectedValue;
-            case "level":
-                return prev.add(selectedValue.times(config.level));
-            case "maxHP":
-                return prev.add(status.maxHP.calculatedValue.percent(selectedValue));
-            case "additionalMaxHP":
-                return prev.add(status.maxHP.additional?.percent(selectedValue) ?? 0);
-            case "defense":
-                return prev.add(status.defense.calculatedValue.percent(selectedValue));
-            case "attack":
-                return prev.add(status.attackPower.calculatedValue.percent(selectedValue));
-            case "additionalAttack":
-                return prev.add(status.attackPower.additional?.percent(selectedValue) ?? 0);
-            case "basicAttackAmp":
-                return prev.addPercent(status.basicAttackAmp.calculatedValue);
-            case "criticalChance":
-                return prev.addPercent(status.criticalChance.calculatedValue.percent(selectedValue));
-            case "additionalAttackSpeed":
-                return prev.add(status.attackSpeed.additional?.percent(selectedValue) ?? 0);
-            case "amp":
-                return prev.add(status.skillAmp.calculatedValue.percent(selectedValue));
-            case "stack":
-                return prev.add(config.stack);
-            case "summonedAttack":
-                return prev.add(status.summonedStatus?.attackPower.percent(selectedValue) ?? 0);
-            case "max":
-                return prev.clamp(0, selectedValue);
-        }
+        const staticValue = (() => {
+            switch (key) {
+                case "base":
+                    return selectedValue; 
+                case "level":
+                    return prev.static.add(selectedValue.times(config.level));
+                case "maxHP":
+                    return prev.static.add(status.maxHP.calculatedValue.percent(selectedValue));
+                case "additionalMaxHP":
+                    return prev.static.add(status.maxHP.additional?.percent(selectedValue) ?? 0);
+                case "defense":
+                    return prev.static.add(status.defense.calculatedValue.percent(selectedValue));
+                case "attack":
+                    return prev.static.add(status.attackPower.calculatedValue.percent(selectedValue));
+                case "additionalAttack":
+                    return prev.static.add(status.attackPower.additional?.percent(selectedValue) ?? 0);
+                case "basicAttackAmp":
+                    return prev.static.addPercent(status.basicAttackAmp.calculatedValue);
+                case "criticalChance":
+                    return prev.static.addPercent(status.criticalChance.calculatedValue.percent(selectedValue));
+                case "additionalAttackSpeed":
+                    return prev.static.add(status.attackSpeed.additional?.percent(selectedValue) ?? 0);
+                case "amp":
+                    return prev.static.add(status.skillAmp.calculatedValue.percent(selectedValue));
+                case "stack":
+                    return prev.static.add(config.stack);
+                case "summonedAttack":
+                    return prev.static.add(status.summonedStatus?.attackPower.percent(selectedValue) ?? 0);
+                case "max":
+                    return prev.static.clamp(0, selectedValue);
+                default:
+                    return undefined;
+            }
+        })();
 
-        return prev;
-    }, new Decimal(0));
+        const dynamicValue = (() => {
+            const dynamicValueKeys = ["targetMaxHP"];
+            if (dynamicValueKeys.includes(key)) {
+                return {...prev.dynamic, [key]: selectedValue};
+            }
+            return prev.dynamic;
+        })();
+
+        return { 
+            static: staticValue ?? prev.static, 
+            dynamic: dynamicValue, 
+            dynamicValueOnly: prev.dynamicValueOnly && staticValue == undefined  // If there exists at least one or more staticValue keys, always returns false.
+        };
+    }, {static: new Decimal(0), dynamic: undefined, dynamicValueOnly: true});
 }

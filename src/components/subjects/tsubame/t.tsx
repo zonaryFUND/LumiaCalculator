@@ -1,26 +1,27 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const t: React.FC<SubjectSkillProps> = props => {
-    //const attack = props.status.criticalChance.times(0.4).add(props.status.criticalDamage.times(0.8))
+    const { status, showEquation } = useValueContext();
 
     return (
         <>
             つばめは基本攻撃の射程距離が<span className={style.emphasis}>{Constants.T.range}</span>
             に固定され、基本攻撃に致命打が発生しない代わりに
             {
-                props.showEquation ?
+                showEquation ?
                 <>
-                    致命打確率1％あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>
-                    と致命打ダメージ増加量1％あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>
+                    致命打確率1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>
+                    と致命打ダメージ増加量1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>
                     の攻撃力が増加します。                    
                 </>
                 :
                 <>
                     致命打確率と致命打ダメージ増加量に応じて攻撃力が
-                    <span className={style.emphasis}>{/*attack.toString()*/}</span>増加します。
+                    <span className={style.emphasis}>{status.attackPower.overrideAdditional?.value?.toString()}</span>増加します。
                 </>
             }
             <br />

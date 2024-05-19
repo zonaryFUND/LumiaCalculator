@@ -22,17 +22,23 @@ const value: React.FC<Props> = props => {
 
     if (context.showEquation) {
         return Object.entries(props.ratio).map(([key, value], index) => {
-            if (typeof value === "number") {
-                return <ValueExpression key={key} id={key as keyof ValueRatio} ratio={value} brackets={index != 0} />;
-            } else if (Array.isArray(value)) {
-                return <ValueExpression key={key} id={key as keyof ValueRatio} ratio={value[skillLevel ?? 0]} brackets={index != 0} />;
-            } else {
-                return null;
-            }
+            return <ValueExpression key={key} id={key as keyof ValueRatio} ratio={value} brackets={index != 0} />;
         });
     } else {
-        const damage = calculateValue(props.ratio, context.status, context.config, props.skill == "item" ? "item" : {skill: props.skill, level: skillLevel ?? 0}).percent(props.multiplier ?? 100);
-        return <span className={style.emphasis}>{damage.toString()}</span>
+        const { static: staticValue, dynamic, dynamicValueOnly } = calculateValue(props.ratio, context.status, context.config, props.skill == "item" ? "item" : {skill: props.skill, level: skillLevel ?? 0}, props.multiplier);
+        
+        return (
+            <>
+                {dynamicValueOnly ? null : <span className={style.emphasis}>{staticValue.toString()}</span>}
+                {
+                    dynamic ?
+                    Object.entries(dynamic).map(([key, value], index) => (
+                        <ValueExpression key={key} id={key as keyof ValueRatio} ratio={value.toNumber()} brackets={index != 0 || !dynamicValueOnly} />
+                    ))
+                    : null
+                }
+            </>
+        )
     }
 };
 

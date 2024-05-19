@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
         つばめが手裏剣{Constants.Q.amount}つを指定した位置に投げます。手裏剣は経路の最後まで飛んで行くと回転しながら的中した後に
-        <Damage {...props} skill="Q" constants={Constants.Q.damage} />のスキルダメージを与え、
-        {Constants.Q.slow_duration}秒間移動速度を{Constants.Q.slow}％減少させます。<br />
+        <Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与え、
+        {Constants.Q.slow_duration}秒間移動速度を{Constants.Q.slow}%減少させます。<br />
         <br />
         刻印が刻まれた敵対象には刻印を{Constants.Q.additional_stack}スタック追加で付与します。
     </>

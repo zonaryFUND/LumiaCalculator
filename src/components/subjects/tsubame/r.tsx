@@ -2,45 +2,31 @@ import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import Value from "components/tooltip/value";
 import Decimal from "decimal.js";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
 import { Status } from "components/subject/status";
-
-export function StaticDamage(status: Status, skillLevel: number): Decimal {
-    const base = Constants.R.damage.base[skillLevel];
-    return status.attackPower.times(Constants.R.damage.attack).dividedBy(100).add(base);
-}
-
-export function TargetMaxHPDependentDamage(status: Status, skillLevel: number): Decimal {
-    const base = Constants.R.damage.targetMaxHP.base[skillLevel];
-    return status.additionalAttackPower.times(Constants.R.damage.targetMaxHP.additionalAttack).dividedBy(100).add(base);
-}
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
+import { } from "typescript";
 
 const r: React.FC<SubjectSkillProps> = props => {
-    /*
-    const damage = props.showEquation ?
+    const { config, showEquation } = useValueContext();
+    const { targetMaxHP: TargetMaxHP, ...Base } = Constants.R.damage;
+
+    const damage = showEquation ?
         <>
-            <span className={style.emphasis}>{Constants.R.damage.base[props.config.skillLevels.R]}</span>
-            <span className={style.attack}>(+攻撃力の{Constants.R.damage.attack}％)</span>
+            <span className={style.emphasis}>{Constants.R.damage.base[props.skillLevel]}</span>
+            <span className={style.attack}>(+攻撃力の{Constants.R.damage.attack}%)</span>
             <span className={style.maxhp}>
-                (+対象の最大体力の{Constants.R.damage.targetMaxHP.base[props.config.skillLevels.R]}％
-                <span className={style.maxhp}>
-                    (+追加攻撃力1あたり{Constants.R.damage.targetMaxHP.additionalAttack * 0.01}％)    
+                (+対象の最大体力の{Constants.R.damage.targetMaxHP.base[props.skillLevel]}%
+                <span className={style.attack}>
+                    (+追加攻撃力1あたり{Constants.R.damage.targetMaxHP.additionalAttack * 0.01}%)    
                 </span>                    
                 )
             </span>
         </>
         :
-        <>
-            <span className={style.emphasis}>
-                {StaticDamage(props.status, props.config.skillLevels.R).toString()}
-            </span>
-            <span className={style.maxhp}>
-                (対象の最大体力の{TargetMaxHPDependentDamage(props.status, props.config.skillLevels.R).toString()}％)
-            </span>
-        </>
-        */
+        <Value skill="R" ratio={Constants.R.damage} />
 
     return (
         <>
@@ -49,7 +35,7 @@ const r: React.FC<SubjectSkillProps> = props => {
             {Constants.R.max_mark}スタックまで刻まれ、最大スタックになった対象はつばめに視界を共有します。<br />
             <br />
             刻印が最大スタックになった敵対象が射程距離の中にいる場合に使用できます。刻印が最大スタックになった敵対象がいる方向に向かって素早く移動し、刻まれた刻印を切り落として
-            {/*damage*/}のスキルダメージを与え、<Damage {...props} skill="R" constants={Constants.R.heal} />の体力を回復します。<br />
+            {damage}のスキルダメージを与え、<Value skill="R" ratio={Constants.R.heal} />の体力を回復します。<br />
             <br />
             敵実験体にダメージを与えた場合、<span className={style.emphasis}>忍び足</span>のクールダウンは
             {Constants.R.w_cdr}％、<span className={style.emphasis}>変わり身の術</span>のクールダウンは
