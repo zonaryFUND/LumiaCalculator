@@ -1,24 +1,17 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps, ValuesPropsGenerator } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const t: React.FC<SubjectSkillProps> = props => {
-    const damage = (() => {
-        /*
-        const base = Constants.T.damage.targetMaxHP.base;
-        const attack = Constants.T.damage.targetMaxHP.attack[props.config.skillLevels.T];
+    const { showEquation } = useValueContext();
 
-        if (props.showEquation) {
-            return <span className={style.maxhp}>対象の最大体力の{base}(+攻撃力の{attack}％)％</span>;
-        } else {
-            return <span className={style.maxhp}>対象の最大体力の{props.status.attackPower.percent(attack).add(base).toString()}％</span>
-        }
-        */
-       return null;
-    })();
+    const damage = showEquation ?
+        <span className={style.maxhp}>対象の最大体力の{Constants.T.damage.targetMaxHP.base}(+攻撃力の{Constants.T.damage.targetMaxHP.attack[props.skillLevel]}%)%</span> :
+        <Value skill="T" ratio={Constants.T.damage} />
 
     return (
         <>
@@ -26,7 +19,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             <br />
             {Constants.T.max_stack}スタックになるとケネスの斧が燃え上がり、基本攻撃またはスキルが的中するたびに
             {damage}のスキルダメージを追加で与えます。<br />
-            ケネスはこのスキルで与えたダメージ量の<Damage skill="T" constants={Constants.T.heal} {...props} /><span className={style.emphasis}>％</span>を体力に回復します。
+            ケネスはこのスキルで与えたダメージ量の<Value skill="T" ratio={Constants.T.heal} /><span className={style.emphasis}>%</span>を体力に回復します。
         </>
     );
 }

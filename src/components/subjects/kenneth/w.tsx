@@ -1,16 +1,16 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ケネスは{Constants.W.duration}秒間炎で体を守り、受けるダメージが<Damage skill="W" constants={Constants.W.damage_reduction} {...props} />
-            <span className={style.emphasis}>％</span>減少します。また、{Constants.W.shield_duration}秒間
-            <Damage skill="W" constants={Constants.W.shield} {...props} />のダメージを吸収するシールドを獲得します。<br />
+            ケネスは{Constants.W.duration}秒間炎で体を守り、受けるダメージが<Value skill="W" ratio={Constants.W.damage_reduction} />
+            <span className={style.emphasis}>%</span>減少します。また、{Constants.W.shield_duration}秒間
+            <Value skill="W" ratio={Constants.W.shield} />のダメージを吸収するシールドを獲得します。<br />
             <br />
             基本攻撃が的中すると、このスキルの持続時間が{Constants.W.extend}秒増加します。
         </>

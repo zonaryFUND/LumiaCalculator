@@ -1,17 +1,17 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ケネスが斧を大きく振り回して<Damage skill="Q" constants={Constants.Q.damage} {...props} />のスキルダメージを与えて、短い時間の間的中した対象を空中に浮かせます。<br />
+            ケネスが斧を大きく振り回して<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えて、短い時間の間的中した対象を空中に浮かせます。<br />
             <br />
             <span className={style.emphasis}>抑圧された怒りー最大スタック</span>：ダメージ量が{Constants.Q.max_stack_damage}
-            ％増加し、的中した敵1人あたり失った体力の{Constants.Q.max_stack_heal}％(最大{Constants.Q.max_stack_heal_max}％)を回復します。
+            %増加し、的中した敵1人あたり失った体力の{Constants.Q.max_stack_heal}%(最大{Constants.Q.max_stack_heal_max}%)を回復します。
         </>
     );
 }

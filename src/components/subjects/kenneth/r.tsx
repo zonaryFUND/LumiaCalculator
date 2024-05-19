@@ -1,18 +1,18 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ケネスが斧を振り上げながら<Damage skill="R" constants={Constants.R.first_damage} {...props} />のスキルダメージを与えます。的中された敵は
+            ケネスが斧を振り上げながら<Value skill="R" ratio={Constants.R.first_damage} />のスキルダメージを与えます。的中された敵は
             {Constants.R.stun}秒間の間空中で捕まったまま気絶し、ケネスの回転攻撃によって
-            <Damage skill="R" constants={Constants.R.second_damage} {...props} />のスキルダメージを{Constants.R.second_count}回受けます。<br />
+            <Value skill="R" ratio={Constants.R.second_damage} />のスキルダメージを{Constants.R.second_count}回受けます。<br />
             <br />
-            その後、斧を振り下ろしながら着地し、着地地点の敵に<Damage skill="R" constants={Constants.R.third_damage} {...props} />
-            のスキルダメー ジを与えて{Constants.R.airborne}秒間空中に浮かせます。
+            その後、斧を振り下ろしながら着地し、着地地点の敵に<Value skill="R" ratio={Constants.R.third_damage} />
+            のスキルダメージを与えて{Constants.R.airborne}秒間空中に浮かせます。
         </>
     );
 }
