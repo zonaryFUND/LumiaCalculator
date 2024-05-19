@@ -1,15 +1,15 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const iremr: React.FC<SubjectSkillProps> = props => (
     <>
         ネコがイレムに変身します。<br />
         <br />
         ネコに変身したイレムは＜お魚＞に移動するとシールドを獲得します。<br />
-        シールドは{Constants.CatR.shield_duration}秒間維持され、<Damage skill="R" constants={Constants.CatR.shield} {...props} />のダメージを吸収します。
+        シールドは{Constants.CatR.shield_duration}秒間維持され、<Value skill="R" ratio={Constants.CatR.shield} />のダメージを吸収します。
     </>
 );
 

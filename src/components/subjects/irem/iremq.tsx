@@ -1,22 +1,21 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Decimal from "decimal.js";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const iremq: React.FC<SubjectSkillProps> = props => {
-    const maxDamageMultiplier = new Decimal(Constants.IremQ.ratio).times(Constants.IremQ.max_ratio_count).add(1);
+    const maxDamageMultiplier = Constants.IremQ.ratio * Constants.IremQ.max_ratio_count + 1;
     const maxDamageConstants = {
-        base: Constants.IremQ.damage.base.map(d => new Decimal(d).times(maxDamageMultiplier)),
-        amp: maxDamageMultiplier.times(Constants.IremQ.damage.amp)
+        base: Constants.IremQ.damage.base.map(d => d * maxDamageMultiplier),
+        amp: maxDamageMultiplier * Constants.IremQ.damage.amp
     };
 
     return (
         <>
             イレムが跳ねるたびに強くなるボールを投げて範囲内の敵に
-            <Damage skill="Q" constants={Constants.IremQ.damage} {...props} />から最大
-            <Damage skill="Q" constants={maxDamageConstants} {...props} />までのスキルダメージを与えます。<br />
+            <Value skill="Q" ratio={Constants.IremQ.damage} />から最大
+            <Value skill="Q" ratio={maxDamageConstants} />までのスキルダメージを与えます。<br />
             ボールは敵にダメージを与えた後には跳ねずに＜お魚＞を生成します。
         </>
     );

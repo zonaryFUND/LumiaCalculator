@@ -1,9 +1,9 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const iremr: React.FC<SubjectSkillProps> = props => (
     <>
@@ -11,7 +11,7 @@ const iremr: React.FC<SubjectSkillProps> = props => (
         <br />
         イレムが<span className={style.emphasis}>バウンシングボール</span>や
         <span className={style.emphasis}>こっちだよ～</span>で＜お魚＞を生成すると、次の基本攻撃の射程距離が増加し、
-        <Damage skill="R" constants={Constants.IremR.damage} {...props} />のスキルダメージを与えます。また、
+        <Value skill="R" ratio={Constants.IremR.damage} />のスキルダメージを与えます。また、
         {Constants.IremR.bell}秒間維持されるネコの鈴を付けさせます。<br />
         ネコの鈴が付けられた対象はイレムに視界を共有されます。<br />
         ＜お魚＞は{Constants.common.fish}秒間維持され、最大{Constants.common.fish_max}まで生成できます。
