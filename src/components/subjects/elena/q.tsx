@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            エレナが前方の敵に<Damage skill="Q" constants={Constants.Q.first_damage} {...props} />
-            のスキルダメージを与えます。一定時間後、氷が爆発しながら同じ範囲に<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />
-            のスキルダメージをもう一度与え、冬の女王の領地のクールダウンが{Constants.Q.cooldown_reduction}％減少します。
+            エレナが前方の敵に<Value skill="Q" ratio={Constants.Q.first_damage} />
+            のスキルダメージを与えます。一定時間後、氷が爆発しながら同じ範囲に<Value skill="Q" ratio={Constants.Q.second_damage} />
+            のスキルダメージをもう一度与え、冬の女王の領地のクールダウンが{Constants.Q.cooldown_reduction}%減少します。
         </>
     );
 }

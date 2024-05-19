@@ -1,9 +1,9 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
@@ -13,7 +13,7 @@ const e: React.FC<SubjectSkillProps> = props => {
             の<span className={style.emphasis}>ステップシークエンス</span>を回復します。<br />
             <br />
             エレナは1秒ごとに{Constants.E.stepsequence_cost}の<span className={style.emphasis}>ステップシークエンス</span>
-            を消耗して指定した方向にスケートで移動しながら経路上の敵に<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えます。
+            を消耗して指定した方向にスケートで移動しながら経路上の敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えます。
         </>
     );
 }

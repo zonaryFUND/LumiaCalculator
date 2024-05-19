@@ -1,20 +1,20 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            エレナが指定した方向に回転しながら経路上の敵に<Damage skill="W" constants={Constants.W.damage} {...props} />
+            エレナが指定した方向に回転しながら経路上の敵に<Value skill="W" ratio={Constants.W.damage} />
             のスキルダメージを与え、<span className={style.emphasis}>クリスタルエレガンス</span>のクールダウンを
-            {Constants.W.q_cooldown_reduction}％減少させて自分の防御力を{Constants.W.defense}
-            ％増加させます。<span className={style.emphasis}>ダブルアクセル</span>使用中に敵からダメージを受けた場合、攻撃した敵の位置に氷床地帯を生成します。<br />
+            {Constants.W.q_cooldown_reduction}%減少させて自分の防御力を{Constants.W.defense}
+            %増加させます。<span className={style.emphasis}>ダブルアクセル</span>使用中に敵からダメージを受けた場合、攻撃した敵の位置に氷床地帯を生成します。<br />
             <br />
             <span className={style.emphasis}>氷床地帯</span>で使用すると、<span className={style.emphasis}>ダブルアクセル</span>
-            の移動距離が増加し、<span className={style.emphasis}>ダブルアクセル</span>のクールダウンが{Constants.W.enhanced_cooldown_reduction}％返されます。
+            の移動距離が増加し、<span className={style.emphasis}>ダブルアクセル</span>のクールダウンが{Constants.W.enhanced_cooldown_reduction}%返されます。
         </>
     );
 }
