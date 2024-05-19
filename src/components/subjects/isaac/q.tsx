@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            アイザックが敵に強く突進して<Damage {...props} skill="Q" constants={Constants.Q.damage} />のスキルダメージを与えます。
+            アイザックが敵に強く突進して<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えます。
         </>
     );
 }

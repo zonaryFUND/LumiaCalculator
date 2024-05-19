@@ -1,16 +1,17 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            アイザックが武器の硬度を上げて次の基本攻撃または基本スキルを強化し、<Damage {...props} skill="W" constants={Constants.W.damage} />
+            アイザックが武器の硬度を上げて次の基本攻撃または基本スキルを強化し、
+            <Value skill="W" ratio={Constants.W.damage} />
             のスキルダメージを追加で与えます。このスキルで強化された基本攻撃または基本スキルが搾取を発動させた場合、基本スキルのクールダウンが
-            {Constants.W.cooldown_reduction}％減少します。
+            {Constants.W.cooldown_reduction}%減少します。
         </>
     );
 }
