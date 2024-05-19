@@ -7,12 +7,15 @@ import style from "components/tooltip/tooltip.module.styl";
 import skillDamage from "../skill-damage";
 
 const MS: React.FC<SubjectSkillProps & {base: number[], amp: number}> = props => {
+    /*
     if (props.showEquation) {
         return <><span className={style.emphasis}>{props.base[props.config.skillLevels.E]}％</span><span className={style.amp}>(+{props.amp}％)</span></>;
     } else {
         const value = skillDamage(props.status, props.config, "E", props);
         return <span className={style.emphasis}>{value.toString()}％</span>
     }
+    */
+   return null;
 }
 
 const e: React.FC<SubjectSkillProps> = props => (

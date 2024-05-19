@@ -10,6 +10,7 @@ const t: React.FC<SubjectSkillProps> = props => {
         const duration = Constants.T.shield.duration;
         const base = Constants.T.shield.effect.consumedStack;
         const attack = Constants.T.shield.effect.attack;
+        /*
         if (props.showEquation) {
             return <>{duration}秒間<span className={style.emphasis}>消耗した1スタックあたり{base}</span><span className={style.attack}>(+攻撃力の{attack}％)</span></>
         } else {
@@ -19,6 +20,7 @@ const t: React.FC<SubjectSkillProps> = props => {
                 <span className={style.emphasis}>{zero.toString()}</span> ~ <span className={style.emphasis}>{zero.add(Constants.T.max_stack * base).toString()}</span>
             </>
         }
+        */
     })();
 
     return (

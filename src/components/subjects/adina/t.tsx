@@ -6,6 +6,7 @@ import { SubjectSkillProps } from "../props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     const ms = (() => {
+        /*
         const base = Constants.T.movement_speed.base[props.config.skillLevels.T];
         const amp = Constants.T.movement_speed.amp;
         if (props.showEquation) {
@@ -16,6 +17,8 @@ const t: React.FC<SubjectSkillProps> = props => {
         } else {
             return <>{props.status.skillAmp.times(amp).dividedBy(100).add(base).toString()}％</>
         }
+        */
+       return null;
     })();
 
     return (

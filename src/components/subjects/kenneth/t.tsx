@@ -7,6 +7,7 @@ import style from "components/tooltip/tooltip.module.styl";
 
 const t: React.FC<SubjectSkillProps> = props => {
     const damage = (() => {
+        /*
         const base = Constants.T.damage.targetMaxHP.base;
         const attack = Constants.T.damage.targetMaxHP.attack[props.config.skillLevels.T];
 
@@ -15,6 +16,8 @@ const t: React.FC<SubjectSkillProps> = props => {
         } else {
             return <span className={style.maxhp}>対象の最大体力の{props.status.attackPower.percent(attack).add(base).toString()}％</span>
         }
+        */
+       return null;
     })();
 
     return (
@@ -32,7 +35,7 @@ export default t;
 
 export const values: ValuesPropsGenerator = props => ({
     additionalInfo: <>
-        ケネスはこのスキルで最大{props.status.attackPower.percent(Constants.T.max_heal.attack).add(Constants.T.max_heal.base[props.config.skillLevels.T]).toString()} = <span className={style.emphasis}>{Constants.T.max_heal.base[props.config.skillLevels.T].toString()}</span>
+        {/*ケネスはこのスキルで最大{props.status.attackPower.percent(Constants.T.max_heal.attack).add(Constants.T.max_heal.base[props.config.skillLevels.T]).toString()} = <span className={style.emphasis}>{Constants.T.max_heal.base[props.config.skillLevels.T].toString()}</span>*/}
         (+攻撃力の{Constants.T.max_heal.attack}％)まで回復できます。<br />
         野生動物に与えられるダメージ量は最大{Constants.T.animal_max}に制限されます。
     </>,

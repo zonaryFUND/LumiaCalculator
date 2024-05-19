@@ -33,12 +33,14 @@ const camera: React.FC<SubjectSkillProps> = props => {
 export default camera;
 
 export function values(props: SubjectSkillProps): ValuesProps {
+    /*
     const damage = skillDamage(props.status, props.config, "D", Constants.sniper_rifle.dead_to_rights.damage)
         .times(Constants.sniper_rifle.dead_to_rights.max_damage_multiplier);
+        */
 
     return {
        additionalInfo: <>
-            デッドアイ最大ダメージ量:{damage.toString()}<br />
+            {/*デッドアイ最大ダメージ量:{damage.toString()}<br />*/}
             狙撃状態で移動したり、妨害効果を受けると狙撃モードが解除されます。<br />
             <br />
             武器熟練度<span className={style.emphasis}>5Lv・10Lv・15Lv</span>の時にスキルレベルアップ

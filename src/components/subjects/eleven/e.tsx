@@ -1,26 +1,26 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import skillDamage from "components/subjects/skill-damage";
-import Damage from "../damage";
 import style from "components/tooltip/tooltip.module.styl";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const e: React.FC<SubjectSkillProps> = props => {
-    const damage = skillDamage(props.status, props.config, "W", Constants.W.damage)
+    const { showEquation } = useValueContext();
 
     return (
         <>
             Elevenがハンバーガーフォークに乗って指定した地点にジャンプし、敵に
-            <Damage {...props} skill="E" constants={Constants.E.damage} />
+            <Value skill="E" ratio={Constants.E.damage} />
             のスキルダメージを与えます。ジャンプする間、Elevenはすべての妨害効果免疫状態になります。チャージ時間に応じてジャンプできる距離が増え、
             {Constants.common.charge_max}秒以上チャージした場合、スキルが強化されます。<br />
             <br />
             <span className={style.enhance}>強化</span>：
             {
-                props.showEquation ? 
-                <>基本スキルダメージの{Constants.E.additional_damage[props.config.skillLevels.E]}％</> :
-                <span>{damage.times(Constants.E.additional_damage[props.config.skillLevels.E]).dividedBy(100).toString()}</span>
+                showEquation ? 
+                <>基本スキルダメージの{Constants.E.additional_damage[props.skillLevel]}％</> :
+                <Value skill="E" ratio={Constants.E.damage} multiplier={Constants.E.additional_damage[props.skillLevel]} />
             }
             のスキルダメージを追加で与え、着地地点付近の敵を押し出します。
         </>

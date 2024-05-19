@@ -36,9 +36,11 @@ export const values: (props: SubjectSkillProps) => ValuesProps = props => ({
         <span className={style.common}>ウイスキー</span>を材料にするすべての飲み物
     </>,
     parameters: [
+        /*
         {title: "最小ダメージ量", values: [0,1,2].map(level => skillDamage(props.status, {
             ...props.config,
             skillLevels: {...props.config.skillLevels, T: level}
         }, "T", Constants.T.damage).toString())}
+        */
     ]
 })

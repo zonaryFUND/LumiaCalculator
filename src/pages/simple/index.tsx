@@ -6,7 +6,9 @@ import style from "./index.module.styl";
 
 import Subject from "../simple/subject";
 import BuffDebuffs from "./buff-debuffs";
-import ItemTooltip from "components/tooltip/item-tooltip";
+import Damage from "./damage";
+import ItemTooltip from "components/tooltip/item/item-tooltip";
+import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 
 import { useLocalStorage, useToggle, useWindowSize } from "react-use";
 import { equipmentStatus } from "app-types/equipment";
@@ -19,6 +21,7 @@ import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-confi
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { SubjectSkillProps } from "components/subjects/props";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 
 const index: React.FC = props => {
     const { width } = useWindowSize();
@@ -94,8 +97,33 @@ const index: React.FC = props => {
                         hideHeader={collapse}
                     />
                     <BuffDebuffs hideHeader={collapse} />
+                    <Damage
+                        config={subjectConfig}
+                        status={status}
+                        setSkillLevels={setSkillLevels}
+                        weaponType={weaponTypeID as (WeaponTypeID | undefined)}
+                        hideHeader={collapse}
+                    />
                 </CollapseTab>
             </div>
+            <Tooltip 
+                id="subject-skill"
+                className={`${style.tooltip}`}
+                style={{zIndex: 1000}}
+                render={({ content, activeAnchor }) => {
+                    if (!content) return null;
+                    const [subject, skill] = content?.split("-");
+                    return (
+                        <SubjectSkillTooltip
+                            id={subject} 
+                            skill={skill as any} 
+                            showEquation={damageInFormula[0]}
+                            status={status} 
+                            config={subjectConfig!} 
+                        />
+                    );
+                }}
+            />
             <Tooltip 
                 id="weapon"
                 className={style.tooltip}

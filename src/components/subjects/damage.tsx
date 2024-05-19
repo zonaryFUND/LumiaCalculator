@@ -66,6 +66,7 @@ const Damage: React.FC<Props> = props => {
     }
 
     if (props.status && props.config && props.showEquation != true) {
+        /*
         const damage = skillDamage(props.status, props.config, props.skill, props.constants);
         const additionalKeys = ["targetHP", "lostHP", "targetMaxHP", "targetLostHP"];
         const additionalOnly = Object.keys(props.constants).filter(key => !additionalKeys.includes(key)).length == 0;
@@ -79,6 +80,8 @@ const Damage: React.FC<Props> = props => {
                {props.constants.targetMaxHP ? <span className={style.maxhp}>{left}{target}の最大体力の{current(level, props.constants.targetMaxHP).toString()}％{right}</span> : null}
             </>
         );
+        */
+       return null;
     } else {
         return (
             <>
@@ -116,9 +119,12 @@ const Damage: React.FC<Props> = props => {
                             case "maxSP":
                                 return <span key={key} className={style.maxsp}>{left}最大スタミナの{current(level, props.constants.maxSP!).toString()}％{right}</span>;
                             case "criticalChance":
+                                /*
                                 return <span key={key} className={style.critical}>+{
                                     props.status?.criticalChance.percent(current(level, props.constants.criticalChance!)).toString()
                                 }％ = (致命打確率の{current(level, props.constants.criticalChance!).toString()}％)</span>;
+                                */
+                               return null;
                             case "summoned_attack":
                                 return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(level, props.constants.summoned_attack!).toString()}％{right}</span>;
                             case "stack":

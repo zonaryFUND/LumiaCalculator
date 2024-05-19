@@ -7,7 +7,7 @@ import style from "components/tooltip/tooltip.module.styl";
 import Decimal from "decimal.js";
 
 const w: React.FC<SubjectSkillProps> = props => {
-    const increasedCooldown = new Decimal(Constants.W.cooldown * Constants.W.cooldown_increase).subPercent(props.status.cooldownReduction).toString();
+    //const increasedCooldown = new Decimal(Constants.W.cooldown * Constants.W.cooldown_increase).subPercent(props.status.cooldownReduction).toString();
 
     return (
         <>
@@ -16,7 +16,7 @@ const w: React.FC<SubjectSkillProps> = props => {
             {Constants.W.movement_speed[props.config.skillLevels.W]}％増加した後、徐々に減少します。スキルが終了する前に<span className={style.emphasis}>蝶の嵐</span>を使用できます。<br />
             <br />
             <span className={style.emphasis}>蝶の嵐</span>：空中に高く飛び上がって{Constants.W.untargettable}秒間対象指定不可状態になり、その場に着地しながら
-            <Damage skill="W" constants={Constants.W.second_damage} {...props} />のスキルダメージを与えます。使用した場合、スキルクールダウンが<span className={style.emphasis}>{increasedCooldown}</span>秒増加します。
+            <Damage skill="W" constants={Constants.W.second_damage} {...props} />のスキルダメージを与えます。使用した場合、スキルクールダウンが<span className={style.emphasis}>{/*increasedCooldown*/}</span>秒増加します。
         </>
     );
 }

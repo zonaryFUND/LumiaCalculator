@@ -14,8 +14,9 @@ const pistol: React.FC<SubjectSkillProps> = props => {
                 <span className={style.amp}>スキル増幅の{Constants.pistol.movement_speed.amp}％</span>
             </>
         } else {
-            const value = skillDamage(props.status, props.config, "D", Constants.pistol.movement_speed);
-            return <span className={style.emphasis}>{value.toString()}％</span>
+            //const value = skillDamage(props.status, props.config, "D", Constants.pistol.movement_speed);
+            //return <span className={style.emphasis}>{value.toString()}％</span>
+            return null;
         }
     })();
 

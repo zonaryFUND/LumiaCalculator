@@ -6,9 +6,10 @@ import style from "./subject-skill-tooltip.module.styl";
 import Images from "@app/resources/image";
 import Decimal from "decimal.js";
 import Values, { ValuesProps } from "components/subjects/values";
-import { Status } from "components/subject/status";
 import { SubjectSkillProps } from "components/subjects/props";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { Status } from "app-types/subject-dynamic/status/type";
+import { ValueContext } from "../value-context";
 
 const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*)\.tsx$/);
 export const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
@@ -57,7 +58,7 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
                 return new Decimal(valueOrElement(info.cooldown.constant, props.skillLevel));
             } else {
                 const baseValue = valueOrElement(info.cooldown, props.skillLevel);
-                return new Decimal(baseValue).subPercent(props.status.cooldownReduction);
+                return new Decimal(baseValue).subPercent(props.status.cooldownReduction.calculatedValue);
             }
         })();
 
@@ -74,7 +75,7 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
                 return valueOrElement(info.charge.time.constant, props.skillLevel);
             } else {
                 const baseValue = valueOrElement(info.charge.time, props.skillLevel);
-                return new Decimal(baseValue).subPercent(props.status.cooldownReduction).toString();
+                return new Decimal(baseValue).subPercent(props.status.cooldownReduction.calculatedValue).toString();
             }
         })();
         return cooldown ? <>(チャージ時間{charge}秒)</> : <>チャージ時間{charge}秒</>;
@@ -145,7 +146,9 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     </div>
                 </header>
                 <p>
-                    {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, subjectSkillsProps)}
+                    <ValueContext.Provider value={props}>
+                        {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, {skillLevel: props.config.skillLevels[skillIDForLevel]})}
+                    </ValueContext.Provider>
                 </p>
             </div>
             {

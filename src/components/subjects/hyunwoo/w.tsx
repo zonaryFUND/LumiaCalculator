@@ -6,12 +6,14 @@ import style from "components/tooltip/tooltip.module.styl";
 
 const w: React.FC<SubjectSkillProps> = props => {
     const defense = (() => {
+        /*
         const base = Constants.W.defense.base[props.config.skillLevels.W];
         if (props.showEquation) {
             return <><span className={style.emphasis}>{base}</span><span className={style.defense}>(+防御力{Constants.W.defense.defense}あたり1)</span></>
         } else {
             return <span className={style.emphasis}>{props.status.defense.dividedBy(Constants.W.defense.defense).floor().add(base).toString()}</span>
         }
+        */
     })();
 
     return (

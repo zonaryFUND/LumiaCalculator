@@ -7,6 +7,7 @@ import style from "components/tooltip/tooltip.module.styl";
 
 const t: React.FC<SubjectSkillProps> = props => {
     const criticalWound = (() => {
+        /*
         const ampRatio = Constants.T.critical_wound.amp;
         const hpRatio = Constants.T.critical_wound.targetMaxHP;
         if (props.showEquation) {
@@ -14,6 +15,8 @@ const t: React.FC<SubjectSkillProps> = props => {
         } else {
             return <>{props.status.skillAmp.percent(ampRatio).toString()}<span className={style.maxhp}>(+最大体力の{hpRatio}％)</span></>
         }
+        */
+       return null;
     })()
 
 

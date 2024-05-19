@@ -8,12 +8,15 @@ import { ValuesProps } from "../values";
 
 const BasicAttackDamage: React.FC<SubjectSkillProps> = props => {
     const base = (() => {
+        /*
         if (props.showEquation) {
             return <span className={style.emphasis}>(アロンソのレベル比例{Constants.Q.basic_attack_damage.level})</span>
         } else {
             const damage = skillDamage(props.status, props.config, "Q", Constants.Q.basic_attack_damage);
             return <span className={style.emphasis}>{damage.toString()}</span>
         }
+        */
+       return null;
     })();
 
     return (

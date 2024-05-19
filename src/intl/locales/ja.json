@@ -35,7 +35,7 @@
     "status.max-cooldown-reduction": "最大クールダウン減少",
     "status.armor-penetration": "防御貫通",
     "status.armor-penetration-constant": "防御貫通(定数)",
-    "status.armor-penetration-ratio": "防御貫通(％)",
+    "status.armor-penetration-ratio": "防御貫通(%)",
     "status.lifesteal": "生命力吸収",
     "status.omnisyphon": "ダメージ吸血",
     "status.heal-power": "与える回復増加",
@@ -61,5 +61,12 @@
     "subject.xiukai.passive-maxhp": "Tスタック増加",
 
     "summoned.nina": "ニナ",
-    "summoned.sentry-gun": "セントリーガン"
+    "summoned.sentry-gun": "セントリーガン",
+
+
+    "app.value.base": "{ratio}",
+    "app.value.maxhp": "最大体力の{ratio}%",
+    "app.value.additional-maxhp": "追加体力の{ratio}%",
+    "app.value.defense": "防御力の{ratio}%",
+    "app.value.attack": "攻撃力の{ratio}%"
 }

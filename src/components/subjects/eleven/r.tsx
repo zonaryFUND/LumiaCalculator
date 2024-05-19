@@ -1,15 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => {
-    const maxHP = props.status.baseMaxHP.add(props.status.additionalMaxHP);
     return (
         <>
-            Elevenが{Constants.R.duration}秒間<Damage skill="R" constants={Constants.R.heal} {...props} />の体力を回復し、
-            {Constants.R.tick}秒ごとに周りの敵に<Damage {...props} skill="R" constants={Constants.R.damage} />のスキルダメージを与えます。
+            Elevenが{Constants.R.duration}秒間<Value skill="R" ratio={Constants.R.heal} {...props} />の体力を回復し、
+            {Constants.R.tick}秒ごとに周りの敵に<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えます。
         </>
     );
 }

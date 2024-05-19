@@ -11,7 +11,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             <span className={style.amp}>(+{
                 props.showEquation ? 
                 <>スキル増幅の{Constants.T.additional_heal.targetMaxHP.base[props.config.skillLevels.R]}</> : 
-                <>{props.status.skillAmp.times(Constants.T.additional_heal.targetMaxHP.amp).dividedBy(100).toString()}</>    
+                <>{/*props.status.skillAmp.times(Constants.T.additional_heal.targetMaxHP.amp).dividedBy(100).toString()*/}</>    
             }％)</span>
         </>
     )

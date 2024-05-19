@@ -8,12 +8,15 @@ import skillDamage from "../skill-damage";
 
 const w: React.FC<SubjectSkillProps> = props => {
     const ms = (() => {
+        /*
         if (props.showEquation) {
             return <>{Constants.W.movement_speed.effect.base[props.config.skillLevels.W]}％<span className={style.level}>(+レニのレベル <span className={style.emphasis}>* {Constants.W.movement_speed.effect.level}</span>)</span></>
         } else {
             const value = skillDamage(props.status, props.config, "W", Constants.W.movement_speed.effect);
             return <>{value.toString()}％</>
         }
+        */
+       return null;
     })();
 
     return (

@@ -7,9 +7,11 @@ import { SubjectSkillProps } from "../props";
 
 const r: React.FC<SubjectSkillProps> = props => {
     const stack = Constants.R.additionalDamage.stack[props.config.skillLevels.R];
+    /*
     const additionalAttack = props.status.attackPower.times(Constants.R.additionalDamage.attack).dividedBy(100);
     const least = additionalAttack.add(stack);
     const max = additionalAttack.add(stack).add(stack);
+    */
 
     return (
         <>
@@ -22,7 +24,8 @@ const r: React.FC<SubjectSkillProps> = props => {
                     <span className={style.attack}>(+攻撃力の{Constants.R.additionalDamage.attack}％)</span>    
                 </>
                 :
-                <span className={style.emphasis}>対象の失った体力の{least.toString()}％ ～ {max.toString()}％</span>
+                /*<span className={style.emphasis}>対象の失った体力の{least.toString()}％ ～ {max.toString()}％</span>*/
+                null
             }
             に値する追加スキルダメージを与え、しばらくの間移動速度を{Constants.R.slow}％減少させます。
         </>

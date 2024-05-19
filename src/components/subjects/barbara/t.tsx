@@ -7,19 +7,25 @@ import style from "components/tooltip/tooltip.module.styl";
 
 const t: React.FC<SubjectSkillProps> = props => {
     const attack = (() => {
+        /*
         if (props.showEquation) {
             return <><span className={style.level}>キャラクターレベル</span><span className={style.amp}>(*スキル増幅の{Constants.T.attack_amp}％)</span></>
         } else {
             return <span className={style.emphasis}>{props.status.skillAmp.percent(Constants.T.attack_amp).times(props.config.level).toString()}</span>
         }
+        */
+       return null;
     })();
 
     const defense = (() => {
+        /*
         if (props.showEquation) {
             return <><span className={style.level}>キャラクターレベル</span><span className={style.amp}>(*スキル増幅の{Constants.T.defense_amp}％)</span></>
         } else {
             return <span className={style.emphasis}>{props.status.skillAmp.percent(Constants.T.defense_amp).times(props.config.level).toString()}</span>
         }
+        */
+       return null;
     })();
 
     return (

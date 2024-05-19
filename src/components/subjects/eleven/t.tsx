@@ -2,7 +2,7 @@ import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
@@ -11,7 +11,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             ：Elevenは<span className={style.rare}>ポテトフライ</span>と<span className={style.uncommon}>コーラ</span>を調合して
             <span className={style.legendary}>Elevenセット</span>を製作することができます。<br />
             <br />
-            Elevenの基本スキルが敵に的中するたびに<span>最大体力の{Constants.T.heal.targetMaxHP[props.config.skillLevels.T]}％</span>
+            Elevenの基本スキルが敵に的中するたびに<span>最大体力の{Constants.T.heal.targetMaxHP[props.skillLevel]}%</span>
             の体力を回復できるElevenバーガーを地面に{Constants.T.amount}つ生成します。
         </>
     );

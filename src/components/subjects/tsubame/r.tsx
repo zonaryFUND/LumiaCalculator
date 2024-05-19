@@ -18,6 +18,7 @@ export function TargetMaxHPDependentDamage(status: Status, skillLevel: number): 
 }
 
 const r: React.FC<SubjectSkillProps> = props => {
+    /*
     const damage = props.showEquation ?
         <>
             <span className={style.emphasis}>{Constants.R.damage.base[props.config.skillLevels.R]}</span>
@@ -39,6 +40,7 @@ const r: React.FC<SubjectSkillProps> = props => {
                 (対象の最大体力の{TargetMaxHPDependentDamage(props.status, props.config.skillLevels.R).toString()}％)
             </span>
         </>
+        */
 
     return (
         <>
@@ -47,7 +49,7 @@ const r: React.FC<SubjectSkillProps> = props => {
             {Constants.R.max_mark}スタックまで刻まれ、最大スタックになった対象はつばめに視界を共有します。<br />
             <br />
             刻印が最大スタックになった敵対象が射程距離の中にいる場合に使用できます。刻印が最大スタックになった敵対象がいる方向に向かって素早く移動し、刻まれた刻印を切り落として
-            {damage}のスキルダメージを与え、<Damage {...props} skill="R" constants={Constants.R.heal} />の体力を回復します。<br />
+            {/*damage*/}のスキルダメージを与え、<Damage {...props} skill="R" constants={Constants.R.heal} />の体力を回復します。<br />
             <br />
             敵実験体にダメージを与えた場合、<span className={style.emphasis}>忍び足</span>のクールダウンは
             {Constants.R.w_cdr}％、<span className={style.emphasis}>変わり身の術</span>のクールダウンは

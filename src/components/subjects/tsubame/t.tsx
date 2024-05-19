@@ -4,7 +4,7 @@ import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "../props";
 
 const t: React.FC<SubjectSkillProps> = props => {
-    const attack = props.status.criticalChance.times(0.4).add(props.status.criticalDamage.times(0.8))
+    //const attack = props.status.criticalChance.times(0.4).add(props.status.criticalDamage.times(0.8))
 
     return (
         <>
@@ -20,7 +20,7 @@ const t: React.FC<SubjectSkillProps> = props => {
                 :
                 <>
                     致命打確率と致命打ダメージ増加量に応じて攻撃力が
-                    <span className={style.emphasis}>{attack.toString()}</span>増加します。
+                    <span className={style.emphasis}>{/*attack.toString()*/}</span>増加します。
                 </>
             }
             <br />

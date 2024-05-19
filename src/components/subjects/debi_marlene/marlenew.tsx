@@ -16,6 +16,7 @@ export function projectileAmount(status: Status): number {
 }
 
 const Projectile: React.FC<SubjectSkillProps> = props => {
+    /*
     const base = Constants.MarleneW.projectiles.base[props.config.skillLevels.W];
     const add = projectileAmount(props.status);
     if (props.showEquation) {
@@ -26,6 +27,8 @@ const Projectile: React.FC<SubjectSkillProps> = props => {
     } else {
         return <span className={style.emphasis}>{base + add}</span>
     }
+    */
+   return null;
 }
 
 const w: React.FC<SubjectSkillProps> = props => (

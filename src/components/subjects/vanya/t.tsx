@@ -14,8 +14,11 @@ const t: React.FC<SubjectSkillProps> = props => {
                 <span className={style.amp}>(+ヴァーニャのレベル1あたり{Constants.T.shield_decline.level})</span>
             </>
         } else {
+            /*
             const value = skillDamage(props.status, props.config, "T", Constants.T.shield_decline);
             return <span className={style.emphasis}>{value.toString()}</span>
+            */
+           return null;
         }
     })();
 

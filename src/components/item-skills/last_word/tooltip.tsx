@@ -7,12 +7,15 @@ import skillDamage from "components/subjects/skill-damage";
 
 const description: React.FC<ItemSkillProps> = props => {
     const value = (() => {
+        /*
         if (props.config && props.status && props.showEquation != true) {
             const ampValue = skillDamage(props.status, props.config, "item", {amp: Constants.ad.amp});
             return <><span className={style.amp}>({ampValue.toString()})</span>+<span className={style.maxhp}>敵最大体力の{Constants.ad.targetMaxHP}％</span></>;
         } else {
             return <Damage {...props} values={Constants.ad} className={style.amp} />;
         }
+        */
+       return null;
     })();
 
     return (

@@ -3,7 +3,7 @@ import Damage from "../damage";
 import { SubjectSkillProps } from "../props";
 import Constants from "./constants.json"
 import { ValuesProps } from "../values";
-import style from "components/tooltip/item-tooltip.module.styl";
+import style from "components/tooltip/item/item-tooltip.module.styl";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>

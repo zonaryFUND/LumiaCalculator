@@ -6,11 +6,14 @@ import skillDamage from "components/subjects/skill-damage";
 
 const description: React.FC<ItemSkillProps> = props => {
     const damage = (() => {
+        /*
         if (props.config && props.status && props.showEquation != true) {
             return skillDamage(props.status, props.config, "item", props.values.dmg).toString();
         } else {
             return null;
         }
+        */
+       return null;
     })();
     return (
         <p>

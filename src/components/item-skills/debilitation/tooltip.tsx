@@ -5,6 +5,7 @@ import { ItemSkillProps } from "../item-skill";
 import skillDamage from "components/subjects/skill-damage";
 
 const Value: React.FC<ItemSkillProps> = props => {
+    /*
     if (props.status && props.config && props.showEquation != true) {
         const value = skillDamage(props.status, props.config, "item", {amp: Constants.dmg.targetMaxHP.base});
         return (
@@ -13,12 +14,13 @@ const Value: React.FC<ItemSkillProps> = props => {
             </span>
         );
     } else {
+        */
         return (
             <span className={style.maxhp}>
                 対象の最大体力の{Constants.dmg.targetMaxHP.base}<span className={style.amp}>(+スキル増幅の{Constants.dmg.targetMaxHP.amp}％)</span>％
             </span>
         );
-    }
+    //}
 }
 
 const description: React.FC<ItemSkillProps> = props => (

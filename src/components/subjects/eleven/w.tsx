@@ -1,29 +1,28 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import skillDamage from "components/subjects/skill-damage";
-import Damage from "../damage";
 import style from "components/tooltip/tooltip.module.styl";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const w: React.FC<SubjectSkillProps> = props => {
-    const damage = skillDamage(props.status, props.config, "W", Constants.W.damage)
-    const taunt = Constants.W.taunt[props.config.skillLevels.W];
-    const enhancedTaunt = Constants.W.enhanced_taunt[props.config.skillLevels.W];
+    const { showEquation } = useValueContext();
 
     return (
         <>
-            Elevenがハンバーガーを持ち上げて範囲内の敵を{taunt}秒間挑発し、<Damage {...props} skill="W" constants={Constants.W.damage} />のスキルダメージを与えます。
+            Elevenがハンバーガーを持ち上げて範囲内の敵を{Constants.W.taunt[props.skillLevel]}秒間挑発し、
+            <Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。
             {Constants.common.charge_max}秒以上チャージした場合、スキルが強化されます。<br />
             <br />
-            <span className={style.enhance}>強化</span>：より広い範囲内の敵を{enhancedTaunt}秒間挑発し、
+            <span className={style.enhance}>強化</span>：より広い範囲内の敵を{Constants.W.enhanced_taunt[props.skillLevel]}秒間挑発し、
             {
-                props.showEquation ? 
-                <>基本スキルダメージの{Constants.W.additional_damage[props.config.skillLevels.W]}％</> :
-                <span>{damage.times(Constants.W.additional_damage[props.config.skillLevels.W]).dividedBy(100).toString()}</span>
+                showEquation ? 
+                <>基本スキルダメージの{Constants.W.additional_damage[props.skillLevel]}%</> :
+                <Value skill="W" ratio={Constants.W.damage} multiplier={Constants.W.additional_damage[props.skillLevel]} />
             }
             のスキルダメージを追加で与えます。また、{Constants.W.damage_reduction_duration}秒間Elevenが受ける最終ダメージが
-            {Constants.W.damage_reduction[props.config.skillLevels.W]}％減少します。
+            {Constants.W.damage_reduction[props.skillLevel]}%減少します。
         </>
     );
 }
@@ -31,7 +30,7 @@ const w: React.FC<SubjectSkillProps> = props => {
 export default w;
 
 export const values: ValuesProps = {
-    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}％が返されます。</>,
+    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}%が返されます。</>,
     parameters: [
         {title: "ダメージ量", values: Constants.W.damage.base},
         {title: "[強化時]ハンマーダメージ比例追加ダメージ量", values: Constants.W.additional_damage, percent: true},
