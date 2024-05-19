@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
         アイソルがMok製爆弾を設置します。Mok製爆弾は{Constants.R.lifetime}秒間敵を感知でき、範囲内に敵が入ると爆発して
-        <Damage {...props} skill="R" constants={Constants.R.damage} />のスキルダメージを与えます。<br />
+        <Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えます。<br />
         <br />
         最大{Constants.R.charge.max}個まで保有でき、{Constants.R.max_place}個まで設置することができます。
     </>

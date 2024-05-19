@@ -69,6 +69,8 @@
     "app.value.additional-maxhp": "追加体力の{ratio}%",
     "app.value.defense": "防御力の{ratio}%",
     "app.value.attack": "攻撃力の{ratio}%",
+    "app.value.skill-amp": "スキル増幅の{ratio}%",
     "app.value.additional-attack": "追加攻撃力の{ratio}%",
-    "app.value.target-maxhp": "対象の最大体力の{ratio}%"
+    "app.value.target-maxhp": "対象の最大体力の{ratio}%",
+    "app.value.target-hp": "対象の現在体力の{ratio}%"
 }
