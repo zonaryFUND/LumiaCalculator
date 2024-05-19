@@ -5,16 +5,21 @@ import { ValueElement, ValueRatio } from "app-types/value-ratio";
 
 type Props = {
     id: keyof ValueRatio
-    className?: string
     level?: number
     ratio: ValueElement
     brackets?: boolean
+    override?: {
+        format: string
+        className: string
+    }
 }
 
 const defaultDictionary: {[key: string]: {key: string, className: string}} = {
     base: {key: "app.value.base", className: style.emphasis},
+    level: {key: "app.value.level", className: style.level},
     maxHP: {key: "app.value.maxhp", className: style.maxhp},
     additionalMaxHP: {key: "app.value.additional-maxhp", className: style.maxhp},
+    defense: {key: "app.value.defense", className: style.defense},
     attack: {key: "app.value.attack", className: style.attack},
     additionalAttack: {key: "app.value.additional-attack", className: style.attack},
     basicAttackAmp: {key: "app.value.basic-attack-amp", className: style.attack},
@@ -40,13 +45,29 @@ const ValueExpression: React.FC<Props> = props => {
     })();
     
     return (
-        <span className={props.className ?? def.className}>
+        <span className={props.override?.className ?? def.className}>
             {
                 props.brackets ? 
                 props.id == "basicAttackAmp" ? "*(" : "(+" 
                 : null
             }
-            <FormattedMessage id={def.key} values={{ratio: value}} />
+            {
+                props.override ?
+                <>
+                {
+                    props.override.format.split(/({ratio})/)
+                        .map(component => {
+                            if (component.startsWith("{") && component.endsWith("}")) {
+                                return <span className={props.override?.className}>{value}</span>
+                            } else {
+                                return component
+                            }
+                        })
+                }
+                </>
+                :
+                <FormattedMessage id={def.key} values={{ratio: value}} />    
+            }
             {props.brackets ? ")" : null}
         </span>
     )

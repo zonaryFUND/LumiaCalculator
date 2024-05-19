@@ -65,6 +65,7 @@
 
 
     "app.value.base": "{ratio}",
+    "app.value.level": "キャラクターレベル*{ratio}",
     "app.value.maxhp": "最大体力の{ratio}%",
     "app.value.additional-maxhp": "追加体力の{ratio}%",
     "app.value.defense": "防御力の{ratio}%",

@@ -10,6 +10,7 @@ type Props = {
     ratio: ValueRatio
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
     multiplier?: number
+    overrideExpression?: {[K in keyof ValueRatio]: {format: string, className: string}}
 }
 
 const value: React.FC<Props> = props => {
@@ -22,7 +23,8 @@ const value: React.FC<Props> = props => {
 
     if (context.showEquation) {
         return Object.entries(props.ratio).map(([key, value], index) => {
-            return <ValueExpression key={key} id={key as keyof ValueRatio} ratio={value} brackets={index != 0} />;
+            const override = props.overrideExpression?.[key as keyof ValueRatio];
+            return <ValueExpression key={key} id={key as keyof ValueRatio} level={skillLevel} ratio={value} brackets={index != 0} override={override} />;
         });
     } else {
         const { static: staticValue, dynamic, dynamicValueOnly } = calculateValue(props.ratio, context.status, context.config, props.skill == "item" ? "item" : {skill: props.skill, level: skillLevel ?? 0}, props.multiplier);
@@ -33,7 +35,7 @@ const value: React.FC<Props> = props => {
                 {
                     dynamic ?
                     Object.entries(dynamic).map(([key, value], index) => (
-                        <ValueExpression key={key} id={key as keyof ValueRatio} ratio={value.toNumber()} brackets={index != 0 || !dynamicValueOnly} />
+                        <ValueExpression key={key} id={key as keyof ValueRatio} level={skillLevel} ratio={value.toNumber()} brackets={index != 0 || !dynamicValueOnly} />
                     ))
                     : null
                 }

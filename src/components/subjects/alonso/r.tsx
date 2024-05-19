@@ -1,22 +1,21 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
-        アロンソが周りの敵を短く引き寄せながら<Damage skill="R" constants={Constants.R.damage} {...props} />
+        アロンソが周りの敵を短く引き寄せながら<Value skill="R" ratio={Constants.R.damage} />
         のスキルダメージを与えます。<br />
         <br />
         その後大地から引き寄せた金属の破片でアロンソの体力を{Constants.R.tick}秒間
-        <Damage skill="R" constants={Constants.R.heal} {...props} />
-        ずつ回復させ、敵には<Damage skill="R" constants={Constants.R.damage_on_time} {...props} />
+        <Value skill="R" ratio={Constants.R.heal} />
+        ずつ回復させ、敵には<Value skill="R" ratio={Constants.R.damage_on_time} />
         の持続スキルダメージを与えてフィールドの外に向かう敵の移動速度を{Constants.R.slow}減少させます。<br />
         <br />
         再使用したり持続時間が終了すると、維持時間に比例して
-        <Damage skill="R" constants={Constants.R.final_damage.min} {...props} /> ~
-        <Damage skill="R" constants={Constants.R.final_damage.max} {...props} />
+        <Value skill="R" ratio={Constants.R.final_damage.min} /> ~ <Value skill="R" ratio={Constants.R.final_damage.max} />
         のスキルダメージを与えます。
     </>
 );

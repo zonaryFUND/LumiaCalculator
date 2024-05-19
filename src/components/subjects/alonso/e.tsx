@@ -1,16 +1,16 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
         アロンソが対象を指定してマーキングします。<br />
         <br />
         しばらくしてから対象に向かって突進し、
-        <Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えて
-        {Constants.E.bind[props.config.skillLevels.E]}秒間束縛します。
+        <Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて
+        {Constants.E.bind[props.skillLevel]}秒間束縛します。
     </>
 );
 
