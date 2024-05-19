@@ -1,19 +1,19 @@
 import * as React from "react";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import Damage from "../damage";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const lyanhq: React.FC<SubjectSkillProps> = props => {
     return (
         <>
              <span className={style.enhance}>人間状態</span>：悪霊がイアンを操ります。短剣で対象を突き刺して
-             <Damage skill="Q" constants={Constants.LyAnhQ.damage} {...props} />
+             <Value skill="Q" ratio={Constants.LyAnhQ.damage} />
              のスキルダメージを与えます。的中した場合、クールダウンが{Constants.LyAnhQ.on_hit_cooldown}秒になります。<br />
              <br />
              <span className={style.enhance}>憑依状態</span>：憑依されたイアンが指定した範囲内の対象に
-             <Damage skill="Q" constants={Constants.GhostQ.damage} {...props} />のスキルダメージを与えて
+             <Value skill="Q" ratio={Constants.GhostQ.damage} />のスキルダメージを与えて
              {Constants.GhostQ.bind}秒間束縛させます。
         </>
     );

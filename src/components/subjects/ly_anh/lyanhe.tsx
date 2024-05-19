@@ -1,19 +1,19 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const lyanhq: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             <span className={style.enhance}>人間状態</span>：イアンが短剣に操られ、経路上の敵に
-            <Damage skill="E" constants={Constants.LyAnhE.damage} {...props} />のスキルダメージを与えます。的中した場合、もう一度使用できます。<br />
+            <Value skill="E" ratio={Constants.LyAnhE.damage} />のスキルダメージを与えます。的中した場合、もう一度使用できます。<br />
             <br />
             <span className={style.enhance}>憑依状態</span>：憑依されたイアンが悪霊の手を振り下ろして
-            <Damage skill="E" constants={Constants.GhostE.first_damage} {...props} />のスキルダメージを与え、対象を引き寄せながら
-            <Damage skill="E" constants={Constants.GhostE.second_damage} {...props} />のスキルダメージを与えます。
+            <Value skill="E" ratio={Constants.GhostE.first_damage} />のスキルダメージを与え、対象を引き寄せながら
+            <Value skill="E" ratio={Constants.GhostE.second_damage} />のスキルダメージを与えます。
         </>
     );
 }

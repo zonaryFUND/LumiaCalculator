@@ -2,6 +2,7 @@ import * as React from "react";
 import Images from "@app/resources/image";
 import style from "../skills-standard.modue.styl";
 import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import r from "../abigail/r";
 
 type Props = {
     src: string
@@ -48,5 +49,6 @@ export default function(props: SkillsStandardProps) {
 }
 
 export function idForLevel(skill: string): string {
+    if (skill == "LyAnhR2") return "R";
     return skill.slice(skill.length - 1);
 }

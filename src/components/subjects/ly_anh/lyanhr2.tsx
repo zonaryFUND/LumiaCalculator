@@ -1,6 +1,6 @@
 import * as React from "react";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const lyanhr2: React.FC<SubjectSkillProps> = props => {
     return (
