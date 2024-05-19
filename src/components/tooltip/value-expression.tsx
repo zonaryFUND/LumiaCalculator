@@ -25,7 +25,9 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
     basicAttackAmp: {key: "app.value.basic-attack-amp", className: style.attack},
     amp: {key: "app.value.skill-amp", className: style.amp},
     targetMaxHP: {key: "app.value.target-maxhp", className: style.maxhp},
-    targetHP: {key: "app.value.target-hp", className: style.maxhp}
+    targetHP: {key: "app.value.target-hp", className: style.maxhp},
+    lostHP: {key: "app.value.lost-hp", className: style.losthp},
+    targetLostHP: {key: "app.value.target-lost-hp", className: style.losthp}
 }
 
 const ValueExpression: React.FC<Props> = props => {

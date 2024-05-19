@@ -1,12 +1,12 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
-        エステルが盾を強化させます。次の基本攻撃が<Damage skill="Q" constants={Constants.Q.damage} {...props} />
+        エステルが盾を強化させます。次の基本攻撃が<Value skill="Q" ratio={Constants.Q.damage} />
         のスキルダメージを追加で与えて{Constants.Q.stun}秒間気絶させます。
     </>
 );

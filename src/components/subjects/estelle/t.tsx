@@ -1,24 +1,27 @@
 import * as React from "react";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const t: React.FC<SubjectSkillProps> = props => {
+    const { showEquation } = useValueContext();
     const additionalHeal = (
+        showEquation ?
         <>
-            <span className={style.maxhp}>{Constants.T.additional_heal.targetMaxHP.base[props.config.skillLevels.T]}％</span>
-            <span className={style.amp}>(+{
-                props.showEquation ? 
-                <>スキル増幅の{Constants.T.additional_heal.targetMaxHP.base[props.config.skillLevels.R]}</> : 
-                <>{/*props.status.skillAmp.times(Constants.T.additional_heal.targetMaxHP.amp).dividedBy(100).toString()*/}</>    
-            }％)</span>
+            <span className={style.maxhp}>{Constants.T.additional_heal.targetMaxHP.base[props.skillLevel]}%</span>
+            <span className={style.amp}>(+スキル増幅の{Constants.T.additional_heal.targetMaxHP.base[props.skillLevel]}%)</span>
         </>
+        :
+        <Value skill="T" ratio={Constants.T.additional_heal} />
     )
+
     return (
         <>
             <span className={style.enhance}>基本効果</span>：半径{Constants.T.range}m以内にいる味方と自分の基本体力再生効果を
-            <span className={style.losthp}>{Constants.T.hp_regen[props.config.skillLevels.T]}％</span>増加させます。エステルは瀕死状態の味方を蘇生させる時間が
+            <span className={style.losthp}>{Constants.T.hp_regen[props.skillLevel]}%</span>増加させます。エステルは瀕死状態の味方を蘇生させる時間が
             {Constants.T.revive}秒早くなります。エステルによって蘇生された味方は{additionalHeal}の体力を追加で回復します。
         </>
     );

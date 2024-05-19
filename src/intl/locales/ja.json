@@ -74,5 +74,7 @@
     "app.value.additional-attack": "追加攻撃力の{ratio}%",
     "app.value.target-maxhp": "対象の最大体力の{ratio}%",
     "app.value.target-hp": "対象の現在体力の{ratio}%",
-    "app.value.basic-attack-amp": "基本攻撃増幅"
+    "app.value.basic-attack-amp": "基本攻撃増幅",
+    "app.value.lost-hp": "失った体力の{ratio}%",
+    "app.value.target-lost-hp": "対象の失った体力の{ratio}%"
 }
