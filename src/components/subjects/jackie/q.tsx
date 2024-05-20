@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
-        ジャッキーが指定した方向に武器を振り回して<Damage skill="Q" constants={Constants.Q.first_damage} {...props} />のスキルダメージを与えます。<br />
+        ジャッキーが指定した方向に武器を振り回して<Value skill="Q" ratio={Constants.Q.first_damage} />のスキルダメージを与えます。<br />
         <span className={style.emphasis}>連斬</span>が敵に的中した場合、もう一度使用することができます。<br />
-        再使用するとジャッキーが指定した方向へ進みながら武器を振り回し、<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />のスキルダメージを与えます。
+        再使用するとジャッキーが指定した方向へ進みながら武器を振り回し、<Value skill="Q" ratio={Constants.Q.second_damage} />のスキルダメージを与えます。
     </>
 );
 

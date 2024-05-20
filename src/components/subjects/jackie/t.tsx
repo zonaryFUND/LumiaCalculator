@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
         ジャッキーからダメージを受けた敵実験体が{Constants.T.duration}秒以内に瀕死状態または死亡する場合、 ジャッキーの基本スキルのクールダウンが初期化されます。<br />
         <br />
-        ジャッキーはスキルで敵にダメージを与えると、{Constants.T.bleeding_duration}秒間<Damage skill="T" constants={Constants.T.bleeding_damage} {...props} />
-        の持続ダメージを与える出血効果を与えます。ジャッキーは出血状態の対象に基本攻撃すると、<Damage skill="T" constants={Constants.T.damage} {...props} />の追加スキルダメージを与えて出血の持続時間を更新します。
+        ジャッキーはスキルで敵にダメージを与えると、{Constants.T.bleeding_duration}秒間<Value skill="T" ratio={Constants.T.bleeding_damage} />
+        の持続ダメージを与える出血効果を与えます。ジャッキーは出血状態の対象に基本攻撃すると、<Value skill="T" ratio={Constants.T.damage} />の追加スキルダメージを与えて出血の持続時間を更新します。
     </>
 );
 

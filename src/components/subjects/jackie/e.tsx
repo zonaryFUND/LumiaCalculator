@@ -1,12 +1,12 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-        ジャッキーが指定した位置にジャンプし、周りの敵に<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えます。
+        ジャッキーが指定した位置にジャンプし、周りの敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えます。
     </>
 );
 
