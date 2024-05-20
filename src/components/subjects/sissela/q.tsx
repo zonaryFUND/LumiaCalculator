@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ウィルソンが指定した位置へ飛んで行きながら経路上の敵に<Damage skill="Q" constants={Constants.Q.first_damage} {...props} />
-            のスキルダメージを与え、到着した後範囲内の敵に<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />のスキルダメージを与えます。
+            ウィルソンが指定した位置へ飛んで行きながら経路上の敵に<Value skill="Q" ratio={Constants.Q.first_damage} />
+            のスキルダメージを与え、到着した後範囲内の敵に<Value skill="Q" ratio={Constants.Q.second_damage} />のスキルダメージを与えます。
         </>
     );
 }

@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-        風を飛ばして<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えます。的中した対象は
+        風を飛ばして<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えます。的中した対象は
         {Constants.E.airborne}秒間空中に浮かびます。<br />
         <br />
         <span className={style.enhance}>死神の目の効果</span>：的中した対象を{Constants.E.enhanced_airborne}秒間空中に浮かべます。

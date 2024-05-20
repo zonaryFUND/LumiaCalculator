@@ -10,7 +10,9 @@ const t: React.FC<SubjectSkillProps> = props => {
     const { showEquation } = useValueContext();
 
     const damage = showEquation ?
-        <span className={style.maxhp}>対象の最大体力の{Constants.T.damage.targetMaxHP.base}(+攻撃力の{Constants.T.damage.targetMaxHP.attack[props.skillLevel]}%)%</span> :
+        <span className={style.maxhp}>対象の最大体力の{Constants.T.damage.targetMaxHP.base}
+            <span className={style.attack}>(+攻撃力の{Constants.T.damage.targetMaxHP.attack[props.skillLevel]}%)</span>%
+        </span> :
         <Value skill="T" ratio={Constants.T.damage} />
 
     return (
@@ -28,7 +30,7 @@ export default t;
 
 export const values: ValuesPropsGenerator = props => ({
     additionalInfo: <>
-        {/*ケネスはこのスキルで最大{props.status.attackPower.percent(Constants.T.max_heal.attack).add(Constants.T.max_heal.base[props.config.skillLevels.T]).toString()} = <span className={style.emphasis}>{Constants.T.max_heal.base[props.config.skillLevels.T].toString()}</span>*/}
+        ケネスはこのスキルで最大{props.status.attackPower.calculatedValue.percent(Constants.T.max_heal.attack).add(Constants.T.max_heal.base[props.config.skillLevels.T]).toString()} = <span className={style.emphasis}>{Constants.T.max_heal.base[props.config.skillLevels.T].toString()}</span>
         (+攻撃力の{Constants.T.max_heal.attack}％)まで回復できます。<br />
         野生動物に与えられるダメージ量は最大{Constants.T.animal_max}に制限されます。
     </>,

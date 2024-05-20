@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
-        ザヒルが神の力を借りて一定範囲に<Damage skill="Q" constants={Constants.Q.damage} {...props} />のスキルダメージを与えます。<br />
+        ザヒルが神の力を借りて一定範囲に<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えます。<br />
         <br />
-        <span className={style.enhance}>死神の目の効果</span>：<Damage skill="Q" constants={Constants.Q.enhanced_damage} {...props} />の強化されたスキルダメージを与えます。
+        <span className={style.enhance}>死神の目の効果</span>：<Value skill="Q" ratio={Constants.Q.enhanced_damage} />の強化されたスキルダメージを与えます。
     </>
 );
 

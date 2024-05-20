@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import { StackName } from "./stack";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
-        シウカイが指定した味方または自分に料理を投げて対象の体力を<Damage skill="W" constants={Constants.W.heal} {...props} stackName={StackName} />
-        回復させ、{Constants.W.defense.duration}秒間防御力を{Constants.W.defense.effect[props.config.skillLevels.W]}
+        シウカイが指定した味方または自分に料理を投げて対象の体力を<Value skill="W" ratio={Constants.W.heal} overrideExpression={{stack: {format: "料理人の情熱スタック数"}}} />
+        回復させ、{Constants.W.defense.duration}秒間防御力を{Constants.W.defense.effect[props.skillLevel]}
         増加させます。料理人の情熱スタックに応じて回復量が増加します。
     </>
 );

@@ -1,17 +1,22 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import { MaxStack } from "./stack";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
-const t: React.FC<SubjectSkillProps> = props => (
-    <>
-        料理人シウカイが作った食べ物と飲み物は{Constants.T.food}％の回復量が追加されます。シウカイは高級等級以上の食べ物や飲み物を作るたびに料理人の情熱スタックを獲得し、スタックに応じて最大体力が
-        {Constants.T.max_hp[props.config.skillLevels.T]}増加します。(最大{MaxStack}スタック)<br />
-        <br />
-        現在の最大体力追加数値:{props.config.stack * Constants.T.max_hp[props.config.skillLevels.T]}
-    </>
-);
+const t: React.FC<SubjectSkillProps> = props => {
+    const { config } = useValueContext();
+
+    return (
+        <>
+            料理人シウカイが作った食べ物と飲み物は{Constants.T.food}%の回復量が追加されます。シウカイは高級等級以上の食べ物や飲み物を作るたびに料理人の情熱スタックを獲得し、スタックに応じて最大体力が
+            {Constants.T.max_hp[props.skillLevel]}増加します。(最大{MaxStack}スタック)<br />
+            <br />
+            現在の最大体力追加数値:{config.stack * Constants.T.max_hp[props.skillLevel]}
+        </>
+    );
+}
 
 export default t;
 

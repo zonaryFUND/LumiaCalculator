@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
-        ザヒルが指定した方向へチャクラムを降り注ぎます。最初は<Damage skill="R" constants={Constants.R.first_damage} {...props} />
-        のスキルダメージを与え、{Constants.R.tick}秒毎に<Damage skill="R" constants={Constants.R.second_damage} {...props} />のスキルダメージを与えます。<br />
+        ザヒルが指定した方向へチャクラムを降り注ぎます。最初は<Value skill="R" ratio={Constants.R.first_damage} />
+        のスキルダメージを与え、{Constants.R.tick}秒毎に<Value skill="R" ratio={Constants.R.second_damage} />のスキルダメージを与えます。<br />
         <br />
         敵に死神の目刻印がない場合は死神の目を付与します。
     </>
