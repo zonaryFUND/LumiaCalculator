@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
         ジェニーの周りに授賞式ステージを設置して、範囲内の敵の移動速度を
-        {Constants.R.slow[props.config.skillLevels.R]}％減少させ、ペルソナのクールダウンが初期化されます。<br />
-        ステージは{Constants.R.duration}秒後に消え、範囲内の敵に<Damage skill="R" constants={Constants.R.damage} {...props} />のスキルダメージを与え、
+        {Constants.R.slow[props.skillLevel]}%減少させ、ペルソナのクールダウンが初期化されます。<br />
+        ステージは{Constants.R.duration}秒後に消え、範囲内の敵に<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与え、
         {Constants.R.charm}秒間敵を魅惑させます。
     </>
 );
