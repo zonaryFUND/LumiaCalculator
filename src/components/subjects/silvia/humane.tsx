@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            シルヴィアが指定した方向へスペアホィールを転がし、的中させた敵には距離に応じて<Damage skill="E" constants={Constants.HumanE.min_damage} {...props} />から最大
-            <Damage skill="E" constants={Constants.HumanE.max_damage} {...props} />のスキルダメージを与えます。<br />
+            シルヴィアが指定した方向へスペアホィールを転がし、的中させた敵には距離に応じて<Value skill="E" ratio={Constants.HumanE.min_damage} />から最大
+            <Value skill="E" ratio={Constants.HumanE.max_damage} />のスキルダメージを与えます。<br />
             敵が{Constants.HumanE.knockback_threshold}m以内でスキルに的中されると突き飛ばされます。<br />
             <br />
             {Constants.HumanE.knockback_threshold}m以上離れて敵を的中させた場合、的中させた距離に応じて

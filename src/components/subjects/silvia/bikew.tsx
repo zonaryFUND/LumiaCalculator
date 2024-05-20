@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            シルヴィアが正面の方にジャンプし、範囲内の敵に<Damage skill="W" constants={Constants.BikeW.damage} {...props} />
+            シルヴィアが正面の方にジャンプし、範囲内の敵に<Value skill="W" ratio={Constants.BikeW.damage} />
             のスキルダメージを与え、{Constants.BikeW.airborne}秒間空中に浮かせます。
         </>
     );

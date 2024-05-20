@@ -1,13 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            シルヴィアがバイクで旋回し、範囲内の敵に<Damage skill="Q" constants={Constants.BikeQ.damage} {...props} />のスキルダメージを与えます。
+            シルヴィアがバイクで旋回し、範囲内の敵に<Value skill="Q" ratio={Constants.BikeQ.damage} />のスキルダメージを与えます。
         </>
     );
 }
