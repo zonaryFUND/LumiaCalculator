@@ -22,7 +22,7 @@ const table: DamageTable = {
         ],
         [
             {label: "R1ヒット", skill: "R" as any, damage: Constants.R.one_hit_damage},
-            {label: "R2ヒット", skill: "R" as any, damage: Constants.R.two_hit_damage}
+            {label: "R2ヒット", skill: "R" as any, damage: Constants.R.two_hit_damage} as SkillDamageProps
         ].concat([...Array(Constants.R.heal.maxHit)].map((_, i) => 
             ({label: `R回復量(${i + 1}ヒット)`, skill: "R", damage: Constants.R.heal, type: "heal", multiplier: Constants.R.heal.perHit.map(v => v * (i + 1) + 100)} as SkillDamageProps)
         )),

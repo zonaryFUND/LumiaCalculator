@@ -15,7 +15,7 @@
         },
         "duration": 15,
         "sentry_damage": {
-            "summoned_attack": 100
+            "summonedAttack": 100
         },
         "sentry_broken_cooldown_penalty": 20,
         "sentry_withdraw_cooldown_reduction": 40,
@@ -34,7 +34,7 @@
         "target_duration": 3,
         "sentry_damage": {
             "base": [60,100,140,180,220],
-            "summoned_attack": 95
+            "summonedAttack": 95
         },
         "sentry_railgun_ammo": 3,
         "sp_cost": [50,60,70,80,90],

@@ -23,7 +23,7 @@ type Props = Partial<SubjectSkillProps> & {
         targetMaxHP?: Value
         maxSP?: Value
         criticalChance?: Value
-        summoned_attack?: Value
+        summonedAttack?: Value
         stack?: Value
         attackSpeed?: Value
         level?: Value
@@ -126,7 +126,7 @@ const Damage: React.FC<Props> = props => {
                                 */
                                return null;
                             case "summoned_attack":
-                                return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(level, props.constants.summoned_attack!).toString()}％{right}</span>;
+                                return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(level, props.constants.summonedAttack!).toString()}％{right}</span>;
                             case "stack":
                                 return <span key={key} className={style.strong}>{left}{props.stackName}スタック数{right}</span>;
                             case "level":

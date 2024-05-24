@@ -8,6 +8,7 @@ import InnerTable from "components/common/inner-table";
 import { SkillDamageProps } from "components/subjects/damage-table";
 import Decimal from "decimal.js";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { ValueRatio } from "app-types/value-ratio";
 
 type Props = SkillDamageProps & {
     config: SubjectConfig
@@ -104,16 +105,16 @@ const skillDamage: React.FC<Props> = props => {
             {key: "lostHPPercent", text: "失った体力1％あたり", ratio: "消耗体力比", removePercent: true}, // sissela only for now
             {key: "gauge", text: "消耗ゲージの", ratio: "消耗ゲージ比"}
         ]
-        const tuple = additionalKeys.find(k => props.damage[k.key] != undefined);
+        const tuple = additionalKeys.find(k => props.damage[k.key as keyof ValueRatio] != undefined);
         if (tuple == undefined) {
             return [null, <td colSpan={4}>{baseDamageTr}</td>]
         }
 
         const brackets = !value.isZero()
-        if (typeof props.damage[tuple.key] === "object") {
-            const ratio = Array.isArray(props.damage[tuple.key]) ?
-                new Decimal(props.damage[tuple.key][level]) :
-                damage(props.status, props.config, props.skill, props.damage[tuple.key]);
+        if (typeof props.damage[tuple.key as keyof ValueRatio] === "object") {
+            const ratio = Array.isArray(props.damage[tuple.key as keyof ValueRatio]) ?
+                new Decimal((props.damage[tuple.key as keyof ValueRatio] as number[])[level]) :
+                damage(props.status, props.config, props.skill, props.damage[tuple.key as keyof ValueRatio]);
             const multiplied = ratio.percent(multiplier ?? 100);
             const content = <>{tuple.text}{multiplied.toString()}{tuple.removePercent ? null : "％"}</>
             return [
@@ -127,7 +128,7 @@ const skillDamage: React.FC<Props> = props => {
                                 {
                                     multiplier ? 
                                     <>{ratio.toString()} x {multiplier}％ {} = {multiplied.toString()}</> :
-                                    <>{equation(props.damage[tuple.key], props.status, props.config.level, level, props.config.stack, props.summonedName)}{ratio.toString()}</>
+                                    <>{equation(props.damage[tuple.key as keyof ValueRatio], props.status, props.config.level, level, props.config.stack, props.summonedName)}{ratio.toString()}</>
                                 }{tuple.removePercent ? null : "％"}
                             </td>
                         </tr>
@@ -136,7 +137,7 @@ const skillDamage: React.FC<Props> = props => {
                 true
             ]
         } else {
-            const content = <>{tuple.text}{new Decimal(levelValue(props.damage[tuple.key], level)).percent(multiplier ?? 100).toString()}％</>;
+            const content = <>{tuple.text}{new Decimal(levelValue(props.damage[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}％</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>{baseDamageTr}</td>,

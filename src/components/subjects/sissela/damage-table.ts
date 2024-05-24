@@ -16,7 +16,7 @@ const table: DamageTable = {
             {label: "Eシールド", skill: "E", damage: Constants.E.shield, type: "shield"},
             {label: "Eダメージ", skill: "E", damage: Constants.E.damage},
         ],
-        [{label: "R", skill: "R", damage: {...Constants.R.damage, lostHPPercent: Constants.R.lost_hp_conversion}}]
+        [{label: "R", skill: "R", damage: {...Constants.R.damage, lostHP: Constants.R.lost_hp_conversion}}]
     ]   
 }
 

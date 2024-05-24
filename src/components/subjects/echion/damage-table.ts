@@ -46,7 +46,7 @@ function table(props: {skillLevels: SkillLevels, weapon?: WeaponID, gauge: numbe
                 {label: "E(増幅計算値)", skill: "E", damage: Constants.E.damage, multiplier, sidewinder}
             ],
             [{label: `R周囲固定ダメージ/${Constants.R.area_damage_tick}秒`, skill: "R" as any, damage: Constants.R.area_damage}]
-                .concat(r)         
+                .concat(r as any)         
         ]   
     }
 } 

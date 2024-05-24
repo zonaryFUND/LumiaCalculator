@@ -1,12 +1,13 @@
 import { WeaponTypeID } from "app-types/equipment/weapon"
 import { WeaponID } from "app-types/equipment/weapon/id"
 import { SkillLevels } from "app-types/subject-dynamic/config"
-import { Status } from "components/subject/status"
+import { Status } from "app-types/subject-dynamic/status/type"
+import { ValueRatio } from "app-types/value-ratio"
 
 export type SkillDamageProps = {
     label: string
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
-    damage: any
+    damage: ValueRatio
     type?: "heal" | "shield" | "ms" | "true" | "basic" | "critical" | "summoned" | "ratio" | "kenneth" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     disableCritical?: boolean
     multiplier?: number | number[]

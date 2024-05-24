@@ -23,6 +23,8 @@ export type ValueRatio = {
     summonedAttack?: ValueElement
 
     targetMaxHP?: ValueElement
+    targetHP?: ValueElement
+    lostHP?: ValueElement
  
     max?: ValueElement
 }
