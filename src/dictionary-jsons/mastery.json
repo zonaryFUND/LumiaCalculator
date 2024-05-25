@@ -19,7 +19,7 @@
 		{
 			"weapon": "assault_rifle",
 			"type": "basic_attack_amp",
-			"value": 1.5,
+			"value": 1.7,
 			"attackSpeed": 4.2
 		},
 		{
@@ -55,7 +55,7 @@
 		{
 			"weapon": "throw",
 			"type": "skill_amp",
-			"value": 4.2,
+			"value": 4.4,
 			"attackSpeed": 1.5
 		}
 	],
@@ -77,7 +77,7 @@
 		{
 			"weapon": "assault_rifle",
 			"type": "basic_attack_amp",
-			"value": 1.4,
+			"value": 1.6,
 			"attackSpeed": 3.5
 		},
 		{
@@ -157,7 +157,7 @@
 		{
 			"weapon": "throw",
 			"type": "basic_attack_amp",
-			"value": 1.6,
+			"value": 1.8,
 			"attackSpeed": 3.1
 		}
 	],
@@ -227,7 +227,7 @@
 		{
 			"weapon": "sniper_rifle",
 			"type": "basic_attack_amp",
-			"value": 2.1,
+			"value": 2.3,
 			"attackSpeed": 4
 		}
 	],
@@ -271,7 +271,7 @@
 		{
 			"weapon": "shuriken",
 			"type": "basic_attack_amp",
-			"value": 1.4,
+			"value": 1.6,
 			"attackSpeed": 2.7
 		}
 	],
@@ -423,8 +423,8 @@
 		{
 			"weapon": "shuriken",
 			"type": "basic_attack_amp",
-			"value": 1.2,
-			"attackSpeed": 4.5
+			"value": 1,
+			"attackSpeed": 4.2
 		}
 	],
 	"tia": [
@@ -469,8 +469,8 @@
 		{
 			"weapon": "crossbow",
 			"type": "basic_attack_amp",
-			"value": 1.4,
-			"attackSpeed": 3.8
+			"value": 1.6,
+			"attackSpeed": 3.4
 		}
 	],
 	"nicky": [
@@ -485,7 +485,7 @@
 		{
 			"weapon": "guitar",
 			"type": "basic_attack_amp",
-			"value": 1.7,
+			"value": 2,
 			"attackSpeed": 3.1
 		}
 	],
@@ -597,7 +597,7 @@
 		{
 			"weapon": "axe",
 			"type": "basic_attack_amp",
-			"value": 1.7,
+			"value": 1.8,
 			"attackSpeed": 3
 		},
 		{
@@ -634,7 +634,7 @@
 			"weapon": "camera",
 			"type": "basic_attack_amp",
 			"value": 1.4,
-			"attackSpeed": 2.2
+			"attackSpeed": 2.5
 		}
 	],
 	"jan": [
@@ -663,7 +663,7 @@
 		{
 			"weapon": "whip",
 			"type": "skill_amp",
-			"value": 4.1,
+			"value": 4.3,
 			"attackSpeed": 2.8
 		}
 	],
@@ -709,7 +709,7 @@
 		{
 			"weapon": "pistol",
 			"type": "basic_attack_amp",
-			"value": 1.4,
+			"value": 1.7,
 			"attackSpeed": 4.5
 		}
 	],
@@ -739,7 +739,7 @@
 		{
 			"weapon": "bow",
 			"type": "basic_attack_amp",
-			"value": 1.5,
+			"value": 1.7,
 			"attackSpeed": 3.3
 		}
 	],

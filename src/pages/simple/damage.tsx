@@ -2,6 +2,7 @@ import * as React from "react";
 import index from "./index.module.styl";
 import { SubjectSkills } from "components/subjects/skills";
 import SkillsStandard from "components/subjects/skills-standard";
+import Table from "components/damage/damage-table";
 import style from "./damage.module.styl";
 import { styles } from "@app/util/style";
 
@@ -51,7 +52,7 @@ const damages: React.FC<Props> = props => {
                 <h3>スキル</h3>
                 {subjectSkills}
             </section>
-            {/*<Table status={props.status} config={props.config} weaponType={props.weaponType} />*/}
+            <Table status={props.status} config={props.config} weaponType={props.weaponType} />
         </div>
     )
 };

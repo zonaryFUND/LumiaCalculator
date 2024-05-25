@@ -1,1 +1,94 @@
-{"vf_prosthetic":{"attackSpeed":0.5,"range":1.4},"arcana":{"attackSpeed":0.555,"range":4.65},"camera":{"attackSpeed":0.55,"range":5.1},"guitar":{"attackSpeed":0.495,"range":4},"glove":{"attackSpeed":0.63,"range":1.2},"tonfa":{"attackSpeed":0.5,"range":1.2},"bat":{"attackSpeed":0.56,"range":1.4},"rapier":{"attackSpeed":0.615,"range":1.4},"shuriken":{"attackSpeed":0.55,"range":4.8},"bow":{"attackSpeed":0.65,"range":5.5},"hammer":{"attackSpeed":0.455,"range":1.5},"pistol":{"attackSpeed":0.505,"range":4.85},"crossbow":{"attackSpeed":0.54,"range":5.2},"sniper_rifle":{"attackSpeed":0.43,"range":6},"dual_swords":{"attackSpeed":0.43,"range":1.4},"nunchaku":{"attackSpeed":0.56,"range":1.55},"spear":{"attackSpeed":0.445,"range":2.2},"dagger":{"attackSpeed":0.58,"range":1.25},"throw":{"attackSpeed":0.41,"range":5.3},"assault_rifle":{"attackSpeed":0.55,"range":5},"axe":{"attackSpeed":0.485,"range":1.65},"whip":{"attackSpeed":0.55,"range":2.4},"two-handed_sword":{"attackSpeed":0.56,"range":1.65}}
+{
+	"vf_prosthetic": {
+		"attackSpeed": "0.5",
+		"range": "1.4"
+	},
+	"arcana": {
+		"attackSpeed": "0.555",
+		"range": "4.65"
+	},
+	"camera": {
+		"attackSpeed": "0.55",
+		"range": "5.1"
+	},
+	"guitar": {
+		"attackSpeed": "0.495",
+		"range": "4.4"
+	},
+	"glove": {
+		"attackSpeed": "0.63",
+		"range": "1.2"
+	},
+	"tonfa": {
+		"attackSpeed": "0.5",
+		"range": "1.2"
+	},
+	"bat": {
+		"attackSpeed": "0.56",
+		"range": "1.4"
+	},
+	"rapier": {
+		"attackSpeed": "0.615",
+		"range": "1.4"
+	},
+	"shuriken": {
+		"attackSpeed": "0.55",
+		"range": "4.8"
+	},
+	"bow": {
+		"attackSpeed": "0.65",
+		"range": "5.5"
+	},
+	"hammer": {
+		"attackSpeed": "0.455",
+		"range": "1.5"
+	},
+	"pistol": {
+		"attackSpeed": "0.505",
+		"range": "4.85"
+	},
+	"crossbow": {
+		"attackSpeed": "0.54",
+		"range": "5.2"
+	},
+	"sniper_rifle": {
+		"attackSpeed": "0.43",
+		"range": "6"
+	},
+	"dual_swords": {
+		"attackSpeed": "0.43",
+		"range": "1.4"
+	},
+	"nunchaku": {
+		"attackSpeed": "0.56",
+		"range": "1.55"
+	},
+	"spear": {
+		"attackSpeed": "0.445",
+		"range": "2.2"
+	},
+	"dagger": {
+		"attackSpeed": "0.58",
+		"range": "1.25"
+	},
+	"throw": {
+		"attackSpeed": "0.41",
+		"range": "5.3"
+	},
+	"assault_rifle": {
+		"attackSpeed": "0.55",
+		"range": "5"
+	},
+	"axe": {
+		"attackSpeed": "0.485",
+		"range": "1.65"
+	},
+	"whip": {
+		"attackSpeed": "0.55",
+		"range": "2.4"
+	},
+	"two-handed_sword": {
+		"attackSpeed": "0.56",
+		"range": "1.65"
+	}
+}

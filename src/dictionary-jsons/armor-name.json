@@ -135,6 +135,22 @@
 		"jp": "タイタンアーマー",
 		"en": "Titan Armor"
 	},
+	"the_revenant": {
+		"jp": "レヴェナント",
+		"en": "The Revenant"
+	},
+	"racing_suit": {
+		"jp": "レーシングスーツ",
+		"en": "Racing Suit"
+	},
+	"ghost_bride_s_dress": {
+		"jp": "幽霊花嫁のドレス",
+		"en": "Ghost Bride's Dress"
+	},
+	"inquisitor": {
+		"jp": "異端審判官",
+		"en": "Inquisitor"
+	},
 	"bikini": {
 		"jp": "ビキニ",
 		"en": "Bikini"
@@ -255,6 +271,30 @@
 		"jp": "天上の響き",
 		"en": "Celestial Echo"
 	},
+	"the_black_death": {
+		"jp": "漆黒の死",
+		"en": "The Black Death"
+	},
+	"blaster_helmet": {
+		"jp": "ブラスターヘルメット",
+		"en": "Blaster Helmet"
+	},
+	"cyberstalker": {
+		"jp": "サイバーストーカー",
+		"en": "Cyberstalker"
+	},
+	"the_dragon_s_fury": {
+		"jp": "雷龍かんざし",
+		"en": "The Dragon's Fury"
+	},
+	"gpnvg": {
+		"jp": "クワッドアイ",
+		"en": "GPNVG"
+	},
+	"commander_headset": {
+		"jp": "コマンダーヘッドセット",
+		"en": "Commander Headset"
+	},
 	"chinese_opera_mask": {
 		"jp": "臉譜",
 		"en": "Chinese Opera Mask"
@@ -310,6 +350,14 @@
 	"sports_watch": {
 		"jp": "スポーツウォッチ",
 		"en": "Sports Watch"
+	},
+	"schrödinger_s_box ": {
+		"jp": "シュレーディンガーの箱",
+		"en": "Schrödinger's Box "
+	},
+	"music_box": {
+		"jp": "オルゴール",
+		"en": "Music Box"
 	},
 	"mythril_shield": {
 		"jp": "ミスリル盾",
@@ -370,6 +418,22 @@
 	"claddagh_ring": {
 		"jp": "クラダリング",
 		"en": "Claddagh Ring"
+	},
+	"moonlight_pendant": {
+		"jp": "月光ペンダント",
+		"en": "Moonlight Pendant"
+	},
+	"magic_lamp": {
+		"jp": "魔法のランプ",
+		"en": "Magic Lamp"
+	},
+	"pharaoh_s_artifact": {
+		"jp": "イムセティ",
+		"en": "Pharaoh's Artifact"
+	},
+	"smash_totem": {
+		"jp": "トーテム",
+		"en": "Smash Totem"
 	},
 	"prominence": {
 		"jp": "プロミネンス",
