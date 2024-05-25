@@ -1,4 +1,4 @@
-import { DamageTable, SkillDamageProps } from "../damage-table";
+import { DamageTable, SkillValueProps } from "../damage-table";
 import Constants from "./constants.json";
 
 const rChaseMax = Constants.R.total_count - 1;
@@ -11,17 +11,17 @@ const table: DamageTable = {
     basicAttack: ["standard"],
     skill: [
         [
-            {label: "Q", skill: "Q", damage: Constants.Q.damage},
-            {label: "強化Q", skill: "Q", damage: Constants.Q.enhanced_damage}
+            {label: "Q", skill: "Q", value: Constants.Q.damage},
+            {label: "強化Q", skill: "Q", value: Constants.Q.enhanced_damage}
         ],
-        [{label: "W", skill: "W", damage: Constants.W.damage}],
-        [{label: "E", skill: "E", damage: Constants.E.damage}],
+        [{label: "W", skill: "W", value: Constants.W.damage}],
+        [{label: "E", skill: "E", value: Constants.E.damage}],
         [
-            {label: "R初撃", skill: "R", damage: Constants.R.first_damage},
-            {label: "R2発目以降", skill: "R", damage: Constants.R.second_damage},
-            {label: "R全ヒット(初撃+追撃4)", skill: "R", damage: maxR}
+            {label: "R初撃", skill: "R", value: Constants.R.first_damage},
+            {label: "R2発目以降", skill: "R", value: Constants.R.second_damage},
+            {label: "R全ヒット(初撃+追撃4)", skill: "R", value: maxR}
         ],
-        [{label: "T", skill: "T", damage: Constants.T.damage}]
+        [{label: "T", skill: "T", value: Constants.T.damage}]
     ]
 }
 

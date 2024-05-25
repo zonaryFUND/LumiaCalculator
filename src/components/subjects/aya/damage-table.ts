@@ -11,18 +11,18 @@ function table(props: {status: Status}): DamageTable {
         ],
         skill: [
             [
-                {label: "Q(1発目)", skill: "Q", damage: Constants.Q.first_damage, type: "basic"},
-                {label: "Q(2発目)", skill: "Q", damage: Constants.Q.second_damage}
+                {label: "Q(1発目)", skill: "Q", value: Constants.Q.first_damage, type: "basic"},
+                {label: "Q(2発目)", skill: "Q", value: Constants.Q.second_damage}
             ],
             [
-                {label: "W", skill: "W", damage: Constants.W.damage},
-                {label: `W最大ヒット(${wCount})`, skill: "W", damage: Constants.W.damage, multiplier: wCount * 100}
+                {label: "W", skill: "W", value: Constants.W.damage},
+                {label: `W最大ヒット(${wCount})`, skill: "W", value: Constants.W.damage, multiplier: wCount * 100}
             ],
             [
-                {label: "R", skill: "R", damage: Constants.R.damage}
+                {label: "R", skill: "R", value: Constants.R.damage}
             ],
             [
-                {label: "Tシールド", skill: "T", damage: Constants.T.shield, type: "shield"}
+                {label: "Tシールド", skill: "T", value: Constants.T.shield, type: "shield"}
             ]
         ]
     }

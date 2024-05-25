@@ -1,8 +1,8 @@
-import { SkillDamageProps } from "../../damage-table";
+import { SkillValueProps } from "../../damage-table";
 import Constants from "../constants.json";
 
-const table: SkillDamageProps[] = [
-    {label: "D", skill: "D", damage: Constants.hammer.damage}
+const table: SkillValueProps[] = [
+    {label: "D", skill: "D", value: Constants.hammer.damage}
 ]
 
 export default table;

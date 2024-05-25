@@ -1,11 +1,11 @@
 import { AssaultRifleAttackRatio, BaseCriticalDamagePercent } from "components/subject/standard-values";
-import { Status } from "components/subject/status";
 import Decimal from "decimal.js";
 import * as React from "react";
 import { useToggle } from "react-use";
 import style from "./damage-table.module.styl";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
+import { Status } from "app-types/subject-dynamic/status/type";
 
 type Props = {
     name: string
@@ -23,7 +23,7 @@ type Props = {
 const basicAttackDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
     const attackPower = React.useMemo(() => {
-        return props.summoned ? props.status.summonedStatus!.attackPower : props.status.attackPower;
+        return props.summoned ? props.status.summonedStatus!.attackPower : props.status.attackPower.calculatedValue;
     }, [props.summoned, props.status.attackPower, props.status.summonedStatus?.attackPower])
 
     const value = React.useMemo(() => {
@@ -31,20 +31,20 @@ const basicAttackDamage: React.FC<Props> = props => {
             return new Decimal(props.config.base ?? 0)
                     .add(attackPower.percent(props.config.attack ?? 0))
                     .floor()
-                    .addPercent(props.config.basicAttackAmp && props.summoned != true ? props.status.basicAttackAmp : 0)
+                    .addPercent(props.config.basicAttackAmp && props.summoned != true ? props.status.basicAttackAmp.calculatedValue : 0)
                     .floor()
         } else {
-            return attackPower.addPercent(props.status.basicAttackAmp).floor();
+            return attackPower.addPercent(props.status.basicAttackAmp.calculatedValue).floor();
         }
     }, [attackPower, props.status.basicAttackAmp, props.config]);
 
     const [criticalChance, showCritical] = React.useMemo(() => {
-        const critical = (props.summoned ? props.status.summonedStatus! : props.status).criticalChance;
+        const critical = (props.summoned ? props.status.summonedStatus!.criticalChance : props.status.criticalChance.calculatedValue);
         return [critical, critical.greaterThan(0)];
     }, [props.summoned, props.status.criticalChance, props.status.summonedStatus?.criticalChance])
     
     const criticalDamage = React.useMemo(() => {
-        return props.summoned ? 0 : props.status.criticalDamage;
+        return props.summoned ? 0 : props.status.criticalDamage.calculatedValue;
     }, [props.summoned, props.status.criticalDamage]);
 
     const critical = React.useMemo(() => {
@@ -98,7 +98,7 @@ const basicAttackDamage: React.FC<Props> = props => {
                                         null
                                     }
                                     {
-                                        props.status.basicAttackAmp.greaterThan(0) && props.summoned != true ?
+                                        props.status.basicAttackAmp.calculatedValue.greaterThan(0) && props.summoned != true ?
                                         <> x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}<br /></>
                                         : null
                                     }

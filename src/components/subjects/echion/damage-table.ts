@@ -1,5 +1,5 @@
 import { WeaponID } from "app-types/equipment/weapon/id";
-import { DamageTable, SkillDamageProps } from "../damage-table";
+import { DamageTable, SkillValueProps } from "../damage-table";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
 import { SkillLevels } from "app-types/subject-dynamic/config";
@@ -9,43 +9,43 @@ function table(props: {skillLevels: SkillLevels, weapon?: WeaponID, gauge: numbe
     const multiplier = new Decimal(Constants.R.damage_amp_per_vf[props.skillLevels.R]).times(props.gauge).add(100).toNumber();
     const sidewinder = props.weapon?.includes("sidewinder") ? Constants.R1.skill_damage_add[props.skillLevels.R] : undefined;
 
-    const r: SkillDamageProps[] = (() => {
+    const r: SkillValueProps[] = (() => {
         if (props.weapon?.includes("sidewinder")) {
             return [
-                {label: "Rエンベノミゼーション(基礎値)", skill: "R" as any, damage: Constants.R1.damage},
-                {label: "Rエンベノミゼーション(増幅計算値)", skill: "R" as any, damage: Constants.R1.damage, sidewinder}
+                {label: "Rエンベノミゼーション(基礎値)", skill: "R" as any, value: Constants.R1.damage},
+                {label: "Rエンベノミゼーション(増幅計算値)", skill: "R" as any, value: Constants.R1.damage}
             ];
         }
         if (props.weapon?.includes("black_mamba")) {
             return [
-                {label: "Rエンベノミゼーション", skill: "R" as any, damage: Constants.R2.damage},
-                {label: "Rエンベノミゼーション2ヒット", skill: "R" as any, damage: Constants.R2.damage, multiplier: 200}
+                {label: "Rエンベノミゼーション", skill: "R" as any, value: Constants.R2.damage},
+                {label: "Rエンベノミゼーション2ヒット", skill: "R" as any, value: Constants.R2.damage, multiplier: 200}
             ];
         } else if (props.weapon?.includes("deathadder")) {
-            return [{label: "Rエンベノミゼーション", skill: "R" as any, damage: Constants.R3.damage}];
+            return [{label: "Rエンベノミゼーション", skill: "R" as any, value: Constants.R3.damage}];
         };
 
-        return [{label: "Rエンベノミゼーション", skill: "R" as any, damage: Constants.R0_1.damage}];
+        return [{label: "Rエンベノミゼーション", skill: "R" as any, value: Constants.R0_1.damage}];
     })();
 
     return {
         basicAttack: props.weapon?.includes("deathadder") ? [
             "standard",
-            {label: "暴走中追加ダメージ", skill: "T", damage: Constants.T3_2.damage, type: "basic"}
+            {label: "暴走中追加ダメージ", skill: "T", value: Constants.T3_2.damage, type: "basic"}
         ] : ["standard"],
         skill: [
             [
-                {label: "Q1(基礎値)", skill: "Q", damage: Constants.Q.first_damage},
-                {label: "Q1(増幅計算値)", skill: "Q", damage: Constants.Q.first_damage, multiplier, sidewinder},
-                {label: "Q2(基礎値)", skill: "Q", damage: Constants.Q.second_damage},
-                {label: "Q2(増幅計算値)", skill: "Q", damage: Constants.Q.second_damage, multiplier, sidewinder},
+                {label: "Q1(基礎値)", skill: "Q", value: Constants.Q.first_damage},
+                {label: "Q1(増幅計算値)", skill: "Q", value: Constants.Q.first_damage, multiplier},
+                {label: "Q2(基礎値)", skill: "Q", value: Constants.Q.second_damage},
+                {label: "Q2(増幅計算値)", skill: "Q", value: Constants.Q.second_damage, multiplier},
             ],
-            [{label: "Wシールド", skill: "W", damage: Constants.W.shield, type: "shield"}],
+            [{label: "Wシールド", skill: "W", value: Constants.W.shield, type: "shield"}],
             [
-                {label: "E(基礎値)", skill: "E", damage: Constants.E.damage},
-                {label: "E(増幅計算値)", skill: "E", damage: Constants.E.damage, multiplier, sidewinder}
+                {label: "E(基礎値)", skill: "E", value: Constants.E.damage},
+                {label: "E(増幅計算値)", skill: "E", value: Constants.E.damage, multiplier}
             ],
-            [{label: `R周囲固定ダメージ/${Constants.R.area_damage_tick}秒`, skill: "R" as any, damage: Constants.R.area_damage}]
+            [{label: `R周囲固定ダメージ/${Constants.R.area_damage_tick}秒`, skill: "R" as any, value: Constants.R.area_damage}]
                 .concat(r as any)         
         ]   
     }

@@ -6,22 +6,22 @@ const eMax = Constants.E.duration / Constants.E.tick;
 const table: DamageTable = {
     basicAttack: [
         "standard",
-        {label: "セントリーガン基本攻撃", skill: "Q", damage: Constants.Q.sentry_damage}
+        {label: "セントリーガン基本攻撃", skill: "Q", value: Constants.Q.sentry_damage}
     ],
     skill: [
-        [{label: "Qセントリーガン設置ダメージ", skill: "Q", damage: Constants.Q.damage}],
+        [{label: "Qセントリーガン設置ダメージ", skill: "Q", value: Constants.Q.damage}],
         [
-            {label: "Wレーザー", skill: "W", damage: Constants.W.damage},
-            {label: "Wセントリーガンレールガン", skill: "W", damage: Constants.W.sentry_damage}
+            {label: "Wレーザー", skill: "W", value: Constants.W.damage},
+            {label: "Wセントリーガンレールガン", skill: "W", value: Constants.W.sentry_damage}
         ],
         [
-            {label: "E持続", skill: "E", damage: Constants.E.damage},
-            {label: `E持続全ヒット(${eMax})`, skill: "E", damage: Constants.E.damage, multiplier: eMax * 100},
-            {label: "E爆発", skill: "E", damage: Constants.E.finish_damage}
+            {label: "E持続", skill: "E", value: Constants.E.damage},
+            {label: `E持続全ヒット(${eMax})`, skill: "E", value: Constants.E.damage, multiplier: eMax * 100},
+            {label: "E爆発", skill: "E", value: Constants.E.finish_damage}
         ],
         [
-            {label: "RQセントリーガン自縛", skill: "R", damage: Constants.R.Q.blast_damage},
-            {label: "RQ瞬間移動", skill: "R", damage: Constants.R.Q.warp_damage}
+            {label: "RQセントリーガン自縛", skill: "R", value: Constants.R.Q.blast_damage},
+            {label: "RQ瞬間移動", skill: "R", value: Constants.R.Q.warp_damage}
         ]
     ]   
 }

@@ -9,16 +9,16 @@ function table(props: {status: Status, skillLevels: SkillLevels}): DamageTable {
     return {
         basicAttack: [
             "standard",
-            {label: "Q発動中基本攻撃", skill: "Q", damage: Constants.Q.damage, type: "basic"},
-            {label: "Tボールキャッチ後基本攻撃", skill: "T", damage: Constants.T.damage, type: "basic"},
-            {label: "Q発動中Tボールキャッチ後基本攻撃", skill: "Q", damage: {attack: qt, basicAttackAmp: 100}, type: "basic"},
+            {label: "Q発動中基本攻撃", skill: "Q", value: Constants.Q.damage, type: "basic"},
+            {label: "Tボールキャッチ後基本攻撃", skill: "T", value: Constants.T.damage, type: "basic"},
+            {label: "Q発動中Tボールキャッチ後基本攻撃", skill: "Q", value: {attack: qt, basicAttackAmp: 100}, type: "basic"},
         ],
         skill: [
             [  
-                {label: "W", skill: "W", damage: Constants.W.damage},
-                {label: "W2ヒット", skill: "W", damage: Constants.W.damage, multiplier: 200}
+                {label: "W", skill: "W", value: Constants.W.damage},
+                {label: "W2ヒット", skill: "W", value: Constants.W.damage, multiplier: 200}
             ],
-            [{label: "R", skill: "R", damage: Constants.R.damage}]
+            [{label: "R", skill: "R", value: Constants.R.damage}]
         ]   
     } 
 }

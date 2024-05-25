@@ -13,32 +13,33 @@ function table(props: {status: Status, skillLevels: SkillLevels}): DamageTable {
     const wBullet = props.status.attackSpeed.multiplier.clamp(0, 100).percent(Constants.MarleneW.max_projectile).add(Constants.MarleneW.projectiles.base[props.skillLevels.W]).floor().toNumber();
 
     return {
-        basicAttack: ["debimarl"],
+        //basicAttack: ["debimarl"],
+        basicAttack: ["standard"],
         skill: [
-            [{label: "デビーQ", skill: "Q", damage: Constants.DebiQ.damage}],
-            [{label: "デビーW", skill: "W", damage: Constants.DebiW.damage}],
+            [{label: "デビーQ", skill: "Q", value: Constants.DebiQ.damage}],
+            [{label: "デビーW", skill: "W", value: Constants.DebiW.damage}],
             [
-                {label: "デビーEマーリンエネルギー", skill: "E", damage: Constants.DebiE.damage},
-                {label: "デビーE待機デビー突進", skill: "E", damage: Constants.DebiE.second_damage},
+                {label: "デビーEマーリンエネルギー", skill: "E", value: Constants.DebiE.damage},
+                {label: "デビーE待機デビー突進", skill: "E", value: Constants.DebiE.second_damage},
             ],
-            [{label: "マーリンQ", skill: "Q", damage: Constants.MarleneQ.damage}],
+            [{label: "マーリンQ", skill: "Q", value: Constants.MarleneQ.damage}],
             [
-                {label: "マーリンW発射数", skill: "W", damage: marlW, type: "true"},
-                {label: "マーリンWダメージ", skill: "W", damage: Constants.MarleneW.damage},
-                {label: `マーリンWダメージ全ヒット(${wBullet})`, skill: "W", damage: Constants.MarleneW.damage, multiplier: wBullet * 100}
-            ],
-            [
-                {label: "マーリンEデビー突進", skill: "E", damage: Constants.MarleneE.damage},
-                {label: "マーリンE待機マーリンエネルギー", skill: "E", damage: Constants.MarleneE.second_damage},
+                {label: "マーリンW発射数", skill: "W", value: marlW, type: "true"},
+                {label: "マーリンWダメージ", skill: "W", value: Constants.MarleneW.damage},
+                {label: `マーリンWダメージ全ヒット(${wBullet})`, skill: "W", value: Constants.MarleneW.damage, multiplier: wBullet * 100}
             ],
             [
-                {label: "R突進", skill: "R", damage: Constants.R.damage},
-                {label: "R追加固定ダメージ", skill: "R", damage: Constants.R.second_damage, type: "true"},
-                {label: `R追加固定ダメージ全ヒット(${Constants.R.second_damage_count})`, skill: "R", damage: Constants.R.second_damage, type: "true", multiplier: Constants.R.second_damage_count * 100}
+                {label: "マーリンEデビー突進", skill: "E", value: Constants.MarleneE.damage},
+                {label: "マーリンE待機マーリンエネルギー", skill: "E", value: Constants.MarleneE.second_damage},
             ],
             [
-                {label: "T色変え", skill: "T", damage: Constants.T.damage},
-                {label: `T色変え最大回数(${Constants.T.max_stack})`, skill: "T", damage: Constants.T.damage, multiplier: Constants.T.max_stack * 100}
+                {label: "R突進", skill: "R", value: Constants.R.damage},
+                {label: "R追加固定ダメージ", skill: "R", value: Constants.R.second_damage, type: "true"},
+                {label: `R追加固定ダメージ全ヒット(${Constants.R.second_damage_count})`, skill: "R", value: Constants.R.second_damage, type: "true", multiplier: Constants.R.second_damage_count * 100}
+            ],
+            [
+                {label: "T色変え", skill: "T", value: Constants.T.damage},
+                {label: `T色変え最大回数(${Constants.T.max_stack})`, skill: "T", value: Constants.T.damage, multiplier: Constants.T.max_stack * 100}
             ]
         ]   
     }

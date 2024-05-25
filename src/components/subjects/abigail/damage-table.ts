@@ -4,22 +4,22 @@ import Constants from "./constants.json";
 const table: DamageTable = {
     basicAttack: [
         "standard",
-        {label: "T追加ダメージ", skill: "T", damage: Constants.T.damage}
+        {label: "T追加ダメージ", skill: "T", value: Constants.T.damage}
     ],
     skill: [
         [
-            {label: "Q1", skill: "Q", damage: Constants.Q.first_damage},
-            {label: "Q2", skill: "Q", damage: Constants.Q.second_damage}
+            {label: "Q1", skill: "Q", value: Constants.Q.first_damage},
+            {label: "Q2", skill: "Q", value: Constants.Q.second_damage}
         ],
         [
-            {label: "W", skill: "W", damage: Constants.W.damage},
-            {label: "Wシールド", skill: "W", damage: Constants.W.shield.amount, type: "shield"},
+            {label: "W", skill: "W", value: Constants.W.damage},
+            {label: "Wシールド", skill: "W", value: Constants.W.shield.amount, type: "shield"},
         ],
         [
-            {label: "E", skill: "E", damage: Constants.E.damage}
+            {label: "E", skill: "E", value: Constants.E.damage}
         ],
         [
-            {label: "R", skill: "R", damage: Constants.R.damage}
+            {label: "R", skill: "R", value: Constants.R.damage}
         ]
     ]
 }

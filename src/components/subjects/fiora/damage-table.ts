@@ -10,19 +10,19 @@ const table: DamageTable = {
     basicAttack: ["standard"],
     skill: [
         [
-            {label: "Q中", skill: "Q", damage: Constants.Q.damage},
-            {label: "Q先端", skill: "Q", damage: enhanceQ}
+            {label: "Q中", skill: "Q", value: Constants.Q.damage},
+            {label: "Q先端", skill: "Q", value: enhanceQ}
         ],
         [
-            {label: "W", skill: "W", damage: Constants.W.damage},
-            {label: "W(2ヒット)", skill: "W", damage: Constants.W.damage, multiplier: 200}
+            {label: "W", skill: "W", value: Constants.W.damage},
+            {label: "W(2ヒット)", skill: "W", value: Constants.W.damage, multiplier: 200}
         ],
-        [{label: "E", skill: "E", damage: Constants.E.damage}],
+        [{label: "E", skill: "E", value: Constants.E.damage}],
         [
-            {label: "R", skill: "R", damage: Constants.R.damage},
-            {label: "R最終", skill: "R", damage: Constants.R.finish_damage}
+            {label: "R", skill: "R", value: Constants.R.damage},
+            {label: "R最終", skill: "R", value: Constants.R.finish_damage}
         ],
-        [{label: "T", skill: "T", damage: Constants.T.damage}]
+        [{label: "T", skill: "T", value: Constants.T.damage}]
     ]   
 }
 

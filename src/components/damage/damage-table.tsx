@@ -1,14 +1,17 @@
-import { Status } from "components/subject/status";
 import * as React from "react";
 import BasicAttack from "components/damage/basic-attack";
 import style from "./damage-table.module.styl";
 import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
-import SkillDamage from "../../damage/skill-damage";
-import BasicAttackDamage from "../../damage/basic-attack-damage";
+import SkillDamage from "./skill-damage";
+import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { SummonedStatus } from "components/subjects/summoned-status";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
-/*
+import { Status } from "app-types/subject-dynamic/status/type";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
+import { equipmentStatus } from "app-types/equipment";
+
 type Props = {
     status: Status
     config: SubjectConfig
@@ -32,8 +35,8 @@ const damageTable: React.FC<Props> = props => {
     }, [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
 
     const summonedName = React.useMemo(() => {
-        if (SummonedStatus[props.config.subject] == undefined) return null;
-        return SummonedStatus[props.config.subject].name("jp");
+        if (SummonedStatus[props.config.subject] == undefined) return undefined;
+        return SummonedStatus[props.config.subject].nameKey;
     }, [props.config.subject]);
 
     const weaponSkill = React.useMemo(() => {
@@ -58,7 +61,8 @@ const damageTable: React.FC<Props> = props => {
                     if (values == undefined) return [];
                     return values(ability.values).map(value => {
                         return {
-                            name: `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})${value.type == "shield" ? " シールド" : ""}${value.type == "effect" ? "適合型能力値上昇量" : ""}${value.type == "dot" || value.type == "true-dot" ? "/秒" : ""}${value.additionalLabel || ""}`,
+                            //name: `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})${value.type == "shield" ? " シールド" : ""}${value.type == "effect" ? "適合型能力値上昇量" : ""}${value.type == "dot" || value.type == "true-dot" ? "/秒" : ""}${value.additionalLabel || ""}`,
+                            name: "",
                             type: value.type,
                             constant: value.constant[range] || value.constant,
                             multiplier: value.multiplier
@@ -76,7 +80,8 @@ const damageTable: React.FC<Props> = props => {
                     <BasicAttack status={props.status} config={props.config} table={definition!} weaponType={props.weaponType}>
                         {
                             itemSkillDamage?.filter(def => def.type == "basic").map(def => {
-                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} damage={def.constant} skill="item" summonedName={summonedName} multiplier={def.multiplier} />
+                                //return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} damage={def.constant} skill="item" summonedName={summonedName} multiplier={def.multiplier} />
+                                return null
                             })
                         }
                     </BasicAttack>
@@ -94,12 +99,12 @@ const damageTable: React.FC<Props> = props => {
                                         if (s.type == "critical") {
                                             const level = (props.config.skillLevels as any)[s.skill];
                                             const sanitizedDict = Object.fromEntries(
-                                                Object.entries(s.damage).map(([key, value]) => {
+                                                Object.entries(s.value).map(([key, value]) => {
                                                     return [key, Array.isArray(value) ? value[level] : value]
                                                 })
                                             );
                                             const multiplier = s.multiplier ?
-                                                (Array.isArray(s.multiplier) ? s.multiplier[level] : s.multiplier) :
+                                                (Array.isArray(s.multiplier) ? s.multiplier[level] : s.multiplier as number) :
                                                 undefined
                                             return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multiplier={multiplier} />;
                                         }
@@ -138,7 +143,8 @@ const damageTable: React.FC<Props> = props => {
                                             return undefined;
                                     }
                                 })();
-                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} damage={def.constant} skill="item" summonedName={summonedName} type={type} multiplier={def.multiplier} />
+                                //return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} damage={def.constant} skill="item" summonedName={summonedName} type={type} multiplier={def.multiplier} />
+                                return null
                             })
                         }
                     </tbody>
@@ -149,4 +155,3 @@ const damageTable: React.FC<Props> = props => {
 };
 
 export default damageTable;
-*/

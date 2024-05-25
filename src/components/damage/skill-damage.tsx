@@ -1,19 +1,19 @@
-import { Status } from "components/subject/status";
 import * as React from "react";
 import damage, { skillLevel } from "components/subjects/skill-damage";
 import style from "./damage-table.module.styl";
 import { useToggle } from "react-use";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
-import { SkillDamageProps } from "components/subjects/damage-table";
+import { SkillValueProps } from "components/subjects/damage-table";
 import Decimal from "decimal.js";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { ValueRatio } from "app-types/value-ratio";
+import { Status } from "app-types/subject-dynamic/status/type";
 
-type Props = SkillDamageProps & {
+type Props = SkillValueProps & {
     config: SubjectConfig
     status: Status
-    summonedName: string
+    summonedName?: string
 }
 
 function levelValue(from: number | number[], level: number): number {
@@ -45,9 +45,9 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
             case "attack":
                 return p.concat(<><span>攻撃力</span>{status.attackPower.toString()} x {levelValue(value, skillLevel)}％</>);
             case "additionalAttack":
-                return p.concat(<><span>追加攻撃力</span>{status.additionalAttackPower.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span>追加攻撃力</span>{status.attackPower.additional?.toString()} x {levelValue(value, skillLevel)}％</>);
             case "additionalMaxHP":
-                return p.concat(<><span>追加体力</span>{status.additionalMaxHP.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span>追加体力</span>{status.maxHP.additional?.toString()} x {levelValue(value, skillLevel)}％</>);
             case "maxHP":
                 return p.concat(<><span>最大体力</span>{status.maxHP.toString()} x {levelValue(value, skillLevel)}％</>);
             case "defense":
@@ -65,7 +65,7 @@ function equation(damage: any, status: Status, level: number, skillLevel: number
             case "stack":
                 return p.concat(<><span>スタック</span>{stack} x {levelValue(value, skillLevel)}</>);
             case "additionalAttackSpeed":
-                return p.concat(<><span>追加攻撃速度(％)</span>{status.attackSpeed.multiplier.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span>追加攻撃速度(％)</span>{status.attackSpeed.additional?.toString()} x {levelValue(value, skillLevel)}％</>);
             case "max":
                 return p.concat(<>最大値{levelValue(value, skillLevel)})</>);
         }
@@ -79,13 +79,16 @@ const skillDamage: React.FC<Props> = props => {
 
     const level = props.skill == "item" ? 0 : skillLevel(props.skill, props.config);
     const [value, base, multiplier, sidewinder] = (() => {
-        const base = damage(props.status, props.config, props.skill, props.damage);
+        //const base = damage(props.status, props.config, props.skill, props.value);
+        const base = new Decimal(0);
+        /*
         if (props.multiplier != undefined || props.sidewinder) {
             const mul = Array.isArray(props.multiplier) ? props.multiplier[level] : props.multiplier;
             return [base.percent(mul ?? 100).addPercent(props.sidewinder ?? 0), base, mul, props.sidewinder];
         }
+        */
 
-        return [base];
+        return [base, undefined, undefined, undefined];
     })();
 
     const percent = React.useMemo(() => {
@@ -93,8 +96,8 @@ const skillDamage: React.FC<Props> = props => {
     }, [props.type])
 
     const baseDamageTr =  base ?
-        <>{base.toString()} x {multiplier}％{sidewinder ? <><span> x (サイドワインダー増幅</span>{sidewinder}％ + 1)</> : null} = {value.toString()}{percent}</> :
-        <>{equation(props.damage, props.status, props.config.level, level, props.config.stack, props.summonedName)}{value.toString()}{percent}</>;
+        <>{/*base.toString()*/} x {multiplier}％{sidewinder ? <><span> x (サイドワインダー増幅</span>{sidewinder}％ + 1)</> : null} = {value.toString()}{percent}</> :
+        <>{equation(props.value, props.status, props.config.level, level, props.config.stack, props.summonedName)}{value.toString()}{percent}</>;
 
     const [additional, expandDescription, objectAdditional] = (() => {
         const additionalKeys = [
@@ -105,16 +108,18 @@ const skillDamage: React.FC<Props> = props => {
             {key: "lostHPPercent", text: "失った体力1％あたり", ratio: "消耗体力比", removePercent: true}, // sissela only for now
             {key: "gauge", text: "消耗ゲージの", ratio: "消耗ゲージ比"}
         ]
-        const tuple = additionalKeys.find(k => props.damage[k.key as keyof ValueRatio] != undefined);
+        //const tuple = additionalKeys.find(k => props.value[k.key as keyof ValueRatio] != undefined);
+        const tuple = undefined;
         if (tuple == undefined) {
             return [null, <td colSpan={4}>{baseDamageTr}</td>]
         }
 
         const brackets = !value.isZero()
-        if (typeof props.damage[tuple.key as keyof ValueRatio] === "object") {
-            const ratio = Array.isArray(props.damage[tuple.key as keyof ValueRatio]) ?
-                new Decimal((props.damage[tuple.key as keyof ValueRatio] as number[])[level]) :
-                damage(props.status, props.config, props.skill, props.damage[tuple.key as keyof ValueRatio]);
+        /*
+        if (typeof props.value[tuple.key as keyof ValueRatio] === "object") {
+            const ratio = Array.isArray(props.value[tuple.key as keyof ValueRatio]) ?
+                new Decimal((props.value[tuple.key as keyof ValueRatio] as number[])[level]) :
+                damage(props.status, props.config, props.skill, props.value[tuple.key as keyof ValueRatio]);
             const multiplied = ratio.percent(multiplier ?? 100);
             const content = <>{tuple.text}{multiplied.toString()}{tuple.removePercent ? null : "％"}</>
             return [
@@ -128,7 +133,7 @@ const skillDamage: React.FC<Props> = props => {
                                 {
                                     multiplier ? 
                                     <>{ratio.toString()} x {multiplier}％ {} = {multiplied.toString()}</> :
-                                    <>{equation(props.damage[tuple.key as keyof ValueRatio], props.status, props.config.level, level, props.config.stack, props.summonedName)}{ratio.toString()}</>
+                                    <>{equation(props.value[tuple.key as keyof ValueRatio], props.status, props.config.level, level, props.config.stack, props.summonedName)}{ratio.toString()}</>
                                 }{tuple.removePercent ? null : "％"}
                             </td>
                         </tr>
@@ -137,24 +142,34 @@ const skillDamage: React.FC<Props> = props => {
                 true
             ]
         } else {
-            const content = <>{tuple.text}{new Decimal(levelValue(props.damage[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}％</>;
+            const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}％</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>{baseDamageTr}</td>,
                 false
             ]
         }
+        */
+        //const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}％</>;
+        const content = null;
+        return [
+            brackets ? <span>+({content})</span> : <span>{content}</span>,
+            <td colSpan={4}>{baseDamageTr}</td>,
+            false
+        ]
     })();
 
     const kenneth = (() => {
-        if (props.type != "kenneth") return null;
+        //if (props.type != "kenneth") return null;
         return "％";
     })();
 
     const valueClass = (() => {
+        /*
         if (props.type == "kenneth" && props.skill == "T") {
             return style.heal;
         }
+        */
         return props.type ? style[props.type] : style.skill;
     })();
 

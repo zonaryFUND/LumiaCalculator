@@ -1,17 +1,17 @@
-import { Status } from "components/subject/status";
 import * as React from "react";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { DamageTable } from "components/subjects/damage-table";
 import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "components/subject/standard-values";
 import SkillDamage from "./skill-damage";
-import Hypercharge from "./aiden-hypercharge";
+import Hypercharge from "../pages/simple/aiden-hypercharge";
 import DebiMarlConstants from "components/subjects/debi_marlene/constants.json";
-import Rio from "./rio";
+import Rio from "../pages/simple/rio";
 import { styles } from "@app/util/style";
 import style from "./basic-attack.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
+import { Status } from "app-types/subject-dynamic/status/type";
 
 
 type Props = {
@@ -32,9 +32,7 @@ const basicAttack: React.FC<Props> = props => {
             }
             {
                 props.table.basicAttack.map(def => {
-                    if (def == "aiden") {
-                        return <Hypercharge status={props.status} config={props.config} />;
-                    } else if (typeof def === "string") {
+                    if (typeof def === "string") {
                         if (props.weaponType == "assault_rifle") {
                             return <BasicAttackDamage 
                                 key="standard" 
@@ -57,22 +55,18 @@ const basicAttack: React.FC<Props> = props => {
                                     basicAttackAmp: 100
                                 }}
                             />
-                        } else if (def == "debimarl") {
-                            return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={true} config={{attack: DebiMarlConstants.T.basic_attack_damage}} />;
-                        } else if (def == "rio") {
-                            return <Rio status={props.status} config={props.config} />;
                         } else {
                             return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={def == "disable-critical"} />
                         }
-                    } else if (def.type == "basic" || def.type == "summoned") {
+                    } else if (def.type == "basic" || def.type == "summoned" || def.type == "basic-nocrit") {
                         const level = (props.config.skillLevels as any)[def.skill];
                         const sanitizedDict = Object.fromEntries(
-                            Object.entries(def.damage).map(([key, value]) => {
+                            Object.entries(def.value).map(([key, value]) => {
                                 return [key, Array.isArray(value) ? value[level] : value]
                             })
                         );
-                        const multiplier = Array.isArray(def.multiplier) ? def.multiplier[level] : def.multiplier
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multiplier={multiplier} disableCritical={def.disableCritical} />
+                        const multiplier = Array.isArray(def.multiplier) ? def.multiplier[level] : def.multiplier as number
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multiplier={multiplier} disableCritical={def.type == "basic-nocrit"} />
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }
