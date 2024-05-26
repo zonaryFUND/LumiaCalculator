@@ -8,7 +8,7 @@ import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 const r: React.FC<SubjectSkillProps> = props => (
     <>
         カミロが踊りながら前に移動した後、{Constants.R.return_time}秒後に戻ってきます。<br />
-        踊りながら移動する間、妨害効果免疫状態となり、受けるダメージ量が{Constants.R.damage_reduction[props.skillLevel]}%減少します。<br />
+        カミロは踊る間、妨害効果免疫状態となり、受けるダメージ量が{Constants.R.damage_reduction[props.skillLevel]}%減少します。<br />
         踊りが終わる時、カミロと一度ぶつかった敵は<Value skill="R" ratio={Constants.R.one_hit_damage} />
         のスキルダメージを与えられます。2回ぶつかった敵には<Value skill="R" ratio={Constants.R.two_hit_damage} />
         のスキルダメージを与えて{Constants.R.stun}秒間気絶させます。また、カミロの移動速度がしばらくの間大きく増加して、

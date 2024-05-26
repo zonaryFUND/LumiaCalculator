@@ -57,7 +57,7 @@
         },
         "stun": 1,
         "sp_cost": [90,120,150],
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "max_attack_speed": 1.1,
