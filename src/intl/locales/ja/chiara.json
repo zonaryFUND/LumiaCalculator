@@ -1,0 +1,15 @@
+{
+    "subject.chiara.q-1hit": "Q1本ヒット",
+    "subject.chiara.q-2hit": "Q2本目以降追加ダメージ",
+    "subject.chiara.q-max": "Q最大ダメージ",
+    "subject.chiara.q-1heal": "Q1本ヒット時回復",
+    "subject.chiara.q-max-heal": "Q最大ヒット({value})時回復",
+    "subject.chiara.w-min": "Wシールド最小値",
+    "subject.chiara.w-max": "Wシールド最大値(体力{value}%以下)",
+    "subject.chiara.w-damage": "W爆発ダメージ",
+    "subject.chiara.e-hit": "E命中",
+    "subject.chiara.e-launch": "E発動",
+    "subject.chiara.r-dot": "R周囲維持ダメージ/秒",
+    "subject.chiara.r-hot": "R周囲人数当たり体力回復/秒",
+    "subject.chiara.r-execute": "R審判固定ダメージ(烙印スタック{value})"
+}

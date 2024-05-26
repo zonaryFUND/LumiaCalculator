@@ -72,7 +72,7 @@
             "effect": 50
         },
         "sp_cost": [100,120,140],
-        "cooldown": [60,50,40]
+        "cooldown": [60,55,50]
     },
     "T": {
         "healing_reduction": [11,13,15],
