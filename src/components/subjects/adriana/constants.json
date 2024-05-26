@@ -51,10 +51,10 @@
     "T": {
         "duration": 4,
         "damage": {
-            "base": [12,24,36],
-            "amp": 32
+            "base": [20,35,50],
+            "amp": 40
         },
-        "defense_reduction": [12,16,20],
-        "immune": 7
+        "defense_reduction": [10,13,16],
+        "immune": 10
     }
 }
