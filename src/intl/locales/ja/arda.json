@@ -1,0 +1,9 @@
+{
+    "subject.arda.w-appear": "W出現時",
+    "subject.arda.w-disappear": "W消滅時",
+    "subject.arda.rq-character": "RQ文字",
+    "subject.arda.rw-wall": "RW障壁",
+    "subject.arda.rw-wall-max-hit": "RW障壁全ヒット({value})",
+    "subject.arda.rw-inner-max-hit": "RW内部全ヒット({value})",
+    "subject.arda.passive-heal": "T回復"
+}
