@@ -1,0 +1,14 @@
+{
+    "subject.alonso.q-aa": "Q対象追加ダメージ",
+    "subject.alonso.w-wave": "W波動",
+    "subject.alonso.w-wave-max-hit": "W波動最大ヒット({value})",
+    "subject.alonso.w-finish": "W最終",
+    "subject.alonso.r-pull": "R引き寄せ",
+    "subject.alonso.r-damage-per-tick": "R継続/{value}秒",
+    "subject.alonso.r-damage-max-hit": "R継続最大ヒット({value})",
+    "subject.alonso.r-heal-per-tick": "R回復/{value}秒",
+    "subject.alonso.r-heal-max": "R回復最大ティック({value})",
+    "subject.alonso.r-finish-damage-min": "R最終(最小)",
+    "subject.alonso.r-finish-damage-max": "R最終(最大)",
+    "subject.alonso.passive-heal": "T回復"
+}
