@@ -1,0 +1,16 @@
+{
+    "subject.lyanh.human-aa": "人間基本攻撃",
+    "subject.lyanh.possessed-aa": "憑依基本攻撃",
+    "subject.lyanh.ghost-aa": "悪霊基本攻撃",
+    "subject.lyanh.additional-true-damage": "憑依/悪霊追加固定ダメージ",
+    "subject.lyanh.possessed-aa-heal": "憑依追加ダメージ比例回復",
+    "subject.lyanh.ghost-aa-heal": "悪霊追加ダメージ比例回復",
+    "subject.lyanh.humanq": "人間Q",
+    "subject.lyanh.humanw": "人間W",
+    "subject.lyanh.humane": "人間E",
+    "subject.lyanh.ghostq": "憑依Q",
+    "subject.lyanh.ghostw": "憑依W",
+    "subject.lyanh.ghoste-swing": "憑依E振り下ろし",
+    "subject.lyanh.ghoste-pull": "憑依E引き寄せ",
+    "subject.lyanh.r-jump-out": "R飛び出し"
+}
