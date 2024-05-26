@@ -1,0 +1,14 @@
+{
+    "subject.aiden.hypercharge-aa": "ハイパーチャージ中基本攻撃",
+    "subject.aiden.hypercharge-additional": "追加ダメージ",
+    "subject.aiden.critical-base": "致命打基本値",
+    "subject.aiden.passive-penalty": "Tペナルティ",
+    "subject.aiden.passive-conversion": "T致命打率変換",
+    "subject.aiden.standard-q": "通常Q",
+    "subject.aiden.hypercharge-q": "ハイパーチャージ中Q",
+    "subject.aiden.w-initial-min": "W発動(最小)",
+    "subject.aiden.w-initial-max": "W発動(最大)",
+    "subject.aiden.w-field": "W電場",
+    "subject.aiden.r1-outer": "R1外周",
+    "subject.aiden.r1-center": "R1中心"    
+}

@@ -4,7 +4,7 @@ import style from "./damage-table.module.styl";
 import { useToggle } from "react-use";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
-import { SkillValueProps, Value } from "components/subjects/damage-table";
+import { SkillValueProps } from "components/subjects/damage-table";
 import Decimal from "decimal.js";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Source, ValueRatio, isValueRatio } from "app-types/value-ratio";
@@ -59,7 +59,7 @@ function equation(value: ValueRatio, status: Status, level: number, skillLevel: 
             case "level":
                 return p.concat(<><span className={table.small}>レベル</span>{level} x {levelValue(value, skillLevel)}</>);
             case "basicAttackAmp":
-                return p.concat(<> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.toString()}％ + 1)</>);
+                return p.concat(<> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}％ + 1)</>);
             case "criticalChance":
                 return p.concat(<> x (<span className={table.small}>致命打確率</span>{status.criticalChance.toString()}％ x {levelValue(value, skillLevel)})</>)
             case "summoned_attack":
@@ -152,7 +152,7 @@ const skillDamage: React.FC<Props> = props => {
                 }
             })();
             const bracket = index > 0 || !dynamicValueOnly;
-            const ratio = (props.value as ValueRatio)[key as keyof Value];
+            const ratio = props.value[key as keyof ValueRatio];
             const isCalculated = typeof ratio === "object" && !Array.isArray(ratio);
 
             return [

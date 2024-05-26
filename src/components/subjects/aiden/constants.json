@@ -25,7 +25,7 @@
     "W": {
         "damage": {
             "base": [40,50,60,70,80],
-            "attack": 50
+            "attack": 45
         },
         "max_multiplier": 2,
         "slow": {
@@ -80,12 +80,12 @@
             "effect": 40
         },
         "sp_cost": 120,
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "duration": 10,
         "attack_speed": 0.2,
-        "critical_damage": 30,
+        "critical_damage": 20,
         "critical_chance_convert": [0.2,0.3,0.4],
         "range": [4,4.5,5],
         "movement_speed": {

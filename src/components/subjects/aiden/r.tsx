@@ -14,7 +14,7 @@ const r: React.FC<SubjectSkillProps> = props => (
         以降、2回目の落雷が落ち、<Value skill="R" ratio={Constants.R.second_damage} {...props} />のスキルダメージを与えて移動速度を
         {Constants.R.second_slow.duration}秒間{Constants.R.second_slow.effect}%減少させます。<br />
         <br />
-        1回目の落雷を敵実験体に的中させると、2回目の落雷が落ちる前にスキルを再使用して、落雷が落ちた位置に移動することができます。この時、2回目の落雷はすぐに落ち、エイデンはすべての
+        2つ目の落雷が落ちる前にスキルを再使用すると、落雷が落ちた位置に移動することができます。この時、2回目の落雷はすぐに落とされます。1つ目の落雷を敵実験体に的中させて移動すると、エイデンはすべての
         <span className={style.emphasis}>アンペア</span>をチャージします。
     </>
 );

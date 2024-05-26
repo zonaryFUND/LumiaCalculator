@@ -6,22 +6,10 @@ import { ValueRatio } from "app-types/value-ratio"
 import Decimal from "decimal.js"
 import { IntlShape } from "react-intl"
 
-type CalculatedBasicAttackValue = {
-    base?: Decimal
-    critical?: Decimal
-    expected?: Decimal
-}
-
-type CalculatedValue = {
-    value: Decimal
-}
-
-export type Value = ValueRatio | CalculatedBasicAttackValue | CalculatedValue
-
 export type SkillValueProps = {
     label: string
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
-    value: ValueRatio | CalculatedBasicAttackValue | CalculatedValue
+    value: ValueRatio
     type?: "heal" | "shield" | "ms" | "true" | "basic" | "basic-nocrit" | "critical" | "summoned" | "ratio" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     multiplier?: ({
         basic: number | number[]
@@ -34,7 +22,7 @@ export type SkillValueProps = {
 export type DamageTableGenerator = (props: {status: Status, skillLevels: SkillLevels, weaponType?: WeaponTypeID, weapon?: WeaponID, gauge?: number, intl: IntlShape}) => DamageTable;
 
 export type DamageTable = {
-    basicAttack: (SkillValueProps | "standard" | "disable-critical")[]
+    basicAttack: (SkillValueProps | "standard" | "disable-critical" | "aiden")[]
     skill: SkillValueProps[][]
 }
 

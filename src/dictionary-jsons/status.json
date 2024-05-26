@@ -65,7 +65,7 @@
 	},
 	"aiden": {
 		"maxHP": "995",
-		"maxHPperLevel": "87",
+		"maxHPperLevel": "91",
 		"maxSP": "500",
 		"maxSPperLevel": "14",
 		"hpRegeneration": "1.53",
@@ -209,7 +209,7 @@
 	},
 	"cathy": {
 		"maxHP": "940",
-		"maxHPperLevel": "84",
+		"maxHPperLevel": "86",
 		"maxSP": "500",
 		"maxSPperLevel": "20",
 		"hpRegeneration": "1.8",
