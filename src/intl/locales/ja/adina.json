@@ -1,0 +1,17 @@
+{
+    "subject.adina.q-sun": "Q太陽追加ダメージ",
+    "subject.adina.w-sun": "W太陽追加ダメージ",
+    "subject.adina.w-star": "W星シールド",
+    "subject.adina.e-2hit": "E(2ヒット)",
+    "subject.adina.e-sun": "E太陽追加ダメージ(1回あたり)",
+    "subject.adina.e-star": "E星回復",
+    "subject.adina.sun-conjunction": "太陽コンジャンクション",
+    "subject.adina.sun-conjunction-dot-sum": "太陽コンジャンクション持続ダメージ合計",
+    "subject.adina.moon-conjunction": "月コンジャンクション",
+    "subject.adina.moon-conjunction-2hit": "月コンジャンクション(2ヒット)",
+    "subject.adina.star-conjunction-heal": "星コンジャンクション体力回復/秒",
+    "subject.adina.star-conjunction-heal-sum": "星コンジャンクション体力回復総量",
+    "subject.adina.star-conjunction-sp-heal": "星コンジャンクションスタミナ回復/秒",
+    "subject.adina.star-conjunction-sp-heal-sum": "星コンジャンクションスタミナ回復総量",
+    "subject.adina.passive-movement-speed": "T移動速度増加量"    
+}

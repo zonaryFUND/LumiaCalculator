@@ -135,14 +135,14 @@ const skillDamage: React.FC<Props> = props => {
         return Object.entries(dynamic).reduce((prev, [key, value], index) => {
             const [content, label] = (() => {
                 switch (key) {
-                    case "targetMaxHP":
+                    case "targetHP":
                     case "targetLostHP":
                         return [
                             <FormattedMessage id="app.value.target-lost-hp" values={{ratio: value.toString()}} />,
                             <FormattedMessage id="app.label.target-lost-hp" />
                         ]
                     case "lostHP":
-                    case "targetHP":
+                    case "targetMaxHP":
                         return [
                             <FormattedMessage id="app.value.target-maxhp" values={{ratio: value.toString()}} />,
                             <FormattedMessage id="app.label.target-maxhp" />
