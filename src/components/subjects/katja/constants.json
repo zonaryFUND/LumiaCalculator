@@ -8,6 +8,10 @@
             "base": [60,110,160,210,260],
             "attack": 90
         },
+        "attack_speed": {
+            "duration": 3,
+            "effect": [20,25,30,35,40]
+        },
         "sp_cost": [20,23,26,29,32],
         "cooldown": [7,6,5,4,3]
     },
@@ -47,7 +51,7 @@
         },
         "cooldown_return": 35,
         "sp_cost": 100,
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "duration": 5,
