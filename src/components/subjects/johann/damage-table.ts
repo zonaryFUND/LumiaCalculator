@@ -15,7 +15,7 @@ const table: DamageTable = {
             {label: "R発動ダメージ", skill: "R", value: Constants.R.damage},
             {label: "R発動時回復", skill: "R", value: Constants.R.heal, type: "heal"},
             {label: "R継続回復/秒", skill: "R", value: Constants.R.heal_per_sec, type: "heal"},
-            {label: `R継続回復全ヒット(${Constants.R.duration})秒`, skill: "R", value: Constants.R.heal_per_sec, type: "heal", multiplier: Constants.R.duration * 100}
+            {label: `R継続回復全ヒット(${Constants.R.duration})秒`, skill: "R", value: Constants.R.heal_per_sec, type: "heal", multiplier: [{basic: Constants.R.duration * 100}]}
         ]
     ]   
 }

@@ -14,7 +14,7 @@ const table: DamageTable = {
         ],
         [
             {label: "W", skill: "W", value: Constants.W.damage, type: "critical"},
-            {label: `W最大ヒット(${Constants.W.count})`, skill: "W", value: Constants.W.damage, type: "critical", multiplier: Constants.W.count * 100},
+            {label: `W最大ヒット(${Constants.W.count})`, skill: "W", value: Constants.W.damage, type: "critical", multiplier: [{basic: Constants.W.count * 100}]},
         ],
         [
             {label: "Eワンステップ", skill: "E", value: Constants.E.damage},
@@ -24,7 +24,7 @@ const table: DamageTable = {
             {label: "R1ヒット", skill: "R" as any, value: Constants.R.one_hit_damage},
             {label: "R2ヒット", skill: "R" as any, value: Constants.R.two_hit_damage} as SkillValueProps
         ].concat([...Array(Constants.R.heal.maxHit)].map((_, i) => 
-            ({label: `R回復量(${i + 1}ヒット)`, skill: "R", value: Constants.R.heal, type: "heal", multiplier: Constants.R.heal.perHit.map(v => v * (i + 1) + 100)} as SkillValueProps)
+            ({label: `R回復量(${i + 1}ヒット)`, skill: "R", value: Constants.R.heal, type: "heal", multiplier: [{basic: Constants.R.heal.perHit.map(v => v * (i + 1) + 100)}]} as SkillValueProps)
         )),
         [{label: "Tシールド", skill: "T", value: Constants.T.shield, type: "shield"}]
     ]

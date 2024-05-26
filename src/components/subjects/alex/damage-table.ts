@@ -16,8 +16,8 @@ function table(props: {status: Status, weaponType: WeaponTypeID}): DamageTable {
                     {label: "R着弾(中央)", skill: "R", value: Constants.R.first_damage.center},
                     {label: "Rパルス1発分(外周)", skill: "R", value: Constants.R.later_damage.outer},
                     {label: "Rパルス1発分(中央)", skill: "R", value: Constants.R.later_damage.center},
-                    {label: `Rパルス最大ヒット(${rMax}回、外周)`, skill: "R", value: Constants.R.later_damage.outer, multiplier: rMax * 100},
-                    {label: `Rパルス最大ヒット(${rMax}回、中央)`, skill: "R", value: Constants.R.later_damage.center, multiplier: rMax * 100},
+                    {label: `Rパルス最大ヒット(${rMax}回、外周)`, skill: "R", value: Constants.R.later_damage.outer, multiplier: [{basic: rMax * 100}]},
+                    {label: `Rパルス最大ヒット(${rMax}回、中央)`, skill: "R", value: Constants.R.later_damage.center, multiplier: [{basic: rMax * 100}]},
                 ]
             ]
         }

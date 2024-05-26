@@ -6,8 +6,15 @@ import { SkillLevels } from "app-types/subject-dynamic/config";
 
 // The ratio of attack of echion's R depends on the level of T, but this application assumes that its always 3.
 function table(props: {skillLevels: SkillLevels, weapon?: WeaponID, gauge: number}): DamageTable {
-    const multiplier = new Decimal(Constants.R.damage_amp_per_vf[props.skillLevels.R]).times(props.gauge).add(100).toNumber();
-    const sidewinder = props.weapon?.includes("sidewinder") ? Constants.R1.skill_damage_add[props.skillLevels.R] : undefined;
+    const multiplier = [
+        {
+            name: "暴走ゲージ増幅",
+            value: new Decimal(Constants.R.damage_amp_per_vf[props.skillLevels.R]).times(props.gauge).add(100).toNumber()
+        }
+    ].concat(props.weapon?.includes("sidewinder") ? [{
+        name: "サイドワインダー増幅",
+        value: Constants.R1.skill_damage_add[props.skillLevels.R]
+    }] : [])
 
     const r: SkillValueProps[] = (() => {
         if (props.weapon?.includes("sidewinder")) {
@@ -19,7 +26,7 @@ function table(props: {skillLevels: SkillLevels, weapon?: WeaponID, gauge: numbe
         if (props.weapon?.includes("black_mamba")) {
             return [
                 {label: "Rエンベノミゼーション", skill: "R" as any, value: Constants.R2.damage},
-                {label: "Rエンベノミゼーション2ヒット", skill: "R" as any, value: Constants.R2.damage, multiplier: 200}
+                {label: "Rエンベノミゼーション2ヒット", skill: "R" as any, value: Constants.R2.damage, multiplier: [{basic: 200}]}
             ];
         } else if (props.weapon?.includes("deathadder")) {
             return [{label: "Rエンベノミゼーション", skill: "R" as any, value: Constants.R3.damage}];

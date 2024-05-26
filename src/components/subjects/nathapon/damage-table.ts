@@ -6,7 +6,7 @@ function array(raw: SkillValueProps, tLevel: number): SkillValueProps[] {
     const max = Constants.T.max_stack;
     return [...Array(max + 1)].map((_, i) => {
         if (i == 0) return raw;
-        return {...raw, label: i == 0 ? raw.label : `${raw.label}(T${i}スタック)`, multiplier: Constants.T.stack_damage_amp[tLevel] * i + 100}
+        return {...raw, label: i == 0 ? raw.label : `${raw.label}(T${i}スタック)`, multiplier: [{basic: Constants.T.stack_damage_amp[tLevel] * i + 100}]}
     });
 }
 

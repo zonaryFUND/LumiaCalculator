@@ -10,7 +10,7 @@ const table: DamageTable = {
         ],
         [
             {label: "W発動(最小)", skill: "W", value: Constants.W.damage},
-            {label: "W発動(最大)", skill: "W", value: Constants.W.damage, multiplier: Constants.W.max_multiplier * 100},
+            {label: "W発動(最大)", skill: "W", value: Constants.W.damage, multiplier: [{basic: Constants.W.max_multiplier * 100}]},
             {label: "W電場", skill: "W", value: Constants.W.field_damage}
         ],
         [

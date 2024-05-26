@@ -9,11 +9,11 @@ const table: DamageTable = {
     skill: [
         [
             {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: "Q往復ヒット", skill: "Q", value: Constants.Q.damage, multiplier: 200},
+            {label: "Q往復ヒット", skill: "Q", value: Constants.Q.damage, multiplier: [{basic: 200}]},
         ],
         [
             {label: "W1", skill: "W", value: Constants.W.first_damage},
-            {label: `W1最大ヒット(${Constants.W.count})`, skill: "W", value: Constants.W.first_damage, multiplier: Constants.W.count},
+            {label: `W1最大ヒット(${Constants.W.count})`, skill: "W", value: Constants.W.first_damage, multiplier: [{basic: Constants.W.count}]},
             {label: "W2", skill: "W", value: Constants.W.second_damage}
         ],
         [

@@ -16,7 +16,7 @@ const table: DamageTable = {
         ],
         [
             {label: "E持続", skill: "E", value: Constants.E.damage},
-            {label: `E持続全ヒット(${eMax})`, skill: "E", value: Constants.E.damage, multiplier: eMax * 100},
+            {label: `E持続全ヒット(${eMax})`, skill: "E", value: Constants.E.damage, multiplier: [{basic: eMax * 100}]},
             {label: "E爆発", skill: "E", value: Constants.E.finish_damage}
         ],
         [

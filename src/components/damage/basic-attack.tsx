@@ -12,6 +12,8 @@ import style from "./basic-attack.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { Status } from "app-types/subject-dynamic/status/type";
+import { FormattedMessage } from "react-intl";
+import value from "components/tooltip/value";
 
 
 type Props = {
@@ -27,8 +29,16 @@ const basicAttack: React.FC<Props> = props => {
         <tbody>
             {
                 props.table.basicAttack.includes("standard") || props.table.basicAttack.find(t => (t as any).type == "basic" && (t as any).disableCritical != true) ?
-                <tr className={styles(table.separator)}><td>基本攻撃</td><td>基礎値</td><td>致命打</td><td>期待値</td></tr> :
-                <tr className={table.separator}><td colSpan={3}>基本攻撃</td><td>基礎値</td></tr>
+                <tr className={styles(table.separator)}>
+                    <td><FormattedMessage id="app.basic-attack" /></td>
+                    <td><FormattedMessage id="app.standard-value" /></td>
+                    <td><FormattedMessage id="app.critical-hit" /></td>
+                    <td><FormattedMessage id="app.expected-value" /></td>
+                </tr> :
+                <tr className={table.separator}>
+                    <td colSpan={3}><FormattedMessage id="app.basic-attack" /></td>
+                    <td><FormattedMessage id="app.standard-value" /></td>
+                </tr>
             }
             {
                 props.table.basicAttack.map(def => {
@@ -36,7 +46,7 @@ const basicAttack: React.FC<Props> = props => {
                         if (props.weaponType == "assault_rifle") {
                             return <BasicAttackDamage 
                                 key="standard" 
-                                name="基本攻撃(3発分)" 
+                                name={<FormattedMessage id="app.basic-attack.assault-rifle" />}
                                 status={props.status} 
                                 disableCritical={def == "disable-critical"} 
                                 config={{
@@ -47,7 +57,7 @@ const basicAttack: React.FC<Props> = props => {
                         } else if (props.weaponType == "dual_swords") {
                             return <BasicAttackDamage 
                                 key="standard" 
-                                name="基本攻撃(2発分)"
+                                name={<FormattedMessage id="app.basic-attack.dual-sword" />}
                                 status={props.status} 
                                 disableCritical={def == "disable-critical"} 
                                 config={{
@@ -56,7 +66,7 @@ const basicAttack: React.FC<Props> = props => {
                                 }}
                             />
                         } else {
-                            return <BasicAttackDamage key="standard" name="基本攻撃" status={props.status} disableCritical={def == "disable-critical"} />
+                            return <BasicAttackDamage key="standard" name={<FormattedMessage id="app.basic-attack" />} status={props.status} disableCritical={def == "disable-critical"} />
                         }
                     } else if (def.type == "basic" || def.type == "summoned" || def.type == "basic-nocrit") {
                         const level = (props.config.skillLevels as any)[def.skill];
@@ -65,8 +75,18 @@ const basicAttack: React.FC<Props> = props => {
                                 return [key, Array.isArray(value) ? value[level] : value]
                             })
                         );
-                        const multiplier = Array.isArray(def.multiplier) ? def.multiplier[level] : def.multiplier as number
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multiplier={multiplier} disableCritical={def.type == "basic-nocrit"} />
+                        const sanitizedMultipliers = def.multiplier?.map(m => {
+                            const anyM = m as any;
+                            if (anyM.basic != undefined) {
+                                return Array.isArray(anyM.basic) ? anyM.basic[level] : anyM.basic;
+                            }
+
+                            return {
+                                name: anyM.name,
+                                value: Array.isArray(anyM.value) ? anyM.value[level] : anyM.value
+                            }
+                        })
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multipliers={sanitizedMultipliers} disableCritical={def.type == "basic-nocrit"} />
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }

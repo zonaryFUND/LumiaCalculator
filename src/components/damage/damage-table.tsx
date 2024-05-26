@@ -11,6 +11,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
 import { equipmentStatus } from "app-types/equipment";
+import { useIntl } from "react-intl";
 
 type Props = {
     status: Status
@@ -19,6 +20,7 @@ type Props = {
 }
 
 const damageTable: React.FC<Props> = props => {
+    const intl = useIntl();
     const definition = React.useMemo(() => {
         const raw = SubjectDamageTable[props.config.subject];
         if (typeof raw === "object") {
@@ -29,7 +31,8 @@ const damageTable: React.FC<Props> = props => {
                 skillLevels: props.config.skillLevels, 
                 weaponType: props.weaponType, 
                 weapon: props.config.equipment.weapon ?? undefined,
-                gauge: props.config.gauge
+                gauge: props.config.gauge,
+                intl
             });
         }
     }, [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
@@ -103,10 +106,18 @@ const damageTable: React.FC<Props> = props => {
                                                     return [key, Array.isArray(value) ? value[level] : value]
                                                 })
                                             );
-                                            const multiplier = s.multiplier ?
-                                                (Array.isArray(s.multiplier) ? s.multiplier[level] : s.multiplier as number) :
-                                                undefined
-                                            return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multiplier={multiplier} />;
+                                            const sanitizedMultipliers = s.multiplier?.map(m => {
+                                                const anyM = m as any;
+                                                if (anyM.basic != undefined) {
+                                                    return Array.isArray(anyM.basic) ? anyM.basic[level] : anyM.basic;
+                                                }
+                    
+                                                return {
+                                                    name: anyM.name,
+                                                    value: Array.isArray(anyM.value) ? anyM.value[level] : anyM.value
+                                                }
+                                            })
+                                            return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multipliers={sanitizedMultipliers} />;
                                         }
                                         
                                         return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} summonedName={summonedName} />

@@ -16,7 +16,7 @@ function table(props: {status: Status}): DamageTable {
             ],
             [
                 {label: "W", skill: "W", value: Constants.W.damage},
-                {label: `W最大ヒット(${wCount})`, skill: "W", value: Constants.W.damage, multiplier: wCount * 100}
+                {label: `W最大ヒット(${wCount})`, skill: "W", value: Constants.W.damage, multiplier: [{basic: wCount * 100}]}
             ],
             [
                 {label: "R", skill: "R", value: Constants.R.damage}

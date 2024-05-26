@@ -20,7 +20,7 @@ const table: DamageTable = {
             {label: "E", skill: "E", value: Constants.E.damage},
             {label: "E(栞あり)", skill: "E", value: Constants.E.bookmark_damage},
             {label: "E回復最小値", skill: "E", value: Constants.E.heal, type: "heal"},
-            {label: "E回復最大値", skill: "E", value: Constants.E.heal, type: "heal", multiplier: Constants.E.heal_max_multiplier * 100},
+            {label: "E回復最大値", skill: "E", value: Constants.E.heal, type: "heal", multiplier: [{basic: Constants.E.heal_max_multiplier * 100}]},
         ],
         [
             {label: "RQ", skill: "R", value: Constants.RQ.damage},
@@ -34,7 +34,7 @@ const table: DamageTable = {
             {label: "RE", skill: "R", value: Constants.RE.damage},
             {label: "RE(栞あり)", skill: "R", value: Constants.RE.bookmark_damage},
             {label: "RE回復最小値", skill: "R", value: Constants.RE.heal, type: "heal"},
-            {label: "RE回復最大値", skill: "R", value: Constants.RE.heal, type: "heal", multiplier: Constants.RE.heal_max_multiplier * 100},
+            {label: "RE回復最大値", skill: "R", value: Constants.RE.heal, type: "heal", multiplier: [{basic: Constants.RE.heal_max_multiplier * 100}]},
         ]
     ]   
 }

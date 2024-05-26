@@ -6,9 +6,11 @@ import style from "./damage-table.module.styl";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
 import { Status } from "app-types/subject-dynamic/status/type";
+import { FormattedMessage } from "react-intl";
+import status from "components/status/status-table";
 
 type Props = {
-    name: string
+    name: React.ReactNode
     status: Status
     disableCritical?: boolean
     config?: {
@@ -16,7 +18,7 @@ type Props = {
         attack?: number
         basicAttackAmp?: number
     }
-    multiplier?: number
+    multipliers?: (number | {name: string, value: number})[]
     summoned?: boolean
 }
 
@@ -60,16 +62,24 @@ const basicAttackDamage: React.FC<Props> = props => {
         }
     }, [value, criticalChance, critical])
 
+    const calculatedMultiplier = React.useMemo(() => {
+        if (props.multipliers == undefined) return 100;
+        return props.multipliers.reduce((prev: number, multiplier) => {
+            if (typeof multiplier === "number") return prev * multiplier / 100;
+            return prev * multiplier.value / 100;
+        }, 100);
+    }, [props.multipliers]);
+
     return (
         <>
             <tr onClick={toggleExpand}>
                 <td colSpan={props.disableCritical ? 3 : undefined}>{props.name}</td>
-                <td className={style.basic}>{value.percent(props.multiplier ?? 100).toString()}</td>
+                <td className={style.basic}>{value.percent(calculatedMultiplier).toString()}</td>
                 {
                     props.disableCritical ? null :
                     <>
-                        <td className={style.basic}>{showCritical ? critical.percent(props.multiplier ?? 100).toString() : "-"}</td>
-                        <td className={style.basic}>{expected.percent(props.multiplier ?? 100).toString()}</td>
+                        <td className={style.basic}>{showCritical ? critical.percent(calculatedMultiplier).toString() : "-"}</td>
+                        <td className={style.basic}>{expected.percent(calculatedMultiplier).toString()}</td>
                     </>
                 }
             </tr>
@@ -78,11 +88,20 @@ const basicAttackDamage: React.FC<Props> = props => {
                 <tr className={table.expand}><td colSpan={4}>
                     <InnerTable>
                         <tr>
-                            <td>基本値</td>
+                            <td><FormattedMessage id="app.standard-value" /></td>
                             {
-                                props.multiplier ?
+                                props.multipliers ?
                                 <td>
-                                    {value.toString()} x {props.multiplier}％ = {value.percent(props.multiplier).toString()}
+                                    {
+                                        props.multipliers.reduce((prev, multiplier) => {
+                                            if (typeof multiplier === "number") {
+                                                return <>{prev} x {multiplier}%</>
+                                            } else {
+                                                return <>{prev} x <span>{multiplier.name}</span>{multiplier.value}%</>
+                                            }
+                                        }, <>{value.toString()}</>)
+                                    }
+                                    <> = {value.percent(calculatedMultiplier).toString()}</>
                                 </td> 
                                 :
                                 <td>
@@ -91,15 +110,15 @@ const basicAttackDamage: React.FC<Props> = props => {
                                         <>{props.config.base.toString()} + </> :
                                         null
                                     }
-                                    <span>攻撃力</span>{attackPower.toString()}
+                                    <span className={table.small}><FormattedMessage id="status.attack-power" /></span>{attackPower.toString()}
                                     {
                                         props.config?.attack ?
-                                        <> x {props.config.attack}％</> :
+                                        <> x {props.config.attack}%</> :
                                         null
                                     }
                                     {
                                         props.status.basicAttackAmp.calculatedValue.greaterThan(0) && props.summoned != true ?
-                                        <> x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}<br /></>
+                                        <> x (<span className={table.small}><FormattedMessage id="status.basic-attack-amp" /></span>{props.status.basicAttackAmp.calculatedValue.toString()}% + 1) = {value.toString()}<br /></>
                                         : null
                                     }
                                 </td>
@@ -108,14 +127,25 @@ const basicAttackDamage: React.FC<Props> = props => {
                         {
                             props.disableCritical ? null :
                             <tr>
-                                <td>致命打</td>
+                                <td><FormattedMessage id="app.critical-hit" /></td>
                                 {
-                                    props.multiplier ?
-                                    <td>{critical.toString()} x {props.multiplier}％ = {critical.percent(props.multiplier).toString()}</td>
+                                    props.multipliers ?
+                                    <>
+                                    {
+                                        props.multipliers.reduce((prev, multiplier) => {
+                                            if (typeof multiplier === "number") {
+                                                return <>{prev} x {multiplier}%</>
+                                            } else {
+                                                return <>{prev} x <span>{multiplier.name}</span>{multiplier.value}%</>
+                                            }
+                                        }, <>{critical.toString()}</>)
+                                    }
+                                    <> = {critical.percent(calculatedMultiplier).toString()}</>
+                                    </>
                                     :
                                     <td><>
-                                        <span>基礎値</span>{value.toString()} x (<span>致命打ダメージ量</span>
-                                        {criticalDamage.toString()}％ + 175％) = {critical?.toString()}
+                                    <span className={table.small}><FormattedMessage id="app.standard-value" /></span>{value.toString()} x (<span className={table.small}><FormattedMessage id="status.critical-damage" /></span>
+                                    {criticalDamage.toString()}% + 175%) = {critical?.toString()}
                                     </></td>
                                 }
                             </tr>

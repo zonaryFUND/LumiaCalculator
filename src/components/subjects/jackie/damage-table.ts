@@ -18,14 +18,14 @@ function table(props: {weaponType?: WeaponTypeID}): DamageTable {
                 {label: "W回復最小値", skill: "W", value: Constants.W.heal, type: "heal"},
                 {label: "W回復最大値", skill: "W", value: Constants.W.heal, multiplier: Constants.W.heal_max_multiplier * 100, type: "heal"}
             ] as SkillValueProps[]).concat(props.weaponType == "dual_swords" ? [
-                {label: "R中W回復最小値", skill: "W", value: Constants.W.heal, type: "heal", multiplier: Constants.R.dualsword_w_heal_multiplier * 100},
-                {label: "R中W回復最大値", skill: "W", value: Constants.W.heal, multiplier: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100, type: "heal"}
+                {label: "R中W回復最小値", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.R.dualsword_w_heal_multiplier * 100}]},
+                {label: "R中W回復最大値", skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100}], type: "heal"}
             ] : [])
             ,
             [{label: "E", skill: "E", value: Constants.E.damage}],
             [
                 {label: "R2最小値", skill: "R", value: Constants.R.finish_damage},
-                {label: "R2最大値", skill: "R", value: Constants.R.finish_damage, multiplier: Constants.R.finish_multiplier_max * 100}
+                {label: "R2最大値", skill: "R", value: Constants.R.finish_damage, multiplier: [{basic: Constants.R.finish_multiplier_max * 100}]}
             ],
             [{label: "T出血固定ダメージ", skill: "T", value: Constants.T.bleeding_damage, type: "true"}]
         ]   

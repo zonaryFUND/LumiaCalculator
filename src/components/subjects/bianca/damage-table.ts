@@ -15,9 +15,9 @@ const table: DamageTable = {
         ],
         [
             {label: "W回復/0.5秒", skill: "W", value: Constants.W.heal, type: "heal"},
-            {label: "W回復最長時間合計", skill: "W", value: Constants.W.heal, type: "heal", multiplier: wMax * 100},
-            {label: "W最大強化回復/0.5秒", skill: "W", value: Constants.W.heal, type: "heal", multiplier: Constants.W.enhanced_heal_ratio * 100},
-            {label: "W最大強化回復最長時間合計", skill: "W", value: Constants.W.heal, type: "heal", multiplier: Constants.W.enhanced_heal_ratio * wMax * 100 }
+            {label: "W回復最長時間合計", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: wMax * 100}]},
+            {label: "W最大強化回復/0.5秒", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.W.enhanced_heal_ratio * 100}]},
+            {label: "W最大強化回復最長時間合計", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.W.enhanced_heal_ratio * wMax * 100}] }
         ],
         [
             {label: "E最小", skill: "E", value: Constants.E.min_damage},

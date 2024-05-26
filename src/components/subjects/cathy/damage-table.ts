@@ -22,9 +22,9 @@ function table(props: {weaponType: WeaponTypeID}): DamageTable {
             ],
             [
                 {label: "R使用・味方蘇生時回復/秒", skill: "R", value: Constants.R.heal, type: "heal"},
-                {label: `R使用・味方蘇生時回復最大(${Constants.R.heal_duration})`, skill: "R", value: Constants.R.heal, type: "heal", multiplier: Constants.R.heal_duration * 100},
+                {label: `R使用・味方蘇生時回復最大(${Constants.R.heal_duration})`, skill: "R", value: Constants.R.heal, type: "heal", multiplier: [{basic: Constants.R.heal_duration * 100}]},
                 {label: "R最小ダメージ", skill: "R", value: Constants.R.min_damage},
-                {label: "R最大ダメージ", skill: "R", value: Constants.R.min_damage, multiplier: Constants.R.max_damage_ratio * 100}
+                {label: "R最大ダメージ", skill: "R", value: Constants.R.min_damage, multiplier: [{basic: Constants.R.max_damage_ratio * 100}]}
             ],
             [
                 {label: "T外傷合計固定ダメージ", skill: "T", value: Constants.T.wound, type: "true"},

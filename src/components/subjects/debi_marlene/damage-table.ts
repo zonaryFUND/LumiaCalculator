@@ -26,7 +26,7 @@ function table(props: {status: Status, skillLevels: SkillLevels}): DamageTable {
             [
                 {label: "マーリンW発射数", skill: "W", value: marlW, type: "true"},
                 {label: "マーリンWダメージ", skill: "W", value: Constants.MarleneW.damage},
-                {label: `マーリンWダメージ全ヒット(${wBullet})`, skill: "W", value: Constants.MarleneW.damage, multiplier: wBullet * 100}
+                {label: `マーリンWダメージ全ヒット(${wBullet})`, skill: "W", value: Constants.MarleneW.damage, multiplier: [{basic: wBullet * 100}]}
             ],
             [
                 {label: "マーリンEデビー突進", skill: "E", value: Constants.MarleneE.damage},
@@ -35,11 +35,11 @@ function table(props: {status: Status, skillLevels: SkillLevels}): DamageTable {
             [
                 {label: "R突進", skill: "R", value: Constants.R.damage},
                 {label: "R追加固定ダメージ", skill: "R", value: Constants.R.second_damage, type: "true"},
-                {label: `R追加固定ダメージ全ヒット(${Constants.R.second_damage_count})`, skill: "R", value: Constants.R.second_damage, type: "true", multiplier: Constants.R.second_damage_count * 100}
+                {label: `R追加固定ダメージ全ヒット(${Constants.R.second_damage_count})`, skill: "R", value: Constants.R.second_damage, type: "true", multiplier: [{basic: Constants.R.second_damage_count * 100}]}
             ],
             [
                 {label: "T色変え", skill: "T", value: Constants.T.damage},
-                {label: `T色変え最大回数(${Constants.T.max_stack})`, skill: "T", value: Constants.T.damage, multiplier: Constants.T.max_stack * 100}
+                {label: `T色変え最大回数(${Constants.T.max_stack})`, skill: "T", value: Constants.T.damage, multiplier: [{basic: Constants.T.max_stack * 100}]}
             ]
         ]   
     }

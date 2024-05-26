@@ -5,7 +5,7 @@ const table: DamageTable = {
     basicAttack: [
         "standard",
         {label: "Q中追加ダメージ", skill: "Q", value: Constants.Q.damage},
-        {label: `Q中追加ダメージ全ヒット(${Constants.Q.count})`, skill: "Q", value: Constants.Q.damage, multiplier: Constants.Q.count * 100},
+        {label: `Q中追加ダメージ全ヒット(${Constants.Q.count})`, skill: "Q", value: Constants.Q.damage, multiplier: [{basic: Constants.Q.count * 100}]},
         {label: "T突進追加ダメージ", skill: "T", value: Constants.T.additional_damage}
     ],
     skill: [

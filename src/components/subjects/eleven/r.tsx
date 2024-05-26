@@ -18,7 +18,7 @@ export default r;
 export const values: ValuesProps = {
     parameters: [
         {title: "最大体力比例回復量", values: Constants.R.heal.maxHP, percent: true},
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown},
+        {title: "ダメージ量", values: Constants.R.damage.base},
+        {title: "クールダウン", values: Constants.R.cooldown},
     ]
 }

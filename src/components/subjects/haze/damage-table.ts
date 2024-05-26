@@ -26,14 +26,14 @@ const table: DamageTable = {
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [
             {label: "E1発分", skill: "E", value: Constants.E.damage},
-            {label: `E全ヒット(${Constants.E.ammo})`, skill: "E", value: Constants.E.damage, multiplier: Constants.E.ammo * 100},
+            {label: `E全ヒット(${Constants.E.ammo})`, skill: "E", value: Constants.E.damage, multiplier: [{basic: Constants.E.ammo * 100}]},
             {label: "E中Q最小(余り弾数1)", skill: "Q", value: oneAmmoQ},
             {label: `E中Q最大(余り弾数${Constants.E.ammo})`, skill: "Q", value: fullAmmoQ}
         ],
         [
             {label: "R切り替え", skill: "R", value: Constants.R.switch_damage},
             {label: "R中Q", skill: "Q", value: Constants.Q3.damage},
-            {label: "R中Q強化", skill: "Q", value: Constants.Q3.damage, multiplier: 100 + Constants.Q3.enhance}
+            {label: "R中Q強化", skill: "Q", value: Constants.Q3.damage, multiplier: [{basic: 100 + Constants.Q3.enhance}]}
         ]
     ]   
 }

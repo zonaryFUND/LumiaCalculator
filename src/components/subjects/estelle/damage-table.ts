@@ -12,7 +12,7 @@ const table: DamageTable = {
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [
             {label: "E中W", skill: "W", value: Constants.W2.damage},
-            {label: `E中W全ヒット(${maxW2})`, skill: "W", value: Constants.W2.damage, multiplier: maxW2 * 100},
+            {label: `E中W全ヒット(${maxW2})`, skill: "W", value: Constants.W2.damage, multiplier: [{basic: maxW2 * 100}]},
         ],
         [{label: "E2", skill: "E", value: Constants.E2.damage}],
         [

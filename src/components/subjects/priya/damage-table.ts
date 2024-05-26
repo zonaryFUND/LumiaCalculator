@@ -14,8 +14,8 @@ const table: DamageTable = {
         ],
         [
             {label: "E", skill: "E", value: Constants.E.damage},
-            {label: "E2ヒット", skill: "E", value: Constants.E.damage, multiplier: 200},
-            {label: "E3ヒット", skill: "E", value: Constants.E.damage, multiplier: 300}
+            {label: "E2ヒット", skill: "E", value: Constants.E.damage, multiplier: [{basic: 200}]},
+            {label: "E3ヒット", skill: "E", value: Constants.E.damage, multiplier: [{basic: 300}]}
         ],
         [
             {label: "R往路(中→外)", skill: "R", value: Constants.R.first_damage},

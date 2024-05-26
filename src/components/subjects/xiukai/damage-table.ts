@@ -12,7 +12,7 @@ const table: DamageTable = {
         ],
         [
             {label: "R1ヒット", skill: "R", value: Constants.R.damage},
-            {label: `R全ヒット(${Constants.R.count})`, skill: "R", value: Constants.R.damage, multiplier: Constants.R.count * 100}
+            {label: `R全ヒット(${Constants.R.count})`, skill: "R", value: Constants.R.damage, multiplier: [{basic: Constants.R.count * 100}]}
         ]
     ]
 }

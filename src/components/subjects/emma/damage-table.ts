@@ -9,7 +9,7 @@ const table: DamageTable = {
     skill: [
         [
             {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: "Q2ヒット", skill: "Q", value: Constants.Q.damage, multiplier: 200},
+            {label: "Q2ヒット", skill: "Q", value: Constants.Q.damage, multiplier: [{basic: 200}]},
         ],
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [{label: "E", skill: "E", value: Constants.E.damage}],

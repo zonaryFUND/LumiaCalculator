@@ -5,26 +5,30 @@ export type Source = {
     level: number
 } | "item"
 
-export type ValueRatio = {
-    base?: ValueElement
-    level?: ValueElement
-    maxHP?: ValueElement
-    additionalMaxHP?: ValueElement
-    maxSP?: ValueElement
-    defense?: ValueElement
-    attack?: ValueElement
-    additionalAttack?: ValueElement
-    basicAttackAmp?: ValueElement
-    criticalChance?: ValueElement
-    additionalAttackSpeed?: ValueElement
-    amp?: ValueElement
+const RATIO_KEYS = [
+    "base",
+    "level",
+    "maxHP",
+    "additionalMaxHP",
+    "maxSP",
+    "defense",
+    "attack",
+    "additionalAttack",
+    "basicAttackAmp",
+    "criticalChance",
+    "additionalAttackSpeed",
+    "amp",
+    "stack",
+    "summonedAttack",
+    "targetMaxHP",
+    "targetHP",
+    "lostHP",
+    "max"
+] as const;
+type RatioKeys = typeof RATIO_KEYS[number];
 
-    stack?: ValueElement
-    summonedAttack?: ValueElement
+export type ValueRatio = Partial<{[key in RatioKeys]: ValueElement}>
 
-    targetMaxHP?: ValueElement
-    targetHP?: ValueElement
-    lostHP?: ValueElement
- 
-    max?: ValueElement
+export function isValueRatio(arg: any): arg is ValueRatio {
+    return RATIO_KEYS.findIndex(key => arg[key] != undefined) > -1;
 }

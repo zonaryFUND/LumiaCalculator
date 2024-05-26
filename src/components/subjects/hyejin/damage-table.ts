@@ -10,7 +10,7 @@ const table: DamageTable = {
         [
             {label: "R発動時周囲", skill: "R", value: Constants.R.first_damage},
             {label: "R札", skill: "R", value: Constants.R.card_damage},
-            {label: "R札全ヒット(5)", skill: "R", value: Constants.R.card_damage, multiplier: 500}
+            {label: "R札全ヒット(5)", skill: "R", value: Constants.R.card_damage, multiplier: [{basic: 500}]}
         ],
         [{label: "T追加ダメージ", skill: "T", value: Constants.T.damage}]
     ]   

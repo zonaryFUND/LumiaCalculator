@@ -18,14 +18,14 @@ const table: DamageTable = {
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [
             {label: "Eシールド", skill: "E", value: Constants.E.shield, type: "shield"},
-            {label: `Eガラス片最大破壊時(${eMax})シールド`, skill: "E", value: Constants.E.shield, type: "shield", multiplier: Constants.E.glass_additional_max + 100},
+            {label: `Eガラス片最大破壊時(${eMax})シールド`, skill: "E", value: Constants.E.shield, type: "shield", multiplier: [{basic: Constants.E.glass_additional_max + 100}]},
             {label: "Eダメージ", skill: "E", value: Constants.E.damage},
-            {label: `Eガラス片最大破壊時(${eMax})ダメージ`, skill: "E", value: Constants.E.damage, multiplier: Constants.E.glass_additional_max + 100}
+            {label: `Eガラス片最大破壊時(${eMax})ダメージ`, skill: "E", value: Constants.E.damage, multiplier: [{basic: Constants.E.glass_additional_max + 100}]}
         ],
         [
             {label: "R出現", skill: "R", value: Constants.R.damage},
             {label: "R爆発", skill: "R", value: Constants.R.blast_damage},
-            {label: `R爆発ガラス片最大破壊時(${rMax})`, skill: "R", value: Constants.R.blast_damage, multiplier: Constants.R.glass_additional_max}
+            {label: `R爆発ガラス片最大破壊時(${rMax})`, skill: "R", value: Constants.R.blast_damage, multiplier: [{basic: Constants.R.glass_additional_max}]}
         ]
     ]   
 }

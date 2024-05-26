@@ -10,11 +10,14 @@
     "app.standard-value": "基礎値",
     "app.additional-value": "追加値",
     "app.constant-value": "定数値",
+    "app.critical-hit": "致命打",
+    "app.expected-value": "期待値",
     "app.weapon": "武器",
     "app.skill": "スキル",
     "app.heal": "回復",
     "app.others": "その他",
     "status.maxhp": "最大体力",
+    "status.additional-maxhp": "追加体力",
     "status.hpregen": "体力再生",
     "status.defense": "防御力",
     "status.basic-attack-damage-reduction": "基本攻撃ダメージ減少",
@@ -63,6 +66,8 @@
     "summoned.nina": "ニナ",
     "summoned.sentry-gun": "セントリーガン",
 
+    "app.basic-attack.assault-rifle": "基本攻撃(3発分)",
+    "app.basic-attack.dual-sword": "基本攻撃(2発分)",
 
     "app.value.base": "{ratio}",
     "app.value.level": "キャラクターレベル*{ratio}",

@@ -16,7 +16,7 @@ function table(props: {status: Status, skillLevels: SkillLevels}): DamageTable {
         skill: [
             [  
                 {label: "W", skill: "W", value: Constants.W.damage},
-                {label: "W2ヒット", skill: "W", value: Constants.W.damage, multiplier: 200}
+                {label: "W2ヒット", skill: "W", value: Constants.W.damage, multiplier: [{basic: 200}]}
             ],
             [{label: "R", skill: "R", value: Constants.R.damage}]
         ]   

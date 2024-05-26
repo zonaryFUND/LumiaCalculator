@@ -8,7 +8,7 @@ const table: DamageTable = {
     skill: [
         [
             {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: `Q最大ヒット(${maxQ})`, skill: "Q", value: Constants.Q.damage, multiplier: maxQ * 100}
+            {label: `Q最大ヒット(${maxQ})`, skill: "Q", value: Constants.Q.damage, multiplier: [{basic: maxQ * 100}]}
         ],
         [
             {label: "E火炎地帯ダメージ/0.5秒", skill: "E", value: Constants.E.damage}

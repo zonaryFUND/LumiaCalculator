@@ -9,8 +9,8 @@ const table: DamageTable = {
     skill: [
         [
             {label: "W(スピア1本)", skill: "W", value: Constants.W.damage},
-            {label: "W(スピア2本)", skill: "W", value: Constants.W.damage, multiplier: 200 - 1 * Constants.W.damage_reduction},
-            {label: "W(スピア3本)", skill: "W", value: Constants.W.damage, multiplier: 300 - 3 * Constants.W.damage_reduction},
+            {label: "W(スピア2本)", skill: "W", value: Constants.W.damage, multiplier: [{basic: 200 - 1 * Constants.W.damage_reduction}]},
+            {label: "W(スピア3本)", skill: "W", value: Constants.W.damage, multiplier: [{basic: 300 - 3 * Constants.W.damage_reduction}]},
         ],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [

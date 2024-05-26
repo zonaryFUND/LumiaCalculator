@@ -7,8 +7,8 @@ const table: DamageTable = {
         {label: "憑依基本攻撃", skill: "T", value: Constants.LyAnhT.possessed_basic_attack, type: "basic"},
         {label: "悪霊基本攻撃", skill: "T", value: Constants.LyAnhT.ghost_basic_attack},
         {label: "憑依/悪霊追加固定ダメージ", skill: "T", value: Constants.LyAnhT.additional_damage, type: "true"},
-        {label: "憑依追加ダメージ比例回復", skill: "T", value: Constants.LyAnhT.additional_damage, multiplier: Constants.LyAnhT.possesed_heal, type: "heal"},
-        {label: "悪霊追加ダメージ比例回復", skill: "T", value: Constants.LyAnhT.additional_damage, multiplier: Constants.LyAnhT.ghost_heal, type: "heal"}
+        {label: "憑依追加ダメージ比例回復", skill: "T", value: Constants.LyAnhT.additional_damage, multiplier: [{basic: Constants.LyAnhT.possesed_heal}], type: "heal"},
+        {label: "悪霊追加ダメージ比例回復", skill: "T", value: Constants.LyAnhT.additional_damage, multiplier: [{basic: Constants.LyAnhT.ghost_heal}], type: "heal"}
     ],
     skill: [
         [{label: "人間Q", skill: "Q", value: Constants.LyAnhQ.damage}],

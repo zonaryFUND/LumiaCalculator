@@ -12,7 +12,7 @@ const table: DamageTable = {
         ],
         [
             {label: "W", "skill": "W", value: Constants.W.damage},
-            {label: `W最大ヒット(${maxW})`, "skill": "W", value: Constants.W.damage, multiplier: maxW * 100}
+            {label: `W最大ヒット(${maxW})`, "skill": "W", value: Constants.W.damage, multiplier: [{basic: maxW * 100}]}
         ],
         [{label: "E", "skill": "E", value: Constants.E.damage}],
         [{label: "R", "skill": "R", value: Constants.R.damage}],

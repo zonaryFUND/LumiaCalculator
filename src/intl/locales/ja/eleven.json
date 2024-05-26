@@ -1,0 +1,11 @@
+{
+    "subject.eleven.table.qmin": "Q最小",
+    "subject.eleven.table.qmax": "Q最大",
+    "subject.eleven.table.wmin": "W最小",
+    "subject.eleven.table.wmax": "W最大",
+    "subject.eleven.table.emin": "E最小",
+    "subject.eleven.table.emax": "E最大",
+    "subject.eleven.table.rheal": "R回復",
+    "subject.eleven.table.rmax": "R最大ヒット({value})",
+    "subject.eleven.table.theal": "T回復"
+}
