@@ -53,7 +53,7 @@ function equation(value: ValueRatio, status: Status, level: number, skillLevel: 
             case "maxHP":
                 return p.concat(<><span className={table.small}><FormattedMessage id="status.maxhp" /></span>{status.maxHP.calculatedValue.toString()} x {levelValue(value, skillLevel)}％</>);
             case "defense":
-                return p.concat(<><span className={table.small}>防御力</span>{status.defense.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}><FormattedMessage id="status.defense" /></span>{status.defense.calculatedValue.toString()} x {levelValue(value, skillLevel)}％</>);
             case "amp":
                 return p.concat(<><span className={table.small}><FormattedMessage id="status.skill-amp" /></span>{status.skillAmp.calculatedValue.toString()} x {levelValue(value, skillLevel)}％</>);
             case "level":
@@ -107,7 +107,7 @@ const skillDamage: React.FC<Props> = props => {
                 } else {
                     const value = Array.isArray(multiplier.value) ? multiplier.value[level] : multiplier.value;
                     return [
-                        <>{prev}[0] x <span className={table.small}>{multiplier.name}</span>{value}%</>,
+                        <>{prev[0]} x <span className={table.small}>{multiplier.name}</span>{value}%</>,
                         prev[1] * value / 100
                     ]
                 }
