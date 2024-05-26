@@ -2,11 +2,11 @@
     "Q": {
         "first_damage": {
             "base": [20,35,50,65,80],
-            "amp":20
+            "amp":25
         },
         "second_damage": {
-            "base": [50,80,110,140,170],
-            "amp": 30
+            "base": [50,85,120,155,190],
+            "amp": 35
         },
         "movement_speed": {
             "duration": 0.5,
@@ -54,12 +54,12 @@
         },
         "coordinates": 5,
         "sp_cost": 100,
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "damage": {
             "base": [30,65,100],
-            "amp": 40
+            "amp": 45
         },
         "defense_reduction": {
             "duration": 4,
