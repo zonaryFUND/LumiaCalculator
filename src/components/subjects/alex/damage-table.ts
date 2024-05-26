@@ -1,9 +1,7 @@
-import { Status } from "components/subject/status";
-import { DamageTable, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
 import Constants from "./constants.json";
-import { WeaponTypeID } from "app-types/equipment/weapon";
 
-function table(props: {status: Status, weaponType: WeaponTypeID}): DamageTable {
+const table: DamageTableGenerator = props => {
     const rMax = Constants.R.later_damage.amount;
 
     function common(weaponDependent: SkillValueProps[][]): DamageTable {
@@ -12,12 +10,12 @@ function table(props: {status: Status, weaponType: WeaponTypeID}): DamageTable {
             skill: [
                 ...weaponDependent,
                 [
-                    {label: "R着弾(外周)", skill: "R", value: Constants.R.first_damage.outer},
-                    {label: "R着弾(中央)", skill: "R", value: Constants.R.first_damage.center},
-                    {label: "Rパルス1発分(外周)", skill: "R", value: Constants.R.later_damage.outer},
-                    {label: "Rパルス1発分(中央)", skill: "R", value: Constants.R.later_damage.center},
-                    {label: `Rパルス最大ヒット(${rMax}回、外周)`, skill: "R", value: Constants.R.later_damage.outer, multiplier: [{basic: rMax * 100}]},
-                    {label: `Rパルス最大ヒット(${rMax}回、中央)`, skill: "R", value: Constants.R.later_damage.center, multiplier: [{basic: rMax * 100}]},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-first-outer"}), skill: "R", value: Constants.R.first_damage.outer},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-first-center"}), skill: "R", value: Constants.R.first_damage.center},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer"}), skill: "R", value: Constants.R.later_damage.outer},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center"}), skill: "R", value: Constants.R.later_damage.center},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.outer, multiplier: [{basic: rMax * 100}]},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.center, multiplier: [{basic: rMax * 100}]},
                 ]
             ]
         }
@@ -26,15 +24,15 @@ function table(props: {status: Status, weaponType: WeaponTypeID}): DamageTable {
     if (props.weaponType == "pistol" || props.weaponType == "shuriken") {
         // ranged
         return common([
-            [{label: "レンジQ", skill: "Q", value: Constants.RangeQ.damage}],
-            [{label: "レンジW", skill: "W", value: Constants.RangeW.damage}],            
-            [{label: "レンジE", skill: "E", value: Constants.RangeE.damage}]            
+            [{label: props.intl.formatMessage({id: "subject.alex.rangeq"}), skill: "Q", value: Constants.RangeQ.damage}],
+            [{label: props.intl.formatMessage({id: "subject.alex.rangew"}), skill: "W", value: Constants.RangeW.damage}],            
+            [{label: props.intl.formatMessage({id: "subject.alex.rangee"}), skill: "E", value: Constants.RangeE.damage}]            
         ])
     } else {
         // melee
         return common([
-            [{label: "メレーQ", skill: "Q", value: Constants.MeleeQ.damage}],
-            [{label: "メレーW", skill: "W", value: Constants.MeleeW.damage}]
+            [{label: props.intl.formatMessage({id: "subject.alex.meleeq"}), skill: "Q", value: Constants.MeleeQ.damage}],
+            [{label: props.intl.formatMessage({id: "subject.alex.meleew"}), skill: "W", value: Constants.MeleeW.damage}]
         ])
     }
 }

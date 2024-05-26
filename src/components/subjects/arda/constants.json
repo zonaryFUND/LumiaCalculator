@@ -41,7 +41,7 @@
                 "base": [160,240,320],
                 "amp": 80
             },
-            "cooldown_reduction": 60
+            "cooldown_reduction": 50
         },
         "W": {
             "bind": [0.8,1,1.2],

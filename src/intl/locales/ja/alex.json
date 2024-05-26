@@ -1,0 +1,13 @@
+{
+    "subject.alex.meleeq": "メレーQ",
+    "subject.alex.meleew": "メレーW",
+    "subject.alex.rangeq": "レンジQ",
+    "subject.alex.rangew": "レンジW",
+    "subject.alex.rangee": "レンジE",
+    "subject.alex.r-first-outer": "R着弾(外周)",
+    "subject.alex.r-first-center": "R着弾(中央)",
+    "subject.alex.r-pulse-outer": "Rパルス1発分(外周)",
+    "subject.alex.r-pulse-center": "Rパルス1発分(中央)",
+    "subject.alex.r-pulse-outer-max-hit": "Rパルス最大ヒット({value}回、外周)",
+    "subject.alex.r-pulse-center-max-hit": "Rパルス1発分({value}回,中央)"
+}
