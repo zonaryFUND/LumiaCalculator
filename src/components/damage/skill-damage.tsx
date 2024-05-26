@@ -92,7 +92,7 @@ const skillDamage: React.FC<Props> = props => {
     })();
 
     const percent = React.useMemo(() => {
-        return props.type == "ms" ? "%" : null
+        return props.type == "ms" || props.type =="ratio" ? "%" : null
     }, [props.type])
 
     const [value, expandDescriptionStatic] = (() => {
@@ -123,8 +123,9 @@ const skillDamage: React.FC<Props> = props => {
         return [
             dynamicValueOnly ? null : staticValue,
             dynamic ? 
-            <tr><td><FormattedMessage id="app.static-value" /></td><td>{baseEquation}</td></tr> :
-            <tr><td colSpan={2}>{baseEquation}</td></tr>
+                dynamicValueOnly ? null :
+                <tr><td><FormattedMessage id="app.static-value" /></td><td>{baseEquation}</td></tr> 
+            : <tr><td colSpan={2}>{baseEquation}</td></tr>
         ]
     })();
 
@@ -142,6 +143,10 @@ const skillDamage: React.FC<Props> = props => {
                             <FormattedMessage id="app.label.target-lost-hp" />
                         ]
                     case "lostHP":
+                        return [
+                            <FormattedMessage id="app.value.lost-hp" values={{ratio: value.toString()}} />,
+                            <FormattedMessage id="app.label.lost-hp" />
+                        ]
                     case "targetMaxHP":
                         return [
                             <FormattedMessage id="app.value.target-maxhp" values={{ratio: value.toString()}} />,

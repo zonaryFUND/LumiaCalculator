@@ -20,9 +20,10 @@ const t: React.FC<SubjectSkillProps> = props => {
 
     return (
         <>
-            <span className={style.enhance}>基本効果</span>：半径{Constants.T.range}m以内にいる味方と自分の基本体力再生効果を
-            <span className={style.losthp}>{Constants.T.hp_regen[props.skillLevel]}%</span>増加させます。エステルは瀕死状態の味方を蘇生させる時間が
-            {Constants.T.revive}秒早くなります。エステルによって蘇生された味方は{additionalHeal}の体力を追加で回復します。
+            <span className={style.enhance}>基本効果</span>：エステルは{Constants.T.heal_period}秒ごとに自分の体力を
+            <Value skill="T" ratio={Constants.T.heal} />回復します。
+            また、エステルは瀕死状態の味方を蘇生させる時間が
+            {Constants.T.revive[props.skillLevel]}秒早くなります。エステルによって蘇生された味方は{additionalHeal}の体力を追加で回復します。
         </>
     );
 }
@@ -31,7 +32,6 @@ export default t;
 
 export const values: ValuesProps = {
     parameters: [
-        {title: "体力再生", values: Constants.T.hp_regen, percent: true},
         {title: "[蘇生]蘇生時間短縮", values: Constants.T.revive},
         {title: "[蘇生]追加回復量", values: Constants.T.additional_heal.targetMaxHP.base, percent: true},
         {title: "クールダウン", values: Constants.R.cooldown}
