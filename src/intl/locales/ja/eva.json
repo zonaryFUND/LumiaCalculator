@@ -1,0 +1,11 @@
+{
+    "subject.eva.passive-additional": "T追加ダメージ",
+    "subject.eva.q-pass": "Q通過",
+    "subject.eva.q-blast": "Q爆発",
+    "subject.eva.w-first": "W発生",
+    "subject.eva.w-blast": "W爆発",
+    "subject.eva.e-additional": "E効果中追加ダメージ",
+    "subject.eva.r-base": "R基本/1ティック",
+    "subject.eva.r-additional": "R{value}スタック時追加ダメージ",
+    "subject.eva.r-set": "R1セット{value}ティック/{set}秒"
+}
