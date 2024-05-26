@@ -1,0 +1,10 @@
+{
+    "subject.adela.q-pawn": "Qポーン",
+    "subject.adela.q-queen": "Qクイーン",
+    "subject.adela.q-pawn-reactivation": "Qポーン再発動",
+    "subject.adela.q-queen-reactivation": "Qクイーン再発動",
+    "subject.adela.w-2hit": "W2ヒット",
+    "subject.adela.w-reactivation": "W再発動",
+    "subject.adela.e-reactivation": "E再発動",
+    "subject.adela.r-damage-per-piece": "R追加ダメージ(駒1つあたり)"
+}
