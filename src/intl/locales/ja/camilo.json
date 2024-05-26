@@ -1,0 +1,12 @@
+{
+    "subject.camilo.q2-first": "Q2初撃",
+    "subject.camilo.q2-second": "Q2追撃",
+    "subject.camilo.q2-heal": "Q2回復",
+    "subject.camilo.w-max-hit": "W最大ヒット({value})",
+    "subject.camilo.e1": "Eワンステップ",
+    "subject.camilo.e2": "Eツーステップ",
+    "subject.camilo.r-1hit": "R1ヒット",
+    "subject.camilo.r-2hit": "R2ヒット",
+    "subject.camilo.r-heal": "R回復量({value}ヒット)",
+    "subject.camilo.passive-shield": "Tシールド"
+}
