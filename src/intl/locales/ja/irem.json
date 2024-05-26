@@ -1,0 +1,11 @@
+{
+    "subject.irem.irem-r-aa-additional": "イレムR追加ダメージ",
+    "subject.irem.cat-q-aa-rush": "ネコQ突進追加ダメージ",
+    "subject.irem.irem-q-bounce": "イレムQ({value}バウンド)",
+    "subject.irem.irem-w": "イレムW",
+    "subject.irem.cat-q-punch": "ネコQパンチ",
+    "subject.irem.cat-q-punch-max-hit": "ネコQパンチ最大ヒット({value})",
+    "subject.irem.cat-w": "ネコW",
+    "subject.irem.cat-e": "ネコE",
+    "subject.irem.cat-r-shield": "ネコRシールド"
+}
