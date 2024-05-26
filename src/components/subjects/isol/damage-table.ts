@@ -1,22 +1,24 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const maxW = Math.ceil(Constants.W.duration / Constants.W.tick);
 
-const table: DamageTable = {
-    basicAttack: ["standard"],
+const table: DamageTableGenerator = props => ({
+    basicAttack: [
+        "standard",
+        {label: props.intl.formatMessage({id: "subject.isol.aa-after-e"}), "skill": "E", value: Constants.E.damage}
+    ],
     skill: [
         [
             {label: "Q", "skill": "Q", value: Constants.Q.damage},
-            {label: "Q追加ダメージ1回分", "skill": "Q", value: Constants.Q.additional_damage}
+            {label: props.intl.formatMessage({id: "subject.isol.q-additional-damage-1"}), "skill": "Q", value: Constants.Q.additional_damage}
         ],
         [
             {label: "W", "skill": "W", value: Constants.W.damage},
-            {label: `W最大ヒット(${maxW})`, "skill": "W", value: Constants.W.damage, multiplier: [{basic: maxW * 100}]}
+            {label: props.intl.formatMessage({id: "subject.isol.w-max"}, {value: maxW}), "skill": "W", value: Constants.W.damage, multiplier: [{basic: maxW * 100}]}
         ],
-        [{label: "E", "skill": "E", value: Constants.E.damage}],
         [{label: "R", "skill": "R", value: Constants.R.damage}],
     ]
-}
+})
 
 export default table;
