@@ -16,6 +16,8 @@
     "app.skill": "スキル",
     "app.heal": "回復",
     "app.others": "その他",
+    "app.static-value": "静的値",
+    "app.label.target-maxhp": "対象最大体力比",
     "status.maxhp": "最大体力",
     "status.additional-maxhp": "追加体力",
     "status.hpregen": "体力再生",

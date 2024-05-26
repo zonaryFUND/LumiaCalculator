@@ -3,36 +3,27 @@ import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
+import Value from "components/tooltip/value";
+import { ValuesProps } from "../values";
 
 const t: React.FC<SubjectSkillProps> = props => {
-    const { status, showEquation } = useValueContext();
-
     return (
         <>
-            つばめは基本攻撃の射程距離が<span className={style.emphasis}>{Constants.T.range}</span>
-            に固定され、基本攻撃に致命打が発生しない代わりに
-            {
-                showEquation ?
-                <>
-                    致命打確率1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_chance}</span>
-                    と致命打ダメージ増加量1%あたり<span className={style.emphasis}>{Constants.T.attack_per_critical_damage}</span>
-                    の攻撃力が増加します。                    
-                </>
-                :
-                <>
-                    致命打確率と致命打ダメージ増加量に応じて攻撃力が
-                    <span className={style.emphasis}>{status.attackPower.overrideAdditional?.value?.toString()}</span>増加します。
-                </>
-            }
-            <br />
-            <br />
-            <span className={style.emphasis}>変わり身の術</span>：つばめが
-            <span className={style.emphasis}>霧隠れの術</span>と
-            <span className={style.emphasis}>秘技 - 生死の刻印</span>を使用すると自分の位置に
-            <span className={style.emphasis}>身代わり</span>を残します。
-            <span className={style.emphasis}>身代わり</span>は{Constants.T.dummy_duration}秒間維持されます。
+            つばめの基本攻撃は{Constants.T.stack_duration}秒間<span className={style.emphasis}>秘技 - 生死の刻印</span>
+            スタックを残します。{Constants.T.max_stack}スタックになると、つばめが攻撃をする時、
+            <span className={style.emphasis}>秘技 - 生死の刻印</span>を切り刻んで
+            <Value skill="T" ratio={Constants.T.damage} />のスキルダメージを与えます。
         </>
     );
 }
 
 export default t;
+
+export const values: ValuesProps = {
+    additionalInfo: <>
+        <span className={style.emphasis}>秘技 - 生死の刻印</span>スタックは最大1人の敵対象にのみ残すことができます。新しい対象にスタックを残した場合、元のスタックはなくなります。
+    </>,
+    parameters: [
+        {title: "最大体力ダメージ(%)", values: Constants.T.damage.targetMaxHP.base}
+    ]
+}

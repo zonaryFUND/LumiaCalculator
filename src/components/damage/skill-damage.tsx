@@ -4,7 +4,7 @@ import style from "./damage-table.module.styl";
 import { useToggle } from "react-use";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
-import { SkillValueProps } from "components/subjects/damage-table";
+import { SkillValueProps, Value } from "components/subjects/damage-table";
 import Decimal from "decimal.js";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Source, ValueRatio, isValueRatio } from "app-types/value-ratio";
@@ -115,46 +115,59 @@ const skillDamage: React.FC<Props> = props => {
             const value = staticValue.percent(multiplier);
             return [
                 value,
-                <td colSpan={4}>{equation} = {value.toString()}</td>
+                <tr><td colSpan={4}>{equation} = {value.toString()}</td></tr>
             ]
         }
 
         const baseEquation = <>{equation(props.value, props.status, props.config.level, level, props.config.stack, props.summonedName)}{staticValue.toString()}{percent}</>;
-        if (dynamic == undefined) {
-            return [
-                staticValue,
-                <td colSpan={4}>{baseEquation}</td>
-            ]
-        }
-        return [dynamicValueOnly ? null : staticValue, null];
+        return [
+            dynamicValueOnly ? null : staticValue,
+            dynamic ? 
+            <tr><td><FormattedMessage id="app.static-value" /></td><td>{baseEquation}</td></tr> :
+            <tr><td colSpan={2}>{baseEquation}</td></tr>
+        ]
     })();
 
-    const [dynamicValue, expandDescriptionDynamic] = (() => {
+    const [dynamicValue, expandDescriptionsDynamic] = (() => {
         if (dynamic == undefined) return [null, null];
+        if (!isValueRatio(props.value)) return [null, null];
 
-        const dynamicValue = Object.entries(dynamic).reduce((prev, [key, value], index) => {
-            const content = (() => {
+        return Object.entries(dynamic).reduce((prev, [key, value], index) => {
+            const [content, label] = (() => {
                 switch (key) {
                     case "targetMaxHP":
                     case "targetLostHP":
                     case "lostHP":
                     case "targetHP":
-                        return <FormattedMessage id="app.value.target-maxhp" values={{ratio: value.toString()}} />
+                        return [
+                            <FormattedMessage id="app.value.target-maxhp" values={{ratio: value.toString()}} />,
+                            <FormattedMessage id="app.label.target-maxhp" />
+                        ]
+                    default:
+                        return [null, null]
                 }
             })();
             const bracket = index > 0 || !dynamicValueOnly;
+            const ratio = (props.value as ValueRatio)[key as keyof Value];
+            const isCalculated = typeof ratio === "object" && !Array.isArray(ratio);
 
-            return (
-                <>
-                    {prev}
-                    {bracket ? <>(+</> : null}
-                    {content}
-                    {bracket ? <>)</> : null}
-                </>
-            );
-        }, <></>);
-
-        return [dynamicValue, null]
+            return [
+                (
+                    <>
+                        {prev[0]}
+                        {bracket ? <>(+</> : null}
+                        {content}
+                        {bracket ? <>)</> : null}
+                    </>
+                ),
+                isCalculated ? prev[1].concat(
+                    <tr>
+                        <td>{label}</td>
+                        <td>{equation(ratio, props.status, props.config.level, level, props.config.stack)}{value.toString()}</td>
+                    </tr>
+                ) : prev[1]
+            ];
+        }, [<></>, [] as React.ReactNode[]]);
     })();
 
         /*
@@ -234,7 +247,7 @@ const skillDamage: React.FC<Props> = props => {
     })();
 
     const prohibitToggle = value?.isZero() != false &&
-        expandDescriptionDynamic == null
+        (expandDescriptionsDynamic ?? []).length == 0
 
     return (
         <>
@@ -242,7 +255,12 @@ const skillDamage: React.FC<Props> = props => {
                 <td>{props.label}</td>
                 <td colSpan={3} className={valueClass}>{value?.isZero() && false ? null : value?.floor().toString()}{dynamicValue}{/*kenneth}{additional*/}{percent}</td>
             </tr>
-            { expand ? <tr className={table.expand}>{expandDescriptionStatic}</tr> : null }
+            <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
+                <InnerTable>
+                    {expandDescriptionStatic}
+                    {expandDescriptionsDynamic}
+                </InnerTable>
+            </td></tr>
         </>
     )
 }

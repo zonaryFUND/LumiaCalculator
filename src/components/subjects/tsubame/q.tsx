@@ -3,6 +3,7 @@ import Constants from "./constants.json";
 import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import style from "components/tooltip/tooltip.module.styl";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
@@ -10,7 +11,7 @@ const q: React.FC<SubjectSkillProps> = props => (
         <Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与え、
         {Constants.Q.slow_duration}秒間移動速度を{Constants.Q.slow}%減少させます。<br />
         <br />
-        刻印が刻まれた敵対象には刻印を{Constants.Q.additional_stack}スタック追加で付与します。
+        <span className={style.emphasis}>秘技 - 生死の刻印</span>スタックが残された敵対象にはスタックが{Constants.Q.additional_stack}追加されます。
     </>
 );
 

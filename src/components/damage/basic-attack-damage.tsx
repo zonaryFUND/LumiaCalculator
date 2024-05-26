@@ -56,7 +56,8 @@ const basicAttackDamage: React.FC<Props> = props => {
     const expected = React.useMemo(() => {
         if (critical) {
             return value.percent(new Decimal(100).sub(criticalChance))
-                .add(critical.percent(criticalChance));
+                .add(critical.percent(criticalChance))
+                .round();
         } else {
             return value;
         }
