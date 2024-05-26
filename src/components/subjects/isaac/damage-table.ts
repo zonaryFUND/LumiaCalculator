@@ -1,4 +1,4 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 function r(stack: number): any {
@@ -11,19 +11,19 @@ function r(stack: number): any {
     }
 }
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: ["standard"],
     skill: [
         [{label: "Q", "skill": "Q", value: Constants.Q.damage}],
         [{label: "W", "skill": "W", value: Constants.W.damage}],
         [{label: "E2", "skill": "E", value: Constants.E.damage}],
         [
-            {label: "R(スタックなし)", "skill": "R", value: r(0)},
-            {label: "R(1スタック)", "skill": "R", value: r(1)},
-            {label: "R(2スタック)", "skill": "R", value: r(2)}
+            {label: props.intl.formatMessage({id: "subject.isaac.r-nostack"}), "skill": "R", value: r(0)},
+            {label: props.intl.formatMessage({id: "subject.isaac.r-1stack"}), "skill": "R", value: r(1)},
+            {label: props.intl.formatMessage({id: "subject.isaac.r-2stack"}), "skill": "R", value: r(2)}
         ],
         [{label: "T", "skill": "T", value: Constants.T.damage}],
     ]
-}
+})
 
 export default table;
