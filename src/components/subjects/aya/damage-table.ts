@@ -1,28 +1,25 @@
-import { Status } from "components/subject/status";
-import { DamageTable } from "../damage-table";
+import { DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
-function table(props: {status: Status}): DamageTable {
-    const wCount = props.status.attackSpeed.multiplier.dividedBy(30).floor().clamp(0, Constants.W.max_bullets - Constants.W.bullets).toNumber() + Constants.W.bullets;
+const table: DamageTableGenerator = props => {
+    const wCount = (props.status.attackSpeed.additional?.dividedBy(30).floor().clamp(0, Constants.W.max_bullets - Constants.W.bullets).toNumber() ?? 0) + Constants.W.bullets;
 
     return {
-        basicAttack: [
-            "standard"
-        ],
+        basicAttack: ["standard"],
         skill: [
             [
-                {label: "Q(1発目)", skill: "Q", value: Constants.Q.first_damage, type: "basic"},
-                {label: "Q(2発目)", skill: "Q", value: Constants.Q.second_damage}
+                {label: props.intl.formatMessage({id: "subject.aya-q1"}), skill: "Q", value: Constants.Q.first_damage, type: "basic"},
+                {label: props.intl.formatMessage({id: "subject.aya-q2"}), skill: "Q", value: Constants.Q.second_damage}
             ],
             [
                 {label: "W", skill: "W", value: Constants.W.damage},
-                {label: `W最大ヒット(${wCount})`, skill: "W", value: Constants.W.damage, multiplier: [{basic: wCount * 100}]}
+                {label: props.intl.formatMessage({id: "subject.aya-w-max-hit"}, {value: wCount}), skill: "W", value: Constants.W.damage, multiplier: [{basic: wCount * 100}]}
             ],
             [
                 {label: "R", skill: "R", value: Constants.R.damage}
             ],
             [
-                {label: "Tシールド", skill: "T", value: Constants.T.shield, type: "shield"}
+                {label: props.intl.formatMessage({id: "subject.aya-passive-shield"}), skill: "T", value: Constants.T.shield, type: "shield"}
             ]
         ]
     }

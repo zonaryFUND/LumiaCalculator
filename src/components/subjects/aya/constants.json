@@ -43,7 +43,7 @@
         },
         "fear": 1.25,
         "sp_cost": 150,
-        "cooldown": [80,60,40]
+        "cooldown": [80,65,50]
     },
     "T": {
         "duration": 1.5,
