@@ -10,7 +10,7 @@
             "defense": 45,
             "amp": 35
         },
-        "cooldown_reduction": 50,
+        "cooldown_reduction": 60,
         "sp_cost": [60,65,70,75,80],
         "cooldown": [8,7,6,5,4]
     },
@@ -20,8 +20,8 @@
             "additionalMaxHP": 10,
             "amp": 50
         },
-        "q_cooldown_reduction": 20,
-        "defense": 30,
+        "q_cooldown_reduction": 30,
+        "defense": 40,
         "enhanced_cooldown_reduction": 50,
         "sp_cost": [40,45,50,55,60],
         "cooldown": {
@@ -56,11 +56,11 @@
             "amp": 30
         },
         "sp_cost": 100,
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "chill": 20,
-        "slow": 20,
+        "slow": 25,
         "frozen": 120,
         "stun": 1.1,
         "damage": {
@@ -69,7 +69,7 @@
             "amp": 20
         },
         "cooldown": {
-            "constant": [10,8,6]
+            "constant": [8,6,4]
         }
     }
 }
