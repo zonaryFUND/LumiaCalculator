@@ -137,6 +137,10 @@ const skillDamage: React.FC<Props> = props => {
                 switch (key) {
                     case "targetMaxHP":
                     case "targetLostHP":
+                        return [
+                            <FormattedMessage id="app.value.target-lost-hp" values={{ratio: value.toString()}} />,
+                            <FormattedMessage id="app.label.target-lost-hp" />
+                        ]
                     case "lostHP":
                     case "targetHP":
                         return [
