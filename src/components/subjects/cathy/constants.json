@@ -34,8 +34,8 @@
             "base": [30,40,50,60,70],
             "amp": 25
         },
-        "bind": 0.45,
-        "stun": 1.2,
+        "bind": 0.7,
+        "stun": 0.9,
         "knockback_damage": {
             "base": [30,50,70,90,110],
             "amp": 45
@@ -56,7 +56,7 @@
         "max_damage_ratio": 2,
         "max_damage_target_hp": 30,
         "sp_cost": [120,135,150],
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "wound_duration": 4,
@@ -72,7 +72,7 @@
         "shield_duration": 2,
         "shield": {
             "base": [50,100,150],
-            "amp": 35
+            "amp": 45
         },
         "movement_speed": [3,8,13],
         "cooldown": {

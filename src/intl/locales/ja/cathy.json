@@ -1,0 +1,14 @@
+{
+    "subject.cathy.q-dualsword-attack": "Q効果時基本攻撃力",
+    "subject.cathy.q-additional-damage": "Q追加ダメージ",
+    "subject.cathy.w-inner": "W内周",
+    "subject.cathy.w-outer": "W外周",
+    "subject.cathy.e-stun-additional": "E気絶時追加ダメージ",
+    "subject.cathy.r-heal-per-sec": "R使用・味方蘇生時回復/秒",
+    "subject.cathy.r-heal-max": "R使用・味方蘇生時回復最大({value})",
+    "subject.cathy.r-min": "R最小ダメージ",
+    "subject.cathy.r-max": "R最大ダメージ",
+    "subject.cathy.passive-wound": "T外傷合計固定ダメージ",
+    "subject.cathy.passive-critical-wound": "T致命的外傷合計固定ダメージ",
+    "subject.cathy.passive-shield": "Tシールド"
+}
