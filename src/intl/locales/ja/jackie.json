@@ -1,0 +1,11 @@
+{
+    "subject.jackie.passive-additional": "T更新時追加ダメージ",
+    "subject.jackie.r-additional": "R中追加ダメージ",
+    "subject.jackie.w-min": "W回復最小値",
+    "subject.jackie.w-max": "W回復最大値",
+    "subject.jackie.rw-dualsword-min": "R中W回復最小値",
+    "subject.jackie.rw-dualsword-max": "R中W回復最大値",
+    "subject.jackie.r2-min": "R2最小値",
+    "subject.jackie.r2-max": "R2最大値",
+    "subject.jackie.passive-dot-sum": "T出血固定ダメージ合計"
+}

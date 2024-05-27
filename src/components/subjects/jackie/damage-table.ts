@@ -1,13 +1,13 @@
 import { WeaponTypeID } from "app-types/equipment/weapon";
-import { DamageTable, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
 import Constants from "./constants.json";
 
-function table(props: {weaponType?: WeaponTypeID}): DamageTable {
+const table: DamageTableGenerator = props => {
     return {
         basicAttack: [
             "standard",
-            {label: "T追加ダメージ", skill: "T", value: Constants.T.damage},
-            {label: "R中追加ダメージ", skill: "R", value: Constants.R.damage}
+            {label: props.intl.formatMessage({id: "subject.jackie.passive-additional"}), skill: "T", value: Constants.T.damage},
+            {label: props.intl.formatMessage({id: "subject.jackie.r-additional"}), skill: "R", value: Constants.R.damage}
         ],
         skill: [
             [
@@ -15,19 +15,19 @@ function table(props: {weaponType?: WeaponTypeID}): DamageTable {
                 {label: "Q2", skill: "Q", value: Constants.Q.second_damage}
             ],
             ([
-                {label: "W回復最小値", skill: "W", value: Constants.W.heal, type: "heal"},
-                {label: "W回復最大値", skill: "W", value: Constants.W.heal, multiplier: Constants.W.heal_max_multiplier * 100, type: "heal"}
+                {label: props.intl.formatMessage({id: "subject.jackie.w-min"}), skill: "W", value: Constants.W.heal, type: "heal"},
+                {label: props.intl.formatMessage({id: "subject.jackie.w-max"}), skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * 100}], type: "heal"}
             ] as SkillValueProps[]).concat(props.weaponType == "dual_swords" ? [
-                {label: "R中W回復最小値", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.R.dualsword_w_heal_multiplier * 100}]},
-                {label: "R中W回復最大値", skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100}], type: "heal"}
+                {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-min"}), skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.R.dualsword_w_heal_multiplier * 100}]},
+                {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-max"}), skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100}], type: "heal"}
             ] : [])
             ,
             [{label: "E", skill: "E", value: Constants.E.damage}],
             [
-                {label: "R2最小値", skill: "R", value: Constants.R.finish_damage},
-                {label: "R2最大値", skill: "R", value: Constants.R.finish_damage, multiplier: [{basic: Constants.R.finish_multiplier_max * 100}]}
+                {label: props.intl.formatMessage({id: "subject.jackie.r2-min"}), skill: "R", value: Constants.R.finish_damage},
+                {label: props.intl.formatMessage({id: "subject.jackie.r2-max"}), skill: "R", value: Constants.R.finish_damage, multiplier: [{basic: Constants.R.finish_multiplier_max * 100}]}
             ],
-            [{label: "T出血固定ダメージ", skill: "T", value: Constants.T.bleeding_damage, type: "true"}]
+            [{label: props.intl.formatMessage({id: "subject.jackie.passive-dot-sum"}), skill: "T", value: Constants.T.bleeding_damage, type: "true"}]
         ]   
     }   
     }

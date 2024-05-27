@@ -31,6 +31,10 @@
             "base": [50,90,130,170,210],
             "attack": 80
         },
+        "slow": {
+            "duration": 1,
+            "effect": 20
+        },
         "sp_cost": [60,70,80,90,100],
         "cooldown": 17
     },

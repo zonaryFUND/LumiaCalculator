@@ -6,7 +6,8 @@ import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-        ジャッキーが指定した位置にジャンプし、周りの敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えます。
+        ジャッキーが指定した位置にジャンプし、周りの敵に<Value skill="E" ratio={Constants.E.damage} />
+        のスキルダメージを与え、{Constants.E.slow.duration}秒間敵の移動速度を{Constants.E.slow.effect}%減少させます。
     </>
 );
 
