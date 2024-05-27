@@ -1,4 +1,4 @@
-import { DamageTable, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
 import Constants from "./constants.json";
 
 const rChaseMax = Constants.R.total_count - 1;
@@ -7,22 +7,22 @@ const maxR = {
     amp: Constants.R.first_damage.amp + Constants.R.second_damage.amp * rChaseMax
 }
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: ["standard"],
     skill: [
         [
             {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: "強化Q", skill: "Q", value: Constants.Q.enhanced_damage}
+            {label: props.intl.formatMessage({id: "subject.zahir.q-enhanced"}), skill: "Q", value: Constants.Q.enhanced_damage}
         ],
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [
-            {label: "R初撃", skill: "R", value: Constants.R.first_damage},
-            {label: "R2発目以降", skill: "R", value: Constants.R.second_damage},
-            {label: "R全ヒット(初撃+追撃4)", skill: "R", value: maxR}
+            {label: props.intl.formatMessage({id: "subject.zahir.r-first"}), skill: "R", value: Constants.R.first_damage},
+            {label: props.intl.formatMessage({id: "subject.zahir.r-second"}), skill: "R", value: Constants.R.second_damage},
+            {label: props.intl.formatMessage({id: "subject.zahir.r-max-hit"}, {value: 4}), skill: "R", value: maxR}
         ],
         [{label: "T", skill: "T", value: Constants.T.damage}]
     ]
-}
+})
 
 export default table;

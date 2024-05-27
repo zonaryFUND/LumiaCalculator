@@ -46,7 +46,7 @@
         },
         "total_count": 5,
         "sp_cost": [120,150,180],
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "duration": 3,
