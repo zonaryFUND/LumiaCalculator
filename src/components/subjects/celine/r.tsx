@@ -1,9 +1,9 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
 import Constants from "./constants.json";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const maxCooldownIncrease = Constants.R.cooldown_increase * Constants.R.max_level;
 
@@ -15,7 +15,7 @@ const r: React.FC<SubjectSkillProps> = props => (
         {Constants.R.cooldown_increase}秒増加します。(最大{maxCooldownIncrease}秒)<br />
         <br />
         持続時間が終わったり、<span className={style.emphasis}>起爆</span>スキルで爆弾を爆発させると
-        <Damage skill="R" constants={Constants.R.damage} {...props} /> <span className={style.emphasis}>x (爆弾のレベル)</span>のスキルダメージを与え、
+        <Value skill="R" ratio={Constants.R.damage} /> <span className={style.emphasis}>x (爆弾のレベル)</span>のスキルダメージを与え、
         {Constants.R.max_level}レベルの爆弾の場合、的中した敵の移動速度を{Constants.R.slow.duration}
         秒間{Constants.R.slow.effect}％減少させます。減少させた移動速度は持続時間の間徐々に回復します。
     </>

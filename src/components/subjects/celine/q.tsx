@@ -1,14 +1,14 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
         プラズマ爆弾を投げて指定した位置に設置します。<span className={style.emphasis}>起爆</span>
-        スキルで爆弾を爆発させると、それぞれの範囲に<Damage skill="Q" constants={Constants.Q.damage} {...props} />
+        スキルで爆弾を爆発させると、それぞれの範囲に<Value skill="Q" ratio={Constants.Q.damage} />
         のスキルダメージを与えます。対象が1つ以上の爆弾にダメージを受けた場合、2つ目からのダメージ量は{Constants.Q.multiple_bomb_damage_multiplier}
         ％のみ適用されます。<br />
         <br />

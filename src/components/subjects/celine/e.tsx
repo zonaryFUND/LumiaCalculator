@@ -1,12 +1,12 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-    衝撃波爆弾を指定した位置に投げ、範囲内の敵と自分を突き飛ばして<Damage skill="E" constants={Constants.E.damage} {...props} />
+    衝撃波爆弾を指定した位置に投げ、範囲内の敵と自分を突き飛ばして<Value skill="E" ratio={Constants.E.damage} />
     のスキルダメージを与えます。
     </>
 )
