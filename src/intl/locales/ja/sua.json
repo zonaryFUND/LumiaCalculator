@@ -1,0 +1,16 @@
+{
+    "subject.sua.passive-additional": "T追加ダメージ(対象)",
+    "subject.sua.passive-additional-aoe": "T追加ダメージ(周囲)",
+    "subject.sua.q-bookmark": "Q(栞あり)",
+    "subject.sua.w-shield": "Wシールド",
+    "subject.sua.w-damage": "Wダメージ",
+    "subject.sua.e-bookmark": "E(栞あり)",
+    "subject.sua.e-heal-min": "E回復最小値",
+    "subject.sua.e-heal-max": "E回復最大値",
+    "subject.sua.rq-bookmark": "RQ(栞あり)",
+    "subject.sua.rw-shield": "RWシールド",
+    "subject.sua.rw-damage": "RWダメージ",
+    "subject.sua.re-bookmark": "RE(栞あり)",
+    "subject.sua.re-heal-min": "RE回復最小値",
+    "subject.sua.re-heal-max": "RE回復最大値"
+}
