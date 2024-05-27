@@ -1,4 +1,4 @@
-import { DamageTable, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
 import Constants from "./constants.json";
 
 const bikeEMax = {
@@ -6,28 +6,28 @@ const bikeEMax = {
     amp: Constants.BikeE.damage.amp
 }
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: "Rバイク降車後追加ダメージ", skill: "R", value: Constants.BikeR.damage}
+        {label: props.intl.formatMessage({id: "subject.silvia.r-additional"}), skill: "R", value: Constants.BikeR.damage}
     ],
     skill: [
         [
-            {label: "人間Qダメージ", skill: "Q", value: Constants.HumanQ.damage},
-            {label: "人間Q回復", skill: "Q", value: Constants.HumanQ.heal, type: "heal"},
+            {label: props.intl.formatMessage({id: "subject.silvia.humanq-damage"}), skill: "Q", value: Constants.HumanQ.damage},
+            {label: props.intl.formatMessage({id: "subject.silvia.humanq-heal"}), skill: "Q", value: Constants.HumanQ.heal, type: "heal"},
         ],
-        [{label: "人間W", skill: "W", value: Constants.HumanW.damage}],
+        [{label: props.intl.formatMessage({id: "subject.silvia.humanw"}), skill: "W", value: Constants.HumanW.damage}],
         [
-            {label: "人間E最小値", skill: "E", value: Constants.HumanE.min_damage},
-            {label: "人間E最大値", skill: "E", value: Constants.HumanE.max_damage},
+            {label: props.intl.formatMessage({id: "subject.silvia.humane-min"}), skill: "E", value: Constants.HumanE.min_damage},
+            {label: props.intl.formatMessage({id: "subject.silvia.humane-max"}), skill: "E", value: Constants.HumanE.max_damage},
         ],
-        [{label: "バイクQ", skill: "Q", value: Constants.BikeQ.damage}],
-        [{label: "バイクW", skill: "W", value: Constants.BikeW.damage}],
+        [{label: props.intl.formatMessage({id: "subject.silvia.bikeq"}), skill: "Q", value: Constants.BikeQ.damage}],
+        [{label: props.intl.formatMessage({id: "subject.silvia.bikew"}), skill: "W", value: Constants.BikeW.damage}],
         [
-            {label: "バイクE最小値", skill: "E", value: Constants.BikeE.damage},
-            {label: "バイクE最大値", skill: "E", value: bikeEMax}
+            {label: props.intl.formatMessage({id: "subject.silvia.bikee-min"}), skill: "E", value: Constants.BikeE.damage},
+            {label: props.intl.formatMessage({id: "subject.silvia.bikee-max"}), skill: "E", value: bikeEMax}
         ]
     ]   
-}
+})
 
 export default table;
