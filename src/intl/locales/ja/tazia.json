@@ -1,0 +1,13 @@
+{
+    "subject.tazia.passive-additional": "ディフェットーゾ追加ダメージ",
+    "subject.tazia.q-stiletto": "Qスティレット",
+    "subject.tazia.q-spada-hit": "Qスパーダ衝突",
+    "subject.tazia.q-spada-blast": "Qスパーダ爆発",
+    "subject.tazia.e-shield": "Eシールド",
+    "subject.tazia.e-shield-max": "Eガラス片最大破壊時({value})シールド",
+    "subject.tazia.e-damage": "Eダメージ",
+    "subject.tazia.e-damage-max": "Eガラス片最大破壊時({value})ダメージ",
+    "subject.tazia.r-appear": "R出現",
+    "subject.tazia.r-blast": "R爆発",
+    "subject.tazia.r-blast-max": "R爆発ガラス片最大破壊時({value})"
+}
