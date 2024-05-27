@@ -114,8 +114,9 @@ const skillDamage: React.FC<Props> = props => {
             }, [<>{staticValue.toString()}</>, 100]);
             const value = staticValue.percent(multiplier);
             return [
-                value,
-                <tr><td colSpan={4}>{equation} = {value.toString()}</td></tr>
+                dynamicValueOnly ? null : value,
+                dynamicValueOnly ? null :
+                    <tr><td colSpan={4}>{equation} = {value.toString()}</td></tr>
             ]
         }
 
@@ -134,31 +135,61 @@ const skillDamage: React.FC<Props> = props => {
         if (!isValueRatio(props.value)) return [null, null];
 
         return Object.entries(dynamic).reduce((prev, [key, value], index) => {
+            const bracket = index > 0 || !dynamicValueOnly;
+            const ratio = props.value[key as keyof ValueRatio];
+            const [dynamicEquation, multipliedValue] = (() => {
+                const isCalculated = typeof ratio === "object" && !Array.isArray(ratio);
+                if (!isCalculated && !props.multiplier) return [null, value];
+                if (props.multiplier) {
+                    const [eq, mul] = props.multiplier.reduce((prev, multiplier: any) => {
+                        if (multiplier.basic) {
+                            const value = Array.isArray(multiplier.basic) ? multiplier.basic[level] : multiplier.basic;
+                            return [
+                                <>{prev[0]} x {value}%</>,
+                                prev[1] * value / 100
+                            ];
+                        } else {
+                            const value = Array.isArray(multiplier.value) ? multiplier.value[level] : multiplier.value;
+                            return [
+                                <>{prev[0]} x <span className={table.small}>{multiplier.name}</span>{value}%</>,
+                                prev[1] * value / 100
+                            ]
+                        }
+                    }, [<>{value.toString()}</>, 100]);
+                    const multipliedValue = value.percent(mul);
+                    return [
+                        <td>{eq} = {multipliedValue.toString()}</td>,
+                        multipliedValue
+                    ]
+                } else {
+                    return [
+                        <td>{equation(ratio as ValueRatio, props.status, props.config.level, level, props.config.stack)}{value.toString()}</td>,
+                        value
+                    ];
+                }
+            })();
             const [content, label] = (() => {
                 switch (key) {
                     case "targetHP":
                     case "targetLostHP":
                         return [
-                            <FormattedMessage id="app.value.target-lost-hp" values={{ratio: value.toString()}} />,
+                            <FormattedMessage id="app.value.target-lost-hp" values={{ratio: multipliedValue.toString()}} />,
                             <FormattedMessage id="app.label.target-lost-hp" />
                         ]
                     case "lostHP":
                         return [
-                            <FormattedMessage id="app.value.lost-hp" values={{ratio: value.toString()}} />,
+                            <FormattedMessage id="app.value.lost-hp" values={{ratio: multipliedValue.toString()}} />,
                             <FormattedMessage id="app.label.lost-hp" />
                         ]
                     case "targetMaxHP":
                         return [
-                            <FormattedMessage id="app.value.target-maxhp" values={{ratio: value.toString()}} />,
+                            <FormattedMessage id="app.value.target-maxhp" values={{ratio: multipliedValue.toString()}} />,
                             <FormattedMessage id="app.label.target-maxhp" />
                         ]
                     default:
                         return [null, null]
                 }
             })();
-            const bracket = index > 0 || !dynamicValueOnly;
-            const ratio = props.value[key as keyof ValueRatio];
-            const isCalculated = typeof ratio === "object" && !Array.isArray(ratio);
 
             return [
                 (
@@ -169,10 +200,11 @@ const skillDamage: React.FC<Props> = props => {
                         {bracket ? <>)</> : null}
                     </>
                 ),
-                isCalculated ? prev[1].concat(
+                dynamicEquation ? 
+                prev[1].concat(
                     <tr>
                         <td>{label}</td>
-                        <td>{equation(ratio, props.status, props.config.level, level, props.config.stack)}{value.toString()}</td>
+                        {dynamicEquation}
                     </tr>
                 ) : prev[1]
             ];

@@ -1,0 +1,13 @@
+{
+    "subject.kenneth.e-additional": "E後追加ダメージ",
+    "subject.kenneth.q-max-stack": "Q(T最大スタック時)",
+    "subject.kenneth.w-damage-reduction": "W被ダメージ減少量",
+    "subject.kenneth.w-shield": "Wシールド",
+    "subject.kenneth.r-swing-up": "R振り上げ",
+    "subject.kenneth.r-midair-1hit": "R空中2連撃1ヒット",
+    "subject.kenneth.r-midair-2hit": "R空中2連撃2ヒット",
+    "subject.kenneth.r-swing-down": "R振り下ろし",
+    "subject.kenneth.passive-additional": "T追加ダメージ",
+    "subject.kenneth.et-conversion": "E効果中T固定ダメージ転換量",
+    "subject.kenneth.t-heal": "T追加ダメージ比回復"
+}

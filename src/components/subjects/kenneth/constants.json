@@ -31,8 +31,8 @@
         "attack_speed": [30,35,40,45,50],
         "damage_conversion": 20,
         "damage": {
-            "base": [30,35,40,45,50],
-            "attack": 5
+            "base": [10,25,40,55,70],
+            "attack": 10
         },
         "cooldown_reduction": [30,40,50,60,70],
         "sp_cost": 35,
@@ -55,7 +55,7 @@
         },
         "airborne": 0.5,
         "sp_cost": [100,150,200],
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "duration": 6,
