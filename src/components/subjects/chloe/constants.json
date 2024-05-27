@@ -68,7 +68,7 @@
         "attacked_damage": 70,
         "linked_damage": 60,
         "sp_cost": [80,70,60],
-        "cooldown": [75,65,55]
+        "cooldown": [80,70,60]
     },
     "T": {
         "damage": {
