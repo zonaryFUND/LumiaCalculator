@@ -1,0 +1,12 @@
+{
+    "subject.felix.passive-second-aa": "T基本攻撃2発目",
+    "subject.felix.q-enhanced": "強化Q",
+    "subject.felix.q-enhanced-true": "強化Qスタック1あたり追加固定ダメージ",
+    "subject.felix.q-enhanced-true-max": "強化Q追加固定ダメージ最大({value}スタック)",
+    "subject.felix.w-enhanced": "強化W",
+    "subject.felix.e-enhanced": "強化E",
+    "subject.felix.r-min": "R最小",
+    "subject.felix.r-max": "R最大",
+    "subject.felix.passive-shield-min": "Tシールド最小(スタックなし)",
+    "subject.felix.passive-shield-max": "Tシールド最大({value}スタック)"
+}
