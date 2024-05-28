@@ -50,7 +50,7 @@
         "cast": 1.35,
         "statis": 2.5,
         "sp_cost": [120,110,100],
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "damage": {

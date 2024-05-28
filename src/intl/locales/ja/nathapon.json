@@ -1,0 +1,8 @@
+{
+    "subject.nathapon.passive-additional": "T追加ダメージ",
+    "subject.nathapon.e-pull": "E引き戻し時",
+    "subject.nathapon.w-1tick": "W1ティック",
+    "subject.nathapon.w-finish": "W最終ティック追加ダメージ",
+    "subject.nathapon.e-hit": "Eヒット",
+    "subject.nathapon.max-stack-suffix": "(T{value}スタック)"
+}

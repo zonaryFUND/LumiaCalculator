@@ -1,8 +1,7 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => {
     return (

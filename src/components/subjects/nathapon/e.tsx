@@ -1,16 +1,16 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ナタポンがフレームを発射して、的中した敵に<Damage skill="E" constants={Constants.E.first_damage} {...props} />
+            ナタポンがフレームを発射して、的中した敵に<Value skill="E" ratio={Constants.E.first_damage} />
             のスキルダメージを与えて移動速度を{Constants.E.slow.duration}秒間{Constants.E.slow.effect}
-            ％減少させます。フレームを当てるとその位置に刻印を残し、{Constants.E.pull.from}秒後から
-            {Constants.E.pull.until}秒間ナタポンは基本攻撃でフレームを当てた敵に<Damage skill="E" constants={Constants.E.second_damage} {...props} />
+            %減少させます。フレームを当てるとその位置に刻印を残し、{Constants.E.pull.from}秒後から
+            {Constants.E.pull.until}秒間ナタポンは基本攻撃でフレームを当てた敵に<Value skill="E" ratio={Constants.E.second_damage} />
             のスキルダメージを与え、刻印を残した位置に戻します。この時、フレームを当てた敵に限って攻撃射程距離が
             {Constants.E.pull_basic_attack_range}mまで増加し、スローシャッターの追加ダメージが適用されます。
         </>
