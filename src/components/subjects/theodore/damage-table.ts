@@ -1,22 +1,22 @@
-import { DamageTable, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
 import Constants from "./constants.json";
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: "Wスクリーン通過基本攻撃追加ダメージ", skill: "W", value: Constants.W.damage}
+        {label: props.intl.formatMessage({id: "subject.theodore.w-additional"}), skill: "W", value: Constants.W.damage}
     ],
     skill: [
         [
-            {label: "Qダメージ", skill: "Q", value: Constants.Q.damage},
-            {label: "Q回復", skill: "Q", value: Constants.Q.heal, type: "heal"},
-            {label: "Qスクリーンダメージ", skill: "Q", value: Constants.Q.screen_damage},
-            {label: "Qスクリーン回復", skill: "Q", value: Constants.Q.screen_heal, type: "heal"}
+            {label: props.intl.formatMessage({id: "subject.theodore.q-damage"}), skill: "Q", value: Constants.Q.damage},
+            {label: props.intl.formatMessage({id: "subject.theodore.q-heal"}), skill: "Q", value: Constants.Q.heal, type: "heal"},
+            {label: props.intl.formatMessage({id: "subject.theodore.q-screen-damage"}), skill: "Q", value: Constants.Q.screen_damage},
+            {label: props.intl.formatMessage({id: "subject.theodore.q-screen-heal"}), skill: "Q", value: Constants.Q.screen_heal, type: "heal"}
         ],
-        [{label: "E対象追加ダメージ", skill: "E", value: Constants.E.damage}],
+        [{label: props.intl.formatMessage({id: "subject.theodore.e-additional"}), skill: "E", value: Constants.E.damage}],
         [{label: "R", skill: "R", value: Constants.R.damage}],
-        [{label: "Tシールド", skill: "T", value: Constants.T.shield, type: "shield"}]
+        [{label: props.intl.formatMessage({id: "subject.theodore.passive-shield"}), skill: "T", value: Constants.T.shield, type: "shield"}]
     ]   
-}
+})
 
 export default table;

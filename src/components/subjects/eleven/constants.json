@@ -63,7 +63,7 @@
             "attack": 2,
             "additionalMaxHP": 1
         },
-        "cooldown": [80, 65, 50],
+        "cooldown": [80,70,60],
         "sp_cost": 70
     },
     "T": {
