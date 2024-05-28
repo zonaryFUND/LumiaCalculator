@@ -1,10 +1,11 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
-import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
+import { ValuesProps, ValuesPropsGenerator } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
-import skillDamage from "../skill-damage";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { calculateValue } from "app-types/value-ratio/calculation";
+import { useValueContext } from "components/tooltip/value-context";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
@@ -12,7 +13,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             ダイリンは酒飲みを使用して酔いを獲得できます。酔い具合によって猛虎清拳が発動します。<br />
             <br />
             <span className={style.emphasis}>猛虎清拳</span>：攻撃速度が{Constants.T.attack_speed}
-            ％増加し、基本攻撃が敵を2回連続で攻撃します。2回目の攻撃は<Damage skill="T" constants={Constants.T.damage} {...props} />
+            %増加し、基本攻撃が敵を2回連続で攻撃します。2回目の攻撃は<Value skill="T" ratio={Constants.T.damage} />
             の基本攻撃ダメージを与えます。<br />
             <br />
             <span className={style.emphasis}>酔いが{Constants.T.threshold}以上の場合</span>
@@ -27,20 +28,22 @@ const t: React.FC<SubjectSkillProps> = props => {
 export default t;
 
 // NOTE: Mysteriously, the second attack damage is displayed as the calculated damage result, not the attack power ratio.
-export const values: (props: SubjectSkillProps) => ValuesProps = props => ({
-    additionalInfo: <>
-        <span className={style.emphasis}>李花子</span>：酒が入ったアイテムを使うと{Constants.T.alcohol_drink.duration}秒間攻撃力が
-        {Constants.T.alcohol_drink.attack}増加します。<br />
-        <span className={style.emphasis}>酒</span>：<span className={style.common}>薬酒</span>、
-        <span className={style.common}>高粱酒</span>、<span className={style.common}>百日酔</span>、
-        <span className={style.common}>ウイスキー</span>を材料にするすべての飲み物
-    </>,
-    parameters: [
-        /*
-        {title: "最小ダメージ量", values: [0,1,2].map(level => skillDamage(props.status, {
-            ...props.config,
-            skillLevels: {...props.config.skillLevels, T: level}
-        }, "T", Constants.T.damage).toString())}
-        */
-    ]
-})
+export const values: ValuesPropsGenerator = props => {
+    return {
+        additionalInfo: <>
+            <span className={style.emphasis}>李花子</span>：酒が入ったアイテムを使うと{Constants.T.alcohol_drink.duration}秒間攻撃力が
+            {Constants.T.alcohol_drink.attack}増加します。<br />
+            <span className={style.emphasis}>酒</span>：<span className={style.common}>薬酒</span>、
+            <span className={style.common}>高粱酒</span>、<span className={style.common}>百日酔</span>、
+            <span className={style.common}>ウイスキー</span>を材料にするすべての飲み物
+        </>,
+        parameters: [
+            {title: "最小ダメージ量", values: [0,1,2].map(level => calculateValue(
+                Constants.T.damage, 
+                props.status,
+                {...props.config, skillLevels: {...props.config.skillLevels, T: level}},
+                {skill: "T", level}
+            ).static.floor().toString())}
+        ]
+    }
+}

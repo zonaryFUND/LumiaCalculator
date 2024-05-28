@@ -47,7 +47,7 @@
             "gauge": 50
         },
         "bac_ratio": 50,
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "attack_speed": 30,

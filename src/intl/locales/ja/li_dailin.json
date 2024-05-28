@@ -1,0 +1,11 @@
+{
+    "subject.lidailin.w-aa-max": "W直後基本攻撃(酔い最大)",
+    "subject.lidailin.passive-chase": "T基本攻撃2発目",
+    "subject.lidailin.q-max": "Q最大ヒット({value})",
+    "subject.lidailin.q-enhanced": "強化Q",
+    "subject.lidailin.q-enhanced-max": "強化Q最大ヒット({value})",
+    "subject.lidailin.r-1hit-min": "R1ヒット最小",
+    "subject.lidailin.r-min-max-hit": "R最小全ヒット({value})",
+    "subject.lidailin.r-1hit-max": "R1ヒット最大",
+    "subject.lidailin.r-max-max-hit": "R最大全ヒット({value})"
+}

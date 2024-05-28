@@ -42,7 +42,7 @@ const value: React.FC<Props> = props => {
                 {
                     dynamic ?
                     Object.entries(dynamic).map(([key, value], index) => (
-                        <ValueExpression key={key} id={key as keyof ValueRatio} level={skillLevel} ratio={value.toNumber()} brackets={index != 0 || !dynamicValueOnly} />
+                        <ValueExpression key={key} id={key as keyof ValueRatio} level={skillLevel} ratio={value.toNumber()} brackets={index != 0 || !dynamicValueOnly} override={props.overrideExpression?.[key as keyof ValueRatio]} />
                     ))
                     : null
                 }

@@ -62,7 +62,7 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
         })();
 
         const dynamicValue = (() => {
-            const dynamicValueKeys = ["targetMaxHP", "lostHP", "targetLostHP"];
+            const dynamicValueKeys = ["targetMaxHP", "lostHP", "targetLostHP", "gauge"];
             if (dynamicValueKeys.includes(key)) {
                 return {...prev.dynamic, [key]: selectedValue};
             }

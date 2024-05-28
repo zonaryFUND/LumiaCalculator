@@ -19,6 +19,7 @@ const RATIO_KEYS = [
     "additionalAttackSpeed",
     "amp",
     "stack",
+    "gauge",
     "summonedAttack",
     "targetMaxHP",
     "targetHP",
