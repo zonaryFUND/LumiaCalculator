@@ -64,7 +64,7 @@
         },
         "airborne": 1.1,
         "sp_cost": [120,100,80],
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "hp_conversion": 20,
