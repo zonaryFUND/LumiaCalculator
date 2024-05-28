@@ -55,14 +55,14 @@
             "amp": 225
         },
         "defense_down": {
-            "duration": 6,
-            "effect": [16,23,30]
+            "duration": 5,
+            "effect": [15,20,25]
         },
         "stun": 0.5,
         "max_later_delay": 0.35,
         "cooldown_payback": 50,
         "sp_cost": 150,
-        "cooldown": [60,50,40]
+        "cooldown": [60,55,50]
     },
     "T": {
         "stack_threshold": [10,9,8],

@@ -1,19 +1,19 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const w: React.FC<SubjectSkillProps> = props => {
+    const { status, showEquation } = useValueContext();
     const defense = (() => {
-        /*
-        const base = Constants.W.defense.base[props.config.skillLevels.W];
-        if (props.showEquation) {
+        const base = Constants.W.defense.base[props.skillLevel];
+        if (showEquation) {
             return <><span className={style.emphasis}>{base}</span><span className={style.defense}>(+防御力{Constants.W.defense.defense}あたり1)</span></>
         } else {
-            return <span className={style.emphasis}>{props.status.defense.dividedBy(Constants.W.defense.defense).floor().add(base).toString()}</span>
+            return <span className={style.emphasis}>{status.defense.calculatedValue.dividedBy(Constants.W.defense.defense).floor().add(base).toString()}</span>
         }
-        */
     })();
 
     return (

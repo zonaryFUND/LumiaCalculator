@@ -1,15 +1,15 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ヒョヌが敵を攻撃するたびにドッグファイトスタックを1獲得し、{Constants.T.stack_threshold[props.config.skillLevels.T]}
-            スタックになるとドッグファイトが活性化されます。次の攻撃は対象に<Damage skill="T" constants={Constants.T.damage} {...props} />
-            の追加スキルダメージを与え、ヒョヌは<Damage skill="T" constants={Constants.T.heal} {...props} />の体力を回復して虚勢のクールダウンが{Constants.T.w_cooldown_reduction}秒減少します。
+            ヒョヌが敵を攻撃するたびにドッグファイトスタックを1獲得し、{Constants.T.stack_threshold[props.skillLevel]}
+            スタックになるとドッグファイトが活性化されます。次の攻撃は対象に<Value skill="T" ratio={Constants.T.damage} />
+            の追加スキルダメージを与え、ヒョヌは<Value skill="T" ratio={Constants.T.heal} />の体力を回復して虚勢のクールダウンが{Constants.T.w_cooldown_reduction}秒減少します。
         </>
     );
 }
