@@ -1,0 +1,11 @@
+{
+    "subject.barbara.sentry-aa": "セントリーガン基本攻撃",
+    "subject.barbara.q-place": "Qセントリーガン設置",
+    "subject.barbara.w-laser": "Wレーザー",
+    "subject.barbara.w-sentry-railgun": "Wセントリーガンレールガン",
+    "subject.barbara.e-dot": "E持続",
+    "subject.barbara.e-dot-max-hit": "E持続全ヒット({value})",
+    "subject.barbara.e-blast": "E爆発",
+    "subject.barbara.rq-detonate": "RQセントリーガン自爆",
+    "subject.barbara.rq-warp": "RQ瞬間移動"
+}

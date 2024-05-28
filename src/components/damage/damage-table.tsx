@@ -37,11 +37,6 @@ const damageTable: React.FC<Props> = props => {
         }
     }, [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
 
-    const summonedName = React.useMemo(() => {
-        if (SummonedStatus[props.config.subject] == undefined) return undefined;
-        return SummonedStatus[props.config.subject].nameKey;
-    }, [props.config.subject]);
-
     const weaponSkill = React.useMemo(() => {
         if (props.weaponType == undefined) return null;
         return WeaponSkillDamageTable[props.weaponType];
@@ -120,7 +115,7 @@ const damageTable: React.FC<Props> = props => {
                                             return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multipliers={sanitizedMultipliers} />;
                                         }
                                         
-                                        return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} summonedName={summonedName} />
+                                        return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
                                     })
                                 }
                                 </React.Fragment>
@@ -131,7 +126,7 @@ const damageTable: React.FC<Props> = props => {
                         <tr className={table.separator}><td>武器スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {
                             weaponSkill?.map(def => (
-                                <SkillDamage key={def.label} status={props.status} config={props.config} {...def} summonedName={summonedName} />
+                                <SkillDamage key={def.label} status={props.status} config={props.config} {...def} />
                             ))
                         }
                     </tbody>

@@ -9,13 +9,13 @@ import Decimal from "decimal.js";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Source, ValueRatio, isValueRatio } from "app-types/value-ratio";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { calculateValue } from "app-types/value-ratio/calculation";
+import { SummonedStatus } from "components/subjects/summoned-status";
 
 type Props = SkillValueProps & {
     config: SubjectConfig
     status: Status
-    summonedName?: string
 }
 
 function levelValue(from: number | number[], level: number): number {
@@ -62,7 +62,7 @@ function equation(value: ValueRatio, status: Status, level: number, skillLevel: 
                 return p.concat(<> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}％ + 1)</>);
             case "criticalChance":
                 return p.concat(<> x (<span className={table.small}>致命打確率</span>{status.criticalChance.toString()}％ x {levelValue(value, skillLevel)})</>)
-            case "summoned_attack":
+            case "summonedAttack":
                 return p.concat(<><span className={table.small}>{summonedName}攻撃力</span>{status.summonedStatus?.attackPower.toString()} x {levelValue(value, skillLevel)}％</>);
             case "stack":
                 return p.concat(<><span className={table.small}>スタック</span>{stack} x {levelValue(value, skillLevel)}</>);
@@ -78,6 +78,12 @@ function equation(value: ValueRatio, status: Status, level: number, skillLevel: 
 
 const skillDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
+    const intl = useIntl();
+    const summonedName = React.useMemo(() => {
+        const module = SummonedStatus[props.config.subject];
+        if (module == undefined) return undefined;
+        return intl.formatMessage({id: module.nameKey});
+    }, [props.config.subject]);
 
     if (!isValueRatio(props.value)) return null;
 
@@ -115,12 +121,14 @@ const skillDamage: React.FC<Props> = props => {
             const value = staticValue.percent(multiplier);
             return [
                 dynamicValueOnly ? null : value,
-                dynamicValueOnly ? null :
-                    <tr><td colSpan={4}>{equation} = {value.toString()}</td></tr>
+                dynamic ?
+                    dynamicValueOnly ? null :
+                    <tr><td><FormattedMessage id="app.static-value" /></td><td>{equation} = {value.toString()}</td></tr>  
+                : <tr><td colSpan={2}>{equation} = {value.toString()}</td></tr>
             ]
         }
 
-        const baseEquation = <>{equation(props.value, props.status, props.config.level, level, props.config.stack, props.summonedName)}{staticValue.toString()}{percent}</>;
+        const baseEquation = <>{equation(props.value, props.status, props.config.level, level, props.config.stack, summonedName)}{staticValue.toString()}{percent}</>;
         return [
             dynamicValueOnly ? null : staticValue,
             dynamic ? 
@@ -163,7 +171,7 @@ const skillDamage: React.FC<Props> = props => {
                     ]
                 } else {
                     return [
-                        <td>{equation(ratio as ValueRatio, props.status, props.config.level, level, props.config.stack)}{value.toString()}</td>,
+                        <td>{equation(ratio as ValueRatio, props.status, props.config.level, level, props.config.stack, summonedName)}{value.toString()}</td>,
                         value
                     ];
                 }

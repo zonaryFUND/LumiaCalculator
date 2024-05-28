@@ -1,16 +1,22 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+
+const dict = {
+    summonedAttack: {
+        format: "セントリーガンの攻撃力の{ratio}%"
+    }
+}
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
-        バーバラが指定した位置に<Damage skill="Q" constants={Constants.Q.hp} {...props} />の体力を持つセントリーガンを設置し、範囲内の敵に
-        <Damage skill="Q" constants={Constants.Q.damage} {...props} />のスキルダメージを与えます。セントリーガンは{Constants.Q.duration}秒間維持され、周りの敵に銃弾を発射して
-        <Damage skill="Q" constants={Constants.Q.sentry_damage} {...props} summonedName="セントリーガン" />のダメージを与えます。<br />
+        バーバラが指定した位置に<Value skill="Q" ratio={Constants.Q.hp} />の体力を持つセントリーガンを設置し、範囲内の敵に
+        <Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えます。セントリーガンは{Constants.Q.duration}秒間維持され、周りの敵に銃弾を発射して
+        <Value skill="Q" ratio={Constants.Q.sentry_damage} overrideExpression={dict} />のダメージを与えます。<br />
         セントリーガンを設置する時、先に設置したセントリーガンは破壊され、敵がセントリーガンを壊した場合にはクールダウンが{Constants.Q.sentry_broken_cooldown_penalty}
-        ％増加します。バーバラの位置がセントリーガンから遠くなったり回収したりするとクールダウンが{Constants.Q.sentry_withdraw_cooldown_reduction}％減少します。
+        %増加します。バーバラの位置がセントリーガンから遠くなったり回収したりするとクールダウンが{Constants.Q.sentry_withdraw_cooldown_reduction}%減少します。
     </>
 )
 

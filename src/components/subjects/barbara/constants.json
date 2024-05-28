@@ -89,7 +89,7 @@
             "duration": 6
         },
         "sp_cost": 100,
-        "cooldown": [70,55,40]
+        "cooldown": [70,60,50]
     },
     "T": {
         "attack_amp": 3,

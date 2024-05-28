@@ -12,9 +12,10 @@ import style from "./damage-table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import value from "components/tooltip/value";
 import { isValueRatio } from "app-types/value-ratio";
+import { SummonedStatus } from "components/subjects/summoned-status";
 
 
 type Props = {
@@ -26,6 +27,13 @@ type Props = {
 }
 
 const basicAttack: React.FC<Props> = props => {
+    const intl = useIntl();
+    const summonedName = React.useMemo(() => {
+        const module = SummonedStatus[props.config.subject];
+        if (module == undefined) return undefined;
+        return intl.formatMessage({id: module.nameKey});
+    }, [props.config.subject]);
+
     return (
         <tbody>
             {
@@ -89,7 +97,7 @@ const basicAttack: React.FC<Props> = props => {
                                 value: Array.isArray(anyM.value) ? anyM.value[level] : anyM.value
                             }
                         })
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summoned={def.type == "summoned"} multipliers={sanitizedMultipliers} disableCritical={def.type == "basic-nocrit"} />
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summonedName={def.type == "summoned" ? summonedName : undefined} multipliers={sanitizedMultipliers} disableCritical={def.type == "basic-nocrit"} />
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }
