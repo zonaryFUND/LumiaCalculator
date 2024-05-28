@@ -1,19 +1,19 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
-        バニスは基本攻撃をする時、{Constants.T.bullet[props.config.skillLevels.T]}発の弾丸を発射し、基本攻撃の射程距離は変動効果の影響されずに固定されます。<br />
+        バニスは基本攻撃をする時、{Constants.T.bullet[props.skillLevel]}発の弾丸を発射し、基本攻撃の射程距離は変動効果の影響されずに固定されます。<br />
         弾丸は敵に的中した数に比例して
-        <Damage skill="T" constants={Constants.T.min_damage} {...props} /> ~ <Damage skill="T" constants={Constants.T.max_damage} {...props} />
+        <Value skill="T" ratio={Constants.T.min_damage} /> ~ <Value skill="T" ratio={Constants.T.max_damage} />
         の基本攻撃ダメージを与えます。バニスの致命打攻撃は致命打効果の代わりに弾丸を追加で発射し、的中した敵の数に比例して攻撃力の
-        <Damage skill="T" constants={Constants.T.min_second_damage} {...props} /> ~ <Damage skill="T" constants={Constants.T.max_second_damage} {...props} />
+        <Value skill="T" ratio={Constants.T.min_second_damage} /> ~ <Value skill="T" ratio={Constants.T.max_second_damage} />
         の基本攻撃ダメージを与えます。<br />
         スキルのレベルに応じてリロードの時間が短縮されます。<br />
-        現在のリロード時間：{Constants.T.reload[props.config.skillLevels.T]}秒
+        現在のリロード時間：{Constants.T.reload[props.skillLevel]}秒
     </>
 )
 

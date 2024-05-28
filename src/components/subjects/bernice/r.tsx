@@ -1,14 +1,14 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
-        バニスが指定した方向へ投げ縄弾を発射して的中した対象に<Damage skill="R" constants={Constants.R.first_damage} {...props} />
+        バニスが指定した方向へ投げ縄弾を発射して的中した対象に<Value skill="R" ratio={Constants.R.first_damage} />
         のスキルダメージを与え、{Constants.R.bind}秒間束縛させます。<br />
-        投げ縄弾の束縛が終わると爆発し、束縛対象に<Damage skill="R" constants={Constants.R.second_damage} {...props} />のスキルダメージを与えて
+        投げ縄弾の束縛が終わると爆発し、束縛対象に<Value skill="R" ratio={Constants.R.second_damage} />のスキルダメージを与えて
         {Constants.R.spread_range}m範囲内の一番近い敵に転移し、同じ効果を発動します。<br />
         投げ縄弾は最大{Constants.R.max_spread}回転移できます。
     </>
