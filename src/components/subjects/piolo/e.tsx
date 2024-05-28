@@ -1,21 +1,21 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             <span className={style.enhance}>絡め捕り</span>：ピオロが双節棍を回しながら投げる準備をします。準備時間に比例して射程距離とダメージ量が増加します。再使用すると、指定した方向に双節棍を投げます。的中すると
-            <Damage skill="E" constants={Constants.E1.first_min_damage} {...props} /> ~ <Damage skill="E" constants={Constants.E1.first_max_damage} {...props} />
+            <Value skill="E" ratio={Constants.E1.first_min_damage} /> ~ <Value skill="E" ratio={Constants.E1.first_max_damage} />
             のスキルダメージを与えて対象に移動し、
-            <Damage skill="E" constants={Constants.E1.second_min_damage} {...props} /> ~ <Damage skill="E" constants={Constants.E1.second_max_damage} {...props} />
+            <Value skill="E" ratio={Constants.E1.second_min_damage} /> ~ <Value skill="E" ratio={Constants.E1.second_max_damage} />
             のスキルダメージを与えながら突き飛ばします。双節棍が敵に的中すると、<span className={style.emphasis}>打ち上げ</span>が活性化します。
             <br />
             <span className={style.enhance}>打ち上げ</span>: ピオロが指定した方向に双節棍を強く打ち上げ、対象に
-            <Damage skill="E" constants={Constants.E2.damage} {...props} />のスキルダメージを与え、{Constants.E2.airborne}秒間空中に浮かせます。
+            <Value skill="E" ratio={Constants.E2.damage} />のスキルダメージを与え、{Constants.E2.airborne}秒間空中に浮かせます。
         </>
     );
 }

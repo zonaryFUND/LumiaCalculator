@@ -1,0 +1,14 @@
+{
+    "subject.piolo.r-passive-additional": "R使用後T追加ダメージ",
+    "subject.piolo.q1-base": "Q1振り回し基本",
+    "subject.piolo.q1-enhance": "Q1振り回し強化({value}回目)",
+    "subject.piolo.q1-max-hit": "Q1全ヒット",
+    "subject.piolo.q2-center": "Q2中央",
+    "subject.piolo.q2-outer": "Q2外周",
+    "subject.piolo.e1-hit-min": "E1命中最小",
+    "subject.piolo.e1-hit-max": "E1命中最大",
+    "subject.piolo.e1-rush-min": "E1突進最小",
+    "subject.piolo.e1-rush-max": "E1突進最大",
+    "subject.piolo.r-damage": "Rダメージ",
+    "subject.piolo.r-shield": "Rシールド"
+}

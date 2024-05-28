@@ -1,9 +1,9 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
@@ -12,7 +12,7 @@ const w: React.FC<SubjectSkillProps> = props => {
             <span className={style.emphasis}>振り回し</span>が活性化します。<br />
             <br />
             <span className={style.enhance}>振り回し</span>：ピオロが飛び上がりながら双節棍を大きく振り回して周りの敵に
-            <Damage skill="W" constants={Constants.W2.damage} {...props} />のスキルダメージを与えます。ピオロは振り回しの間、移動速度が{Constants.W2.movement_speed}%増加します。
+            <Value skill="W" ratio={Constants.W2.damage} />のスキルダメージを与えます。ピオロは振り回しの間、移動速度が{Constants.W2.movement_speed}%増加します。
         </>
     );
 }
