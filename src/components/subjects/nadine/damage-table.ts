@@ -1,18 +1,18 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: `R中追加ダメージ/${Constants.R.count}回`, skill: "R", value: Constants.R.damage}
+        {label: props.intl.formatMessage({id: "subject.nadine.r-additional"}, {value: Constants.R.count}), skill: "R", value: Constants.R.damage}
     ],
     skill: [
         [
-            {label: "Q最小", skill: "Q", value: Constants.Q.min_damage},
-            {label: "Q最大", skill: "Q", value: Constants.Q.max_damage}
+            {label: props.intl.formatMessage({id: "subject.nadine.q-min"}), skill: "Q", value: Constants.Q.min_damage},
+            {label: props.intl.formatMessage({id: "subject.nadine.q-max"}), skill: "Q", value: Constants.Q.max_damage}
         ],
         [{label: "W", skill: "W", value: Constants.W.damage}]
     ]   
-}
+})
 
 export default table;

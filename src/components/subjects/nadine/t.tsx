@@ -1,19 +1,16 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
-import { StackName } from "./stack";
-import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
-        ナディンが野生動物狩りまたは実験体のキルに関与した場合、野性スタックを獲得します。<br />
+        ナディンが野生動物狩りまたは実験体のキルに関与した場合、野性スタックを獲得します。(最大{Constants.T.max_stack}スタック)<br />
         <br />
-        ニワトリ：{Constants.T.chicken[props.config.skillLevels.T]} / コウモリ、イノシシ：
-        {Constants.T.bat_boar[props.config.skillLevels.T]} / ハウンド、オオカミ：
-        {Constants.T.hound_wolf[props.config.skillLevels.T]} / クマ：
-        {Constants.T.bear[props.config.skillLevels.T]} / 実験体：{Constants.T.subject[props.config.skillLevels.T]}
+        ニワトリ：{Constants.T.chicken[props.skillLevel]} / コウモリ、イノシシ：
+        {Constants.T.bat_boar[props.skillLevel]} / ハウンド、オオカミ：
+        {Constants.T.hound_wolf[props.skillLevel]} / クマ：
+        {Constants.T.bear[props.skillLevel]} / 実験体：{Constants.T.subject[props.skillLevel]}
     </>
 );
 

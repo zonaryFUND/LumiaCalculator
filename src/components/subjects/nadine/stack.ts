@@ -1,2 +1,4 @@
-export const MaxStack = 1000; // This is an arbitrary value without any basis in the game.
-export const StackName = "野生スタックダメージ";
+import Constants from "./constants.json";
+
+export const MaxStack = Constants.T["max_stack"];
+export const StackName = "subject.nadine.stack-name";

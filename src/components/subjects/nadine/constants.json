@@ -40,14 +40,15 @@
         "cooldown": [14,13,12,11,10]
     },
     "E": {
-        "duration": 8,
+        "duration": 7,
         "wire_length": 11,
         "attack_speed": [20,30,40,50,60],
+        "remain": 3,
         "sp_cost": [70,75,80,85,90],
         "cooldown": [20,18.5,17,15.5,14]
     },
     "R": {
-        "duration": [10,11,12],
+        "duration": 10,
         "count": 3,
         "damage": {
             "base": [90,140,190],
@@ -57,10 +58,12 @@
         },
         "attack_speed": 10,
         "movement_speed": 40,
+        "extend": 3,
         "sp_cost": 150,
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
+        "max_stack": 200,
         "chicken": [1,1,2],
         "bat_boar": [1,2,3],
         "hound_wolf": [2,3,4],

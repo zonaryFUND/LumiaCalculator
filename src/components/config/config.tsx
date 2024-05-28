@@ -10,6 +10,8 @@ import { useToggle } from "react-use";
 import SubjectList, { style as subjectsStyle } from "components/modal/subject-list";
 import common from "@app/common.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
+import { SubjectStackInfo } from "components/subjects/stack";
+import { FormattedMessage } from "react-intl";
 
 type Props = StateWrapped<SubjectConfig>;
 
@@ -23,6 +25,14 @@ const config: React.FC<Props> = props => {
     const onChangeGauge: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
         props.gauge[1](+e.currentTarget.value);
     }, [])
+
+    const onChangeStack: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
+        props.stack[1](+e.currentTarget.value);
+    }, [])
+
+    const stackInfo = React.useMemo(() => {
+        return SubjectStackInfo[props.subject[0]];
+    }, [props.subject[0]]);
 
     return (
         <>
@@ -52,6 +62,17 @@ const config: React.FC<Props> = props => {
                             <input type="range" value={props.gauge[0]} max="100" onChange={onChangeGauge} />
                         </div>
                         :null
+                    }
+                    {
+                        stackInfo ? 
+                        <div>
+                            <div>
+                                <h3><FormattedMessage id={stackInfo.nameKey} /></h3>
+                                <p>{props.stack[0]}</p>
+                            </div>
+                        <input type="range" value={props.stack[0]} max={stackInfo.max} onChange={onChangeStack} />
+                    </div>
+                    :null
                     }
                 </div>
 
