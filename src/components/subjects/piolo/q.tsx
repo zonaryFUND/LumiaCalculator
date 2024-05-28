@@ -16,7 +16,7 @@ const q: React.FC<SubjectSkillProps> = props => {
             <br />
             <span className={style.enhance}>打ち下ろし</span>：ピオロが指定した地点に双節棍を強く打ち下ろし、中央範囲の敵には
             <Damage skill="Q" constants={Constants.Q2.center_damage} {...props} />のスキルダメージを与え、対象の移動速度を
-            {Constants.Q2.slow.duration}秒間{Constants.Q2.slow.effect}％減少させます。外側範囲の敵には
+            {Constants.Q2.slow.duration}秒間{Constants.Q2.slow.effect}%減少させます。外側範囲の敵には
             <Damage skill="Q" constants={Constants.Q2.outer_damage} {...props} />のスキルダメージを与えます。
         </>
     );
@@ -25,7 +25,7 @@ const q: React.FC<SubjectSkillProps> = props => {
 export default q;
 
 export const values: ValuesProps = {
-    additionalInfo: <><span className={style.emphasis}>双節乱舞</span>キャスト中、移動速度が{Constants.Q1.movement_speed_penalty}％減少します。</>,
+    additionalInfo: <><span className={style.emphasis}>双節乱舞</span>キャスト中、移動速度が{Constants.Q1.movement_speed_penalty}%減少します。</>,
     parameters: [
         {title: "[双節乱舞]ダメージ量", values: Constants.Q1.damage.base},
         {title: "[双節乱舞]強化ダメージ量", values: Constants.Q1.enhanced_damage.base},

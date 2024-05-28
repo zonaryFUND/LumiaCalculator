@@ -24,6 +24,6 @@ export const values: ValuesProps = {
     parameters: [
         {title: "対象ダメージ量", values: Constants.T.damage.base},
         {title: "周辺範囲ダメージ量", values: Constants.T.damage.base},
-        {title: "追加攻撃速度(％)", values: Constants.T.attack_speed}
+        {title: "追加攻撃速度(%)", values: Constants.T.attack_speed}
     ]
 }

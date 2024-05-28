@@ -9,10 +9,10 @@ import skillDamage from "../skill-damage";
 const MS: React.FC<SubjectSkillProps & {base: number[], amp: number}> = props => {
     /*
     if (props.showEquation) {
-        return <><span className={style.emphasis}>{props.base[props.config.skillLevels.E]}％</span><span className={style.amp}>(+{props.amp}％)</span></>;
+        return <><span className={style.emphasis}>{props.base[props.config.skillLevels.E]}%</span><span className={style.amp}>(+{props.amp}%)</span></>;
     } else {
         const value = skillDamage(props.status, props.config, "E", props);
-        return <span className={style.emphasis}>{value.toString()}％</span>
+        return <span className={style.emphasis}>{value.toString()}%</span>
     }
     */
    return null;
@@ -34,8 +34,8 @@ export default e;
 export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "移動速度増加量(％)", values: Constants.E.movement_speed.effect.base, percent: true},
-        {title: "追撃児移動速度(％)", values: Constants.E.self_movement_speed.base, percent: true},
+        {title: "移動速度増加量(%)", values: Constants.E.movement_speed.effect.base, percent: true},
+        {title: "追撃児移動速度(%)", values: Constants.E.self_movement_speed.base, percent: true},
         {title: "消費", values: Constants.E.sp_cost},
         {title: "クールダウン", values: Constants.E.cooldown}
     ]

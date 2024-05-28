@@ -7,7 +7,7 @@ import Damage from "../damage";
 const description: React.FC<ItemSkillProps> = props => (
     <p>
         基本攻撃が敵実験体に命中すると、<Damage {...props} values={props.values.dmg} className={style.amp} />のスキルダメージを与え、
-        {Constants.duration}秒間情熱スタックを獲得して、{props.values.as}％の攻撃速度を獲得します。
+        {Constants.duration}秒間情熱スタックを獲得して、{props.values.as}%の攻撃速度を獲得します。
     </p> 
 );
 

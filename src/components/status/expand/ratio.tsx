@@ -7,7 +7,7 @@ type Props = {
 }
 
 const ratio: React.FC<Props> = props => (
-    <tr><td>{props.label}</td><td>{props.ratio.toString()}％</td></tr>
+    <tr><td>{props.label}</td><td>{props.ratio.toString()}%</td></tr>
 )
 
 export default ratio;

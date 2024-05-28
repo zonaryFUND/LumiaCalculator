@@ -15,9 +15,9 @@ const r: React.FC<SubjectSkillProps> = props => {
             のスキルダメージを与え、的中した対象を後ろに{Constants.R.hankyu_knockback}mノックバックさせます。強力な矢によってノックバックされた対象が壁にぶつかる場合、対象は{Constants.R.hankyu_stun}秒間気絶します。<br />
             <br />
             和弓：莉央が集中して矢を発射し、<Damage skill="R" constants={Constants.R.daikyu_damage} {...props} />の範囲スキルダメージを与え、 
-            {Constants.R.daikyu_slow.duration}秒間ダメージを受けた対象の移動速度を{Constants.R.daikyu_slow.effect}％減少させます。矢は発射されてから
-            {Constants.R.daikyu_acceleration}秒後、速度が{Constants.R.daikyu_enhance.velocity}％、ダメージ量が{Constants.R.daikyu_enhance.damage}％、移動速度減少持続時間が
-            {Constants.R.daikyu_enhance.slow_duration}％増加します。矢は対象と衝突したり、範囲の外まで飛ぶと消滅します。
+            {Constants.R.daikyu_slow.duration}秒間ダメージを受けた対象の移動速度を{Constants.R.daikyu_slow.effect}%減少させます。矢は発射されてから
+            {Constants.R.daikyu_acceleration}秒後、速度が{Constants.R.daikyu_enhance.velocity}%、ダメージ量が{Constants.R.daikyu_enhance.damage}%、移動速度減少持続時間が
+            {Constants.R.daikyu_enhance.slow_duration}%増加します。矢は対象と衝突したり、範囲の外まで飛ぶと消滅します。
         </>
     );
 }

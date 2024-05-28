@@ -12,7 +12,7 @@ const q: React.FC<SubjectSkillProps> = props => {
             <br />
             再使用：ルクが洗剤容器に当たった敵に突進して敵のシールドを破壊し、<Damage skill="Q" constants={Constants.Q.second_damage} {...props} />のスキルダメージを与えます。<br />
             <br />
-            <span className={style.strong}>進化効果</span>：対象の失った体力に比例して再使用時のダメージ量が最大{Constants.Q.enhance_max}％まで増加します。(対象の体力が{Constants.Q.enhance_max_target_hp}%の場合、最大値が適用されます。)
+            <span className={style.strong}>進化効果</span>：対象の失った体力に比例して再使用時のダメージ量が最大{Constants.Q.enhance_max}%まで増加します。(対象の体力が{Constants.Q.enhance_max_target_hp}%の場合、最大値が適用されます。)
         </>
     );
 }

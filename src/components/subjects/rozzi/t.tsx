@@ -11,8 +11,8 @@ const t: React.FC<SubjectSkillProps> = props => {
             <Damage skill="T" constants={Constants.T.first_damage} {...props} />と
             <Damage skill="T" constants={Constants.T.second_damage} {...props} />の基本攻撃ダメージを与えます。<br />
             <br />
-            ロッジはチョコレートが入った食べ物を食べると体力回復量の{Constants.T.food}％のスタミナを回復し、チョコレートが入った飲み物を飲むとスタミナ回復量の
-            {Constants.T.drink}％の体力を回復します。
+            ロッジはチョコレートが入った食べ物を食べると体力回復量の{Constants.T.food}%のスタミナを回復し、チョコレートが入った飲み物を飲むとスタミナ回復量の
+            {Constants.T.drink}%の体力を回復します。
         </>
     );
 }

@@ -10,7 +10,7 @@ const r: React.FC<SubjectSkillProps> = props => {
         <>
             マーカスが指定した方向にジャンプして斧を振り下ろします。振り下ろした範囲は{Constants.R.tectonic_rift}秒間<span className={style.emphasis}>亀裂</span>
             状態になり、攻撃された敵は<Damage skill="R" constants={Constants.R.damage} {...props} />のスキルダメージを受け、{Constants.R.slow.duration}
-            秒間移動速度が{Constants.R.slow.effect}％減少された後、すぐに元に戻ります。<br />
+            秒間移動速度が{Constants.R.slow.effect}%減少された後、すぐに元に戻ります。<br />
             <br />
             <span className={style.emphasis}>亀裂</span>範囲でエアボーンやノックバックの影響を受けると<span className={style.emphasis}>ショック</span>ダメージを受けて
             <span className={style.emphasis}>ショック</span>状態になります。この効果は<span className={style.emphasis}>亀裂</span>範囲の中で1回のみ適用されます。<br />

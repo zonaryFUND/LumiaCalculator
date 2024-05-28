@@ -59,7 +59,7 @@
         },
         "slow": {
             "duration": 2,
-            "effect": 50
+            "effect": 60
         },
         "omnisyphon_amp": [20,30,40],
         "min_damage": {
@@ -77,7 +77,7 @@
         },
         "multiple_hit_heal_amp": 40,
         "hp_cost_percent": 10,
-        "cooldown": [90,75,60]
+        "cooldown": [85,75,65]
     },
     "T": {
         "damage": {

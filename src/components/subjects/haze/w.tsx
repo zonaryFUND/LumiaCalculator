@@ -11,7 +11,7 @@ const w: React.FC<SubjectSkillProps> = props => {
             後ろに一歩下がり、前方に向けて散弾銃を発射します。的中した敵に<Damage skill="W" constants={Constants.W.damage} {...props} />のスキルダメージを与え、{Constants.W.stun}秒間気絶させます。<br />
             <br />
             <span className={style.emphasis}>サブマシンガン状態</span>または<span className={style.emphasis}>ロケットランチャー状態</span>で使用すると、武器を解除し、クールダウンを追加で
-            {Constants.W.er_cooldown_reduction}％減少させます。
+            {Constants.W.er_cooldown_reduction}%減少させます。
         </>
     );
 }

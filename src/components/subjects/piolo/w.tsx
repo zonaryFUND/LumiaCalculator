@@ -20,7 +20,7 @@ const w: React.FC<SubjectSkillProps> = props => {
 export default w;
 
 export const values: ValuesProps = {
-    additionalInfo: <><span className={style.emphasis}>弾き</span>キャスト中、移動速度が{Constants.W1.movement_speed_penalty}％減少します。</>,
+    additionalInfo: <><span className={style.emphasis}>弾き</span>キャスト中、移動速度が{Constants.W1.movement_speed_penalty}%減少します。</>,
     parameters: [
         {title: "[振り回し]ダメージ量", values: Constants.W2.damage.base},
         {title: "クールダウン", values: Constants.W.cooldown},

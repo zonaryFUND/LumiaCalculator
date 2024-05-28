@@ -10,7 +10,7 @@ const tonfa: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             スキルを使用すると{Constants.tonfa.duration}秒間すべての方向からのダメージを防御し、攻撃した対象から受けたダメージの
-            {Constants.tonfa.reflected_ratio[level]}％を固定ダメージで返します。(攻撃の効果は防御できません。)
+            {Constants.tonfa.reflected_ratio[level]}%を固定ダメージで返します。(攻撃の効果は防御できません。)
         </>
     );
 }

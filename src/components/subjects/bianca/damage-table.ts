@@ -1,36 +1,36 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const wMax = Constants.W.max_duration / Constants.W.heal_tick;
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: "T追加ダメージ", skill: "T", value: Constants.T.damage}
+        {label: props.intl.formatMessage({id: "subject.bianca.passive-additional"}), skill: "T", value: Constants.T.damage}
     ],
     skill: [
         [
-            {label: "Q通過", skill: "Q", value: Constants.Q.first_damage},
-            {label: "Q血の槍", skill: "Q", value: Constants.Q.second_damage}
+            {label: props.intl.formatMessage({id: "subject.bianca.q-pass"}), skill: "Q", value: Constants.Q.first_damage},
+            {label: props.intl.formatMessage({id: "subject.bianca.q-lance"}), skill: "Q", value: Constants.Q.second_damage}
         ],
         [
-            {label: "W回復/0.5秒", skill: "W", value: Constants.W.heal, type: "heal"},
-            {label: "W回復最長時間合計", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: wMax * 100}]},
-            {label: "W最大強化回復/0.5秒", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.W.enhanced_heal_ratio * 100}]},
-            {label: "W最大強化回復最長時間合計", skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.W.enhanced_heal_ratio * wMax * 100}] }
+            {label: props.intl.formatMessage({id: "subject.bianca.w-heal-1tick"}, {value: 0.5}), skill: "W", value: Constants.W.heal, type: "heal"},
+            {label: props.intl.formatMessage({id: "subject.bianca.w-heal-max-tick"}), skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: wMax * 100}]},
+            {label: props.intl.formatMessage({id: "subject.bianca.w-max-heal-1tick"}, {value: 0.5}), skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.W.enhanced_heal_ratio * 100}]},
+            {label: props.intl.formatMessage({id: "subject.bianca.w-max-heal-max-tick"}), skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.W.enhanced_heal_ratio * wMax * 100}] }
         ],
         [
-            {label: "E最小", skill: "E", value: Constants.E.min_damage},
-            {label: "E最大", skill: "E", value: Constants.E.max_damage},
-            {label: "E回復", skill: "E", value: Constants.E.heal, type: "heal"}
+            {label: props.intl.formatMessage({id: "subject.bianca.e-min"}), skill: "E", value: Constants.E.min_damage},
+            {label: props.intl.formatMessage({id: "subject.bianca.e-max"}), skill: "E", value: Constants.E.max_damage},
+            {label: props.intl.formatMessage({id: "subject.bianca.e-heal"}), skill: "E", value: Constants.E.heal, type: "heal"}
         ],
         [
-            {label: "R発生", skill: "R", value: Constants.R.first_damage},
-            {label: "R終了最小", skill: "R", value: Constants.R.min_damage},
-            {label: "R終了最大", skill: "R", value: Constants.R.max_damage},
-            {label: "R回復基礎値", skill: "R", value: Constants.R.heal}
+            {label: props.intl.formatMessage({id: "subject.bianca.r-first"}), skill: "R", value: Constants.R.first_damage},
+            {label: props.intl.formatMessage({id: "subject.bianca.r-finish-min"}), skill: "R", value: Constants.R.min_damage},
+            {label: props.intl.formatMessage({id: "subject.bianca.r-finish-max"}), skill: "R", value: Constants.R.max_damage},
+            {label: props.intl.formatMessage({id: "subject.bianca.r-heal-base"}), skill: "R", value: Constants.R.heal}
         ]
     ]   
-}
+})
 
 export default table;

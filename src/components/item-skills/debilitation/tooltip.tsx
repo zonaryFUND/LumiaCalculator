@@ -10,14 +10,14 @@ const Value: React.FC<ItemSkillProps> = props => {
         const value = skillDamage(props.status, props.config, "item", {amp: Constants.dmg.targetMaxHP.base});
         return (
             <span className={style.maxhp}>
-                対象の最大体力の{Constants.dmg.targetMaxHP.base}<span className={style.amp}>(+{value.toString()})</span>％
+                対象の最大体力の{Constants.dmg.targetMaxHP.base}<span className={style.amp}>(+{value.toString()})</span>%
             </span>
         );
     } else {
         */
         return (
             <span className={style.maxhp}>
-                対象の最大体力の{Constants.dmg.targetMaxHP.base}<span className={style.amp}>(+スキル増幅の{Constants.dmg.targetMaxHP.amp}％)</span>％
+                対象の最大体力の{Constants.dmg.targetMaxHP.base}<span className={style.amp}>(+スキル増幅の{Constants.dmg.targetMaxHP.amp}%)</span>%
             </span>
         );
     //}

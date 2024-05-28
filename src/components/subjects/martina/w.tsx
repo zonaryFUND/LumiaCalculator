@@ -13,7 +13,7 @@ const w: React.FC<SubjectSkillProps> = props => {
             マルティナが{Constants.W.duration}秒間維持される小型カメラを設置し、周りの視界を確保します。
             <span className={style.emphasis}>早送り</span>スキルが小型カメラを的中すると小型カメラがマルティナがいる方向を撮影し、敵に
             <Damage skill="W" constants={Constants.W.damage} {...props} />のスキルダメージを与え、移動速度を
-            {Constants.W.slow.duration}秒間{Constants.W.slow.effect}％減少させます。小型カメラは最大{Constants.W.charge.max}
+            {Constants.W.slow.duration}秒間{Constants.W.slow.effect}%減少させます。小型カメラは最大{Constants.W.charge.max}
             台まで保持することができ、一度に{Constants.W.max_set}台まで設置できます。<br />
             <br />
             <span className={martina.broadcast}>[放送中]</span><br />

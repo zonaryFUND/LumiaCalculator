@@ -9,7 +9,7 @@ const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             <span className={style.emphasis}>ショック</span>：マーカスが突き飛ばした敵が壁に衝突すると、敵に<Damage skill="T" constants={Constants.T.damage} {...props} />
-            スキルダメージを与え、敵は{Constants.T.stun}秒間気絶して{Constants.T.slow.duration}秒間移動速度が{Constants.T.slow.effect}％減少されます。壁に衝突した敵は
+            スキルダメージを与え、敵は{Constants.T.stun}秒間気絶して{Constants.T.slow.duration}秒間移動速度が{Constants.T.slow.effect}%減少されます。壁に衝突した敵は
             {Constants.T.shock}秒間<span className={style.emphasis}>ショック</span>状態になります。<br />
             マーカスが突き飛ばした敵が他の野生動物や実験体に衝突すると、衝突したすべての対象に同じ効果を与えて突き飛ばします。<br />
             <br />

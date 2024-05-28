@@ -23,7 +23,7 @@ const e: React.FC<SubjectSkillProps> = props => {
 export default e;
 
 export const values: ValuesProps = {
-    additionalInfo: <><span className={style.emphasis}>絡め捕り</span>キャスト中、移動速度が{Constants.E1.movement_speed_penalty}％減少します。</>,
+    additionalInfo: <><span className={style.emphasis}>絡め捕り</span>キャスト中、移動速度が{Constants.E1.movement_speed_penalty}%減少します。</>,
     parameters: [
         {title: "[絡め捕り]双節棍最小ダメージ量", values: Constants.E1.first_min_damage.base},
         {title: "[絡め捕り]双節棍最大ダメージ量", values: Constants.E1.first_max_damage.base},

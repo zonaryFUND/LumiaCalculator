@@ -20,7 +20,7 @@ export default t;
 
 export const values: ValuesProps = {
     parameters: [
-        {title: "移動速度増加量(％)", values: Constants.T.movement_speed.effect, percent: true},
+        {title: "移動速度増加量(%)", values: Constants.T.movement_speed.effect, percent: true},
         {title: "防御力", values: Constants.T.defense}
     ]
 }

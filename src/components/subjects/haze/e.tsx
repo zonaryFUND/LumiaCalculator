@@ -15,7 +15,7 @@ const e: React.FC<SubjectSkillProps> = props => {
             {Constants.E.effect_count}発目の弾ごとに基本攻撃が的中すると、効果が適用されます。サブマシンガン状態を維持する間、製作や採取など一部の行動が制限され、
             <span className={style.emphasis}>40mmグレネードスキル</span>は<span className={style.emphasis}>サブマシンガン連射</span>スキルに変更されます。<br />
             <br />
-            サブマシンガン状態が終了すると、余った弾の数に比例してクールダウンが最大{Constants.E.max_cooldown_reduction}％減少します。
+            サブマシンガン状態が終了すると、余った弾の数に比例してクールダウンが最大{Constants.E.max_cooldown_reduction}%減少します。
         </>
     );
 }

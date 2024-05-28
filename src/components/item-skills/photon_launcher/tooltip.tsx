@@ -20,8 +20,8 @@ const Value: React.FC<ItemSkillProps> = props => {
         return (
             <>
                 {props.values.dmg.base}
-                {props.values.dmg.attack ? <span className={style.attack}>(+攻撃力の{props.values.dmg.attack}％)</span> : null}
-                {props.values.dmg.amp ? <span className={style.amp}>(+スキル増幅の{props.values.dmg.amp}％)</span> : null}
+                {props.values.dmg.attack ? <span className={style.attack}>(+攻撃力の{props.values.dmg.attack}%)</span> : null}
+                {props.values.dmg.amp ? <span className={style.amp}>(+スキル増幅の{props.values.dmg.amp}%)</span> : null}
                 {props.values.dmg.level ? <span className={style.level}>(+キャラクターレベル*{props.values.dmg.level})</span> : null}
             </>
         );
@@ -31,7 +31,7 @@ const Value: React.FC<ItemSkillProps> = props => {
 const description: React.FC<ItemSkillProps> = props => (
     <p>
         敵に基本攻撃を的中させるたびにスタックを獲得します。{Constants.max_stack}スタックの時に相手に基本攻撃を命中させると、
-        スタックをすべて消耗して<Value {...props} />の追加スキルダメージを与えて追加ダメージの{Constants.lifesteal}％を回復します。
+        スタックをすべて消耗して<Value {...props} />の追加スキルダメージを与えて追加ダメージの{Constants.lifesteal}%を回復します。
     </p> 
 );
 

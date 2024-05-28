@@ -13,12 +13,12 @@ const e: React.FC<SubjectSkillProps> = props => {
         const attack = Constants.E.omnisyphon.effect.attack;
         /*
         if (props.showEquation) {
-            return <>{duration}秒間ダメージ吸血を<span className={style.emphasis}>消耗した1スタックあたり{base}％</span><span className={style.attack}>(+攻撃力の{attack}％)</span></>
+            return <>{duration}秒間ダメージ吸血を<span className={style.emphasis}>消耗した1スタックあたり{base}%</span><span className={style.attack}>(+攻撃力の{attack}%)</span></>
         } else {
             const zero = props.status.attackPower.percent(attack)
             return <>
                 消耗した連携攻撃のスタックに比例して{duration}秒間ダメージ吸血を
-                <span className={style.emphasis}>{zero.add(1).toString()}％</span> ~ <span className={style.emphasis}>{zero.add(Constants.T.max_stack).toString()}％</span>
+                <span className={style.emphasis}>{zero.add(1).toString()}%</span> ~ <span className={style.emphasis}>{zero.add(Constants.T.max_stack).toString()}%</span>
             </>
         }
         */

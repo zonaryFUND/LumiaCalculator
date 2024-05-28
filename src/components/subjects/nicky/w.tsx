@@ -25,7 +25,7 @@ export default w;
 export const values: ValuesProps = {
     additionalInfo: <>移動不可状態ではカウンターが発動しません。</>,
     parameters: [
-        {title: "受けるダメージ減少(％)", values: Constants.W.damage_reduction},
+        {title: "受けるダメージ減少(%)", values: Constants.W.damage_reduction},
         {title: "カウンターダメージ量", values: Constants.W.damage.base},
         {title: "クールダウン", values: Constants.W.cooldown}
     ]

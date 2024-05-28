@@ -21,7 +21,7 @@ const values: React.FC<ValuesProps & {skillLevel: number}> = props => (
             {
                 props.parameters.map(parameter => {
                     const values = parameter.values
-                        .map(v => `${v}${parameter.percent ? "％" : ""}`)
+                        .map(v => `${v}${parameter.percent ? "%" : ""}`)
                         .map((v, i) => {
                             const content = i == props.skillLevel ?
                             <span>{v}</span> :

@@ -1,0 +1,16 @@
+{
+    "subject.bianca.passive-additional": "T追加ダメージ",
+    "subject.bianca.q-pass": "Q通過",
+    "subject.bianca.q-lance": "Q血の槍",
+    "subject.bianca.w-heal-1tick": "W回復/{value}秒",
+    "subject.bianca.w-heal-max-tick": "W回復最長時間合計",
+    "subject.bianca.w-max-heal-1tick": "W最大強化回復/{value}秒",
+    "subject.bianca.w-max-heal-max-tick": "W最大強化回復最長時間合計",
+    "subject.bianca.e-min": "E最小",
+    "subject.bianca.e-max": "E最大",
+    "subject.bianca.e-heal": "E回復",
+    "subject.bianca.r-first": "R発生",
+    "subject.bianca.r-finish-min": "R終了最小値",
+    "subject.bianca.r-finish-max": "R終了最大値",
+    "subject.bianca.r-heal-base": "R回復基礎値"
+}

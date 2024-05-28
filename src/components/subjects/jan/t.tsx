@@ -7,7 +7,7 @@ const t: React.FC<SubjectSkillProps> = props => (
     <>
         ヤンが敵にダメージを与えるたびに熱血の意志スタック1を獲得します。熱血の意志がスタック{Constants.T.threshold}
         以上になると、次のスキルを使用する時、スタックを消耗してニーストライク、トマホークスピン、ウィービングスキルのクールダウンが
-        {Constants.T.cooldown_reduction[props.config.skillLevels.T]}％減少して、スキルを強化します。
+        {Constants.T.cooldown_reduction[props.config.skillLevels.T]}%減少して、スキルを強化します。
     </>
 );
 

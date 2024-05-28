@@ -31,7 +31,7 @@ const skillAmp: React.FC<Props> = props => {
             }
             {
                 props.equipmentRatio?.greaterThan(0) ?
-                <tr><td>％増幅</td><td>{props.equipmentRatio.toString()}％</td></tr> : 
+                <tr><td>%増幅</td><td>{props.equipmentRatio.toString()}%</td></tr> : 
                 null
             }
         </InnerTable>

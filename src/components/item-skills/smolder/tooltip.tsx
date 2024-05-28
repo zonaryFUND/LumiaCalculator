@@ -8,7 +8,7 @@ type Props = {
 
 const Value: React.FC<Props> = props => {
     return (
-        <span className={style.maxhp}>対象最大体力の{props.values.dmg.enemyMaxHP}％</span>
+        <span className={style.maxhp}>対象最大体力の{props.values.dmg.enemyMaxHP}%</span>
     )
 };
 

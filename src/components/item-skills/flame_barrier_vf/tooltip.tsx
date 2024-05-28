@@ -21,7 +21,7 @@ const description: React.FC<ItemSkillProps> = props => {
             戦闘に突入すると秒ごとに周り{Constants.area}mの敵に
             {damage ? <><span className={style.maxhp}>{damage}</span>の</> : null}
             スキルダメージを与えます。<br />
-            {damage ? null :  <>敵に<span className={style.maxhp}>最大体力の{props.values.dmg.maxHP}％</span>のスキルダメージを与えます。<br /></>}
+            {damage ? null :  <>敵に<span className={style.maxhp}>最大体力の{props.values.dmg.maxHP}%</span>のスキルダメージを与えます。<br /></>}
             <br />
             <span className={style["vf-overflow"]}>VF暴走</span>状態の場合はブラックマンバキングの<span className={style.strong}>炎の結界</span>のみ発動します。
         </p> 

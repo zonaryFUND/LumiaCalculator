@@ -19,7 +19,7 @@ const assaultRifle: React.FC<SubjectSkillProps> = props => {
             過熱スキルを使用すると、弾丸を即時装填して{Constants.assault_rifle.per_stack.duration}
             秒 ~ {Constants.assault_rifle.per_stack.duration * maxStack}秒間過熱効果を活性化します。<br />
             過熱状態では基本攻撃追加ダメージが0 ~ {Constants.assault_rifle.per_stack.basic_attack_addition * maxStack}、攻撃速度が
-            {Constants.assault_rifle.attack_speed[level]}％増加します。効果が持続される間には攻撃速度制限を無視します。<br />
+            {Constants.assault_rifle.attack_speed[level]}%増加します。効果が持続される間には攻撃速度制限を無視します。<br />
             過熱持続時間と基本攻撃追加ダメージはスタックされた過熱量に比例します。
         </>
     );

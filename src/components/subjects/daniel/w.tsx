@@ -24,7 +24,7 @@ export default w;
 
 export const values: ValuesProps = {
     parameters: [
-        {title: "ダメージ保存量(％)", values: Constants.W.stored_damage, percent: true},
+        {title: "ダメージ保存量(%)", values: Constants.W.stored_damage, percent: true},
         {title: "ダメージ量", values: Constants.W.damage.base},
     ]
 }

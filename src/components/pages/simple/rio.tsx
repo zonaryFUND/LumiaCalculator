@@ -23,7 +23,7 @@ const basicAttackDamage: React.FC<Props> = props => {
 
         return [
             value,
-            <><span>攻撃力</span>{props.status.attackPower.toString()} x {Constants.Q.hankyu.attack}％ x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}</>
+            <><span>攻撃力</span>{props.status.attackPower.toString()} x {Constants.Q.hankyu.attack}% x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}% + 1) = {value.toString()}</>
         ]
     }, [props.status.attackPower, props.status.basicAttackAmp]);
 
@@ -32,7 +32,7 @@ const basicAttackDamage: React.FC<Props> = props => {
 
         return [
             value,
-            <><span>攻撃力</span>{props.status.attackPower.toString()} x {Constants.Q.daikyu.attack}％ x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}％ + 1) = {value.toString()}</>
+            <><span>攻撃力</span>{props.status.attackPower.toString()} x {Constants.Q.daikyu.attack}% x (<span>基本攻撃増幅</span>{props.status.basicAttackAmp.toString()}% + 1) = {value.toString()}</>
         ]
     }, [props.status.attackPower, props.status.basicAttackAmp]);
 
@@ -42,7 +42,7 @@ const basicAttackDamage: React.FC<Props> = props => {
             .add(props.status.criticalChance.times(criticalDamage).dividedBy(100)).floor();
         return [
             value,
-            <>{Constants.T.basic_attack_damage.base}％ + (<span>致命打確率</span>{props.status.criticalChance.toString()}％ x ({Constants.T.basic_attack_damage.criticalBase}％ + <span>致命打ダメージ上昇</span>{props.status.criticalDamage.toString()}％)) = {value.toString()}％</>
+            <>{Constants.T.basic_attack_damage.base}% + (<span>致命打確率</span>{props.status.criticalChance.toString()}% x ({Constants.T.basic_attack_damage.criticalBase}% + <span>致命打ダメージ上昇</span>{props.status.criticalDamage.toString()}%)) = {value.toString()}%</>
         ]
 
     }, [props.status.criticalChance, props.status.criticalDamage])

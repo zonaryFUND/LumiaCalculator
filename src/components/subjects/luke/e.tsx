@@ -11,7 +11,7 @@ const e: React.FC<SubjectSkillProps> = props => {
             <span className={style.level}>持続効果</span>：ルクが攻撃または対象を倒す時、ミニマップにピングが発生しません。<br />
             <br />
             使用効果：ルクが指定した敵と味方、自分が設置したカメラの後ろに即時移動して拳銃で<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えてキャストを妨害し、
-            {Constants.E.slow.duration}秒間移動速度を{Constants.E.slow.effect}％減少させます。味方や自分が設置したカメラに使用した場合、スキルの射程距離が増加し、使用したカメラは破壊されます。<br />
+            {Constants.E.slow.duration}秒間移動速度を{Constants.E.slow.effect}%減少させます。味方や自分が設置したカメラに使用した場合、スキルの射程距離が増加し、使用したカメラは破壊されます。<br />
             <br />
             <span className={style.strong}>進化効果</span>：敵実験体を倒す時に関与した場合、無騒音掃除機のクールダウンが初期化されます。
         </>

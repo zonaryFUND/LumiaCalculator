@@ -45,29 +45,29 @@ function equation(value: ValueRatio, status: Status, level: number, skillLevel: 
             case "base":
                 return p.concat(<>{levelValue(value, skillLevel)}</>);
             case "attack":
-                return p.concat(<><span className={table.small}><FormattedMessage id="status.attack-power" /></span>{status.attackPower.calculatedValue.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}><FormattedMessage id="status.attack-power" /></span>{status.attackPower.calculatedValue.toString()} x {levelValue(value, skillLevel)}%</>);
             case "additionalAttack":
-                return p.concat(<><span className={table.small}>追加攻撃力</span>{status.attackPower.additional?.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}>追加攻撃力</span>{status.attackPower.additional?.toString()} x {levelValue(value, skillLevel)}%</>);
             case "additionalMaxHP":
-                return p.concat(<><span className={table.small}><FormattedMessage id="status.additional-maxhp" /></span>{status.maxHP.additional?.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}><FormattedMessage id="status.additional-maxhp" /></span>{status.maxHP.additional?.toString()} x {levelValue(value, skillLevel)}%</>);
             case "maxHP":
-                return p.concat(<><span className={table.small}><FormattedMessage id="status.maxhp" /></span>{status.maxHP.calculatedValue.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}><FormattedMessage id="status.maxhp" /></span>{status.maxHP.calculatedValue.toString()} x {levelValue(value, skillLevel)}%</>);
             case "defense":
-                return p.concat(<><span className={table.small}><FormattedMessage id="status.defense" /></span>{status.defense.calculatedValue.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}><FormattedMessage id="status.defense" /></span>{status.defense.calculatedValue.toString()} x {levelValue(value, skillLevel)}%</>);
             case "amp":
-                return p.concat(<><span className={table.small}><FormattedMessage id="status.skill-amp" /></span>{status.skillAmp.calculatedValue.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}><FormattedMessage id="status.skill-amp" /></span>{status.skillAmp.calculatedValue.toString()} x {levelValue(value, skillLevel)}%</>);
             case "level":
                 return p.concat(<><span className={table.small}>レベル</span>{level} x {levelValue(value, skillLevel)}</>);
             case "basicAttackAmp":
-                return p.concat(<> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}％ + 1)</>);
+                return p.concat(<> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}% + 1)</>);
             case "criticalChance":
-                return p.concat(<> x (<span className={table.small}>致命打確率</span>{status.criticalChance.toString()}％ x {levelValue(value, skillLevel)})</>)
+                return p.concat(<> x (<span className={table.small}>致命打確率</span>{status.criticalChance.toString()}% x {levelValue(value, skillLevel)})</>)
             case "summonedAttack":
-                return p.concat(<><span className={table.small}>{summonedName}攻撃力</span>{status.summonedStatus?.attackPower.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}>{summonedName}攻撃力</span>{status.summonedStatus?.attackPower.toString()} x {levelValue(value, skillLevel)}%</>);
             case "stack":
                 return p.concat(<><span className={table.small}>スタック</span>{stack} x {levelValue(value, skillLevel)}</>);
             case "additionalAttackSpeed":
-                return p.concat(<><span className={table.small}>追加攻撃速度(％)</span>{status.attackSpeed.additional?.toString()} x {levelValue(value, skillLevel)}％</>);
+                return p.concat(<><span className={table.small}>追加攻撃速度(%)</span>{status.attackSpeed.additional?.toString()} x {levelValue(value, skillLevel)}%</>);
             case "max":
                 return p.concat(<>最大値{levelValue(value, skillLevel)})</>);
         }
@@ -230,7 +230,7 @@ const skillDamage: React.FC<Props> = props => {
             {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"},
             {key: "lostHP", text: "失った体力の", ratio: "消耗体力比"},
             {key: "targetHP", text: "対象の現在体力の", ratio: "対象体力比"},
-            {key: "lostHPPercent", text: "失った体力1％あたり", ratio: "消耗体力比", removePercent: true}, // sissela only for now
+            {key: "lostHPPercent", text: "失った体力1%あたり", ratio: "消耗体力比", removePercent: true}, // sissela only for now
             {key: "gauge", text: "消耗ゲージの", ratio: "消耗ゲージ比"}
         ]
         //const tuple = additionalKeys.find(k => props.value[k.key as keyof ValueRatio] != undefined);
@@ -245,7 +245,7 @@ const skillDamage: React.FC<Props> = props => {
                 new Decimal((props.value[tuple.key as keyof ValueRatio] as number[])[level]) :
                 damage(props.status, props.config, props.skill, props.value[tuple.key as keyof ValueRatio]);
             const multiplied = ratio.percent(multiplier ?? 100);
-            const content = <>{tuple.text}{multiplied.toString()}{tuple.removePercent ? null : "％"}</>
+            const content = <>{tuple.text}{multiplied.toString()}{tuple.removePercent ? null : "%"}</>
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>
@@ -256,9 +256,9 @@ const skillDamage: React.FC<Props> = props => {
                             <td>
                                 {
                                     multiplier ? 
-                                    <>{ratio.toString()} x {multiplier}％ {} = {multiplied.toString()}</> :
+                                    <>{ratio.toString()} x {multiplier}% {} = {multiplied.toString()}</> :
                                     <>{equation(props.value[tuple.key as keyof ValueRatio], props.status, props.config.level, level, props.config.stack, props.summonedName)}{ratio.toString()}</>
-                                }{tuple.removePercent ? null : "％"}
+                                }{tuple.removePercent ? null : "%"}
                             </td>
                         </tr>
                     </InnerTable>
@@ -266,14 +266,14 @@ const skillDamage: React.FC<Props> = props => {
                 true
             ]
         } else {
-            const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}％</>;
+            const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}%</>;
             return [
                 brackets ? <span>+({content})</span> : <span>{content}</span>,
                 <td colSpan={4}>{baseDamageTr}</td>,
                 false
             ]
         }
-        //const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}％</>;
+        //const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}%</>;
         const content = null;
         return [
             brackets ? <span>+({content})</span> : <span>{content}</span>,
@@ -286,7 +286,7 @@ const skillDamage: React.FC<Props> = props => {
     /*
     const kenneth = (() => {
         //if (props.type != "kenneth") return null;
-        return "％";
+        return "%";
     })();
     */
 

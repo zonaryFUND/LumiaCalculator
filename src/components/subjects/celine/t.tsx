@@ -13,7 +13,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             セリーヌがスキルを{Constants.T.count}回使用すると、次の基本攻撃に<Value skill="T" ratio={Constants.T.damage} />
             のスキルダメージが追加されます。<br />
             <br />
-            セリーヌはクールダウン減少ステータスに影響されない代わりに、クールダウン減少ステータスを1％あたり{Constants.T.cooldown_conversion}のスキル増幅に置き換えます。<br />
+            セリーヌはクールダウン減少ステータスに影響されない代わりに、クールダウン減少ステータスを1%あたり{Constants.T.cooldown_conversion}のスキル増幅に置き換えます。<br />
             現在増加したスキル増幅:{additionalAmp(status).toString()}
         </>
     )

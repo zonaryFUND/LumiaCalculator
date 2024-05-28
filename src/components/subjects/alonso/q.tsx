@@ -27,7 +27,7 @@ export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.Q.damage.base},
         {title: "距離比例移動速度増加量", values: Constants.Q.near_movement_speed},
-        {title: "磁力線でつながった敵の最大体力ダメージ(％)", values: Constants.Q.basic_attack_damage.targetMaxHP},
+        {title: "磁力線でつながった敵の最大体力ダメージ(%)", values: Constants.Q.basic_attack_damage.targetMaxHP},
         {title: "クールダウン", values: Constants.Q.cooldown},
         {title: "消費", values: Constants.Q.sp_cost}
     ]

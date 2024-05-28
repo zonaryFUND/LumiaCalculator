@@ -20,7 +20,7 @@ const camera: React.FC<SubjectSkillProps> = props => {
             {Constants.sniper_rifle.cripping.vision}の視界を持っています。対象に
             <Damage skill="D" constants={Constants.sniper_rifle.cripping.damage} {...props} />のスキルダメージを与え、
             {Constants.sniper_rifle.cripping.target_vision}秒間対象の視界を獲得できます。ダメージを受けた対象は
-            {Constants.sniper_rifle.cripping.slow.duration}秒間移動速度が{Constants.sniper_rifle.cripping.slow.effect}％減少します。<br />
+            {Constants.sniper_rifle.cripping.slow.duration}秒間移動速度が{Constants.sniper_rifle.cripping.slow.effect}%減少します。<br />
             <br />
             <span className={style.emphasis}>デッドアイ</span><br />
             {Constants.sniper_rifle.dead_to_rights.vision}の視界を持っています。対象に

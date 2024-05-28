@@ -8,7 +8,7 @@ const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             ヘジンが指定した方向に制圧符を投げ、的中した対象に<Damage skill="Q" constants={Constants.Q.damage} {...props} />のスキルダメージを与えます。<br />
-            的中した場合、クールダウンが{Constants.Q.cooldown_reduction}％減少します。
+            的中した場合、クールダウンが{Constants.Q.cooldown_reduction}%減少します。
         </>
     );
 }

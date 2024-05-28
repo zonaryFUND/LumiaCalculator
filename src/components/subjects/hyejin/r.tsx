@@ -16,7 +16,7 @@ const r: React.FC<SubjectSkillProps> = props => {
 export default r;
 
 export const values: ValuesProps = {
-    additionalInfo: <>キャスト中には移動速度が{Constants.R.movement_speed_penalty}％減少します。</>,
+    additionalInfo: <>キャスト中には移動速度が{Constants.R.movement_speed_penalty}%減少します。</>,
     parameters: [
         {title: "ダメージ量", values: Constants.R.first_damage.base},
         {title: "札ダメージ量", values: Constants.R.card_damage.base},

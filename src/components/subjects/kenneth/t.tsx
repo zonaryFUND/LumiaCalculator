@@ -31,7 +31,7 @@ export default t;
 export const values: ValuesPropsGenerator = props => ({
     additionalInfo: <>
         ケネスはこのスキルで最大{props.status.attackPower.calculatedValue.percent(Constants.T.max_heal.attack).add(Constants.T.max_heal.base[props.config.skillLevels.T]).toString()} = <span className={style.emphasis}>{Constants.T.max_heal.base[props.config.skillLevels.T].toString()}</span>
-        (+攻撃力の{Constants.T.max_heal.attack}％)まで回復できます。<br />
+        (+攻撃力の{Constants.T.max_heal.attack}%)まで回復できます。<br />
         野生動物に与えられるダメージ量は最大{Constants.T.animal_max}に制限されます。
     </>,
     parameters: [

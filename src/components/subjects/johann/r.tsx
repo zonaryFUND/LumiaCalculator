@@ -23,8 +23,8 @@ export const values: ValuesProps = {
     </>,
     parameters: [
         {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "移動速度増加量(％)", values: Constants.E.movement_speed.effect.base, percent: true},
-        {title: "追撃児移動速度(％)", values: Constants.E.self_movement_speed.base, percent: true},
+        {title: "移動速度増加量(%)", values: Constants.E.movement_speed.effect.base, percent: true},
+        {title: "追撃児移動速度(%)", values: Constants.E.self_movement_speed.base, percent: true},
         {title: "消費", values: Constants.E.sp_cost},
         {title: "クールダウン", values: Constants.E.cooldown}
     ]

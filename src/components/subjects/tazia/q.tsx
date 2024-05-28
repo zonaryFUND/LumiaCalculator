@@ -9,7 +9,7 @@ const q: React.FC<SubjectSkillProps> = props => (
     <>
         <span className={style.level}>持続効果</span>：タジアは一定時間ごとに<span className={style.emphasis}>ガラス刃</span>
         を作ります。タジアが<span className={style.emphasis}>ガラス破片</span>に近づくと破壊され、<span className={style.emphasis}>ガラス刃</span>のチャージ時間の
-        {Constants.Q.collect_charge}％を回復します。<span className={style.emphasis}>ガラス刃</span>
+        {Constants.Q.collect_charge}%を回復します。<span className={style.emphasis}>ガラス刃</span>
         は最大{Constants.Q.charge.max}つまで保有することができます。<br />
         <br />
         <span className={style.emphasis}>ガラス刃</span>を前方に投げて的中させた敵に

@@ -10,7 +10,7 @@ const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             雪の次の基本攻撃が<Damage skill="Q" constants={weaponType == "dual_swords" ? Constants.Q.dual_sword_damage : Constants.Q.damage} {...props} />の基本攻撃ダメージを与えて
-            {Constants.Q.slow.duration}秒間敵の移動速度を{Constants.Q.slow.effect}％減少させます。<br />
+            {Constants.Q.slow.duration}秒間敵の移動速度を{Constants.Q.slow.effect}%減少させます。<br />
             <br />
             端正な服装のボタンがある場合、{Constants.Q.stun}秒間気絶させます。
         </>

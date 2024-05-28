@@ -28,7 +28,7 @@ const additional: React.FC<Props> = props => {
     } else if (props.ratio?.greaterThan(0)) {
         return (
             <>
-                {props.ratio.toString()}％
+                {props.ratio.toString()}%
                 <> = {props.baseValue?.percent(props.ratio).toString()}</>
             </> 
         );

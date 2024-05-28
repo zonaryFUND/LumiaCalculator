@@ -10,9 +10,9 @@ const r: React.FC<SubjectSkillProps> = props => {
         <>
             <span className={style.emphasis}>[取材中]</span><br />
             マルティナが最大{Constants.R.duration}秒間指定した方向を撮影し、撮影する間撮影対象が範囲内に入ってくると録画持続時間の間には移動速度が
-            {Constants.R.recording_movement_speed}％増加します。撮影に成功すると対象によって
+            {Constants.R.recording_movement_speed}%増加します。撮影に成功すると対象によって
             <span className={style.emphasis}>録画スタック</span>を獲得し、{Constants.R.recorded_movement_speed.duration}秒間移動速度が
-            {Constants.R.recorded_movement_speed.effect}％増加します。<br />
+            {Constants.R.recorded_movement_speed.effect}%増加します。<br />
             <br />
             <span className={style.emphasis}>録画スタック</span>が{Constants.R.max_stack}以上になるとマルティナが取材を終わらせ、
             <span className={martina.broadcast}>放送</span>を始めてスキルの威力が強化されます。<br />

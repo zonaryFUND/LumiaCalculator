@@ -12,7 +12,7 @@ const glove: React.FC<SubjectSkillProps> = props => {
         <>
             指定した対象に近づき、<Damage skill="D" constants={Constants.glove.damage} {...props} />
             の基本攻撃ダメージを与え、最終ダメージの{Constants.glove.additional_damage[level]}
-            ％に値するダメージと{Constants.glove.true_damage.base[level]}の固定ダメージを追加で与えます。アッパーカットは致命打が発生しません。
+            %に値するダメージと{Constants.glove.true_damage.base[level]}の固定ダメージを追加で与えます。アッパーカットは致命打が発生しません。
         </>
     );
 }

@@ -7,7 +7,7 @@ import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const rangeW: React.FC<SubjectSkillProps> = props => (
     <>
-        <span className={style.level}>持続効果</span>：アレックスの攻撃速度が{Constants.common.e_as[props.skillLevel]}％増加します。<br />
+        <span className={style.level}>持続効果</span>：アレックスの攻撃速度が{Constants.common.e_as[props.skillLevel]}%増加します。<br />
         <br />
         アレックスが指定した方向へパルススティングを発射して
         <Value skill="E" ratio={Constants.RangeE.damage} />

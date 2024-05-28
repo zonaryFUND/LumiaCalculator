@@ -33,7 +33,7 @@ const r: React.FC<SubjectSkillProps> = props => {
                 :
                 <span className={style.emphasis}>対象の失った体力の<Value skill="R" ratio={min} />% ~ <Value skill="R" ratio={max} />%</span>
             }
-            に値する追加スキルダメージを与え、しばらくの間移動速度を{Constants.R.slow}％減少させます。
+            に値する追加スキルダメージを与え、しばらくの間移動速度を{Constants.R.slow}%減少させます。
         </>
     );
 }

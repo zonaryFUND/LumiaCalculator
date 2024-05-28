@@ -7,7 +7,7 @@ import { SubjectSkillProps } from "../props";
 const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            マルティナが指定した方向を撮影し、的中した敵の防御力を{Constants.R2.defense_reduction}％減少させ、
+            マルティナが指定した方向を撮影し、的中した敵の防御力を{Constants.R2.defense_reduction}%減少させ、
             {Constants.R2.duration}秒にかけて スキル範囲の端の敵に<Damage skill="R" constants={Constants.R2.first_outer_damage} {...props} />のスキルダメージを与えます。中央の敵には
             <Damage skill="R" constants={Constants.R2.first_center_damage} {...props} />のスキルダメージを与えます。<br />
             <br />

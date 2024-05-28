@@ -22,9 +22,9 @@ const mastery: React.FC<Props> = props => {
         <tr>
             <td><FormattedMessage id="app.mastery"/></td>
             <td>
-                <span>{value.toString()}{props.perMastery.ratio ? "％" : null} x <span className={table.small}>{props.name}</span>{props.mastery}</span>
+                <span>{value.toString()}{props.perMastery.ratio ? "%" : null} x <span className={table.small}>{props.name}</span>{props.mastery}</span>
                 <> = </>
-                {new Decimal(value.toString()).times(props.mastery).cut(props.digit ?? 2, "floor").toString()}{props.perMastery.ratio ? "％" : null}
+                {new Decimal(value.toString()).times(props.mastery).cut(props.digit ?? 2, "floor").toString()}{props.perMastery.ratio ? "%" : null}
             </td>
         </tr>
     );

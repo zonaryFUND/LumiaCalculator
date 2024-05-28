@@ -17,7 +17,7 @@ const r: React.FC<SubjectSkillProps> = props => (
         持続時間が終わったり、<span className={style.emphasis}>起爆</span>スキルで爆弾を爆発させると
         <Value skill="R" ratio={Constants.R.damage} /> <span className={style.emphasis}>x (爆弾のレベル)</span>のスキルダメージを与え、
         {Constants.R.max_level}レベルの爆弾の場合、的中した敵の移動速度を{Constants.R.slow.duration}
-        秒間{Constants.R.slow.effect}％減少させます。減少させた移動速度は持続時間の間徐々に回復します。
+        秒間{Constants.R.slow.effect}%減少させます。減少させた移動速度は持続時間の間徐々に回復します。
     </>
 )
 

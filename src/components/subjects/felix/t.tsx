@@ -12,7 +12,7 @@ const t: React.FC<SubjectSkillProps> = props => {
         const attack = Constants.T.shield.effect.attack;
         /*
         if (props.showEquation) {
-            return <>{duration}秒間<span className={style.emphasis}>消耗した1スタックあたり{base}</span><span className={style.attack}>(+攻撃力の{attack}％)</span></>
+            return <>{duration}秒間<span className={style.emphasis}>消耗した1スタックあたり{base}</span><span className={style.attack}>(+攻撃力の{attack}%)</span></>
         } else {
             const zero = props.status.attackPower.percent(attack);
             return <>

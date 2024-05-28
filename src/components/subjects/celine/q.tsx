@@ -10,7 +10,7 @@ const q: React.FC<SubjectSkillProps> = props => (
         プラズマ爆弾を投げて指定した位置に設置します。<span className={style.emphasis}>起爆</span>
         スキルで爆弾を爆発させると、それぞれの範囲に<Value skill="Q" ratio={Constants.Q.damage} />
         のスキルダメージを与えます。対象が1つ以上の爆弾にダメージを受けた場合、2つ目からのダメージ量は{Constants.Q.multiple_bomb_damage_multiplier}
-        ％のみ適用されます。<br />
+        %のみ適用されます。<br />
         <br />
         プラズマ爆弾は最大{Constants.Q.max_bomb}つまで設置することができ、最大{Constants.Q.charge.max}つの爆弾を貯めておくことができます。<br />
         <br />

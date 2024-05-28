@@ -20,7 +20,7 @@ const t: React.FC<SubjectSkillProps> = props => {
 export default t;
 
 export const values: ValuesProps = {
-    additionalInfo: <>釣りでアイテム獲得確率：一般{Constants.T.fishing.common}％/高級{Constants.T.fishing.uncommon}％/レア{Constants.T.fishing.rare}％</>,
+    additionalInfo: <>釣りでアイテム獲得確率：一般{Constants.T.fishing.common}%/高級{Constants.T.fishing.uncommon}%/レア{Constants.T.fishing.rare}%</>,
     parameters: [
         {title: "シールド吸収量", values: Constants.T.shield.maxHP, percent: true},
         {title: "クールダウン", values: Constants.T.cooldown.constant}

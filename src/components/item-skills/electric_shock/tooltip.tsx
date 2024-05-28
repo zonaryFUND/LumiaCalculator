@@ -31,7 +31,7 @@ const Value: React.FC<ItemSkillProps> = props => {
             null;
 
         return <>
-            <span className={style.maxhp}>敵の最大体力の{props.values.targetMaxHP}％</span>
+            <span className={style.maxhp}>敵の最大体力の{props.values.targetMaxHP}%</span>
             {value == null ? <> + </> : null}
             <span className={style.level}>
                 {value ? <>(+{value})</> : null}

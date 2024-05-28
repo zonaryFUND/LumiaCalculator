@@ -20,7 +20,7 @@ const e: React.FC<SubjectSkillProps> = props => {
 export default e;
 
 export const values: ValuesProps = {
-    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}％が返されます。</>,
+    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}%が返されます。</>,
     parameters: [
         {title: "最小ダメージ量", values: Constants.E.min_damage.base},
         {title: "最大ダメージ量", values: Constants.E.max_damage.base},

@@ -19,7 +19,7 @@ export default q;
 export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "最大体力ダメージ(％)", values: Constants.Q.additional_damage.maxHP, percent: true},
+        {title: "最大体力ダメージ(%)", values: Constants.Q.additional_damage.maxHP, percent: true},
         {title: "消費", values: Constants.Q.sp_cost}
     ]
 }

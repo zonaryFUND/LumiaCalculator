@@ -21,7 +21,7 @@ export default e;
 export const values: ValuesProps = {
     parameters: [
         {title: "視界増加量", values: Constants.E.vision},
-        {title: "追撃時移動速度(％)", values: Constants.E.movement_speed},
+        {title: "追撃時移動速度(%)", values: Constants.E.movement_speed},
         {title: "クールダウン", values: Constants.E.cooldown},
         {title: "消費", values: Constants.E.sp_cost}
     ]

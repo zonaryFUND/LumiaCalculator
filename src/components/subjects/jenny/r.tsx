@@ -18,7 +18,7 @@ export default r;
 export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "移動速度減少量(％)", values: Constants.R.slow, percent: true},
+        {title: "移動速度減少量(%)", values: Constants.R.slow, percent: true},
         {title: "クールダウン", values: Constants.R.cooldown},
         {title: "消費", values: Constants.R.sp_cost},
     ]

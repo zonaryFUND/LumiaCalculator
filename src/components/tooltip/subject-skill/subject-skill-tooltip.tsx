@@ -85,7 +85,7 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
         <div className={style.cooldown}>
             {spCost != null ? <>スタミナ {spCost}<br /></> : null}
             {hpCost != null ? <>体力 {hpCost}<br /></> : null}
-            {hpPercentCost != null ? <>現在体力 {hpPercentCost}％<br /></> : null}
+            {hpPercentCost != null ? <>現在体力 {hpPercentCost}%<br /></> : null}
             {cost != null ? <>資源消費量 {cost}<br /></> : null}
             {spCost == null && hpCost == null && hpPercentCost == null && cost == null ? <>コストなし<br /></> : null}
             {

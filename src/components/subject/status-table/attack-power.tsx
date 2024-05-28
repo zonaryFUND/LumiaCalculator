@@ -33,7 +33,7 @@ const attackPower: React.FC<Props> = props => {
             }
             {
                 props.ratio?.greaterThan(0) ?
-                <tr><td>積算補正値</td><td>{props.ratio.toString()}％</td></tr> : 
+                <tr><td>積算補正値</td><td>{props.ratio.toString()}%</td></tr> : 
                 null
             }
         </InnerTable>

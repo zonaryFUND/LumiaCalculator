@@ -8,8 +8,8 @@ import style from "components/tooltip/tooltip.module.styl";
 const q: React.FC<SubjectSkillProps> = props => (
     <>
         <span className={style.enhance}>ニーストライク</span>：ヤンが膝で範囲内の敵に<Damage skill="Q" constants={Constants.Q.damage} {...props} />のスキルダメージを与え、
-        {Constants.Q.slow.duration}秒間、移動速度を{Constants.Q.slow.effect}％減少させます。再使用すると、リッピング・ニーストライクを使用できます。<br />
-        <span className={style.emphasis}>強化効果</span>：ダメージを受けた敵に{Constants.Q.defense_reduction.duration}秒間、防御力を{Constants.Q.defense_reduction.effect}％減少させます。<br />
+        {Constants.Q.slow.duration}秒間、移動速度を{Constants.Q.slow.effect}%減少させます。再使用すると、リッピング・ニーストライクを使用できます。<br />
+        <span className={style.emphasis}>強化効果</span>：ダメージを受けた敵に{Constants.Q.defense_reduction.duration}秒間、防御力を{Constants.Q.defense_reduction.effect}%減少させます。<br />
         <br />
         <span className={style.enhance}>リッピング・ニーストライク</span>：ヤンが膝打ちで敵に<Damage skill="Q" constants={Constants.Q.Q2_damage} {...props} />のスキルダメージを与え、
         {Constants.Q.airborne}秒間、敵を空中に浮かせます。<br />

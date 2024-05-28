@@ -74,10 +74,10 @@ const Damage: React.FC<Props> = props => {
         return (
             <>
                {additionalOnly ? null : <span className={props.className || style.emphasis}>{damage.toString()}</span>}
-               {props.constants.targetHP ? <span className={style.maxhp}>{left}{target}の現在体力の{current(level, props.constants.targetHP).toString()}％{right}</span> : null}
-               {props.constants.lostHP ? <span className={style.losthp}>{left}失った体力の{current(level, props.constants.lostHP).toString()}％{right}</span> : null}
-               {props.constants.targetLostHP ? <span className={style.losthp}>{left}{target}の失った体力の{current(level, props.constants.targetLostHP).toString()}％{right}</span> : null}
-               {props.constants.targetMaxHP ? <span className={style.maxhp}>{left}{target}の最大体力の{current(level, props.constants.targetMaxHP).toString()}％{right}</span> : null}
+               {props.constants.targetHP ? <span className={style.maxhp}>{left}{target}の現在体力の{current(level, props.constants.targetHP).toString()}%{right}</span> : null}
+               {props.constants.lostHP ? <span className={style.losthp}>{left}失った体力の{current(level, props.constants.lostHP).toString()}%{right}</span> : null}
+               {props.constants.targetLostHP ? <span className={style.losthp}>{left}{target}の失った体力の{current(level, props.constants.targetLostHP).toString()}%{right}</span> : null}
+               {props.constants.targetMaxHP ? <span className={style.maxhp}>{left}{target}の最大体力の{current(level, props.constants.targetMaxHP).toString()}%{right}</span> : null}
             </>
         );
         */
@@ -95,38 +95,38 @@ const Damage: React.FC<Props> = props => {
                             case "base":
                                 return <span key={key} className={props.className || style.emphasis}>{current(level, props.constants.base!).toString()}</span>;
                             case "attack":
-                                return <span key={key} className={style.attack}>{left}攻撃力の{current(level, props.constants.attack!).toString()}％{right}</span>;
+                                return <span key={key} className={style.attack}>{left}攻撃力の{current(level, props.constants.attack!).toString()}%{right}</span>;
                             case "basicAttackAmp":
                                 return <span key={key} className={style.attack}>* (基本攻撃増幅)</span>;
                             case "additionalAttack":
-                                return <span key={key} className={style.attack}>{left}追加攻撃力の{current(level, props.constants.additionalAttack!).toString()}％{right}</span>;
+                                return <span key={key} className={style.attack}>{left}追加攻撃力の{current(level, props.constants.additionalAttack!).toString()}%{right}</span>;
                             case "defense":
-                                return <span key={key} className={style.defense}>{left}防御力の{current(level, props.constants.defense!).toString()}％{right}</span>;
+                                return <span key={key} className={style.defense}>{left}防御力の{current(level, props.constants.defense!).toString()}%{right}</span>;
                             case "maxHP":
-                                return <span key={key} className={style.maxhp}>{left}最大体力の{current(level, props.constants.maxHP!).toString()}％{right}</span>;
+                                return <span key={key} className={style.maxhp}>{left}最大体力の{current(level, props.constants.maxHP!).toString()}%{right}</span>;
                             case "additionalMaxHP":
-                                return <span key={key} className={style.maxhp}>{left}追加体力の{current(level, props.constants.additionalMaxHP!).toString()}％{right}</span>;                                
+                                return <span key={key} className={style.maxhp}>{left}追加体力の{current(level, props.constants.additionalMaxHP!).toString()}%{right}</span>;                                
                             case "amp":
-                                return <span key={key} className={style.amp}>{left}スキル増幅の{current(level, props.constants.amp!).toString()}％{right}</span>;
+                                return <span key={key} className={style.amp}>{left}スキル増幅の{current(level, props.constants.amp!).toString()}%{right}</span>;
                             case "targetHP":
-                                return <span key={key} className={style.maxhp}>{left}{target}の現在体力の{current(level, props.constants.targetHP!).toString()}％{right}</span>;
+                                return <span key={key} className={style.maxhp}>{left}{target}の現在体力の{current(level, props.constants.targetHP!).toString()}%{right}</span>;
                             case "targetMaxHP":
-                                return <span key={key} className={style.maxhp}>{left}{target}の最大体力の{current(level, props.constants.targetMaxHP!).toString()}％{right}</span>;
+                                return <span key={key} className={style.maxhp}>{left}{target}の最大体力の{current(level, props.constants.targetMaxHP!).toString()}%{right}</span>;
                             case "lostHP":
-                                return <span key={key} className={style.losthp}>{left}失った体力の{current(level, props.constants.lostHP!).toString()}％{right}</span>;
+                                return <span key={key} className={style.losthp}>{left}失った体力の{current(level, props.constants.lostHP!).toString()}%{right}</span>;
                             case "targetLostHP":
-                                return <span key={key} className={style.losthp}>{left}{target}の失った体力の{current(level, props.constants.targetLostHP!).toString()}％{right}</span>;
+                                return <span key={key} className={style.losthp}>{left}{target}の失った体力の{current(level, props.constants.targetLostHP!).toString()}%{right}</span>;
                             case "maxSP":
-                                return <span key={key} className={style.maxsp}>{left}最大スタミナの{current(level, props.constants.maxSP!).toString()}％{right}</span>;
+                                return <span key={key} className={style.maxsp}>{left}最大スタミナの{current(level, props.constants.maxSP!).toString()}%{right}</span>;
                             case "criticalChance":
                                 /*
                                 return <span key={key} className={style.critical}>+{
                                     props.status?.criticalChance.percent(current(level, props.constants.criticalChance!)).toString()
-                                }％ = (致命打確率の{current(level, props.constants.criticalChance!).toString()}％)</span>;
+                                }% = (致命打確率の{current(level, props.constants.criticalChance!).toString()}%)</span>;
                                 */
                                return null;
                             case "summoned_attack":
-                                return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(level, props.constants.summonedAttack!).toString()}％{right}</span>;
+                                return <span key={key} className={style.attack}>{left}{props.summonedName}の攻撃力の{current(level, props.constants.summonedAttack!).toString()}%{right}</span>;
                             case "stack":
                                 return <span key={key} className={style.strong}>{left}{props.stackName}スタック数{right}</span>;
                             case "level":
@@ -136,7 +136,7 @@ const Damage: React.FC<Props> = props => {
                                     return <span key={key} className={style.level}>{left}キャラクターレベル*{current(level, props.constants.level!).toString()}{right}</span>
                                 }
                             case "attackSpeed":
-                                return <span key={key} className={style.attackspeed}>{left}攻撃速度の{current(level, props.constants.attackSpeed!).toString()}％{right}</span>;
+                                return <span key={key} className={style.attackspeed}>{left}攻撃速度の{current(level, props.constants.attackSpeed!).toString()}%{right}</span>;
                         }
                     })
                 }

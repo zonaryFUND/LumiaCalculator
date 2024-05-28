@@ -8,14 +8,14 @@ import style from "components/tooltip/tooltip.module.styl";
 const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            <span className={style.emphasis}>ロケットランチャーに武器切り替え</span>：ウェポンケースを振り回して敵の移動速度を{Constants.R.slow.duration}秒間{Constants.R.slow.effect}％減少させながら
+            <span className={style.emphasis}>ロケットランチャーに武器切り替え</span>：ウェポンケースを振り回して敵の移動速度を{Constants.R.slow.duration}秒間{Constants.R.slow.effect}%減少させながら
             <Damage skill="R" constants={Constants.R.switch_damage} {...props} />のスキルダメージを与え、{Constants.R.duration}秒間{Constants.R.ammo}発弾倉のロケットランチャーに切り替えます。<br />
             <br />
             ロケットランチャー状態では射程距離と攻撃速度が固定され、移動速度が{Constants.R.movement_speed_penalty}減少します。また、基本攻撃に致命打が適用されません。的中した敵の後方に
             <Damage skill="R" constants={Constants.R.area_damage} {...props} />の範囲スキルダメージを追加で与えます。ロケットランチャー状態を維持する間、
             <span className={style.emphasis}>40mmグレネード</span>スキルが<span className={style.emphasis}>加速ロケット</span>スキルに変更されます。<br />
             <br />
-            ロケットランチャー状態が終了すると、余った弾の数に比例してクールダウンが最大{Constants.R.max_cooldown_reduction}％減少します。
+            ロケットランチャー状態が終了すると、余った弾の数に比例してクールダウンが最大{Constants.R.max_cooldown_reduction}%減少します。
         </>
     );
 }

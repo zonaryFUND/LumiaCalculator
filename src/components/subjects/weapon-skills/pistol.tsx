@@ -10,12 +10,12 @@ const pistol: React.FC<SubjectSkillProps> = props => {
     const movementSpeed = (() => {
         if (props.showEquation) {
             return <>
-                <span className={style.emphasis}>{Constants.pistol.movement_speed.base[level]}％</span>
-                <span className={style.amp}>スキル増幅の{Constants.pistol.movement_speed.amp}％</span>
+                <span className={style.emphasis}>{Constants.pistol.movement_speed.base[level]}%</span>
+                <span className={style.amp}>スキル増幅の{Constants.pistol.movement_speed.amp}%</span>
             </>
         } else {
             //const value = skillDamage(props.status, props.config, "D", Constants.pistol.movement_speed);
-            //return <span className={style.emphasis}>{value.toString()}％</span>
+            //return <span className={style.emphasis}>{value.toString()}%</span>
             return null;
         }
     })();
@@ -23,7 +23,7 @@ const pistol: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             {Constants.pistol.duration}秒間{movementSpeed}早く移動して銃弾を装填します。装填を終えた後には、次の
-            {Constants.pistol.attack_speed.count}回の基本攻撃速度が{Constants.pistol.attack_speed.effect}％増加します。
+            {Constants.pistol.attack_speed.count}回の基本攻撃速度が{Constants.pistol.attack_speed.effect}%増加します。
         </>
     );
 }

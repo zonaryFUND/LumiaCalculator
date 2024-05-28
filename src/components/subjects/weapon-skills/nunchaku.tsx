@@ -11,7 +11,7 @@ const nunchaku: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             双節棍を素早く振り回して風を集め、移動速度が{Constants.nunchaku.movement_speed_penalty}
-            ％減少します。もう一度使用すると指定した方向に飛ばします。風の塊は双節棍を振り回した時間によって
+            %減少します。もう一度使用すると指定した方向に飛ばします。風の塊は双節棍を振り回した時間によって
             <Damage skill="D" constants={Constants.nunchaku.min_damage} {...props} /> ~ <Damage skill="D" constants={Constants.nunchaku.max_damage} {...props} />
             のスキルダメージを与え、{Constants.nunchaku.stun_threshold}秒以上を振り回すと当たった対象を{Constants.nunchaku.stun}秒間気絶させます。
         </>

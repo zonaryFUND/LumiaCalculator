@@ -16,7 +16,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             充電にかかる時間: {Constants.T.battery_charge}秒<br />
             <br />
             <br />
-            マルティナの基本攻撃は対象の視界を獲得し、攻撃速度{Constants.T.attack_speed_conversion.from}％が上がるたび、攻撃力が{Constants.T.attack_speed_conversion.to}％増加します。<br />
+            マルティナの基本攻撃は対象の視界を獲得し、攻撃速度{Constants.T.attack_speed_conversion.from}%が上がるたび、攻撃力が{Constants.T.attack_speed_conversion.to}%増加します。<br />
             <br />
             <span className={style.emphasis}>[取材中]</span>
             従軍記者であるマルティナは取材中、交戦中の地域を直感的に把握できます。{Constants.T.engagement_ping_range}m範囲内で敵実験体が交戦した地点に特殊なピングが表示されます。<br />
