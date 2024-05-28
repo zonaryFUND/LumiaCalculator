@@ -1,7 +1,7 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 type Props = SubjectSkillProps & {
     to: React.ReactElement

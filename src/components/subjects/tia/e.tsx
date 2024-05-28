@@ -1,8 +1,8 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 type Props = SubjectSkillProps & {
     color: React.ReactElement
@@ -10,7 +10,7 @@ type Props = SubjectSkillProps & {
 
 const e: React.FC<Props> = props => (
     <>
-        ティアが地面を{props.color}の絵の具で塗りながら突進し、衝突した敵に<Damage skill="E" constants={Constants.E.damage} {...props} />
+        ティアが地面を{props.color}の絵の具で塗りながら突進し、衝突した敵に<Value skill="E" ratio={Constants.E.damage} />
         のスキルダメージを与え{props.color}の絵の具を塗ります。
     </>
 )
