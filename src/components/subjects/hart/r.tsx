@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             ハートが{Constants.R.duration}秒間ギターを演奏し、範囲内のすべての対象を踊らせます。<br />
-            ギターを演奏している間、{Constants.R.heal_tick}秒ごとに自分の体力を<Damage skill="R" constants={Constants.R.heal} {...props} />回復します。<br />
+            ギターを演奏している間、{Constants.R.heal_tick}秒ごとに自分の体力を<Value skill="R" ratio={Constants.R.heal} />回復します。<br />
             <br />
             <span className={style.enhance}>進化効果</span>：ギターを演奏している間、範囲内の味方の体力が回復します。
         </>

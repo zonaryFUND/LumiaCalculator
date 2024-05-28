@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ハートが指定した方向に短く移動し、周りの敵に音符を飛ばして<Damage skill="E" constants={Constants.E.damage} {...props} />
+            ハートが指定した方向に短く移動し、周りの敵に音符を飛ばして<Value skill="E" ratio={Constants.E.damage} />
             のスキルダメージを与えます。このスキルはもう1度使用することができます。<br />
             <br />
             <span className={style.enhance}>進化効果</span>：スキルの再使用回数が増加します。

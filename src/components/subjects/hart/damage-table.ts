@@ -1,30 +1,30 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const rTicks = Constants.R.duration / Constants.R.heal_tick;
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: "進化T追加ダメージ", skill: "T", value: Constants.T.damage, type: "basic"},
-        {label: `進化T追加ダメージ全ヒット(${Constants.T.evoluted_sound_wave})`, skill: "T", value: Constants.T.damage, type: "basic", multiplier: [{basic: Constants.T.evoluted_sound_wave * 100}]}
+        {label: props.intl.formatMessage({id: "subject.hart.passive-additional"}), skill: "T", value: Constants.T.damage, type: "basic"},
+        {label: props.intl.formatMessage({id: "subject.hart.passive-additional-max-hit"}, {value: Constants.T.evoluted_sound_wave}), skill: "T", value: Constants.T.damage, type: "basic", multiplier: [{basic: Constants.T.evoluted_sound_wave * 100}]}
     ],
     skill: [
         [
-            {label: "Q最小", skill: "Q", value: Constants.Q.min_damage},
-            {label: "Q最大", skill: "Q", value: Constants.Q.max_damage},
+            {label: props.intl.formatMessage({id: "subject.hart.q-min"}), skill: "Q", value: Constants.Q.min_damage},
+            {label: props.intl.formatMessage({id: "subject.hart.q-max"}), skill: "Q", value: Constants.Q.max_damage},
         ],
-        [{label: "進化W追加ダメージ", skill: "W", value: Constants.W.buff_damage}],
+        [{label: props.intl.formatMessage({id: "subject.hart.w-additional"}), skill: "W", value: Constants.W.buff_damage}],
         [
             {label: "E", skill: "E", value: Constants.E.damage},
-            {label: "E最大ヒット(2)", skill: "E", value: Constants.E.damage, multiplier: [{basic: 200}]},
-            {label: "進化E最大ヒット(3)", skill: "E", value: Constants.E.damage, multiplier: [{basic: 300}]}
+            {label: props.intl.formatMessage({id: "subject.hart.e-max-hit"}, {value: 2}), skill: "E", value: Constants.E.damage, multiplier: [{basic: 200}]},
+            {label: props.intl.formatMessage({id: "subject.hart.e-evolved-max-hit"}, {value: 3}), skill: "E", value: Constants.E.damage, multiplier: [{basic: 300}]}
         ],
         [
-            {label: "R回復/0.5秒", skill: "R", value: Constants.R.heal, type: "heal"},
-            {label: `R回復最大(${rTicks}ティック)`, skill: "R", value: Constants.R.heal, type: "heal", multiplier: [{basic: rTicks * 100}]}
+            {label: props.intl.formatMessage({id: "subject.hart.r-heal-tick"}, {value: 0.5}), skill: "R", value: Constants.R.heal, type: "heal"},
+            {label: props.intl.formatMessage({id: "subject.hart.r-heal-max-tick"}, {value: rTicks}), skill: "R", value: Constants.R.heal, type: "heal", multiplier: [{basic: rTicks * 100}]}
         ]
     ]   
-}
+})
 
 export default table;

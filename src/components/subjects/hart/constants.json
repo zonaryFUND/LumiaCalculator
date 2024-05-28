@@ -12,7 +12,7 @@
         "slow_threshold": 2,
         "slow": {
             "duration": 1,
-            "effect": 20
+            "effect": 30
         },
         "sp_cost": 100,
         "cooldown": 4
@@ -25,7 +25,7 @@
             "attack": 50
         },
         "sp_cost": [85,90,95,100,105],
-        "cooldown": 15
+        "cooldown": 14
     },
     "E": {
         "damage": {
@@ -45,7 +45,7 @@
         },
         "movement_speed": 2.5,
         "sp_cost": [100,110,120],
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "sp": [4,6,8],

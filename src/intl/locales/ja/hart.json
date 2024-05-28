@@ -1,0 +1,11 @@
+{
+    "subject.hart.passive-additional": "進化T追加ダメージ",
+    "subject.hart.passive-additional-max-hit": "進化T追加ダメージ全ヒット({value})",
+    "subject.hart.q-min": "Q最小",
+    "subject.hart.q-max": "Q最大",
+    "subject.hart.w-additional": "進化W追加ダメージ",
+    "subject.hart.e-max-hit": "E最大ヒット({value})",
+    "subject.hart.e-evolved-max-hit": "進化E最大ヒット({value})",
+    "subject.hart.r-heal-tick": "R回復/{value}秒",
+    "subject.hart.r-heal-max-tick": "R回復最大({value}ティック)"
+}
