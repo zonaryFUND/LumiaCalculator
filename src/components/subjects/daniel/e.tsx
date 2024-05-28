@@ -1,14 +1,14 @@
 import * as React from "react";
-import Damage from "../damage";
-import { SubjectSkillProps } from "../props";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
         ダニエルが前に素早く突進して、{Constants.E.duration}秒間シャドーグライド状態になります。シャドーグライド状態では基本攻撃の射程距離が
         {Constants.E.basic_attack_range}mに固定され、敵を基本攻撃するとダニエルは敵の後ろ側に瞬間移動して
-        <Damage skill="W" constants={Constants.E.damage} {...props} />のスキルダメージを追加で与えます。
+        <Value skill="W" ratio={Constants.E.damage} />のスキルダメージを追加で与えます。
     </>
 )
 
