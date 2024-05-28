@@ -1,0 +1,17 @@
+{
+    "subject.debimarlene.debiq": "デビーQ",
+    "subject.debimarlene.debiw": "デビーW",
+    "subject.debimarlene.debie-energy": "デビーEマーリンエネルギー",
+    "subject.debimarlene.debie-rush": "デビーE待機デビー突進",
+    "subject.debimarlene.marleneq": "マーリンQ",
+    "subject.debimarlene.marlenew-bullets": "マーリンW弾数",
+    "subject.debimarlene.marlenew-damage": "マーリンWダメージ",
+    "subject.debimarlene.marlenew-damage-max-hit": "マーリンWダメージ全ヒット({value})",
+    "subject.debimarlene.marlenee-rush": "マーリンEデビー突進",
+    "subject.debimarlene.marlenee-energy": "マーリンE待機マーリンエネルギー",
+    "subject.debimarlene.r-rush": "R突進",
+    "subject.debimarlene.r-true-damage": "R追加固定ダメージ",
+    "subject.debimarlene.r-true-damage-max-hit": "R追加固定ダメージ全ヒット({value})",
+    "subject.debimarlene.passive-color-change": "T色変え",
+    "subject.debimarlene.passive-color-change-set": "T色変え1セット({value})"
+}

@@ -100,7 +100,7 @@
             "base": [5,10,15],
             "additionalAttack": 10
         },
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "debi_defense": [5,10,15],

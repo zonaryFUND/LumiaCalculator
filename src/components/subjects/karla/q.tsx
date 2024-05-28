@@ -3,10 +3,8 @@ import Constants from "./constants.json";
 import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
-import Decimal from "decimal.js";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { CooldownOverride } from "../skills";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>
@@ -27,7 +25,7 @@ export const values: ValuesProps = {
     ]
 }
 
-export function cooldownOverride(config: SubjectConfig, status: Status): (base: Decimal) => Decimal {
+export const cooldownOverride: CooldownOverride = (config, status) => {
     // NOTE: This multiplier is an estimated value.
     return base => base.dividedBy(status.attackSpeed.calculatedValue).round2()
 }
