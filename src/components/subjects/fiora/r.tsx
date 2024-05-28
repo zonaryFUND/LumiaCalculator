@@ -1,17 +1,17 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            フィオラが指定した方向に短く突進しながら攻撃し、<Damage skill="R" constants={Constants.R.damage} {...props} />のスキルダメージを与えて
+            フィオラが指定した方向に短く突進しながら攻撃し、<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えて
             {Constants.R.slow.duration}秒間敵の移動速度を{Constants.R.slow.effect}%減少させます。<br />
             フレッシュは最大2回追加で使用することができます。<br />
             <br />
-            最後に使用する時は<Damage skill="R" constants={Constants.R.finish_damage} {...props} />のスキルダメージを与えて敵を
+            最後に使用する時は<Value skill="R" ratio={Constants.R.finish_damage} />のスキルダメージを与えて敵を
             {Constants.R.stun}秒間気絶させます。
         </>
     );

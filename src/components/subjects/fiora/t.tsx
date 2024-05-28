@@ -1,16 +1,16 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             フィオラは敵にスキルを的中させるたびにトゥシェ刻印を敵に付与することができます。トゥシェ刻印がムスタックになった敵をスキルで的中させた場合、敵に
-            <Damage skill="T" constants={Constants.T.damage} {...props} />のスキルダメージを追加で与え、フィオラの移動速度が{Constants.T.movement_speed.duration}
-            秒間{Constants.T.movement_speed.effect[props.config.skillLevels.T]}%増加しては徐々に減少します。フィオラの
+            <Value skill="T" ratio={Constants.T.damage} />のスキルダメージを追加で与え、フィオラの移動速度が{Constants.T.movement_speed.duration}
+            秒間{Constants.T.movement_speed.effect[props.skillLevel]}%増加しては徐々に減少します。フィオラの
             <span className={style.emphasis}>ファント</span>のクールダウンは{Constants.T.q_cooldown_reduction}
             %減少し、他の基本スキルの残ったクールダウンは{Constants.T.cooldown_reduction}%減少します。
         </>

@@ -1,4 +1,4 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const enhanceQ = {
@@ -6,24 +6,24 @@ const enhanceQ = {
     amp: Constants.Q.damage.amp + Constants.Q.additional_damage.amp
 }
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: ["standard"],
     skill: [
         [
-            {label: "Q中", skill: "Q", value: Constants.Q.damage},
-            {label: "Q先端", skill: "Q", value: enhanceQ}
+            {label: props.intl.formatMessage({id: "subject.fiora.q-inner"}), skill: "Q", value: Constants.Q.damage},
+            {label: props.intl.formatMessage({id: "subject.fiora.q-tip"}), skill: "Q", value: enhanceQ}
         ],
         [
             {label: "W", skill: "W", value: Constants.W.damage},
-            {label: "W(2ヒット)", skill: "W", value: Constants.W.damage, multiplier: [{basic: 200}]}
+            {label: props.intl.formatMessage({id: "subject.fiora.w-max-hit"}, {value: 2}), skill: "W", value: Constants.W.damage, multiplier: [{basic: 200}]}
         ],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [
             {label: "R", skill: "R", value: Constants.R.damage},
-            {label: "R最終", skill: "R", value: Constants.R.finish_damage}
+            {label: props.intl.formatMessage({id: "subject.fiora.r-finish"}), skill: "R", value: Constants.R.finish_damage}
         ],
         [{label: "T", skill: "T", value: Constants.T.damage}]
     ]   
-}
+})
 
 export default table;
