@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ヘジンは同じ対象にスキルを3回的中させると三災をかけて{Constants.T.fear[props.config.skillLevels.T]}秒間恐怖状態にさせ、
-            <Damage skill="T" constants={Constants.T.damage} {...props} />の追加スキルダメージを与えます。
+            ヘジンは同じ対象にスキルを3回的中させると三災をかけて{Constants.T.fear[props.skillLevel]}秒間恐怖状態にさせ、
+            <Value skill="T" ratio={Constants.T.damage} />の追加スキルダメージを与えます。
         </>
     );
 }
