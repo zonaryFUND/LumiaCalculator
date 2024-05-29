@@ -1,0 +1,13 @@
+{
+    "subject.haze.passive-additional": "T追加ダメージ",
+    "subject.haze.r-additional": "R中追加ダメージ",
+    "subject.haze.q-outer": "Q外周",
+    "subject.haze.q-center": "Q中心",
+    "subject.haze.e-1hit": "E1発",
+    "subject.haze.e-max-hit": "E全ヒット({value})",
+    "subject.haze.eq-1ammo": "E中Q最小(余り弾数1)",
+    "subject.haze.eq-max-ammo": "E中Q最大(余り弾数{value})",
+    "subject.haze.r-swap": "R切り替え",
+    "subject.haze.rq": "R中Q",
+    "subject.haze.rq-enhanced": "R中Q強化"
+}

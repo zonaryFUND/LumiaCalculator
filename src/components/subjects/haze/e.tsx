@@ -1,16 +1,16 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             <span className={style.emphasis}>サブマシンガンに武器切り替え</span>：前方に短く突進し、{Constants.E.duration}秒間{Constants.E.ammo}発弾倉のサブマシンガンに切り替えます。<br />
             <br />
-            サブマシンガン状態では移動しながら敵を攻撃でき、攻撃命令で対象を変更できます。各攻撃は<Damage skill="E" constants={Constants.E.damage} {...props} />
+            サブマシンガン状態では移動しながら敵を攻撃でき、攻撃命令で対象を変更できます。各攻撃は<Value skill="E" ratio={Constants.E.damage} />
             <span className={style.amp}>(+スキル増幅{Constants.E.damage.amp_per}あたり1)</span>のスキルダメージを与え、
             {Constants.E.effect_count}発目の弾ごとに基本攻撃が的中すると、効果が適用されます。サブマシンガン状態を維持する間、製作や採取など一部の行動が制限され、
             <span className={style.emphasis}>40mmグレネードスキル</span>は<span className={style.emphasis}>サブマシンガン連射</span>スキルに変更されます。<br />
