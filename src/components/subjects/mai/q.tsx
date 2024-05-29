@@ -1,18 +1,18 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            マイが両手にあるショールを大きく広げ、範囲内の敵に<Damage skill="Q" constants={Constants.Q.damage} {...props} />のスキルダメージを与えて
+            マイが両手にあるショールを大きく広げ、範囲内の敵に<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えて
             {Constants.Q.duration}秒間持続されるパターンを付けます。<br />
             <br />
             パターンを付けられた対象が<span className={style.emphasis}>ドレープ</span>に再び的中されると、{Constants.Q.slow.duration}
-            秒間移動速度が{Constants.Q.slow.effect[props.config.skillLevels.Q]}%減少します。
+            秒間移動速度が{Constants.Q.slow.effect[props.skillLevel]}%減少します。
         </>
     );
 }
