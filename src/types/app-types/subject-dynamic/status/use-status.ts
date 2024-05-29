@@ -16,6 +16,7 @@ import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { SubjectStatusOverride } from "components/subjects/status-override";
 import { SummonedStatus } from "components/subjects/summoned-status";
+import { defenseCalc } from "./defense-calculation";
 
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
@@ -227,7 +228,7 @@ export function useStatus(config: SubjectConfig): Status {
     const calculated: Status = {
         maxHP: maxHPCalc(overriddenValue.maxHP, {level: config.level}),
         hpReg: standardCalc(overriddenValue.hpReg, {level: config.level}, 2),
-        defense: standardCalc(overriddenValue.defense, {level: config.level}, 0),
+        defense: defenseCalc(overriddenValue.defense, config.level),
         maxSP: standardCalc(overriddenValue.maxSP, {level: config.level}, 0),
         basicAttackReduction: defenseMasteryCalc(overriddenValue.basicAttackReduction, {mastery: config.defenseMastery}),
         skillReduction: defenseMasteryCalc(overriddenValue.skillReduction, {mastery: config.defenseMastery}),

@@ -46,7 +46,7 @@ export type SummonedStatus = {
 export type Status = {
     maxHP: StatusValue & AdditionalStatusValue & CalculatedStatusValue
     hpReg: StatusValue & CalculatedStatusValue
-    defense: StatusValue & CalculatedStatusValue
+    defense: StatusValue & AdditionalStatusValue & CalculatedStatusValue
     basicAttackReduction: StatusValue & CalculatedStatusValue
     skillReduction: StatusValue & CalculatedStatusValue
     maxSP: StatusValue & CalculatedStatusValue,

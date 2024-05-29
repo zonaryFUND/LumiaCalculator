@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            対象を殴って<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与え、マグヌスの左側の方に
+            対象を殴って<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与え、マグヌスの左側の方に
             {Constants.E.knockback}m飛ばします。<br />
-            飛ばされた対象が壁にぶつかると{Constants.E.stun[props.config.skillLevels.E]}秒間気絶します。
+            飛ばされた対象が壁にぶつかると{Constants.E.stun[props.skillLevel]}秒間気絶します。
         </>
     );
 }

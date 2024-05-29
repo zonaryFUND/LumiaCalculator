@@ -14,17 +14,18 @@
     },
     "W": {
         "duration": 4,
+        "additional_hit_per__additional_defense": 40,
         "damage": {
-            "base": [30,35,40,45,50],
+            "base": [16,22,28,34,40],
             "additionalAttack": 50,
-            "amp": 20,
-            "defense": 15
+            "amp": 16,
+            "targetMaxHP": 2
         },
-        "count": [8,8,10,10,12],
-        "cooldown_reduction": 0.75,
+        "count": 11,
+        "cooldown_reduction": 0.5,
         "tenacity": 50,
         "sp_cost": [80,90,100,110,120],
-        "cooldown": 14
+        "cooldown": [15,14,13,12,11]
     },
     "E": {
         "damage": {
@@ -40,6 +41,7 @@
     },
     "R": {
         "duration": 7,
+        "stack_gain": [4,8,12],
         "max_speed": 2,
         "damage": {
             "base": [110,230,350],
@@ -53,7 +55,7 @@
     "T": {
         "basic_attack_hit_stack": 1,
         "skill_hit_stack": 2,
-        "defense": [1,2,3],
+        "defense": [1,1.5,2],
         "max_stack": 12,
         "hpRegen": [3,4,5]
     }

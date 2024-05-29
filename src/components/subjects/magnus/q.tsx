@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            地面を叩いて石を打ち飛ばし、対象に<Damage skill="Q" constants={Constants.Q.damage} {...props} />のスキルダメージを与えます。石に当たった対象は
-            {Constants.Q.slow.duration}秒間移動速度が{Constants.Q.slow.effect[props.config.skillLevels.Q]}%減少します。減少した移動速度は一定時間にわたって徐々に回復します。
+            地面を叩いて石を打ち飛ばし、対象に<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えます。石に当たった対象は
+            {Constants.Q.slow.duration}秒間移動速度が{Constants.Q.slow.effect[props.skillLevel]}%減少します。減少した移動速度は一定時間にわたって徐々に回復します。
         </>
     );
 }
