@@ -1,16 +1,16 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            マルティナが指定した方向を撮影し、<Damage skill="Q" constants={Constants.Q2.damage} {...props} />のスキルダメージを与えます。スキルが的中するとクールダウンが
+            マルティナが指定した方向を撮影し、<Value skill="Q" ratio={Constants.Q2.damage} />のスキルダメージを与えます。スキルが的中するとクールダウンが
             {Constants.Q2.cooldown_reduction}%減少し、刻印が消耗されるとマルティナの移動速度が
-            {Constants.Q2.movement_speed.duration[props.config.skillLevels.Q]}秒間{Constants.Q2.movement_speed.effect[props.config.skillLevels.Q]}%増加し、攻撃速度が
-            {Constants.Q2.attack_speed.duration}秒間{Constants.Q2.attack_speed.effect[props.config.skillLevels.Q]}%増加します。
+            {Constants.Q2.movement_speed.duration[props.skillLevel]}秒間{Constants.Q2.movement_speed.effect[props.skillLevel]}%増加し、攻撃速度が
+            {Constants.Q2.attack_speed.duration}秒間{Constants.Q2.attack_speed.effect[props.skillLevel]}%増加します。
         </>
     );
 }

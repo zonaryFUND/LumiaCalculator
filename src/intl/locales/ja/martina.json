@@ -1,0 +1,19 @@
+{
+    "subject.martina.interview.aa-1tick": "取材中基本攻撃(1ティック)",
+    "subject.martina.interview.aa-max-hit": "取材中基本攻撃全ヒット({value})",
+    "subject.martina.broadcast.aa-1tick": "放送中基本攻撃(1ティック)",
+    "subject.martina.broadcast.aa-max-hit": "放送中基本攻撃全ヒット({value})",
+    "subject.martina.interview.q": "取材中Q",
+    "subject.martina.interview.w": "取材中W",
+    "subject.martina.interview.passive-additional": "取材中T追加ダメージ",
+    "subject.martina.broadcast.q": "放送中Q",
+    "subject.martina.broadcast.w": "放送中W",
+    "subject.martina.broadcast.e2": "放送中E2",
+    "subject.martina.broadcast.r-outer-1tick": "放送中R外周1ティック",
+    "subject.martina.broadcast.r-outer-max-hit": "放送中R外周全ヒット({value})",
+    "subject.martina.broadcast.r-inner-1tick": "放送中R中央1ティック",
+    "subject.martina.broadcast.r-inner-max-hit": "放送中R中央全ヒット({value})",
+    "subject.martina.broadcast.r-outer-finish": "放送中R外周最終",
+    "subject.martina.broadcast.r-inner-finish": "放送中R中央最終",
+    "subject.martina.broadcast.passive-additional": "放送中T追加ダメージ"
+}

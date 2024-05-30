@@ -130,7 +130,7 @@ const basicAttackDamage: React.FC<Props> = props => {
                                 <td><FormattedMessage id="app.critical-hit" /></td>
                                 {
                                     props.multipliers ?
-                                    <>
+                                    <td>
                                     {
                                         props.multipliers.reduce((prev, multiplier) => {
                                             if (typeof multiplier === "number") {
@@ -141,7 +141,7 @@ const basicAttackDamage: React.FC<Props> = props => {
                                         }, <>{critical.toString()}</>)
                                     }
                                     <> = {critical.percent(calculatedMultiplier).toString()}</>
-                                    </>
+                                    </td>
                                     :
                                     <td><>
                                     <span className={table.small}><FormattedMessage id="app.standard-value" /></span>{value.toString()} x (<span className={table.small}><FormattedMessage id="status.critical-damage" /></span>

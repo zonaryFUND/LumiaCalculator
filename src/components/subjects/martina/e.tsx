@@ -1,10 +1,9 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
 import martina from "./martina.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (

@@ -1,32 +1,32 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const rMax = Constants.R2.count;
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
-        {label: "取材中基本攻撃(1ティック)", skill: "T", value: Constants.T.damage, type: "basic"},
-        {label: "取材中基本攻撃全ヒット(4)", skill: "T", value: Constants.T.damage, type: "basic", multiplier: [{basic: 400}]},
-        {label: "放送中基本攻撃(1ティック)", skill: "T", value: Constants.T.broadcasting_damage, type: "basic"},
-        {label: "放送中基本攻撃全ヒット(4)", skill: "T", value: Constants.T.broadcasting_damage, type: "basic", multiplier: [{basic: 400}]},
+        {label: props.intl.formatMessage({id: "subject.martina.interview.aa-1tick"}), skill: "T", value: Constants.T.damage, type: "basic"},
+        {label: props.intl.formatMessage({id: "subject.martina.interview.aa-max-hit"}, {value: 4}), skill: "T", value: Constants.T.damage, type: "basic", multiplier: [{basic: 400}]},
+        {label: props.intl.formatMessage({id: "subject.martina.broadcast.aa-1tick"}), skill: "T", value: Constants.T.broadcasting_damage, type: "basic"},
+        {label: props.intl.formatMessage({id: "subject.martina.broadcast.aa-max-hit"}, {value: 4}), skill: "T", value: Constants.T.broadcasting_damage, type: "basic", multiplier: [{basic: 400}]},
     ],
     skill: [
-        [{label: "取材中Q", skill: "Q", value: Constants.Q.damage}],
-        [{label: "取材中W", skill: "W", value: Constants.W.damage}],
-        [{label: "取材中T追加ダメージ", skill: "T", value: Constants.T.mark_damage}],
-        [{label: "放送中Q", skill: "Q", value: Constants.Q2.damage}],
-        [{label: "放送中W", skill: "W", value: Constants.W2.damage}],
-        [{label: "放送中E2", skill: "E", value: Constants.E2.damage}],
+        [{label: props.intl.formatMessage({id: "subject.martina.interview.q"}), skill: "Q", value: Constants.Q.damage}],
+        [{label: props.intl.formatMessage({id: "subject.martina.interview.w"}), skill: "W", value: Constants.W.damage}],
+        [{label: props.intl.formatMessage({id: "subject.martina.interview.passive-additional"}), skill: "T", value: Constants.T.mark_damage}],
+        [{label: props.intl.formatMessage({id: "subject.martina.broadcast.q"}), skill: "Q", value: Constants.Q2.damage}],
+        [{label: props.intl.formatMessage({id: "subject.martina.broadcast.w"}), skill: "W", value: Constants.W2.damage}],
+        [{label: props.intl.formatMessage({id: "subject.martina.broadcast.e2"}), skill: "E", value: Constants.E2.damage}],
         [
-            {label: "放送中R外周1ティック", skill: "R", value: Constants.R2.first_outer_damage},
-            {label: `放送中R外周全ヒット(${rMax})`, skill: "R", value: Constants.R2.first_outer_damage, multiplier: [{basic: rMax * 100}]},
-            {label: "放送中R中央1ティック", skill: "R", value: Constants.R2.first_center_damage},
-            {label: `放送中R中央全ヒット(${rMax})`, skill: "R", value: Constants.R2.first_center_damage, multiplier: [{basic: rMax * 100}]},
-            {label: "放送中R外周最終", skill: "R", value: Constants.R2.second_outer_damage},
-            {label: "放送中R中央最終", skill: "R", value: Constants.R2.second_center_damage}
+            {label: props.intl.formatMessage({id: "subject.martina.broadcast.r-outer-1tick"}), skill: "R", value: Constants.R2.first_outer_damage},
+            {label: props.intl.formatMessage({id: "subject.martina.broadcast.r-outer-max-hit"}, {value: rMax}), skill: "R", value: Constants.R2.first_outer_damage, multiplier: [{basic: rMax * 100}]},
+            {label: props.intl.formatMessage({id: "subject.martina.broadcast.r-inner-1tick"}), skill: "R", value: Constants.R2.first_center_damage},
+            {label: props.intl.formatMessage({id: "subject.martina.broadcast.r-inner-max-hit"}, {value: rMax}), skill: "R", value: Constants.R2.first_center_damage, multiplier: [{basic: rMax * 100}]},
+            {label: props.intl.formatMessage({id: "subject.martina.broadcast.r-outer-finish"}), skill: "R", value: Constants.R2.second_outer_damage},
+            {label: props.intl.formatMessage({id: "subject.martina.broadcast.r-inner-finish"}), skill: "R", value: Constants.R2.second_center_damage}
         ],
-        [{label: "放送中T追加ダメージ", skill: "T", value: Constants.T.broadcasting_mark_damage}]
+        [{label: props.intl.formatMessage({id: "subject.martina.broadcast.passive-additional"}), skill: "T", value: Constants.T.broadcasting_mark_damage}]
     ]   
-}
+})
 
 export default table;
