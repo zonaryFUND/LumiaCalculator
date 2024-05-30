@@ -1,13 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            マーカスが指定した方向に{Constants.E.distance}m突進します。敵とぶつかると、<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えて{Constants.E.knockback}m突き飛ばします。
+            マーカスが指定した方向に{Constants.E.distance}m突進します。敵とぶつかると、
+            <Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて{Constants.E.knockback}m突き飛ばします。
         </>
     );
 }

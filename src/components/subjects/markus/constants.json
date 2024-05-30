@@ -4,7 +4,7 @@
         "attack_speed": [28,41,54,67,80],
         "damage": {
             "base": [15,25,35,45,55],
-            "additionalMaxHP": 18
+            "additionalMaxHP": 15
         },
         "heal": 200,
         "duration": 5,
@@ -46,9 +46,13 @@
             "duration": 1,
             "effect": 75
         },
+        "defense_down": {
+            "duration": 4,
+            "effect": 15
+        },
         "cooldown_reduction": 3,
         "sp_cost": [100,120,140],
-        "cooldown": [70,60,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "damage": {
@@ -63,8 +67,8 @@
         "shock": 4,
         "shock_range": 6.5,
         "additional_damage": {
-            "base": [30,60,90],
-            "attack": 70
+            "base": [50,80,110],
+            "attack": 80
         }
     }
 }

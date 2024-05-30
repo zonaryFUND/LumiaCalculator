@@ -1,18 +1,18 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            マーカスは次の基本攻撃{Constants.Q.count}回の攻撃速度が{Constants.Q.attack_speed[props.config.skillLevels.Q]}%増加して基本攻撃で
-            <Damage skill="Q" constants={Constants.Q.damage} {...props} />の追加スキルダメージを与え、追加スキルダメージ量の{Constants.Q.heal}
+            マーカスは次の基本攻撃{Constants.Q.count}回の攻撃速度が{Constants.Q.attack_speed[props.skillLevel]}%増加して基本攻撃で
+            <Value skill="Q" ratio={Constants.Q.damage} />の追加スキルダメージを与え、追加スキルダメージ量の{Constants.Q.heal}
             %の体力を回復します。{Constants.Q.duration}秒間基本攻撃をしない場合には効果が消えます。<br />
             <br />
-            <span className={style.emphasis}>戦闘教範</span>スキルを使用した後、マーカスは{Constants.Q.movement_speed.duration}秒間敵実験体に向かって移動する時、移動速度が{Constants.Q.movement_speed.effect[props.config.skillLevels.Q]}%増加します。
+            <span className={style.emphasis}>戦闘教範</span>スキルを使用した後、マーカスは{Constants.Q.movement_speed.duration}秒間敵実験体に向かって移動する時、移動速度が{Constants.Q.movement_speed.effect[props.skillLevel]}%増加します。
         </>
     );
 }
