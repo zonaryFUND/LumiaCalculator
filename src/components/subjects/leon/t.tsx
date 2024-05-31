@@ -1,15 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            基本攻撃をすると{Constants.T.cooldown.constant[props.config.skillLevels.T]}秒ごとに水溜りを生成します。レオンが水溜りの上にいると移動速度が
-            {Constants.T.movement_speed[props.config.skillLevels.T]}%、攻撃速度が{Constants.T.attack_speed[props.config.skillLevels.T]}%増加します。<br />
-            水中強打：レオンが水溜りの上にいると基本攻撃ダメージに<Damage skill="T" constants={Constants.T.damage} {...props} />の追加スキルダメージを与えます。
+            基本攻撃をすると{Constants.T.cooldown.constant[props.skillLevel]}秒ごとに水溜りを生成します。レオンが水溜りの上にいると移動速度が
+            {Constants.T.movement_speed[props.skillLevel]}%、攻撃速度が{Constants.T.attack_speed[props.skillLevel]}%増加します。<br />
+            水中強打：レオンが水溜りの上にいると基本攻撃ダメージに<Value skill="T" ratio={Constants.T.damage} />の追加スキルダメージを与えます。
         </>
     );
 }

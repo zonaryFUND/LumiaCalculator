@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            レオンが自分と周りの味方にシールドを付与します。シールドは秒間レオンに<Damage skill="W" constants={Constants.W.shield} {...props} />のダメージを吸収するシールドを付与し、周りの味方には
-            <Damage skill="W" constants={Constants.W.ally_shield} {...props} />のダメージを吸収するシールドを付与します。シールドが消える時、その場に水溜りを生成します。
+            レオンが自分と周りの味方にシールドを付与します。シールドは秒間レオンに<Value skill="W" ratio={Constants.W.shield} />のダメージを吸収するシールドを付与し、周りの味方には
+            <Value skill="W" ratio={Constants.W.ally_shield} />のダメージを吸収するシールドを付与します。シールドが消える時、その場に水溜りを生成します。
         </>
     );
 }
