@@ -1,28 +1,30 @@
 import * as React from "react";
-import { useValueContext } from "./value-context";
+import { useValueContext, useValueContextOptional } from "./value-context";
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { ValueElement, ValueRatio } from "app-types/value-ratio";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 import style from "./tooltip.module.styl";
 import ValueExpression from "./value-expression";
 
+type OverrideKey = keyof ValueRatio | "result"
+
 type Props = {
     ratio: ValueRatio
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
     multiplier?: number
-    overrideExpression?: {[K in keyof ValueRatio]: {format?: string, className?: string}} |
+    overrideExpression?: Partial<{[K in OverrideKey]: {format?: string, className?: string}}> |
         ((key: keyof ValueRatio) => (value: number | React.ReactNode) => React.ReactNode | undefined)
 }
 
 const value: React.FC<Props> = props => {
-    const context = useValueContext();
+    const { config, status, showEquation } = useValueContextOptional();
     const skillLevel = React.useMemo(() => {
         if (props.skill == "item") return undefined;
-        if (props.skill == "D") return weaponSkillLevel(context.config.weaponMastery);
-        return context.config.skillLevels[props.skill];
-    }, [props.skill, context.config.weaponMastery, context.config.skillLevels]);
+        if (props.skill == "D") return weaponSkillLevel(config!.weaponMastery);
+        return config!.skillLevels[props.skill];
+    }, [props.skill, config?.weaponMastery, config?.skillLevels]);
 
-    if (context.showEquation) {
+    if (showEquation || config == undefined || status == undefined) {
         return Object.entries(props.ratio).map(([key, value], index) => {
             const override = (() => {
                 if (typeof props.overrideExpression === "function") {
@@ -46,11 +48,11 @@ const value: React.FC<Props> = props => {
             />;
         });
     } else {
-        const { static: staticValue, dynamic, dynamicValueOnly } = calculateValue(props.ratio, context.status, context.config, props.skill == "item" ? "item" : {skill: props.skill, level: skillLevel ?? 0}, props.multiplier);
-        
+        const { static: staticValue, dynamic, dynamicValueOnly } = calculateValue(props.ratio, status, config, props.skill == "item" ? "item" : {skill: props.skill, level: skillLevel ?? 0}, props.multiplier);
+        const resultClass = typeof props.overrideExpression === "object" ? props.overrideExpression.result?.className : undefined;
         return (
             <>
-                {dynamicValueOnly ? null : <span className={style.emphasis}>{staticValue.toString()}</span>}
+                {dynamicValueOnly ? null : <span className={resultClass ?? style.emphasis}>{staticValue.toString()}</span>}
                 {
                     dynamic ?
                     Object.entries(dynamic).map(([key, value], index) => {

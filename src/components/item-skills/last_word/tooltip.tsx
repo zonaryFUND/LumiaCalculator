@@ -2,20 +2,19 @@ import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
 import { ItemSkillProps } from "../item-skill";
-import Damage from "../damage";
-import skillDamage from "components/subjects/skill-damage";
+import Value from "../value";
+import { useValueContextOptional } from "components/tooltip/value-context";
+import { calculateValue } from "app-types/value-ratio/calculation";
 
 const description: React.FC<ItemSkillProps> = props => {
+    const { config, status, showEquation } = useValueContextOptional();
     const value = (() => {
-        /*
-        if (props.config && props.status && props.showEquation != true) {
-            const ampValue = skillDamage(props.status, props.config, "item", {amp: Constants.ad.amp});
+        if (config && status && !showEquation) {
+            const ampValue = calculateValue({amp: Constants.ad.amp}, status, config, "item");
             return <><span className={style.amp}>({ampValue.toString()})</span>+<span className={style.maxhp}>敵最大体力の{Constants.ad.targetMaxHP}%</span></>;
         } else {
-            return <Damage {...props} values={Constants.ad} className={style.amp} />;
+            return <Value ratio={Constants.ad} overrideExpression={{result: {className: style.amp}}} />;
         }
-        */
-       return null;
     })();
 
     return (

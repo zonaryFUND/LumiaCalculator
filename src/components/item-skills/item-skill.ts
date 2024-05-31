@@ -1,6 +1,6 @@
-import { SubjectSkillProps } from "components/subjects/props";
+import { ValueRatio } from "app-types/value-ratio";
 
-export type ItemSkillProps = Partial<SubjectSkillProps> & {
+export type ItemSkillProps = {
     values: any
 }
 

@@ -2,18 +2,17 @@ import * as React from "react";
 import style from "components/tooltip/tooltip.module.styl";
 import Constants from "./constants.json";
 import { ItemSkillProps } from "../item-skill";
-import skillDamage from "components/subjects/skill-damage";
+import { useValueContextOptional } from "components/tooltip/value-context";
+import { calculateValue } from "app-types/value-ratio/calculation";
 
 const description: React.FC<ItemSkillProps> = props => {
+    const { config, status, showEquation } = useValueContextOptional();
     const damage = (() => {
-        /*
-        if (props.config && props.status && props.showEquation != true) {
-            return skillDamage(props.status, props.config, "item", props.values.dmg).toString();
+        if (config && status && !showEquation) {
+            return calculateValue(props.values.dmg, status, config, "item").toString();
         } else {
             return null;
         }
-        */
-       return null;
     })();
     return (
         <p>

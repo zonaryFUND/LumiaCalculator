@@ -13,3 +13,7 @@ export const ValueContext = React.createContext<Props | undefined>(undefined);
 export function useValueContext(): Props {
     return React.useContext(ValueContext)!;
 }
+
+export function useValueContextOptional(): Partial<Props> & {showEquation: boolean} {
+    return React.useContext(ValueContext) ?? {showEquation: false};
+}

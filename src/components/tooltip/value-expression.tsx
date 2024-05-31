@@ -3,7 +3,7 @@ import style from "./tooltip.module.styl";
 import { FormattedMessage } from "react-intl";
 import { ValueElement, ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
-import { useValueContext } from "./value-context";
+import { useValueContext, useValueContextOptional } from "./value-context";
 
 type Props = {
     id: keyof ValueRatio
@@ -38,7 +38,7 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
 }
 
 const ValueExpression: React.FC<Props> = props => {
-    const { status } = useValueContext();
+    const { status } = useValueContextOptional();
     const def = defaultDictionary[props.id];
     const value = (() => {
         if (typeof props.ratio === "number") return props.ratio;
@@ -63,7 +63,7 @@ const ValueExpression: React.FC<Props> = props => {
             {
                 props.brackets ? 
                 props.id == "basicAttackAmp" ? "*(" : 
-                props.id == "criticalChance" ? `+${status.criticalChance.calculatedValue.percent(value as number).toString()}% = (` : "(+" 
+                props.id == "criticalChance" ? `+${status!.criticalChance.calculatedValue.percent(value as number).toString()}% = (` : "(+" 
                 : null
             }
             {

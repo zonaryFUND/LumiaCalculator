@@ -2,20 +2,19 @@ import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
 import { ItemSkillProps } from "../item-skill";
+import { useValueContextOptional } from "components/tooltip/value-context";
 
 const Value: React.FC<ItemSkillProps> = props => {
-    if (props.config && props.status && props.showEquation != true) {
-        /*
+    const { config, status, showEquation } = useValueContextOptional();
+    if (config && status && !showEquation) {
         return (
             <>
                 {props.values.dmg.base}
-                {props.values.dmg.attack ? <span className={style.attack}>(+{props.status.attackPower.percent(props.values.dmg.attack).toString()})</span> : null}
-                {props.values.dmg.amp ? <span className={style.amp}>(+{props.status.skillAmp.percent(props.values.dmg.amp).toString()})</span> : null}
-                {props.values.dmg.level ? <span className={style.level}>(+{props.config.level * props.values.dmg.level})</span> : null}
+                {props.values.dmg.attack ? <span className={style.attack}>(+{status.attackPower.calculatedValue.percent(props.values.dmg.attack).toString()})</span> : null}
+                {props.values.dmg.amp ? <span className={style.amp}>(+{status.skillAmp.calculatedValue.percent(props.values.dmg.amp).toString()})</span> : null}
+                {props.values.dmg.level ? <span className={style.level}>(+{config.level * props.values.dmg.level})</span> : null}
             </>
         )
-        */
-       return null;
     } else {
         return (
             <>

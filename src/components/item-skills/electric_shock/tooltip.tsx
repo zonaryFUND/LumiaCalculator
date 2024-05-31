@@ -4,30 +4,32 @@ import style from "components/tooltip/tooltip.module.styl";
 import { ItemSkillProps } from "../item-skill";
 import { equipmentStatus } from "app-types/equipment";
 import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
+import { useValueContextOptional } from "components/tooltip/value-context";
 
 const Value: React.FC<ItemSkillProps> = props => {
+    const { config, status, showEquation } = useValueContextOptional();
     const perLevel = React.useMemo(() => {
         if (props.values.melee != undefined) return 0;
         return (props.values.levelProp.to - props.values.levelProp.from) / 19;
     }, [props.values.levelProp]);
 
     const range = React.useMemo(() => {
-        if (props.config?.equipment.weapon && props.showEquation != true) {
-            return meleeOrRange(equipmentStatus(props.config.equipment.weapon).type as WeaponTypeID);
+        if (config?.equipment.weapon && !showEquation) {
+            return meleeOrRange(equipmentStatus(config.equipment.weapon).type as WeaponTypeID);
         } else {
             return undefined;
         }
     }, []);
 
     if (props.values.melee != undefined) {
-        if (props.showEquation != false) {
+        if (showEquation != false) {
             return <>(近距離：<Value {...props} values={props.values.melee} /> | 遠距離：<Value {...props} values={props.values.range} />)</>;
         } else {
             return <Value {...props} values={props.values[range || "melee"]} />;
         }
     } else {
-        const value = props.config && props.showEquation != true ?
-            props.values.levelProp.from + (props.config!.level - 1) * perLevel :
+        const value = config && showEquation != true ?
+            props.values.levelProp.from + (config!.level - 1) * perLevel :
             null;
 
         return <>

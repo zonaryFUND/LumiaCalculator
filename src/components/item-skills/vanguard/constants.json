@@ -1,10 +1,10 @@
 {
-    "threshold_maxhp": 500,
+    "threshold_maxhp": 600,
     "time_bound": 5,
     "threshold_damage": 500,
     "duration": 6,
+    "damage_mitigation": 15,
     "area": 6,
     "as": 30,
-    "tenacity": 40,
     "cooldown": 8
 }

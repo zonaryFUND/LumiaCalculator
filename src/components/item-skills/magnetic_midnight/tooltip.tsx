@@ -2,18 +2,17 @@ import * as React from "react";
 import style from "components/tooltip/tooltip.module.styl";
 import Constants from "./constants.json";
 import { ItemSkillProps } from "../item-skill";
+import { useValueContextOptional } from "components/tooltip/value-context";
 
 const Value: React.FC<ItemSkillProps> = props => {
-    if (props.config && props.status && props.showEquation != true) {
-        /*
+    const { config, status, showEquation } = useValueContextOptional();
+    if (config && status && !showEquation) {
         return (
             <>
-                <span className={style.level}>{props.config.level * props.values.dmg.level}</span>
-                {props.values.dmg.amp ? <span className={style.amp}>(+{props.status.skillAmp.percent(props.values.dmg.amp).toString()})</span> : null}
+                <span className={style.level}>{config.level * props.values.dmg.level}</span>
+                {props.values.dmg.amp ? <span className={style.amp}>(+{status.skillAmp.calculatedValue.percent(props.values.dmg.amp).toString()})</span> : null}
             </>
         )
-        */
-       return null;
     } else {
         return (
             <>

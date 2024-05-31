@@ -2,8 +2,8 @@
     "threshold": 40,
     "guard_duration": 2.5,
     "shield": {
-        "base": 150,
-        "level": 10
+        "base": 200,
+        "level": 15
     },
     "tenacity": 50,
     "adaptive_duration": 8,
