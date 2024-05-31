@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            レノックスが後ろから前へと鞭を振って、範囲内の敵に<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与えて突き飛ばした後、対象の移動速度を
-            {Constants.E.slow.duration}秒間{Constants.E.slow.effect[props.config.skillLevels.E]}%減少させます。
+            レノックスが後ろから前へと鞭を振って、範囲内の敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて突き飛ばした後、対象の移動速度を
+            {Constants.E.slow.duration}秒間{Constants.E.slow.effect[props.skillLevel]}%減少させます。
         </>
     );
 }

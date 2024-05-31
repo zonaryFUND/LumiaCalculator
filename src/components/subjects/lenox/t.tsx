@@ -1,17 +1,17 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             <span className={style.enhance}>釣り人</span>：レノックスは釣りで魚を獲得する時、武器以外のアイテムを1個追加で獲得します。<br />
             <br />
-            <span className={style.enhance}>直感</span>:{Constants.T.cooldown.constant[props.config.skillLevels.T]}
-            秒ごとに敵実験体に基本攻撃またはスキルダメージを与えた場合、<Damage skill="T" constants={Constants.T.shield} {...props} />のダメージを吸収するシールドを獲得します。シールドは最大
+            <span className={style.enhance}>直感</span>:{Constants.T.cooldown.constant[props.skillLevel]}
+            秒ごとに敵実験体に基本攻撃またはスキルダメージを与えた場合、<Value skill="T" ratio={Constants.T.shield} />のダメージを吸収するシールドを獲得します。シールドは最大
             {Constants.T.duration}秒間維持されます。
         </>
     );
