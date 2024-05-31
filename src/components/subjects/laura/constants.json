@@ -40,7 +40,7 @@
         },
         "defense_decrease": {
             "duration": 6,
-            "effect": [15,17,19,21,23]
+            "effect": [10,12,14,16,18]
         },
         "thril": 30,
         "sp_cost": 100,

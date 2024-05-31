@@ -1,9 +1,9 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
     return (
@@ -11,7 +11,7 @@ const t: React.FC<SubjectSkillProps> = props => {
             ラウラは1m移動するたびに{Constants.T.thril}のスリルを回復します。<br />
             <br />
             <span className={style.emphasis}>ネレアの教え</span>：ラウラは{Constants.T.threshold}m移動するたびに次の基本攻撃が
-            <Damage skill="T" constants={Constants.T.damage} {...props} />の追加範囲スキルダメージを与えます。スキルで移動するとすぐに活性化します。<br />
+            <Value skill="T" ratio={Constants.T.damage} />の追加範囲スキルダメージを与えます。スキルで移動するとすぐに活性化します。<br />
             攻撃対象が{Constants.T.unavailable_range}m以内にいると発動しません。
         </>
     );
