@@ -1,17 +1,16 @@
 import * as React from "react";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>
-        ヨハンの妨害耐性が{Constants.T.tenacity}%増加します。ヨハンが次のアイテムを使用するたびに追加で増加します。(最大{Constants.T.tenacity_max}%)<br />
-        <span className={style.emphasis}>聖水</span>：{Constants.T.holy_water}%<br />
-        <span className={style.emphasis}>浄化水</span>：{Constants.T.purified_water}%<br />
+        <span className={style.enhance}>基本効果：</span>ヨハンの妨害耐性が{Constants.T.tenacity[props.skillLevel]}%増加します。<br />
         <br />
-        ヨハンがキルやアシストに関わると、味方の実験体に<Damage skill="T" constants={Constants.T.shield} {...props} />のシールドを{Constants.T.shield_duration[props.config.skillLevels.T]}秒間付与します。
+        ヨハンのスキルで体力回復またはシールド効果を受けた味方は{Constants.T.tenacity_ally.duration}秒間妨害耐性が
+        {Constants.T.tenacity_ally.effect[props.skillLevel]}%増加します。
     </>
 );
 
@@ -19,7 +18,7 @@ export default t;
 
 export const values: ValuesProps = {
     parameters: [
-        {title: "シールド吸収量", values: Constants.T.shield.base},
-        {title: "シールド持続時間", values: Constants.T.shield_duration}
+        {title: "ヨハン - 妨害耐性(%)", values: Constants.T.tenacity, percent: true},
+        {title: "味方 - 妨害耐性(%)", values: Constants.T.tenacity_ally.effect, percent: true}
     ]
 }

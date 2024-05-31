@@ -1,0 +1,16 @@
+{
+    "subject.johann.q-damage": "Qダメージ",
+    "subject.johann.q-heal": "Q回復",
+    "subject.johann.q-enhanced-damage": "強化Qダメージ",
+    "subject.johann.q-enhanced-heal": "強化Q回復",
+    "subject.johann.e-finish-damage": "E終了時ダメージ",
+    "subject.johann.e-enhanced-shield": "強化Eシールド",
+    "subject.johann.e-enhanced-damage": "強化E追加ダメージ",
+    "subject.johann.e-enhanced-damage-sum": "E強化時合計ダメージ",
+    "subject.johann.e-target-movement-speed": "E対象移動速度増加",
+    "subject.johann.e-chase-movement-speed": "E対象への移動速度増加",
+    "subject.johann.r-damage": "R発動ダメージ",
+    "subject.johann.r-first-heal": "R発動時回復",
+    "subject.johann.r-heal-on-time": "R継続回復/秒",
+    "subject.johann.r-heal-on-time-max-hit": "R継続回復全ヒット({value})"
+}
