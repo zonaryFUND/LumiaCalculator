@@ -1,24 +1,24 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: "W中追加ダメージ", skill: "W", value: Constants.W.basic_attack_damage}
+        {label: props.intl.formatMessage({id: "subject.luke.w-additional"}), skill: "W", value: Constants.W.basic_attack_damage}
     ],
     skill: [
         [
             {label: "Q1", skill: "Q", value: Constants.Q.first_damage},
             {label: "Q2", skill: "Q", value: Constants.Q.second_damage},
-            {label: "進化Q2最大値", skill: "Q", value: Constants.Q.second_damage, multiplier: [{basic: Constants.Q.enhance_max + 100}]}
+            {label: props.intl.formatMessage({id: "subject.luke.q2-evolved-max"}), skill: "Q", value: Constants.Q.second_damage, multiplier: [{basic: Constants.Q.enhance_max + 100}]}
         ],
-        [{label: "W発動", skill: "W", value: Constants.W.damage}],
+        [{label: props.intl.formatMessage({id: "subject.luke.w-first"}), skill: "W", value: Constants.W.damage}],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [
-            {label: "R最小", skill: "R", value: Constants.R.damage},
-            {label: "R最大", skill: "R", value: Constants.R.damage, multiplier: [{basic: Constants.R.max_multiplier * 100}]}
+            {label: props.intl.formatMessage({id: "subject.luke.r-min"}), skill: "R", value: Constants.R.damage},
+            {label: props.intl.formatMessage({id: "subject.luke.r-max"}), skill: "R", value: Constants.R.damage, multiplier: [{basic: Constants.R.max_multiplier * 100}]}
         ]
     ]   
-}
+})
 
 export default table;
