@@ -1,0 +1,13 @@
+{
+    "subject.vanya.passive-additional": "T追加ダメージ",
+    "subject.vanya.q-2hit": "Q往復ヒット",
+    "subject.vanya.w1-max-hit": "W1最大ヒット({value})",
+    "subject.vanya.e-inner": "E中心",
+    "subject.vanya.e-outer": "E外周",
+    "subject.vanya.r-hit": "R命中",
+    "subject.vanya.r-awake": "R目覚まし",
+    "subject.vanya.passive-dot": "T持続ダメージ",
+    "subject.vanya.passive-shield": "Tシールド1回分",
+    "subject.vanya.passive-shield-decline": "Tシールド減少量/秒",
+    "subject.vanya.passive-shield-max": "Tシールド最大値"
+}

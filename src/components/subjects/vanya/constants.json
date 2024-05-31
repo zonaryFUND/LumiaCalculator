@@ -53,7 +53,7 @@
             "amp": 65
         },
         "sp_cost": 100,
-        "cooldown": [80,65,50]
+        "cooldown": [80,70,60]
     },
     "T": {
         "basic_attack_damage": {

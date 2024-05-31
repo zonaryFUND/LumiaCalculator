@@ -1,22 +1,24 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
 import Decimal from "decimal.js";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const w: React.FC<SubjectSkillProps> = props => {
-    //const increasedCooldown = new Decimal(Constants.W.cooldown * Constants.W.cooldown_increase).subPercent(props.status.cooldownReduction).toString();
+    const { status } = useValueContext();
+    const increasedCooldown = new Decimal(Constants.W.cooldown * Constants.W.cooldown_increase).subPercent(status.cooldownReduction.calculatedValue).toString();
 
     return (
         <>
             <span className={style.emphasis}>空色の風</span>：ヴァーニャが空中に浮いて<span className={style.emphasis}>3</span>
-            秒間スキルダメージを<Damage skill="W" constants={Constants.W.first_damage} {...props} />ずつ{Constants.W.count}回与えて、移動速度が
-            {Constants.W.movement_speed[props.config.skillLevels.W]}%増加した後、徐々に減少します。スキルが終了する前に<span className={style.emphasis}>蝶の嵐</span>を使用できます。<br />
+            秒間スキルダメージを<Value skill="W" ratio={Constants.W.first_damage} />ずつ{Constants.W.count}回与えて、移動速度が
+            {Constants.W.movement_speed[props.skillLevel]}%増加した後、徐々に減少します。スキルが終了する前に<span className={style.emphasis}>蝶の嵐</span>を使用できます。<br />
             <br />
             <span className={style.emphasis}>蝶の嵐</span>：空中に高く飛び上がって{Constants.W.untargettable}秒間対象指定不可状態になり、その場に着地しながら
-            <Damage skill="W" constants={Constants.W.second_damage} {...props} />のスキルダメージを与えます。使用した場合、スキルクールダウンが<span className={style.emphasis}>{/*increasedCooldown*/}</span>秒増加します。
+            <Value skill="W" ratio={Constants.W.second_damage} />のスキルダメージを与えます。使用した場合、スキルクールダウンが<span className={style.emphasis}>{increasedCooldown}</span>秒増加します。
         </>
     );
 }

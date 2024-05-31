@@ -1,36 +1,36 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: "T追加ダメージ", skill: "T", value: Constants.T.basic_attack_damage}
+        {label: props.intl.formatMessage({id: "subject.vanya.passive-additional"}), skill: "T", value: Constants.T.basic_attack_damage}
     ],
     skill: [
         [
             {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: "Q往復ヒット", skill: "Q", value: Constants.Q.damage, multiplier: [{basic: 200}]},
+            {label: props.intl.formatMessage({id: "subject.vanya.q-2hit"}), skill: "Q", value: Constants.Q.damage, multiplier: [{basic: 200}]},
         ],
         [
             {label: "W1", skill: "W", value: Constants.W.first_damage},
-            {label: `W1最大ヒット(${Constants.W.count})`, skill: "W", value: Constants.W.first_damage, multiplier: [{basic: Constants.W.count}]},
+            {label: props.intl.formatMessage({id: "subject.vanya.w1-max-hit"}, {value: Constants.W.count}), skill: "W", value: Constants.W.first_damage, multiplier: [{basic: Constants.W.count * 100}]},
             {label: "W2", skill: "W", value: Constants.W.second_damage}
         ],
         [
-            {label: "E中心", skill: "E", value: Constants.E.inner_damage},
-            {label: "E外周", skill: "E", value: Constants.E.outer_damage}
+            {label: props.intl.formatMessage({id: "subject.vanya.e-inner"}), skill: "E", value: Constants.E.inner_damage},
+            {label: props.intl.formatMessage({id: "subject.vanya.e-outer"}), skill: "E", value: Constants.E.outer_damage}
         ],
         [
-            {label: "R命中", skill: "R", value: Constants.R.damage},
-            {label: "R目覚まし", skill: "R", value: Constants.R.wakeup_damage}
+            {label: props.intl.formatMessage({id: "subject.vanya.r-hit"}), skill: "R", value: Constants.R.damage},
+            {label: props.intl.formatMessage({id: "subject.vanya.r-awake"}), skill: "R", value: Constants.R.wakeup_damage}
         ],
         [
-            {label: "T持続ダメージ", skill: "T", value: Constants.T.damage_over_time},
-            {label: "Tシールド1発動分", skill: "T", value: Constants.T.shield, type: "shield"},
-            {label: "Tシールド減少量/秒", skill: "T", value: Constants.T.shield_decline, type: "shield"},
-            {label: "Tシールド最大値", skill: "T", value: Constants.T.max_shield, type: "shield"}
+            {label: props.intl.formatMessage({id: "subject.vanya.passive-dot"}), skill: "T", value: Constants.T.damage_over_time},
+            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield"}), skill: "T", value: Constants.T.shield, type: "shield"},
+            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield-decline"}), skill: "T", value: Constants.T.shield_decline, type: "shield"},
+            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield-max"}), skill: "T", value: Constants.T.max_shield, type: "shield"}
         ]
     ]   
-}
+})
 
 export default table;
