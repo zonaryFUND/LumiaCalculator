@@ -1,9 +1,9 @@
-import { SkillValueProps } from "../../damage-table";
+import { SkillValueProps, WeaponSkillTableGenerator } from "../../damage-table";
 import Constants from "../constants.json";
 
-const table: SkillValueProps[] = [
-    {label: "D外周", skill: "D", value: Constants.bow.damage},
-    {label: "D中央", skill: "D", value: Constants.bow.center_damage}
+const table: WeaponSkillTableGenerator = props => [
+    {label: props.intl.formatMessage({id: "weapon-skill.bow.outer"}), skill: "D", value: Constants.bow.damage},
+    {label: props.intl.formatMessage({id: "weapon-skill.bow.center"}), skill: "D", value: Constants.bow.center_damage}
 ]
 
 export default table;

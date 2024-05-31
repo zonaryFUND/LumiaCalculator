@@ -1,14 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
-import { ValuesProps } from "../values";
-import Damage from "../damage";
-import skillDamage, { skillLevel } from "../skill-damage";
+import { ValuesProps, ValuesPropsGenerator } from "../values";
+import Value from "components/tooltip/value";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { calculateValue } from "app-types/value-ratio/calculation";
+import { skillLevel } from "../skill-damage";
 
 const camera: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
             指定した方向へ{Constants.sniper_rifle.duration}秒間<span className={style.emphasis}>狙撃モード</span>を活性化します。<br />
@@ -18,13 +17,13 @@ const camera: React.FC<SubjectSkillProps> = props => {
             <br />
             <span className={style.emphasis}>阻止射撃</span><br />
             {Constants.sniper_rifle.cripping.vision}の視界を持っています。対象に
-            <Damage skill="D" constants={Constants.sniper_rifle.cripping.damage} {...props} />のスキルダメージを与え、
+            <Value skill="D" ratio={Constants.sniper_rifle.cripping.damage} />のスキルダメージを与え、
             {Constants.sniper_rifle.cripping.target_vision}秒間対象の視界を獲得できます。ダメージを受けた対象は
             {Constants.sniper_rifle.cripping.slow.duration}秒間移動速度が{Constants.sniper_rifle.cripping.slow.effect}%減少します。<br />
             <br />
             <span className={style.emphasis}>デッドアイ</span><br />
             {Constants.sniper_rifle.dead_to_rights.vision}の視界を持っています。対象に
-            <Damage skill="D" constants={Constants.sniper_rifle.dead_to_rights.damage} {...props} />
+            <Value skill="D" ratio={Constants.sniper_rifle.dead_to_rights.damage} />
             のスキルダメージを与えます。<span className={style.emphasis}>デッドアイ</span>は対象の失った体力に応じてダメージ量が増加します。
         </>
     );
@@ -32,18 +31,13 @@ const camera: React.FC<SubjectSkillProps> = props => {
 
 export default camera;
 
-export function values(props: SubjectSkillProps): ValuesProps {
-    /*
-    const damage = skillDamage(props.status, props.config, "D", Constants.sniper_rifle.dead_to_rights.damage)
-        .times(Constants.sniper_rifle.dead_to_rights.max_damage_multiplier);
-        */
+export const values: ValuesPropsGenerator = props => {
+    const damage = calculateValue(Constants.sniper_rifle.dead_to_rights.damage, props.status, props.config, {skill: "D", level: skillLevel("D", props.config)});
 
     return {
        additionalInfo: <>
-            {/*デッドアイ最大ダメージ量:{damage.toString()}<br />*/}
+            デッドアイ最大ダメージ量:{damage.static.times(Constants.sniper_rifle.dead_to_rights.max_damage_multiplier).toString()}<br />
             狙撃状態で移動したり、妨害効果を受けると狙撃モードが解除されます。<br />
-            <br />
-            武器熟練度<span className={style.emphasis}>5Lv・10Lv・15Lv</span>の時にスキルレベルアップ
         </>,
         parameters: [
             {title: "1打ダメージ量", values: Constants.sniper_rifle.cripping.damage.base},

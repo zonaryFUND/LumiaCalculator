@@ -1,17 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { skillLevel } from "../skill-damage";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const axe: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            指定した方向に進みながら斧を振り回して範囲内のすべての敵に<Damage skill="D" constants={Constants.axe.damage} {...props} />
+            指定した方向に進みながら斧を振り回して範囲内のすべての敵に<Value skill="D" ratio={Constants.axe.damage} />
             のスキルダメージを与えます。与えたダメージの{Constants.axe.heal}%を体力に回復します。
         </>
     );
@@ -21,10 +19,7 @@ export default axe;
 
 export const values: ValuesProps = {
     additionalInfo: <>
-        このスキルは壁を越えられません。<br />
-        野生動物に{Constants.axe.animal}%のダメージを与えます。<br />
-        <br />
-        武器熟練度<span className={style.emphasis}>5Lv・10Lv・15Lv</span>の時にスキルレベルアップ<br />
+        このスキルは壁を越えられません。
     </>,
     parameters: [
         {title: "ダメージ量", values: Constants.axe.damage.base},

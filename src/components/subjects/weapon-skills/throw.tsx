@@ -1,13 +1,9 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
-import { skillLevel } from "../skill-damage";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const throwWeapon: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
             指定した位置に煙幕弾を投げ、爆発させます。煙幕は{Constants.throw.duration}

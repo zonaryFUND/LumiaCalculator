@@ -1,18 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
-import { skillLevel } from "../skill-damage";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const crossbow: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            指定した方向へ石弓を撃ちます。撃たれた対象は<Damage skill="D" constants={Constants.crossbow.damage} {...props} />
+            指定した方向へ石弓を撃ちます。撃たれた対象は<Value skill="D" ratio={Constants.crossbow.damage} />
             のスキルダメージを受けて押し出されます。対象が壁にぶつかったら{Constants.crossbow.stun}秒間気絶し、
-            <Damage skill="D" constants={Constants.crossbow.damage} {...props} />のスキルダメージを追加で与えます。
+            <Value skill="D" ratio={Constants.crossbow.damage} />のスキルダメージを追加で与えます。
         </>
     );
 }

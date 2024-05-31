@@ -1,17 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
-import { skillLevel } from "../skill-damage";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const camera: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            フラッシュを使用して<Damage skill="D" constants={Constants.camera.damage} {...props} />
-            のスキルダメージを与えます。自分を見ていた敵は{Constants.camera.additional_damage[level]}
+            フラッシュを使用して<Value skill="D" ratio={Constants.camera.damage} />
+            のスキルダメージを与えます。自分を見ていた敵は{Constants.camera.additional_damage[props.skillLevel]}
             の追加スキルダメージを受け、{Constants.camera.vision}秒間視界が減少します。
         </>
     );

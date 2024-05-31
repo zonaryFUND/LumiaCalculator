@@ -1,16 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
-import { skillLevel } from "../skill-damage";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const bat: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            前方の全ての敵に<Damage skill="D" constants={Constants.bat.damage} {...props} />
+            前方の全ての敵に<Value skill="D" ratio={Constants.bat.damage} />
             のスキルダメージを与え、{Constants.bat.knockback}mノックバックさせます。ノックバックされた敵が壁にぶつかった場合、
             {Constants.bat.stun}秒間気絶します。
         </>

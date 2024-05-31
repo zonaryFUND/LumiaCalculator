@@ -1,0 +1,22 @@
+{
+    "weapon-skill.arcana.max-hit": "D全ヒット({value})",
+    "weapon-skill.assault-rifle.max": "D基本攻撃追加ダメージ最大値",
+    "weapon-skill.bow.center": "D中央",
+    "weapon-skill.bow.outer": "D外周",
+    "weapon-skill.camera.facing": "D対面",
+    "weapon-skill.crossbow.hit_and_wall": "D命中+壁ドン合計",
+    "weapon-skill.dagger.skill-damage": "D(スキルダメージ分)",
+    "weapon-skill.dagger.true-damage": "D(固定ダメージ分)",
+    "weapon-skill.dual-sword.d1-max-hit": "D1全ヒット({value})",
+    "weapon-skill.glove.base": "D基礎ダメージ",
+    "weapon-skill.glove.base-plus-additional": "D基礎+追加割合ダメージ威力換算値",
+    "weapon-skill.glove.true": "D追加固定ダメージ",
+    "weapon-skill.nunchaku.min": "D最小",
+    "weapon-skill.nunchaku.max": "D最大",
+    "weapon-skill.pistol.movement-speed": "D移動速度増加量",
+    "weapon-skill.shuriken.base": "D基礎値",
+    "weapon-skill.sniper-rifle.d2-min": "D2最小値",
+    "weapon-skill.sniper-rifle.d2-max": "D2最大値",
+    "weapon-skill.spear.near": "D近距離",
+    "weapon-skill.whip.2hit": "D2ヒット"
+}

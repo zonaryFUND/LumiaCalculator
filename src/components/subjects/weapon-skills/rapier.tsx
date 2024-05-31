@@ -1,16 +1,13 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
-import { skillLevel } from "../skill-damage";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const rapier: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            指定した対象に突進して<Damage skill="D" constants={Constants.rapier.damage} {...props} />のスキルダメージを与えます。
+            指定した対象に突進して<Value skill="D" ratio={Constants.rapier.damage} />のスキルダメージを与えます。
         </>
     );
 }

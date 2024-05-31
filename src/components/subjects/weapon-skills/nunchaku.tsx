@@ -1,19 +1,19 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { skillLevel } from "../skill-damage";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const nunchaku: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            双節棍を素早く振り回して風を集め、移動速度が{Constants.nunchaku.movement_speed_penalty}
-            %減少します。もう一度使用すると指定した方向に飛ばします。風の塊は双節棍を振り回した時間によって
-            <Damage skill="D" constants={Constants.nunchaku.min_damage} {...props} /> ~ <Damage skill="D" constants={Constants.nunchaku.max_damage} {...props} />
-            のスキルダメージを与え、{Constants.nunchaku.stun_threshold}秒以上を振り回すと当たった対象を{Constants.nunchaku.stun}秒間気絶させます。
+            チャージ：双節棍を素早く振り回して風を集め、移動速度が{Constants.nunchaku.movement_speed_penalty}
+            %減少します。<br />
+            <br />
+            使用：指定した方向に飛ばして
+            <Value skill="D" ratio={Constants.nunchaku.min_damage} /> ~ <Value skill="D" ratio={Constants.nunchaku.max_damage} />
+            のスキルダメージを与えます。最大までチャージした場合には対象を{Constants.nunchaku.stun}秒間気絶させます。
         </>
     );
 }

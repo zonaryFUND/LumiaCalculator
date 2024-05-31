@@ -1,13 +1,10 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
-import { skillLevel } from "../skill-damage";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const vfProsthetic: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
             エキオンが{Constants.vf_prosthetic.cast}秒間スキルをキャストします。VFゲージの状態に応じて効果が適用されます。<br />
@@ -18,12 +15,12 @@ const vfProsthetic: React.FC<SubjectSkillProps> = props => {
             を消耗して、武器スキルを除いたスキルクールダウンを{Constants.vf_prosthetic.cooldown_reduction}%減少させて移動速度が
             {Constants.vf_prosthetic.movement_speed.duration}秒間{Constants.vf_prosthetic.movement_speed.effect}%増加します。<br />
             <br />
-            <span className={style.emphasis}>VF暴走状態</span>：暴走持続時間を{Constants.vf_prosthetic.extend[level]}
+            <span className={style.emphasis}>VF暴走状態</span>：暴走持続時間を{Constants.vf_prosthetic.extend[props.skillLevel]}
             秒延長して、スキルクールダウンを{Constants.vf_prosthetic.cooldown_reduction}%減少させて移動速度が
             {Constants.vf_prosthetic.movement_speed.duration}秒間{Constants.vf_prosthetic.movement_speed.effect}%増加します。<br />
             <br />
             <span className={style.emphasis}>オーバーロード状態</span>：オーバーロード状態を
-            {Constants.vf_prosthetic.overload_reduction[level]}秒減少させます。
+            {Constants.vf_prosthetic.overload_reduction[props.skillLevel]}秒減少させます。
         </>
     );
 }

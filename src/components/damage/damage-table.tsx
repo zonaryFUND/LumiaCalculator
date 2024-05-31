@@ -39,7 +39,9 @@ const damageTable: React.FC<Props> = props => {
 
     const weaponSkill = React.useMemo(() => {
         if (props.weaponType == undefined) return null;
-        return WeaponSkillDamageTable[props.weaponType];
+        const table = WeaponSkillDamageTable[props.weaponType];
+        if (typeof table == "function") return table({intl});
+        return table;
     }, [props.weaponType]);
 
     const range = React.useMemo(() => {

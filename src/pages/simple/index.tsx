@@ -9,6 +9,7 @@ import BuffDebuffs from "./buff-debuffs";
 import Damage from "./damage";
 import ItemTooltip from "components/tooltip/item/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
+import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
 
 import { useLocalStorage, useToggle, useWindowSize } from "react-use";
 import { equipmentStatus } from "app-types/equipment";
@@ -117,6 +118,21 @@ const index: React.FC = props => {
                         <SubjectSkillTooltip
                             id={subject} 
                             skill={skill as any} 
+                            showEquation={damageInFormula[0]}
+                            status={status} 
+                            config={subjectConfig!} 
+                        />
+                    );
+                }}
+            />
+            <Tooltip 
+                id="weapon-skill"
+                className={`${style.tooltip}`}
+                style={{zIndex: 1000}}
+                render={({ content, activeAnchor }) => {
+                    if (!content) return null;
+                    return (
+                        <WeaponSkillTooltip 
                             showEquation={damageInFormula[0]}
                             status={status} 
                             config={subjectConfig!} 

@@ -1,18 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
-import { skillLevel } from "../skill-damage";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const glove: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            指定した対象に近づき、<Damage skill="D" constants={Constants.glove.damage} {...props} />
-            の基本攻撃ダメージを与え、最終ダメージの{Constants.glove.additional_damage[level]}
-            %に値するダメージと{Constants.glove.true_damage.base[level]}の固定ダメージを追加で与えます。アッパーカットは致命打が発生しません。
+            指定した対象に近づき、<Value skill="D" ratio={Constants.glove.damage} />
+            の基本攻撃ダメージを与え、最終ダメージの{Constants.glove.additional_damage[props.skillLevel]}
+            %に値するダメージと{Constants.glove.true_damage.base[props.skillLevel]}の固定ダメージを追加で与えます。アッパーカットは致命打が発生しません。
         </>
     );
 }

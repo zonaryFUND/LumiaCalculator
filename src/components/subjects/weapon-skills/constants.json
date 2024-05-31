@@ -34,11 +34,14 @@
     },
     "guitar": {
         "damage": {
-            "base": [80,120,160],
+            "base": [100,150,200],
             "additionalAttack": [100,130,160],
-            "amp": [35,40,45]
+            "amp": [60,70,80]
         },
-        "charm": [0.6,0.8,1],
+        "slow": {
+            "duration": 1,
+            "effect": 99
+        },
         "cooldown": 25
     },
     "glove": {
@@ -116,8 +119,8 @@
             "amp":70
         },
         "defense_decline": {
-            "duration": 6,
-            "effect": [20,25,30]
+            "duration": 5,
+            "effect": [10,15,20]
         },
         "cooldown": [25,20,15]
     },
@@ -193,11 +196,10 @@
             "amp": 40
         },
         "max_damage": {
-            "base": [200,350,500],
-            "additionalAttack": 150,
-            "amp": 80
+            "base": [150,300,450],
+            "additionalAttack": 120,
+            "amp": 65
         },
-        "stun_threshold": 0.8,
         "stun": 1,
         "cooldown": [28,24,20]
     },
@@ -222,12 +224,12 @@
         },
         "dagger": {
             "damage": {
-                "base": [50,100,150],
-                "additionalAttack": 85,
-                "amp": 25
+                "base": [10,30,50],
+                "additionalAttack": 50,
+                "amp": 15
             },
             "true_damage": {
-                "targetHP": 10
+                "targetHP": 8
             },
             "slow": {
                 "duration": 1,
@@ -254,13 +256,12 @@
     },
     "axe": {
         "damage": {
-            "base": [70,110,150],
-            "additionalAttack": [100,120,140],
-            "amp": 40,
-            "targetMaxHP": 5
+            "base": [50,75,100],
+            "additionalAttack": [50,65,80],
+            "amp": 25,
+            "targetMaxHP": 6
         },
-        "heal": 50,
-        "animal": 110,
+        "heal": 80,
         "cooldown": [7,6,5]
     },
     "whip": {

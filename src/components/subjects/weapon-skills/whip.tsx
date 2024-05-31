@@ -1,18 +1,15 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import Damage from "../damage";
-import { skillLevel } from "../skill-damage";
+import Value from "components/tooltip/value";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const whip: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
-
     return (
         <>
-            鞭を2回振り回し、1回あたり<Damage skill="D" constants={Constants.whip.damage} {...props} />
+            鞭を2回振り回し、1回あたり<Value skill="D" ratio={Constants.whip.damage} />
             のスキルダメージを与えて、敵の移動速度を{Constants.whip.slow.duration}秒間
-            {Constants.whip.slow.effect[level]}%減少させます。
+            {Constants.whip.slow.effect[props.skillLevel]}%減少させます。
         </>
     );
 }

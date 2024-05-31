@@ -1,22 +1,25 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { SubjectSkillProps } from "../props";
 import { ValuesProps } from "../values";
-import skillDamage, { skillLevel } from "../skill-damage";
+import Value from "components/tooltip/value";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const pistol: React.FC<SubjectSkillProps> = props => {
-    const level = skillLevel("D", props.config);
+    const { showEquation } = useValueContext();
+
     const movementSpeed = (() => {
-        if (props.showEquation) {
+        if (showEquation) {
             return <>
-                <span className={style.emphasis}>{Constants.pistol.movement_speed.base[level]}%</span>
+                <span className={style.emphasis}>{Constants.pistol.movement_speed.base[props.skillLevel]}%</span>
                 <span className={style.amp}>スキル増幅の{Constants.pistol.movement_speed.amp}%</span>
             </>
         } else {
-            //const value = skillDamage(props.status, props.config, "D", Constants.pistol.movement_speed);
-            //return <span className={style.emphasis}>{value.toString()}%</span>
-            return null;
+            return <>
+                <Value skill="D" ratio={Constants.pistol.movement_speed} />
+                <span className={style.emphasis}>%</span>
+            </>;
         }
     })();
 

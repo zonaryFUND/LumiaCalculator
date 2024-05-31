@@ -26,6 +26,8 @@ export type DamageTable = {
     skill: SkillValueProps[][]
 }
 
+export type WeaponSkillTableGenerator = (props: {intl: IntlShape}) => SkillValueProps[];
+
 const context = require.context("./", true, /\.\/.*\/damage-table\.ts$/);
 export const SubjectDamageTable = context.keys().reduce((skills: any, path) => {
     const key = path.substring(2, path.lastIndexOf("/"));
@@ -39,4 +41,4 @@ export const WeaponSkillDamageTable = weaponSkillContext.keys().reduce((skills: 
     const name = pathComponents[pathComponents.length - 1];
     skills[name.substring(0, name.length - 3)] = weaponSkillContext(path).default;
     return skills;
-}, {}) as {[id: string]: SkillValueProps[]}
+}, {}) as {[id: string]: SkillValueProps[] | WeaponSkillTableGenerator}
