@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useValueContext } from "./value-context";
 import { calculateValue } from "app-types/value-ratio/calculation";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueElement, ValueRatio } from "app-types/value-ratio";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 import style from "./tooltip.module.styl";
 import ValueExpression from "./value-expression";
@@ -10,7 +10,8 @@ type Props = {
     ratio: ValueRatio
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
     multiplier?: number
-    overrideExpression?: {[K in keyof ValueRatio]: {format?: string, className?: string}}
+    overrideExpression?: {[K in keyof ValueRatio]: {format?: string, className?: string}} |
+        ((key: keyof ValueRatio) => (value: number | React.ReactNode) => React.ReactNode | undefined)
 }
 
 const value: React.FC<Props> = props => {
@@ -23,7 +24,18 @@ const value: React.FC<Props> = props => {
 
     if (context.showEquation) {
         return Object.entries(props.ratio).map(([key, value], index) => {
-            const override = props.overrideExpression?.[key as keyof ValueRatio];
+            const override = (() => {
+                if (typeof props.overrideExpression === "function") {
+                    return props.overrideExpression(key as keyof ValueRatio);
+                }
+
+                if (typeof props.overrideExpression === "object") {
+                    return props.overrideExpression[key as keyof ValueRatio];
+                }
+
+                return undefined
+            })();
+
             return <ValueExpression 
                 key={key} 
                 id={key as keyof ValueRatio} 
@@ -41,9 +53,10 @@ const value: React.FC<Props> = props => {
                 {dynamicValueOnly ? null : <span className={style.emphasis}>{staticValue.toString()}</span>}
                 {
                     dynamic ?
-                    Object.entries(dynamic).map(([key, value], index) => (
-                        <ValueExpression key={key} id={key as keyof ValueRatio} level={skillLevel} ratio={value.toNumber()} brackets={index != 0 || !dynamicValueOnly} override={props.overrideExpression?.[key as keyof ValueRatio]} />
-                    ))
+                    Object.entries(dynamic).map(([key, value], index) => {
+                        const override = typeof props.overrideExpression === "object" ? props.overrideExpression?.[key as keyof ValueRatio] : undefined
+                        return <ValueExpression key={key} id={key as keyof ValueRatio} level={skillLevel} ratio={value.toNumber()} brackets={index != 0 || !dynamicValueOnly} override={override} />
+                    })
                     : null
                 }
             </>

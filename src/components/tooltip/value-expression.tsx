@@ -14,7 +14,7 @@ type Props = {
     override?: {
         format?: string
         className?: string
-    }
+    } | ((value: number | React.ReactNode) => React.ReactNode)
 }
 
 const defaultDictionary: {[key: string]: {key: string, className: string}} = {
@@ -53,9 +53,13 @@ const ValueExpression: React.FC<Props> = props => {
             </>
         )
     })();
+
+    const className = typeof props.override === "object" ? props.override.className : def.className;
+    const format = typeof props.override === "object" ? props.override.format : undefined
+    const overrideNode = typeof props.override === "function" ? props.override(value) : null;
     
     return (
-        <span className={props.override?.className ?? def.className}>
+        <span className={className}>
             {
                 props.brackets ? 
                 props.id == "basicAttackAmp" ? "*(" : 
@@ -63,20 +67,15 @@ const ValueExpression: React.FC<Props> = props => {
                 : null
             }
             {
-                props.override ?
-                <>
-                {
-                    props.override.format?.split(/({ratio})/)
-                        .map(component => {
-                            if (component.startsWith("{") && component.endsWith("}")) {
-                                return <span className={props.override?.className ?? def.className}>{value}</span>
-                            } else {
-                                return component
-                            }
-                        })
-                }
-                </>
-                :
+                format?.split(/({ratio})/)
+                    .map(component => {
+                        if (component.startsWith("{") && component.endsWith("}")) {
+                            return <span className={className}>{value}</span>
+                        } else {
+                            return component
+                        }
+                    }) ??
+                overrideNode ??
                 <FormattedMessage id={def.key} values={{ratio: value}} />    
             }
             {props.brackets ? ")" : null}

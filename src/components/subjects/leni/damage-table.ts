@@ -1,21 +1,21 @@
-import { DamageTable } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
-const table: DamageTable = {
+const table: DamageTableGenerator = props => ({
     basicAttack: ["standard"],
     skill: [
         [
-            {label: "Qダメージ", skill: "Q", value: Constants.Q.damage},
-            {label: "Q回復", skill: "Q", value: Constants.Q.heal, type: "heal"},
+            {label: props.intl.formatMessage({id: "subject.leni.q-damage"}), skill: "Q", value: Constants.Q.damage},
+            {label: props.intl.formatMessage({id: "subject.leni.q-heal"}), skill: "Q", value: Constants.Q.heal, type: "heal"},
         ],
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [
-            {label: "Eダメージ", skill: "E", value: Constants.E.damage},
-            {label: "Eシールド", skill: "E", value: Constants.E.shield, type: "shield"}
+            {label: props.intl.formatMessage({id: "subject.leni.e-damage"}), skill: "E", value: Constants.E.damage},
+            {label: props.intl.formatMessage({id: "subject.leni.e-shield"}), skill: "E", value: Constants.E.shield, type: "shield"}
         ],
         [{label: "R", skill: "R", value: Constants.R.damage}],
-        [{label: "T追加ダメージ", skill: "T", value: Constants.T.damage}]
+        [{label: props.intl.formatMessage({id: "subject.leni.passive-additional"}), skill: "T", value: Constants.T.damage}]
     ]   
-}
+})
 
 export default table;

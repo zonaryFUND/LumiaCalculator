@@ -1,10 +1,8 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import LeniValue from "./leni-value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
-import style from "components/tooltip/tooltip.module.styl";
-import skillDamage from "../skill-damage";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => {
     return (
@@ -12,8 +10,8 @@ const e: React.FC<SubjectSkillProps> = props => {
             レニがエアーホーンガンを発射します。<br />
             敵または味方にそれぞれ違う効果が適用されます。<br />
             <br />
-            敵：<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与え、{Constants.E.stun}秒間気絶させます。<br />
-            味方：{Constants.E.duration}秒間<Damage skill="E" constants={Constants.E.shield} {...props} />のシールドを付与します。
+            敵：<LeniValue skill="E" ratio={Constants.E.damage} />のスキルダメージを与え、{Constants.E.stun}秒間気絶させます。<br />
+            味方：{Constants.E.duration}秒間<LeniValue skill="E" ratio={Constants.E.shield} />のシールドを付与します。
         </>
     );
 }
