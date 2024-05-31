@@ -1,12 +1,12 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const e: React.FC<SubjectSkillProps> = props => (
     <>
-        雪が指定した方向に突進し、最初に対峙した敵に<Damage skill="E" constants={Constants.E.damage} {...props} />のスキルダメージを与え
+        雪が指定した方向に突進し、最初に対峙した敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与え
         {Constants.E.distance}m移動します。攻撃された対象は{Constants.E.basic_attack_disable}秒間基本攻撃が封鎖され、ダメージを受けた対象がいる場合は打ち落としのクールダウンが{Constants.E.cooldown_reduction}秒減少します。
     </>
 );
