@@ -1,33 +1,28 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
-import skillDamage from "../skill-damage";
+import { useValueContext } from "components/tooltip/value-context";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {
+    const { status, showEquation } = useValueContext();
     const defense = (() => {
-        /*
-        if (props.showEquation) {
-            return <><span className={style.emphasis}>{Constants.T.defense_decline.base[props.config.skillLevels.T]}%</span><span className={style.critical}>(+致命打確率の1%あたり{Constants.T.defense_decline.criticalChance}%)</span></>;
+        if (showEquation) {
+            return <><span className={style.emphasis}>{Constants.T.defense_decline.base[props.skillLevel]}%</span><span className={style.critical}>(+致命打確率の1%あたり{Constants.T.defense_decline.criticalChance}%)</span></>;
         } else {
-            const value = props.status.criticalChance.times(Constants.T.defense_decline.criticalChance).add(Constants.T.defense_decline.base[props.config.skillLevels.T])
+            const value = status.criticalChance.calculatedValue.times(Constants.T.defense_decline.criticalChance).add(Constants.T.defense_decline.base[props.skillLevel])
             return <span className={style.emphasis}>{value.toString()}%</span>
         }
-        */
-       return null
     })();
 
     const basicAttack = (() => {
-        /*
-        if (props.showEquation) {
+        if (showEquation) {
             return <><span className={style.emphasis}>{Constants.T.basic_attack_damage.base}%</span><span className={style.critical}>(+致命打確率 * ({Constants.T.basic_attack_damage.criticalBase}% + 致命打ダメージ増加量))</span></>;
         } else {
-            const value = props.status.criticalDamage.add(Constants.T.basic_attack_damage.criticalBase).percent(props.status.criticalChance).add(Constants.T.basic_attack_damage.base);
+            const value = status.criticalDamage.calculatedValue.add(Constants.T.basic_attack_damage.criticalBase).percent(status.criticalChance.calculatedValue).add(Constants.T.basic_attack_damage.base);
             return <span className={style.emphasis}>{value.toString()}%</span>
         }
-        */
-       return null;
     })()
 
     return (

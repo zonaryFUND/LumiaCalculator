@@ -22,7 +22,7 @@ export type SkillValueProps = {
 export type DamageTableGenerator = (props: {status: Status, skillLevels: SkillLevels, weaponType?: WeaponTypeID, weapon?: WeaponID, gauge?: number, intl: IntlShape}) => DamageTable;
 
 export type DamageTable = {
-    basicAttack: (SkillValueProps | "standard" | "disable-critical" | "aiden")[]
+    basicAttack: (SkillValueProps | "standard" | "disable-critical" | "aiden" | "rio")[]
     skill: SkillValueProps[][]
 }
 

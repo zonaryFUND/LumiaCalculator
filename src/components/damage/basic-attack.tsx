@@ -5,16 +5,12 @@ import { DamageTable } from "components/subjects/damage-table";
 import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "components/subject/standard-values";
 import SkillDamage from "./skill-damage";
 import Hypercharge from "./aiden-hypercharge";
-import DebiMarlConstants from "components/subjects/debi_marlene/constants.json";
-import Rio from "../pages/simple/rio";
+import Rio from "./rio";
 import { styles } from "@app/util/style";
-import style from "./damage-table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
-import value from "components/tooltip/value";
-import { isValueRatio } from "app-types/value-ratio";
 import { SummonedStatus } from "components/subjects/summoned-status";
 
 
@@ -76,6 +72,8 @@ const basicAttack: React.FC<Props> = props => {
                             />
                         } else if (def == "aiden") {
                             return <Hypercharge status={props.status} config={props.config} />
+                        } else if (def == "rio") {
+                            return <Rio status={props.status} config={props.config} />;
                         } else {
                             return <BasicAttackDamage key="standard" name={<FormattedMessage id="app.basic-attack" />} status={props.status} disableCritical={def == "disable-critical"} />
                         }

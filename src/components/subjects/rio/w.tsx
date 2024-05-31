@@ -1,20 +1,20 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
 import style from "components/tooltip/tooltip.module.styl";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             離れが的中した場合、莉央のスキルクールダウンが{Constants.W.cooldown_reduction}秒減少します。<br />
             <br />
-            短弓：指定した方向へ扇型に矢を発射して<Damage skill="W" constants={Constants.W.hankyu_damage} {...props} />のスキルダメージを与え、ダメージを受けた対象の位置に移動速度を
+            短弓：指定した方向へ扇型に矢を発射して<Value skill="W" ratio={Constants.W.hankyu_damage} />のスキルダメージを与え、ダメージを受けた対象の位置に移動速度を
             {Constants.W.hankyu_slow.effect}%減少させる風を{Constants.W.hankyu_slow.duration}秒間生成します。一つの対象に連続で的中した矢は{Constants.W.multiple_hit}%のダメージを与えます。<br />
             <br />
-            和弓：指定した方向へ強力な1本の矢を発射して<Damage skill="W" constants={Constants.W.daikyu_damage} {...props} />のスキルダメージを与え、その後ろの敵には
-            <Damage skill="W" constants={Constants.W.daikyu_behind_damage} {...props} />のスキルダメージを与えます。ダメージを受けた対象は
+            和弓：指定した方向へ強力な1本の矢を発射して<Value skill="W" ratio={Constants.W.daikyu_damage} />のスキルダメージを与え、その後ろの敵には
+            <Value skill="W" ratio={Constants.W.daikyu_behind_damage} />のスキルダメージを与えます。ダメージを受けた対象は
             {Constants.W.daikyu_slow.duration}秒間移動速度が{Constants.W.daikyu_slow.effect}%減少します。
         </>
     );

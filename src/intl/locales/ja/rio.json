@@ -1,0 +1,19 @@
+{
+    "subject.rio.hankyu-aa": "短弓基本攻撃",
+    "subject.rio.hankyu-aa-2hit": "短弓基本攻撃(2発分)",
+    "subject.rio.daikyu-aa": "和弓基本攻撃",
+    "subject.rio.passive-multiplier": "T倍率",
+    "subject.rio.hankyu-w": "短弓W",
+    "subject.rio.hankyu-w-2hit": "短弓(最大ヒット)",
+    "subject.rio.daikyu-w": "和弓W",
+    "subject.rio.daikyu-w-penetrate": "和弓W貫通",
+    "subject.rio.hankyu-e": "短弓E",
+    "subject.rio.hankyu-e-2hit": "短弓E(2ヒット)",
+    "subject.rio.daikyu-e": "和弓E",
+    "subject.rio.daikyu-e-splash": "和弓E拡散",
+    "subject.rio.hankyu-r1": "短弓R1",
+    "subject.rio.hankyu-r1-max-hit": "短弓R1全ヒット({value})",
+    "subject.rio.hankyu-r2": "短弓R2",
+    "subject.rio.daikyu-r": "和弓R",
+    "subject.rio.daikyu-r-enhanced": "和弓R強化"
+}
