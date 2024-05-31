@@ -1,17 +1,17 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             ロッジが敵や地面に付着する爆弾を発射します。爆弾は{Constants.R.duration}秒後に爆発します。<br />
-            爆弾を敵に付着した場合、敵の移動速度が{Constants.R.slow}%減少し、爆発する時に<Damage skill="R" constants={Constants.R.damage} {...props} />のスキルダメージを与えます。<br />
+            爆弾を敵に付着した場合、敵の移動速度が{Constants.R.slow}%減少し、爆発する時に<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えます。<br />
             爆弾が付着された対象はロッジに視界を共有します。<br />
             <br />
-            爆弾が爆発する前に対象に基本攻撃を{Constants.R.basic_attack_launch}回的中させるとすぐに爆発し、対象の最大体力の{Constants.R.additional_damage[props.config.skillLevels.R]}
+            爆弾が爆発する前に対象に基本攻撃を{Constants.R.basic_attack_launch}回的中させるとすぐに爆発し、対象の最大体力の{Constants.R.additional_damage[props.skillLevel]}
             %の固定ダメージを追加で与えて{Constants.R.detonate_slow.duration}秒間移動速度を{Constants.R.detonate_slow.effect}%減少させます。スキルを的中させると
             {Constants.R.skill_hit}回攻撃したことになります。<br />
             <br />

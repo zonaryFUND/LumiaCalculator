@@ -1,14 +1,14 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import Damage from "../damage";
+import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { SubjectSkillProps } from "../props";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            ロッジが銃を乱射して周りの敵に<Damage skill="W" constants={Constants.W.damage} {...props} />のスキルダメージを与え、{Constants.W.duration}
-            秒間防御力を{Constants.W.defense_down[props.config.skillLevels.W]}%、治癒効果を{Constants.W.healing_reduction}%減少させます。<br />
+            ロッジが銃を乱射して周りの敵に<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与え、{Constants.W.duration}
+            秒間防御力を{Constants.W.defense_down[props.skillLevel]}%、治癒効果を{Constants.W.healing_reduction}%減少させます。<br />
             乱射をする間にはロッジの移動速度が{Constants.W.movement_speed}%増加し、弾丸をリロードします。的中させた対象がいる場合、クールダウンが{Constants.W.cooldown_reduction}秒減少します。
         </>
     );
