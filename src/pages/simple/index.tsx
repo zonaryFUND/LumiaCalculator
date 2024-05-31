@@ -148,10 +148,11 @@ const index: React.FC = props => {
                     if (!content) return null;
 
                     const [item, onSlot] = content.split("%");
-                    const props: Partial<SubjectSkillProps> | undefined = onSlot ? {
-                        showEquation: damageInFormula[0],
-                        config: subjectConfig
-                    } : undefined;
+                    const props: SubjectSkillProps = {
+                        showEquation: damageInFormula[0] || onSlot == undefined,
+                        config: subjectConfig,
+                        status
+                    };
 
                     return <ItemTooltip itemID={item} {...props} />;
                 }}

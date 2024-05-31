@@ -28,7 +28,7 @@ const item: React.FC<Props> = props => {
         if (props.itemID.endsWith("_crimson") || props.itemID.endsWith("_dawn")) {
             return Items[props.itemID.substring(0, props.itemID.lastIndexOf("_"))];
         } 
-          
+
         return Items[props.itemID];
     }, [props.itemID]);
 

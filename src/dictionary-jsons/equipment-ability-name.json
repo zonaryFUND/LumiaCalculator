@@ -104,11 +104,14 @@
 	"quickstep": {
 		"jp": "乱舞"
 	},
-	"debilitating_fog": {
+	"debilitation_fog": {
 		"jp": "衰弱の霧"
 	},
 	"brute_enforcer": {
 		"jp": "執行人"
+	},
+	"tranquility": {
+		"jp": "明鏡止水"
 	},
 	"spirit_harvest": {
 		"jp": "漆黒の死"

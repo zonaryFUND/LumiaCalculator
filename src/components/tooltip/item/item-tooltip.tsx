@@ -8,8 +8,9 @@ import baseStyle from "../tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
 import { SubjectSkillProps } from "components/subjects/props";
 import { tierName } from "app-types/equipment/tier";
+import { ValueContext } from "../value-context";
 
-type Props = Partial<SubjectSkillProps> & {
+type Props = SubjectSkillProps & {
     itemID: EquipmentID
 }
 
@@ -53,7 +54,9 @@ const itemTooltip: React.FC<Props> = props => {
             <div className={style.content}>
                 <Options {...status} />
                 {ammo}
-                {status.option ? status.option.map(op => <Skill key={op.id} {...props} id={op.id} values={op.values} />) : null}
+                <ValueContext.Provider value={props}>
+                    {status.option ? status.option.map(op => <Skill key={op.id} {...props} id={op.id} values={op.values} />) : null}
+                </ValueContext.Provider>
             </div>
         </div>
     )

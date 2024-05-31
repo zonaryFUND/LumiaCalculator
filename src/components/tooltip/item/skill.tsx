@@ -14,7 +14,6 @@ const skill: React.FC<EquipmentAbility & ItemSkillProps> = props => {
             return React.createElement(ItemSkillDefinition["healing_reduction"].tooltip!, {...props, intensity: "strong"} as any);
             //return <HealingReduction intensity="strong" />;
         } else {
-            console.log(props.id)
             return React.createElement(ItemSkillDefinition[props.id].tooltip!, props);
         }
     })();

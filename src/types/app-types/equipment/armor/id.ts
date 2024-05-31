@@ -2,7 +2,8 @@ export const Chests = [
     "cardinal_robes", "sunset_armor", "covert_agent_uniform", "optical_camouflage_suit", "rocker_s_jacket", "crusader_armor", "amazoness_armor", "dragon_dobok",
     "commander_s_armor", "butler_s_suit", "eod_suit", "tuxedo", "high_priest_robes", "changpao", "turnout_coat", "mythril_armor", "battle_suit", "blazing_dress",
     "mythril_crop", "kabana", "holy_orders", "áo_dài", "phantom_jacket", "guardian_suit", "elegant_gown", "beautiful_garnment", "specter", "blood_cloak",
-    "omertà", "shooting_star_jacket", "couturier", "tactical_armor", "elf_dress", "titan_armor", "bikini", "queen_of_hearts", "burgundy_47"
+    "omertà", "shooting_star_jacket", "couturier", "tactical_armor", "elf_dress", "titan_armor", "the_revenant", "racing_suit", "ghost_bride_s_dress", 
+    "inquisitor", "bikini", "queen_of_hearts", "burgundy_47"
 ]
 export type ChestID = typeof Chests[number];
 

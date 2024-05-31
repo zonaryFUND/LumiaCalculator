@@ -1,0 +1,12 @@
+{
+    "threshold": 5,
+    "shield": {
+        "base": 30,
+        "level": 5
+    },
+    "max_shield": {
+        "base": 50,
+        "level": 10,
+        "amp": 40
+    }
+}
