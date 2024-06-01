@@ -11,10 +11,8 @@ const tableValues: TableValues = (dictionaryValues: any) => {
         };
     });
 
-    console.log(constant)
-
     return [
-        {type: "basic", constant: {melee: constant[0], range: constant[1]}}
+        {type: "basic", ratio: {melee: constant[0], range: constant[1]}, labelFormat: "{text}追加ダメージ"}
     ]
 }
 

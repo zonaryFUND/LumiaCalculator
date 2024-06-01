@@ -2,7 +2,7 @@ import { TableValues } from "../item-skill";
 
 const tableValues: TableValues = (dictionaryValues: any) => {
     return [
-        {type: "basic", constant: dictionaryValues.dmg}
+        {type: "basic", ratio: dictionaryValues.dmg}
     ]
 }
 

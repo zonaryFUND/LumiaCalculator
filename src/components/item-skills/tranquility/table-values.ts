@@ -3,7 +3,8 @@ import Constants from "./constants.json";
 
 const tableValues: TableValues = (dictionaryValues: any) => {
     return [
-        {type: "skill", ratio: dictionaryValues.dmg, labelFormat: "{text}被ダメージ閾値到達時周囲ダメージ"}
+        {type: "shield", ratio: Constants.shield, labelFormat: "{text}シールド獲得/秒"},
+        {type: "shield", ratio: Constants.max_shield, labelFormat: "{text}シールド最大値"}
     ]
 }
 

@@ -3,7 +3,7 @@ import Constants from "./constants.json";
 
 const tableValues: TableValues = (dictionaryValues: any) => {
     return [
-        {type: "basic", constant: Constants.dmg}
+        {type: "basic", ratio: Constants.dmg, labelFormat: "{text}追加ダメージ"}
     ]
 }
 

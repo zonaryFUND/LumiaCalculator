@@ -3,7 +3,7 @@ import Constants from "./constants.json";
 
 const tableValues: TableValues = (dictionaryValues: any) => {
     return [
-        {type: "effect", constant: Constants.adaptive}
+        {type: "status", ratio: Constants.adaptive, labelFormat: "{text}適合型能力値増加"}
     ]
 }
 

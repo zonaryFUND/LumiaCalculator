@@ -10,7 +10,7 @@ const description: React.FC<ItemSkillProps> = props => {
     const { config, status, showEquation } = useValueContextOptional();
     const value = (() => {
         if (config && status && !showEquation) {
-            const ampValue = calculateValue({amp: Constants.ad.amp}, status, config, "item");
+            const ampValue = calculateValue({amp: Constants.ad.amp}, status, config, "item").static;
             return <><span className={style.amp}>({ampValue.toString()})</span>+<span className={style.maxhp}>敵最大体力の{Constants.ad.targetMaxHP}%</span></>;
         } else {
             return <Value ratio={Constants.ad} overrideExpression={{result: {className: style.amp}}} />;

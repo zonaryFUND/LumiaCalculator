@@ -1,11 +1,9 @@
-import { ValueRatio } from "app-types/value-ratio";
-
 export type ItemSkillProps = {
     values: any
 }
 
 export type TableValues = (dictionaryValues: any) => {
-    type: "basic" | "skill" | "true" | "shield" | "dot" | "true-dot" | "effect", constant: any, multiplier?: number, additionalLabel?: string
+    type: "basic" | "skill" | "true" | "shield" | "heal" | "status", ratio: any, multiplier?: number, labelFormat?: string
 }[]
 
 const context = require.context("./", true, /\.\/.*\/(tooltip\.tsx|table-values\.ts)$/);

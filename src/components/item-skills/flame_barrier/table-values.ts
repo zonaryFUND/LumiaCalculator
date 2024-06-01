@@ -2,7 +2,7 @@ import { TableValues } from "../item-skill";
 
 const tableValues: TableValues = (dictionaryValues: any) => {
     return [
-        {type: "dot", constant: dictionaryValues.dmg}
+        {type: "skill", ratio: dictionaryValues.dmg, labelFormat: "{text}/秒"}
     ]
 }
 

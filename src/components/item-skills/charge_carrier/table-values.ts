@@ -3,7 +3,7 @@ import Constants from "./constants.json";
 
 const tableValues: TableValues = (dictionaryValues: any) => {
     return [
-        {type: "shield", constant: Constants.shield}
+        {type: "shield", ratio: Constants.shield, labelFormat: "{text}シールド量"}
     ]
 }
 

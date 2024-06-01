@@ -5,13 +5,14 @@ import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/
 import SkillDamage from "./skill-damage";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
-import { SummonedStatus } from "components/subjects/summoned-status";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
-import { equipmentStatus } from "app-types/equipment";
+import { equipmentStatus, name } from "app-types/equipment";
 import { useIntl } from "react-intl";
+import { name as abilityName } from "app-types/equipment/ability";
+import { name as equipmentName } from "app-types/equipment";
 
 type Props = {
     status: Status
@@ -60,12 +61,23 @@ const damageTable: React.FC<Props> = props => {
                     const values = ItemSkillDefinition[ability.id].values;
                     if (values == undefined) return [];
                     return values(ability.values).map(value => {
+                        const baseText = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
+                        const multiplier = value.multiplier ? [{basic: value.multiplier}] : undefined;
+                        const name = value.labelFormat?.split(/({text})/)
+                            .map(component => {
+                                if (component.startsWith("{") && component.endsWith("}")) {
+                                    return baseText
+                                } else {
+                                    return component
+                                }
+                            })
+                            .join("");
+                            
                         return {
-                            //name: `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})${value.type == "shield" ? " シールド" : ""}${value.type == "effect" ? "適合型能力値上昇量" : ""}${value.type == "dot" || value.type == "true-dot" ? "/秒" : ""}${value.additionalLabel || ""}`,
-                            name: "",
+                            name: name ?? baseText,
                             type: value.type,
-                            constant: value.constant[range] || value.constant,
-                            multiplier: value.multiplier
+                            ratio: value.ratio[range] || value.ratio,
+                            multiplier
                         };
                     });
                 });
@@ -80,8 +92,7 @@ const damageTable: React.FC<Props> = props => {
                     <BasicAttack status={props.status} config={props.config} table={definition!} weaponType={props.weaponType}>
                         {
                             itemSkillDamage?.filter(def => def.type == "basic").map(def => {
-                                //return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} damage={def.constant} skill="item" summonedName={summonedName} multiplier={def.multiplier} />
-                                return null
+                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="item" multiplier={def.multiplier} />
                             })
                         }
                     </BasicAttack>
@@ -142,17 +153,17 @@ const damageTable: React.FC<Props> = props => {
                                             return "basic";
                                         case "shield":
                                             return "shield";
-                                        case "effect":
+                                        case "heal":
+                                            return "heal";
+                                        case "status":
                                         case "true":
-                                        case "true-dot":
                                             return "true"
-                                        case "dot":
                                         case "skill":
                                             return undefined;
                                     }
                                 })();
-                                //return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} damage={def.constant} skill="item" summonedName={summonedName} type={type} multiplier={def.multiplier} />
-                                return null
+                                
+                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="item" type={type} multiplier={def.multiplier} />
                             })
                         }
                     </tbody>
