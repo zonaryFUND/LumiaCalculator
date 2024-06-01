@@ -1,0 +1,7 @@
+{
+    "damage": {
+        "attack": 80
+    },
+    "spark_max": 5,
+    "cooldown": 5
+}

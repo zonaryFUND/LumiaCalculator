@@ -1,0 +1,13 @@
+{
+    "threshold": 4.5,
+    "area": 8,
+    "damage": {
+        "base": 30,
+        "amp": 35
+    },
+    "skill_damage_enhance": {
+        "duration": 5,
+        "effect": 15
+    },
+    "cooldown": 15
+}

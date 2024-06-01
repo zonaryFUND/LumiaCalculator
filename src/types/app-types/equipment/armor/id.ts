@@ -11,7 +11,8 @@ export const Heads = [
     "virtuous_outlaw", "crystal_tiara", "motorcycle_helmet", "tactical_ops_helmet", "helm_of_banneret", "imperial_crown", "imperial_burgonet", "mohawk_headgear",
     "vigilante", "diadem", "cowboy_hat", "plasma_helmet", "harmony_in_full_bloom", "mythril_helm", "laurel_wreath", "crusader_helmet", "elysian_halo",
     "fallen_pegasus", "persona", "sultan_s_turban", "racing_helmet", "the_star_of_the_wilds", "astronaut_s_helmet", "dwarf_s_helmet", "twilight",
-    "tactical_visor", "celestial_echo", "chinese_opera_mask"
+    "gpnvg", "the_black_death", "cyberstalker", "blaster_helmet", "commander_headset", "tactical_visor", "the_dragon_s_fury", "celestial_echo", 
+    "chinese_opera_mask"
 ]
 export type HeadID = typeof Heads[number]
 

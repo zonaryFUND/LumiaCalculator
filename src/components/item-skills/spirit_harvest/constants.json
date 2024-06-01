@@ -1,0 +1,12 @@
+{
+    "duration": 4,
+    "first_damage": {
+        "base": 20,
+        "amp": 20
+    },
+    "second_damage": {
+        "base": 40,
+        "amp": 40
+    },
+    "cooldown": 5
+}

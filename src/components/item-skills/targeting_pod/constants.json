@@ -1,0 +1,12 @@
+{
+    "duration": 5,
+    "damage": {
+        "base": 15,
+        "level": 3
+    },
+    "heal": {
+        "base": 5,
+        "level": 3
+    },
+    "cooldown": 8
+}

@@ -1,0 +1,9 @@
+{
+    "cooldown": 10,
+    "range_extend": 20,
+    "damage": {
+        "level": 6
+    },
+    "max_range": 7.8,
+    "cooldown_reduction": 1
+}
