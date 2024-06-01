@@ -35,7 +35,7 @@
         },
         "damage_reduction_duration": 2,
         "max_damage_reduction": [15, 17.5, 20, 22.5, 25],
-        "cooldown": [15, 14, 13, 12, 11],
+        "cooldown": [14,13,12,11,10],
         "sp_cost": [50, 60, 70, 80, 90]
     },
     "E": {
@@ -49,7 +49,7 @@
             "attack": 50,
             "additionalMaxHP": 20
         },
-        "cooldown": [20, 19, 18, 17, 16],
+        "cooldown": [18,17,16,15,14],
         "sp_cost": [60, 70, 80, 90, 100]
     },
     "R": {

@@ -155,7 +155,7 @@
 		"attackPower": "38",
 		"apPerLevel": "3.2",
 		"armor": "53",
-		"armorPerLevel": "2.9",
+		"armorPerLevel": "3.2",
 		"attackSpeed": "0.04",
 		"movementSpeed": "3.5"
 	},
@@ -600,9 +600,9 @@
 		"hpRegenPerLevel": "0.06",
 		"spRegeneration": "3.9",
 		"spRegenPerLevel": "0.04",
-		"attackPower": "36",
+		"attackPower": "32",
 		"apPerLevel": "4.5",
-		"armor": "49",
+		"armor": "51",
 		"armorPerLevel": "2.6",
 		"attackSpeed": "0.13",
 		"movementSpeed": "3.5"
@@ -648,7 +648,7 @@
 		"hpRegenPerLevel": "0.09",
 		"spRegeneration": "2.6",
 		"spRegenPerLevel": "0.04",
-		"attackPower": "38",
+		"attackPower": "35",
 		"apPerLevel": "3.9",
 		"armor": "50",
 		"armorPerLevel": "2.7",
@@ -768,7 +768,7 @@
 		"movementSpeed": "3.55"
 	},
 	"ly_anh": {
-		"maxHP": "965",
+		"maxHP": "1000",
 		"maxHPperLevel": "94",
 		"maxSP": "430",
 		"maxSPperLevel": "16",
@@ -794,7 +794,7 @@
 		"spRegenPerLevel": "0.03",
 		"attackPower": "44",
 		"apPerLevel": "4.4",
-		"armor": "55",
+		"armor": "52",
 		"armorPerLevel": "2.7",
 		"attackSpeed": "0.16",
 		"movementSpeed": "3.6"
@@ -913,7 +913,7 @@
 	},
 	"priya": {
 		"maxHP": "915",
-		"maxHPperLevel": "77",
+		"maxHPperLevel": "80",
 		"maxSP": "430",
 		"maxSPperLevel": "17",
 		"hpRegeneration": "0.8",
@@ -1035,7 +1035,7 @@
 		"attackPower": "30",
 		"apPerLevel": "4.4",
 		"armor": "53",
-		"armorPerLevel": "2.6",
+		"armorPerLevel": "2.9",
 		"attackSpeed": "0.06",
 		"movementSpeed": "3.5"
 	},
@@ -1080,7 +1080,7 @@
 		"hpRegenPerLevel": "0.06",
 		"spRegeneration": "3",
 		"spRegenPerLevel": "0.04",
-		"attackPower": "30",
+		"attackPower": "33",
 		"apPerLevel": "4.4",
 		"armor": "50",
 		"armorPerLevel": "2.8",
@@ -1146,7 +1146,7 @@
 		"spRegenPerLevel": "0.03",
 		"attackPower": "33",
 		"apPerLevel": "4.9",
-		"armor": "48",
+		"armor": "52",
 		"armorPerLevel": "2.7",
 		"attackSpeed": "0.11",
 		"movementSpeed": "3.55"

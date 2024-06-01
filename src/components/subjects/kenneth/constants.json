@@ -5,7 +5,7 @@
             "attack": [145,150,155,160,165]
         },
         "max_stack_damage": 20,
-        "max_stack_heal": 12,
+        "max_stack_heal": 10,
         "max_stack_heal_max": 30,
         "sp_cost": 40,
         "cooldown": [10,9,8,7,6]

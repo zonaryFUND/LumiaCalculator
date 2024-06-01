@@ -245,7 +245,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "10",
+		"skillAmplification": "20",
 		"ampRatio": "30",
 		"cooldownReduction": "15",
 		"defense": "28",
@@ -288,7 +288,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "hp[20]",
-		"cooldownReduction": "10",
+		"cooldownReduction": "15",
 		"defense": "31",
 		"option": "quickstep"
 	},
@@ -458,7 +458,7 @@
 		"type": "head",
 		"tier": "legendary",
 		"adaptiveStatus": "35",
-		"defense": "10",
+		"defense": "15",
 		"maxSP": "300",
 		"option": "biotic_infusion[\"dmg\":{\"melee\":{\"targetMaxHP\":12},\"range\":{\"targetMaxHP\":11}}]"
 	},
@@ -536,7 +536,7 @@
 		"type": "head",
 		"tier": "legendary",
 		"perLevelStatus": "ap[1]",
-		"skillAmplification": "80",
+		"skillAmplification": "85",
 		"cooldownReduction": "15",
 		"maxSP": "500"
 	},
@@ -558,7 +558,7 @@
 	"cyberstalker": {
 		"type": "head",
 		"tier": "legendary",
-		"skillAmplification": "80",
+		"skillAmplification": "85",
 		"cooldownReduction": "15",
 		"maxSP": "400",
 		"option": "taser_gun"
@@ -745,7 +745,7 @@
 		"type": "arm",
 		"tier": "legendary",
 		"perLevelStatus": "hp[15]",
-		"defense": "22",
+		"defense": "20",
 		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
 	"tindalos_monarch": {
@@ -761,7 +761,7 @@
 		"tier": "legendary",
 		"attackPower": "30",
 		"cooldownReduction": "15",
-		"maxHP": "150"
+		"maxHP": "200"
 	},
 	"dragon_scale": {
 		"type": "arm",
@@ -805,7 +805,7 @@
 	"claddagh_ring": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "80",
+		"skillAmplification": "77",
 		"maxHP": "100",
 		"healingPower": "18"
 	},
@@ -827,7 +827,7 @@
 	"pharaoh_s_artifact": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "105"
+		"skillAmplification": "102"
 	},
 	"smash_totem": {
 		"type": "arm",

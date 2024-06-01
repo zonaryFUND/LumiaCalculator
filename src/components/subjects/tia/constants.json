@@ -14,7 +14,7 @@
         "r": {
             "slow": {
                 "duration": 1,
-                "effect": 25
+                "effect": 35
             }
         },
         "b": {

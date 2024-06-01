@@ -7,7 +7,7 @@
         "movement_speed": [4,5,6,7,8],
         "queen_damage": {
             "base": [50,95,140,185,230],
-            "amp": 70
+            "amp": 75
         },
         "stun": 1,
         "stack_reset": 6,

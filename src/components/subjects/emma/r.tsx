@@ -28,11 +28,10 @@ const r: React.FC<SubjectSkillProps> = props => {
 export default r;
 
 export const values: ValuesProps = {
-    additionalInfo: <>クールダウン減少の影響を受けません。</>,
     parameters: [
         {title: "鳩のダメージ量", values: Constants.R.Q.damage.base},
         {title: "帽子のダメージ量", values: Constants.R.W.damage.base},
         {title: "ウサギのダメージ量", values: Constants.R.E.damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown.constant}
+        {title: "クールダウン", values: Constants.R.cooldown}
     ]
 }

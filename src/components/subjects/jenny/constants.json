@@ -3,7 +3,7 @@
         "count": 3,
         "damage": {
             "base": [50,60,70,80,90],
-            "amp": 30
+            "amp": 35
         },
         "cooldown_reduction": 0.5,
         "buff_duration": 6,
@@ -16,7 +16,7 @@
     "W": {
         "first_damage": {
             "base": [30,55,80,105,130],
-            "amp": 35
+            "amp": 40
         },
         "slow": {
             "duration": 0.25,
@@ -24,7 +24,7 @@
         },
         "second_damage": {
             "base": [30,55,80,105,130],
-            "amp": 35
+            "amp": 40
         },
         "sp_cost": 100,
         "cooldown": 20
@@ -34,7 +34,7 @@
         "count": 3,
         "damage": {
             "base": [30,70,110,150,190],
-            "amp": 45
+            "amp": 55
         },
         "sp_cost": [30,35,40,45,50],
         "cooldown": {

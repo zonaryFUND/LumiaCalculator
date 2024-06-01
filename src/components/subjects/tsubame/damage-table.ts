@@ -8,7 +8,10 @@ const table: DamageTableGenerator = props => ({
     ],
     skill: [
         [{label: "Q", skill: "Q", value: Constants.Q.damage}],
-        [{label: "R", skill: "R", value: Constants.R.damage}]
+        [
+            {label: props.intl.formatMessage({id: "subject.tsubame.r-min"}), skill: "R", value: Constants.R.damage},
+            {label: props.intl.formatMessage({id: "subject.tsubame.r-max"}), skill: "R", value: Constants.R.damage, multiplier: [{basic: 100 + Constants.R.max_multiplier}]}
+        ]
     ]
 })
 

@@ -20,7 +20,7 @@
             "amp": 80,
             "targetMaxHP": 6
         },
-        "airborne": 0.65,
+        "airborne": 0.75,
         "sp_cost": 50,
         "cooldown": [12,11,10,9,8]
     },

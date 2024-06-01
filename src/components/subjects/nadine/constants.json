@@ -9,14 +9,14 @@
         },
         "min_damage": {
             "base": [60,90,120,150,180],
-            "additionalAttack": 100,
-            "amp": 60,
+            "additionalAttack": 110,
+            "amp": 65,
             "stack": 1
         },
         "max_damage": {
             "base": [120,180,240,300,360],
-            "additionalAttack": 200,
-            "amp": 120,
+            "additionalAttack": 220,
+            "amp": 130,
             "stack": 1
         },
         "payback": 50,

@@ -29,11 +29,11 @@
     "R": {
         "first_damage": {
             "base": [50,100,150],
-            "amp": 25
+            "amp": 30
         },
         "duration": 10,
         "card_damage": {
-            "base": [50,110,170],
+            "base": [80,125,170],
             "amp": 50
         },
         "movement_speed_penalty": 10,

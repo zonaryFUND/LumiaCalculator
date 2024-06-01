@@ -15,12 +15,12 @@
     },
     "W": {
         "inner_damage": {
-            "base": [30,45,60,75,90],
-            "amp": 60
+            "base": [30,55,80,105,130],
+            "amp": 70
         },
         "outer_damage": {
             "base": [50,100,150,200,250],
-            "amp": 85
+            "amp": 90
         },
         "slow": {
             "duration": 2,
@@ -32,13 +32,13 @@
     "E": {
         "damage": {
             "base": [30,40,50,60,70],
-            "amp": 25
+            "amp": 35
         },
         "bind": 0.7,
         "stun": 0.9,
         "knockback_damage": {
             "base": [30,50,70,90,110],
-            "amp": 45
+            "amp": 50
         },
         "sp_cost": 70,
         "cooldown": [15,14,13,12,11]

@@ -1,5 +1,5 @@
 {
     "duration": 3,
-    "movement_speed": 2,
+    "movement_speed": 1.5,
     "max_stack": 10
 }

@@ -410,7 +410,8 @@
 		"type": "throw",
 		"tier": "legendary",
 		"attackPower": "40",
-		"skillAmplification": "101",
+		"skillAmplification": "88",
+		"cooldownReduction": "15",
 		"option": "healing_reduction_weak"
 	},
 	"chaser": {
@@ -435,7 +436,7 @@
 		"type": "throw",
 		"tier": "mythic",
 		"attackPower": "40",
-		"adaptiveStatus": "51",
+		"adaptiveStatus": "49",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
@@ -487,9 +488,9 @@
 		"type": "shuriken",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "74",
+		"skillAmplification": "70",
 		"cooldownReduction": "15",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"death_rune": {
 		"type": "shuriken",
@@ -590,7 +591,7 @@
 		"attackPower": "45",
 		"skillAmplification": "85",
 		"cooldownReduction": "15",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"crimson_bow": {
 		"type": "bow",
@@ -850,16 +851,17 @@
 		"tier": "legendary",
 		"attackPower": "45",
 		"attackSpeed": "30",
-		"skillAmplification": "100",
+		"skillAmplification": "87",
+		"cooldownReduction": "15",
 		"ammo": "30",
 		"option": "healing_reduction_weak"
 	},
 	"hellfire": {
 		"type": "assault_rifle",
 		"tier": "mythic",
-		"attackPower": "35",
+		"attackPower": "37",
 		"attackSpeed": "30",
-		"adaptiveStatus": "59",
+		"adaptiveStatus": "57",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "12",
 		"ammo": "120"
@@ -879,7 +881,7 @@
 		"tier": "mythic",
 		"attackPower": "25",
 		"attackSpeed": "30",
-		"adaptiveStatus": "50",
+		"adaptiveStatus": "48",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"ammo": "60",
@@ -1149,7 +1151,7 @@
 		"adaptiveStatus": "53",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"carnwennan": {
 		"type": "dagger",
@@ -1207,10 +1209,10 @@
 		"type": "dagger",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "78",
+		"skillAmplification": "73",
 		"cooldownReduction": "15",
 		"movementSpeed": "0.06",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"soul_reaper": {
 		"type": "dagger",
@@ -1242,11 +1244,11 @@
 		"type": "dagger",
 		"tier": "mythic",
 		"attackPower": "13",
-		"adaptiveStatus": "56",
+		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"movementSpeed": "0.1",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"thuận_thiên": {
 		"type": "two-handed_sword",
@@ -1544,7 +1546,7 @@
 		"tier": "legendary",
 		"attackPower": "75",
 		"attackSpeed": "25",
-		"attackRange": "0.4"
+		"criticalChance": "25"
 	},
 	"crimson_red_lovers": {
 		"type": "nunchaku",
@@ -1568,9 +1570,9 @@
 		"tier": "mythic",
 		"attackPower": "32",
 		"attackSpeed": "30",
+		"criticalChance": "25",
 		"adaptiveStatus": "56",
-		"armorPenetrationRatio": "7",
-		"attackRange": "0.4"
+		"armorPenetrationRatio": "7"
 	},
 	"hydra_dawn": {
 		"type": "nunchaku",
@@ -1579,8 +1581,7 @@
 		"adaptiveStatus": "53",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"attackRange": "0.4",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"sword_of_justice": {
 		"type": "rapier",
@@ -1670,8 +1671,9 @@
 		"type": "rapier",
 		"tier": "mythic",
 		"attackPower": "7",
-		"attackSpeed": "30",
-		"criticalDamage": "12",
+		"attackSpeed": "25",
+		"criticalChance": "20",
+		"criticalDamage": "10",
 		"adaptiveStatus": "52",
 		"armorPenetrationRatio": "7",
 		"option": "magnetic_midnight[\"dmg\":{\"level\":11},\"slow\":{\"effect\":20,\"duration\":1.5}]"
@@ -1815,7 +1817,7 @@
 		"skillAmplification": "79",
 		"cooldownReduction": "15",
 		"vision": "1.5",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"vision_flex": {
 		"type": "camera",
@@ -1845,7 +1847,7 @@
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"vision": "1.5",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":30}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"the_hermit": {
 		"type": "arcana",

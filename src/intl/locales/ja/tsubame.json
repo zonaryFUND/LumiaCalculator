@@ -1,4 +1,6 @@
 {
     "subject.tsubame.range": "固定値",
-    "subject.tsubame.passive-damage": "T追加ダメージ"
+    "subject.tsubame.passive-damage": "T追加ダメージ",
+    "subject.tsubame.r-min": "R最小",
+    "subject.tsubame.r-max": "R最大"
 }

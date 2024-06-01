@@ -31,9 +31,11 @@
     },
     "R": {
         "damage": {
-            "base": [150,225,300],
-            "attack": 100
+            "base": [150,175,250],
+            "attack": 85
         },
+        "max_multiplier": 50,
+        "max_multiplier_threshold": 40,
         "cooldown_reduction": 80,
         "cooldown": {
             "constant": [60,50,40]
