@@ -54,9 +54,9 @@
     },
     "T": {
         "damage": {
-            "base": [10,40,70],
+            "base": [20,50,80],
             "attackSpeed": 20,
-            "amp": 55
+            "amp": 60
         },
         "stack_damage_amp": [4,7,10],
         "max_stack": 3

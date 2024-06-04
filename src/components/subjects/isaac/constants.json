@@ -19,8 +19,8 @@
     "E": {
         "time_bound": 2.5,
         "damage": {
-            "base": [50,80,110,140,170],
-            "attack": 60
+            "base": [30,60,90,120,150],
+            "attack": 55
         },
         "stun": 0.65,
         "defense_down": {

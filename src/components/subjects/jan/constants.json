@@ -4,7 +4,7 @@
             "base": [80,100,120,140,160],
             "additionalAttack": 65,
             "amp": 50,
-            "targetMaxHP": 4
+            "targetMaxHP": 6
         },
         "slow": {
             "duration": 1,
@@ -18,7 +18,7 @@
             "base": [65,90,115,140,165],
             "additionalAttack": 90,
             "amp": 80,
-            "targetMaxHP": 6
+            "targetMaxHP": 7
         },
         "airborne": 0.75,
         "sp_cost": 50,

@@ -96,7 +96,7 @@
 		"movementSpeed": "3.45"
 	},
 	"alonso": {
-		"maxHP": "970",
+		"maxHP": "1000",
 		"maxHPperLevel": "86",
 		"maxSP": "400",
 		"maxSPperLevel": "16",
@@ -129,7 +129,7 @@
 	},
 	"aya": {
 		"maxHP": "905",
-		"maxHPperLevel": "73",
+		"maxHPperLevel": "76",
 		"maxSP": "440",
 		"maxSPperLevel": "25",
 		"hpRegeneration": "0.75",
@@ -193,7 +193,7 @@
 	},
 	"camilo": {
 		"maxHP": "940",
-		"maxHPperLevel": "84",
+		"maxHPperLevel": "88",
 		"maxSP": "440",
 		"maxSPperLevel": "25",
 		"hpRegeneration": "2.25",
@@ -303,6 +303,22 @@
 		"attackSpeed": "0.07",
 		"movementSpeed": "3.5"
 	},
+	"darko": {
+		"maxHP": "960",
+		"maxHPperLevel": "85",
+		"maxSP": "480",
+		"maxSPperLevel": "23",
+		"hpRegeneration": "2",
+		"hpRegenPerLevel": "0.136",
+		"spRegeneration": "3",
+		"spRegenPerLevel": "0.04",
+		"attackPower": "42",
+		"apPerLevel": "4.6",
+		"armor": "44",
+		"armorPerLevel": "3.2",
+		"attackSpeed": "0.12",
+		"movementSpeed": "3.55"
+	},
 	"debi_marlene": {
 		"maxHP": "1000",
 		"maxHPperLevel": "80",
@@ -337,7 +353,7 @@
 	},
 	"elena": {
 		"maxHP": "990",
-		"maxHPperLevel": "94",
+		"maxHPperLevel": "98",
 		"maxSP": "430",
 		"maxSPperLevel": "20",
 		"hpRegeneration": "2.04",
@@ -347,7 +363,7 @@
 		"attackPower": "37",
 		"apPerLevel": "4.4",
 		"armor": "57",
-		"armorPerLevel": "3.1",
+		"armorPerLevel": "3.3",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.5"
 	},
@@ -401,7 +417,7 @@
 	},
 	"eva": {
 		"maxHP": "940",
-		"maxHPperLevel": "75",
+		"maxHPperLevel": "78",
 		"maxSP": "400",
 		"maxSPperLevel": "26",
 		"hpRegeneration": "0.9",
@@ -443,7 +459,7 @@
 		"attackPower": "40",
 		"apPerLevel": "4.4",
 		"armor": "55",
-		"armorPerLevel": "3.5",
+		"armorPerLevel": "3.9",
 		"attackSpeed": "0.18",
 		"movementSpeed": "3.55"
 	},
@@ -507,7 +523,7 @@
 		"attackPower": "37",
 		"apPerLevel": "4.9",
 		"armor": "54",
-		"armorPerLevel": "3.2",
+		"armorPerLevel": "3.5",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.55"
 	},
@@ -587,13 +603,13 @@
 		"attackPower": "35",
 		"apPerLevel": "4.4",
 		"armor": "56",
-		"armorPerLevel": "2.9",
+		"armorPerLevel": "3.3",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
 	},
 	"jenny": {
 		"maxHP": "895",
-		"maxHPperLevel": "64",
+		"maxHPperLevel": "68",
 		"maxSP": "440",
 		"maxSPperLevel": "25",
 		"hpRegeneration": "0.75",
@@ -648,7 +664,7 @@
 		"hpRegenPerLevel": "0.09",
 		"spRegeneration": "2.6",
 		"spRegenPerLevel": "0.04",
-		"attackPower": "35",
+		"attackPower": "39",
 		"apPerLevel": "3.9",
 		"armor": "50",
 		"armorPerLevel": "2.7",
@@ -800,7 +816,7 @@
 		"movementSpeed": "3.6"
 	},
 	"mai": {
-		"maxHP": "1010",
+		"maxHP": "980",
 		"maxHPperLevel": "80",
 		"maxSP": "440",
 		"maxSPperLevel": "16",
@@ -810,7 +826,7 @@
 		"spRegenPerLevel": "0.02",
 		"attackPower": "30",
 		"apPerLevel": "4.2",
-		"armor": "51",
+		"armor": "48",
 		"armorPerLevel": "3.1",
 		"attackSpeed": "0.13",
 		"movementSpeed": "3.5"
@@ -1008,7 +1024,7 @@
 		"movementSpeed": "3.5"
 	},
 	"sua": {
-		"maxHP": "1020",
+		"maxHP": "1070",
 		"maxHPperLevel": "93",
 		"maxSP": "480",
 		"maxSPperLevel": "18",
@@ -1083,7 +1099,7 @@
 		"attackPower": "33",
 		"apPerLevel": "4.4",
 		"armor": "50",
-		"armorPerLevel": "2.8",
+		"armorPerLevel": "3",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.5"
 	},

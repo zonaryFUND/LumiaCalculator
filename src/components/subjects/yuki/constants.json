@@ -1,12 +1,12 @@
 {
     "Q": {
         "damage": {
-            "base": [20,40,60,80,100],
+            "base": [40,60,80,100,120],
             "attack": 100,
             "basicAttackAmp": 100
         },
         "dual_sword_damage": {
-            "base": [20,40,60,80,100],
+            "base": [40,60,80,100,120],
             "attack": 150,
             "basicAttackAmp": 100
         },

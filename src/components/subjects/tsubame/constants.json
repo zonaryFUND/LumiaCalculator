@@ -15,7 +15,7 @@
         "sp_cost": [30,35,40,45,50]
     },
     "W": {
-        "movement_speed": [10,12.5,15,17.5,20],
+        "movement_speed": [20,22.5,25,27.5,30],
         "ms_duration": 2,
         "attack_speed": [20,25,30,35,40],
         "as_duration": 3,

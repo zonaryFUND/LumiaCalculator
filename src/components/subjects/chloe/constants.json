@@ -7,7 +7,7 @@
     "Q": {
         "damage": {
             "base": [70,90,110,130,150],
-            "summonedAttack": 85
+            "summonedAttack": 75
         },
         "slow": {
             "duration": 1.5,
@@ -80,8 +80,8 @@
         "nina_revive_hp": 80,
         "base_chloe_status_ratio": 60,
         "per_level_chloe_status_ratio": 2,
-        "nina_attack": [5,10,15],
-        "nina_defense": [10,30,50],
-        "nina_maxhp": [200,300,400]
+        "nina_attack": [4,7,10],
+        "nina_defense": [10,25,40],
+        "nina_maxhp": [200,250,300]
     }
 }

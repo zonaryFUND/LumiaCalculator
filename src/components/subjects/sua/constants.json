@@ -106,7 +106,7 @@
         "cooldown_reduction": 20
     },
     "R": {
-        "cooldown": [46,33,20]
+        "cooldown": [40,30,20]
     },
     "T": {
         "damage": {

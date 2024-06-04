@@ -15,7 +15,7 @@
     "HumanW": {
         "damage": {
             "base": [80,105,130,155,180],
-            "amp": 70
+            "amp": 60
         },
         "slow": {
             "duration": 2,

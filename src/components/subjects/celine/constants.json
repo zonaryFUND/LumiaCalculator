@@ -15,7 +15,7 @@
         }
     },
     "W": {
-        "q_cooldown_reduction": [25,30,35,40,45],
+        "q_cooldown_reduction": [30,35,40,45,50],
         "sp_cost": 15,
         "cooldown": {
             "constant": 0.1

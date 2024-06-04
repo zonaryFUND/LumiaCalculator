@@ -91,7 +91,7 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ad",
-		"attackSpeed": "30",
+		"attackSpeed": "24",
 		"criticalChance": "27"
 	},
 	"high_priest_robes": {
@@ -138,6 +138,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[23]",
 		"defense": "34",
+		"spRegeneration": "100",
 		"vision": "1",
 		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":3.5},\"range\":{\"maxHP\":2.5}}]"
 	},
@@ -147,15 +148,15 @@
 		"perLevelStatus": "hp[25]",
 		"cooldownReduction": "15",
 		"defense": "51",
-		"movementSpeed": "0.12",
-		"option": "healing_reduction_weak"
+		"movementSpeed": "0.12"
 	},
 	"kabana": {
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
 		"skillAmplification": "40",
-		"defense": "28"
+		"defense": "28",
+		"option": "healing_reduction_weak"
 	},
 	"holy_orders": {
 		"type": "chest",
@@ -169,18 +170,18 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"attackPower": "28",
+		"attackPower": "30",
 		"attackSpeed": "25",
 		"cooldownReduction": "20",
-		"defense": "24",
+		"defense": "25",
 		"spRegeneration": "100"
 	},
 	"phantom_jacket": {
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "hp[28]",
-		"attackPower": "5",
 		"defense": "38",
+		"spRegeneration": "100",
 		"vision": "1",
 		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":4},\"range\":{\"maxHP\":3}}]"
 	},
@@ -213,7 +214,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"attackPower": "9",
+		"attackPower": "6",
 		"criticalChance": "33",
 		"defense": "21"
 	},
@@ -255,7 +256,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"attackPower": "13",
+		"attackPower": "15",
 		"defense": "23",
 		"armorPenetration": "10",
 		"option": "verdict"
@@ -452,7 +453,8 @@
 		"perLevelStatus": "hp[16]",
 		"cooldownReduction": "20",
 		"cdrCap": "5",
-		"defense": "14"
+		"defense": "14",
+		"maxSP": "400"
 	},
 	"elysian_halo": {
 		"type": "head",
@@ -498,7 +500,7 @@
 		"type": "head",
 		"tier": "legendary",
 		"attackPower": "35",
-		"attackSpeed": "46",
+		"attackSpeed": "40",
 		"option": "healing_reduction_weak"
 	},
 	"astronaut_s_helmet": {
@@ -514,6 +516,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[16]",
 		"defense": "10",
+		"maxHP": "50",
 		"spRegeneration": "50",
 		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
@@ -543,7 +546,7 @@
 	"the_black_death": {
 		"type": "head",
 		"tier": "legendary",
-		"skillAmplification": "85",
+		"skillAmplification": "82",
 		"maxSP": "300",
 		"movementSpeed": "0.06",
 		"option": "spirit_harvest"
@@ -582,7 +585,7 @@
 		"type": "head",
 		"tier": "legendary",
 		"perLevelStatus": "hp[16]",
-		"defense": "10",
+		"defense": "15",
 		"option": "targeting_pod"
 	},
 	"chinese_opera_mask": {
@@ -612,7 +615,7 @@
 	"draupnir": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "67",
+		"skillAmplification": "65",
 		"maxSP": "300"
 	},
 	"vital_sign_sensor": {
@@ -687,7 +690,7 @@
 		"tier": "epic",
 		"cooldownReduction": "15",
 		"defense": "10",
-		"maxHP": "120"
+		"maxHP": "100"
 	},
 	"music_box": {
 		"type": "arm",
@@ -781,9 +784,8 @@
 	"nightmare_nails": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "82",
+		"skillAmplification": "80",
 		"cooldownReduction": "15",
-		"defense": "0",
 		"option": "healing_reduction_weak"
 	},
 	"helix": {
@@ -819,7 +821,7 @@
 	"magic_lamp": {
 		"type": "arm",
 		"tier": "legendary",
-		"perLevelStatus": "hp[20]",
+		"perLevelStatus": "hp[18]",
 		"cooldownReduction": "20",
 		"cdrCap": "5",
 		"defense": "12"
@@ -938,6 +940,7 @@
 		"tier": "epic",
 		"attackPower": "12",
 		"cooldownReduction": "10",
+		"spRegeneration": "50",
 		"movementSpeed": "0.22"
 	},
 	"mythril_boots": {
@@ -964,7 +967,7 @@
 	"boots_of_hermes": {
 		"type": "leg",
 		"tier": "legendary",
-		"defense": "23",
+		"defense": "20",
 		"maxHP": "150",
 		"movementSpeed": "0.25",
 		"tenacity": "30"
@@ -981,7 +984,7 @@
 	"alexander": {
 		"type": "leg",
 		"tier": "legendary",
-		"attackPower": "11",
+		"attackPower": "12",
 		"criticalChance": "33",
 		"movementSpeed": "0.25"
 	},
@@ -1020,6 +1023,7 @@
 		"tier": "legendary",
 		"attackPower": "21",
 		"cooldownReduction": "15",
+		"spRegeneration": "100",
 		"movementSpeed": "0.25"
 	},
 	"taproot": {

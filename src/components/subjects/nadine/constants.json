@@ -51,9 +51,9 @@
         "duration": 10,
         "count": 3,
         "damage": {
-            "base": [90,140,190],
-            "additionalAttack": 90,
-            "amp": 80,
+            "base": [100,150,200],
+            "additionalAttack": 100,
+            "amp": 85,
             "stack": 1
         },
         "attack_speed": 10,

@@ -67,12 +67,12 @@
     "T": {
         "stack_threshold": [10,9,8],
         "damage": {
-            "base": [40,65,90],
+            "base": [40,70,100],
             "attack": 35,
             "amp": 40
         },
         "heal": {
-            "maxHP": [7,11,15]
+            "maxHP": [8,12,16]
         },
         "w_cooldown_reduction": 2
     }

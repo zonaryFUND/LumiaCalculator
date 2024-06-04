@@ -7,6 +7,6 @@
     },
     "heal": {
         "base": 30,
-        "additionalMaxHP": 10
+        "additionalMaxHP": 15
     }
 }

@@ -1,7 +1,7 @@
 {
     "Q": {
         "additional_damage": {
-            "amp": 50
+            "amp": 55
         },
         "damage": {
             "base": [40,70,100,130,160],

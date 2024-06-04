@@ -46,7 +46,7 @@
         "movement_speed": [10,15,20],
         "attack_speed": [30,40,50],
         "damage": {
-            "base": [20,50,80],
+            "base": [20,40,60],
             "amp": 35
         },
         "cooldown": {

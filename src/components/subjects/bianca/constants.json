@@ -31,7 +31,7 @@
     "E": {
         "additional_cost": {
             "per": 0.2,
-            "value": 2
+            "value": 1
         },
         "max_charge": 1,
         "charge_remain": 3,
@@ -64,11 +64,11 @@
         "omnisyphon_amp": [20,30,40],
         "min_damage": {
             "base": [50,100,150],
-            "amp": 60
+            "amp": 70
         },
         "max_damage": {
             "base": [100,200,300],
-            "amp": 120
+            "amp": 140
         },
         "heal": {
             "base": [100,150,200],

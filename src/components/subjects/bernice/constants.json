@@ -5,7 +5,7 @@
     "Q": {
         "damage": {
             "base": [60,95,130,165,200],
-            "attack": 80
+            "attack": 90
         },
         "slow": {
             "duration": 1.5,
@@ -42,7 +42,7 @@
     },
     "E": {
         "mark_duration": 6,
-        "movement_speed": [8,10,12,14,16],
+        "movement_speed": [10,12,14,16,18],
         "q_cooldown_reduction": 0.5,
         "r_cooldown_reduction": 0.5,
         "duration": 8,

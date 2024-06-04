@@ -81,7 +81,7 @@
         "duration": 3,
         "shield": {
             "base": [50,100,150],
-            "attack": 60
+            "attack": 70
         },
         "attack_speed": [15,25,35],
         "wt_cooldown_reduction": 3,

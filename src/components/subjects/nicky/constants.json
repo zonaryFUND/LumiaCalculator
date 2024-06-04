@@ -12,7 +12,7 @@
         "cooldown_reduction": 50,
         "q2_damage": {
             "base": [30,55,80,105,130],
-            "amp": 50
+            "amp": 60
         },
         "rage": {
             "base": 150,

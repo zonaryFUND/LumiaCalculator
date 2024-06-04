@@ -17,7 +17,7 @@
         "chakram_duration": 20,
         "damage": {
             "base": [20,45,70,95,120],
-            "amp": 50
+            "amp": 55
         },
         "qe_cooldown_reduction": 40,
         "cooldown": {
