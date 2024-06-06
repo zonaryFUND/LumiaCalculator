@@ -14,5 +14,6 @@ export default t;
 
 export const values: ValuesProps = {
     parameters: [
+        {title: "防御力減少量(%)", values: Constants.T.defense.effect, percent: true}
     ]
 }

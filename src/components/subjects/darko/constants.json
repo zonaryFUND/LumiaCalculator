@@ -6,11 +6,11 @@
         },
         "damage": {
             "base": [20,40,60,80,100],
-            "attack": 30,
+            "attack": 40,
             "targetMaxHP": 5
         },
         "mark": 5,
-        "mark_enhance": 50,
+        "mark_enhance": [10,20,30,40,50],
         "cooldown": 3,
         "sp_cost": 40
     },

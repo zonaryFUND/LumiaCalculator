@@ -5,7 +5,7 @@ const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
         {label: props.intl.formatMessage({id: "subject.darko.q-additional"}), skill: "Q", value: Constants.Q.damage},
-        {label: props.intl.formatMessage({id: "subject.darko.q-additional-enhanced"}), skill: "Q", value: Constants.Q.damage, multiplier: [{basic: Constants.Q.mark_enhance + 100}]}
+        {label: props.intl.formatMessage({id: "subject.darko.q-additional-enhanced"}), skill: "Q", value: Constants.Q.damage, multiplier: [{basic: Constants.Q.mark_enhance.map(v => v + 100)}]}
     ],
     skill: [
         [

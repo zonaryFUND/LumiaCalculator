@@ -16,6 +16,10 @@ const w: React.FC<SubjectSkillProps> = props => (
 export default w;
 
 export const values: ValuesProps = {
+    additionalInfo: <>追加で獲得できるシールドや攻撃力はダルコの近くにいる最大{Constants.W.max_hit}人の実験体から獲得できます。</>,
     parameters: [
+        {title: "シールド吸収量", values: Constants.W.shield.base},
+        {title: "移動速度減少量(%)", values: Constants.W.slow.effect, percent: true},
+        {title: "攻撃力減少量", values: Constants.W.attack.effect}
     ]
 }

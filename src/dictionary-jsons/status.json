@@ -315,7 +315,7 @@
 		"attackPower": "42",
 		"apPerLevel": "4.6",
 		"armor": "44",
-		"armorPerLevel": "3.2",
+		"armorPerLevel": "3.4",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
 	},
@@ -568,7 +568,7 @@
 		"hpRegenPerLevel": "0.034",
 		"spRegeneration": "3.1",
 		"spRegenPerLevel": "0.03",
-		"attackPower": "41",
+		"attackPower": "38",
 		"apPerLevel": "4",
 		"armor": "51",
 		"armorPerLevel": "2.2",

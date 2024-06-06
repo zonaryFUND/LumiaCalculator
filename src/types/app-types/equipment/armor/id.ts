@@ -18,7 +18,7 @@ export type HeadID = typeof Heads[number]
 
 export const Arms = [
     "corrupting_touch", "sword_stopper", "draupnir", "vital_sign_sensor", "creed_of_the_knight", "sheath_of_shah_jahan", "burnished_aegis",
-    "tindalos_band", "nightingale", "plasma_arc", "smart_band", "minuteman_armband", "sports_watch", "music_box", /*"schrödinger_s_box",*/
+    "tindalos_band", "nightingale", "plasma_arc", "smart_band", "minuteman_armband", "sports_watch", "music_box", "schrödinger_s_box",
     "mythril_shield", "cube_watch",
     "tellurian_timepiece", "bracelet_of_skadi", "radar", "auto_arms", "centipede_s_pauldron", "tindalos_monarch", "shield_of_kings",
     "dragon_scale", "chain_of_thorns", "nightmare_nails", "helix", "mythril_armband", "moonlight_pendant", "magic_lamp", 

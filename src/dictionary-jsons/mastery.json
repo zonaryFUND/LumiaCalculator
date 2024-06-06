@@ -19,7 +19,7 @@
 		{
 			"weapon": "assault_rifle",
 			"type": "basic_attack_amp",
-			"value": 1.7,
+			"value": 1.6,
 			"attackSpeed": 4.2
 		},
 		{
@@ -55,7 +55,7 @@
 		{
 			"weapon": "throw",
 			"type": "skill_amp",
-			"value": 4.4,
+			"value": 4.1,
 			"attackSpeed": 1.5
 		}
 	],
@@ -575,7 +575,7 @@
 		{
 			"weapon": "assault_rifle",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.3,
 			"attackSpeed": 3
 		}
 	],

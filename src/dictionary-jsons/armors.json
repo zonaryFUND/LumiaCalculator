@@ -546,7 +546,7 @@
 	"the_black_death": {
 		"type": "head",
 		"tier": "legendary",
-		"skillAmplification": "82",
+		"skillAmplification": "78",
 		"maxSP": "300",
 		"movementSpeed": "0.06",
 		"option": "spirit_harvest"
@@ -685,7 +685,7 @@
 		"skillAmplification": "20",
 		"option": "circulation[\"dmg\":{\"melee\":{\"base\":10,\"amp\":25},\"range\":{\"base\":10,\"amp\":20}},\"as\":10]"
 	},
-	"schrödinger_s_box ": {
+	"schrödinger_s_box": {
 		"type": "arm",
 		"tier": "epic",
 		"cooldownReduction": "15",
