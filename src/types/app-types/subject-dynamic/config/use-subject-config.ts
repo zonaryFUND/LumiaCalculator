@@ -7,10 +7,11 @@ import React, { useCallback } from "react"
 import { usePrevious } from "react-use"
 
 type Response = StateWrapped<SubjectConfig> & {
+    value: SubjectConfig
     setConfig: (config: SubjectConfig) => void
 }
 
-export default function(storage?: { value: SubjectConfig | undefined, update: React.Dispatch<React.SetStateAction<SubjectConfig | undefined>> }): Response {
+export default function(storage?: { value?: SubjectConfig | undefined, update: React.Dispatch<React.SetStateAction<SubjectConfig | undefined>> }): Response {
     const defaultConfig: SubjectConfig = storage?.value ?? {
         subject: "eleven",
         equipment: { weapon: null, chest: null, head: null, arm: null, leg: null },
@@ -67,6 +68,7 @@ export default function(storage?: { value: SubjectConfig | undefined, update: Re
     }, [subject, level, weaponMastery, defenseMastery, movementMastery, equipment, skillLevels, gauge, stack]);
     
     return {
+        value: { subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack },
         subject: [subject, updateSubject],
         equipment: [equipment, setEquipment],
         level: [level, setLevel],

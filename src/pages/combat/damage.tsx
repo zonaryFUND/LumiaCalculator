@@ -10,9 +10,10 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 
 type Props = {
-    status: Status
-    config: SubjectConfig
-    setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
+    leftStatus: Status
+    leftConfig: SubjectConfig
+    rightStatus: Status
+    rightConfig: SubjectConfig
     weaponType?: WeaponTypeID
     hideHeader?: boolean
 }
@@ -26,11 +27,7 @@ const damages: React.FC<Props> = props => {
                     <h1>ダメージ</h1>
                 </header>
             }
-            <section className={style.skill}>
-                <h3>スキル</h3>
-                <SubjectSkills config={props.config} setSkillLevels={props.setSkillLevels} />
-            </section>
-            <Table status={props.status} config={props.config} weaponType={props.weaponType} />
+            <Table status={props.leftStatus} targetStatus={props.rightStatus} config={props.leftConfig} weaponType={props.weaponType} />
         </div>
     )
 };

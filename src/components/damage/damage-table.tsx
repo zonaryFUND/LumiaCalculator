@@ -16,6 +16,7 @@ import { name as equipmentName } from "app-types/equipment";
 
 type Props = {
     status: Status
+    targetStatus?: Status
     config: SubjectConfig
     weaponType?: WeaponTypeID
 }

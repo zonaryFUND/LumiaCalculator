@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from "react-modal"
 import Simple from "./pages/simple";
+import Combat from "./pages/combat";
 import Navigation from 'components/pages/navigation/navigation';
 import { Route, Routes } from 'react-router';
 import { IntlProvider } from 'react-intl';
@@ -32,7 +33,7 @@ function App({}: AppProps) {
             <Routes>
                 <Route path="/" element={<Simple />} />
                 <Route path="/simple" element={<Simple />} />
-                <Route path="/combat" element={<Simple />} />
+                <Route path="/combat" element={<Combat />} />
             </Routes>
         </IntlProvider>
     );

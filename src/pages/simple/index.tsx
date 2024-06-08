@@ -27,8 +27,9 @@ import { WeaponTypeID } from "app-types/equipment/weapon";
 const index: React.FC = props => {
     const { width } = useWindowSize();
 
-    const [config, saveConfig] = useLocalStorage<SubjectConfig>(SimpleCurrentConfigKey);
+    const [storageConfig, saveConfig] = useLocalStorage<SubjectConfig>(SimpleCurrentConfigKey);
     const {
+        value: config,
         subject: [subject, setSubject],
         equipment: [equipment, setEquipment],
         level: [level, setLevel],
@@ -39,12 +40,9 @@ const index: React.FC = props => {
         gauge: [gauge, setGauge],
         stack: [stack, setStack],
         setConfig
-    } = useSubjectConfig({value: config!, update: saveConfig});
+    } = useSubjectConfig({value: storageConfig, update: saveConfig});
 
-    const subjectConfig = {
-        subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack
-    }
-    const status = useStatus(subjectConfig);
+    const status = useStatus(config);
     const damageInFormula = React.useState(false);
     const weaponTypeID = React.useMemo(() => {
         if (!equipment.weapon) return undefined;
@@ -86,6 +84,7 @@ const index: React.FC = props => {
                 <CollapseTab collapse={collapse}>
                     <Subject 
                         subject={[subject, setSubject]} 
+                        config={config!}
                         level={[level, setLevel]}
                         skillLevels={[skillLevels, setSkillLevels]}
                         weaponMastery={[weaponMastery, setWeaponMastery]}
@@ -99,7 +98,7 @@ const index: React.FC = props => {
                     />
                     <BuffDebuffs hideHeader={collapse} />
                     <Damage
-                        config={subjectConfig}
+                        config={config}
                         status={status}
                         setSkillLevels={setSkillLevels}
                         weaponType={weaponTypeID as (WeaponTypeID | undefined)}
@@ -120,7 +119,7 @@ const index: React.FC = props => {
                             skill={skill as any} 
                             showEquation={damageInFormula[0]}
                             status={status} 
-                            config={subjectConfig!} 
+                            config={config} 
                         />
                     );
                 }}
@@ -135,7 +134,7 @@ const index: React.FC = props => {
                         <WeaponSkillTooltip 
                             showEquation={damageInFormula[0]}
                             status={status} 
-                            config={subjectConfig!} 
+                            config={config} 
                         />
                     );
                 }}
@@ -150,7 +149,7 @@ const index: React.FC = props => {
                     const [item, onSlot] = content.split("%");
                     const props: SubjectSkillProps = {
                         showEquation: damageInFormula[0] || onSlot == undefined,
-                        config: subjectConfig,
+                        config,
                         status
                     };
 

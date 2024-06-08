@@ -16,6 +16,7 @@ import { SummonedStatus } from "components/subjects/summoned-status";
 type Props = SkillValueProps & {
     config: SubjectConfig
     status: Status
+    targetStatus?: Status
 }
 
 function levelValue(from: number | number[], level: number): number {
