@@ -305,7 +305,7 @@
 	},
 	"darko": {
 		"maxHP": "960",
-		"maxHPperLevel": "85",
+		"maxHPperLevel": "88",
 		"maxSP": "480",
 		"maxSPperLevel": "23",
 		"hpRegeneration": "2",

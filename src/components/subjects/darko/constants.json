@@ -6,7 +6,7 @@
         },
         "damage": {
             "base": [20,40,60,80,100],
-            "attack": 40,
+            "attack": 45,
             "targetMaxHP": 5
         },
         "mark": 5,
@@ -32,12 +32,12 @@
             "effect": [1,2,3,4,5]
         },
         "max_hit": 4,
-        "cooldown": 10,
+        "cooldown": 9,
         "sp_cost": 80
     },
     "E": {
         "damage": {
-            "base": [60,115,170,225,280],
+            "base": [80,135,190,245,300],
             "attack": 85
         },
         "airborne": 0.5,
@@ -46,9 +46,9 @@
     },
     "R": {
         "damage": {
-            "base": [100,225,350],
-            "attack": 55,
-            "targetMaxHP": 25
+            "base": [75,150,225],
+            "attack": 40,
+            "targetMaxHP": 30
         },
         "slow": {
             "duration": 0.5,
@@ -59,7 +59,7 @@
     },
     "T": {
         "defense": {
-            "duration": 3,
+            "duration": 4,
             "effect": [4,7,10]
         },
         "cooldown": 8
