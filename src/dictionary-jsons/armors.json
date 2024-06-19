@@ -162,7 +162,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "30",
+		"skillAmplification": "25",
 		"ampRatio": "30",
 		"defense": "20"
 	},
@@ -246,9 +246,8 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "20",
+		"skillAmplification": "35",
 		"ampRatio": "30",
-		"cooldownReduction": "15",
 		"defense": "28",
 		"spRegeneration": "100"
 	},
@@ -312,8 +311,8 @@
 		"type": "chest",
 		"tier": "mythic",
 		"perLevelStatus": "ap",
-		"skillAmplification": "20",
-		"defense": "23",
+		"skillAmplification": "30",
+		"defense": "25",
 		"omnisyphon": "10",
 		"spRegeneration": "100",
 		"option": "tranquility"
@@ -333,6 +332,7 @@
 		"tier": "mythic",
 		"perLevelStatus": "ad",
 		"attackPower": "25",
+		"defense": "10",
 		"omnisyphon": "18",
 		"movementSpeed": "0.1",
 		"option": "bloodpact"
@@ -442,7 +442,7 @@
 	"laurel_wreath": {
 		"type": "head",
 		"tier": "legendary",
-		"attackPower": "35",
+		"attackPower": "37",
 		"cooldownReduction": "15",
 		"maxSP": "500",
 		"armorPenetration": "11"
@@ -523,7 +523,7 @@
 	"twilight": {
 		"type": "head",
 		"tier": "legendary",
-		"attackPower": "42",
+		"attackPower": "44",
 		"armorPenetration": "12",
 		"movementSpeed": "0.06"
 	},
@@ -630,7 +630,8 @@
 		"tier": "epic",
 		"attackPower": "22",
 		"cooldownReduction": "10",
-		"maxHP": "100"
+		"maxHP": "100",
+		"option": "healing_reduction_weak"
 	},
 	"sheath_of_shah_jahan": {
 		"type": "arm",
@@ -641,7 +642,7 @@
 	"burnished_aegis": {
 		"type": "arm",
 		"tier": "epic",
-		"defense": "15",
+		"defense": "17",
 		"maxHP": "200",
 		"maxSP": "300"
 	},
@@ -742,7 +743,7 @@
 		"tier": "legendary",
 		"attackPower": "45",
 		"defense": "20",
-		"tenacity": "25"
+		"tenacity": "30"
 	},
 	"centipede_s_pauldron": {
 		"type": "arm",
@@ -764,7 +765,8 @@
 		"tier": "legendary",
 		"attackPower": "30",
 		"cooldownReduction": "15",
-		"maxHP": "200"
+		"maxHP": "200",
+		"option": "healing_reduction_weak"
 	},
 	"dragon_scale": {
 		"type": "arm",
@@ -784,7 +786,7 @@
 	"nightmare_nails": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "80",
+		"skillAmplification": "77",
 		"cooldownReduction": "15",
 		"option": "healing_reduction_weak"
 	},
@@ -815,7 +817,7 @@
 		"type": "arm",
 		"tier": "legendary",
 		"attackPower": "30",
-		"omnisyphon": "10",
+		"omnisyphon": "12",
 		"option": "quickstep"
 	},
 	"magic_lamp": {
@@ -835,7 +837,7 @@
 		"type": "arm",
 		"tier": "legendary",
 		"perLevelStatus": "hp[17]",
-		"defense": "10",
+		"defense": "13",
 		"option": "crushing_blow"
 	},
 	"prominence": {

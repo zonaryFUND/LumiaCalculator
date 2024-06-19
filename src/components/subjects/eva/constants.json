@@ -70,7 +70,7 @@
         "vitalforce_assist": 15,
         "vitalforce_enhanced_attack": 15,
         "cooldown": {
-            "constant": 6
+            "constant": 5
         }
     }
 }

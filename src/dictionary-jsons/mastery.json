@@ -157,7 +157,7 @@
 		{
 			"weapon": "throw",
 			"type": "basic_attack_amp",
-			"value": 1.8,
+			"value": 1.6,
 			"attackSpeed": 3.1
 		}
 	],
@@ -235,7 +235,7 @@
 		{
 			"weapon": "dual_swords",
 			"type": "basic_attack_amp",
-			"value": 2.2,
+			"value": 2.4,
 			"attackSpeed": 3
 		},
 		{
@@ -307,7 +307,7 @@
 		{
 			"weapon": "dagger",
 			"type": "skill_amp",
-			"value": 4.7,
+			"value": 4.9,
 			"attackSpeed": 5
 		}
 	],
@@ -355,7 +355,7 @@
 		{
 			"weapon": "dual_swords",
 			"type": "basic_attack_amp",
-			"value": 1.5,
+			"value": 1.7,
 			"attackSpeed": 3.4
 		}
 	],
@@ -464,7 +464,7 @@
 			"weapon": "bow",
 			"type": "skill_amp",
 			"value": 4.6,
-			"attackSpeed": 3.4
+			"attackSpeed": 3.8
 		},
 		{
 			"weapon": "crossbow",
@@ -559,7 +559,7 @@
 		{
 			"weapon": "spear",
 			"type": "basic_attack_amp",
-			"value": 2.4,
+			"value": 2.2,
 			"attackSpeed": 4
 		}
 	],
@@ -641,7 +641,7 @@
 		{
 			"weapon": "glove",
 			"type": "basic_attack_amp",
-			"value": 1.8,
+			"value": 2,
 			"attackSpeed": 3.9
 		},
 		{
@@ -739,7 +739,7 @@
 		{
 			"weapon": "bow",
 			"type": "basic_attack_amp",
-			"value": 1.5,
+			"value": 1.4,
 			"attackSpeed": 3.3
 		}
 	],

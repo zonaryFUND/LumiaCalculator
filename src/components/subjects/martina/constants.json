@@ -68,7 +68,7 @@
     },
     "E": {
         "duration": 7,
-        "movement_speed": 12,
+        "movement_speed": 15,
         "slow": {
             "duration": 1,
             "effect": 15
@@ -103,7 +103,7 @@
         "max_dead_body_stack": 3,
         "reshooting_prohibit": 60,
         "sp_cost": 100,
-        "cooldown": [30,20,1]
+        "cooldown": [25,20,1]
     },
     "R2": {
         "count": 8,

@@ -83,10 +83,10 @@
         "collection_max": 4,
         "damage": {
             "base": [20,40,60],
-            "amp": 30
+            "amp": 35
         },
         "cooldown": {
-            "constant": [15,11,7]
+            "constant": [13,10,7]
         }
     }
 }

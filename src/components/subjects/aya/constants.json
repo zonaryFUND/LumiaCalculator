@@ -31,7 +31,7 @@
         "cooldown": [11,10,9,8,7]
     },
     "E": {
-        "cooldown_reduction": [20,25,30,35,40],
+        "cooldown_reduction": [30,35,40,45,50],
         "sp_cost": [85,90,95,100,105],
         "cooldown": [19,17,15,13,11]
     },

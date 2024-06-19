@@ -36,7 +36,7 @@
             "attack": 100
         },
         "additionalDamage": {
-            "stack": [3,6,9],
+            "stack": [2,5,8],
             "attack": 6
         },
         "slow": 99,
@@ -52,7 +52,7 @@
         },
         "movement_speed": [5,15,25],
         "duration": 2,
-        "heal": [100,175,250],
+        "heal": [100,150,200],
         "animal": 70
     }
 }

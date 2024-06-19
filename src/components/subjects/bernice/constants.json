@@ -42,7 +42,7 @@
     },
     "E": {
         "mark_duration": 6,
-        "movement_speed": [10,12,14,16,18],
+        "movement_speed": [10,13,16,19,22],
         "q_cooldown_reduction": 0.5,
         "r_cooldown_reduction": 0.5,
         "duration": 8,
@@ -54,7 +54,7 @@
     "R": {
         "first_damage": {
             "base": [150,200,250],
-            "attack": 70
+            "attack": 85
         },
         "bind": 1.25,
         "second_damage": {

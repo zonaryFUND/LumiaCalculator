@@ -62,7 +62,7 @@
         "nina_movement_speed": [20,25,30],
         "we_cooldown_reduction": 30,
         "damage": {
-            "base": [42,72,102]
+            "base": [30,60,90]
         },
         "damage_max_multipler": 2.5,
         "attacked_damage": 70,

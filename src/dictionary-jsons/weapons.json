@@ -231,7 +231,7 @@
 	"monkey_king_bar": {
 		"type": "bat",
 		"tier": "legendary",
-		"attackPower": "91",
+		"attackPower": "94",
 		"attackSpeed": "40",
 		"attackRange": "0.5"
 	},
@@ -481,14 +481,14 @@
 		"type": "shuriken",
 		"tier": "legendary",
 		"attackPower": "41",
-		"skillAmplification": "87",
+		"skillAmplification": "91",
 		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":3]"
 	},
 	"wind_and_fire_wheels": {
 		"type": "shuriken",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "70",
+		"skillAmplification": "75",
 		"cooldownReduction": "15",
 		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
@@ -496,7 +496,7 @@
 		"type": "shuriken",
 		"tier": "legendary",
 		"attackPower": "41",
-		"skillAmplification": "81",
+		"skillAmplification": "84",
 		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
 	},
 	"sudarsana": {
@@ -603,7 +603,7 @@
 	"failnaught": {
 		"type": "bow",
 		"tier": "mythic",
-		"attackPower": "29",
+		"attackPower": "26",
 		"attackSpeed": "30",
 		"adaptiveStatus": "57",
 		"cooldownReduction": "15",
@@ -944,7 +944,7 @@
 		"type": "sniper_rifle",
 		"tier": "legendary",
 		"attackPower": "107",
-		"ammo": "1",
+		"ammo": "2",
 		"option": "lead_shell"
 	},
 	"andromeda": {
@@ -1936,14 +1936,14 @@
 		"type": "vf_prosthetic",
 		"tier": "epic",
 		"attackPower": "47",
-		"perLevelStatus": "hp[10]",
+		"perLevelStatus": "hp[8]",
 		"omnisyphon": "12"
 	},
 	"alpha_sidewinder": {
 		"type": "vf_prosthetic",
 		"tier": "epic",
-		"attackPower": "68",
-		"cooldownReduction": "10",
+		"attackPower": "70",
+		"cooldownReduction": "15",
 		"movementSpeed": "0.06",
 		"option": "swift_strides_vf[\"dmg\":{\"base\":55},\"slow\":{\"effect\":30,\"duration\":1}]"
 	},
@@ -1968,7 +1968,7 @@
 		"type": "vf_prosthetic",
 		"tier": "legendary",
 		"attackPower": "49",
-		"perLevelStatus": "hp[13]",
+		"perLevelStatus": "hp[10]",
 		"omnisyphon": "12",
 		"option": "flame_barrier_vf[\"dmg\":{\"maxHP\":3.5}]"
 	},
@@ -1976,7 +1976,7 @@
 		"type": "vf_prosthetic",
 		"tier": "legendary",
 		"attackPower": "62",
-		"perLevelStatus": "hp[14]",
+		"perLevelStatus": "hp[12]",
 		"omnisyphon": "12",
 		"tenacity": "30",
 		"option": "flame_barrier_vf[\"dmg\":{\"maxHP\":4}]"
@@ -1984,7 +1984,7 @@
 	"alpha_sidewinder_ml": {
 		"type": "vf_prosthetic",
 		"tier": "legendary",
-		"attackPower": "75",
+		"attackPower": "78",
 		"cooldownReduction": "20",
 		"cdrCap": "5",
 		"movementSpeed": "0.06",
@@ -1993,7 +1993,7 @@
 	"alpha_sidewinder_fc": {
 		"type": "vf_prosthetic",
 		"tier": "legendary",
-		"attackPower": "81",
+		"attackPower": "84",
 		"cooldownReduction": "20",
 		"cdrCap": "5",
 		"movementSpeed": "0.06",
@@ -2013,14 +2013,14 @@
 		"type": "vf_prosthetic",
 		"tier": "mythic",
 		"attackPower": "66",
-		"perLevelStatus": "hp[16]",
+		"perLevelStatus": "hp[14]",
 		"omnisyphon": "20",
 		"option": "flame_barrier_vf[\"dmg\":{\"maxHP\":4}]"
 	},
 	"alpha_sidewinder_vbs": {
 		"type": "vf_prosthetic",
 		"tier": "mythic",
-		"attackPower": "91",
+		"attackPower": "94",
 		"cooldownReduction": "30",
 		"cdrCap": "10",
 		"movementSpeed": "0.08",

@@ -45,7 +45,7 @@
             "duration": 4,
             "effect": {
                 "perStack": 1,
-                "attack": 5 
+                "attack": 3
             }
         },
         "sp_cost": [40,50,60,70,80]
@@ -71,7 +71,7 @@
         },
         "shared_cooldown": [10,9,8],
         "max_stack": 10,
-        "stack_cooldown_reduction": 0.8,
+        "stack_cooldown_reduction": 0.7,
         "shield": {
             "duration": 2.5,
             "effect": {

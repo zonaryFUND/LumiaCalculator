@@ -1,8 +1,8 @@
 {
     "Q": {
         "damage": {
-            "base": [40,70,100,130,160],
-            "attack": 90
+            "base": [30,55,80,105,130],
+            "attack": 100
         },
         "time_bound": 2,
         "cooldown_reduction": 2,
@@ -11,11 +11,11 @@
     },
     "W": {
         "damage": {
-            "base": [30,70,110,150,190],
-            "attack": 50
+            "base": [30,65,100,135,170],
+            "attack": 60
         },
         "duration": 3,
-        "defense_down": [11,12,13,14,15],
+        "defense_down": [9,10,11,12,13],
         "healing_reduction": 45,
         "movement_speed": 100,
         "cooldown_reduction": 3,
@@ -39,7 +39,7 @@
             "attack": 40
         },
         "basic_attack_launch": 5,
-        "additional_damage": [4,7,10],
+        "additional_damage": [3,6,9],
         "detonate_slow": {
             "duration": 1,
             "effect": 30
