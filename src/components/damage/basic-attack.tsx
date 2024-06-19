@@ -3,7 +3,7 @@ import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { DamageTable } from "components/subjects/damage-table";
 import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "components/subject/standard-values";
-import SkillDamage from "./skill-damage";
+import SkillDamage from "./simple/skill-damage";
 import Hypercharge from "./aiden-hypercharge";
 import Rio from "./rio";
 import { styles } from "@app/util/style";

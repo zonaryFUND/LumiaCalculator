@@ -3,7 +3,7 @@ import * as React from "react";
 import BasicAttack from "components/damage/basic-attack";
 import style from "./damage-table.module.styl";
 import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
-import SkillDamage from "../../damage/skill-damage";
+import SkillDamage from "../../damage/simple/skill-damage";
 import BasicAttackDamage from "../../damage/basic-attack-damage";
 import table from "components/common/table.styl";
 import { SummonedStatus } from "components/subjects/summoned-status";

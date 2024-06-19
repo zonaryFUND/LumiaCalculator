@@ -1,6 +1,6 @@
 import * as React from "react";
 import damage, { skillLevel } from "components/subjects/skill-damage";
-import style from "./damage-table.module.styl";
+import style from "../damage-table.module.styl";
 import { useToggle } from "react-use";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
@@ -16,7 +16,6 @@ import { SummonedStatus } from "components/subjects/summoned-status";
 type Props = SkillValueProps & {
     config: SubjectConfig
     status: Status
-    targetStatus?: Status
 }
 
 function levelValue(from: number | number[], level: number): number {
@@ -224,79 +223,7 @@ const skillDamage: React.FC<Props> = props => {
         }, [<></>, [] as React.ReactNode[]]);
     })();
 
-        /*
-    const [additional, expandDescription, objectAdditional] = (() => {
-        const additionalKeys = [
-            {key: "targetMaxHP", text: "対象の最大体力の", ratio: "対象最大体力比"},
-            {key: "targetLostHP", text: "対象の失った体力の", ratio: "対象消耗体力比"},
-            {key: "lostHP", text: "失った体力の", ratio: "消耗体力比"},
-            {key: "targetHP", text: "対象の現在体力の", ratio: "対象体力比"},
-            {key: "lostHPPercent", text: "失った体力1%あたり", ratio: "消耗体力比", removePercent: true}, // sissela only for now
-            {key: "gauge", text: "消耗ゲージの", ratio: "消耗ゲージ比"}
-        ]
-        //const tuple = additionalKeys.find(k => props.value[k.key as keyof ValueRatio] != undefined);
-        const tuple = undefined;
-        if (tuple == undefined) {
-            return [null, <td colSpan={4}>{baseDamageTr}</td>]
-        }
-
-        //const brackets = !value.isZero()
-        if (typeof props.value[tuple.key as keyof ValueRatio] === "object") {
-            const ratio = Array.isArray(props.value[tuple.key as keyof ValueRatio]) ?
-                new Decimal((props.value[tuple.key as keyof ValueRatio] as number[])[level]) :
-                damage(props.status, props.config, props.skill, props.value[tuple.key as keyof ValueRatio]);
-            const multiplied = ratio.percent(multiplier ?? 100);
-            const content = <>{tuple.text}{multiplied.toString()}{tuple.removePercent ? null : "%"}</>
-            return [
-                brackets ? <span>+({content})</span> : <span>{content}</span>,
-                <td colSpan={4}>
-                    <InnerTable>
-                        {value.isZero() ? null : <tr><td>基礎値</td><td>{baseDamageTr}</td></tr>}
-                        <tr>
-                            <td>{tuple.ratio}</td>
-                            <td>
-                                {
-                                    multiplier ? 
-                                    <>{ratio.toString()} x {multiplier}% {} = {multiplied.toString()}</> :
-                                    <>{equation(props.value[tuple.key as keyof ValueRatio], props.status, props.config.level, level, props.config.stack, props.summonedName)}{ratio.toString()}</>
-                                }{tuple.removePercent ? null : "%"}
-                            </td>
-                        </tr>
-                    </InnerTable>
-                </td>,
-                true
-            ]
-        } else {
-            const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}%</>;
-            return [
-                brackets ? <span>+({content})</span> : <span>{content}</span>,
-                <td colSpan={4}>{baseDamageTr}</td>,
-                false
-            ]
-        }
-        //const content = <>{tuple.text}{new Decimal(levelValue(props.value[tuple.key as keyof ValueRatio] as any, level)).percent(multiplier ?? 100).toString()}%</>;
-        const content = null;
-        return [
-            brackets ? <span>+({content})</span> : <span>{content}</span>,
-            <td colSpan={4}>{baseDamageTr}</td>,
-            false
-        ]
-    })();
-    */
-
-    /*
-    const kenneth = (() => {
-        //if (props.type != "kenneth") return null;
-        return "%";
-    })();
-    */
-
     const valueClass = (() => {
-        /*
-        if (props.type == "kenneth" && props.skill == "T") {
-            return style.heal;
-        }
-        */
         return props.type ? style[props.type] : style.skill;
     })();
 

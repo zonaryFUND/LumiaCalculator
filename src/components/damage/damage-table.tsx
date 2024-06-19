@@ -2,7 +2,7 @@ import * as React from "react";
 import BasicAttack from "components/damage/basic-attack";
 import style from "./damage-table.module.styl";
 import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
-import SkillDamage from "./skill-damage";
+import SkillDamage from "./simple/skill-damage";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
