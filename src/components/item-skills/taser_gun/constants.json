@@ -1,5 +1,5 @@
 {
-    "threshold": 4.5,
+    "threshold": 3,
     "area": 8,
     "damage": {
         "base": 30,
@@ -9,5 +9,5 @@
         "duration": 5,
         "effect": 15
     },
-    "cooldown": 15
+    "cooldown": 10
 }

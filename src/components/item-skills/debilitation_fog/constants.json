@@ -1,9 +1,9 @@
 {
     "duration": 6,
-    "defense_down": 20,
+    "defense_down": 15,
     "damage": {
         "base": 15,
-        "additionalMaxHP": 10
+        "additionalMaxHP": 15
     },
-    "cooldown": 13
+    "cooldown": 10
 }
