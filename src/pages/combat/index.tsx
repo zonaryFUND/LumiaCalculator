@@ -15,10 +15,13 @@ const index: React.FC = props => {
     const [storageConfigLeft, saveConfigLeft] = useLocalStorage<SubjectConfig>(CombatCurrentLeftConfigKey);
     const leftConfig = useSubjectConfig({value: storageConfigLeft, update: saveConfigLeft});
     const leftStatus = useStatus(leftConfig.value);
+    const [leftHP, setLeftHP] = React.useState(0);
 
     const [storageConfigRight, saveConfigRight] = useLocalStorage<SubjectConfig>(CombatCurrentRightConfigKey);
     const rightConfig = useSubjectConfig({value: storageConfigRight, update: saveConfigRight});
-    const rightStatus = useStatus(leftConfig.value);
+    const rightStatus = useStatus(rightConfig.value);
+    const [rightHP, setRightHP] = React.useState(0);
+
 
     const { width } = useWindowSize();
     const parentRef = React.useRef<HTMLDivElement>(null);
@@ -36,7 +39,7 @@ const index: React.FC = props => {
                         config={leftConfig.value}
                         hideHeader={collapse}
                     />
-                    <Damage leftStatus={leftStatus} rightStatus={rightStatus} leftConfig={leftConfig.value} rightConfig={rightConfig.value} />
+                    <Damage leftStatus={leftStatus} rightStatus={rightStatus} leftConfig={leftConfig.value} rightConfig={rightConfig.value} leftHP={leftHP} rightHP={rightHP} />
                     <Subject
                         {...rightConfig}
                         status={rightStatus}

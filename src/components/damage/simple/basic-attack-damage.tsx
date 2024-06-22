@@ -2,7 +2,7 @@ import { AssaultRifleAttackRatio, BaseCriticalDamagePercent } from "components/s
 import Decimal from "decimal.js";
 import * as React from "react";
 import { useToggle } from "react-use";
-import style from "./damage-table.module.styl";
+import style from "../damage-table.module.styl";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
 import { Status } from "app-types/subject-dynamic/status/type";

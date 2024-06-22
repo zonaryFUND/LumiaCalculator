@@ -4,7 +4,7 @@ import Constants from "components/subjects/aiden/constants.json";
 import { BaseCriticalDamagePercent } from "components/subject/standard-values";
 import InnerTable from "components/common/inner-table";
 import table from "components/common/table.styl";
-import style from "./damage-table.module.styl";
+import style from "../damage-table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage } from "react-intl";

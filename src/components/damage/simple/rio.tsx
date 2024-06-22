@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import * as React from "react";
 import { useToggle } from "react-use";
-import style from "./damage-table.module.styl";
+import style from "../damage-table.module.styl";
 import table from "components/common/table.styl";
 import InnerTable from "components/common/inner-table";
 import Constants from "components/subjects/rio/constants.json";

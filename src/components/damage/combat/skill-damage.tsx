@@ -7,13 +7,13 @@ import { skillLevel } from "components/subjects/skill-damage";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import { useToggle } from "react-use";
+import { useCombatHPContext } from "./combat-hp-context";
+import { useMitigation } from "./mitigation-context";
+import mitigatedDamage from "./mitigated-damage";
 
 type Props = SkillValueProps & {
     config: SubjectConfig
     status: Status
-    hp: number
-    targetStatus: Status
-    targetHP: number
 }
 
 const skillDamage: React.FC<Props> = props => {
@@ -29,39 +29,81 @@ const skillDamage: React.FC<Props> = props => {
         return calculateValue(props.value, props.status, props.config, source, baseMultiplier);
     })();
 
+    const { hp, targetHP, targetMaxHP } = useCombatHPContext();
+
     const [potency, potencyDescription] = (() => {
         if (!dynamicPotency) {
             return [
                 staticPotency,   
-                (
-                    <>
-                        <tr><td>軽減前ダメージ</td><td>{staticPotency.toString()}</td></tr>
-                    </>
-                )
+                <tr><td><FormattedMessage id="app.label.potency" /></td><td>{staticPotency.toString()}</td></tr>
             ]
         }
-        const dynamicValue = (() => {
+        const [dynamicLabel, dynamicValue] = (() => {
             switch (Object.keys(dynamicPotency)[0]) {
                 case "targetHP":
-                    return [<FormattedMessage id="app.label.target-hp" />, props.targetHP];
+                    return [<FormattedMessage id="app.label.target-hp" />, targetHP];
                 case "targetLostHP":
-                    return [<FormattedMessage id="app.label.target-lost-hp" />, props.targetStatus.maxHP.calculatedValue.toNumber() - props.targetHP];
+                    return [<FormattedMessage id="app.label.target-lost-hp" />, targetMaxHP.toNumber() - targetHP];
                 case "lostHP":
-                    return [<FormattedMessage id="app.label.lost-hp" />, props.status.maxHP.calculatedValue.toNumber() - props.hp];
+                    return [<FormattedMessage id="app.label.lost-hp" />, props.status.maxHP.calculatedValue.toNumber() - hp];
                 case "targetMaxHP":
-                    return [<FormattedMessage id="app.label.lost-hp" />, props.targetStatus.maxHP.calculatedValue.toNumber()];
+                    return [<FormattedMessage id="app.label.lost-hp" />, targetMaxHP.toNumber()];
             }
+            return [null, 0]
         })()
 
-        return [0, null]
+        return [
+            staticPotency.add(dynamicValue),
+            <tr>
+                <td>軽減前ダメージ</td>
+                <td>
+                    <span>静的値</span>{staticPotency.toString()}
+                    <span>{dynamicLabel}</span>{dynamicValue}
+                </td>
+            </tr>
+        ]
     })();
+
+    const mitigationContext = useMitigation();
+
+    const [lastValue, mitigationDescriptions] = (() => {
+        if (props.type == "true" || props.type == "ms" || props.type == "ratio") return [potency, null]
+        if (props.type == "heal" || props.type == "shield") {
+            const healPower = props.status.healPower.calculatedValue;
+            return [
+                potency.addPercent(healPower), 
+                <tr><td>与える回復増加</td><td>{healPower.toString()}%</td></tr>
+            ]
+        }
+        
+        return mitigatedDamage(
+            potency, 
+            mitigationContext, 
+            props.type == "basic" || props.type == "basic-nocrit" ? "basic" : "skill",
+            props.type == "summoned"
+        );
+    })();
+
+    const targetHPRatio = lastValue.dividedBy(targetHP).times(100).floor2();
+    const enableExpand = potencyDescription != null || mitigationDescriptions != null;
 
     return (
         <>
-            <tr>
+            <tr onClick={enableExpand ? toggleExpand : undefined}>
                 <td>{props.label}</td>
-                <td></td>
+                <td>{lastValue.toString()}</td>
+                <td>{targetHPRatio.toString()}%</td>
             </tr>
+            {
+                expand ? 
+                <>
+                    {potencyDescription}
+                    {mitigationDescriptions}
+                </>
+                : null
+            }
         </>
     )
 }
+
+export default skillDamage;
