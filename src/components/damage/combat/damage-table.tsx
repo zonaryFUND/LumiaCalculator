@@ -16,9 +16,11 @@ import { name as equipmentName } from "app-types/equipment";
 import { BaseCriticalDamagePercent } from "components/subject/standard-values";
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { Source } from "app-types/value-ratio";
+import { MitigationContext, createMitigation } from "./mitigation-context";
 
 type Props = {
     status: Status
+    targetStatus: Status
     config: SubjectConfig
 }
 
@@ -92,6 +94,7 @@ const damageTable: React.FC<Props> = props => {
     }, [range, props.config.equipment])
 
     return (
+        <MitigationContext.Provider value={createMitigation(props.status, props.targetStatus)} >
         <section className={style.damage}>
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
@@ -112,13 +115,13 @@ const damageTable: React.FC<Props> = props => {
                         }
                     </BasicAttack>
                     <tbody>
-                        <tr className={table.separator}><td>実験体スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
+                        <tr className={table.separator}><td>実験体スキル</td><td>効果量</td><td>最大体力比</td></tr>
                         {
                             definition?.skill.map((array, index) => 
                                 <React.Fragment key={index}>
                                 {
                                     index == 0 ? null :
-                                    <tr className={table.border}><td colSpan={4}></td></tr>
+                                    <tr className={table.border}><td colSpan={3}></td></tr>
                                 }
                                 {
                                     array.map(s => {
@@ -156,7 +159,7 @@ const damageTable: React.FC<Props> = props => {
                     }
                     </tbody>
                     <tbody>
-                        <tr className={table.separator}><td>武器スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
+                        <tr className={table.separator}><td>武器スキル</td><td>効果量</td><td>最大体力比</td></tr>
                         {
                             weaponSkill?.map(def => (
                                 <SkillDamage 
@@ -169,7 +172,7 @@ const damageTable: React.FC<Props> = props => {
                         }
                     </tbody>
                     <tbody>
-                        <tr className={table.separator}><td>アイテムスキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
+                        <tr className={table.separator}><td>アイテムスキル</td><td>効果量</td><td>最大体力比</td></tr>
                         {
                             itemSkillDamage?.filter(def => def.type != "basic").map(def => {
                                 const type = (() => {
@@ -204,6 +207,7 @@ const damageTable: React.FC<Props> = props => {
                 </table>
             </div>
         </section>
+        </MitigationContext.Provider>
     );
 };
 

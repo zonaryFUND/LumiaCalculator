@@ -61,12 +61,12 @@ const basicAttackDamage: React.FC<Props> = props => {
         <>
             <tr onClick={toggleExpand}>
                 <td>{props.name}</td>
-                <td className={style.basic}>{(damageExpression == "damage" ? finalDamage : dps).toString()}</td>
+                <td className={style.basic}>{(damageExpression == "damage" ? finalDamage.floor() : dps).toString()}</td>
                 <td className={style.basic}>{(damageExpression == "damage" ? healthRatio : dpsHealthRatio).toString()}%</td>
             </tr>
             {
                 expand ?
-                <tr className={table.expand}><td colSpan={4}>
+                <tr className={table.expand}><td colSpan={3}>
                     <InnerTable>
                         <tr><td><FormattedMessage id="app.label.potency" /></td><td>{potency.floor().toString()}</td></tr>
                         {descriptions}

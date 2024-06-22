@@ -5,11 +5,15 @@ import { calculateValue } from "app-types/value-ratio/calculation";
 import { SkillValueProps } from "components/subjects/damage-table";
 import { skillLevel } from "components/subjects/skill-damage";
 import * as React from "react";
+import style from "../damage-table.module.styl";
+import table from "components/common/table.styl";
 import { FormattedMessage } from "react-intl";
 import { useToggle } from "react-use";
 import { useCombatHPContext } from "./combat-hp-context";
 import { useMitigation } from "./mitigation-context";
 import mitigatedDamage from "./mitigated-damage";
+import InnerTable from "components/common/inner-table";
+import Decimal from "decimal.js";
 
 type Props = SkillValueProps & {
     config: SubjectConfig
@@ -38,27 +42,29 @@ const skillDamage: React.FC<Props> = props => {
                 <tr><td><FormattedMessage id="app.label.potency" /></td><td>{staticPotency.toString()}</td></tr>
             ]
         }
-        const [dynamicLabel, dynamicValue] = (() => {
+        const [dynamicLabel, dynamicSeed] = (() => {
             switch (Object.keys(dynamicPotency)[0]) {
                 case "targetHP":
-                    return [<FormattedMessage id="app.label.target-hp" />, targetHP];
+                    return [<FormattedMessage id="app.label.target-hp" />, new Decimal(targetHP)];
                 case "targetLostHP":
-                    return [<FormattedMessage id="app.label.target-lost-hp" />, targetMaxHP.toNumber() - targetHP];
+                    return [<FormattedMessage id="app.label.target-lost-hp" />, targetMaxHP.sub(targetHP)];
                 case "lostHP":
-                    return [<FormattedMessage id="app.label.lost-hp" />, props.status.maxHP.calculatedValue.toNumber() - hp];
+                    return [<FormattedMessage id="app.label.lost-hp" />, props.status.maxHP.calculatedValue.sub(hp)];
                 case "targetMaxHP":
-                    return [<FormattedMessage id="app.label.lost-hp" />, targetMaxHP.toNumber()];
+                    return [<FormattedMessage id="app.label.target-maxhp" />, targetMaxHP];
             }
-            return [null, 0]
+            return [null, new Decimal(0)]
         })()
+
+        const dynamicValue = dynamicSeed.percent(Object.values(dynamicPotency)[0]).floor();
 
         return [
             staticPotency.add(dynamicValue),
             <tr>
                 <td>軽減前ダメージ</td>
                 <td>
-                    <span>静的値</span>{staticPotency.toString()}
-                    <span>{dynamicLabel}</span>{dynamicValue}
+                    <span className={table.small}>威力</span>{staticPotency.toString()}+
+                    <span className={table.small}>{dynamicLabel}</span>{dynamicValue.toString()}
                 </td>
             </tr>
         ]
@@ -84,22 +90,26 @@ const skillDamage: React.FC<Props> = props => {
         );
     })();
 
-    const targetHPRatio = lastValue.dividedBy(targetHP).times(100).floor2();
+    const targetHPRatio = lastValue.dividedBy(targetMaxHP).times(100).floor2();
     const enableExpand = potencyDescription != null || mitigationDescriptions != null;
+
+    const valueClass = props.type ? style[props.type] : style.skill;
 
     return (
         <>
             <tr onClick={enableExpand ? toggleExpand : undefined}>
                 <td>{props.label}</td>
-                <td>{lastValue.toString()}</td>
-                <td>{targetHPRatio.toString()}%</td>
+                <td className={valueClass}>{lastValue.floor().toString()}</td>
+                <td className={valueClass}>{targetHPRatio.toString()}%</td>
             </tr>
             {
                 expand ? 
-                <>
-                    {potencyDescription}
-                    {mitigationDescriptions}
-                </>
+                <tr className={table.expand}><td colSpan={3}>
+                    <InnerTable>
+                        {potencyDescription}
+                        {mitigationDescriptions}
+                    </InnerTable>
+                </td></tr>
                 : null
             }
         </>
