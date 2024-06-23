@@ -16,7 +16,7 @@ const table: DamageTableGenerator = props => ({
             {label: "W2", skill: "W", value: Constants.W.second_damage}
         ],
         [{label: "R", skill: "R", value: Constants.R.damage}],
-        [{label: props.intl.formatMessage({id: "subject.jenny.passive-heal"}), skill: "T", value: Constants.T.hp, type: "heal"}]
+        [{label: props.intl.formatMessage({id: "subject.jenny.passive-heal"}), skill: "T", value: Constants.T.hp, type: "heal", target: "self"}]
     ]   
 })
 

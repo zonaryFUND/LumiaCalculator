@@ -15,11 +15,11 @@ const table: DamageTableGenerator = props => {
                 {label: "Q2", skill: "Q", value: Constants.Q.second_damage}
             ],
             ([
-                {label: props.intl.formatMessage({id: "subject.jackie.w-min"}), skill: "W", value: Constants.W.heal, type: "heal"},
-                {label: props.intl.formatMessage({id: "subject.jackie.w-max"}), skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * 100}], type: "heal"}
+                {label: props.intl.formatMessage({id: "subject.jackie.w-min"}), skill: "W", value: Constants.W.heal, type: "heal", target: "self"},
+                {label: props.intl.formatMessage({id: "subject.jackie.w-max"}), skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * 100}], type: "heal", target: "self"}
             ] as SkillValueProps[]).concat(props.weaponType == "dual_swords" ? [
-                {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-min"}), skill: "W", value: Constants.W.heal, type: "heal", multiplier: [{basic: Constants.R.dualsword_w_heal_multiplier * 100}]},
-                {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-max"}), skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100}], type: "heal"}
+                {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-min"}), skill: "W", value: Constants.W.heal, type: "heal", target: "self", multiplier: [{basic: Constants.R.dualsword_w_heal_multiplier * 100}]},
+                {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-max"}), skill: "W", value: Constants.W.heal, multiplier: [{basic: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100}], type: "heal", target: "self"}
             ] : [])
             ,
             [{label: "E", skill: "E", value: Constants.E.damage}],
