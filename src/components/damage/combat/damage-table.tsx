@@ -220,6 +220,7 @@ const damageTable: React.FC<Props> = props => {
                                         case "heal":
                                             return "heal";
                                         case "status":
+                                            return "count";
                                         case "true":
                                             return "true"
                                         case "skill":
@@ -236,6 +237,7 @@ const damageTable: React.FC<Props> = props => {
                                     skill="item" 
                                     type={type}
                                     multiplier={def.multiplier}
+                                    selfTarget={def.type == "heal" || def.type == "shield"}
                                 />
                             })
                         }
