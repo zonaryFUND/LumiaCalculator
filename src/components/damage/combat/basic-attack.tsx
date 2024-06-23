@@ -115,7 +115,7 @@ const basicAttack: React.FC<Props> = props => {
                             summonedName={def.type == "summoned" ? summonedName : undefined} 
                         />
                     } else {
-                        return <SkillDamage {...def as any} status={props.status} config={props.config} />
+                        return <SkillDamage {...def as any} status={props.status} config={props.config} selfTarget={def.target == "self"} />
                     }
                 })
             }
