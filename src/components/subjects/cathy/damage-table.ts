@@ -20,15 +20,15 @@ const table: DamageTableGenerator = props => {
                 {label: props.intl.formatMessage({id: "subject.cathy.e-stun-additional"}), skill: "E", value: Constants.E.knockback_damage}
             ],
             [
-                {label: props.intl.formatMessage({id: "subject.cathy.r-heal-per-sec"}), skill: "R", value: Constants.R.heal, type: "heal"},
-                {label: props.intl.formatMessage({id: "subject.cathy.r-heal-max"}, {value: Constants.R.heal_duration}), skill: "R", value: Constants.R.heal, type: "heal", multiplier: [{basic: Constants.R.heal_duration * 100}]},
+                {label: props.intl.formatMessage({id: "subject.cathy.r-heal-per-sec"}), skill: "R", value: Constants.R.heal, type: "heal", target: "any"},
+                {label: props.intl.formatMessage({id: "subject.cathy.r-heal-max"}, {value: Constants.R.heal_duration}), skill: "R", value: Constants.R.heal, type: "heal", target: "any", multiplier: [{basic: Constants.R.heal_duration * 100}]},
                 {label: props.intl.formatMessage({id: "subject.cathy.r-min"}), skill: "R", value: Constants.R.min_damage},
                 {label: props.intl.formatMessage({id: "subject.cathy.r-max"}), skill: "R", value: Constants.R.min_damage, multiplier: [{basic: Constants.R.max_damage_ratio * 100}]}
             ],
             [
                 {label: props.intl.formatMessage({id: "subject.cathy.passive-wound"}), skill: "T", value: Constants.T.wound, type: "true"},
                 {label: props.intl.formatMessage({id: "subject.cathy.passive-critical-wound"}), skill: "T", value: Constants.T.critical_wound, type: "true"},
-                {label: props.intl.formatMessage({id: "subject.cathy.passive-shield"}), skill: "T", value: Constants.T.shield, type: "shield"}
+                {label: props.intl.formatMessage({id: "subject.cathy.passive-shield"}), skill: "T", value: Constants.T.shield, type: "shield", target: "self"}
             ]
         ]
     }

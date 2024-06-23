@@ -9,5 +9,6 @@
     "subject.kenneth.r-swing-down": "R振り下ろし",
     "subject.kenneth.passive-additional": "T追加ダメージ",
     "subject.kenneth.et-conversion": "E効果中T固定ダメージ転換量",
-    "subject.kenneth.t-heal": "T追加ダメージ比回復"
+    "subject.kenneth.t-heal": "T追加ダメージ比回復",
+    "subject.kenneth.t-e-heal": "E効果中T追加ダメージ比回復"
 }

@@ -14,6 +14,7 @@ import { useIntl } from "react-intl";
 import { name as abilityName } from "app-types/equipment/ability";
 import { name as equipmentName } from "app-types/equipment";
 import { MitigationContext, createMitigation } from "./mitigation-context";
+import KennethHeal from "./kenneth-heal";
 
 type Props = {
     status: Status
@@ -164,14 +165,23 @@ const damageTable: React.FC<Props> = props => {
                                                     />
                                                 </>
                                             )
-                                        } else {
-                                            return <SkillDamage 
-                                                key={s.label} 
-                                                status={props.status} 
-                                                config={props.config} {...s}
-                                                selfTarget={s.target == "self"}
-                                            />
+                                        } 
+
+                                        if (s.type == "kenneth-heal") {
+                                            return (
+                                                <>
+                                                    <KennethHeal status={props.status} config={props.config} onEEffect={false} />
+                                                    <KennethHeal status={props.status} config={props.config} onEEffect={true} />
+                                                </>
+                                            )
                                         }
+
+                                        return <SkillDamage 
+                                            key={s.label} 
+                                            status={props.status} 
+                                            config={props.config} {...s}
+                                            selfTarget={s.target == "self"}
+                                        />;
                                     })
                                 }
                                 </React.Fragment>

@@ -92,8 +92,11 @@ const skillDamage: React.FC<Props> = props => {
         <>
             <tr onClick={enableExpand ? toggleExpand : undefined}>
                 <td>{props.label}</td>
-                <td className={valueClass}>{lastValue.floor().toString()}</td>
-                <td className={valueClass}>{targetHPRatio.toString()}%</td>
+                <td className={valueClass}>{lastValue.floor().toString()}{props.type == "ms" || props.type == "ratio" ? "%" : null}</td>
+                {
+                    props.type == "ms" || props.type == "ratio" ? <td>-</td> :
+                    <td className={valueClass}>{targetHPRatio.toString()}%</td>
+                }
             </tr>
             {
                 expand ? 
