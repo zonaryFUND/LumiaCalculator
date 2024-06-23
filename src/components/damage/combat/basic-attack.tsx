@@ -34,6 +34,8 @@ const basicAttack: React.FC<Props> = props => {
         return intl.formatMessage({id: module.nameKey});
     }, [props.config.subject]);
 
+    console.log(props.table.basicAttack)
+
     return (
         <tbody>
             {
@@ -95,7 +97,7 @@ const basicAttack: React.FC<Props> = props => {
                         }, 100);
 
                         return <BasicAttackDamage 
-                            key="standard" 
+                            key={def.label} 
                             name={def.label} 
                             status={props.status} 
                             config={sanitizedDict}

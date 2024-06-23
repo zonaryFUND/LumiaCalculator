@@ -82,7 +82,9 @@ const skillDamage: React.FC<Props> = props => {
     const targetHPRatio = lastValue
         .dividedBy(props.selfTarget ? props.status.maxHP.calculatedValue : targetMaxHP)
         .times(100).floor2();
-    const enableExpand = mitigationDescriptions != null || props.damageDependent != undefined;
+    const enableExpand = dynamicPotency != undefined ||
+        mitigationDescriptions != null || 
+        props.damageDependent != undefined;
 
     const valueClass = props.type ? style[props.type] : style.skill;
 
