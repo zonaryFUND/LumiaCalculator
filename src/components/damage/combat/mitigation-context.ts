@@ -35,12 +35,13 @@ function defenseMitigationPercentage(rawDefense: Decimal, penetration: Decimal):
     return adjustedDefense.dividedBy(adjustedDefense.add(100)).times(100);
 }
 
-export function createMitigation(status: Status, targetStatus: Status): Mitigation {
+export function createMitigation(status: Status, targetStatus: Status, additionalPenetrationRatio: number): Mitigation {
     const targetDefense = targetStatus.defense.calculatedValue;
 
-    const penetration = status.armorPenetration.calculatedValue.add(
-        targetDefense.percent(status.armorPenetrationRatio.calculatedValue).floor()
-    );
+    const penetration = status.armorPenetration.calculatedValue
+        .add(targetDefense.percent(status.armorPenetrationRatio.calculatedValue).floor())
+        .add(targetDefense.percent(additionalPenetrationRatio).floor());
+    
     
     const summonedPenetration = status.summonedStatus ? status.summonedStatus.armorPenetration.add(
         targetDefense.percent(status.summonedStatus.armorPenetrationRatio).floor()

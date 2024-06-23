@@ -15,6 +15,7 @@ import { name as abilityName } from "app-types/equipment/ability";
 import { name as equipmentName } from "app-types/equipment";
 import { MitigationContext, createMitigation } from "./mitigation-context";
 import KennethHeal from "./kenneth-heal";
+import RioConstants from "components/subjects/rio/constants.json";
 
 type Props = {
     status: Status
@@ -89,10 +90,15 @@ const damageTable: React.FC<Props> = props => {
                     });
                 });
             });
-    }, [range, props.config.equipment])
+    }, [range, props.config.equipment]);
+
+    const rioPassivePenetration = (() => {
+        if (props.config.subject != "rio") return 0;
+        return RioConstants.T.defense_decline.base[props.config.skillLevels.T] + props.status.criticalChance.calculatedValue.toNumber() * RioConstants.T.defense_decline.criticalChance;
+    })();
 
     return (
-        <MitigationContext.Provider value={createMitigation(props.status, props.targetStatus)} >
+        <MitigationContext.Provider value={createMitigation(props.status, props.targetStatus, rioPassivePenetration)} >
         <section className={style.damage}>
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
