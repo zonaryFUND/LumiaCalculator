@@ -13,9 +13,6 @@ import { equipmentStatus, name } from "app-types/equipment";
 import { useIntl } from "react-intl";
 import { name as abilityName } from "app-types/equipment/ability";
 import { name as equipmentName } from "app-types/equipment";
-import { BaseCriticalDamagePercent } from "components/subject/standard-values";
-import { calculateValue } from "app-types/value-ratio/calculation";
-import { Source } from "app-types/value-ratio";
 import { MitigationContext, createMitigation } from "./mitigation-context";
 
 type Props = {
@@ -146,12 +143,35 @@ const damageTable: React.FC<Props> = props => {
                                                 multiplier={multiplier} 
                                             />;
                                         }
-                                        
-                                        return <SkillDamage 
-                                            key={s.label} 
-                                            status={props.status} 
-                                            config={props.config} {...s}
-                                        />
+
+                                        if (s.target == "any") {
+                                            return (
+                                                <>
+                                                    <SkillDamage 
+                                                        {...s}
+                                                        key={s.label + "_self"}
+                                                        label={s.label + "(自己)"}
+                                                        status={props.status} 
+                                                        config={props.config} 
+                                                        selfTarget={true}
+                                                    />
+                                                    <SkillDamage 
+                                                        {...s}
+                                                        key={s.label + "_opponent"} 
+                                                        label={s.label + "(相手)"} 
+                                                        status={props.status} 
+                                                        config={props.config} 
+                                                    />
+                                                </>
+                                            )
+                                        } else {
+                                            return <SkillDamage 
+                                                key={s.label} 
+                                                status={props.status} 
+                                                config={props.config} {...s}
+                                                selfTarget={s.target == "self"}
+                                            />
+                                        }
                                     })
                                 }
                                 </React.Fragment>
@@ -198,7 +218,7 @@ const damageTable: React.FC<Props> = props => {
                                     config={props.config} 
                                     value={def.ratio} 
                                     skill="item" 
-                                    type={type} 
+                                    type={type}
                                     multiplier={def.multiplier}
                                 />
                             })

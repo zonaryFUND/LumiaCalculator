@@ -128,7 +128,8 @@ const damageTable: React.FC<Props> = props => {
                                             })
                                             return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multipliers={sanitizedMultipliers} />;
                                         }
-                                        
+
+                                        if (s.damageDependent != undefined) return null;                                        
                                         return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
                                     })
                                 }
