@@ -1,0 +1,83 @@
+{
+    "healing_factor": {
+        "enhance": 10,
+        "adaptive": {
+            "level": 1
+        },
+        "duration": 2
+    },
+    "amplification_drone": {
+        "duration": 4.5,
+        "movement_speed": {
+            "base": 10,
+            "level": 0.3
+        },
+        "skill_damage_amp": {
+            "base": 8,
+            "level": 0.5
+        },
+        "cooldown": 30
+    },
+    "healing_drone": {
+        "range": 4,
+        "threshold": 40,
+        "duration": 3,
+        "heal": {
+            "base": 3,
+            "level": 0.5
+        },
+        "cooldown": 35,
+        "multiple_reduction": 50
+    },
+    "sentinel": {
+        "range": 8,
+        "duration": 6,
+        "cooldown": 6,
+        "shield_amp": {
+            "threshold": 30,
+            "effect": 1.5
+        },
+        "max_shield": 35,
+        "shield": {
+            "base": 70,
+            "level": 3
+        }
+    },
+    "thrill_of_the_hant": {
+        "damage_increase": 18,
+        "heal_min": {
+            "base": 40,
+            "attack": 5,
+            "amp": 3
+        },
+        "heal_max_multiplier": 3,
+        "movement_speed": {
+            "effect": 12,
+            "duration": 2
+        },
+        "cooldown": 3
+    },
+    "thorn_shackles": {
+        "effect": 5,
+        "duration": 6,
+        "cooldown": 10
+    },
+    "coin_toss": {
+        "coin": [5, 10]
+    },
+    "camping_guide": {
+        "movement_speed": {
+            "effect": 0.8,
+            "duration": 5
+        }
+    },
+    "logistics": {
+        "amount": 2
+    },
+    "urban_warfare": {
+        "amount": 2
+    },
+    "penny_pitcher": {
+        "amount": 15
+    }
+}

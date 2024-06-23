@@ -1,0 +1,108 @@
+{
+    "diamond_shard": {
+        "defense": {
+            "duration": 3,
+            "effect": {
+                "base": 20,
+                "level": 5
+            }
+        },
+        "damage": {
+            "level": 10
+        },
+        "range": 3,
+        "slow": {
+            "effect": 40,
+            "duration": 1.5
+        },
+        "cooldown": 20
+    },
+    "ironclad": {
+        "damage_reduction": {
+            "melee": {
+                "base": 10,
+                "level": 1
+            },
+            "range": {
+                "base": 5,
+                "level": 1
+            }
+        },
+        "tenacity": {
+            "melee": {
+                "base": 25,
+                "defense": 15
+            },
+            "range": {
+                "base": 18,
+                "defense": 15
+            }
+        },
+        "duration": {
+            "melee": 3,
+            "range": 2.5
+        }
+    },
+    "heavy_kneepads": {
+        "shield": {
+            "maxHP": 15
+        },
+        "movement_speed": {
+            "effect": 35,
+            "duration": 1
+        },
+        "cooldown": 30,
+        "animal_cooldown_reduction": 70
+    },
+    "bitter_retribution": {
+        "stack_per_lost_hp": 1,
+        "max_stack": 30,
+        "damage_reduction_per_stack": 0.2,
+        "melee_slow": {
+            "duration": 1.5,
+            "effect": 50
+        },
+        "damage": {
+            "level": 15
+        },
+        "cooldown": 2,
+        "recover_per_stack": 0.5
+    },
+    "embolden": {
+        "defense": {
+            "base": 7,
+            "level": 1
+        },
+        "duration": 4,
+        "cooldown": 8
+    },
+    "painkiller": {
+        "defense_max": {
+            "effect": 12,
+            "hp": 40
+        }
+    },
+    "unwavering_mentality": {
+        "shield": {
+            "level": 15
+        },
+        "duration": 3,
+        "cooldown": 20
+    },
+    "steadfast": {
+        "damage_reduction": {
+            "base": 6,
+            "level": 0.3
+        }
+    },
+    "dine_n_dash": {
+        "food_consumption_reduction": 3,
+        "hp_threshold": 70,
+        "sp_threshold": 50,
+        "consume_threshold": 400
+    },
+    "cavalcade": {
+        "effect": 5,
+        "range": 3.5
+    }
+}
