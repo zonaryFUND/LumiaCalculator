@@ -44,7 +44,7 @@ const skillDamage: React.FC<Props> = props => {
             case "targetHP":
                 return [<FormattedMessage id="app.label.target-hp" />, new Decimal(targetHP).percent(ratio).floor()];
             case "targetLostHP":
-                return [<FormattedMessage id="app.label.target-lost-hp" />, targetMaxHP.sub(targetHP).percent(ratio).floor()];
+                return [<FormattedMessage id="app.label.target-lost-hp" />, (props.type == "heal" && props.selfTarget ? props.status.maxHP.calculatedValue.sub(hp) : targetMaxHP.sub(targetHP)).percent(ratio).floor()];
             case "lostHP":
                 return [<FormattedMessage id="app.label.lost-hp" />, props.status.maxHP.calculatedValue.sub(hp).percent(ratio).floor()];
             case "targetMaxHP":
@@ -59,7 +59,7 @@ const skillDamage: React.FC<Props> = props => {
     const healPower = props.status.healPower.calculatedValue;
     const healPowerDescirption = healPower.greaterThan(0) ? <tr><td>与える回復増加</td><td>{healPower.toString()}%</td></tr> : null;
     const [mitigated, mitigationDescriptions] = (() => {
-        if (props.type == "true" || props.type == "ms" || props.type == "ratio") return [potency, null]
+        if (props.type == "true" || props.type == "ms" || props.type == "ratio" || props.type == "count") return [potency, null]
         if ((props.type == "heal" && props.damageDependent == undefined) || props.type == "shield") {
             
             return [
@@ -94,7 +94,7 @@ const skillDamage: React.FC<Props> = props => {
                 <td>{props.label}</td>
                 <td className={valueClass}>{lastValue.floor().toString()}{props.type == "ms" || props.type == "ratio" ? "%" : null}</td>
                 {
-                    props.type == "ms" || props.type == "ratio" ? <td>-</td> :
+                    props.type == "ms" || props.type == "ratio" || props.type == "count" ? <td>-</td> :
                     <td className={valueClass}>{targetHPRatio.toString()}%</td>
                 }
             </tr>

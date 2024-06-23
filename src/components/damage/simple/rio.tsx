@@ -14,6 +14,13 @@ type Props = {
     config: SubjectConfig
 }
 
+export const HankyuMultiplier = Constants.Q.hankyu.attack;
+export const DaikyuMultiplier = Constants.Q.daikyu.attack;
+
+export function criticalAddition(status: Status): Decimal {
+    return status.criticalChance.calculatedValue.percent(status.criticalDamage.calculatedValue.add(Constants.T.basic_attack_damage.criticalBase)).add(Constants.T.basic_attack_damage.base);
+}
+
 const basicAttackDamage: React.FC<Props> = props => {
     const [hankyuExpand, toggleHankyuExpand] = useToggle(false);
     const [daikyuExpand, toggleDaikyuExpand] = useToggle(false);
@@ -37,9 +44,7 @@ const basicAttackDamage: React.FC<Props> = props => {
     }, [props.status.attackPower, props.status.basicAttackAmp]);
 
     const [criticalEnhance, criticalEquation] = React.useMemo(() => {
-        const criticalDamage = props.status.criticalDamage.calculatedValue.add(Constants.T.basic_attack_damage.criticalBase);
-        const value = new Decimal(Constants.T.basic_attack_damage.base)
-            .add(props.status.criticalChance.calculatedValue.times(criticalDamage).dividedBy(100)).floor();
+        const value = criticalAddition(props.status).floor();
         return [
             value,
             <>{Constants.T.basic_attack_damage.base}% + (<span><FormattedMessage id="status.critical-chance" /></span>{props.status.criticalChance.calculatedValue.toString()}% x ({Constants.T.basic_attack_damage.criticalBase}% + <span><FormattedMessage id="status.critical-damage" /></span>{props.status.criticalDamage.calculatedValue.toString()}%)) = {value.toString()}%</>

@@ -96,8 +96,10 @@ const basicAttack: React.FC<Props> = props => {
                             }
                         })
                         return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summonedName={def.type == "summoned" ? summonedName : undefined} multipliers={sanitizedMultipliers} disableCritical={def.type == "basic-nocrit"} />
-                    } else {
+                    } else if (def.damageDependent == undefined) {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
+                    } else {
+                        return null;
                     }
                 })
             }

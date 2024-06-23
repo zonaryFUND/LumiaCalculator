@@ -1,6 +1,8 @@
 {
     "subject.markus.q-additional": "Q中追加ダメージ",
+    "subject.markus.q-additional-heal": "Q中追加ダメージによる回復",
     "subject.markus.q-additional-max-hit": "Q中追加ダメージ全ヒット({value})",
+    "subject.markus.q-additional-heal-max-hit": "Q中追加ダメージによる回復全ヒット({value})",
     "subject.markus.passive-additional": "T突進追加ダメージ",
     "subject.markus.passive-shock": "T衝突追加ダメージ"
 }

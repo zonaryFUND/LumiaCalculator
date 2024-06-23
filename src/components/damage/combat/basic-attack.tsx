@@ -17,6 +17,7 @@ import { calculateValue } from "app-types/value-ratio/calculation";
 import { Source } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 import { hyperChargeMultiplier } from "../simple/aiden-hypercharge";
+import { DaikyuMultiplier, HankyuMultiplier, criticalAddition } from "../simple/rio";
 
 
 type Props = {
@@ -55,7 +56,33 @@ const basicAttack: React.FC<Props> = props => {
                 props.table.basicAttack.map(def => {
                     if (typeof def === "string") {
                         if (def == "rio") {
-                            return null;
+                            const base = props.status.attackPower.calculatedValue;
+                            const crit = criticalAddition(props.status);
+                            return (
+                                <>
+                                    <BasicAttackDamage 
+                                        key="rio-hankyu" 
+                                        name={<FormattedMessage id="subject.rio.hankyu-aa" />}
+                                        status={props.status}
+                                        potency={base.percent(HankyuMultiplier).addPercent(props.status.basicAttackAmp.calculatedValue).floor().percent(crit)}
+                                        disableCritical={true}
+                                    />
+                                    <BasicAttackDamage 
+                                        key="rio-hankyu-2" 
+                                        name={<FormattedMessage id="subject.rio.hankyu-aa-2hit" />}
+                                        status={props.status}
+                                        potency={base.percent(HankyuMultiplier * 2).addPercent(props.status.basicAttackAmp.calculatedValue).floor().percent(crit)}
+                                        disableCritical={true}
+                                    />
+                                    <BasicAttackDamage 
+                                        key="rio-daikyu" 
+                                        name={<FormattedMessage id="subject.rio.daikyu-aa" />}
+                                        status={props.status}
+                                        potency={base.percent(DaikyuMultiplier).addPercent(props.status.basicAttackAmp.calculatedValue).floor().percent(crit)}
+                                        disableCritical={true}
+                                    />
+                                </>
+                            );
                         }
                         if (def == "aiden") {
                             const base = props.status.attackPower.calculatedValue.addPercent(props.status.basicAttackAmp.calculatedValue);

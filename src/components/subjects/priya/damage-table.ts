@@ -10,7 +10,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: "W", skill: "W", value: Constants.W.damage},
-            {label: props.intl.formatMessage({id: "subject.priya.w-full-bloom"}), skill: "W", value: Constants.W.shield, type: "shield"}
+            {label: props.intl.formatMessage({id: "subject.priya.w-full-bloom"}), skill: "W", value: Constants.W.shield, type: "shield", target: "any"}
         ],
         [
             {label: "E", skill: "E", value: Constants.E.damage},

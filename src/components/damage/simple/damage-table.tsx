@@ -103,7 +103,7 @@ const damageTable: React.FC<Props> = props => {
                             definition?.skill.map((array, index) => 
                                 <React.Fragment key={index}>
                                 {
-                                    index == 0 ? null :
+                                    index == 0 || array.filter(s => s.damageDependent == undefined).length == 0 ? null :
                                     <tr className={table.border}><td colSpan={4}></td></tr>
                                 }
                                 {
