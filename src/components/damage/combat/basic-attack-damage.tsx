@@ -16,11 +16,12 @@ type Props = {
     name: React.ReactNode
     status: Status
     disableCritical?: boolean
-    config: {
+    config?: {
         base?: number
         attack?: number
         basicAttackAmp?: number
     }
+    potency?: Decimal
     multiplier?: number
     summonedName?: string
 }
@@ -46,7 +47,7 @@ const Unit: React.FC<UnitProps> = props => {
 
     return (
         <>
-            <tr>
+            <tr onClick={toggleExpand}>
                 <td>{props.name}</td>
                 <td className={style.basic}>{(damageExpression == "damage" ? finalDamage.floor() : dps).toString()}</td>
                 <td className={style.basic}>{(damageExpression == "damage" ? healthRatio : dpsHealthRatio).toString()}%</td>
@@ -66,12 +67,18 @@ const Unit: React.FC<UnitProps> = props => {
 }
 
 const basicAttackDamage: React.FC<Props> = props => {
-    const basePotency = new Decimal(props.config.base ?? 0)
-        .add(props.status.attackPower.calculatedValue.percent(props.config.attack ?? 0))
-        .floor()
-        .addPercent(props.config.basicAttackAmp && props.summonedName == undefined ? props.status.basicAttackAmp.calculatedValue : 0)
-        .percent(props.multiplier ?? 100)
-        .floor();
+    const basePotency = (() => {
+        if (props.config) {
+            return new Decimal(props.config.base ?? 0)
+                .add(props.status.attackPower.calculatedValue.percent(props.config.attack ?? 0))
+                .floor()
+                .addPercent(props.config.basicAttackAmp && props.summonedName == undefined ? props.status.basicAttackAmp.calculatedValue : 0)
+                .percent(props.multiplier ?? 100)
+                .floor();
+        } else {
+            return props.potency!
+        }
+    })()
 
     const critRate = props.summonedName != undefined ? props.status.summonedStatus!.criticalChance : props.status.criticalChance.calculatedValue;
     const critDamage = BaseCriticalDamagePercent.add(props.summonedName != undefined ? 0 : props.status.criticalDamage.calculatedValue);

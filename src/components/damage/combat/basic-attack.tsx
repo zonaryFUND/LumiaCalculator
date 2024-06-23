@@ -16,6 +16,7 @@ import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/stan
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { Source } from "app-types/value-ratio";
 import Decimal from "decimal.js";
+import { hyperChargeMultiplier } from "../simple/aiden-hypercharge";
 
 
 type Props = {
@@ -57,7 +58,15 @@ const basicAttack: React.FC<Props> = props => {
                             return null;
                         }
                         if (def == "aiden") {
-                            return null;
+                            const base = props.status.attackPower.calculatedValue.addPercent(props.status.basicAttackAmp.calculatedValue);
+                            const multiplier = hyperChargeMultiplier(props.config, props.status)
+                            return <BasicAttackDamage 
+                                key="aiden" 
+                                name={<FormattedMessage id="subject.aiden.hypercharge-aa" />}
+                                status={props.status}
+                                potency={base.addPercent(multiplier)}
+                                disableCritical={true}
+                            />;
                         }
 
                         const [baseRatio, label] = (() => {

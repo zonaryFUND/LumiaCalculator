@@ -8,22 +8,27 @@ import style from "../damage-table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage } from "react-intl";
+import Decimal from "decimal.js";
 
 type Props = {
     status: Status
     config: SubjectConfig
 }
 
+export function hyperChargeMultiplier(config: SubjectConfig, status: Status): Decimal {
+    const conversion = Constants.T.critical_chance_convert[config.skillLevels.T];
+    const convertedRatio = status.criticalChance.calculatedValue.times(conversion);
+    return BaseCriticalDamagePercent.minus(Constants.T.critical_damage).add(convertedRatio);
+}
+
 const hypercharge: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
 
     const conversion = Constants.T.critical_chance_convert[props.config.skillLevels.T];
-    const convertedRatio = props.status.criticalChance.calculatedValue.times(conversion);
 
     const base = props.status.attackPower.calculatedValue.addPercent(props.status.basicAttackAmp.calculatedValue).floor();
     const value = (() => {
-        const multiplier = BaseCriticalDamagePercent.minus(Constants.T.critical_damage).add(convertedRatio);
-        return base.addPercent(multiplier);
+        return base.addPercent(hyperChargeMultiplier(props.config, props.status));
     })();
 
     return (
