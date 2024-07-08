@@ -28,7 +28,7 @@ export type ArmID = typeof Arms[number]
 
 export const Legs = [
     "hiking_boots", "glacier_crampons", "feather_boots", "marverick_runner", "straitjacket_sneakers", "bucephalus", "eod_boots", "white_rhinos",
-    "tachyon_brace", "scv", "stellar_steps", "mythril_boots", "glacial_shoes", "iron_maiden", "boots_of_hermes", "blade_boots", "alexander", "legs_of_steel",
+    "tachyon_brace", "scv", "stellar_steps", "cowboy_boots", "mythril_boots", "glacial_shoes", "iron_maiden", "boots_of_hermes", "blade_boots", "alexander", "legs_of_steel",
     "galaxy_steps", "wild_walkers", "mirage_lace-ups", "racing_boots", "taproot", "red_shoes"
 ]
 export type LegID = typeof Legs[number]

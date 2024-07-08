@@ -1,0 +1,79 @@
+{
+    "stellar_charge": {
+        "time_bound": 5,
+        "max_stack": 3,
+        "duration": 5,
+        "damage": {
+            "base": 30,
+            "level": 2
+        },
+        "cooldown_reduction": 40,
+        "cooldown": 15,
+        "animal_damage_multiplier": 2,
+        "animal_cooldown_multiplier": 0.5
+    },
+    "ghost_light": {
+        "threshold": {
+            "hp": 30,
+            "time": 3
+        },
+        "damage": {
+            "base": 50,
+            "level": 10,
+            "additionalAttack": 70,
+            "amp": 23
+        },
+        "duration": 5,
+        "cooldown_acceleration": 5,
+        "cooldown": 30
+    },
+    "red_sprite": {
+        "damage": {
+            "base": 15,
+            "level": 2,
+            "additionalAttack": 20,
+            "amp": 25
+        },
+        "cooldown": 10,
+        "damage_amp": {
+            "range": 5,
+            "effect": 20
+        },
+        "transport": {
+            "range": 4,
+            "damage_reduction": 20
+        },
+        "cooldown_reduction": 0.5
+    },
+    "circular_system": {
+        "ratio": 35,
+        "duration": 3
+    },
+    "open_wounds": {
+        "damage": {
+            "base": 10,
+            "level": 2,
+            "targetHP": 8
+        },
+        "duration": 2,
+        "cooldown": 12
+    },
+    "stopping_power": {
+        "armor_penetration": {
+            "effect": 7,
+            "duration": 5
+        },
+        "cooldown": 12
+    },
+    "power_crescendo": {
+        "adaptive": [0,1,2,3,4,5,7,9,11,14,17,20,20]
+    },
+    "overwatch": {
+        "cooldown": 5,
+        "adaptive_conversion": 5,
+        "max_conversion": 10
+    },
+    "r_echarger": {
+        "effect": 15
+    }
+}

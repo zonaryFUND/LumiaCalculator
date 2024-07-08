@@ -1,5 +1,7 @@
 {
     "subject.jan.e-additional": "E後追加ダメージ",
     "subject.jan.w-enhanced": "強化W",
+    "subject.jan.e-heal-min": "E回復最小値",
+    "subject.jan.e-heal-max": "E回復最大値",
     "subject.jan.r-rope": "Rロープ衝突"
 }

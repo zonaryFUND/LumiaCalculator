@@ -10,7 +10,9 @@ export type SkillValueProps = {
     label: string
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
     value: ValueRatio
-    type?: "heal" | "shield" | "ms" | "true" | "basic" | "basic-nocrit" | "critical" | "summoned" | "ratio" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
+    type?: "heal" | "shield" | "ms" | "true" | "count" | "basic" | "basic-nocrit" | "critical" | "summoned" | "ratio" | "kenneth-heal" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
+    target?: "self" | "any"
+    damageDependent?: number | number[]
     multiplier?: ({
         basic: number | number[]
     } | {

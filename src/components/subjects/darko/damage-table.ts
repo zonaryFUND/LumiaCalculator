@@ -9,10 +9,10 @@ const table: DamageTableGenerator = props => ({
     ],
     skill: [
         [
-            {label: props.intl.formatMessage({id: "subject.darko.w-shield-base"}), skill: "W", value: Constants.W.shield, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.darko.w-shield-additional"}), skill: "W", value: Constants.W.additional_shield, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.darko.w-shield-additional-3hit"}), skill: "W", value: Constants.W.additional_shield, type: "shield", multiplier: [{basic: 300}]},
-            {label: props.intl.formatMessage({id: "subject.darko.w-shield-additional-max"}), skill: "W", value: Constants.W.additional_shield, type: "shield", multiplier: [{basic: Constants.W.max_hit * 100}]}
+            {label: props.intl.formatMessage({id: "subject.darko.w-shield-base"}), skill: "W", value: Constants.W.shield, type: "shield", target: "self"},
+            {label: props.intl.formatMessage({id: "subject.darko.w-shield-additional"}), skill: "W", value: Constants.W.additional_shield, type: "shield", target: "self"},
+            {label: props.intl.formatMessage({id: "subject.darko.w-shield-additional-3hit"}), skill: "W", value: Constants.W.additional_shield, type: "shield", target: "self", multiplier: [{basic: 300}]},
+            {label: props.intl.formatMessage({id: "subject.darko.w-shield-additional-max"}), skill: "W", value: Constants.W.additional_shield, type: "shield", target: "self", multiplier: [{basic: Constants.W.max_hit * 100}]}
         ],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [{label: "R", skill: "R", value: Constants.R.damage}]

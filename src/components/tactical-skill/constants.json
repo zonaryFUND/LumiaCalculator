@@ -1,0 +1,67 @@
+{
+    "blink": {
+
+    },
+    "quake": {
+        "damage": {
+            "base": 25,
+            "level": 4
+        },
+        "duration": 6,
+        "tick": 0.5
+    },
+    "protocol_violation": {
+        "hp_increase": {
+            "base": [100,200,300],
+            "level": [5,10,15]
+        },
+        "damage_increase": [5,10,15]
+    },
+    "electric_shift": {
+
+    },
+    "force_field": {
+        "duration": 3,
+        "shield": {
+            "base": [100,200,300],
+            "additionalMaxHP": [50,75,100]
+        }
+    },
+    "totem": {
+
+    },
+    "nullification": {
+
+    },
+    "soul_stealer": {
+
+    },
+    "the_strider": {
+        "damage": {
+            "base": 150,
+            "level": 15
+        }
+    },
+    "blader_of_truth": {
+        "damage": {
+            "base": 100,
+            "level": 20
+        },
+        "damage_increase": 15
+    },
+    "false_oath": {
+        "damage_increase": {
+
+        }
+    },
+    "healing_wind": {
+        "heal": {
+            "base": [100,100,150],
+            "level": [5,15,25]
+        },
+        "defense": {
+            "duration": 3,
+            "effect": 20
+        }
+    }
+}

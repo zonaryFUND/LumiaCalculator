@@ -16,6 +16,8 @@ import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/stan
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { Source } from "app-types/value-ratio";
 import Decimal from "decimal.js";
+import { hyperChargeMultiplier } from "../simple/aiden-hypercharge";
+import { DaikyuMultiplier, HankyuMultiplier, criticalAddition } from "../simple/rio";
 
 
 type Props = {
@@ -33,6 +35,8 @@ const basicAttack: React.FC<Props> = props => {
         if (module == undefined) return undefined;
         return intl.formatMessage({id: module.nameKey});
     }, [props.config.subject]);
+
+    console.log(props.table.basicAttack)
 
     return (
         <tbody>
@@ -52,10 +56,44 @@ const basicAttack: React.FC<Props> = props => {
                 props.table.basicAttack.map(def => {
                     if (typeof def === "string") {
                         if (def == "rio") {
-                            return null;
+                            const base = props.status.attackPower.calculatedValue;
+                            const crit = criticalAddition(props.status);
+                            return (
+                                <>
+                                    <BasicAttackDamage 
+                                        key="rio-hankyu" 
+                                        name={<FormattedMessage id="subject.rio.hankyu-aa" />}
+                                        status={props.status}
+                                        potency={base.percent(HankyuMultiplier).addPercent(props.status.basicAttackAmp.calculatedValue).floor().percent(crit)}
+                                        disableCritical={true}
+                                    />
+                                    <BasicAttackDamage 
+                                        key="rio-hankyu-2" 
+                                        name={<FormattedMessage id="subject.rio.hankyu-aa-2hit" />}
+                                        status={props.status}
+                                        potency={base.percent(HankyuMultiplier * 2).addPercent(props.status.basicAttackAmp.calculatedValue).floor().percent(crit)}
+                                        disableCritical={true}
+                                    />
+                                    <BasicAttackDamage 
+                                        key="rio-daikyu" 
+                                        name={<FormattedMessage id="subject.rio.daikyu-aa" />}
+                                        status={props.status}
+                                        potency={base.percent(DaikyuMultiplier).addPercent(props.status.basicAttackAmp.calculatedValue).floor().percent(crit)}
+                                        disableCritical={true}
+                                    />
+                                </>
+                            );
                         }
                         if (def == "aiden") {
-                            return null;
+                            const base = props.status.attackPower.calculatedValue.addPercent(props.status.basicAttackAmp.calculatedValue);
+                            const multiplier = hyperChargeMultiplier(props.config, props.status)
+                            return <BasicAttackDamage 
+                                key="aiden" 
+                                name={<FormattedMessage id="subject.aiden.hypercharge-aa" />}
+                                status={props.status}
+                                potency={base.addPercent(multiplier)}
+                                disableCritical={true}
+                            />;
                         }
 
                         const [baseRatio, label] = (() => {
@@ -95,7 +133,7 @@ const basicAttack: React.FC<Props> = props => {
                         }, 100);
 
                         return <BasicAttackDamage 
-                            key="standard" 
+                            key={def.label} 
                             name={def.label} 
                             status={props.status} 
                             config={sanitizedDict}
@@ -104,7 +142,7 @@ const basicAttack: React.FC<Props> = props => {
                             summonedName={def.type == "summoned" ? summonedName : undefined} 
                         />
                     } else {
-                        return <SkillDamage {...def as any} status={props.status} config={props.config} />
+                        return <SkillDamage {...def as any} status={props.status} config={props.config} selfTarget={def.target == "self"} />
                     }
                 })
             }

@@ -1,0 +1,103 @@
+{
+    "frailty_infliction": {
+        "damage": {
+           "base": 30,
+           "level": 3
+        },
+        "defense_reduction": {
+            "duration": 6,
+            "effect": {
+                "base": 10,
+                "level": 0.5
+            }
+        },
+        "cooldown": 15
+    },
+    "vampiric_bloodline": {
+        "stack": {
+            "adaptive": 1,
+            "omnisyphon": {
+                "melee": 2,
+                "range": 1.5
+            }
+        },
+        "duration": 6,
+        "max_stack": 8,
+        "max_additional_adaptive": {
+            "base": 7,
+            "level": 0.5
+        }
+    },
+    "adrenaline": {
+        "duration": 5,
+        "max_stack": 6,
+        "stack": {
+            "attack_speed": {
+                "melee": {
+                    "base": 2,
+                    "level": 0.2
+                },
+                "range": {
+                    "base": 1.5,
+                    "level": 0.15
+                }
+            }
+        },
+        "max_additional_attack_speed": {
+            "melee": {
+                "base": 20,
+                "level": 1.5
+            },
+            "range": {
+                "base": 15,
+                "level": 1
+            }
+        },
+        "max_movement_speed": 7
+    },
+    "accelerator": {
+        "count": 3,
+        "attack_speed": 120,
+        "duration": 3,
+        "damage": {
+            "base": [10,10,10,10,15,20,25,30,35,40,47,55,64,72,81,90,100,111,122,135],
+            "additionalAttack": 50,
+            "amp": 40
+        }
+    },
+    "dismantle_goliath": {
+        "min": 10,
+        "max": 40,
+        "multiplier": 0.25
+    },
+    "frenzy": {
+        "min": {
+            "hp": 70,
+            "value": 5
+        },
+        "max": {
+            "hp": 10,
+            "value": 35
+        }
+    },
+    "contempt_for_the_weak": {
+        "threshold": 40,
+        "effect": 8
+    },
+    "anima_reaper": {
+        "max_stack": 80,
+        "adaptive_ratio": 0.1,
+        "stack": {
+            "subject": 10,
+            "bear_or_boss": 8
+        }
+    },
+    "endorphin": {
+        "damage_conversion": 20,
+        "regeneration_amp": 100
+    },
+    "carnivore": {
+        "total": 700,
+        "instant": 100
+    }
+}

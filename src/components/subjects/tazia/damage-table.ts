@@ -17,8 +17,8 @@ const table: DamageTableGenerator = props => ({
         ],
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [
-            {label: props.intl.formatMessage({id: "subject.tazia.e-shield"}), skill: "E", value: Constants.E.shield, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.tazia.e-shield-max"}, {value: eMax}), skill: "E", value: Constants.E.shield, type: "shield", multiplier: [{basic: Constants.E.glass_additional_max + 100}]},
+            {label: props.intl.formatMessage({id: "subject.tazia.e-shield"}), skill: "E", value: Constants.E.shield, type: "shield", target: "self"},
+            {label: props.intl.formatMessage({id: "subject.tazia.e-shield-max"}, {value: eMax}), skill: "E", value: Constants.E.shield, type: "shield", target: "self", multiplier: [{basic: Constants.E.glass_additional_max + 100}]},
             {label: props.intl.formatMessage({id: "subject.tazia.e-damage"}), skill: "E", value: Constants.E.damage},
             {label: props.intl.formatMessage({id: "subject.tazia.e-damage-max"}, {value: eMax}), skill: "E", value: Constants.E.damage, multiplier: [{basic: Constants.E.glass_additional_max + 100}]}
         ],

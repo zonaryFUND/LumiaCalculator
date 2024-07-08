@@ -6,6 +6,7 @@ import { styles } from "@app/util/style";
 
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
+import { CombatHPContext } from "components/damage/combat/combat-hp-context";
 
 type Props = {
     leftStatus: Status
@@ -26,10 +27,13 @@ const damages: React.FC<Props> = props => {
                     <h1>ダメージ</h1>
                 </header>
             }
+            <CombatHPContext.Provider value={{hp: props.leftHP, targetHP: props.rightHP, targetMaxHP: props.rightStatus.maxHP.calculatedValue}}>
             <Table 
-                status={props.leftStatus} 
+                status={props.leftStatus}
+                targetStatus={props.rightStatus} 
                 config={props.leftConfig}
             />
+            </CombatHPContext.Provider>
         </div>
     )
 };

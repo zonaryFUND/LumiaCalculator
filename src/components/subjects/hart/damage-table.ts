@@ -21,8 +21,8 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.hart.e-evolved-max-hit"}, {value: 3}), skill: "E", value: Constants.E.damage, multiplier: [{basic: 300}]}
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.hart.r-heal-tick"}, {value: 0.5}), skill: "R", value: Constants.R.heal, type: "heal"},
-            {label: props.intl.formatMessage({id: "subject.hart.r-heal-max-tick"}, {value: rTicks}), skill: "R", value: Constants.R.heal, type: "heal", multiplier: [{basic: rTicks * 100}]}
+            {label: props.intl.formatMessage({id: "subject.hart.r-heal-tick"}, {value: 0.5}), skill: "R", value: Constants.R.heal, type: "heal", target: "any"},
+            {label: props.intl.formatMessage({id: "subject.hart.r-heal-max-tick"}, {value: rTicks}), skill: "R", value: Constants.R.heal, type: "heal", target: "any", multiplier: [{basic: rTicks * 100}]}
         ]
     ]   
 })

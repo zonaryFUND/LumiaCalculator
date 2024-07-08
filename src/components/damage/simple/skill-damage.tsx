@@ -98,7 +98,7 @@ const skillDamage: React.FC<Props> = props => {
     })();
 
     const percent = React.useMemo(() => {
-        return props.type == "ms" || props.type =="ratio" ? "%" : null
+        return props.type == "ms" || props.type =="ratio" || props.type == "kenneth-heal" ? "%" : null
     }, [props.type])
 
     const [value, expandDescriptionStatic] = (() => {
@@ -234,7 +234,7 @@ const skillDamage: React.FC<Props> = props => {
         <>
             <tr onClick={prohibitToggle ? undefined : toggleExpand}>
                 <td>{props.label}</td>
-                <td colSpan={3} className={valueClass}>{value?.isZero() && false ? null : value?.floor().toString()}{dynamicValue}{/*kenneth}{additional*/}{percent}</td>
+                <td colSpan={3} className={valueClass}>{value?.isZero() && false ? null : value?.floor().toString()}{dynamicValue}{percent}</td>
             </tr>
             <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
                 <InnerTable>

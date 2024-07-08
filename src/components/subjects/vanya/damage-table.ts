@@ -26,9 +26,9 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.vanya.passive-dot"}), skill: "T", value: Constants.T.damage_over_time},
-            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield"}), skill: "T", value: Constants.T.shield, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield-decline"}), skill: "T", value: Constants.T.shield_decline, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield-max"}), skill: "T", value: Constants.T.max_shield, type: "shield"}
+            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield"}), skill: "T", value: Constants.T.shield, type: "shield", target: "self"},
+            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield-decline"}), skill: "T", value: Constants.T.shield_decline, type: "shield", target: "self"},
+            {label: props.intl.formatMessage({id: "subject.vanya.passive-shield-max"}), skill: "T", value: Constants.T.max_shield, type: "shield", target: "self"}
         ]
     ]   
 })

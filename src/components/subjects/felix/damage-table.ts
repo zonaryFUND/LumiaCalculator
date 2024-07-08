@@ -26,8 +26,8 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.felix.r-max"}), skill: "R", value: Constants.R.max_damage}
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.felix.passive-shield-min"}), skill: "T", value: {attack: Constants.T.shield.effect.attack}, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.felix.passive-shield-max"}, {value: Constants.T.max_stack}), skill: "T", value: {base: Constants.T.shield.effect.consumedStack * Constants.T.max_stack, attack: Constants.T.shield.effect.attack}, type: "shield"},
+            {label: props.intl.formatMessage({id: "subject.felix.passive-shield-min"}), skill: "T", value: {attack: Constants.T.shield.effect.attack}, type: "shield", target: "self"},
+            {label: props.intl.formatMessage({id: "subject.felix.passive-shield-max"}, {value: Constants.T.max_stack}), skill: "T", value: {base: Constants.T.shield.effect.consumedStack * Constants.T.max_stack, attack: Constants.T.shield.effect.attack}, type: "shield", target: "self"},
         ]
     ]   
 })

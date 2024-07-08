@@ -19,11 +19,11 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.eleven.table.emax"}), skill: "E", value: Constants.E.max_damage},
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.eleven.table.rheal"}), skill: "R", value: Constants.R.heal, type: "heal"},
+            {label: props.intl.formatMessage({id: "subject.eleven.table.rheal"}), skill: "R", value: Constants.R.heal, type: "heal", target: "self"},
             {label: "R", skill: "R", value: Constants.R.damage},
             {label: props.intl.formatMessage({id: "subject.eleven.table.rmax"}, {value: maxRHit}), skill: "R", value: Constants.R.damage, multiplier: [{basic: maxRHit * 100}]}
         ],
-        [{   label: props.intl.formatMessage({id: "subject.eleven.table.theal"}), skill: "T", value: Constants.T.heal, type: "heal"}]
+        [{   label: props.intl.formatMessage({id: "subject.eleven.table.theal"}), skill: "T", value: Constants.T.heal, type: "heal", target: "any"}]
     ]
 })
 

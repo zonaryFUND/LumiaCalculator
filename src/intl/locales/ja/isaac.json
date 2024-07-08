@@ -1,5 +1,6 @@
 {
     "subject.isaac.r-nostack": "R(スタックなし)",
     "subject.isaac.r-1stack": "R(1スタック)",
-    "subject.isaac.r-2stack": "R(2スタック)"
+    "subject.isaac.r-2stack": "R(2スタック)",
+    "subject.isaac.passive-heal": "T回復"
 }
