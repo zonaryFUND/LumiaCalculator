@@ -18,11 +18,11 @@
             "amp": 20
         },
         "sp_cost": 50,
-        "cooldown": [11,10,9,8,7]
+        "cooldown": [10,9,8,7,6]
     },
     "W": {
         "duration": 6,
-        "slow": 35,
+        "slow": 40,
         "attack_speed": [30,35,40,45,50],
         "mastery_addition": 20,
         "effect_remain": 3,

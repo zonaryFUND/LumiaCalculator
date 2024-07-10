@@ -16,7 +16,7 @@
     "CatQ": {
         "damage": {
             "base": [30,60,90,120,150],
-            "amp": 55
+            "amp": 60
         },
         "bind": 0.75,
         "rush": {
@@ -24,8 +24,8 @@
             "amount": 5
         },
         "rush_damage": {
-            "base": [6,9,12,15,18],
-            "amp": 5
+            "base": [6,10,14,18,22],
+            "amp": 6
         },
         "additional_damage": 100,
         "sp_cost": 50,
@@ -68,7 +68,7 @@
     "IremR": {
         "damage": {
             "base": [10,50,90,130],
-            "amp": [25,30,35,40]
+            "amp": [30,35,40,45]
         },
         "bell": 4,
         "range_penalty": 1,

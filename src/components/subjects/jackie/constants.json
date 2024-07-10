@@ -15,8 +15,9 @@
     "W": {
         "movement_speed": {
             "duration": 5,
-            "effect": [5,8,11,14,17]
+            "effect": 8
         },
+        "additional_movement_speed": [8,11,14,17,20],
         "heal": {
             "base": [10,20,30,40,50],
             "attack": 20
@@ -55,7 +56,7 @@
         "dualsword_multiplier": 160,
         "dualsword_w_heal_multiplier": 2,
         "sp_cost": [120,150,180],
-        "cooldown": [80,65,50]
+        "cooldown": [65,60,55]
     },
     "T": {
         "duration": 3,

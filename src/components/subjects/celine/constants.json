@@ -28,14 +28,14 @@
         },
         "sp_cost": 55,
         "cooldown": {
-            "constant": [16,14,12,10,8]
+            "constant": [14,12.5,11,9.5,8]
         }
     },
     "R": {
         "max_level": 4,
         "cooldown_increase": 1.25,
         "damage": {
-            "base": [50,60,70,80,90],
+            "base": [60,70,80,90,100],
             "amp": 40
         },
         "slow": {

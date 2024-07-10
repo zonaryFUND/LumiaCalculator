@@ -40,7 +40,7 @@ export default function(props: SkillsStandardProps) {
             <li><SkillLevelConfigurator skill="Q" /></li>
             <li><SkillLevelConfigurator skill="W" /></li>
             <li><SkillLevelConfigurator skill="E" /></li>
-            <li><SkillLevelConfigurator skill="R" /></li>
+            <li><SkillLevelConfigurator skill="R" max={4} /></li>
             <li><SkillLevelConfigurator skill="T" /></li>
         </SkillsParent>
     )

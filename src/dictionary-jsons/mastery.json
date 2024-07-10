@@ -25,7 +25,7 @@
 		{
 			"weapon": "pistol",
 			"type": "skill_amp",
-			"value": 4.4,
+			"value": 4.6,
 			"attackSpeed": 4.5
 		}
 	],
@@ -33,7 +33,7 @@
 		{
 			"weapon": "arcana",
 			"type": "skill_amp",
-			"value": 4.4,
+			"value": 4.1,
 			"attackSpeed": 2.5
 		}
 	],
@@ -77,13 +77,13 @@
 		{
 			"weapon": "assault_rifle",
 			"type": "basic_attack_amp",
-			"value": 1.6,
+			"value": 1.4,
 			"attackSpeed": 3.5
 		},
 		{
 			"weapon": "sniper_rifle",
 			"type": "skill_amp",
-			"value": 5,
+			"value": 4.8,
 			"attackSpeed": 2.5
 		}
 	],
@@ -165,7 +165,7 @@
 		{
 			"weapon": "two-handed_sword",
 			"type": "basic_attack_amp",
-			"value": 2.1,
+			"value": 2.2,
 			"attackSpeed": 4
 		}
 	],
@@ -315,7 +315,7 @@
 		{
 			"weapon": "pistol",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.2,
 			"attackSpeed": 3.3
 		}
 	],
@@ -363,7 +363,7 @@
 		{
 			"weapon": "pistol",
 			"type": "skill_amp",
-			"value": 3.9,
+			"value": 4.1,
 			"attackSpeed": 2.5
 		}
 	],
@@ -477,7 +477,7 @@
 		{
 			"weapon": "glove",
 			"type": "skill_amp",
-			"value": 4,
+			"value": 4.2,
 			"attackSpeed": 3.9
 		}
 	],
@@ -501,7 +501,7 @@
 		{
 			"weapon": "sniper_rifle",
 			"type": "basic_attack_amp",
-			"value": 2,
+			"value": 2.2,
 			"attackSpeed": 2.7
 		}
 	],
@@ -633,7 +633,7 @@
 		{
 			"weapon": "camera",
 			"type": "basic_attack_amp",
-			"value": 1.4,
+			"value": 1.2,
 			"attackSpeed": 2.5
 		}
 	],
@@ -717,7 +717,7 @@
 		{
 			"weapon": "dagger",
 			"type": "skill_amp",
-			"value": 3.8,
+			"value": 4.1,
 			"attackSpeed": 2.7
 		}
 	],

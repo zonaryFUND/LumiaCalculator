@@ -151,6 +151,10 @@
 		"jp": "異端審判官",
 		"en": "Inquisitor"
 	},
+	"ghillie_suit": {
+		"jp": "ギリースーツ",
+		"en": "Ghillie Suit"
+	},
 	"bikini": {
 		"jp": "ビキニ",
 		"en": "Bikini"
@@ -214,6 +218,10 @@
 	"harmony_in_full_bloom": {
 		"jp": "満開のメロディー",
 		"en": "Harmony In Full Bloom"
+	},
+	"welding_helmet": {
+		"jp": "溶接面",
+		"en": "Welding Helmet"
 	},
 	"mythril_helm": {
 		"jp": "ミスリルヘルム",
@@ -294,6 +302,10 @@
 	"commander_headset": {
 		"jp": "コマンダーヘッドセット",
 		"en": "Commander Headset"
+	},
+	"blue_flames": {
+		"jp": "スパークシールド",
+		"en": "Blue Flames"
 	},
 	"chinese_opera_mask": {
 		"jp": "臉譜",
@@ -434,6 +446,18 @@
 	"smash_totem": {
 		"jp": "トーテム",
 		"en": "Smash Totem"
+	},
+	"emerald_tablet": {
+		"jp": "エメラルドタブレット",
+		"en": "Emerald Tablet"
+	},
+	"psyche_s_blade": {
+		"jp": "プシュケーの刃",
+		"en": "Psyche's Blade"
+	},
+	"burning_heart": {
+		"jp": "ハートオンファイヤー",
+		"en": "Burning Heart"
 	},
 	"prominence": {
 		"jp": "プロミネンス",

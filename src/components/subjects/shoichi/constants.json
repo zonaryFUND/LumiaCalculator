@@ -11,7 +11,7 @@
     },
     "W": {
         "damage": {
-            "base": [40,60,80,100,120],
+            "base": [60,80,100,120,140],
             "amp": 60
         },
         "sp_cost": 80,
@@ -54,13 +54,13 @@
         "max_stack": 5,
         "basic_attack_damage": {
             "base": [10,20,30],
-            "amp": 30,
+            "amp": 40,
             "targetMaxHP": [2,3,4]
         },
         "knife_range": 5,
         "knife_damage": {
             "base": [10,40,70],
-            "amp": 25
+            "amp": 30
         }
     }
 }

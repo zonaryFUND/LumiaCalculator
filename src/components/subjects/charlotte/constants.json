@@ -33,7 +33,7 @@
         "channeling": 1.5,
         "duration": 1.5,
         "sp_cost": 150,
-        "cooldown": [100,80,60]
+        "cooldown": [90,75,60]
     },
     "T": {
         "ally_losthp_threshold": 25,

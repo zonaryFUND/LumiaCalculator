@@ -49,7 +49,7 @@
         "vision": [2,2.5,3,3.5,4],
         "marking_period": 6,
         "sp_cost": [60,70,80,90,100],
-        "cooldown": [14,12,10,8,6]
+        "cooldown": [10,9,8,7,6]
     },
     "R": {
         "first_damage": {

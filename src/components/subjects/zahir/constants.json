@@ -2,11 +2,11 @@
     "Q": {
         "damage": {
             "base": [30,70,110,150,190],
-            "amp": 50
+            "amp": 55
         },
         "enhanced_damage": {
             "base": [60,120,180,240,300],
-            "amp": 60
+            "amp": 65
         },
         "sp_cost": [70,85,100,115,130],
         "cooldown": [6,5.5,5,4.5,4]
@@ -16,7 +16,7 @@
         "chakram_max": 5,
         "chakram_duration": 20,
         "damage": {
-            "base": [20,45,70,95,120],
+            "base": [40,65,90,115,140],
             "amp": 55
         },
         "qe_cooldown_reduction": 40,

@@ -1,7 +1,7 @@
 {
     "Q": {
         "damage": {
-            "base": [40,80,120,160,200],
+            "base": [40,75,110,145,180],
             "defense": 40,
             "amp": 40,
             "maxHP": 7
@@ -18,14 +18,14 @@
         "duration": 1.25,
         "basic_attack_damage": 1,
         "movement_speed": [8,11,14,17,20],
-        "defense": [12,14,16,18,20],
+        "defense": [10,12,14,16,18],
         "damage": {
             "base": [100,140,180,220,260],
             "amp": 45,
             "defense": 30
         },
         "cooldown": {
-            "constant": 4
+            "constant": 5
         },
         "charge_time_reduction": 1,
         "charge": {

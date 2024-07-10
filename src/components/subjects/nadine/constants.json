@@ -65,9 +65,9 @@
     "T": {
         "max_stack": 200,
         "chicken": [1,1,2],
-        "bat_boar": [1,2,3],
-        "hound_wolf": [2,3,4],
-        "bear": [4,5,6],
+        "bat_boar": [2,3,4],
+        "hound_wolf": [3,4,5],
+        "bear": [5,6,7],
         "subject": [6,8,10]
     }
 }
