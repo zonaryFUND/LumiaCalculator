@@ -31,7 +31,7 @@
         "cooldown_reduction": 1,
         "kill_cooldown_reduction": 90,
         "sp_cost": 90,
-        "cooldown": [14,13,12,11,10]
+        "cooldown": [13,12,11,10,9]
     },
     "R": {
         "damage": {

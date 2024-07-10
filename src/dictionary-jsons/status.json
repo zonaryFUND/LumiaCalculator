@@ -168,7 +168,7 @@
 		"hpRegenPerLevel": "0.09",
 		"spRegeneration": "3.1",
 		"spRegenPerLevel": "0.03",
-		"attackPower": "33",
+		"attackPower": "30",
 		"apPerLevel": "4.8",
 		"armor": "50",
 		"armorPerLevel": "3.3",
@@ -977,7 +977,7 @@
 	},
 	"shoichi": {
 		"maxHP": "940",
-		"maxHPperLevel": "86",
+		"maxHPperLevel": "90",
 		"maxSP": "440",
 		"maxSPperLevel": "13",
 		"hpRegeneration": "1.8",
