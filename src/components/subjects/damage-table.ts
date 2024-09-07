@@ -8,7 +8,7 @@ import { IntlShape } from "react-intl"
 
 export type SkillValueProps = {
     label: string
-    skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
+    skill: "Q" | "W" | "E" | "R" | "T" | "D" | "other"
     value: ValueRatio
     type?: "heal" | "shield" | "ms" | "true" | "count" | "basic" | "basic-nocrit" | "critical" | "summoned" | "ratio" | "kenneth-heal" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     target?: "self" | "any"

@@ -29,7 +29,7 @@ const Value: React.FC<Props> = props => {
     }, []);
 
     if (isValueRatio(props.ratio)) {
-        return <BaseValue skill="item" ratio={props.ratio} overrideExpression={props.overrideExpression} />;
+        return <BaseValue skill="other" ratio={props.ratio} overrideExpression={props.overrideExpression} />;
     } else {
         if (showEquation != false) {
             return <span className={props.rangeClassName?.base}>(<span className={props.rangeClassName?.range}>近距離：<Value {...props} ratio={props.ratio.melee} /></span> | <span className={props.rangeClassName?.range}>遠距離：</span><Value {...props} ratio={props.ratio.range} />)</span>;

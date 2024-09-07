@@ -15,7 +15,7 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
         if (value == undefined) return prev;
 
         const selectedValue: Decimal = (() => {
-            if (Array.isArray(value) && source != "item") {
+            if (Array.isArray(value) && source != "other") {
                 return new Decimal(value[source.level]);
             } else if (typeof value == "object") {
                 return calculateValue(value as ValueRatio, status, config, source).static;

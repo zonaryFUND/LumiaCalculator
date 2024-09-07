@@ -3,7 +3,7 @@ export type ValueElement = number | number[] | ValueRatio
 export type Source = {
     skill: "Q" | "W" | "E" | "R" | "T" | "D"
     level: number
-} | "item"
+} | "other"
 
 const RATIO_KEYS = [
     "base",

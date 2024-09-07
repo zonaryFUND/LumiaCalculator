@@ -10,7 +10,7 @@ type OverrideKey = keyof ValueRatio | "result"
 
 type Props = {
     ratio: ValueRatio
-    skill: "Q" | "W" | "E" | "R" | "T" | "D" | "item"
+    skill: "Q" | "W" | "E" | "R" | "T" | "D" | "other"
     multiplier?: number
     overrideExpression?: Partial<{[K in OverrideKey]: {format?: string, className?: string}}> |
         ((key: keyof ValueRatio) => (value: number | React.ReactNode) => React.ReactNode | undefined)
@@ -19,7 +19,7 @@ type Props = {
 const value: React.FC<Props> = props => {
     const { config, status, showEquation } = useValueContextOptional();
     const skillLevel = React.useMemo(() => {
-        if (props.skill == "item") return undefined;
+        if (props.skill == "other") return undefined;
         if (props.skill == "D") return weaponSkillLevel(config!.weaponMastery);
         return config!.skillLevels[props.skill];
     }, [props.skill, config?.weaponMastery, config?.skillLevels]);
@@ -48,7 +48,7 @@ const value: React.FC<Props> = props => {
             />;
         });
     } else {
-        const { static: staticValue, dynamic, dynamicValueOnly } = calculateValue(props.ratio, status, config, props.skill == "item" ? "item" : {skill: props.skill, level: skillLevel ?? 0}, props.multiplier);
+        const { static: staticValue, dynamic, dynamicValueOnly } = calculateValue(props.ratio, status, config, props.skill == "other" ? "other" : {skill: props.skill, level: skillLevel ?? 0}, props.multiplier);
         const resultClass = typeof props.overrideExpression === "object" ? props.overrideExpression.result?.className : undefined;
         return (
             <>

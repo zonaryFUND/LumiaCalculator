@@ -13,6 +13,7 @@ import { equipmentStatus, name } from "app-types/equipment";
 import { useIntl } from "react-intl";
 import { name as abilityName } from "app-types/equipment/ability";
 import { name as equipmentName } from "app-types/equipment";
+import { augmentTableValues } from "components/augment/table-value";
 
 type Props = {
     status: Status
@@ -93,7 +94,7 @@ const damageTable: React.FC<Props> = props => {
                     <BasicAttack status={props.status} config={props.config} table={definition!} weaponType={props.weaponType}>
                         {
                             itemSkillDamage?.filter(def => def.type == "basic").map(def => {
-                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="item" multiplier={def.multiplier} />
+                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="other" multiplier={def.multiplier} />
                             })
                         }
                     </BasicAttack>
@@ -165,7 +166,22 @@ const damageTable: React.FC<Props> = props => {
                                     }
                                 })();
                                 
-                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="item" type={type} multiplier={def.multiplier} />
+                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="other" type={type} multiplier={def.multiplier} />
+                            })
+                        }
+                    </tbody>
+                    <tbody>
+                        <tr className={table.separator}><td>特性</td><td colSpan={3}>ダメージ / 効果量</td></tr>
+                        {
+                            augmentTableValues({intl}).map(def => {
+                                return <SkillDamage
+                                    key={def.label}
+                                    label={def.label}
+                                    status={props.status}
+                                    config={props.config}
+                                    value={def.ratio}
+                                    skill="other"
+                                />
                             })
                         }
                     </tbody>

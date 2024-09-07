@@ -9,7 +9,7 @@ const description: React.FC<ItemSkillProps> = props => {
     const { config, status, showEquation } = useValueContextOptional();
     const damage = (() => {
         if (config && status && !showEquation) {
-            return calculateValue(props.values.dmg, status, config, "item").toString();
+            return calculateValue(props.values.dmg, status, config, "other").toString();
         } else {
             return null;
         }

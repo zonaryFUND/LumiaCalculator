@@ -112,7 +112,7 @@ const damageTable: React.FC<Props> = props => {
                                     status={props.status} 
                                     config={props.config} 
                                     value={def.ratio} 
-                                    skill="item" 
+                                    skill="other" 
                                     multiplier={def.multiplier}
                                 />;
                             })
@@ -234,7 +234,7 @@ const damageTable: React.FC<Props> = props => {
                                     status={props.status} 
                                     config={props.config} 
                                     value={def.ratio} 
-                                    skill="item" 
+                                    skill="other" 
                                     type={type}
                                     multiplier={def.multiplier}
                                     selfTarget={def.type == "heal" || def.type == "shield"}

@@ -65,7 +65,7 @@
 	},
 	"aiden": {
 		"maxHP": "995",
-		"maxHPperLevel": "91",
+		"maxHPperLevel": "94",
 		"maxSP": "500",
 		"maxSPperLevel": "14",
 		"hpRegeneration": "1.53",
@@ -123,7 +123,7 @@
 		"attackPower": "37",
 		"apPerLevel": "4.6",
 		"armor": "51",
-		"armorPerLevel": "2.1",
+		"armorPerLevel": "2.4",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
 	},
@@ -337,7 +337,7 @@
 	},
 	"echion": {
 		"maxHP": "950",
-		"maxHPperLevel": "94",
+		"maxHPperLevel": "96",
 		"maxSP": "430",
 		"maxSPperLevel": "12",
 		"hpRegeneration": "1.13",
@@ -762,7 +762,7 @@
 		"spRegenPerLevel": "0.01",
 		"attackPower": "27",
 		"apPerLevel": "5",
-		"armor": "54",
+		"armor": "52",
 		"armorPerLevel": "3.1",
 		"attackSpeed": "0.15",
 		"movementSpeed": "3.55"
@@ -778,7 +778,7 @@
 		"spRegenPerLevel": "0.03",
 		"attackPower": "33",
 		"apPerLevel": "5",
-		"armor": "56",
+		"armor": "53",
 		"armorPerLevel": "3.3",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
@@ -875,7 +875,7 @@
 		"attackPower": "32",
 		"apPerLevel": "4",
 		"armor": "48",
-		"armorPerLevel": "2.3",
+		"armorPerLevel": "2.5",
 		"attackSpeed": "0.13",
 		"movementSpeed": "3.5"
 	},
@@ -977,7 +977,7 @@
 	},
 	"shoichi": {
 		"maxHP": "940",
-		"maxHPperLevel": "86",
+		"maxHPperLevel": "90",
 		"maxSP": "440",
 		"maxSPperLevel": "13",
 		"hpRegeneration": "1.8",
@@ -1019,7 +1019,7 @@
 		"attackPower": "33",
 		"apPerLevel": "4.3",
 		"armor": "45",
-		"armorPerLevel": "2.1",
+		"armorPerLevel": "2.4",
 		"attackSpeed": "0.15",
 		"movementSpeed": "3.5"
 	},
@@ -1105,7 +1105,7 @@
 	},
 	"vanya": {
 		"maxHP": "890",
-		"maxHPperLevel": "79",
+		"maxHPperLevel": "83",
 		"maxSP": "430",
 		"maxSPperLevel": "16",
 		"hpRegeneration": "1.5",
@@ -1182,5 +1182,21 @@
 		"armorPerLevel": "2.7",
 		"attackSpeed": "0.11",
 		"movementSpeed": "3.45"
+	},
+	"lenore": {
+		"maxHP": "900",
+		"maxHPperLevel": "79",
+		"maxSP": "450",
+		"maxSPperLevel": "25",
+		"hpRegeneration": "1.02",
+		"hpRegenPerLevel": "0.06",
+		"spRegeneration": "3",
+		"spRegenPerLevel": "0.04",
+		"attackPower": "35",
+		"apPerLevel": "4.1",
+		"armor": "52",
+		"armorPerLevel": "2.8",
+		"attackSpeed": "0.14",
+		"movementSpeed": "3.55"
 	}
 }

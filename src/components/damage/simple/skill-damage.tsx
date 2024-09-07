@@ -87,10 +87,10 @@ const skillDamage: React.FC<Props> = props => {
 
     if (!isValueRatio(props.value)) return null;
 
-    const level = props.skill == "item" ? 0 : skillLevel(props.skill, props.config);
+    const level = props.skill == "other" ? 0 : skillLevel(props.skill, props.config);
     const {static: staticValue, dynamic, dynamicValueOnly} = (() => {
         if (isValueRatio(props.value)) {
-            const source: Source = props.skill == "item" ? "item" : {skill: props.skill, level: skillLevel(props.skill, props.config)};
+            const source: Source = props.skill == "other" ? "other" : {skill: props.skill, level: skillLevel(props.skill, props.config)};
             return calculateValue(props.value, props.status, props.config, source);
         } else {
             return {static: new Decimal(0), dynamic: undefined, dynamicValueOnly: false};

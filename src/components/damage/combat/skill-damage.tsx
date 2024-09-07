@@ -23,9 +23,9 @@ type Props = SkillValueProps & {
 
 const skillDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
-    const level = props.skill == "item" ? -1 : skillLevel(props.skill, props.config);
+    const level = props.skill == "other" ? -1 : skillLevel(props.skill, props.config);
     const {static: staticPotency, dynamic: dynamicPotency, dynamicValueOnly} = (() => {
-        const source: Source = props.skill == "item" ? "item" : {skill: props.skill, level};
+        const source: Source = props.skill == "other" ? "other" : {skill: props.skill, level};
         const baseMultiplier = props.multiplier?.reduce((prev, current) => {
             const values = (current as any).basic ?? (current as any).value;
             const value = Array.isArray(values) ? values[level] : values;

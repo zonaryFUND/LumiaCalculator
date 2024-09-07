@@ -1,0 +1,76 @@
+{
+    "Q": {
+        "damage": {
+            "base": [60,82,104,126,148],
+            "amp": 60
+        },
+        "additional_damage": 50,
+        "same_target_reduction": 50,
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": [7,6.5,6,5.5,5]
+    },
+    "W": {
+        "shield": {
+            "duration": 2.5,
+            "effect": {
+                "base": [50,65,80,95,110],
+                "amp": 35
+            }
+        },
+        "damage": {
+            "base": [80,110,140,170,200],
+            "amp": 55
+        },
+        "bind": 0.27,
+        "enhance": {
+            "shield": 30,
+            "movement_speed": {
+                "duration": 2,
+                "effect": 20
+            }
+        },
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [15,14.5,14,13.5,13]
+    },
+    "E": {
+        "damage": {
+            "base": [70,110,150,190,230],
+            "amp": 65
+        },
+        "enhance_slow": {
+            "duration": 1.25,
+            "effect": 60
+        },
+        "sp_cost": [50,60,70,80,90],
+        "cooldown": [17,16,15,14,13]
+    },
+    "R": {
+        "duration": 3,
+        "damage_tick": 0.25,
+        "damage": {
+            "base": [10,15,20],
+            "amp": 3
+        },
+        "slow": 4,
+        "max_stack": 12,
+        "finish_damage": {
+            "base": [150,225,300],
+            "amp": 70
+        },
+        "insane": [1.3,1.4,1.5],
+        "insane_attack_speed": 200,
+        "cooldown": [80,70,60],
+        "sp_cost": [100,125,150]
+    },
+    "T": {
+        "stack_gain_threshold": 50,
+        "additional_damage": {
+            "base": [10,30,50],
+            "amp": 20,
+            "stack": 2
+        },
+        "target_cooldown": [12,10,8],
+        "stack_conversion": 1.5,
+        "stack_conversion_limit": 70
+    }
+}
