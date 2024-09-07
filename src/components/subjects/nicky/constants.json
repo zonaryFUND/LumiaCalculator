@@ -2,17 +2,17 @@
     "Q": {
         "movement_speed_penalty": 20,
         "min_damage": {
-            "base": [20,35,50,65,80],
+            "base": [30,45,60,75,90],
             "amp": 70
         },
         "max_damage": {
-            "base": [40,70,100,130,160],
+            "base": [60,90,120,150,180],
             "amp": 140
         },
         "cooldown_reduction": 50,
         "q2_damage": {
             "base": [30,55,80,105,130],
-            "amp": 60
+            "amp": 65
         },
         "rage": {
             "base": 150,

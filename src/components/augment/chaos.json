@@ -7,10 +7,10 @@
             "base": 30,
             "level": 2
         },
-        "cooldown_reduction": 40,
+        "cooldown_reduction": 35,
         "cooldown": 15,
         "animal_damage_multiplier": 2,
-        "animal_cooldown_multiplier": 0.5
+        "animal_cooldown_reduction": 15
     },
     "ghost_light": {
         "threshold": {

@@ -11,7 +11,7 @@
     },
     "W": {
         "damage": {
-            "base": [40,60,80,100,120],
+            "base": [60,80,100,120,140],
             "amp": 60
         },
         "sp_cost": 80,
@@ -31,7 +31,7 @@
         "cooldown_reduction": 1,
         "kill_cooldown_reduction": 90,
         "sp_cost": 90,
-        "cooldown": [14,13,12,11,10]
+        "cooldown": [13,12,11,10,9]
     },
     "R": {
         "damage": {
@@ -54,13 +54,13 @@
         "max_stack": 5,
         "basic_attack_damage": {
             "base": [10,20,30],
-            "amp": 30,
+            "amp": 40,
             "targetMaxHP": [2,3,4]
         },
         "knife_range": 5,
         "knife_damage": {
             "base": [10,40,70],
-            "amp": 25
+            "amp": 30
         }
     }
 }

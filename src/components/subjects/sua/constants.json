@@ -46,14 +46,14 @@
             "amp": 80
         },
         "heal": {
-            "base": [20,30,40,50,60],
+            "base": [40,50,60,70,80],
             "amp": 30
         },
         "heal_max_multiplier": 1.5,
         "heal_max_hp": 40,
         "cooldown_reduction": 20,
         "sp_cost": 110,
-        "cooldown": [20,18.5,17,15.5,14]
+        "cooldown": [18,17,16,15,14]
     },
     "RQ": {
         "damage": {
@@ -98,7 +98,7 @@
             "amp": 85
         },
         "heal": {
-            "base": [40,80,120],
+            "base": [60,100,140],
             "amp": 30
         },
         "heal_max_multiplier": 1.5,

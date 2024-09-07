@@ -61,7 +61,7 @@
     "T": {
         "wound_duration": 4,
         "wound": {
-            "amp": 18
+            "amp": 20
         },
         "max_stack": 3,
         "critical_wound": {
@@ -72,9 +72,9 @@
         "shield_duration": 2,
         "shield": {
             "base": [50,100,150],
-            "amp": 45
+            "amp": 50
         },
-        "movement_speed": [3,8,13],
+        "movement_speed": [5,10,15],
         "cooldown": {
             "constant": 16
         }

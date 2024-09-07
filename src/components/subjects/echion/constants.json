@@ -62,8 +62,8 @@
     },
     "R1": {
         "damage": {
-            "base": [75,165,205,250],
-            "attack": 100
+            "base": [95,190,230,270],
+            "attack": 105
         },
         "slow": {
             "duration": 1,
@@ -83,15 +83,15 @@
         "second": 0.85,
         "second_damage": [55,70,85,100],
         "airborne": 0.75,
-        "skill_lifesteal": [30,35,40,45],
+        "skill_lifesteal": [25,30,35,40],
         "cooldown": {
             "constant": 4.5
         }
     },
     "R3": {
         "damage": {
-            "base": [70,160,205,250],
-            "attack": 95
+            "base": [90,180,225,270],
+            "attack": 100
         },
         "attack_speed": [8,10,12,14]
     },

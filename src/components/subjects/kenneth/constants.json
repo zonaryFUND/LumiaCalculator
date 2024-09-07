@@ -1,11 +1,11 @@
 {
     "Q": {
         "damage": {
-            "base": [10,20,30,40,50],
-            "attack": [145,150,155,160,165]
+            "base": [20,30,40,50,60],
+            "attack": [150,155,160,165,170]
         },
         "max_stack_damage": 20,
-        "max_stack_heal": 10,
+        "max_stack_heal": 12,
         "max_stack_heal_max": 30,
         "sp_cost": 40,
         "cooldown": [10,9,8,7,6]
@@ -13,7 +13,7 @@
     "W": {
         "duration": 4,
         "damage_reduction": {
-            "base": 1,
+            "base": 3,
             "attack": [5,5.25,5.5,5.75,6]
         },
         "shield_duration": 0.75,

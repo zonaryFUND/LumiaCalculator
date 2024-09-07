@@ -40,7 +40,7 @@
         "target_duration": 4,
         "damage": {
             "base": [30,60,90,120,150],
-            "amp": 80
+            "amp": 70
         },
         "bind": [0.9,0.95,1,1.05,1.1],
         "sp_cost": [45,50,55,60,65],
@@ -64,7 +64,7 @@
         "movement_speed": [5,10,15],
         "shield_duration": 2.5,
         "shield": {
-            "maxHP": [10,17,24]
+            "maxHP": [10,15,20]
         },
         "q_cooldown_reduction": [20,40,60],
         "cooldown_reduction": [2,6,10],

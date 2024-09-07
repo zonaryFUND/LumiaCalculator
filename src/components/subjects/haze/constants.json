@@ -44,7 +44,7 @@
     "W": {
         "damage": {
             "base": [80,120,160,200,240],
-            "amp": 70
+            "amp": 75
         },
         "stun": 0.65,
         "er_cooldown_reduction": 20,
@@ -89,7 +89,7 @@
     "T": {
         "swap_time": 0.75,
         "damage": {
-            "base": [25,55,85],
+            "base": [40,70,100],
             "amp": 50
         },
         "movement_speed": {

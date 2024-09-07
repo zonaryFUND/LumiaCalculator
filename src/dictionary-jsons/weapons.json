@@ -274,44 +274,46 @@
 		"type": "whip",
 		"tier": "epic",
 		"attackPower": "40",
-		"attackSpeed": "12",
-		"skillAmplification": "75"
+		"skillAmplification": "62",
+		"cooldownReduction": "15"
 	},
 	"gleipnir": {
 		"type": "whip",
 		"tier": "epic",
 		"attackPower": "40",
-		"skillAmplification": "65",
+		"skillAmplification": "72",
 		"movementSpeed": "0.04",
 		"option": "healing_reduction_weak"
 	},
 	"plasma_whip": {
 		"type": "whip",
 		"tier": "epic",
-		"attackPower": "65",
-		"attackSpeed": "40"
+		"attackPower": "40",
+		"attackSpeed": "40",
+		"skillAmplification": "75"
 	},
 	"cathod_lash": {
 		"type": "whip",
 		"tier": "epic",
-		"attackPower": "54",
-		"attackSpeed": "25",
-		"cooldownReduction": "10",
-		"option": "charge_carrier"
+		"attackPower": "28",
+		"skillAmplification": "50",
+		"maxHP": "100",
+		"option": "charge_carrier[\"shield\":105]"
 	},
 	"ouranos": {
 		"type": "whip",
 		"tier": "legendary",
-		"attackPower": "66",
-		"attackSpeed": "35",
-		"option": "biotic_infusion[\"dmg\":{\"targetMaxHP\":10}]"
+		"attackPower": "42",
+		"attackSpeed": "40",
+		"skillAmplification": "88",
+		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":25},\"slow\":{\"effect\":20,\"duration\":1.5}]"
 	},
 	"sword_of_scales": {
 		"type": "whip",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "94",
-		"movementSpeed": "0.06",
+		"skillAmplification": "83",
+		"cooldownReduction": "15",
 		"option": "healing_reduction_weak"
 	},
 	"bloody_nine_tails": {
@@ -330,7 +332,7 @@
 		"attackSpeed": "30",
 		"adaptiveStatus": "52",
 		"armorPenetrationRatio": "7",
-		"option": "biotic_infusion[\"dmg\":{\"targetMaxHP\":10}]"
+		"option": "charge_carrier[\"shield\":180]"
 	},
 	"bloody_nine_tails_dawn": {
 		"type": "whip",
@@ -396,7 +398,7 @@
 		"tier": "legendary",
 		"attackPower": "40",
 		"attackSpeed": "20",
-		"skillAmplification": "80",
+		"skillAmplification": "84",
 		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":15},\"slow\":{\"effect\":20,\"duration\":1}]"
 	},
 	"dyadic_prism": {
@@ -841,7 +843,7 @@
 	"judgement": {
 		"type": "assault_rifle",
 		"tier": "legendary",
-		"attackPower": "84",
+		"attackPower": "81",
 		"attackSpeed": "35",
 		"attackRange": "0.35",
 		"ammo": "120"
@@ -859,7 +861,7 @@
 	"hellfire": {
 		"type": "assault_rifle",
 		"tier": "mythic",
-		"attackPower": "37",
+		"attackPower": "34",
 		"attackSpeed": "30",
 		"adaptiveStatus": "57",
 		"cooldownReduction": "15",
@@ -869,7 +871,7 @@
 	"hellfire_crimson": {
 		"type": "assault_rifle",
 		"tier": "mythic",
-		"attackPower": "39",
+		"attackPower": "36",
 		"attackSpeed": "40",
 		"adaptiveStatus": "53",
 		"armorPenetrationRatio": "7",
@@ -891,7 +893,7 @@
 		"type": "sniper_rifle",
 		"tier": "epic",
 		"attackPower": "71",
-		"criticalChance": "22",
+		"criticalChance": "26",
 		"vision": "1",
 		"ammo": "5"
 	},
@@ -926,7 +928,7 @@
 		"tier": "legendary",
 		"attackPower": "79",
 		"attackSpeed": "30",
-		"criticalChance": "27",
+		"criticalChance": "33",
 		"vision": "1.5",
 		"ammo": "5"
 	},
@@ -935,7 +937,7 @@
 		"tier": "legendary",
 		"attackPower": "50",
 		"attackSpeed": "30",
-		"skillAmplification": "92",
+		"skillAmplification": "89",
 		"cooldownReduction": "15",
 		"vision": "1.5",
 		"ammo": "10"
@@ -1383,7 +1385,7 @@
 	"starsteel_twin_swords": {
 		"type": "dual_swords",
 		"tier": "legendary",
-		"attackPower": "63",
+		"attackPower": "64",
 		"attackSpeed": "45"
 	},
 	"lloigor_zahr": {
@@ -1396,7 +1398,7 @@
 	"spring_and_autumn": {
 		"type": "dual_swords",
 		"tier": "legendary",
-		"attackPower": "61",
+		"attackPower": "66",
 		"attackSpeed": "18",
 		"attackRange": "0.35"
 	},
@@ -1412,7 +1414,7 @@
 	"phantom_blade_crimson": {
 		"type": "dual_swords",
 		"tier": "mythic",
-		"attackPower": "20",
+		"attackPower": "22",
 		"attackSpeed": "30",
 		"adaptiveStatus": "50",
 		"armorPenetrationRatio": "7",
@@ -1936,7 +1938,7 @@
 		"type": "vf_prosthetic",
 		"tier": "epic",
 		"attackPower": "47",
-		"perLevelStatus": "hp[8]",
+		"perLevelStatus": "hp[4]",
 		"omnisyphon": "12"
 	},
 	"alpha_sidewinder": {
@@ -1968,7 +1970,7 @@
 		"type": "vf_prosthetic",
 		"tier": "legendary",
 		"attackPower": "49",
-		"perLevelStatus": "hp[10]",
+		"perLevelStatus": "hp[6]",
 		"omnisyphon": "12",
 		"option": "flame_barrier_vf[\"dmg\":{\"maxHP\":3.5}]"
 	},
@@ -1976,7 +1978,7 @@
 		"type": "vf_prosthetic",
 		"tier": "legendary",
 		"attackPower": "62",
-		"perLevelStatus": "hp[12]",
+		"perLevelStatus": "hp[8]",
 		"omnisyphon": "12",
 		"tenacity": "30",
 		"option": "flame_barrier_vf[\"dmg\":{\"maxHP\":4}]"
@@ -2013,7 +2015,7 @@
 		"type": "vf_prosthetic",
 		"tier": "mythic",
 		"attackPower": "66",
-		"perLevelStatus": "hp[14]",
+		"perLevelStatus": "hp[10]",
 		"omnisyphon": "20",
 		"option": "flame_barrier_vf[\"dmg\":{\"maxHP\":4}]"
 	},

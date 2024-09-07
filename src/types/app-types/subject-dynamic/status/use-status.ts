@@ -109,6 +109,8 @@ export function useStatus(config: SubjectConfig): Status {
     const basicAttackRangeEquipment = maxEquipmentStatus("attackRange", equipments);
     const criticalChanceEquipment = sumEquipmentStatus("criticalChance", equipments);
 
+    const adaptive = sumEquipmentStatus("adaptiveStatus", equipments);
+
     const baseValue: StatusBeforeCalculation = {
         maxHP: {
             base: baseStatusValues.maxHP,
@@ -149,7 +151,11 @@ export function useStatus(config: SubjectConfig): Status {
         attackPower: {
             base: baseStatusValues.attackPower,
             perLevel: baseStatusValues.apPerLevel,
-            equipment: equipmentValue("attackPower", perLevelStatus.attack_power),
+            equipment: {
+                ...equipmentValue("attackPower", perLevelStatus.attack_power),
+                adaptive: masteryFactor?.type == "attack_power" || masteryFactor?.type == "basic_attack_amp" ?
+                    adaptive : undefined
+            },
             perMastery: masteryFactor?.type == "attack_power" ? {
                 value: masteryFactor.value
             } : undefined
@@ -183,7 +189,8 @@ export function useStatus(config: SubjectConfig): Status {
         skillAmp: {
             equipment: {
                 ...equipmentValue("skillAmplification", perLevelStatus.skill_amp),
-                ratio: maxEquipmentStatus("ampRatio", equipments)
+                ratio: maxEquipmentStatus("ampRatio", equipments),
+                adaptive: masteryFactor?.type == "skill_amp" ? adaptive : undefined
             },
             perMastery: masteryFactor?.type == "skill_amp" ? {
                 ratio: masteryFactor.value
@@ -219,12 +226,6 @@ export function useStatus(config: SubjectConfig): Status {
     const overrideFunc = useMemo(() => SubjectStatusOverride[config.subject], [config.subject]);
     const overriddenValue = overrideFunc ? overrideFunc(baseValue, config) : baseValue;    
 
-    const adaptive = sumEquipmentStatus("adaptiveStatus", equipments);
-    const attackWithoutAdaptive = attackCalc(overriddenValue.attackPower, {level: config.level, mastery: config.weaponMastery});
-    const ampWithoutAdaptive = standardCalc(overriddenValue.skillAmp, {level: config.level, mastery: config.weaponMastery}, 0);
-    const addAdaptiveTo = adaptive == undefined ? undefined :
-        attackWithoutAdaptive.calculatedValue.greaterThanOrEqualTo(ampWithoutAdaptive.calculatedValue) ? "attack" : "amp";
-
     const calculated: Status = {
         maxHP: maxHPCalc(overriddenValue.maxHP, {level: config.level}),
         hpReg: standardCalc(overriddenValue.hpReg, {level: config.level}, 2),
@@ -233,13 +234,7 @@ export function useStatus(config: SubjectConfig): Status {
         basicAttackReduction: defenseMasteryCalc(overriddenValue.basicAttackReduction, {mastery: config.defenseMastery}),
         skillReduction: defenseMasteryCalc(overriddenValue.skillReduction, {mastery: config.defenseMastery}),
         spReg: standardCalc(overriddenValue.spReg, {level: config.level}, 2),
-        attackPower: attackCalc({
-            ...attackWithoutAdaptive,
-            equipment: {
-                ...equipmentValue("attackPower", perLevelStatus.attack_power),
-                adaptive: addAdaptiveTo == "attack" ? adaptive : undefined
-            }
-        }, {level: config.level, mastery: config.weaponMastery}),
+        attackPower: attackCalc(overriddenValue.attackPower, {level: config.level, mastery: config.weaponMastery}),
         basicAttackAmp: basicAttackAmpCalc(overriddenValue.basicAttackAmp, {level: config.level, mastery: config.weaponMastery}),
         attackSpeed: overriddenValue.attackSpeed.calculatedValue ? {
             ...overriddenValue.attackSpeed,
@@ -253,13 +248,7 @@ export function useStatus(config: SubjectConfig): Status {
             }
         })(),
         criticalDamage: overriddenValue.criticalDamage as any,
-        skillAmp: addAdaptiveTo == "amp" ? standardCalc({
-            ...ampWithoutAdaptive,
-            equipment: {
-                ...ampWithoutAdaptive.equipment,
-                adaptive: adaptive?.times(2)
-            }
-        }, {level: config.level, mastery: config.weaponMastery}, 0) : ampWithoutAdaptive,
+        skillAmp: standardCalc(overriddenValue.skillAmp, {level: config.level, mastery: config.weaponMastery}, 0),
         cooldownReduction: overriddenValue.cooldownReduction as any,
         armorPenetration: {
             calculatedValue: sumEquipmentStatus("armorPenetration", equipments) ?? new Decimal(0)
