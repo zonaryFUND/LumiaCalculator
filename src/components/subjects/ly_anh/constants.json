@@ -69,8 +69,8 @@
             "attack": 25
         },
         "second_damage": {
-            "base": [10,40,70,100,130],
-            "attack": 30
+            "base": [20,50,80,110,140],
+            "attack": 35
         },
         "thrash": {
             "hit": 20,

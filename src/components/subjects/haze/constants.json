@@ -28,7 +28,7 @@
     },
     "Q3": {
         "damage": {
-            "base": [40,65,90,115,140],
+            "base": [40,60,80,100,120],
             "amp": 45
         },
         "slow": {
@@ -38,7 +38,7 @@
         "enhance": 50,
         "sp_cost": 40,
         "cooldown": {
-            "constant":0.5
+            "constant":0.6
         }
     },
     "W": {

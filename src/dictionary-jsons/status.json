@@ -123,7 +123,7 @@
 		"attackPower": "37",
 		"apPerLevel": "4.6",
 		"armor": "51",
-		"armorPerLevel": "2.4",
+		"armorPerLevel": "2.7",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
 	},
@@ -202,7 +202,7 @@
 		"spRegenPerLevel": "0.04",
 		"attackPower": "34",
 		"apPerLevel": "5",
-		"armor": "53",
+		"armor": "51",
 		"armorPerLevel": "3.1",
 		"attackSpeed": "0.11",
 		"movementSpeed": "3.5"
@@ -330,7 +330,7 @@
 		"spRegenPerLevel": "0.1",
 		"attackPower": "29",
 		"apPerLevel": "4.1",
-		"armor": "47",
+		"armor": "50",
 		"armorPerLevel": "2.7",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.5"
@@ -442,7 +442,7 @@
 		"spRegenPerLevel": "0.03",
 		"attackPower": "35",
 		"apPerLevel": "5",
-		"armor": "53",
+		"armor": "50",
 		"armorPerLevel": "3.2",
 		"attackSpeed": "0.13",
 		"movementSpeed": "3.5"
@@ -568,7 +568,7 @@
 		"hpRegenPerLevel": "0.034",
 		"spRegeneration": "3.1",
 		"spRegenPerLevel": "0.03",
-		"attackPower": "38",
+		"attackPower": "41",
 		"apPerLevel": "4",
 		"armor": "51",
 		"armorPerLevel": "2.2",
@@ -714,7 +714,7 @@
 		"spRegenPerLevel": "0.04",
 		"attackPower": "35",
 		"apPerLevel": "4.1",
-		"armor": "55",
+		"armor": "52",
 		"armorPerLevel": "2.8",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.55"
@@ -763,7 +763,7 @@
 		"attackPower": "27",
 		"apPerLevel": "5",
 		"armor": "52",
-		"armorPerLevel": "3.1",
+		"armorPerLevel": "3.3",
 		"attackSpeed": "0.15",
 		"movementSpeed": "3.55"
 	},
@@ -865,7 +865,7 @@
 	},
 	"nadine": {
 		"maxHP": "880",
-		"maxHPperLevel": "69",
+		"maxHPperLevel": "73",
 		"maxSP": "350",
 		"maxSPperLevel": "13",
 		"hpRegeneration": "0.6",
@@ -1117,7 +1117,7 @@
 		"armor": "56",
 		"armorPerLevel": "2.8",
 		"attackSpeed": "0.12",
-		"movementSpeed": "3.45"
+		"movementSpeed": "3.5"
 	},
 	"william": {
 		"maxHP": "905",

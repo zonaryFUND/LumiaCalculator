@@ -27,7 +27,7 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ad",
-		"attackPower": "7",
+		"attackPower": "8",
 		"criticalChance": "24",
 		"cooldownReduction": "15",
 		"defense": "10"
@@ -119,6 +119,13 @@
 		"attackSpeed": "30",
 		"defense": "24"
 	},
+	"doctor_s_gown": {
+		"type": "chest",
+		"tier": "epic",
+		"perLevelStatus": "ap",
+		"defense": "20",
+		"maxHP": "120"
+	},
 	"mythril_armor": {
 		"type": "chest",
 		"tier": "legendary",
@@ -181,7 +188,7 @@
 	"phantom_jacket": {
 		"type": "chest",
 		"tier": "legendary",
-		"perLevelStatus": "hp[28]",
+		"perLevelStatus": "hp[26]",
 		"defense": "38",
 		"spRegeneration": "100",
 		"vision": "1",
@@ -216,7 +223,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"attackPower": "13",
+		"attackPower": "15",
 		"criticalChance": "33",
 		"defense": "15"
 	},
@@ -357,7 +364,7 @@
 	"crystal_tiara": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "15",
+		"attackPower": "17",
 		"criticalChance": "28",
 		"maxSP": "400"
 	},
@@ -439,7 +446,7 @@
 		"tier": "epic",
 		"attackPower": "20",
 		"attackSpeed": "15",
-		"defense": "10"
+		"defense": "12"
 	},
 	"harmony_in_full_bloom": {
 		"type": "head",
@@ -541,7 +548,7 @@
 		"tier": "legendary",
 		"attackPower": "44",
 		"armorPenetration": "12",
-		"movementSpeed": "0.06"
+		"movementSpeed": "0.08"
 	},
 	"tactical_visor": {
 		"type": "head",
@@ -594,7 +601,7 @@
 		"tier": "legendary",
 		"attackPower": "15",
 		"attackSpeed": "15",
-		"criticalChance": "33",
+		"criticalChance": "35",
 		"option": "extended_fury"
 	},
 	"commander_headset": {
@@ -648,7 +655,7 @@
 		"tier": "epic",
 		"attackSpeed": "33",
 		"criticalChance": "26",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":10,\"level\":2}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":20,\"level\":2}]"
 	},
 	"creed_of_the_knight": {
 		"type": "arm",
@@ -886,7 +893,20 @@
 		"perLevelStatus": "hp[16]",
 		"defense": "10",
 		"maxSP": "100",
-		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":2.5},\"range\":{\"maxHP\":2}}]"
+		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":3},\"range\":{\"maxHP\":2}}]"
+	},
+	"solar_system_miniature": {
+		"type": "arm",
+		"tier": "legendary",
+		"perLevelStatus": "hp[30]",
+		"defense": "15"
+	},
+	"eye_of_horus": {
+		"type": "arm",
+		"tier": "legendary",
+		"skillAmplification": "80",
+		"spRegeneration": "100",
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"prominence": {
 		"type": "arm",

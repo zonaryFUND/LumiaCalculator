@@ -1,5 +1,5 @@
 {
-    "cooldown": 10,
+    "cooldown": 8,
     "range_extend": 20,
     "damage": {
         "level": 2

@@ -21,7 +21,7 @@
         "damage": {
             "base": [30,35,40,45,50],
             "amp": 25,
-            "additionalMaxHP": 5
+            "additionalMaxHP": 8
         },
         "final_damage": {
             "base": [80,120,160,200,240],

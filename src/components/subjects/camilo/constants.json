@@ -44,12 +44,12 @@
     "E": {
         "damage": {
             "base": [30,45,60,75,90],
-            "attack": 30
+            "attack": 20
         },
         "onestep_duration": 7,
         "second_damage": {
             "base": [30,45,60,75,90],
-            "attack": 30
+            "attack": 20
         },
         "twostep_duration": [9,8,7,6,5],
         "sp_cost": [60,65,70,75,80],

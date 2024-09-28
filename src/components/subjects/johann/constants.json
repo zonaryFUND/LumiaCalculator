@@ -11,11 +11,11 @@
         "bind": 0.85,
         "heal": {
             "base": [20,30,40,50,60],
-            "amp": 12
+            "amp": 15
         },
         "enhanced_heal": {
             "base": [40,55,70,85,100],
-            "amp": 20
+            "amp": 25
         },
         "sp_cost": 50,
         "cooldown": [10,9,8,7,6]

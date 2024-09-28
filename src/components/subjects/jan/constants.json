@@ -18,7 +18,7 @@
             "base": [65,90,115,140,165],
             "additionalAttack": 90,
             "amp": 80,
-            "targetMaxHP": 7
+            "targetMaxHP": 6
         },
         "airborne": 0.75,
         "sp_cost": 50,

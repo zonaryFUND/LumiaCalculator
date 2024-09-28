@@ -59,6 +59,10 @@
 		"jp": "防火服",
 		"en": "Turnout Coat"
 	},
+	"doctor_s_gown": {
+		"jp": "白衣",
+		"en": "Doctor's Gown"
+	},
 	"mythril_armor": {
 		"jp": "ミスリル鎧",
 		"en": "Mythril Armor"
@@ -458,6 +462,14 @@
 	"burning_heart": {
 		"jp": "ハートオンファイヤー",
 		"en": "Burning Heart"
+	},
+	"solar_system_miniature": {
+		"jp": "ミニチュアソーラーシステム",
+		"en": "Solar System Miniature"
+	},
+	"eye_of_horus": {
+		"jp": "ホルスの眼",
+		"en": "Eye of Horus"
 	},
 	"prominence": {
 		"jp": "プロミネンス",

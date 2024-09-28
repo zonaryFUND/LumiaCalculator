@@ -243,6 +243,13 @@
 		"cooldownReduction": "15",
 		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
 	},
+	"vulture_s_eye": {
+		"type": "bat",
+		"tier": "legendary",
+		"attackPower": "80",
+		"attackSpeed": "25",
+		"option": "vigor[\"dmg\":{\"targetHP\":4},\"duration\":5,\"as\":12,\"stack\":3,\"max\":{\"ad\":12,\"ms\":0.1}]"
+	},
 	"rod_of_heart": {
 		"type": "bat",
 		"tier": "mythic",
@@ -421,7 +428,7 @@
 		"tier": "mythic",
 		"attackPower": "45",
 		"attackSpeed": "30",
-		"adaptiveStatus": "56",
+		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "12"
 	},
@@ -546,7 +553,7 @@
 		"type": "bow",
 		"tier": "epic",
 		"attackPower": "55",
-		"attackSpeed": "10",
+		"attackSpeed": "15",
 		"option": "vigor[\"dmg\":{\"targetHP\":2},\"duration\":5,\"as\":4,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.06}]"
 	},
 	"golden-ratio_bow": {
@@ -559,7 +566,7 @@
 	"twinbow": {
 		"type": "bow",
 		"tier": "epic",
-		"attackPower": "59",
+		"attackPower": "61",
 		"attackSpeed": "40",
 		"lifeSteal": "10",
 		"option": "healing_reduction_weak"
@@ -646,7 +653,7 @@
 	"sniper_crossbow": {
 		"type": "crossbow",
 		"tier": "epic",
-		"attackPower": "77",
+		"attackPower": "80",
 		"attackRange": "0.3"
 	},
 	"poisoned_crossbow": {
@@ -1128,6 +1135,13 @@
 		"cooldownReduction": "15",
 		"attackRange": "0.3"
 	},
+	"nephleon": {
+		"type": "axe",
+		"tier": "legendary",
+		"attackPower": "55",
+		"skillAmplification": "95",
+		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":25},\"slow\":{\"effect\":20,\"duration\":1.5}]"
+	},
 	"scarlet_scythe": {
 		"type": "axe",
 		"tier": "mythic",
@@ -1538,7 +1552,7 @@
 	"blue_3": {
 		"type": "nunchaku",
 		"tier": "epic",
-		"attackPower": "55",
+		"attackPower": "57",
 		"criticalChance": "25",
 		"cooldownReduction": "10",
 		"option": "healing_reduction_weak"
@@ -1707,7 +1721,7 @@
 		"type": "guitar",
 		"tier": "epic",
 		"attackPower": "42",
-		"skillAmplification": "86",
+		"skillAmplification": "84",
 		"spRegeneration": "1"
 	},
 	"satisfaction": {
@@ -1745,6 +1759,13 @@
 		"skillAmplification": "89",
 		"cooldownReduction": "20",
 		"cdrCap": "5"
+	},
+	"heaven_s_door": {
+		"type": "guitar",
+		"tier": "legendary",
+		"attackPower": "44",
+		"skillAmplification": "4",
+		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
 	},
 	"heartbreaker": {
 		"type": "guitar",

@@ -1,6 +1,7 @@
 export const Chests = [
     "cardinal_robes", "sunset_armor", "covert_agent_uniform", "optical_camouflage_suit", "rocker_s_jacket", "crusader_armor", "amazoness_armor", "dragon_dobok",
-    "commander_s_armor", "butler_s_suit", "eod_suit", "tuxedo", "high_priest_robes", "changpao", "turnout_coat", "mythril_armor", "battle_suit", "blazing_dress",
+    "commander_s_armor", "butler_s_suit", "eod_suit", "tuxedo", "high_priest_robes", "changpao", "turnout_coat", "doctor_s_gown",
+    "mythril_armor", "battle_suit", "blazing_dress",
     "mythril_crop", "kabana", "holy_orders", "áo_dài", "phantom_jacket", "guardian_suit", "elegant_gown", "beautiful_garnment", "specter", "blood_cloak",
     "omertà", "shooting_star_jacket", "couturier", "tactical_armor", "elf_dress", "titan_armor", "the_revenant", "racing_suit", "ghost_bride_s_dress", 
     "inquisitor", "ghillie_suit", "bikini", "queen_of_hearts", "burgundy_47"
@@ -24,6 +25,7 @@ export const Arms = [
     "tellurian_timepiece", "bracelet_of_skadi", "radar", "auto_arms", "centipede_s_pauldron", "tindalos_monarch", "shield_of_kings",
     "dragon_scale", "chain_of_thorns", "nightmare_nails", "helix", "mythril_armband", "moonlight_pendant", "magic_lamp",
     "claddagh_ring", "smash_totem", "pharaoh_s_artifact", "emerald_tablet", "psyche_s_blade", "burning_heart",
+    "solar_system_miniature", "eye_of_horus",
     "prominence", "bloodripper"
 ]
 export type ArmID = typeof Arms[number]

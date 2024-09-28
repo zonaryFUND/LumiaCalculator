@@ -15,7 +15,7 @@ export type TonfaID = typeof Tonfas[number];
 
 export const Bats = [
     "vajra", "pakua_chang", "statue_of_soteria", "mallet", "spy_umbrella", "magic_stick",
-    "monkey_king_bar", "ghost_hand", "rod_of_heart", "rod_of_heart_crimson", "rod_of_heart_dawn"
+    "monkey_king_bar", "ghost_hand", "vulture_s_eye", "rod_of_heart", "rod_of_heart_crimson", "rod_of_heart_dawn"
 ]
 export type BatID = typeof Bats[number]
 
@@ -73,7 +73,7 @@ export const Hammers = [
 export type HammerID = typeof Hammers[number]
 
 export const Axes = [
-    "beam_axe", "santa_muerte", "scythe", "parashu", "harpe", "the_juggernaut", "axe_of_pangu", "paradise_lost",
+    "beam_axe", "santa_muerte", "scythe", "parashu", "harpe", "the_juggernaut", "axe_of_pangu", "paradise_lost", "nephleon",
     "scarlet_scythe", "scarlet_scythe_crimson", "scarlet_scythe_dawn"
 ]
 export type AxeID = typeof Axes[number]
@@ -115,7 +115,7 @@ export type RapierID = typeof Rapiers[number]
 
 export const Guitars = [
     "bohemian", "stairway_to_heaven", "purple_haze", "satisfaction", "the_wall", "teen_spirit", "wonderful_tonight",
-    "cpt_pepper", "heartbreaker", "heartbreaker_crimson", "heartbreaker_dawn"
+    "cpt_pepper", "heaven_s_door", "heartbreaker", "heartbreaker_crimson", "heartbreaker_dawn"
 ]
 export type GuitarID = typeof Guitars[number]
 

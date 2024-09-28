@@ -18,7 +18,7 @@
         "defense_down": [9,10,11,12,13],
         "healing_reduction": 45,
         "movement_speed": 100,
-        "cooldown_reduction": 3,
+        "cooldown_reduction": 2,
         "sp_cost": [30,35,40,45,50],
         "cooldown": 6
     },

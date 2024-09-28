@@ -57,7 +57,7 @@
         "duration": 5,
         "damage": {
             "base": [30,45,60],
-            "attack": [30,50,70]
+            "attack": [30,45,60]
         },
         "credit": 4
     }

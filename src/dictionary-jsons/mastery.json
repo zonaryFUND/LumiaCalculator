@@ -41,7 +41,7 @@
 		{
 			"weapon": "rapier",
 			"type": "skill_amp",
-			"value": 4.5,
+			"value": 4.7,
 			"attackSpeed": 2.5
 		},
 		{
@@ -363,7 +363,7 @@
 		{
 			"weapon": "pistol",
 			"type": "skill_amp",
-			"value": 4.1,
+			"value": 4.3,
 			"attackSpeed": 2.5
 		}
 	],
@@ -407,7 +407,7 @@
 		{
 			"weapon": "shuriken",
 			"type": "skill_amp",
-			"value": 4.3,
+			"value": 4.5,
 			"attackSpeed": 2.9
 		}
 	],
@@ -477,7 +477,7 @@
 		{
 			"weapon": "glove",
 			"type": "skill_amp",
-			"value": 4.2,
+			"value": 4.4,
 			"attackSpeed": 3.9
 		}
 	],
@@ -663,7 +663,7 @@
 		{
 			"weapon": "whip",
 			"type": "skill_amp",
-			"value": 4.3,
+			"value": 4.5,
 			"attackSpeed": 2.8
 		}
 	],
@@ -685,7 +685,7 @@
 		{
 			"weapon": "tonfa",
 			"type": "skill_amp",
-			"value": 4.8,
+			"value": 5,
 			"attackSpeed": 3
 		}
 	],
@@ -763,8 +763,8 @@
 		{
 			"weapon": "guitar",
 			"type": "skill_amp",
-			"value": 2,
-			"attackSpeed": 4.3
+			"value": 4.3,
+			"attackSpeed": 2
 		}
 	]
 }
