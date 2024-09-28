@@ -69,8 +69,11 @@
             "amp": 20,
             "stack": 2
         },
-        "target_cooldown": [12,10,8],
+        "target_cooldown": 12,
         "stack_conversion": 1.5,
-        "stack_conversion_limit": 70
+        "stack_conversion_limit": 70,
+        "cooldown": {
+            "constant": [12,10,8]
+        }
     }
 }

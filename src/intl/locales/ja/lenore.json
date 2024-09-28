@@ -1,0 +1,13 @@
+{
+    "subject.lenore.stack-name": "悲鳴",
+    "subject.lenore.q-1hit": "Q1ヒット",
+    "subject.lenore.q-allhit": "Q同一対象ヒット",
+    "subject.lenore.q-enhanced-1hit": "強化Q1ヒット",
+    "subject.lenore.q-enhanced-allhit": "強化Q同一対象全ヒット",
+    "subject.lenore.w-shield": "Wシールド",
+    "subject.lenore.w-damage": "Wダメージ",
+    "subject.lenore.w-enhanced-shield": "強化Wシールド",
+    "subject.lenore.r-dot-1tick": "R持続ダメージ1ティック",
+    "subject.lenore.r-dot-fulltick": "R持続ダメージ全ティック",
+    "subject.lenore.r-finish": "R最終"
+}
