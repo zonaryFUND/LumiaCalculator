@@ -904,9 +904,9 @@
 	"eye_of_horus": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "80",
+		"skillAmplification": "72",
 		"spRegeneration": "100",
-		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
+		"option": "biotic_infusion[\"dmg\":{\"amp\":35}]"
 	},
 	"prominence": {
 		"type": "arm",

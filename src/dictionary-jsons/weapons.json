@@ -247,7 +247,7 @@
 		"type": "bat",
 		"tier": "legendary",
 		"attackPower": "80",
-		"attackSpeed": "25",
+		"attackSpeed": "10",
 		"option": "vigor[\"dmg\":{\"targetHP\":4},\"duration\":5,\"as\":12,\"stack\":3,\"max\":{\"ad\":12,\"ms\":0.1}]"
 	},
 	"rod_of_heart": {
