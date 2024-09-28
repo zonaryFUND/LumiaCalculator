@@ -197,7 +197,7 @@
 		{
 			"weapon": "shuriken",
 			"type": "skill_amp",
-			"value": 4.5,
+			"value": 4.6,
 			"attackSpeed": 2.5
 		},
 		{
@@ -329,8 +329,8 @@
 		{
 			"weapon": "throw",
 			"type": "skill_amp",
-			"value": 4.7,
-			"attackSpeed": 3
+			"value": 4.8,
+			"attackSpeed": 3.5
 		}
 	],
 	"jackie": [
@@ -559,7 +559,7 @@
 		{
 			"weapon": "spear",
 			"type": "basic_attack_amp",
-			"value": 2.2,
+			"value": 2,
 			"attackSpeed": 4
 		}
 	],
@@ -603,7 +603,7 @@
 		{
 			"weapon": "hammer",
 			"type": "basic_attack_amp",
-			"value": 3,
+			"value": 3.2,
 			"attackSpeed": 4
 		}
 	],
@@ -655,7 +655,7 @@
 		{
 			"weapon": "arcana",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.4,
 			"attackSpeed": 2.5
 		}
 	],
@@ -747,7 +747,7 @@
 		{
 			"weapon": "arcana",
 			"type": "skill_amp",
-			"value": 4.8,
+			"value": 4.6,
 			"attackSpeed": 2.5
 		}
 	],

@@ -7,7 +7,7 @@
         "tick": 0.12,
         "damage": {
             "base": [8,16,24,32,40],
-            "amp": 10
+            "amp": 12
         },
         "enhance": [1,5,10],
         "enhanced_damage": {

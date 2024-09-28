@@ -7,7 +7,7 @@
         "reuse": 3,
         "second_damage": {
             "base": [40,60,80,100,120],
-            "attack": 60
+            "attack": 50
         },
         "enhance_max": 100,
         "enhance_max_target_hp": 40,

@@ -22,8 +22,8 @@
     },
     "W": {
         "duration": 6,
-        "slow": 40,
-        "attack_speed": [30,35,40,45,50],
+        "slow": 30,
+        "attack_speed": [30,32.5,35,37.5,40],
         "mastery_addition": 20,
         "effect_remain": 3,
         "cooldown_reduction": 50,
@@ -49,7 +49,7 @@
         "shield_duration": 2.5,
         "shield": {
             "base": [30,60,90,120,150],
-            "amp": 25
+            "amp": 20
         },
         "chase_movement_speed": {
             "base": [5,7.5,10,12.5,15],
@@ -68,7 +68,7 @@
             "targetLostHP": [5,7.5,10]
         },
         "duration": 4,
-        "defense": [15,25,35],
+        "defense": [10,18,26],
         "heal_per_sec": {
             "base": [32,64,96],
             "amp": 25

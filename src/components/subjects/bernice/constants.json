@@ -84,6 +84,6 @@
             "attack": [82,90,97],
             "basicAttackAmp": 100
         },
-        "reload": [1.8,1.4,1]
+        "reload": [1.5,1.2,0.9]
     }
 }

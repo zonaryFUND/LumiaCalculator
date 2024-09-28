@@ -7,7 +7,7 @@
         "second_damage": {
             "base": [40,70,100,130,160],
             "attack": 30,
-            "amp": 80
+            "amp": 70
         },
         "attack_speed": {
             "duration": 5,

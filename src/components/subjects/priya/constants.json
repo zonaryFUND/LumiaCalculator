@@ -35,7 +35,7 @@
         "basic_attack_flower": 6,
         "shield_duration": 2.5,
         "shield": {
-            "base": [50,75,100,125,150]
+            "base": [50,70,90,110,130]
         },
         "sp_cost": 65,
         "cooldown": [15,14,13,12,11]

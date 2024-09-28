@@ -16,7 +16,7 @@
         "duration": 4,
         "additional_hit_per__additional_defense": 40,
         "damage": {
-            "base": [20,26,32,38,44],
+            "base": [16,22,28,34,40],
             "additionalAttack": 50,
             "amp": 16,
             "targetMaxHP": 2

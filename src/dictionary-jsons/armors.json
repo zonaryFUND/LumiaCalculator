@@ -312,7 +312,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "30",
+		"skillAmplification": "40",
 		"defense": "28",
 		"option": "brute_enforcer"
 	},
@@ -891,7 +891,7 @@
 		"type": "arm",
 		"tier": "legendary",
 		"perLevelStatus": "hp[16]",
-		"defense": "10",
+		"defense": "12",
 		"maxSP": "100",
 		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":3},\"range\":{\"maxHP\":2}}]"
 	},

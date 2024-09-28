@@ -118,7 +118,7 @@
             "base": [20,50,80],
             "amp": 25
         },
-        "heal": 55,
+        "heal": 60,
         "max_stack": 3,
         "attack_speed": 40,
         "cooldown_reduction": 1.5
