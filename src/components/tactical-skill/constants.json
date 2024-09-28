@@ -3,6 +3,7 @@
 
     },
     "quake": {
+        "slow": 50,
         "damage": {
             "base": 25,
             "level": 4
@@ -12,10 +13,10 @@
     },
     "protocol_violation": {
         "hp_increase": {
-            "base": [100,200,300],
-            "level": [5,10,15]
+            "base": [200,300],
+            "level": [10,15]
         },
-        "damage_increase": [5,10,15]
+        "damage_increase": [10,15]
     },
     "electric_shift": {
 
@@ -23,8 +24,8 @@
     "force_field": {
         "duration": 3,
         "shield": {
-            "base": [100,200,300],
-            "additionalMaxHP": [50,75,100]
+            "base": [200,300],
+            "additionalMaxHP": [75,100]
         }
     },
     "totem": {
@@ -38,8 +39,8 @@
     },
     "the_strider": {
         "damage": {
-            "base": 150,
-            "level": 15
+            "base": 100,
+            "level": [5,10]
         }
     },
     "blader_of_truth": {
@@ -56,12 +57,12 @@
     },
     "healing_wind": {
         "heal": {
-            "base": [100,100,150],
-            "level": [5,15,25]
+            "base": [100,150],
+            "level": [15,25]
         },
         "defense": {
             "duration": 3,
-            "effect": 10
+            "effect": 15
         }
     }
 }

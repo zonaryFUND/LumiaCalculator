@@ -45,6 +45,30 @@
         },
         "cooldown_reduction": 0.5
     },
+    "syphon_maelstorm": {
+        "time_bound": 3,
+        "threshold": 2,
+        "duration": 2.5,
+        "movement_speed": {
+            "melee": 20,
+            "range": 15
+        },
+        "damage": {
+            "level": 5,
+            "additionalAttack": 100,
+            "amp": 60
+        },
+        "heal": {
+            "additionalAttack": 80,
+            "amp": 25,
+            "maxHP": 10,
+            "lostHP": 10
+        },
+        "additional_heal_per_hit": 40,
+        "additional_heal_max": 80,
+        "overheal_duration": 5,
+        "cooldown": 25
+    },
     "circular_system": {
         "ratio": 35,
         "duration": 3

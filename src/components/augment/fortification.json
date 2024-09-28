@@ -90,14 +90,11 @@
         "cooldown": 20
     },
     "steadfast": {
-        "damage_reduction": {
-            "base": 6,
-            "level": 0.3
-        }
+        "tenacity": 10
     },
     "dine_n_dash": {
         "food_consumption_reduction": 3,
-        "hp_threshold": 70,
+        "hp_threshold": 75,
         "sp_threshold": 50,
         "consume_threshold": 400
     },
