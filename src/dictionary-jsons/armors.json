@@ -689,7 +689,7 @@
 		"type": "arm",
 		"tier": "epic",
 		"skillAmplification": "62",
-		"healingPower": "12"
+		"healingPower": "8"
 	},
 	"plasma_arc": {
 		"type": "arm",
@@ -841,9 +841,9 @@
 	"claddagh_ring": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "77",
+		"skillAmplification": "80",
 		"maxHP": "100",
-		"healingPower": "18"
+		"healingPower": "13"
 	},
 	"moonlight_pendant": {
 		"type": "arm",

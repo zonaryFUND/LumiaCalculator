@@ -1895,7 +1895,7 @@
 		"attackPower": "30",
 		"skillAmplification": "59",
 		"cooldownReduction": "15",
-		"healingPower": "10"
+		"healingPower": "8"
 	},
 	"the_star": {
 		"type": "arcana",

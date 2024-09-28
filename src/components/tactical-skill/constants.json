@@ -61,7 +61,7 @@
         },
         "defense": {
             "duration": 3,
-            "effect": 20
+            "effect": 10
         }
     }
 }
