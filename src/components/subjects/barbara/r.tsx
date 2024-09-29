@@ -2,37 +2,48 @@ import * as React from "react";
 import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
+import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
-        バーバラがすべての基本スキルのクールダウンを初期化させ、次に使用する基本スキルに追加効果を与えます。<br />
+        バーバラの基本スキルが強化されます。もう一度使用すると強化状態をキャンセルし、{Constants.R.cancel_cooldown}秒後に再び使用できます。<br />
         <br />
-        ショートサーキット：バーバラがセントリーガンを設置し、その位置に瞬間移動します。すでに設置したセントリーガンは自爆して周りに
-        <Value skill="R" ratio={Constants.R.Q.blast_damage} />のスキルダメージを与えます。バーバラは瞬間移動しながら敵に
-        <Value skill="R" ratio={Constants.R.Q.warp_damage} />のスキルダメージを与えます。ダメージを受けた敵の数に応じて
-        {Constants.R.Q.attack_speed.duration}秒間セントリーガンの攻撃速度が{Constants.R.Q.attack_speed.effect}%増加し、オーバークロックのクールダウンが
-        {Constants.R.Q.cooldown_reduction}%減少します。<br />
+        <span className={style.emphasis}>BT-Mk3 強化セントリーガン</span>：指定した位置に体力<Value skill="Q" ratio={Constants.Q.hp} overrideExpression={{level: {format: "バーバラのレベル"}}} />
+        の強化されたセントリーガンを設置します。強化セントリーガンは{Constants.R.Q.duration}秒間維持され、最大設置数の制限を無視することができます。<br />
+        強化セントリーガンは設置されたセントリーガンに{Constants.R.Q.duration}秒間強化効果を付与し、強化効果が付与されたセントリーガンは攻撃速度が
+        {Constants.R.Q.attack_speed}増加し、{Constants.R.Q.railgun_count}回目の基本攻撃ごとにレールガンを発射します。<br />
         <br />
-        レーザーチャージ：{Constants.R.W.duration}秒間レーザーがチャージされ、その間イオンレーザーとセントリーガンのレールガンのダメージ量が{Constants.R.W.damagen_increase[props.skillLevel]}
-        %増加し、スタミナ消耗がなくなってクールダウンが{Constants.R.W.cooldown[props.skillLevel]}減少します。セントリーガンはレーザーチャージ中、基本攻撃がレールガン攻撃に変わります。<br />
+        <span className={style.emphasis}>超高出力イオンレーザー</span>：バーバラが高出力砲でイオンレーザーを最大出力で発射し、経路上の敵に
+        <Value skill="R" ratio={Constants.R.W.damage} />のスキルダメージを与え、カメラとトラップを破壊します。的中した敵は
+        {Constants.R.W.dot_duration}秒間<Value skill="R" ratio={Constants.R.W.dot_damage} />のスキルダメージを受けます。敵に的中すると、
+        {Constants.R.W.movement_speed.duration}秒間移動速度が{Constants.R.W.movement_speed.effect}%増加します。増加した移動速度は
+        {Constants.R.W.movement_speed.duration}秒にわたって徐々に元に戻ります。<br />
         <br />
-        超磁力ブラスト：磁力ブラストが少しずつ大きくなり、与えたダメージ量に比例するシールドの生成量が{Constants.R.E.shield_increase[props.skillLevel]}%増加し、持続時間の間受けるダメージが
-        {Constants.R.E.damage_reduction}%減少します。スキルを再度使用したり、{Constants.R.E.duration}秒間後になると範囲内の敵は
-        <Value skill="E" ratio={Constants.E.finish_damage} />のスキルダメージを受けて{Constants.E.slow.duration}秒間移動速度が{Constants.E.slow.effect[props.skillLevel]}%減少します。<br />
-        スキルを再度使用するとオーバークロック状態をキャンセルして3秒後、再び使用できます。
+        <span className={style.emphasis}>超磁力手榴弾</span>：バーバラが強化された超磁力手榴弾を投げて敵に<Value skill="R" ratio={Constants.R.E.damage} />
+        のスキルダメージを与えます。<br />
+        中央部分に的中した敵は{Constants.R.E.stun}秒間気絶します。<br />
+        手榴弾が爆発した後、磁力暴風地帯が発生し、範囲内の敵は{Constants.R.E.dot_tick}秒ごとに
+        <Value skill="R" ratio={Constants.R.E.dot_damage} />のスキルダメージを受け、移動速度が{Constants.R.E.slow}%減少します。
     </>
 )
 
 export default r;
 
 export const values: ValuesProps = {
+    additionalInfo: <>
+        BT-Mk3強化セントリーガンの能力値<br />
+        基本攻擊：<Value skill="R" ratio={Constants.R.Q.damage} /><br />
+        レールガン：<Value skill="R" ratio={Constants.R.Q.railgun_damage} /><br />
+        防御力<span className={style.emphasis}>{Constants.R.Q.sentry_defence}</span>
+    </>,
     parameters: [
-        {title: "ワープダメージ量", values: Constants.R.Q.warp_damage.base},
-        {title: "自縛ダメージ量", values: Constants.R.Q.blast_damage.base},
-        {title: "追加ダメージ量", values: Constants.R.W.damagen_increase, percent: true},
-        {title: "追加ダメージ保存量(%)", values: Constants.R.E.shield_increase, percent: true},
-        {title: "レールガンクールダウン", values: Constants.R.W.cooldown},
+        {title: "セントリーガン基本攻撃ダメージ量", values: Constants.R.Q.damage.base},
+        {title: "セントリーガンレールガンダメージ量", values: Constants.R.Q.railgun_damage.base},
+        {title: "超高出力異音レーザーダメージ量", values: Constants.R.W.damage.base},
+        {title: "超高出力異音レーザー持続ダメージ量", values: Constants.R.W.dot_damage.base},
+        {title: "超磁力手榴弾ダメージ量", values: Constants.R.E.damage.base},
+        {title: "超磁力手榴弾持続ダメージ量", values: Constants.R.E.dot_damage.base},
         {title: "クールダウン", values: Constants.R.cooldown},
     ]
 }

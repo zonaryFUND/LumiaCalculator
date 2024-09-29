@@ -2,12 +2,12 @@
     "Q": {
         "max_stack": 3,
         "hankyu_duration": 2,
-        "movement_speed": [6,9,12,15,18],
-        "attack_speed": [20,25,30,35,40],
+        "movement_speed": [3,6,9,12,15],
+        "attack_speed": [20,22.5,25,27.5,30],
         "daikyu_range_extend": 0.4,
         "daikyu_damage_enhance": 0.3,
         "hankyu": {
-            "attack": 52,
+            "attack": 51,
             "basicAttackAmp": 100
         },
         "daikyu": {

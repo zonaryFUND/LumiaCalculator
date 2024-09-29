@@ -1,100 +1,109 @@
 {
-    "sentry_gun": {
-        "base_attack": 30,
-        "base_defense": 39,
-        "attack_speed": 0.9
-    },
     "Q": {
         "hp": {
-            "base": [50,55,60,65,70],
-            "level": 50
+            "base": 100,
+            "level": 80
         },
+        "max_sentry_gun": 2,
+        "duration": 12,
+        "railgun_count": 4,
+        "railgun_charge": 3,
+        "w_cooldown_reduction": 10,
         "damage": {
-            "base": [15,30,45,60,75],
-            "amp": 10
+            "base": [20,30,40,50,60],
+            "amp": 15
         },
-        "duration": 15,
-        "sentry_damage": {
-            "summonedAttack": 100
+        "railgun_damage": {
+            "base": [60,80,100,120,140],
+            "amp": 30
         },
-        "sentry_broken_cooldown_penalty": 20,
-        "sentry_withdraw_cooldown_reduction": 40,
-        "sp_cost": [60,70,80,90,100],
-        "cooldown": 12
+        "sentry_defence": 80,
+        "sentry_attack_speed": 1.5,
+        "sp_cost": [40,50,60,70,80],
+        "cooldown": [15,14,13,12,11]
     },
     "W": {
         "damage": {
-            "base": [60,100,140,180,220],
-            "amp": 55
+            "base": [70,105,140,175,210],
+            "amp": 70
         },
-        "slow": {
-            "duration": 1.5,
-            "effect": 20
+        "movement_speed": {
+            "duration": 2,
+            "effect": 10
         },
-        "target_duration": 3,
-        "sentry_damage": {
-            "base": [60,100,140,180,220],
-            "summonedAttack": 95
-        },
-        "sentry_railgun_ammo": 3,
-        "sp_cost": [50,60,70,80,90],
-        "cooldown": 5
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": [10,9.5,9,8.5,8]
     },
     "E": {
-        "duration": 4,
-        "tick": 0.5,
         "damage": {
-            "base": [2,4,6,8,10],
-            "amp": 10,
-            "targetMaxHP": [2,2.5,3,3.5,4]
+            "base": [60,90,120,150,180],
+            "amp": 55
         },
-        "movement_speed": 20,
-        "finish_damage": {
-            "base": [60,80,100,120,140],
-            "amp": 60
-        },
-        "shield": 25,
-        "max_shield": 40,
-        "slow": {
-            "duration": 1,
-            "effect": [30,40,50,60,70]
-        },
-        "sp_cost": [80,90,100,110,120],
-        "cooldown": [18,16.5,15,13.5,12]
+        "stun": 0.5,
+        "sp_cost": [60,70,80,90,100],
+        "cooldown": [14,13,12,11,10]
     },
     "R": {
+        "cancel_cooldown": 3, 
         "Q": {
-            "blast_damage": {
-                "base": [60,80,100],
-                "amp": 40
+            "hp": {
+                "base": 300,
+                "level": 150
             },
-            "warp_damage": {
-                "base": [50,100,150],
+            "duration": 6,
+            "attack_speed": 0.2,
+            "railgun_count": 3,
+            "damage": {
+                "base": [90,110,130],
+                "amp": 30
+            },
+            "railgun_damage": {
+                "base": [100,125,150],
                 "amp": 50
             },
-            "attack_speed": {
-                "duration": 4,
-                "effect": 10
-            },
-            "cooldown_reduction": 30
+            "sentry_defence": 120
         },
         "W": {
-            "duration": 7,
-            "damagen_increase": [5,10,15],
-            "cooldown": [0.35,0.25,0.15]
+            "damage": {
+                "base": [200,300,400],
+                "amp": 100
+            },
+            "dot_duration": 2,
+            "dot_damage": {
+                "base": [100,150,200],
+                "amp": 30
+            },
+            "movement_speed": {
+                "duration": 2,
+                "effect": 20
+            }
         },
         "E": {
-            "shield_increase": [20,25,30],
-            "damage_reduction": 20,
-            "duration": 6
+            "damage": {
+                "base": [150,200,250],
+                "amp": 60
+            },
+            "stun": 0.5,
+            "dot_tick": 0.5,
+            "area_duration": 2.5,
+            "dot_damage": {
+                "base": [30,40,50],
+                "amp": 15
+            },
+            "slow": 40
         },
-        "sp_cost": 100,
-        "cooldown": [70,60,50]
+        "sp_cost": 150,
+        "cooldown": [80,65,50]
     },
     "T": {
-        "attack_amp": 3,
-        "defense_amp": 1,
-        "attack_speed": [15,20,25],
-        "max_stack": 3
+        "making_time_reduction": 20,
+        "attack_speed": 100,
+        "damage": {
+            "base": [30,40,50],
+            "amp": [30,40,50]
+        },
+        "cooldown": {
+            "constant": [10,8,6]
+        }
     }
 }

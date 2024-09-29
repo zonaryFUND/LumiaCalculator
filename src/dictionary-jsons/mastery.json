@@ -491,9 +491,9 @@
 	],
 	"barbara": [
 		{
-			"weapon": "bat",
+			"weapon": "pistol",
 			"type": "skill_amp",
-			"value": 4.4,
+			"value": 4.3,
 			"attackSpeed": 3
 		}
 	],
@@ -747,7 +747,7 @@
 		{
 			"weapon": "arcana",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.4,
 			"attackSpeed": 2.5
 		}
 	],

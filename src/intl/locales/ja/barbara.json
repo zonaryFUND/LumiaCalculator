@@ -1,11 +1,11 @@
 {
-    "subject.barbara.sentry-aa": "セントリーガン基本攻撃",
-    "subject.barbara.q-place": "Qセントリーガン設置",
-    "subject.barbara.w-laser": "Wレーザー",
-    "subject.barbara.w-sentry-railgun": "Wセントリーガンレールガン",
-    "subject.barbara.e-dot": "E持続",
-    "subject.barbara.e-dot-max-hit": "E持続全ヒット({value})",
-    "subject.barbara.e-blast": "E爆発",
-    "subject.barbara.rq-detonate": "RQセントリーガン自爆",
-    "subject.barbara.rq-warp": "RQ瞬間移動"
+    "subject.barbara.q-sentry-aa": "Qセントリーガン基本攻撃",
+    "subject.barbara.q-sentry-railgun": "Qセントリーガンレールガン",
+    "subject.barbara.rq-aa": "RQ強化セントリーガン基本攻撃",
+    "subject.barbara.rq-railgun": "RQ強化セントリーガンレールガン",
+    "subject.barbara.rw-hit": "RWヒット",
+    "subject.barbara.rw-dot": "RW持続ダメージ",
+    "subject.barbara.re-hit": "REヒット",
+    "subject.barbara.re-dot-1tick": "RE持続ダメージ1ティック",
+    "subject.barbara.re-dot-all": "RE持続ダメージ全ヒット({value})"
 }

@@ -68,22 +68,15 @@
     },
     "T": {
         "bullet": [2,3,4],
-        "min_damage": {
+        "base_damage": {
             "attack": 100,
             "basicAttackAmp": 100
         },
-        "max_damage": {
-            "attack": [110,120,130],
+        "additional_damage": {
+            "attack": 10,
             "basicAttackAmp": 100
         },
-        "min_second_damage": {
-            "attack": 75,
-            "basicAttackAmp": 100
-        },
-        "max_second_damage": {
-            "attack": [82,90,97],
-            "basicAttackAmp": 100
-        },
+        "second_damage_multiplier": 75,
         "reload": [1.5,1.2,0.9]
     }
 }

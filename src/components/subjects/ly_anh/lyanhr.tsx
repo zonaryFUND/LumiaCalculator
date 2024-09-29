@@ -4,8 +4,25 @@ import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { useValueContext } from "components/tooltip/value-context";
 
 const lyanhr: React.FC<SubjectSkillProps> = props => {
+    const { showEquation } = useValueContext();
+
+    const attackSpeed = (() => {
+        if (showEquation) {
+            return <>
+                <span className={style.emphasis}>{Constants.LyAnhR.attack_speed.base[props.skillLevel]}%</span>
+                <span className={style.attack}>(+攻撃力の{Constants.LyAnhR.attack_speed.attack}%)</span>
+            </>
+        } else {
+            return <>
+                <Value skill="D" ratio={Constants.LyAnhR.attack_speed} />
+                <span className={style.emphasis}>%</span>
+            </>;
+        }
+    })();
+
     return (
         <>
             <span className={style.level}>使用条件</span>憑依状態で侵食が100以上の時に使用できます。悪霊状態では毎秒侵食が
@@ -15,11 +32,9 @@ const lyanhr: React.FC<SubjectSkillProps> = props => {
             イアンが悪霊に完全に侵食されます。指定した方向に悪霊が飛び出て<Value skill="R" ratio={Constants.LyAnhR.damage} />
             のスキルダメージを与え、イアンの本体はキャストした位置に残ります。悪霊状態では最大体力が
             <span className={style.emphasis}>{Constants.LyAnhR.maxhp[props.skillLevel]}</span>増加し、移動速度が
-            <span className={style.emphasis}>{Constants.LyAnhR.movement_speed}%</span>増加します。基本攻撃する時、敵に
+            <span className={style.emphasis}>{Constants.LyAnhR.movement_speed}%</span>、攻撃速度が{attackSpeed}増加します。基本攻撃する時、敵に
             <Value skill="R" ratio={Constants.LyAnhR.attack_damage} />
-            のスキルダメージを与えてイアンが[殺戮本能]スタックを獲得します。スタック1あたり攻撃速度が
-            {Constants.LyAnhR.attack_speed[props.skillLevel]}ずつ増加し、最大{Constants.LyAnhR.max_stack}スタックまで獲得できます。<br />
-            {Constants.LyAnhR.fear_count}回目の基本攻撃は対象を{Constants.LyAnhR.fear[props.skillLevel]}秒間恐怖に陥れます。対象の周り
+            のスキルダメージを与え、{Constants.LyAnhR.fear_count}回目の基本攻撃は敵を{Constants.LyAnhR.fear[props.skillLevel]}秒間恐怖状態にさせます。対象の周り
             {Constants.LyAnhR.fear_range}m範囲内にいる敵も同じく恐怖状態になります。<br />
             <br />
             スキル終了後、悪霊が消えていない場合、その場で人間状態になります。悪霊が消えた場合、スキルを使用したときに分離されたイアンの本体の方が体力
@@ -38,7 +53,7 @@ export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.LyAnhR.damage.base},
         {title: "最大体力増加量", values: Constants.LyAnhR.maxhp},
-        {title: "攻撃速度増加量(%)", values: Constants.LyAnhR.attack_speed, percent: true},
+        {title: "攻撃速度増加量(%)", values: Constants.LyAnhR.attack_speed.base, percent: true},
         {title: "恐怖持続時間", values: Constants.LyAnhR.fear},
         {title: "死亡時体力保有量", values: Constants.LyAnhR.hp_on_death},
         {title: "クールダウン", values: Constants.LyAnhR.cooldown}

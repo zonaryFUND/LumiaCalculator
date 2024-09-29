@@ -97,7 +97,7 @@
 	},
 	"alonso": {
 		"maxHP": "1000",
-		"maxHPperLevel": "86",
+		"maxHPperLevel": "88",
 		"maxSP": "400",
 		"maxSPperLevel": "16",
 		"hpRegeneration": "1.67",
@@ -107,7 +107,7 @@
 		"attackPower": "36",
 		"apPerLevel": "4.2",
 		"armor": "49",
-		"armorPerLevel": "3",
+		"armorPerLevel": "3.4",
 		"attackSpeed": "0.1",
 		"movementSpeed": "3.6"
 	},
@@ -144,7 +144,7 @@
 		"movementSpeed": "3.55"
 	},
 	"barbara": {
-		"maxHP": "910",
+		"maxHP": "900",
 		"maxHPperLevel": "82",
 		"maxSP": "390",
 		"maxSPperLevel": "17",
@@ -154,10 +154,10 @@
 		"spRegenPerLevel": "0.02",
 		"attackPower": "38",
 		"apPerLevel": "3.2",
-		"armor": "53",
+		"armor": "50",
 		"armorPerLevel": "3.2",
 		"attackSpeed": "0.04",
-		"movementSpeed": "3.5"
+		"movementSpeed": "3.55"
 	},
 	"bernice": {
 		"maxHP": "940",
@@ -689,7 +689,7 @@
 	},
 	"laura": {
 		"maxHP": "960",
-		"maxHPperLevel": "93",
+		"maxHPperLevel": "90",
 		"maxSP": "440",
 		"maxSPperLevel": "15",
 		"hpRegeneration": "1.28",
@@ -698,8 +698,8 @@
 		"spRegenPerLevel": "0.02",
 		"attackPower": "28",
 		"apPerLevel": "4.9",
-		"armor": "56",
-		"armorPerLevel": "3.5",
+		"armor": "54",
+		"armorPerLevel": "3.2",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.45"
 	},

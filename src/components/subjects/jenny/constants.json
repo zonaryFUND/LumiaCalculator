@@ -58,7 +58,7 @@
         "movement_speed": 3,
         "act_duration": 3,
         "hp": {
-            "base": 100,
+            "base": 200,
             "maxHP": [2,11,20]
         },
         "cooldown": {

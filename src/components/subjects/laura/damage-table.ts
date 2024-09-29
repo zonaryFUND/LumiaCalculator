@@ -8,18 +8,19 @@ const table: DamageTableGenerator = props => ({
     ],
     skill: [
         [
-            {label: "Q1", skill: "Q", value: Constants.Q.Q1_damage},
-            {label: "Q2", skill: "Q", value: Constants.Q.Q2_damage},
-            {label: "Q3", skill: "Q", value: Constants.Q.Q3_first_damage},
-            {label: props.intl.formatMessage({id: "subject.laura.q3-second"}), skill: "Q", value: Constants.Q.Q3_second_damage}
+            {label: "Q", skill: "Q", value: Constants.Q.damage}
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.laura.w-hit"}), skill: "W", value: Constants.W.hit_damage},
-            {label: props.intl.formatMessage({id: "subject.laura.w-launch"}), skill: "W", value: Constants.W.target_damage}
+            {label: props.intl.formatMessage({id: "subject.laura.w-damage"}), skill: "W", value: Constants.W.damage},
+            {label: props.intl.formatMessage({id: "subject.laura.w-heal"}), skill: "W", value: Constants.W.heal, type: "heal"}
         ],
+        [{label: "E", skill: "E", value: Constants.E.damage}],
         [
-            {label: props.intl.formatMessage({id: "subject.laura.r-hit"}), skill: "R", value: Constants.R.first_damage},
-            {label: props.intl.formatMessage({id: "subject.laura.r-landing"}), skill: "R", value: Constants.R.second_damage}
+            {label: props.intl.formatMessage({id: "subject.laura.r-first"}), skill: "R", value: Constants.R.first_damage},
+            {label: props.intl.formatMessage({id: "subject.laura.r-second"}), skill: "R", value: Constants.R.second_damage},
+            {label: props.intl.formatMessage({id: "subject.laura.r-shield"}), skill: "R", value: Constants.R.shield, type: "shield"},
+            {label: props.intl.formatMessage({id: "subject.laura.r-additional-shield-1"}), skill: "R", value: Constants.R.additional_shield, type: "shield"},
+            {label: props.intl.formatMessage({id: "subject.laura.r-additional-shield-2"}), skill: "R", value: Constants.R.additional_shield, type: "shield", multiplier: [{basic: 200}]}
         ]
     ]   
 })

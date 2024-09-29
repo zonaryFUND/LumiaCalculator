@@ -13,11 +13,9 @@ const dict = {
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
-        バーバラが高出力砲身でイオンレーザーを発射し、経路上の敵に<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えて
-        {Constants.W.slow.duration}秒間移動速度を{Constants.W.slow.effect}%減少させます。<br />
-        <span className={style.emphasis}>イオンレーザー</span>が的中した最初の敵実験体は{Constants.W.target_duration}秒間セントリーガンの<span className={style.emphasis}>標的</span>
-        になります。バーバラが<span className={style.emphasis}>イオンレーザー</span>を使用すると、セントリーガンがチャージされ、敵にレールガンを発射して
-        <Value skill="W" ratio={Constants.W.sentry_damage} overrideExpression={dict} />のスキルダメージを与えます。レールガンは最大{Constants.W.sentry_railgun_ammo}発装填することができます。
+        バーバラが高出力砲でイオンレーザーを発射し、経路上の敵に<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。<br />
+        敵に的中すると、{Constants.W.movement_speed.duration}秒間移動速度が{Constants.W.movement_speed.effect}
+        %増加します。増加した移動速度は{Constants.W.movement_speed.duration}秒にわたって徐々に元に戻ります。
     </>
 )
 
@@ -26,7 +24,7 @@ export default w;
 export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "セントリーガンレールガンダメージ量", values: Constants.W.sentry_damage.base},
+        {title: "クールダウン", values: Constants.W.cooldown},
         {title: "消費", values: Constants.W.sp_cost}
     ]
 }

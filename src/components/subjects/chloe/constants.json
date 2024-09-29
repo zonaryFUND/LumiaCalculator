@@ -2,7 +2,7 @@
     "nina": {
         "base_attack": 10,
         "base_defense": 30,
-        "attack_speed": 1
+        "attack_speed": 0.8
     },
     "Q": {
         "damage": {
@@ -57,7 +57,7 @@
         "cooldown": [13,12.5,12,11,5,11]
     },
     "R": {
-        "duration": 6,
+        "duration": 5,
         "summoned_attack_speed": [20,25,30],
         "nina_movement_speed": [20,25,30],
         "we_cooldown_reduction": 30,
@@ -73,7 +73,7 @@
     "T": {
         "damage": {
             "base": [20,50,80],
-            "summonedAttack": 60
+            "summonedAttack": 40
         },
         "nina_revive": [20,18,16],
         "nina_revive_cost": 30,

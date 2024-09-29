@@ -8,7 +8,7 @@ import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 const w: React.FC<SubjectSkillProps> = props => {
     return (
         <>
-            <span className={style.enhance}>弾き</span>：ピオロが自分を中心に双節棍を素早く振り回して{Constants.W1.duration}秒間阻止不可状態になり、敵の投射体を弾いて消滅させます。スキル終了後、
+            <span className={style.enhance}>弾き</span>：ピオロが自分を中心に双節棍を素早く振り回して{Constants.W1.duration}秒間すべての妨害効果免疫状態になり、敵の投射体を弾いて消滅させます。スキル終了後、
             <span className={style.emphasis}>振り回し</span>が活性化します。<br />
             <br />
             <span className={style.enhance}>振り回し</span>：ピオロが飛び上がりながら双節棍を大きく振り回して周りの敵に

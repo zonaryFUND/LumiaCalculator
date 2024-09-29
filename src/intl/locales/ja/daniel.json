@@ -4,6 +4,5 @@
     "subject.daniel.w-blast-base": "W爆発基礎値",
     "subject.daniel.r-1hit": "R潜入中1ヒット",
     "subject.daniel.r-max-hit": "R潜入中全ヒット({value})",
-    "subject.daniel.r-finish-min": "R最終最小",
-    "subject.daniel.r-finish-max": "R最終最大"
+    "subject.daniel.r-finish": "R最終"
 }

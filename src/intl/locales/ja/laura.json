@@ -1,8 +1,10 @@
 {
     "subject.laura.passive-additional": "T追加ダメージ",
-    "subject.laura.q3-second": "Q3追撃",
-    "subject.laura.w-hit": "W命中",
-    "subject.laura.w-launch": "W発動",
-    "subject.laura.r-hit": "R衝突",
-    "subject.laura.r-landing": "R着地"
+    "subject.laura.w-damage": "Wダメージ",
+    "subject.laura.w-heal": "W回復",
+    "subject.laura.r-first": "R1打目",
+    "subject.laura.r-second": "R2打目",
+    "subject.laura.r-shield": "Rシールド基礎値",
+    "subject.laura.r-additional-shield-1": "Rシールド追加値（追加ヒット1人）",
+    "subject.laura.r-additional-shield-2": "Rシールド追加値（追加ヒット2人）"
 }

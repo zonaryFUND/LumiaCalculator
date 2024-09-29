@@ -9,10 +9,10 @@ const lyanht: React.FC<SubjectSkillProps> = props => {
     return (
         <>
             <span className={style.emphasis}>侵食</span>
-            ：イアンは基本攻撃やスキルを使用すると侵食が始まります。侵食が100まで進むと憑依状態になります。非戦闘状態の場合、1秒あたり
+            ：イアンは基本攻撃やスキルを使用すると侵食が始まります。侵食が100まで進むと憑依状態になり、<Value skill="T" ratio={Constants.LyAnhT.possessing_heal} />の体力を回復します。非戦闘状態になると、侵食が1秒あたり
             {Constants.LyAnhT.thrash_decline}ずつ減少します。<br />
             <br />
-            イアンは悪霊に身体を乗っ取られないように抵抗し続けています。イアンは各状態によって基本攻撃のダメージ量が変わります。<br />
+            イアンは悪霊に体を乗っ取られないように抵抗し続けています。イアンは各状態によって基本攻撃のダメージ量が変わります。<br />
             人間状態：<span className={style.attack}>攻撃力の{Constants.LyAnhT.human_basic_attack.attack}%</span><br />
             憑依状態：<span className={style.attack}>攻撃力の{Constants.LyAnhT.possessed_basic_attack.attack}%</span><br />
             悪霊状態：<span className={style.attack}>攻撃力の{Constants.LyAnhT.ghost_basic_attack.attack}%</span><br />
@@ -27,7 +27,10 @@ const lyanht: React.FC<SubjectSkillProps> = props => {
 export default lyanht;
 
 export const values: ValuesProps = {
-    additionalInfo: <>基本攻撃をすると、[侵食]を{Constants.LyAnhT.thrash}獲得します。</>,
+    additionalInfo: <>
+        人間状態：基本攻撃をすると、[侵食]を{Constants.LyAnhT.human_thrash}獲得します。<br />
+        憑依状態：基本攻撃をすると、[侵食]を{Constants.LyAnhT.possessed_thrash}獲得します。
+    </>,
     parameters: [
         {title: "追加固定ダメージ", values: Constants.LyAnhT.additional_damage.attack, percent: true}
     ]

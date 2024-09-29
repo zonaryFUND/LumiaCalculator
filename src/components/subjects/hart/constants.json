@@ -21,29 +21,23 @@
         "duration": [5,5.5,6,6.5,7],
         "attack": [6,12,18,24,30],
         "range": 0.4,
-        "buff_damage": {
-            "attack": 50
-        },
         "sp_cost": [85,90,95,100,105],
         "cooldown": 14
     },
     "E": {
         "damage": {
-            "base": [50,70,90,110,130],
-            "attack": 60
+            "base": [70,90,110,130,150],
+            "attack": 75
         },
-        "actoss_wall_count": 3,
         "sp_cost": 25,
-        "cooldown": [17,16,15,14,13]
+        "cooldown": [13,12.5,12,11.5,11]
     },
     "R": {
-        "duration": 5,
-        "heal_tick": 0.5,
+        "duration": 4,
+        "threshold": 10,
         "heal": {
-            "base": [20,30,40],
-            "attack": [2,4,6]
+            "base": [250,325,400]
         },
-        "movement_speed": 2.5,
         "sp_cost": [100,110,120],
         "cooldown": [80,70,60]
     },
@@ -51,7 +45,7 @@
         "sp": [4,6,8],
         "evoluted_sound_wave": 2,
         "damage": {
-            "attack": 7,
+            "attack": [4,7,10],
             "basicAttackAmp": 100
         }
     }

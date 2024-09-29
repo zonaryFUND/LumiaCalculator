@@ -8,8 +8,7 @@ import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 const w: React.FC<SubjectSkillProps> = props => (
     <>
         <span className={style.level}>持続効果</span>：ガンディバ以外のスキルを的中した場合、ザヒルの後ろに{Constants.W.chakram_gain}
-        つのチャクラムを獲得します。(最大{Constants.W.chakram_max}つ)チャクラムは{Constants.W.chakram_duration}
-        秒間維持され、チャクラムを獲得する度に維持時間が初期化されます。<br />
+        つのチャクラムを獲得します。(最大{Constants.W.charge.max}つ)<br />
         <br />
         チャクラムを1つ消耗して指定した方向へチャクラムを発射し、的中した敵に<Value skill="W" ratio={Constants.W.damage} />
         のスキルダメージを与えます。<br />
@@ -21,6 +20,7 @@ const w: React.FC<SubjectSkillProps> = props => (
 export default w;
 
 export const values: ValuesProps = {
+    additionalInfo: <>ガンディバはチャクラム及び武器がないと使用できません</>,
     parameters: [
         {title: "ダメージ量", values: Constants.W.damage.base}
     ]

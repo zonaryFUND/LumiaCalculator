@@ -1,12 +1,17 @@
 import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
+const firstMaxDamage = {
+    attack: [1,2,3].map(i => Constants.T.base_damage.attack + Constants.T.additional_damage.attack * i),
+    basicAttackAmp: Constants.T.base_damage.basicAttackAmp
+}
+
 const table: DamageTableGenerator = props => ({
     basicAttack: [
-        {label: props.intl.formatMessage({id: "subject.bernice.aa-min"}), skill: "T", value: Constants.T.min_damage, type: "basic-nocrit"},   
-        {label: props.intl.formatMessage({id: "subject.bernice.aa-max"}), skill: "T", value: Constants.T.max_damage, type: "basic-nocrit"},
-        {label: props.intl.formatMessage({id: "subject.bernice.critical-min"}), skill: "T", value: Constants.T.min_second_damage, type: "basic-nocrit"},
-        {label: props.intl.formatMessage({id: "subject.bernice.critical-max"}), skill: "T", value: Constants.T.max_second_damage, type: "basic-nocrit"}
+        {label: props.intl.formatMessage({id: "subject.bernice.aa-min"}), skill: "T", value: Constants.T.base_damage, type: "basic-nocrit"},   
+        {label: props.intl.formatMessage({id: "subject.bernice.aa-max"}), skill: "T", value: firstMaxDamage, type: "basic-nocrit"},
+        {label: props.intl.formatMessage({id: "subject.bernice.critical-min"}), skill: "T", value: Constants.T.base_damage, type: "basic-nocrit", multiplier: [{basic: Constants.T.second_damage_multiplier}]},   
+        {label: props.intl.formatMessage({id: "subject.bernice.critical-max"}), skill: "T", value: firstMaxDamage, type: "basic-nocrit", multiplier: [{basic: Constants.T.second_damage_multiplier}]}
     ],
     skill: [
         [

@@ -16,7 +16,7 @@
     },
     "W": {
         "duration": 2.5,
-        "damage_reduction": 80,
+        "damage_reduction": 70,
         "waves": 5,
         "damage": {
             "base": [30,35,40,45,50],
@@ -57,7 +57,7 @@
             "base": [16,20,24],
             "amp": 15
         },
-        "slow": 50,
+        "slow": 40,
         "final_damage": {
             "min": {
                 "base": [100,150,200],

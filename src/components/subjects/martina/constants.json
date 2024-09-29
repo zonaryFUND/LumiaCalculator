@@ -96,7 +96,7 @@
             "effect": 30
         },
         "max_stack": 5,
-        "multiple_subject_recording_time": 1.2,
+        "multiple_subject_recording_time": 1,
         "multiple_subject_mastery": 1300,
         "dead_body_recording_time": 2,
         "dead_body_mastery": 650,
