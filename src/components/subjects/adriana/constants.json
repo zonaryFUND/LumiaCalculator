@@ -54,7 +54,7 @@
             "base": [20,35,50],
             "amp": 40
         },
-        "defense_reduction": [10,13,16],
+        "defense_reduction": [9,12,15],
         "immune": 9
     }
 }
