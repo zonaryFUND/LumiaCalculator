@@ -51,6 +51,11 @@ const navigation: React.FC<Props> = props => {
                 ルミア計算機は個人の研究のため作成された非営利・非公式Webサイトです。<br />
                 画像は<a className={style.link} href="https://drive.google.com/drive/folders/1bgW32L09YPpRgQKtH4C_TAd3Kr0N9Y90" target="_blank">ファンキット</a>より引用され、ゲーム内テキストおよび文章はエターナルリターンより引用されています。
             </div>
+            <div className={style.warning}>
+                ルミア計算機はα版です。機能には未実装のものが含まれ、値は間違っているかもしれません。<br />
+                <br />
+                対応バージョン：1.31b
+            </div>
         </nav>
         </IconContext.Provider>
     )
