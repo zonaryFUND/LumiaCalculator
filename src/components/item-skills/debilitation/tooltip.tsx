@@ -6,18 +6,19 @@ import { useValueContextOptional } from "components/tooltip/value-context";
 import { calculateValue } from "app-types/value-ratio/calculation";
 
 const Value: React.FC<ItemSkillProps> = props => {
+    console.log(props)
     const { config, status, showEquation } = useValueContextOptional();
     if (status && config && showEquation != true) {
-        const value = calculateValue({amp: Constants.dmg.targetMaxHP.base}, status, config, "other");
+        const value = calculateValue({amp: props.values.dmg.targetMaxHP.amp}, status, config, "other").dynamic?.targetMaxHP;
         return (
             <span className={style.maxhp}>
-                対象の最大体力の{Constants.dmg.targetMaxHP.base}<span className={style.amp}>(+{value.toString()})</span>%
+                対象の最大体力の{props.values.dmg.targetMaxHP.base}<span className={style.amp}>(+{value?.toString()})</span>%
             </span>
         );
     } else {
         return (
             <span className={style.maxhp}>
-                対象の最大体力の{Constants.dmg.targetMaxHP.base}<span className={style.amp}>(+スキル増幅の{Constants.dmg.targetMaxHP.amp}%)</span>%
+                対象の最大体力の{props.values.dmg.targetMaxHP.base}<span className={style.amp}>(+スキル増幅の{props.values.dmg.targetMaxHP.amp}%)</span>%
             </span>
         );
     }

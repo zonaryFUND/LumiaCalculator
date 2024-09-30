@@ -7,8 +7,8 @@ const description: React.FC = props => {
     return (
         <p>
             戦闘状態になった後、{Constants.cooldown}秒ごとに強化基本攻撃をチャージします。強化基本攻撃は
-            <Value ratio={Constants.damage} overrideExpression={{result: {className: style.level}}} />の追加スキルダメージを与えて
-            <Value ratio={Constants.heal} overrideExpression={{result: {className: style.level}}} />の体力を回復します。
+            <Value ratio={Constants.damage} overrideExpression={{result: {className: style.maxhp}}} />の追加スキルダメージを与えて
+            <Value ratio={Constants.heal} overrideExpression={{result: {className: style.maxhp}}} />の体力を回復します。
         </p> 
     );
 }

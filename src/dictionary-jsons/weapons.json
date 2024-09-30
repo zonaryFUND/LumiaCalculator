@@ -778,7 +778,7 @@
 		"attackSpeed": "30",
 		"skillAmplification": "90",
 		"ammo": "30",
-		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":120}]"
+		"option": "swift_strides[\"tick\":0.2,\"ms\":0.1,\"dmg\":{\"base\":120}]"
 	},
 	"high_noon": {
 		"type": "pistol",
@@ -1110,7 +1110,7 @@
 		"tier": "epic",
 		"attackPower": "74",
 		"attackSpeed": "25",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":120},\"slow\":{\"effect\":25,\"duration\":2}]"
+		"option": "swift_strides[\"tick\":0.2,\"ms\":0.08,\"dmg\":{\"base\":120},\"slow\":{\"effect\":25,\"duration\":2}]"
 	},
 	"the_juggernaut": {
 		"type": "axe",

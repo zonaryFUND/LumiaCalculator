@@ -235,7 +235,7 @@
 		"perLevelStatus": "ap",
 		"skillAmplification": "14",
 		"defense": "28",
-		"option": "debilitation[\"dmg\":{\"targetMaxHP:{\"base\":0.8,\"amp\":0.22}\"}]"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.8,\"amp\":0.22}}]"
 	},
 	"omertà": {
 		"type": "chest",
@@ -378,7 +378,7 @@
 		"tier": "epic",
 		"attackPower": "29",
 		"cooldownReduction": "15",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
+		"option": "swift_strides[\"tick\":0.2,\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
 	},
 	"crystal_tiara": {
 		"type": "head",
@@ -438,7 +438,7 @@
 		"skillAmplification": "54",
 		"maxHP": "150",
 		"spRegeneration": "50",
-		"option": "debilitation[\"dmg\":{\"targetMaxHP:{\"base\":0.4,\"amp\":0.14}\"}]"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.4,\"amp\":0.14}}]"
 	},
 	"diadem": {
 		"type": "head",
@@ -481,7 +481,7 @@
 		"perLevelStatus": "hp[17]",
 		"cooldownReduction": "15",
 		"defense": "15",
-		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":100},\"slow\":{\"effect\":30,\"duration\":2}]"
+		"option": "swift_strides[\"tick\":0.2,\"ms\":0.1,\"dmg\":{\"base\":100},\"slow\":{\"effect\":30,\"duration\":2}]"
 	},
 	"laurel_wreath": {
 		"type": "head",
@@ -553,7 +553,7 @@
 		"skillAmplification": "65",
 		"maxHP": "180",
 		"spRegeneration": "50",
-		"option": "debilitation[\"dmg\":{\"targetMaxHP:{\"base\":0.8,\"amp\":0.22}\"}]"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.8,\"amp\":0.22}}]"
 	},
 	"dwarf_s_helmet": {
 		"type": "head",
@@ -622,7 +622,7 @@
 		"attackPower": "15",
 		"attackSpeed": "15",
 		"criticalChance": "35",
-		"option": "extended_fury"
+		"option": "extended_fury[\"extend\":20]"
 	},
 	"commander_headset": {
 		"type": "head",
@@ -880,7 +880,7 @@
 		"attackPower": "35",
 		"criticalChance": "34",
 		"defense": "5",
-		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":100},\"slow\":{\"effect\":30,\"duration\":2}]"
+		"option": "swift_strides[\"tick\":0.2,\"ms\":0.1,\"dmg\":{\"base\":100},\"slow\":{\"effect\":30,\"duration\":2}]"
 	},
 	"claddagh_ring": {
 		"type": "arm",

@@ -1,12 +1,10 @@
 {
-    "time_bound": 5,
-    "count": 3,
     "tick": 0.5,
     "damage": {
-        "base": 10,
-        "amp": 15,
+        "base": 20,
+        "attack": 30,
         "targetMaxHP": 0.5
     },
     "duration": 5,
-    "cooldown": 10
+    "cooldown": 25
 }
