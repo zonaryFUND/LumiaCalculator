@@ -1220,7 +1220,7 @@
 		"attackPower": "69",
 		"attackSpeed": "50",
 		"movementSpeed": "0.04",
-		"option": "swift_strides[\"ms\":0.2,\"dmg\":{\"base\":100}, \"slow\":{\"effect\":20,\"duration\":2},\"tick\":0.4]"
+		"option": "swift_strides[\"ms\":0.16,\"dmg\":{\"base\":100}, \"slow\":{\"effect\":20,\"duration\":2},\"tick\":0.4]"
 	},
 	"eclipse": {
 		"type": "dagger",
@@ -1255,7 +1255,7 @@
 		"adaptiveStatus": "52",
 		"armorPenetrationRatio": "7",
 		"movementSpeed": "0.06",
-		"option": "swift_strides[\"ms\":0.22,\"dmg\":{\"base\":100}, \"slow\":{\"effect\":20,\"duration\":2},\"tick\":0.4]"
+		"option": "swift_strides[\"ms\":0.18,\"dmg\":{\"base\":100}, \"slow\":{\"effect\":20,\"duration\":2},\"tick\":0.4]"
 	},
 	"scarlet_dagger_dawn": {
 		"type": "dagger",

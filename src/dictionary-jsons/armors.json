@@ -538,7 +538,7 @@
 		"attackSpeed": "35",
 		"skillAmplification": "70",
 		"maxHP": "100",
-		"option": "photon_launcher[\"dmg\":{\"base\":20,\"amp\":35}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":20,\"amp\":35},\"heal\":40]"
 	},
 	"the_star_of_the_wilds": {
 		"type": "head",
@@ -645,7 +645,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[20]",
 		"cooldownReduction": "15",
-		"defense": "18",
+		"defense": "15",
 		"option": "security_protocol"
 	},
 	"chinese_opera_mask": {
@@ -662,7 +662,7 @@
 		"type": "head",
 		"tier": "mythic",
 		"attackSpeed": "40",
-		"adaptiveStatus": "55",
+		"adaptiveStatus": "50",
 		"defense": "10",
 		"movementSpeed": "0.08"
 	},
@@ -691,7 +691,7 @@
 		"tier": "epic",
 		"attackSpeed": "33",
 		"criticalChance": "26",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":30,\"level\":2}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":25,\"level\":2}]"
 	},
 	"creed_of_the_knight": {
 		"type": "arm",
@@ -812,7 +812,7 @@
 		"tier": "legendary",
 		"attackSpeed": "42",
 		"criticalChance": "35",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":60,\"level\":3}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":55,\"level\":3},\"heal\":30]"
 	},
 	"auto_arms": {
 		"type": "arm",

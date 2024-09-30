@@ -30,13 +30,13 @@
             "attack": 75
         },
         "sp_cost": 25,
-        "cooldown": [13,12.5,12,11.5,11]
+        "cooldown": [14,13.5,13,12.5,12]
     },
     "R": {
         "duration": 4,
         "threshold": 10,
         "heal": {
-            "base": [250,325,400]
+            "base": [200,275,350]
         },
         "sp_cost": [100,110,120],
         "cooldown": [80,70,60]

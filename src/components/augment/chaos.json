@@ -50,18 +50,18 @@
         "threshold": 2,
         "duration": 2.5,
         "movement_speed": {
-            "melee": 20,
-            "range": 15
+            "melee": 10,
+            "range": 5
         },
         "damage": {
             "level": 5,
-            "additionalAttack": 100,
-            "amp": 60
+            "additionalAttack": 80,
+            "amp": 40
         },
         "heal": {
-            "additionalAttack": 80,
-            "amp": 25,
-            "maxHP": 10,
+            "additionalAttack": 70,
+            "amp": 20,
+            "maxHP": 8,
             "lostHP": 10
         },
         "additional_heal_per_hit": 40,

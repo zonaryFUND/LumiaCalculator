@@ -1,8 +1,8 @@
 {
     "Q": {
         "damage": {
-            "base": [50,80,110,140,170],
-            "amp": 50
+            "base": [60,90,120,150,180],
+            "amp": 55
         },
         "reuse": 3,
         "sp_cost": 70,
@@ -10,7 +10,7 @@
     },
     "W": {
         "damage": {
-            "base": [40,70,100,130,160],
+            "base": [60,90,120,150,180],
             "amp": 65
         },
         "slow": {
@@ -28,17 +28,17 @@
     "E": {
         "reuse": 1.5,
         "damage": {
-            "base": [80,115,150,185,220],
-            "amp": 85
+            "base": [110,145,180,215,250],
+            "amp": 75
         },
-        "airborne": 0.4,
+        "airborne": 0.55,
         "sp_cost": [60,65,70,75,80],
-        "cooldown": [19,18,17,16,15]
+        "cooldown": [18,17,16,15,14]
     },
     "R": {
         "first_damage": {
             "base": [50,100,150],
-            "amp": 20
+            "amp": 15
         },
         "shield_duration": 1,
         "shield": {
@@ -47,8 +47,8 @@
         },
         "duration": 1,
         "second_damage": {
-            "base": [200,300,400],
-            "amp": 90
+            "base": [220,310,400],
+            "amp": 85
         },
         "additional_shield": {
             "base": [30,40,50],

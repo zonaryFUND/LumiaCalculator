@@ -1,21 +1,22 @@
 {
     "red": {
+        "dot_duration": 3,
         "damage": {
             "base": 3,
-            "level": 4
+            "level": 3
         },
         "cooldown": 4,
-        "duration": 150
+        "duration": 120
     },
     "purple": {
         "cdr": 15,
-        "max_cdr": 10,
+        "max_cdr": 5,
         "amp": 3,
         "sp_regeneration": {
             "tick": 3,
             "effet": 15
         },
-        "duration": 150
+        "duration": 120
     },
     "yellow": {
         "credit": {
@@ -28,19 +29,19 @@
         "heal": {
             "durataion": 4,
             "effect": {
-                "maxHP": 7
+                "maxHP": 6
             }
         },
-        "duration": 150
+        "duration": 120
     },
     "blue": {
-        "movement_speed": 0.15,
-        "ms_not_in_combat": 0.1,
-        "attack_speed": 12,
+        "movement_speed": 0.12,
+        "ms_not_in_combat": 0.08,
+        "attack_speed": 10,
         "on_get": {
             "duration": 5,
             "effect": 30
         },
-        "duration": 150
+        "duration": 120
     }
 }

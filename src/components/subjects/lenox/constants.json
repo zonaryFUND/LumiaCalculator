@@ -38,7 +38,7 @@
             "effect": [30,35,40,45,50]
         },
         "sp_cost": [60,65,70,76,80],
-        "cooldown": 7
+        "cooldown": 8
     },
     "R": {
         "damage": {

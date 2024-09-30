@@ -485,7 +485,7 @@
 		{
 			"weapon": "guitar",
 			"type": "basic_attack_amp",
-			"value": 1.8,
+			"value": 1.4,
 			"attackSpeed": 3.1
 		}
 	],
@@ -501,7 +501,7 @@
 		{
 			"weapon": "sniper_rifle",
 			"type": "basic_attack_amp",
-			"value": 2.2,
+			"value": 2,
 			"attackSpeed": 2.7
 		}
 	],
@@ -739,7 +739,7 @@
 		{
 			"weapon": "bow",
 			"type": "basic_attack_amp",
-			"value": 1.4,
+			"value": 1.2,
 			"attackSpeed": 3.3
 		}
 	],
