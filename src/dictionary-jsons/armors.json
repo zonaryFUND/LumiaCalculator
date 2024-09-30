@@ -451,7 +451,7 @@
 	"cowboy_hat": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "27",
+		"attackPower": "25",
 		"attackSpeed": "30",
 		"option": "healing_reduction_weak"
 	},
@@ -471,7 +471,7 @@
 	"harmony_in_full_bloom": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "78",
+		"skillAmplification": "75",
 		"cooldownReduction": "15",
 		"maxSP": "300"
 	},
@@ -543,7 +543,7 @@
 	"the_star_of_the_wilds": {
 		"type": "head",
 		"tier": "legendary",
-		"attackPower": "35",
+		"attackPower": "33",
 		"attackSpeed": "40",
 		"option": "healing_reduction_weak"
 	},
@@ -582,7 +582,7 @@
 		"type": "head",
 		"tier": "legendary",
 		"perLevelStatus": "ap[1]",
-		"skillAmplification": "85",
+		"skillAmplification": "82",
 		"cooldownReduction": "15",
 		"maxSP": "500"
 	},
