@@ -59,7 +59,7 @@
         },
         "slow": {
             "duration": 2,
-            "effect": 60
+            "effect": 50
         },
         "omnisyphon_amp": [20,30,40],
         "min_damage": {

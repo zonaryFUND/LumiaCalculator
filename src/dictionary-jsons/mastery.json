@@ -371,7 +371,7 @@
 		{
 			"weapon": "hammer",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.4,
 			"attackSpeed": 3
 		},
 		{
@@ -663,7 +663,7 @@
 		{
 			"weapon": "whip",
 			"type": "skill_amp",
-			"value": 4.3,
+			"value": 4.1,
 			"attackSpeed": 2.8
 		}
 	],

@@ -315,7 +315,7 @@
 		"attackPower": "42",
 		"apPerLevel": "4.6",
 		"armor": "44",
-		"armorPerLevel": "3.4",
+		"armorPerLevel": "3.1",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
 	},
@@ -609,7 +609,7 @@
 	},
 	"jenny": {
 		"maxHP": "895",
-		"maxHPperLevel": "68",
+		"maxHPperLevel": "71",
 		"maxSP": "440",
 		"maxSPperLevel": "25",
 		"hpRegeneration": "0.75",
@@ -762,7 +762,7 @@
 		"spRegenPerLevel": "0.01",
 		"attackPower": "27",
 		"apPerLevel": "5",
-		"armor": "52",
+		"armor": "54",
 		"armorPerLevel": "3.3",
 		"attackSpeed": "0.15",
 		"movementSpeed": "3.55"
@@ -1096,7 +1096,7 @@
 		"hpRegenPerLevel": "0.06",
 		"spRegeneration": "3",
 		"spRegenPerLevel": "0.04",
-		"attackPower": "33",
+		"attackPower": "36",
 		"apPerLevel": "4.4",
 		"armor": "50",
 		"armorPerLevel": "3",

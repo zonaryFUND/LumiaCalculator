@@ -55,7 +55,7 @@
         },
         "damage_count": 4,
         "finish_damage": {
-            "base": [80,150,220],
+            "base": [80,140,200],
             "attack": 80
         },
         "window_after_attack": 4,

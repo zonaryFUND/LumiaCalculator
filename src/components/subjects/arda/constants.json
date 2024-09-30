@@ -60,7 +60,7 @@
             "duration": 8
         },
         "sp_cost": [160,120,80],
-        "cooldown": [18,16,14]
+        "cooldown": [19,17,15]
     },
     "T": {
         "max_stack": [5,4,3],

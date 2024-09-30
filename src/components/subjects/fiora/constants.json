@@ -35,7 +35,7 @@
     "R": {
         "damage": {
             "base": [100,150,200],
-            "amp": 45
+            "amp": 50
         },
         "slow": {
             "duration": 1,

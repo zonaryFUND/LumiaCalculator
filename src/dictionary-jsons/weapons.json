@@ -879,7 +879,7 @@
 	"hellfire_crimson": {
 		"type": "assault_rifle",
 		"tier": "mythic",
-		"attackPower": "36",
+		"attackPower": "38",
 		"attackSpeed": "40",
 		"adaptiveStatus": "53",
 		"armorPenetrationRatio": "7",
@@ -1308,7 +1308,7 @@
 		"type": "two-handed_sword",
 		"tier": "epic",
 		"attackPower": "38",
-		"skillAmplification": "81",
+		"skillAmplification": "77",
 		"cooldownReduction": "15"
 	},
 	"laevateinn": {

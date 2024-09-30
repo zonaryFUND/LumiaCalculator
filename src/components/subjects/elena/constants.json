@@ -64,7 +64,7 @@
         "frozen": 110,
         "stun": 1.1,
         "damage": {
-            "base": [30,65,100],
+            "base": [20,50,80],
             "defense": 35,
             "amp": 20
         },

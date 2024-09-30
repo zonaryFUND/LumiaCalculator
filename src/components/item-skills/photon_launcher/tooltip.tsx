@@ -30,7 +30,9 @@ const Value: React.FC<ItemSkillProps> = props => {
 const description: React.FC<ItemSkillProps> = props => (
     <p>
         敵に基本攻撃を的中させるたびにスタックを獲得します。{Constants.max_stack}スタックの時に相手に基本攻撃を命中させると、
-        スタックをすべて消耗して<Value {...props} />の追加スキルダメージを与えて追加ダメージの{Constants.lifesteal}%を回復します。
+        スタックをすべて消耗して<Value {...props} />の追加スキルダメージを与え
+        {props.values.heal ? <>て追加ダメージの{props.values.heal}%を回復し</>: null}
+        ます。
     </p> 
 );
 

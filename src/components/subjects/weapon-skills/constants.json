@@ -251,7 +251,7 @@
             "duration": 0.1,
             "basic_attack_addition": 0.1
         },
-        "attack_speed": [20,35,50],
+        "attack_speed": [20,30,40],
         "cooldown": 17
     },
     "axe": {

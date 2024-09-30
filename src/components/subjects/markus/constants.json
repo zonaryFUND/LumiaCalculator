@@ -4,9 +4,9 @@
         "attack_speed": [28,41,54,67,80],
         "damage": {
             "base": [15,25,35,45,55],
-            "additionalMaxHP": 18
+            "additionalMaxHP": 15
         },
-        "heal": 200,
+        "heal": 180,
         "duration": 5,
         "movement_speed": {
             "duration": 2,

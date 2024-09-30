@@ -330,7 +330,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"defense": "20",
+		"defense": "23",
 		"spRegeneration": "200",
 		"option": "rally"
 	},
@@ -339,7 +339,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "ad",
 		"attackPower": "10",
-		"attackSpeed": "25",
+		"attackSpeed": "20",
 		"defense": "20",
 		"option": "awakening"
 	},
@@ -435,7 +435,7 @@
 	"vigilante": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "54",
+		"skillAmplification": "50",
 		"maxHP": "150",
 		"spRegeneration": "50",
 		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.4,\"amp\":0.14}}]"
@@ -636,7 +636,7 @@
 		"tier": "legendary",
 		"attackPower": "30",
 		"attackSpeed": "15",
-		"defense": "10",
+		"defense": "14",
 		"spRegeneration": "100",
 		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"cooldown\":2]"
 	},

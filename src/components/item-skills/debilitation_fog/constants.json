@@ -2,7 +2,7 @@
     "duration": 6,
     "defense_down": 15,
     "damage": {
-        "base": 15,
+        "base": 12,
         "additionalMaxHP": 15
     },
     "cooldown": 10

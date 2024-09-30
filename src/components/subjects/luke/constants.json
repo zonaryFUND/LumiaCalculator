@@ -29,8 +29,8 @@
             "base": [4,8,12,16,20],
             "attack": 18
         },
-        "heal": 20,
-        "max_heal": 45,
+        "heal": 18,
+        "max_heal": 40,
         "sp_cost": [20,35,50,65,80],
         "cooldown": 7
     },

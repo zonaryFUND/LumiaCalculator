@@ -43,7 +43,7 @@
         "shield_duration": 1,
         "shield": {
             "base": [90,120,150],
-            "amp": 30
+            "amp": 25
         },
         "duration": 1,
         "second_damage": {
@@ -52,7 +52,7 @@
         },
         "additional_shield": {
             "base": [30,40,50],
-            "amp": 15
+            "amp": 10
         },
         "max_additional_shield": 3,
         "sp_cost": 100,
