@@ -25,7 +25,7 @@
         "first_damage": {
             "base": [50,75,100,125,150],
             "amp": 60,
-            "maxHP": 6
+            "maxHP": 7
         },
         "airborne": 0.8,
         "reuse": 3,

@@ -59,7 +59,7 @@
         },
         "knife_range": 5,
         "knife_damage": {
-            "base": [10,40,70],
+            "base": [20,50,80],
             "amp": 30
         }
     }

@@ -73,7 +73,7 @@
     "T": {
         "damage": {
             "base": [20,50,80],
-            "summonedAttack": 40
+            "summonedAttack": 50
         },
         "nina_revive": [20,18,16],
         "nina_revive_cost": 30,

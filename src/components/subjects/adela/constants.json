@@ -4,7 +4,7 @@
             "base": [40,85,130,175,220],
             "amp": 65
         },
-        "movement_speed": [4,5,6,7,8],
+        "movement_speed": [6,7,8,9,10],
         "queen_damage": {
             "base": [50,95,140,185,230],
             "amp": 75
@@ -50,7 +50,7 @@
         "reuse": 4,
         "duration": 8,
         "sp_cost": [70,85,100,115,130],
-        "cooldown": [14,13,12,11,10]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
         "channel": 2,

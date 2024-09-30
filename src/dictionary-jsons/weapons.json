@@ -498,7 +498,7 @@
 		"type": "shuriken",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "75",
+		"skillAmplification": "81",
 		"cooldownReduction": "15",
 		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
@@ -676,7 +676,7 @@
 		"tier": "legendary",
 		"attackPower": "83",
 		"attackSpeed": "35",
-		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
+		"option": "extended_fury[\"extend\":25,\"dmg\":{\"level\":3}]"
 	},
 	"blood_half_moon": {
 		"type": "crossbow",
@@ -694,7 +694,7 @@
 		"attackSpeed": "40",
 		"adaptiveStatus": "51",
 		"armorPenetrationRatio": "7",
-		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
+		"option": "extended_fury[\"extend\":25,\"dmg\":{\"level\":3}]"
 	},
 	"blood_half_moon_dawn": {
 		"type": "crossbow",
@@ -750,7 +750,7 @@
 		"tier": "legendary",
 		"attackPower": "29",
 		"attackSpeed": "30",
-		"skillAmplification": "74",
+		"skillAmplification": "78",
 		"cooldownReduction": "15",
 		"ammo": "3",
 		"option": "last_word[\"dmg\":{\"amp\":45,\"targetMaxHP\":8},\"heal\":66]"
@@ -805,7 +805,7 @@
 		"tier": "mythic",
 		"attackPower": "28",
 		"attackSpeed": "30",
-		"adaptiveStatus": "53",
+		"adaptiveStatus": "55",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"ammo": "3",
@@ -854,7 +854,7 @@
 		"attackPower": "83",
 		"attackSpeed": "40",
 		"ammo": "120",
-		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
+		"option": "extended_fury[\"extend\":25,\"dmg\":{\"level\":3}]"
 	},
 	"black_widow": {
 		"type": "assault_rifle",
@@ -1953,7 +1953,7 @@
 	"deathadder_queen": {
 		"type": "vf_prosthetic",
 		"tier": "epic",
-		"attackPower": "55",
+		"attackPower": "57",
 		"perLevelStatus": "aaamp[0.8]",
 		"attackSpeed": "15",
 		"option": "biotic_infusion_vf[\"dmg\":{\"level\":5}]"
@@ -1961,14 +1961,14 @@
 	"black_mamba_king": {
 		"type": "vf_prosthetic",
 		"tier": "epic",
-		"attackPower": "47",
+		"attackPower": "49",
 		"perLevelStatus": "hp[4]",
 		"omnisyphon": "12"
 	},
 	"alpha_sidewinder": {
 		"type": "vf_prosthetic",
 		"tier": "epic",
-		"attackPower": "70",
+		"attackPower": "72",
 		"cooldownReduction": "15",
 		"movementSpeed": "0.06",
 		"option": "swift_strides_vf[\"dmg\":{\"base\":55},\"slow\":{\"effect\":30,\"duration\":1}]"

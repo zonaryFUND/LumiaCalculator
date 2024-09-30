@@ -59,8 +59,8 @@
     },
     "R": {
         "first_damage": {
-            "base": [40,65,90],
-            "attack": 60
+            "base": [60,90,120],
+            "attack": 75
         },
         "first_slow": {
             "duration": 1,
@@ -72,8 +72,8 @@
         },
         "stun": 1,
         "second_damage": {
-            "base": [70,105,140],
-            "attack": 70
+            "base": [70,115,150],
+            "attack": 80
         },
         "second_slow": {
             "duration": 1,

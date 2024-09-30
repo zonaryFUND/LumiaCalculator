@@ -1,12 +1,12 @@
 {
     "Q": {
         "min_damage": {
-            "base": [40,60,80,100,120],
-            "attack": 45
+            "base": [30,50,70,90,110],
+            "attack": 40
         },
         "max_damage": {
-            "base": [80,120,160,200,240],
-            "attack": 90
+            "base": [60,100,140,180,220],
+            "attack": 80
         },
         "charge_threshold": 4,
         "slow_threshold": 2,

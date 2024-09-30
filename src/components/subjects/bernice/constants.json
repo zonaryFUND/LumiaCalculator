@@ -59,7 +59,7 @@
         "bind": 1.25,
         "second_damage": {
             "base": [80,120,160],
-            "attack": 30
+            "attack": 45
         },
         "spread_range": 2,
         "max_spread": 3,

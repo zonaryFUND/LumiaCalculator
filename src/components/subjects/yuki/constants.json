@@ -24,7 +24,7 @@
         "damage_reduction": 30,
         "e_cooldown_reduction": 3,
         "sp_cost": 50,
-        "cooldown": [15,14,13,12,11]
+        "cooldown": [16,15,14,13,12]
     },
     "E": {
         "damage": {

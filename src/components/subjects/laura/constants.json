@@ -20,7 +20,7 @@
         "target_duration": 3,
         "heal": {
             "base": [30,35,40,45,50],
-            "amp": 10
+            "amp": 7
         },
         "sp_cost": 60,
         "cooldown": [10,9.5,9,8.5,8]
@@ -47,8 +47,8 @@
         },
         "duration": 1,
         "second_damage": {
-            "base": [220,310,400],
-            "amp": 85
+            "base": [200,280,360],
+            "amp": 80
         },
         "additional_shield": {
             "base": [30,40,50],
@@ -61,8 +61,8 @@
     "T": {
         "attack_speed": 100,
         "damage": {
-            "base": [40,70,100],
-            "amp": 40
+            "base": [30,60,90],
+            "amp": 30
         }
     }
 }

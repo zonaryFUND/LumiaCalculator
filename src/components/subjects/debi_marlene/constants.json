@@ -33,7 +33,7 @@
         "slow_after": 1.5,
         "slow": {
             "duration": 0.75,
-            "effect": 20
+            "effect": 40
         },
         "debi_remain": 5, 
         "second_damage": {
@@ -42,7 +42,7 @@
         },
         "airborne": 0.5,
         "cooldown": {
-            "constant": [17,15.5,14,12.5,11]
+            "constant": [15,14,13,12,11]
         }
     },
     "MarleneQ": {

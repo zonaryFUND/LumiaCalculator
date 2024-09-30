@@ -1,7 +1,7 @@
 {
     "Q": {
         "damage": {
-            "base": [40,60,80,100,120],
+            "base": [40,65,90,115,140],
             "amp": 60
         },
         "additional_damage": 30,
@@ -70,7 +70,7 @@
             "stack": 2
         },
         "target_cooldown": 12,
-        "stack_conversion": 2,
+        "stack_conversion": 3,
         "stack_conversion_limit": 70,
         "cooldown": {
             "constant": [12,10,8]

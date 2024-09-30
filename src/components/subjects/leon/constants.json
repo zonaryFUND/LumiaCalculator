@@ -47,7 +47,7 @@
         "attack_speed": [30,40,50],
         "damage": {
             "base": [20,40,60],
-            "amp": 35
+            "amp": 30
         },
         "cooldown": {
             "constant": [10,7,4]

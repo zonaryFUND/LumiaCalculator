@@ -1,0 +1,8 @@
+{
+    "subject.garnet.passive-damage-reduction": "T基本攻撃ダメージ減少",
+    "subject.garnet.w-channeling-heal": "W詠唱中ヒール(1ティック)",
+    "subject.garnet.w-damage-min": "W最小ダメージ",
+    "subject.garnet.w-damage-max": "W最大ダメージ",
+    "subject.garnet.w-finish-heal-min": "W終了時ヒール(スタック0)",
+    "subject.garnet.w-finish-heal-max": "W終了時ヒール(スタック{value})"
+}

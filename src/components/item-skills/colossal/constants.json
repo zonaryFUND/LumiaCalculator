@@ -1,8 +1,8 @@
 {
     "threshold": 40,
-    "duration": 2.5,
+    "duration": 2,
     "shield": {
-        "base": 200,
+        "base": 125,
         "additionalMaxHP": 80
     },
     "cooldown": 30

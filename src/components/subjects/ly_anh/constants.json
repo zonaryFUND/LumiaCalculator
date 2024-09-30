@@ -96,7 +96,7 @@
             "attack": 10
         },
         "fear_count": 4,
-        "fear": [0.8,1,1.2],
+        "fear": [0.9,1.1,1.3],
         "fear_range": 2,
         "fear_immune": 3,
         "hp_on_death": [100,200,300],
@@ -118,7 +118,7 @@
             "attack": 100
         },
         "additional_damage": {
-            "attack": [8,15,22]
+            "attack": [8,16,24]
         },
         "possesed_heal": 100,
         "ghost_heal": 200,

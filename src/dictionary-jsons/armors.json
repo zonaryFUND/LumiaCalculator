@@ -28,10 +28,10 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ad",
-		"attackPower": "10",
+		"attackPower": "9",
 		"criticalChance": "24",
 		"cooldownReduction": "15",
-		"defense": "10"
+		"defense": "9"
 	},
 	"rocker_s_jacket": {
 		"type": "chest",
@@ -165,7 +165,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "40",
+		"skillAmplification": "43",
 		"defense": "28",
 		"option": "healing_reduction_weak"
 	},
@@ -233,9 +233,9 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "14",
+		"skillAmplification": "16",
 		"defense": "28",
-		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.8,\"amp\":0.22}}]"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":1,\"amp\":0.25}}]"
 	},
 	"omertà": {
 		"type": "chest",
@@ -285,7 +285,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[24]",
 		"attackSpeed": "42",
-		"defense": "34"
+		"defense": "36"
 	},
 	"the_revenant": {
 		"type": "chest",
@@ -300,7 +300,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[20]",
 		"cooldownReduction": "15",
-		"defense": "33",
+		"defense": "36",
 		"option": "quickstep"
 	},
 	"ghost_bride_s_dress": {
@@ -315,7 +315,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "ap",
 		"skillAmplification": "40",
-		"defense": "28",
+		"defense": "30",
 		"option": "brute_enforcer"
 	},
 	"ghillie_suit": {
@@ -330,7 +330,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"defense": "23",
+		"defense": "25",
 		"spRegeneration": "200",
 		"option": "rally"
 	},
@@ -413,13 +413,13 @@
 	"imperial_crown": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "68",
+		"skillAmplification": "70",
 		"cooldownReduction": "15"
 	},
 	"imperial_burgonet": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "67",
+		"skillAmplification": "70",
 		"cooldownReduction": "10",
 		"maxSP": "400",
 		"movementSpeed": "0.06"
@@ -435,7 +435,7 @@
 	"vigilante": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "50",
+		"skillAmplification": "52",
 		"maxHP": "150",
 		"spRegeneration": "50",
 		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.4,\"amp\":0.14}}]"
@@ -527,7 +527,7 @@
 	"sultan_s_turban": {
 		"type": "head",
 		"tier": "legendary",
-		"skillAmplification": "83",
+		"skillAmplification": "85",
 		"cooldownReduction": "15",
 		"maxSP": "400",
 		"movementSpeed": "0.06"
@@ -553,13 +553,13 @@
 		"skillAmplification": "65",
 		"maxHP": "180",
 		"spRegeneration": "50",
-		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.8,\"amp\":0.22}}]"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":1,\"amp\":0.25}}]"
 	},
 	"dwarf_s_helmet": {
 		"type": "head",
 		"tier": "legendary",
 		"perLevelStatus": "hp[16]",
-		"defense": "10",
+		"defense": "12",
 		"spRegeneration": "50",
 		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
@@ -663,13 +663,12 @@
 		"tier": "mythic",
 		"attackSpeed": "40",
 		"adaptiveStatus": "50",
-		"defense": "10",
-		"movementSpeed": "0.08"
+		"defense": "10"
 	},
 	"corrupting_touch": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "57",
+		"skillAmplification": "59",
 		"cooldownReduction": "10",
 		"option": "healing_reduction_weak"
 	},
@@ -683,7 +682,7 @@
 	"draupnir": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "65",
+		"skillAmplification": "67",
 		"maxSP": "300"
 	},
 	"vital_sign_sensor": {
@@ -691,7 +690,7 @@
 		"tier": "epic",
 		"attackSpeed": "33",
 		"criticalChance": "26",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":25,\"level\":2}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":20,\"level\":2}]"
 	},
 	"creed_of_the_knight": {
 		"type": "arm",
@@ -717,7 +716,7 @@
 	"tindalos_band": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "53",
+		"skillAmplification": "55",
 		"cooldownReduction": "15",
 		"maxSP": "300"
 	},
@@ -810,9 +809,10 @@
 	"radar": {
 		"type": "arm",
 		"tier": "legendary",
+		"attackPower": "10",
 		"attackSpeed": "42",
 		"criticalChance": "35",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":55,\"level\":3},\"heal\":30]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":40,\"level\":2},\"heal\":30]"
 	},
 	"auto_arms": {
 		"type": "arm",
@@ -831,7 +831,7 @@
 	"tindalos_monarch": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "80",
+		"skillAmplification": "82",
 		"cooldownReduction": "20",
 		"cdrCap": "5",
 		"maxSP": "400"
@@ -862,16 +862,16 @@
 	"nightmare_nails": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "77",
+		"skillAmplification": "79",
 		"cooldownReduction": "15",
 		"option": "healing_reduction_weak"
 	},
 	"helix": {
 		"type": "arm",
 		"tier": "legendary",
-		"attackPower": "20",
+		"attackPower": "22",
 		"cooldownReduction": "15",
-		"defense": "20",
+		"defense": "22",
 		"option": "pulverization"
 	},
 	"mythril_armband": {
@@ -1033,7 +1033,7 @@
 	"bucephalus": {
 		"type": "leg",
 		"tier": "epic",
-		"attackPower": "6",
+		"attackPower": "5",
 		"criticalChance": "25",
 		"movementSpeed": "0.22"
 	},

@@ -2,7 +2,7 @@
     "Q": {
         "damage": {
             "base": [40,55,70,85,100],
-            "attack": 110
+            "attack": 100
         },
         "basic_attack_enhance": {
             "count": 3,
@@ -10,7 +10,7 @@
             "attack_speed": [80,110,140,170,200] 
         },
         "center_damage": {
-            "base": [70,90,110,130,150],
+            "base": [55,75,95,115,135],
             "attack": 120
         },
         "slow": {
@@ -41,7 +41,7 @@
         "basic_attack_range": 3.5,
         "damage": {
             "base": [20,40,60,80,100],
-            "attack": 35
+            "attack": 30
         },
         "sp_cost": [80,90,100,110,120],
         "cooldown": [10,9,8,7,6]

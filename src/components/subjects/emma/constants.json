@@ -1,11 +1,11 @@
 {
     "Q": {
         "damage": {
-            "base": [40,75,110,145,180],
+            "base": [60,95,130,165,200],
             "amp": 85
         },
         "duration": 7,
-        "cooldown_reduction": 15,
+        "cooldown_reduction": 20,
         "slow": {
             "duration": 2,
             "effect": 40

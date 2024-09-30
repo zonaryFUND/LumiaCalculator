@@ -46,9 +46,9 @@
         "duration": 2,
         "damage": {
             "base": [100,200,300],
-            "amp": 70
+            "amp": 65
         },
-        "charm": 1,
+        "charm": 0.8,
         "sp_cost": [100,125,150],
         "cooldown": [80,65,50]
     },

@@ -11,7 +11,7 @@
         },
         "enhance": [1,5,10],
         "enhanced_damage": {
-            "base": [20,30,40,50,60],
+            "base": [30,40,50,60,70],
             "amp": 25
         },
         "Q2_enable_enhanced_attack": 2,
@@ -48,7 +48,7 @@
     },
     "E": {
         "sp_cost": [70,75,80,85,90],
-        "cooldown": [14,13,12,11,10]
+        "cooldown": [13,12,11,10,9]
     },
     "E1": {
         "first_min_damage": {
@@ -85,7 +85,7 @@
         "shield_duration": 4,
         "shield": {
             "base": [40,90,140],
-            "amp": 45
+            "amp": 50
         },
         "cooldown_reduction": 1,
         "attack_speed": [20,30,40],

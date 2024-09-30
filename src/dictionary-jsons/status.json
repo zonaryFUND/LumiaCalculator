@@ -137,7 +137,7 @@
 		"spRegeneration": "3.9",
 		"spRegenPerLevel": "0.04",
 		"attackPower": "43",
-		"apPerLevel": "4.5",
+		"apPerLevel": "4.1",
 		"armor": "49",
 		"armorPerLevel": "2.1",
 		"attackSpeed": "0.11",
@@ -192,7 +192,7 @@
 		"movementSpeed": "3.5"
 	},
 	"camilo": {
-		"maxHP": "940",
+		"maxHP": "980",
 		"maxHPperLevel": "88",
 		"maxSP": "440",
 		"maxSPperLevel": "25",
@@ -321,7 +321,7 @@
 	},
 	"debi_marlene": {
 		"maxHP": "1000",
-		"maxHPperLevel": "80",
+		"maxHPperLevel": "83",
 		"maxSP": "430",
 		"maxSPperLevel": "16",
 		"hpRegeneration": "1.02",
@@ -336,7 +336,7 @@
 		"movementSpeed": "3.5"
 	},
 	"echion": {
-		"maxHP": "950",
+		"maxHP": "990",
 		"maxHPperLevel": "96",
 		"maxSP": "430",
 		"maxSPperLevel": "12",
@@ -545,7 +545,7 @@
 	},
 	"isaac": {
 		"maxHP": "950",
-		"maxHPperLevel": "92",
+		"maxHPperLevel": "95",
 		"maxSP": "425",
 		"maxSPperLevel": "16",
 		"hpRegeneration": "2.2",
@@ -665,7 +665,7 @@
 		"spRegeneration": "2.6",
 		"spRegenPerLevel": "0.04",
 		"attackPower": "41",
-		"apPerLevel": "3.9",
+		"apPerLevel": "4.3",
 		"armor": "50",
 		"armorPerLevel": "2.7",
 		"attackSpeed": "0.13",
@@ -682,7 +682,7 @@
 		"spRegenPerLevel": "0.03",
 		"attackPower": "30",
 		"apPerLevel": "3.9",
-		"armor": "45",
+		"armor": "48",
 		"armorPerLevel": "2.7",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.55"
@@ -699,7 +699,7 @@
 		"attackPower": "28",
 		"apPerLevel": "4.9",
 		"armor": "51",
-		"armorPerLevel": "3.2",
+		"armorPerLevel": "2.9",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.45"
 	},
@@ -817,7 +817,7 @@
 	},
 	"mai": {
 		"maxHP": "980",
-		"maxHPperLevel": "80",
+		"maxHPperLevel": "83",
 		"maxSP": "440",
 		"maxSPperLevel": "16",
 		"hpRegeneration": "2.25",
@@ -956,7 +956,7 @@
 		"apPerLevel": "4",
 		"armor": "47",
 		"armorPerLevel": "2.5",
-		"attackSpeed": "0.12",
+		"attackSpeed": "0.07",
 		"movementSpeed": "3.45"
 	},
 	"rozzi": {
@@ -968,7 +968,7 @@
 		"hpRegenPerLevel": "0.03",
 		"spRegeneration": "3.1",
 		"spRegenPerLevel": "0.02",
-		"attackPower": "33",
+		"attackPower": "30",
 		"apPerLevel": "4.8",
 		"armor": "51",
 		"armorPerLevel": "2.8",
@@ -986,7 +986,7 @@
 		"spRegenPerLevel": "0.02",
 		"attackPower": "29",
 		"apPerLevel": "5",
-		"armor": "50",
+		"armor": "52",
 		"armorPerLevel": "3",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
@@ -1153,7 +1153,7 @@
 	},
 	"yuki": {
 		"maxHP": "920",
-		"maxHPperLevel": "87",
+		"maxHPperLevel": "83",
 		"maxSP": "410",
 		"maxSPperLevel": "20",
 		"hpRegeneration": "1.58",
@@ -1196,6 +1196,22 @@
 		"apPerLevel": "4.1",
 		"armor": "52",
 		"armorPerLevel": "2.8",
+		"attackSpeed": "0.14",
+		"movementSpeed": "3.55"
+	},
+	"garnet": {
+		"maxHP": "960",
+		"maxHPperLevel": "94",
+		"maxSP": "430",
+		"maxSPperLevel": "25",
+		"hpRegeneration": "2.2",
+		"hpRegenPerLevel": "0.136",
+		"spRegeneration": "3",
+		"spRegenPerLevel": "0.04",
+		"attackPower": "35",
+		"apPerLevel": "4.1",
+		"armor": "54",
+		"armorPerLevel": "3.1",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.55"
 	}

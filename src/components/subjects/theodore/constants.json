@@ -3,7 +3,7 @@
         "channeling": 1.5,
         "movement_speed_penalty": 20,
         "damage": {
-            "base": [50,85,120,155,190],
+            "base": [50,90,130,170,210],
             "amp": 65
         },
         "heal_duration": 2.5,
@@ -12,7 +12,7 @@
             "amp": 20
         },
         "screen_damage": {
-            "base": [50,90,130,170,210],
+            "base": [70,110,150,190,230],
             "amp": 65
         },
         "screen_heal": {

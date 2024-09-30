@@ -54,7 +54,7 @@ const aiueoDef: {index: string, ids: SubjectID[]}[] = [
         "eva", "echion", "estelle", "emma", "elena"
     ]},
     {index: "か", ids: [
-        "karla", "katja", "camilo", "chiara", "cathy",
+        "garnet", "karla", "katja", "camilo", "chiara", "cathy",
         "chloe", "kenneth"
     ]},
     {index: "さ", ids: [

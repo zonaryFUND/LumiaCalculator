@@ -14,20 +14,21 @@
             "attack": 103,
             "basicAttackAmp": 100
         },
+        "daikyu_as_penalty": 0.2,
         "daikyu_range": [6.3,6.35,6.4,6.45,6.5],
         "cooldown": {
             "constant": 0.8
         }
     },
     "W": {
-        "cooldown_reduction": 1.5,
+        "cooldown_reduction": 1,
         "hankyu_damage": {
             "base": [50,70,90,110,130],
-            "attack": 90
+            "attack": 80
         },
         "hankyu_slow": {
             "duration": 1.5,
-            "effect": 40
+            "effect": 30
         },
         "multiple_hit": 20,
         "daikyu_damage": {
@@ -43,7 +44,7 @@
             "effect": 20
         },
         "sp_cost": [50,60,70,80,90],
-        "cooldown": [5.5,5.25,5,4.75,4.5]
+        "cooldown": [6,5.75,5.5,5.25,5]
     },
     "E": {
         "max_target": 3,
@@ -81,7 +82,7 @@
         },
         "daikyu_slow": {
             "duration": 1.5,
-            "effect": 80
+            "effect": 60
         },
         "daikyu_acceleration": 0.8,
         "daikyu_enhance": {

@@ -1,0 +1,88 @@
+{
+    "Q": {
+        "Q1_damage": {
+            "base": [40,60,80,100,120],
+            "amp": 45,
+            "maxHP": 5
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 30
+        },
+        "reuse": 5,
+        "Q2_damage": {
+            "base": [50,75,100,125,150],
+            "amp": 55,
+            "maxHP": 7
+        },
+        "hp_cost_percent": 2,
+        "cooldown": [6,5.5,5,4.5,4]
+    },
+    "W": {
+        "qe_cooldown_reduction_per_stack": 0.6,
+        "charge_duration_max": 0.8,
+        "damage_reduction": {
+            "duration": 1,
+            "effect": 70
+        },
+        "heal_tick": 0.2,
+        "heal": {
+            "lostHP": 4
+        },
+        "min_damage": {
+            "base": [80,110,140,170,200],
+            "amp": 50,
+            "maxHP": 8
+        },
+        "max_damage": {
+            "base": [120,165,210,255,300],
+            "amp": 75,
+            "maxHP": 12
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 50
+        },
+        "max_stack": 5,
+        "max_charge_bind": 0.8,
+        "finish_heal": {
+            "base": [20,40,60,80,100],
+            "amp": 50,
+            "maxHP": 5,
+            "stack": [30,35,40,45,50]
+        },
+        "cooldown": [13,12,11,10,9]
+    },
+    "E": {
+        "damage": {
+            "base": [60,85,110,135,160],
+            "amp": 50,
+            "maxHP": 7
+        },
+        "stun": 0.3,
+        "hp_cost_percent": 2,
+        "cooldown": [9,8.5,8,7.5,7]
+    },
+    "R": {
+        "bind": 0.7,
+        "damage": {
+            "base": [75,150,225],
+            "amp": 40,
+            "targetHP": 15
+        },
+        "duration": 6,
+        "reuse_threshold": 25,
+        "movement_speed": {
+            "duration": 2,
+            "effect": 30
+        },
+        "cooldown": [80,70,60]
+    },
+    "T": {
+        "reduction": {
+            "base": [2,6,10],
+            "amp": 1,
+            "maxHP": 0.5
+        }
+    }
+}

@@ -26,7 +26,7 @@
     },
     "MeleeE": {
         "duration": 5,
-        "taunt": 0.65,
+        "taunt": 0.75,
         "weapon_swap": 4,
         "sp_cost": [50,55,60,65,70],
         "cooldown": 12
