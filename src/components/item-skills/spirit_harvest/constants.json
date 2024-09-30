@@ -1,5 +1,5 @@
 {
-    "duration": 4,
+    "duration": 3,
     "first_damage": {
         "base": 10,
         "amp": 10
@@ -8,5 +8,5 @@
         "base": 50,
         "amp": 50
     },
-    "cooldown": 5
+    "cooldown": 8
 }

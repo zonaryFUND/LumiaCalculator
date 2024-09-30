@@ -3,8 +3,7 @@ import Constants from "./constants.json";
 
 const tableValues: TableValues = (dictionaryValues: any) => {
     return [
-        {type: "skill", ratio: Constants.dmg, labelFormat: "{text}1スタック/秒"},
-        {type: "skill", ratio: Constants.dmg, multiplier: 200, labelFormat: `{text}最大スタック(${Constants.max_stack})/秒`},
+        {type: "skill", ratio: dictionaryValues.dmg, labelFormat: "{text}/秒"}
     ]
 }
 

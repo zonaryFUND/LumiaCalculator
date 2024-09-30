@@ -1,10 +1,4 @@
 {
-    "dmg": {
-        "targetMaxHP": {
-            "base": 0.5,
-            "amp": 0.14
-        }
-    },
     "duration": 3,
-    "max_stack": 2
+    "max_stack": 1
 }

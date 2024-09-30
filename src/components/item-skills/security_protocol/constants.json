@@ -1,0 +1,10 @@
+{
+    "duration": 2.5,
+    "shield": {
+        "base": 50,
+        "maxHP": 7
+    },
+    "threshold": 40,
+    "enhance": 30,
+    "cooldown": 6
+}

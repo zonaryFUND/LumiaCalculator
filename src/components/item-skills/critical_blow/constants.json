@@ -1,0 +1,13 @@
+{
+    "duration": 8,
+    "damage": {
+        "attack": 55
+    },
+    "heal": {
+        "base": 20,
+        "attack": 40,
+        "lostHP": 8
+    },
+    "overheal_duration": 5,
+    "cooldown": 6
+}

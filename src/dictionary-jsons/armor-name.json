@@ -159,6 +159,14 @@
 		"jp": "ギリースーツ",
 		"en": "Ghillie Suit"
 	},
+	"spectral_jacket": {
+		"jp": "スペクター",
+		"en": "Spectral Jacket"
+	},
+	"wisdom_robes": {
+		"jp": "賢者のローブ",
+		"en": "Wisdom Robes"
+	},
 	"bikini": {
 		"jp": "ビキニ",
 		"en": "Bikini"
@@ -311,9 +319,17 @@
 		"jp": "スパークシールド",
 		"en": "Blue Flames"
 	},
+	"bunny_hat": {
+		"jp": "バニーハット",
+		"en": "Bunny Hat"
+	},
 	"chinese_opera_mask": {
 		"jp": "臉譜",
 		"en": "Chinese Opera Mask"
+	},
+	"blood_crown": {
+		"jp": "血色の王冠",
+		"en": "Blood Crown"
 	},
 	"corrupting_touch": {
 		"jp": "ポイズン手袋",
@@ -374,6 +390,10 @@
 	"music_box": {
 		"jp": "オルゴール",
 		"en": "Music Box"
+	},
+	"laced_quiver": {
+		"jp": "弓騎兵の矢筒",
+		"en": "Laced Quiver"
 	},
 	"mythril_shield": {
 		"jp": "ミスリル盾",
@@ -471,6 +491,14 @@
 		"jp": "ホルスの眼",
 		"en": "Eye of Horus"
 	},
+	"sultan_adorned": {
+		"jp": "スルタンの矢筒",
+		"en": "Sultan Adorned"
+	},
+	"mythril_quiver": {
+		"jp": "ミスリルクイーバー",
+		"en": "Mythril Quiver"
+	},
 	"prominence": {
 		"jp": "プロミネンス",
 		"en": "Prominence"
@@ -478,6 +506,10 @@
 	"bloodripper": {
 		"jp": "血寺爪",
 		"en": "Bloodripper"
+	},
+	"necronomicon": {
+		"jp": "ネクロノミコン",
+		"en": "Nercronomicon"
 	},
 	"hiking_boots": {
 		"jp": "登山靴",

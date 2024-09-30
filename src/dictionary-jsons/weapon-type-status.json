@@ -61,7 +61,7 @@
 	},
 	"nunchaku": {
 		"attackSpeed": "0.56",
-		"range": "1.55"
+		"range": "1.75"
 	},
 	"spear": {
 		"attackSpeed": "0.445",
@@ -77,7 +77,7 @@
 	},
 	"assault_rifle": {
 		"attackSpeed": "0.55",
-		"range": "5"
+		"range": "5.15"
 	},
 	"axe": {
 		"attackSpeed": "0.485",

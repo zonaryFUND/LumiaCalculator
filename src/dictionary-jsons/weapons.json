@@ -71,7 +71,7 @@
 		"attackPower": "38",
 		"skillAmplification": "86",
 		"cooldownReduction": "15",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":10,\"cooldown\":4]"
+		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":10,\"cooldown\":3]"
 	},
 	"bloody_hand": {
 		"type": "glove",
@@ -98,7 +98,7 @@
 		"adaptiveStatus": "56",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":10,\"cooldown\":4]"
+		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":10,\"cooldown\":3]"
 	},
 	"tactical_tonfa": {
 		"type": "tonfa",
@@ -145,7 +145,7 @@
 		"skillAmplification": "87",
 		"cooldownReduction": "15",
 		"defense": "8",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"frozen_echo": {
 		"type": "tonfa",
@@ -153,7 +153,7 @@
 		"attackPower": "66",
 		"attackSpeed": "40",
 		"defense": "8",
-		"option": "lichs_grasp[\"type\":\"all\",\"as\":30,\"duration\":2,\"cooldown\":4]"
+		"option": "lichs_grasp[\"type\":\"all\",\"as\":30,\"duration\":2,\"cooldown\":3]"
 	},
 	"blade_tonfa": {
 		"type": "tonfa",
@@ -169,7 +169,7 @@
 		"type": "tonfa",
 		"tier": "mythic",
 		"attackPower": "23",
-		"attackSpeed": "25",
+		"attackSpeed": "40",
 		"adaptiveStatus": "54",
 		"defense": "8",
 		"armorPenetrationRatio": "7",
@@ -183,7 +183,7 @@
 		"cooldownReduction": "15",
 		"defense": "8",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"vajra": {
 		"type": "bat",
@@ -231,9 +231,10 @@
 	"monkey_king_bar": {
 		"type": "bat",
 		"tier": "legendary",
-		"attackPower": "94",
-		"attackSpeed": "40",
-		"attackRange": "0.5"
+		"attackPower": "85",
+		"attackSpeed": "30",
+		"attackRange": "0.2",
+		"option": "critical_blow"
 	},
 	"ghost_hand": {
 		"type": "bat",
@@ -241,7 +242,7 @@
 		"attackPower": "30",
 		"skillAmplification": "86",
 		"cooldownReduction": "15",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"vulture_s_eye": {
 		"type": "bat",
@@ -262,11 +263,11 @@
 	"rod_of_heart_crimson": {
 		"type": "bat",
 		"tier": "mythic",
-		"attackPower": "57",
+		"attackPower": "49",
 		"attackSpeed": "40",
 		"adaptiveStatus": "53",
 		"armorPenetrationRatio": "7",
-		"attackRange": "0.5"
+		"option": "critical_blow"
 	},
 	"rod_of_heart_dawn": {
 		"type": "bat",
@@ -275,7 +276,7 @@
 		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"thunder_whip": {
 		"type": "whip",
@@ -445,10 +446,10 @@
 		"type": "throw",
 		"tier": "mythic",
 		"attackPower": "40",
-		"adaptiveStatus": "49",
+		"adaptiveStatus": "51",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "spirit_harvest"
 	},
 	"cards_of_tyranny": {
 		"type": "shuriken",
@@ -491,7 +492,7 @@
 		"tier": "legendary",
 		"attackPower": "41",
 		"skillAmplification": "91",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":3]"
+		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":2]"
 	},
 	"wind_and_fire_wheels": {
 		"type": "shuriken",
@@ -547,7 +548,7 @@
 		"adaptiveStatus": "52",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":3]"
+		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
 	},
 	"ancient_bolt": {
 		"type": "bow",
@@ -674,8 +675,8 @@
 		"type": "crossbow",
 		"tier": "legendary",
 		"attackPower": "83",
-		"attackSpeed": "30",
-		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":120}]"
+		"attackSpeed": "35",
+		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
 	},
 	"blood_half_moon": {
 		"type": "crossbow",
@@ -693,7 +694,7 @@
 		"attackSpeed": "40",
 		"adaptiveStatus": "51",
 		"armorPenetrationRatio": "7",
-		"option": "swift_strides[\"ms\":0.12,\"dmg\":{\"base\":150}]"
+		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
 	},
 	"blood_half_moon_dawn": {
 		"type": "crossbow",
@@ -702,7 +703,7 @@
 		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"elegance": {
 		"type": "pistol",
@@ -850,10 +851,10 @@
 	"judgement": {
 		"type": "assault_rifle",
 		"tier": "legendary",
-		"attackPower": "81",
-		"attackSpeed": "35",
-		"attackRange": "0.35",
-		"ammo": "120"
+		"attackPower": "83",
+		"attackSpeed": "40",
+		"ammo": "120",
+		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
 	},
 	"black_widow": {
 		"type": "assault_rifle",
@@ -882,8 +883,8 @@
 		"attackSpeed": "40",
 		"adaptiveStatus": "53",
 		"armorPenetrationRatio": "7",
-		"attackRange": "0.35",
-		"ammo": "120"
+		"ammo": "120",
+		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
 	},
 	"hellfire_dawn": {
 		"type": "assault_rifle",
@@ -894,7 +895,7 @@
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"ammo": "60",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"tac-50": {
 		"type": "sniper_rifle",
@@ -997,7 +998,7 @@
 		"armorPenetrationRatio": "7",
 		"vision": "1.5",
 		"ammo": "10",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":25},\"slow\":{\"effect\":20,\"duration\":1}]"
 	},
 	"fang_mace": {
 		"type": "hammer",
@@ -1044,9 +1045,9 @@
 	"squeaky_hammer": {
 		"type": "hammer",
 		"tier": "legendary",
-		"attackPower": "93",
+		"attackPower": "87",
 		"cooldownReduction": "15",
-		"option": "magnetic_midnight[\"dmg\":{\"level\":11},\"slow\":{\"effect\":20,\"duration\":1.5}]"
+		"option": "critical_blow"
 	},
 	"peacebringer": {
 		"type": "hammer",
@@ -1060,11 +1061,11 @@
 	"peacebringer_crimson": {
 		"type": "hammer",
 		"tier": "mythic",
-		"attackPower": "52",
+		"attackPower": "50",
 		"attackSpeed": "30",
 		"adaptiveStatus": "52",
 		"armorPenetrationRatio": "7",
-		"option": "magnetic_midnight[\"dmg\":{\"level\":11},\"slow\":{\"effect\":20,\"duration\":1.5}]"
+		"option": "critical_blow"
 	},
 	"peacebringer_dawn": {
 		"type": "hammer",
@@ -1122,10 +1123,10 @@
 	"axe_of_pangu": {
 		"type": "axe",
 		"tier": "legendary",
-		"attackPower": "92",
+		"attackPower": "85",
 		"attackSpeed": "30",
 		"maxHP": "100",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":120},\"slow\":{\"effect\":25,\"duration\":2}]"
+		"option": "critical_blow"
 	},
 	"paradise_lost": {
 		"type": "axe",
@@ -1154,11 +1155,11 @@
 	"scarlet_scythe_crimson": {
 		"type": "axe",
 		"tier": "mythic",
-		"attackPower": "53",
+		"attackPower": "47",
 		"attackSpeed": "30",
 		"adaptiveStatus": "52",
 		"armorPenetrationRatio": "7",
-		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":150},\"slow\":{\"effect\":25,\"duration\":2}]"
+		"option": "critical_blow"
 	},
 	"scarlet_scythe_dawn": {
 		"type": "axe",
@@ -1219,7 +1220,7 @@
 		"attackPower": "69",
 		"attackSpeed": "50",
 		"movementSpeed": "0.04",
-		"option": "swift_strides[\"ms\":0.06,\"dmg\":{\"base\":150}]"
+		"option": "swift_strides[\"ms\":0.2,\"dmg\":{\"base\":100}, \"slow\":{\"effect\":20,\"duration\":2},\"tick\":0.4]"
 	},
 	"eclipse": {
 		"type": "dagger",
@@ -1254,7 +1255,7 @@
 		"adaptiveStatus": "52",
 		"armorPenetrationRatio": "7",
 		"movementSpeed": "0.06",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":150}]"
+		"option": "swift_strides[\"ms\":0.22,\"dmg\":{\"base\":100}, \"slow\":{\"effect\":20,\"duration\":2},\"tick\":0.4]"
 	},
 	"scarlet_dagger_dawn": {
 		"type": "dagger",
@@ -1336,9 +1337,9 @@
 		"type": "two-handed_sword",
 		"tier": "legendary",
 		"attackPower": "40",
-		"skillAmplification": "87",
+		"skillAmplification": "84",
 		"cooldownReduction": "15",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "spirit_harvest"
 	},
 	"dáinsleif": {
 		"type": "two-handed_sword",
@@ -1356,7 +1357,7 @@
 		"attackSpeed": "40",
 		"adaptiveStatus": "53",
 		"armorPenetrationRatio": "7",
-		"option": "magnetic_midnight[\"dmg\":{\"level\":11},\"slow\":{\"effect\":20,\"duration\":1.5}]"
+		"option": "smolder[\"dmg\":{\"targetMaxHP\":0.8}]"
 	},
 	"dáinsleif_dawn": {
 		"type": "two-handed_sword",
@@ -1365,7 +1366,7 @@
 		"adaptiveStatus": "55",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":99,\"duration\":0.56,\"cooldown\":4]"
+		"option": "spirit_harvest"
 	},
 	"divine_dual_swords": {
 		"type": "dual_swords",
@@ -1406,15 +1407,16 @@
 		"type": "dual_swords",
 		"tier": "legendary",
 		"attackPower": "31",
-		"skillAmplification": "94",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"skillAmplification": "78",
+		"cooldownReduction": "15",
+		"option": "cataclasm"
 	},
 	"spring_and_autumn": {
 		"type": "dual_swords",
 		"tier": "legendary",
 		"attackPower": "66",
 		"attackSpeed": "18",
-		"attackRange": "0.35"
+		"option": "quickstep"
 	},
 	"phantom_blade": {
 		"type": "dual_swords",
@@ -1432,7 +1434,7 @@
 		"attackSpeed": "30",
 		"adaptiveStatus": "50",
 		"armorPenetrationRatio": "7",
-		"attackRange": "0.35"
+		"option": "quickstep"
 	},
 	"phantom_blade_dawn": {
 		"type": "dual_swords",
@@ -1441,7 +1443,7 @@
 		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"eighteen_foot_spear": {
 		"type": "spear",
@@ -1478,7 +1480,7 @@
 		"attackPower": "82",
 		"attackSpeed": "40",
 		"movementSpeed": "0.04",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":120},\"slow\":{\"effect\":25,\"duration\":2}]"
+		"option": "swift_strides[\"tick\":0.2,\"ms\":0.1,\"dmg\":{\"base\":150},\"slow\":{\"effect\":30,\"duration\":2}]"
 	},
 	"cosmic_bident": {
 		"type": "spear",
@@ -1522,7 +1524,7 @@
 		"adaptiveStatus": "55",
 		"defense": "8",
 		"armorPenetrationRatio": "7",
-		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":150},\"slow\":{\"effect\":25,\"duration\":2}]"
+		"option": "swift_strides[\"tick\":0.2,\"ms\":0.15,\"dmg\":{\"base\":150},\"slow\":{\"effect\":30,\"duration\":2}]"
 	},
 	"spear_of_longinus_dawn": {
 		"type": "spear",
@@ -1584,11 +1586,12 @@
 	"hydra_crimson": {
 		"type": "nunchaku",
 		"tier": "mythic",
-		"attackPower": "32",
+		"attackPower": "36",
 		"attackSpeed": "30",
 		"criticalChance": "25",
 		"adaptiveStatus": "56",
-		"armorPenetrationRatio": "7"
+		"armorPenetrationRatio": "7",
+		"option": "blasting_bullet"
 	},
 	"hydra_dawn": {
 		"type": "nunchaku",
@@ -1671,7 +1674,7 @@
 		"attackPower": "30",
 		"skillAmplification": "88",
 		"vision": "1",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"nosferatu": {
 		"type": "rapier",
@@ -1701,7 +1704,7 @@
 		"adaptiveStatus": "55",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"bohemian": {
 		"type": "guitar",
@@ -1765,7 +1768,7 @@
 		"tier": "legendary",
 		"attackPower": "44",
 		"skillAmplification": "4",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"heartbreaker": {
 		"type": "guitar",
@@ -1792,7 +1795,7 @@
 		"adaptiveStatus": "51",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"mirrorless": {
 		"type": "camera",
@@ -1828,10 +1831,10 @@
 	"cannon_camera": {
 		"type": "camera",
 		"tier": "legendary",
-		"attackPower": "73",
+		"attackPower": "70",
 		"attackSpeed": "20",
-		"attackRange": "0.5",
-		"vision": "1.5"
+		"vision": "1.5",
+		"option": "blasting_bullet"
 	},
 	"ultraviolet": {
 		"type": "camera",
@@ -1855,12 +1858,12 @@
 	"vision_flex_crimson": {
 		"type": "camera",
 		"tier": "mythic",
-		"attackPower": "30",
+		"attackPower": "28",
 		"attackSpeed": "40",
 		"adaptiveStatus": "52",
 		"armorPenetrationRatio": "7",
-		"attackRange": "0.5",
-		"vision": "1.5"
+		"vision": "1.5",
+		"option": "blasting_bullet"
 	},
 	"vision_flex_dawn": {
 		"type": "camera",
@@ -1918,7 +1921,7 @@
 		"attackPower": "40",
 		"skillAmplification": "95",
 		"cooldownReduction": "15",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":3]"
+		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":2]"
 	},
 	"the_death": {
 		"type": "arcana",
@@ -1945,7 +1948,7 @@
 		"skillAmplification": "110",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":3]"
+		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":30,\"cooldown\":2]"
 	},
 	"deathadder_queen": {
 		"type": "vf_prosthetic",

@@ -114,7 +114,7 @@
 		"jp": "明鏡止水"
 	},
 	"spirit_harvest": {
-		"jp": "漆黒の死"
+		"jp": "魂の収穫"
 	},
 	"blasting_bullet": {
 		"jp": "ブラスター弾丸"
@@ -130,5 +130,20 @@
 	},
 	"crushing_blow": {
 		"jp": "シャッターストライク"
+	},
+	"cataclasm": {
+		"jp": "破裂"
+	},
+	"critical_blow": {
+		"jp": "クリティカル・ブロウ"
+	},
+	"rally": {
+		"jp": "突風 - 結集"
+	},
+	"awakening": {
+		"jp": "覚醒"
+	},
+	"security_protocol": {
+		"jp": "保護プロトコル"
 	}
 }

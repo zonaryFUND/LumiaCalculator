@@ -3,14 +3,14 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ap",
-		"skillAmplification": "14",
-		"defense": "21",
+		"skillAmplification": "17",
+		"defense": "23",
 		"option": "healing_reduction_weak"
 	},
 	"sunset_armor": {
 		"type": "chest",
 		"tier": "epic",
-		"perLevelStatus": "hp[20]",
+		"perLevelStatus": "hp[21]",
 		"defense": "25",
 		"vision": "1",
 		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":2},\"range\":{\"maxHP\":1.5}}]"
@@ -19,6 +19,7 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ap",
+		"skillAmplification": "5",
 		"cooldownReduction": "10",
 		"defense": "28",
 		"hpRegeneration": "45"
@@ -27,7 +28,7 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ad",
-		"attackPower": "8",
+		"attackPower": "10",
 		"criticalChance": "24",
 		"cooldownReduction": "15",
 		"defense": "10"
@@ -37,7 +38,7 @@
 		"tier": "epic",
 		"perLevelStatus": "ad",
 		"defense": "16",
-		"armorPenetration": "7",
+		"armorPenetration": "8",
 		"option": "healing_reduction_weak"
 	},
 	"crusader_armor": {
@@ -50,7 +51,7 @@
 	"amazoness_armor": {
 		"type": "chest",
 		"tier": "epic",
-		"perLevelStatus": "hp[14]",
+		"perLevelStatus": "hp[18]",
 		"cooldownReduction": "10",
 		"defense": "26",
 		"option": "reflection[\"ratio\":4.5,\"dmg\":{\"base\":150}]"
@@ -60,7 +61,7 @@
 		"tier": "epic",
 		"perLevelStatus": "ad",
 		"cooldownReduction": "15",
-		"defense": "15",
+		"defense": "17",
 		"spRegeneration": "100",
 		"armorPenetration": "6"
 	},
@@ -68,22 +69,22 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ap",
-		"skillAmplification": "17",
+		"skillAmplification": "19",
 		"defense": "23"
 	},
 	"butler_s_suit": {
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ad",
-		"attackPower": "20",
 		"attackSpeed": "15",
-		"lifeSteal": "12",
+		"criticalChance": "24",
+		"defense": "9",
 		"movementSpeed": "0.04"
 	},
 	"eod_suit": {
 		"type": "chest",
 		"tier": "epic",
-		"perLevelStatus": "hp[16]",
+		"perLevelStatus": "hp[18]",
 		"cooldownReduction": "15",
 		"defense": "26",
 		"hpRegeneration": "60"
@@ -94,7 +95,7 @@
 		"perLevelStatus": "ad",
 		"attackSpeed": "15",
 		"criticalChance": "24",
-		"defense": "10"
+		"defense": "9"
 	},
 	"high_priest_robes": {
 		"type": "chest",
@@ -108,6 +109,7 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ad",
+		"attackPower": "3",
 		"attackSpeed": "34",
 		"defense": "15",
 		"spRegeneration": "150"
@@ -115,7 +117,7 @@
 	"turnout_coat": {
 		"type": "chest",
 		"tier": "epic",
-		"perLevelStatus": "hp[19]",
+		"perLevelStatus": "hp[20]",
 		"attackSpeed": "30",
 		"defense": "24"
 	},
@@ -124,7 +126,7 @@
 		"tier": "epic",
 		"perLevelStatus": "ap",
 		"defense": "20",
-		"maxHP": "120"
+		"maxHP": "140"
 	},
 	"mythril_armor": {
 		"type": "chest",
@@ -233,7 +235,7 @@
 		"perLevelStatus": "ap",
 		"skillAmplification": "14",
 		"defense": "28",
-		"option": "debilitation"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP:{\"base\":0.8,\"amp\":0.22}\"}]"
 	},
 	"omertà": {
 		"type": "chest",
@@ -324,6 +326,23 @@
 		"criticalChance": "33",
 		"defense": "15"
 	},
+	"spectral_jacket": {
+		"type": "chest",
+		"tier": "legendary",
+		"perLevelStatus": "ad",
+		"defense": "20",
+		"spRegeneration": "200",
+		"option": "rally"
+	},
+	"wisdom_robes": {
+		"type": "chest",
+		"tier": "legendary",
+		"perLevelStatus": "ad",
+		"attackPower": "10",
+		"attackSpeed": "25",
+		"defense": "20",
+		"option": "awakening"
+	},
 	"bikini": {
 		"type": "chest",
 		"tier": "mythic",
@@ -357,14 +376,14 @@
 	"virtuous_outlaw": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "28",
+		"attackPower": "29",
 		"cooldownReduction": "15",
 		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
 	},
 	"crystal_tiara": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "17",
+		"attackPower": "19",
 		"criticalChance": "28",
 		"maxSP": "400"
 	},
@@ -373,14 +392,14 @@
 		"tier": "epic",
 		"attackSpeed": "30",
 		"skillAmplification": "60",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"amp\":15}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"amp\":20}]"
 	},
 	"tactical_ops_helmet": {
 		"type": "head",
 		"tier": "epic",
 		"attackSpeed": "30",
-		"cooldownReduction": "10",
-		"maxHP": "150",
+		"cooldownReduction": "15",
+		"maxHP": "130",
 		"option": "electric_shock[\"dmg\":{\"melee\":{\"targetMaxHP\":2,\"levelProp\":{\"from\":20,\"to\":58}},\"range\":{\"targetMaxHP\":1.5,\"levelProp\":{\"from\":20,\"to\":58}}}]"
 	},
 	"helm_of_banneret": {
@@ -394,13 +413,13 @@
 	"imperial_crown": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "65",
+		"skillAmplification": "68",
 		"cooldownReduction": "15"
 	},
 	"imperial_burgonet": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "65",
+		"skillAmplification": "67",
 		"cooldownReduction": "10",
 		"maxSP": "400",
 		"movementSpeed": "0.06"
@@ -416,14 +435,15 @@
 	"vigilante": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "59",
+		"skillAmplification": "54",
 		"maxHP": "150",
-		"spRegeneration": "50"
+		"spRegeneration": "50",
+		"option": "debilitation[\"dmg\":{\"targetMaxHP:{\"base\":0.4,\"amp\":0.14}\"}]"
 	},
 	"diadem": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "25",
+		"attackPower": "27",
 		"cooldownReduction": "15",
 		"maxSP": "270",
 		"armorPenetration": "7"
@@ -431,27 +451,27 @@
 	"cowboy_hat": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "25",
+		"attackPower": "27",
 		"attackSpeed": "30",
 		"option": "healing_reduction_weak"
 	},
 	"plasma_helmet": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "35",
+		"attackPower": "37",
 		"armorPenetration": "8"
 	},
 	"welding_helmet": {
 		"type": "head",
 		"tier": "epic",
-		"attackPower": "20",
+		"attackPower": "24",
 		"attackSpeed": "15",
 		"defense": "12"
 	},
 	"harmony_in_full_bloom": {
 		"type": "head",
 		"tier": "epic",
-		"skillAmplification": "75",
+		"skillAmplification": "78",
 		"cooldownReduction": "15",
 		"maxSP": "300"
 	},
@@ -461,7 +481,7 @@
 		"perLevelStatus": "hp[17]",
 		"cooldownReduction": "15",
 		"defense": "15",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
+		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":100},\"slow\":{\"effect\":30,\"duration\":2}]"
 	},
 	"laurel_wreath": {
 		"type": "head",
@@ -483,7 +503,7 @@
 	"elysian_halo": {
 		"type": "head",
 		"tier": "legendary",
-		"adaptiveStatus": "35",
+		"attackPower": "35",
 		"defense": "15",
 		"maxSP": "300",
 		"option": "biotic_infusion[\"dmg\":{\"melee\":{\"targetMaxHP\":12},\"range\":{\"targetMaxHP\":11}}]"
@@ -533,7 +553,7 @@
 		"skillAmplification": "65",
 		"maxHP": "180",
 		"spRegeneration": "50",
-		"option": "debilitation"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP:{\"base\":0.8,\"amp\":0.22}\"}]"
 	},
 	"dwarf_s_helmet": {
 		"type": "head",
@@ -553,7 +573,7 @@
 	"tactical_visor": {
 		"type": "head",
 		"tier": "legendary",
-		"attackSpeed": "38",
+		"attackSpeed": "42",
 		"cooldownReduction": "15",
 		"maxHP": "200",
 		"option": "electric_shock[\"dmg\":{\"melee\":{\"targetMaxHP\":3.5,\"levelProp\":{\"from\":30,\"to\":106}},\"range\":{\"targetMaxHP\":2.5,\"levelProp\":{\"from\":30,\"to\":106}}}]"
@@ -618,7 +638,15 @@
 		"attackSpeed": "15",
 		"defense": "10",
 		"spRegeneration": "100",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"cooldown\":3]"
+		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"cooldown\":2]"
+	},
+	"bunny_hat": {
+		"type": "head",
+		"tier": "legendary",
+		"perLevelStatus": "hp[20]",
+		"cooldownReduction": "15",
+		"defense": "18",
+		"option": "security_protocol"
 	},
 	"chinese_opera_mask": {
 		"type": "head",
@@ -630,17 +658,25 @@
 		"maxSP": "400",
 		"movementSpeed": "0.1"
 	},
+	"blood_crown": {
+		"type": "head",
+		"tier": "mythic",
+		"attackSpeed": "40",
+		"adaptiveStatus": "55",
+		"defense": "10",
+		"movementSpeed": "0.08"
+	},
 	"corrupting_touch": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "55",
+		"skillAmplification": "57",
 		"cooldownReduction": "10",
 		"option": "healing_reduction_weak"
 	},
 	"sword_stopper": {
 		"type": "arm",
 		"tier": "epic",
-		"defense": "15",
+		"defense": "16",
 		"maxHP": "120",
 		"option": "reflection[\"ratio\":4.5,\"dmg\":{\"base\":150}]"
 	},
@@ -655,20 +691,20 @@
 		"tier": "epic",
 		"attackSpeed": "33",
 		"criticalChance": "26",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":20,\"level\":2}]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":30,\"level\":2}]"
 	},
 	"creed_of_the_knight": {
 		"type": "arm",
 		"tier": "epic",
 		"attackPower": "22",
 		"cooldownReduction": "10",
-		"maxHP": "100",
+		"maxHP": "120",
 		"option": "healing_reduction_weak"
 	},
 	"sheath_of_shah_jahan": {
 		"type": "arm",
 		"tier": "epic",
-		"attackPower": "37",
+		"attackPower": "39",
 		"armorPenetration": "8"
 	},
 	"burnished_aegis": {
@@ -681,15 +717,16 @@
 	"tindalos_band": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "50",
+		"skillAmplification": "53",
 		"cooldownReduction": "15",
 		"maxSP": "300"
 	},
 	"nightingale": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "62",
-		"healingPower": "8"
+		"skillAmplification": "59",
+		"maxHP": "50",
+		"healingPower": "10"
 	},
 	"plasma_arc": {
 		"type": "arm",
@@ -701,7 +738,7 @@
 	"smart_band": {
 		"type": "arm",
 		"tier": "epic",
-		"attackPower": "31",
+		"attackPower": "33",
 		"cooldownReduction": "10",
 		"armorPenetration": "7"
 	},
@@ -715,7 +752,7 @@
 		"type": "arm",
 		"tier": "epic",
 		"attackSpeed": "30",
-		"skillAmplification": "20",
+		"skillAmplification": "24",
 		"option": "circulation[\"dmg\":{\"melee\":{\"base\":10,\"amp\":25},\"range\":{\"base\":10,\"amp\":20}},\"as\":10]"
 	},
 	"schrödinger_s_box": {
@@ -723,14 +760,21 @@
 		"tier": "epic",
 		"cooldownReduction": "15",
 		"defense": "10",
-		"maxHP": "100"
+		"maxHP": "120"
 	},
 	"music_box": {
 		"type": "arm",
 		"tier": "epic",
 		"attackSpeed": "30",
-		"defense": "5",
+		"defense": "6",
 		"maxHP": "200"
+	},
+	"laced_quiver": {
+		"type": "arm",
+		"tier": "epic",
+		"attackPower": "25",
+		"attackSpeed": "30",
+		"movementSpeed": "0.06"
 	},
 	"mythril_shield": {
 		"type": "arm",
@@ -761,7 +805,7 @@
 		"skillAmplification": "85",
 		"maxSP": "350",
 		"spRegeneration": "100",
-		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"cooldown\":3]"
+		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"cooldown\":2]"
 	},
 	"radar": {
 		"type": "arm",
@@ -836,14 +880,14 @@
 		"attackPower": "35",
 		"criticalChance": "34",
 		"defense": "5",
-		"option": "swift_strides[\"ms\":0.08,\"dmg\":{\"base\":80},\"slow\":{\"effect\":20,\"duration\":2}]"
+		"option": "swift_strides[\"ms\":0.1,\"dmg\":{\"base\":100},\"slow\":{\"effect\":30,\"duration\":2}]"
 	},
 	"claddagh_ring": {
 		"type": "arm",
 		"tier": "legendary",
 		"skillAmplification": "80",
 		"maxHP": "100",
-		"healingPower": "13"
+		"healingPower": "15"
 	},
 	"moonlight_pendant": {
 		"type": "arm",
@@ -898,8 +942,9 @@
 	"solar_system_miniature": {
 		"type": "arm",
 		"tier": "legendary",
-		"perLevelStatus": "hp[30]",
-		"defense": "15"
+		"perLevelStatus": "hp[20]",
+		"defense": "15",
+		"option": "colossal"
 	},
 	"eye_of_horus": {
 		"type": "arm",
@@ -908,6 +953,22 @@
 		"spRegeneration": "100",
 		"option": "biotic_infusion[\"dmg\":{\"amp\":35}]"
 	},
+	"sultan_adorned": {
+		"type": "arm",
+		"tier": "legendary",
+		"attackPower": "25",
+		"attackSpeed": "30",
+		"movementSpeed": "0.08",
+		"option": "rush"
+	},
+	"mythril_quiver": {
+		"type": "arm",
+		"tier": "legendary",
+		"attackPower": "30",
+		"attackSpeed": "35",
+		"movementSpeed": "0.08",
+		"option": "streamlined"
+	},
 	"prominence": {
 		"type": "arm",
 		"tier": "mythic",
@@ -915,20 +976,28 @@
 		"adaptiveStatus": "30",
 		"cooldownReduction": "30",
 		"cdrCap": "10",
-		"maxHP": "85",
+		"maxHP": "100",
 		"maxSP": "350"
 	},
 	"bloodripper": {
 		"type": "arm",
 		"tier": "mythic",
-		"attackSpeed": "20",
+		"attackSpeed": "30",
 		"adaptiveStatus": "28",
 		"armorPenetrationRatio": "20",
+		"option": "healing_reduction_strong"
+	},
+	"necronomicon": {
+		"type": "arm",
+		"tier": "mythic",
+		"adaptiveStatus": "45",
+		"armorPenetrationRatio": "10",
 		"option": "healing_reduction_strong"
 	},
 	"hiking_boots": {
 		"type": "leg",
 		"tier": "epic",
+		"defense": "3",
 		"maxHP": "120",
 		"hpRegeneration": "50",
 		"movementSpeed": "0.22"
@@ -942,14 +1011,14 @@
 	"feather_boots": {
 		"type": "leg",
 		"tier": "epic",
-		"attackSpeed": "34",
+		"attackSpeed": "35",
 		"hpRegeneration": "25",
 		"movementSpeed": "0.22"
 	},
 	"marverick_runner": {
 		"type": "leg",
 		"tier": "epic",
-		"attackPower": "16",
+		"attackPower": "19",
 		"hpRegeneration": "25",
 		"movementSpeed": "0.22",
 		"tenacity": "20"
@@ -957,28 +1026,28 @@
 	"straitjacket_sneakers": {
 		"type": "leg",
 		"tier": "epic",
-		"skillAmplification": "22",
+		"skillAmplification": "24",
 		"spRegeneration": "100",
 		"movementSpeed": "0.22"
 	},
 	"bucephalus": {
 		"type": "leg",
 		"tier": "epic",
-		"attackPower": "5",
+		"attackPower": "6",
 		"criticalChance": "25",
 		"movementSpeed": "0.22"
 	},
 	"eod_boots": {
 		"type": "leg",
 		"tier": "epic",
-		"defense": "10",
+		"defense": "12",
 		"movementSpeed": "0.22",
 		"tenacity": "20"
 	},
 	"white_rhinos": {
 		"type": "leg",
 		"tier": "epic",
-		"attackSpeed": "18",
+		"attackSpeed": "22",
 		"hpRegeneration": "25",
 		"movementSpeed": "0.22",
 		"option": "healing_reduction_strong"
@@ -987,20 +1056,20 @@
 		"type": "leg",
 		"tier": "epic",
 		"cooldownReduction": "15",
-		"defense": "3",
+		"defense": "5",
 		"movementSpeed": "0.22"
 	},
 	"scv": {
 		"type": "leg",
 		"tier": "epic",
-		"skillAmplification": "15",
+		"skillAmplification": "18",
 		"movementSpeed": "0.22",
 		"tenacity": "20"
 	},
 	"stellar_steps": {
 		"type": "leg",
 		"tier": "epic",
-		"attackPower": "14",
+		"attackPower": "16",
 		"attackSpeed": "10",
 		"lifeSteal": "10",
 		"movementSpeed": "0.22"

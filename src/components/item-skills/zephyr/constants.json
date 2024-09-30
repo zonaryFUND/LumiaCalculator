@@ -2,10 +2,9 @@
     "time_bound": 4,
     "threshold": 3,
     "duration": 2,
-    "ms": 10,
-    "as": 40,
+    "ms": 15,
     "shield": {
-        "base": 150
+        "base": 200
     },
     "cooldown": 12
 }
