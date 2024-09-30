@@ -38,7 +38,7 @@
         "max_multiplier_threshold": 40,
         "cooldown_reduction": 80,
         "cooldown": {
-            "constant": [60,50,40]
+            "constant": [50,40,30]
         },
         "sp_cost": 50
     },

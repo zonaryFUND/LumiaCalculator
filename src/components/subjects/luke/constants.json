@@ -17,7 +17,7 @@
     "W": {
         "attack_speed": {
             "duration": 3,
-            "one_stack": 6,
+            "one_stack": 8,
             "max_stack": 4
         },
         "damage": {

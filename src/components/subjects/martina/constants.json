@@ -111,11 +111,11 @@
         "duration": 1.5,
         "first_outer_damage": {
             "base": [10,15,20],
-            "attack": 3
+            "attack": 6
         },
         "first_center_damage": {
             "base": [20,25,30],
-            "attack": 7
+            "attack": 12
         },
         "second_outer_damage": {
             "base": [100,200,300],

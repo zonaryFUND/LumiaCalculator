@@ -48,7 +48,7 @@
         "finish_heal": {
             "base": [20,40,60,80,100],
             "amp": 40,
-            "maxHP": 7,
+            "maxHP": 5,
             "stack": [18,21,24,27,30]
         },
         "cooldown": [15,14,13,12,11]
@@ -71,7 +71,7 @@
             "targetHP": 15
         },
         "duration": 6,
-        "reuse_threshold": 25,
+        "reuse_threshold": 20,
         "movement_speed": {
             "duration": 2,
             "effect": 30

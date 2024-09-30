@@ -42,7 +42,7 @@
     "E": {
         "duration": 7,
         "wire_length": 11,
-        "attack_speed": [20,30,40,50,60],
+        "attack_speed": [30,35,40,45,50],
         "remain": 3,
         "sp_cost": [70,75,80,85,90],
         "cooldown": [17,16,15,14,13]

@@ -2,8 +2,8 @@
     "duration": 0.8,
     "damage": {
         "base": 60,
-        "level": 4,
-        "amp": 35
+        "level": 3,
+        "amp": 30
     },
     "cooldown": 8
 }

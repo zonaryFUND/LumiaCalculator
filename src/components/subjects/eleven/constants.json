@@ -5,12 +5,12 @@
     },
     "Q": {
         "min_damage": {
-            "base": [70, 100, 130, 160, 190],
+            "base": [80, 110, 140, 170, 200],
             "attack": 30,
             "additionalMaxHP": 10
         },
         "max_damage": {
-            "base": [140, 200, 260, 320, 380],
+            "base": [160, 220, 280, 340, 400],
             "attack": 60,
             "additionalMaxHP": 20
         },
@@ -61,7 +61,7 @@
         "damage": {
             "base": [4, 7, 10],
             "attack": 2,
-            "additionalMaxHP": 1
+            "additionalMaxHP": 2
         },
         "cooldown": [80,70,60],
         "sp_cost": 70

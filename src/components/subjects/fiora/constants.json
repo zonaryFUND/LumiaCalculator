@@ -60,6 +60,6 @@
             "effect": [10,15,20]
         },
         "q_cooldown_reduction": 80,
-        "cooldown_reduction": 40
+        "cooldown_reduction": 50
     }
 }

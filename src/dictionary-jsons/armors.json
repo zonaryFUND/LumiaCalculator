@@ -233,7 +233,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "16",
+		"skillAmplification": "13",
 		"defense": "28",
 		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":1,\"amp\":0.25}}]"
 	},
@@ -339,7 +339,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "ad",
 		"attackPower": "10",
-		"attackSpeed": "20",
+		"attackSpeed": "30",
 		"defense": "20",
 		"option": "awakening"
 	},
@@ -787,7 +787,7 @@
 		"type": "arm",
 		"tier": "legendary",
 		"attackPower": "25",
-		"attackSpeed": "40",
+		"attackSpeed": "35",
 		"defense": "10",
 		"option": "electric_shock[\"dmg\":{\"melee\":{\"targetMaxHP\":3.5,\"levelProp\":{\"from\":30,\"to\":106}},\"range\":{\"targetMaxHP\":2.5,\"levelProp\":{\"from\":30,\"to\":106}}}]"
 	},
@@ -812,7 +812,7 @@
 		"attackPower": "10",
 		"attackSpeed": "42",
 		"criticalChance": "35",
-		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":40,\"level\":2},\"heal\":30]"
+		"option": "photon_launcher[\"dmg\":{\"base\":10,\"attack\":40,\"level\":2},\"heal\":40]"
 	},
 	"auto_arms": {
 		"type": "arm",
@@ -964,7 +964,7 @@
 	"mythril_quiver": {
 		"type": "arm",
 		"tier": "legendary",
-		"attackPower": "30",
+		"attackPower": "33",
 		"attackSpeed": "35",
 		"movementSpeed": "0.08",
 		"option": "streamlined"
@@ -1040,7 +1040,7 @@
 	"eod_boots": {
 		"type": "leg",
 		"tier": "epic",
-		"defense": "12",
+		"defense": "10",
 		"movementSpeed": "0.22",
 		"tenacity": "20"
 	},

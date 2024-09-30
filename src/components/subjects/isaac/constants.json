@@ -20,7 +20,7 @@
         "time_bound": 2.5,
         "damage": {
             "base": [30,60,90,120,150],
-            "attack": 55
+            "attack": 60
         },
         "stun": 0.65,
         "defense_down": {
@@ -47,8 +47,8 @@
         "threshold": 3,
         "damage": {
             "base": [30,40,50],
-            "attack": 50,
-            "targetMaxHP": [1,2,3]
+            "attack": 60,
+            "targetMaxHP": [2,3,4]
         },
         "movement_speed": [5,15,25],
         "duration": 2,

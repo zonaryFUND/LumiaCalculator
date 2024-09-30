@@ -81,7 +81,7 @@
         "base_chloe_status_ratio": 60,
         "per_level_chloe_status_ratio": 2,
         "nina_attack": [4,7,10],
-        "nina_defense": [10,25,40],
+        "nina_defense": [15,30,45],
         "nina_maxhp": [200,250,300]
     }
 }

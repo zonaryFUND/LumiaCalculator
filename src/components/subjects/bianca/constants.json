@@ -18,7 +18,7 @@
         "damage_reduction": [60,65,70,75,80],
         "heal_tick": 0.5,
         "heal": {
-            "maxHP": 3.5
+            "maxHP": 4
         },
         "enhance_threshold": 50,
         "enhanced_heal_ratio": 1.5,

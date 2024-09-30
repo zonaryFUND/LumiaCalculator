@@ -25,11 +25,11 @@
     "W": {
         "damage": {
             "base": [70,105,140,175,210],
-            "amp": 70
+            "amp": 75
         },
         "movement_speed": {
             "duration": 2,
-            "effect": 10
+            "effect": 15
         },
         "sp_cost": [30,35,40,45,50],
         "cooldown": [10,9.5,9,8.5,8]

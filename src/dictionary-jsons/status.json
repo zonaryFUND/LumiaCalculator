@@ -168,7 +168,7 @@
 		"hpRegenPerLevel": "0.09",
 		"spRegeneration": "3.1",
 		"spRegenPerLevel": "0.03",
-		"attackPower": "30",
+		"attackPower": "33",
 		"apPerLevel": "4.8",
 		"armor": "50",
 		"armorPerLevel": "3.3",
@@ -267,7 +267,7 @@
 		"attackPower": "44",
 		"apPerLevel": "4.3",
 		"armor": "51",
-		"armorPerLevel": "2.4",
+		"armorPerLevel": "2.8",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.6"
 	},
@@ -571,7 +571,7 @@
 		"attackPower": "41",
 		"apPerLevel": "4",
 		"armor": "51",
-		"armorPerLevel": "2.2",
+		"armorPerLevel": "2.5",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.5"
 	},
@@ -699,7 +699,7 @@
 		"attackPower": "28",
 		"apPerLevel": "4.9",
 		"armor": "51",
-		"armorPerLevel": "2.9",
+		"armorPerLevel": "3.1",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.45"
 	},
@@ -811,7 +811,7 @@
 		"attackPower": "44",
 		"apPerLevel": "4.4",
 		"armor": "45",
-		"armorPerLevel": "2.7",
+		"armorPerLevel": "3",
 		"attackSpeed": "0.16",
 		"movementSpeed": "3.6"
 	},
@@ -826,14 +826,14 @@
 		"spRegenPerLevel": "0.02",
 		"attackPower": "30",
 		"apPerLevel": "4.2",
-		"armor": "48",
+		"armor": "52",
 		"armorPerLevel": "3.1",
 		"attackSpeed": "0.13",
 		"movementSpeed": "3.5"
 	},
 	"markus": {
 		"maxHP": "950",
-		"maxHPperLevel": "90",
+		"maxHPperLevel": "93",
 		"maxSP": "430",
 		"maxSPperLevel": "13",
 		"hpRegeneration": "1.02",
@@ -861,7 +861,7 @@
 		"armor": "53",
 		"armorPerLevel": "2.8",
 		"attackSpeed": "0.22",
-		"movementSpeed": "3.5"
+		"movementSpeed": "3.55"
 	},
 	"nadine": {
 		"maxHP": "880",
@@ -913,7 +913,7 @@
 	},
 	"piolo": {
 		"maxHP": "920",
-		"maxHPperLevel": "88",
+		"maxHPperLevel": "92",
 		"maxSP": "400",
 		"maxSPperLevel": "15",
 		"hpRegeneration": "2",
@@ -976,7 +976,7 @@
 		"movementSpeed": "3.55"
 	},
 	"shoichi": {
-		"maxHP": "940",
+		"maxHP": "980",
 		"maxHPperLevel": "90",
 		"maxSP": "440",
 		"maxSPperLevel": "13",
@@ -1096,7 +1096,7 @@
 		"hpRegenPerLevel": "0.06",
 		"spRegeneration": "3",
 		"spRegenPerLevel": "0.04",
-		"attackPower": "36",
+		"attackPower": "39",
 		"apPerLevel": "4.4",
 		"armor": "50",
 		"armorPerLevel": "3",

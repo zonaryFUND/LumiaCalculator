@@ -2,7 +2,7 @@
     "tick": 0.5,
     "damage": {
         "base": 20,
-        "attack": 30,
+        "attack": 35,
         "targetMaxHP": 0.5
     },
     "duration": 5,

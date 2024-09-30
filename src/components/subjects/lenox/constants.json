@@ -48,7 +48,7 @@
         "duration": [4,4.5,5],
         "tick": 0.23,
         "move_damage": [5,15,25],
-        "enhanced_move_damage": [20,35,50],
+        "enhanced_move_damage": [20,30,40],
         "sp_cost": [100,120,140],
         "cooldown": [80,70,60]
     },
@@ -56,7 +56,7 @@
         "shield": {
             "maxHP": [6,10,14]
         },
-        "duration": 5,
+        "duration": 3,
         "fishing": {
             "common": 85,
             "uncommon": 14,

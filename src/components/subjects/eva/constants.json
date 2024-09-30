@@ -32,13 +32,13 @@
     "E": {
         "movement_speed": {
             "duration": 0.5,
-            "effect": [50,57.5,65,72.5,80]
+            "effect": [60,65,70,75,80]
         },
         "vitalforce": 30,
         "vision_duration": 3,
         "vflight_duration": 4,
         "damage": {
-            "base": [10,20,30,40,50],
+            "base": [30,35,40,45,50],
             "amp": 20
         },
         "sp_cost": [70,80,90,100,110],

@@ -27,7 +27,7 @@
         "damage_duration": 3,
         "damage": {
             "base": [30,60,90,120,150],
-            "attack": 45
+            "attack": 60
         },
         "bind": 1,
         "setup": [1,2,2,3,3],

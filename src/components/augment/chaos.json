@@ -85,7 +85,7 @@
     "stopping_power": {
         "armor_penetration": {
             "effect": 7,
-            "duration": 5
+            "duration": 4
         },
         "cooldown": 12
     },

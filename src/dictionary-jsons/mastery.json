@@ -91,7 +91,7 @@
 		{
 			"weapon": "arcana",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.4,
 			"attackSpeed": 2.5
 		}
 	],
@@ -257,7 +257,7 @@
 		{
 			"weapon": "dagger",
 			"type": "skill_amp",
-			"value": 4.2,
+			"value": 4.4,
 			"attackSpeed": 2.7
 		},
 		{
@@ -315,7 +315,7 @@
 		{
 			"weapon": "pistol",
 			"type": "skill_amp",
-			"value": 4.2,
+			"value": 4,
 			"attackSpeed": 3.3
 		}
 	],
@@ -415,7 +415,7 @@
 		{
 			"weapon": "dagger",
 			"type": "basic_attack_amp",
-			"value": 2.8,
+			"value": 2.5,
 			"attackSpeed": 2.7
 		}
 	],
@@ -469,7 +469,7 @@
 		{
 			"weapon": "crossbow",
 			"type": "basic_attack_amp",
-			"value": 1.6,
+			"value": 1.4,
 			"attackSpeed": 3.4
 		}
 	],
@@ -531,7 +531,7 @@
 		{
 			"weapon": "tonfa",
 			"type": "skill_amp",
-			"value": 4.6,
+			"value": 4.3,
 			"attackSpeed": 2.6
 		}
 	],
@@ -567,7 +567,7 @@
 		{
 			"weapon": "guitar",
 			"type": "skill_amp",
-			"value": 4,
+			"value": 4.2,
 			"attackSpeed": 2
 		}
 	],
@@ -663,7 +663,7 @@
 		{
 			"weapon": "whip",
 			"type": "skill_amp",
-			"value": 3.7,
+			"value": 3.9,
 			"attackSpeed": 2.8
 		}
 	],
@@ -671,7 +671,7 @@
 		{
 			"weapon": "bat",
 			"type": "basic_attack_amp",
-			"value": 1.5,
+			"value": 1.7,
 			"attackSpeed": 4
 		}
 	],
@@ -685,7 +685,7 @@
 		{
 			"weapon": "tonfa",
 			"type": "skill_amp",
-			"value": 5,
+			"value": 4.6,
 			"attackSpeed": 3
 		}
 	],

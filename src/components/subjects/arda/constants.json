@@ -28,7 +28,7 @@
     "E": {
         "damage": {
             "base": [80,110,140,170,200],
-            "amp": 60
+            "amp": 50
         },
         "sp_cost": 80,
         "cooldown": [14,13,12,11,10]
@@ -44,7 +44,7 @@
             "cooldown_reduction": 40
         },
         "W": {
-            "bind": [0.8,1,1.2],
+            "bind": [0.8,0.9,1],
             "duration": 5,
             "damage": {
                 "base": [100,140,180],

@@ -15,7 +15,7 @@
     "W": {
         "cast": 0.8,
         "bac": 45,
-        "damage_reduction": [50,55,60,65,70],
+        "damage_reduction": [60,65,70,75,80],
         "cooldown_reduction": 0.5,
         "basic_attack_amp": 0.2,
         "cooldown": [9,8,7,6,5]

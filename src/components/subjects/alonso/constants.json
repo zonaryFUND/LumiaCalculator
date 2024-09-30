@@ -8,7 +8,7 @@
         "near_movement_speed": [20,22.5,25,27.5,30],
         "basic_attack_damage": {
             "level": 10,
-            "targetMaxHP": [7,7.5,8,8.5,9]
+            "targetMaxHP": [6,6.5,7,7.5,8]
         },
         "stun": 0.6,
         "sp_cost": [30,35,40,45,50],
@@ -16,7 +16,7 @@
     },
     "W": {
         "duration": 2.5,
-        "damage_reduction": 70,
+        "damage_reduction": 60,
         "waves": 5,
         "damage": {
             "base": [30,35,40,45,50],

@@ -15,7 +15,7 @@
         "chakram_gain": 2,
         "damage": {
             "base": [40,65,90,115,140],
-            "amp": 55
+            "amp": 50
         },
         "qe_cooldown_reduction": 40,
         "cooldown": {
@@ -39,7 +39,7 @@
     "R": {
         "first_damage": {
             "base": [60,120,180],
-            "amp": 50
+            "amp": 45
         },
         "tick": 0.45,
         "second_damage": {

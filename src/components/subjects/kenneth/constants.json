@@ -4,7 +4,7 @@
             "base": [20,30,40,50,60],
             "attack": [150,155,160,165,170]
         },
-        "max_stack_damage": 20,
+        "max_stack_damage": 25,
         "max_stack_heal": 12,
         "max_stack_heal_max": 30,
         "sp_cost": 40,

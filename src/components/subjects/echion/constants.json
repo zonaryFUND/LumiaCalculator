@@ -43,7 +43,7 @@
         "area_damage_tick": 0.5,
         "area_damage": {
             "base": [8,12,16,20],
-            "attack": 6
+            "attack": 8
         },
         "kill_extend": 5,
         "overload": 12,
@@ -71,7 +71,7 @@
         },
         "skill_damage_add": [30,40,50,60],
         "cooldown": {
-            "constant": 3.5
+            "constant": 3
         }
     },
     "R2": {
@@ -85,7 +85,7 @@
         "airborne": 0.75,
         "skill_lifesteal": [25,30,35,40],
         "cooldown": {
-            "constant": 4.5
+            "constant": 4
         }
     },
     "R3": {
