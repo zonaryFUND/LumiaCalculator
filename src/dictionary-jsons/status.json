@@ -956,7 +956,7 @@
 		"apPerLevel": "4",
 		"armor": "47",
 		"armorPerLevel": "2.5",
-		"attackSpeed": "0.07",
+		"attackSpeed": "0.09",
 		"movementSpeed": "3.45"
 	},
 	"rozzi": {
@@ -1201,7 +1201,7 @@
 	},
 	"garnet": {
 		"maxHP": "960",
-		"maxHPperLevel": "94",
+		"maxHPperLevel": "90",
 		"maxSP": "430",
 		"maxSPperLevel": "25",
 		"hpRegeneration": "2.2",
@@ -1210,7 +1210,7 @@
 		"spRegenPerLevel": "0.04",
 		"attackPower": "35",
 		"apPerLevel": "4.1",
-		"armor": "54",
+		"armor": "50",
 		"armorPerLevel": "3.1",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.55"

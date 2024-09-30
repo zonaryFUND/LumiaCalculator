@@ -14,7 +14,7 @@
             "attack": 103,
             "basicAttackAmp": 100
         },
-        "daikyu_as_penalty": 0.2,
+        "daikyu_as_penalty": 0.22,
         "daikyu_range": [6.3,6.35,6.4,6.45,6.5],
         "cooldown": {
             "constant": 0.8

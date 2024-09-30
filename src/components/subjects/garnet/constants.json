@@ -12,8 +12,8 @@
         "reuse": 5,
         "Q2_damage": {
             "base": [50,75,100,125,150],
-            "amp": 55,
-            "maxHP": 7
+            "amp": 50,
+            "maxHP": 6
         },
         "hp_cost_percent": 2,
         "cooldown": [6,5.5,5,4.5,4]
@@ -23,7 +23,7 @@
         "charge_duration_max": 0.8,
         "damage_reduction": {
             "duration": 1,
-            "effect": 70
+            "effect": 50
         },
         "heal_tick": 0.2,
         "heal": {
@@ -47,11 +47,11 @@
         "max_charge_bind": 0.8,
         "finish_heal": {
             "base": [20,40,60,80,100],
-            "amp": 50,
-            "maxHP": 5,
-            "stack": [30,35,40,45,50]
+            "amp": 40,
+            "maxHP": 7,
+            "stack": [18,21,24,27,30]
         },
-        "cooldown": [13,12,11,10,9]
+        "cooldown": [15,14,13,12,11]
     },
     "E": {
         "damage": {
@@ -82,7 +82,7 @@
         "reduction": {
             "base": [2,6,10],
             "amp": 1,
-            "maxHP": 0.5
+            "maxHP": 0.3
         }
     }
 }
