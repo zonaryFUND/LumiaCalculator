@@ -2,7 +2,6 @@ import * as React from "react";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import Value from "components/tooltip/value";
-import { skillLevel } from "../skill-damage";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const nunchaku: React.FC<SubjectSkillProps> = props => {

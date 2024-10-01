@@ -19,6 +19,7 @@ export const SubjectSkills = subjectContext.keys().reduce((skills: any, path) =>
 type Props = {
     config: SubjectConfig
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
+    subjectSide?: "left" | "right"
 }
 
 const subjectSkills: React.FC<Props> = props => {
@@ -37,14 +38,15 @@ const subjectSkills: React.FC<Props> = props => {
             weaponType={weaponType}    
             skillImage={skillImage}
         />;
+    } else {
+        return React.createElement(SubjectSkills[props.config.subject].default, {
+            id: props.config.subject, 
+            skillLevels: props.config.skillLevels, 
+            setSkillLevels: props.setSkillLevels,
+            weaponType: weaponType,
+            weapon: props.config.equipment.weapon
+        })
     }
-    return React.createElement(SubjectSkills[props.config.subject].default, {
-        id: props.config.subject, 
-        skillLevels: props.config.skillLevels, 
-        setSkillLevels: props.setSkillLevels,
-        weaponType: weaponType,
-        weapon: props.config.equipment.weapon
-    })
 };
 
 export default subjectSkills;

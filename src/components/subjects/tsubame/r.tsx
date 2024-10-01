@@ -3,11 +3,7 @@ import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
 import Value from "components/tooltip/value";
-import Decimal from "decimal.js";
-import { Status } from "components/subject/status";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { useValueContext } from "components/tooltip/value-context";
-import { } from "typescript";
 
 const r: React.FC<SubjectSkillProps> = props => {
     return (

@@ -6,11 +6,10 @@ import Images from "@app/resources/image";
 import Values, { ValuesProps } from "components/subjects/values";
 import Constant from "components/subjects/weapon-skills/constants.json";
 import { equipmentStatus } from "app-types/equipment";
-import { skillLevel } from "components/subjects/skill-damage";
 import { ValueContext, useValueContext } from "../value-context";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { useIntl } from "react-intl";
+import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 
 function valueOrElement(value: number | number[], index: number): number {
     if (Array.isArray(value)) return value[index];
@@ -38,7 +37,7 @@ const weaponSkillTooltip: React.FC<Props> = props => {
         return equipmentStatus(props.config.equipment.weapon!).type;
     }, [props.config.equipment.weapon]);
 
-    const level = skillLevel("D", props.config);
+    const level = weaponSkillLevel(props.config.weaponMastery);
 
     const valuesProps: ValuesProps = (() => {
         if (!props.showEquation) return null;

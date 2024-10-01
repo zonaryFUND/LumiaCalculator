@@ -1,4 +1,3 @@
-import { StatusProps } from "components/subject/status";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
 import { StatusOverrideFunc } from "../status-override";

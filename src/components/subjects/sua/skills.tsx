@@ -1,47 +1,34 @@
 import * as React from "react";
-import Images from "@app/resources/image";
 import style from "../skills-standard.modue.styl";
 import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
-
-type Props = {
-    src: string
-}
-
-const TooltipImage: React.FC<Props> = props => (
-    <img 
-        src={Images.skill.sua[props.src]} 
-        data-tooltip-id="subject-skill"
-        data-tooltip-content={`sua-${props.src}`}
-    />
-)
 
 export default function(props: SkillsStandardProps) {
     return  (
         <SkillsParent {...props}>
-            <li>
-                <TooltipImage src="Q" />
-                <TooltipImage src="RQ" />
-            </li>
-            <li>
-                <TooltipImage src="W" />
-                <TooltipImage src="RW" />
-            </li>
-            <li>
-                <TooltipImage src="E" />
-                <TooltipImage src="RE" />
-            </li>
-            <li>
-                <TooltipImage src="R" />
-            </li>
-            <li>
-                <TooltipImage src="T" />
-            </li>
+            <div className={style.vertical}>
+                <Skill id="sua" skill="Q" />
+                <Skill id="sua" skill="RQ" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="sua" skill="W" />
+                <Skill id="sua" skill="RW" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="sua" skill="E" />
+                <Skill id="sua" skill="RE" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="sua" skill="R" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="sua" skill="T" />
+            </div>
             <WeaponSkill id={props.weaponType} />
-            <li><SkillLevelConfigurator skill="Q" /></li>
-            <li><SkillLevelConfigurator skill="W" /></li>
-            <li><SkillLevelConfigurator skill="E" /></li>
-            <li><SkillLevelConfigurator skill="R" /></li>
-            <li><SkillLevelConfigurator skill="T" /></li>
+            <SkillLevelConfigurator skill="Q" />
+            <SkillLevelConfigurator skill="W" />
+            <SkillLevelConfigurator skill="E" />
+            <SkillLevelConfigurator skill="R" />
+            <SkillLevelConfigurator skill="T" />
         </SkillsParent>
     )
 }

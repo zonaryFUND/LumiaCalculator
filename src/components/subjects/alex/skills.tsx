@@ -2,7 +2,7 @@ import * as React from "react";
 import style from "components/subjects/skills-standard.modue.styl";
 import Images from "@app/resources/image";
 import { WeaponID } from "app-types/equipment/weapon/id";
-import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
 
 export default function(props: {weaponType?: WeaponID} & SkillsStandardProps) {
     const skills = props.weaponType == "two-handed_sword" || props.weaponType == "tonfa" ?
@@ -13,13 +13,11 @@ export default function(props: {weaponType?: WeaponID} & SkillsStandardProps) {
         <SkillsParent {...props}>
             {
                 skills.map(skill => (
-                    <li
+                    <Skill
                         key={skill}
-                        data-tooltip-id="subject-skill" 
-                        data-tooltip-content={`alex-${skill}`}
-                    >
-                        <img src={Images.skill.alex[skill]} />
-                    </li>
+                        id="alex"
+                        skill={skill}
+                    />
                 ))
             }
             <WeaponSkill id={props.weaponType} />

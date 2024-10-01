@@ -5,7 +5,7 @@ import Value from "components/tooltip/value";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { calculateValue } from "app-types/value-ratio/calculation";
-import { skillLevel } from "../skill-damage";
+import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 
 const camera: React.FC<SubjectSkillProps> = props => {
     return (
@@ -32,7 +32,7 @@ const camera: React.FC<SubjectSkillProps> = props => {
 export default camera;
 
 export const values: ValuesPropsGenerator = props => {
-    const damage = calculateValue(Constants.sniper_rifle.dead_to_rights.damage, props.status, props.config, {skill: "D", level: skillLevel("D", props.config)});
+    const damage = calculateValue(Constants.sniper_rifle.dead_to_rights.damage, props.status, props.config, {skill: "D", level: weaponSkillLevel(props.config.weaponMastery)});
 
     return {
        additionalInfo: <>

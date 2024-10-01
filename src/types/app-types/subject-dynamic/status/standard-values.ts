@@ -8,5 +8,5 @@ export const BaseVision = new Decimal(8.5);
 export const BaseBasicAttackRange = new Decimal(0.4);
 export const BaseCriticalDamagePercent = new Decimal(75)
 
-export const AssaultRifleAttackRatio = [30,30,45]
+export const AssaultRifleAttackRatio = [30,30,40]
 export const DualSwordsAttackRatio = [80,80]

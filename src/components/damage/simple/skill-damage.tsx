@@ -1,5 +1,4 @@
 import * as React from "react";
-import damage, { skillLevel } from "components/subjects/skill-damage";
 import style from "../damage-table.module.styl";
 import { useToggle } from "react-use";
 import table from "components/common/table.styl";
@@ -12,6 +11,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { SummonedStatus } from "components/subjects/summoned-status";
+import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 
 type Props = SkillValueProps & {
     config: SubjectConfig
@@ -87,10 +87,14 @@ const skillDamage: React.FC<Props> = props => {
 
     if (!isValueRatio(props.value)) return null;
 
-    const level = props.skill == "other" ? 0 : skillLevel(props.skill, props.config);
+    const level = (() => {
+        if (props.skill == "other") return 0;
+        if (props.skill == "D") return weaponSkillLevel(props.config.weaponMastery);
+        return props.config.skillLevels[props.skill];
+    })();
     const {static: staticValue, dynamic, dynamicValueOnly} = (() => {
         if (isValueRatio(props.value)) {
-            const source: Source = props.skill == "other" ? "other" : {skill: props.skill, level: skillLevel(props.skill, props.config)};
+            const source: Source = props.skill == "other" ? "other" : {skill: props.skill, level};
             return calculateValue(props.value, props.status, props.config, source);
         } else {
             return {static: new Decimal(0), dynamic: undefined, dynamicValueOnly: false};

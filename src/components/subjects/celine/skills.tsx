@@ -3,11 +3,11 @@ import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, Weapo
 
 const skills: React.FC<SkillsStandardProps> = props => (
     <SkillsParent {...props}>
-        <Skill id="celine" skill="Q" skillImage={props.skillImage} />
-        <Skill id="celine" skill="W" skillImage={props.skillImage} />
-        <Skill id="celine" skill="E" skillImage={props.skillImage} />
-        <Skill id="celine" skill="R" skillImage={props.skillImage} />
-        <Skill id="celine" skill="T" skillImage={props.skillImage} />
+        <Skill id="celine" skill="Q" />
+        <Skill id="celine" skill="W" />
+        <Skill id="celine" skill="E" />
+        <Skill id="celine" skill="R" />
+        <Skill id="celine" skill="T" />
         <WeaponSkill id={props.weaponType} />
         <SkillLevelConfigurator skill="Q" />    
         <SkillLevelConfigurator skill="W" />    

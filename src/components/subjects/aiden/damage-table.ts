@@ -1,5 +1,4 @@
-import { BaseCriticalDamagePercent } from "components/subject/standard-values";
-import { DamageTable, DamageTableGenerator } from "../damage-table";
+import { DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => {

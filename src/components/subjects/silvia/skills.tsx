@@ -1,47 +1,36 @@
 import * as React from "react";
 import Images from "@app/resources/image";
-import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
-
-type Props = {
-    src: string
-}
-
-const TooltipImage: React.FC<Props> = props => (
-    <img 
-        src={Images.skill.silvia[props.src]} 
-        data-tooltip-id="subject-skill"
-        data-tooltip-content={`silvia-${props.src}`}
-    />
-)
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import style from "../skills-standard.modue.styl";
 
 export default function(props: SkillsStandardProps) {
     return  (
         <SkillsParent {...props}>
-            <li>
-                <TooltipImage src="HumanQ" />
-                <TooltipImage src="BikeQ" />
-            </li>
-            <li>
-                <TooltipImage src="HumanW" />
-                <TooltipImage src="BikeW" />
-            </li>
-            <li>
-                <TooltipImage src="HumanE" />
-                <TooltipImage src="BikeE" />
-            </li>
-            <li>
-                <TooltipImage src="HumanR" />
-                <TooltipImage src="BikeR" />
-            </li>
-            <li>
-                <TooltipImage src="T" />
-            </li>
+            <div className={style.vertical}>
+                <Skill id="silvia" skill="HumanQ" />
+                <Skill id="silvia" skill="BikeQ" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="silvia" skill="HumanW" />
+                <Skill id="silvia" skill="BikeW" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="silvia" skill="HumanE" />
+                <Skill id="silvia" skill="BikeE" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="silvia" skill="HumanR" />
+                <Skill id="silvia" skill="BikeR" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="silvia" skill="T" />
+            </div>
             <WeaponSkill id={props.weaponType} />
-            <li><SkillLevelConfigurator skill="Q" /></li>
-            <li><SkillLevelConfigurator skill="W" /></li>
-            <li><SkillLevelConfigurator skill="E" /></li>
-            <li><SkillLevelConfigurator skill="R" /></li>
-            <li><SkillLevelConfigurator skill="T" /></li>
+            <SkillLevelConfigurator skill="Q" />
+            <SkillLevelConfigurator skill="W" />
+            <SkillLevelConfigurator skill="E" />
+            <SkillLevelConfigurator skill="R" />
+            <SkillLevelConfigurator skill="T" />
         </SkillsParent>
     )
 }

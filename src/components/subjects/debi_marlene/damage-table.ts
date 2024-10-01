@@ -1,7 +1,6 @@
 import { SkillLevels } from "app-types/subject-dynamic/config";
 import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
-import { Status } from "components/subject/status";
 import { projectileAmount } from "./marlenew";
 
 const marlW = {

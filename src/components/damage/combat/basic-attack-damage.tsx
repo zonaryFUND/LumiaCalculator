@@ -1,4 +1,4 @@
-import { AssaultRifleAttackRatio, BaseCriticalDamagePercent } from "components/subject/standard-values";
+import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 import Decimal from "decimal.js";
 import * as React from "react";
 import { useToggle } from "react-use";

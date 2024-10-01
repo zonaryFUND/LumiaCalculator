@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useToggle } from "react-use";
 import Constants from "components/subjects/aiden/constants.json";
-import { BaseCriticalDamagePercent } from "components/subject/standard-values";
+import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 import InnerTable from "components/common/inner-table";
 import table from "components/common/table.styl";
 import style from "../damage-table.module.styl";

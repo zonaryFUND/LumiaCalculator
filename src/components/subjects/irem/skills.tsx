@@ -1,47 +1,36 @@
 import * as React from "react";
 import Images from "@app/resources/image";
-import { SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
-
-type Props = {
-    src: string
-}
-
-const TooltipImage: React.FC<Props> = props => (
-    <img 
-        src={Images.skill.irem[props.src]} 
-        data-tooltip-id="subject-skill"
-        data-tooltip-content={`irem-${props.src}`}
-    />
-)
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import style from "../skills-standard.modue.styl";
 
 export default function(props: SkillsStandardProps) {
     return  (
         <SkillsParent {...props}>
-            <li>
-                <TooltipImage src="IremQ" />
-                <TooltipImage src="CatQ" />
-            </li>
-            <li>
-                <TooltipImage src="IremW" />
-                <TooltipImage src="CatW" />
-            </li>
-            <li>
-                <TooltipImage src="IremE" />
-                <TooltipImage src="CatE" />
-            </li>
-            <li>
-                <TooltipImage src="IremR" />
-                <TooltipImage src="CatR" />
-            </li>
-            <li>
-                <TooltipImage src="T" />
-            </li>
+            <div className={style.vertical}>
+                <Skill id="irem" skill="IremQ" />
+                <Skill id="irem" skill="CatQ" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="irem" skill="IremW" />
+                <Skill id="irem" skill="CatW" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="irem" skill="IremE" />
+                <Skill id="irem" skill="CatE" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="irem" skill="IremR" />
+                <Skill id="irem" skill="CatR" />
+            </div>
+            <div className={style.vertical}>
+                <Skill id="irem" skill="T" />
+            </div>
             <WeaponSkill id={props.weaponType} />
-            <li><SkillLevelConfigurator skill="Q" /></li>
-            <li><SkillLevelConfigurator skill="W" /></li>
-            <li><SkillLevelConfigurator skill="E" /></li>
-            <li><SkillLevelConfigurator skill="R" max={4} /></li>
-            <li><SkillLevelConfigurator skill="T" /></li>
+            <SkillLevelConfigurator skill="Q" />
+            <SkillLevelConfigurator skill="W" />
+            <SkillLevelConfigurator skill="E" />
+            <SkillLevelConfigurator skill="R" max={4} />
+            <SkillLevelConfigurator skill="T" />
         </SkillsParent>
     )
 }

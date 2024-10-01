@@ -5,6 +5,7 @@ import Images from "@app/resources/image";
 import Selection from "components/common/number-selection";
 import { SkillLevels } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
+import { SubjectSideContext } from "./subject-side";
 
 export type SkillImage = (skillID: string) => string | undefined;
 type ConfigurationProps = [SkillLevels, React.Dispatch<React.SetStateAction<SkillLevels>>]
@@ -42,13 +43,15 @@ export const Skill: React.FC<SkillProps> = props => {
         return props.skillImage ? (props.skillImage(props.skill) ?? standard) : standard 
     })();
 
+    const side = React.useContext(SubjectSideContext);
+
     return (
-        <li
+        <img 
+            src={src} 
             data-tooltip-id="subject-skill" 
             data-tooltip-content={`${props.id}-${props.skill}`}
-        >
-            <img src={src} />
-        </li>
+            data-tooltip-subject-side={side}
+        />
     );
 }
 
@@ -62,13 +65,15 @@ export const WeaponSkill: React.FC<WeaponSkillProps> = props => {
         return Images.skill.weapon[props.id];
     })();
 
+    const side = React.useContext(SubjectSideContext);
+
     return (
-        <li
+        <img 
+            src={src}
             data-tooltip-id={props.id ? "weapon-skill" : undefined}
             data-tooltip-content={`${props.id}`}
-        >
-            <img src={src} />
-        </li> 
+            data-tooltip-subject-side={side}
+        />
     )
 }
 
@@ -81,11 +86,11 @@ export type SkillsStandardProps = {
 }
 
 export const SkillsParent: React.FC<SkillsStandardProps & {children?: React.ReactNode}> = props => (
-    <ul className={style.skills}>
+    <div className={style.skills}>
         <ConfigurationContext.Provider value={[props.skillLevels, props.setSkillLevels]}>
             {props.children}
         </ConfigurationContext.Provider>
-    </ul>
+    </div>
 )
 
 const skillsStandard: React.FC<SkillsStandardProps> = props => {

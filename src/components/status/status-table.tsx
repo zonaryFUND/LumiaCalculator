@@ -11,7 +11,7 @@ import InnerTable from "components/common/inner-table";
 import BasePlusPerLevel from "./expand/base-plus-per-level";
 import Mastery from "./expand/mastery";
 import Equipment from "./expand/equipment";
-import useStatusToggle from "../subject/use-status-toggle";
+import useStatusToggle from "./use-status-toggle";
 import SegmentedControl from "components/common/segmented-control";
 import { name } from "app-types/subject-static";
 import { SummonedStatus } from "components/subjects/summoned-status";
