@@ -1,4 +1,5 @@
 import * as React from "react";
+import Modal from "react-modal";
 import { Tooltip } from "react-tooltip";
 import common from "@app/common.styl";
 
@@ -10,19 +11,24 @@ import Damage from "./damage";
 import ItemTooltip from "components/tooltip/item/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
+import LoadBuild from "components/modal/load-build";
+import loadStyle from "components/modal/load-build/index.module.styl";
+import SaveBuild from "components/modal/save-build";
+import saveStyle from "components/modal/save-build/index.module.styl";
 
 import { useLocalStorage, useToggle, useWindowSize } from "react-use";
 import { equipmentStatus } from "app-types/equipment";
 import Switch from "components/common/switch";
 import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
-import { useBuildStorage } from "@app/storage/build";
+import { BuildWithKey, useBuildStorage } from "@app/storage/build";
 import { SimpleCurrentConfigKey, useStorageOnSimple } from "@app/storage/simple";
 import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { SubjectSkillProps } from "components/subjects/props";
 import { WeaponTypeID } from "app-types/equipment/weapon";
+import { name } from "app-types/subject-static";
 
 const index: React.FC = props => {
     const { width } = useWindowSize();
@@ -63,6 +69,14 @@ const index: React.FC = props => {
     const currentBuild = React.useMemo(() => {
         return builds.find(b => b.key == currentBuildKey);
     }, [builds.length, currentBuildKey]);
+
+    const onLoadBuild = React.useCallback((buildWithKey: BuildWithKey) => {
+        setConfig(buildWithKey.config);
+        setCurrentBuildKey(buildWithKey.key);
+        toggleShowingLoad();
+    }, []);
+
+    //const onSaveBuild = React.useCallback((buildWithKey: BuildWithKey))
 
     return (
         <main className={style.simple} style={{paddingLeft: width > 1400 ? 266 : 80}}>
@@ -155,7 +169,35 @@ const index: React.FC = props => {
 
                     return <ItemTooltip itemID={item} {...props} />;
                 }}
-            />
+            />            
+            <Modal
+                isOpen={showingLoad}
+                shouldCloseOnOverlayClick
+                onRequestClose={toggleShowingLoad}
+                className={loadStyle.load}
+                overlayClassName={common["modal-overlay"]}
+            >
+                <LoadBuild 
+                    onSelect={onLoadBuild} 
+                    onDeleteCurrentBuild={() =>   setCurrentBuildKey(undefined)} 
+                />
+            </Modal>
+            <Modal
+                isOpen={showingSave}
+                shouldCloseOnOverlayClick
+                onRequestClose={toggleShowingSave}
+                className={saveStyle.save}
+                overlayClassName={common["modal-overlay"]}
+            >
+                <SaveBuild 
+                    defaultName={name(config.subject, "jp")}
+                    onSave={name => {
+                        toggleShowingSave(false);
+                        const key = saveNew(name, config);
+                        setCurrentBuildKey(key);
+                    }}
+                />
+            </Modal>
         </main>
     )
 };
