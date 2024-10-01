@@ -19,7 +19,6 @@ export const SubjectSkills = subjectContext.keys().reduce((skills: any, path) =>
 type Props = {
     config: SubjectConfig
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
-    subjectSide?: "left" | "right"
 }
 
 const subjectSkills: React.FC<Props> = props => {

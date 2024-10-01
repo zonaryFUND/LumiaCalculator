@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Tooltip } from "react-tooltip";
 import { StateWrapped } from "util/state";
 import index from "./index.module.styl";
 import Config from "components/config/config";
@@ -8,9 +7,6 @@ import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status as StatusType } from "app-types/subject-dynamic/status/type";
 import SubjectSkills from "components/subjects/skills";
 import style from "./subject.module.styl";
-
-import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
-import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
 
 type Props = StateWrapped<SubjectConfig> & {
     status: StatusType
@@ -38,24 +34,6 @@ const subject: React.FC<Props> = props => {
                     <Status {...props.config} status={props.status} />
                 </section>
             </div>
-            <Tooltip 
-                id="subject-skill"
-                className={`${style.tooltip}`}
-                style={{zIndex: 1000}}
-                render={({ content, activeAnchor }) => {
-                    if (!content) return null;
-                    const [subject, skill] = content?.split("-");
-                    return (
-                        <SubjectSkillTooltip
-                            id={subject} 
-                            skill={skill as any} 
-                            showEquation={false}
-                            status={props.status} 
-                            config={props.config} 
-                        />
-                    );
-                }}
-            />     
         </div>
     )
 };
