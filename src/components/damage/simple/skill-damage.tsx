@@ -106,6 +106,11 @@ const skillDamage: React.FC<Props> = props => {
     }, [props.type])
 
     const [value, expandDescriptionStatic] = (() => {
+        if (dynamicValueOnly) return [null, null];
+
+        const healPower = (props.type == "heal" || props.type == "kenneth-heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
+            props.status.healPower.calculatedValue : null;
+
         if (props.multiplier) {
             const [equation, multiplier] = props.multiplier.reduce((prev, multiplier: any) => {
                 if (multiplier.basic) {
@@ -122,24 +127,32 @@ const skillDamage: React.FC<Props> = props => {
                     ]
                 }
             }, [<>{staticValue.toString()}</>, 100]);
+
             const value = staticValue.percent(multiplier);
+
             return [
-                dynamicValueOnly ? null : value,
-                dynamic ?
-                    dynamicValueOnly ? null :
-                    <tr><td><FormattedMessage id="app.static-value" /></td><td>{equation} = {value.toString()}</td></tr>  
-                : <tr><td colSpan={2}>{equation} = {value.toString()}</td></tr>
+                value.addPercent(healPower || 0),
+                <>
+                    <tr>
+                        {dynamic ? <td><FormattedMessage id="app.static-value" /></td> : null}
+                        <td colSpan={dynamic ? undefined : 2}>{equation} = {value.toString()}</td>
+                    </tr>
+                    {healPower ? <tr><td><FormattedMessage id="status.heal-power" /></td><td>{value.toString()} x {healPower.toString()}% = {value.percent(healPower).toString()}</td></tr> : null}
+                </>
+            ]
+        } else {
+            const baseEquation = <>{equation(props.value, props.status, props.config.level, level, props.config.stack, summonedName)}{staticValue.toString()}{percent}</>;
+            return [
+                staticValue.addPercent(healPower || 0),
+                <>
+                    <tr>
+                        {dynamic ? <td><FormattedMessage id="app.static-value" /></td> : null}
+                        <td colSpan={dynamic ? undefined : 2}>{baseEquation}</td>
+                    </tr>
+                    {healPower ? <tr><td><FormattedMessage id="status.heal-power" /></td><td>{staticValue.toString()} x {healPower.toString()}% = {staticValue.percent(healPower).toString()}</td></tr> : null}
+                </>
             ]
         }
-
-        const baseEquation = <>{equation(props.value, props.status, props.config.level, level, props.config.stack, summonedName)}{staticValue.toString()}{percent}</>;
-        return [
-            dynamicValueOnly ? null : staticValue,
-            dynamic ? 
-                dynamicValueOnly ? null :
-                <tr><td><FormattedMessage id="app.static-value" /></td><td>{baseEquation}</td></tr> 
-            : <tr><td colSpan={2}>{baseEquation}</td></tr>
-        ]
     })();
 
     const [dynamicValue, expandDescriptionsDynamic] = (() => {

@@ -61,14 +61,15 @@ const skillDamage: React.FC<Props> = props => {
     const mitigationContext = useMitigation();
 
     const healPower = props.status.healPower.calculatedValue;
-    const healPowerDescirption = healPower.greaterThan(0) ? <tr><td>与える回復増加</td><td>{healPower.toString()}%</td></tr> : null;
+    console.log(healPower)
+    const healPowerDescription = healPower.greaterThan(0) ? <tr><td>与える回復増加</td><td>{healPower.toString()}%</td></tr> : null;
     const [mitigated, mitigationDescriptions] = (() => {
         if (props.type == "true" || props.type == "ms" || props.type == "ratio" || props.type == "count") return [potency, null]
-        if ((props.type == "heal" && props.damageDependent == undefined) || props.type == "shield") {
+        if ((props.type == "heal" && props.damageDependent == undefined)) {
             
             return [
                 potency.addPercent(healPower), 
-                healPowerDescirption
+                healPowerDescription
             ]
         }
         
@@ -137,7 +138,7 @@ const skillDamage: React.FC<Props> = props => {
                                     <td>{damageDependent}%</td>
                                     
                                 </tr>
-                                {healPowerDescirption}
+                                {healPowerDescription}
                             </>
                             : null
                         }
