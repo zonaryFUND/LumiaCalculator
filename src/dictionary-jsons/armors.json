@@ -622,7 +622,7 @@
 		"attackPower": "15",
 		"attackSpeed": "15",
 		"criticalChance": "35",
-		"option": "extended_fury[\"extend\":20]"
+		"option": "extended_fury[\"extend\":20,\"dmg\":{\"level\":2}]"
 	},
 	"commander_headset": {
 		"type": "head",

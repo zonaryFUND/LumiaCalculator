@@ -105,11 +105,11 @@ const skillDamage: React.FC<Props> = props => {
         return props.type == "ms" || props.type =="ratio" || props.type == "kenneth-heal" ? "%" : null
     }, [props.type])
 
-    const [value, expandDescriptionStatic] = (() => {
-        if (dynamicValueOnly) return [null, null];
-
-        const healPower = (props.type == "heal" || props.type == "kenneth-heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
+    const healPower = (props.type == "heal" || props.type == "kenneth-heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
             props.status.healPower.calculatedValue : null;
+
+    const [value, expandDescriptionStatic] = (() => {
+        if (dynamicValueOnly) return [null, null];        
 
         if (props.multiplier) {
             const [equation, multiplier] = props.multiplier.reduce((prev, multiplier: any) => {
@@ -165,6 +165,7 @@ const skillDamage: React.FC<Props> = props => {
             const [dynamicEquation, multipliedValue] = (() => {
                 const isCalculated = typeof ratio === "object" && !Array.isArray(ratio);
                 if (!isCalculated && !props.multiplier) return [null, value];
+
                 if (props.multiplier) {
                     const [eq, mul] = props.multiplier.reduce((prev, multiplier: any) => {
                         if (multiplier.basic) {
@@ -184,15 +185,16 @@ const skillDamage: React.FC<Props> = props => {
                     const multipliedValue = value.percent(mul);
                     return [
                         <td>{eq} = {multipliedValue.toString()}</td>,
-                        multipliedValue
+                        multipliedValue.addPercent(healPower || 0)
                     ]
                 } else {
                     return [
                         <td>{equation(ratio as ValueRatio, props.status, props.config.level, level, props.config.stack, summonedName)}{value.toString()}</td>,
-                        value
+                        value.addPercent(healPower || 0)
                     ];
                 }
             })();
+
             const [content, label] = (() => {
                 switch (key) {
                     case "targetHP":
