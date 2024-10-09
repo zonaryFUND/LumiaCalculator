@@ -56,7 +56,7 @@
         "dualsword_multiplier": 160,
         "dualsword_w_heal_multiplier": 2,
         "sp_cost": [120,150,180],
-        "cooldown": [65,60,55]
+        "cooldown": [60,55,50]
     },
     "T": {
         "duration": 3,

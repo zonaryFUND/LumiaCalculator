@@ -22,7 +22,7 @@
         },
         "cooldown_increase": 1,
         "sp_cost": [55,60,65,70,75],
-        "cooldown": 7
+        "cooldown": 6
     },
     "E": {
         "inner_damage": {

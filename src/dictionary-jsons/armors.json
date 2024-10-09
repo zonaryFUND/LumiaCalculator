@@ -233,9 +233,9 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ap",
-		"skillAmplification": "13",
+		"skillAmplification": "16",
 		"defense": "28",
-		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":1,\"amp\":0.25}}]"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.8,\"amp\":0.25}}]"
 	},
 	"omertà": {
 		"type": "chest",
@@ -543,17 +543,17 @@
 	"the_star_of_the_wilds": {
 		"type": "head",
 		"tier": "legendary",
-		"attackPower": "33",
-		"attackSpeed": "40",
+		"attackPower": "30",
+		"attackSpeed": "42",
 		"option": "healing_reduction_weak"
 	},
 	"astronaut_s_helmet": {
 		"type": "head",
 		"tier": "legendary",
-		"skillAmplification": "65",
-		"maxHP": "180",
+		"skillAmplification": "68",
+		"maxHP": "200",
 		"spRegeneration": "50",
-		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":1,\"amp\":0.25}}]"
+		"option": "debilitation[\"dmg\":{\"targetMaxHP\":{\"base\":0.8,\"amp\":0.25}}]"
 	},
 	"dwarf_s_helmet": {
 		"type": "head",
@@ -647,6 +647,13 @@
 		"cooldownReduction": "15",
 		"defense": "15",
 		"option": "security_protocol"
+	},
+	"legatus": {
+		"type": "head",
+		"tier": "legendary",
+		"attackPower": "30",
+		"attackSpeed": "35",
+		"criticalChance": "35"
 	},
 	"chinese_opera_mask": {
 		"type": "head",
@@ -969,6 +976,14 @@
 		"movementSpeed": "0.08",
 		"option": "streamlined"
 	},
+	"dice_of_destiny": {
+		"type": "arm",
+		"tier": "legendary",
+		"attackPower": "30",
+		"attackSpeed": "33",
+		"criticalChance": "35",
+		"criticalDamage": "7"
+	},
 	"prominence": {
 		"type": "arm",
 		"tier": "mythic",
@@ -1082,6 +1097,20 @@
 		"spRegeneration": "50",
 		"movementSpeed": "0.22"
 	},
+	"gladiator": {
+		"type": "leg",
+		"tier": "epic",
+		"attackSpeed": "10",
+		"criticalChance": "25",
+		"movementSpeed": "0.22"
+	},
+	"delta_red": {
+		"type": "leg",
+		"tier": "epic",
+		"skillAmplification": "13",
+		"cooldownReduction": "10",
+		"movementSpeed": "0.22"
+	},
 	"mythril_boots": {
 		"type": "leg",
 		"tier": "legendary",
@@ -1153,7 +1182,7 @@
 	"racing_boots": {
 		"type": "leg",
 		"tier": "legendary",
-		"attackSpeed": "22",
+		"attackSpeed": "20",
 		"criticalChance": "33",
 		"movementSpeed": "0.25"
 	},

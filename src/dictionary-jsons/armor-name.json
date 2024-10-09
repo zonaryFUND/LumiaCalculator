@@ -323,6 +323,10 @@
 		"jp": "バニーハット",
 		"en": "Bunny Hat"
 	},
+	"legatus": {
+		"jp": "レガトゥス",
+		"en": "Legatus "
+	},
 	"chinese_opera_mask": {
 		"jp": "臉譜",
 		"en": "Chinese Opera Mask"
@@ -499,6 +503,10 @@
 		"jp": "ミスリルクイーバー",
 		"en": "Mythril Quiver"
 	},
+	"dice_of_destiny": {
+		"jp": "運命のさいころ",
+		"en": "Dice of Destiny"
+	},
 	"prominence": {
 		"jp": "プロミネンス",
 		"en": "Prominence"
@@ -558,6 +566,14 @@
 	"cowboy_boots": {
 		"jp": "カウボーイブーツ",
 		"en": "Cowboy Boots"
+	},
+	"gladiator": {
+		"jp": "グラディエーター",
+		"en": "Gladiator"
+	},
+	"delta_red": {
+		"jp": "デルタレッド",
+		"en": "Delta Red"
 	},
 	"mythril_boots": {
 		"jp": "ミスリルブーツ",

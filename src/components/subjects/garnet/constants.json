@@ -27,7 +27,7 @@
         },
         "heal_tick": 0.2,
         "heal": {
-            "lostHP": 4
+            "lostHP": 5
         },
         "min_damage": {
             "base": [80,110,140,170,200],
@@ -56,7 +56,7 @@
     "E": {
         "damage": {
             "base": [60,85,110,135,160],
-            "amp": 50,
+            "amp": 55,
             "maxHP": 7
         },
         "stun": 0.3,

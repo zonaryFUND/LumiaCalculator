@@ -14,7 +14,7 @@ export const Heads = [
     "vigilante", "diadem", "cowboy_hat", "plasma_helmet", "harmony_in_full_bloom", "welding_helmet", "mythril_helm", "laurel_wreath", "crusader_helmet", "elysian_halo",
     "fallen_pegasus", "persona", "sultan_s_turban", "racing_helmet", "the_star_of_the_wilds", "astronaut_s_helmet", "dwarf_s_helmet", "twilight",
     "gpnvg", "the_black_death", "cyberstalker", "blaster_helmet", "commander_headset", "tactical_visor", "the_dragon_s_fury", "celestial_echo",
-    "blue_flames", "bunny_hat",
+    "blue_flames", "bunny_hat", "legatus",
     "chinese_opera_mask", "blood_crown"
 ]
 export type HeadID = typeof Heads[number]
@@ -27,13 +27,16 @@ export const Arms = [
     "dragon_scale", "chain_of_thorns", "nightmare_nails", "helix", "mythril_armband", "moonlight_pendant", "magic_lamp",
     "claddagh_ring", "smash_totem", "pharaoh_s_artifact", "emerald_tablet", "psyche_s_blade", "burning_heart",
     "solar_system_miniature", "eye_of_horus", "sultan_adorned", "mythril_quiver",
+    "dice_of_destiny",
     "prominence", "bloodripper", "necronomicon"
 ]
 export type ArmID = typeof Arms[number]
 
 export const Legs = [
     "hiking_boots", "glacier_crampons", "feather_boots", "marverick_runner", "straitjacket_sneakers", "bucephalus", "eod_boots", "white_rhinos",
-    "tachyon_brace", "scv", "stellar_steps", "cowboy_boots", "mythril_boots", "glacial_shoes", "iron_maiden", "boots_of_hermes", "blade_boots", "alexander", "legs_of_steel",
+    "tachyon_brace", "scv", "stellar_steps", "cowboy_boots", "gladiator",
+    "delta_red",
+    "mythril_boots", "glacial_shoes", "iron_maiden", "boots_of_hermes", "blade_boots", "alexander", "legs_of_steel",
     "galaxy_steps", "wild_walkers", "mirage_lace-ups", "racing_boots", "taproot", "red_shoes"
 ]
 export type LegID = typeof Legs[number]

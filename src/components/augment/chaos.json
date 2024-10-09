@@ -67,7 +67,7 @@
         "additional_heal_per_hit": 40,
         "additional_heal_max": 80,
         "overheal_duration": 5,
-        "cooldown": 25
+        "cooldown": 20
     },
     "circular_system": {
         "ratio": 35,

@@ -46,7 +46,7 @@
         "count": 6,
         "damage": {
             "base": [50,85,120],
-            "amp": 45,
+            "amp": 50,
             "maxHP": 4
         },
         "slow": {

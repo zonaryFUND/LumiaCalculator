@@ -2,7 +2,7 @@ import { WeaponTypeID } from "./type-id";
 
 export const Gloves = [
     "one_inch_punch", "divine_fist", "bloodwing_knuckles", "frost_petal_hand", "buddha_s_palm", 
-    "brasil_gauntlet", "white_claw_punch", "imperial_silk_gloves", "mark_of_the_phoenix", "permafrost",
+    "brasil_gauntlet", "white_claw_punch", "imperial_silk_gloves", "mark_of_the_phoenix", "permafrost", "iron_fist",
     "bloody_hand", "bloody_hand_crimson", "bloody_hand_dawn"
 ]
 export type GloveID = typeof Gloves[number];
@@ -39,7 +39,7 @@ export type ShurikenID = typeof Shurikens[number]
 
 export const Bows = [
     "ancient_bolt", "golden-ratio_bow", "twinbow", "jebe_s_altered_bow", "elemental_bow", "artemis",
-    "argyrotoxus", "crimson_bow", "failnaught", "failnaught_crimson", "failnaught_dawn"
+    "argyrotoxus", "crimson_bow", "eagle_eye", "failnaught", "failnaught_crimson", "failnaught_dawn"
 ]
 export type BowID = typeof Bows[number]
 
@@ -115,7 +115,8 @@ export type RapierID = typeof Rapiers[number]
 
 export const Guitars = [
     "bohemian", "stairway_to_heaven", "purple_haze", "satisfaction", "the_wall", "teen_spirit", "wonderful_tonight",
-    "cpt_pepper", "heaven_s_door", "heartbreaker", "heartbreaker_crimson", "heartbreaker_dawn"
+    "cpt_pepper", "heaven_s_door", "free_bird",
+    "heartbreaker", "heartbreaker_crimson", "heartbreaker_dawn"
 ]
 export type GuitarID = typeof Guitars[number]
 

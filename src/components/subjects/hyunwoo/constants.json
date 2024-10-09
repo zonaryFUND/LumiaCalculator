@@ -19,7 +19,7 @@
     "W": {
         "duration": 2.5,
         "defense": {
-            "base": [4,13,22,31,40],
+            "base": [12,20,28,36,44],
             "defense": 10
         },
         "cc_immune": 1,

@@ -241,7 +241,7 @@
 		{
 			"weapon": "rapier",
 			"type": "basic_attack_amp",
-			"value": 1.3,
+			"value": 1.5,
 			"attackSpeed": 2
 		}
 	],
@@ -509,7 +509,7 @@
 		{
 			"weapon": "arcana",
 			"type": "skill_amp",
-			"value": 4.4,
+			"value": 4.6,
 			"attackSpeed": 2.5
 		}
 	],
@@ -717,7 +717,7 @@
 		{
 			"weapon": "dagger",
 			"type": "skill_amp",
-			"value": 4.3,
+			"value": 4.5,
 			"attackSpeed": 2.7
 		}
 	],

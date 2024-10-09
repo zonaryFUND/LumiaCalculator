@@ -7,7 +7,7 @@
         },
         "dual_sword_damage": {
             "base": [40,60,80,100,120],
-            "attack": 155,
+            "attack": 160,
             "basicAttackAmp": 100
         },
         "slow": {

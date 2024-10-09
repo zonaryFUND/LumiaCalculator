@@ -82,7 +82,7 @@
         "collection_duration": 6,
         "collection_max": 4,
         "damage": {
-            "base": [20,40,60],
+            "base": [40,70,100],
             "amp": 35
         },
         "cooldown": {

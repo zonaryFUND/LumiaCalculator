@@ -2,8 +2,14 @@
     "red": {
         "dot_duration": 3,
         "damage": {
-            "base": 3,
-            "level": 3
+            "melee": {
+                "base": 5,
+                "level": 4
+            },
+            "range": {
+                "base": 3,
+                "level": 3
+            }
         },
         "cooldown": 6,
         "duration": 120
@@ -16,6 +22,17 @@
             "tick": 3,
             "effet": 15
         },
+        "damage": {
+            "melee": {
+                "base": 50,
+                "amp": 6
+            },
+            "range": {
+                "base": 30,
+                "amp": 6
+            }
+        },
+        "cooldown": 8,
         "duration": 120
     },
     "yellow": {
@@ -35,12 +52,16 @@
         "duration": 120
     },
     "blue": {
-        "movement_speed": 0.1,
-        "ms_not_in_combat": 0.05,
+        "movement_speed": 1.5,
+        "ms_not_in_combat": 0.08,
         "attack_speed": 10,
         "on_get": {
             "duration": 5,
             "effect": 30
+        },
+        "on_combat_stack": {
+            "effect": 1.5,
+            "max_stack": 4
         },
         "duration": 120
     }

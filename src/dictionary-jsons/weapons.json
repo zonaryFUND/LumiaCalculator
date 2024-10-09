@@ -11,7 +11,7 @@
 		"type": "glove",
 		"tier": "epic",
 		"attackPower": "41",
-		"skillAmplification": "62",
+		"skillAmplification": "66",
 		"maxHP": "100"
 	},
 	"bloodwing_knuckles": {
@@ -72,6 +72,14 @@
 		"skillAmplification": "86",
 		"cooldownReduction": "15",
 		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"as\":10,\"cooldown\":3]"
+	},
+	"iron_fist": {
+		"type": "glove",
+		"tier": "legendary",
+		"attackPower": "40",
+		"skillAmplification": "90",
+		"maxHP": "120",
+		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":25},\"slow\":{\"effect\":20,\"duration\":1.5}]"
 	},
 	"bloody_hand": {
 		"type": "glove",
@@ -610,6 +618,13 @@
 		"attackSpeed": "20",
 		"option": "vigor[\"dmg\":{\"targetHP\":3},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.1}]"
 	},
+	"eagle_eye": {
+		"type": "bow",
+		"tier": "legendary",
+		"attackPower": "80",
+		"attackSpeed": "40",
+		"movementSpeed": "0.08"
+	},
 	"failnaught": {
 		"type": "bow",
 		"tier": "mythic",
@@ -674,14 +689,14 @@
 	"sharanga": {
 		"type": "crossbow",
 		"tier": "legendary",
-		"attackPower": "83",
+		"attackPower": "80",
 		"attackSpeed": "35",
 		"option": "extended_fury[\"extend\":25,\"dmg\":{\"level\":3}]"
 	},
 	"blood_half_moon": {
 		"type": "crossbow",
 		"tier": "mythic",
-		"attackPower": "39",
+		"attackPower": "35",
 		"attackSpeed": "30",
 		"adaptiveStatus": "59",
 		"cooldownReduction": "15",
@@ -690,7 +705,7 @@
 	"blood_half_moon_crimson": {
 		"type": "crossbow",
 		"tier": "mythic",
-		"attackPower": "45",
+		"attackPower": "41",
 		"attackSpeed": "40",
 		"adaptiveStatus": "51",
 		"armorPenetrationRatio": "7",
@@ -750,7 +765,7 @@
 		"tier": "legendary",
 		"attackPower": "29",
 		"attackSpeed": "30",
-		"skillAmplification": "78",
+		"skillAmplification": "80",
 		"cooldownReduction": "15",
 		"ammo": "3",
 		"option": "last_word[\"dmg\":{\"amp\":45,\"targetMaxHP\":8},\"heal\":66]"
@@ -1769,6 +1784,13 @@
 		"attackPower": "44",
 		"skillAmplification": "4",
 		"option": "cataclasm"
+	},
+	"free_bird": {
+		"type": "guitar",
+		"tier": "legendary",
+		"attackPower": "80",
+		"attackSpeed": "40",
+		"lifeSteal": "20"
 	},
 	"heartbreaker": {
 		"type": "guitar",

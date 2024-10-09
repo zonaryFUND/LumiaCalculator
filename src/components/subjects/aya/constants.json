@@ -28,7 +28,7 @@
         "per_as": 30,
         "max_bullets": 8,
         "sp_cost": [80,90,100,110,120],
-        "cooldown": [11,10,9,8,7]
+        "cooldown": [10,9,8,7,6]
     },
     "E": {
         "cooldown_reduction": [30,35,40,45,50],

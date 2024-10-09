@@ -4,9 +4,15 @@
     },
     "quake": {
         "slow": 50,
-        "damage": {
-            "base": 25,
-            "level": 4
+        "first_damage": {
+            "base": [50, 100],
+            "level": 10,
+            "additionalMaxHP": 10
+        },
+        "dot_damage": {
+            "base": 20,
+            "level": 2,
+            "additionalMaxHP": 1.5
         },
         "duration": 6,
         "tick": 0.5
@@ -26,6 +32,10 @@
         "shield": {
             "base": [200,300],
             "additionalMaxHP": [75,100]
+        },
+        "tenacity": {
+            "base": 10,
+            "additionalMaxHP": 3
         }
     },
     "totem": {
@@ -48,7 +58,10 @@
             "base": 100,
             "level": 20
         },
-        "damage_increase": 15
+        "second_damage": {
+            "base": 50,
+            "level": 10
+        }
     },
     "false_oath": {
         "damage_increase": {

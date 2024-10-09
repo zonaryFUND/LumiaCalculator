@@ -39,6 +39,10 @@
 		"jp": "永久凍土",
 		"en": "Permafrost"
 	},
+	"iron_fist": {
+		"jp": "アイアンフィスト",
+		"en": "Iron Fist"
+	},
 	"bloody_hand": {
 		"jp": "ブラッディハンド",
 		"en": "Bloody Hand"
@@ -310,6 +314,10 @@
 	"crimson_bow": {
 		"jp": "赤弓白矢",
 		"en": "Crimson Bow"
+	},
+	"eagle_eye": {
+		"jp": "イーグルアイ",
+		"en": "Eagle Eye"
 	},
 	"failnaught": {
 		"jp": "無駄なしの弓",
@@ -878,6 +886,10 @@
 	"heaven_s_door": {
 		"jp": "ヘブンズドア",
 		"en": "Heaven's Door"
+	},
+	"free_bird": {
+		"jp": "フリーバード",
+		"en": "Free Bird"
 	},
 	"heartbreaker": {
 		"jp": "ハートブレイカー",
