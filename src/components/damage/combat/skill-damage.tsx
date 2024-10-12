@@ -64,8 +64,8 @@ const skillDamage: React.FC<Props> = props => {
     console.log(healPower)
     const healPowerDescription = healPower.greaterThan(0) ? <tr><td>与える回復増加</td><td>{healPower.toString()}%</td></tr> : null;
     const [mitigated, mitigationDescriptions] = (() => {
-        if (props.type == "true" || props.type == "ms" || props.type == "ratio" || props.type == "count") return [potency, null]
-        if ((props.type == "heal" && props.damageDependent == undefined)) {
+        if (props.type == "true" || props.type == "ms" || props.type == "ratio" || props.type == "count" || props.type == "shield") return [potency, null]
+        if (((props.type == "heal" || props.type == "kenneth-heal") && props.damageDependent == undefined)) {
             
             return [
                 potency.addPercent(healPower), 

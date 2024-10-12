@@ -1,3 +1,4 @@
+/*
 import { useBuildStorage } from "@app/storage/build";
 import { useStorageOnCombat } from "@app/storage/combat";
 import * as React from "react";
@@ -22,3 +23,4 @@ export default function useBuildSave(): Props {
         return builds.find(b => b.key == rightStorage.currentBuildKey);
     }, [builds.length, rightStorage.currentBuildKey]);
 }
+*/

@@ -1,9 +1,8 @@
 import * as React from "react";
 import Switch from "components/common/switch";
-import { StateProps } from "@app/util/state";
 
 type Props = {
-    damageInFormula: StateProps<boolean>
+    damageInFormula: [boolean, (to: boolean) => void]
 }
 
 const preference: React.FC<Props> = props => {

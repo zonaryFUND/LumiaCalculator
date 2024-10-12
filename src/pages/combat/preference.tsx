@@ -3,8 +3,8 @@ import Switch from "components/common/switch";
 import { StateProps } from "@app/util/state";
 
 type Props = {
-    damageInFormula: StateProps<boolean>
-    makeMasteryAlign: StateProps<boolean>
+    damageInFormula: [boolean, (to: boolean) => void]
+    makeMasteryAlign: [boolean, (to: boolean) => void]
 }
 
 const preference: React.FC<Props> = props => {

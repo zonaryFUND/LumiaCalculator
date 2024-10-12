@@ -3,6 +3,8 @@ import Modal from "react-modal";
 import { Tooltip } from "react-tooltip";
 import common from "@app/common.styl";
 
+import { Gear } from "@phosphor-icons/react"
+
 import style from "./index.module.styl";
 
 import Subject from "../simple/subject";
@@ -15,10 +17,11 @@ import LoadBuild from "components/modal/load-build";
 import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";
 import saveStyle from "components/modal/save-build/index.module.styl";
+import Preference from "./preference";
+import preferenceStyle from "./preference.module.styl";
 
 import { useLocalStorage, useToggle, useWindowSize } from "react-use";
 import { equipmentStatus } from "app-types/equipment";
-import Switch from "components/common/switch";
 import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
 import { BuildWithKey, useBuildStorage } from "@app/storage/build";
@@ -29,6 +32,8 @@ import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { SubjectSkillProps } from "components/subjects/props";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { name } from "app-types/subject-static";
+import useStorageBoolean from "@app/storage/boolean";
+import { DetailedTooltipKey } from "@app/storage/common";
 
 const index: React.FC = props => {
     const { width } = useWindowSize();
@@ -49,7 +54,7 @@ const index: React.FC = props => {
     } = useSubjectConfig({value: storageConfig, update: saveConfig});
 
     const status = useStatus(config);
-    const damageInFormula = React.useState(false);
+    const damageInFormula = useStorageBoolean(DetailedTooltipKey);
     const weaponTypeID = React.useMemo(() => {
         if (!equipment.weapon) return undefined;
         return equipmentStatus(equipment.weapon).type;
@@ -76,7 +81,7 @@ const index: React.FC = props => {
         toggleShowingLoad();
     }, []);
 
-    //const onSaveBuild = React.useCallback((buildWithKey: BuildWithKey))
+    const [showingPreference, toggleShowingPreference] = useToggle(false);
 
     return (
         <main className={style.simple} style={{paddingLeft: width > 1400 ? 266 : 80}}>
@@ -90,9 +95,8 @@ const index: React.FC = props => {
                             <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>新規保存</button>
                         </div>
                     </div>
-                    <div className={styles(style.formula, damageInFormula[0] ? style.on : undefined)}>
-                        <Switch {...damageInFormula} />
-                        <p>ツールチップ詳細表記</p>
+                    <div className={style.config}>
+                        <Gear fontSize={44} weight="fill" onClick={toggleShowingPreference}  />
                     </div>
                 </header>
                 <CollapseTab collapse={collapse}>
@@ -197,6 +201,15 @@ const index: React.FC = props => {
                         setCurrentBuildKey(key);
                     }}
                 />
+            </Modal>
+            <Modal
+                isOpen={showingPreference}
+                shouldCloseOnOverlayClick
+                onRequestClose={toggleShowingPreference}
+                className={preferenceStyle.preference}
+                overlayClassName={common["modal-overlay"]}
+            >
+                <Preference damageInFormula={damageInFormula} />
             </Modal>
         </main>
     )
