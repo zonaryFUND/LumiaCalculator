@@ -1788,7 +1788,7 @@
 	"free_bird": {
 		"type": "guitar",
 		"tier": "legendary",
-		"attackPower": "80",
+		"attackPower": "75",
 		"attackSpeed": "40",
 		"lifeSteal": "20"
 	},
