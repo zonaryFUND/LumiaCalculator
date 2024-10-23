@@ -59,7 +59,7 @@ const index: React.FC = props => {
     }, [width]);
 
     React.useEffect(() => {
-        if (!makeMasteryAlign) return;
+        if (!makeMasteryAlign[0]) return;
         rightConfig.setConfig({
             ...rightConfig.value,
             level: leftConfig.level[0],
@@ -75,24 +75,30 @@ const index: React.FC = props => {
         leftConfig.movementMastery
     ]);
 
+    const [loading, setLoading] = React.useState<"left" | "right" | null>(null);
+    const [saving, setSaving] = React.useState<"left" | "right" | null>(null);
+
     const [showingPreference, toggleShowingPreference] = useToggle(false);
 
     return (
         <main className={style.combat} style={{paddingLeft: width > 1400 ? 266 : 80}}>
             <div className={styles(style.parent, collapse ? style.collapse : undefined)} ref={parentRef}>
-                {/*
                 <header className={style.header} style={collapse ? {flexDirection: "column"} : undefined}>
+                    <div />
+                    {/*
                     <div className={style.storage}>
                         <h1>保存名：{currentBuildLeft?.name ?? "-----"}</h1>
                         <div>
-                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingLoad}>ロード</button>
-                            {currentBuildLeft?.isPreset || currentBuild == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>上書き保存</button>}
-                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>新規保存</button>
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setLoading("left")}>ロード</button>
+                            {currentBuildLeft?.isPreset || currentBuildLeft == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setSaving("left")}>上書き保存</button>}
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setSaving("left")}>新規保存</button>
                         </div>
                     </div>
-                    <Gear fontSize={44} weight="fill" onClick={toggleShowingPreference}  />
+                    */}
+                    <div className={style.config}>
+                        <Gear fontSize={44} weight="fill" onClick={toggleShowingPreference}  />
+                    </div>
                 </header>
-                */}
                 <CollapseTab collapse={collapse}>
                     <SubjectSideContext.Provider value="left">
                         <Subject
