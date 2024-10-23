@@ -40,7 +40,7 @@
         "duration": 3,
         "basic_attack_range": 3.5,
         "damage": {
-            "base": [20,40,60,80,100],
+            "base": [20,35,50,65,80],
             "attack": 30
         },
         "sp_cost": [80,90,100,110,120],

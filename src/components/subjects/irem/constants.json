@@ -6,7 +6,7 @@
     "IremQ": {
         "damage": {
             "base": [50,70,90,110,130],
-            "amp": 50
+            "amp": 45
         },
         "ratio": 0.25,
         "max_ratio_count": 3,

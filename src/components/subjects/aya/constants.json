@@ -15,7 +15,7 @@
         },
         "threshold": 1,
         "sp_cost": 50,
-        "cooldown": [11,10,9,8,7]
+        "cooldown": [10,9,8,7,6]
     },
     "W": {
         "duration": 1.8,

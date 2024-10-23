@@ -1,17 +1,17 @@
 {
     "Q": {
         "pawn_damage": {
-            "base": [40,85,130,175,220],
+            "base": [40,80,120,160,200],
             "amp": 65
         },
         "movement_speed": [6,7,8,9,10],
         "queen_damage": {
             "base": [50,95,140,185,230],
-            "amp": 75
+            "amp": 70
         },
         "stun": 1,
         "stack_reset": 6,
-        "duration": 8,
+        "duration": 6,
         "sp_cost": [50,55,60,65,70],
         "cooldown": {
             "constant": [2.4,2.2,2,1.8,1.6]
@@ -30,14 +30,14 @@
             "damage": 40,
             "airborne": 1.25
         },
-        "duration": 8,
+        "duration": 6,
         "sp_cost": [90,100,110,120,130],
         "cooldown": [11,10,9,8,7]
     },
     "E": {
         "damage": {
-            "base": [20,75,130,185,240],
-            "amp": 80
+            "base": [50,90,130,170,210],
+            "amp": 75
         },
         "pawn_queen": 40,
         "knight": {
@@ -48,7 +48,7 @@
             }
         },
         "reuse": 4,
-        "duration": 8,
+        "duration": 6,
         "sp_cost": [70,85,100,115,130],
         "cooldown": [12,11.5,11,10.5,10]
     },

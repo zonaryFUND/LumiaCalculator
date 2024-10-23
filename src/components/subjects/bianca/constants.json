@@ -7,7 +7,7 @@
         "second_damage": {
             "base": [10,40,70,100,130],
             "amp": 45,
-            "targetMaxHP": 5
+            "targetMaxHP": 8
         },
         "bind": 1,
         "hp_cost_percent": 5,
@@ -55,7 +55,7 @@
         "first_damage": {
             "base": [50,100,150],
             "amp": 45,
-            "targetMaxHP": 8
+            "targetMaxHP": 11
         },
         "slow": {
             "duration": 2,

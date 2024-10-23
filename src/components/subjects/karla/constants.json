@@ -71,7 +71,7 @@
         "full_charge_damage": {
             "base": [10,25,40],
             "attack": 100,
-            "amp": 35,
+            "amp": 40,
             "targetMaxHP": [4,7,10]
         },
         "slow": {

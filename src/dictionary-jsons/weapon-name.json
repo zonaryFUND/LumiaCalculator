@@ -83,6 +83,10 @@
 		"jp": "万年寒波",
 		"en": "Frozen Echo"
 	},
+	"mantis_tonfa": {
+		"jp": "メンティストンファー",
+		"en": "Mantis Tonfa"
+	},
 	"blade_tonfa": {
 		"jp": "ブレードトンファー",
 		"en": "Blade Tonfa"
@@ -443,6 +447,10 @@
 		"jp": "彼岸花",
 		"en": "Black Widow"
 	},
+	"endeavor_ax": {
+		"jp": "エンデバーAX",
+		"en": "Endeavor AX"
+	},
 	"hellfire": {
 		"jp": "ヘルファイヤー",
 		"en": "Hellfire"
@@ -487,6 +495,10 @@
 		"jp": "アンドロメダ",
 		"en": "Andromeda"
 	},
+	"dead_eye": {
+		"jp": "デッドアイ",
+		"en": "Dead Eye"
+	},
 	"widow_maker": {
 		"jp": "ウィドウ・メーカー",
 		"en": "Widow Maker"
@@ -526,6 +538,10 @@
 	"squeaky_hammer": {
 		"jp": "ピコピコハンマー",
 		"en": "Squeaky Hammer"
+	},
+	"doomsday": {
+		"jp": "最後の審判",
+		"en": "Doomsday"
 	},
 	"peacebringer": {
 		"jp": "ピースブリンガー",
@@ -622,6 +638,10 @@
 	"soul_reaper": {
 		"jp": "ソウルリッパー",
 		"en": "Soul Reaper"
+	},
+	"malice": {
+		"jp": "悪意",
+		"en": "Malice"
 	},
 	"scarlet_dagger": {
 		"jp": "緋色の短剣",
@@ -962,6 +982,10 @@
 	"the_empress": {
 		"jp": "女帝",
 		"en": "The Empress"
+	},
+	"the_sun": {
+		"jp": "ザ・サン",
+		"en": "The Sun"
 	},
 	"the_death": {
 		"jp": "ザ・デス",

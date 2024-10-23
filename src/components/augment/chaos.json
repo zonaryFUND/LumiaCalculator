@@ -14,7 +14,7 @@
     },
     "ghost_light": {
         "threshold": {
-            "hp": 30,
+            "hp": 35,
             "time": 3
         },
         "damage": {
@@ -90,7 +90,7 @@
         "cooldown": 12
     },
     "power_crescendo": {
-        "adaptive": [0,1,2,3,4,5,7,9,11,14,17,20,20]
+        "adaptive": [0,1,2,3,4,6,8,10,12,14,16,16,16]
     },
     "overwatch": {
         "cooldown": 5,

@@ -57,7 +57,7 @@
     },
     "R": {
         "return_time": 0.65,
-        "damage_reduction": [20,25,30],
+        "damage_reduction": [25,30,35],
         "one_hit_damage": {
             "base": [100,150,200],
             "attack": 50

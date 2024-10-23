@@ -168,7 +168,7 @@
 		"hpRegenPerLevel": "0.09",
 		"spRegeneration": "3.1",
 		"spRegenPerLevel": "0.03",
-		"attackPower": "33",
+		"attackPower": "35",
 		"apPerLevel": "4.8",
 		"armor": "50",
 		"armorPerLevel": "3.3",
@@ -315,7 +315,7 @@
 		"attackPower": "42",
 		"apPerLevel": "4.6",
 		"armor": "44",
-		"armorPerLevel": "3.1",
+		"armorPerLevel": "3.3",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.55"
 	},
@@ -520,7 +520,7 @@
 		"hpRegenPerLevel": "0.09",
 		"spRegeneration": "2.9",
 		"spRegenPerLevel": "0.02",
-		"attackPower": "37",
+		"attackPower": "40",
 		"apPerLevel": "4.9",
 		"armor": "51",
 		"armorPerLevel": "3.5",
@@ -554,7 +554,7 @@
 		"spRegenPerLevel": "0.05",
 		"attackPower": "33",
 		"apPerLevel": "4.7",
-		"armor": "53",
+		"armor": "50",
 		"armorPerLevel": "3.3",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.5"
@@ -833,7 +833,7 @@
 	},
 	"markus": {
 		"maxHP": "950",
-		"maxHPperLevel": "93",
+		"maxHPperLevel": "95",
 		"maxSP": "430",
 		"maxSPperLevel": "13",
 		"hpRegeneration": "1.02",
@@ -952,7 +952,7 @@
 		"hpRegenPerLevel": "0.06",
 		"spRegeneration": "2.6",
 		"spRegenPerLevel": "0.03",
-		"attackPower": "29",
+		"attackPower": "33",
 		"apPerLevel": "4",
 		"armor": "47",
 		"armorPerLevel": "2.5",
@@ -1214,5 +1214,21 @@
 		"armorPerLevel": "3.1",
 		"attackSpeed": "0.14",
 		"movementSpeed": "3.55"
+	},
+	"yumin": {
+		"maxHP": "920",
+		"maxHPperLevel": "73",
+		"maxSP": "480",
+		"maxSPperLevel": "23",
+		"hpRegeneration": "1.2",
+		"hpRegenPerLevel": "0.08",
+		"spRegeneration": "3.2",
+		"spRegenPerLevel": "0.05",
+		"attackPower": "38",
+		"apPerLevel": "4.1",
+		"armor": "50",
+		"armorPerLevel": "2.8",
+		"attackSpeed": "0.12",
+		"movementSpeed": "3.5"
 	}
 }

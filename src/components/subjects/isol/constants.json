@@ -38,7 +38,7 @@
         "attack_duration": 5,
         "damage": {
             "base": [40,65,90,115,140],
-            "amp": 60
+            "amp": 70
         },
         "sp_cost": [40,50,60,70,80],
         "cooldown": [15,14,13,12,11]

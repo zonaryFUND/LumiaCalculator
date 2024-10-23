@@ -146,7 +146,7 @@
             "attack": [55,65,75]
         },
         "broadcasting_damage": {
-            "attack": 60,
+            "attack": 55,
             "basicAttackAmp": 100
         },
         "broadcasting_mark_damage": {

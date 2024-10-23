@@ -32,7 +32,7 @@
             "effect": 15
         },
         "sp_cost": [30,35,40,45,50],
-        "cooldown": [10,9.5,9,8.5,8]
+        "cooldown": [9,8.5,8,7.5,7]
     },
     "E": {
         "damage": {
@@ -100,7 +100,7 @@
         "attack_speed": 100,
         "damage": {
             "base": [30,40,50],
-            "amp": [30,40,50]
+            "amp": [35,45,55]
         },
         "cooldown": {
             "constant": [10,8,6]

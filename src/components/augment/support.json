@@ -1,6 +1,6 @@
 {
     "healing_factor": {
-        "enhance": 10,
+        "enhance": 15,
         "adaptive": {
             "level": 1
         },

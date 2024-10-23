@@ -3,7 +3,7 @@
         "damage": {
             "base": [50,100,150,200,250],
             "additionalAttack": 40,
-            "amp": 85
+            "amp": 75
         },
         "slow": {
             "duration": 2,

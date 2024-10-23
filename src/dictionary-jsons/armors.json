@@ -619,7 +619,7 @@
 	"gpnvg": {
 		"type": "head",
 		"tier": "legendary",
-		"attackPower": "15",
+		"attackPower": "18",
 		"attackSpeed": "15",
 		"criticalChance": "35",
 		"option": "extended_fury[\"extend\":20,\"dmg\":{\"level\":2}]"
@@ -636,7 +636,7 @@
 		"tier": "legendary",
 		"attackPower": "30",
 		"attackSpeed": "15",
-		"defense": "14",
+		"defense": "12",
 		"spRegeneration": "100",
 		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"cooldown\":2]"
 	},
@@ -781,6 +781,13 @@
 		"attackPower": "25",
 		"attackSpeed": "30",
 		"movementSpeed": "0.06"
+	},
+	"veritas_lux_mea": {
+		"type": "arm",
+		"tier": "epic",
+		"skillAmplification": "40",
+		"defense": "5",
+		"maxHP": "100"
 	},
 	"mythril_shield": {
 		"type": "arm",
@@ -963,7 +970,7 @@
 	"sultan_adorned": {
 		"type": "arm",
 		"tier": "legendary",
-		"attackPower": "25",
+		"attackPower": "27",
 		"attackSpeed": "30",
 		"movementSpeed": "0.08",
 		"option": "rush"
@@ -971,7 +978,7 @@
 	"mythril_quiver": {
 		"type": "arm",
 		"tier": "legendary",
-		"attackPower": "33",
+		"attackPower": "35",
 		"attackSpeed": "35",
 		"movementSpeed": "0.08",
 		"option": "streamlined"
@@ -979,10 +986,17 @@
 	"dice_of_destiny": {
 		"type": "arm",
 		"tier": "legendary",
-		"attackPower": "30",
+		"attackPower": "25",
 		"attackSpeed": "33",
 		"criticalChance": "35",
-		"criticalDamage": "7"
+		"criticalDamage": "10"
+	},
+	"lunar_embrace": {
+		"type": "arm",
+		"tier": "legendary",
+		"skillAmplification": "50",
+		"defense": "10",
+		"maxHP": "150"
 	},
 	"prominence": {
 		"type": "arm",
@@ -1177,7 +1191,8 @@
 		"cooldownReduction": "15",
 		"maxHP": "150",
 		"hpRegeneration": "50",
-		"movementSpeed": "0.25"
+		"movementSpeed": "0.25",
+		"option": "healing_reduction_weak"
 	},
 	"racing_boots": {
 		"type": "leg",

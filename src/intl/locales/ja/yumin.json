@@ -1,0 +1,10 @@
+{
+    "subject.yumin.q-maxhit": "Q全ヒット({value})",
+    "subject.yumin.q-weak": "Q2人目以降ヒット",
+    "subject.yumin.q-enhanced-1tick": "強化Q竜巻1ティック",
+    "subject.yumin.q-enhanced-maxtick": "強化Q竜巻最大({value}ティック)",
+    "subject.yumin.w-enhanced": "強化W",
+    "subject.yumin.r-first": "R1段目",
+    "subject.yumin.r-second": "R2段目",
+    "subject.yumin.t-shield": "Tシールド"
+}

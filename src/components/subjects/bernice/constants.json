@@ -9,7 +9,7 @@
         },
         "slow": {
             "duration": 1.5,
-            "effect": [10,15,20,25,30]
+            "effect": [15,20,25,30,35]
         },
         "enhanced_damage": {
             "base": [90,130,170,210,250],

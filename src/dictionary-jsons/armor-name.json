@@ -399,6 +399,10 @@
 		"jp": "弓騎兵の矢筒",
 		"en": "Laced Quiver"
 	},
+	"veritas_lux_mea": {
+		"jp": "真理は我が光",
+		"en": "Veritas Lux Mea"
+	},
 	"mythril_shield": {
 		"jp": "ミスリル盾",
 		"en": "Mythril Shield"
@@ -506,6 +510,10 @@
 	"dice_of_destiny": {
 		"jp": "運命のさいころ",
 		"en": "Dice of Destiny"
+	},
+	"lunar_embrace": {
+		"jp": "邀明月",
+		"en": "Lunar Embrace"
 	},
 	"prominence": {
 		"jp": "プロミネンス",

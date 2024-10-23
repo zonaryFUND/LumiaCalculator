@@ -1,8 +1,8 @@
 {
     "duration": 6,
     "adaptive": {
-        "base": 5,
+        "base": 10,
         "level": 0.5
     },
-    "as": 10
+    "as": 15
 }

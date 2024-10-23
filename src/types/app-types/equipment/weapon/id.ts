@@ -9,7 +9,7 @@ export type GloveID = typeof Gloves[number];
 
 export const Tonfas = [
     "tactical_tonfa", "mai_sok", "plasma_tonfa", "holster_tonfa", "windrunner", "obsidian_jitte",
-    "frozen_echo", "blade_tonfa", "blade_tonfa_crimson", "blade_tonfa_dawn"
+    "frozen_echo", "mantis_tonfa", "blade_tonfa", "blade_tonfa_crimson", "blade_tonfa_dawn"
 ]
 export type TonfaID = typeof Tonfas[number];
 
@@ -56,19 +56,20 @@ export const Pistols = [
 export type PistolID = typeof Pistols[number]
 
 export const AssaultRifles = [
-    "type_95", "ak-12", "xcr", "gold_rush", "agni", "judgement", "black_widow", "hellfire", "hellfire_crimson", "hellfire_dawn"
+    "type_95", "ak-12", "xcr", "gold_rush", "agni", "judgement", "black_widow", "endeavor_ax",
+    "hellfire", "hellfire_crimson", "hellfire_dawn"
 ]
 export type AssaultRifleID = typeof AssaultRifles[number]
 
 export const SniperRifles = [
     "tac-50", "ntw-20", "polaris", "gauss_rifle", "intervention", "the_deadly_ray", "blackfire_cannon",
-    "andromeda", "widow_maker", "widow_maker_crimson", "widow_maker_dawn"
+    "andromeda", "dead_eye", "widow_maker", "widow_maker_crimson", "widow_maker_dawn"
 ]
 export type SniperRifleID = typeof SniperRifles[number]
 
 export const Hammers = [
     "fang_mace", "hammer_of_dagda", "hammer_of_thor", "weight_of_the_world", "bookmaster", "evening_star",
-    "squeaky_hammer", "peacebringer", "peacebringer_crimson", "peacebringer_dawn"
+    "squeaky_hammer", "doomsday", "peacebringer", "peacebringer_crimson", "peacebringer_dawn"
 ]
 export type HammerID = typeof Hammers[number]
 
@@ -80,7 +81,7 @@ export type AxeID = typeof Axes[number]
 
 export const Daggers = [
     "carnwennan", "mount_slicer", "vibroblade", "damascus_steel_thorn", "maharaja", "highlander_dirk", "fragarach",
-    "eclipse", "soul_reaper", "scarlet_dagger", "scarlet_dagger_crimson", "scarlet_dagger_dawn"
+    "eclipse", "soul_reaper", "malice", "scarlet_dagger", "scarlet_dagger_crimson", "scarlet_dagger_dawn"
 ]
 export type DaggerID = typeof Daggers[number]
 
@@ -127,7 +128,7 @@ export const Cameras = [
 export type CameraID = typeof Cameras[number]
 
 export const Arcanas = [
-    "the_hermit", "the_hierophant", "temperance", "the_star", "the_moon", "the_empress",
+    "the_hermit", "the_hierophant", "temperance", "the_star", "the_moon", "the_empress", "the_sun",
     "the_death", "the_death_crimson", "the_death_dawn"
 ]
 export type ArcanaID = typeof Arcanas[number]
