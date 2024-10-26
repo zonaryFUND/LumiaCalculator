@@ -1,6 +1,6 @@
 import { SubjectID, name } from "app-types/subject-static";
 import * as React from "react";
-import { StateWrapped } from "util/state";
+import { StateProps, StateWrapped } from "util/state";
 import style from "./config.module.styl";
 import Images from "@app/resources/image";
 import Selection from "components/common/number-selection";
@@ -13,9 +13,11 @@ import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { SubjectStackInfo } from "components/subjects/stack";
 import { FormattedMessage } from "react-intl";
 
-type Props = StateWrapped<SubjectConfig>;
+export type ConfigModifierProps = {
+    [K in keyof SubjectConfig]: StateProps<SubjectConfig[K]>   
+}
 
-const config: React.FC<Props> = props => {
+const config: React.FC<ConfigModifierProps> = props => {
     const [selectingSubject, toggleSelectingSubject] = useToggle(false);
     const onChangeSubject = React.useCallback((id: SubjectID) => {
         props.subject[1](id);

@@ -3,31 +3,31 @@ import { defaultSampleBuilds } from "components/modal/load-build/default-sample"
 import { useCallback } from "react";
 import { useLocalStorage } from "react-use";
 
-export const SavedBuildsKey = "saved-builds";
+export const SavedPresetsKey = "saved-builds";
 
-export type BuildWithKey = {
+export type PresetWithKey = {
     name: string
     key: number
-    isPreset?: boolean
+    isPremadeSample?: boolean
     config: SubjectConfig
 };
 
 type BuildStorage = {
-    builds: BuildWithKey[]
+    presets: PresetWithKey[]
     saveNew: (name: string, config: SubjectConfig) => number
     overwrite: (key: number, config: SubjectConfig) => void
     delete: (key: number) => void
 }
 
-export function useBuildStorage(): BuildStorage {
-    const [builds, saveBuilds, reset] = useLocalStorage<BuildWithKey[]>(SavedBuildsKey, []);
+export function usePresetStorage(): BuildStorage {
+    const [presets, savePresets, reset] = useLocalStorage<PresetWithKey[]>(SavedPresetsKey, []);
     const saveNew = useCallback((name: string, config: SubjectConfig) => {
         const key = Date.now();
-        saveBuilds(prev => ([{name, key, config}]).concat(prev ?? []));
+        savePresets(prev => ([{name, key, config}]).concat(prev ?? []));
         return key;
     }, []);
     const overwrite = useCallback((id: number, config: SubjectConfig) => {
-        saveBuilds(prev => {
+        savePresets(prev => {
             return (prev ?? []).map(build => {
                 return build.key != id ? build : {
                     ...build,
@@ -36,14 +36,14 @@ export function useBuildStorage(): BuildStorage {
             })
         })
     }, [])
-    const deleteBuild = useCallback((key: number) => {
-        saveBuilds(prev => (prev ?? []).filter(b => b.key != key))
+    const deletePreset = useCallback((key: number) => {
+        savePresets(prev => (prev ?? []).filter(b => b.key != key))
     }, [])
 
     return {
-        builds: (builds ?? []).concat(defaultSampleBuilds),
+        presets: (presets ?? []).concat(defaultSampleBuilds),
         saveNew,
         overwrite,
-        delete: deleteBuild
+        delete: deletePreset
     }
 }

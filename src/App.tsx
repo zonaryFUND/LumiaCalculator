@@ -15,7 +15,6 @@ export const Locales = context.keys().reduce((locales, path) => {
     };
     return locales;
 }, {} as {[locale: string]: Record<string, string>})
-console.log(Locales)
 
 interface AppProps {}
 

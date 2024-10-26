@@ -34,8 +34,6 @@ const basicAttack: React.FC<Props> = props => {
         return intl.formatMessage({id: module.nameKey});
     }, [props.config.subject]);
 
-    console.log(props.table.basicAttack)
-
     return (
         <tbody>
             {

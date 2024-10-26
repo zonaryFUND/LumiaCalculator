@@ -6,6 +6,7 @@ import Selection from "components/common/number-selection";
 import { SkillLevels } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { SubjectSideContext } from "./subject-side";
+import { Prohibit } from "@phosphor-icons/react"
 
 export type SkillImage = (skillID: string) => string | undefined;
 type ConfigurationProps = [SkillLevels, React.Dispatch<React.SetStateAction<SkillLevels>>]
@@ -68,12 +69,19 @@ export const WeaponSkill: React.FC<WeaponSkillProps> = props => {
     const side = React.useContext(SubjectSideContext);
 
     return (
-        <img 
-            src={src}
+        <div 
+            className={style.vertical}
             data-tooltip-id={props.id ? "weapon-skill" : undefined}
             data-tooltip-content={`${props.id}`}
             data-tooltip-subject-side={side}
-        />
+        >
+            {
+                props.id ?
+                <img src={Images.skill.weapon[props.id]} />
+                :
+                <div className={style.blank}><Prohibit size="2rem" /></div>
+            }
+        </div>
     )
 }
 

@@ -24,8 +24,8 @@ import { useLocalStorage, useToggle, useWindowSize } from "react-use";
 import { equipmentStatus } from "app-types/equipment";
 import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
-import { BuildWithKey, useBuildStorage } from "@app/storage/build";
-import { SimpleCurrentConfigKey, useStorageOnSimple } from "@app/storage/simple";
+import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
+import { SimpleCurrentConfigKey, SimpleCurrentSelectedKey as SimpleCurrentSelectedPresetKey } from "@app/storage/simple";
 import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { useStatus } from "app-types/subject-dynamic/status/use-status";
@@ -34,6 +34,7 @@ import { WeaponTypeID } from "app-types/equipment/weapon";
 import { name } from "app-types/subject-static";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
+import { useSelectedPresetKey } from "@app/storage/use-selected-preset-key";
 
 const index: React.FC = props => {
     const { width } = useWindowSize();
@@ -69,17 +70,21 @@ const index: React.FC = props => {
     const [showingLoad, toggleShowingLoad] = useToggle(false);
     const [showingSave, toggleShowingSave] = useToggle(false);
 
-    const { builds, saveNew } = useBuildStorage();
-    const { currentBuildKey, setCurrentBuildKey } = useStorageOnSimple();
-    const currentBuild = React.useMemo(() => {
-        return builds.find(b => b.key == currentBuildKey);
-    }, [builds.length, currentBuildKey]);
+    const { presets: builds, overwrite, saveNew } = usePresetStorage();
+    const { currentPresetKey, setCurrentPresetKey } = useSelectedPresetKey(SimpleCurrentSelectedPresetKey);
+    const currentPreset = React.useMemo(() => {
+        return builds.find(b => b.key == currentPresetKey);
+    }, [builds.length, currentPresetKey]);
 
-    const onLoadBuild = React.useCallback((buildWithKey: BuildWithKey) => {
-        setConfig(buildWithKey.config);
-        setCurrentBuildKey(buildWithKey.key);
+    const onLoadBuild = React.useCallback((presetWithKey: PresetWithKey) => {
+        setConfig(presetWithKey.config);
+        setCurrentPresetKey(presetWithKey.key);
         toggleShowingLoad();
     }, []);
+
+    const onOverwrite = React.useCallback(() => {
+        overwrite(currentPresetKey!, config);
+    }, [currentPresetKey, config]);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
 
@@ -88,10 +93,10 @@ const index: React.FC = props => {
             <div className={styles(style.parent, collapse ? style.collapse : undefined)} ref={parentRef}>
                 <header className={style.header} style={collapse ? {flexDirection: "column"} : undefined}>
                     <div className={style.storage}>
-                        <h1>保存名：{currentBuild?.name ?? "-----"}</h1>
+                        <h1>保存名：{currentPreset?.name ?? "-----"}</h1>
                         <div>
                             <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingLoad}>ロード</button>
-                            {currentBuild?.isPreset || currentBuild == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>上書き保存</button>}
+                            {currentPreset?.isPremadeSample || currentPreset == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={onOverwrite}>上書き保存</button>}
                             <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={toggleShowingSave}>新規保存</button>
                         </div>
                     </div>
@@ -101,17 +106,19 @@ const index: React.FC = props => {
                 </header>
                 <CollapseTab collapse={collapse}>
                     <Subject 
-                        subject={[subject, setSubject]} 
                         config={config!}
-                        level={[level, setLevel]}
-                        skillLevels={[skillLevels, setSkillLevels]}
-                        weaponMastery={[weaponMastery, setWeaponMastery]}
-                        defenseMastery={[defenseMastery, setDefenseMastery]}
-                        movementMastery={[movementMastery, setMovementMastery]}
-                        equipment={[equipment, setEquipment]}
+                        modifier={{
+                            subject: [subject, setSubject],
+                            level: [level, setLevel],
+                            skillLevels: [skillLevels, setSkillLevels],
+                            weaponMastery: [weaponMastery, setWeaponMastery],
+                            defenseMastery: [defenseMastery, setDefenseMastery],
+                            movementMastery: [movementMastery, setMovementMastery],
+                            equipment: [equipment, setEquipment],
+                            gauge: [gauge, setGauge],
+                            stack: [stack, setStack]
+                        }}
                         status={status}
-                        gauge={[gauge, setGauge]}
-                        stack={[stack, setStack]}
                         hideHeader={collapse}
                     />
                     <BuffDebuffs hideHeader={collapse} />
@@ -183,7 +190,7 @@ const index: React.FC = props => {
             >
                 <LoadBuild 
                     onSelect={onLoadBuild} 
-                    onDeleteCurrentBuild={() =>   setCurrentBuildKey(undefined)} 
+                    onDeleteCurrentBuild={() => setCurrentPresetKey(undefined)} 
                 />
             </Modal>
             <Modal
@@ -198,7 +205,7 @@ const index: React.FC = props => {
                     onSave={name => {
                         toggleShowingSave(false);
                         const key = saveNew(name, config);
-                        setCurrentBuildKey(key);
+                        setCurrentPresetKey(key);
                     }}
                 />
             </Modal>

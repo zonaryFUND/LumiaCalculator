@@ -1,10 +1,10 @@
-import { BuildWithKey } from "@app/storage/build";
+import { PresetWithKey } from "@app/storage/preset";
 
-export const defaultSampleBuilds: BuildWithKey[] = [
+export const defaultSampleBuilds: PresetWithKey[] = [
     {
         name: "サンプル1：フルビルドEleven",
         key: 0,
-        isPreset: true,
+        isPremadeSample: true,
         config: {
             subject: "eleven",
             equipment: {

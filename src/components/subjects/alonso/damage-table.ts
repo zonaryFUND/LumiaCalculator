@@ -21,8 +21,8 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.alonso.r-pull"}), skill: "R", value: Constants.R.damage},
             {label: props.intl.formatMessage({id: "subject.alonso.r-damage-per-tick"}, {value: Constants.R.tick}), skill: "R", value: Constants.R.damage_on_time},
             {label: props.intl.formatMessage({id: "subject.alonso.r-damage-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.damage_on_time, multiplier: [{basic: rMax * 100}]},
-            {label: props.intl.formatMessage({id: "subject.alonso.r-heal-per-tick"}, {value: Constants.R.tick}), skill: "R", value: Constants.R.heal},
-            {label: props.intl.formatMessage({id: "subject.alonso.r-heal-max"}, {value: rMax}), skill: "R", value: Constants.R.heal, multiplier: [{basic: rMax * 100}]},
+            {label: props.intl.formatMessage({id: "subject.alonso.r-heal-per-tick"}, {value: Constants.R.tick}), skill: "R", value: Constants.R.heal, type: "heal", target: "self"},
+            {label: props.intl.formatMessage({id: "subject.alonso.r-heal-max"}, {value: rMax}), skill: "R", value: Constants.R.heal, multiplier: [{basic: rMax * 100}], type: "heal", target: "self"},
             {label: props.intl.formatMessage({id: "subject.alonso.r-finish-damage-min"}), skill: "R", value: Constants.R.final_damage.min},
             {label: props.intl.formatMessage({id: "subject.alonso.r-finish-damage-max"}), skill: "R", value: Constants.R.final_damage.max}
         ],

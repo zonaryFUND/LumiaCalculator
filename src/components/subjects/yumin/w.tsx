@@ -19,8 +19,8 @@ export default w;
 export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "移動速度減少量", values: Constants.W.slow.effect, percent: true},
-        {title: "強化ダメージ量", values: Constants.W.enhanced_damage.base},
+        {title: "[風雲地帯]ダメージ量", values: Constants.W.enhanced_damage.base},
+        {title: "移動速度減少量(%)", values: Constants.W.slow.effect, percent: true},
         {title: "クールダウン", values: Constants.W.cooldown}
     ]
 }

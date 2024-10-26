@@ -8,14 +8,13 @@ import { Gear } from "@phosphor-icons/react";
 import CollapseTab from "components/common/collapse-tab";
 import Subject from "./subject";
 import Damage from "./damage";
-import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
-import { useLocalStorage, useToggle, useWindowSize } from "react-use";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey, CombatMasterySyncKey, useStorageOnCombat } from "@app/storage/combat";
-import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import style from "./index.module.styl";
 import { styles } from "@app/util/style";
 import { SubjectSideContext } from "components/subjects/subject-side";
+import LoadBuild from "components/modal/load-build";
+import loadStyle from "components/modal/load-build/index.module.styl";
+import SaveBuild from "components/modal/save-build";
+import saveStyle from "components/modal/save-build/index.module.styl";
 
 import ItemTooltip from "components/tooltip/item/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
@@ -23,34 +22,20 @@ import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-to
 import { SubjectSkillProps } from "components/subjects/props";
 import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
-import { useBuildStorage } from "@app/storage/build";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
+import { name } from "app-types/subject-static";
+import useCombatConfig from "./use-combat-config";
+import { CombatMasterySyncKey } from "@app/storage/combat";
+import { useToggle, useWindowSize } from "react-use";
 
 const index: React.FC = props => {
     const [collapse, setCollapse] = React.useState(false);
-    const [storageConfigLeft, saveConfigLeft] = useLocalStorage<SubjectConfig>(CombatCurrentLeftConfigKey);
-    const leftConfig = useSubjectConfig({value: storageConfigLeft, update: saveConfigLeft});
-    const leftStatus = useStatus(leftConfig.value);
-    const [leftHP, setLeftHP] = React.useState(0);
-
-    const [storageConfigRight, saveConfigRight] = useLocalStorage<SubjectConfig>(CombatCurrentRightConfigKey);
-    const rightConfig = useSubjectConfig({value: storageConfigRight, update: saveConfigRight});
-    const rightStatus = useStatus(rightConfig.value);
-    const [rightHP, setRightHP] = React.useState(0);
+    const left = useCombatConfig("left");
+    const right = useCombatConfig("right");
 
     const damageInFormula = useStorageBoolean(DetailedTooltipKey);
     const makeMasteryAlign = useStorageBoolean(CombatMasterySyncKey);
-    const ltr = React.useState(true);
-
-    const { builds, saveNew } = useBuildStorage();
-    const { left: leftStorage, right: rightStorage } = useStorageOnCombat();
-    const currentBuildLeft = React.useMemo(() => {
-        return builds.find(b => b.key == leftStorage.currentBuildKey);
-    }, [builds.length, leftStorage.currentBuildKey]);
-    const currentBuildRight = React.useMemo(() => {
-        return builds.find(b => b.key == rightStorage.currentBuildKey);
-    }, [builds.length, rightStorage.currentBuildKey]);
 
     const { width } = useWindowSize();
     const parentRef = React.useRef<HTMLDivElement>(null);
@@ -60,19 +45,19 @@ const index: React.FC = props => {
 
     React.useEffect(() => {
         if (!makeMasteryAlign[0]) return;
-        rightConfig.setConfig({
-            ...rightConfig.value,
-            level: leftConfig.level[0],
-            weaponMastery: leftConfig.weaponMastery[0],
-            defenseMastery: leftConfig.defenseMastery[0],
-            movementMastery: leftConfig.movementMastery[0]
+        right.setConfig({
+            ...right.config,
+            level: left.modifier.level[0],
+            weaponMastery: left.modifier.weaponMastery[0],
+            defenseMastery: left.modifier.defenseMastery[0],
+            movementMastery: left.modifier.movementMastery[0]
         });
     }, [
         makeMasteryAlign,
-        leftConfig.level, 
-        leftConfig.weaponMastery, 
-        leftConfig.defenseMastery, 
-        leftConfig.movementMastery
+        left.config.level, 
+        left.config.weaponMastery, 
+        left.config.defenseMastery, 
+        left.config.movementMastery
     ]);
 
     const [loading, setLoading] = React.useState<"left" | "right" | null>(null);
@@ -85,16 +70,22 @@ const index: React.FC = props => {
             <div className={styles(style.parent, collapse ? style.collapse : undefined)} ref={parentRef}>
                 <header className={style.header} style={collapse ? {flexDirection: "column"} : undefined}>
                     <div />
-                    {/*
                     <div className={style.storage}>
-                        <h1>保存名：{currentBuildLeft?.name ?? "-----"}</h1>
+                        <h1>左保存名：{left.currentPreset?.name ?? "-----"}</h1>
                         <div>
                             <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setLoading("left")}>ロード</button>
-                            {currentBuildLeft?.isPreset || currentBuildLeft == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setSaving("left")}>上書き保存</button>}
+                            {left.currentPreset?.isPremadeSample || left.currentPreset == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={left.onOverwriteCurrentPreset}>上書き保存</button>}
                             <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setSaving("left")}>新規保存</button>
                         </div>
                     </div>
-                    */}
+                    <div className={style.storage}>
+                        <h1>右保存名：{right.currentPreset?.name ?? "-----"}</h1>
+                        <div>
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setLoading("right")}>ロード</button>
+                            {right.currentPreset?.isPremadeSample || right.currentPreset == undefined ? null : <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={right.onOverwriteCurrentPreset}>上書き保存</button>}
+                            <button className={`${common["system-button"]} ${common["button-medium"]}`} onClick={() => setSaving("right")}>新規保存</button>
+                        </div>
+                    </div>
                     <div className={style.config}>
                         <Gear fontSize={44} weight="fill" onClick={toggleShowingPreference}  />
                     </div>
@@ -102,18 +93,25 @@ const index: React.FC = props => {
                 <CollapseTab collapse={collapse}>
                     <SubjectSideContext.Provider value="left">
                         <Subject
-                            {...leftConfig}
-                            status={leftStatus}
-                            config={leftConfig.value}
+                            config={left.config}
+                            modifier={left.modifier}
+                            status={left.status}
                             hideHeader={collapse}
                         />
                     </SubjectSideContext.Provider>
-                    <Damage leftStatus={leftStatus} rightStatus={rightStatus} leftConfig={leftConfig.value} rightConfig={rightConfig.value} leftHP={leftHP} rightHP={rightHP} />
+                    <Damage 
+                        leftStatus={left.status} 
+                        rightStatus={right.status} 
+                        leftConfig={left.config} 
+                        rightConfig={right.config} 
+                        leftHP={left.hp[0]} 
+                        rightHP={right.hp[0]} 
+                    />
                     <SubjectSideContext.Provider value="right">
                         <Subject
-                            {...rightConfig}
-                            status={rightStatus}
-                            config={rightConfig.value}
+                            config={right.config}
+                            modifier={right.modifier}
+                            status={right.status}
                             hideHeader={collapse}
                         />
                     </SubjectSideContext.Provider>
@@ -133,8 +131,8 @@ const index: React.FC = props => {
                             id={subject} 
                             skill={skill as any} 
                             showEquation={damageInFormula[0]}
-                            status={side == "left" ? leftStatus : rightStatus} 
-                            config={side == "left" ? leftConfig.value : rightConfig.value} 
+                            status={side == "left" ? left.status : right.status} 
+                            config={side == "left" ? left.config : right.config} 
                         />
                     );
                 }}
@@ -149,8 +147,8 @@ const index: React.FC = props => {
                     return (
                         <WeaponSkillTooltip 
                             showEquation={damageInFormula[0]}
-                            status={side == "left" ? leftStatus : rightStatus} 
-                            config={side == "left" ? leftConfig.value : rightConfig.value} 
+                            status={side == "left" ? left.status : right.status} 
+                            config={side == "left" ? left.config : right.config} 
                         />
                     );
                 }}
@@ -167,13 +165,43 @@ const index: React.FC = props => {
 
                     const props: SubjectSkillProps = {
                         showEquation: damageInFormula[0] || onSlot == undefined,
-                        config: side == "left" ? leftConfig.value : rightConfig.value,
-                        status: side == "left" ? leftStatus : rightStatus
+                        config: side == "left" ? left.config : right.config,
+                        status: side == "left" ? left.status : right.status
                     };
 
                     return <ItemTooltip itemID={item} {...props} />;
                 }}
             />
+            <Modal
+                isOpen={loading != null}
+                shouldCloseOnOverlayClick
+                onRequestClose={() => setLoading(null)}
+                className={loadStyle.load}
+                overlayClassName={common["modal-overlay"]}
+            >
+                <LoadBuild 
+                    onSelect={preset => {
+                        (loading == "left" ? left.onLoadPreset : right.onLoadPreset)(preset);
+                        setLoading(null);
+                    }} 
+                    onDeleteCurrentBuild={() => (loading == "left" ? left.onDeleteCurrentPreset : right.onDeleteCurrentPreset)()} 
+                />
+            </Modal>
+            <Modal
+                isOpen={saving != null}
+                shouldCloseOnOverlayClick
+                onRequestClose={() => setSaving(null)}
+                className={saveStyle.save}
+                overlayClassName={common["modal-overlay"]}
+            >
+                <SaveBuild 
+                    defaultName={name(saving == "left" ? left.config.subject : right.config.subject, "jp")}
+                    onSave={name => {
+                        (saving == "left" ? left.onSavePreset : right.onSavePreset)(name);
+                        setSaving(null);
+                    }}
+                />
+            </Modal>
             <Modal
                 isOpen={showingPreference}
                 shouldCloseOnOverlayClick

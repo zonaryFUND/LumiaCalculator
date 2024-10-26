@@ -16,35 +16,47 @@ import { name as equipmentName } from "app-types/equipment";
 import { MitigationContext, createMitigation } from "./mitigation-context";
 import KennethHeal from "./kenneth-heal";
 import RioConstants from "components/subjects/rio/constants.json";
+import SegmentedControl from "components/common/segmented-control";
+import { CombatHPContext } from "./combat-hp-context";
 
 type Props = {
-    status: Status
-    targetStatus: Status
-    config: SubjectConfig
+    hideHeader?: boolean
+    left: {
+        status: Status
+        config: SubjectConfig
+        hp: number
+    }
+    right: {
+        status: Status
+        config: SubjectConfig
+        hp: number
+    }
 }
 
 const damageTable: React.FC<Props> = props => {
+    const ltr = React.useState<string | undefined>("ltr");
+    const [attacker, defender] = ltr[0] == "ltr" ? [props.left, props.right] : [props.right, props.left]
     const weaponTypeID = React.useMemo(() => {
-        if (!props.config.equipment.weapon) return undefined;
-        return equipmentStatus(props.config.equipment.weapon).type as WeaponTypeID;
-    }, [props.config.equipment.weapon]);
+        if (!attacker.config.equipment.weapon) return undefined;
+        return equipmentStatus(attacker.config.equipment.weapon).type as WeaponTypeID;
+    }, [attacker.config.equipment.weapon]);
 
     const intl = useIntl();
     const definition = React.useMemo(() => {
-        const raw = SubjectDamageTable[props.config.subject];
+        const raw = SubjectDamageTable[attacker.config.subject];
         if (typeof raw === "object") {
             return raw;
         } else {
             return raw({
-                status: props.status, 
-                skillLevels: props.config.skillLevels, 
+                status: attacker.status, 
+                skillLevels: attacker.config.skillLevels, 
                 weaponType: weaponTypeID, 
-                weapon: props.config.equipment.weapon ?? undefined,
-                gauge: props.config.gauge,
+                weapon: attacker.config.equipment.weapon ?? undefined,
+                gauge: attacker.config.gauge,
                 intl
             });
         }
-    }, [props.config.subject, props.status, props.config.skillLevels, weaponTypeID]);
+    }, [attacker.config.subject, attacker.status, attacker.config.skillLevels, weaponTypeID]);
 
     const weaponSkill = React.useMemo(() => {
         if (weaponTypeID == undefined) return null;
@@ -58,7 +70,7 @@ const damageTable: React.FC<Props> = props => {
     }, [weaponTypeID])
 
     const itemSkillDamage = React.useMemo(() => {
-        return Object.values(props.config.equipment)
+        return Object.values(attacker.config.equipment)
             .flatMap(id => {
                 if (id == null) return [];
                 const abilities = equipmentStatus(id).option ?? [];
@@ -90,27 +102,35 @@ const damageTable: React.FC<Props> = props => {
                     });
                 });
             });
-    }, [range, props.config.equipment]);
+    }, [range, attacker.config.equipment]);
 
     const rioPassivePenetration = (() => {
-        if (props.config.subject != "rio") return 0;
-        return RioConstants.T.defense_decline.base[props.config.skillLevels.T] + props.status.criticalChance.calculatedValue.toNumber() * RioConstants.T.defense_decline.criticalChance;
+        if (attacker.config.subject != "rio") return 0;
+        return RioConstants.T.defense_decline.base[attacker.config.skillLevels.T] + attacker.status.criticalChance.calculatedValue.toNumber() * RioConstants.T.defense_decline.criticalChance;
     })();
 
     return (
-        <MitigationContext.Provider value={createMitigation(props.status, props.targetStatus, rioPassivePenetration)} >
+        <CombatHPContext.Provider value={{hp: attacker.hp, targetHP: defender.hp, targetMaxHP: defender.status.maxHP.calculatedValue}} >
+        <MitigationContext.Provider value={createMitigation(attacker.status, defender.status, rioPassivePenetration)} >
         <section className={style.damage}>
-            <h3>ダメージ</h3>
+            <header className={style.switch}>
+                <SegmentedControl 
+                    name="direction" 
+                    segments={[{title: "左→右", value: "ltr"}, {title:  "右→左", value: "rtl"}]} 
+                    value={ltr}
+                    style={{verticalPadding: 2}}
+                />
+            </header>
             <div className={table["table-base"]}>
                 <table>
-                    <BasicAttack status={props.status} config={props.config} table={definition!} weaponType={weaponTypeID}>
+                    <BasicAttack status={attacker.status} config={attacker.config} table={definition!} weaponType={weaponTypeID}>
                         {
                             itemSkillDamage?.filter(def => def.type == "basic").map(def => {
                                 return <SkillDamage 
                                     key={def.name} 
                                     label={def.name} 
-                                    status={props.status} 
-                                    config={props.config} 
+                                    status={attacker.status} 
+                                    config={attacker.config} 
                                     value={def.ratio} 
                                     skill="other" 
                                     multiplier={def.multiplier}
@@ -130,7 +150,7 @@ const damageTable: React.FC<Props> = props => {
                                 {
                                     array.map(s => {
                                         if (s.type == "critical") {
-                                            const level = (props.config.skillLevels as any)[s.skill];
+                                            const level = (attacker.config.skillLevels as any)[s.skill];
                                             const sanitizedDict = Object.fromEntries(
                                                 Object.entries(s.value).map(([key, value]) => {
                                                     return [key, Array.isArray(value) ? value[level] : value]
@@ -145,7 +165,7 @@ const damageTable: React.FC<Props> = props => {
                                             }, 100);
                                             return <BasicAttackDamage 
                                                 name={s.label} 
-                                                status={props.status} 
+                                                status={attacker.status} 
                                                 config={sanitizedDict} 
                                                 multiplier={multiplier} 
                                             />;
@@ -158,16 +178,16 @@ const damageTable: React.FC<Props> = props => {
                                                         {...s}
                                                         key={s.label + "_self"}
                                                         label={s.label + "(自己)"}
-                                                        status={props.status} 
-                                                        config={props.config} 
+                                                        status={attacker.status} 
+                                                        config={attacker.config} 
                                                         selfTarget={true}
                                                     />
                                                     <SkillDamage 
                                                         {...s}
                                                         key={s.label + "_opponent"} 
                                                         label={s.label + "(相手)"} 
-                                                        status={props.status} 
-                                                        config={props.config} 
+                                                        status={attacker.status} 
+                                                        config={attacker.config} 
                                                     />
                                                 </>
                                             )
@@ -176,16 +196,16 @@ const damageTable: React.FC<Props> = props => {
                                         if (s.type == "kenneth-heal") {
                                             return (
                                                 <>
-                                                    <KennethHeal status={props.status} config={props.config} onEEffect={false} />
-                                                    <KennethHeal status={props.status} config={props.config} onEEffect={true} />
+                                                    <KennethHeal status={attacker.status} config={attacker.config} onEEffect={false} />
+                                                    <KennethHeal status={attacker.status} config={attacker.config} onEEffect={true} />
                                                 </>
                                             )
                                         }
 
                                         return <SkillDamage 
                                             key={s.label} 
-                                            status={props.status} 
-                                            config={props.config} {...s}
+                                            status={attacker.status} 
+                                            config={attacker.config} {...s}
                                             selfTarget={s.target == "self"}
                                         />;
                                     })
@@ -200,8 +220,8 @@ const damageTable: React.FC<Props> = props => {
                             weaponSkill?.map(def => (
                                 <SkillDamage 
                                     key={def.label} 
-                                    status={props.status} 
-                                    config={props.config} 
+                                    status={attacker.status} 
+                                    config={attacker.config} 
                                     {...def}
                                 />
                             ))
@@ -231,8 +251,8 @@ const damageTable: React.FC<Props> = props => {
                                 return <SkillDamage 
                                     key={def.name} 
                                     label={def.name} 
-                                    status={props.status} 
-                                    config={props.config} 
+                                    status={attacker.status} 
+                                    config={attacker.config} 
                                     value={def.ratio} 
                                     skill="other" 
                                     type={type}
@@ -246,6 +266,7 @@ const damageTable: React.FC<Props> = props => {
             </div>
         </section>
         </MitigationContext.Provider>
+        </CombatHPContext.Provider>
     );
 };
 

@@ -20,8 +20,8 @@ export default q;
 export const values: ValuesProps = {
     parameters: [
         {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "竜巻ダメージ量", values: Constants.Q.vortex_damage.base},
-        {title: "消費", values: Constants.Q.sp_cost},
+        {title: "[風雲地帯]ダメージ量", values: Constants.Q.vortex_damage.base},
         {title: "クールダウン", values: Constants.Q.cooldown},
+        {title: "消費", values: Constants.Q.sp_cost},
     ]
 }

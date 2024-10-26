@@ -35,6 +35,7 @@ export default function(storage?: { value?: SubjectConfig | undefined, update: R
     const [stack, setStack] = React.useState(defaultConfig.stack);
 
     const setConfig = useCallback((config: SubjectConfig) => {
+        console.log(config)
         setSubject(config.subject);
         setLevel(config.level);
         setWeaponMastery(config.weaponMastery);
@@ -45,15 +46,6 @@ export default function(storage?: { value?: SubjectConfig | undefined, update: R
         setGauge(config.gauge);
         setStack(config.stack);
     }, [])
-
-    const prevSubject = usePrevious(subject);
-    React.useEffect(() => {
-        if (prevSubject == undefined) return;
-        setEquipment({ weapon: null, chest: null, head: null, arm: null, leg: null });
-        setSkillLevels({Q: 0, W: 0, E: 0, R: 0, T: 0});
-        setGauge(0);
-        setStack(0);
-    }, [subject])
 
     const updateSubject = React.useCallback((action: React.SetStateAction<SubjectID>) => {
         setEquipment({ weapon: null, chest: null, head: null, arm: null, leg: null });

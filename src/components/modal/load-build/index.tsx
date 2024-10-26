@@ -1,6 +1,6 @@
 
 
-import { BuildWithKey, SavedBuildsKey, useBuildStorage } from "@app/storage/build";
+import { PresetWithKey, SavedPresetsKey, usePresetStorage } from "@app/storage/preset";
 import * as React from "react";
 import { useLatest, useLocalStorage } from "react-use";
 import { defaultSampleBuilds } from "./default-sample";
@@ -10,13 +10,13 @@ import { styles } from "@app/util/style";
 
 type Props = {
     currentKey?: number
-    onSelect: (build: BuildWithKey) => void
+    onSelect: (build: PresetWithKey) => void
     onDeleteCurrentBuild: () => void
 }
 
 
 const loadBuild: React.FC<Props> = props => {
-    const {builds: savedBuilds, delete: deleteBuild } = useBuildStorage();
+    const {presets: savedBuilds, delete: deleteBuild } = usePresetStorage();
     const [selected, setSelected] = React.useState<number | null>(null);
     const latestSelected = useLatest(selected);
 
@@ -47,7 +47,7 @@ const loadBuild: React.FC<Props> = props => {
                     (savedBuilds ?? []).map((build, i) => (
                         <li className={styles(selected == build.key ? style.selected : undefined, props.currentKey == build.key ? style.current : undefined)} onClick={() => onClick(build.key)}>
                             <p>{build.name}</p>
-                            {build.isPreset ? null : <button onClick={event => {
+                            {build.isPremadeSample ? null : <button onClick={event => {
                                 event.stopPropagation();
                                 onClickDelete(build.key);
                             }}><Trash size={20} /></button>}

@@ -1005,7 +1005,7 @@
 		"skillAmplification": "95",
 		"vision": "1.5",
 		"ammo": "12",
-		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":15},\"slow\":{\"effect\":20,\"duration\":1.5}]"
+		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":15},\"slow\":{\"effect\":20,\"duration\":1}]"
 	},
 	"widow_maker": {
 		"type": "sniper_rifle",
@@ -1039,7 +1039,7 @@
 		"armorPenetrationRatio": "7",
 		"vision": "1.5",
 		"ammo": "12",
-		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":25},\"slow\":{\"effect\":20,\"duration\":1}]"
+		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":25},\"slow\":{\"effect\":20,\"duration\":1.5}]"
 	},
 	"fang_mace": {
 		"type": "hammer",

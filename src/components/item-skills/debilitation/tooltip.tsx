@@ -6,7 +6,6 @@ import { useValueContextOptional } from "components/tooltip/value-context";
 import { calculateValue } from "app-types/value-ratio/calculation";
 
 const Value: React.FC<ItemSkillProps> = props => {
-    console.log(props)
     const { config, status, showEquation } = useValueContextOptional();
     if (status && config && showEquation != true) {
         const value = calculateValue({amp: props.values.dmg.targetMaxHP.amp}, status, config, "other").dynamic?.targetMaxHP;
