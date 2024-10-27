@@ -14,8 +14,8 @@ const table: DamageTableGenerator = props => {
                     {label: props.intl.formatMessage({id: "subject.alex.r-first-center"}), skill: "R", value: Constants.R.first_damage.center},
                     {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer"}), skill: "R", value: Constants.R.later_damage.outer},
                     {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center"}), skill: "R", value: Constants.R.later_damage.center},
-                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.outer, multiplier: [{basic: rMax * 100}]},
-                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.center, multiplier: [{basic: rMax * 100}]},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.outer, multiplier: rMax * 100},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.center, multiplier: rMax * 100},
                 ]
             ]
         }

@@ -1,7 +1,7 @@
 export type ValueElement = number | number[] | ValueRatio
 
 export type Source = {
-    skill: "Q" | "W" | "E" | "R" | "T" | "D"
+    skill: "Q" | "W" | "E" | "R" | "T" | "D" | "tactical"
     level: number
 } | "other"
 

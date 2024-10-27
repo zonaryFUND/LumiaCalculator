@@ -14,6 +14,7 @@ import mitigatedDamage from "./mitigated-damage";
 import InnerTable from "components/common/inner-table";
 import Decimal from "decimal.js";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
+import { extractMultiplier, extractskillLevel } from "../damage-table-util";
 
 type Props = SkillValueProps & {
     config: SubjectConfig
@@ -23,20 +24,14 @@ type Props = SkillValueProps & {
 
 const skillDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
-    const level = (() => {
-        if (props.skill == "other") return 0;
-        if (props.skill == "D") return weaponSkillLevel(props.config.weaponMastery);
-        return props.config.skillLevels[props.skill];
-    })();
+    const level = extractskillLevel(props, props.config);
     const {static: staticPotency, dynamic: dynamicPotency, dynamicValueOnly} = (() => {
-        const source: Source = props.skill == "other" ? "other" : {skill: props.skill, level};
-        const baseMultiplier = props.multiplier?.reduce((prev, current) => {
-            const values = (current as any).basic ?? (current as any).value;
-            const value = Array.isArray(values) ? values[level] : values;
-            return prev * value  / 100;
-        }, 100);
-        return calculateValue(props.value, props.status, props.config, source, baseMultiplier);
+        const source = (props.skill == "other" || (props.skill as any).tacticalLevel != undefined) ? "other" : {skill: props.skill, level} as Source;
+        const multiplier = extractMultiplier(level, props.multiplier)?.[0];
+        return calculateValue(props.value, props.status, props.config, source, multiplier);
     })();
+
+    const selfTarget = props.type?.type == "heal" || props.type?.type == "shield" && props.type.target == "self";
 
     const { hp, targetHP, targetMaxHP } = useCombatHPContext();
 
@@ -48,11 +43,11 @@ const skillDamage: React.FC<Props> = props => {
             case "targetHP":
                 return [<FormattedMessage id="app.label.target-hp" />, new Decimal(targetHP).percent(ratio).floor()];
             case "targetLostHP":
-                return [<FormattedMessage id="app.label.target-lost-hp" />, (props.type == "heal" && props.selfTarget ? props.status.maxHP.calculatedValue.sub(hp) : targetMaxHP.sub(targetHP)).percent(ratio).floor()];
+                return [<FormattedMessage id="app.label.target-lost-hp" />, (props.type?.type == "heal" && selfTarget ? props.status.maxHP.calculatedValue.sub(hp) : targetMaxHP.sub(targetHP)).percent(ratio).floor()];
             case "lostHP":
                 return [<FormattedMessage id="app.label.lost-hp" />, props.status.maxHP.calculatedValue.sub(hp).percent(ratio).floor()];
             case "targetMaxHP":
-                return [<FormattedMessage id="app.label.target-maxhp" />, (props.selfTarget && props.damageDependent == undefined ? props.status.maxHP.calculatedValue : targetMaxHP).percent(ratio).floor()];
+                return [<FormattedMessage id="app.label.target-maxhp" />, (selfTarget && props.damageDependent == undefined ? props.status.maxHP.calculatedValue : targetMaxHP).percent(ratio).floor()];
         }
         return [null, null]
     })();
@@ -63,8 +58,8 @@ const skillDamage: React.FC<Props> = props => {
     const healPower = props.status.healPower.calculatedValue;
     const healPowerDescription = healPower.greaterThan(0) ? <tr><td>与える回復増加</td><td>{healPower.toString()}%</td></tr> : null;
     const [mitigated, mitigationDescriptions] = (() => {
-        if (props.type == "true" || props.type == "ms" || props.type == "ratio" || props.type == "count" || props.type == "shield") return [potency, null]
-        if (((props.type == "heal" || props.type == "kenneth-heal") && props.damageDependent == undefined)) {
+        if (props.type?.type == "true" || props.type?.type == "misc" || props.type?.type == "shield") return [potency, null]
+        if (((props.type?.type == "heal") && props.damageDependent == undefined)) {
             
             return [
                 potency.addPercent(healPower), 
@@ -75,8 +70,8 @@ const skillDamage: React.FC<Props> = props => {
         return mitigatedDamage(
             potency, 
             mitigationContext, 
-            props.type == "basic" || props.type == "basic-nocrit" ? "basic" : "skill",
-            props.type == "summoned"
+            props.type?.type == "basic" ? "basic" : "skill",
+            (props.type as any).fromSummoned == true
         );
     })();
 
@@ -84,21 +79,21 @@ const skillDamage: React.FC<Props> = props => {
     const lastValue = damageDependent ? mitigated.percent(damageDependent).addPercent(healPower) : mitigated;
 
     const targetHPRatio = lastValue
-        .dividedBy(props.selfTarget ? props.status.maxHP.calculatedValue : targetMaxHP)
+        .dividedBy(selfTarget ? props.status.maxHP.calculatedValue : targetMaxHP)
         .times(100).floor2();
     const enableExpand = dynamicPotency != undefined ||
         mitigationDescriptions != null || 
         props.damageDependent != undefined;
 
-    const valueClass = props.type ? style[props.type] : style.skill;
+    const valueClass = props.type ? style[props.type.type] : style.skill;
 
     return (
         <>
             <tr onClick={enableExpand ? toggleExpand : undefined}>
                 <td>{props.label}</td>
-                <td className={valueClass}>{lastValue.floor().toString()}{props.type == "ms" || props.type == "ratio" ? "%" : null}</td>
+                <td className={valueClass}>{lastValue.floor().toString()}{props.type?.type == "misc" && (props.type?.percentExpression) ? "%" : null}</td>
                 {
-                    props.type == "ms" || props.type == "ratio" || props.type == "count" ? <td>-</td> :
+                    props.type?.type == "misc" ? <td>-</td> :
                     <td className={valueClass}>{targetHPRatio.toString()}%</td>
                 }
             </tr>

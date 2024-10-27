@@ -14,15 +14,15 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.bianca.q-lance"}), skill: "Q", value: Constants.Q.second_damage}
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.bianca.w-heal-1tick"}, {value: 0.5}), skill: "W", value: Constants.W.heal, type: "heal", target: "self"},
-            {label: props.intl.formatMessage({id: "subject.bianca.w-heal-max-tick"}), skill: "W", value: Constants.W.heal, type: "heal", target: "self", multiplier: [{basic: wMax * 100}]},
-            {label: props.intl.formatMessage({id: "subject.bianca.w-max-heal-1tick"}, {value: 0.5}), skill: "W", value: Constants.W.heal, type: "heal", target: "self", multiplier: [{basic: Constants.W.enhanced_heal_ratio * 100}]},
-            {label: props.intl.formatMessage({id: "subject.bianca.w-max-heal-max-tick"}), skill: "W", value: Constants.W.heal, type: "heal", target: "self", multiplier: [{basic: Constants.W.enhanced_heal_ratio * wMax * 100}] }
+            {label: props.intl.formatMessage({id: "subject.bianca.w-heal-1tick"}, {value: 0.5}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}},
+            {label: props.intl.formatMessage({id: "subject.bianca.w-heal-max-tick"}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}, multiplier: wMax * 100},
+            {label: props.intl.formatMessage({id: "subject.bianca.w-max-heal-1tick"}, {value: 0.5}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}, multiplier: Constants.W.enhanced_heal_ratio * 100},
+            {label: props.intl.formatMessage({id: "subject.bianca.w-max-heal-max-tick"}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}, multiplier: Constants.W.enhanced_heal_ratio * wMax * 100 }
         ],
         [
             {label: props.intl.formatMessage({id: "subject.bianca.e-min"}), skill: "E", value: Constants.E.min_damage},
             {label: props.intl.formatMessage({id: "subject.bianca.e-max"}), skill: "E", value: Constants.E.max_damage},
-            {label: props.intl.formatMessage({id: "subject.bianca.e-heal"}), skill: "E", value: Constants.E.heal, type: "heal", target: "self"}
+            {label: props.intl.formatMessage({id: "subject.bianca.e-heal"}), skill: "E", value: Constants.E.heal, type: {type: "heal", target: "self"}}
         ],
         [
             {label: props.intl.formatMessage({id: "subject.bianca.r-first"}), skill: "R", value: Constants.R.first_damage},

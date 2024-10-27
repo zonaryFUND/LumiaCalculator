@@ -26,7 +26,7 @@ const table: DamageTableGenerator = props => {
         if (props.weapon?.includes("black_mamba")) {
             return [
                 {label: props.intl.formatMessage({id: "subject.echion.r"}), skill: "R" as any, value: Constants.R2.damage},
-                {label: props.intl.formatMessage({id: "subject.echion.r-2hit"}), skill: "R" as any, value: Constants.R2.damage, multiplier: [{basic: 200}]}
+                {label: props.intl.formatMessage({id: "subject.echion.r-2hit"}), skill: "R" as any, value: Constants.R2.damage, multiplier: 200}
             ];
         } else if (props.weapon?.includes("deathadder")) {
             return [{label: props.intl.formatMessage({id: "subject.echion.r"}), skill: "R" as any, value: Constants.R3.damage}];
@@ -38,7 +38,7 @@ const table: DamageTableGenerator = props => {
     return {
         basicAttack: props.weapon?.includes("deathadder") ? [
             "standard",
-            {label: props.intl.formatMessage({id: "subject.echion.deathadder-aa-additional"}), skill: "T", value: Constants.T3_2.damage, type: "basic"}
+            {label: props.intl.formatMessage({id: "subject.echion.deathadder-aa-additional"}), skill: "T", value: Constants.T3_2.damage, type: {type: "basic"}}
         ] : ["standard"],
         skill: [
             [
@@ -47,7 +47,7 @@ const table: DamageTableGenerator = props => {
                 {label: `Q2(${props.intl.formatMessage({id: "app.standard-value"})})`, skill: "Q", value: Constants.Q.second_damage},
                 {label: `Q2(${props.intl.formatMessage({id: "subject.echion.amp-calculated"})})`, skill: "Q", value: Constants.Q.second_damage, multiplier},
             ],
-            [{label: props.intl.formatMessage({id: "subject.echion.w-shield"}), skill: "W", value: Constants.W.shield, type: "shield", target: "self"}],
+            [{label: props.intl.formatMessage({id: "subject.echion.w-shield"}), skill: "W", value: Constants.W.shield, type: {type: "shield", target: "self"}}],
             [
                 {label: `E(${props.intl.formatMessage({id: "app.standard-value"})})`, skill: "E", value: Constants.E.damage},
                 {label: `E(${props.intl.formatMessage({id: "subject.echion.amp-calculated"})})`, skill: "E", value: Constants.E.damage, multiplier}

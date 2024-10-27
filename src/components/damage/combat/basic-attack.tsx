@@ -16,6 +16,7 @@ import { Source } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 import { hyperChargeMultiplier } from "../simple/aiden-hypercharge";
 import { DaikyuMultiplier, HankyuMultiplier, criticalAddition } from "../simple/rio";
+import { extractMultiplier, extractskillLevel } from "../damage-table-util";
 
 
 type Props = {
@@ -113,20 +114,14 @@ const basicAttack: React.FC<Props> = props => {
                                 />
                             </>
                         )
-                    } else if (def.type == "basic" || def.type == "summoned" || def.type == "basic-nocrit") {
-                        const level = (props.config.skillLevels as any)[def.skill];
+                    } else if (def.type?.type == "basic") {
+                        const level = extractskillLevel(def, props.config);
                         const sanitizedDict = Object.fromEntries(
                             Object.entries(def.value).map(([key, value]) => {
                                 return [key, Array.isArray(value) ? value[level] : value]
                             })
                         );
-                        const multiplier = def.multiplier?.reduce((prev, current) => {
-                            const anyC = current as any;
-                            if (anyC.basic != undefined) {
-                                return prev / 100 * (Array.isArray(anyC.basic) ? anyC.basic[level] : anyC.basic);
-                            }
-                            return prev / 100 * (Array.isArray(anyC) ? anyC[level] : anyC);
-                        }, 100);
+                        const multiplier = extractMultiplier(level, def.multiplier)?.[0];
 
                         return <BasicAttackDamage 
                             key={def.label} 
@@ -134,11 +129,11 @@ const basicAttack: React.FC<Props> = props => {
                             status={props.status} 
                             config={sanitizedDict}
                             multiplier={multiplier}
-                            disableCritical={def.type == "basic-nocrit"}
-                            summonedName={def.type == "summoned" ? summonedName : undefined} 
+                            disableCritical={def.type.critical == "none"}
+                            summonedName={def.type.fromSummoned ? summonedName : undefined} 
                         />
                     } else {
-                        return <SkillDamage {...def as any} status={props.status} config={props.config} selfTarget={def.target == "self"} />
+                        return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }
                 })
             }

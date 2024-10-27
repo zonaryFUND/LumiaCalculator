@@ -26,11 +26,13 @@ const damages: React.FC<Props> = props => {
                     <h1>ダメージ</h1>
                 </header>
             }
+            <div className={index.content}>
             <section className={style.skill}>
                 <h3>スキル</h3>
                 <SubjectSkills config={props.config} setSkillLevels={props.setSkillLevels} />
             </section>
             <Table status={props.status} config={props.config} weaponType={props.weaponType} />
+            </div>
         </div>
     )
 };

@@ -1,0 +1,17 @@
+{
+    "tactical.quake.first": "クエイク発動時",
+    "tactical.quake.dot-1tick": "クエイクLv2継続ダメージ1ティック",
+    "tactical.quake.dot-all": "クエイクLv2継続ダメージ全ティック({value})",
+    "tactical.protocol-violation.level1": "プロトコル違反Lv1体力増加",
+    "tactical.protocol-violation.level2": "プロトコル違反Lv2体力増加",
+    "tactical.force-field.level1": "超越Lv1シールド",
+    "tactical.force-field.level2": "超越Lv2シールド",
+    "tactical.strider.level1": "ストライダーLv1追加ダメージ",
+    "tactical.strider.level2": "ストライダーLv2追加ダメージ",
+    "tactical.blader-of-truth.level1": "真実の刃1段目ダメージ",
+    "tactical.blader-of-truth.level2": "真実の刃2段目ダメージ",
+    "tactical.false-oath.level1": "偽りの制約Lv1回復/秒",
+    "tactical.false-oath.level2": "偽りの制約Lv2回復/秒",
+    "tactical.healing-wind.level1": "癒しの風Lv1回復",
+    "tactical.healing-wind.level2": "癒しの風Lv2回復"
+}

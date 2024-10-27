@@ -3,14 +3,14 @@ import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => ({
     basicAttack: [
-        {label: "Q", skill: "Q", value: Constants.Q.damage, type: "basic"},
-        {label: props.intl.formatMessage({id: "subject.karla.q-second-target"}), skill: "Q", value: Constants.Q.second_damage, type: "basic"},
+        {label: "Q", skill: "Q", value: Constants.Q.damage, type: {type: "basic"}},
+        {label: props.intl.formatMessage({id: "subject.karla.q-second-target"}), skill: "Q", value: Constants.Q.second_damage, type: {type: "basic"}},
     ],
     skill: [
         [
             {label: props.intl.formatMessage({id: "subject.karla.w"}, {value: 1}), skill: "W", value: Constants.W.damage},
-            {label: props.intl.formatMessage({id: "subject.karla.w"}, {value: 2}), skill: "W", value: Constants.W.damage, multiplier: [{basic: 200 - 1 * Constants.W.damage_reduction}]},
-            {label: props.intl.formatMessage({id: "subject.karla.w"}, {value: 3}), skill: "W", value: Constants.W.damage, multiplier: [{basic: 300 - 3 * Constants.W.damage_reduction}]},
+            {label: props.intl.formatMessage({id: "subject.karla.w"}, {value: 2}), skill: "W", value: Constants.W.damage, multiplier: 200 - 1 * Constants.W.damage_reduction},
+            {label: props.intl.formatMessage({id: "subject.karla.w"}, {value: 3}), skill: "W", value: Constants.W.damage, multiplier: 300 - 3 * Constants.W.damage_reduction},
         ],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [

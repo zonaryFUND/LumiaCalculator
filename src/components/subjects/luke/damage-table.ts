@@ -10,13 +10,13 @@ const table: DamageTableGenerator = props => ({
         [
             {label: "Q1", skill: "Q", value: Constants.Q.first_damage},
             {label: "Q2", skill: "Q", value: Constants.Q.second_damage},
-            {label: props.intl.formatMessage({id: "subject.luke.q2-evolved-max"}), skill: "Q", value: Constants.Q.second_damage, multiplier: [{basic: Constants.Q.enhance_max + 100}]}
+            {label: props.intl.formatMessage({id: "subject.luke.q2-evolved-max"}), skill: "Q", value: Constants.Q.second_damage, multiplier: Constants.Q.enhance_max + 100}
         ],
         [{label: props.intl.formatMessage({id: "subject.luke.w-first"}), skill: "W", value: Constants.W.damage}],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [
             {label: props.intl.formatMessage({id: "subject.luke.r-min"}), skill: "R", value: Constants.R.damage},
-            {label: props.intl.formatMessage({id: "subject.luke.r-max"}), skill: "R", value: Constants.R.damage, multiplier: [{basic: Constants.R.max_multiplier * 100}]}
+            {label: props.intl.formatMessage({id: "subject.luke.r-max"}), skill: "R", value: Constants.R.damage, multiplier: Constants.R.max_multiplier * 100}
         ]
     ]   
 })

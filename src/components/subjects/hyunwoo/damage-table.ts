@@ -7,7 +7,7 @@ const table: DamageTableGenerator = props => ({
     ],
     skill: [
         [{label: "Q", skill: "Q", value: Constants.Q.damage}],
-        [{label: props.intl.formatMessage({id: "subject.hyunwoo.w-defense"}), skill: "W", value: Constants.W.defense, type: "true"}],
+        [{label: props.intl.formatMessage({id: "subject.hyunwoo.w-defense"}), skill: "W", value: Constants.W.defense, type: {type: "true"}}],
         [
             {label: "E", skill: "E", value: Constants.E.damage},
             {label: props.intl.formatMessage({id: "subject.hyunwoo.e-additional"}), skill: "E", value: Constants.E.wall_damage}
@@ -18,7 +18,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.hyunwoo.passive-additional"}), skill: "T", value: Constants.T.damage},
-            {label: props.intl.formatMessage({id: "subject.hyunwoo.passive-heal"}), skill: "T", value: Constants.T.heal, type: "heal", target: "self"}
+            {label: props.intl.formatMessage({id: "subject.hyunwoo.passive-heal"}), skill: "T", value: Constants.T.heal, type: {type: "heal", target: "self"}}
         ]
     ]   
 })

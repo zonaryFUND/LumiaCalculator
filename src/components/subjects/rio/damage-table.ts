@@ -6,7 +6,7 @@ const table: DamageTableGenerator = props => ({
     skill: [
         [
             {label: props.intl.formatMessage({id: "subject.rio.hankyu-w"}), skill: "W", value: Constants.W.hankyu_damage},
-            {label: props.intl.formatMessage({id: "subject.rio.hankyu-w-2hit"}), skill: "W", value: Constants.W.hankyu_damage, multiplier: [{basic: 100 + 4 * Constants.W.multiple_hit}]},
+            {label: props.intl.formatMessage({id: "subject.rio.hankyu-w-2hit"}), skill: "W", value: Constants.W.hankyu_damage, multiplier: 100 + 4 * Constants.W.multiple_hit},
         ],
         [
             {label: props.intl.formatMessage({id: "subject.rio.daikyu-w"}), skill: "W", value: Constants.W.daikyu_damage},
@@ -14,7 +14,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.rio.hankyu-e"}), skill: "E", value: Constants.E.hankyu_damage},
-            {label: props.intl.formatMessage({id: "subject.rio.hankyu-e-2hit"}), skill: "E", value: Constants.E.hankyu_damage, multiplier: [{basic: 200}]}
+            {label: props.intl.formatMessage({id: "subject.rio.hankyu-e-2hit"}), skill: "E", value: Constants.E.hankyu_damage, multiplier: 200}
         ],
         [
             {label: props.intl.formatMessage({id: "subject.rio.daikyu-e"}), skill: "E", value: Constants.E.daikyu_damage},
@@ -22,12 +22,12 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.rio.hankyu-r1"}), skill: "R", value: Constants.R.hankyu_first_damage},
-            {label: props.intl.formatMessage({id: "subject.rio.hankyu-r1-max-hit"}, {value: 3}), skill: "R", value: Constants.R.hankyu_first_damage, multiplier: [{basic: 300}]},
+            {label: props.intl.formatMessage({id: "subject.rio.hankyu-r1-max-hit"}, {value: 3}), skill: "R", value: Constants.R.hankyu_first_damage, multiplier: 300},
             {label: props.intl.formatMessage({id: "subject.rio.hankyu-r2"}), skill: "R", value: Constants.R.hankyu_second_damage}
         ],
         [
             {label: props.intl.formatMessage({id: "subject.rio.daikyu-r"}), skill: "R", value: Constants.R.daikyu_damage},
-            {label: props.intl.formatMessage({id: "subject.rio.daikyu-r-enhanced"}), skill: "R", value: Constants.R.daikyu_damage, multiplier: [{basic: Constants.R.daikyu_enhance.damage + 100}]}
+            {label: props.intl.formatMessage({id: "subject.rio.daikyu-r-enhanced"}), skill: "R", value: Constants.R.daikyu_damage, multiplier: Constants.R.daikyu_enhance.damage + 100}
         ]
     ]   
 })

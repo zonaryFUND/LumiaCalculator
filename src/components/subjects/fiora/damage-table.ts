@@ -15,7 +15,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: "W", skill: "W", value: Constants.W.damage},
-            {label: props.intl.formatMessage({id: "subject.fiora.w-max-hit"}, {value: 2}), skill: "W", value: Constants.W.damage, multiplier: [{basic: 200}]}
+            {label: props.intl.formatMessage({id: "subject.fiora.w-max-hit"}, {value: 2}), skill: "W", value: Constants.W.damage, multiplier: 200}
         ],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [

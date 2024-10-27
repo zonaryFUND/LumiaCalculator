@@ -10,12 +10,12 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: "W", skill: "W", value: Constants.W.damage},
-            {label: props.intl.formatMessage({id: "subject.priya.w-full-bloom"}), skill: "W", value: Constants.W.shield, type: "shield", target: "any"}
+            {label: props.intl.formatMessage({id: "subject.priya.w-full-bloom"}), skill: "W", value: Constants.W.shield, type: {type: "shield", target: "any"}}
         ],
         [
             {label: "E", skill: "E", value: Constants.E.damage},
-            {label: props.intl.formatMessage({id: "subject.priya.e-multiple-hits"}, {value: 2}), skill: "E", value: Constants.E.damage, multiplier: [{basic: 200}]},
-            {label: props.intl.formatMessage({id: "subject.priya.e-multiple-hits"}, {value: 3}), skill: "E", value: Constants.E.damage, multiplier: [{basic: 300}]}
+            {label: props.intl.formatMessage({id: "subject.priya.e-multiple-hits"}, {value: 2}), skill: "E", value: Constants.E.damage, multiplier: 200},
+            {label: props.intl.formatMessage({id: "subject.priya.e-multiple-hits"}, {value: 3}), skill: "E", value: Constants.E.damage, multiplier: 300}
         ],
         [
             {label: props.intl.formatMessage({id: "subject.priya.r-outward"}), skill: "R", value: Constants.R.first_damage},

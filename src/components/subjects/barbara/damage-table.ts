@@ -21,7 +21,7 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.barbara.rw-dot"}), skill: "R", value: Constants.R.W.dot_damage},
             {label: props.intl.formatMessage({id: "subject.barbara.re-hit"}), skill: "R", value: Constants.R.E.damage},
             {label: props.intl.formatMessage({id: "subject.barbara.re-dot-1tick"}), skill: "R", value: Constants.R.E.dot_damage},
-            {label: props.intl.formatMessage({id: "subject.barbara.re-dot-all"}, {value: reMax}), skill: "R", value: Constants.R.E.dot_damage, multiplier: [{basic: reMax * 100}]}
+            {label: props.intl.formatMessage({id: "subject.barbara.re-dot-all"}, {value: reMax}), skill: "R", value: Constants.R.E.dot_damage, multiplier: reMax * 100}
         ]
     ]   
 })

@@ -64,6 +64,15 @@
         }
     },
     "false_oath": {
+        "heal_min": {
+            "melee": {
+                "base": 60
+            },
+            "range": {
+                "base": 40
+            }
+        },
+        "heal_max_multiplier": 1.5,
         "damage_increase": {
 
         }

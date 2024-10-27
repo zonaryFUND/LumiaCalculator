@@ -12,6 +12,7 @@ import { WeaponTypeID } from "app-types/equipment/weapon";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
 import { SummonedStatus } from "components/subjects/summoned-status";
+import { extractMultiplier, extractskillLevel } from "../damage-table-util";
 
 
 type Props = {
@@ -77,25 +78,15 @@ const basicAttack: React.FC<Props> = props => {
                         } else {
                             return <BasicAttackDamage key="standard" name={<FormattedMessage id="app.basic-attack" />} status={props.status} disableCritical={def == "disable-critical"} />
                         }
-                    } else if (def.type == "basic" || def.type == "summoned" || def.type == "basic-nocrit") {
-                        const level = (props.config.skillLevels as any)[def.skill];
+                    } else if (def.type?.type == "basic") {
+                        const level = extractskillLevel(def, props.config);
+                        const multiplier = extractMultiplier(level, def.multiplier);
                         const sanitizedDict = Object.fromEntries(
                             Object.entries(def.value).map(([key, value]) => {
                                 return [key, Array.isArray(value) ? value[level] : value]
                             })
                         );
-                        const sanitizedMultipliers = def.multiplier?.map(m => {
-                            const anyM = m as any;
-                            if (anyM.basic != undefined) {
-                                return Array.isArray(anyM.basic) ? anyM.basic[level] : anyM.basic;
-                            }
-
-                            return {
-                                name: anyM.name,
-                                value: Array.isArray(anyM.value) ? anyM.value[level] : anyM.value
-                            }
-                        })
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summonedName={def.type == "summoned" ? summonedName : undefined} multipliers={sanitizedMultipliers} disableCritical={def.type == "basic-nocrit"} />
+                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summonedName={def.type.fromSummoned ? summonedName : undefined} multipliers={multiplier} disableCritical={def.type.critical == "none"} />
                     } else if (def.damageDependent == undefined) {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     } else {

@@ -1,21 +1,45 @@
 import { WeaponTypeID } from "app-types/equipment/weapon"
 import { WeaponID } from "app-types/equipment/weapon/id"
-import { SkillLevels } from "app-types/subject-dynamic/config"
+import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config"
 import { Status } from "app-types/subject-dynamic/status/type"
 import { ValueRatio } from "app-types/value-ratio"
 import Decimal from "decimal.js"
 import { IntlShape } from "react-intl"
 
+type BasicAttackType = {
+    type: "basic",
+    critical?: "none" | "confirmed" // if it is undefined, calculate critical hit as same as standard auto-attack
+    fromSummoned?: boolean
+}
+
+type TrueDamageType = {
+    type: "true"
+}
+
+type SupportType = {
+    type: "heal" | "shield"
+    target: "self" | "any" | "ally"
+}
+
+type MiscValueType = {
+    type: "misc"
+    percentExpression?: boolean
+}
+
+export type SkillEffectType = {
+    type: "basic",
+
+}
+
 export type SkillValueProps = {
     label: string
-    skill: "Q" | "W" | "E" | "R" | "T" | "D" | "other"
+    skill: "Q" | "W" | "E" | "R" | "T" | "D" | {tacticalLevel: number} | "other"
     value: ValueRatio
-    type?: "heal" | "shield" | "ms" | "true" | "count" | "basic" | "basic-nocrit" | "critical" | "summoned" | "ratio" | "kenneth-heal" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
-    target?: "self" | "any"
-    damageDependent?: number | number[]
-    multiplier?: ({
-        basic: number | number[]
-    } | {
+    //type?: "heal" | "shield" | "ms" | "true" | "count" | "basic" | "basic-nocrit" | "critical" | "summoned" | "ratio" | "kenneth-heal" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
+    //type?: "kenneth-heal" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
+    type?: BasicAttackType | TrueDamageType | SupportType | MiscValueType   // undefined means standard skill damage
+    damageDependent?: number | number[] // Recovery amounts dependent on the damage dealt, and it is only displayed on Combat page.
+    multiplier?: number | number[] | ({
         name: string, 
         value: number | number[]
     })[]

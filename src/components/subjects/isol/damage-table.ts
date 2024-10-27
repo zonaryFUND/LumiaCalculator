@@ -15,7 +15,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: "W", "skill": "W", value: Constants.W.damage},
-            {label: props.intl.formatMessage({id: "subject.isol.w-max"}, {value: maxW}), "skill": "W", value: Constants.W.damage, multiplier: [{basic: maxW * 100}]}
+            {label: props.intl.formatMessage({id: "subject.isol.w-max"}, {value: maxW}), "skill": "W", value: Constants.W.damage, multiplier: maxW * 100}
         ],
         [{label: "R", "skill": "R", value: Constants.R.damage}],
     ]

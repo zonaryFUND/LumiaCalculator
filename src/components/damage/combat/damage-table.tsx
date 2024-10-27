@@ -18,6 +18,7 @@ import KennethHeal from "./kenneth-heal";
 import RioConstants from "components/subjects/rio/constants.json";
 import SegmentedControl from "components/common/segmented-control";
 import { CombatHPContext } from "./combat-hp-context";
+import { extractMultiplier, extractskillLevel } from "../damage-table-util";
 
 type Props = {
     hideHeader?: boolean
@@ -82,7 +83,6 @@ const damageTable: React.FC<Props> = props => {
                     if (values == undefined) return [];
                     return values(ability.values).map(value => {
                         const baseText = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
-                        const multiplier = value.multiplier ? [{basic: value.multiplier}] : undefined;
                         const name = value.labelFormat?.split(/({text})/)
                             .map(component => {
                                 if (component.startsWith("{") && component.endsWith("}")) {
@@ -97,7 +97,7 @@ const damageTable: React.FC<Props> = props => {
                             name: name ?? baseText,
                             type: value.type,
                             ratio: value.ratio[range] || value.ratio,
-                            multiplier
+                            multiplier: value.multiplier
                         };
                     });
                 });
@@ -149,20 +149,14 @@ const damageTable: React.FC<Props> = props => {
                                 }
                                 {
                                     array.map(s => {
-                                        if (s.type == "critical") {
-                                            const level = (attacker.config.skillLevels as any)[s.skill];
+                                        if (s.type?.type == "basic" && s.type.critical != "none") {
+                                            const level = extractskillLevel(s, attacker.config);
+                                            const multiplier = extractMultiplier(level, s.multiplier)?.[0];
                                             const sanitizedDict = Object.fromEntries(
                                                 Object.entries(s.value).map(([key, value]) => {
                                                     return [key, Array.isArray(value) ? value[level] : value]
                                                 })
                                             );
-                                            const multiplier = s.multiplier?.reduce((prev, current) => {
-                                                const anyC = current as any;
-                                                if (anyC.basic != undefined) {
-                                                    return prev / 100 * (Array.isArray(anyC.basic) ? anyC.basic[level] : anyC.basic);
-                                                }
-                                                return prev / 100 * (Array.isArray(anyC) ? anyC[level] : anyC);
-                                            }, 100);
                                             return <BasicAttackDamage 
                                                 name={s.label} 
                                                 status={attacker.status} 
@@ -171,7 +165,7 @@ const damageTable: React.FC<Props> = props => {
                                             />;
                                         }
 
-                                        if (s.target == "any") {
+                                        if ((s.type?.type == "heal" || s.type?.type == "shield") && s.type.target == "any") {
                                             return (
                                                 <>
                                                     <SkillDamage 
@@ -193,6 +187,7 @@ const damageTable: React.FC<Props> = props => {
                                             )
                                         } 
 
+                                        /*
                                         if (s.type == "kenneth-heal") {
                                             return (
                                                 <>
@@ -201,12 +196,12 @@ const damageTable: React.FC<Props> = props => {
                                                 </>
                                             )
                                         }
+                                            */
 
                                         return <SkillDamage 
                                             key={s.label} 
                                             status={attacker.status} 
                                             config={attacker.config} {...s}
-                                            selfTarget={s.target == "self"}
                                         />;
                                     })
                                 }
@@ -234,15 +229,15 @@ const damageTable: React.FC<Props> = props => {
                                 const type = (() => {
                                     switch (def.type) {
                                         case "basic":
-                                            return "basic";
+                                            return {type: "basic", critical: "none"};
                                         case "shield":
-                                            return "shield";
+                                            return {type: "shield", target: "self"};
                                         case "heal":
-                                            return "heal";
+                                            return {type: "heal", target: "self"};
                                         case "status":
-                                            return "count";
+                                            return {type: "misc"};
                                         case "true":
-                                            return "true"
+                                            return {type: "true"}
                                         case "skill":
                                             return undefined;
                                     }
@@ -255,7 +250,7 @@ const damageTable: React.FC<Props> = props => {
                                     config={attacker.config} 
                                     value={def.ratio} 
                                     skill="other" 
-                                    type={type}
+                                    type={type as any}
                                     multiplier={def.multiplier}
                                     selfTarget={def.type == "heal" || def.type == "shield"}
                                 />

@@ -12,6 +12,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { SummonedStatus } from "components/subjects/summoned-status";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
+import { extractMultiplier, extractskillLevel } from "../damage-table-util";
 
 type Props = SkillValueProps & {
     config: SubjectConfig
@@ -87,48 +88,39 @@ const skillDamage: React.FC<Props> = props => {
 
     if (!isValueRatio(props.value)) return null;
 
-    const level = (() => {
-        if (props.skill == "other") return 0;
-        if (props.skill == "D") return weaponSkillLevel(props.config.weaponMastery);
-        return props.config.skillLevels[props.skill];
-    })();
+    const level = extractskillLevel(props, props.config);
     const {static: staticValue, dynamic, dynamicValueOnly} = (() => {
         if (isValueRatio(props.value)) {
-            const source: Source = props.skill == "other" ? "other" : {skill: props.skill, level};
+            const source: Source = (() => {
+                if (props.skill == "other") return "other";
+                if ((props.skill as any).tacticalLevel != undefined) return {skill: "tactical", level};
+                return {skill: props.skill, level} as Source;
+            })();
             return calculateValue(props.value, props.status, props.config, source);
         } else {
             return {static: new Decimal(0), dynamic: undefined, dynamicValueOnly: false};
         }
     })();
 
-    const percent = React.useMemo(() => {
-        return props.type == "ms" || props.type =="ratio" || props.type == "kenneth-heal" ? "%" : null
-    }, [props.type])
+    const multiplier = extractMultiplier(level, props.multiplier);
 
-    const healPower = (props.type == "heal" || props.type == "kenneth-heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
+    const percent = React.useMemo(() => props.type?.type == "misc" && props.type?.percentExpression, [props.type]);
+
+    const healPower = (props.type?.type == "heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
             props.status.healPower.calculatedValue : null;
 
     const [value, expandDescriptionStatic] = (() => {
         if (dynamicValueOnly) return [null, null];        
 
-        if (props.multiplier) {
-            const [equation, multiplier] = props.multiplier.reduce((prev, multiplier: any) => {
-                if (multiplier.basic) {
-                    const value = Array.isArray(multiplier.basic) ? multiplier.basic[level] : multiplier.basic;
-                    return [
-                        <>{prev[0]} x {value}%</>,
-                        prev[1] * value / 100
-                    ]
+        if (multiplier) {
+            const value = staticValue.percent(multiplier[0]);
+            const equation = multiplier[1].reduce((prev, def) => {
+                if (def.label) {
+                    return <>{prev} x <span className={table.small}>{def.label}</span>{value}%</>
                 } else {
-                    const value = Array.isArray(multiplier.value) ? multiplier.value[level] : multiplier.value;
-                    return [
-                        <>{prev[0]} x <span className={table.small}>{multiplier.name}</span>{value}%</>,
-                        prev[1] * value / 100
-                    ]
+                    return <>{prev} x {def}</>
                 }
-            }, [<>{staticValue.toString()}</>, 100]);
-
-            const value = staticValue.percent(multiplier);
+            }, <>{staticValue.toString()}</>)
 
             return [
                 value.addPercent(healPower || 0),
@@ -166,26 +158,18 @@ const skillDamage: React.FC<Props> = props => {
                 const isCalculated = typeof ratio === "object" && !Array.isArray(ratio);
                 if (!isCalculated && !props.multiplier) return [null, value];
 
-                if (props.multiplier) {
-                    const [eq, mul] = props.multiplier.reduce((prev, multiplier: any) => {
-                        if (multiplier.basic) {
-                            const value = Array.isArray(multiplier.basic) ? multiplier.basic[level] : multiplier.basic;
-                            return [
-                                <>{prev[0]} x {value}%</>,
-                                prev[1] * value / 100
-                            ];
+                if (multiplier) {
+                    const multiplied = value.percent(multiplier[0])
+                    const equation = multiplier[1].reduce((prev, def) => {
+                        if (def.label) {
+                            return <>{prev} x <span className={table.small}>{def.label}</span>{value}%</>
                         } else {
-                            const value = Array.isArray(multiplier.value) ? multiplier.value[level] : multiplier.value;
-                            return [
-                                <>{prev[0]} x <span className={table.small}>{multiplier.name}</span>{value}%</>,
-                                prev[1] * value / 100
-                            ]
+                            return <>{prev} x {def}</>
                         }
-                    }, [<>{value.toString()}</>, 100]);
-                    const multipliedValue = value.percent(mul);
+                    }, <>{staticValue.toString()}</>)
                     return [
-                        <td>{eq} = {multipliedValue.toString()}</td>,
-                        multipliedValue.addPercent(healPower || 0)
+                        <td>{equation} = {multiplied.toString()}</td>,
+                        multiplied.addPercent(healPower || 0)
                     ]
                 } else {
                     return [
@@ -243,7 +227,7 @@ const skillDamage: React.FC<Props> = props => {
     })();
 
     const valueClass = (() => {
-        return props.type ? style[props.type] : style.skill;
+        return props.type ? style[props.type.type] : style.skill;
     })();
 
     const prohibitToggle = value?.isZero() != false &&

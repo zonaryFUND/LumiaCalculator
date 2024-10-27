@@ -17,7 +17,7 @@ type Props = {
         attack?: number
         basicAttackAmp?: number
     }
-    multipliers?: (number | {name: string, value: number})[]
+    multipliers?: [number, number | {label?: string, value: number}[]]
     summonedName?: string
 }
 
@@ -62,24 +62,16 @@ const basicAttackDamage: React.FC<Props> = props => {
         }
     }, [value, criticalChance, critical])
 
-    const calculatedMultiplier = React.useMemo(() => {
-        if (props.multipliers == undefined) return 100;
-        return props.multipliers.reduce((prev: number, multiplier) => {
-            if (typeof multiplier === "number") return prev * multiplier / 100;
-            return prev * multiplier.value / 100;
-        }, 100);
-    }, [props.multipliers]);
-
     return (
         <>
             <tr onClick={toggleExpand}>
                 <td colSpan={props.disableCritical ? 3 : undefined}>{props.name}</td>
-                <td className={style.basic}>{value.percent(calculatedMultiplier).toString()}</td>
+                <td className={style.basic}>{value.percent(props.multipliers?.[0] ?? 100).toString()}</td>
                 {
                     props.disableCritical ? null :
                     <>
-                        <td className={style.basic}>{showCritical ? critical.percent(calculatedMultiplier).toString() : "-"}</td>
-                        <td className={style.basic}>{expected.percent(calculatedMultiplier).toString()}</td>
+                        <td className={style.basic}>{showCritical ? critical.percent(props.multipliers?.[0] ?? 100).toString() : "-"}</td>
+                        <td className={style.basic}>{expected.percent(props.multipliers?.[0] ?? 100).toString()}</td>
                     </>
                 }
             </tr>
@@ -93,15 +85,18 @@ const basicAttackDamage: React.FC<Props> = props => {
                                 props.multipliers ?
                                 <td>
                                     {
-                                        props.multipliers.reduce((prev, multiplier) => {
-                                            if (typeof multiplier === "number") {
+                                        Array.isArray(props.multipliers[1]) ? 
+                                        props.multipliers[1].reduce((prev, multiplier) => {
+                                            if (typeof multiplier) {
                                                 return <>{prev} x {multiplier}%</>
                                             } else {
-                                                return <>{prev} x <span>{multiplier.name}</span>{multiplier.value}%</>
+                                                return <>{prev} x <span>{multiplier.label}</span>{multiplier.value}%</>
                                             }
                                         }, <>{value.toString()}</>)
+                                        :
+                                        <>{value.toString()} x {props.multipliers[1]}%</>
                                     }
-                                    <> = {value.percent(calculatedMultiplier).toString()}</>
+                                    <> = {value.percent(props.multipliers?.[0] ?? 100).toString()}</>
                                 </td> 
                                 :
                                 <td>
@@ -132,15 +127,18 @@ const basicAttackDamage: React.FC<Props> = props => {
                                     props.multipliers ?
                                     <td>
                                     {
-                                        props.multipliers.reduce((prev, multiplier) => {
-                                            if (typeof multiplier === "number") {
+                                        Array.isArray(props.multipliers[1]) ? 
+                                        props.multipliers[1].reduce((prev, multiplier) => {
+                                            if (typeof multiplier) {
                                                 return <>{prev} x {multiplier}%</>
                                             } else {
-                                                return <>{prev} x <span>{multiplier.name}</span>{multiplier.value}%</>
+                                                return <>{prev} x <span>{multiplier.label}</span>{multiplier.value}%</>
                                             }
                                         }, <>{critical.toString()}</>)
+                                        :
+                                        <>{critical.toString()} x {props.multipliers[1]}%</>
                                     }
-                                    <> = {critical.percent(calculatedMultiplier).toString()}</>
+                                    <> = {critical.percent(props.multipliers?.[0] ?? 100).toString()}</>
                                     </td>
                                     :
                                     <td><>

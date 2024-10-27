@@ -6,12 +6,12 @@ const table: DamageTableGenerator = props => {
         basicAttack: ["standard", "aiden"],
         skill: [
             [
-                {label: props.intl.formatMessage({id: "subject.aiden.standard-q"}), skill: "Q", value: Constants.Q.damage, type: "basic"},
-                {label: props.intl.formatMessage({id: "subject.aiden.hypercharge-q"}), skill: "Q", value: Constants.Q.range_damage, type: "basic"}
+                {label: props.intl.formatMessage({id: "subject.aiden.standard-q"}), skill: "Q", value: Constants.Q.damage, type: {type: "basic", critical: "none"}},
+                {label: props.intl.formatMessage({id: "subject.aiden.hypercharge-q"}), skill: "Q", value: Constants.Q.range_damage, type: {type: "basic", critical: "none"}}
             ],
             [
                 {label: props.intl.formatMessage({id: "subject.aiden.w-initial-min"}), skill: "W", value: Constants.W.damage},
-                {label: props.intl.formatMessage({id: "subject.aiden.w-initial-max"}), skill: "W", value: Constants.W.damage, multiplier: [{basic: Constants.W.max_multiplier * 100}]},
+                {label: props.intl.formatMessage({id: "subject.aiden.w-initial-max"}), skill: "W", value: Constants.W.damage, multiplier: Constants.W.max_multiplier * 100},
                 {label: props.intl.formatMessage({id: "subject.aiden.w-field"}), skill: "W", value: Constants.W.field_damage}
             ],
             [

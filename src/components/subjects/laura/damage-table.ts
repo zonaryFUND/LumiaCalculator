@@ -12,15 +12,15 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.laura.w-damage"}), skill: "W", value: Constants.W.damage},
-            {label: props.intl.formatMessage({id: "subject.laura.w-heal"}), skill: "W", value: Constants.W.heal, type: "heal"}
+            {label: props.intl.formatMessage({id: "subject.laura.w-heal"}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}}
         ],
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [
             {label: props.intl.formatMessage({id: "subject.laura.r-first"}), skill: "R", value: Constants.R.first_damage},
             {label: props.intl.formatMessage({id: "subject.laura.r-second"}), skill: "R", value: Constants.R.second_damage},
-            {label: props.intl.formatMessage({id: "subject.laura.r-shield"}), skill: "R", value: Constants.R.shield, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.laura.r-additional-shield-1"}), skill: "R", value: Constants.R.additional_shield, type: "shield"},
-            {label: props.intl.formatMessage({id: "subject.laura.r-additional-shield-2"}), skill: "R", value: Constants.R.additional_shield, type: "shield", multiplier: [{basic: 200}]}
+            {label: props.intl.formatMessage({id: "subject.laura.r-shield"}), skill: "R", value: Constants.R.shield, type: {type: "shield", target: "self"}},
+            {label: props.intl.formatMessage({id: "subject.laura.r-additional-shield-1"}), skill: "R", value: Constants.R.additional_shield, type: {type: "shield", target: "self"}},
+            {label: props.intl.formatMessage({id: "subject.laura.r-additional-shield-2"}), skill: "R", value: Constants.R.additional_shield, type: {type: "shield", target: "self"}, multiplier: 200}
         ]
     ]   
 })
