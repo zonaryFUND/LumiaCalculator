@@ -55,7 +55,7 @@ const index: React.FC = props => {
     } = useSubjectConfig({value: storageConfig, update: saveConfig});
 
     const status = useStatus(config);
-    const damageInFormula = useStorageBoolean(DetailedTooltipKey);
+    const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const weaponTypeID = React.useMemo(() => {
         if (!equipment.weapon) return undefined;
         return equipmentStatus(equipment.weapon).type;
@@ -142,7 +142,7 @@ const index: React.FC = props => {
                         <SubjectSkillTooltip
                             id={subject} 
                             skill={skill as any} 
-                            showEquation={damageInFormula[0]}
+                            showEquation={damageInFormula}
                             status={status} 
                             config={config} 
                         />
@@ -157,7 +157,7 @@ const index: React.FC = props => {
                     if (!content) return null;
                     return (
                         <WeaponSkillTooltip 
-                            showEquation={damageInFormula[0]}
+                            showEquation={damageInFormula}
                             status={status} 
                             config={config} 
                         />
@@ -173,7 +173,7 @@ const index: React.FC = props => {
 
                     const [item, onSlot] = content.split("%");
                     const props: SubjectSkillProps = {
-                        showEquation: damageInFormula[0] || onSlot == undefined,
+                        showEquation: damageInFormula || onSlot == undefined,
                         config,
                         status
                     };
@@ -216,7 +216,7 @@ const index: React.FC = props => {
                 className={preferenceStyle.preference}
                 overlayClassName={common["modal-overlay"]}
             >
-                <Preference damageInFormula={damageInFormula} />
+                <Preference damageInFormula={[damageInFormula, setDamageInFormula]} />
             </Modal>
         </main>
     )

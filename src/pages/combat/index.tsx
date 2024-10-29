@@ -34,8 +34,8 @@ const index: React.FC = props => {
     const left = useCombatConfig("left");
     const right = useCombatConfig("right");
 
-    const damageInFormula = useStorageBoolean(DetailedTooltipKey);
-    const makeMasteryAlign = useStorageBoolean(CombatMasterySyncKey);
+    const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
+    const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
 
     const { width } = useWindowSize();
     const parentRef = React.useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ const index: React.FC = props => {
     }, [width]);
 
     React.useEffect(() => {
-        if (!makeMasteryAlign[0]) return;
+        if (!makeMasteryAlign) return;
         right.setConfig({
             ...right.config,
             level: left.modifier.level[0],
@@ -130,7 +130,7 @@ const index: React.FC = props => {
                         <SubjectSkillTooltip
                             id={subject} 
                             skill={skill as any} 
-                            showEquation={damageInFormula[0]}
+                            showEquation={damageInFormula}
                             status={side == "left" ? left.status : right.status} 
                             config={side == "left" ? left.config : right.config} 
                         />
@@ -146,7 +146,7 @@ const index: React.FC = props => {
                     const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
                     return (
                         <WeaponSkillTooltip 
-                            showEquation={damageInFormula[0]}
+                            showEquation={damageInFormula}
                             status={side == "left" ? left.status : right.status} 
                             config={side == "left" ? left.config : right.config} 
                         />
@@ -164,7 +164,7 @@ const index: React.FC = props => {
                     const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
 
                     const props: SubjectSkillProps = {
-                        showEquation: damageInFormula[0] || onSlot == undefined,
+                        showEquation: damageInFormula || onSlot == undefined,
                         config: side == "left" ? left.config : right.config,
                         status: side == "left" ? left.status : right.status
                     };
@@ -210,8 +210,8 @@ const index: React.FC = props => {
                 overlayClassName={common["modal-overlay"]}
             >
                 <Preference 
-                    damageInFormula={damageInFormula} 
-                    makeMasteryAlign={makeMasteryAlign} 
+                    damageInFormula={[damageInFormula, setDamageInFormula]} 
+                    makeMasteryAlign={[makeMasteryAlign, setMakeMasteryAlign]} 
                 />
             </Modal>
         </main>

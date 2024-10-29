@@ -22,13 +22,16 @@ const subject: React.FC<Props> = props => {
     }, [props.constant, props.perLevel]);
     
     return (
-        <tr><td>{props.label ?? <FormattedMessage id="app.equipment" />}</td><td>
-            {constantOnly ? null : props.constant?.toString()}
-            {props.constant && props.perLevel ? <> + </> : null}
-            {props.perLevel ? <>{props.perLevel.times(props.level).toString()} <span className={style.multiply}>({props.perLevel.toString()} x <span className={table.small}>Lv</span>{props.level})</span></> : null}
-            {constantOnly ? null : <> = </>}
-            <>{value.toString()}{props.percent ? "%" : null}</>
-        </td></tr>
+        <tr>
+            <td>{props.label ?? <FormattedMessage id="app.equipment" />}</td>
+            <td>
+                {constantOnly ? null : props.constant?.toString()}
+                {props.constant && props.perLevel ? <> + </> : null}
+                {props.perLevel ? <>{props.perLevel.times(props.level).toString()} <span className={style.multiply}>({props.perLevel.toString()} x <span className={table.small}>Lv</span>{props.level})</span></> : null}
+                {constantOnly ? null : <> = </>}
+                <>{value.toString()}{props.percent ? "%" : null}</>
+            </td>
+        </tr>
     );
 };
 
