@@ -893,7 +893,7 @@
 		"type": "assault_rifle",
 		"tier": "legendary",
 		"attackPower": "75",
-		"attackSpeed": "40",
+		"attackSpeed": "30",
 		"ammo": "90",
 		"option": "vigor[\"dmg\":{\"targetHP\":3},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.1}]"
 	},
