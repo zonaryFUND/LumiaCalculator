@@ -21,6 +21,16 @@ type Props = {
     summonedName?: string
 }
 
+type Response = {
+    base: Decimal
+    critical: Decimal
+    expected: Decimal
+}
+
+function useBasicAttackDamage() {
+
+}
+
 const basicAttackDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);    
     const attackPower = React.useMemo(() => {
