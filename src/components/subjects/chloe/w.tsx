@@ -4,6 +4,7 @@ import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { NinaValue } from "./nina-ratio-strategy";
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
@@ -14,7 +15,7 @@ const w: React.FC<SubjectSkillProps> = props => (
         <span className={style.enhance}>再使用</span>：{Constants.W.duration}秒以内にスキルをもう一度使用でき、指定した位置に刃の刺繍を挿し込んで
         <Value skill="W" ratio={Constants.W.drop_damage} />のスキルダメージを与え、{Constants.W.drop_slow.duration}
         秒間敵の移動速度を{Constants.W.drop_slow.effect[props.skillLevel]}%減少させます。この時ニナは刃の刺繍の位置に瞬間移動して、刃の足を鋭く振り下ろして、
-        <Value skill="W" ratio={Constants.W.nina_damage} overrideExpression={{summonedAttack: {format: "ニナの攻撃力の{ratio}%"}}} />
+        <NinaValue {...props} {...Constants.W.nina_damage} />
         のスキルダメージを与え、敵を{Constants.W.airborne}秒間空中に浮かせます。ニナの攻撃以降、刃の刺繍はクロエの方に弾かれ、再び拾うと
         {Constants.W.movement_speed.duration}秒間クロエの移動速度が{Constants.W.movement_speed.effect}%増加します。
     </>

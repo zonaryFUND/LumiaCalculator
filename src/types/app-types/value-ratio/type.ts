@@ -20,13 +20,11 @@ const RATIO_KEYS = [
     "amp",
     "stack",
     "gauge",
-    "summonedAttack",
     "targetMaxHP",
     "targetHP",
-    "lostHP",
-    "max"
+    "lostHP"
 ] as const;
-type RatioKeys = typeof RATIO_KEYS[number];
+export type RatioKeys = typeof RATIO_KEYS[number];
 
 export type ValueRatio = Partial<{[key in RatioKeys]: ValueElement}>
 

@@ -5,6 +5,7 @@ import { ValueElement, ValueRatio } from "app-types/value-ratio";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 import style from "./tooltip.module.styl";
 import ValueExpression from "./value-expression";
+import Decimal from "decimal.js";
 
 type OverrideKey = keyof ValueRatio | "result"
 

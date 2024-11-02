@@ -33,9 +33,6 @@ function equation(value: ValueRatio, status: Status, level: number, skillLevel: 
             if (key == "criticalChance") {
                 return [<>({prev})</>];
             }
-            if (key == "max") {
-                return [<>({prev}, </>];
-            }
             if (prev.length > 0 && key != "basicAttackAmp") {
                 return prev.concat(<> + </>);
             }
@@ -63,14 +60,10 @@ function equation(value: ValueRatio, status: Status, level: number, skillLevel: 
                 return p.concat(<> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}% + 1)</>);
             case "criticalChance":
                 return p.concat(<> x (<span className={table.small}>致命打確率</span>{status.criticalChance.toString()}% x {levelValue(value, skillLevel)})</>)
-            case "summonedAttack":
-                return p.concat(<><span className={table.small}>{summonedName}攻撃力</span>{status.summonedStatus?.attackPower.toString()} x {levelValue(value, skillLevel)}%</>);
             case "stack":
                 return p.concat(<><span className={table.small}>スタック</span>{stack} x {levelValue(value, skillLevel)}</>);
             case "additionalAttackSpeed":
                 return p.concat(<><span className={table.small}>追加攻撃速度(%)</span>{status.attackSpeed.additional?.toString()} x {levelValue(value, skillLevel)}%</>);
-            case "max":
-                return p.concat(<>最大値{levelValue(value, skillLevel)})</>);
         }
         return prev;
     }, [] as React.ReactElement[]);
@@ -86,9 +79,31 @@ const skillDamage: React.FC<Props> = props => {
         return intl.formatMessage({id: module.nameKey});
     }, [props.config.subject]);
 
-    if (!isValueRatio(props.value)) return null;
+    const valueClass = (() => {
+        return props.type ? style[props.type.type] : style.skill;
+    })();
 
     const level = extractskillLevel(props, props.config);
+
+    if (typeof props.value === "function") {
+        const { value, equationExpression} = props.value(props.config, props.status);
+        return (
+            <>
+                <tr onClick={toggleExpand}>
+                    <td>{props.label}</td>
+                    <td colSpan={3} className={valueClass}>{value.toString()}</td>
+                </tr>
+                <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
+                    <InnerTable>
+                        <tr><td>{equationExpression}</td></tr>
+                    </InnerTable>
+                </td></tr>
+            </>
+        )
+    }
+
+    if (!isValueRatio(props.value)) return null;
+
     const {static: staticValue, dynamic, dynamicValueOnly} = (() => {
         if (isValueRatio(props.value)) {
             const source: Source = (() => {
@@ -153,7 +168,7 @@ const skillDamage: React.FC<Props> = props => {
 
         return Object.entries(dynamic).reduce((prev, [key, value], index) => {
             const bracket = index > 0 || !dynamicValueOnly;
-            const ratio = props.value[key as keyof ValueRatio];
+            const ratio = (props.value as ValueRatio)[key as keyof ValueRatio];
             const [dynamicEquation, multipliedValue] = (() => {
                 const isCalculated = typeof ratio === "object" && !Array.isArray(ratio);
                 if (!isCalculated && !props.multiplier) return [null, value];
@@ -226,9 +241,7 @@ const skillDamage: React.FC<Props> = props => {
         }, [<></>, [] as React.ReactNode[]]);
     })();
 
-    const valueClass = (() => {
-        return props.type ? style[props.type.type] : style.skill;
-    })();
+
 
     const prohibitToggle = value?.isZero() != false &&
         (expandDescriptionsDynamic ?? []).length == 0

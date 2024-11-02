@@ -1,13 +1,6 @@
-import { SkillLevels } from "app-types/subject-dynamic/config";
-import { DamageTable, DamageTableGenerator } from "../damage-table";
+import { DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
-import { projectileAmount } from "./marlenew";
-
-const marlW = {
-    base: Constants.MarleneW.projectiles.base,
-    additionalAttackSpeed: Constants.MarleneW.max_projectile,
-    max: Constants.MarleneW.projectiles.base.map(v => v + Constants.MarleneW.max_projectile)
-}
+import { MarleneWStrategy, projectileAmount } from "./marlenew";
 
 const table: DamageTableGenerator = props => {
     const wBullet = projectileAmount(props.status) + Constants.MarleneW.projectiles.base[props.skillLevels.W]; 
@@ -25,7 +18,7 @@ const table: DamageTableGenerator = props => {
             ],
             [{label: props.intl.formatMessage({id: "subject.debimarlene.marleneq"}), skill: "Q", value: Constants.MarleneQ.damage}],
             [
-                {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-bullets"}), skill: "W", value: marlW, type: {type: "misc"}},
+                {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-bullets"}), skill: "W", value: MarleneWStrategy, type: {type: "misc"}},
                 {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-damage"}), skill: "W", value: Constants.MarleneW.damage},
                 {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-damage-max-hit"}, {value: wBullet}), skill: "W", value: Constants.MarleneW.damage, multiplier: wBullet * 100}
             ],

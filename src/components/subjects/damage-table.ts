@@ -31,10 +31,16 @@ export type SkillEffectType = {
 
 }
 
+export type UniqueValueStrategy = (config: SubjectConfig, status: Status) => {
+    value: Decimal
+    equationExpression: React.ReactElement
+}
+
 export type SkillValueProps = {
     label: string
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | {tacticalLevel: number} | "other"
-    value: ValueRatio
+    value: ValueRatio | UniqueValueStrategy
+
     //type?: "heal" | "shield" | "ms" | "true" | "count" | "basic" | "basic-nocrit" | "critical" | "summoned" | "ratio" | "kenneth-heal" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     //type?: "kenneth-heal" // "critical" in basicattack means confirmed critical, and that in skill means it is able to critical basic attack damage
     type?: BasicAttackType | TrueDamageType | SupportType | MiscValueType   // undefined means standard skill damage

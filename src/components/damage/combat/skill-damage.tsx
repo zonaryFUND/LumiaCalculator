@@ -28,7 +28,11 @@ const skillDamage: React.FC<Props> = props => {
     const {static: staticPotency, dynamic: dynamicPotency, dynamicValueOnly} = (() => {
         const source = (props.skill == "other" || (props.skill as any).tacticalLevel != undefined) ? "other" : {skill: props.skill, level} as Source;
         const multiplier = extractMultiplier(level, props.multiplier)?.[0];
-        return calculateValue(props.value, props.status, props.config, source, multiplier);
+        if (typeof props.value == "function") {
+            return {static: props.value(props.config, props.status).value, dynamic: 0, dynamicValueOnly: false};
+        } else {
+            return calculateValue(props.value, props.status, props.config, source, multiplier);
+        }
     })();
 
     const selfTarget = props.type?.type == "heal" || props.type?.type == "shield" && props.type.target == "self";

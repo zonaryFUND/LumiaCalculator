@@ -52,8 +52,6 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
                     return prev.static.add(status.skillAmp.calculatedValue.percent(selectedValue));
                 case "stack":
                     return prev.static.add(config.stack);
-                case "summonedAttack":
-                    return prev.static.add(status.summonedStatus?.attackPower.percent(selectedValue) ?? 0);
                 case "max":
                     return prev.static.clamp(0, selectedValue);
                 default:

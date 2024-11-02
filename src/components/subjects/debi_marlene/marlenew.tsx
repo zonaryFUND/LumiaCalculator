@@ -8,12 +8,25 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import { CooldownOverride } from "../skills";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
+import { UniqueValueStrategy } from "../damage-table";
+import table from "components/common/table.styl";
 
 export function projectileAmount(status: Status): number {
     // NOTE: This multiplier is an estimated value.
     // The number of extra projectiles from additional attack speed peaks when it reaches 100%. 
     // Unlike other calculations in-game, this projectile count calculation truncates any decimal places.
     return status.attackPower.additional?.clamp(0, 100).times(0.07).floor().toNumber() ?? 0;
+}
+
+export const MarleneWStrategy: UniqueValueStrategy = (config, status) => {
+    const base = Constants.MarleneW.projectiles.base[config.skillLevels.W];
+    const add = projectileAmount(status);
+    return {
+        value: new Decimal(base + add),
+        equationExpression: <>
+            {base} + min(100, <span className={table.small}>追加攻撃速度(%)</span>{status.attackSpeed.additional?.toString()}) x 0.07 = {base + add}
+        </>
+    }
 }
 
 const Projectile: React.FC<SubjectSkillProps> = props => {
