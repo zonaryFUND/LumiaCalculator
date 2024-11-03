@@ -5,6 +5,7 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectDamageTableUnit } from "components/subjects/damage-table";
 import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
+import HealPower from "../subrows/heal-power";
 
 import InnerTable from "components/common/inner-table";
 import RatioKey from "../subrows/ratio-key";
@@ -12,6 +13,7 @@ import RatioKey from "../subrows/ratio-key";
 import style from "../../../damage-table.module.styl";
 import table from "components/common/table.styl";
 import { FormattedMessage } from "react-intl";
+import Decimal from "decimal.js";
 
 type Props = Omit<SubjectDamageTableUnit, "value"> & {
     strategy: UniqueValueStrategy
@@ -41,19 +43,23 @@ const uniqueExpression: React.FC<Props> = props => {
         </tr>
     });
 
+    const healPower = props.type?.type == "heal" && props.status.healPower.calculatedValue.greaterThan(0) ? props.status.healPower.calculatedValue : undefined;
+    const healPowerConcerned = Array.isArray(value) ? value : value.addPercent(healPower ?? 0);
+
     return (
         <>
             <tr onClick={toggleExpand}>
                 <td>{props.label}</td>
                 {
-                    Array.isArray(value) ?
-                    value.map(v => <td className={valueClass}>{v?.floor().toString() ?? "-"}</td>) :
-                    <td colSpan={3} className={valueClass}>{value.floor().toString()}</td>
+                    Array.isArray(healPowerConcerned) ?
+                    healPowerConcerned.map(v => <td className={valueClass}>{v?.floor().toString() ?? "-"}</td>) :
+                    <td colSpan={3} className={valueClass}>{healPowerConcerned.floor().toString()}</td>
                 }
             </tr>
             <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
                 <InnerTable>
                     {equations}
+                    {healPower ? <HealPower baseValue={value as Decimal} healPower={healPower} /> : null}
                 </InnerTable>
             </td></tr>
         </>

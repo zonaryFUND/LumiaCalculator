@@ -4,7 +4,7 @@ import style from "../damage-table.module.styl";
 import { BasicAttackElement, SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
 import StandardDamage from "./subtables/rows/standard-damage";
 import UniqueExpression from "./subtables/rows/unique-expression";
-import BasicAttackDamage from "./basic-attack-damage";
+import Skill from "./subtables/skill";
 import table from "components/common/table.styl";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
 import { Status } from "app-types/subject-dynamic/status/type";
@@ -106,52 +106,11 @@ const damageTable: React.FC<Props> = props => {
                         }
                     </BasicAttack>
                     */}
-                    <tbody>
-                        <tr className={table.separator}><td>実験体スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
-                        {
-                            definition?.skill.map((array, index) => 
-                                <React.Fragment key={index}>
-                                {
-                                    index == 0 || array.filter(s => s.damageDependentHeal == undefined).length == 0 ? null :
-                                    <tr className={table.border}><td colSpan={4}></td></tr>
-                                }
-                                {
-                                    array.map(s => {
-                                        const skillLevel = props.config.skillLevels[s.skill];
-
-                                        if (s.type?.type == "basic" && s.type.critical != "none") {
-                                            /*
-                                            const level = extractskillLevel(s, props.config);
-                                            const sanitizedDict = Object.fromEntries(
-                                                Object.entries(s.value).map(([key, value]) => {
-                                                    return [key, Array.isArray(value) ? value[level] : value]
-                                                })
-                                            );
-                                            const multiplier = extractMultiplier(level, s.multiplier);
-                                            return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multipliers={multiplier} />;
-                                            */
-                                           return null
-                                        }
-
-                                        if (s.damageDependentHeal != undefined) return null;
-                                        if (typeof s.value == "function") {
-                                            return <UniqueExpression key={s.label} status={props.status} config={props.config} {...s} strategy={s.value} />;  
-                                        } else {
-                                            return <StandardDamage 
-                                                key={s.label} 
-                                                skillLevel={skillLevel}
-                                                status={props.status} 
-                                                config={props.config} 
-                                                {...s} 
-                                                value={s.value} 
-                                            />
-                                        }
-                                    })
-                                }
-                                </React.Fragment>
-                            )
-                    }
-                    </tbody>
+                    <Skill 
+                        tables={definition.skill}
+                        config={props.config}
+                        status={props.status}
+                    />
                     <tbody>
                         <tr className={table.separator}><td>武器スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {/*

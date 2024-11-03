@@ -13,6 +13,7 @@ type Props = {
     status: Status
     ratio: ValueRatio
     calculated: React.ReactElement
+    percent?: boolean
 }
 
 type EquationBuildConfigDefinition = {
@@ -117,7 +118,7 @@ const staticValueEquation: React.FC<Props> = props => {
 
     return <tr>
         {props.label ? <td>{props.label}</td> : null}
-        <td colSpan={props.label ? undefined : 2}>{equation} = {props.calculated}</td>
+        <td colSpan={props.label ? undefined : 2}>{equation} = {props.calculated}{props.percent ? "%" : null}</td>
     </tr>;
 }
 

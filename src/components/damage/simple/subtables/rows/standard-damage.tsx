@@ -85,7 +85,7 @@ const standardDamage: React.FC<Props> = props => {
                 } else {
                     const targetRatio = props.value[key as RatioKeys];
                     const showEquation = typeof targetRatio == "object" && !Array.isArray(targetRatio);
-                    const showConstant = !dynamicValueOnly || healPower;
+                    const showConstant = !showEquation && (!dynamicValueOnly || healPower);
                     return {
                         value: <FormattedMessage id={valueIntlID} values={{ratio: dynamicValueHealConcerned.toString()}} />,
                         subrows: [
@@ -97,10 +97,11 @@ const standardDamage: React.FC<Props> = props => {
                                 status={props.status}
                                 ratio={targetRatio as ValueRatio}
                                 calculated={<>{value.toString()}</>}
+                                percent={true}
                             /> : 
                             undefined,
                             showConstant ? <tr><td><FormattedMessage id={labelIntlID} /></td><td>{value.toString()}%</td></tr> : undefined,
-                            healPower ? <HealPower baseValue={value} healPower={healPower} /> : undefined
+                            healPower ? <HealPower baseValue={value} healPower={healPower} percent={true} /> : undefined
                         ]
                         .filter((item): item is React.ReactElement => item != undefined)
                     }

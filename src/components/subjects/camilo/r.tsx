@@ -4,6 +4,28 @@ import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { UniqueValueStrategy } from "../unique-value-strategy";
+import Decimal from "decimal.js";
+
+export function CamiloRHealStrategy(val: "min" | "max"): UniqueValueStrategy {
+    return (config, status) => {
+        const base = Constants.R.heal.base[config.skillLevels.R];
+        const multiplier = Constants.R.heal.perHit[config.skillLevels.R] * (val == "min" ? 1 : Constants.R.heal.maxHit);
+        const value = new Decimal(base).addPercent(multiplier);
+
+        return {
+            value,
+            equationExpression: [
+                {
+                    expression: [
+                        {intlID: "app.standard-value"},
+                        `${base} x (1 + ${multiplier}%) = ${value}`
+                    ]
+                }
+            ]
+        }
+    }
+}
 
 const r: React.FC<SubjectSkillProps> = props => (
     <>
