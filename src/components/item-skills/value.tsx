@@ -3,7 +3,7 @@ import { equipmentStatus } from "app-types/equipment";
 import BaseValue from "components/tooltip/value";
 import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
 import { useValueContextOptional } from "components/tooltip/value-context";
-import { ValueRatio, isValueRatio } from "app-types/value-ratio";
+import { RatioKeys, ValueRatio, isValueRatio } from "app-types/value-ratio";
 
 type Props = {
     ratio: ValueRatio | {
@@ -14,7 +14,7 @@ type Props = {
         base: string
         range: string
     }
-    overrideExpression?: Partial<{[K in keyof ValueRatio | "result"]: {format?: string, className?: string}}>
+    overrideExpression?: Partial<{[K in RatioKeys | "result"]: {format?: string, className?: string}}>
 }
 
 const Value: React.FC<Props> = props => {

@@ -2,11 +2,11 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { Source } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio/calculation";
-import { SkillValueProps } from "components/subjects/damage-table";
+import { SubjectDamageTableUnit } from "components/subjects/damage-table";
 import * as React from "react";
 import style from "../damage-table.module.styl";
 import table from "components/common/table.styl";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { useToggle } from "react-use";
 import { useCombatHPContext } from "./combat-hp-context";
 import { useMitigation } from "./mitigation-context";
@@ -14,14 +14,15 @@ import mitigatedDamage from "./mitigated-damage";
 import InnerTable from "components/common/inner-table";
 import Decimal from "decimal.js";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
-import { extractMultiplier, extractskillLevel } from "../damage-table-util";
+//import { extractMultiplier, extractskillLevel } from "../damage-table-util";
 
-type Props = SkillValueProps & {
+type Props = SubjectDamageTableUnit & {
     config: SubjectConfig
     status: Status
     selfTarget?: boolean
 }
 
+/*
 const skillDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
     const level = extractskillLevel(props, props.config);
@@ -149,3 +150,4 @@ const skillDamage: React.FC<Props> = props => {
 }
 
 export default skillDamage;
+*/

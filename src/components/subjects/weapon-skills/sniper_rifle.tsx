@@ -32,7 +32,7 @@ const camera: React.FC<SubjectSkillProps> = props => {
 export default camera;
 
 export const values: ValuesPropsGenerator = props => {
-    const damage = calculateValue(Constants.sniper_rifle.dead_to_rights.damage, props.status, props.config, {skill: "D", level: weaponSkillLevel(props.config.weaponMastery)});
+    const damage = calculateValue(Constants.sniper_rifle.dead_to_rights.damage, props.status, props.config, weaponSkillLevel(props.config.weaponMastery));
 
     return {
        additionalInfo: <>

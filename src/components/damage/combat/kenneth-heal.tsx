@@ -18,7 +18,7 @@ type Props = {
 
 const kennethHeal: React.FC<Props> = props => {
     const { targetMaxHP } = useCombatHPContext();
-    const { dynamic } = calculateValue(Constants.T.damage, props.status, props.config, {skill: "T", level: props.config.skillLevels.T});
+    const { dynamic } = calculateValue(Constants.T.damage, props.status, props.config, props.config.skillLevels.T);
     const basePotency = targetMaxHP.percent(dynamic?.targetMaxHP ?? 0);
     
     const mitigation = useMitigation();
@@ -27,7 +27,7 @@ const kennethHeal: React.FC<Props> = props => {
         return mitigatedDamage(skillDamage, mitigation, "skill", false)[0].add(trueDamage);
     })();
 
-    const { static: healRatio } = calculateValue(Constants.T.heal, props.status, props.config, {skill: "T", level: props.config.skillLevels.T});
+    const { static: healRatio } = calculateValue(Constants.T.heal, props.status, props.config, props.config.skillLevels.T);
     const finalValue = damageValue.percent(healRatio);
     const maxHPRatio = finalValue.dividedBy(props.status.maxHP.calculatedValue).times(100).floor2();
 

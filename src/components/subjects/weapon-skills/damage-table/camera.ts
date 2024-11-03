@@ -1,4 +1,4 @@
-import { SkillValueProps, WeaponSkillTableGenerator } from "../../damage-table";
+import { SubjectDamageTableUnit, WeaponSkillTableGenerator } from "../../damage-table";
 import Constants from "../constants.json";
 
 const facing = {

@@ -8,8 +8,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import { CooldownOverride } from "../skills";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
-import { UniqueValueStrategy } from "../damage-table";
-import table from "components/common/table.styl";
+import { UniqueValueStrategy } from "../unique-value-strategy";
 
 export function projectileAmount(status: Status): number {
     // NOTE: This multiplier is an estimated value.
@@ -21,11 +20,18 @@ export function projectileAmount(status: Status): number {
 export const MarleneWStrategy: UniqueValueStrategy = (config, status) => {
     const base = Constants.MarleneW.projectiles.base[config.skillLevels.W];
     const add = projectileAmount(status);
+    const value = new Decimal(base + add);
     return {
-        value: new Decimal(base + add),
-        equationExpression: <>
-            {base} + min(100, <span className={table.small}>追加攻撃速度(%)</span>{status.attackSpeed.additional?.toString()}) x 0.07 = {base + add}
-        </>
+        value,
+        equationExpression: [
+            {
+                expression: [
+                    `${base} + min(100, `,
+                    { ratioKey: "additionalAttackSpeed" },
+                    `${status.attackSpeed.additional?.toString()}) x 0.07 = ${value}`
+                ]
+            }
+        ]
     }
 }
 

@@ -15,5 +15,6 @@
     "subject.rio.hankyu-r1-max-hit": "短弓R1全ヒット({value})",
     "subject.rio.hankyu-r2": "短弓R2",
     "subject.rio.daikyu-r": "和弓R",
-    "subject.rio.daikyu-r-enhanced": "和弓R強化"
+    "subject.rio.daikyu-r-enhanced": "和弓R強化",
+    "subject.rio.passive-penetration": "T致命打率変換"
 }

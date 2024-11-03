@@ -1,14 +1,16 @@
-import { WeaponTypeID } from "app-types/equipment/weapon";
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
+import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
 
 const table: DamageTableGenerator = props => {
+    const weaponType = extractWeaponTypeID(props.config);
+
     return {
         basicAttack: [
             "standard",
-            props.weaponType == "dual_swords" ? {label: props.intl.formatMessage({id: "subject.cathy.q-dualsword-attack"}), skill: "Q", value: {attack: Constants.Q.dual_sword}, type: {type: "basic"}} : undefined,
+            weaponType == "dual_swords" ? {label: props.intl.formatMessage({id: "subject.cathy.q-dualsword-attack"}), skill: "Q", value: {attack: Constants.Q.dual_sword}, type: {type: "basic"}} : undefined,
             {label: props.intl.formatMessage({id: "subject.cathy.q-additional-damage"}), skill: "Q", value: Constants.Q.additional_damage}
-        ].filter(v => v) as SkillValueProps[],
+        ].filter(v => v) as SubjectDamageTableUnit[],
         skill: [
             [{label: "Q", skill: "Q", value: Constants.Q.damage}],
             [

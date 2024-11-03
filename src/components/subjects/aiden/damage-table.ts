@@ -1,9 +1,13 @@
 import { DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
+import { AidenTStrategy } from "./t";
 
 const table: DamageTableGenerator = props => {
     return {
-        basicAttack: ["standard", "aiden"],
+        basicAttack: [
+            "standard", 
+            {label: props.intl.formatMessage({id: "subject.aiden.hypercharge-aa"}), skill: "T", value: AidenTStrategy, type: {type: "basic", critical: "confirmed"}}
+        ],
         skill: [
             [
                 {label: props.intl.formatMessage({id: "subject.aiden.standard-q"}), skill: "Q", value: Constants.Q.damage, type: {type: "basic", critical: "none"}},

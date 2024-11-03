@@ -1,4 +1,4 @@
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => ({

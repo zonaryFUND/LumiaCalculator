@@ -1,10 +1,10 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import { UniqueValueStrategy } from "../damage-table";
 import table from "components/common/table.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
 import style from "components/tooltip/tooltip.module.styl";
+import { UniqueValueStrategy } from "../unique-value-strategy";
 
 type Ratio = {
     base: number | number[]
@@ -20,9 +20,15 @@ export function NinaRatioStrategy(skill: "Q" | "W" | "E" | "R" | "T", ratio: Rat
 
         return {
             value,
-            equationExpression: <>
-                {base} + <span className={table.small}>ニナ攻撃力</span>{status.summonedStatus?.attackPower.toString()} x {ninaAttack}% = {value.toString()}
-            </>
+            equationExpression: [
+                {
+                    expression: [
+                        `${base} + `,
+                        { intlID: "subject.chloe.nina-attack" },
+                        `${status.summonedStatus?.attackPower.toString()} x ${ninaAttack}% = ${value}`
+                    ]
+                }
+            ]
         }
     }
 }

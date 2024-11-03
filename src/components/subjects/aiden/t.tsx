@@ -3,6 +3,37 @@ import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { UniqueValueStrategy } from "../unique-value-strategy";
+import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
+
+export const AidenTStrategy: UniqueValueStrategy = (config, status) => {
+    const regularDamage = status.attackPower.calculatedValue.addPercent(status.basicAttackAmp.calculatedValue)
+    const chanceConversionRatio = Constants.T.critical_chance_convert[config.skillLevels.T];
+    const multiplier = BaseCriticalDamagePercent
+        .add(100)
+        .minus(Constants.T.critical_damage)
+        .add(status.criticalChance.calculatedValue.mul(chanceConversionRatio));
+    const value = regularDamage.percent(multiplier);
+
+    return {
+        value: value,
+        equationExpression: [
+            {
+                expression: [
+                    {intlID: "基礎値"},
+                    `${regularDamage} x `,
+                    "(1 + ",
+                    {intlID: "T致命打基本値"},
+                    `${BaseCriticalDamagePercent.sub(Constants.T.critical_damage).toString()}% + `,
+                    {intlID: "T致命打率変換"},
+                    `${status.criticalChance.calculatedValue.toString()} x ${chanceConversionRatio}% + `,
+                    {ratioKey: "criticalDamage"},
+                    `${status.criticalDamage.calculatedValue.toString()}%) = ${value.toString()}`
+                ]
+            }
+        ]
+    }
+} 
 
 const t: React.FC<SubjectSkillProps> = props => (
     <>

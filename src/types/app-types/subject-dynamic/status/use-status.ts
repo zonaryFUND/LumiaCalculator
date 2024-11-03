@@ -110,6 +110,7 @@ export function useStatus(config: SubjectConfig): Status {
     const criticalChanceEquipment = sumEquipmentStatus("criticalChance", equipments);
 
     const adaptive = sumEquipmentStatus("adaptiveStatus", equipments);
+    const armorPenetrationRatio = sumEquipmentStatus("armorPenetrationRatio", equipments);
 
     const baseValue: StatusBeforeCalculation = {
         maxHP: {
@@ -201,7 +202,12 @@ export function useStatus(config: SubjectConfig): Status {
             calculatedValue: (sumEquipmentStatus("cooldownReduction", equipments) ?? new Decimal(0)).clamp(0, BaseCooldownCap.add(cdrCap))
         },
         armorPenetration: {},
-        armorPenetrationRatio: {},
+        armorPenetrationRatio: {
+            equipment: {
+                constant: armorPenetrationRatio ?? new Decimal(0)
+            },
+            calculatedValue: armorPenetrationRatio ?? new Decimal(0),
+        },
         lifeSteal: {},
         omnisyphon: {},
         healPower: {},
@@ -253,9 +259,7 @@ export function useStatus(config: SubjectConfig): Status {
         armorPenetration: {
             calculatedValue: sumEquipmentStatus("armorPenetration", equipments) ?? new Decimal(0)
         },
-        armorPenetrationRatio: {
-            calculatedValue: sumEquipmentStatus("armorPenetrationRatio", equipments) ?? new Decimal(0)
-        },
+        armorPenetrationRatio: standardCalc(overriddenValue.armorPenetrationRatio, {}, 0),
         lifeSteal: {
             calculatedValue: sumEquipmentStatus("lifeSteal", equipments) ?? new Decimal(0)
         },

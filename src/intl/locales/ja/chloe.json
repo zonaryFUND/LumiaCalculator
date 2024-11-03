@@ -6,5 +6,6 @@
     "subject.chloe.w-nina": "Wニナ落下ダメージ",
     "subject.chloe.r-min": "Rライン最小固定ダメージ/秒",
     "subject.chloe.r-max": "Rライン最大固定ダメージ/秒",
-    "subject.chloe.passive-nina": "Tニナ突き追加ダメージ"
+    "subject.chloe.passive-nina": "Tニナ突き追加ダメージ",
+    "subject.chloe.nina-attack": "ニナ攻撃力"
 }

@@ -1,6 +1,6 @@
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
-import { Source, ValueRatio } from "./type";
+import { ValueRatio } from "./type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 type Response = { 
@@ -9,16 +9,19 @@ type Response = {
     dynamicValueOnly: boolean
 }
 
-export function calculateValue(ratio: ValueRatio, status: Status, config: SubjectConfig, source: Source, multiplier?: number): Response {
+export function calculateValue(ratio: ValueRatio, status: Status, config: SubjectConfig, skillLevel?: number): Response {
     const values = Object.keys(ratio).reduce((prev: Response, key) => {
         const value = ratio[key as keyof ValueRatio];
         if (value == undefined) return prev;
 
         const selectedValue: Decimal = (() => {
-            if (Array.isArray(value) && source != "other") {
-                return new Decimal(value[source.level]);
+            if (Array.isArray(value)) {
+                if (skillLevel == undefined) {
+                    throw new Error("level-dependent value ratio is calculated without its level")
+                }
+                return new Decimal(value[skillLevel]);
             } else if (typeof value == "object") {
-                return calculateValue(value as ValueRatio, status, config, source).static;
+                return calculateValue(value as ValueRatio, status, config, skillLevel).static;
             } else {
                 return new Decimal(value);
             }
@@ -62,9 +65,8 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
         const dynamicValue = (() => {
             const dynamicValueKeys = ["targetHP", "targetMaxHP", "lostHP", "targetLostHP", "gauge"];
             if (dynamicValueKeys.includes(key)) {
-                return {...prev.dynamic, [key]: selectedValue.percent(multiplier ?? 100)};
+                return {...prev.dynamic, [key]: selectedValue};
             }
-            return prev.dynamic;
         })();
 
         return { 
@@ -74,5 +76,5 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
         };
     }, {static: new Decimal(0), dynamic: undefined, dynamicValueOnly: true});
 
-    return {...values, static: multiplier ? values.static.percent(multiplier) : values.static}
+    return values
 }

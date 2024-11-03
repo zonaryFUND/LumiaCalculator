@@ -1,12 +1,13 @@
 import * as React from "react";
 import style from "./tooltip.module.styl";
 import { FormattedMessage } from "react-intl";
-import { ValueElement, ValueRatio } from "app-types/value-ratio";
+import { RatioKeys, ValueElement, ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 import { useValueContext, useValueContextOptional } from "./value-context";
+import attackSpeed from "components/status/chunks/attack-speed";
 
 type Props = {
-    id: keyof ValueRatio
+    id: RatioKeys
     level?: number
     ratio: ValueElement
     criticalMultiplier?: Decimal
@@ -34,7 +35,8 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
     targetHP: {key: "app.value.target-hp", className: style.maxhp},
     lostHP: {key: "app.value.lost-hp", className: style.losthp},
     targetLostHP: {key: "app.value.target-lost-hp", className: style.losthp},
-    summonedAttack: {key: "app.value.summoned-attack", className: style.attack}
+    summonedAttack: {key: "app.value.summoned-attack", className: style.attack},
+    attackSpeed: {key: "app.value.attack-speed", className: style.attackspeed}
 }
 
 const ValueExpression: React.FC<Props> = props => {
@@ -54,7 +56,7 @@ const ValueExpression: React.FC<Props> = props => {
         )
     })();
 
-    const className = typeof props.override === "object" ? props.override.className : def.className;
+    const className = typeof props.override === "object" ? props.override.className : def?.className;
     const format = typeof props.override === "object" ? props.override.format : undefined
     const overrideNode = typeof props.override === "function" ? props.override(value) : null;
     
@@ -76,7 +78,7 @@ const ValueExpression: React.FC<Props> = props => {
                         }
                     }) ??
                 overrideNode ??
-                <FormattedMessage id={def.key} values={{ratio: value}} />    
+                <FormattedMessage id={def?.key} values={{ratio: value}} />    
             }
             {props.brackets ? ")" : null}
         </span>

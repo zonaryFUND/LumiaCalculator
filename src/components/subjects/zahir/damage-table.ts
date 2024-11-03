@@ -1,4 +1,4 @@
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const rChaseMax = Constants.R.total_count - 1;

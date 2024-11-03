@@ -8,7 +8,7 @@ import { calculateValue } from "app-types/value-ratio/calculation";
 const Value: React.FC<ItemSkillProps> = props => {
     const { config, status, showEquation } = useValueContextOptional();
     if (status && config && showEquation != true) {
-        const value = calculateValue({amp: props.values.dmg.targetMaxHP.amp}, status, config, "other").dynamic?.targetMaxHP;
+        const value = calculateValue({amp: props.values.dmg.targetMaxHP.amp}, status, config).dynamic?.targetMaxHP;
         return (
             <span className={style.maxhp}>
                 対象の最大体力の{props.values.dmg.targetMaxHP.base}<span className={style.amp}>(+{value?.toString()})</span>%

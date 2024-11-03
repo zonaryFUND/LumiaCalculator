@@ -1,34 +1,35 @@
-import { DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
 
 // The ratio of attack of echion's R depends on the level of T, but this application assumes that its always 3.
 const table: DamageTableGenerator = props => {
     const sidewinder = {
-        name: props.intl.formatMessage({id: "subject.echion.sidewinder-amp"}),
-        value: Constants.R1.skill_damage_add[props.skillLevels.R] + 100
+        label: props.intl.formatMessage({id: "subject.echion.sidewinder-amp"}),
+        value: Constants.R1.skill_damage_add[props.config.skillLevels.R] + 100
     };
 
+    const weapon = props.config.equipment.weapon;
     const multiplier = [
         {
-            name: props.intl.formatMessage({id: "subject.echion.gauge-amp"}),
-            value: new Decimal(Constants.R.damage_amp_per_vf[props.skillLevels.R]).times(props.gauge ?? 0).add(100).toNumber()
+            label: props.intl.formatMessage({id: "subject.echion.gauge-amp"}),
+            value: new Decimal(Constants.R.damage_amp_per_vf[props.config.skillLevels.R]).times(props.config.gauge ?? 0).add(100).toNumber()
         }
-    ].concat(props.weapon?.includes("sidewinder") ? [sidewinder] : [])
+    ].concat(weapon?.includes("sidewinder") ? [sidewinder] : [])
 
-    const r: SkillValueProps[] = (() => {
-        if (props.weapon?.includes("sidewinder")) {
+    const r: SubjectDamageTableUnit[] = (() => {
+        if (weapon?.includes("sidewinder")) {
             return [
                 {label: `${props.intl.formatMessage({id: "subject.echion.r"})}(${props.intl.formatMessage({id: "app.standard-value"})})`, skill: "R" as any, value: Constants.R1.damage},
                 {label: `${props.intl.formatMessage({id: "subject.echion.r"})}(${props.intl.formatMessage({id: "subject.echion.amp-calculated"})})`, skill: "R" as any, value: Constants.R1.damage, multiplier: [sidewinder]}
             ];
         }
-        if (props.weapon?.includes("black_mamba")) {
+        if (weapon?.includes("black_mamba")) {
             return [
                 {label: props.intl.formatMessage({id: "subject.echion.r"}), skill: "R" as any, value: Constants.R2.damage},
                 {label: props.intl.formatMessage({id: "subject.echion.r-2hit"}), skill: "R" as any, value: Constants.R2.damage, multiplier: 200}
             ];
-        } else if (props.weapon?.includes("deathadder")) {
+        } else if (weapon?.includes("deathadder")) {
             return [{label: props.intl.formatMessage({id: "subject.echion.r"}), skill: "R" as any, value: Constants.R3.damage}];
         };
 
@@ -36,7 +37,7 @@ const table: DamageTableGenerator = props => {
     })();
 
     return {
-        basicAttack: props.weapon?.includes("deathadder") ? [
+        basicAttack: weapon?.includes("deathadder") ? [
             "standard",
             {label: props.intl.formatMessage({id: "subject.echion.deathadder-aa-additional"}), skill: "T", value: Constants.T3_2.damage, type: {type: "basic"}}
         ] : ["standard"],

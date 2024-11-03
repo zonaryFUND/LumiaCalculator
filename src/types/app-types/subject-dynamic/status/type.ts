@@ -61,7 +61,7 @@ export type Status = {
         cap: Decimal
     } & CalculatedStatusValue
     armorPenetration: CalculatedStatusValue
-    armorPenetrationRatio: CalculatedStatusValue
+    armorPenetrationRatio: StatusValue & CalculatedStatusValue
     omnisyphon: CalculatedStatusValue
     lifeSteal: CalculatedStatusValue
     healPower: CalculatedStatusValue

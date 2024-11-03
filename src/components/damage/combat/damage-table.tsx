@@ -2,7 +2,7 @@ import * as React from "react";
 import BasicAttack from "./basic-attack";
 import style from "../damage-table.module.styl";
 import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
-import SkillDamage from "./skill-damage";
+//import SkillDamage from "./skill-damage";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
@@ -18,7 +18,7 @@ import KennethHeal from "./kenneth-heal";
 import RioConstants from "components/subjects/rio/constants.json";
 import SegmentedControl from "components/common/segmented-control";
 import { CombatHPContext } from "./combat-hp-context";
-import { extractMultiplier, extractskillLevel } from "../damage-table-util";
+import { extractMultiplier } from "../damage-table-util";
 
 type Props = {
     hideHeader?: boolean
@@ -35,6 +35,7 @@ type Props = {
 }
 
 const damageTable: React.FC<Props> = props => {
+    /*
     const ltr = React.useState<string | undefined>("ltr");
     const [attacker, defender] = ltr[0] == "ltr" ? [props.left, props.right] : [props.right, props.left]
     const weaponTypeID = React.useMemo(() => {
@@ -187,7 +188,6 @@ const damageTable: React.FC<Props> = props => {
                                             )
                                         } 
 
-                                        /*
                                         if (s.type == "kenneth-heal") {
                                             return (
                                                 <>
@@ -196,7 +196,6 @@ const damageTable: React.FC<Props> = props => {
                                                 </>
                                             )
                                         }
-                                            */
 
                                         return <SkillDamage 
                                             key={s.label} 
@@ -263,6 +262,9 @@ const damageTable: React.FC<Props> = props => {
         </MitigationContext.Provider>
         </CombatHPContext.Provider>
     );
+    */
+
+    return null;
 };
 
 export default damageTable;

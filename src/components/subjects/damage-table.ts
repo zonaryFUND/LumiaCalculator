@@ -3,40 +3,18 @@ import { WeaponID } from "app-types/equipment/weapon/id"
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config"
 import { Status } from "app-types/subject-dynamic/status/type"
 import { ValueRatio } from "app-types/value-ratio"
-import Decimal from "decimal.js"
 import { IntlShape } from "react-intl"
+import { UniqueValueStrategy } from "./unique-value-strategy"
+import { DamageTableUnit } from "app-types/damage-table/unit"
 
-type BasicAttackType = {
-    type: "basic",
-    critical?: "none" | "confirmed" // if it is undefined, calculate critical hit as same as standard auto-attack
-    fromSummoned?: boolean
+export type SubjectDamageTableUnit = Omit<DamageTableUnit, "value"> & {
+    value: ValueRatio | UniqueValueStrategy
+    
+    skill: "Q" | "W" | "E" | "R" | "T"
 }
 
-type TrueDamageType = {
-    type: "true"
-}
-
-type SupportType = {
-    type: "heal" | "shield"
-    target: "self" | "any" | "ally"
-}
-
-type MiscValueType = {
-    type: "misc"
-    percentExpression?: boolean
-}
-
-export type SkillEffectType = {
-    type: "basic",
-
-}
-
-export type UniqueValueStrategy = (config: SubjectConfig, status: Status) => {
-    value: Decimal
-    equationExpression: React.ReactElement
-}
-
-export type SkillValueProps = {
+/*
+export type SubjectDamageTableUnit = {
     label: string
     skill: "Q" | "W" | "E" | "R" | "T" | "D" | {tacticalLevel: number} | "other"
     value: ValueRatio | UniqueValueStrategy
@@ -50,15 +28,19 @@ export type SkillValueProps = {
         value: number | number[]
     })[]
 }
+    */
 
-export type DamageTableGenerator = (props: {status: Status, skillLevels: SkillLevels, weaponType?: WeaponTypeID, weapon?: WeaponID, gauge?: number, intl: IntlShape}) => DamageTable;
+export type DamageTableGenerator = (props: {config: SubjectConfig, status: Status, intl: IntlShape}) => DamageTable;
+
+export type BasicAttackElement = SubjectDamageTableUnit | "standard" | "disable-critical"
 
 export type DamageTable = {
-    basicAttack: (SkillValueProps | "standard" | "disable-critical" | "aiden" | "rio")[]
-    skill: SkillValueProps[][]
+    basicAttack: BasicAttackElement[]
+    skill: SubjectDamageTableUnit[][]
 }
 
-export type WeaponSkillTableGenerator = (props: {intl: IntlShape}) => SkillValueProps[];
+
+export type WeaponSkillTableGenerator = (props: {intl: IntlShape}) => DamageTableUnit[];
 
 const context = require.context("./", true, /\.\/.*\/damage-table\.ts$/);
 export const SubjectDamageTable = context.keys().reduce((skills: any, path) => {
@@ -73,4 +55,4 @@ export const WeaponSkillDamageTable = weaponSkillContext.keys().reduce((skills: 
     const name = pathComponents[pathComponents.length - 1];
     skills[name.substring(0, name.length - 3)] = weaponSkillContext(path).default;
     return skills;
-}, {}) as {[id: string]: SkillValueProps[] | WeaponSkillTableGenerator}
+}, {}) as {[id: string]: DamageTableUnit[] | WeaponSkillTableGenerator}

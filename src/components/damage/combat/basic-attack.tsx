@@ -3,7 +3,7 @@ import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { DamageTable } from "components/subjects/damage-table";
 import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "app-types/subject-dynamic/status/standard-values";
-import SkillDamage from "./skill-damage";
+//import SkillDamage from "./skill-damage";
 import { styles } from "@app/util/style";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
@@ -16,7 +16,7 @@ import { Source } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 import { hyperChargeMultiplier } from "../simple/aiden-hypercharge";
 import { DaikyuMultiplier, HankyuMultiplier, criticalAddition } from "../simple/rio";
-import { extractMultiplier, extractskillLevel } from "../damage-table-util";
+import { extractMultiplier } from "../damage-table-util";
 
 
 type Props = {
@@ -52,6 +52,7 @@ const basicAttack: React.FC<Props> = props => {
             {
                 props.table.basicAttack.map(def => {
                     if (typeof def === "string") {
+                        /*
                         if (def == "rio") {
                             const base = props.status.attackPower.calculatedValue;
                             const crit = criticalAddition(props.status);
@@ -80,18 +81,7 @@ const basicAttack: React.FC<Props> = props => {
                                     />
                                 </>
                             );
-                        }
-                        if (def == "aiden") {
-                            const base = props.status.attackPower.calculatedValue.addPercent(props.status.basicAttackAmp.calculatedValue);
-                            const multiplier = hyperChargeMultiplier(props.config, props.status)
-                            return <BasicAttackDamage 
-                                key="aiden" 
-                                name={<FormattedMessage id="subject.aiden.hypercharge-aa" />}
-                                status={props.status}
-                                potency={base.addPercent(multiplier)}
-                                disableCritical={true}
-                            />;
-                        }
+                        }*/
 
                         const [baseRatio, label] = (() => {
                             switch (props.weaponType) {
@@ -114,7 +104,7 @@ const basicAttack: React.FC<Props> = props => {
                                 />
                             </>
                         )
-                    } else if (def.type?.type == "basic") {
+                    }/* else if (def.type?.type == "basic") {
                         const level = extractskillLevel(def, props.config);
                         const sanitizedDict = Object.fromEntries(
                             Object.entries(def.value).map(([key, value]) => {
@@ -135,6 +125,7 @@ const basicAttack: React.FC<Props> = props => {
                     } else {
                         return <SkillDamage {...def as any} status={props.status} config={props.config} />
                     }
+                        */
                 })
             }
             {props.children}

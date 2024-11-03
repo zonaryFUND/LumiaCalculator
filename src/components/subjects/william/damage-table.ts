@@ -2,7 +2,7 @@ import { DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => {
-    const qt = Constants.Q.damage.attack[props.skillLevels.Q] + Constants.T.damage.attack[props.skillLevels.T] - 100;
+    const qt = Constants.Q.damage.attack[props.config.skillLevels.Q] + Constants.T.damage.attack[props.config.skillLevels.T] - 100;
 
     return {
         basicAttack: [

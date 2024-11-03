@@ -42,7 +42,7 @@ export const values: ValuesPropsGenerator = props => {
                 Constants.T.damage, 
                 props.status,
                 {...props.config, skillLevels: {...props.config.skillLevels, T: level}},
-                {skill: "T", level}
+                level
             ).static.floor().toString())}
         ]
     }

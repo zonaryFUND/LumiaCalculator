@@ -1,8 +1,10 @@
-import { WeaponTypeID } from "app-types/equipment/weapon";
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
+import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
 
 const table: DamageTableGenerator = props => {
+    const weaponType = extractWeaponTypeID(props.config);
+
     return {
         basicAttack: [
             "standard",
@@ -17,7 +19,7 @@ const table: DamageTableGenerator = props => {
             ([
                 {label: props.intl.formatMessage({id: "subject.jackie.w-min"}), skill: "W", value: Constants.W.heal, type: "heal", target: "self"},
                 {label: props.intl.formatMessage({id: "subject.jackie.w-max"}), skill: "W", value: Constants.W.heal, multiplier: Constants.W.heal_max_multiplier * 100, type: {type: "heal", target: "self"}}
-            ] as SkillValueProps[]).concat(props.weaponType == "dual_swords" ? [
+            ] as SubjectDamageTableUnit[]).concat(weaponType == "dual_swords" ? [
                 {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-min"}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}, multiplier: Constants.R.dualsword_w_heal_multiplier * 100},
                 {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-max"}), skill: "W", value: Constants.W.heal, multiplier: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100, type: {type: "heal", target: "self"}}
             ] : [])

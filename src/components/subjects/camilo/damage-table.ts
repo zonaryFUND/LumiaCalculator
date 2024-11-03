@@ -1,4 +1,4 @@
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => ({
@@ -22,9 +22,9 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.camilo.r-1hit"}), skill: "R" as any, value: Constants.R.one_hit_damage},
-            {label: props.intl.formatMessage({id: "subject.camilo.r-2hit"}), skill: "R" as any, value: Constants.R.two_hit_damage} as SkillValueProps
+            {label: props.intl.formatMessage({id: "subject.camilo.r-2hit"}), skill: "R" as any, value: Constants.R.two_hit_damage} as SubjectDamageTableUnit
         ].concat([...Array(Constants.R.heal.maxHit)].map((_, i) => 
-            ({label: props.intl.formatMessage({id: "subject.camilo.r-heal"}, {value: i + 1}), skill: "R", value: Constants.R.heal, type: {type: "heal", target: "self"}, multiplier: Constants.R.heal.perHit.map(v => v * (i + 1) + 100)} as SkillValueProps)
+            ({label: props.intl.formatMessage({id: "subject.camilo.r-heal"}, {value: i + 1}), skill: "R", value: Constants.R.heal, type: {type: "heal", target: "self"}, multiplier: Constants.R.heal.perHit.map(v => v * (i + 1) + 100)} as SubjectDamageTableUnit)
         )),
         [{label: props.intl.formatMessage({id: "subject.camilo.passive-shield"}), skill: "T", value: Constants.T.shield, type: {type: "shield", target: "self"}}]
     ]

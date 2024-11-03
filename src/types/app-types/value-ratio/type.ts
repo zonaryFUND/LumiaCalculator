@@ -16,6 +16,7 @@ const RATIO_KEYS = [
     "additionalAttack",
     "basicAttackAmp",
     "criticalChance",
+    "criticalDamage",
     "additionalAttackSpeed",
     "amp",
     "stack",

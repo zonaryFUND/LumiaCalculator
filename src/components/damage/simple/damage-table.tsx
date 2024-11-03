@@ -1,8 +1,9 @@
 import * as React from "react";
-import BasicAttack from "components/damage/simple/basic-attack";
+import BasicAttack from "./subtables/basic-attack";
 import style from "../damage-table.module.styl";
-import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
-import SkillDamage from "./skill-damage";
+import { BasicAttackElement, SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
+import StandardDamage from "./subtables/rows/standard-damage";
+import UniqueExpression from "./subtables/rows/unique-expression";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
@@ -15,7 +16,7 @@ import { name as abilityName } from "app-types/equipment/ability";
 import { name as equipmentName } from "app-types/equipment";
 import { augmentTableValues } from "components/augment/table-value";
 import TacticalSkill from "components/tactical-skill/damage-table";
-import { extractMultiplier, extractskillLevel } from "../damage-table-util";
+import { extractMultiplier } from "../damage-table-util";
 
 type Props = {
     status: Status
@@ -32,11 +33,8 @@ const damageTable: React.FC<Props> = props => {
             return raw;
         } else {
             return raw({
+                config: props.config,
                 status: props.status, 
-                skillLevels: props.config.skillLevels, 
-                weaponType: props.weaponType, 
-                weapon: props.config.equipment.weapon ?? undefined,
-                gauge: props.config.gauge,
                 intl
             });
         }
@@ -94,25 +92,35 @@ const damageTable: React.FC<Props> = props => {
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
                 <table>
-                    <BasicAttack status={props.status} config={props.config} table={definition!} weaponType={props.weaponType}>
+                    <BasicAttack 
+                        elements={definition.basicAttack}
+                        status={props.status} 
+                        config={props.config}
+                        weaponType={props.weaponType}
+                    />
+                     {/*</table>       
                         {
                             itemSkillDamage?.filter(def => def.type == "basic").map(def => {
                                 return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="other" multiplier={def.multiplier} />
                             })
                         }
                     </BasicAttack>
+                    */}
                     <tbody>
                         <tr className={table.separator}><td>実験体スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {
                             definition?.skill.map((array, index) => 
                                 <React.Fragment key={index}>
                                 {
-                                    index == 0 || array.filter(s => s.damageDependent == undefined).length == 0 ? null :
+                                    index == 0 || array.filter(s => s.damageDependentHeal == undefined).length == 0 ? null :
                                     <tr className={table.border}><td colSpan={4}></td></tr>
                                 }
                                 {
                                     array.map(s => {
+                                        const skillLevel = props.config.skillLevels[s.skill];
+
                                         if (s.type?.type == "basic" && s.type.critical != "none") {
+                                            /*
                                             const level = extractskillLevel(s, props.config);
                                             const sanitizedDict = Object.fromEntries(
                                                 Object.entries(s.value).map(([key, value]) => {
@@ -121,10 +129,23 @@ const damageTable: React.FC<Props> = props => {
                                             );
                                             const multiplier = extractMultiplier(level, s.multiplier);
                                             return <BasicAttackDamage name={s.label} status={props.status} config={sanitizedDict} multipliers={multiplier} />;
+                                            */
+                                           return null
                                         }
 
-                                        if (s.damageDependent != undefined) return null;                                        
-                                        return <SkillDamage key={s.label} status={props.status} config={props.config} {...s} />
+                                        if (s.damageDependentHeal != undefined) return null;
+                                        if (typeof s.value == "function") {
+                                            return <UniqueExpression key={s.label} status={props.status} config={props.config} {...s} strategy={s.value} />;  
+                                        } else {
+                                            return <StandardDamage 
+                                                key={s.label} 
+                                                skillLevel={skillLevel}
+                                                status={props.status} 
+                                                config={props.config} 
+                                                {...s} 
+                                                value={s.value} 
+                                            />
+                                        }
                                     })
                                 }
                                 </React.Fragment>
@@ -133,11 +154,13 @@ const damageTable: React.FC<Props> = props => {
                     </tbody>
                     <tbody>
                         <tr className={table.separator}><td>武器スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
-                        {
+                        {/*
                             weaponSkill?.map(def => (
-                                <SkillDamage key={def.label} status={props.status} config={props.config} {...def} />
+                                typeof def.value == "function" ?
+                                null :
+                                <SkillDamage key={def.label} status={props.status} config={props.config} {...def} value={def.value} />
                             ))
-                        }
+                        */}
                     </tbody>
                     <tbody>
                         <tr className={table.separator}><td>アイテムスキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
@@ -159,7 +182,7 @@ const damageTable: React.FC<Props> = props => {
                                     }
                                 })();
                                 
-                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="other" type={type as any} multiplier={def.multiplier} />
+                                return <StandardDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} type={type as any} multiplier={def.multiplier} />
                             })
                         }
                     </tbody>
@@ -167,13 +190,12 @@ const damageTable: React.FC<Props> = props => {
                         <tr className={table.separator}><td>特性</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {
                             augmentTableValues({intl}).map(def => {
-                                return <SkillDamage
+                                return <StandardDamage
                                     key={def.label}
                                     label={def.label}
                                     status={props.status}
                                     config={props.config}
                                     value={def.ratio}
-                                    skill="other"
                                 />
                             })
                         }
@@ -188,16 +210,18 @@ const damageTable: React.FC<Props> = props => {
                                     }
                                     {
                                         array.map(def => {
-                                            return <SkillDamage 
+                                            /*
+                                            return <StandardDamage 
                                                 key={def.label} 
                                                 label={def.label} 
                                                 status={props.status} 
                                                 config={props.config} 
                                                 value={(def.value as any)[range] || def.value} 
-                                                skill={{tacticalLevel: def.level - 1}} 
                                                 type={def.type} 
                                                 multiplier={def.multiplier} 
                                             />
+                                            */
+                                           return null;
                                         })
                                     }
                                 </React.Fragment>

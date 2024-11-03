@@ -1,10 +1,12 @@
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
+import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => {
     const rMax = Constants.R.later_damage.amount;
+    const weaponType = extractWeaponTypeID(props.config);
 
-    function common(weaponDependent: SkillValueProps[][]): DamageTable {
+    function common(weaponDependent: SubjectDamageTableUnit[][]): DamageTable {
         return {
             basicAttack: ["standard"],
             skill: [
@@ -21,7 +23,7 @@ const table: DamageTableGenerator = props => {
         }
     }
 
-    if (props.weaponType == "pistol" || props.weaponType == "shuriken") {
+    if (weaponType == "pistol" || weaponType == "shuriken") {
         // ranged
         return common([
             [{label: props.intl.formatMessage({id: "subject.alex.rangeq"}), skill: "Q", value: Constants.RangeQ.damage}],

@@ -3,7 +3,7 @@ import Constants from "./constants.json";
 import { MarleneWStrategy, projectileAmount } from "./marlenew";
 
 const table: DamageTableGenerator = props => {
-    const wBullet = projectileAmount(props.status) + Constants.MarleneW.projectiles.base[props.skillLevels.W]; 
+    const wBullet = projectileAmount(props.status) + Constants.MarleneW.projectiles.base[props.config.skillLevels.W]; 
 
     return {
         basicAttack: [

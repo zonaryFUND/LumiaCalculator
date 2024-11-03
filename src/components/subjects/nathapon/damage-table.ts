@@ -1,10 +1,10 @@
-import { SkillLevels } from "app-types/subject-dynamic/config";
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
+import { NathaponeTStrategy } from "./t";
 
 const table: DamageTableGenerator = props => {
-    const tLevel = props.skillLevels.T;
-    function array(raw: SkillValueProps): SkillValueProps[] {
+    const tLevel = props.config.skillLevels.T;
+    function array(raw: SubjectDamageTableUnit): SubjectDamageTableUnit[] {
         const max = Constants.T.max_stack;
         return [...Array(max + 1)].map((_, i) => {
             if (i == 0) return raw;
@@ -15,7 +15,7 @@ const table: DamageTableGenerator = props => {
     return {    
         basicAttack: [
             "disable-critical" as any,
-            {label: props.intl.formatMessage({id: "subject.nathapon.passive-additional"}), skill: "T", value: Constants.T.damage}
+            {label: props.intl.formatMessage({id: "subject.nathapon.passive-additional"}), skill: "T", value: NathaponeTStrategy}
         ].concat(array({label: props.intl.formatMessage({id: "subject.nathapon.e-pull"}), skill: "E", value: Constants.E.second_damage})),
         skill: [
             array({label: "Q", skill: "Q", value: Constants.Q.damage}),

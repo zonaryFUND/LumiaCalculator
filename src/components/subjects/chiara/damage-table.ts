@@ -1,4 +1,4 @@
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
 
 const qMax = {
@@ -28,9 +28,9 @@ const table: DamageTableGenerator = props => ({
         ([
             {label: props.intl.formatMessage({id: "subject.chiara.r-dot"}), skill: "R", value: Constants.R.damage},
             {label: props.intl.formatMessage({id: "subject.chiara.r-hot"}), skill: "R", value: Constants.R.heal, type: "heal", target: "self"}
-        ] as SkillValueProps[])
+        ] as SubjectDamageTableUnit[])
         .concat([...Array(Constants.T.max_stack + 1)].map((_, i) => (
-            {label: props.intl.formatMessage({id: "subject.chiara.r-execute"}, {value: i}), skill: "R", value: Constants.R.finish_damage, type: {type: "true"}, multiplier: i == 0 ? undefined : (100 + i * Constants.R.additional_damage_per_stack)} as SkillValueProps)
+            {label: props.intl.formatMessage({id: "subject.chiara.r-execute"}, {value: i}), skill: "R", value: Constants.R.finish_damage, type: {type: "true"}, multiplier: i == 0 ? undefined : (100 + i * Constants.R.additional_damage_per_stack)} as SubjectDamageTableUnit)
         ))
     ]
 })

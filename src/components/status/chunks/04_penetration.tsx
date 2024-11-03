@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useToggle } from "react-use";
 import Column from "./column";
+import Equipment from "./expand/equipment";
+import InnerTable from "components/common/inner-table";
 import { ShieldSlash, CaretDown, CaretUp } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";
@@ -27,6 +29,22 @@ const penetration: React.FC<Props> = props => {
             <Column 
                 name={<><ShieldSlash /><FormattedMessage id="status.armor-penetration-ratio" /></>} 
                 value={props.status.armorPenetrationRatio.calculatedValue} 
+                expand={
+                    props.status.armorPenetrationRatio.overrideAdditional ?
+                    <InnerTable>
+                        <Equipment 
+                            constant={props.status.armorPenetrationRatio.equipment?.constant}
+                            percent
+                            level={props.level}
+                        />
+                        <tr>
+                            <td><FormattedMessage id={props.status.armorPenetrationRatio.overrideAdditional.nameKey} /></td>
+                            <td>{props.status.armorPenetrationRatio.overrideAdditional.value?.toString()}%</td>
+                        </tr>
+                    </InnerTable> 
+                    :
+                    null
+                }
                 percent 
                 isHidden={hidden} 
             />

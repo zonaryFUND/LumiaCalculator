@@ -1,8 +1,8 @@
-import { SkillValueProps } from "../../damage-table";
+import { DamageTableUnit } from "app-types/damage-table/unit";
 import Constants from "../constants.json";
 
-const table: SkillValueProps[] = [
-    {label: "D", skill: "D", value: Constants.bat.damage}
+const table: DamageTableUnit[] = [
+    {label: "D", value: Constants.bat.damage}
 ]
 
 export default table;

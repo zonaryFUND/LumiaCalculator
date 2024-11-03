@@ -1,4 +1,4 @@
-import { DamageTable, DamageTableGenerator, SkillValueProps } from "../damage-table";
+import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
 
 const eMax = Constants.E.glass_additional_max / Constants.E.glass_additional_damage + 1
