@@ -41,9 +41,11 @@ const standardDamage: React.FC<Props> = props => {
                 [<MultiplyEquation key="multiply" baseValue={staticBaseValueHealConcerned} multiplier={multiplier} percent={percent} />]
             ]
         } else {
+            const baseOnly = Object.keys(props.value).length == 1 && "base" in props.value;
             return [
                 staticBaseValueHealConcerned,
                 [
+                    baseOnly ? undefined :
                     <StaticValueEquation
                         key="equation"
                         label={dynamicBaseValue != undefined ? <FormattedMessage id="app.static-value" /> : undefined}
