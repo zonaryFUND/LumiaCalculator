@@ -29,7 +29,7 @@ const standardDamage: React.FC<Props> = props => {
     const multiplier = extractMultiplier(props.skillLevel, props.multiplier);    
     const healPower = (props.type?.type == "heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
             props.status.healPower.calculatedValue : null;
-    const percent = React.useMemo(() => props.type?.type == "misc" && props.type.percentExpression, [props.type]);
+    const percent = React.useMemo(() => props.type && ("percentExpression" in props.type) && props.type.percentExpression, [props.type]);
 
     const [staticFinalValue, staticSubRows] = (() => {
         if (dynamicValueOnly) return [null, [] as React.ReactElement[]]

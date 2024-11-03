@@ -9,10 +9,12 @@ const table: DamageTableGenerator = props => ({
     skill: [
         [
             {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: props.intl.formatMessage({id: "subject.kenneth.q-max-stack"}), skill: "Q", value: Constants.Q.damage, multiplier: 100 + Constants.Q.max_stack_damage}
+            {label: props.intl.formatMessage({id: "subject.kenneth.q-max-stack"}), skill: "Q", value: Constants.Q.damage, multiplier: 100 + Constants.Q.max_stack_damage},
+            {label: props.intl.formatMessage({id: "subject.kenneth.q-heal-min"}), skill: "Q", value: {lostHP: Constants.Q.max_stack_heal}, type: {type: "heal", target: "self"}},
+            {label: props.intl.formatMessage({id: "subject.kenneth.q-heal-max"}), skill: "Q", value: {lostHP: Constants.Q.max_stack_heal_max}, type: {type: "heal", target: "self"}}
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.kenneth.w-damage-reduction"}), skill: "W", value: Constants.W.damage_reduction, type: {type: "misc"}},
+            {label: props.intl.formatMessage({id: "subject.kenneth.w-damage-reduction"}), skill: "W", value: Constants.W.damage_reduction, type: {type: "misc", percentExpression: true}},
             {label: props.intl.formatMessage({id: "subject.kenneth.w-shield"}), skill: "W", value: Constants.W.shield, type: {type: "shield", target: "self"}}
         ],
         [
@@ -24,7 +26,7 @@ const table: DamageTableGenerator = props => ({
         [
             {label: props.intl.formatMessage({id: "subject.kenneth.passive-additional"}), skill: "T", value: Constants.T.damage},
             {label: props.intl.formatMessage({id: "subject.kenneth.et-conversion"}), skill: "T", value: Constants.T.damage, multiplier: Constants.E.damage_conversion, type: {type: "true"}},
-            {label: props.intl.formatMessage({id: "subject.kenneth.t-heal"}), skill: "T", value: Constants.T.heal, type: {type: "heal", target: "self"}}
+            {label: props.intl.formatMessage({id: "subject.kenneth.t-heal"}), skill: "T", value: Constants.T.heal, type: {type: "heal", target: "self", percentExpression: true}}
         ]
     ]
 })

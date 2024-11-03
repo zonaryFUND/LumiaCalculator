@@ -1,6 +1,8 @@
 {
     "subject.kenneth.e-additional": "E後追加ダメージ",
     "subject.kenneth.q-max-stack": "Q(T最大スタック時)",
+    "subject.kenneth.q-heal-min": "Q(T最大スタック時)最小回復量",
+    "subject.kenneth.q-heal-max": "Q(T最大スタック時)最大回復量",
     "subject.kenneth.w-damage-reduction": "W被ダメージ減少量",
     "subject.kenneth.w-shield": "Wシールド",
     "subject.kenneth.r-swing-up": "R振り上げ",

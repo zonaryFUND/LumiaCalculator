@@ -14,6 +14,7 @@ export type TrueDamageType = {
 export type SupportType = {
     type: "heal" | "shield"
     target: "self" | "any" | "ally"
+    percentExpression?: boolean
 }
 
 export type MiscValueType = {
