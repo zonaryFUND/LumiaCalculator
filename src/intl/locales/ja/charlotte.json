@@ -1,4 +1,6 @@
 {
     "subject.charlotte.w-heal": "W回復",
-    "subject.charlotte.e-shield": "Eシールド"
+    "subject.charlotte.e-shield": "Eシールド",
+    "subject.charlotte.r-amp": "R増幅増加",
+    "subject.charlotte.t-stack": "(T{value}スタック)"
 }
