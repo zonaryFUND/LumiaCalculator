@@ -29,7 +29,7 @@ const standardDamage: React.FC<Props> = props => {
     const multiplier = extractMultiplier(props.skillLevel, props.multiplier);    
     const healPower = (props.type?.type == "heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
             props.status.healPower.calculatedValue : null;
-    const percent = React.useMemo(() => (props.type?.type == "misc" && props.type?.percentExpression) || false, [props.type]);
+    const percent = React.useMemo(() => props.type?.type == "misc" && props.type.percentExpression, [props.type]);
 
     const [staticFinalValue, staticSubRows] = (() => {
         if (dynamicValueOnly) return [null, [] as React.ReactElement[]]
@@ -129,7 +129,7 @@ const standardDamage: React.FC<Props> = props => {
         <>
             <tr onClick={staticSubRows.length + dynamicSubRows.length > 0 ? toggleExpand : undefined}>
                 <td>{props.label}</td>
-                <td colSpan={3} className={valueClass}>{staticFinalValue?.floor().toString()}{dynamicFinalValue}{percent}</td>
+                <td colSpan={3} className={valueClass}>{staticFinalValue?.floor().toString()}{dynamicFinalValue}{percent ? "%" : null}</td>
             </tr>
             {
                 staticSubRows.length + dynamicSubRows.length > 0 ?
