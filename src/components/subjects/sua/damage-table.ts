@@ -5,7 +5,9 @@ const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
         {label: props.intl.formatMessage({id: "subject.sua.passive-additional"}), skill: "T", value: Constants.T.damage},
-        {label: props.intl.formatMessage({id: "subject.sua.passive-additional-aoe"}), skill: "T", value: Constants.T.aoe_damage}
+        {label: props.intl.formatMessage({id: "subject.sua.passive-heal"}), skill: "T", value: Constants.T.damage, damageDependentHeal: Constants.T.heal},
+        {label: props.intl.formatMessage({id: "subject.sua.passive-additional-aoe"}), skill: "T", value: Constants.T.aoe_damage},
+        {label: props.intl.formatMessage({id: "subject.sua.passive-heal-aoe"}), skill: "T", value: Constants.T.aoe_damage, damageDependentHeal: Constants.T.heal}
     ],
     skill: [
         [

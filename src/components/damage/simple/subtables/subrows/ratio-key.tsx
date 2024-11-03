@@ -34,6 +34,8 @@ const ratioKey: React.FC<Props> = props => {
             return "スタック";
         case "additionalAttackSpeed":
             return "追加攻撃速度(%)"
+        case "gauge":
+            return "ゲージ";
     }
 }
 

@@ -36,6 +36,15 @@ const config: React.FC<ConfigModifierProps> = props => {
         return SubjectStackInfo[props.subject[0]];
     }, [props.subject[0]]);
 
+    const gaugeTitle = React.useMemo(() => {
+        switch (props.subject[0]) {
+            case "echion":
+                return "暴走ゲージ";
+            case "li_dailin":
+                return "酔いゲージ";
+        }
+    }, [props.subject[0]]);
+
     return (
         <>
             <div className={style.config}>
@@ -55,15 +64,18 @@ const config: React.FC<ConfigModifierProps> = props => {
                         <Selection max={20} label="移動" value={props.movementMastery} layout="config" />
                     </div>
                     {
-                        props.subject[0] == "echion" ?
+                        gaugeTitle ?
                         <div>
                             <div>
-                                <h3>暴走ゲージ</h3>
+                                <h3>{gaugeTitle}</h3>
                                 <p>{props.gauge[0]}</p>
                             </div>
                             <input type="range" value={props.gauge[0]} max="100" onChange={onChangeGauge} />
                         </div>
                         :null
+                    }
+                    {
+
                     }
                     {
                         stackInfo ? 

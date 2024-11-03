@@ -80,6 +80,10 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
         extract: config.stack,
         omitPercent: true
     },
+    gauge: {
+        label: "ゲージ",
+        extract: config.gauge
+    },
     additionalAttackSpeed: {
         label: "追加攻撃速度(%)",
         extract: status.attackSpeed.additional ?? 0

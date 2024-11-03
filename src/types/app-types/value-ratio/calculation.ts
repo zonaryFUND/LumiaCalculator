@@ -55,8 +55,8 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
                     return prev.static.add(status.skillAmp.calculatedValue.percent(selectedValue));
                 case "stack":
                     return prev.static.add(config.stack);
-                case "max":
-                    return prev.static.clamp(0, selectedValue);
+                case "gauge":
+                    return prev.static.add(new Decimal(config.gauge).percent(selectedValue));
                 default:
                     return undefined;
             }
@@ -65,7 +65,7 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
 
 
         const dynamicValue = (() => {
-            const dynamicValueKeys = ["targetHP", "targetMaxHP", "lostHP", "targetLostHP", "gauge"];
+            const dynamicValueKeys = ["targetHP", "targetMaxHP", "lostHP", "targetLostHP"];
             if (dynamicValueKeys.includes(key)) {
                 return {...(prev.dynamic ?? {}), [key]: selectedValue};
             }

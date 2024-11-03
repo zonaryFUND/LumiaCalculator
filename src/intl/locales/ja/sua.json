@@ -1,6 +1,8 @@
 {
     "subject.sua.passive-additional": "T追加ダメージ(対象)",
+    "subject.sua.passive-heal": "T追加ダメージ比例回復(対象)",
     "subject.sua.passive-additional-aoe": "T追加ダメージ(周囲)",
+    "subject.sua.passive-heal-aoe": "T追加ダメージ比例回復(周囲)",
     "subject.sua.q-bookmark": "Q(栞あり)",
     "subject.sua.w-shield": "Wシールド",
     "subject.sua.w-damage": "Wダメージ",
