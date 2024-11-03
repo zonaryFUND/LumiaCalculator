@@ -7,5 +7,6 @@
     "subject.barbara.rw-dot": "RW持続ダメージ",
     "subject.barbara.re-hit": "REヒット",
     "subject.barbara.re-dot-1tick": "RE持続ダメージ1ティック",
-    "subject.barbara.re-dot-all": "RE持続ダメージ全ヒット({value})"
+    "subject.barbara.re-dot-all": "RE持続ダメージ全ヒット({value})",
+    "subject.barbara.t-additional": "T追加ダメージ"
 }

@@ -104,6 +104,7 @@ const basicAttack: React.FC<Props> = props => {
                                 value={def.value}
                                 config={props.config}
                                 status={props.status}
+                                multiplier={def.multiplier}
                             />
                         } else {
                             return <StandardDamage 

@@ -4,7 +4,10 @@ import Constants from "./constants.json";
 const reMax = Constants.R.E.area_duration / Constants.R.E.dot_tick;
 
 const table: DamageTableGenerator = props => ({
-    basicAttack: ["standard"],
+    basicAttack: [
+        "standard",
+        {label: props.intl.formatMessage({id: "subject.barbara.t-additional"}), skill: "T", value: Constants.T.damage}
+    ],
     skill: [
         [
             {label: props.intl.formatMessage({id: "subject.barbara.q-sentry-aa"}), skill: "Q", value: Constants.Q.damage},

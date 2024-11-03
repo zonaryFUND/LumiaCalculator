@@ -42,6 +42,7 @@ const criticalAvailable: React.FC<Props> = props => {
     const expectedValue = regularDamage.percent(new Decimal(100).sub(criticalChance))
         .add(criticalDamage.percent(criticalChance));
     const multiplier = extractMultiplier(props.skillLevel, props.multiplier);
+    console.log(multiplier)
 
     return (
         <>

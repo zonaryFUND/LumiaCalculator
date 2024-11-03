@@ -11,7 +11,10 @@ const table: DamageTableGenerator = props => ({
         [{label: "Q", skill: "Q", value: Constants.Q.damage}],
         [{label: "W", skill: "W", value: Constants.W.damage}],
         [{label: "E", skill: "E", value: Constants.E.damage}],
-        [{label: "R", skill: "R", value: Constants.R.damage}]
+        [
+            {label: "R", skill: "R", value: Constants.R.damage},
+            {label: props.intl.formatMessage({id: "subject.rozzi.r-blast"}), skill: "R", value: {targetMaxHP: Constants.R.additional_damage}, type: {type: "true"}}
+        ]
     ]   
 })
 
