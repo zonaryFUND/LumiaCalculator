@@ -97,6 +97,7 @@ const basicAttack: React.FC<Props> = props => {
                         } else if (def.type?.type == "basic" && def.type.critical == undefined) {
                             return <CriticalAvailable 
                                 label={def.label}
+                                skillLevel={props.config.skillLevels[def.skill]}
                                 value={def.value}
                                 config={props.config}
                                 status={props.status}

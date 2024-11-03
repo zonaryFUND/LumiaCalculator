@@ -59,8 +59,6 @@ const standardDamage: React.FC<Props> = props => {
         }
     })();
 
-    console.log({...props, d: dynamicBaseValue})
-
     const [dynamicFinalValue, dynamicSubRows] = (() => {
         if (dynamicBaseValue == undefined) return [[] as React.ReactElement[], [] as React.ReactElement[]];
         

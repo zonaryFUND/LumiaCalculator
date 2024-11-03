@@ -78,6 +78,7 @@ const criticalAvailable: React.FC<Props> = props => {
                             <>
                                 <StaticValueEquation
                                     label={<FormattedMessage id="app.standard-value" />}
+                                    skillLevel={props.skillLevel}
                                     config={props.config}
                                     status={props.status}
                                     ratio={props.value}
