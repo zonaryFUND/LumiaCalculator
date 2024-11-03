@@ -53,7 +53,11 @@ const toughness: React.FC<Props> = props => {
                 value={props.status.basicAttackReduction.calculatedValue} 
                 percent 
                 isHidden={hidden}
-                expand={<Mastery perMastery={props.status.basicAttackReduction.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />}
+                expand={
+                    <InnerTable>
+                        <Mastery perMastery={props.status.basicAttackReduction.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />
+                    </InnerTable>
+                }
             />
             <Column 
                 name={<><span className={style.reduction}><Shield /><ArrowFatLinesUp weight="fill" /></span><FormattedMessage id="status.skill-damage-reduction" /></>} 

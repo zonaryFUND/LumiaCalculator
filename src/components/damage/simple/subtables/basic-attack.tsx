@@ -9,7 +9,6 @@ import { WeaponTypeID } from "app-types/equipment/weapon";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
 import CriticalAvailable from "./rows/critical-available";
-import { extractMultiplier } from "components/damage/damage-table-util";
 
 type Props = {
     status: Status
@@ -68,7 +67,8 @@ const basicAttack: React.FC<Props> = props => {
             {
                 props.elements.map(def => {
                     if (def == "standard" && standardBasicAttackRatio && standardBasicAttackLabelIntlID) {
-                        return <CriticalAvailable 
+                        return <CriticalAvailable
+                            key="standard"
                             label={intl.formatMessage({id: standardBasicAttackLabelIntlID})}
                             value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
                             config={props.config}
@@ -78,6 +78,7 @@ const basicAttack: React.FC<Props> = props => {
 
                     if (def == "disable-critical" && standardBasicAttackRatio && standardBasicAttackLabelIntlID) {
                         return <StandardDamage 
+                            key="disable-critical"
                             label={intl.formatMessage({id: standardBasicAttackLabelIntlID})}
                             type={{type: "basic", critical: "none"}}
                             value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
@@ -89,6 +90,7 @@ const basicAttack: React.FC<Props> = props => {
                     if (typeof def == "object" && def.damageDependentHeal == undefined) {
                         if (typeof def.value == "function") {
                             return <UniqueExpression 
+                                key={def.label}
                                 {...def}
                                 strategy={def.value}
                                 config={props.config}
@@ -96,6 +98,7 @@ const basicAttack: React.FC<Props> = props => {
                             />
                         } else if (def.type?.type == "basic" && def.type.critical == undefined) {
                             return <CriticalAvailable 
+                                key={def.label}
                                 label={def.label}
                                 skillLevel={props.config.skillLevels[def.skill]}
                                 value={def.value}
@@ -104,6 +107,7 @@ const basicAttack: React.FC<Props> = props => {
                             />
                         } else {
                             return <StandardDamage 
+                                key={def.label}
                                 {...def}
                                 skillLevel={props.config.skillLevels[def.skill]}
                                 value={def.value}
@@ -114,52 +118,6 @@ const basicAttack: React.FC<Props> = props => {
                     }
 
                     return null;
-                    /*
-                    if (typeof def === "string") {
-                        if (props.weaponType == "assault_rifle") {
-                            return <BasicAttackDamage 
-                                key="standard" 
-                                name={<FormattedMessage id="app.basic-attack.assault-rifle" />}
-                                status={props.status} 
-                                disableCritical={def == "disable-critical"} 
-                                config={{
-                                    attack: AssaultRifleAttackRatio.reduce((p, c) => p + c, 0),
-                                    basicAttackAmp: 100
-                                }}
-                            />
-                        } else if (props.weaponType == "dual_swords") {
-                            return <BasicAttackDamage 
-                                key="standard" 
-                                name={<FormattedMessage id="app.basic-attack.dual-sword" />}
-                                status={props.status} 
-                                disableCritical={def == "disable-critical"} 
-                                config={{
-                                    attack: DualSwordsAttackRatio.reduce((p, c) => p + c, 0),
-                                    basicAttackAmp: 100
-                                }}
-                            />
-                        } else if (def == "aiden") {
-                            return <Hypercharge status={props.status} config={props.config} />
-                        } else if (def == "rio") {
-                            return <Rio status={props.status} config={props.config} />;
-                        } else {
-                            return <BasicAttackDamage key="standard" name={<FormattedMessage id="app.basic-attack" />} status={props.status} disableCritical={def == "disable-critical"} />
-                        }
-                    } else if (def.type?.type == "basic") {
-                        const level = extractskillLevel(def, props.config);
-                        const multiplier = extractMultiplier(level, def.multiplier);
-                        const sanitizedDict = Object.fromEntries(
-                            Object.entries(def.value).map(([key, value]) => {
-                                return [key, Array.isArray(value) ? value[level] : value]
-                            })
-                        );
-                        return <BasicAttackDamage key="standard" name={def.label} status={props.status} config={sanitizedDict} summonedName={def.type.fromSummoned ? summonedName : undefined} multipliers={multiplier} disableCritical={def.type.critical == "none"} />
-                    } else if (def.damageDependent == undefined) {
-                        return <SkillDamage {...def as any} status={props.status} config={props.config} />
-                    } else {
-                        return null;
-                    }
-                        */
                 })
             }
         </tbody>

@@ -26,7 +26,7 @@ type EquationBuildConfigDefinition = {
 
 const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[key in RatioKeys]: EquationBuildConfigDefinition}> = (config, status) => ({
     base: {
-        reducer: (p, v) => p.concat(<>{v}</>)
+        reducer: (p, v) => p.concat(<React.Fragment key="base">{v}</React.Fragment>)
     },
     attack: {
         label: <FormattedMessage id="status.attack-power" />,
@@ -61,8 +61,8 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
         reducer: (p, v) => {
             if (status.basicAttackAmp.calculatedValue.greaterThan(0)) {
                 return [
-                    p.length > 1 ? <>({p})</> : <>{p}</>,
-                    <> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}% + 1)</>
+                    p.length > 1 ? <React.Fragment key="before-aa-amp">({p})</React.Fragment> : <React.Fragment key="before-aa-amp">{p}</React.Fragment>,
+                    <React.Fragment key="aa-amp"> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}% + 1)</React.Fragment>
                 ]
             } else {
                 return p
@@ -71,8 +71,8 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
     },
     criticalChance: {
         reducer: (p, v) => [
-            <>({p})</>, 
-            <> x (<span className={table.small}>致命打確率</span>{status.criticalChance.toString()}% x {v})</>
+            <React.Fragment key="before-critical-chance">({p})</React.Fragment>, 
+            <React.Fragment key="critical-chance"> x (<span className={table.small}>致命打確率</span>{status.criticalChance.calculatedValue.toString()}% x {v})</React.Fragment>
         ]
     },
     stack: {
@@ -100,6 +100,7 @@ const staticValueEquation: React.FC<Props> = props => {
                     return value;
                 }
             })();
+
             const buildConfig = EquationBuildConfig(props.config, props.status)[key];
             if (buildConfig == undefined) {
                 return prev;
@@ -110,7 +111,7 @@ const staticValueEquation: React.FC<Props> = props => {
                     {buildConfig.extract.toString()} x {sanitizedValue}
                     {buildConfig.omitPercent ? null : "%"}
                 </>;
-                return prev.concat(<>{plus}{added}</>);
+                return prev.concat(<React.Fragment key={key}>{plus}{added}</React.Fragment>);
             } else {
                 return buildConfig.reducer(prev, sanitizedValue);
             }

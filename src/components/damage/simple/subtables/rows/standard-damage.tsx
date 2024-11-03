@@ -38,13 +38,14 @@ const standardDamage: React.FC<Props> = props => {
         if (multiplier) {
             return [
                 staticBaseValueHealConcerned.percent(multiplier[0]),
-                [<MultiplyEquation baseValue={staticBaseValueHealConcerned} multiplier={multiplier} percent={percent} />]
+                [<MultiplyEquation key="multiply" baseValue={staticBaseValueHealConcerned} multiplier={multiplier} percent={percent} />]
             ]
         } else {
             return [
                 staticBaseValueHealConcerned,
                 [
-                    <StaticValueEquation  
+                    <StaticValueEquation
+                        key="equation"
                         label={dynamicBaseValue != undefined ? <FormattedMessage id="app.static-value" /> : undefined}
                         skillLevel={props.skillLevel}
                         config={props.config}
@@ -52,7 +53,7 @@ const standardDamage: React.FC<Props> = props => {
                         ratio={props.value}
                         calculated={<>{staticBaseValue.toString()}{percent}</>}
                     />,
-                    healPower ? <HealPower baseValue={staticBaseValue} healPower={healPower} /> : undefined
+                    healPower ? <HealPower key="healpower" baseValue={staticBaseValue} healPower={healPower} /> : undefined
                 ]
                 .filter((item): item is React.ReactElement => item != undefined)
             ]
@@ -77,9 +78,10 @@ const standardDamage: React.FC<Props> = props => {
 
                 if (multiplier) {
                     return {
+                        key,
                         value: <FormattedMessage id={valueIntlID} values={{ratio: dynamicValueHealConcerned.percent(multiplier[0]).toString()}} />,
                         subrows: [
-                            <MultiplyEquation baseValue={dynamicValueHealConcerned} multiplier={multiplier} percent={percent} />
+                            <MultiplyEquation key={`${key}-multiply`} baseValue={dynamicValueHealConcerned} multiplier={multiplier} percent={percent} />
                         ]
                     }
                 } else {
@@ -87,10 +89,12 @@ const standardDamage: React.FC<Props> = props => {
                     const showEquation = typeof targetRatio == "object" && !Array.isArray(targetRatio);
                     const showConstant = !showEquation && (!dynamicValueOnly || healPower);
                     return {
+                        key,
                         value: <FormattedMessage id={valueIntlID} values={{ratio: dynamicValueHealConcerned.toString()}} />,
                         subrows: [
                             showEquation ?
                             <StaticValueEquation
+                                key={`${key}-equation`}
                                 label={<FormattedMessage id={labelIntlID} />}
                                 skillLevel={props.skillLevel}
                                 config={props.config}
@@ -100,21 +104,21 @@ const standardDamage: React.FC<Props> = props => {
                                 percent={true}
                             /> : 
                             undefined,
-                            showConstant ? <tr><td><FormattedMessage id={labelIntlID} /></td><td>{value.toString()}%</td></tr> : undefined,
-                            healPower ? <HealPower baseValue={value} healPower={healPower} percent={true} /> : undefined
+                            showConstant ? <tr key={`${key}-constant`}><td><FormattedMessage id={labelIntlID} /></td><td>{value.toString()}%</td></tr> : undefined,
+                            healPower ? <HealPower key={`${key}-healpower`} baseValue={value} healPower={healPower} percent={true} /> : undefined
                         ]
                         .filter((item): item is React.ReactElement => item != undefined)
                     }
                 }
             })
-            .reduce((prev, {value, subrows}, index) => {
+            .reduce((prev, {key, value, subrows}, index) => {
                 const encloseValueInBrackets = index > 0 || !dynamicValueOnly;
                 return [
-                    prev[0].concat(<>
+                    prev[0].concat(<React.Fragment key={key}>
                         {encloseValueInBrackets ? <>(+</> : null}
                         {value}
                         {encloseValueInBrackets ? <>)</> : null}
-                    </>),
+                    </React.Fragment>),
                     prev[1].concat(subrows)
                 ];
             }, [[] as React.ReactElement[], [] as React.ReactElement[]])

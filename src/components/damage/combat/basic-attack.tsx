@@ -14,8 +14,6 @@ import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/stan
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { Source } from "app-types/value-ratio";
 import Decimal from "decimal.js";
-import { hyperChargeMultiplier } from "../simple/aiden-hypercharge";
-import { DaikyuMultiplier, HankyuMultiplier, criticalAddition } from "../simple/rio";
 import { extractMultiplier } from "../damage-table-util";
 
 

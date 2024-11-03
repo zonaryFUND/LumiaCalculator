@@ -1,16 +1,10 @@
 import * as React from "react";
-import { useToggle } from "react-use";
 import Column from "./column";
-import Mastery from "./expand/mastery";
-import Equipment from "./expand/equipment";
-import InnerTable from "components/common/inner-table";
 import { FirstAid, Shield, Sword, Crosshair, ArrowFatLinesUp, ShieldSlash, CaretDown, CaretUp } from "@phosphor-icons/react"
-import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 import table from "components/common/table.styl";
-import style from "./06_misc.module.styl";
 import AttackSpeed from "./attack-speed";
 import useStorageBoolean from "@app/storage/boolean";
 import { BasicAttackTableHiddenKey, PenetrationTableHiddenKey, ToughnessTableHiddenKey } from "@app/storage/status";
