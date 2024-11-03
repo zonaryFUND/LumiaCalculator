@@ -25,7 +25,7 @@ const standardDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
 
     const {static: staticBaseValue, dynamic: dynamicBaseValue, dynamicValueOnly} = calculateValue(props.value, props.status, props.config, props.skillLevel);
-    
+
     const multiplier = extractMultiplier(props.skillLevel, props.multiplier);    
     const healPower = (props.type?.type == "heal") && props.status.healPower.calculatedValue.greaterThan(0) ?
             props.status.healPower.calculatedValue : null;
