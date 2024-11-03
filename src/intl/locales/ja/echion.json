@@ -6,5 +6,6 @@
     "subject.echion.w-shield": "Wシールド",
     "subject.echion.r-true-damage": "R周囲固定ダメージ/{value}秒",
     "subject.echion.r": "Rエンベノミゼーション",
-    "subject.echion.r-2hit": "Rエンベノミゼーション2ヒット"
+    "subject.echion.r-2hit": "Rエンベノミゼーション2ヒット",
+    "subject.echion.gauge-consumption": "暴走ゲージ"
 }

@@ -1,6 +1,7 @@
 import Decimal from "decimal.js";
 import * as React from "react";
 import { MultiplierExpression } from "../../../damage-table-util";
+import table from "components/common/table.styl";
 
 type Props = {
     label?: React.ReactElement
@@ -12,7 +13,7 @@ type Props = {
 const multiplyEquation: React.FC<Props> = props => {
     const equation = props.multiplier[1].reduce((prev, current) => {
         if (current.label) {
-            return <>{prev} x <span>{current.label}</span>{current.value}%</>
+            return <>{prev} x <span className={table.small}>{current.label}</span>{current.value}%</>
         } else {
             return <>{prev} x {current.value}%</>
         }

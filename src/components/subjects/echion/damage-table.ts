@@ -1,6 +1,7 @@
 import { DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
+import { EchionWStrategy } from "./w";
 
 // The ratio of attack of echion's R depends on the level of T, but this application assumes that its always 3.
 const table: DamageTableGenerator = props => {
@@ -48,7 +49,7 @@ const table: DamageTableGenerator = props => {
                 {label: `Q2(${props.intl.formatMessage({id: "app.standard-value"})})`, skill: "Q", value: Constants.Q.second_damage},
                 {label: `Q2(${props.intl.formatMessage({id: "subject.echion.amp-calculated"})})`, skill: "Q", value: Constants.Q.second_damage, multiplier},
             ],
-            [{label: props.intl.formatMessage({id: "subject.echion.w-shield"}), skill: "W", value: Constants.W.shield, type: {type: "shield", target: "self"}}],
+            [{label: props.intl.formatMessage({id: "subject.echion.w-shield"}), skill: "W", value: EchionWStrategy, type: {type: "shield", target: "self"}}],
             [
                 {label: `E(${props.intl.formatMessage({id: "app.standard-value"})})`, skill: "E", value: Constants.E.damage},
                 {label: `E(${props.intl.formatMessage({id: "subject.echion.amp-calculated"})})`, skill: "E", value: Constants.E.damage, multiplier}

@@ -6,6 +6,29 @@ import Decimal from "decimal.js";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { CooldownOverride } from "../skills";
+import { UniqueValueStrategy } from "../unique-value-strategy";
+
+export const EchionWStrategy: UniqueValueStrategy = (config, status) => {
+    const value = new Decimal(Constants.W.shield.base[config.skillLevels.W])
+        .add(status.attackPower.calculatedValue.percent(Constants.W.shield.attack))
+        .add(Math.min(config.gauge, Constants.W.gauge_max_consumption) * Constants.W.multiplier / 100);
+
+    return {
+        value,
+        equationExpression: [
+            {
+                expression: [
+                    `${Constants.W.shield.base[config.skillLevels.W]} + `,
+                    {ratioKey: "attack"},
+                    `${status.attackPower.calculatedValue} x ${Constants.W.shield.attack}% + `,
+                    `min(${Constants.W.gauge_max_consumption}, `,
+                    {intlID: "subject.echion.gauge-consumption"},
+                    `${config.gauge}) x ${Constants.W.multiplier}% = ${value.toString()}`
+                ]
+            }
+        ]
+    }
+}
 
 const w: React.FC<SubjectSkillProps> = props => (
     <>
