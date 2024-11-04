@@ -66,7 +66,9 @@ const basicAttack: React.FC<Props> = props => {
                 </tr>
             }
             {
-                props.elements.reduce((prev, array, index) => {
+                props.elements.reduce((prev, array, index) => {                    
+                    const separator = index == 0 ? undefined : <tr key={`separator-${index}`} className={table.border}><td colSpan={4}></td></tr>;
+
                     const units = array.map(definition => {
                         if (definition == "standard" && standardBasicAttackRatio && standardBasicAttackLabelIntlID) {
                             return <CriticalAvailable
@@ -121,67 +123,12 @@ const basicAttack: React.FC<Props> = props => {
                             }
                         }
 
-                        return <></>;
+                        return null;
                     })
+                    .filter((item): item is React.ReactElement => item != null);
 
-                    return prev.concat(units)
+                    return (separator ? prev.concat(separator) : prev).concat(units)
                 }, [] as React.ReactElement[])
-                /*.map(def => {
-                    if (def == "standard" && standardBasicAttackRatio && standardBasicAttackLabelIntlID) {
-                        return <CriticalAvailable
-                            key="standard"
-                            label={intl.formatMessage({id: standardBasicAttackLabelIntlID})}
-                            value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
-                            config={props.config}
-                            status={props.status}
-                        />
-                    }
-
-                    if (def == "disable-critical" && standardBasicAttackRatio && standardBasicAttackLabelIntlID) {
-                        return <StandardDamage 
-                            key="disable-critical"
-                            label={intl.formatMessage({id: standardBasicAttackLabelIntlID})}
-                            type={{type: "basic", critical: "none"}}
-                            value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
-                            config={props.config}
-                            status={props.status}
-                        />
-                    }
-
-                    if (typeof def == "object" && def.damageDependentHeal == undefined) {
-                        if (typeof def.value == "function") {
-                            return <UniqueExpression 
-                                key={def.label}
-                                {...def}
-                                strategy={def.value}
-                                config={props.config}
-                                status={props.status}
-                            />
-                        } else if (def.type?.type == "basic" && def.type.critical == undefined) {
-                            return <CriticalAvailable 
-                                key={def.label}
-                                label={def.label}
-                                skillLevel={props.config.skillLevels[def.skill]}
-                                value={def.value}
-                                config={props.config}
-                                status={props.status}
-                                multiplier={def.multiplier}
-                            />
-                        } else {
-                            return <StandardDamage 
-                                key={def.label}
-                                {...def}
-                                skillLevel={props.config.skillLevels[def.skill]}
-                                value={def.value}
-                                config={props.config}
-                                status={props.status}
-                            />
-                        }
-                    }
-
-                    return null;
-                })
-                    */
             }
         </tbody>
     )

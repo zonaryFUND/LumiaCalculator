@@ -18,49 +18,47 @@ const skill: React.FC<Props> = props => {
         <tbody>
             <tr className={table.separator}><td>実験体スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
             {
-                props.tables.map((chunk, index) => 
-                    <React.Fragment key={index}>
-                        {
-                            index == 0 || chunk.filter(s => s.damageDependentHeal == undefined).length == 0 ? 
-                            null :
-                            <tr className={table.border}><td colSpan={4}></td></tr>
+                props.tables.reduce((prev, chunk, index) => {
+                    const separator = index == 0 || chunk.filter(s => s.damageDependentHeal == undefined).length == 0 ? 
+                        null :
+                        <tr key={`separator-${index}`} className={table.border}><td colSpan={4}></td></tr>;
+                    
+                    const elements = chunk.map(unit => {
+                        if (unit.damageDependentHeal != undefined) return null;
+                        const skillLevel = props.config.skillLevels[unit.skill];
+                        
+                        if (typeof unit.value == "function") {
+                            return <UniqueExpression 
+                                key={unit.label} 
+                                status={props.status} 
+                                config={props.config} 
+                                {...unit} 
+                                strategy={unit.value} 
+                            />;  
+                        } else if (unit.type?.type == "basic" && unit.type.critical != "none") {
+                            return <CriticalAvailable 
+                                key={unit.label}
+                                skillLevel={skillLevel}
+                                {...unit}
+                                status={props.status}
+                                config={props.config}
+                                value={unit.value}
+                            />;
+                        } else {
+                            return <StandardDamage 
+                                key={unit.label} 
+                                skillLevel={skillLevel}
+                                status={props.status} 
+                                config={props.config} 
+                                {...unit} 
+                                value={unit.value} 
+                            />;
                         }
-                        {
-                            chunk.map(unit => {
-                                if (unit.damageDependentHeal != undefined) return null;
-                                const skillLevel = props.config.skillLevels[unit.skill];
-                                
-                                if (typeof unit.value == "function") {
-                                    return <UniqueExpression 
-                                        key={unit.label} 
-                                        status={props.status} 
-                                        config={props.config} 
-                                        {...unit} 
-                                        strategy={unit.value} 
-                                    />;  
-                                } else if (unit.type?.type == "basic" && unit.type.critical != "none") {
-                                    return <CriticalAvailable 
-                                        key={unit.label}
-                                        skillLevel={skillLevel}
-                                        {...unit}
-                                        status={props.status}
-                                        config={props.config}
-                                        value={unit.value}
-                                    />;
-                                } else {
-                                    return <StandardDamage 
-                                        key={unit.label} 
-                                        skillLevel={skillLevel}
-                                        status={props.status} 
-                                        config={props.config} 
-                                        {...unit} 
-                                        value={unit.value} 
-                                    />;
-                                }
-                            })
-                        }
-                    </React.Fragment>
-                )
+                    })
+                    .filter((item): item is React.ReactElement => item != null)
+
+                    return (separator ? prev.concat(separator) : prev).concat(elements);
+                }, [] as React.ReactElement[])
             }
         </tbody>
     )
