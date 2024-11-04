@@ -15,7 +15,7 @@ import table from "components/common/table.styl";
 import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
 
-type Props = Omit<SubjectDamageTableUnit, "value"> & {
+type Props = Omit<SubjectDamageTableUnit, "value" | "skill"> & {
     strategy: UniqueValueStrategy
     config: SubjectConfig
     status: Status
@@ -56,12 +56,15 @@ const uniqueExpression: React.FC<Props> = props => {
                     <td colSpan={3} className={valueClass}>{healPowerConcerned.floor().toString()}</td>
                 }
             </tr>
-            <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
-                <InnerTable>
-                    {equations}
-                    {healPower ? <HealPower baseValue={value as Decimal} healPower={healPower} /> : null}
-                </InnerTable>
-            </td></tr>
+            {
+                equations.length == 0 ? null :
+                <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
+                    <InnerTable>
+                        {equations}
+                        {healPower ? <HealPower baseValue={value as Decimal} healPower={healPower} /> : null}
+                    </InnerTable>
+                </td></tr>
+            }
         </>
     )
 }

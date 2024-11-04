@@ -13,6 +13,8 @@ export type DamageTableUnit = {
         value: number | number[]
     }[]
 
+    triggeredOnBasicAttack?: boolean
+
     // heal amount dependent on the damage dealt and it is not displayed on simple page
     damageDependentHeal?: number | number[]
 }

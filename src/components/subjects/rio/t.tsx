@@ -42,7 +42,7 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValue
                         {ratioKey: "attack"},
                         `${status.attackPower.calculatedValue.toString()} x ${bowRatio}% x (`,
                         {ratioKey: "basicAttackAmp"},
-                        `${status.basicAttackAmp.calculatedValue.toString()} + 1) = ${value.toString()}`
+                        `${status.basicAttackAmp.calculatedValue.toString()}% + 1) = ${value.toString()}`
                     ]
                 },
                 {

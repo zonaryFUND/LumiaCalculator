@@ -7,7 +7,7 @@ import { IntlShape } from "react-intl"
 import { UniqueValueStrategy } from "./unique-value-strategy"
 import { DamageTableUnit } from "app-types/damage-table/unit"
 
-export type SubjectDamageTableUnit = Omit<DamageTableUnit, "value"> & {
+export type SubjectDamageTableUnit = Omit<DamageTableUnit, "value" | "triggeredOnBasicAttack"> & {
     value: ValueRatio | UniqueValueStrategy
     
     skill: "Q" | "W" | "E" | "R" | "T"
@@ -38,7 +38,6 @@ export type DamageTable = {
     basicAttack: BasicAttackElement[]
     skill: SubjectDamageTableUnit[][]
 }
-
 
 export type WeaponSkillTableGenerator = (props: {intl: IntlShape}) => DamageTableUnit[];
 

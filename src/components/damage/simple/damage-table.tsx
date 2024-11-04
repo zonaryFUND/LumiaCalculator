@@ -1,15 +1,16 @@
 import * as React from "react";
 import BasicAttack from "./subtables/basic-attack";
 import style from "../damage-table.module.styl";
-import { BasicAttackElement, SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
+import { BasicAttackElement, SubjectDamageTable, SubjectDamageTableUnit, WeaponSkillDamageTable } from "components/subjects/damage-table";
 import StandardDamage from "./subtables/rows/standard-damage";
 import UniqueExpression from "./subtables/rows/unique-expression";
 import Skill from "./subtables/skill";
+import WeaponSkill from "./subtables/weapon-skill";
 import table from "components/common/table.styl";
 import { ItemSkillDefinition } from "components/item-skills/item-skill";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
+import { WeaponTypeID, Weapons, meleeOrRange } from "app-types/equipment/weapon";
 import { equipmentStatus, name } from "app-types/equipment";
 import { useIntl } from "react-intl";
 import { name as abilityName } from "app-types/equipment/ability";
@@ -17,6 +18,7 @@ import { name as equipmentName } from "app-types/equipment";
 import { augmentTableValues } from "components/augment/table-value";
 import TacticalSkill from "components/tactical-skill/damage-table";
 import { extractMultiplier } from "../damage-table-util";
+import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 
 type Props = {
     status: Status
@@ -40,16 +42,60 @@ const damageTable: React.FC<Props> = props => {
         }
     }, [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
 
-    const weaponSkill = React.useMemo(() => {
-        if (props.weaponType == undefined) return null;
+    const [basicAttackTriggeredWeaponSkill, weaponSkill] = React.useMemo(() => {
+        if (props.weaponType == undefined) return [[], []];
+        const skillLevel = weaponSkillLevel(props.config.weaponMastery);
+
         const table = WeaponSkillDamageTable[props.weaponType];
-        if (typeof table == "function") return table({intl});
-        return table;
+        const units = (typeof table == "function" ? table({intl}) : table)
+            .filter(unit => unit.damageDependentHeal == undefined)
+            .map(unit => ({...unit, skillLevel}));
+
+        return [
+            units.filter(u => u.triggeredOnBasicAttack),
+            units.filter(u => u.triggeredOnBasicAttack != true)
+        ]
     }, [props.weaponType]);
 
     const range = React.useMemo(() => {
         return props.weaponType ? meleeOrRange(props.weaponType) : "melee";
     }, [props.weaponType])
+
+    /*
+    const itemSkillValues = React.useMemo(() => {
+        const skills = Object.values(props.config.equipment)
+            .flatMap(id => {
+                if (id == null) return [];
+                return (equipmentStatus(id).option ?? []).flatMap(ability => {
+                    if (ItemSkillDefinition[ability.id] == undefined) return [];
+
+                    const values = ItemSkillDefinition[ability.id].values;
+                    if (values == undefined) return [];
+
+                    return values(ability.values).map(value => {
+                        const baseText = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
+                        const name = value.labelFormat?.split(/({text})/)
+                            .map(component => {
+                                if (component.startsWith("{") && component.endsWith("}")) {
+                                    return baseText
+                                } else {
+                                    return component
+                                }
+                            })
+                            .join("");
+                            
+                        return {
+                            name: name ?? baseText,
+                            type: value.type,
+                            ratio: value.ratio[range] || value.ratio,
+                            multiplier: value.multiplier
+                        };
+                    })
+                });
+            })
+            .filter(array => array.length > 0)
+    }, []);
+    */
 
     const itemSkillDamage = React.useMemo(() => {
         return Object.values(props.config.equipment)
@@ -93,7 +139,12 @@ const damageTable: React.FC<Props> = props => {
             <div className={table["table-base"]}>
                 <table>
                     <BasicAttack 
-                        elements={definition.basicAttack}
+                        elements={
+                            [
+                                definition.basicAttack,
+                                basicAttackTriggeredWeaponSkill
+                            ].filter(array => array.length > 0)
+                        }
                         status={props.status} 
                         config={props.config}
                         weaponType={props.weaponType}
@@ -111,16 +162,11 @@ const damageTable: React.FC<Props> = props => {
                         config={props.config}
                         status={props.status}
                     />
-                    <tbody>
-                        <tr className={table.separator}><td>武器スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
-                        {/*
-                            weaponSkill?.map(def => (
-                                typeof def.value == "function" ?
-                                null :
-                                <SkillDamage key={def.label} status={props.status} config={props.config} {...def} value={def.value} />
-                            ))
-                        */}
-                    </tbody>
+                    <WeaponSkill 
+                        elements={weaponSkill}
+                        config={props.config}
+                        status={props.status}
+                    />
                     <tbody>
                         <tr className={table.separator}><td>アイテムスキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {

@@ -13,7 +13,7 @@ const pistol: React.FC<SubjectSkillProps> = props => {
         if (showEquation) {
             return <>
                 <span className={style.emphasis}>{Constants.pistol.movement_speed.base[props.skillLevel]}%</span>
-                <span className={style.amp}>スキル増幅の{Constants.pistol.movement_speed.amp}%</span>
+                <span className={style.amp}>(+スキル増幅の{Constants.pistol.movement_speed.amp}%)</span>
             </>
         } else {
             return <>
