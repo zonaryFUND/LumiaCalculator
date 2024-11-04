@@ -1,10 +1,8 @@
-import { TableValues } from "../item-skill";
+import { ItemSkillDamageTableUnit } from "../item-skill";
 import Constants from "./constants.json";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "status", ratio: Constants.adaptive, labelFormat: "{text}適合型能力値増加"}
-    ]
-}
+const tableValues: ItemSkillDamageTableUnit[] = [
+    {labelIntlID: "item-skill.adaptive", value: Constants.adaptive, type: {type: "misc"}}
+]
 
 export default tableValues;

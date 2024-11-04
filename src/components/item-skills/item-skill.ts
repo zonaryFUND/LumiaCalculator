@@ -1,12 +1,25 @@
+import { DamageTableUnit } from "app-types/damage-table/unit";
+import { ValueRatio } from "app-types/value-ratio";
+
 export type ItemSkillProps = {
     values: any
 }
 
-export type TableValues = (dictionaryValues: any) => {
-    type: "basic" | "skill" | "true" | "shield" | "heal" | "status", ratio: any, multiplier?: number, labelFormat?: string
-}[]
+const tooltipContext = require.context("./", true, /\.\/.*\/tooltip\.tsx/);
+export const ItemSkillTooltipDefinitions = tooltipContext.keys().reduce((skills: any, path) => {
+    const pathComponents = path.split("/");
+    const key = pathComponents[1];
+    return {
+        ...skills,
+        [key]: tooltipContext(path).default
+    }
+}, {})
 
-const context = require.context("./", true, /\.\/.*\/(tooltip\.tsx|table-values\.ts)$/);
+export type ItemSkillDamageTableUnit = Omit<DamageTableUnit, "label" | "value"> & { labelIntlID?: string, intlValue?: string, value: ValueRatio | {melee: ValueRatio, range: ValueRatio} };
+export type ItemSkillDamageTableGenerator = (importedValues: any | {melee: any, range: any}) => ItemSkillDamageTableUnit[];
+
+const damageTableContext = require.context("./", true, /\.\/.*\/table-values\.ts/);
+/*
 export const ItemSkillDefinition = context.keys().reduce((skills: any, path) => {
     const pathComponents = path.split("/");
     const key = pathComponents[1];
@@ -24,3 +37,13 @@ export const ItemSkillDefinition = context.keys().reduce((skills: any, path) => 
     }
     return skills;
 }, {}) as {[id: string]: {tooltip?: React.FC<ItemSkillProps>, values?: TableValues}}
+*/
+
+export const ItemSkillDamageTable = damageTableContext.keys().reduce((skills: any, path) => {
+    const pathComponents = path.split("/");
+    const key = pathComponents[1];
+    return {
+        ...skills,
+        [key]: damageTableContext(path).default
+    };
+}, {}) as {[id: string]: ItemSkillDamageTableUnit[] | ItemSkillDamageTableGenerator}

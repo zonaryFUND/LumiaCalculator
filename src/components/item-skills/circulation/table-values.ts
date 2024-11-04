@@ -1,9 +1,8 @@
-import { TableValues } from "../item-skill";
+import { ValueRatio } from "app-types/value-ratio";
+import { ItemSkillDamageTableGenerator } from "../item-skill";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "basic", ratio: dictionaryValues.dmg}
-    ]
-}
+const tableValues: ItemSkillDamageTableGenerator = (importedValues) => [
+    {label: "item-skill.additional-damage", value: importedValues as ValueRatio, triggeredOnBasicAttack: true}
+]
 
 export default tableValues;

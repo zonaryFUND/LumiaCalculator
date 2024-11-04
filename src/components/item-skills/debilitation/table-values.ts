@@ -1,10 +1,8 @@
-import { TableValues } from "../item-skill";
-import Constants from "./constants.json";
+import { ValueRatio } from "app-types/value-ratio";
+import { ItemSkillDamageTableGenerator } from "../item-skill";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "skill", ratio: dictionaryValues.dmg, labelFormat: "{text}/秒"}
-    ]
-}
+const tableValues: ItemSkillDamageTableGenerator = (importedValues) => [
+    {labelIntlID: "item-skill.dot", value: importedValues as ValueRatio}
+]
 
 export default tableValues;

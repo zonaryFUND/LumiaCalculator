@@ -13,7 +13,7 @@ type Props = {
     status: Status
 }
 
-const skill: React.FC<Props> = props => {
+const subjectSkill: React.FC<Props> = props => {
     return (
         <tbody>
             <tr className={table.separator}><td>実験体スキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
@@ -64,4 +64,4 @@ const skill: React.FC<Props> = props => {
     )
 };
 
-export default skill;
+export default subjectSkill;

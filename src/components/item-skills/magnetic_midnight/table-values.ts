@@ -1,9 +1,9 @@
-import { TableValues } from "../item-skill";
+import { ItemSkillDamageTableGenerator } from "../item-skill";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    if (dictionaryValues.dmg) {
+const tableValues: ItemSkillDamageTableGenerator = (importedValues) => {
+    if (importedValues) {
         return [
-            {type: "basic", ratio: dictionaryValues.dmg, labelFormat: "{text}追加ダメージ"}
+            {labelIntlID: "item-skill.additional-damage", value: importedValues, triggeredOnBasicAttack: true}
         ]
     } else {
         return []

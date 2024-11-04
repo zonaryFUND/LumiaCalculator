@@ -1,8 +1,9 @@
-import { TableValues } from "../item-skill";
+import { ValueRatio } from "app-types/value-ratio";
+import { ItemSkillDamageTableGenerator } from "../item-skill";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
+const tableValues: ItemSkillDamageTableGenerator = (importedValues) => {    
     const constant = ["melee", "range"].map(key => {
-        const damage = dictionaryValues.dmg[key];
+        const damage = importedValues[key];
 
         return {
             base: damage.levelProp.from,
@@ -12,7 +13,7 @@ const tableValues: TableValues = (dictionaryValues: any) => {
     });
 
     return [
-        {type: "basic", ratio: {melee: constant[0], range: constant[1]}, labelFormat: "{text}追加ダメージ"}
+        {labelIntlID: "item-skill.additional-damage", value: {melee: constant[0], range: constant[1]}, triggeredOnBasicAttack: true}
     ]
 }
 

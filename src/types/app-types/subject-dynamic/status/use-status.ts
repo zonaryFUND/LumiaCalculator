@@ -191,7 +191,7 @@ export function useStatus(config: SubjectConfig): Status {
             equipment: {
                 ...equipmentValue("skillAmplification", perLevelStatus.skill_amp),
                 ratio: maxEquipmentStatus("ampRatio", equipments),
-                adaptive: masteryFactor?.type == "skill_amp" ? adaptive : undefined
+                adaptive: masteryFactor?.type == "skill_amp" ? adaptive?.times(2) : undefined
             },
             perMastery: masteryFactor?.type == "skill_amp" ? {
                 ratio: masteryFactor.value

@@ -1,13 +1,13 @@
 import * as React from "react";
 import BasicAttack from "./subtables/basic-attack";
 import style from "../damage-table.module.styl";
-import { BasicAttackElement, SubjectDamageTable, SubjectDamageTableUnit, WeaponSkillDamageTable } from "components/subjects/damage-table";
+import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/damage-table";
 import StandardDamage from "./subtables/rows/standard-damage";
-import UniqueExpression from "./subtables/rows/unique-expression";
-import Skill from "./subtables/skill";
+import SubjectSkill from "./subtables/subject-skill";
+import OtherSkill from "./subtables/other-skill";
 import WeaponSkill from "./subtables/weapon-skill";
 import table from "components/common/table.styl";
-import { ItemSkillDefinition } from "components/item-skills/item-skill";
+import { ItemSkillDamageTable } from "components/item-skills/item-skill";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID, Weapons, meleeOrRange } from "app-types/equipment/weapon";
@@ -17,8 +17,8 @@ import { name as abilityName } from "app-types/equipment/ability";
 import { name as equipmentName } from "app-types/equipment";
 import { augmentTableValues } from "components/augment/table-value";
 import TacticalSkill from "components/tactical-skill/damage-table";
-import { extractMultiplier } from "../damage-table-util";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
+import { DamageTableUnit } from "app-types/damage-table/unit";
 
 type Props = {
     status: Status
@@ -47,7 +47,7 @@ const damageTable: React.FC<Props> = props => {
         const skillLevel = weaponSkillLevel(props.config.weaponMastery);
 
         const table = WeaponSkillDamageTable[props.weaponType];
-        const units = (typeof table == "function" ? table({intl}) : table)
+        const units = (typeof table == "function" ? table({intl}) : table ?? [])
             .filter(unit => unit.damageDependentHeal == undefined)
             .map(unit => ({...unit, skillLevel}));
 
@@ -61,74 +61,31 @@ const damageTable: React.FC<Props> = props => {
         return props.weaponType ? meleeOrRange(props.weaponType) : "melee";
     }, [props.weaponType])
 
-    /*
-    const itemSkillValues = React.useMemo(() => {
-        const skills = Object.values(props.config.equipment)
-            .flatMap(id => {
-                if (id == null) return [];
-                return (equipmentStatus(id).option ?? []).flatMap(ability => {
-                    if (ItemSkillDefinition[ability.id] == undefined) return [];
-
-                    const values = ItemSkillDefinition[ability.id].values;
-                    if (values == undefined) return [];
-
-                    return values(ability.values).map(value => {
-                        const baseText = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
-                        const name = value.labelFormat?.split(/({text})/)
-                            .map(component => {
-                                if (component.startsWith("{") && component.endsWith("}")) {
-                                    return baseText
-                                } else {
-                                    return component
-                                }
-                            })
-                            .join("");
-                            
-                        return {
-                            name: name ?? baseText,
-                            type: value.type,
-                            ratio: value.ratio[range] || value.ratio,
-                            multiplier: value.multiplier
-                        };
-                    })
-                });
-            })
-            .filter(array => array.length > 0)
-    }, []);
-    */
-
-    const itemSkillDamage = React.useMemo(() => {
+    const [basicAttackTriggeredItemSkillValues, itemSkillValues] = React.useMemo(() => {
         return Object.values(props.config.equipment)
             .flatMap(id => {
                 if (id == null) return [];
                 const abilities = equipmentStatus(id).option ?? [];
 
                 return abilities.flatMap(ability => {
-                    if (ItemSkillDefinition[ability.id] == undefined) return [];
-
-                    const values = ItemSkillDefinition[ability.id].values;
-                    if (values == undefined) return [];
-                    return values(ability.values).map(value => {
-                        const baseText = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
-                        const name = value.labelFormat?.split(/({text})/)
-                            .map(component => {
-                                if (component.startsWith("{") && component.endsWith("}")) {
-                                    return baseText
-                                } else {
-                                    return component
-                                }
-                            })
-                            .join("");
-                            
-                        return {
-                            name: name ?? baseText,
-                            type: value.type,
-                            ratio: value.ratio[range] || value.ratio,
-                            multiplier: value.multiplier
-                        };
+                    const unitsOrGenerator = ItemSkillDamageTable[ability.id];
+                    if (unitsOrGenerator == undefined) return [];
+                    const entries = typeof unitsOrGenerator == "function" ? unitsOrGenerator(ability.values.dmg) : unitsOrGenerator;
+                    return entries.map(entry => {
+                        const itemWithSkillName = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
+                        const label = entry.labelIntlID ? intl.formatMessage({id: entry.labelIntlID}, {item: itemWithSkillName, value: entry.intlValue}) : itemWithSkillName;
+                        const value = "melee" in entry.value ? entry.value[range] : entry.value;
+                        return {...entry, label, value}
                     });
                 });
-            });
+            })
+            .reduce((prev, entry) => {
+                if (entry.triggeredOnBasicAttack) {
+                    return [prev[0].concat(entry),  prev[1]]
+                } else {
+                    return [prev[0], prev[1].concat(entry)]
+                }
+            }, [[] as DamageTableUnit[], [] as DamageTableUnit[]]);
     }, [range, props.config.equipment])
 
     const tacticalSkills = TacticalSkill(intl);
@@ -142,22 +99,15 @@ const damageTable: React.FC<Props> = props => {
                         elements={
                             [
                                 definition.basicAttack,
-                                basicAttackTriggeredWeaponSkill
+                                basicAttackTriggeredWeaponSkill,
+                                basicAttackTriggeredItemSkillValues
                             ].filter(array => array.length > 0)
                         }
                         status={props.status} 
                         config={props.config}
                         weaponType={props.weaponType}
                     />
-                     {/*</table>       
-                        {
-                            itemSkillDamage?.filter(def => def.type == "basic").map(def => {
-                                return <SkillDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} skill="other" multiplier={def.multiplier} />
-                            })
-                        }
-                    </BasicAttack>
-                    */}
-                    <Skill 
+                    <SubjectSkill 
                         tables={definition.skill}
                         config={props.config}
                         status={props.status}
@@ -167,30 +117,12 @@ const damageTable: React.FC<Props> = props => {
                         config={props.config}
                         status={props.status}
                     />
-                    <tbody>
-                        <tr className={table.separator}><td>アイテムスキル</td><td colSpan={3}>ダメージ / 効果量</td></tr>
-                        {
-                            itemSkillDamage?.filter(def => def.type != "basic").map(def => {
-                                const type = (() => {
-                                    switch (def.type) {
-                                        case "basic":
-                                            return {type: "basic", critical: "none"};
-                                        case "shield":
-                                            return {type: "shield", target: "self"};
-                                        case "heal":
-                                            return {type: "heal", target: "self"};
-                                        case "status":
-                                        case "true":
-                                            return {type: "true"}
-                                        case "skill":
-                                            return undefined;
-                                    }
-                                })();
-                                
-                                return <StandardDamage key={def.name} label={def.name} status={props.status} config={props.config} value={def.ratio} type={type as any} multiplier={def.multiplier} />
-                            })
-                        }
-                    </tbody>
+                    <OtherSkill 
+                        label="アイテムスキル"
+                        tables={[itemSkillValues]}
+                        config={props.config}
+                        status={props.status}
+                    />
                     <tbody>
                         <tr className={table.separator}><td>特性</td><td colSpan={3}>ダメージ / 効果量</td></tr>
                         {

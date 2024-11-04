@@ -1,11 +1,9 @@
-import { TableValues } from "../item-skill";
+import { ItemSkillDamageTableUnit } from "../item-skill";
 import Constants from "./constants.json";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "shield", ratio: Constants.shield, labelFormat: "{text}シールド獲得/秒"},
-        {type: "shield", ratio: Constants.max_shield, labelFormat: "{text}シールド最大値"}
-    ]
-}
+const tableValues: ItemSkillDamageTableUnit[] = [
+    {labelIntlID: "item-skill.shield-per-sec", value: Constants.shield, type: {type: "shield", target: "self"}},
+    {labelIntlID: "item-skill.shield-max", value: Constants.max_shield, type: {type: "shield", target: "self"}}
+]
 
 export default tableValues;

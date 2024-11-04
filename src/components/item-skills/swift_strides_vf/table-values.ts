@@ -1,10 +1,7 @@
-import { TableValues } from "../item-skill";
-import Constants from "./constants.json";
+import { ItemSkillDamageTableGenerator } from "../item-skill";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "basic", ratio: dictionaryValues.dmg, labelFormat: "{text}最大追加ダメージ"}
-    ]
-}
+const tableValues: ItemSkillDamageTableGenerator = (importedValues) => [
+    {labelIntlID: "item-skill.max-additional-damage", value: importedValues, labelFormat: "{text}最大追加ダメージ", triggeredOnBasicAttack: true}
+]
 
 export default tableValues;

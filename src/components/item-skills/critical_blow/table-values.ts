@@ -1,11 +1,9 @@
-import { TableValues } from "../item-skill";
+import { ItemSkillDamageTableUnit } from "../item-skill";
 import Constants from "./constants.json";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "basic", ratio: Constants.damage},
-        {type: "heal", ratio: Constants.heal}
-    ]
-}
+const tableValues: ItemSkillDamageTableUnit[] = [
+    {labelIntlID: "item-skill.additional-damage", value: Constants.damage, triggeredOnBasicAttack: true},
+    {labelIntlID: "item-skill.heal", value: Constants.heal, type: {type: "heal", target: "self"}, triggeredOnBasicAttack: true}
+]
 
 export default tableValues;

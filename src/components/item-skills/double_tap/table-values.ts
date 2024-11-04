@@ -1,10 +1,8 @@
-import { TableValues } from "../item-skill";
+import { ItemSkillDamageTableUnit } from "../item-skill";
 import Constants from "./constants.json";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "basic", ratio: Constants.ad, labelFormat: "{text}追加ダメージ"}
-    ]
-}
+const tableValues: ItemSkillDamageTableUnit[] = [
+    {labelIntlID: "item-skill.additional-damage", value: Constants.ad, triggeredOnBasicAttack: true}
+]
 
 export default tableValues;

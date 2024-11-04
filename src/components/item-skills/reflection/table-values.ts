@@ -1,10 +1,7 @@
-import { TableValues } from "../item-skill";
-import Constants from "./constants.json";
+import { ItemSkillDamageTableGenerator } from "../item-skill";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "skill", ratio: dictionaryValues.dmg, labelFormat: "{text}被ダメージ閾値到達時周囲ダメージ"}
-    ]
-}
+const tableValues: ItemSkillDamageTableGenerator = (importedValues) => [
+    {intlValue: "item-skill.reflection-threshold", value: importedValues}
+]
 
 export default tableValues;

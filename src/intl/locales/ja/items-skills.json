@@ -1,0 +1,20 @@
+{
+    "item-skill.additional-damage": "{item}追加ダメージ",
+    "item-skill.max-additional-damage": "{item}最大追加ダメージ",
+    "item-skill.dot": "{item}/秒",
+    "item-skill.dot-max": "{item}最大ヒット({value}秒)",
+    "item-skill.dot-tick": "{item}/{value}秒",
+    "item-skill.dot-tick-max": "{item}最大ヒット({value}ティック)",
+    "item-skill.shield": "{item}シールド量",
+    "item-skill.enhanced-shield": "{item}強化シールド量",
+    "item-skill.shield-per-sec": "{item}シールド獲得/秒",
+    "item-skill.shield-max": "{item}シールド最大値",
+    "item-skill.heal": "{item}回復量",
+    "item-skill.adaptive": "{item}適合型能力値増加",
+    "item-skill.true": "{item}固定ダメージ",
+    "item-skill.reflection-threshold": "{item}被ダメージ閾値到達時周囲ダメージ",
+    "item-skill.dot-1-stack-true": "{item}1スタック時固定ダメージ/秒",
+    "item-skill.dot-max-stack-true": "{item}最大スタック({value})時固定ダメージ/秒",
+    "item-skill.spirit-harvest-add": "{item}刻印付与時追加ダメージ",
+    "item-skill.spirit-harvest-remove": "{item}刻印消化時追加ダメージ"
+}

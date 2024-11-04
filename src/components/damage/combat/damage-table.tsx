@@ -5,7 +5,6 @@ import { SubjectDamageTable, WeaponSkillDamageTable } from "components/subjects/
 //import SkillDamage from "./skill-damage";
 import BasicAttackDamage from "./basic-attack-damage";
 import table from "components/common/table.styl";
-import { ItemSkillDefinition } from "components/item-skills/item-skill";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";

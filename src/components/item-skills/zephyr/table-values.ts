@@ -1,10 +1,8 @@
-import { TableValues } from "../item-skill";
+import { ItemSkillDamageTableUnit } from "../item-skill";
 import Constants from "./constants.json";
 
-const tableValues: TableValues = (dictionaryValues: any) => {
-    return [
-        {type: "shield", ratio: Constants.shield, labelFormat: "{text}シールド"}
-    ]
-}
+const tableValues: ItemSkillDamageTableUnit[] = [
+    {labelIntlID: "item-skill.shield", value: Constants.shield, type: {type: "shield", target: "self"}}
+]
 
 export default tableValues;

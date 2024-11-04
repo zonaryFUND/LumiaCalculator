@@ -2,19 +2,19 @@ import * as React from "react";
 import style from "./skill.module.styl";
 import HealingReduction from "components/item-skills/healing_reduction/tooltip";
 
-import { ItemSkillDefinition, ItemSkillProps } from "components/item-skills/item-skill";
+import { ItemSkillProps, ItemSkillTooltipDefinitions } from "components/item-skills/item-skill";
 import { EquipmentAbility, name } from "app-types/equipment/ability";
 
 const skill: React.FC<EquipmentAbility & ItemSkillProps> = props => {
     const description = (() => {
         if (props.id == "healing_reduction_weak") {
-            return React.createElement(ItemSkillDefinition["healing_reduction"].tooltip!, {...props, intensity: "weak"} as any);
+            return React.createElement(ItemSkillTooltipDefinitions["healing_reduction"], {...props, intensity: "weak"} as any);
             //return <HealingReduction intensity="weak" />;
         } else if (props.id == "healing_reduction_strong") {
-            return React.createElement(ItemSkillDefinition["healing_reduction"].tooltip!, {...props, intensity: "strong"} as any);
+            return React.createElement(ItemSkillTooltipDefinitions["healing_reduction"], {...props, intensity: "strong"} as any);
             //return <HealingReduction intensity="strong" />;
         } else {
-            return React.createElement(ItemSkillDefinition[props.id].tooltip!, props);
+            return React.createElement(ItemSkillTooltipDefinitions[props.id], props);
         }
     })();
 
