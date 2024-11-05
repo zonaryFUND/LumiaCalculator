@@ -53,7 +53,7 @@ const potency: React.FC<Props> = props => {
             <td><FormattedMessage id="app.label.potency" /></td>
             <td>
                 {potencyDescription}
-                {potencyDescription.length > 1 ? <> = {props.sum.toString()}</> : null}
+                {props.dynamicPotencyDictionary ? <> = {props.sum.toString()}</> : null}
             </td>
         </tr>
     )

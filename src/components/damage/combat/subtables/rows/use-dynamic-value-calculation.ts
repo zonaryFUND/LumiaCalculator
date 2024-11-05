@@ -8,7 +8,7 @@ type PotencyDictionaryElement = {
 }
 
 type Response = {
-    potencyDictionary: {
+    potencyDictionary?: {
         [key in RatioKeys]: {
             ratio: number,
             value: Decimal,
@@ -30,6 +30,12 @@ export default function useDynamicValueCalculation(
         maxHP: Decimal.Value
     }
 ): Response {
+    if (basePotency == undefined) {
+        return {
+            potency: new Decimal(0)
+        }
+    }
+
     return Object.entries(basePotency ?? {})
         .reduce((prev, [ratioKey, ratioValue]) => {
             const targetValue = (() => {
