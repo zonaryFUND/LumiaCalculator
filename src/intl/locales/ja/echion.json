@@ -3,9 +3,13 @@
     "subject.echion.sidewinder-amp": "サイドワインダー増幅",
     "subject.echion.deathadder-aa-additional": "暴走中追加ダメージ",
     "subject.echion.amp-calculated": "増幅計算値",
+    "subject.echion.q-heal": "Q回復",
+    "subject.echion.q2-heal": "Q2回復",
     "subject.echion.w-shield": "Wシールド",
+    "subject.echion.e-heal": "E回復",
     "subject.echion.r-true-damage": "R周囲固定ダメージ/{value}秒",
-    "subject.echion.r": "Rエンベノミゼーション",
-    "subject.echion.r-2hit": "Rエンベノミゼーション2ヒット",
+    "subject.echion.r": "R",
+    "subject.echion.r-2hit": "R2ヒット",
+    "subject.echion.r-heal": "R回復",
     "subject.echion.gauge-consumption": "暴走ゲージ"
 }
