@@ -22,7 +22,6 @@ type Props = Omit<DamageTableUnit, "value"> & {
 }
 
 const standardDamage: React.FC<Props> = props => {
-    console.log(props)
     const [expand, toggleExpand] = useToggle(false);
 
     const {static: staticBaseValue, dynamic: dynamicBaseValue, dynamicValueOnly} = calculateValue(props.value, props.status, props.config, props.skillLevel);

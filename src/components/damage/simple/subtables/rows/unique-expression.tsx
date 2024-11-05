@@ -24,6 +24,13 @@ type Props = Omit<SubjectDamageTableUnit, "value" | "skill"> & {
 const uniqueExpression: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
     const { value, equationExpression } = props.strategy(props.config, props.status);
+    const sanitizedValue = (() => {
+        if (Array.isArray(value)) {
+            return [value[0], value[1], value[2] || value[1]];
+        } else {
+            return value;
+        }
+    })();
     const valueClass = (() => {
         return props.type ? style[props.type.type] : style.skill;
     })();
@@ -44,7 +51,7 @@ const uniqueExpression: React.FC<Props> = props => {
     });
 
     const healPower = props.type?.type == "heal" && props.status.healPower.calculatedValue.greaterThan(0) ? props.status.healPower.calculatedValue : undefined;
-    const healPowerConcerned = Array.isArray(value) ? value : value.addPercent(healPower ?? 0);
+    const healPowerConcerned = Array.isArray(sanitizedValue) ? sanitizedValue.map(v => v?.addPercent(healPower || 0)) : sanitizedValue.addPercent(healPower || 0);
 
     return (
         <>
@@ -61,7 +68,7 @@ const uniqueExpression: React.FC<Props> = props => {
                 <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
                     <InnerTable>
                         {equations}
-                        {healPower ? <HealPower baseValue={value as Decimal} healPower={healPower} /> : null}
+                        {healPower ? <HealPower baseValue={sanitizedValue as Decimal} healPower={healPower} /> : null}
                     </InnerTable>
                 </td></tr>
             }

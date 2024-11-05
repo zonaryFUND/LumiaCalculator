@@ -5,17 +5,16 @@ import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "app-types/subjec
 import StandardDamage from "./rows/standard-damage";
 import UniqueExpression from "./rows/unique-expression";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { WeaponTypeID } from "app-types/equipment/weapon";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
 import CriticalAvailable from "./rows/critical-available";
 import { DamageTableUnit } from "app-types/damage-table/unit";
+import useBasicAttackInfo from "components/damage/use-basic-attack-info";
 
 type Props = {
     status: Status
     config: SubjectConfig
     elements: (BasicAttackElement | DamageTableUnit & { skillLevel?: number })[][]
-    weaponType?: WeaponTypeID
 }
 
 const basicAttack: React.FC<Props> = props => {
@@ -26,24 +25,7 @@ const basicAttack: React.FC<Props> = props => {
         return false;
     }) != -1;
 
-    const [standardBasicAttackRatio, standardBasicAttackLabelIntlID] = React.useMemo(() => {
-        if (props.weaponType == "assault_rifle") {
-            return [
-                AssaultRifleAttackRatio.reduce((p, c) => p + c, 0),
-                "app.basic-attack.assault-rifle"
-            ]
-        }
-        if (props.weaponType == "dual_swords") {
-            return [
-                DualSwordsAttackRatio.reduce((p, c) => p + c, 0),
-                "app.basic-attack.dual-sword"
-            ]
-        }
-        if (props.weaponType == undefined) {
-            return [undefined, undefined]
-        }
-        return [100, "app.basic-attack"]
-    }, [props.weaponType]);
+    const [standardBasicAttackRatio, standardBasicAttackLabelIntlID] = useBasicAttackInfo(props.config);
 
     return (
         <tbody>

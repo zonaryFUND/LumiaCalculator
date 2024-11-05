@@ -14,12 +14,12 @@ export type Mitigation = {
     }
 
     basicAttackMitigation: {
-        label: string
+        labelIntlID: string
         value: Decimal
     }[]
 
     skillMitigation: {
-        label: string
+        labelIntlID: string
         value: Decimal
     }[]
 }
@@ -35,13 +35,11 @@ function defenseMitigationPercentage(rawDefense: Decimal, penetration: Decimal):
     return adjustedDefense.dividedBy(adjustedDefense.add(100)).times(100);
 }
 
-export function createMitigation(status: Status, targetStatus: Status, additionalPenetrationRatio: number): Mitigation {
+export function createMitigation(status: Status, targetStatus: Status): Mitigation {
     const targetDefense = targetStatus.defense.calculatedValue;
 
     const penetration = status.armorPenetration.calculatedValue
         .add(targetDefense.percent(status.armorPenetrationRatio.calculatedValue).floor())
-        .add(targetDefense.percent(additionalPenetrationRatio).floor());
-    
     
     const summonedPenetration = status.summonedStatus ? status.summonedStatus.armorPenetration.add(
         targetDefense.percent(status.summonedStatus.armorPenetrationRatio).floor()
@@ -53,12 +51,12 @@ export function createMitigation(status: Status, targetStatus: Status, additiona
     };
 
     const basicAttackMitigation = [{
-        label: "防御熟練度によるダメージ減少",
+        labelIntlID: "app.mitigation.defense-mastery",
         value: targetStatus.basicAttackReduction.calculatedValue
     }];
 
     const skillMitigation = [{
-        label: "防御熟練度によるダメージ減少",
+        labelIntlID: "app.mitigation.defense-mastery",
         value: targetStatus.skillReduction.calculatedValue
     }];
 

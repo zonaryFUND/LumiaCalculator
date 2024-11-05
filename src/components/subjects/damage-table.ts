@@ -44,14 +44,26 @@ export type WeaponSkillTableGenerator = (props: {intl: IntlShape}) => DamageTabl
 const context = require.context("./", true, /\.\/.*\/damage-table\.ts$/);
 export const SubjectDamageTable = context.keys().reduce((skills: any, path) => {
     const key = path.substring(2, path.lastIndexOf("/"));
-    skills[key] = context(path).default;
+    const tableOrGenerator = context(path).default;
+    if (typeof tableOrGenerator == "function") {
+        skills[key] = tableOrGenerator;     
+    } else {
+        skills[key] = () => tableOrGenerator;
+    }
+    
     return skills;
-}, {}) as {[id: string]: (DamageTable | DamageTableGenerator)}
+}, {}) as {[id: string]: (DamageTableGenerator)}
 
 const weaponSkillContext = require.context("./", true, /\.\/weapon-skills\/damage-table\/.*\.ts/);
 export const WeaponSkillDamageTable = weaponSkillContext.keys().reduce((skills: any, path) => {
     const pathComponents = path.split("/");
     const name = pathComponents[pathComponents.length - 1];
-    skills[name.substring(0, name.length - 3)] = weaponSkillContext(path).default;
+    const tableOrGenerator = weaponSkillContext(path).default;
+    if (typeof tableOrGenerator == "function") {
+        skills[name.substring(0, name.length - 3)] = tableOrGenerator;
+    } else {
+        skills[name.substring(0, name.length - 3)] = () => tableOrGenerator;
+    }
+
     return skills;
-}, {}) as {[id: string]: DamageTableUnit[] | WeaponSkillTableGenerator}
+}, {}) as {[id: string]: WeaponSkillTableGenerator}

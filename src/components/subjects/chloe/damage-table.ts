@@ -14,7 +14,11 @@ const ninaBasicAttackStrategy: UniqueValueStrategy = (config, status) => {
         .add(criticalDamage.percent(status.summonedStatus!.criticalChance));
 
     return {
-        value: [regularDamage, criticalAvailable ? criticalDamage : undefined, expectedValue],
+        value: [
+            regularDamage, 
+            criticalAvailable ? criticalDamage : undefined, 
+            criticalAvailable && status.summonedStatus?.criticalChance.lessThan(100) ? expectedValue : undefined
+        ],
         equationExpression: [
             {
                 labelIntlID: "app.standard-value",

@@ -29,18 +29,20 @@ const damages: React.FC<Props> = props => {
                     <h1>実験体</h1>
                 </header>
             }
-            <Table
-                left={{
-                    config: props.leftConfig,
-                    status: props.leftStatus,
-                    hp: props.leftHP
-                }}
-                right={{
-                    config: props.rightConfig,
-                    status: props.rightStatus,
-                    hp: props.rightHP
-                }}
-            />
+            <div className={index.content}>
+                <Table
+                    left={{
+                        config: props.leftConfig,
+                        status: props.leftStatus,
+                        hp: props.leftHP
+                    }}
+                    right={{
+                        config: props.rightConfig,
+                        status: props.rightStatus,
+                        hp: props.rightHP
+                    }}
+                />
+            </div>
         </div>
     )
 };

@@ -7,17 +7,17 @@ import { DamageTableUnit } from "app-types/damage-table/unit";
 
 type Props = {
     label: string
-    tables: DamageTableUnit[][]
+    elements: (DamageTableUnit & {skillLevel?: number})[][]
     config: SubjectConfig
     status: Status
 }
 
-const otherSkill: React.FC<Props> = props => {
+const subTable: React.FC<Props> = props => {
     return (
         <tbody>
             <tr className={table.separator}><td>{props.label}</td><td colSpan={3}>ダメージ / 効果量</td></tr>
             {
-                props.tables.reduce((prev, chunk, index) => {
+                props.elements.reduce((prev, chunk, index) => {
                     const separator = index == 0 || chunk.filter(s => s.damageDependentHeal == undefined).length == 0 ? 
                         null :
                         <tr key={`separator-${index}`} className={table.border}><td colSpan={4}></td></tr>;
@@ -26,7 +26,8 @@ const otherSkill: React.FC<Props> = props => {
                         if (unit.damageDependentHeal != undefined) return null;
 
                         return <StandardDamage 
-                            key={unit.label} 
+                            key={unit.label}
+                            skillLevel={unit.skillLevel}
                             status={props.status} 
                             config={props.config} 
                             {...unit} 
@@ -42,4 +43,4 @@ const otherSkill: React.FC<Props> = props => {
     )
 };
 
-export default otherSkill;
+export default subTable;
