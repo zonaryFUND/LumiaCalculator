@@ -70,17 +70,22 @@ const standardDamage: React.FC<Props> = props => {
                 false
             );
             if (props.damageDependentHeal) {
-                const ratio = (() => {
-                    if (Array.isArray(props.damageDependentHeal)) {
-                        if (props.skillLevel == undefined) {
-                            throw new Error("damage dependent heal is array but skill level is not provided.");
+                if (typeof props.damageDependentHeal == "function") {
+                    const response = props.damageDependentHeal({potency: finalPotency, calculatedDamage: mitigated[0] });
+                    return[response.heal, {base: response.baseValue, multiplier: response.multiplier}, []]
+                }  else {
+                    const multiplier = (() => {
+                        if (Array.isArray(props.damageDependentHeal)) {
+                            if (props.skillLevel == undefined) {
+                                throw new Error("damage dependent heal is array but skill level is not provided.");
+                            }
+                            return props.damageDependentHeal[props.skillLevel];
+                        } else {
+                            return props.damageDependentHeal;
                         }
-                        return props.damageDependentHeal[props.skillLevel];
-                    } else {
-                        return props.damageDependentHeal;
-                    }
-                })();
-                return [mitigated[0].percent(ratio), {base: mitigated[0], ratio}, []]
+                    })();
+                    return [mitigated[0].percent(multiplier), {base: mitigated[0], multiplier}, []]
+                }
             } else {
                 return [mitigated[0], undefined, mitigated[1]]
             }
@@ -125,7 +130,7 @@ const standardDamage: React.FC<Props> = props => {
             damageDependentHealValue ?
             <DamageDependentHeal 
                 baseDamage={damageDependentHealValue.base}
-                ratio={damageDependentHealValue.ratio}
+                ratio={damageDependentHealValue.multiplier}
                 calculated={mitigatedValue}
             /> 
             :
