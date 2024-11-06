@@ -10,10 +10,10 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { useIntl } from "react-intl";
-import { augmentTableValues } from "components/augment/table-value";
 import useItemSkills from "../use-item-skills";
 import useWeaponSkill from "../use-weapon-skills";
 import useTacticalSkill from "../use-tactical-skill";
+import useAugment from "../use-augment";
 
 type Props = {
     status: Status
@@ -34,6 +34,7 @@ const damageTable: React.FC<Props> = props => {
 
     const weaponSkill = useWeaponSkill(props.config);
     const itemSkills = useItemSkills(props.config);
+    const augments = useAugment(props.config);
     const tacticalSkills = useTacticalSkill(props.config);
 
     return (
@@ -69,20 +70,12 @@ const damageTable: React.FC<Props> = props => {
                         config={props.config}
                         status={props.status}
                     />
-                    <tbody>
-                        <tr className={table.separator}><td>特性</td><td colSpan={3}>ダメージ / 効果量</td></tr>
-                        {
-                            augmentTableValues({intl}).map(def => {
-                                return <StandardDamage
-                                    key={def.label}
-                                    label={def.label}
-                                    status={props.status}
-                                    config={props.config}
-                                    value={def.ratio}
-                                />
-                            })
-                        }
-                    </tbody>
+                    <SubTable 
+                        label="特性"
+                        elements={augments}
+                        config={props.config}
+                        status={props.status}
+                    />
                     <SubTable 
                         label="戦術スキル"
                         elements={tacticalSkills}

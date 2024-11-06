@@ -87,12 +87,13 @@ const SectionedList: React.FC<Props> = props => (
     <>
         {
             aiueoDef.map(tuple => (
-                <section>
+                <section key={tuple.index}>
                     <h3>{tuple.index}</h3>
                     <ul>
                         {
                             tuple.ids.map(id => 
-                                <Subject 
+                                <Subject
+                                    key={id}
                                     id={id} 
                                     onSelect={props.onSelect} 
                                     selected={props.current == id}

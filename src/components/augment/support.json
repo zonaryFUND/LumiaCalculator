@@ -23,8 +23,10 @@
         "threshold": 40,
         "duration": 3,
         "heal": {
-            "base": 3,
-            "level": 0.5
+            "targetMaxHP": {
+                "base": 3,
+                "level": 0.5
+            }
         },
         "cooldown": 35,
         "multiple_reduction": 50

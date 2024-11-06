@@ -4,10 +4,13 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import StandardDamage from "./rows/standard-damage";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { DamageTableUnit } from "app-types/damage-table/unit";
+import { ValueRatio } from "app-types/value-ratio";
+import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
+import UniqueExpression from "./rows/unique-expression";
 
 type Props = {
     label: string
-    elements: (DamageTableUnit & {skillLevel?: number})[][]
+    elements: (Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy} & {skillLevel?: number})[][]
     config: SubjectConfig
     status: Status
 }
@@ -24,15 +27,24 @@ const subTable: React.FC<Props> = props => {
                     
                     const elements = chunk.map(unit => {
                         if (unit.damageDependentHeal != undefined) return null;
-
-                        return <StandardDamage 
-                            key={unit.label}
-                            skillLevel={unit.skillLevel}
-                            status={props.status} 
-                            config={props.config} 
-                            {...unit} 
-                            value={unit.value} 
-                        />;
+                        if (typeof unit.value == "function") {
+                            return <UniqueExpression 
+                                key={unit.label} 
+                                status={props.status} 
+                                config={props.config} 
+                                {...unit} 
+                                strategy={unit.value} 
+                            />;  
+                        } else {
+                            return <StandardDamage 
+                                key={unit.label}
+                                skillLevel={unit.skillLevel}
+                                status={props.status} 
+                                config={props.config} 
+                                {...unit} 
+                                value={unit.value} 
+                            />;
+                        }
                     })
                     .filter((item): item is React.ReactElement => item != null)
 

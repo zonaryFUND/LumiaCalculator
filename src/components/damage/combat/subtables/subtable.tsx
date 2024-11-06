@@ -8,10 +8,12 @@ import StandardDamage from "./rows/standard-damage";
 import CriticalAvailable from "./rows/critical-available";
 import Decimal from "decimal.js";
 import { useCombatHPContext } from "../combat-hp-context";
+import { ValueRatio } from "app-types/value-ratio";
+import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
 
 type Props = {
     label: string
-    elements: (SubjectDamageTableUnit | DamageTableUnit & {skillLevel?: number})[][]
+    elements: (SubjectDamageTableUnit | Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy} & {skillLevel?: number})[][]
     attacker: {
         config: SubjectConfig
         status: Status
@@ -21,9 +23,9 @@ type Props = {
 const subTable: React.FC<Props> = props => {
     const { ltr } = useCombatHPContext();
     const hpRatioHeader = [
-        <td>自己体力比</td>,
-        <td>効果量</td>,
-        <td>対象体力比</td>
+        <td key="self">自己体力比</td>,
+        <td key="effect">効果量</td>,
+        <td key="target">対象体力比</td>
     ]
 
     return (
@@ -46,19 +48,20 @@ const subTable: React.FC<Props> = props => {
 
                         if (typeof unit.value == "function") {
                             const { value } = unit.value(props.attacker.config, props.attacker.status);
-                            console.log(value)
                             if (Array.isArray(value)) {
                                 return value
                                     .map((v, index) => {
                                         if (v == undefined) return null;
-                                        const label = [
+                                        const labelSuffix = [
                                             "(基礎値)", 
                                             value[2] == undefined ? "(確定致命打)" : "(致命打)", 
                                             "(期待値)"
                                         ];
-                                        return <StandardDamage 
+                                        const label = `${unit.label}${labelSuffix[index]}`
+                                        return <StandardDamage
+                                            key={label}
                                             {...unit}
-                                            label={`${unit.label}${label[index]}`}
+                                            label={label}
                                             value={v}
                                             skillLevel={skillLevel}
                                             config={props.attacker.config}
@@ -70,6 +73,7 @@ const subTable: React.FC<Props> = props => {
                                 return [
                                     <StandardDamage 
                                         {...unit}
+                                        key={unit.label}
                                         value={value}
                                         skillLevel={skillLevel}
                                         config={props.attacker.config}
@@ -82,6 +86,7 @@ const subTable: React.FC<Props> = props => {
                                 return [
                                     <CriticalAvailable 
                                         {...unit}
+                                        key={unit.label}
                                         value={unit.value}
                                         skillLevel={skillLevel}
                                         config={props.attacker.config}
@@ -99,6 +104,7 @@ const subTable: React.FC<Props> = props => {
                                     return [
                                         <StandardDamage 
                                             {...unit}
+                                            key={`${unit.label}(自分へ)`}
                                             label={`${unit.label}(自分へ)`}
                                             value={unit.value}
                                             skillLevel={skillLevel}
@@ -108,6 +114,7 @@ const subTable: React.FC<Props> = props => {
                                         />,
                                         <StandardDamage 
                                             {...unit}
+                                            key={`${unit.label}(相手へ)`}
                                             label={`${unit.label}(相手へ)`}
                                             value={unit.value}
                                             skillLevel={skillLevel}
@@ -120,6 +127,7 @@ const subTable: React.FC<Props> = props => {
                                     return [
                                         <StandardDamage 
                                             {...unit}
+                                            key={unit.label}
                                             value={unit.value}
                                             skillLevel={skillLevel}
                                             config={props.attacker.config}
@@ -132,6 +140,7 @@ const subTable: React.FC<Props> = props => {
                                 return [
                                     <StandardDamage 
                                         {...unit}
+                                        key={unit.label}
                                         value={unit.value}
                                         skillLevel={skillLevel}
                                         config={props.attacker.config}
@@ -144,72 +153,6 @@ const subTable: React.FC<Props> = props => {
 
                     return separator ? [separator].concat(elements) : elements;
                 })
-                /*
-                definition?.skill.map((array, index) => 
-                    <React.Fragment key={index}>
-                    {
-                        index == 0 ? null :
-                        <tr className={table.border}><td colSpan={3}></td></tr>
-                    }
-                    {
-                        array.map(s => {
-                            if (s.type?.type == "basic" && s.type.critical != "none") {
-                                const level = extractskillLevel(s, attacker.config);
-                                const multiplier = extractMultiplier(level, s.multiplier)?.[0];
-                                const sanitizedDict = Object.fromEntries(
-                                    Object.entries(s.value).map(([key, value]) => {
-                                        return [key, Array.isArray(value) ? value[level] : value]
-                                    })
-                                );
-                                return <BasicAttackDamage 
-                                    name={s.label} 
-                                    status={attacker.status} 
-                                    config={sanitizedDict} 
-                                    multiplier={multiplier} 
-                                />;
-                            }
-
-                            if ((s.type?.type == "heal" || s.type?.type == "shield") && s.type.target == "any") {
-                                return (
-                                    <>
-                                        <SkillDamage 
-                                            {...s}
-                                            key={s.label + "_self"}
-                                            label={s.label + "(自己)"}
-                                            status={attacker.status} 
-                                            config={attacker.config} 
-                                            selfTarget={true}
-                                        />
-                                        <SkillDamage 
-                                            {...s}
-                                            key={s.label + "_opponent"} 
-                                            label={s.label + "(相手)"} 
-                                            status={attacker.status} 
-                                            config={attacker.config} 
-                                        />
-                                    </>
-                                )
-                            } 
-
-                            if (s.type == "kenneth-heal") {
-                                return (
-                                    <>
-                                        <KennethHeal status={attacker.status} config={attacker.config} onEEffect={false} />
-                                        <KennethHeal status={attacker.status} config={attacker.config} onEEffect={true} />
-                                    </>
-                                )
-                            }
-
-                            return <SkillDamage 
-                                key={s.label} 
-                                status={attacker.status} 
-                                config={attacker.config} {...s}
-                            />;
-                        })
-                    }
-                    </React.Fragment>
-                )
-                    */
         }
         </tbody>
     )

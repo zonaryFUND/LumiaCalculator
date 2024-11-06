@@ -77,7 +77,7 @@ const subjectsList: React.FC<Props> = props => {
                 {props.slot == "weapon" ? null : <SegmentedControl name="equipment-sort" value={[layout, setLayout]} segments={[{title: "一括表示", value: "in-game"}, {title: "等級別表示", value: "rarity"}]} />}
             </header>
             <div className={style.content}>
-                <section>
+                <section key="remove">
                     <div onClick={onClick(null)} className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot] == null ? style.selected : undefined)}>
                         <Blank slot={props.slot} />
                         <p>外す</p>
@@ -85,7 +85,7 @@ const subjectsList: React.FC<Props> = props => {
                 </section>
             {
                 def.sections.map(section => (
-                    <section>
+                    <section key={section.title || "empty"}>
                         {section.title ? <h3>{section.title}</h3> : null}
                         <ul>
                             {

@@ -130,29 +130,31 @@ const standardDamage: React.FC<Props> = props => {
         return [
             damageDependentHealValue ?
             <DamageDependentHeal 
+                key="damage-dependent-heal"
                 baseDamage={damageDependentHealValue.base}
                 ratio={damageDependentHealValue.multiplier}
                 calculated={mitigatedValue}
             /> 
             :
             <Potency
+                key="potency"
                 staticPotency={dynamicValueOnly ? undefined : staticPotency}
                 dynamicPotencyDictionary={dynamicPotencyDictionary}
                 sum={totalPotency}
             />,
-            healPower ? <HealPower baseValue={totalPotency} healPower={healPower} calculated={finalPotency} /> : [],
+            healPower ? <HealPower key="healpower" baseValue={totalPotency} healPower={healPower} calculated={finalPotency} /> : [],
             mitigationInfo.map(info => <Mitigation key={info.labelIntlID} {...info} />)
         ].flat()
     })();
 
     const hpRatio: React.ReactElement[] = [
         selfHPRatio ? 
-        <td className={valueClass}>{selfHPRatio.toString()}%</td> :
-        <td />,
-        <td className={valueClass}>{mitigatedValue.floor().toString()}{percent ? "%" : null}</td>,
+        <td key="self" className={valueClass}>{selfHPRatio.toString()}%</td> :
+        <td key="self" />,
+        <td key="effect" className={valueClass}>{mitigatedValue.floor().toString()}{percent ? "%" : null}</td>,
         opponentHPRatio ? 
-        <td className={valueClass}>{opponentHPRatio.toString()}%</td> :
-        <td />
+        <td key="opponent" className={valueClass}>{opponentHPRatio.toString()}%</td> :
+        <td key="opponent" />
     ];
 
     return (

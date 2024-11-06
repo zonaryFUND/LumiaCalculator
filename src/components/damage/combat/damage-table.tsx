@@ -13,6 +13,7 @@ import SubTable from "./subtables/subtable";
 import useItemSkills from "../use-item-skills";
 import useWeaponSkill from "../use-weapon-skills";
 import useTacticalSkill from "../use-tactical-skill";
+import useAugment from "../use-augment";
 
 type Props = {
     hideHeader?: boolean
@@ -41,6 +42,7 @@ const damageTable: React.FC<Props> = props => {
 
     const weaponSkill = useWeaponSkill(attacker.config);
     const itemSkills = useItemSkills(attacker.config);
+    const augments = useAugment(attacker.config);
     const tacticalSkills = useTacticalSkill(attacker.config);
 
     return (
@@ -87,6 +89,14 @@ const damageTable: React.FC<Props> = props => {
                     <SubTable 
                         label="アイテムスキル"
                         elements={[itemSkills.regular]}
+                        attacker={{
+                            config: attacker.config,
+                            status: attacker.status
+                        }}
+                    />
+                    <SubTable 
+                        label="特性"
+                        elements={augments}
                         attacker={{
                             config: attacker.config,
                             status: attacker.status

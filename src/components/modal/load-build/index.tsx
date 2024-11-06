@@ -45,7 +45,7 @@ const loadBuild: React.FC<Props> = props => {
             <ul>
                 {
                     (savedBuilds ?? []).map((build, i) => (
-                        <li className={styles(selected == build.key ? style.selected : undefined, props.currentKey == build.key ? style.current : undefined)} onClick={() => onClick(build.key)}>
+                        <li key={build.key} className={styles(selected == build.key ? style.selected : undefined, props.currentKey == build.key ? style.current : undefined)} onClick={() => onClick(build.key)}>
                             <p>{build.name}</p>
                             {build.isPremadeSample ? null : <button onClick={event => {
                                 event.stopPropagation();
