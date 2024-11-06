@@ -1,3 +1,4 @@
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
 import * as React from "react";
@@ -15,6 +16,7 @@ export type Mitigation = {
 
     basicAttackMitigation: {
         labelIntlID: string
+        mitigationType: "ratio" | "constant"
         value: Decimal
     }[]
 
@@ -50,10 +52,23 @@ export function createMitigation(status: Status, targetStatus: Status): Mitigati
         summoned: summonedPenetration ? defenseMitigationPercentage(targetDefense, summonedPenetration) : undefined
     };
 
-    const basicAttackMitigation = [{
-        labelIntlID: "app.mitigation.defense-mastery",
-        value: targetStatus.basicAttackReduction.calculatedValue
-    }];
+    const basicAttackMitigation = [
+        {
+            labelIntlID: "app.mitigation.defense-mastery",
+            mitigationType: "ratio",
+            value: targetStatus.basicAttackReduction.calculatedValue
+        },
+        targetStatus.basicAttackReductionConstant.overrideAdditional ?
+        {
+            labelIntlID: targetStatus.basicAttackReductionConstant.overrideAdditional.nameKey,
+            mitigationType: "constant",
+            value: targetStatus.basicAttackReductionConstant.calculatedValue
+        } : undefined
+    ].filter((e): e is {
+        labelIntlID: string
+        mitigationType: "ratio" | "constant"
+        value: Decimal
+    } => e != undefined);
 
     const skillMitigation = [{
         labelIntlID: "app.mitigation.defense-mastery",

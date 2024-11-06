@@ -17,6 +17,7 @@ import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { SubjectStatusOverride } from "components/subjects/status-override";
 import { SummonedStatus } from "components/subjects/summoned-status";
 import { defenseCalc } from "./defense-calculation";
+import { ProgressPlugin } from "webpack";
 
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
@@ -138,6 +139,7 @@ export function useStatus(config: SubjectConfig): Status {
                 ratio: BasicAttackReductionPerMastery
             }
         },
+        basicAttackReductionConstant: {},
         skillReduction: {
             perMastery: {
                 ratio: SkillReductionPerMastery
@@ -238,6 +240,7 @@ export function useStatus(config: SubjectConfig): Status {
         defense: defenseCalc(overriddenValue.defense, config.level),
         maxSP: standardCalc(overriddenValue.maxSP, {level: config.level}, 0),
         basicAttackReduction: defenseMasteryCalc(overriddenValue.basicAttackReduction, {mastery: config.defenseMastery}),
+        basicAttackReductionConstant: standardCalc(overriddenValue.basicAttackReductionConstant, {}, 0),
         skillReduction: defenseMasteryCalc(overriddenValue.skillReduction, {mastery: config.defenseMastery}),
         spReg: standardCalc(overriddenValue.spReg, {level: config.level}, 2),
         attackPower: attackCalc(overriddenValue.attackPower, {level: config.level, mastery: config.weaponMastery}),

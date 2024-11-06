@@ -67,7 +67,8 @@ const standardDamage: React.FC<Props> = props => {
                 finalPotency, 
                 mitigationContext, 
                 props.type?.type == "basic" ? "basic" : "skill",
-                false
+                false,
+                (props.type && "hitCount" in props.type) ? props.type.hitCount : undefined
             );
             if (props.damageDependentHeal) {
                 if (typeof props.damageDependentHeal == "function") {
@@ -93,6 +94,11 @@ const standardDamage: React.FC<Props> = props => {
             return [finalPotency, undefined, []]
         }
     })();
+
+    if (props.type && "hitCount" in props.type && props.type.hitCount) {
+        console.log(props)
+        console.log(mitigationInfo)
+    }
 
     const target = props.type != undefined && "target" in props.type ? props.type.target : undefined;
     const selfHPRatio = (() => {

@@ -25,7 +25,10 @@ const basicAttack: React.FC<Props> = props => {
         return false;
     }) != -1;
 
-    const [standardBasicAttackRatio, standardBasicAttackLabelIntlID] = useBasicAttackInfo(props.config);
+    const { 
+        attackRatio: standardBasicAttackRatio, 
+        labelIntlID: standardBasicAttackLabelIntlID
+    } = useBasicAttackInfo(props.config);
 
     return (
         <tbody>

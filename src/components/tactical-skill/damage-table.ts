@@ -20,8 +20,8 @@ const table: (intl: IntlShape) => Unit[][] = intl => [
         {label: intl.formatMessage({id: "tactical.quake.dot-all"}, {value: quakeMax}), value: Constants.quake.dot_damage, skillLevel: 2, multiplier: quakeMax * 100}
     ],
     [
-        {label: intl.formatMessage({id: "tactical.protocol-violation.level1"}), value: Constants.protocol_violation.hp_increase, skillLevel: 1, type: {type: "heal", target: "any"}},
-        {label: intl.formatMessage({id: "tactical.protocol-violation.level2"}), value: Constants.protocol_violation.hp_increase, skillLevel: 2, type: {type: "heal", target: "any"}}
+        {label: intl.formatMessage({id: "tactical.protocol-violation.level1"}), value: Constants.protocol_violation.hp_increase, skillLevel: 1, type: {type: "shield", target: "any"}},
+        {label: intl.formatMessage({id: "tactical.protocol-violation.level2"}), value: Constants.protocol_violation.hp_increase, skillLevel: 2, type: {type: "shield", target: "any"}}
     ],
     [
         {label: intl.formatMessage({id: "tactical.force-field.level1"}), value: Constants.force_field.shield, skillLevel: 1, type: {type: "shield", target: "self"}},

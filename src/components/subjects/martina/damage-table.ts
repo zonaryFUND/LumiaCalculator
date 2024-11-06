@@ -6,9 +6,9 @@ const rMax = Constants.R2.count;
 const table: DamageTableGenerator = props => ({
     basicAttack: [
         {label: props.intl.formatMessage({id: "subject.martina.interview.aa-1tick"}), skill: "T", value: Constants.T.damage, type: {type: "basic"}},
-        {label: props.intl.formatMessage({id: "subject.martina.interview.aa-max-hit"}, {value: 4}), skill: "T", value: Constants.T.damage, type: {type: "basic"}, multiplier: 400},
+        {label: props.intl.formatMessage({id: "subject.martina.interview.aa-max-hit"}, {value: 4}), skill: "T", value: Constants.T.damage, type: {type: "basic", hitCount: 4}, multiplier: 400},
         {label: props.intl.formatMessage({id: "subject.martina.broadcast.aa-1tick"}), skill: "T", value: Constants.T.broadcasting_damage, type: {type: "basic"}},
-        {label: props.intl.formatMessage({id: "subject.martina.broadcast.aa-max-hit"}, {value: 4}), skill: "T", value: Constants.T.broadcasting_damage, type: {type: "basic"}, multiplier: 400},
+        {label: props.intl.formatMessage({id: "subject.martina.broadcast.aa-max-hit"}, {value: 4}), skill: "T", value: Constants.T.broadcasting_damage, type: {type: "basic", hitCount: 4}, multiplier: 400},
     ],
     skill: [
         [{label: props.intl.formatMessage({id: "subject.martina.interview.q"}), skill: "Q", value: Constants.Q.damage}],

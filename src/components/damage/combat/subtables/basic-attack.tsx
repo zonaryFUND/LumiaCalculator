@@ -18,7 +18,11 @@ type Props = {
 
 const basicAttack: React.FC<Props> = props => {
     const intl = useIntl();
-    const [standardBasicAttackRatio, standardBasicAttackLabelIntlID] = useBasicAttackInfo(props.attacker.config);
+    const {
+        attackRatio: standardBasicAttackRatio, 
+        labelIntlID: standardBasicAttackLabelIntlID,
+        hitCount
+    } = useBasicAttackInfo(props.attacker.config);
 
     const sanitizedElements = props.elements.map(chunk => {
         return chunk.flatMap(element => {
@@ -27,7 +31,11 @@ const basicAttack: React.FC<Props> = props => {
                     const unit: DamageTableUnit = {
                         label: intl.formatMessage({id: standardBasicAttackLabelIntlID}),
                         value: {attack: standardBasicAttackRatio, basicAttackAmp: 100},
-                        type: {type: "basic", critical: element == "disable-critical" ? "none" : undefined}
+                        type: {
+                            type: "basic", 
+                            critical: element == "disable-critical" ? "none" : undefined,
+                            hitCount
+                        }
                     }
                     return unit;
                 } else {

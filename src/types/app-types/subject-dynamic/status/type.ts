@@ -48,6 +48,7 @@ export type Status = {
     hpReg: StatusValue & CalculatedStatusValue
     defense: StatusValue & AdditionalStatusValue & CalculatedStatusValue
     basicAttackReduction: StatusValue & CalculatedStatusValue
+    basicAttackReductionConstant: StatusValue & CalculatedStatusValue // hidden status for calculation
     skillReduction: StatusValue & CalculatedStatusValue
     maxSP: StatusValue & CalculatedStatusValue,
     spReg: StatusValue & CalculatedStatusValue,

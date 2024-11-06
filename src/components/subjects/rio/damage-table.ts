@@ -5,7 +5,7 @@ import { RioTStrategy } from "./t";
 const table: DamageTableGenerator = props => ({
     basicAttack: [
         {label: props.intl.formatMessage({id: "subject.rio.hankyu-aa"}), skill: "Q", value: RioTStrategy("hankyu"), type: {type: "basic", critical: "none"}},
-        {label: props.intl.formatMessage({id: "subject.rio.hankyu-aa-2hit"}), skill: "Q", value: RioTStrategy("hankyu-2"), type: {type: "basic", critical: "none"}},
+        {label: props.intl.formatMessage({id: "subject.rio.hankyu-aa-2hit"}), skill: "Q", value: RioTStrategy("hankyu-2"), type: {type: "basic", critical: "none", hitCount: 2}},
         {label: props.intl.formatMessage({id: "subject.rio.daikyu-aa"}), skill: "Q", value: RioTStrategy("daikyu"), type: {type: "basic", critical: "none"}}
     ],
     skill: [

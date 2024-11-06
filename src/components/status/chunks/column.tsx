@@ -5,7 +5,7 @@ import style from "components/common/table.styl";
 
 type ColumnProps = {
     name: React.ReactElement
-    value: Decimal
+    value: Decimal | React.ReactElement
     percent?: boolean
     expand?: React.ReactNode
     isHidden?: boolean
@@ -16,7 +16,10 @@ const column: React.FC<ColumnProps> = props => {
         content={
             <>
                 <td className={style.label}>{props.name}</td>
-                <td className={style.value}>{props.value.toString() + (props.percent ? "%" : "")}</td>
+                <td className={style.value}>{
+                    "props" in props.value ? props.value :
+                    (props.value.toString() + (props.percent ? "%" : ""))
+                }</td>
             </>
         }
         expand={props.expand}

@@ -13,9 +13,9 @@ const table: DamageTableGenerator = props => {
     return {
         basicAttack: [
             {label: props.intl.formatMessage({id: "subject.bernice.aa-min"}), skill: "T", value: Constants.T.base_damage, type: {type: "basic", critical: "none"}},   
-            {label: props.intl.formatMessage({id: "subject.bernice.aa-max"}), skill: "T", value: firstMaxDamage, type: {type: "basic", critical: "none"}},
+            {label: props.intl.formatMessage({id: "subject.bernice.aa-max"}), skill: "T", value: firstMaxDamage, type: {type: "basic", critical: "none", hitCount: Constants.T.bullet[props.config.skillLevels.T]}},
             {label: props.intl.formatMessage({id: "subject.bernice.critical-min"}), skill: "T", value: Constants.T.base_damage, type: {type: "basic", critical: "none"}, multiplier: criticalMultiplier},   
-            {label: props.intl.formatMessage({id: "subject.bernice.critical-max"}), skill: "T", value: firstMaxDamage, type: {type: "basic", critical: "none"}, multiplier: criticalMultiplier}
+            {label: props.intl.formatMessage({id: "subject.bernice.critical-max"}), skill: "T", value: firstMaxDamage, type: {type: "basic", critical: "none", hitCount: Constants.T.bullet[props.config.skillLevels.T]}, multiplier: criticalMultiplier}
         ],
         skill: [
             [
