@@ -45,7 +45,7 @@ export type BowID = typeof Bows[number]
 
 export const Crossbows = [
     "the_legend_of_the_general", "ballista", "sniper_crossbow", "poisoned_crossbow", "the_golden_ghost",
-    "sharanga", "blood_half_moon", "blood_half_moon_crimson", "blood_half_moon_dawn"
+    "sharanga", "tempest", "phantom_bolt", "blood_half_moon", "blood_half_moon_crimson", "blood_half_moon_dawn"
 ]
 export type CrossbowID = typeof Crossbows[number]
 
@@ -56,7 +56,7 @@ export const Pistols = [
 export type PistolID = typeof Pistols[number]
 
 export const AssaultRifles = [
-    "type_95", "ak-12", "xcr", "gold_rush", "agni", "judgement", "black_widow", "endeavor_ax",
+    "type_95", "ak-12", "xcr", "gold_rush", "agni", "judgement", "black_widow", "endeavor_ax", "valkyrie",
     "hellfire", "hellfire_crimson", "hellfire_dawn"
 ]
 export type AssaultRifleID = typeof AssaultRifles[number]
@@ -69,7 +69,7 @@ export type SniperRifleID = typeof SniperRifles[number]
 
 export const Hammers = [
     "fang_mace", "hammer_of_dagda", "hammer_of_thor", "weight_of_the_world", "bookmaster", "evening_star",
-    "squeaky_hammer", "doomsday", "peacebringer", "peacebringer_crimson", "peacebringer_dawn"
+    "squeaky_hammer", "doomsday", "leviathan", "peacebringer", "peacebringer_crimson", "peacebringer_dawn"
 ]
 export type HammerID = typeof Hammers[number]
 
@@ -93,7 +93,7 @@ export type TwoHandedSwordID = typeof TwoHandedSwords[number]
 
 export const DualSwords = [
     "divine_dual_swords", "asura", "deadly_butterfly", "dioscuri", "starsteel_twin_swords", "lloigor_zahr",
-    "spring_and_autumn", "phantom_blade", "phantom_blade_crimson", "phantom_blade_dawn"
+    "spring_and_autumn", "thanatos", "phantom_blade", "phantom_blade_crimson", "phantom_blade_dawn"
 ]
 export type DualSwordID = typeof DualSwords[number]
 
@@ -104,7 +104,7 @@ export const Spears = [
 export type SpearID = typeof Spears[number]
 
 export const Nunchakus = [
-    "the_smiting_dragon", "vibro_nunchaku", "blue_3", "cerberus", "crimson_red_lovers", "hydra", "hydra_crimson", "hydra_dawn"
+    "the_smiting_dragon", "vibro_nunchaku", "blue_3", "cerberus", "crimson_red_lovers", "geryon", "neon_chain", "hydra", "hydra_crimson", "hydra_dawn"
 ]
 export type NunchakuID = typeof Nunchakus[number]
 
@@ -122,7 +122,7 @@ export const Guitars = [
 export type GuitarID = typeof Guitars[number]
 
 export const Cameras = [
-    "mirrorless", "laser_designator", "vicg", "instant_camera", "cannon_camera", "ultraviolet",
+    "mirrorless", "laser_designator", "vicg", "instant_camera", "cannon_camera", "ultraviolet", "on_air", "triple_focus",
     "vision_flex", "vision_flex_crimson", "vision_flex_dawn"
 ]
 export type CameraID = typeof Cameras[number]

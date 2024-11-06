@@ -359,6 +359,14 @@
 		"jp": "シャランガ",
 		"en": "Sharanga"
 	},
+	"tempest": {
+		"jp": "テンペスト",
+		"en": "Tempest"
+	},
+	"phantom_bolt": {
+		"jp": "ファントムボルト",
+		"en": "Phantom Bolt"
+	},
 	"blood_half_moon": {
 		"jp": "赤い半月",
 		"en": "Blood Half Moon"
@@ -451,6 +459,10 @@
 		"jp": "エンデバーAX",
 		"en": "Endeavor AX"
 	},
+	"valkyrie": {
+		"jp": "ヴァルキリー",
+		"en": "Valkyrie"
+	},
 	"hellfire": {
 		"jp": "ヘルファイヤー",
 		"en": "Hellfire"
@@ -542,6 +554,10 @@
 	"doomsday": {
 		"jp": "最後の審判",
 		"en": "Doomsday"
+	},
+	"leviathan": {
+		"jp": "レヴィアタン",
+		"en": "Leviathan"
 	},
 	"peacebringer": {
 		"jp": "ピースブリンガー",
@@ -735,6 +751,10 @@
 		"jp": "干将・莫耶",
 		"en": "Spring And Autumn"
 	},
+	"thanatos": {
+		"jp": "タナトス",
+		"en": "Thanatos"
+	},
 	"phantom_blade": {
 		"jp": "幻影刀",
 		"en": "Phantom Blade"
@@ -810,6 +830,14 @@
 	"crimson_red_lovers": {
 		"jp": "比翼連理",
 		"en": "Crimson Red Lovers"
+	},
+	"geryon": {
+		"jp": "ゲリュオン",
+		"en": "Geryon"
+	},
+	"neon_chain": {
+		"jp": "ネオンチェーン",
+		"en": "Neon Chain"
 	},
 	"hydra": {
 		"jp": "ヒドラ",
@@ -946,6 +974,14 @@
 	"ultraviolet": {
 		"jp": "ウルトラビジョン",
 		"en": "Ultraviolet"
+	},
+	"on_air": {
+		"jp": "On Air",
+		"en": "On Air"
+	},
+	"triple_focus": {
+		"jp": "トリプルフォーカス",
+		"en": "Triple Focus"
 	},
 	"vision_flex": {
 		"jp": "ビジョンフレックス",

@@ -71,7 +71,7 @@
             "targetHP": 15
         },
         "duration": 6,
-        "reuse_threshold": 20,
+        "reuse_threshold": 25,
         "movement_speed": {
             "duration": 2,
             "effect": 30

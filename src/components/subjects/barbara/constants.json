@@ -93,7 +93,7 @@
             "slow": 50
         },
         "sp_cost": 150,
-        "cooldown": [80,65,50]
+        "cooldown": [65,55,45]
     },
     "T": {
         "making_time_reduction": 20,

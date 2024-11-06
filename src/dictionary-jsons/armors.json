@@ -559,7 +559,7 @@
 		"type": "head",
 		"tier": "legendary",
 		"perLevelStatus": "hp[16]",
-		"defense": "12",
+		"defense": "15",
 		"spRegeneration": "50",
 		"option": "reflection[\"ratio\":7.5,\"dmg\":{\"base\":300}]"
 	},
@@ -785,8 +785,8 @@
 	"veritas_lux_mea": {
 		"type": "arm",
 		"tier": "epic",
-		"skillAmplification": "40",
-		"defense": "5",
+		"skillAmplification": "45",
+		"defense": "10",
 		"maxHP": "100"
 	},
 	"mythril_shield": {
@@ -957,7 +957,7 @@
 		"type": "arm",
 		"tier": "legendary",
 		"perLevelStatus": "hp[20]",
-		"defense": "15",
+		"defense": "13",
 		"option": "colossal"
 	},
 	"eye_of_horus": {
@@ -994,9 +994,9 @@
 	"lunar_embrace": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "50",
+		"skillAmplification": "55",
 		"defense": "10",
-		"maxHP": "150"
+		"maxHP": "200"
 	},
 	"prominence": {
 		"type": "arm",
@@ -1121,7 +1121,7 @@
 	"delta_red": {
 		"type": "leg",
 		"tier": "epic",
-		"skillAmplification": "13",
+		"skillAmplification": "16",
 		"cooldownReduction": "10",
 		"movementSpeed": "0.22"
 	},
@@ -1189,7 +1189,7 @@
 		"type": "leg",
 		"tier": "legendary",
 		"cooldownReduction": "15",
-		"maxHP": "150",
+		"maxHP": "120",
 		"hpRegeneration": "50",
 		"movementSpeed": "0.25",
 		"option": "healing_reduction_weak"

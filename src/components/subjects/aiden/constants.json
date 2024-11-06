@@ -7,8 +7,8 @@
         },
         "cooldown_reduction": 1.5,
         "range_damage": {
-            "base": [50,85,120,155,190],
-            "attack": 70,
+            "base": [80,110,140,170,200],
+            "attack": 75,
             "basicAttackAmp": 100
         },
         "slow": {

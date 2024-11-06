@@ -28,8 +28,8 @@
         },
         "shield_duration": 3,
         "damage": {
-            "base": [70,90,110,130,150],
-            "amp": 45
+            "base": [90,110,130,150,170],
+            "amp": 60
         },
         "stun": 0.5,
         "cooldown_reduction": 3,
@@ -41,7 +41,7 @@
         "blast": 3,
         "range": 20,
         "damage": {
-            "base": [100,180,260],
+            "base": [140,200,260],
             "amp": 100
         },
         "lost_hp_conversion": [2,2.5,3],

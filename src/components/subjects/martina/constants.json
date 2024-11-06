@@ -15,7 +15,7 @@
     "Q2": {
         "damage": {
             "base": [50,80,110,140,170],
-            "attack": 70
+            "attack": 80
         },
         "cooldown_reduction": 30,
         "movement_speed": {

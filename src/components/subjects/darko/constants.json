@@ -17,7 +17,7 @@
     "W": {
         "shield": {
             "base": [50,75,100,125,150],
-            "attack": 40
+            "attack": 50
         },
         "shield_duration": 3,
         "slow": {
@@ -60,7 +60,7 @@
     "T": {
         "defense": {
             "duration": 4,
-            "effect": [4,7,10]
+            "effect": [4,8,12]
         },
         "cooldown": 8
     }

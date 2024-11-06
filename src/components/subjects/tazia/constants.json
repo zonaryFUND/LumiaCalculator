@@ -71,7 +71,7 @@
         "blast_range": 3,
         "blast_damage": {
             "base": [90,180,270],
-            "amp": 55
+            "amp": 60
         },
         "glass_additional_damage": 30,
         "glass_additional_max": 120,

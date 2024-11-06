@@ -28,10 +28,10 @@
             "amp": 22
         },
         "defense_decline": [2,2,3,3,3],
-        "defense_decline_duration": 3,
+        "defense_decline_duration": 4,
         "defense_decline_max": 6,
         "sp_cost": [50,55,60,65,70],
-        "cooldown": [13,12,11,10,9]
+        "cooldown": [12,11,10,9,8]
     },
     "E": {
         "hide_duration": [1.2,1.4,1.6,1.8,2],

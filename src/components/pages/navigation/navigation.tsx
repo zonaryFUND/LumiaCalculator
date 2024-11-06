@@ -54,7 +54,7 @@ const navigation: React.FC<Props> = props => {
             <div className={style.warning}>
                 ルミア計算機はα版です。機能には未実装のものが含まれ、値は間違っているかもしれません。<br />
                 <br />
-                対応バージョン：1.33a
+                対応バージョン：1.34
             </div>
         </nav>
         </IconContext.Provider>

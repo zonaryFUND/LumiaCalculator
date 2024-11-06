@@ -3,7 +3,7 @@
         "count": 3,
         "damage": {
             "base": [50,60,70,80,90],
-            "amp": 35
+            "amp": 40
         },
         "cooldown_reduction": 0.5,
         "buff_duration": 6,
@@ -27,7 +27,7 @@
             "amp": 40
         },
         "sp_cost": 100,
-        "cooldown": 20
+        "cooldown": 18
     },
     "E": {
         "cooldown_reduction": 1,

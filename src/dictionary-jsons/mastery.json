@@ -33,7 +33,7 @@
 		{
 			"weapon": "arcana",
 			"type": "skill_amp",
-			"value": 4.1,
+			"value": 4.2,
 			"attackSpeed": 2.5
 		}
 	],
@@ -493,7 +493,7 @@
 		{
 			"weapon": "pistol",
 			"type": "skill_amp",
-			"value": 4.3,
+			"value": 4.5,
 			"attackSpeed": 3
 		}
 	],
@@ -517,7 +517,7 @@
 		{
 			"weapon": "nunchaku",
 			"type": "skill_amp",
-			"value": 4.2,
+			"value": 4.4,
 			"attackSpeed": 2.5
 		}
 	],

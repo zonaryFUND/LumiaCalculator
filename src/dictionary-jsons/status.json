@@ -843,7 +843,7 @@
 		"attackPower": "37",
 		"apPerLevel": "4.9",
 		"armor": "47",
-		"armorPerLevel": "3.7",
+		"armorPerLevel": "3.3",
 		"attackSpeed": "0.12",
 		"movementSpeed": "3.6"
 	},
@@ -1181,7 +1181,7 @@
 		"armor": "52",
 		"armorPerLevel": "2.7",
 		"attackSpeed": "0.11",
-		"movementSpeed": "3.45"
+		"movementSpeed": "3.5"
 	},
 	"lenore": {
 		"maxHP": "900",

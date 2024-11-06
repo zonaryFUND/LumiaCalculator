@@ -30,7 +30,7 @@
             "effect": [50,55,60,65,70]
         },
         "movement_speed": {
-            "duration": 1.5,
+            "duration": 2,
             "effect": 30
         },
         "sp_cost": 60,

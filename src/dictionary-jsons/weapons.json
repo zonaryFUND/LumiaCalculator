@@ -63,7 +63,7 @@
 		"tier": "legendary",
 		"attackPower": "60",
 		"attackSpeed": "20",
-		"option": "smolder[\"dmg\":{\"targetMaxHP\":0.5}]"
+		"option": "smolder[\"dmg\":{\"targetMaxHP\":0.6}]"
 	},
 	"permafrost": {
 		"type": "glove",
@@ -264,7 +264,7 @@
 		"type": "bat",
 		"tier": "legendary",
 		"attackPower": "80",
-		"attackSpeed": "10",
+		"attackSpeed": "20",
 		"option": "vigor[\"dmg\":{\"targetHP\":4},\"duration\":5,\"as\":12,\"stack\":3,\"max\":{\"ad\":12,\"ms\":0.1}]"
 	},
 	"rod_of_heart": {
@@ -607,7 +607,7 @@
 		"type": "bow",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "85",
+		"skillAmplification": "90",
 		"maxSP": "200",
 		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
 	},
@@ -615,7 +615,7 @@
 		"type": "bow",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "85",
+		"skillAmplification": "90",
 		"cooldownReduction": "15",
 		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
@@ -700,6 +700,19 @@
 		"attackPower": "80",
 		"attackSpeed": "35",
 		"option": "extended_fury[\"extend\":25,\"dmg\":{\"level\":3}]"
+	},
+	"tempest": {
+		"type": "crossbow",
+		"tier": "legendary",
+		"attackPower": "78",
+		"attackSpeed": "45"
+	},
+	"phantom_bolt": {
+		"type": "crossbow",
+		"tier": "legendary",
+		"attackPower": "52",
+		"skillAmplification": "96",
+		"option": "cataclasm"
 	},
 	"blood_half_moon": {
 		"type": "crossbow",
@@ -895,7 +908,16 @@
 		"attackPower": "75",
 		"attackSpeed": "30",
 		"ammo": "90",
-		"option": "vigor[\"dmg\":{\"targetHP\":3},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.1}]"
+		"option": "vigor[\"dmg\":{\"targetHP\":2},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.1}]"
+	},
+	"valkyrie": {
+		"type": "assault_rifle",
+		"tier": "legendary",
+		"attackPower": "40",
+		"attackSpeed": "30",
+		"skillAmplification": "92",
+		"ammo": "30",
+		"option": "cataclasm"
 	},
 	"hellfire": {
 		"type": "assault_rifle",
@@ -1032,7 +1054,7 @@
 	"widow_maker_dawn": {
 		"type": "sniper_rifle",
 		"tier": "mythic",
-		"attackPower": "26",
+		"attackPower": "22",
 		"attackSpeed": "30",
 		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
@@ -1098,6 +1120,13 @@
 		"maxHP": "120",
 		"option": "cataclasm"
 	},
+	"leviathan": {
+		"type": "hammer",
+		"tier": "legendary",
+		"attackPower": "105",
+		"attackSpeed": "40",
+		"movementSpeed": "0.08"
+	},
 	"peacebringer": {
 		"type": "hammer",
 		"tier": "mythic",
@@ -1123,7 +1152,7 @@
 		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
-		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
+		"option": "cataclasm"
 	},
 	"beam_axe": {
 		"type": "axe",
@@ -1290,7 +1319,7 @@
 		"type": "dagger",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "80",
+		"skillAmplification": "84",
 		"movementSpeed": "0.06",
 		"option": "brute_enforcer"
 	},
@@ -1475,6 +1504,14 @@
 		"attackSpeed": "18",
 		"option": "quickstep"
 	},
+	"thanatos": {
+		"type": "dual_swords",
+		"tier": "legendary",
+		"attackPower": "35",
+		"skillAmplification": "86",
+		"maxHP": "100",
+		"option": "healing_reduction_weak"
+	},
 	"phantom_blade": {
 		"type": "dual_swords",
 		"tier": "mythic",
@@ -1543,14 +1580,14 @@
 		"type": "spear",
 		"tier": "legendary",
 		"attackPower": "40",
-		"skillAmplification": "112",
+		"skillAmplification": "111",
 		"defense": "10",
 		"option": "healing_reduction_weak"
 	},
 	"blazing_lance": {
 		"type": "spear",
 		"tier": "legendary",
-		"attackPower": "56",
+		"attackPower": "60",
 		"attackSpeed": "20",
 		"option": "smolder[\"dmg\":{\"targetMaxHP\":0.6}]"
 	},
@@ -1558,7 +1595,7 @@
 		"type": "spear",
 		"tier": "legendary",
 		"attackPower": "40",
-		"skillAmplification": "94",
+		"skillAmplification": "98",
 		"cooldownReduction": "15",
 		"defense": "8",
 		"option": "magnetic_midnight[\"dmg\":{\"level\":8,\"amp\":25},\"slow\":{\"effect\":20,\"duration\":1.5}]"
@@ -1630,6 +1667,20 @@
 		"skillAmplification": "90",
 		"cooldownReduction": "15",
 		"option": "healing_reduction_weak"
+	},
+	"geryon": {
+		"type": "nunchaku",
+		"tier": "legendary",
+		"attackPower": "40",
+		"skillAmplification": "92",
+		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
+	},
+	"neon_chain": {
+		"type": "nunchaku",
+		"tier": "legendary",
+		"attackPower": "70",
+		"attackSpeed": "25",
+		"option": "blasting_bullet"
 	},
 	"hydra": {
 		"type": "nunchaku",
@@ -1908,6 +1959,21 @@
 		"cooldownReduction": "15",
 		"vision": "1.5",
 		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
+	},
+	"on_air": {
+		"type": "camera",
+		"tier": "legendary",
+		"attackPower": "75",
+		"attackSpeed": "33",
+		"vision": "1.5"
+	},
+	"triple_focus": {
+		"type": "camera",
+		"tier": "legendary",
+		"attackPower": "43",
+		"skillAmplification": "90",
+		"vision": "1.5",
+		"option": "healing_reduction_weak"
 	},
 	"vision_flex": {
 		"type": "camera",

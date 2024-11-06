@@ -43,12 +43,12 @@
         "shield_duration": 1,
         "shield": {
             "base": [90,120,150],
-            "amp": 25
+            "amp": 20
         },
         "duration": 1,
         "second_damage": {
             "base": [200,280,360],
-            "amp": 80
+            "amp": 75
         },
         "additional_shield": {
             "base": [30,40,50],
