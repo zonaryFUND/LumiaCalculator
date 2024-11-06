@@ -30,7 +30,7 @@ type Props = {
 
 const damageTable: React.FC<Props> = props => {
     const intl = useIntl();
-    const ltr = React.useState<string | undefined>("ltr");
+    const ltr = React.useState<"ltr" | "rtl" | undefined>("ltr");
     const [attacker, defender] = ltr[0] == "ltr" ? [props.left, props.right] : [props.right, props.left]
 
     const subject = SubjectDamageTable[attacker.config.subject]({
@@ -44,14 +44,14 @@ const damageTable: React.FC<Props> = props => {
     const tacticalSkills = useTacticalSkill(attacker.config);
 
     return (
-        <CombatHPContext.Provider value={{hp: attacker.hp, targetHP: defender.hp, targetMaxHP: defender.status.maxHP.calculatedValue}} >
+        <CombatHPContext.Provider value={{hp: attacker.hp, targetHP: defender.hp, targetMaxHP: defender.status.maxHP.calculatedValue, ltr: ltr[0]!}} >
         <MitigationContext.Provider value={createMitigation(attacker.status, defender.status)} >
         <section className={style.damage}>
             <header className={style.switch}>
                 <SegmentedControl 
                     name="direction" 
                     segments={[{title: "左→右", value: "ltr"}, {title:  "左←右", value: "rtl"}]} 
-                    value={ltr}
+                    value={ltr as any}
                     style={{verticalPadding: 2}}
                 />
             </header>

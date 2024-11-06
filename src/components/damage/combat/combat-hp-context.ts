@@ -5,6 +5,7 @@ type Props = {
     hp: number
     targetHP: number
     targetMaxHP: Decimal
+    ltr: "ltr" | "rtl"
 }
 
 export const CombatHPContext = React.createContext<Props | undefined>(undefined);

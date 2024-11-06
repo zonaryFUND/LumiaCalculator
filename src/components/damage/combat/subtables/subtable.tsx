@@ -7,6 +7,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import StandardDamage from "./rows/standard-damage";
 import CriticalAvailable from "./rows/critical-available";
 import Decimal from "decimal.js";
+import { useCombatHPContext } from "../combat-hp-context";
 
 type Props = {
     label: string
@@ -18,13 +19,18 @@ type Props = {
 }
 
 const subTable: React.FC<Props> = props => {
+    const { ltr } = useCombatHPContext();
+    const hpRatioHeader = [
+        <td>自己体力比</td>,
+        <td>効果量</td>,
+        <td>対象体力比</td>
+    ]
+
     return (
         <tbody>
             <tr className={table.separator}>
                 <td>{props.label}</td>
-                <td>自己体力比</td>
-                <td>効果量</td>
-                <td>対象体力比</td>
+                {ltr == "ltr" ? hpRatioHeader : hpRatioHeader.toReversed()}
             </tr>
             {
                 props.elements.flatMap((chunk, index) => {

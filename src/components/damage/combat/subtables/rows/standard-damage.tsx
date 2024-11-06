@@ -37,7 +37,7 @@ const standardDamage: React.FC<Props> = props => {
             return { static: props.value, dynamic: undefined, dynamicValueOnly: false };
         }
     })();
-    const { hp, targetHP, targetMaxHP } = useCombatHPContext();
+    const { hp, targetHP, targetMaxHP, ltr } = useCombatHPContext();
     const multiplier = extractMultiplier(props.skillLevel, props.multiplier);
 
     const staticPotency = staticBasePotency.percent(multiplier?.[0] ?? 100);
@@ -95,11 +95,6 @@ const standardDamage: React.FC<Props> = props => {
         }
     })();
 
-    if (props.type && "hitCount" in props.type && props.type.hitCount) {
-        console.log(props)
-        console.log(mitigationInfo)
-    }
-
     const target = props.type != undefined && "target" in props.type ? props.type.target : undefined;
     const selfHPRatio = (() => {
         if (
@@ -150,21 +145,21 @@ const standardDamage: React.FC<Props> = props => {
         ].flat()
     })();
 
+    const hpRatio: React.ReactElement[] = [
+        selfHPRatio ? 
+        <td className={valueClass}>{selfHPRatio.toString()}%</td> :
+        <td />,
+        <td className={valueClass}>{mitigatedValue.floor().toString()}{percent ? "%" : null}</td>,
+        opponentHPRatio ? 
+        <td className={valueClass}>{opponentHPRatio.toString()}%</td> :
+        <td />
+    ];
+
     return (
         <>
             <tr onClick={toggleExpand}>
                 <td>{props.label}</td>
-                {
-                    selfHPRatio ? 
-                    <td className={valueClass}>{selfHPRatio.toString()}%</td> :
-                    <td />
-                }
-                <td className={valueClass}>{mitigatedValue.floor().toString()}{percent ? "%" : null}</td>
-                {
-                    opponentHPRatio ? 
-                    <td className={valueClass}>{opponentHPRatio.toString()}%</td> :
-                    <td />
-                }
+                {ltr == "ltr" ? hpRatio : hpRatio.toReversed()}
             </tr>
             {
                 subrows.length == 0 ? null :
