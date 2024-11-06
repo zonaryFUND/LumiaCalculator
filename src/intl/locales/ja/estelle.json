@@ -4,9 +4,9 @@
     "subject.estelle.ew": "E中W",
     "subject.estelle.ew-max-hit": "E中W全ヒット({value})",
     "subject.estelle.r-self-shield": "R自己シールド",
-    "subject.estelle.r-self-damage": "R事故使用時ダメージ",
+    "subject.estelle.r-self-damage": "R自己使用時周囲ダメージ",
     "subject.estelle.r-ally-shield": "R味方シールド",
-    "subject.estelle.r-ally-damage": "R味方使用時ダメージ",
+    "subject.estelle.r-ally-damage": "R味方使用時周囲ダメージ",
     "subject.estelle.t-heal": "T自己回復",
     "subject.estelle.t-ally-heal": "T味方蘇生時追加回復"
 }

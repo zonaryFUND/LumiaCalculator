@@ -54,7 +54,12 @@ export default function useCombatConfig(target: "left" | "right"): Response {
         storage.overwrite(currentPresetKey!, config.value)
     }, [currentPresetKey, config.value]);
     
-    const hp = React.useState(0);
+    const hp = React.useState(status.maxHP.calculatedValue.toNumber());
+    React.useEffect(() => {
+        if (status.maxHP.calculatedValue.lessThan(hp[0])) {
+            hp[1](status.maxHP.calculatedValue.toNumber())
+        }
+    }, [status.maxHP])
 
     return {
         config: config.value,

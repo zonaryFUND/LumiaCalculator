@@ -94,7 +94,7 @@ const index: React.FC = props => {
                     <SubjectSideContext.Provider value="left">
                         <Subject
                             config={left.config}
-                            modifier={left.modifier}
+                            modifier={{...left.modifier, currentHP: left.hp, maxHP: left.status.maxHP.calculatedValue.toNumber()}}
                             status={left.status}
                             hideHeader={collapse}
                         />
@@ -110,7 +110,7 @@ const index: React.FC = props => {
                     <SubjectSideContext.Provider value="right">
                         <Subject
                             config={right.config}
-                            modifier={right.modifier}
+                            modifier={{...right.modifier, currentHP: right.hp, maxHP: right.status.maxHP.calculatedValue.toNumber()}}
                             status={right.status}
                             hideHeader={collapse}
                         />

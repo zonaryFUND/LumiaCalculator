@@ -6,31 +6,30 @@ import Images from "@app/resources/image";
 import Selection from "components/common/number-selection";
 import EquipmentSlot from "./equipment-slot";
 import Modal from "react-modal";
-import { useToggle } from "react-use";
+import { useThrottle, useToggle } from "react-use";
 import SubjectList, { style as subjectsStyle } from "components/modal/subject-list";
 import common from "@app/common.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { SubjectStackInfo } from "components/subjects/stack";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
+import ThrottleSlider from "./throttle-slider";
 
 export type ConfigModifierProps = {
-    [K in keyof SubjectConfig]: StateProps<SubjectConfig[K]>   
+    [K in keyof SubjectConfig]: StateProps<SubjectConfig[K]>
 }
 
-const config: React.FC<ConfigModifierProps> = props => {
+export type CurrentHPProps = {
+    currentHP?: StateProps<number>
+    maxHP?: number
+}
+
+const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
+    const intl = useIntl();
     const [selectingSubject, toggleSelectingSubject] = useToggle(false);
     const onChangeSubject = React.useCallback((id: SubjectID) => {
         props.subject[1](id);
         toggleSelectingSubject(false);
     }, []);
-
-    const onChangeGauge: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
-        props.gauge[1](+e.currentTarget.value);
-    }, [])
-
-    const onChangeStack: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
-        props.stack[1](+e.currentTarget.value);
-    }, [])
 
     const stackInfo = React.useMemo(() => {
         return SubjectStackInfo[props.subject[0]];
@@ -64,29 +63,31 @@ const config: React.FC<ConfigModifierProps> = props => {
                         <Selection max={20} label="移動" value={props.movementMastery} layout="config" />
                     </div>
                     {
-                        gaugeTitle ?
-                        <div>
-                            <div>
-                                <h3>{gaugeTitle}</h3>
-                                <p>{props.gauge[0]}</p>
-                            </div>
-                            <input type="range" value={props.gauge[0]} max="100" onChange={onChangeGauge} />
-                        </div>
-                        :null
+                        props.currentHP ?
+                        <ThrottleSlider 
+                            label="現在HP"
+                            value={props.currentHP}
+                            max={props.maxHP!}
+                        /> :
+                        null
                     }
                     {
-
+                        gaugeTitle ?
+                        <ThrottleSlider 
+                            label={gaugeTitle}
+                            value={props.gauge}
+                            max={100}
+                        /> :
+                        null
                     }
                     {
                         stackInfo ? 
-                        <div>
-                            <div>
-                                <h3><FormattedMessage id={stackInfo.nameKey} /></h3>
-                                <p>{props.stack[0]}</p>
-                            </div>
-                        <input type="range" value={props.stack[0]} max={stackInfo.max} onChange={onChangeStack} />
-                    </div>
-                    :null
+                        <ThrottleSlider 
+                            label={intl.formatMessage({id: stackInfo.nameKey})}
+                            value={props.stack}
+                            max={stackInfo.max}
+                        /> :
+                        null
                     }
                 </div>
 

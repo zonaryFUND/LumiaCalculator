@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StateWrapped } from "util/state";
 import index from "./index.module.styl";
-import Config, { ConfigModifierProps } from "components/config/config";
+import Config, { ConfigModifierProps, CurrentHPProps } from "components/config/config";
 import Status from "components/status/status-table";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status as StatusType } from "app-types/subject-dynamic/status/type";
@@ -10,7 +10,7 @@ import style from "./subject.module.styl";
 
 type Props = {
     status: StatusType
-    modifier: ConfigModifierProps
+    modifier: ConfigModifierProps & CurrentHPProps
     config: SubjectConfig
     hideHeader?: boolean
 }
