@@ -1,4 +1,5 @@
 {
     "subject.magnus.w-1hit": "W単発",
-    "subject.magnus.w-max-hit": "W全ヒット({value})"
+    "subject.magnus.w-max-hit": "W全ヒット({value})",
+    "subject.magnus.t-defense": "T防御力増加"
 }

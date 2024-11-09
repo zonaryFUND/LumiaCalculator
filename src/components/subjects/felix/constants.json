@@ -75,8 +75,8 @@
         "shield": {
             "duration": 2.5,
             "effect": {
-                "consumedStack": 5,
-                "attack": 50
+                "consumedStack": 10,
+                "attack": 55
             }
         }
     }

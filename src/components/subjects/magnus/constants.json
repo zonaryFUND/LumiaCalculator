@@ -23,7 +23,7 @@
         },
         "count": 11,
         "cooldown_reduction": 0.5,
-        "tenacity": 50,
+        "tenacity": 40,
         "sp_cost": [80,90,100,110,120],
         "cooldown": [14,13,12,11,10]
     },
@@ -41,7 +41,7 @@
     },
     "R": {
         "duration": 7,
-        "stack_gain": [4,8,12],
+        "stack_gain": [4,7,10],
         "max_speed": 2,
         "damage": {
             "base": [110,230,350],
@@ -55,8 +55,8 @@
     "T": {
         "basic_attack_hit_stack": 1,
         "skill_hit_stack": 2,
-        "defense": [1,1.5,2],
-        "max_stack": 12,
+        "defense": [1,2,3],
+        "max_stack": 10,
         "hpRegen": [3,4,5]
     }
 }

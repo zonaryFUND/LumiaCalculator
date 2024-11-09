@@ -20,8 +20,8 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.johann.e-enhanced-shield"}), skill: "E", value: Constants.E.shield, type: {type: "shield", target: "any"}},
             {label: props.intl.formatMessage({id: "subject.johann.e-enhanced-damage"}), skill: "E", value: Constants.E.enhanced_damage},
             {label: props.intl.formatMessage({id: "subject.johann.e-enhanced-damage-sum"}), skill: "E", value: enhancedESum},
-            {label: props.intl.formatMessage({id: "subject.johann.e-target-movement-speed"}), skill: "E", value: Constants.E.movement_speed.effect, type: {type: "misc"}},
-            {label: props.intl.formatMessage({id: "subject.johann.e-chase-movement-speed"}), skill: "E", value: Constants.E.chase_movement_speed, type: {type: "misc"}}
+            {label: props.intl.formatMessage({id: "subject.johann.e-target-movement-speed"}), skill: "E", value: Constants.E.movement_speed.effect, type: {type: "misc", percentExpression: true}},
+            {label: props.intl.formatMessage({id: "subject.johann.e-chase-movement-speed"}), skill: "E", value: Constants.E.chase_movement_speed, type: {type: "misc", percentExpression: true}}
         ],
         [
             {label: props.intl.formatMessage({id: "subject.johann.r-damage"}), skill: "R", value: Constants.R.damage},

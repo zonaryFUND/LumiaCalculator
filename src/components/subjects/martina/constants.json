@@ -78,7 +78,7 @@
     },
     "E2": {
         "duration": 5,
-        "movement_speed": 12,
+        "movement_speed": 15,
         "damage": {
             "base": [50,80,110,140,170],
             "attack": 40

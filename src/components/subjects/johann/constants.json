@@ -32,7 +32,7 @@
     },
     "E": {
         "movement_speed": {
-            "duration": 3,
+            "duration": 2,
             "effect": {
                 "base": [4,6,8,10,12],
                 "amp": 1

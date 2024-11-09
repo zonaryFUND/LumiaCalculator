@@ -85,7 +85,7 @@
         "damage": {
             "base": [60,90,120],
             "additionalAttack": 50,
-            "amp": [30,40,50]
+            "amp": [20,25,30]
         },
         "slow": {
             "duration": 1.5,
@@ -206,9 +206,9 @@
     "spear": {
         "range": 4,
         "damage": {
-            "base": [100,155,210],
+            "base": [100,150,200],
             "additionalAttack": [60,90,120],
-            "amp": [35,45,55]
+            "amp": [50,60,70]
         },
         "double_range": 2,
         "slow": {

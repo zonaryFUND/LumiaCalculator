@@ -19,7 +19,7 @@
         "duration": 1,
         "vanish_damage": {
             "base": [50,80,110,140,170],
-            "amp": 60
+            "amp": 65
         },
         "stun": 1,
         "sp_cost": [90,100,110,120,130],

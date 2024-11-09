@@ -27,7 +27,7 @@
             "effect": [30,35,40,45,50]
         },
         "duration": 5,
-        "damage_increase": 20,
+        "damage_increase": 25,
         "cooldown_reduction": 1,
         "kill_cooldown_reduction": 90,
         "sp_cost": 90,

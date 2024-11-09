@@ -8,7 +8,7 @@
         },
         "heal_duration": 2.5,
         "heal": {
-            "base": [45,75,105,135,165],
+            "base": [40,65,90,115,140],
             "amp": 20
         },
         "screen_damage": {
@@ -26,7 +26,7 @@
         "duration": 7,
         "damage": {
             "base": [25,35,45,55,65],
-            "amp": 30
+            "amp": 26
         },
         "sp_cost": [30,35,40,45,50],
         "cooldown": [11,10.5,10,9.5,9]
@@ -60,7 +60,7 @@
         "attack_speed": [40,90,140],
         "hypercharge_q_charge": 0.5,
         "sp_cost": [120,150,180],
-        "cooldown": [75,60,45]
+        "cooldown": [80,70,60]
     },
     "T": {
         "hide": 2.5,

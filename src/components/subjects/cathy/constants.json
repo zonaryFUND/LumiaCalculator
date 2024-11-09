@@ -50,7 +50,7 @@
             "amp": 4
         },
         "min_damage": {
-            "base": [100,1750,250],
+            "base": [100,175,250],
             "amp": 70
         },
         "max_damage_ratio": 2,

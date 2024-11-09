@@ -82,7 +82,7 @@
     "T": {
         "damage": {
             "base": [30,65,100],
-            "amp": 35,
+            "amp": 40,
             "targetMaxHP": 3
         },
         "slow": {

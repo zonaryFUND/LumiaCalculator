@@ -32,6 +32,7 @@ export default t;
 
 export const values: ValuesProps = {
     parameters: [
+        {title: "最大体力係数", values: Constants.T.heal.maxHP, percent: true},
         {title: "[蘇生]蘇生時間短縮", values: Constants.T.revive},
         {title: "[蘇生]追加回復量", values: Constants.T.additional_heal.targetMaxHP.base, percent: true},
         {title: "クールダウン", values: Constants.R.cooldown}

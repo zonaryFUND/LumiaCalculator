@@ -111,11 +111,13 @@
     "T": {
         "damage": {
             "base": [40,100,160],
+            "attack": 40,
             "amp": 50
         },
         "aoe_range": 2,
         "aoe_damage": {
             "base": [20,50,80],
+            "attack": 20,
             "amp": 25
         },
         "heal": 60,

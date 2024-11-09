@@ -47,7 +47,7 @@
         "lifetime": 45,
         "damage": {
             "base": [100,200,300],
-            "attack": 45,
+            "attack": 40,
             "amp": 70,
             "targetHP": 15
         },

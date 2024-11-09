@@ -62,7 +62,7 @@
             "maxHP": [2,11,20]
         },
         "cooldown": {
-            "constant": 120
+            "constant": 90
         }
     }
 }

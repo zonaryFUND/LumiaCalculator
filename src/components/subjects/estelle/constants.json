@@ -92,7 +92,7 @@
     "T": {
         "heal_period": 5,
         "heal": {
-            "maxHP": 1,
+            "maxHP": [1,2,3],
             "amp": 25
         },
         "revive": [1,1.5,2],
