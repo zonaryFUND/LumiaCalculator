@@ -499,7 +499,7 @@
 		"type": "shuriken",
 		"tier": "epic",
 		"attackPower": "60",
-		"criticalDamage": "5",
+		"criticalDamage": "6",
 		"movementSpeed": "0.06",
 		"attackRange": "0.4"
 	},
@@ -522,7 +522,7 @@
 		"type": "shuriken",
 		"tier": "legendary",
 		"attackPower": "41",
-		"skillAmplification": "84",
+		"skillAmplification": "87",
 		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
 	},
 	"sudarsana": {
@@ -561,7 +561,7 @@
 		"type": "shuriken",
 		"tier": "mythic",
 		"attackPower": "30",
-		"adaptiveStatus": "52",
+		"adaptiveStatus": "54",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"option": "primodal_hex[\"dmg\":{\"base\":50,\"amp\":15}]"
@@ -622,8 +622,8 @@
 	"crimson_bow": {
 		"type": "bow",
 		"tier": "legendary",
-		"attackPower": "66",
-		"attackSpeed": "20",
+		"attackPower": "70",
+		"attackSpeed": "25",
 		"option": "vigor[\"dmg\":{\"targetHP\":3},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.1}]"
 	},
 	"eagle_eye": {
@@ -645,8 +645,8 @@
 	"failnaught_crimson": {
 		"type": "bow",
 		"tier": "mythic",
-		"attackPower": "26",
-		"attackSpeed": "25",
+		"attackPower": "29",
+		"attackSpeed": "30",
 		"adaptiveStatus": "50",
 		"armorPenetrationRatio": "7",
 		"option": "vigor[\"dmg\":{\"targetHP\":3},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.1}]"
@@ -664,8 +664,7 @@
 		"type": "crossbow",
 		"tier": "epic",
 		"attackPower": "67",
-		"attackSpeed": "30",
-		"hpRegeneration": "90"
+		"attackSpeed": "30"
 	},
 	"ballista": {
 		"type": "crossbow",
@@ -1110,6 +1109,7 @@
 		"tier": "legendary",
 		"attackPower": "87",
 		"cooldownReduction": "15",
+		"defense": "10",
 		"option": "critical_blow"
 	},
 	"doomsday": {
@@ -1304,7 +1304,7 @@
 		"type": "dagger",
 		"tier": "legendary",
 		"attackPower": "45",
-		"skillAmplification": "73",
+		"skillAmplification": "76",
 		"cooldownReduction": "15",
 		"movementSpeed": "0.06",
 		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
@@ -1347,7 +1347,7 @@
 		"type": "dagger",
 		"tier": "mythic",
 		"attackPower": "13",
-		"adaptiveStatus": "54",
+		"adaptiveStatus": "56",
 		"cooldownReduction": "15",
 		"armorPenetrationRatio": "7",
 		"movementSpeed": "0.1",
@@ -1439,7 +1439,7 @@
 	"dáinsleif_crimson": {
 		"type": "two-handed_sword",
 		"tier": "mythic",
-		"attackPower": "29",
+		"attackPower": "20",
 		"attackSpeed": "40",
 		"adaptiveStatus": "50",
 		"armorPenetrationRatio": "7",
@@ -1581,7 +1581,7 @@
 		"tier": "legendary",
 		"attackPower": "40",
 		"skillAmplification": "111",
-		"defense": "10",
+		"defense": "8",
 		"option": "healing_reduction_weak"
 	},
 	"blazing_lance": {
@@ -1694,7 +1694,7 @@
 	"hydra_crimson": {
 		"type": "nunchaku",
 		"tier": "mythic",
-		"attackPower": "36",
+		"attackPower": "26",
 		"attackSpeed": "30",
 		"criticalChance": "25",
 		"adaptiveStatus": "56",
@@ -1875,7 +1875,7 @@
 		"type": "guitar",
 		"tier": "legendary",
 		"attackPower": "44",
-		"skillAmplification": "4",
+		"skillAmplification": "94",
 		"option": "cataclasm"
 	},
 	"free_bird": {

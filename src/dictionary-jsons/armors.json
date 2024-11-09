@@ -4,7 +4,7 @@
 		"tier": "epic",
 		"perLevelStatus": "ap",
 		"skillAmplification": "17",
-		"defense": "23",
+		"defense": "21",
 		"option": "healing_reduction_weak"
 	},
 	"sunset_armor": {
@@ -30,7 +30,6 @@
 		"perLevelStatus": "ad",
 		"attackPower": "9",
 		"criticalChance": "24",
-		"cooldownReduction": "15",
 		"defense": "9"
 	},
 	"rocker_s_jacket": {
@@ -76,9 +75,9 @@
 		"type": "chest",
 		"tier": "epic",
 		"perLevelStatus": "ad",
+		"attackPower": "20",
 		"attackSpeed": "15",
-		"criticalChance": "24",
-		"defense": "9",
+		"lifeSteal": "12",
 		"movementSpeed": "0.04"
 	},
 	"eod_suit": {
@@ -102,7 +101,7 @@
 		"tier": "epic",
 		"perLevelStatus": "ap",
 		"cooldownReduction": "15",
-		"defense": "21",
+		"defense": "23",
 		"spRegeneration": "100"
 	},
 	"changpao": {
@@ -110,7 +109,7 @@
 		"tier": "epic",
 		"perLevelStatus": "ad",
 		"attackPower": "3",
-		"attackSpeed": "34",
+		"attackSpeed": "38",
 		"defense": "15",
 		"spRegeneration": "150"
 	},
@@ -148,7 +147,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "hp[23]",
-		"defense": "34",
+		"defense": "36",
 		"spRegeneration": "100",
 		"vision": "1",
 		"option": "flame_barrier[\"dmg\":{\"melee\":{\"maxHP\":3.5},\"range\":{\"maxHP\":2.5}}]"
@@ -184,7 +183,7 @@
 		"attackPower": "30",
 		"attackSpeed": "25",
 		"cooldownReduction": "20",
-		"defense": "25",
+		"defense": "26",
 		"spRegeneration": "100"
 	},
 	"phantom_jacket": {
@@ -216,7 +215,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"attackPower": "11",
+		"attackPower": "13",
 		"attackSpeed": "46",
 		"defense": "17",
 		"spRegeneration": "200"
@@ -241,9 +240,10 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"attackPower": "28",
+		"attackPower": "30",
 		"cooldownReduction": "20",
-		"defense": "23"
+		"defense": "25",
+		"spRegeneration": "100"
 	},
 	"shooting_star_jacket": {
 		"type": "chest",
@@ -322,7 +322,7 @@
 		"type": "chest",
 		"tier": "legendary",
 		"perLevelStatus": "ad",
-		"attackSpeed": "28",
+		"attackSpeed": "24",
 		"criticalChance": "33",
 		"defense": "15"
 	},
@@ -406,9 +406,9 @@
 		"type": "head",
 		"tier": "epic",
 		"cooldownReduction": "15",
-		"defense": "14",
+		"defense": "15",
 		"maxHP": "100",
-		"maxSP": "300"
+		"maxSP": "200"
 	},
 	"imperial_crown": {
 		"type": "head",
@@ -428,7 +428,7 @@
 		"type": "head",
 		"tier": "epic",
 		"defense": "10",
-		"maxHP": "150",
+		"maxHP": "120",
 		"spRegeneration": "50",
 		"option": "reflection[\"ratio\":4.5,\"dmg\":{\"base\":150}]"
 	},
@@ -466,7 +466,7 @@
 		"tier": "epic",
 		"attackPower": "24",
 		"attackSpeed": "15",
-		"defense": "12"
+		"defense": "10"
 	},
 	"harmony_in_full_bloom": {
 		"type": "head",
@@ -497,7 +497,7 @@
 		"perLevelStatus": "hp[16]",
 		"cooldownReduction": "20",
 		"cdrCap": "5",
-		"defense": "17",
+		"defense": "18",
 		"maxSP": "400"
 	},
 	"elysian_halo": {
@@ -635,7 +635,7 @@
 		"type": "head",
 		"tier": "legendary",
 		"attackPower": "30",
-		"attackSpeed": "15",
+		"attackSpeed": "20",
 		"defense": "12",
 		"spRegeneration": "100",
 		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":20,\"duration\":1,\"cooldown\":2]"
@@ -794,7 +794,7 @@
 		"tier": "legendary",
 		"perLevelStatus": "hp[19]",
 		"attackSpeed": "30",
-		"defense": "19",
+		"defense": "13",
 		"option": "streamlined"
 	},
 	"cube_watch": {
@@ -891,7 +891,7 @@
 	"mythril_armband": {
 		"type": "arm",
 		"tier": "legendary",
-		"attackPower": "35",
+		"attackPower": "33",
 		"criticalChance": "34",
 		"defense": "5",
 		"option": "swift_strides[\"tick\":0.2,\"ms\":0.1,\"dmg\":{\"base\":100},\"slow\":{\"effect\":30,\"duration\":2}]"
@@ -907,7 +907,7 @@
 		"type": "arm",
 		"tier": "legendary",
 		"attackPower": "35",
-		"omnisyphon": "12",
+		"omnisyphon": "15",
 		"option": "quickstep"
 	},
 	"magic_lamp": {
@@ -933,7 +933,7 @@
 	"emerald_tablet": {
 		"type": "arm",
 		"tier": "legendary",
-		"skillAmplification": "80",
+		"skillAmplification": "85",
 		"cooldownReduction": "15",
 		"spRegeneration": "100",
 		"option": "streamlined"
@@ -1034,7 +1034,7 @@
 	"glacier_crampons": {
 		"type": "leg",
 		"tier": "epic",
-		"armorPenetration": "9",
+		"armorPenetration": "10",
 		"movementSpeed": "0.22"
 	},
 	"feather_boots": {
@@ -1048,7 +1048,6 @@
 		"type": "leg",
 		"tier": "epic",
 		"attackPower": "19",
-		"hpRegeneration": "25",
 		"movementSpeed": "0.22",
 		"tenacity": "20"
 	},
@@ -1106,7 +1105,7 @@
 	"cowboy_boots": {
 		"type": "leg",
 		"tier": "epic",
-		"attackPower": "12",
+		"attackPower": "16",
 		"cooldownReduction": "10",
 		"spRegeneration": "50",
 		"movementSpeed": "0.22"
@@ -1204,7 +1203,7 @@
 	"mirage_lace-ups": {
 		"type": "leg",
 		"tier": "legendary",
-		"attackPower": "21",
+		"attackPower": "23",
 		"cooldownReduction": "15",
 		"spRegeneration": "100",
 		"movementSpeed": "0.25"
