@@ -49,7 +49,10 @@ const navigation: React.FC<Props> = props => {
                 <a className={style.link} href="https://playeternalreturn.com" target="_blank">エターナルリターン</a>はNimble Neuron社の著作物です。<br />
                 <br />
                 ルミア計算機は個人の研究のため作成された非営利・非公式Webサイトです。<br />
-                画像は<a className={style.link} href="https://drive.google.com/drive/folders/1bgW32L09YPpRgQKtH4C_TAd3Kr0N9Y90" target="_blank">ファンキット</a>より引用され、ゲーム内テキストおよび文章はエターナルリターンより引用されています。
+                画像は<a className={style.link} href="https://drive.google.com/drive/folders/1bgW32L09YPpRgQKtH4C_TAd3Kr0N9Y90" target="_blank">ファンキット</a>より引用され、ゲーム内テキストおよび文章はエターナルリターンより引用されています。 <br />
+                <br />
+                <br />
+                致命的なバグや数値の設定ミスを発見した場合、お手数ですがGitHubリポジトリにissueを立てるか、<a className={style.link} href="https://forms.gle/VANo6tLDqr5vYbGe9" target="_blank">報告用Googleフォーム</a>に送信していただければ修正対応します。
             </div>
             <div className={style.warning}>
                 ルミア計算機はα版です。機能には未実装のものが含まれ、値は間違っているかもしれません。<br />
