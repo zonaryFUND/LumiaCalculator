@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "./skills-standard.modue.styl";
+import style from "./skills-standard.module.styl";
 import { SubjectID } from "app-types/subject-static/id";
 import Images from "@app/resources/image";
 import Selection from "components/common/number-selection";

@@ -6,14 +6,17 @@ import Navigation from 'components/pages/navigation/navigation';
 import { Route, Routes } from 'react-router';
 import { IntlProvider } from 'react-intl';
 
-const context = require.context("./intl/locales/", true, /\.\/.*\/.*\.json$/);
-export const Locales = context.keys().reduce((locales, path) => {
-    const key = path.split("/")[1];
-    locales[key] = {
-        ...locales[key],
-        ...context(path)
+const files = import.meta.glob<Record<"default", Record<string, string>>>("./intl/locales/*/*.json", {eager: true});
+console.log(files)
+export const Locales = Object.entries(files).reduce((locales, [path, m]) => {
+    const key = path.split("/")[3];
+    return {
+        ...locales,
+        [key]: {
+            ...locales[key],
+            ...m.default
+        }
     };
-    return locales;
 }, {} as {[locale: string]: Record<string, string>})
 
 interface AppProps {}

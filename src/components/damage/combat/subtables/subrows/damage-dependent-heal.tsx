@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 import React, * as Raect from "react";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 
 type Props = {
     baseDamage: Decimal

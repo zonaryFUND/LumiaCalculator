@@ -1,7 +1,7 @@
 import * as React from "react";
 import style from "../damage-table.module.styl";
 import { SubjectDamageTable } from "components/subjects/damage-table";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { useIntl } from "react-intl";

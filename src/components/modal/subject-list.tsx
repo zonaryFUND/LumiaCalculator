@@ -4,7 +4,7 @@ import style from "./subject-list.module.styl";
 import Images from "@app/resources/image";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
-import common from "@app/common.styl";
+import common from "@app/common.module.styl";
 import { styles } from "@app/util/style";
 
 type Props = {

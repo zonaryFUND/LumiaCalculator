@@ -4,7 +4,7 @@ import { RatioKeys, ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 
 type Props = {
     label?: React.ReactElement

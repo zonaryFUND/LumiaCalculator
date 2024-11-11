@@ -4,7 +4,7 @@ import { FirstAid, Shield, Sword, Crosshair, ArrowFatLinesUp, ShieldSlash, Caret
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import AttackSpeed from "./attack-speed";
 import useStorageBoolean from "@app/storage/boolean";
 import { BasicAttackTableHiddenKey, PenetrationTableHiddenKey, ToughnessTableHiddenKey } from "@app/storage/status";

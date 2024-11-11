@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { PenetrationTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 

@@ -1,49 +1,47 @@
-function importImages(context: __WebpackModuleApi.RequireContext): any {
-    return context.keys().reduce((images: any, path) => {
-        const key = path.substring(path.lastIndexOf("/") + 1).split(".").slice(0, -1).join(".");
-        images[key] = context(path);
-        return images
-    }, {}) as any
+
+function extractDefaultImages(record: Record<string, Record<"default", string>>): Record<string, string> {
+    return Object.entries(record).reduce((prev, [key, value]) => {
+        const pathComponents = key.split("/");
+        const imageName = pathComponents[pathComponents.length - 1].split(".")[0];
+        return {
+            ...prev,
+            [imageName]: value.default
+        }
+    }, {});
 }
 
-const subjectContext = require.context("resources/subjects", false, /\.png$/);
-const subjectImages = importImages(subjectContext)
+const subjectImages = import.meta.glob<Record<"default", string>>("resources/subjects/*.png", {eager: true});
+const weaponImages = import.meta.glob<Record<"default", string>>("resources/weapons/**/*.png", {eager: true});
+const chestImages = import.meta.glob<Record<"default", string>>("resources/armors/chest/*.png", {eager: true});
+const headImages = import.meta.glob<Record<"default", string>>("resources/armors/head/*.png", {eager: true});
+const armImages = import.meta.glob<Record<"default", string>>("resources/armors/arm/*.png", {eager: true});
+const legImages = import.meta.glob<Record<"default", string>>("resources/armors/leg/*.png", {eager: true});
 
-const weaponContext = require.context("resources/weapons", true, /\.png$/);
-const weaponImages = importImages(weaponContext);
-
-const chestContext = require.context("resources/armors/chest", true, /\.png$/);
-const chestImages = importImages(chestContext);
-
-const headContext = require.context("resources/armors/head", true, /\.png$/);
-const headImages = importImages(headContext);
-
-const armContext = require.context("resources/armors/arm", true, /\.png$/);
-const armImages = importImages(armContext);
-
-const legContext = require.context("resources/armors/leg", true, /\.png$/);
-const legImages = importImages(legContext);
-
-const skillImagesContext = require.context("resources/skills", true, /\.png$/);
-const skillImages = skillImagesContext.keys().reduce((images: any, path) => {
-    const pathComponents = path.split("/");
+const skillImageModules = import.meta.glob<{default: string}>("resources/skills/**/*.png", {eager: true});
+const skillImages = Object.entries(skillImageModules).reduce((images, [key, m]) => {
+    const pathComponents = key.split("/");
     const [subjectID, image] = pathComponents.slice(pathComponents.length - 2);
     const imageName = image.split(".")[0];
-    images[subjectID] = {
-        ...images[subjectID],
-        [imageName]: skillImagesContext(path)
+    return {
+        ...images,
+        [subjectID]: {
+            ...(subjectID in images ? images[subjectID] : {}),
+            [imageName]: m.default
+        }
     }
-    return images
-}, {}) as any;
-
+}, {} as {
+    [subjectKey: string]: {
+        [skillKey: string]: string
+    }
+});
 
 const Images = {
-    subject: subjectImages,
-    weapon: weaponImages,
-    chest: chestImages,
-    head: headImages,
-    arm: armImages,
-    leg: legImages,
+    subject: extractDefaultImages(subjectImages),
+    weapon: extractDefaultImages(weaponImages),
+    chest: extractDefaultImages(chestImages),
+    head: extractDefaultImages(headImages),
+    arm: extractDefaultImages(armImages),
+    leg: extractDefaultImages(legImages),
     skill: skillImages
 }
 

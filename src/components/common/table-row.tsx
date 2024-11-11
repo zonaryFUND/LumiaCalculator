@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useToggle } from "react-use";
-import style from "./table.styl";
+import style from "./table.module.styl";
 
 export const MaxColContext = React.createContext(0);
 

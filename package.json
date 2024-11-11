@@ -2,12 +2,13 @@
   "name": "eternalreturn-calclator",
   "version": "1.0.0",
   "description": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.tsx",
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
+    "dev": "vite",
     "build": "webpack --mode=production",
-    "deploy": "ts-node ./deploy.ts"
+    "deploy": "ts-node ./deploy.ts",
+    "get-character-status": "tsx ./api.ts subject"
   },
   "author": "zonaryFUND",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "@phosphor-icons/react": "^2.1.5",
     "decimal.js": "^10.4.3",
     "react": "^18.3.1",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
     "react-intl": "^6.6.6",
     "react-modal": "^3.16.1",
@@ -29,22 +31,14 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@types/react-modal": "^3.16.3",
-    "@types/webpack": "^5.28.5",
-    "@types/webpack-env": "^1.18.4",
-    "copy-webpack-plugin": "^12.0.2",
-    "css-loader": "^7.1.1",
-    "file-loader": "^6.2.0",
+    "@types/yargs": "^17.0.33",
+    "@vitejs/plugin-react-swc": "^3.7.1",
+    "axios": "^1.7.7",
     "gh-pages": "^6.1.1",
-    "html-webpack-plugin": "^5.6.0",
     "path": "^0.12.7",
-    "style-loader": "^3.3.4",
-    "stylus": "^0.63.0",
-    "stylus-loader": "^8.1.0",
-    "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.4.5",
-    "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.3"
+    "vite": "^5.4.10",
+    "yargs": "^17.7.2"
   }
 }

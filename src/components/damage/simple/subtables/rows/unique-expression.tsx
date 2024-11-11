@@ -11,7 +11,7 @@ import InnerTable from "components/common/inner-table";
 import RatioKey from "../subrows/ratio-key";
 
 import style from "../../../damage-table.module.styl";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
 

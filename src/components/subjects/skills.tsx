@@ -2,19 +2,30 @@ import * as React from "react";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
-import SkillsStandard from "./skills-standard";
+import SkillsStandard, { SkillImage, SkillsStandardProps } from "./skills-standard";
 import { equipmentStatus } from "app-types/equipment";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 
-const subjectContext = require.context("./", true, /\.\/.*\/skills\.tsx$/);
 
 export type CooldownOverride = (config: SubjectConfig, status: Status) => (basic: Decimal) => Decimal;
+type SubjectModule = {
+    default?: (props: SkillsStandardProps) => React.ReactElement
+    idForLevel?: (skill: string) => string
+    idForConsumption?: (skill: string) => string
+    SkillImage?: SkillImage
+}
 
-export const SubjectSkills = subjectContext.keys().reduce((skills: any, path) => {
-    const key = path.substring(2, path.lastIndexOf("/"));
-    skills[key] = subjectContext(path);
-    return skills;
-}, {}) as any
+const subjectModules = import.meta.glob<SubjectModule>("./**/skills.tsx", {eager: true});
+
+export const SubjectSkills = Object.entries(subjectModules).reduce((skills, [key, m]) => {
+    const subject = key.substring(2, key.lastIndexOf("/"));
+    return {
+        ...skills,
+        [subject]: m
+    }
+}, {} as {
+    [key: string]: SubjectModule
+})
 
 type Props = {
     config: SubjectConfig
@@ -27,7 +38,14 @@ const subjectSkills: React.FC<Props> = props => {
     , [props.config.equipment.weapon]);
 
     const skills = SubjectSkills[props.config.subject];
-    if (skills == undefined || skills.default == undefined) {
+    if (skills && skills.default) {
+        return React.createElement(skills.default, {
+            id: props.config.subject, 
+            skillLevels: props.config.skillLevels, 
+            setSkillLevels: props.setSkillLevels,
+            weaponType: weaponType
+        })
+    } else {
         const skillImage = skills == undefined ? undefined : skills.SkillImage;
         
         return <SkillsStandard
@@ -37,14 +55,6 @@ const subjectSkills: React.FC<Props> = props => {
             weaponType={weaponType}    
             skillImage={skillImage}
         />;
-    } else {
-        return React.createElement(SubjectSkills[props.config.subject].default, {
-            id: props.config.subject, 
-            skillLevels: props.config.skillLevels, 
-            setSkillLevels: props.setSkillLevels,
-            weaponType: weaponType,
-            weapon: props.config.equipment.weapon
-        })
     }
 };
 

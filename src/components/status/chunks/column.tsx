@@ -1,7 +1,7 @@
 import * as React from "react";
 import Decimal from "decimal.js";
 import TableRow from "components/common/table-row";
-import style from "components/common/table.styl";
+import style from "components/common/table.module.styl";
 
 type ColumnProps = {
     name: React.ReactElement

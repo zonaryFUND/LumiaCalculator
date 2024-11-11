@@ -2,16 +2,16 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status, SummonedStatus as SummonedStatusType } from "app-types/subject-dynamic/status/type";
 import { SubjectID } from "app-types/subject-static";
 
-const subjectContext = require.context("./", true, /\.\/.*\/summoned-status\.ts$/);
-
 export type SummonedStatusFunc = (masterStatus: Status, config: SubjectConfig) => SummonedStatusType;
+const subjectModules = import.meta.glob<{default: SummonedStatusFunc, nameKey: string}>("./**/summoned-status.ts", {eager: true});
 
-export const SummonedStatus = subjectContext.keys().reduce((skills: any, path) => {
-    const key = path.substring(2, path.lastIndexOf("/"));
-    const module = subjectContext(path);
-    skills[key] = {
-        status: module.default,
-        nameKey: module.nameKey
+export const SummonedStatus = Object.entries(subjectModules).reduce((skills, [key, m]) => {
+    const subject = key.substring(2, key.lastIndexOf("/"));
+    return {
+        ...skills,
+        [subject]: {
+            status: m.default,
+            nameKey: m.nameKey
+        }
     }
-    return skills;
 }, {}) as {[id: SubjectID]: {status: SummonedStatusFunc, nameKey: string}}

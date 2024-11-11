@@ -1,3 +1,4 @@
+import * as React from "react";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { ValueRatio } from "app-types/value-ratio";
 
@@ -5,45 +6,32 @@ export type ItemSkillProps = {
     values: any
 }
 
-const tooltipContext = require.context("./", true, /\.\/.*\/tooltip\.tsx/);
-export const ItemSkillTooltipDefinitions = tooltipContext.keys().reduce((skills: any, path) => {
+const tooltipModules = import.meta.glob<{
+    default: React.FC<ItemSkillProps>
+}>("./**/tooltip.tsx", {eager: true});
+
+export const ItemSkillTooltipDefinitions = Object.entries(tooltipModules).reduce((skills, [path, m]) => {
     const pathComponents = path.split("/");
     const key = pathComponents[1];
     return {
         ...skills,
-        [key]: tooltipContext(path).default
+        [key]: m.default
     }
-}, {})
+}, {} as {[key: string]: React.FC<ItemSkillProps>})
 
 export type ItemSkillDamageTableUnit = Omit<DamageTableUnit, "label" | "value"> & { labelIntlID?: string, intlValue?: string, value: ValueRatio | {melee: ValueRatio, range: ValueRatio} };
 export type ItemSkillDamageTableGenerator = (importedValues: any | {melee: any, range: any}) => ItemSkillDamageTableUnit[];
 
-const damageTableContext = require.context("./", true, /\.\/.*\/table-values\.ts/);
-/*
-export const ItemSkillDefinition = context.keys().reduce((skills: any, path) => {
-    const pathComponents = path.split("/");
-    const key = pathComponents[1];
-    if (pathComponents[2] == "tooltip.tsx") {
-        skills[key] = {
-            ...(skills[key] ?? {}),
-            tooltip: context(path).default
-        }
-    }
-    if (pathComponents[2] == "table-values.ts") {
-        skills[key] = {
-            ...(skills[key] ?? {}),
-            values: context(path).default
-        }
-    }
-    return skills;
-}, {}) as {[id: string]: {tooltip?: React.FC<ItemSkillProps>, values?: TableValues}}
-*/
+const damageTableModules = import.meta.glob<{
+    default: ItemSkillDamageTableUnit[] | ItemSkillDamageTableGenerator
+}>("./**/table-values.ts", {eager: true});
 
-export const ItemSkillDamageTable = damageTableContext.keys().reduce((skills: any, path) => {
+export const ItemSkillDamageTable = Object.entries(damageTableModules).reduce((skills, [path, m]) => {
     const pathComponents = path.split("/");
     const key = pathComponents[1];
+    const tableOrGenerator = m.default
     return {
         ...skills,
-        [key]: damageTableContext(path).default
+        [key]: typeof tableOrGenerator == "function" ? tableOrGenerator : () => tableOrGenerator
     };
-}, {}) as {[id: string]: ItemSkillDamageTableUnit[] | ItemSkillDamageTableGenerator}
+}, {} as {[key: string]: ItemSkillDamageTableGenerator})

@@ -1,7 +1,7 @@
 import * as React from "react";
 import style from "../../../damage-table.module.styl";
 import { useToggle } from "react-use";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import InnerTable from "components/common/inner-table";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { RatioKeys, ValueRatio } from "app-types/value-ratio";

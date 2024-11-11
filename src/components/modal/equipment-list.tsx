@@ -10,7 +10,7 @@ import { SubjectID } from "app-types/subject-static/id";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
 import { styles } from "@app/util/style";
-import common from "@app/common.styl";
+import common from "@app/common.module.styl";
 import Blank from "components/item/blank";
 import { Equipment } from "app-types/subject-dynamic/config";
 import { ArmorTypeID } from "app-types/equipment/armor";

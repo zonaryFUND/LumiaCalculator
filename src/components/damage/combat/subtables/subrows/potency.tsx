@@ -2,7 +2,7 @@ import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
 import { RatioKeys } from "app-types/value-ratio";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 
 type Props = {
     staticPotency?: Decimal

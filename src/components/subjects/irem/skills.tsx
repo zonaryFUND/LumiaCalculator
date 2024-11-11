@@ -1,7 +1,7 @@
 import * as React from "react";
 import Images from "@app/resources/image";
 import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
-import style from "../skills-standard.modue.styl";
+import style from "../skills-standard.module.styl";
 
 export default function(props: SkillsStandardProps) {
     return  (

@@ -10,25 +10,41 @@ import { SubjectSkillProps } from "components/subjects/props";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { ValueContext } from "../value-context";
+import { CooldownOverride, SubjectSkills } from "components/subjects/skills";
 
-const skillsContext = require.context("components/subjects", true, /\.\/.*\/(.*)\.tsx$/);
-export const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
+type SkillsModule = {
+    default: React.FC<{skillLevel: number}>
+    cooldownOverride?: CooldownOverride
+}
+const skillsModules = import.meta.glob<SkillsModule>("components/subjects/**/*.tsx", {eager: true});
+
+export const SkillsDescription = Object.entries(skillsModules).reduce((skills, [path, m]) => {
     const pathComponents = path.split("/");
     const [subject, skill] = pathComponents.slice(pathComponents.length - 2);
-    skills[subject] = {
-        ...skills[subject],
-        [skill.split(".")[0]]: skillsContext(path)
-    };
-    return skills;
-}, {}) as any
+    return {
+        ...skills,
+        [subject]: {
+            ...(subject in skills ? skills[subject] : {}),
+            [skill.split(".")[0]]: m
+        }
+    }
+}, {} as {
+    [subject: string]: {
+        [skill: string]: SkillsModule
+    }
+});
 
-const constContext = require.context("components/subjects", true, /\.\/.*\/constants.json$/);
-export const SkillsConstant = constContext.keys().reduce((consts: any, path) => {
+const constantModules = import.meta.glob("components/subjects/*/constants.json", {eager: true})
+export const SkillsConstant = Object.entries(constantModules).reduce((consts, [path, m]) => {
     const pathComponents = path.split("/");
     const key = pathComponents[pathComponents.length - 2]
-    consts[key] = constContext(path)
-    return consts;
-}, {}) as any
+    return {
+        ...consts,
+        [key]: m
+    }
+}, {} as {
+    [subject: string]: any
+})
 
 type Props = {
     id: SubjectID
@@ -62,10 +78,12 @@ const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Stat
             }
         })();
 
-        if (SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride == undefined) {
+        const cooldownOverride = SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride
+        if (cooldownOverride) {
+            return cooldownOverride(props.config, props.status)(base).toString();
+
             return base.toString();
         }
-        return SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride(props.config, props.status)(base).toString();
     })();
 
     const charge = (() => {
@@ -107,20 +125,22 @@ const subjectSkillTooltip: React.FC<Props> = props => {
 
     const src = React.useMemo(() => {
         const standard = Images.skill[props.id][props.skill];
-        if (SkillsDescription[props.id].skills && SkillsDescription[props.id].skills.SkillImage) {
-            return SkillsDescription[props.id].skills.SkillImage(props.skill) ?? standard;
+        const def =  SubjectSkills[props.id]
+        
+        if (def?.SkillImage) {
+            return def.SkillImage(props.skill) ?? standard;
         }
         return standard;
     }, [props.id, props.skill]);
 
     const skillIDForLevel = React.useMemo(() => {
-        const def = SkillsDescription[props.id].skills
+        const def =  SubjectSkills[props.id]
         if (def == undefined || def.idForLevel == undefined) return props.skill as "Q" | "W" | "E" | "R" | "T";
         return def.idForLevel(props.skill) as "Q" | "W" | "E" | "R" | "T";
     }, [props.id, props.skill]);
 
     const skillIDForConsumption = React.useMemo(() => {
-        const def = SkillsDescription[props.id].skills
+        const def =  SubjectSkills[props.id]
         if (def == undefined || def.idForConsumption == undefined) return props.skill;
         return def.idForConsumption(props.skill);
     }, [props.id, props.skill]);

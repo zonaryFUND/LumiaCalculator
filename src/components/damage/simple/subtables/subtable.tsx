@@ -1,5 +1,5 @@
 import * as React from "react";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import StandardDamage from "./rows/standard-damage";
 import { Status } from "app-types/subject-dynamic/status/type";

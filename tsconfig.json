@@ -16,14 +16,14 @@
     },
     "strict": true,
     "skipLibCheck": true,
-    "types": ["node", "webpack-env"],
+    "types": ["node", "vite/client"],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "esnext"
     }
   }
 }

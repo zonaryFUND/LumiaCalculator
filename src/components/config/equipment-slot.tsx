@@ -13,7 +13,7 @@ import EquipmentList, { style as listStyle } from "../modal/equipment-list";
 import { StateProps } from "@app/util/state";
 import { styles } from "@app/util/style";
 
-import common from "@app/common.styl";
+import common from "@app/common.module.styl";
 import style from "./equipment-slot.module.styl";
 
 

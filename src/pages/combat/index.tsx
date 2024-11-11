@@ -1,7 +1,7 @@
 import * as React from "react";
 import Modal from "react-modal";
 import { Tooltip } from "react-tooltip";
-import common from "@app/common.styl";
+import common from "@app/common.module.styl";
 
 import { Gear } from "@phosphor-icons/react";
 

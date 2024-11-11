@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 import * as React from "react";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { FormattedMessage } from "react-intl";
 
 type Props = {

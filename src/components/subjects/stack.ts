@@ -1,13 +1,18 @@
 import { SubjectID } from "app-types/subject-static";
 
-const subjectContext = require.context("./", true, /\.\/.*\/stack\.ts$/);
+const subjectModules = import.meta.glob<{MaxStack: number, StackName: number}>("./**/stack.ts", {eager: true});
 
-export const SubjectStackInfo = subjectContext.keys().reduce((skills: any, path) => {
-    const key = path.substring(2, path.lastIndexOf("/"));
-    const module = subjectContext(path);
-    skills[key] = {
-        max: module.MaxStack,
-        nameKey: module.StackName
+export const SubjectStackInfo = Object.entries(subjectModules).reduce((skills, [key, m]) => {
+    const subject = key.substring(2, key.lastIndexOf("/"));
+    return {
+        ...skills,
+        [subject]: {
+            max: m.MaxStack,
+            nameKey: m.StackName
+        }
     }
-    return skills;
-}, {}) as {[id: SubjectID]: {max: number, nameKey: string}}
+}, {}) as {
+    [id: SubjectID]: {
+        max: number, nameKey: string
+    }
+}

@@ -1,5 +1,5 @@
 import * as React from "react";
-import style from "components/subjects/skills-standard.modue.styl";
+import style from "components/subjects/skills-standard.module.styl";
 import Images from "@app/resources/image";
 import { WeaponID } from "app-types/equipment/weapon/id";
 import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";

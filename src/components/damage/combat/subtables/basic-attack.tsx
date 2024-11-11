@@ -1,5 +1,5 @@
 import * as React from "react";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { BasicAttackElement, SubjectDamageTableUnit } from "components/subjects/damage-table";
 import { SubjectConfig } from "app-types/subject-dynamic/config";

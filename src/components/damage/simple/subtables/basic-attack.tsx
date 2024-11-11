@@ -1,5 +1,5 @@
 import * as React from "react";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { BasicAttackElement, DamageTable } from "components/subjects/damage-table";
 import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "app-types/subject-dynamic/status/standard-values";
 import StandardDamage from "./rows/standard-damage";

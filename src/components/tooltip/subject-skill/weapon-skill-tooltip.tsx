@@ -16,13 +16,15 @@ function valueOrElement(value: number | number[], index: number): number {
     return value;
 }
 
-const skillsContext = require.context("components/subjects/weapon-skills", true, /(.*)\.tsx$/);
-export const SkillsDescription = skillsContext.keys().reduce((skills: any, path) => {
+const skillsModules = import.meta.glob<{
+    default: React.FC<{skillLevel: number}>
+}>("components/subjects/weapon-skills/*.tsx", {eager: true});
+export const SkillsDescription = Object.entries(skillsModules).reduce((skills: any, [path, m]) => {
     const pathComponents = path.split("/");
     const weapon = pathComponents[pathComponents.length - 1];
     return {
         ...skills,
-        [weapon.split(".")[0]]: skillsContext(path)
+        [weapon.split(".")[0]]: m
     };
 }, {}) as any
 

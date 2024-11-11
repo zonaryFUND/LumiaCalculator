@@ -5,7 +5,7 @@ import { SubjectDamageTable } from "components/subjects/damage-table";
 import StandardDamage from "./subtables/rows/standard-damage";
 import SubjectSkill from "./subtables/subject-skill";
 import SubTable from "./subtables/subtable";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
 import style from "components/tooltip/tooltip.module.styl";

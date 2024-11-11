@@ -10,8 +10,8 @@ import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
-import table from "components/common/table.styl";
-import style from "./02_basicattack.styl";
+import table from "components/common/table.module.styl";
+import style from "./02_basicattack.module.styl";
 import AttackSpeed from "./attack-speed";
 import { BasicAttackTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";

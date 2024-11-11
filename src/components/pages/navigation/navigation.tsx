@@ -1,7 +1,8 @@
 import * as React from "react";
 import style from "./navigation.module.styl";
 import { 
-    Calculator, Sword, ChartBar, ChartLine, IconContext, GithubLogo, ArrowSquareOut
+    Calculator, Sword, ChartBar, ChartLine, IconContext, GithubLogo, ArrowSquareOut,
+    Database
 } from "@phosphor-icons/react"
 import { styles } from "@app/util/style";
 import { useWindowSize } from "react-use";
@@ -35,6 +36,10 @@ const navigation: React.FC<Props> = props => {
                 <ChartLine />
                 <h2>成長対戦(作成中)</h2>
             </div>
+            <Link to="/database" className={style.button}>
+                <Database />
+                <h2>データベース</h2>
+            </Link>
             <hr />
             <a className={styles(style.button, style.link)} href="https://playeternalreturn.com" target="_blank">
                 <ArrowSquareOut />

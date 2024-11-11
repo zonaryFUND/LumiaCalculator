@@ -8,7 +8,7 @@ import EquipmentSlot from "./equipment-slot";
 import Modal from "react-modal";
 import { useThrottle, useToggle } from "react-use";
 import SubjectList, { style as subjectsStyle } from "components/modal/subject-list";
-import common from "@app/common.styl";
+import common from "@app/common.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { SubjectStackInfo } from "components/subjects/stack";
 import { FormattedMessage, useIntl } from "react-intl";

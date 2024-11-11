@@ -13,7 +13,7 @@ import MultiplyEquation from "../subrows/mutiply-equation";
 import CriticalHit from "../subrows/critical-hit";
 import style from "../../../damage-table.module.styl";
 import { FormattedMessage } from "react-intl";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { extractMultiplier } from "components/damage/damage-table-util";
 

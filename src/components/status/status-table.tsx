@@ -4,7 +4,7 @@ import style from "./status-table.module.styl";
 import SegmentedControl from "components/common/segmented-control";
 import { name } from "app-types/subject-static";
 import { SummonedStatus } from "components/subjects/summoned-status";
-import table from "components/common/table.styl";
+import table from "components/common/table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { useIntl } from "react-intl";
