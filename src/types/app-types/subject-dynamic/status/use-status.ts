@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { SubjectConfig } from "../config/type";
 import { Status, StatusBeforeCalculation } from "./type";
-import { baseStatus, mastery } from "app-types/subject-static";
+import { BaseStatus, LevelUpStatus, mastery } from "app-types/subject-static";
 import { EquipmentStatus, PerLevelStatus, PerLevelStatusKeys, equipmentStatus } from "app-types/equipment";
 import Decimal from "decimal.js";
 import { standardCalc } from "./standard-calculation";
@@ -17,8 +17,6 @@ import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { SubjectStatusOverride } from "components/subjects/status-override";
 import { SummonedStatus } from "components/subjects/summoned-status";
 import { defenseCalc } from "./defense-calculation";
-import { ProgressPlugin } from "webpack";
-
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
     return equipments
@@ -38,8 +36,11 @@ function maxEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentSta
 }
 
 export function useStatus(config: SubjectConfig): Status {
-    const baseStatusValues = useMemo(() => {
-        return baseStatus(config.subject);
+    const [baseStatusValues, levelupStatusValues] = useMemo(() => {
+        return [
+            BaseStatus[config.subject],
+            LevelUpStatus[config.subject]
+        ];
     }, [config.subject]);
 
     const equipments = Object.values(config.equipment)
@@ -115,23 +116,23 @@ export function useStatus(config: SubjectConfig): Status {
 
     const baseValue: StatusBeforeCalculation = {
         maxHP: {
-            base: baseStatusValues.maxHP,
-            perLevel: baseStatusValues.maxHPperLevel,
+            base: baseStatusValues.maxHp,
+            perLevel: levelupStatusValues.maxHp,
             equipment: equipmentValue("maxHP", perLevelStatus.max_hp),
         },
         hpReg: {
-            base: baseStatusValues.hpRegeneration,
-            perLevel: baseStatusValues.hpRegenPerLevel,
+            base: baseStatusValues.hpRegen,
+            perLevel: levelupStatusValues.hpRegen,
             equipment: hpRegenEquipment,
         },
         defense: {
-            base: baseStatusValues.armor,
-            perLevel: baseStatusValues.armorPerLevel,
+            base: baseStatusValues.defense,
+            perLevel: levelupStatusValues.defense,
             equipment: equipmentValue("defense")
         },
         maxSP: {
-            base: baseStatusValues.maxSP,
-            perLevel: baseStatusValues.maxSPperLevel,
+            base: baseStatusValues.maxSp,
+            perLevel: levelupStatusValues.maxSp,
             equipment: equipmentValue("maxSP")
         },
         basicAttackReduction: {
@@ -147,13 +148,13 @@ export function useStatus(config: SubjectConfig): Status {
             equipment: equipmentValue("skillDamageReduction")
         },
         spReg: {
-            base: baseStatusValues.spRegeneration,
-            perLevel: baseStatusValues.spRegenPerLevel,
+            base: baseStatusValues.spRegen,
+            perLevel: levelupStatusValues.spRegen,
             equipment: spRegenEquipment,
         },
         attackPower: {
             base: baseStatusValues.attackPower,
-            perLevel: baseStatusValues.apPerLevel,
+            perLevel: levelupStatusValues.attackPower,
             equipment: {
                 ...equipmentValue("attackPower", perLevelStatus.attack_power),
                 adaptive: masteryFactor?.type == "attack_power" || masteryFactor?.type == "basic_attack_amp" ?
@@ -215,7 +216,7 @@ export function useStatus(config: SubjectConfig): Status {
         healPower: {},
         tenacity: {},
         movementSpeed: {
-            base: baseStatusValues.movementSpeed,
+            base: baseStatusValues.moveSpeed,
             equipment: movementSpeedEquipment
         },
         visionRange: {

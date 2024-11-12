@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "webpack --mode=production",
     "deploy": "ts-node ./deploy.ts",
-    "get-character-status": "tsx ./api.ts subject"
+    "subject-json": "tsx ./api.ts subject"
   },
   "author": "zonaryFUND",
   "license": "MIT",
@@ -36,6 +36,7 @@
     "axios": "^1.7.7",
     "gh-pages": "^6.1.1",
     "path": "^0.12.7",
+    "stylus": "^0.64.0",
     "tsx": "^4.19.2",
     "typescript": "^5.4.5",
     "vite": "^5.4.10",

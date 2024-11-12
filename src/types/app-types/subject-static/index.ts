@@ -1,4 +1,3 @@
 export * from "./base-status";
-export * from "./id";
+export * from "./levelup-status";
 export * from "./mastery";
-export * from "./name";

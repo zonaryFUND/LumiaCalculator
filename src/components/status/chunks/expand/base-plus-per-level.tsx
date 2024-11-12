@@ -15,7 +15,7 @@ type Props = {
 const basePlusPerLevel: React.FC<Props> = props => {
     const value = React.useMemo(() => {
         return (props.base ?? new Decimal(0)).add(props.perLevel?.times(props.level - 1) ?? 0).cut(props.digit, "round");
-    }, [props.base, props.perLevel]);
+    }, [props.base, props.perLevel, props.level]);
     
     return (
         <tr><td>{props.label}</td><td>

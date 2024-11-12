@@ -31,12 +31,13 @@ import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { SubjectSkillProps } from "components/subjects/props";
 import { WeaponTypeID } from "app-types/equipment/weapon";
-import { name } from "app-types/subject-static";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
 import { useSelectedPresetKey } from "@app/storage/use-selected-preset-key";
+import { useIntl } from "react-intl";
 
 const index: React.FC = props => {
+    const intl = useIntl();
     const { width } = useWindowSize();
 
     const [storageConfig, saveConfig] = useLocalStorage<SubjectConfig>(SimpleCurrentConfigKey);
@@ -201,7 +202,7 @@ const index: React.FC = props => {
                 overlayClassName={common["modal-overlay"]}
             >
                 <SaveBuild 
-                    defaultName={name(config.subject, "jp")}
+                    defaultName={intl.formatMessage({id: config.subject})}
                     onSave={name => {
                         toggleShowingSave(false);
                         const key = saveNew(name, config);

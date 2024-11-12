@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Subjects, SubjectID, name } from "app-types/subject-static";
+import { Subjects, SubjectID } from "app-types/subject-static";
 import style from "./subject-list.module.styl";
 import Images from "@app/resources/image";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
 import common from "@app/common.module.styl";
 import { styles } from "@app/util/style";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type Props = {
     current: SubjectID
@@ -25,25 +26,31 @@ const Subject: React.FC<SubjectProps> = props => (
         onClick={() => props.onSelect(props.id)}
     >
         <img src={Images.subject[props.id]} />
-        <p>{name(props.id, "jp")}</p>
+        <p><FormattedMessage id={props.id} /></p>
     </li>
 )
 
-const SortedSubjects = Subjects.map(s => ({id: s, name: name(s, "jp")})).sort((a, b) => a.name > b.name ? 1 : -1).map(v => v.id);
-const StandardList: React.FC<Props> = props => (
-    <ul>
-        {
-            SortedSubjects.map(id => (
-                <Subject
-                    key={id}
-                    id={id} 
-                    onSelect={props.onSelect} 
-                    selected={props.current == id}
-                />
-            ))
-        }
-    </ul>
-)
+const StandardList: React.FC<Props> = props => {
+    const intl = useIntl();
+    const sorted = React.useMemo(() => {
+        return Subjects.map(id => ({id, name: intl.formatMessage({id})})).sort((a, b) => a.name > b.name ? 1 : -1).map(v => v.id)
+    }, [])
+
+    return (
+        <ul>
+            {
+                sorted.map(id => (
+                    <Subject
+                        key={id}
+                        id={id} 
+                        onSelect={props.onSelect} 
+                        selected={props.current == id}
+                    />
+                ))
+            }
+        </ul>
+    );
+}
 
 const aiueoDef: {index: string, ids: SubjectID[]}[] = [
     {index: "アルファベット", ids: ["eleven"]},

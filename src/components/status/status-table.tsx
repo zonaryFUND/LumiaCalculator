@@ -2,7 +2,6 @@ import * as React from "react";
 import { IconContext } from "@phosphor-icons/react"
 import style from "./status-table.module.styl";
 import SegmentedControl from "components/common/segmented-control";
-import { name } from "app-types/subject-static";
 import { SummonedStatus } from "components/subjects/summoned-status";
 import table from "components/common/table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
@@ -19,8 +18,8 @@ import Summoned from "./chunks/10_summoned";
 import { MaxColContext } from "components/common/table-row";
 
 const status: React.FC<SubjectConfig & {status: Status}> = props => {
-    const subjectName = React.useMemo(() => name(props.subject, "jp"), [props.subject]);
     const intl = useIntl();
+    const subjectName = React.useMemo(() => intl.formatMessage({id: props.subject}), [props.subject]);
     const summonedName = React.useMemo(() => {
         const module = SummonedStatus[props.subject];
         if (module == undefined) return undefined;

@@ -1,4 +1,4 @@
-import { SubjectID, name } from "app-types/subject-static";
+import { SubjectID } from "app-types/subject-static";
 import * as React from "react";
 import { StateProps, StateWrapped } from "util/state";
 import style from "./config.module.styl";
@@ -50,7 +50,7 @@ const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
                 <div className={style.top}>
                     <img className={common.hover} src={Images.subject[props.subject[0]]} onClick={toggleSelectingSubject} />
                     <div className={style.right}>
-                        <h2>{name(props.subject[0], "jp")}</h2>
+                        <h2><FormattedMessage id={props.subject[0]} /></h2>
                         <Selection max={20} label="Lv" value={props.level} layout="config" />
                     </div>
                 </div>

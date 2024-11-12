@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "./skills-standard.module.styl";
-import { SubjectID } from "app-types/subject-static/id";
+import { SubjectID } from "app-types/subject-static";
 import Images from "@app/resources/image";
 import Selection from "components/common/number-selection";
 import { SkillLevels } from "app-types/subject-dynamic/config";

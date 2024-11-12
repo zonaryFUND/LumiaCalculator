@@ -24,12 +24,13 @@ import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
-import { name } from "app-types/subject-static";
 import useCombatConfig from "./use-combat-config";
 import { CombatMasterySyncKey } from "@app/storage/combat";
 import { useToggle, useWindowSize } from "react-use";
+import { useIntl } from "react-intl";
 
 const index: React.FC = props => {
+    const intl = useIntl();
     const [collapse, setCollapse] = React.useState(false);
     const left = useCombatConfig("left");
     const right = useCombatConfig("right");
@@ -195,7 +196,7 @@ const index: React.FC = props => {
                 overlayClassName={common["modal-overlay"]}
             >
                 <SaveBuild 
-                    defaultName={name(saving == "left" ? left.config.subject : right.config.subject, "jp")}
+                    defaultName={intl.formatMessage({id: (saving == "left" ? left : right).config.subject})}
                     onSave={name => {
                         (saving == "left" ? left.onSavePreset : right.onSavePreset)(name);
                         setSaving(null);
