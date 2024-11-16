@@ -6,21 +6,21 @@ import { styles } from "@app/util/style";
 import { ArmorTypeID } from "app-types/equipment/armor";
 
 type Props = {
-    slot: "weapon" | ArmorTypeID
+    slot: "Weapon" | ArmorTypeID
 }
 
 const blank: React.FC<Props> = props => {
     const icon = React.useMemo(() => {
         switch (props.slot) {
-            case "weapon":
+            case "Weapon":
                 return <Sword size="2rem" />;
-            case "chest":
+            case "Chest":
                 return <TShirt size="2rem" />;
-            case "head":
+            case "Head":
                 return <BaseballCap size="2rem" />;
-            case "arm":
+            case "Arm":
                 return <Hand size="2rem" />;
-            case "leg":
+            case "Leg":
                 return <Sneaker size="2rem" />;
         }
         

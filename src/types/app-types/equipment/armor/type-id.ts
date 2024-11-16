@@ -1,1 +1,1 @@
-export type ArmorTypeID = "chest" | "head" | "arm" | "leg"
+export type ArmorTypeID = "Chest" | "Head" | "Arm" | "Leg"

@@ -1,12 +1,92 @@
 import Decimal from "decimal.js";
-import { EquipmentID } from "./id";
-import { EquipmentStatus, PerLevelStatus } from "./status";
-import { parseEquipmentAbility } from "./ability";
-import Weapons from "dictionary/weapons.json";
-import Armors from "dictionary/armors.json";
+import { EquipmentStatus } from "./status";
+import Weapons from "dictionary/weapon.json";
+import Armors from "dictionary/armor.json";
+import { WeaponTypeID } from "./weapon"
+import * as es from "es-toolkit/object"
 
-var statusCache = {} as {[id: string]: EquipmentStatus}
+export const [
+    WeaponTypeCodes,
+    WeaponStatusDictionary
+] = (() => {
+    const [codes, statusDictionary] = Weapons.reduce(([codes, status], entry) => {
+        const {code, weaponType, ...extractedStatus} = entry
+        const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
+            if (typeof value != "number") return value;
+            return new Decimal(value).times(key.includes("Ratio") ? 100 : 1)
+        });
 
+        const tierRank = (() => {
+            switch (extractedStatus.itemGrade) {
+                case "Epic": return 0;
+                case "Legend": return 1;
+                case "Mythic": return 2;
+                default: throw new Error("unexpected itemGrade found");
+            }
+        })();
+    
+        return [
+            {
+                ...codes,
+                [entry.weaponType]: (codes[weaponType as WeaponTypeID] ?? []).concat({ code: entry.code, tierRank })
+            },
+            {
+                ...status,
+                [entry.code]: {...valuesMapped, type: weaponType} as EquipmentStatus
+            }
+        ]
+    }, [
+        {} as {[typeID in WeaponTypeID]: {code: number, tierRank: number}[]},
+        {} as {[code: number]: EquipmentStatus}
+    ]);
+
+    const sortedCodes = es.mapValues(codes, tuple => {
+        return tuple
+            .toSorted((a, b) => a.tierRank - b.tierRank)
+            .map(({code}) => code)
+    })
+
+    return [sortedCodes, statusDictionary];
+})();
+
+
+
+export const [
+    HeadArmorCodes,
+    ChestArmorCodes,
+    ArmArmorCodes,
+    LegArmorCodes,
+    ArmorStatusDictionary
+] = (() => {
+    return Armors.reduce(([headIDs, chestIDs, armIDs, legIDs, status], entry) => {
+        const {code, armorType, ...extractedStatus} = entry
+        const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
+            if (typeof value != "number") return value;
+            return new Decimal(value).times(key.includes("Ratio") ? 100 : 1)
+        });
+
+        return [
+            entry.armorType == "Head" ? headIDs.concat(entry.code) : headIDs,
+            entry.armorType == "Chest" ? chestIDs.concat(entry.code) : chestIDs,
+            entry.armorType == "Arm" ? armIDs.concat(entry.code) : armIDs,
+            entry.armorType == "Leg" ? legIDs.concat(entry.code) : legIDs,
+            {
+                ...status,
+                [entry.code]: {...valuesMapped, type: armorType} as EquipmentStatus
+            }
+        ]
+    }, [
+        [] as number[],
+        [] as number[],
+        [] as number[],
+        [] as number[],
+        {} as {[code: number]: EquipmentStatus}
+    ]);
+})();
+
+export const EquipmentStatusDictionary = {...WeaponStatusDictionary, ...ArmorStatusDictionary};
+
+/*
 export function equipmentStatus(id: EquipmentID): EquipmentStatus {
     if (statusCache[id] != undefined) return statusCache[id];
 
@@ -42,3 +122,4 @@ export function equipmentStatus(id: EquipmentID): EquipmentStatus {
     statusCache[id] = status;
     return status;
 }
+    */

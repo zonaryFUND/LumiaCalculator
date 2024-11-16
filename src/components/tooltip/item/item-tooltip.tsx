@@ -1,7 +1,6 @@
 import * as React from "react";
 import { EquipmentID } from "app-types/equipment/id";
 import Images from "@app/resources/image";
-import { equipmentStatus, name } from "app-types/equipment";
 import Options from "./options";
 import Skill from "./skill";
 import baseStyle from "../tooltip.module.styl";
@@ -10,29 +9,32 @@ import { SubjectSkillProps } from "components/subjects/props";
 import { tierName } from "app-types/equipment/tier";
 import { ValueContext } from "../value-context";
 import { FormattedMessage } from "react-intl";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 
 type Props = SubjectSkillProps & {
     itemID: EquipmentID
 }
 
 const itemTooltip: React.FC<Props> = props => {
-    const status = equipmentStatus(props.itemID);
-    const itemName = name(props.itemID, "jp");
+    const status = React.useMemo(() => EquipmentStatusDictionary[props.itemID], [props.itemID]);
+    const itemName = props.itemID;
 
     const src = React.useMemo(() => {
-        const itemType = equipmentStatus(props.itemID).type;
+        const itemType = EquipmentStatusDictionary[props.itemID].type;
         const Items = (() => {
             switch (itemType) {
-                case "head":    return Images.head;
-                case "chest":   return Images.chest;
-                case "arm":     return Images.arm;
-                case "leg":     return Images.leg;
+                case "Head":    return Images.head;
+                case "Chest":   return Images.chest;
+                case "Arm":     return Images.arm;
+                case "Leg":     return Images.leg;
                 default:        return Images.weapon;
             }
         })()
+        /*
         if (props.itemID.endsWith("_crimson") || props.itemID.endsWith("_dawn")) {
             return Items[props.itemID.substring(0, props.itemID.lastIndexOf("_"))];
         } 
+            */
           
         return Items[props.itemID];
     }, [props.itemID]);
@@ -43,11 +45,11 @@ const itemTooltip: React.FC<Props> = props => {
     })();
 
     return (
-        <div className={`${baseStyle.base} ${style.tooltip} ${style[status.tier]}`}>
+        <div className={`${baseStyle.base} ${style.tooltip} ${style[status.itemGrade]}`}>
             <header className={style.header}>
                 <div>
                     <h1>{itemName}</h1>
-                    <p>{tierName(status.tier, "jp")}</p>
+                    <p>{status.itemGrade}</p>
                     <p><FormattedMessage id={status.type} /></p>
                 </div>
                 <img src={src} />

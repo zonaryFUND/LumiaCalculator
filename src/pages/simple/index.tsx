@@ -21,7 +21,6 @@ import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 
 import { useToggle, useWindowSize } from "react-use";
-import { equipmentStatus } from "app-types/equipment";
 import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
@@ -35,6 +34,7 @@ import { DetailedTooltipKey } from "@app/storage/common";
 import { useSelectedPresetKey } from "@app/storage/use-selected-preset-key";
 import { useIntl } from "react-intl";
 import { useLocalStorageConfig } from "@app/storage/config";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 
 const index: React.FC = props => {
     const intl = useIntl();
@@ -59,7 +59,7 @@ const index: React.FC = props => {
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const weaponTypeID = React.useMemo(() => {
         if (!equipment.weapon) return undefined;
-        return equipmentStatus(equipment.weapon).type;
+        return EquipmentStatusDictionary[equipment.weapon].type;
     }, [equipment.weapon])
 
     const parentRef = React.useRef<HTMLDivElement>(null);

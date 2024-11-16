@@ -1,9 +1,7 @@
 import * as React from "react";
 import Item from "components/item/item";
-import { equipmentStatus, name } from "app-types/equipment";
 import style from "./equipment-list.module.styl";
 import { weaponIDsForType } from "app-types/equipment/weapon/id";
-import { Arms, Chests, HeadID, Heads, Legs } from "app-types/equipment/armor/id";
 import { EquipmentID } from "app-types/equipment/id";
 import { WeaponMasteryStatus } from "app-types/subject-static/mastery";
 import { SubjectID } from "app-types/subject-static";
@@ -14,32 +12,33 @@ import common from "@app/common.module.styl";
 import Blank from "components/item/blank";
 import { Equipment } from "app-types/subject-dynamic/config";
 import { ArmorTypeID } from "app-types/equipment/armor";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { WeaponTypeID } from "app-types/equipment/weapon";
+import { ArmArmorCodes, ChestArmorCodes, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
 
 type Props = {
     subject: SubjectID
     equipment: [Equipment, React.Dispatch<React.SetStateAction<Equipment>>]
-    slot: "weapon" | ArmorTypeID
+    slot: "Weapon" | ArmorTypeID
 }
 
 function splitIdsWithRarity(ids: EquipmentID[]): {title: string, ids: EquipmentID[]}[] {
     const splitted = ids.reduce((prev, id) => {
-        const def = equipmentStatus(id);
+        const status = EquipmentStatusDictionary[id];
         return {
             ...prev,
-            [def.tier]: prev[def.tier].concat([id])
-        }
-    }, {epic: [] as EquipmentID[], legendary: [] as EquipmentID[], mythic: [] as EquipmentID[]})
+            [status.itemGrade]: (prev[status.itemGrade] ?? []).concat(id)
+        };
+    }, {Epic: [] as EquipmentID[], Legend: [] as EquipmentID[], Mythic: [] as EquipmentID[]})
 
     return [
-        {title: "英雄等級", ids: splitted.epic},
-        {title: "伝説等級", ids: splitted.legendary},
-        {title: "神話等級", ids: splitted.mythic}
+        {title: "英雄等級", ids: splitted.Epic},
+        {title: "伝説等級", ids: splitted.Legend},
+        {title: "神話等級", ids: splitted.Mythic}
     ].filter(v => v.ids.length != 0)
 }
 
-const priyaUnique: HeadID[] = ["harmony_in_full_bloom", "celestial_echo"];
+const priyaUnique: number[] = [201416, 201516];
 
 const subjectsList: React.FC<Props> = props => {
     const intl = useIntl();
@@ -47,41 +46,41 @@ const subjectsList: React.FC<Props> = props => {
 
     const def: {title: string, sections: {title?: string, ids: EquipmentID[]}[]} = React.useMemo(() => {
         switch (props.slot) {
-            case "head":    
-                const IDs = props.subject == "priya" ? priyaUnique : Heads.filter(id => priyaUnique.includes(id) == false);
+            case "Head":    
+                const IDs = props.subject == 51 ? priyaUnique : HeadArmorCodes.filter(id => priyaUnique.includes(id) == false);
                 return {title: "頭", sections: layout == "in-game" ? [{ids: IDs}] : splitIdsWithRarity(IDs)};
-            case "chest":   
-                return {title: "胴", sections: layout == "in-game" ? [{ids: Chests}] : splitIdsWithRarity(Chests)};
-            case "arm":
-                return {title: "腕", sections: layout == "in-game" ? [{ids: Arms}] : splitIdsWithRarity(Arms)};
-            case "leg":
-                return {title: "脚", sections: layout == "in-game" ? [{ids: Legs}] : splitIdsWithRarity(Legs)};
-            case "weapon":
+            case "Chest":   
+                return {title: "胴", sections: layout == "in-game" ? [{ids: ChestArmorCodes}] : splitIdsWithRarity(ChestArmorCodes)};
+            case "Arm":
+                return {title: "腕", sections: layout == "in-game" ? [{ids: ArmArmorCodes}] : splitIdsWithRarity(ArmArmorCodes)};
+            case "Leg":
+                return {title: "脚", sections: layout == "in-game" ? [{ids: LegArmorCodes}] : splitIdsWithRarity(LegArmorCodes)};
+            case "Weapon":
                 const availableTypes = Object.keys(WeaponMasteryStatus[props.subject]) as WeaponTypeID[];
-                const names = availableTypes.map(id => intl.formatMessage({id}))
+                const names = availableTypes.map(id => intl.formatMessage({id: `MasteryType/${id}`}))
                 return {
                     title: names.join("、"), 
                     sections: availableTypes.map((id, i) => ({
                         title: names.length == 1 ? undefined : names[i],
-                        ids: weaponIDsForType(id)
+                        ids: WeaponTypeCodes[id]
                     }))
                 }
         }
     }, [props.slot, props.subject, layout]);
 
     const onClick = React.useCallback((id: EquipmentID | null) => () => {
-        props.equipment[1](prev => ({...prev, [props.slot]: id}))
+        props.equipment[1](prev => ({...prev, [props.slot.toLowerCase()]: id}))
     }, [props.slot]);
 
     return (
         <>
             <header>
                 <h1>装備選択 {def.title}</h1>
-                {props.slot == "weapon" ? null : <SegmentedControl name="equipment-sort" value={[layout, setLayout]} segments={[{title: "一括表示", value: "in-game"}, {title: "等級別表示", value: "rarity"}]} />}
+                {props.slot == "Weapon" ? null : <SegmentedControl name="equipment-sort" value={[layout, setLayout]} segments={[{title: "一括表示", value: "in-game"}, {title: "等級別表示", value: "rarity"}]} />}
             </header>
             <div className={style.content}>
                 <section key="remove">
-                    <div onClick={onClick(null)} className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot] == null ? style.selected : undefined)}>
+                    <div onClick={onClick(null)} className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot.toLowerCase() as any] == null ? style.selected : undefined)}>
                         <Blank slot={props.slot} />
                         <p>外す</p>
                     </div>
@@ -93,9 +92,9 @@ const subjectsList: React.FC<Props> = props => {
                         <ul>
                             {
                                 section.ids.map(id => (
-                                <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot] ? style.selected : undefined)}>
+                                <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot.toLowerCase() as any] ? style.selected : undefined)}>
                                     <Item slot={props.slot} itemID={id} inSlot={false} />
-                                    <p>{name(id, "jp")}</p>
+                                    <p><FormattedMessage id={`Item/Name/${id}`} /></p>
                                 </li>
                                 ))
                             }

@@ -847,21 +847,21 @@
 		"option": "last_word[\"dmg\":{\"amp\":45,\"targetMaxHP\":8},\"heal\":66]"
 	},
 	"type_95": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "epic",
 		"attackPower": "72",
 		"attackRange": "0.35",
 		"ammo": "60"
 	},
 	"ak-12": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "epic",
 		"attackPower": "70",
 		"criticalChance": "22",
 		"ammo": "60"
 	},
 	"xcr": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "epic",
 		"attackPower": "35",
 		"skillAmplification": "61",
@@ -869,7 +869,7 @@
 		"ammo": "30"
 	},
 	"gold_rush": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "epic",
 		"attackPower": "35",
 		"attackSpeed": "25",
@@ -877,14 +877,14 @@
 		"ammo": "30"
 	},
 	"agni": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "epic",
 		"attackPower": "69",
 		"attackSpeed": "35",
 		"ammo": "60"
 	},
 	"judgement": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "legendary",
 		"attackPower": "83",
 		"attackSpeed": "40",
@@ -892,7 +892,7 @@
 		"option": "extended_fury[\"extend\":25,\"dmg\":{\"level\":3}]"
 	},
 	"black_widow": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "legendary",
 		"attackPower": "45",
 		"attackSpeed": "30",
@@ -902,7 +902,7 @@
 		"option": "healing_reduction_weak"
 	},
 	"endeavor_ax": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "legendary",
 		"attackPower": "75",
 		"attackSpeed": "30",
@@ -910,7 +910,7 @@
 		"option": "vigor[\"dmg\":{\"targetHP\":2},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10,\"ms\":0.1}]"
 	},
 	"valkyrie": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "legendary",
 		"attackPower": "40",
 		"attackSpeed": "30",
@@ -919,7 +919,7 @@
 		"option": "cataclasm"
 	},
 	"hellfire": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "mythic",
 		"attackPower": "34",
 		"attackSpeed": "30",
@@ -929,7 +929,7 @@
 		"ammo": "120"
 	},
 	"hellfire_crimson": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "mythic",
 		"attackPower": "38",
 		"attackSpeed": "40",
@@ -939,7 +939,7 @@
 		"option": "extended_fury[\"extend\":30,\"dmg\":{\"level\":3}]"
 	},
 	"hellfire_dawn": {
-		"type": "assault_rifle",
+		"type": "assaultrifle",
 		"tier": "mythic",
 		"attackPower": "25",
 		"attackSpeed": "30",
@@ -1354,14 +1354,14 @@
 		"option": "biotic_infusion[\"dmg\":{\"amp\":40}]"
 	},
 	"thuận_thiên": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "epic",
 		"attackPower": "67",
 		"cooldownReduction": "10",
 		"defense": "9"
 	},
 	"arondight": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "epic",
 		"attackPower": "53",
 		"attackSpeed": "20",
@@ -1369,7 +1369,7 @@
 		"option": "vigor[\"dmg\":{\"targetHP\":2},\"duration\":5,\"as\":5,\"stack\":4,\"max\":{\"ad\":10}]"
 	},
 	"excalibur": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "epic",
 		"attackPower": "55",
 		"attackSpeed": "20",
@@ -1377,35 +1377,35 @@
 		"hpRegeneration": "75"
 	},
 	"monohoshizao": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "epic",
 		"attackPower": "65",
 		"attackSpeed": "20",
 		"omnisyphon": "7"
 	},
 	"hovud": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "epic",
 		"attackPower": "58",
 		"criticalChance": "29",
 		"criticalDamage": "5"
 	},
 	"arcane_edge": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "epic",
 		"attackPower": "38",
 		"skillAmplification": "77",
 		"cooldownReduction": "15"
 	},
 	"laevateinn": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "legendary",
 		"attackPower": "50",
 		"attackSpeed": "20",
 		"option": "smolder[\"dmg\":{\"targetMaxHP\":0.6}]"
 	},
 	"aurora_longsword": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "legendary",
 		"attackPower": "69",
 		"attackSpeed": "38",
@@ -1413,14 +1413,14 @@
 		"option": "magnetic_midnight[\"dmg\":{\"level\":11},\"slow\":{\"effect\":20,\"duration\":1.5}]"
 	},
 	"almas": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "legendary",
 		"attackPower": "40",
 		"skillAmplification": "98",
 		"option": "lichs_grasp[\"type\":\"skill\",\"slow\":99,\"duration\":0.56,\"cooldown\":4]"
 	},
 	"chained_nightmare": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "legendary",
 		"attackPower": "40",
 		"skillAmplification": "84",
@@ -1428,7 +1428,7 @@
 		"option": "spirit_harvest"
 	},
 	"dáinsleif": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "mythic",
 		"attackPower": "27",
 		"attackSpeed": "30",
@@ -1437,7 +1437,7 @@
 		"armorPenetrationRatio": "12"
 	},
 	"dáinsleif_crimson": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "mythic",
 		"attackPower": "20",
 		"attackSpeed": "40",
@@ -1446,7 +1446,7 @@
 		"option": "smolder[\"dmg\":{\"targetMaxHP\":0.8}]"
 	},
 	"dáinsleif_dawn": {
-		"type": "two-handed_sword",
+		"type": "twohandsword",
 		"tier": "mythic",
 		"attackPower": "22",
 		"adaptiveStatus": "55",

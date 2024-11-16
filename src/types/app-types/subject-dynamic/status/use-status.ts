@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { SubjectConfig } from "../config/type";
 import { Status, StatusBeforeCalculation } from "./type";
 import { BaseStatus, LevelUpStatus, WeaponMasteryStatus } from "app-types/subject-static";
-import { EquipmentStatus, PerLevelStatus, PerLevelStatusKeys, equipmentStatus } from "app-types/equipment";
+import { EquipmentStatus, EquipmentStatusDictionary } from "app-types/equipment";
 import Decimal from "decimal.js";
 import { standardCalc } from "./standard-calculation";
 import { maxHPCalc } from "./maxhp-calclation"
@@ -43,14 +43,15 @@ export function useStatus(config: SubjectConfig): Status {
         ];
     }, [config.subject]);
 
-    const equipments = Object.values(config.equipment)
-        .filter((id): id is string => id !== null)
-        .map(equipmentStatus);
+    const equipments = useMemo(() => Object.values(config.equipment)
+        .filter((id): id is number => id !== null)
+        .map(id => EquipmentStatusDictionary[id])
+    , [config.equipment])
 
     const [weaponType, weaponBaseStatus] = useMemo(() => {
         if (config.equipment.weapon == null) return [undefined, undefined];
 
-        const type = equipmentStatus(config.equipment.weapon).type as WeaponTypeID;
+        const type = EquipmentStatusDictionary[config.equipment.weapon].type as WeaponTypeID;
         const weaponBaseStatus = WeaponTypeStatus[type];
         return [type, weaponBaseStatus];
     }, [config.equipment.weapon]);
@@ -60,6 +61,7 @@ export function useStatus(config: SubjectConfig): Status {
         return WeaponMasteryStatus[config.subject][weaponType];
     }, [config.subject, weaponType]);
 
+    /*
     const perLevelStatus = (() => {
         const values = equipments
             .map(equipment => equipment.perLevelStatus)
@@ -78,47 +80,50 @@ export function useStatus(config: SubjectConfig): Status {
                 }
             }, {} as Partial<Record<typeof PerLevelStatusKeys[number], Decimal>>) ;
     })();
+    */
 
-    const equipmentValue = (constKey: keyof EquipmentStatus, perLevel?: Decimal) => {
+    const equipmentValue = (constKey: keyof EquipmentStatus, perLevel?: keyof EquipmentStatus) => {
         const constant = sumEquipmentStatus(constKey, equipments);
         if (constant || perLevel) {
-            return { constant, perLevel };
+            return { constant, perLevel: perLevel == undefined ? undefined : sumEquipmentStatus(perLevel, equipments) };
         } else {
             return undefined;
         }
     }
 
     const hpRegenEquipment = (() => {
-        const value = sumEquipmentStatus("hpRegeneration", equipments);
+        const value = sumEquipmentStatus("hpRegenRatio", equipments);
         return value ? { ratio: value } : undefined;
     })();
 
     const spRegenEquipment = (() => {
-        const value = sumEquipmentStatus("spRegeneration", equipments);
+        const value = sumEquipmentStatus("spRegenRatio", equipments);
         return value ? { ratio: value } : undefined;
     })();
 
-    const attackSpeedEquipment = sumEquipmentStatus("attackSpeed", equipments);
-    const cdrCap = maxEquipmentStatus("cdrCap", equipments) ?? new Decimal(0);
+    const attackSpeedEquipment = sumEquipmentStatus("attackSpeedRatio", equipments);
+    const cdrCap = maxEquipmentStatus("uniqueCooldownLimit", equipments) ?? new Decimal(0);
     const movementSpeedEquipment = (() => {
-        const value = sumEquipmentStatus("movementSpeed", equipments);
+        const value = sumEquipmentStatus("moveSpeed", equipments);
         return value ?  { constant: value } : undefined;
     })();
     const visionEquipment = (() => {
-        const value = maxEquipmentStatus("vision", equipments);
+        const value = maxEquipmentStatus("sightRange", equipments);
         return value ? { constant: value } : undefined;
     })();
-    const basicAttackRangeEquipment = maxEquipmentStatus("attackRange", equipments);
-    const criticalChanceEquipment = sumEquipmentStatus("criticalChance", equipments);
+    const basicAttackRangeEquipment = maxEquipmentStatus("uniqueAttackRange", equipments);
+    const criticalChanceEquipment = sumEquipmentStatus("criticalStrikeChance", equipments);
 
-    const adaptive = sumEquipmentStatus("adaptiveStatus", equipments);
-    const armorPenetrationRatio = sumEquipmentStatus("armorPenetrationRatio", equipments);
+    const adaptive = sumEquipmentStatus("adaptiveForce", equipments);
+    const armorPenetrationRatio = sumEquipmentStatus("penetrationDefenseRatio", equipments);
+
+    const basicAttackAmpEquipment = sumEquipmentStatus("increaseBasicAttackDamageRatioByLv", equipments);
 
     const baseValue: StatusBeforeCalculation = {
         maxHP: {
             base: baseStatusValues.maxHp,
             perLevel: levelupStatusValues.maxHp,
-            equipment: equipmentValue("maxHP", perLevelStatus.max_hp),
+            equipment: equipmentValue("maxHp", "maxHpByLv"),
         },
         hpReg: {
             base: baseStatusValues.hpRegen,
@@ -133,7 +138,7 @@ export function useStatus(config: SubjectConfig): Status {
         maxSP: {
             base: baseStatusValues.maxSp,
             perLevel: levelupStatusValues.maxSp,
-            equipment: equipmentValue("maxSP")
+            equipment: equipmentValue("maxSp")
         },
         basicAttackReduction: {
             perMastery: {
@@ -145,7 +150,7 @@ export function useStatus(config: SubjectConfig): Status {
             perMastery: {
                 ratio: SkillReductionPerMastery
             },
-            equipment: equipmentValue("skillDamageReduction")
+            equipment: equipmentValue("preventSkillDamagedRatio")
         },
         spReg: {
             base: baseStatusValues.spRegen,
@@ -156,7 +161,7 @@ export function useStatus(config: SubjectConfig): Status {
             base: baseStatusValues.attackPower,
             perLevel: levelupStatusValues.attackPower,
             equipment: {
-                ...equipmentValue("attackPower", perLevelStatus.attack_power),
+                ...equipmentValue("attackPower", "attackPowerByLv"),
                 adaptive: masteryFactor?.type == "attack_power" || masteryFactor?.type == "basic_attack_amp" ?
                     adaptive : undefined
             },
@@ -168,8 +173,8 @@ export function useStatus(config: SubjectConfig): Status {
             perMastery: masteryFactor?.type == "basic_attack_amp" ? {
                 ratio: masteryFactor.value
             } : undefined,
-            equipment: perLevelStatus.aa_amp ? {
-                perLevel: perLevelStatus.aa_amp
+            equipment: basicAttackAmpEquipment ? {
+                perLevel: basicAttackAmpEquipment
             } : undefined
         },
         attackSpeed: {
@@ -188,12 +193,12 @@ export function useStatus(config: SubjectConfig): Status {
             } : undefined
         },
         criticalDamage: {
-            calculatedValue: sumEquipmentStatus("criticalDamage", equipments) ?? new Decimal(0)
+            calculatedValue: sumEquipmentStatus("criticalStrikeDamage", equipments) ?? new Decimal(0)
         },
         skillAmp: {
             equipment: {
-                ...equipmentValue("skillAmplification", perLevelStatus.skill_amp),
-                ratio: maxEquipmentStatus("ampRatio", equipments),
+                ...equipmentValue("skillAmp", "skillAmpByLevel"),
+                ratio: maxEquipmentStatus("uniqueSkillAmpRatio", equipments),
                 adaptive: masteryFactor?.type == "skill_amp" ? adaptive?.times(2) : undefined
             },
             perMastery: masteryFactor?.type == "skill_amp" ? {
@@ -261,20 +266,20 @@ export function useStatus(config: SubjectConfig): Status {
         skillAmp: standardCalc(overriddenValue.skillAmp, {level: config.level, mastery: config.weaponMastery}, 0),
         cooldownReduction: overriddenValue.cooldownReduction as any,
         armorPenetration: {
-            calculatedValue: sumEquipmentStatus("armorPenetration", equipments) ?? new Decimal(0)
+            calculatedValue: sumEquipmentStatus("penetrationDefense", equipments) ?? new Decimal(0)
         },
         armorPenetrationRatio: standardCalc(overriddenValue.armorPenetrationRatio, {}, 0),
         lifeSteal: {
             calculatedValue: sumEquipmentStatus("lifeSteal", equipments) ?? new Decimal(0)
         },
         omnisyphon: {
-            calculatedValue: sumEquipmentStatus("omnisyphon", equipments) ?? new Decimal(0)
+            calculatedValue: sumEquipmentStatus("normalLifeSteal", equipments) ?? new Decimal(0)
         },
         healPower: {
-            calculatedValue: sumEquipmentStatus("healingPower", equipments) ?? new Decimal(0)
+            calculatedValue: sumEquipmentStatus("healerGiveHpHealRatio", equipments) ?? new Decimal(0)
         },
         tenacity: {
-            calculatedValue: maxEquipmentStatus("tenacity", equipments) ?? new Decimal(0)
+            calculatedValue: maxEquipmentStatus("uniqueTenacity", equipments) ?? new Decimal(0)
         },
         movementSpeed: movementSpeedSpeedCalc(overriddenValue.movementSpeed, {mastery: config.movementMastery}),
         visionRange: standardCalc(overriddenValue.visionRange, {}, 2),

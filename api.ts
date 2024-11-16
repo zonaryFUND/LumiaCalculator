@@ -1,9 +1,8 @@
 import axios from "axios";
 import fs from "fs";
 import yargs from "yargs/yargs";
-import _ from "lodash";
 import { APIKey } from "credentials";
-
+import * as es from "es-toolkit";
 
 const baseURL = "https://open-api.bser.io/";
 
@@ -34,6 +33,31 @@ if (argv._[2] == "subject") {
     await callAPI("v2/data/MasteryStat", "./src/dictionary-jsons/mastery.json");
 } else if (argv._[2] == "weapon-status") {
     await callAPI("v2/data/WeaponTypeInfo", "./src/dictionary-jsons/weapon-type-status.json");
+} else if (argv._[2] == "armor") {
+    const response = await axios.get(`${baseURL}v2/data/ItemArmor`, {
+        headers: {
+            accept: "application/json",
+            "x-api-key": APIKey
+        }
+    });
+
+    const data = response.data.data
+        .filter((entry: any) => entry.itemGrade == "Epic" || entry.itemGrade == "Legend" || entry.itemGrade == "Mythic")
+        .filter((entry: any) => entry.modeType == 0)
+        .map((entry: any) => {
+            const zeroRemoved = es.pickBy(entry, (value) => value != 0);
+            const unwantedKeys = [
+                "name", "itemType", "isCompletedItem", "markingType", 
+                "gradeBgOverride", "makeCustomAction",
+                "alertInSpectator", "isRemovedFromPlayerCorpseInventoryWhenPlayerKilled",
+                "craftAnimTrigger", "stackable", "initialCount", "itemUsableType", 
+                "makeMaterial1", "makeMaterial2", "restoreItemWhenResurrected", "autoDisappear",
+                "creditValueWhenConvertedToBounty"
+            ]
+            return es.omit(zeroRemoved, unwantedKeys);
+        });
+    
+    fs.writeFileSync("./src/dictionary-jsons/armor.json", JSON.stringify(data, null, 4), "utf-8");
 } else if (argv._[2] == "weapon") {
     try {
         const response = await axios.get(`${baseURL}v2/data/ItemWeapon`, {
@@ -45,15 +69,9 @@ if (argv._[2] == "subject") {
 
         const data = response.data.data
             .filter((entry: any) => entry.itemGrade == "Epic" || entry.itemGrade == "Legend" || entry.itemGrade == "Mythic")
+            .filter((entry: any) => entry.modeType == 0)
             .map((entry: any) => {
-                /*
-                const baseInfo = pick(entry, ["code", "weaponType", "itemGrade"]);
-                
-                return {
-                    ...baseInfo
-                }
-                    */
-                const zeroRemoved = _.pickBy(entry, (value) => value != 0);
+                const zeroRemoved = es.pickBy(entry, (value) => value != 0);
                 const unwantedKeys = [
                     "name", "itemType", "isCompletedItem", "markingType", 
                     "gradeBgOverride", "makeCustomAction",
@@ -62,11 +80,9 @@ if (argv._[2] == "subject") {
                     "makeMaterial1", "makeMaterial2", "restoreItemWhenResurrected", "autoDisappear",
                     "creditValueWhenConvertedToBounty"
                 ]
-                return _.omit(zeroRemoved, ...unwantedKeys);
+                return es.omit(zeroRemoved, unwantedKeys);
             });
         
-            console.log(data)
-
         fs.writeFileSync("./src/dictionary-jsons/weapon.json", JSON.stringify(data, null, 4), "utf-8");
     } catch (error) {
         console.error(error);

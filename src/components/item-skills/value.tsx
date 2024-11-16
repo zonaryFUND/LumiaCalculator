@@ -1,9 +1,9 @@
 import * as React from "react";
-import { equipmentStatus } from "app-types/equipment";
 import BaseValue from "components/tooltip/value";
 import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
 import { useValueContextOptional } from "components/tooltip/value-context";
 import { RatioKeys, ValueRatio, isValueRatio } from "app-types/value-ratio";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 
 type Props = {
     ratio: ValueRatio | {
@@ -22,7 +22,7 @@ const Value: React.FC<Props> = props => {
 
     const range = React.useMemo(() => {
         if (config?.equipment.weapon && !showEquation) {
-            return meleeOrRange(equipmentStatus(config.equipment.weapon).type as WeaponTypeID);
+            return meleeOrRange(EquipmentStatusDictionary[config.equipment.weapon].type as WeaponTypeID);
         } else {
             return undefined;
         }

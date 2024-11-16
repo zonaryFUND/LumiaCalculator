@@ -149,28 +149,28 @@ export const Weapons = [
 
 export function weaponIDsForType(type: WeaponTypeID): string[] {
     switch (type) {
-        case "arcana": return Arcanas;
-        case "assault_rifle": return AssaultRifles;
-        case "axe": return Axes;
-        case "bat": return Bats;
-        case "bow": return Bows;
-        case "camera": return Cameras;
-        case "crossbow": return Crossbows;
-        case "dagger": return Daggers;
-        case "dual_swords": return DualSwords;
-        case "glove": return Gloves;
-        case "guitar": return Guitars;
-        case "hammer": return Hammers;
-        case "nunchaku": return Nunchakus;
-        case "pistol": return Pistols;
-        case "rapier": return Rapiers;
-        case "shuriken": return Shurikens;
-        case "sniper_rifle": return SniperRifles;
-        case "spear": return Spears;
-        case "throw": return Throws;
-        case "tonfa": return Tonfas;
-        case "two-handed_sword": return TwoHandedSwords;
-        case "vf_prosthetic": return VFProsthetics;
-        case "whip": return Whips;
+        case "Arcana": return Arcanas;
+        case "AssaultRifle": return AssaultRifles;
+        case "Axe": return Axes;
+        case "Bat": return Bats;
+        case "Bow": return Bows;
+        case "Camera": return Cameras;
+        case "CrossBow": return Crossbows;
+        case "OneHandSword": return Daggers;
+        case "DualSword": return DualSwords;
+        case "Glove": return Gloves;
+        case "Guitar": return Guitars;
+        case "Hammer": return Hammers;
+        case "Nunchaku": return Nunchakus;
+        case "Pistol": return Pistols;
+        case "Rapier": return Rapiers;
+        case "DirectFire": return Shurikens;
+        case "SniperRifle": return SniperRifles;
+        case "Spear": return Spears;
+        case "HighAngleFire": return Throws;
+        case "Tonfa": return Tonfas;
+        case "TwoHandSword": return TwoHandedSwords;
+        case "VFArm": return VFProsthetics;
+        case "Whip": return Whips;
     }
 }

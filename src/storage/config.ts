@@ -1,4 +1,4 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { Equipment, SubjectConfig } from "app-types/subject-dynamic/config";
 import { OldSubjectID, SubjectCodeWithOldID } from "app-types/subject-static";
 import { Dispatch, SetStateAction } from "react";
 import { useLocalStorage } from "react-use";
@@ -11,9 +11,24 @@ function migrateConfig(rawConfig: SubjectConfig): SubjectConfig {
         return codeStr ? +codeStr : 0
     };
 
+    const migrateEquipment = (equipment: Equipment) => {
+        if (Object.values(equipment).findIndex(e => typeof e == "string") == -1) {
+            return equipment;
+        }
+
+        return {
+            weapon: null,
+            head: null,
+            chest: null,
+            arm: null,
+            leg: null
+        };
+    }
+
     return {        
         ...rawConfig,
-        subject: typeof rawConfig.subject == "string" ? migrateSubjectID(rawConfig.subject) : rawConfig.subject
+        subject: typeof rawConfig.subject == "string" ? migrateSubjectID(rawConfig.subject) : rawConfig.subject,
+        equipment: migrateEquipment(rawConfig.equipment)
     }
 }
 

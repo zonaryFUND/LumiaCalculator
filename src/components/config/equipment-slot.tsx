@@ -18,7 +18,7 @@ import style from "./equipment-slot.module.styl";
 
 
 type Props = {
-    slot: "weapon" | ArmorTypeID 
+    slot: "Weapon" | ArmorTypeID 
     subject: SubjectID
     equipment: StateProps<Equipment>
 }
@@ -34,8 +34,8 @@ const equipmentSlot: React.FC<Props> = props => {
         <>
             <div className={styles(style.slot, common["hover-bright"])} onClick={toggleSelecting}>
                 {
-                    props.equipment[0][props.slot] ?
-                    <Item itemID={props.equipment[0][props.slot]} slot={props.slot} inSlot={true} /> :
+                    props.equipment[0][props.slot.toLowerCase()] ?
+                    <Item itemID={props.equipment[0][props.slot.toLowerCase()]} slot={props.slot} inSlot={true} /> :
                     <Blank slot={props.slot} />
                 }
             </div>

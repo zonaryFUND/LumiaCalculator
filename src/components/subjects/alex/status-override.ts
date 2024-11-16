@@ -1,11 +1,10 @@
-import { equipmentStatus } from "app-types/equipment";
 import Constants from "./constants.json";
 import { StatusOverrideFunc } from "../status-override";
 import Decimal from "decimal.js";
+import useRange from "app-types/subject-dynamic/config/use-range";
 
 const f: StatusOverrideFunc = (status, config) => {
-    const equipmentType = config.equipment.weapon ? equipmentStatus(config.equipment.weapon).type : null;
-    const isRange = equipmentType == "pistol" || equipmentType == "shuriken";
+    const range = useRange(config);
 
     return {
         ...status,
@@ -18,7 +17,7 @@ const f: StatusOverrideFunc = (status, config) => {
         },
         defense: {
             ...status.defense,
-            overrideAdditional: isRange ? undefined : {
+            overrideAdditional: range == "range" ? undefined : {
                 nameKey: "subject.alex.passive-defense",
                 value: new Decimal(Constants.T.defense[config.skillLevels.T])
             }

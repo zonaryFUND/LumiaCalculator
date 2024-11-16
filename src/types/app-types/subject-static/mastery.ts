@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import { WeaponTypeID, SanitizeApiWeaponName } from "../equipment/weapon";
+import { WeaponTypeID } from "../equipment/weapon";
 import { SubjectCode, SubjectCodeWithOldID } from "./base-status"
 import Dictionary from "dictionary/mastery.json";
 
@@ -26,7 +26,7 @@ export const WeaponMasteryStatus = Dictionary.reduce((prev, entry) => {
         ...prev,
         [entry.characterCode]: {
             ...(entry.characterCode in prev ? prev[entry.characterCode] : {}),
-            [SanitizeApiWeaponName(entry.type)]: { type, value, attackSpeed }
+            [entry.type]: { type, value, attackSpeed }
         }
     }
 }, {} as {

@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 import Dictionary from "dictionary/weapon-type-status.json"
-import { SanitizeApiWeaponName, WeaponTypeID } from "./type-id";
+import { WeaponTypeID } from "./type-id";
 
 type Status = {
     attackSpeed: Decimal
@@ -8,10 +8,9 @@ type Status = {
 }
 
 export const WeaponTypeStatus = Dictionary.reduce((prev, entry) => {
-    const key = SanitizeApiWeaponName(entry.type);
     return {
         ...prev,
-        [key]: {
+        [entry.type]: {
             attackSpeed: new Decimal(entry.attackSpeed),
             range: new Decimal(entry.attackRange)
         }

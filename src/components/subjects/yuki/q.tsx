@@ -2,16 +2,16 @@ import * as React from "react";
 import Constants from "./constants.json";
 import Value from "components/tooltip/value";
 import { ValuesProps } from "../values";
-import { equipmentStatus } from "app-types/equipment";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 
 const q: React.FC<SubjectSkillProps> = props => {
     const { config } = useValueContext();
-    const weaponType = config.equipment.weapon ? equipmentStatus(config.equipment.weapon).type : undefined;
+    const weaponType = config.equipment.weapon ? EquipmentStatusDictionary[config.equipment.weapon].type : undefined;
     return (
         <>
-            雪の次の基本攻撃が<Value skill="Q" ratio={weaponType == "dual_swords" ? Constants.Q.dual_sword_damage : Constants.Q.damage} {...props} />の基本攻撃ダメージを与えて
+            雪の次の基本攻撃が<Value skill="Q" ratio={weaponType == "DualSword" ? Constants.Q.dual_sword_damage : Constants.Q.damage} {...props} />の基本攻撃ダメージを与えて
             {Constants.Q.slow.duration}秒間敵の移動速度を{Constants.Q.slow.effect}%減少させます。<br />
             <br />
             端正な服装のボタンがある場合、{Constants.Q.stun}秒間気絶させます。

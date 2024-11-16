@@ -2,9 +2,9 @@ import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
 import { ItemSkillProps } from "../item-skill";
-import { equipmentStatus } from "app-types/equipment";
 import { WeaponTypeID, meleeOrRange } from "app-types/equipment/weapon";
 import { useValueContextOptional } from "components/tooltip/value-context";
+import useRange from "app-types/subject-dynamic/config/use-range";
 
 const Value: React.FC<ItemSkillProps> = props => {
     const { config, status, showEquation } = useValueContextOptional();
@@ -13,13 +13,7 @@ const Value: React.FC<ItemSkillProps> = props => {
         return (props.values.levelProp.to - props.values.levelProp.from) / 19;
     }, [props.values.levelProp]);
 
-    const range = React.useMemo(() => {
-        if (config?.equipment.weapon && !showEquation) {
-            return meleeOrRange(equipmentStatus(config.equipment.weapon).type as WeaponTypeID);
-        } else {
-            return undefined;
-        }
-    }, []);
+    const range = useRange(config);
 
     if (props.values.melee != undefined) {
         if (showEquation != false) {

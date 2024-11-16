@@ -23,7 +23,7 @@ const table: DamageTableGenerator = props => {
         }
     }
 
-    if (weaponType == "pistol" || weaponType == "shuriken") {
+    if (weaponType == "Pistol" || weaponType == "DirectFire") {
         // ranged
         return common([
             [{label: props.intl.formatMessage({id: "subject.alex.rangeq"}), skill: "Q", value: Constants.RangeQ.damage}],

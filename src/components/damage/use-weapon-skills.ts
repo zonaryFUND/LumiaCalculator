@@ -1,5 +1,5 @@
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import { equipmentStatus } from "app-types/equipment";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
@@ -18,10 +18,10 @@ export default function useWeaponSkill(config: SubjectConfig): Response {
     return React.useMemo(() => {
         if (config.equipment.weapon == null) return {regular: [], basicAttackTriggered: []};
 
-        const weaponType = equipmentStatus(config.equipment.weapon).type as WeaponTypeID;
+        const weaponType = EquipmentStatusDictionary[config.equipment.weapon].type as WeaponTypeID;
         const skillLevel = weaponSkillLevel(config.weaponMastery);
     
-        const generator = WeaponSkillDamageTable[weaponType];
+        const generator = WeaponSkillDamageTable[weaponType.toLowerCase()];
         if (generator == undefined) return {regular: [], basicAttackTriggered: []};
 
         const units = (generator({intl}))

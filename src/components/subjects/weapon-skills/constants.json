@@ -1,5 +1,5 @@
 {
-    "vf_prosthetic": {
+    "vfarm": {
         "cast": 1,
         "threshold": 50,
         "charge_gauge": 45,
@@ -79,7 +79,7 @@
         },
         "cooldown": [30,22,14]
     },
-    "shuriken": {
+    "directfire": {
         "count": 12,
         "duration": 6,
         "damage": {
@@ -145,7 +145,7 @@
         "stun": 1.25,
         "cooldown": [40,32,24]
     },
-    "sniper_rifle": {
+    "sniperrifle": {
         "duration": 10,
         "vision": 30,
         "cripping": {
@@ -172,7 +172,7 @@
         },
         "cooldown": [40,35,30]
     },
-    "dual_swords": {
+    "dualsword": {
         "first_damage": {
             "base": [20,35,50],
             "additionalAttack": [20,30,40],
@@ -217,7 +217,7 @@
         },
         "cooldown": [30,25,20]
     },
-    "dagger": {
+    "onehandsword": {
         "cloak": {
             "duration": [1,1.5,2],
             "movement_speed": 20
@@ -238,11 +238,11 @@
         },
         "cooldown": [30,25,20]
     },
-    "throw": {
+    "highanglefire": {
         "duration": 2.5,
         "cooldown": [40,32,24]
     },
-    "assault_rifle": {
+    "assaultrifle": {
         "stack_gain": 3,
         "max_stack": [50,75,100],
         "stack_reduction_threshold": 6,
@@ -276,7 +276,7 @@
         },
         "cooldown": [25,20,15]
     },
-    "two-handed_sword": {
+    "twohandsword": {
         "duration": 0.75,
         "dash": 3,
         "damage": {

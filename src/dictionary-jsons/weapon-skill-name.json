@@ -56,7 +56,7 @@
 	"throw": {
 		"jp": "煙幕"
 	},
-	"assault_rifle": {
+	"assaultrifle": {
 		"jp": "過熱"
 	},
 	"axe": {
@@ -65,7 +65,7 @@
 	"whip": {
 		"jp": "風裂き"
 	},
-	"two-handed_sword": {
+	"twohandsword": {
 		"jp": "受け流し"
 	}
 }

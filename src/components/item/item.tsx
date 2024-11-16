@@ -4,10 +4,10 @@ import Images from "@app/resources/image";
 import style from "./item.module.styl";
 import { styles } from "@app/util/style";
 import { ArmorTypeID } from "app-types/equipment/armor";
-import { equipmentStatus } from "app-types/equipment";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 
 type Props = {
-    slot: "weapon" | ArmorTypeID
+    slot: "Weapon" | ArmorTypeID
     itemID: EquipmentID | null
     inSlot: boolean
 }
@@ -15,29 +15,25 @@ type Props = {
 const item: React.FC<Props> = props => {
     const Items = (() => {
         switch (props.slot) {
-            case "weapon":  return Images.weapon;
-            case "head":    return Images.head;
-            case "chest":   return Images.chest;
-            case "arm":     return Images.arm;
-            case "leg":     return Images.leg;
+            case "Weapon":  return Images.weapon;
+            case "Head":    return Images.head;
+            case "Chest":   return Images.chest;
+            case "Arm":     return Images.arm;
+            case "Leg":     return Images.leg;
         }
     })()
 
     const src = React.useMemo(() => {
         if (props.itemID == undefined) return undefined;
-        if (props.itemID.endsWith("_crimson") || props.itemID.endsWith("_dawn")) {
-            return Items[props.itemID.substring(0, props.itemID.lastIndexOf("_"))];
-        } 
-
         return Items[props.itemID];
     }, [props.itemID]);
 
     const className = React.useMemo(() => {
-        if (props.itemID == undefined) return undefined;
-        switch (equipmentStatus(props.itemID).tier) {
-            case "epic":        return style.epic;
-            case "legendary":   return style.legendary;
-            case "mythic":      return style.mythic;
+        if (props.itemID == null) return undefined;
+        switch (EquipmentStatusDictionary[props.itemID].itemGrade) {
+            case "Epic":        return style.epic;
+            case "Legend":   return style.legendary;
+            case "Mythic":      return style.mythic;
         }
     }, [props.itemID])
 

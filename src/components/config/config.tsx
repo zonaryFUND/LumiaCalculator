@@ -95,11 +95,11 @@ const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
                 <div>
                     <h3>装備</h3>
                     <div className={style.equipment}>
-                    <EquipmentSlot slot="weapon" subject={props.subject[0]} equipment={props.equipment} />
-                    <EquipmentSlot slot="chest" subject={props.subject[0]} equipment={props.equipment} />
-                    <EquipmentSlot slot="head" subject={props.subject[0]} equipment={props.equipment} />
-                    <EquipmentSlot slot="arm" subject={props.subject[0]} equipment={props.equipment} />
-                    <EquipmentSlot slot="leg" subject={props.subject[0]} equipment={props.equipment} />
+                    <EquipmentSlot slot="Weapon" subject={props.subject[0]} equipment={props.equipment} />
+                    <EquipmentSlot slot="Chest" subject={props.subject[0]} equipment={props.equipment} />
+                    <EquipmentSlot slot="Head" subject={props.subject[0]} equipment={props.equipment} />
+                    <EquipmentSlot slot="Arm" subject={props.subject[0]} equipment={props.equipment} />
+                    <EquipmentSlot slot="Leg" subject={props.subject[0]} equipment={props.equipment} />
                     </div>
                 </div>
             </div>

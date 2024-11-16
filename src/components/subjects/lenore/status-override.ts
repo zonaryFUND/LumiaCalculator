@@ -1,14 +1,14 @@
 import Constants from "./constants.json";
 import { StatusOverrideFunc } from "../status-override";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { equipmentStatus } from "app-types/equipment";
 import Decimal from "decimal.js";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 
 export const accelerando = (config: SubjectConfig) => {
     const equipment = Object.values(config.equipment)
         .reduce((sum, id) => {
             if (!id) return sum;
-            const value = equipmentStatus(id).cooldownReduction?.toNumber() || 0;
+            const value = EquipmentStatusDictionary[id].cooldownReduction?.toNumber() || 0;
             return sum + value;
         }, 0)
     const screamMax = Math.max(0, Constants.T.stack_conversion_limit - equipment);

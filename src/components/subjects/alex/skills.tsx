@@ -5,7 +5,7 @@ import { WeaponID } from "app-types/equipment/weapon/id";
 import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
 
 export default function(props: {weaponType?: WeaponID} & SkillsStandardProps) {
-    const skills = props.weaponType == "two-handed_sword" || props.weaponType == "tonfa" ?
+    const skills = props.weaponType == "twohandsword" || props.weaponType == "tonfa" ?
         ["MeleeQ", "MeleeW", "MeleeE", "R", "T"] :
         ["RangeQ", "RangeW", "RangeE", "R", "T"]
 
