@@ -3,6 +3,7 @@ import fs from "fs";
 import yargs from "yargs/yargs";
 import { APIKey } from "credentials";
 import * as es from "es-toolkit";
+import { EquipmentStatusKeys } from "app-types/equipment";
 
 const baseURL = "https://open-api.bser.io/";
 
@@ -46,15 +47,7 @@ if (argv._[2] == "subject") {
         .filter((entry: any) => entry.modeType == 0)
         .map((entry: any) => {
             const zeroRemoved = es.pickBy(entry, (value) => value != 0);
-            const unwantedKeys = [
-                "name", "itemType", "isCompletedItem", "markingType", 
-                "gradeBgOverride", "makeCustomAction",
-                "alertInSpectator", "isRemovedFromPlayerCorpseInventoryWhenPlayerKilled",
-                "craftAnimTrigger", "stackable", "initialCount", "itemUsableType", 
-                "makeMaterial1", "makeMaterial2", "restoreItemWhenResurrected", "autoDisappear",
-                "creditValueWhenConvertedToBounty"
-            ]
-            return es.omit(zeroRemoved, unwantedKeys);
+            return es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "armorType", "itemGrade"]);
         });
     
     fs.writeFileSync("./src/dictionary-jsons/armor.json", JSON.stringify(data, null, 4), "utf-8");
@@ -72,15 +65,7 @@ if (argv._[2] == "subject") {
             .filter((entry: any) => entry.modeType == 0)
             .map((entry: any) => {
                 const zeroRemoved = es.pickBy(entry, (value) => value != 0);
-                const unwantedKeys = [
-                    "name", "itemType", "isCompletedItem", "markingType", 
-                    "gradeBgOverride", "makeCustomAction",
-                    "alertInSpectator", "isRemovedFromPlayerCorpseInventoryWhenPlayerKilled",
-                    "craftAnimTrigger", "stackable", "initialCount", "itemUsableType", 
-                    "makeMaterial1", "makeMaterial2", "restoreItemWhenResurrected", "autoDisappear",
-                    "creditValueWhenConvertedToBounty"
-                ]
-                return es.omit(zeroRemoved, unwantedKeys);
+                return es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "weaponType", "itemGrade"]);
             });
         
         fs.writeFileSync("./src/dictionary-jsons/weapon.json", JSON.stringify(data, null, 4), "utf-8");

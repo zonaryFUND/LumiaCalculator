@@ -19,24 +19,19 @@ const itemTooltip: React.FC<Props> = props => {
     const status = React.useMemo(() => EquipmentStatusDictionary[props.itemID], [props.itemID]);
     const itemName = props.itemID;
 
-    const src = React.useMemo(() => {
+    const [src, typeExpression] = React.useMemo(() => {
         const itemType = EquipmentStatusDictionary[props.itemID].type;
-        const Items = (() => {
+        const [Items, typeExpression] = (() => {
             switch (itemType) {
-                case "Head":    return Images.head;
-                case "Chest":   return Images.chest;
-                case "Arm":     return Images.arm;
-                case "Leg":     return Images.leg;
-                default:        return Images.weapon;
+                case "Head":    return [Images.head, <FormattedMessage id="ArmorType/Head" />];
+                case "Chest":   return [Images.chest, <FormattedMessage id="ArmorType/Chest" />];
+                case "Arm":     return [Images.arm, <FormattedMessage id="ArmorType/Arm" />];
+                case "Leg":     return [Images.leg, <FormattedMessage id="ArmorType/Leg" />];
+                default:        return [Images.weapon, <FormattedMessage id={`MasteryType/${status.type}`} />];
             }
         })()
-        /*
-        if (props.itemID.endsWith("_crimson") || props.itemID.endsWith("_dawn")) {
-            return Items[props.itemID.substring(0, props.itemID.lastIndexOf("_"))];
-        } 
-            */
           
-        return Items[props.itemID];
+        return [Items[props.itemID], typeExpression];
     }, [props.itemID]);
 
     const ammo = (() => {
@@ -45,12 +40,12 @@ const itemTooltip: React.FC<Props> = props => {
     })();
 
     return (
-        <div className={`${baseStyle.base} ${style.tooltip} ${style[status.itemGrade]}`}>
+        <div className={`${baseStyle.base} ${style.tooltip} ${style[status.itemGrade.toLowerCase()]}`}>
             <header className={style.header}>
                 <div>
-                    <h1>{itemName}</h1>
-                    <p>{status.itemGrade}</p>
-                    <p><FormattedMessage id={status.type} /></p>
+                    <h1><FormattedMessage id={`Item/Name/${props.itemID}`} /></h1>
+                    <p><FormattedMessage id={`ItemGrade/${status.itemGrade}`} /></p>
+                    <p>{typeExpression}</p>
                 </div>
                 <img src={src} />
             </header>

@@ -2,54 +2,41 @@ import Decimal from "decimal.js";
 import { WeaponTypeID } from "./weapon";
 import { ArmorTypeID } from "./armor";
 import { EquipmentAbility } from "./ability";
+import { number } from "yargs";
 
 export type Tier = "Epic" | "Legend" | "Mythic";
 
-/*
-export const PerLevelStatusKeys = [
-    "attack_power", "skill_amp", "max_hp", "aa_amp"
-] as const;
-
-export type PerLevelStatus = {
-    type: typeof PerLevelStatusKeys[number]
-    value: Decimal
-};
-*/
-
-export type EquipmentStatus = {
-    type: WeaponTypeID | ArmorTypeID
-    itemGrade: Tier
-
-    attackPower?: Decimal
-    attackPowerByLv?: Decimal
-    defense?: Decimal
-    // defenseByLv: Decimal
-    skillAmp?: Decimal
-    skillAmpByLevel?: Decimal
-    // skillAmpRatio?: Decimal
-    // skillAmpRatioByLevel?: Decimal
-    adaptiveForce?: Decimal
-    adaptiveForceByLevel?: Decimal
-    maxHp?: Decimal
-    maxHpByLv?: Decimal
-    maxSp?: Decimal
-    hpRegenRatio?: Decimal
-    // hpRegen?: Decimal
-    spRegenRatio?: Decimal
-    // spRegen: Decimal
-    attackSpeedRatio?: Decimal
-    // attackSpeedRatioByLv: Decimal
-    criticalStrikeChance?: Decimal
-    criticalStrikeDamage?: Decimal
-    // preventCriticalStrikeDamaged?: Decimal
-    cooldownReduction?: Decimal
-    // cooldownLimit?: Decimal // unique only
-    lifeSteal?: Decimal
-    normalLifeSteal?: Decimal
-    // skillLifeSteal?: Decimal
-    moveSpeed?: Decimal
-    // moveSpeedOutOfCombat?: Decimal
-    sightRange?: Decimal
+export const EquipmentStatusKeys = [
+    "attackPower",
+    "attackPowerByLv",
+    "defense",
+    // defenseByLv,
+    "skillAmp",
+    "skillAmpByLv",
+    // skillAmpRatio
+    // skillAmpRatioByLevel
+    "adaptiveForce",
+    // "adaptiveForceByLevel",
+    "maxHp",
+    "maxHpByLv",
+    "maxSp",
+    "hpRegenRatio",
+    // hpRegen
+    "spRegenRatio",
+    // spRegen
+    "attackSpeedRatio",
+    // attackSpeedRatioByLv
+    "criticalStrikeChance",
+    "criticalStrikeDamage",
+    // preventCriticalStrikeDamaged
+    "cooldownReduction",
+    // cooldownLimit // unique only
+    "lifeSteal",
+    "normalLifeSteal",
+    // skillLifeSteal
+    "moveSpeed",
+    // moveSpeedOutOfCombat
+    "sightRange",
     // attackRange?: Decimal // unique only
     // increaseBasicAttackDamage?: Decimal
     // increaseBasicAttackDamageByLv?: Decimal
@@ -58,27 +45,41 @@ export type EquipmentStatus = {
     // preventBasicAttackDamagedRatio?: Decimal
     // preventBasicAttackDamagedRatioByLv?: Decimal
     // increaseBasicAttackDamageRatio?: Decimal
-    increaseBasicAttackDamageRatioByLv?: Decimal
+    "increaseBasicAttackDamageRatioByLv",
     // preventSkillDamaged?: Decimal
     // preventSkillDamagedByLv?: Decimal
-    preventSkillDamagedRatio?: Decimal
+    "preventSkillDamagedRatio",
     // preventSkillDamagedRatioByLv": Decimal
-    penetrationDefense?: Decimal
-    penetrationDefenseRatio?: Decimal
+    "penetrationDefense",
+    "penetrationDefenseRatio",
     // trapDamageReduce?: Decimal
     // trapDamageReduceRatio?: Decimal
     // hpHealedIncreaseRatio?: Decimal // incoming heal only, it is deprecated
-    healerGiveHpHealRatio?: Decimal
-    uniqueAttackRange?: Decimal
+    "healerGiveHpHealRatio",
+    "uniqueAttackRange",
     // uniqueHpHealedIncreaseRatio?: Decimal
-    uniqueCooldownLimit?: Decimal
-    uniqueTenacity?: Decimal
-    // uniqueMoveSpeed?: Decimal
-    // uniquePenetrationDefense?: Decimal
-    // uniquePenetrationDefenseRatio?: Decimal
-    // uniqueLifeSteal?: Decimal
-    uniqueSkillAmpRatio?: Decimal
+    "uniqueCooldownLimit",
+    "uniqueTenacity",
+    // uniqueMoveSpeed
+    // uniquePenetrationDefense
+    // uniquePenetrationDefenseRatio
+    // uniqueLifeSteal
+    "uniqueSkillAmpRatio"
+] as const;
 
+export type EquipmentStatusValueKey = typeof EquipmentStatusKeys[number]
+
+export const PercentExpressedEquipmentStatusKeys: EquipmentStatusValueKey[] = EquipmentStatusKeys.filter(key => 
+    key.includes("Ratio") || 
+    key.includes("criticalStrike") ||
+    key.includes("ooldown") ||
+    key.includes("ifeSteal") ||
+    key == "uniqueTenacity"
+);
+
+export type EquipmentStatus = {[key in EquipmentStatusValueKey]?: Decimal} & {
+    type: WeaponTypeID | ArmorTypeID
+    itemGrade: Tier
     ammo?: Decimal
     option?: EquipmentAbility[]
 }

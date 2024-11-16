@@ -12,7 +12,9 @@ const availableRegexs = [
     /ArmorType\/[a-zA-z]*/,
     /MasteryType\/[a-zA-z]*/,
     /StatType\/[a-zA-z]*/,
-    /Skill\/Group\/Name\/\d*/
+    /Skill\/Group\/Name\/\d*/,
+    /ItemGrade\/[a-zA-Z]*/,
+    /StatType\/[a-zA-z]*/
 ]
 
 const result: Record<string, string> = {};

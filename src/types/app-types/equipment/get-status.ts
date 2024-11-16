@@ -1,19 +1,24 @@
 import Decimal from "decimal.js";
-import { EquipmentStatus } from "./status";
+import { EquipmentStatus, EquipmentStatusValueKey, PercentExpressedEquipmentStatusKeys } from "./status";
 import Weapons from "dictionary/weapon.json";
 import Armors from "dictionary/armor.json";
 import { WeaponTypeID } from "./weapon"
 import * as es from "es-toolkit/object"
+
+function mapValues(key: EquipmentStatusValueKey, value: number) {
+    const percentExpression = PercentExpressedEquipmentStatusKeys.includes(key);
+    return new Decimal(value).times(percentExpression ? 100 : 1);
+}
 
 export const [
     WeaponTypeCodes,
     WeaponStatusDictionary
 ] = (() => {
     const [codes, statusDictionary] = Weapons.reduce(([codes, status], entry) => {
-        const {code, weaponType, ...extractedStatus} = entry
+        const {code, weaponType, ...extractedStatus} = entry;
         const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
             if (typeof value != "number") return value;
-            return new Decimal(value).times(key.includes("Ratio") ? 100 : 1)
+            return mapValues(key as EquipmentStatusValueKey, value);
         });
 
         const tierRank = (() => {
@@ -60,9 +65,10 @@ export const [
 ] = (() => {
     return Armors.reduce(([headIDs, chestIDs, armIDs, legIDs, status], entry) => {
         const {code, armorType, ...extractedStatus} = entry
-        const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
+        const keysSanitized = es.mapKeys(extractedStatus, (_, key) => key == "skillAmpByLevel" ? "skillAmpByLv" : key);
+        const valuesMapped = es.mapValues(keysSanitized, (value, key) => {
             if (typeof value != "number") return value;
-            return new Decimal(value).times(key.includes("Ratio") ? 100 : 1)
+            return mapValues(key as EquipmentStatusValueKey, value);
         });
 
         return [
