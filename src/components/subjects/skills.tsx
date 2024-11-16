@@ -5,6 +5,7 @@ import Decimal from "decimal.js";
 import SkillsStandard, { SkillImage, SkillsStandardProps } from "./skills-standard";
 import { equipmentStatus } from "app-types/equipment";
 import { WeaponTypeID } from "app-types/equipment/weapon";
+import { SubjectCodeWithOldID } from "app-types/subject-static";
 
 
 export type CooldownOverride = (config: SubjectConfig, status: Status) => (basic: Decimal) => Decimal;
@@ -33,14 +34,15 @@ type Props = {
 }
 
 const subjectSkills: React.FC<Props> = props => {
+    const oldSubjectID = SubjectCodeWithOldID[props.config.subject];
     const weaponType = React.useMemo(() => 
         props.config.equipment.weapon ? equipmentStatus(props.config.equipment.weapon).type as WeaponTypeID : undefined
     , [props.config.equipment.weapon]);
 
-    const skills = SubjectSkills[props.config.subject];
+    const skills = SubjectSkills[oldSubjectID];
     if (skills && skills.default) {
         return React.createElement(skills.default, {
-            id: props.config.subject, 
+            id: oldSubjectID, 
             skillLevels: props.config.skillLevels, 
             setSkillLevels: props.setSkillLevels,
             weaponType: weaponType
@@ -49,7 +51,7 @@ const subjectSkills: React.FC<Props> = props => {
         const skillImage = skills == undefined ? undefined : skills.SkillImage;
         
         return <SkillsStandard
-            id={props.config.subject} 
+            id={oldSubjectID} 
             skillLevels={props.config.skillLevels}
             setSkillLevels={props.setSkillLevels}
             weaponType={weaponType}    

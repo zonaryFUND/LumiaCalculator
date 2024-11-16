@@ -1,94 +1,163 @@
-{
-	"vf_prosthetic": {
-		"attackSpeed": "0.5",
-		"range": "1.4"
-	},
-	"arcana": {
-		"attackSpeed": "0.555",
-		"range": "4.65"
-	},
-	"camera": {
-		"attackSpeed": "0.55",
-		"range": "5.1"
-	},
-	"guitar": {
-		"attackSpeed": "0.495",
-		"range": "4.4"
-	},
-	"glove": {
-		"attackSpeed": "0.63",
-		"range": "1.2"
-	},
-	"tonfa": {
-		"attackSpeed": "0.5",
-		"range": "1.2"
-	},
-	"bat": {
-		"attackSpeed": "0.56",
-		"range": "1.4"
-	},
-	"rapier": {
-		"attackSpeed": "0.615",
-		"range": "1.4"
-	},
-	"shuriken": {
-		"attackSpeed": "0.55",
-		"range": "4.8"
-	},
-	"bow": {
-		"attackSpeed": "0.65",
-		"range": "5.5"
-	},
-	"hammer": {
-		"attackSpeed": "0.455",
-		"range": "1.5"
-	},
-	"pistol": {
-		"attackSpeed": "0.505",
-		"range": "4.85"
-	},
-	"crossbow": {
-		"attackSpeed": "0.54",
-		"range": "5.2"
-	},
-	"sniper_rifle": {
-		"attackSpeed": "0.43",
-		"range": "6"
-	},
-	"dual_swords": {
-		"attackSpeed": "0.43",
-		"range": "1.4"
-	},
-	"nunchaku": {
-		"attackSpeed": "0.56",
-		"range": "1.75"
-	},
-	"spear": {
-		"attackSpeed": "0.445",
-		"range": "2.2"
-	},
-	"dagger": {
-		"attackSpeed": "0.58",
-		"range": "1.25"
-	},
-	"throw": {
-		"attackSpeed": "0.41",
-		"range": "5.3"
-	},
-	"assault_rifle": {
-		"attackSpeed": "0.55",
-		"range": "5.15"
-	},
-	"axe": {
-		"attackSpeed": "0.485",
-		"range": "1.65"
-	},
-	"whip": {
-		"attackSpeed": "0.55",
-		"range": "2.4"
-	},
-	"two-handed_sword": {
-		"attackSpeed": "0.56",
-		"range": "1.65"
-	}
-}
+[
+    {
+        "type": "Glove",
+        "attackSpeed": 0.63,
+        "attackRange": 1.2,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "Tonfa",
+        "attackSpeed": 0.5,
+        "attackRange": 1.2,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "Bat",
+        "attackSpeed": 0.56,
+        "attackRange": 1.4,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "Hammer",
+        "attackSpeed": 0.455,
+        "attackRange": 1.5,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "Whip",
+        "attackSpeed": 0.55,
+        "attackRange": 2.4,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "HighAngleFire",
+        "attackSpeed": 0.51,
+        "attackRange": 5.3,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "DirectFire",
+        "attackSpeed": 0.55,
+        "attackRange": 4.8,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "Bow",
+        "attackSpeed": 0.65,
+        "attackRange": 5.5,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "CrossBow",
+        "attackSpeed": 0.54,
+        "attackRange": 5.2,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "Pistol",
+        "attackSpeed": 0.505,
+        "attackRange": 4.85,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "AssaultRifle",
+        "attackSpeed": 0.55,
+        "attackRange": 5.15,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 1
+    },
+    {
+        "type": "SniperRifle",
+        "attackSpeed": 0.43,
+        "attackRange": 6,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "Axe",
+        "attackSpeed": 0.485,
+        "attackRange": 1.65,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "OneHandSword",
+        "attackSpeed": 0.58,
+        "attackRange": 1.25,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "TwoHandSword",
+        "attackSpeed": 0.56,
+        "attackRange": 1.65,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "DualSword",
+        "attackSpeed": 0.43,
+        "attackRange": 1.4,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "Spear",
+        "attackSpeed": 0.445,
+        "attackRange": 2.2,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "Nunchaku",
+        "attackSpeed": 0.56,
+        "attackRange": 1.75,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "Rapier",
+        "attackSpeed": 0.615,
+        "attackRange": 1.4,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    },
+    {
+        "type": "Guitar",
+        "attackSpeed": 0.495,
+        "attackRange": 4.4,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 2
+    },
+    {
+        "type": "Camera",
+        "attackSpeed": 0.55,
+        "attackRange": 5.1,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "Arcana",
+        "attackSpeed": 0.555,
+        "attackRange": 4.65,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 3
+    },
+    {
+        "type": "VFArm",
+        "attackSpeed": 0.5,
+        "attackRange": 1.4,
+        "shopFilter": 1,
+        "summonObjectHitDamage": 4
+    }
+]

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { SubjectConfig } from "../config/type";
 import { Status, StatusBeforeCalculation } from "./type";
-import { BaseStatus, LevelUpStatus, mastery } from "app-types/subject-static";
+import { BaseStatus, LevelUpStatus, WeaponMasteryStatus } from "app-types/subject-static";
 import { EquipmentStatus, PerLevelStatus, PerLevelStatusKeys, equipmentStatus } from "app-types/equipment";
 import Decimal from "decimal.js";
 import { standardCalc } from "./standard-calculation";
@@ -11,7 +11,7 @@ import { defenseMasteryCalc } from "./defenseMasteryCalc";
 import { attackCalc } from "./attack-calculation";
 import { basicAttackAmpCalc } from "./basic-attack-amp-calculation";
 import { attackSpeedCalc } from "./attack-speed-calculation";
-import { WeaponTypeID, weaponTypeStatus } from "app-types/equipment/weapon";
+import { WeaponTypeID, WeaponTypeStatus } from "app-types/equipment/weapon";
 import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { SubjectStatusOverride } from "components/subjects/status-override";
@@ -51,13 +51,13 @@ export function useStatus(config: SubjectConfig): Status {
         if (config.equipment.weapon == null) return [undefined, undefined];
 
         const type = equipmentStatus(config.equipment.weapon).type as WeaponTypeID;
-        const weaponBaseStatus = weaponTypeStatus(type);
+        const weaponBaseStatus = WeaponTypeStatus[type];
         return [type, weaponBaseStatus];
     }, [config.equipment.weapon]);
 
     const masteryFactor = useMemo(() => {
         if (weaponType == undefined) return undefined;        
-        return mastery(config.subject).find(m => m.weapon == weaponType);
+        return WeaponMasteryStatus[config.subject][weaponType];
     }, [config.subject, weaponType]);
 
     const perLevelStatus = (() => {

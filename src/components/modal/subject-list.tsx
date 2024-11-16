@@ -1,121 +1,80 @@
 import * as React from "react";
-import { Subjects, SubjectID } from "app-types/subject-static";
+import { SubjectCode, SubjectCodeMax } from "app-types/subject-static";
 import style from "./subject-list.module.styl";
 import Images from "@app/resources/image";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
 import common from "@app/common.module.styl";
 import { styles } from "@app/util/style";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, IntlShape, useIntl } from "react-intl";
 
 type Props = {
-    current: SubjectID
-    onSelect: (subject: SubjectID) => void
+    current: SubjectCode
+    onSelect: (subject: SubjectCode) => void
 }
 
 type SubjectProps = {
-    id: SubjectID
-    onSelect: (id: SubjectID) => void
+    code: SubjectCode
+    onSelect: (code: SubjectCode) => void
     selected: boolean
 }
 
 const Subject: React.FC<SubjectProps> = props => (
     <li 
         className={styles(props.selected ? style.selected : undefined, common.hover)} 
-        key={props.id} 
-        onClick={() => props.onSelect(props.id)}
+        key={props.code} 
+        onClick={() => props.onSelect(props.code)}
     >
-        <img src={Images.subject[props.id]} />
-        <p><FormattedMessage id={props.id} /></p>
+        <img src={Images.subject[props.code]} />
+        <p><FormattedMessage id={`Character/Name/${props.code}`} /></p>
     </li>
-)
-
-const StandardList: React.FC<Props> = props => {
-    const intl = useIntl();
-    const sorted = React.useMemo(() => {
-        return Subjects.map(id => ({id, name: intl.formatMessage({id})})).sort((a, b) => a.name > b.name ? 1 : -1).map(v => v.id)
-    }, [])
-
-    return (
-        <ul>
-            {
-                sorted.map(id => (
-                    <Subject
-                        key={id}
-                        id={id} 
-                        onSelect={props.onSelect} 
-                        selected={props.current == id}
-                    />
-                ))
-            }
-        </ul>
-    );
-}
-
-const aiueoDef: {index: string, ids: SubjectID[]}[] = [
-    {index: "アルファベット", ids: ["eleven"]},
-    {index: "あ", ids: [
-        "isaac", "isol", "adina", "adela", "adriana",
-        "abigail", "aya", "arda", "alex", "alonso",
-        "ly_anh", "irem", "vanya", "william", "aiden",
-        "eva", "echion", "estelle", "emma", "elena"
-    ]},
-    {index: "か", ids: [
-        "garnet", "karla", "katja", "camilo", "chiara", "cathy",
-        "chloe", "kenneth"
-    ]},
-    {index: "さ", ids: [
-        "zahir", "xiukai","jenny", "sissela", "charlotte",
-        "jackie", "shoichi", "silvia", "sua", "celine"
-    ]},
-    {index: "た", ids: [
-        "li_dailin", "tazia", "daniel", "darko", "tia", "theodore",
-        "debi_marlene"
-    ]},
-    {index: "な", ids: [
-        "nathapon", "nadine", "nicky"
-    ]},
-    {index: "は", ids: [
-        "hart", "barbara", "bernice", "bianca", "piolo", 
-        "hyunwoo", "fiora", "felix", "priya", "haze", "hyejin"
-    ]},
-    {index: "ま", ids: [
-        "mai", "magnus", "martina", "markus"
-    ]},
-    {index: "や", ids: [
-        "jan", "yuki", "yumin", "johann"
-    ]},
-    {index: "ら", ids: [
-        "laura", "rio", "luke", "leon", "leni", "lenore", "lenox", "rozzi"
-    ]}
-]
-
-const SectionedList: React.FC<Props> = props => (
-    <>
-        {
-            aiueoDef.map(tuple => (
-                <section key={tuple.index}>
-                    <h3>{tuple.index}</h3>
-                    <ul>
-                        {
-                            tuple.ids.map(id => 
-                                <Subject
-                                    key={id}
-                                    id={id} 
-                                    onSelect={props.onSelect} 
-                                    selected={props.current == id}
-                                />
-                            )
-                        }
-                    </ul>
-                </section>
-            ))
-        }
-    </>
 )
 
 const subjectsList: React.FC<Props> = props => {
     const [sort, setSort] = useLocalStorage("subject-list-sort", "in-game");
+    const intl = useIntl();
+    const jpNameWithCode = React.useMemo(() => {
+        return [...Array(SubjectCodeMax - 1).keys()]
+            .map(index => ({code: index + 1, name: intl.formatMessage({id: `Character/Name/${index + 1}`})}))
+    }, []);
+
+    const sorted = React.useMemo(() => {
+        return jpNameWithCode
+            .toSorted((a, b) => a.name > b.name ? 1 : -1)
+            .map(v => v.code)
+    }, []);
+
+    const aiueoSorted = React.useMemo(() => {
+        const sanitizedNameWithCode = jpNameWithCode
+            .map(entry => {
+                if (entry.name == "雪") return {code: entry.code, name: "ゆき"};
+                if (entry.name == "彰一") return {code: entry.code, name: "しょういち"};
+                if (entry.name == "莉央") return {code: entry.code, name: "りお"};
+                return entry;
+            });
+
+        function filtered(initialRegex: RegExp): SubjectCode[] {
+            return sanitizedNameWithCode
+                .filter(entry => initialRegex.test(entry.name[0]))
+                .toSorted((a, b) => a.name.localeCompare(b.name, "ja"))
+                .map(entry => entry.code);
+        }
+        
+        return [
+            {index: "アルファベット", ids: filtered(/[a-zA-Z]/)},
+            {index: "あ", ids: filtered(/[あ-おア-オ]/)},
+            {index: "か", ids: filtered(/[か-こカ-コ]/)},
+            {index: "さ", ids: filtered(/[さ-そサ-ソ]/)},
+            {index: "た", ids: filtered(/[た-とタ-ト]/)},
+            {index: "な", ids: filtered(/[な-のナ-ノ]/)},
+            {index: "は", ids: filtered(/[は-ほハ-ホ]/)},
+            {index: "ま", ids: filtered(/[ま-もマ-モ]/)},
+            {index: "や", ids: filtered(/[や-よヤ-ヨ]/)},
+            {index: "ら", ids: filtered(/[ら-ろラ-ロ]/)},
+            //{index: "わ", ids: filtered(/[わ-んワ-ン]/)}
+        ]
+    }, []);
+
 
     return (
         <>
@@ -126,8 +85,40 @@ const subjectsList: React.FC<Props> = props => {
             <div className={style.content}>
                 {   
                     sort == "in-game" ?
-                    <StandardList {...props} /> :
-                    <SectionedList {...props} />
+                    <ul>
+                        {
+                            sorted.map(code => (
+                                <Subject
+                                    key={code}
+                                    code={code} 
+                                    onSelect={props.onSelect} 
+                                    selected={props.current == code}
+                                />
+                            ))
+                        }
+                    </ul>
+                    :
+                    <>
+                        {
+                            aiueoSorted.map(tuple => (
+                                <section key={tuple.index}>
+                                    <h3>{tuple.index}</h3>
+                                    <ul>
+                                        {
+                                            tuple.ids.map(code => 
+                                                <Subject
+                                                    key={code}
+                                                    code={code} 
+                                                    onSelect={props.onSelect} 
+                                                    selected={props.current == code}
+                                                />
+                                            )
+                                        }
+                                    </ul>
+                                </section>
+                            ))
+                        }
+                    </>
                 }
             </div>
         </>

@@ -1,6 +1,6 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { defaultSampleBuilds } from "components/modal/load-build/default-sample";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "react-use";
 
 export const SavedPresetsKey = "saved-builds";
@@ -21,6 +21,7 @@ type BuildStorage = {
 
 export function usePresetStorage(): BuildStorage {
     const [presets, savePresets, reset] = useLocalStorage<PresetWithKey[]>(SavedPresetsKey, []);
+
     const saveNew = useCallback((name: string, config: SubjectConfig) => {
         const key = Date.now();
         savePresets(prev => ([{name, key, config}]).concat(prev ?? []));

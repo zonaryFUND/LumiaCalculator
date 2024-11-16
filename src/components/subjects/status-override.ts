@@ -1,6 +1,6 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { StatusBeforeCalculation } from "app-types/subject-dynamic/status/type";
-import { SubjectID } from "app-types/subject-static";
+import { OldSubjectID } from "app-types/subject-static";
 
 export type StatusOverrideFunc = (status: StatusBeforeCalculation, config: SubjectConfig) => StatusBeforeCalculation;
 
@@ -11,4 +11,4 @@ export const SubjectStatusOverride = Object.entries(subjectModules).reduce((skil
         ...skills,
         [key]: m
     }
-}, {}) as {[key: SubjectID]: StatusOverrideFunc}
+}, {}) as {[key: OldSubjectID]: StatusOverrideFunc}

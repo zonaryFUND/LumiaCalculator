@@ -1,12 +1,12 @@
 import * as React from "react";
 import Item from "components/item/item";
-import { equipmentStatus, name, typeName } from "app-types/equipment";
+import { equipmentStatus, name } from "app-types/equipment";
 import style from "./equipment-list.module.styl";
-import { weaponIDsForType, Weapons } from "app-types/equipment/weapon/id";
+import { weaponIDsForType } from "app-types/equipment/weapon/id";
 import { Arms, Chests, HeadID, Heads, Legs } from "app-types/equipment/armor/id";
 import { EquipmentID } from "app-types/equipment/id";
-import { mastery } from "app-types/subject-static/mastery";
-import { SubjectID } from "app-types/subject-static/id";
+import { WeaponMasteryStatus } from "app-types/subject-static/mastery";
+import { SubjectID } from "app-types/subject-static";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
 import { styles } from "@app/util/style";
@@ -14,6 +14,8 @@ import common from "@app/common.module.styl";
 import Blank from "components/item/blank";
 import { Equipment } from "app-types/subject-dynamic/config";
 import { ArmorTypeID } from "app-types/equipment/armor";
+import { useIntl } from "react-intl";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 
 type Props = {
     subject: SubjectID
@@ -40,6 +42,7 @@ function splitIdsWithRarity(ids: EquipmentID[]): {title: string, ids: EquipmentI
 const priyaUnique: HeadID[] = ["harmony_in_full_bloom", "celestial_echo"];
 
 const subjectsList: React.FC<Props> = props => {
+    const intl = useIntl();
     const [layout, setLayout] = useLocalStorage("equipment-list-sort", "in-game");
 
     const def: {title: string, sections: {title?: string, ids: EquipmentID[]}[]} = React.useMemo(() => {
@@ -54,8 +57,8 @@ const subjectsList: React.FC<Props> = props => {
             case "leg":
                 return {title: "脚", sections: layout == "in-game" ? [{ids: Legs}] : splitIdsWithRarity(Legs)};
             case "weapon":
-                const availableTypes = mastery(props.subject).map(m => m.weapon);
-                const names = availableTypes.map(id => typeName(id, "jp"))
+                const availableTypes = Object.keys(WeaponMasteryStatus[props.subject]) as WeaponTypeID[];
+                const names = availableTypes.map(id => intl.formatMessage({id}))
                 return {
                     title: names.join("、"), 
                     sections: availableTypes.map((id, i) => ({

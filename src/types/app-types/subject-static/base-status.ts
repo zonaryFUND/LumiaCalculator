@@ -12,12 +12,19 @@ type BaseStatusType = {
     moveSpeed: Decimal
 };
 
-export const [BaseStatus, Subjects] = Dictionary.reduce(([rawData, ids], entry) => {
-    const name = entry.name.toLowerCase();
+export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = Dictionary.reduce(([rawData, apiCodeDictionary, codeMax], entry) => {
+    const sanitizedID = (() => {
+        const lowercase = entry.name.toLowerCase();
+        if (lowercase == "lidailin") return "li_dailin";
+        if (lowercase == "debimarlene") return "debi_marlene";
+        if (lowercase == "lyanh") return "ly_anh";
+        return lowercase;
+    })();
+
     return [
         {
             ...rawData,
-            [name]: {
+            [entry.code]: {
                 maxHp: new Decimal(entry.maxHp).round(),
                 maxSp: new Decimal(entry.maxSp).round(),
                 hpRegen: new Decimal(entry.hpRegen).cut(2, "round"),
@@ -28,8 +35,16 @@ export const [BaseStatus, Subjects] = Dictionary.reduce(([rawData, ids], entry) 
                 moveSpeed: new Decimal(entry.moveSpeed).cut(2, "round")
             }
         },
-        ids.concat(name)
+        {
+            ...apiCodeDictionary,
+            [entry.code]: sanitizedID
+        },
+        Math.max(codeMax, entry.code)
     ];
-}, [{} as {[subjectID: string]: BaseStatusType}, [] as string[]]);
+}, [
+    {} as {[subjectCode: SubjectCode]: BaseStatusType}, 
+    {} as {[apiCode: number]: string},
+    0
+]);
 
-export type SubjectID = typeof Subjects[number];
+export type SubjectCode = number;

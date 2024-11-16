@@ -31,7 +31,7 @@ export default function useItemSkills(config: SubjectConfig): Response {
                 return abilities.flatMap(ability => {
                     const unitsOrGenerator = ItemSkillDamageTable[ability.id];
                     if (unitsOrGenerator == undefined) return [];
-                    const entries = typeof unitsOrGenerator == "function" ? unitsOrGenerator(ability.values.dmg) : unitsOrGenerator;
+                    const entries = typeof unitsOrGenerator == "function" ? unitsOrGenerator(ability.values?.dmg) : unitsOrGenerator;
                     return entries.map(entry => {
                         const itemWithSkillName = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
                         const label = entry.labelIntlID ? intl.formatMessage({id: entry.labelIntlID}, {item: itemWithSkillName, value: entry.intlValue}) : itemWithSkillName;

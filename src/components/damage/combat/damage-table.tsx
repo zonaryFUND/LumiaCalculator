@@ -14,6 +14,7 @@ import useItemSkills from "../use-item-skills";
 import useWeaponSkill from "../use-weapon-skills";
 import useTacticalSkill from "../use-tactical-skill";
 import useAugment from "../use-augment";
+import { SubjectCodeWithOldID } from "app-types/subject-static";
 
 type Props = {
     hideHeader?: boolean
@@ -34,7 +35,7 @@ const damageTable: React.FC<Props> = props => {
     const ltr = React.useState<"ltr" | "rtl" | undefined>("ltr");
     const [attacker, defender] = ltr[0] == "ltr" ? [props.left, props.right] : [props.right, props.left]
 
-    const subject = SubjectDamageTable[attacker.config.subject]({
+    const subject = SubjectDamageTable[SubjectCodeWithOldID[attacker.config.subject]]({
         status: attacker.status,
         config: attacker.config,
         intl

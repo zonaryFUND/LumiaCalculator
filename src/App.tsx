@@ -6,10 +6,7 @@ import Navigation from 'components/pages/navigation/navigation';
 import { Route, Routes } from 'react-router';
 import { IntlProvider } from 'react-intl';
 
-console.log("aaa")
-
 const files = import.meta.glob<Record<"default", Record<string, string>>>("./intl/locales/**/*.json", {eager: true});
-console.log(files)
 export const Locales = Object.entries(files).reduce((locales, [path, m]) => {
     const key = path.split("/")[3];
     return {
@@ -22,7 +19,6 @@ export const Locales = Object.entries(files).reduce((locales, [path, m]) => {
 }, {} as {[locale: string]: Record<string, string>})
 
 interface AppProps {}
-
 
 function App({}: AppProps) {
     React.useLayoutEffect(() => {

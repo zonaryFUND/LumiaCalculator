@@ -1,5 +1,6 @@
 import Decimal from "decimal.js";
 import Dictionary from "dictionary/levelup-status.json";
+import { SubjectCode } from "./base-status";
 
 type LevelUpStatusType = {
     maxHp: Decimal,
@@ -11,10 +12,9 @@ type LevelUpStatusType = {
 };
 
 export const LevelUpStatus = Dictionary.reduce((rawData, entry) => {
-    const name = entry.name.toLowerCase();
     return {
         ...rawData,
-        [name]: {
+        [entry.code]: {
             maxHp: new Decimal(entry.maxHp),
             maxSp: new Decimal(entry.maxSp),
             hpRegen: new Decimal(entry.hpRegen),
@@ -23,4 +23,4 @@ export const LevelUpStatus = Dictionary.reduce((rawData, entry) => {
             defense: new Decimal(entry.defense).cut(1, "round")
         }
     };
-}, {} as {[subjectID: string]: LevelUpStatusType});
+}, {} as {[subjectCode: SubjectCode]: LevelUpStatusType});

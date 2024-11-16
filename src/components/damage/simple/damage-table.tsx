@@ -14,6 +14,7 @@ import useItemSkills from "../use-item-skills";
 import useWeaponSkill from "../use-weapon-skills";
 import useTacticalSkill from "../use-tactical-skill";
 import useAugment from "../use-augment";
+import { SubjectCodeWithOldID } from "app-types/subject-static";
 
 type Props = {
     status: Status
@@ -24,8 +25,9 @@ type Props = {
 
 const damageTable: React.FC<Props> = props => {
     const intl = useIntl();
+    const oldSubjectID = SubjectCodeWithOldID[props.config.subject];
     const subject = React.useMemo(() => 
-        SubjectDamageTable[props.config.subject]({
+        SubjectDamageTable[oldSubjectID]({
             config: props.config, 
             status: props.status,
             intl

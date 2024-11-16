@@ -1,9 +1,9 @@
-import { SubjectID } from "app-types/subject-static"
+import { SubjectCode } from "app-types/subject-static"
 import { Equipment } from "./equipment"
 import { SkillLevels } from "./skill-levels"
 
 export type SubjectConfig = {
-    subject: SubjectID 
+    subject: SubjectCode
     equipment: Equipment
     level: number
     weaponMastery: number

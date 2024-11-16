@@ -1,4 +1,4 @@
-import { SubjectID } from "app-types/subject-static";
+import { SubjectCodeWithOldID, OldSubjectID, SubjectCode } from "app-types/subject-static";
 import * as React from "react";
 import { StateProps, StateWrapped } from "util/state";
 import style from "./config.module.styl";
@@ -25,24 +25,25 @@ export type CurrentHPProps = {
 
 const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
     const intl = useIntl();
+    const subjectID = SubjectCodeWithOldID[props.subject[0]];
     const [selectingSubject, toggleSelectingSubject] = useToggle(false);
-    const onChangeSubject = React.useCallback((id: SubjectID) => {
-        props.subject[1](id);
+    const onChangeSubject = React.useCallback((code: SubjectCode) => {
+        props.subject[1](code);
         toggleSelectingSubject(false);
     }, []);
 
     const stackInfo = React.useMemo(() => {
-        return SubjectStackInfo[props.subject[0]];
-    }, [props.subject[0]]);
+        return SubjectStackInfo[subjectID];
+    }, [subjectID]);
 
     const gaugeTitle = React.useMemo(() => {
-        switch (props.subject[0]) {
+        switch (subjectID) {
             case "echion":
                 return "暴走ゲージ";
             case "li_dailin":
                 return "酔いゲージ";
         }
-    }, [props.subject[0]]);
+    }, [subjectID]);
 
     return (
         <>
@@ -50,7 +51,7 @@ const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
                 <div className={style.top}>
                     <img className={common.hover} src={Images.subject[props.subject[0]]} onClick={toggleSelectingSubject} />
                     <div className={style.right}>
-                        <h2><FormattedMessage id={props.subject[0]} /></h2>
+                        <h2><FormattedMessage id={`Character/Name/${props.subject[0]}`} /></h2>
                         <Selection max={20} label="Lv" value={props.level} layout="config" />
                     </div>
                 </div>

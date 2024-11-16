@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "./skills-standard.module.styl";
-import { SubjectID } from "app-types/subject-static";
+import { OldSubjectID } from "app-types/subject-static";
 import Images from "@app/resources/image";
 import Selection from "components/common/number-selection";
 import { SkillLevels } from "app-types/subject-dynamic/config";
@@ -33,7 +33,7 @@ export const SkillLevelConfigurator: React.FC<{skill: "Q" | "W" | "E" | "R" | "T
 }
 
 type SkillProps = {
-    id: SubjectID
+    id: OldSubjectID
     skill: string
     skillImage?: SkillImage
 }
@@ -86,7 +86,7 @@ export const WeaponSkill: React.FC<WeaponSkillProps> = props => {
 }
 
 export type SkillsStandardProps = {
-    id: SubjectID
+    id: OldSubjectID
     skillImage?: SkillImage
     skillLevels: SkillLevels
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>

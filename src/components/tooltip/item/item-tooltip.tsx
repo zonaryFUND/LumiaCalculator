@@ -1,7 +1,7 @@
 import * as React from "react";
 import { EquipmentID } from "app-types/equipment/id";
 import Images from "@app/resources/image";
-import { equipmentStatus, name, typeName } from "app-types/equipment";
+import { equipmentStatus, name } from "app-types/equipment";
 import Options from "./options";
 import Skill from "./skill";
 import baseStyle from "../tooltip.module.styl";
@@ -9,6 +9,7 @@ import style from "./item-tooltip.module.styl";
 import { SubjectSkillProps } from "components/subjects/props";
 import { tierName } from "app-types/equipment/tier";
 import { ValueContext } from "../value-context";
+import { FormattedMessage } from "react-intl";
 
 type Props = SubjectSkillProps & {
     itemID: EquipmentID
@@ -47,7 +48,7 @@ const itemTooltip: React.FC<Props> = props => {
                 <div>
                     <h1>{itemName}</h1>
                     <p>{tierName(status.tier, "jp")}</p>
-                    <p>{typeName(status.type, "jp")}</p>
+                    <p><FormattedMessage id={status.type} /></p>
                 </div>
                 <img src={src} />
             </header>

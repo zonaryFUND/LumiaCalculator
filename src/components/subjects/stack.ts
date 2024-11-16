@@ -1,4 +1,4 @@
-import { SubjectID } from "app-types/subject-static";
+import { OldSubjectID } from "app-types/subject-static";
 
 const subjectModules = import.meta.glob<{MaxStack: number, StackName: number}>("./**/stack.ts", {eager: true});
 
@@ -12,7 +12,7 @@ export const SubjectStackInfo = Object.entries(subjectModules).reduce((skills, [
         }
     }
 }, {}) as {
-    [id: SubjectID]: {
+    [id: OldSubjectID]: {
         max: number, nameKey: string
     }
 }

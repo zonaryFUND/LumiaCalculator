@@ -1,10 +1,7 @@
-import { StateProps, StateWrapped } from "@app/util/state"
-import { SubjectID } from "app-types/subject-static"
-import { Equipment } from "./equipment"
-import { SkillLevels } from "./skill-levels"
+import { StateWrapped } from "@app/util/state"
+import { SubjectCode } from "app-types/subject-static"
 import { SubjectConfig } from "./type"
 import React, { useCallback } from "react"
-import { usePrevious } from "react-use"
 
 type Response = StateWrapped<SubjectConfig> & {
     value: SubjectConfig
@@ -13,7 +10,7 @@ type Response = StateWrapped<SubjectConfig> & {
 
 export default function(storage?: { value?: SubjectConfig | undefined, update: React.Dispatch<React.SetStateAction<SubjectConfig | undefined>> }): Response {
     const defaultConfig: SubjectConfig = storage?.value ?? {
-        subject: "eleven",
+        subject: 1,
         equipment: { weapon: null, chest: null, head: null, arm: null, leg: null },
         level: 1,
         weaponMastery: 1,
@@ -24,7 +21,7 @@ export default function(storage?: { value?: SubjectConfig | undefined, update: R
         stack: 0
     }
 
-    const [subject, setSubject] = React.useState<SubjectID>(defaultConfig.subject);
+    const [subject, setSubject] = React.useState<SubjectCode>(defaultConfig.subject);
     const [level, setLevel] = React.useState(defaultConfig.level);
     const [weaponMastery, setWeaponMastery] = React.useState(defaultConfig.weaponMastery);
     const [defenseMastery, setDefenseMastery] = React.useState(defaultConfig.defenseMastery);
@@ -47,7 +44,7 @@ export default function(storage?: { value?: SubjectConfig | undefined, update: R
         setStack(config.stack);
     }, [])
 
-    const updateSubject = React.useCallback((action: React.SetStateAction<SubjectID>) => {
+    const updateSubject = React.useCallback((action: React.SetStateAction<SubjectCode>) => {
         setEquipment({ weapon: null, chest: null, head: null, arm: null, leg: null });
         setSkillLevels({Q: 0, W: 0, E: 0, R: 0, T: 0});
         setGauge(0);

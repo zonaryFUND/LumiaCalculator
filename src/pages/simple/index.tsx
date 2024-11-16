@@ -20,14 +20,13 @@ import saveStyle from "components/modal/save-build/index.module.styl";
 import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 
-import { useLocalStorage, useToggle, useWindowSize } from "react-use";
+import { useToggle, useWindowSize } from "react-use";
 import { equipmentStatus } from "app-types/equipment";
 import CollapseTab from "components/common/collapse-tab";
 import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
 import { SimpleCurrentConfigKey, SimpleCurrentSelectedKey as SimpleCurrentSelectedPresetKey } from "@app/storage/simple";
 import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
-import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { SubjectSkillProps } from "components/subjects/props";
 import { WeaponTypeID } from "app-types/equipment/weapon";
@@ -35,12 +34,13 @@ import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
 import { useSelectedPresetKey } from "@app/storage/use-selected-preset-key";
 import { useIntl } from "react-intl";
+import { useLocalStorageConfig } from "@app/storage/config";
 
 const index: React.FC = props => {
     const intl = useIntl();
     const { width } = useWindowSize();
 
-    const [storageConfig, saveConfig] = useLocalStorage<SubjectConfig>(SimpleCurrentConfigKey);
+    const [storageConfig, saveConfig] = useLocalStorageConfig(SimpleCurrentConfigKey);
     const {
         value: config,
         subject: [subject, setSubject],
