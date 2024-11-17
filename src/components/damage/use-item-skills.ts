@@ -5,6 +5,7 @@ import * as React from "react";
 import { useIntl } from "react-intl";
 import useRange from "app-types/subject-dynamic/config/use-range";
 import { EquipmentStatusDictionary } from "app-types/equipment";
+import { ignorePseudoTag } from "components/common/ignore-pseudo-tag";
 
 type Response = {
     basicAttackTriggered: DamageTableUnit[]
@@ -22,11 +23,11 @@ export default function useItemSkills(config: SubjectConfig): Response {
                 const abilities = EquipmentStatusDictionary[id].skill ?? [];
 
                 return abilities.flatMap(ability => {
-                    const unitsOrGenerator = ItemSkillDamageTable[ability.name];
+                    const unitsOrGenerator = ItemSkillDamageTable[ability.skillCode];
                     if (unitsOrGenerator == undefined) return [];
                     const entries = typeof unitsOrGenerator == "function" ? unitsOrGenerator(ability.dmg, ability.values) : unitsOrGenerator;
                     return entries.map(entry => {
-                        const itemWithSkillName = `${intl.formatMessage({id: `Item/Skills/${ability.skillCode}/Name`})}(${intl.formatMessage({id: `Item/Name/${id}`})})`;
+                        const itemWithSkillName = `${ignorePseudoTag(intl.formatMessage({id: `Item/Skills/${ability.skillCode}/Name`}))}(${intl.formatMessage({id: `Item/Name/${id}`})})`;
                         const label = entry.labelIntlID ? intl.formatMessage({id: entry.labelIntlID}, {item: itemWithSkillName, value: entry.intlValue}) : itemWithSkillName;
                         const value = "melee" in entry.value ? entry.value[range] : entry.value;
                         return {...entry, label, value}

@@ -1,4 +1,4 @@
 export { default as tooltip } from "./tooltip";
-export * from "./table-values";
+export { default as damageTable } from "./table-values";
 
 export const SkillCode = 6001011;
