@@ -15,3 +15,5 @@ export const SummonedStatus = Object.entries(subjectModules).reduce((skills, [ke
         }
     }
 }, {}) as {[id: OldSubjectID]: {status: SummonedStatusFunc, nameKey: string}}
+
+console.log(SummonedStatus)

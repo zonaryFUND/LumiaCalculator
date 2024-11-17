@@ -94,7 +94,7 @@ const subjectsList: React.FC<Props> = props => {
                                 section.ids.map(id => (
                                 <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot.toLowerCase() as any] ? style.selected : undefined)}>
                                     <Item slot={props.slot} itemID={id} inSlot={false} />
-                                    <p><FormattedMessage id={`Item/Name/${id}`} /></p>
+                                    <p><FormattedMessage id={`Item/Name/${id}`} />{id}</p>
                                 </li>
                                 ))
                             }

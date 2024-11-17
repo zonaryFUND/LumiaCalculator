@@ -3,10 +3,10 @@ import Value from "components/tooltip/value";
 import Constants from "./constants.json";
 import { ValuesProps } from "../values";
 import Decimal from "decimal.js";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { CooldownOverride } from "../skills";
 import { UniqueValueStrategy } from "../unique-value-strategy";
+import { weaponType } from "./weapon-type";
 
 export const EchionWStrategy: UniqueValueStrategy = (config, status) => {
     const value = new Decimal(Constants.W.shield.base[config.skillLevels.W])
@@ -51,7 +51,7 @@ export const values: ValuesProps = {
 }
 
 export const cooldownOverride: CooldownOverride = (config, status) => {
-    if (config.equipment.weapon?.includes("sidewinder")) {
+    if (weaponType(config.equipment.weapon) == "sidewinder") {
         return v => v.times(100 - Constants.T1_2.w_cooldown_reduction).dividedBy(100);
     } else {
         return v => v;

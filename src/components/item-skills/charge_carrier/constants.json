@@ -5,8 +5,5 @@
     "movement_speed": {
         "level": 1
     },
-    "shield": {
-        "base": 150
-    },
     "cooldown": 12
 }

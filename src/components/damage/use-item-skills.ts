@@ -1,11 +1,10 @@
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { ItemSkillDamageTable } from "components/item-skills/item-skill";
-import { name as abilityName } from "app-types/equipment/ability";
-import { name as equipmentName, EquipmentStatusDictionary } from "app-types/equipment";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import useRange from "app-types/subject-dynamic/config/use-range";
+import { EquipmentStatusDictionary } from "app-types/equipment";
 
 type Response = {
     basicAttackTriggered: DamageTableUnit[]
@@ -20,14 +19,14 @@ export default function useItemSkills(config: SubjectConfig): Response {
         return Object.values(config.equipment)
             .flatMap(id => {
                 if (id == null) return [];
-                const abilities = EquipmentStatusDictionary[id].option ?? [];
+                const abilities = EquipmentStatusDictionary[id].skill ?? [];
 
                 return abilities.flatMap(ability => {
-                    const unitsOrGenerator = ItemSkillDamageTable[ability.id];
+                    const unitsOrGenerator = ItemSkillDamageTable[ability.name];
                     if (unitsOrGenerator == undefined) return [];
-                    const entries = typeof unitsOrGenerator == "function" ? unitsOrGenerator(ability.values?.dmg) : unitsOrGenerator;
+                    const entries = typeof unitsOrGenerator == "function" ? unitsOrGenerator(ability.dmg, ability.values) : unitsOrGenerator;
                     return entries.map(entry => {
-                        const itemWithSkillName = `${abilityName(ability.id, "jp")}(${equipmentName(id, "jp")})`;
+                        const itemWithSkillName = `${intl.formatMessage({id: `Item/Skills/${ability.skillCode}/Name`})}(${intl.formatMessage({id: `Item/Name/${id}`})})`;
                         const label = entry.labelIntlID ? intl.formatMessage({id: entry.labelIntlID}, {item: itemWithSkillName, value: entry.intlValue}) : itemWithSkillName;
                         const value = "melee" in entry.value ? entry.value[range] : entry.value;
                         return {...entry, label, value}

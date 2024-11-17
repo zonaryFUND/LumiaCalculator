@@ -1,0 +1,543 @@
+{
+	"201304": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 80
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.08,
+			"slow": {
+				"effect": 20,
+				"duration": 2
+			}
+		}
+	},
+	"201403": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 100
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1,
+			"slow": {
+				"effect": 30,
+				"duration": 2
+			}
+		}
+	},
+	"201405": {
+		"skillCode": 6033003,
+		"name": "photon_launcher",
+		"dmg": {
+			"base": 10,
+			"amp": 20
+		}
+	},
+	"201406": {
+		"skillCode": 6024001,
+		"name": "electric_shock",
+		"dmg": {
+			"melee": {
+				"targetMaxHP": 2,
+				"levelProp": {
+					"from": 20,
+					"to": 58
+				}
+			},
+			"range": {
+				"targetMaxHP": 1.5,
+				"levelProp": {
+					"from": 20,
+					"to": 58
+				}
+			}
+		}
+	},
+	"201412": {
+		"skillCode": 6006001,
+		"name": "reflection",
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"ratio": 4.5
+		}
+	},
+	"201413": {
+		"skillCode": 6030001,
+		"name": "debilitation",
+		"dmg": {
+			"targetMaxHP": {
+				"base": 0.4,
+				"amp": 0.14
+			}
+		}
+	},
+	"201417": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"201501": {
+		"skillCode": 6002001,
+		"name": "biotic_infusion",
+		"dmg": {
+			"melee": {
+				"targetMaxHP": 12
+			},
+			"range": {
+				"targetMaxHP": 11
+			}
+		}
+	},
+	"201505": {
+		"skillCode": 6033002,
+		"name": "photon_launcher",
+		"dmg": {
+			"base": 20,
+			"amp": 35
+		},
+		"values": {
+			"heal": 40
+		}
+	},
+	"201506": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"201507": {
+		"skillCode": 6030001,
+		"name": "debilitation",
+		"dmg": {
+			"targetMaxHP": {
+				"base": 0.8,
+				"amp": 0.25
+			}
+		}
+	},
+	"201508": {
+		"skillCode": 6006001,
+		"name": "reflection",
+		"dmg": {
+			"base": 300
+		},
+		"values": {
+			"ratio": 7.5
+		}
+	},
+	"201518": {
+		"skillCode": 6034001,
+		"name": "extended_fury",
+		"dmg": {
+			"level": 2
+		},
+		"values": {
+			"extend": 20
+		}
+	},
+	"201519": {
+		"skillCode": 6044001,
+		"name": "spirit_harvest"
+	},
+	"201520": {
+		"skillCode": 6040001,
+		"name": "taser_gun"
+	},
+	"201521": {
+		"skillCode": 6042001,
+		"name": "blasting_bullet"
+	},
+	"201522": {
+		"skillCode": 6037001,
+		"name": "targeting_pod"
+	},
+	"201523": {
+		"skillCode": 6019002,
+		"name": "lichs_grasp",
+		"values": {
+			"slow": 20,
+			"duration": 1,
+			"cooldown": 2
+		}
+	},
+	"201524": {
+		"skillCode": 6047001,
+		"name": "security_protocol"
+	},
+	"202209": {
+		"skillCode": 6020001,
+		"name": "tranquility"
+	},
+	"202307": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"202402": {
+		"skillCode": 6001002,
+		"name": "flame_barrier",
+		"dmg": {
+			"melee": {
+				"maxHP": 2
+			},
+			"range": {
+				"maxHP": 1.5
+			}
+		}
+	},
+	"202406": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"202410": {
+		"skillCode": 6006001,
+		"name": "reflection",
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"ratio": 4.5
+		}
+	},
+	"202415": {
+		"skillCode": 6006001,
+		"name": "reflection",
+		"dmg": {
+			"base": 300
+		},
+		"values": {
+			"ratio": 7.5
+		}
+	},
+	"202416": {
+		"skillCode": 6001002,
+		"name": "flame_barrier",
+		"dmg": {
+			"melee": {
+				"maxHP": 3.5
+			},
+			"range": {
+				"maxHP": 2.5
+			}
+		}
+	},
+	"202501": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"202504": {
+		"skillCode": 6016001,
+		"name": "bloodpact"
+	},
+	"202506": {
+		"skillCode": 6001002,
+		"name": "flame_barrier",
+		"dmg": {
+			"melee": {
+				"maxHP": 4
+			},
+			"range": {
+				"maxHP": 3
+			}
+		}
+	},
+	"202507": {
+		"skillCode": 6027001,
+		"name": "vanguard"
+	},
+	"202511": {
+		"skillCode": 6030001,
+		"name": "debilitation",
+		"dmg": {
+			"targetMaxHP": {
+				"base": 0.8,
+				"amp": 0.25
+			}
+		}
+	},
+	"202515": {
+		"skillCode": 6022101,
+		"name": "verdict"
+	},
+	"202516": {
+		"skillCode": 6032001,
+		"name": "encourage"
+	},
+	"202518": {
+		"skillCode": 6036001,
+		"name": "whirlwind"
+	},
+	"202521": {
+		"skillCode": 6035001,
+		"name": "quickstep"
+	},
+	"202522": {
+		"skillCode": 6041001,
+		"name": "debilitation_fog"
+	},
+	"202524": {
+		"skillCode": 6036002,
+		"name": "rally"
+	},
+	"202525": {
+		"skillCode": 6048001,
+		"name": "awakening"
+	},
+	"203306": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"203402": {
+		"skillCode": 6006001,
+		"name": "reflection",
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"ratio": 4.5
+		}
+	},
+	"203404": {
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 20
+		}
+	},
+	"203405": {
+		"skillCode": 6033004,
+		"name": "photon_launcher",
+		"dmg": {
+			"base": 10,
+			"attack": 20,
+			"level": 2
+		}
+	},
+	"203406": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"203408": {
+		"skillCode": 6024001,
+		"name": "electric_shock",
+		"dmg": {
+			"melee": {
+				"targetMaxHP": 3.5,
+				"levelProp": {
+					"from": 30,
+					"to": 106
+				}
+			},
+			"range": {
+				"targetMaxHP": 2.5,
+				"levelProp": {
+					"from": 30,
+					"to": 106
+				}
+			}
+		}
+	},
+	"203413": {
+		"skillCode": 6017006,
+		"name": "circulation",
+		"dmg": {
+			"melee": {
+				"base": 10,
+				"amp": 28
+			},
+			"range": {
+				"base": 10,
+				"amp": 23
+			}
+		},
+		"values": {
+			"as": 15
+		}
+	},
+	"203501": {
+		"skillCode": 6019002,
+		"name": "lichs_grasp",
+		"values": {
+			"slow": 20,
+			"duration": 1,
+			"cooldown": 2
+		}
+	},
+	"203502": {
+		"skillCode": 6033001,
+		"name": "photon_launcher",
+		"dmg": {
+			"base": 10,
+			"attack": 40,
+			"level": 2
+		},
+		"values": {
+			"heal": 40
+		}
+	},
+	"203505": {
+		"skillCode": 6006001,
+		"name": "reflection",
+		"dmg": {
+			"base": 300
+		},
+		"values": {
+			"ratio": 7.5
+		}
+	},
+	"203506": {
+		"skillCode": 6017006,
+		"name": "circulation",
+		"dmg": {
+			"melee": {
+				"base": 10,
+				"amp": 25
+			},
+			"range": {
+				"base": 10,
+				"amp": 20
+			}
+		},
+		"values": {
+			"as": 10
+		}
+	},
+	"203508": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"203509": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
+	},
+	"203511": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"203512": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"203513": {
+		"skillCode": 6028001,
+		"name": "pulverization"
+	},
+	"203514": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 100
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1,
+			"slow": {
+				"effect": 30,
+				"duration": 2
+			}
+		}
+	},
+	"204411": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"204502": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
+	},
+	"204503": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"204505": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"204506": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"205401": {
+		"skillCode": 6035001,
+		"name": "quickstep"
+	},
+	"205407": {
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 20
+		}
+	},
+	"205408": {
+		"skillCode": 6017026,
+		"name": "rush"
+	},
+	"205505": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 35
+		}
+	},
+	"205507": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
+	},
+	"205508": {
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 20
+		}
+	},
+	"701451": {
+		"skillCode": 6024001,
+		"name": "electric_shock",
+		"dmg": {
+			"melee": {
+				"targetMaxHP": 3.5,
+				"levelProp": {
+					"from": 30,
+					"to": 106
+				}
+			},
+			"range": {
+				"targetMaxHP": 2.5,
+				"levelProp": {
+					"from": 30,
+					"to": 106
+				}
+			}
+		}
+	},
+	"702602": {
+		"skillCode": 6039001,
+		"name": "brute_enforcer"
+	},
+	"705601": {
+		"skillCode": 6016003,
+		"name": "colossal"
+	},
+	"705603": {
+		"skillCode": 6001002,
+		"name": "flame_barrier",
+		"dmg": {
+			"melee": {
+				"maxHP": 3
+			},
+			"range": {
+				"maxHP": 2
+			}
+		}
+	},
+	"705607": {
+		"skillCode": 6038001,
+		"name": "crushing_blow"
+	},
+	"705620": {
+		"skillCode": 6028001,
+		"name": "pulverization"
+	}
+}

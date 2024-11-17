@@ -6,7 +6,6 @@ import Skill from "./skill";
 import baseStyle from "../tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
 import { SubjectSkillProps } from "components/subjects/props";
-import { tierName } from "app-types/equipment/tier";
 import { ValueContext } from "../value-context";
 import { FormattedMessage } from "react-intl";
 import { EquipmentStatusDictionary } from "app-types/equipment";
@@ -53,7 +52,7 @@ const itemTooltip: React.FC<Props> = props => {
                 <Options {...status} />
                 {ammo}
                 <ValueContext.Provider value={props}>
-                    {status.option ? status.option.map(op => <Skill key={op.id} {...props} id={op.id} values={op.values} />) : null}
+                    {status.skill ? status.skill.map(op => <Skill key={op.skillCode} {...props} {...op} />) : null}
                 </ValueContext.Provider>
             </div>
         </div>

@@ -1,0 +1,1421 @@
+{
+	"101401": {
+		"skillCode": 6013004,
+		"name": "magnetic_midnight",
+		"values": {
+			"slow": {
+				"effect": 25,
+				"duration": 1
+			}
+		}
+	},
+	"101404": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 8,
+			"stack": 4,
+			"max": {
+				"ad": 8,
+				"ms": 0.06
+			}
+		}
+	},
+	"101405": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 100
+		},
+		"values": {
+			"ms": 0.16,
+			"slow": {
+				"effect": 20,
+				"duration": 2
+			},
+			"tick": 0.4
+		}
+	},
+	"101406": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"101407": {
+		"skillCode": 6015001,
+		"name": "rudra_embodied",
+		"values": {
+			"ms": 24,
+			"ad": 16
+		}
+	},
+	"101501": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"101502": {
+		"skillCode": 6015001,
+		"name": "rudra_embodied",
+		"values": {
+			"ms": 24,
+			"ad": 21
+		}
+	},
+	"101504": {
+		"skillCode": 6039001,
+		"name": "brute_enforcer"
+	},
+	"101701": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 100
+		},
+		"values": {
+			"ms": 0.18,
+			"slow": {
+				"effect": 20,
+				"duration": 2
+			},
+			"tick": 0.4
+		}
+	},
+	"101702": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"102406": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
+		}
+	},
+	"102409": {
+		"skillCode": 6004003,
+		"name": "smolder",
+		"dmg": {
+			"targetMaxHP": 0.6
+		}
+	},
+	"102412": {
+		"skillCode": 6013006,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 11
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"102502": {
+		"skillCode": 6019002,
+		"name": "lichs_grasp",
+		"values": {
+			"slow": 99,
+			"duration": 0.56,
+			"cooldown": 4
+		}
+	},
+	"102503": {
+		"skillCode": 6044001,
+		"name": "spirit_harvest"
+	},
+	"102701": {
+		"skillCode": 6004003,
+		"name": "smolder",
+		"dmg": {
+			"targetMaxHP": 0.8
+		}
+	},
+	"102702": {
+		"skillCode": 6044001,
+		"name": "spirit_harvest"
+	},
+	"103401": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"103404": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 12
+		}
+	},
+	"103502": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"103503": {
+		"skillCode": 6035001,
+		"name": "quickstep"
+	},
+	"103505": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"103701": {
+		"skillCode": 6035001,
+		"name": "quickstep"
+	},
+	"103702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"104401": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"104404": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"104406": {
+		"skillCode": 6013004,
+		"name": "magnetic_midnight",
+		"values": {
+			"slow": {
+				"effect": 25,
+				"duration": 1
+			}
+		}
+	},
+	"104408": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 12
+		}
+	},
+	"104502": {
+		"skillCode": 6046001,
+		"name": "critical_blow"
+	},
+	"104503": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"104701": {
+		"skillCode": 6046001,
+		"name": "critical_blow"
+	},
+	"104702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"105406": {
+		"skillCode": 6007002,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 120
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.08,
+			"slow": {
+				"effect": 25,
+				"duration": 2
+			}
+		}
+	},
+	"105407": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 4
+		},
+		"values": {
+			"duration": 5,
+			"as": 12,
+			"stack": 3,
+			"max": {
+				"ad": 12,
+				"ms": 0.1
+			}
+		}
+	},
+	"105408": {
+		"skillCode": 6046001,
+		"name": "critical_blow"
+	},
+	"105503": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"105701": {
+		"skillCode": 6046001,
+		"name": "critical_blow"
+	},
+	"105702": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"107402": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1,
+			"slow": {
+				"effect": 30,
+				"duration": 2
+			}
+		}
+	},
+	"107404": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"107406": {
+		"skillCode": 6004003,
+		"name": "smolder",
+		"dmg": {
+			"targetMaxHP": 0.6
+		}
+	},
+	"107407": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"107502": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"107701": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.15,
+			"slow": {
+				"effect": 30,
+				"duration": 2
+			}
+		}
+	},
+	"107702": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"108404": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"108502": {
+		"skillCode": 6046001,
+		"name": "critical_blow"
+	},
+	"108503": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"108505": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 4
+		},
+		"values": {
+			"duration": 5,
+			"as": 12,
+			"stack": 3,
+			"max": {
+				"ad": 12,
+				"ms": 0.1
+			}
+		}
+	},
+	"108701": {
+		"skillCode": 6046001,
+		"name": "critical_blow"
+	},
+	"108702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"109403": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"109405": {
+		"skillCode": 6015003,
+		"name": "charge_carrier",
+		"values": {
+			"shield": 105
+		}
+	},
+	"109406": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"109502": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"109701": {
+		"skillCode": 6015003,
+		"name": "charge_carrier",
+		"values": {
+			"shield": 180
+		}
+	},
+	"109702": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"110409": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 12
+		}
+	},
+	"110410": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 10,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
+		}
+	},
+	"110412": {
+		"skillCode": 6013006,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 11
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"110501": {
+		"skillCode": 6004003,
+		"name": "smolder",
+		"dmg": {
+			"targetMaxHP": 0.6
+		}
+	},
+	"110502": {
+		"skillCode": 6019001,
+		"name": "lichs_grasp",
+		"values": {
+			"slow": 20,
+			"duration": 1,
+			"as": 10,
+			"cooldown": 3
+		}
+	},
+	"110504": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"110701": {
+		"skillCode": 6013006,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 11
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"110702": {
+		"skillCode": 6019001,
+		"name": "lichs_grasp",
+		"values": {
+			"slow": 20,
+			"duration": 1,
+			"as": 10,
+			"cooldown": 3
+		}
+	},
+	"111403": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 12
+		}
+	},
+	"111405": {
+		"skillCode": 6015002,
+		"name": "zephyr"
+	},
+	"111501": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"111502": {
+		"skillCode": 6019005,
+		"name": "lichs_grasp",
+		"values": {
+			"as": 30,
+			"duration": 2,
+			"cooldown": 3
+		}
+	},
+	"111504": {
+		"skillCode": 6015002,
+		"name": "zephyr"
+	},
+	"111701": {
+		"skillCode": 6015002,
+		"name": "zephyr"
+	},
+	"111702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"112402": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 4,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
+		}
+	},
+	"112405": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 15
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1
+			}
+		}
+	},
+	"112406": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 3
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"112408": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 10
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1
+			}
+		}
+	},
+	"112501": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"112502": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"112701": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 3
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"112702": {
+		"skillCode": 6044001,
+		"name": "spirit_harvest"
+	},
+	"113405": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 12
+		}
+	},
+	"113408": {
+		"skillCode": 6019001,
+		"name": "lichs_grasp",
+		"values": {
+			"slow": 20,
+			"duration": 1,
+			"as": 30,
+			"cooldown": 2
+		}
+	},
+	"113409": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"113411": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"113412": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 50,
+			"amp": 15
+		}
+	},
+	"113501": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 3
+		},
+		"values": {
+			"duration": 5,
+			"as": 7,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"113502": {
+		"skillCode": 6026001,
+		"name": "in_full_bloom"
+	},
+	"113701": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 3
+		},
+		"values": {
+			"duration": 5,
+			"as": 7,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"113702": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 50,
+			"amp": 15
+		}
+	},
+	"114401": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 4,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.06
+			}
+		}
+	},
+	"114405": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"114406": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"114407": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 50,
+			"amp": 15
+		}
+	},
+	"114503": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"114504": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 3
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"114701": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 3
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"114702": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 50,
+			"amp": 15
+		}
+	},
+	"115406": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"115501": {
+		"skillCode": 6034001,
+		"name": "extended_fury",
+		"dmg": {
+			"level": 3
+		},
+		"values": {
+			"extend": 25
+		}
+	},
+	"115504": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"115701": {
+		"skillCode": 6034001,
+		"name": "extended_fury",
+		"dmg": {
+			"level": 3
+		},
+		"values": {
+			"extend": 25
+		}
+	},
+	"115702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"116403": {
+		"skillCode": 6012001,
+		"name": "last_word",
+		"dmg": {
+			"amp": 45,
+			"targetMaxHP": 8
+		},
+		"values": {
+			"heal": 66
+		}
+	},
+	"116407": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
+		}
+	},
+	"116409": {
+		"skillCode": 6012002,
+		"name": "double_tap",
+		"dmg": {
+			"level": 8,
+			"amp": 30,
+			"targetMaxHP": 6
+		}
+	},
+	"116410": {
+		"skillCode": 6007003,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 120
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1
+		}
+	},
+	"116502": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 8,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.08
+			}
+		}
+	},
+	"116701": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 8,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.08
+			}
+		}
+	},
+	"116702": {
+		"skillCode": 6012001,
+		"name": "last_word",
+		"dmg": {
+			"amp": 45,
+			"targetMaxHP": 8
+		},
+		"values": {
+			"heal": 66
+		}
+	},
+	"117406": {
+		"skillCode": 6034001,
+		"name": "extended_fury",
+		"dmg": {
+			"level": 3
+		},
+		"values": {
+			"extend": 25
+		}
+	},
+	"117502": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"117504": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"117505": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"117701": {
+		"skillCode": 6034001,
+		"name": "extended_fury",
+		"dmg": {
+			"level": 3
+		},
+		"values": {
+			"extend": 25
+		}
+	},
+	"117702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"118502": {
+		"skillCode": 6013002,
+		"name": "lead_shell"
+	},
+	"118505": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 15
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1
+			}
+		}
+	},
+	"118701": {
+		"skillCode": 6013002,
+		"name": "lead_shell"
+	},
+	"118702": {
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"119401": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"119402": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 5,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
+		}
+	},
+	"119404": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"119502": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"119503": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"119504": {
+		"skillCode": 6042001,
+		"name": "blasting_bullet"
+	},
+	"119701": {
+		"skillCode": 6042001,
+		"name": "blasting_bullet"
+	},
+	"119702": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"120401": {
+		"skillCode": 6013004,
+		"name": "magnetic_midnight",
+		"values": {
+			"slow": {
+				"effect": 25,
+				"duration": 1.25
+			}
+		}
+	},
+	"120402": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"120404": {
+		"skillCode": 6013006,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 11
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"120406": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"120407": {
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 12
+		}
+	},
+	"120501": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"120701": {
+		"skillCode": 6013006,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 11
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
+		}
+	},
+	"120702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"121401": {
+		"skillCode": 6013004,
+		"name": "magnetic_midnight",
+		"values": {
+			"slow": {
+				"effect": 25,
+				"duration": 1
+			}
+		}
+	},
+	"121405": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 7,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"121406": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 4,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
+		}
+	},
+	"121503": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"121701": {
+		"skillCode": 6017002,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 7,
+			"stack": 4,
+			"max": {
+				"ad": 10,
+				"ms": 0.1
+			}
+		}
+	},
+	"121702": {
+		"skillCode": 6045001,
+		"name": "cataclasm"
+	},
+	"122403": {
+		"skillCode": 6042001,
+		"name": "blasting_bullet"
+	},
+	"122404": {
+		"skillCode": 6002006,
+		"name": "biotic_infusion",
+		"dmg": {
+			"base": 45,
+			"level": 8
+		}
+	},
+	"122501": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"122504": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"122701": {
+		"skillCode": 6042001,
+		"name": "blasting_bullet"
+	},
+	"122702": {
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
+	},
+	"130401": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 12
+		}
+	},
+	"130402": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"130405": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 50,
+			"amp": 15
+		}
+	},
+	"130501": {
+		"skillCode": 6019001,
+		"name": "lichs_grasp",
+		"values": {
+			"type": "skill",
+			"slow": 20,
+			"duration": 1,
+			"as": 30,
+			"cooldown": 2
+		}
+	},
+	"130701": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 50,
+			"amp": 15
+		}
+	},
+	"130702": {
+		"skillCode": 6019001,
+		"name": "lichs_grasp",
+		"values": {
+			"type": "skill",
+			"slow": 20,
+			"duration": 1,
+			"as": 30,
+			"cooldown": 2
+		}
+	},
+	"131401": {
+		"skillCode": 6002011,
+		"name": "biotic_infusion_vf",
+		"dmg": {
+			"level": 5
+		}
+	},
+	"131403": {
+		"skillCode": 6007011,
+		"name": "swift_strides_vf",
+		"dmg": {
+			"base": 55
+		},
+		"values": {
+			"slow": {
+				"effect": 30,
+				"duration": 1
+			}
+		}
+	},
+	"131501": {
+		"skillCode": [
+			6002011,
+			6021001
+		],
+		"name": [
+			"biotic_infusion_vf",
+			"necrosis"
+		],
+		"dmg": {
+			"level": 7
+		}
+	},
+	"131502": {
+		"skillCode": [
+			6002011,
+			6021001
+		],
+		"name": [
+			"biotic_infusion_vf",
+			"necrosis"
+		],
+		"dmg": {
+			"level": 9
+		}
+	},
+	"131503": {
+		"skillCode": [
+			6002011,
+			6021001
+		],
+		"name": [
+			"biotic_infusion_vf",
+			"necrosis"
+		],
+		"dmg": {
+			"level": 9
+		}
+	},
+	"131504": {
+		"skillCode": 6001011,
+		"name": "flame_barrier_vf",
+		"dmg": {
+			"maxHP": 3.5
+		}
+	},
+	"131505": {
+		"skillCode": 6001011,
+		"name": "flame_barrier_vf",
+		"dmg": {
+			"maxHP": 4
+		}
+	},
+	"131506": {
+		"skillCode": 6001011,
+		"name": "flame_barrier_vf",
+		"dmg": {
+			"maxHP": 4
+		}
+	},
+	"131507": {
+		"skillCode": [
+			6007011,
+			6021011
+		],
+		"name": [
+			"swift_strides_vf",
+			"vf_control_enhancement"
+		],
+		"dmg": {
+			"base": 100
+		},
+		"values": {
+			"slow": {
+				"effect": 40,
+				"duration": 1
+			}
+		}
+	},
+	"131508": {
+		"skillCode": [
+			6007011,
+			6021011
+		],
+		"name": [
+			"swift_strides_vf",
+			"vf_control_enhancement"
+		],
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"slow": {
+				"effect": 40,
+				"duration": 1
+			}
+		}
+	},
+	"131509": {
+		"skillCode": [
+			6007011,
+			6021011
+		],
+		"name": [
+			"swift_strides_vf",
+			"vf_control_enhancement"
+		],
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"slow": {
+				"effect": 40,
+				"duration": 1
+			}
+		}
+	}
+}

@@ -7,6 +7,7 @@ import { nameKey } from "./summoned-status";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 
 const ninaBasicAttackStrategy: UniqueValueStrategy = (config, status) => {
+    console.log(status)
     const regularDamage = new Decimal(status.summonedStatus!.attackPower);
     const criticalAvailable = status.summonedStatus?.criticalChance.greaterThan(0) == true
     const criticalDamage = regularDamage.addPercent(new Decimal(BaseCriticalDamagePercent));

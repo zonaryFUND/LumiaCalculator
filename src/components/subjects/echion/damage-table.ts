@@ -4,6 +4,7 @@ import Decimal from "decimal.js";
 import { EchionWStrategy } from "./w";
 import damageDependentHeal from "components/damage/combat/subtables/subrows/damage-dependent-heal";
 import { Target } from "@phosphor-icons/react";
+import { weaponType } from "./weapon-type";
 
 // The ratio of attack of echion's R depends on the level of T, but this application assumes that its always 3.
 const table: DamageTableGenerator = props => {
@@ -12,17 +13,7 @@ const table: DamageTableGenerator = props => {
         value: Constants.R1.skill_damage_add[props.config.skillLevels.R] + 100
     };
 
-    const weapon = props.config.equipment.weapon;
-    const armType = (() => {
-        if (weapon == null) return;
-        if ([131401, 131501, 131502, 131503].includes(weapon)) {
-            return "deathadder";
-        }
-        if ([131402, 131504, 131505, 131506].includes(weapon)) {
-            return "blackmamba";
-        }
-        return "sidewinder"
-    })();
+    const armType = weaponType(props.config.equipment.weapon);
     
     const rMambaHeal = Constants.R2.skill_lifesteal[props.config.skillLevels.R];
     const multiplier = [

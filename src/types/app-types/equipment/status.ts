@@ -1,8 +1,7 @@
 import Decimal from "decimal.js";
 import { WeaponTypeID } from "./weapon";
 import { ArmorTypeID } from "./armor";
-import { EquipmentAbility } from "./ability";
-import { number } from "yargs";
+import { ValueRatio } from "app-types/value-ratio";
 
 export type Tier = "Epic" | "Legend" | "Mythic";
 
@@ -77,9 +76,16 @@ export const PercentExpressedEquipmentStatusKeys: EquipmentStatusValueKey[] = Eq
     key == "uniqueTenacity"
 );
 
+export type EquipmentSkill = {
+    skillCode: number
+    name: string
+    dmg: ValueRatio | {melee: ValueRatio, range: ValueRatio}
+    values: Record<string, unknown>
+}
+
 export type EquipmentStatus = {[key in EquipmentStatusValueKey]?: Decimal} & {
     type: WeaponTypeID | ArmorTypeID
     itemGrade: Tier
     ammo?: Decimal
-    option?: EquipmentAbility[]
+    skill?: EquipmentSkill[]
 }
