@@ -33,8 +33,7 @@ type Props = {
 }
 
 const subjectSkills: React.FC<Props> = props => {
-    const oldSubjectID = SubjectCodeWithOldID[props.config.subject];
-    console.log(oldSubjectID)
+    console.log(props.config.subject)
 
     return <SkillsStandard 
         code={props.config.subject}

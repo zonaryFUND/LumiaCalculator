@@ -14,9 +14,9 @@ import { attackSpeedCalc } from "./attack-speed-calculation";
 import { WeaponTypeID, WeaponTypeStatus } from "app-types/equipment/weapon";
 import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
-import { SubjectStatusOverride } from "components/subjects/status-override";
 import { SummonedStatus } from "components/subjects/summoned-status";
 import { defenseCalc } from "./defense-calculation";
+import { SubjectStatusOverrideDictionary } from "components/subjects/dictionary";
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
     return equipments
@@ -237,7 +237,7 @@ export function useStatus(config: SubjectConfig): Status {
         }
     }
 
-    const overrideFunc = useMemo(() => SubjectStatusOverride[config.subject], [config.subject]);
+    const overrideFunc = useMemo(() => SubjectStatusOverrideDictionary[config.subject], [config.subject]);
     const overriddenValue = overrideFunc ? overrideFunc(baseValue, config) : baseValue;    
 
     const calculated: Status = {

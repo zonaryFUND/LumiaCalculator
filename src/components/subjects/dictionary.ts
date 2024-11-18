@@ -55,16 +55,19 @@ const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eag
 export const [
     SubjectSkillListExpressionDictionary,
     SubjectTooltipDictionary,
-    SubjectDamageTableDictionary
-] = Object.entries(modules).reduce(([lists, tooltips, damageTables], [key, m]) => {
+    SubjectDamageTableDictionary,
+    SubjectStatusOverrideDictionary
+] = Object.entries(modules).reduce(([lists, tooltips, damageTables, statusOverrides], [key, m]) => {
     const subjectCode = m.default.code;
     return [
         {...lists, [subjectCode]: m.default.skills.listExpression},
         {...tooltips, ...m.default.skills.tooltip},
-        {...damageTables, [subjectCode]: m.default.damageTable}
+        {...damageTables, [subjectCode]: m.default.damageTable},
+        {...statusOverrides, ...(m.default.statusOverride ? { [subjectCode]: m.default.statusOverride} : {}) }
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
     {} as Record<SkillCode, TooltipInfo>,
-    {} as Record<SubjectCode, DamageTableGenerator>
+    {} as Record<SubjectCode, DamageTableGenerator>,
+    {} as Record<SubjectCode, StatusOverrideFunc>
 ])
