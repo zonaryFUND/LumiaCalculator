@@ -1,22 +1,24 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        アドリアナが指定した位置にオイルを発射して{Constants.W.duration}
-        秒間維持されるオイル地帯を作ります。オイルの範囲にスキルを使用して炎をつけたり、火傷状態の敵がオイル地帯の上にいると
-        {Constants.W.flame_duration}秒間維持される火炎地帯が作られます。<br />
-        <br />
-        オイル地帯の上にいる敵は移動速度が{Constants.W.slow}減少します。
-    </>
-)
+export const code = 1017300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "チャージ時間", values: Constants.W.charge.time}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    charge: Constants.W.charge,
+    values: () => ({
+        0: Constants.W.duration,
+        1: Constants.W.flame_duration,
+        2: `${Constants.W.slow}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.W.charge.time}
+        ]  
+    })
 }

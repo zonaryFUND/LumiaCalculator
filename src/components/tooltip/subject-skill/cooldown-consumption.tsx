@@ -3,6 +3,7 @@ import * as React from "react";
 import style from "./cooldown-consumption.module.styl";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
+import { extractArrayOrValue } from "@app/util/array";
 
 const cooldownComsumption: React.FC<TooltipInfo & {skillLevel: number, status: Status}> = props => {
     const consumptionType = (() => {
@@ -17,42 +18,39 @@ const cooldownComsumption: React.FC<TooltipInfo & {skillLevel: number, status: S
                 return "コストなし"
         }
     })();
-    const consumptionValue = Array.isArray(props.consumption?.value) ? 
-        props.consumption.value[props.skillLevel] :
-        props.consumption?.value ?? null;
+    const consumptionValue = props.consumption ? extractArrayOrValue(props.consumption.value, props.skillLevel) : null;
 
     const cooldown = (() => {
         if (props.cooldown == undefined) return null;
         if (typeof props.cooldown == "function") return props.cooldown().toString();
-        const arrayOrValue = (typeof props.cooldown == "object" && "constant" in props.cooldown) ? 
-            props.cooldown.constant : props.cooldown;
-        
-        const cooldownBase = Array.isArray(arrayOrValue) ? arrayOrValue[props.skillLevel] : arrayOrValue;
-        return new Decimal(cooldownBase).subPercent(props.status.cooldownReduction.calculatedValue).floor2().toString();
+        if (typeof props.cooldown == "object" && "constant" in props.cooldown) {
+            return extractArrayOrValue(props.cooldown.constant, props.skillLevel);
+        }
+    
+        return new Decimal(extractArrayOrValue(props.cooldown, props.skillLevel)).subPercent(props.status.cooldownReduction.calculatedValue).floor2().toString();
     })();
 
-    /*
     const charge = (() => {
-        if (info.charge == undefined) return null;
-        const charge = (() => {
-            if (info.charge.time.constant != undefined) {
-                return valueOrElement(info.charge.time.constant, props.skillLevel);
-            } else {
-                const baseValue = valueOrElement(info.charge.time, props.skillLevel);
-                return new Decimal(baseValue).subPercent(props.status.cooldownReduction.calculatedValue).toString();
-            }
-        })();
-        return cooldown ? <>(チャージ時間{charge}秒)</> : <>チャージ時間{charge}秒</>;
+        if (props.charge == undefined) return null;
+        if (typeof props.charge.time == "object" && "constant" in props.charge.time) {
+            return extractArrayOrValue(props.charge.time.constant, props.skillLevel);
+        }
+
+        return new Decimal(extractArrayOrValue(props.charge.time, props.skillLevel)).subPercent(props.status.cooldownReduction.calculatedValue).floor2().toString();
     })();
-    */
 
     return (
         <div className={style.cooldown}>
             {consumptionType}{consumptionValue}
-            {consumptionType ? <br /> : null}
+            {consumptionValue ? <br /> : null}
             {
                 cooldown != null ?
                 <>クールダウン{cooldown}秒</> :
+                null
+            }
+            {
+                charge != null ?
+                (cooldown ? <>(チャージ時間{charge}秒)</> : <>チャージ時間{charge}秒</>) :
                 null
             }
         </div>

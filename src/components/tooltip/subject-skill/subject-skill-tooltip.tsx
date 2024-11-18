@@ -24,7 +24,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     const intl = useIntl();
     const skillInfo = SubjectTooltipDictionary[props.code];
     const skillLevel = props.config.skillLevels[skillInfo.skill];
-    const values = skillInfo.values({skillLevel, config: props.config, status: props.status});
+    const values = skillInfo.values({skillLevel, showEquation: props.showEquation, config: props.config, status: props.status});
     const coefficientValues = es.mapValues(values, value => {
         if (typeof value == "object") {
             return calculateValue(value, props.status, props.config, skillLevel).static.floor().toString();

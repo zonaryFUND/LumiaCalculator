@@ -1,23 +1,26 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const q: React.FC<SubjectSkillProps> = props => (
-    <>
-        アドリアナが指定した方向に{Constants.Q.duration}秒間火炎放射器の炎を発射して
-        {Constants.Q.tick}秒ごとに<Value skill="Q" ratio={Constants.Q.damage} />
-        のスキルダメージを与えます。
-    </>
-)
+export const code = 1017200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "合計スキル増幅係数", values: Constants.Q.damage.amp, percent: true},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.Q.tick,
+        2: Constants.Q.damage.base[skillLevel],
+        3: `${Constants.Q.damage.amp[skillLevel]}%`,
+        20: Constants.Q.damage,
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/SkillSkillAmpCoef", values: Constants.Q.damage.amp, percent: true},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+        ]  
+    })
 }
