@@ -1,26 +1,30 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        アビゲイルが次元の中に身を潜め、{Constants.R.untargetable}秒間対象指定不可状態になります。<br />
-        その後着地しながら敵に<Value skill="R" ratio={Constants.R.damage} />
-        のスキルダメージを与え、移動速度を{Constants.R.slow.duration}秒間{Constants.R.slow.effect}%減少させます。<br />
-        <br />
-        スキルに的中された対象には<span className={style.emphasis}>座標</span>を残します。<br />
-        座標は{Constants.R.coordinates}秒間維持され、対象の視界が提供されます。
-    </>
-);
+export const code = 1067500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel }) => {
+        return {
+            0: Constants.R.untargetable,
+            1: Constants.R.slow.duration,
+            2: `${Constants.R.slow.effect}%`,
+            3: Constants.R.damage.base[skillLevel],
+            4: `${Constants.R.damage.amp}`,
+            8: Constants.R.coordinates,
+            20: Constants.R.damage
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+        ]  
+    })
 }

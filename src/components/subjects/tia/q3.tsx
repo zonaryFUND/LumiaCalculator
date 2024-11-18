@@ -1,7 +1,7 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import Value from "components/tooltip/value";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 import color from "./color.module.styl";
 import { values as baseValues } from "./q";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";

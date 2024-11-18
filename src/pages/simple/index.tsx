@@ -27,7 +27,6 @@ import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storag
 import { SimpleCurrentConfigKey, SimpleCurrentSelectedKey as SimpleCurrentSelectedPresetKey } from "@app/storage/simple";
 import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
 import { useStatus } from "app-types/subject-dynamic/status/use-status";
-import { SubjectSkillProps } from "components/subjects/props";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
@@ -35,6 +34,7 @@ import { useSelectedPresetKey } from "@app/storage/use-selected-preset-key";
 import { useIntl } from "react-intl";
 import { useLocalStorageConfig } from "@app/storage/config";
 import { EquipmentStatusDictionary } from "app-types/equipment";
+import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const index: React.FC = props => {
     const intl = useIntl();
@@ -138,11 +138,9 @@ const index: React.FC = props => {
                 style={{zIndex: 1000}}
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
-                    const [subject, skill] = content?.split("-");
                     return (
                         <SubjectSkillTooltip
-                            id={subject} 
-                            skill={skill as any} 
+                            code={+content} 
                             showEquation={damageInFormula}
                             status={status} 
                             config={config} 

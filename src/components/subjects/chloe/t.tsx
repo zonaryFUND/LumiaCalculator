@@ -1,6 +1,6 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesPropsGenerator } from "../values";
+import { ValuesPropsGenerator } from "../../tooltip/subject-skill/expansion-values";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { NinaValue } from "./nina-ratio-strategy";

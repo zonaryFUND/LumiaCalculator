@@ -1,6 +1,6 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 import lyanhw from "./lyanhw";
 
 export default lyanhw;

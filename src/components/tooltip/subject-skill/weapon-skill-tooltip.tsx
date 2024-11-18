@@ -3,7 +3,7 @@ import Name from "dictionary/weapon-skill-name.json";
 import baseStyle from "../tooltip.module.styl";
 import style from "./subject-skill-tooltip.module.styl";
 import Images from "@app/resources/image";
-import Values, { ValuesProps } from "components/subjects/values";
+import Values, { ValuesProps } from "components/tooltip/subject-skill/expansion-values";
 import Constant from "components/subjects/weapon-skills/constants.json";
 import { ValueContext, useValueContext } from "../value-context";
 import { SubjectConfig } from "app-types/subject-dynamic/config";

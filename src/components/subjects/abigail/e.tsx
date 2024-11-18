@@ -1,26 +1,27 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        アビゲイルが次元の隙間を通り抜けて敵周辺の指定した位置に瞬間移動し、
-        <Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えます。<br />
-        <br />
-        <span className={style.emphasis}>座標</span>が残った対象に使用すると
-        <span className={style.emphasis}>ワープスラッシュ</span>のクールダウンが初期化されます。
-    </>
-);
+export const code = 1067400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel }) => {
+        return {
+            0: Constants.E.damage.base[skillLevel],
+            1: `${Constants.E.damage.amp}%`,
+            20: Constants.E.damage,
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }

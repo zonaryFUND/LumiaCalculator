@@ -129,7 +129,7 @@ const index: React.FC = props => {
 
                     return (
                         <SubjectSkillTooltip
-                            id={subject} 
+                            code={+subject} 
                             skill={skill as any} 
                             showEquation={damageInFormula}
                             status={side == "left" ? left.status : right.status} 

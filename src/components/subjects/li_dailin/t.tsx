@@ -1,7 +1,7 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import Value from "components/tooltip/value";
-import { ValuesProps, ValuesPropsGenerator } from "../values";
+import { ValuesProps, ValuesPropsGenerator } from "../../tooltip/subject-skill/expansion-values";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { calculateValue } from "app-types/value-ratio/calculation";

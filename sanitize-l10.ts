@@ -7,15 +7,20 @@ const ws = fs.createWriteStream("./src/intl/locales/ja/l10.json");
 const rl = readline.createInterface({input: rs, output: ws});
 
 const availableRegexs = [
-    /Item\/Name\/\d*/,
-    /Character\/Name\/\d*/,
-    /ArmorType\/[a-zA-z]*/,
-    /MasteryType\/[a-zA-z]*/,
-    /StatType\/[a-zA-z]*/,
-    /Skill\/Group\/Name\/\d*/,
-    /ItemGrade\/[a-zA-Z]*/,
-    /StatType\/[a-zA-z]*/,
-    /Item\/Skills\/\d*/
+    /Item\/Name\/\d+/,
+    /Character\/Name\/\d+/,
+    /ArmorType\/[a-zA-z]+/,
+    /MasteryType\/[a-zA-z]+/,
+    /StatType\/[a-zA-z]+/,
+    /Skill\/Group\/Name\/\d+/,
+    /ItemGrade\/[a-zA-Z]+/,
+    /StatType\/[a-zA-z]+/,
+    /Item\/Skills\/\d+/,
+    /Skill\/Group\/Name\/\d+/,
+    /Skill\/Group\/Desc\/\d+/,
+    /Skill\/Group\/Coef\/\d+/,
+    /Skill\/Group\/ExpansionTip\/\d+/,
+    /ToolTipType\/[a-zA-Z]*/
 ]
 
 const result: Record<string, string> = {};

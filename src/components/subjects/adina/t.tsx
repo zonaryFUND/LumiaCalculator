@@ -2,7 +2,7 @@ import * as React from "react";
 import Constants from "./constants.json";
 import style from "components/tooltip/tooltip.module.styl";
 import Value from "components/tooltip/value";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
 

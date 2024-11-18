@@ -2,7 +2,7 @@ import * as React from "react";
 import Value from "components/tooltip/value";
 import { SubjectSkillProps } from "../props";
 import Constants from "./constants.json";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 
 const q: React.FC<SubjectSkillProps> = props => (
     <>

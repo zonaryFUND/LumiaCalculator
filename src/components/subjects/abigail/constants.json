@@ -18,8 +18,10 @@
     "W": {
         "damage": {
             "base": [80,110,140,170,200],
-            "targetHP": 6,
-            "amp": 2
+            "targetHP": {
+                "base": 6,
+                "amp": 2
+            }
         },
         "shield": {
             "duration": 2.5,

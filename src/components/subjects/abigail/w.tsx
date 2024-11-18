@@ -1,30 +1,38 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { calculateValue } from "app-types/value-ratio/calculation";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        アビゲイルが空間を切り開いて敵に<Value skill="W" ratio={Constants.W.damage} />
-        のスキルダメージを与え、スキルを的中した場合には{Constants.W.shield.duration}秒間
-        <Value skill="W" ratio={Constants.W.shield.amount} />のダメージを吸収するシールドを獲得します。<br />
-        複数の敵に的中した場合には追加で的中した敵の数ごとにシールド量が{Constants.W.additional_shield}
-        %増加します。(最大{Constants.W.additional_shield_max}%)<br />
-        <br />
-        スキルに的中された対象には<span className={style.emphasis}>座標</span>を残します。<br />
-        座標は{Constants.W.coordinates}秒間維持され、対象の視界が提供されます。
-    </>
-);
+export const code = 1067300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "シールド吸収量", values: Constants.W.shield.amount.base},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, config, status }) => {
+        return {
+            0: `${Constants.W.additional_shield}%`,
+            1: Constants.W.shield.duration,
+            2: Constants.W.damage.base[skillLevel],
+            3: `${Constants.W.damage.targetHP.base}%`,
+            4: `${Constants.W.damage.targetHP.amp}%`,
+            5: Constants.W.shield.amount.base[skillLevel],
+            6: `${Constants.W.shield.amount.amp}%`,
+            7: `${Constants.W.additional_shield_max}%`,
+            8: Constants.W.coordinates,
+            20: Constants.W.damage,
+            21: `${calculateValue(Constants.W.damage.targetHP, status, config).static.floor().toString()}%`,
+            22: Constants.W.shield.amount
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.amount.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

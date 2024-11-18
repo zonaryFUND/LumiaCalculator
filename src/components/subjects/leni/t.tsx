@@ -1,7 +1,7 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import LeniValue from "./leni-value";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const t: React.FC<SubjectSkillProps> = props => {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Constants from "./constants.json";
 import style from "./adina.module.styl";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 import baseStyle from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 

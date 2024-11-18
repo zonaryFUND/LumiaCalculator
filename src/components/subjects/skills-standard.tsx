@@ -1,12 +1,13 @@
 import * as React from "react";
 import style from "./skills-standard.module.styl";
-import { OldSubjectID } from "app-types/subject-static";
+import { OldSubjectID, SubjectCode } from "app-types/subject-static";
 import Images from "@app/resources/image";
 import Selection from "components/common/number-selection";
 import { SkillLevels } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { SubjectSideContext } from "./subject-side";
 import { Prohibit } from "@phosphor-icons/react"
+import { SkillCode, SkillKey, SkillListHook } from "./dictionary";
 
 export type SkillImage = (skillID: string) => string | undefined;
 type ConfigurationProps = [SkillLevels, React.Dispatch<React.SetStateAction<SkillLevels>>]
@@ -33,24 +34,17 @@ export const SkillLevelConfigurator: React.FC<{skill: "Q" | "W" | "E" | "R" | "T
 }
 
 type SkillProps = {
-    id: OldSubjectID
-    skill: string
-    skillImage?: SkillImage
+    code: SkillCode
 }
 
 export const Skill: React.FC<SkillProps> = props => {
-    const src = (() => {
-        const standard = Images.skill[props.id][props.skill];
-        return props.skillImage ? (props.skillImage(props.skill) ?? standard) : standard 
-    })();
-
     const side = React.useContext(SubjectSideContext);
 
     return (
         <img 
-            src={src} 
+            src={Images.skill[props.code]} 
             data-tooltip-id="subject-skill" 
-            data-tooltip-content={`${props.id}-${props.skill}`}
+            data-tooltip-content={`${props.code}`}
             data-tooltip-subject-side={side}
         />
     );
@@ -86,8 +80,8 @@ export const WeaponSkill: React.FC<WeaponSkillProps> = props => {
 }
 
 export type SkillsStandardProps = {
-    id: OldSubjectID
-    skillImage?: SkillImage
+    code: SubjectCode
+    listHook: SkillListHook
     skillLevels: SkillLevels
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
     weaponType?: WeaponTypeID
@@ -102,19 +96,25 @@ export const SkillsParent: React.FC<SkillsStandardProps & {children?: React.Reac
 )
 
 const skillsStandard: React.FC<SkillsStandardProps> = props => {
+    const list = props.listHook();
+
     return (
         <SkillsParent {...props}>
-            <Skill id={props.id} skill="Q" skillImage={props.skillImage} />
-            <Skill id={props.id} skill="W" skillImage={props.skillImage} />
-            <Skill id={props.id} skill="E" skillImage={props.skillImage} />
-            <Skill id={props.id} skill="R" skillImage={props.skillImage} />
-            <Skill id={props.id} skill="T" skillImage={props.skillImage} />
+            {
+                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => (
+                    <div key={skill} className={style.vertical}>
+                        {
+                            (Array.isArray(list[skill]) ? list[skill] : [list[skill]]).map(code => <Skill key={code} code={code} />)
+                        }
+                    </div>
+                ))
+            }
             <WeaponSkill id={props.weaponType} />
-            <SkillLevelConfigurator skill="Q" />    
-            <SkillLevelConfigurator skill="W" />    
-            <SkillLevelConfigurator skill="E" />    
-            <SkillLevelConfigurator skill="R" />    
-            <SkillLevelConfigurator skill="T" />    
+            {
+                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => (
+                    <SkillLevelConfigurator key={skill} skill={skill} />  
+                ))
+            }
         </SkillsParent>
     )
 }

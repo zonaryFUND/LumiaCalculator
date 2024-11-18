@@ -1,7 +1,7 @@
 import * as React from "react";
 import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 import Decimal from "decimal.js";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { CooldownOverride } from "../skills";

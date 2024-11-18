@@ -3,7 +3,7 @@ import Constants from "./constants.json";
 import Value from "components/tooltip/value";
 import baseStyle from "components/tooltip/tooltip.module.styl";
 import style from "./adina.module.styl";
-import { ValuesProps } from "../values";
+import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const q: React.FC<SubjectSkillProps> = props => {

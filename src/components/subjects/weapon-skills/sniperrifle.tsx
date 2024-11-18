@@ -1,6 +1,6 @@
 import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps, ValuesPropsGenerator } from "../values";
+import { ValuesProps, ValuesPropsGenerator } from "../../tooltip/subject-skill/expansion-values";
 import Value from "components/tooltip/value";
 import style from "components/tooltip/tooltip.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";

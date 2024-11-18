@@ -20,19 +20,13 @@ const legImages = import.meta.glob<Record<"default", string>>("resources/armors/
 const skillImageModules = import.meta.glob<{default: string}>("resources/skills/**/*.png", {eager: true});
 const skillImages = Object.entries(skillImageModules).reduce((images, [key, m]) => {
     const pathComponents = key.split("/");
-    const [subjectID, image] = pathComponents.slice(pathComponents.length - 2);
-    const imageName = image.split(".")[0];
+    const imageName = pathComponents[pathComponents.length - 1].split(".")[0];
     return {
         ...images,
-        [subjectID]: {
-            ...(subjectID in images ? images[subjectID] : {}),
-            [imageName]: m.default
-        }
+        [imageName]: m.default
     }
 }, {} as {
-    [subjectKey: string]: {
-        [skillKey: string]: string
-    }
+    [skillCode: number]: string
 });
 
 const Images = {

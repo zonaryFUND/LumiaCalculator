@@ -1,179 +1,81 @@
-import { SubjectID } from "app-types/subject-static/id";
 import * as React from "react";
-import Name from "dictionary/skill-name.json";
 import baseStyle from "../tooltip.module.styl";
 import style from "./subject-skill-tooltip.module.styl";
 import Images from "@app/resources/image";
-import Decimal from "decimal.js";
-import Values, { ValuesProps } from "components/subjects/values";
-import { SubjectSkillProps } from "components/subjects/props";
+import ExpansionValues from "components/tooltip/subject-skill/expansion-values";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { ValueContext } from "../value-context";
-import { CooldownOverride, SubjectSkills } from "components/subjects/skills";
-
-type SkillsModule = {
-    default: React.FC<{skillLevel: number}>
-    cooldownOverride?: CooldownOverride
-}
-const skillsModules = import.meta.glob<SkillsModule>("components/subjects/**/*.tsx", {eager: true});
-
-export const SkillsDescription = Object.entries(skillsModules).reduce((skills, [path, m]) => {
-    const pathComponents = path.split("/");
-    const [subject, skill] = pathComponents.slice(pathComponents.length - 2);
-    return {
-        ...skills,
-        [subject]: {
-            ...(subject in skills ? skills[subject] : {}),
-            [skill.split(".")[0]]: m
-        }
-    }
-}, {} as {
-    [subject: string]: {
-        [skill: string]: SkillsModule
-    }
-});
-
-const constantModules = import.meta.glob("components/subjects/*/constants.json", {eager: true})
-export const SkillsConstant = Object.entries(constantModules).reduce((consts, [path, m]) => {
-    const pathComponents = path.split("/");
-    const key = pathComponents[pathComponents.length - 2]
-    return {
-        ...consts,
-        [key]: m
-    }
-}, {} as {
-    [subject: string]: any
-})
+import { SkillCode, SubjectTooltipDictionary, TooltipInfo } from "components/subjects/dictionary";
+import { FormattedMessage, useIntl } from "react-intl";
+import FormattedText from "components/common/formatted-text";
+import * as es from "es-toolkit";
+import { calculateValue } from "app-types/value-ratio/calculation";
+import CooldownComsumption from "./cooldown-consumption";
 
 type Props = {
-    id: SubjectID
-    skill: string
+    code: SkillCode
     showEquation: boolean
     config: SubjectConfig
     status: Status
 }
 
-function valueOrElement(value: number | number[], index: number): number {
-    if (Array.isArray(value)) return value[index];
-    return value;
-}
-
-const ConsumptionAndCooldown: React.FC<Props & {skillLevel: number, status: Status}> = props => {
-    const info = SkillsConstant[props.id][props.skill];
-    const spCost = info.sp_cost == undefined ? null : valueOrElement(info.sp_cost, props.skillLevel);
-    const hpCost = info.hp_cost == undefined ? null : valueOrElement(info.hp_cost, props.skillLevel);
-    const cost = info.cost == undefined ? null : valueOrElement(info.cost, props.skillLevel);
-    const hpPercentCost = info.hp_cost_percent == undefined ? null : valueOrElement(info.hp_cost_percent, props.skillLevel);
-
-    const cooldown = (() => {
-        if (info.cooldown == undefined) return null;
-
-        const base = (() => {
-            if (info.cooldown.constant != undefined) {
-                return new Decimal(valueOrElement(info.cooldown.constant, props.skillLevel));
-            } else {
-                const baseValue = valueOrElement(info.cooldown, props.skillLevel);
-                return new Decimal(baseValue).subPercent(props.status.cooldownReduction.calculatedValue);
-            }
-        })();
-
-        const cooldownOverride = SkillsDescription[props.id][props.skill.toLowerCase()].cooldownOverride
-        if (cooldownOverride) {
-            return cooldownOverride(props.config, props.status)(base).toString();
-
-            return base.toString();
-        }
-    })();
-
-    const charge = (() => {
-        if (info.charge == undefined) return null;
-        const charge = (() => {
-            if (info.charge.time.constant != undefined) {
-                return valueOrElement(info.charge.time.constant, props.skillLevel);
-            } else {
-                const baseValue = valueOrElement(info.charge.time, props.skillLevel);
-                return new Decimal(baseValue).subPercent(props.status.cooldownReduction.calculatedValue).toString();
-            }
-        })();
-        return cooldown ? <>(チャージ時間{charge}秒)</> : <>チャージ時間{charge}秒</>;
-    })();
-
-    return (
-        <div className={style.cooldown}>
-            {spCost != null ? <>スタミナ {spCost}<br /></> : null}
-            {hpCost != null ? <>体力 {hpCost}<br /></> : null}
-            {hpPercentCost != null ? <>現在体力 {hpPercentCost}%<br /></> : null}
-            {cost != null ? <>資源消費量 {cost}<br /></> : null}
-            {spCost == null && hpCost == null && hpPercentCost == null && cost == null ? <>コストなし<br /></> : null}
-            {
-                cooldown != null ?
-                <>クールダウン{cooldown}秒</> :
-                null
-            }
-            {charge}
-        </div>
-    );
-};
-
 const subjectSkillTooltip: React.FC<Props> = props => {
-    const subjectSkillsProps: SubjectSkillProps = {
-        showEquation: props.showEquation,
-        config: props.config,
-        status: props.status
-    }
-
-    const src = React.useMemo(() => {
-        const standard = Images.skill[props.id][props.skill];
-        const def =  SubjectSkills[props.id]
-        
-        if (def?.SkillImage) {
-            return def.SkillImage(props.skill) ?? standard;
+    const intl = useIntl();
+    const skillInfo = SubjectTooltipDictionary[props.code];
+    const skillLevel = props.config.skillLevels[skillInfo.skill];
+    const values = skillInfo.values({skillLevel, config: props.config, status: props.status});
+    const coefficientValues = es.mapValues(values, value => {
+        if (typeof value == "object") {
+            return calculateValue(value, props.status, props.config, skillLevel).static.floor().toString();
+        } else {
+            return value;
         }
-        return standard;
-    }, [props.id, props.skill]);
+    });
+    const expansion = skillInfo.expansion();
+    const expansionValues = (() => {
+        if (expansion.tipValues == undefined) return undefined;
 
-    const skillIDForLevel = React.useMemo(() => {
-        const def =  SubjectSkills[props.id]
-        if (def == undefined || def.idForLevel == undefined) return props.skill as "Q" | "W" | "E" | "R" | "T";
-        return def.idForLevel(props.skill) as "Q" | "W" | "E" | "R" | "T";
-    }, [props.id, props.skill]);
-
-    const skillIDForConsumption = React.useMemo(() => {
-        const def =  SubjectSkills[props.id]
-        if (def == undefined || def.idForConsumption == undefined) return props.skill;
-        return def.idForConsumption(props.skill);
-    }, [props.id, props.skill]);
-
-    const valuesProps: ValuesProps = (() => {
-        if (!props.showEquation) return null;
-        const values = SkillsDescription[props.id][props.skill.toLowerCase()].values
-        if (values == undefined) return null;
-        return typeof values === "function" ? values(subjectSkillsProps) : values;
+        return es.mapValues(expansion.tipValues, value => {
+            if (typeof value == "object") {
+                return calculateValue(value, props.status, props.config, skillLevel).static.floor().toString();
+            } else {
+                return value;
+            }
+        })
     })();
+    const expansionTooltip = intl.formatMessage({id: `Skill/Group/ExpansionTip/${props.code}`});
 
     return (
         <ValueContext.Provider value={props}>
             <div className={`${baseStyle.base} ${style.tooltip}`}>
                 <div className={style.main}>
                     <header>
-                        <img src={src} />
+                        <img src={Images.skill[props.code]} />
                         <div>
                             <div className={style.name}>
-                                <h1>{(Name as any)[props.id][props.skill].jp} （レベル {props.config.skillLevels[skillIDForLevel] + 1}）</h1>
-                                <p>[{skillIDForLevel}]</p>
+                                <h1><FormattedMessage id={`Skill/Group/Name/${props.code}`} /> （レベル {props.config.skillLevels[skillInfo.skill] + 1}）</h1>
+                                <p>[{skillInfo.skill}]</p>
                             </div>
-                            <ConsumptionAndCooldown {...props} skill={skillIDForConsumption} skillLevel={props.config.skillLevels[skillIDForLevel]} />
+                            <CooldownComsumption {...skillInfo} skillLevel={skillLevel} status={props.status} />
                         </div>
                     </header>
                     <p>
-                            {React.createElement(SkillsDescription[props.id][props.skill.toLowerCase()].default, {skillLevel: props.config.skillLevels[skillIDForLevel]})}
+                        <FormattedText 
+                            text={intl.formatMessage({id: `Skill/Group/${props.showEquation ? "Coef" : "Desc"}/${props.code}`})}
+                            values={coefficientValues}
+                        />
                     </p>
                 </div>
                 {
-                    valuesProps ? (
+                    props.showEquation && (expansion.tipValues || expansion.enumeratedValues.length) ? (
                         <div className={style.values}>
-                            <Values {...valuesProps} skillLevel={props.config.skillLevels[skillIDForLevel]} />
+                            {
+                                expansionTooltip.startsWith("Skill/Group/ExpansionTip") ? 
+                                null : 
+                                <FormattedText text={expansionTooltip} values={expansionValues} />
+                            }
+                            <ExpansionValues {...expansion} skillLevel={skillLevel} />
                         </div>
                     ) : null
                 }
