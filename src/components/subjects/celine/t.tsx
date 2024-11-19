@@ -1,29 +1,27 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 import { additionalAmp } from "./status-override";
-import { useValueContext } from "components/tooltip/value-context";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    const { status } = useValueContext();
-    return (
-        <>
-            セリーヌがスキルを{Constants.T.count}回使用すると、次の基本攻撃に<Value skill="T" ratio={Constants.T.damage} />
-            のスキルダメージが追加されます。<br />
-            <br />
-            セリーヌはクールダウン減少ステータスに影響されない代わりに、クールダウン減少ステータスを1%あたり{Constants.T.cooldown_conversion}のスキル増幅に置き換えます。<br />
-            現在増加したスキル増幅:{additionalAmp(status).toString()}
-        </>
-    )
-}
+export const code = 1043100;
 
-export default t;
-
-export const values: ValuesProps = {
-    additionalInfo: <>この基本攻撃はスキル攻撃とも見なされます。</>,
-    parameters: [
-        {title: "スキル増幅比例ダメージ増加量", values: Constants.T.damage.amp, percent: true}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation, status }) => ({
+        0: Constants.T.count,
+        1: Constants.T.damage,
+        2: `${Constants.T.damage.amp[skillLevel]}%`,
+        3: Constants.T.cooldown_conversion,
+        4: status.skillAmp.overrideAdditional?.value?.toString() ?? "",
+        5: Constants.T.damage.base
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MaxSkillRatio", values: Constants.T.damage.amp, percent: true}
+        ]  
+    })
 }
