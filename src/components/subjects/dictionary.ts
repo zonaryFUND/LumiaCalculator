@@ -29,7 +29,7 @@ export type TooltipInfo = {
     cooldown?: number | number[] | { constant: number | number[] } | (() => Decimal)
     charge?: {
         time: number | number[] | { constant: number | number[] },
-        max: number
+        max: number | number[]
     }
     values: (props: { skillLevel: number, showEquation: boolean, config: SubjectConfig, status: Status }) => TooltipValues
     expansion: (props: { skillLevel: number }) => ExpansionTooltipProps
