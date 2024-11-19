@@ -26,7 +26,7 @@ export type TooltipInfo = {
         type: "sp" | "hp" | "hp-ratio"
         value: number | number[]
     }
-    cooldown?: number | number[] | { constant: number | number[] } | (() => Decimal)
+    cooldown?: number | number[] | { constant: number | number[] } | ((props: {config: SubjectConfig, status: Status}) => Decimal)
     charge?: {
         time: number | number[] | { constant: number | number[] },
         max: number | number[]

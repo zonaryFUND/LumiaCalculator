@@ -1,27 +1,29 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        カミロが指定した対象に素早く突進して<Value skill="E" ratio={Constants.E.damage} />
-        のスキルダメージを与えて、{Constants.E.onestep_duration}秒間ワンステップを付与します。<br />
-        ワンステップが付与された対象にスキルを再使用すると、対象に素早く移動して<Value skill="E" ratio={Constants.E.second_damage} />
-        のスキルダメージを与え、対象を後ろに押し出した後に距離を広げながら{Constants.E.twostep_duration[props.skillLevel]}秒間ツーステップを付与します。<br />
-        <br />
-        ツーステップが付与された対象にはアルコムパスを使用できません。
-    </>
-)
+export const code = 1039400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ワンステップダメージ量", values: Constants.E.damage.base},
-        {title: "ツーステップダメージ量", values: Constants.E.second_damage.base},
-        {title: "ツーステップデバフ持続時間", values: Constants.E.twostep_duration},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.E.damage.base[skillLevel] : Constants.E.damage,
+        1: showEquation ? `${Constants.E.damage.attack}%` : Constants.E.onestep_duration,
+        2: showEquation ?  Constants.E.onestep_duration: Constants.E.second_damage,
+        3: showEquation ? Constants.E.second_damage.base[skillLevel] : Constants.E.twostep_duration[skillLevel],
+        4: `${Constants.E.second_damage.attack}%`,
+        5: Constants.E.twostep_duration[skillLevel]
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/OneStep", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/TwoStep", values: Constants.E.second_damage.base},
+            {labelIntlID: "ToolTipType/TwoStepDebuffTime", values: Constants.E.twostep_duration},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost},
+        ]  
+    })
 }

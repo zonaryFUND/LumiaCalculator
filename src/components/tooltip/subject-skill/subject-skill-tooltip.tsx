@@ -57,7 +57,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                                 <h1><FormattedMessage id={`Skill/Group/Name/${props.code}`} /> （レベル {props.config.skillLevels[skillInfo.skill] + 1}）</h1>
                                 <p>[{skillInfo.skill}]</p>
                             </div>
-                            <CooldownComsumption {...skillInfo} skillLevel={skillLevel} status={props.status} />
+                            <CooldownComsumption {...skillInfo} skillLevel={skillLevel} config={props.config} status={props.status} />
                         </div>
                     </header>
                     <p>

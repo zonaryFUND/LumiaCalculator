@@ -4,8 +4,9 @@ import style from "./cooldown-consumption.module.styl";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { extractArrayOrValue } from "@app/util/array";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
-const cooldownComsumption: React.FC<TooltipInfo & {skillLevel: number, status: Status}> = props => {
+const cooldownComsumption: React.FC<TooltipInfo & {skillLevel: number, config: SubjectConfig, status: Status}> = props => {
     const consumptionType = (() => {
         switch (props.consumption?.type) {
             case "hp":
@@ -22,7 +23,7 @@ const cooldownComsumption: React.FC<TooltipInfo & {skillLevel: number, status: S
 
     const cooldown = (() => {
         if (props.cooldown == undefined) return null;
-        if (typeof props.cooldown == "function") return props.cooldown().toString();
+        if (typeof props.cooldown == "function") return props.cooldown({config: props.config, status: props.status}).toString();
         if (typeof props.cooldown == "object" && "constant" in props.cooldown) {
             return extractArrayOrValue(props.cooldown.constant, props.skillLevel);
         }
