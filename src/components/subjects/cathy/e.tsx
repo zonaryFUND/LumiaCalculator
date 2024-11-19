@@ -1,28 +1,29 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        キャッシーが糸を通した針を投げて敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて
-        {Constants.E.bind}秒間束縛します。敵に的中すると針が貫通し最大1人の敵を追加で攻撃できます。<br />
-        貫通した針で敵を的中すると、先に的中した敵を後で的中した敵の方に突き飛ばします。<br />
-        二人が衝突した場合、{Constants.E.stun}秒間気絶状態になって<Value skill="E" ratio={Constants.E.knockback_damage} />
-        の追加スキルダメージを受けます。貫通した針が壁に衝突すると最初に的中した敵を壁に突き飛ばして{Constants.E.stun}秒間気絶させ、
-        <Value skill="E" ratio={Constants.E.knockback_damage} />の追加スキルダメージを与えます。<br />
-        <br />
-        縫合の衝突ダメージは外傷スタックを与えません。
-    </>
-)
+export const code = 1023400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "追加されたダメージ量", values: Constants.E.knockback_damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.E.damage.base[skillLevel] : Constants.E.damage,
+        1: Constants.E.knockback_damage,
+        2: Constants.E.bind,
+        3: Constants.E.stun,
+        4: Constants.E.knockback_damage.base[skillLevel],
+        6: `${Constants.E.damage.amp}%`,
+        7: `${Constants.E.knockback_damage.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.E.knockback_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+        ]  
+    })
 }
