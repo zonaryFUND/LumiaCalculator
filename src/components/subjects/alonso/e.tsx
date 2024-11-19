@@ -1,27 +1,28 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        アロンソが対象を指定してマーキングします。<br />
-        <br />
-        しばらくしてから対象に向かって突進し、
-        <Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて
-        {Constants.E.bind[props.skillLevel]}秒間束縛します。
-    </>
-);
+export const code = 1068400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>突進する前に対象が遠くなったり消えた場合には突進せず、クールダウンが一部返されます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "束縛持続時間", values: Constants.E.bind},
-        {title: "クールダウン", values: Constants.E.cooldown},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.E.damage,
+        1: Constants.E.bind[skillLevel],
+        10: Constants.E.damage.base[skillLevel],
+        11: `${Constants.E.damage.defense}%`,
+        12: `${Constants.E.damage.maxHP}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/FetterTime", values: Constants.E.bind},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }

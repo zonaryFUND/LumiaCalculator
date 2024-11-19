@@ -1,22 +1,25 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const meleeW: React.FC<SubjectSkillProps> = props => (
-    <>
-        アレックスが指定した地点にプラズママインを発射して範囲内の敵に<Value skill="W" ratio={Constants.MeleeW.damage} />
-        のスキルダメージを与え、中心部に引っ張ります。
-    </>
-);
+export const code = 1027700;
 
-export default meleeW;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.MeleeW.damage.base},
-        {title: "消費", values: Constants.MeleeW.sp_cost},
-        {title: "クールダウン", values: Constants.MeleeW.cooldown},
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.MeleeW.sp_cost
+    },
+    cooldown: Constants.MeleeW.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.MeleeW.damage.base[skillLevel],
+        1: `${Constants.MeleeW.damage.attack}%`,
+        20: Constants.MeleeW.damage,
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.MeleeW.damage.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.MeleeW.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.MeleeW.cooldown},
+        ]  
+    })
 }

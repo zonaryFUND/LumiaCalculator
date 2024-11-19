@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-list";
 
 const skills: React.FC<SkillsStandardProps> = props => (
     <SkillsParent {...props}>

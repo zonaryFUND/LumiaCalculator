@@ -55,6 +55,9 @@ const index: React.FC = props => {
         setConfig
     } = useSubjectConfig({value: storageConfig, update: saveConfig});
 
+    const c = React.useCallback(() => {}, [])
+
+
     const status = useStatus(config);
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const weaponTypeID = React.useMemo(() => {

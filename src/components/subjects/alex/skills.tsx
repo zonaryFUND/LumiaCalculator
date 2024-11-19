@@ -2,7 +2,7 @@ import * as React from "react";
 import style from "components/subjects/skills-standard.module.styl";
 import Images from "@app/resources/image";
 import { WeaponID } from "app-types/equipment/weapon/id";
-import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-list";
 
 export default function(props: {weaponType?: WeaponID} & SkillsStandardProps) {
     const skills = props.weaponType == "twohandsword" || props.weaponType == "tonfa" ?

@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { ItemSkillTooltipValuesHook } from "../item-skill";
 import { useValueContextOptional } from "components/tooltip/value-context";
-import useRange from "app-types/subject-dynamic/config/use-range";
+import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import useSanitizedValueRatio from "../use-sanitize-value-ratio";
 
 const values: ItemSkillTooltipValuesHook = (damage, values) => {

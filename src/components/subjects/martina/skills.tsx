@@ -1,6 +1,6 @@
 import * as React from "react";
 import Images from "@app/resources/image";
-import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-list";
 import style from "../skills-standard.module.styl";
 
 export default function(props: SkillsStandardProps) {

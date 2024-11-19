@@ -3,11 +3,11 @@ import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import TacticalSkillTable from "components/tactical-skill/damage-table";
 import { useIntl } from "react-intl";
-import useRange from "app-types/subject-dynamic/config/use-range";
+import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 
 export default function useTacticalSkill(config: SubjectConfig): (DamageTableUnit & {skillLevel: number})[][] {
     const intl = useIntl();
-    const range = useRange(config);
+    const range = weaponRange(config);
 
     return React.useMemo(() => {
         return TacticalSkillTable(intl).map(chunk => 

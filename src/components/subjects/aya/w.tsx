@@ -1,25 +1,31 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        アヤが{Constants.W.duration}秒間一方向に向かって銃を発射し、{Constants.W.bullets}
-        発を連射します。銃弾が的中すると<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。<br />
-        <br />
-        アヤの追加攻撃速度{Constants.W.per_as}あたり発射する弾丸数が最大{Constants.W.max_bullets}発まで増加します。
-    </>
-)
+export const code = 1002300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "合計スキル増幅係数", values: Constants.W.damage.amp},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.W.damage.base[skillLevel] : Constants.W.damage,
+        1: showEquation ? `${Constants.W.damage.attack}%` : `${Constants.W.per_as}%`,
+        2: Constants.W.duration,
+        3: showEquation ? Constants.W.duration : Constants.W.bullets,
+        4: showEquation ? Constants.W.bullets : Constants.W.max_bullets,
+        5: `${Constants.W.damage.amp[skillLevel]}%`,
+        6: Constants.W.per_as,
+        7: Constants.W.max_bullets
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/SkillSkillAmpCoef", values: Constants.W.damage.amp},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost},
+        ]  
+    })
 }

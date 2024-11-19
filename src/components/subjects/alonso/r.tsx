@@ -1,34 +1,44 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        アロンソが周りの敵を短く引き寄せながら<Value skill="R" ratio={Constants.R.damage} />
-        のスキルダメージを与えます。<br />
-        <br />
-        その後大地から引き寄せた金属の破片でアロンソの体力を{Constants.R.tick}秒間
-        <Value skill="R" ratio={Constants.R.heal} />
-        ずつ回復させ、敵には<Value skill="R" ratio={Constants.R.damage_on_time} />
-        の持続スキルダメージを与えてフィールドの外に向かう敵の移動速度を{Constants.R.slow}減少させます。<br />
-        <br />
-        再使用したり持続時間が終了すると、維持時間に比例して
-        <Value skill="R" ratio={Constants.R.final_damage.min} /> ~ <Value skill="R" ratio={Constants.R.final_damage.max} />
-        のスキルダメージを与えます。
-    </>
-);
+export const code = 1068500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "1打ダメージ量", values: Constants.R.damage.base},
-        {title: "最大体力比例回復量", values: Constants.R.heal.maxHP, percent: true},
-        {title: "持続ダメージ量", values: Constants.R.damage_on_time.base},
-        {title: "スキル終了ダメージ量(最小)", values: Constants.R.final_damage.min.base},
-        {title: "スキル終了ダメージ量(最大)", values: Constants.R.final_damage.max.base},
-        {title: "クールダウン", values: Constants.R.cooldown},
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.damage,
+        1: Constants.R.duration,
+        2: Constants.R.heal,
+        3: Constants.R.damage_on_time,
+        4: `${Constants.R.slow}%`,
+        5: Constants.R.final_damage.min,
+        6: Constants.R.final_damage.max,
+        10: Constants.R.damage.base[skillLevel],
+        11: `${Constants.R.damage.amp}%`,
+        12: Constants.R.heal.base,
+        13: `${Constants.R.heal.maxHP[skillLevel]}%`,
+        14: Constants.R.damage_on_time.base[skillLevel],
+        15: `${Constants.R.damage_on_time.amp}%`,
+        16: Constants.R.final_damage.min.base[skillLevel],
+        17: `${Constants.R.final_damage.min.amp}%`,
+        18: `${Constants.R.final_damage.min.additionalMaxHP}%`,
+        19: Constants.R.final_damage.max.base[skillLevel],
+        20: `${Constants.R.final_damage.max.amp}%`,
+        21: `${Constants.R.final_damage.max.additionalMaxHP}%`,
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/FirstDamage", values: Constants.R.damage.base},
+            {labelIntlID: "StatType/MaxHpHealRatio", values: Constants.R.heal.maxHP, percent: true},
+            {labelIntlID: "ToolTipType/DotDamage", values: Constants.R.damage_on_time.base},
+            {labelIntlID: "ToolTipType/AlonsoActive4FinishDamage_Min", values: Constants.R.final_damage.min.base},
+            {labelIntlID: "ToolTipType/AlonsoActive4FinishDamage_Max", values: Constants.R.final_damage.max.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+        ]  
+    })
 }

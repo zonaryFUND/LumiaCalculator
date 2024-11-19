@@ -1,21 +1,23 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
-import Constants from "./constants.json"
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import Constants from "./constants.json";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        指定した位置にニムルドの石碑を落として範囲内の敵に
-        <Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて敵を押し出します。
-    </>
-);
+export const code = 1066400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.E.damage.base[skillLevel] : Constants.E.damage,
+        1: `${Constants.E.damage.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+        ]  
+    })
 }

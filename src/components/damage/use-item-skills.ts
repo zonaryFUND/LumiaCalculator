@@ -3,7 +3,7 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { ItemSkillDamageTable } from "components/item-skills/item-skill";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import useRange from "app-types/subject-dynamic/config/use-range";
+import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import { EquipmentStatusDictionary } from "app-types/equipment";
 import { ignorePseudoTag } from "components/common/ignore-pseudo-tag";
 
@@ -14,7 +14,7 @@ type Response = {
 
 export default function useItemSkills(config: SubjectConfig): Response {
     const intl = useIntl();
-    const range = useRange(config);
+    const range = weaponRange(config);
 
     return React.useMemo(() => {
         return Object.values(config.equipment)

@@ -1,50 +1,67 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
-import Constants from "./constants.json"
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/item/item-tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import Constants from "./constants.json";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        アルダが遺物に秘められた起源を解読し、元の能力を復元します。
-        {Constants.R.duration}秒間次に使用する一般スキルを強化させます。<br />
-        <br />
-        <span className={style.emphasis}>シャマシュの法典</span>
-        ：指定した方向にシャマシュの法典を開きます。シャマシュの法典は衝突した敵に<Value skill="Q" ratio={Constants.Q.damage} />
-        のスキルダメージを与えて法典の文字を残し、{Constants.R.Q.second_time}秒後法典の上の敵に
-        <Value skill="R" ratio={Constants.R.Q.damage} />のスキルダメージを与えます。<br />
-        <br />
-        <span className={style.emphasis}>シャマシュの法典</span>を使用すると
-        <span className={style.emphasis}>秘められた力</span>のクールダウンの{Constants.R.Q.cooldown_reduction}%が返されます。<br />
-        <br />
-        <span className={style.emphasis}>バビロンのさいころ</span>
-        ：指定した地点にバビロンのさいころを召喚して境界線に障壁を作り、障壁に触れた敵を{Constants.R.W.bind[props.skillLevel]}
-        秒間束縛させます。<br />
-        障壁は{Constants.R.W.duration}秒間時計回りの順番で破壊されながら敵に
-        <Value skill="R" ratio={Constants.R.W.damage} />のスキルダメージを与え、さいころの領域内の敵には
-        <Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えて
-        {Constants.W.slow.duration}秒間移動速度を{Constants.W.slow.effect}%減少させます。<br />
-        すべての障壁が破壊されるとバビロンのさいころは消え、領域内の敵に
-        <Value skill="W" ratio={Constants.W.vanish_damage} />のスキルダメージを与えて
-        {Constants.W.stun}秒間気絶させます。<br />
-        <br />
-        <span className={style.emphasis}>ニムルドの門</span>：使用距離が{Constants.R.E.range[props.skillLevel]}
-        m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<Value skill="E" ratio={Constants.E.damage} />
-        のスキルダメージを与えて敵を押し出します。<br />
-        以降、二つの石碑は神秘的な力でつながり、味方が1回移動できる次元の通路が{Constants.R.E.duration}秒間維持されます。
-    </>
-);
+export const code = 1066500;
 
-export default r;
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation, config }) => {
+        const baseQDamage = {
+            base: Constants.Q.damage.base[config.skillLevels.Q],
+            amp: Constants.Q.damage.amp
+        };
+        const baseWInnerDamage = {
+            base: Constants.W.damage.base[config.skillLevels.W],
+            amp: Constants.W.damage.amp
+        };
+        const baseWVanishDamage = {
+            base: Constants.W.vanish_damage.base[config.skillLevels.W],
+            amp: Constants.W.vanish_damage.amp
+        };
+        const baseEDamage = {
+            base: Constants.E.damage.base[config.skillLevels.E],
+            amp: Constants.E.damage.amp
+        };
 
-export const values: ValuesProps = {
-    parameters: [
-        {title: "消費", values: Constants.R.sp_cost},
-        {title: "クールダウン", values: Constants.R.cooldown},
-        {title: "[シャマシュの法典]文字のダメージ量", values: Constants.R.Q.damage.base},
-        {title: "[バビロンのさいころ]障壁ダメージ量", values: Constants.R.W.damage.base},
-        {title: "[バビロンのさいころ]束縛持続時間", values: Constants.R.W.bind},
-        {title: "[ニムルドの門]距離増加", values: Constants.R.E.range}       
-    ]
+        return {
+            0: Constants.R.duration,
+            1: `${Constants.R.Q.cooldown_reduction}%`,
+            2: showEquation ? baseQDamage.base : baseQDamage,
+            3: Constants.R.Q.second_time,
+            4: showEquation ? Constants.R.Q.damage.base[skillLevel] : Constants.R.Q.damage,
+            5: showEquation ? baseWInnerDamage.base : baseWInnerDamage,
+            6: Constants.W.slow.duration,
+            7: `${Constants.W.slow.effect}%`,
+            8: showEquation ? `${Constants.R.W.damage.base[skillLevel]}` : Constants.R.W.damage,
+            9: showEquation ? baseWVanishDamage.base : baseWVanishDamage,
+            10: Constants.R.W.bind[skillLevel],
+            11: showEquation ? baseEDamage.base : baseEDamage,
+            12: Constants.R.E.duration,
+            13: 1,
+            14: Constants.R.E.range[skillLevel],
+            15: showEquation ? `${baseQDamage.amp}%` : Constants.R.W.duration,
+            16: showEquation ? `${Constants.R.Q.damage.amp}%` : Constants.W.stun,
+            17: `${baseWInnerDamage.amp}%`,
+            18: `${Constants.R.W.damage.amp}%`,
+            19: `${baseWVanishDamage.amp}%`,
+            20: `${baseEDamage.amp}%`,
+            21: Constants.R.W.duration,
+            22: Constants.W.stun
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/ArdaActive1Damage", values: Constants.R.Q.damage.base},
+            {labelIntlID: "ToolTipType/ArdaActive2Damage", values: Constants.R.W.damage.base},
+            {labelIntlID: "ToolTipType/ArdaActive2Duration", values: Constants.R.W.bind},
+            {labelIntlID: "ToolTipType/ArdaActive3Range", values: Constants.R.E.range},
+        ]  
+    })
 }

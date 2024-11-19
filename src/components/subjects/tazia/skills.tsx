@@ -1,5 +1,5 @@
 import * as React from "react";
-import SkillsStandard from "../skills-standard";
+import SkillsStandard from "../skills-list";
 import Q1 from "resources/skills/tazia/Q1.png";
 
 export function SkillImage(id: string): string | undefined {

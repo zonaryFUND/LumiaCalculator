@@ -1,23 +1,28 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const meleeQ: React.FC<SubjectSkillProps> = props => (
-    <>
-        アレックスが対象に素早く突進して<Value skill="Q" ratio={Constants.MeleeQ.damage} />のスキルダメージを与えます。<br />
-        スキルが的中すると{Constants.MeleeQ.attack_up.duration}秒間攻撃力が{Constants.MeleeQ.attack_up.effect}
-        増加します。（最大{Constants.MeleeQ.attack_up.max_stack}回スタック）<br />
-        コイルガンの効果と同時に最大スタックになると、攻撃速度が{Constants.common.q_stack_max_as}%増加します。
-    </>
-);
+export const code = 1027600;
 
-export default meleeQ;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.MeleeQ.damage.base},
-        {title: "クールダウン", values: Constants.MeleeQ.cooldown},
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.MeleeQ.sp_cost
+    },
+    cooldown: Constants.MeleeQ.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.MeleeQ.damage.base[skillLevel],
+        1: `${Constants.MeleeQ.damage.attack}%`,
+        2: Constants.MeleeQ.attack_up.duration,
+        3: Constants.MeleeQ.attack_up.effect,
+        4: Constants.MeleeQ.attack_up.max_stack,
+        5: `${Constants.common.q_stack_max_as}%`,
+        20: Constants.MeleeQ.damage,
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.MeleeQ.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.MeleeQ.cooldown},
+        ]  
+    })
 }

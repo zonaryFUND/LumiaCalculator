@@ -1,26 +1,29 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const rangeW: React.FC<SubjectSkillProps> = props => (
-    <>
-        アレックスが指定した地点にターゲットマーカーを発射して範囲内の敵に
-        <Value skill="W" ratio={Constants.RangeW.damage} />のスキルダメージを与え、
-        対象の視界を{Constants.RangeW.duration[props.skillLevel]}秒間獲得します。<br />
-        スキルが的中するとアレックスの基本攻撃の射程距離が
-        {Constants.RangeW.duration[props.skillLevel]}秒間{Constants.RangeW.range}増加します。
-    </>
-);
+export const code = 1027300;
 
-export default rangeW;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.RangeQ.damage.base},
-        {title: "維持時間", values: Constants.RangeW.duration},
-        {title: "消費", values: Constants.RangeW.sp_cost},
-        {title: "クールダウン", values: Constants.RangeW.cooldown},
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.RangeW.sp_cost
+    },
+    cooldown: Constants.RangeW.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.RangeW.damage.base[skillLevel],
+        1: `${Constants.RangeW.damage.attack}%`,
+        2: Constants.RangeW.duration[skillLevel],
+        3: Constants.RangeW.duration[skillLevel],
+        4: Constants.RangeW.range,
+        20: Constants.RangeW.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.RangeW.damage.base},
+            {labelIntlID: "ToolTipType/Time", values: Constants.RangeW.duration},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.RangeW.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.RangeW.cooldown},
+        ]  
+    })
 }

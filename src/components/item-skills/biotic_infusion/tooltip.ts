@@ -1,12 +1,12 @@
 import Constants from "./constants.json";
 import { ItemSkillTooltipValuesHook } from "../item-skill";
 import { useValueContextOptional } from "components/tooltip/value-context";
-import useRange from "app-types/subject-dynamic/config/use-range";
+import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import { ValueRatio } from "app-types/value-ratio";
 
 const values: ItemSkillTooltipValuesHook = (damage, values) => {
     const { config, status } = useValueContextOptional();
-    const range = useRange(config)
+    const range = weaponRange(config)
 
     return {
         1: `${("melee" in damage! ? damage.melee.targetMaxHP : undefined)}%`, 

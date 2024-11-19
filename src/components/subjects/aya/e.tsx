@@ -1,24 +1,23 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        アヤは指定した方向に素早く移動します。<br />
-        <span className={style.emphasis}>二連発</span>と
-        <span className={style.emphasis}>固定射撃</span>のクールダウンが
-        {Constants.E.cooldown_reduction[props.skillLevel]}%返されます。
-    </>
-)
+export const code = 1002400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "クールダウン", values: Constants.E.cooldown},
-        {title: "消費", values: Constants.E.sp_cost},
-        {title: "二連発・固定射撃クールダウン減少量(%)", values: Constants.E.cooldown_reduction, percent: true}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: `${Constants.E.cooldown_reduction[skillLevel]}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost},
+            {labelIntlID: "ToolTipType/AyaActive3", values: Constants.E.cooldown_reduction, percent: true},
+        ]  
+    })
 }

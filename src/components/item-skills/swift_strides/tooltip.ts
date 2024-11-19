@@ -3,12 +3,12 @@ import { ItemSkillTooltipValuesHook } from "../item-skill";
 import { useValueContextOptional } from "components/tooltip/value-context";
 import useSanitizedValueRatio from "../use-sanitize-value-ratio";
 import { useIntl } from "react-intl";
-import useRange from "app-types/subject-dynamic/config/use-range";
+import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 
 const values: ItemSkillTooltipValuesHook = (damage, values) => {
     const intl = useIntl();
     const { config, showEquation } = useValueContextOptional();
-    const range = useRange(config);
+    const range = weaponRange(config);
     const sanitizedDamage = useSanitizedValueRatio(damage!);
 
     const meleeMessage = intl.formatMessage({id: "Item/Skills/6007000/Melee"})

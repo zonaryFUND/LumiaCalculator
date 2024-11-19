@@ -10,9 +10,9 @@ import { useThrottle, useToggle } from "react-use";
 import SubjectList, { style as subjectsStyle } from "components/modal/subject-list";
 import common from "@app/common.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
-import { SubjectStackInfo } from "components/subjects/stack";
 import { FormattedMessage, useIntl } from "react-intl";
 import ThrottleSlider from "./throttle-slider";
+import { SubjectStackInfoDictionary } from "components/subjects/dictionary";
 
 export type ConfigModifierProps = {
     [K in keyof SubjectConfig]: StateProps<SubjectConfig[K]>
@@ -33,8 +33,8 @@ const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
     }, []);
 
     const stackInfo = React.useMemo(() => {
-        return SubjectStackInfo[subjectID];
-    }, [subjectID]);
+        return SubjectStackInfoDictionary[props.subject[0]];
+    }, [props.subject[0]]);
 
     const gaugeTitle = React.useMemo(() => {
         switch (subjectID) {
@@ -84,7 +84,7 @@ const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
                     {
                         stackInfo ? 
                         <ThrottleSlider 
-                            label={intl.formatMessage({id: stackInfo.nameKey})}
+                            label={intl.formatMessage({id: stackInfo.nameIntlID})}
                             value={props.stack}
                             max={stackInfo.max}
                         /> :

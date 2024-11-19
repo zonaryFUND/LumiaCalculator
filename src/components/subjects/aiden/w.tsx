@@ -1,40 +1,42 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+
+export const code = 1046300;
 
 const maxConstant = {
-    base: Constants.W.damage.base.map(v => v * 2),
-    attack: Constants.W.damage.attack * 2
-};
-
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エイデンが武器に電流を集めて次の攻撃を準備し、移動速度が若干減少します。<br />
-            再使用すると、周りの敵にチャージ時間に応じて
-            <Value skill="W" ratio={Constants.W.damage} /> ~ <Value skill="W" ratio={maxConstant} />
-            のスキルダメージを与え、移動速度を
-            {Constants.W.slow.duration}秒間{Constants.W.slow.effect}%減少させます。最大チャージ時、範囲の端に
-            {Constants.W.field_duration}秒間維持される<span className={style.emphasis}>電場</span>を残します。<br />
-            <br />
-            <span className={style.emphasis}>電場</span>：電場に触れる敵は
-            <Value skill="W" ratio={Constants.W.field_damage} />のスキルダメージを受けて
-            {Constants.W.bind[props.skillLevel]}秒間束縛されます。
-        </>
-    );
+    base: Constants.W.damage.base.map(b => b * Constants.W.max_multiplier),
+    attack: Constants.W.damage.attack * Constants.W.max_multiplier
 }
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "最小ダメージ量", values: Constants.W.damage.base},
-        {title: "最大ダメージ量", values: maxConstant.base},
-        {title: "追加ダメージ量", values: Constants.W.field_damage.base},
-        {title: "束縛持続時間", values: Constants.W.bind},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.W.damage.base[skillLevel],
+        1: `${Constants.W.damage.attack}%`,
+        2: maxConstant.base[skillLevel],
+        3: `${maxConstant.attack}%`,
+        4: Constants.W.slow.duration,
+        5: `${Constants.W.slow.effect}%`,
+        6: Constants.W.field_duration,
+        7: Constants.W.field_damage.base[skillLevel],
+        8: `${Constants.W.field_damage.attack}%`,
+        9: Constants.W.bind[skillLevel],
+        20: Constants.W.damage,
+        21: maxConstant,
+        22: Constants.W.field_damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MinDamage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/MaxDamage", values: maxConstant.base},
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.W.field_damage.base},
+            {labelIntlID: "ToolTipType/FetterTime", values: Constants.W.bind},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+        ]  
+    })
 }

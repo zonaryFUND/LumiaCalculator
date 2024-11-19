@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
 import { StatusOverrideFunc } from "../status-override";
 import Decimal from "decimal.js";
-import useRange from "app-types/subject-dynamic/config/use-range";
+import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 
 const f: StatusOverrideFunc = (status, config) => {
-    const range = useRange(config);
+    const range = weaponRange(config);
 
     return {
         ...status,

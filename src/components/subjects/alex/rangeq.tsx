@@ -1,24 +1,28 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const rangeQ: React.FC<SubjectSkillProps> = props => (
-    <>
-        アレックスがコイルガンを発射し、的中した敵に<Value skill="Q" ratio={Constants.RangeQ.damage} />
-        のスキルダメージを与えます。<br />
-        スキルが的中すると{Constants.RangeQ.attack_up.duration}秒間攻撃力が
-        {Constants.RangeQ.attack_up.effect}増加します。（最大{Constants.RangeQ.attack_up.max_stack}回スタック）<br />
-        奇襲の効果と同時に最大スタックになると、攻撃速度が{Constants.common.q_stack_max_as}%増加します。
-    </>
-);
+export const code = 1027200;
 
-export default rangeQ;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.RangeQ.damage.base},
-        {title: "クールダウン", values: Constants.RangeQ.cooldown},
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.RangeQ.sp_cost
+    },
+    cooldown: Constants.RangeQ.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.RangeQ.damage.base[skillLevel],
+        1: `${Constants.RangeQ.damage.attack}%`,
+        2: Constants.RangeQ.attack_up.duration,
+        3: Constants.RangeQ.attack_up.effect,
+        4: Constants.RangeQ.attack_up.max_stack,
+        5: `${Constants.common.q_stack_max_as}%`,
+        20: Constants.RangeQ.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.RangeQ.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.RangeQ.cooldown},
+        ]  
+    })
 }

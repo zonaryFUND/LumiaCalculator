@@ -9,7 +9,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
 
 export type SkillCode = number
 export type SkillKey = "Q" | "W" | "E" | "R" | "T";
-export type SkillListHook = () => Record<SkillKey, SkillCode | SkillCode[]>;
+export type SkillListHook = (config: SubjectConfig) => Record<SkillKey, SkillCode | SkillCode[]>;
 type TooltipValues = Record<number, number | string | ValueRatio>;
 
 export type ExpansionTooltipProps = {
@@ -36,6 +36,11 @@ export type TooltipInfo = {
     expansion: () => ExpansionTooltipProps
 }
 
+type SubjectStackInfo = {
+    nameIntlID: string
+    max: number
+}
+
 export type SubjectModules = {
     code: number
     damageTable: DamageTableGenerator
@@ -47,10 +52,7 @@ export type SubjectModules = {
 
     statusOverride?: StatusOverrideFunc
     summonedStatus?: SummonedStatusFunc
-    stackInfo?: {
-        nameIntlID: string
-        max: number
-    }
+    stackInfo?: SubjectStackInfo
 }
 
 export function defineSubject(module: SubjectModules): SubjectModules { return module };
@@ -60,18 +62,21 @@ export const [
     SubjectSkillListExpressionDictionary,
     SubjectTooltipDictionary,
     SubjectDamageTableDictionary,
-    SubjectStatusOverrideDictionary
-] = Object.entries(modules).reduce(([lists, tooltips, damageTables, statusOverrides], [key, m]) => {
+    SubjectStatusOverrideDictionary,
+    SubjectStackInfoDictionary
+] = Object.entries(modules).reduce(([lists, tooltips, damageTables, statusOverrides, stackInfo], [key, m]) => {
     const subjectCode = m.default.code;
     return [
         {...lists, [subjectCode]: m.default.skills.listExpression},
         {...tooltips, ...m.default.skills.tooltip},
         {...damageTables, [subjectCode]: m.default.damageTable},
-        {...statusOverrides, ...(m.default.statusOverride ? { [subjectCode]: m.default.statusOverride} : {}) }
+        {...statusOverrides, ...(m.default.statusOverride ? { [subjectCode]: m.default.statusOverride } : {}) },
+        {...stackInfo, ...(m.default.stackInfo ? { [subjectCode]: m.default.stackInfo } : {})}
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
     {} as Record<SkillCode, TooltipInfo>,
     {} as Record<SubjectCode, DamageTableGenerator>,
-    {} as Record<SubjectCode, StatusOverrideFunc>
+    {} as Record<SubjectCode, StatusOverrideFunc>,
+    {} as Record<SubjectCode, SubjectStackInfo>
 ])

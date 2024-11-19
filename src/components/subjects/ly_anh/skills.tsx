@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "../skills-standard.module.styl";
-import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-standard";
+import { Skill, SkillLevelConfigurator, SkillsParent, SkillsStandardProps, WeaponSkill } from "../skills-list";
 
 export default function(props: SkillsStandardProps) {
     return  (

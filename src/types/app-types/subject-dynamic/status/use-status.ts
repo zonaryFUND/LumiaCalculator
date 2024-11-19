@@ -61,27 +61,6 @@ export function useStatus(config: SubjectConfig): Status {
         return WeaponMasteryStatus[config.subject][weaponType];
     }, [config.subject, weaponType]);
 
-    /*
-    const perLevelStatus = (() => {
-        const values = equipments
-            .map(equipment => equipment.perLevelStatus)
-            .filter((value): value is PerLevelStatus => value !== undefined)
-
-        return PerLevelStatusKeys
-            .reduce((prev, key) => {
-                const filtered = values  
-                    .filter(v => v.type == key)
-                if (filtered.length == 0) {
-                    return prev;
-                }
-                return {
-                    ...prev,
-                    [key]: filtered.reduce((p, c) => (p ? p.add(c.value) : c.value), null as Decimal | null)
-                }
-            }, {} as Partial<Record<typeof PerLevelStatusKeys[number], Decimal>>) ;
-    })();
-    */
-
     const equipmentValue = (constKey: keyof EquipmentStatus, perLevel?: keyof EquipmentStatus) => {
         const constant = sumEquipmentStatus(constKey, equipments);
         if (constant || perLevel) {

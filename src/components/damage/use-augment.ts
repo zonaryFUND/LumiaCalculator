@@ -6,7 +6,7 @@ import { meleeOrRange, WeaponTypeID } from "app-types/equipment/weapon";
 import { AugmentTableValues } from "components/augment/table-value";
 import { ValueRatio } from "app-types/value-ratio";
 import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
-import useRange from "app-types/subject-dynamic/config/use-range";
+import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 
 type Unit = Omit<DamageTableUnit, "value"> & {
     value: ValueRatio | UniqueValueStrategy
@@ -14,7 +14,7 @@ type Unit = Omit<DamageTableUnit, "value"> & {
 
 export default function useAugment(config: SubjectConfig): Unit[][] {
     const intl = useIntl();
-    const range = useRange(config);
+    const range = weaponRange(config);
 
     return React.useMemo(() => {
         return AugmentTableValues(intl).map(chunk => 

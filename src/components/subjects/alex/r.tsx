@@ -1,33 +1,42 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        アレックスが指定した位置に衛星ミサイルを誘導して範囲内の敵に
-        <Value skill="R" ratio={Constants.R.first_damage.outer} />
-        のスキルダメージを与え、中心部の敵には
-        <Value skill="R" ratio={Constants.R.first_damage.center} />
-        のスキルダメージを与えます。的中した対象の移動速度を
-        {Constants.R.first_slow.duration}秒間{Constants.R.first_slow.effect}減少させます。<br />
-        その後、周期的にパルスを放出して{Constants.R.later_damage.tick}秒ごとに
-        <Value skill="R" ratio={Constants.R.later_damage.outer} />のスキルダメージを
-        {Constants.R.later_damage.amount}回与え、中心部の敵には
-        <Value skill="R" ratio={Constants.R.later_damage.center} />
-        のスキルダメージを与えて{Constants.R.later_slow.duration}秒間移動速度を{Constants.R.later_slow.effect}減少させます。
-    </>
-);
+export const code = 1027500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "最初の外郭ダメージ量", values: Constants.R.first_damage.outer.base},
-        {title: "最初の中心部ダメージ量", values: Constants.R.first_damage.center.base},
-        {title: "持続外郭ダメージ量", values: Constants.R.later_damage.outer.base},
-        {title: "持続中心部ダメージ量", values: Constants.R.later_damage.center.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.R.first_damage.outer.base[skillLevel],
+        1: `${Constants.R.first_damage.outer.attack}%`,
+        2: Constants.R.first_damage.center.base[skillLevel],
+        3: `${Constants.R.first_damage.center.attack}%`,
+        4: Constants.R.later_damage.tick,
+        5: Constants.R.later_damage.amount,
+        6: Constants.R.later_damage.outer.base[skillLevel],
+        7: `${Constants.R.later_damage.outer.attack}%`,
+        8: Constants.R.later_damage.center.base[skillLevel],
+        9: `${Constants.R.later_damage.center.attack}%`,
+        10: Constants.R.first_slow.duration,
+        11: `${Constants.R.first_slow.effect}%`,
+        12: Constants.R.later_slow.duration,
+        13: `${Constants.R.later_slow.effect}`,
+        20: Constants.R.first_damage.outer,
+        21: Constants.R.first_damage.center,
+        22: Constants.R.later_damage.outer,
+        23: Constants.R.later_damage.center
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/FirstOutDamage", values: Constants.R.first_damage.outer.base},
+            {labelIntlID: "ToolTipType/FirstInnerDamage", values: Constants.R.first_damage.center.base},
+            {labelIntlID: "ToolTipType/KeepOutDamage", values: Constants.R.later_damage.outer.base},
+            {labelIntlID: "ToolTipType/KeepInnerDamage", values: Constants.R.later_damage.center.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+        ]  
+    })
 }

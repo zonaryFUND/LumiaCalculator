@@ -2,30 +2,51 @@ import * as React from "react";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
-import SkillsStandard, { SkillImage, SkillsStandardProps } from "./skills-standard";
 import { SubjectCodeWithOldID } from "app-types/subject-static";
-import { SubjectSkillListExpressionDictionary } from "./dictionary";
+import { SkillCode, SkillKey, SubjectSkillListExpressionDictionary } from "./dictionary";
+import style from "./skills.module.styl";
+import Images from "@app/resources/image";
+import { SubjectSideContext } from "./subject-side";
+import Selection from "components/common/number-selection";
 
+type SkillListProps = {
+    config: SubjectConfig
+    setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
+}
+export const SkillListContext = React.createContext<SkillListProps | null>(null);
 
-export type CooldownOverride = (config: SubjectConfig, status: Status) => (basic: Decimal) => Decimal;
-type SubjectModule = {
-    default?: (props: SkillsStandardProps) => React.ReactElement
-    idForLevel?: (skill: string) => string
-    idForConsumption?: (skill: string) => string
-    SkillImage?: SkillImage
+const Skill: React.FC<{code: SkillCode}> = ({code}) => {
+    const side = React.useContext(SubjectSideContext);
+
+    return (
+        <img 
+            src={Images.skill[code]} 
+            data-tooltip-id="subject-skill" 
+            data-tooltip-content={`${code}`}
+            data-tooltip-subject-side={side}
+        />
+    );
 }
 
-const subjectModules = import.meta.glob<SubjectModule>("./**/skills.tsx", {eager: true});
+const SkillLevelConfigurator: React.FC<{skill: "Q" | "W" | "E" | "R" | "T", max?: number}> = props => {
+    const context = React.useContext(SkillListContext);
 
-export const SubjectSkills = Object.entries(subjectModules).reduce((skills, [key, m]) => {
-    const subject = key.substring(2, key.lastIndexOf("/"));
-    return {
-        ...skills,
-        [subject]: m
-    }
-}, {} as {
-    [key: string]: SubjectModule
-})
+    const value = context!.config.skillLevels[props.skill];
+    const max = (() => {
+        if (props.max) return props.max;
+        return props.skill == "R" || props.skill == "T" ? 3 : 5;
+    })();
+
+    const onChange = React.useCallback((to: number) => {
+        context!.setSkillLevels(prev => ({...prev, [props.skill]: to - 1}))
+    }, [])
+
+    return (
+        <div className={style.configurator}>
+            <Selection max={max} value={[value + 1, onChange]} layout="skill" />
+        </div>
+    )
+}
 
 type Props = {
     config: SubjectConfig
@@ -34,13 +55,29 @@ type Props = {
 
 const subjectSkills: React.FC<Props> = props => {
     console.log(props.config.subject)
-
-    return <SkillsStandard 
-        code={props.config.subject}
-        listHook={SubjectSkillListExpressionDictionary[props.config.subject]}
-        skillLevels={props.config.skillLevels}
-        setSkillLevels={props.setSkillLevels}
-    />
+    const list = SubjectSkillListExpressionDictionary[props.config.subject](props.config);
+    
+    return (
+        <div className={style.skills}>
+            <SkillListContext.Provider value={props}>
+            {
+                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => (
+                    <div key={skill} className={style.vertical}>
+                        {
+                            (Array.isArray(list[skill]) ? list[skill] : [list[skill]]).map(code => <Skill key={code} code={code} />)
+                        }
+                    </div>
+                ))
+            }
+            {/*<WeaponSkill id={props.weaponType} />*/}
+            {
+                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => (
+                    <SkillLevelConfigurator key={skill} skill={skill} />  
+                ))
+            }
+            </SkillListContext.Provider>
+        </div>
+    )
 };
 
 export default subjectSkills;

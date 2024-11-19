@@ -1,28 +1,28 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const q: React.FC<SubjectSkillProps> = props => (
-    <>
-        アヤが対象に向かって銃を2回発砲します。一発目の攻撃は
-        <Value skill="Q" ratio={Constants.Q.first_damage} />
-        の基本攻撃ダメージを、二発目の攻撃は<Value skill="Q" ratio={Constants.Q.second_damage} />
-        のスキルダメージを与えてアヤの攻撃速度が{Constants.Q.attack_speed.duration}秒間
-        {Constants.Q.attack_speed.effect[props.skillLevel]}%増加します。
-    </>
-)
+export const code = 1002200;
 
-export default q;
-
-export const values: ValuesProps = {
-    additionalInfo: <>
-        アヤの攻撃速度が{Constants.Q.threshold}以上の場合、攻撃速度に比例してキャスト時間と投射体の発射速度が速くなります。
-    </>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.second_damage.base},
-        {title: "攻撃速度増加量(%)", values: Constants.Q.attack_speed.effect, percent: true},
-        {title: "クールダウン", values: Constants.Q.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? `${Constants.Q.second_damage.attack}%` : Constants.Q.second_damage,
+        1: showEquation ? Constants.Q.second_damage.base[skillLevel] : Constants.Q.first_damage,
+        2: showEquation ? `${Constants.Q.second_damage.amp}%` : Constants.Q.attack_speed.duration,
+        3: showEquation ? `${Constants.Q.first_damage.attack}%` : `${Constants.Q.attack_speed.effect[skillLevel]}%`,
+        4: Constants.Q.attack_speed.duration,
+        5: `${Constants.Q.attack_speed.effect[skillLevel]}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.second_damage.base},
+            {labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.Q.attack_speed.effect, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+        ]  
+    })
 }

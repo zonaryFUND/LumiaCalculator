@@ -1,28 +1,28 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const meleeE: React.FC<SubjectSkillProps> = props => (
-    <>
-        <span className={style.level}>持続効果</span>：アレックスの攻撃速度が{Constants.common.e_as[props.skillLevel]}
-        %増加し、ホログラムが持続する間は効果が2倍適用されます。<br />
-        <br />
-        アレックスが{Constants.MeleeE.duration}秒間維持されるホログラムを生成し、指定した方向へ素早く移動して即時潜入状態になります。<br />
-        ホログラムは範囲内の敵に挑発をして{Constants.MeleeE.taunt}秒間自分を攻撃するようにします。<br />
-        <br />
-        スキル使用後には{Constants.MeleeE.weapon_swap}
-        秒間武器を一度交替できる状態になります。この状態は潜入が解除されたり武器を変更するとすぐに消えます。<br />
-        潜入効果は6レベル以降に適用されます。
-    </>
-);
+export const code = 1027800;
 
-export default meleeE;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "攻撃速度", values: Constants.common.e_as, percent: true},
-        {title: "消費", values: Constants.MeleeE.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.MeleeE.sp_cost
+    },
+    cooldown: Constants.MeleeE.cooldown,
+    values: ({ skillLevel }) => ({
+        0: Constants.MeleeE.duration,
+        1: `${Constants.common.e_as[skillLevel]}%`,
+        2: Constants.MeleeE.taunt,
+        3: 2,
+        5: Constants.MeleeE.weapon_swap,
+        6: 6,
+        20: Constants.MeleeW.damage,
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "StatType/AttackSpeed", values: Constants.common.e_as, percent: true},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.MeleeE.sp_cost},
+        ]  
+    })
 }
