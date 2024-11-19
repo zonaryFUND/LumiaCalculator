@@ -41,8 +41,7 @@ const cooldownComsumption: React.FC<TooltipInfo & {skillLevel: number, status: S
 
     return (
         <div className={style.cooldown}>
-            {consumptionType}{consumptionValue}<br />
-            {consumptionValue ? <br /> : null}
+            {consumptionType}{consumptionValue}{props.consumption?.type == "hp-ratio" ? "%" : null}<br />
             {
                 cooldown != null ?
                 <>クールダウン{cooldown}秒</> :

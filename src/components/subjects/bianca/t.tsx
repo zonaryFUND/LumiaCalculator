@@ -1,30 +1,29 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const t: React.FC<SubjectSkillProps> = props => (
-    <>
-        <span className={style.emphasis}>血流減速</span><br />
-        ビアンカは一定時間ごとに基本攻撃で<Value skill="T" ratio={Constants.T.damage} />のスキルダメージを与えます。ビアンカにスキルダメージを受けた対象は
-        {Constants.T.slow.duration}秒間移動速度が{Constants.T.slow.effect[props.skillLevel]}%減少します。<br />
-        <br />
-        <span className={style.emphasis}>携帯用血液パック</span><br />
-        ビアンカはスキルで与えるダメージの{Constants.T.blood_conversion.skill_damage}%、体力消耗量の{Constants.T.blood_conversion.lost_hp}%の血液を蓄積します。
-        <span className={style.emphasis}>血液</span>は自分の最大体力の{Constants.T.max_blood}%まで蓄積できます。ビアンカが非戦闘状態になると
-        {Constants.T.blood_heal_tick}秒ごとに最大血液の{Constants.T.blood_consumption}%を消耗して消耗量の
-        {Constants.T.blood_heal_ratio}%の体力を回復します。
-    </>
-)
+export const code = 1042100;
 
-export default t;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "移動速度減少量(%)", values: Constants.T.slow.effect},
-        {title: "ダメージ量", values: Constants.T.damage.base},
-        {title: "クールダウン", values: Constants.T.cooldown.constant}
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    cooldown: Constants.T.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.T.slow.duration,
+        1: `${Constants.T.slow.effect[skillLevel]}%`,
+        2: `${Constants.T.blood_conversion.skill_damage}%`,
+        3: `${Constants.T.blood_conversion.lost_hp}%`,
+        4: `${Constants.T.max_blood}%`,
+        5: `${Constants.T.blood_consumption}%`,
+        6: showEquation ? Constants.T.damage.base[skillLevel] : Constants.T.damage,
+        8: `${Constants.T.damage.targetMaxHP}%`,
+        9: Constants.T.blood_heal_tick,
+        10: `${Constants.T.blood_heal_ratio}%`,
+        11: `${Constants.T.damage.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.T.slow.effect},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant},
+        ]  
+    })
 }

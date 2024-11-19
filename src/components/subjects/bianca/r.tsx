@@ -1,29 +1,40 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        ビアンカが呪文詠唱をしながら自分の周りに魔法陣を生成します。呪文詠唱が終わると地面に魔法陣を固定させ、範囲内の敵に<Value skill="R" ratio={Constants.R.first_damage} />
-        のスキルダメージを与えて{Constants.R.slow.duration}秒間移動速度を{Constants.R.slow.effect}%減少させます。ビアンカは魔法陣の上にいると、ダメージ吸血が{Constants.R.omnisyphon_amp[props.skillLevel]}%増加します。<br />
-        魔法陣の持続時間が終わると、範囲内の敵に失った体力に比例して
-        <Value skill="R" ratio={Constants.R.min_damage} /> ~ <Value skill="R" ratio={Constants.R.max_damage} />のスキルダメージを与え、
-        <Value skill="R" ratio={Constants.R.heal} />だけ体力を回復します。複数の敵に的中した場合、追加で的中した敵数あたりの回復量が{Constants.R.multiple_hit_heal_amp}%増加します。
-    </>
-)
+export const code = 1042500;
 
-export default r;
-
-export const values: ValuesProps = {
-    additionalInfo: <>真祖の君臨使用中に循環が使用できます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.first_damage.base},
-        {title: "追加ダメージ量", values: Constants.R.min_damage.base},
-        {title: "最大追加ダメージ量", values: Constants.R.max_damage.base},
-        {title: "最大回復量", values: Constants.R.heal.base},
-        {title: "ダメージ吸血量", values: Constants.R.omnisyphon_amp, percent: true},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "hp-ratio",
+        value: Constants.R.hp_cost_percent
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.R.first_damage.base[skillLevel] : Constants.R.first_damage,
+        2: `${Constants.R.first_damage.targetMaxHP}%`,
+        3: `${Constants.R.slow.effect}%`,
+        4: `${Constants.R.omnisyphon_amp[skillLevel]}%`,
+        5: showEquation ? `${Constants.R.min_damage.base[skillLevel]}` : Constants.R.min_damage,
+        6: Constants.R.max_damage,
+        7: Constants.R.max_damage.base[skillLevel],
+        9: showEquation ? Constants.R.heal.base[skillLevel] : Constants.R.heal,
+        11: `${Constants.R.heal.lostHP}%`,
+        12: `${Constants.R.multiple_hit_heal_amp}%`,
+        13: showEquation ? `${Constants.R.first_damage.amp}%` : Constants.R.slow.duration,
+        14: `${Constants.R.min_damage.amp}%`,
+        15: `${Constants.R.max_damage.amp}%`,
+        16: `${Constants.R.heal.amp}%`,
+        17: Constants.R.slow.duration
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.first_damage.base},
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.R.min_damage.base},
+            {labelIntlID: "ToolTipType/MaxAdditionalDamage", values: Constants.R.max_damage.base},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.R.heal.base},
+            {labelIntlID: "ToolTipType/LifeSteal", values: Constants.R.omnisyphon_amp, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+        ]  
+    })
 }

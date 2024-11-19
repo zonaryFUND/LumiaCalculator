@@ -1,25 +1,29 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const q: React.FC<SubjectSkillProps> = props => (
-    <>
-        ビアンカが指定した地点に血の槍を投げて衝突した対象に<Value skill="Q" ratio={Constants.Q.first_damage} />
-        のスキルダメージを与えます。血の槍は到着位置で円形に広がって衝突する敵一人に<Value skill="Q" ratio={Constants.Q.second_damage} />
-        のスキルダメージを与えてから消えます。<span className={style.emphasis}>血流減速</span>の対象が<span className={style.emphasis}>鮮血の投槍</span>によってダメージを受けると
-        {Constants.Q.bind}秒間束縛されます。
-    </>
-)
+export const code = 1042200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.first_damage.base},
-        {title: "追加ダメージ量", values: Constants.Q.second_damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "hp-ratio",
+        value: Constants.Q.hp_cost_percent
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.Q.first_damage.base[skillLevel] : Constants.Q.first_damage,
+        1: Constants.Q.second_damage,
+        2: Constants.Q.second_damage.base[skillLevel],
+        4: `${Constants.Q.second_damage.targetMaxHP}%`,
+        5: Constants.Q.bind,
+        6: `${Constants.Q.first_damage.amp}%`,
+        7: `${Constants.Q.second_damage.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.first_damage.base},
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.Q.second_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+        ]  
+    })
 }
