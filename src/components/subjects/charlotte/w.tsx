@@ -1,20 +1,23 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        シャーロットが治癒の光で体力の割合が最も低い味方と自分の体力を<Value skill="W" ratio={Constants.W.heal} />回復させます。
-    </>
-)
+export const code = 1073300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.heal.base},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.W.heal.base[skillLevel] : Constants.W.heal,
+        1: `${Constants.W.heal.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Heal", values: Constants.W.heal.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+        ]  
+    })
 }

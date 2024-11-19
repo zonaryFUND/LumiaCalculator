@@ -1,21 +1,24 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import style from "components/tooltip/tooltip.module.styl";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        <span className={style.level}>持続効果：</span>スキル増幅が{Constants.R.amp[props.skillLevel]}増加します。<br />
-        <br />
-        シャーロットが奇跡を起こします。{Constants.R.channeling}秒後、周りにいる味方は{Constants.R.duration}秒間無敵状態になります。<br />
-    </>
-)
+export const code = 1073500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.channeling,
+        1: Constants.R.duration,
+        2: Constants.R.amp[skillLevel]
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/ApDamage", values: Constants.R.amp}
+        ]  
+    })
 }
