@@ -71,7 +71,10 @@ export type Status = {
     visionRange: StatusValue & CalculatedStatusValue
     basicAttackRange: StatusValue & CalculatedStatusValue
 
-    summonedStatus?: SummonedStatus
+    summoned?: {
+        nameIntlID: string
+        status: SummonedStatus
+    }[]
 }
 
 export type StatusBeforeCalculation = { [K in keyof Omit<Status, "summonedStatus">]: Status[K] extends infer T & CalculatedStatusValue ? T & Partial<CalculatedStatusValue> : never };

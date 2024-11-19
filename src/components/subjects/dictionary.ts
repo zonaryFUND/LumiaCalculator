@@ -1,11 +1,10 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { DamageTableGenerator } from "./damage-table"
 import { StatusOverrideFunc } from "./status-override";
-import { SummonedStatusFunc } from "./summoned-status";
 import { SubjectCode } from "app-types/subject-static";
 import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
 
 export type SkillCode = number
 export type SkillKey = "Q" | "W" | "E" | "R" | "T";
@@ -33,7 +32,13 @@ export type TooltipInfo = {
         max: number
     }
     values: (props: { skillLevel: number, showEquation: boolean, config: SubjectConfig, status: Status }) => TooltipValues
-    expansion: () => ExpansionTooltipProps
+    expansion: (props: { skillLevel: number }) => ExpansionTooltipProps
+}
+
+export type SummonedStatusFunc = (masterStatus: Status, config: SubjectConfig) => SummonedStatus;
+type SummonInfo = {
+    status: SummonedStatusFunc,
+    nameIntlID: string
 }
 
 type SubjectStackInfo = {
@@ -51,7 +56,7 @@ export type SubjectModules = {
     }
 
     statusOverride?: StatusOverrideFunc
-    summonedStatus?: SummonedStatusFunc
+    summoned?: SummonInfo[]
     stackInfo?: SubjectStackInfo
 }
 
@@ -63,14 +68,23 @@ export const [
     SubjectTooltipDictionary,
     SubjectDamageTableDictionary,
     SubjectStatusOverrideDictionary,
+    SubjectSummonInfoDictionary,
     SubjectStackInfoDictionary
-] = Object.entries(modules).reduce(([lists, tooltips, damageTables, statusOverrides, stackInfo], [key, m]) => {
+] = Object.entries(modules).reduce(([
+        skillLists, 
+        tooltips, 
+        damageTables, 
+        statusOverrides, 
+        summons,
+        stackInfo
+    ], [key, m]) => {
     const subjectCode = m.default.code;
     return [
-        {...lists, [subjectCode]: m.default.skills.listExpression},
+        {...skillLists, [subjectCode]: m.default.skills.listExpression},
         {...tooltips, ...m.default.skills.tooltip},
         {...damageTables, [subjectCode]: m.default.damageTable},
         {...statusOverrides, ...(m.default.statusOverride ? { [subjectCode]: m.default.statusOverride } : {}) },
+        {...summons, ...(m.default.summoned ? { [subjectCode]: m.default.summoned } : {})},
         {...stackInfo, ...(m.default.stackInfo ? { [subjectCode]: m.default.stackInfo } : {})}
     ]
 }, [
@@ -78,5 +92,6 @@ export const [
     {} as Record<SkillCode, TooltipInfo>,
     {} as Record<SubjectCode, DamageTableGenerator>,
     {} as Record<SubjectCode, StatusOverrideFunc>,
+    {} as Record<SubjectCode, SummonInfo[]>,
     {} as Record<SubjectCode, SubjectStackInfo>
 ])

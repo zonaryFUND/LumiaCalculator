@@ -20,7 +20,8 @@ const availableRegexs = [
     /Skill\/Group\/Desc\/\d+/,
     /Skill\/Group\/Coef\/\d+/,
     /Skill\/Group\/ExpansionTip\/\d+/,
-    /ToolTipType\/[a-zA-Z]*/
+    /ToolTipType\/[a-zA-Z]*/,
+    /SummonData\/Name\/\d+/
 ]
 
 const result: Record<string, string> = {};

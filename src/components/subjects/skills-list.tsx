@@ -2,7 +2,7 @@ import * as React from "react";
 import style from "./skills-standard.module.styl";
 import { SubjectCode } from "app-types/subject-static";
 import Images from "@app/resources/image";
-import Selection from "components/common/number-selection";
+import Selection from "components/common/pull-down";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { SubjectSideContext } from "./subject-side";

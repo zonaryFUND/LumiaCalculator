@@ -2,7 +2,6 @@ import * as React from "react";
 import { IconContext } from "@phosphor-icons/react"
 import style from "./status-table.module.styl";
 import SegmentedControl from "components/common/segmented-control";
-import { SummonedStatus } from "components/subjects/summoned-status";
 import table from "components/common/table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
@@ -16,16 +15,14 @@ import Heal from "./chunks/05_heal";
 import Misc from "./chunks/06_misc";
 import Summoned from "./chunks/10_summoned";
 import { MaxColContext } from "components/common/table-row";
+import PullDown from "components/common/pull-down";
 
 const status: React.FC<SubjectConfig & {status: Status}> = props => {
-    const intl = useIntl();
-    const subjectName = React.useMemo(() => intl.formatMessage({id: props.subject}), [props.subject]);
-    const summonedName = React.useMemo(() => {
-        const module = SummonedStatus[props.subject];
-        if (module == undefined) return undefined;
-        return intl.formatMessage({id: module.nameKey});
-    }, [props.subject]);
-    const shownStatus = React.useState<string | undefined>("subject");
+    const subjectNameIntlID = `Character/Name/${props.subject}`;
+    const shownStatus = React.useState<string | undefined>(undefined);
+    React.useEffect(() => {
+        if (props.status.summoned == undefined) shownStatus[1](undefined);
+    }, [props.status.summoned == undefined])
 
     return (
         <IconContext.Provider value={{size: 18}}>
@@ -33,12 +30,17 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
             <header>    
                 <h3>ステータス</h3>
                 {
-                    summonedName ?
-                    <SegmentedControl 
-                        name="summoned-status" 
-                        segments={[{title: subjectName, value: "subject"}, {title:  summonedName, value: "summoned"}]} 
-                        value={shownStatus}
-                        style={{verticalPadding: 2}}
+                    props.status.summoned ?
+                    <PullDown
+                        value={{
+                            intlID: true,
+                            list: [subjectNameIntlID, ...props.status.summoned.map(e => e.nameIntlID)],
+                            current: shownStatus[0] ?? subjectNameIntlID,
+                            set: (id: string) => {
+                                shownStatus[1](id == subjectNameIntlID ? undefined : id);
+                            }
+                        }}
+                        layout="skill"
                     /> :
                     null
                 }
@@ -52,7 +54,7 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                     </colgroup>
                     <MaxColContext.Provider value={2}>
                         {
-                            shownStatus[0] == "subject" ?
+                            shownStatus[0] == undefined || props.status.summoned == undefined ?
                             <>
                                 <Toughness {...props} />
                                 <Sp {...props} />
@@ -63,7 +65,7 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                                 <Misc {...props} />
                             </>
                             :
-                            <Summoned {...props} />
+                            <Summoned {...props} selected={shownStatus[0]!} />
                         }
                     </MaxColContext.Provider>
                 </table>

@@ -1,6 +1,6 @@
+import { SummonedStatusFunc } from "../dictionary";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
-import { SummonedStatusFunc } from "../summoned-status";
 
 const f: SummonedStatusFunc = (barbaraStatus, config) => ({
     maxHP: new Decimal(Constants.Q.hp.base + config.level * Constants.Q.hp.level),
@@ -15,4 +15,4 @@ const f: SummonedStatusFunc = (barbaraStatus, config) => ({
 
 export default f;
 
-export const nameKey = "summoned.sentry-gun"
+export const nameIntlID = "SummonData/Name/1100"

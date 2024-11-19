@@ -14,9 +14,9 @@ import { attackSpeedCalc } from "./attack-speed-calculation";
 import { WeaponTypeID, WeaponTypeStatus } from "app-types/equipment/weapon";
 import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
-import { SummonedStatus } from "components/subjects/summoned-status";
 import { defenseCalc } from "./defense-calculation";
-import { SubjectStatusOverrideDictionary } from "components/subjects/dictionary";
+import { SubjectStatusOverrideDictionary, SubjectSummonInfoDictionary } from "components/subjects/dictionary";
+import { nameIntlID } from "components/subjects/barbara/sentry-gun";
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
     return equipments
@@ -268,10 +268,13 @@ export function useStatus(config: SubjectConfig): Status {
         } : basicAttackRangeCalc(overriddenValue.basicAttackRange)
     }
 
-    const summonedStatusFunc = useMemo(() => SummonedStatus[config.subject]?.status, [config.subject]);
+    const summoned = useMemo(() => SubjectSummonInfoDictionary[config.subject], [config.subject]);
 
     return {
         ...calculated,
-        summonedStatus: summonedStatusFunc ? summonedStatusFunc(calculated, config) : undefined
+        summoned: summoned?.map(s => ({
+            status: s.status(calculated, config),
+            nameIntlID: s.nameIntlID
+        }))
     }
 }

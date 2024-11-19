@@ -3,7 +3,7 @@ import * as React from "react";
 import { StateProps, StateWrapped } from "util/state";
 import style from "./config.module.styl";
 import Images from "@app/resources/image";
-import Selection from "components/common/number-selection";
+import PullDown from "components/common/pull-down";
 import EquipmentSlot from "./equipment-slot";
 import Modal from "react-modal";
 import { useThrottle, useToggle } from "react-use";
@@ -52,16 +52,16 @@ const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
                     <img className={common.hover} src={Images.subject[props.subject[0]]} onClick={toggleSelectingSubject} />
                     <div className={style.right}>
                         <h2><FormattedMessage id={`Character/Name/${props.subject[0]}`} /></h2>
-                        <Selection max={20} label="Lv" value={props.level} layout="config" />
+                        <PullDown label="Lv" value={{max: 20, current: props.level[0], set: props.level[1]}} layout="config" />
                     </div>
                 </div>
                 
                 <div>
                     <h3>熟練度</h3>
                     <div className={style.mastery}>
-                        <Selection max={20} label="武器" value={props.weaponMastery} layout="config" />
-                        <Selection max={20} label="防御" value={props.defenseMastery} layout="config" />
-                        <Selection max={20} label="移動" value={props.movementMastery} layout="config" />
+                        <PullDown label="武器" value={{max: 20, current: props.weaponMastery[0], set: props.weaponMastery[1]}} layout="config" />
+                        <PullDown label="防御" value={{max: 20, current: props.defenseMastery[0], set: props.defenseMastery[1]}} layout="config" />
+                        <PullDown label="移動" value={{max: 20, current: props.movementMastery[0], set: props.movementMastery[1]}} layout="config" />
                     </div>
                     {
                         props.currentHP ?

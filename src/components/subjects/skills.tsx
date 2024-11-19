@@ -7,7 +7,7 @@ import { SkillCode, SkillKey, SubjectSkillListExpressionDictionary } from "./dic
 import style from "./skills.module.styl";
 import Images from "@app/resources/image";
 import { SubjectSideContext } from "./subject-side";
-import Selection from "components/common/number-selection";
+import PullDown from "components/common/pull-down";
 
 type SkillListProps = {
     config: SubjectConfig
@@ -43,7 +43,7 @@ const SkillLevelConfigurator: React.FC<{skill: "Q" | "W" | "E" | "R" | "T", max?
 
     return (
         <div className={style.configurator}>
-            <Selection max={max} value={[value + 1, onChange]} layout="skill" />
+            <PullDown value={{max, current: value + 1, set: onChange}} layout="skill" />
         </div>
     )
 }

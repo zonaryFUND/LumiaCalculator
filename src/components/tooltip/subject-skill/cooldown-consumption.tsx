@@ -41,7 +41,7 @@ const cooldownComsumption: React.FC<TooltipInfo & {skillLevel: number, status: S
 
     return (
         <div className={style.cooldown}>
-            {consumptionType}{consumptionValue}
+            {consumptionType}{consumptionValue}<br />
             {consumptionValue ? <br /> : null}
             {
                 cooldown != null ?

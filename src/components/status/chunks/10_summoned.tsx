@@ -10,6 +10,7 @@ import useStorageBoolean from "@app/storage/boolean";
 import { BasicAttackTableHiddenKey, PenetrationTableHiddenKey, ToughnessTableHiddenKey } from "@app/storage/status";
 
 type Props = SubjectConfig & {
+    selected: string
     status: Status
 }
 const summoned: React.FC<Props> = props => {
@@ -17,10 +18,12 @@ const summoned: React.FC<Props> = props => {
     const {value: hideBasicAttack, toggleValue: toggleHideBasicAttack} = useStorageBoolean(BasicAttackTableHiddenKey);
     const {value: hidePenetration, toggleValue: toggleHidePenetration} = useStorageBoolean(PenetrationTableHiddenKey);
 
+    const targetStatus = props.status.summoned!.find(entry => entry.nameIntlID == props.selected)?.status;
+
     const summonedEffectiveToughness = React.useMemo(() => {
-        if (props.status.summonedStatus == undefined) return null;
-        return props.status.summonedStatus.maxHP.times(props.status.summonedStatus.defense.add(100).dividedBy(100));
-    }, [props.status.summonedStatus?.maxHP, props.status.summonedStatus?.defense]);
+        if (targetStatus == undefined) return null;
+        return targetStatus?.maxHP.times(targetStatus.defense.add(100).dividedBy(100));
+    }, [targetStatus?.maxHP, targetStatus?.defense]);
 
     return (
         <>
@@ -30,12 +33,12 @@ const summoned: React.FC<Props> = props => {
                 </tr>
                 <Column 
                     name={<><FirstAid weight="fill" />最大体力</>} 
-                    value={props.status.summonedStatus!.maxHP} 
+                    value={targetStatus!.maxHP} 
                     isHidden={hideToughness} 
                 />
                 <Column 
                     name={<><Shield />防御力</>} 
-                    value={props.status.summonedStatus!.defense} 
+                    value={targetStatus!.defense} 
                     isHidden={hideToughness} 
                 />
             </tbody>
@@ -45,23 +48,23 @@ const summoned: React.FC<Props> = props => {
                 </tr>
                 <Column 
                     name={<><Sword />攻撃力</>} 
-                    value={props.status.summonedStatus!.attackPower} 
+                    value={targetStatus!.attackPower} 
                     isHidden={hideBasicAttack} 
                 />
                 <Column 
                     name={<><AttackSpeed/>攻撃速度</>} 
-                    value={props.status.summonedStatus!.attackSpeed} 
+                    value={targetStatus!.attackSpeed} 
                     isHidden={hideBasicAttack}
                 />
                 <Column 
                     name={<><Crosshair />致命打確率</>} 
-                    value={props.status.summonedStatus!.criticalChance} 
+                    value={targetStatus!.criticalChance} 
                     percent
                     isHidden={hideBasicAttack} 
                 />
                 <Column 
                     name={<><ArrowFatLinesUp weight="fill" />スキル増幅</>} 
-                    value={props.status.summonedStatus!.skillAmp} 
+                    value={targetStatus!.skillAmp} 
                     isHidden={hideBasicAttack} 
                 />
             </tbody>
@@ -71,12 +74,12 @@ const summoned: React.FC<Props> = props => {
                 </tr>
                 <Column 
                     name={<><ShieldSlash />防御貫通(定数)</>} 
-                    value={props.status.summonedStatus!.armorPenetration} 
+                    value={targetStatus!.armorPenetration} 
                     isHidden={hidePenetration} 
                 />
                 <Column 
                     name={<><ShieldSlash />防御貫通(%)</>} 
-                    value={props.status.summonedStatus!.armorPenetrationRatio} 
+                    value={targetStatus!.armorPenetrationRatio} 
                     percent 
                     isHidden={hidePenetration}
                 />
