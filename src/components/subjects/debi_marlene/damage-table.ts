@@ -20,7 +20,7 @@ const table: DamageTableGenerator = props => {
             [
                 {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-bullets"}), skill: "W", value: MarleneWStrategy, type: {type: "misc"}},
                 {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-damage"}), skill: "W", value: Constants.MarleneW.damage},
-                {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-damage-max-hit"}, {value: wBullet}), skill: "W", value: Constants.MarleneW.damage, multiplier: wBullet * 100}
+                {label: props.intl.formatMessage({id: "subject.debimarlene.marlenew-damage-max-hit"}, {value: wBullet}), skill: "W", value: Constants.MarleneW.damage, multiplier: 100 + (wBullet - 1) * Constants.MarleneW.multiple_hit}
             ],
             [
                 {label: props.intl.formatMessage({id: "subject.debimarlene.marlenee-rush"}), skill: "E", value: Constants.MarleneE.damage},

@@ -1,31 +1,30 @@
 import Decimal from "decimal.js";
-import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
+import { DamageTableGenerator, SubjectDamageTableUnit } from "../damage-table";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Constants from "./constants.json";
 import { NinaRatioStrategy } from "./nina-ratio-strategy";
-import { nameKey } from "./summoned-status";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 
 const ninaBasicAttackStrategy: UniqueValueStrategy = (config, status) => {
-    console.log(status)
-    const regularDamage = new Decimal(status.summonedStatus!.attackPower);
-    const criticalAvailable = status.summonedStatus?.criticalChance.greaterThan(0) == true
+    const ninaStatus = status.summoned![0].status;
+    const regularDamage = new Decimal(ninaStatus.attackPower);
+    const criticalAvailable = ninaStatus.criticalChance.greaterThan(0);
     const criticalDamage = regularDamage.addPercent(new Decimal(BaseCriticalDamagePercent));
-    const expectedValue = regularDamage.percent(new Decimal(100).sub(status.summonedStatus!.criticalChance))
-        .add(criticalDamage.percent(status.summonedStatus!.criticalChance));
+    const expectedValue = regularDamage.percent(new Decimal(100).sub(ninaStatus.criticalChance))
+        .add(criticalDamage.percent(ninaStatus.criticalChance));
 
     return {
         value: [
             regularDamage, 
             criticalAvailable ? criticalDamage : undefined, 
-            criticalAvailable && status.summonedStatus?.criticalChance.lessThan(100) ? expectedValue : undefined
+            criticalAvailable && ninaStatus.criticalChance.lessThan(100) ? expectedValue : undefined
         ],
         equationExpression: [
             {
                 labelIntlID: "app.standard-value",
                 expression: [
                     {intlID: "subject.chloe.nina-attack"},
-                    `${status.summonedStatus?.attackPower.toString()} x 100% = ${regularDamage.toString()}`
+                    `${ninaStatus.attackPower.toString()} x 100% = ${regularDamage.toString()}`
                 ]
             },
             {

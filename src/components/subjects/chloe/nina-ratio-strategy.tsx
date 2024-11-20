@@ -1,6 +1,5 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import table from "components/common/table.module.styl";
 import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 import { useValueContext } from "components/tooltip/value-context";
 import style from "components/tooltip/tooltip.module.styl";
@@ -16,7 +15,7 @@ export function NinaRatioStrategy(skill: "Q" | "W" | "E" | "R" | "T", ratio: Rat
         const level = config.skillLevels[skill];
         const base = Array.isArray(ratio.base) ? ratio.base[level] : ratio.base;
         const ninaAttack = Array.isArray(ratio.ninaAttack) ? ratio.ninaAttack[level] : ratio.ninaAttack;
-        const value = new Decimal(base).add(status.summonedStatus!.attackPower.percent(ninaAttack)).floor();
+        const value = new Decimal(base).add(status.summoned![0].status.attackPower.percent(ninaAttack)).floor();
 
         return {
             value,
@@ -25,7 +24,7 @@ export function NinaRatioStrategy(skill: "Q" | "W" | "E" | "R" | "T", ratio: Rat
                     expression: [
                         `${base} + `,
                         { intlID: "subject.chloe.nina-attack" },
-                        `${status.summonedStatus?.attackPower.toString()} x ${ninaAttack}% = ${value}`
+                        `${status.summoned![0].status.attackPower.toString()} x ${ninaAttack}% = ${value}`
                     ]
                 }
             ]
@@ -44,6 +43,6 @@ export const NinaValue: React.FC<SubjectSkillProps & Ratio> = props => {
             <span className={style.attack}>(+ニナの攻撃力の{attack}%)</span>
         </>
     } else {
-        return <span className={style.emphasis}>{new Decimal(base).add(status.summonedStatus!.attackPower.percent(attack)).floor().toString()}</span>
+        return <span className={style.emphasis}>{new Decimal(base).add(status.summoned![0].status.attackPower.percent(attack)).floor().toString()}</span>
     }
 }

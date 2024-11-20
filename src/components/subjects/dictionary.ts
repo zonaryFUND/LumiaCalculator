@@ -32,7 +32,7 @@ export type TooltipInfo = {
         max: number | number[]
     }
     values: (props: { skillLevel: number, showEquation: boolean, config: SubjectConfig, status: Status }) => TooltipValues
-    expansion: (props: { skillLevel: number }) => ExpansionTooltipProps
+    expansion: (props: { skillLevel: number, config: SubjectConfig }) => ExpansionTooltipProps
 }
 
 export type SummonedStatusFunc = (masterStatus: Status, config: SubjectConfig) => SummonedStatus;

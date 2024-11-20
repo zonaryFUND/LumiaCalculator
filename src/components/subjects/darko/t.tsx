@@ -1,19 +1,18 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const t: React.FC<SubjectSkillProps> = props => (
-    <>
-        ダルコの基本攻撃は{Constants.T.defense.duration}秒間対象の防御力を
-        {Constants.T.defense.effect[props.skillLevel]}%盗み取ります。
-    </>
-)
+export const code = 1074100;
 
-export default t;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "防御力減少量(%)", values: Constants.T.defense.effect, percent: true}
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    cooldown: Constants.T.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.T.defense.duration,
+        1: `${Constants.T.defense.effect[skillLevel]}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/DecreaseDefenseRatio", values: Constants.T.defense.effect, percent: true}
+        ]  
+    })
 }

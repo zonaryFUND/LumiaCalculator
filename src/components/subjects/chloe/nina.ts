@@ -1,7 +1,6 @@
+import { SummonedStatusFunc } from "../dictionary";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
-import { Language } from "app-types/language";
-import { SummonedStatusFunc } from "../summoned-status";
 
 const f: SummonedStatusFunc = (chloeStatus, config) => {
     const chloeRatio = Constants.T.base_chloe_status_ratio + Constants.T.per_level_chloe_status_ratio * config.level;
@@ -25,4 +24,4 @@ const f: SummonedStatusFunc = (chloeStatus, config) => {
 
 export default f;
 
-export const nameKey = "summoned.nina";
+export const nameIntlID = "SummonData/Name/1191"

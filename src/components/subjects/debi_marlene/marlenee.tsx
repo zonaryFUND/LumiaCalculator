@@ -1,35 +1,31 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        <span className={style.level}>持続効果</span>：デビーとマーリンはお互いに交替する時、移動速度が
-        {Constants.E.movement_speed.effect}%増加し、{Constants.E.movement_speed.duration}秒にわたって元に戻ります。<br />
-        <br />
-        デビーを呼んで交替します。交替する時、デビーが前方に突進して経路上の敵に<Value skill="E" ratio={Constants.MarleneE.damage} />
-        のスキルダメージを与えて{Constants.MarleneE.airborne}秒間空中に浮かせます。<br />
-        <br />
-        マーリンは{Constants.MarleneE.marlene_remain}秒間交替した位置で待機し、<span className={style.emphasis}>ハードスラッシュ</span>
-        を使用するとマーリンが後ろに移動してエネルギーを放出し、最初に的中した敵に<Value skill="E" ratio={Constants.MarleneE.second_damage} />
-        のスキルダメージを与えます。また、{Constants.MarleneE.slow_after}秒後、最初に的中した敵と周りのすべての敵の移動速度を
-        {Constants.MarleneE.slow.duration}秒間{Constants.MarleneE.slow.effect}%減少させます。
-    </>
-);
+export const code = 1065410;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>
-        このスキルは基本攻撃及びスキル攻撃判定と見なされ、最初に的中した敵に的中した場合に効果が発動します。<br />
-        クールダウン減少効果の影響を受けず、追加攻撃速度に比例してキャスト時間が減少します。
-    </>,
-    parameters: [
-        {title: "デビーのダメージ量", values: Constants.DebiE.damage.base},
-        {title: "マーリンのダメージ量", values: Constants.DebiE.second_damage.base},
-        {title: "クールダウン", values: Constants.DebiE.cooldown.constant}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    cooldown: Constants.MarleneE.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: showEquation ? Constants.MarleneE.damage.base[skillLevel] : Constants.MarleneE.damage,
+        1: showEquation ? `${Constants.MarleneE.damage.additionalAttack}%` : Constants.MarleneE.airborne,
+        2: Constants.MarleneE.marlene_remain,
+        3: showEquation ? Constants.MarleneE.airborne : Constants.MarleneE.second_damage,
+        4: showEquation ? Constants.MarleneE.marlene_remain : Constants.MarleneE.slow_after,
+        5: showEquation ? Constants.MarleneE.second_damage.base[skillLevel] : Constants.MarleneE.slow.duration,
+        6: showEquation ? `${Constants.MarleneE.second_damage.additionalAttack}%` : `${Constants.E.movement_speed.effect}%`,
+        7: Constants.E.movement_speed.duration,
+        8: showEquation ? Constants.MarleneE.slow_after : `${Constants.MarleneE.slow.effect}%`,
+        9: Constants.MarleneE.slow.duration,
+        10: `${Constants.E.movement_speed.effect}%`,
+        11: Constants.E.movement_speed.duration,
+        12: `${Constants.MarleneE.slow.effect}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/DebiSkill03Damage", values: Constants.MarleneE.damage.base},
+            {labelIntlID: "ToolTipType/MarleneSkill03Damage", values: Constants.MarleneE.second_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.MarleneE.cooldown.constant}
+        ]  
+    })
 }

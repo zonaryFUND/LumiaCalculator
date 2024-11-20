@@ -1,32 +1,45 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+
+export const code = 1014300;
 
 const maxShield = {
     base: Constants.W.shield.base.map(v => v * (100 + Constants.W.max_shield) / 100),
     amp: Constants.W.shield.amp * (100 + Constants.W.max_shield) / 100
 }
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        キアラは失った体力に比例する<Value skill="W" ratio={Constants.W.shield} /> ~ <Value skill="W" ratio={maxShield} />
-        のシールドを生成して{Constants.W.duration}秒間維持させる事ができます。<br />
-        {Constants.W.reuse}秒後、シールドが残っている場合にはスキルを再び使用してシールドを爆発させる事ができます。<br />
-        シールドが爆発する時には範囲内の敵に<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。
-    </>
-)
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.duration,
+        1: Constants.W.reuse,
+        2: showEquation ? Constants.W.damage.base[skillLevel] : Constants.W.damage,
+        3: Constants.W.shield,
+        4: showEquation ? Constants.W.shield.base[skillLevel] : `${Constants.W.damage.targetMaxHP[skillLevel]}%`,
+        5: maxShield,
+        6: `${Constants.W.damage.amp}%`,
+        7: `${Constants.W.shield.amp}%`,
+        9: `${Constants.W.damage.targetMaxHP[skillLevel]}%`,
+        10: maxShield.base[skillLevel],
+        12: `${maxShield.amp}%`
 
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>キアラの体力が{Constants.W.max_shield_hp}%の時、失った体力比例増幅最大値が({Constants.W.max_shield}%)に適用されます。</>,
-    parameters: [
-        {title: "シールド吸収量", values: Constants.W.shield.base},
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "最大体力ダメージ(%)", values: Constants.W.damage.targetMaxHP, percent: true},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+    }),
+    expansion: () => ({
+        tipValues: {
+            0: `${Constants.W.max_shield_hp}%`,
+            1: `${Constants.W.max_shield}%`
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.base},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/SkillAddDamageMaxHpRatio", values: Constants.W.damage.targetMaxHP, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost},
+        ]  
+    })
 }

@@ -1,30 +1,32 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const q: React.FC<SubjectSkillProps> = props => (
-    <>
-        キアラが不浄な気を噴出させて<Value skill="Q" ratio={Constants.Q.damage} />
-        のスキルダメージを与えます。複数の不浄な気に的中された場合、2つ目の不浄な気からは不浄な気1つあたり
-        <Value skill="Q" ratio={Constants.Q.additional_damage} />
-        のスキルダメージを追加で与えられます。敵に的中すると{Constants.Q.heal_duration}秒にわたって
-        <span className={style.emphasis}>的中した不浄の手1つあたり</span>
-        <Value skill="Q" ratio={Constants.Q.heal} />の体力を回復します。
-    </>
-)
+export const code = 1014200;
 
-export default q;
-
-export const values: ValuesProps = {
-    additionalInfo: <>複数の不浄の手に的中されても烙印スタックは1つのみ与えられます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "追加ダメージ量", values: Constants.Q.additional_damage.base},
-        {title: "体力回復量", values: Constants.Q.heal.base},
-        {title: "クールダウン", values: Constants.Q.cooldown},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        1: showEquation ? Constants.Q.damage.base[skillLevel] : Constants.Q.damage,
+        2: Constants.Q.additional_damage,
+        3: Constants.Q.heal_duration,
+        4: showEquation ? Constants.Q.heal.base[skillLevel] : Constants.Q.heal,
+        5: Constants.Q.additional_damage.base[skillLevel],
+        6: `${Constants.Q.damage.amp}%`,
+        8: `${Constants.Q.additional_damage.amp}%`,
+        10: `${Constants.Q.heal.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.Q.additional_damage.base},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.Q.heal.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost},
+        ]  
+    })
 }

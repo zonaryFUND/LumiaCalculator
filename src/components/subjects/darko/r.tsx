@@ -1,23 +1,27 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        ダルコが敵の胸ぐらを掴んで制圧し、そのまま引きずって行った後、地面に投げつけます。<br />
-        この時、周りにいる敵に<Value skill="R" ratio={Constants.R.damage} overrideExpression={{targetMaxHP: {format: "捕まえた対象の最大体力の{ratio}%", className: style.maxhp}}} />のスキルダメージを与えて
-        {Constants.R.slow.duration}秒間移動速度を{Constants.R.slow.effect}%減少させます。
-    </>
-)
+export const code = 1074500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.slow.duration,
+        1: `${Constants.R.slow.effect}%`,
+        2: `${Constants.R.damage.targetMaxHP}%`,
+        3: Constants.R.damage.base[skillLevel],
+        4: `${Constants.R.damage.attack}%`,
+        20: Constants.R.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }
