@@ -1,9 +1,16 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { useValueContext } from "components/tooltip/value-context";
+import { TooltipInfo } from "../dictionary";
+
+export const code = 1044100;
+
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ skillLevel, showEquation, config }) => ({}),
+    expansion: () => ({
+        enumeratedValues: [] 
+    })
+}
+
 
 const t: React.FC<SubjectSkillProps> = props => {
     const { config } = useValueContext();

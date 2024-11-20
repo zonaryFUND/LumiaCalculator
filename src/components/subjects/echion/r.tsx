@@ -1,23 +1,96 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import Decimal from "decimal.js";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        <span className={style.level}>持続効果</span>：エキオンが攻撃スキルを使用すると、VFゲージが増加して、VFゲージ1あたり
-        {Constants.R.damage_amp_per_vf[props.skillLevel]}%スキルのダメージ量が増加します。<br />
-        <br />
-        <span className={style.emphasis}>VF暴走</span>：ゲージをフルチャージすると{Constants.R.overflow}
-        秒間暴走状態になり毒蛇の刃(Q)、竜鱗(W)スキルが使用できない代わりに移動速度が{Constants.R.movement_speed}%増加します。また、周りの敵に
-        {Constants.R.area_damage_tick}秒ごとに<Value skill="R" ratio={Constants.R.area_damage} />
-        の固定ダメージを与え、エンベノミゼーション(R)スキルが使用でき、ドライバイト(E)のクールダウンが初期化されます。<br />
-        VF暴走状態で敵を倒した場合、暴走持続時間が{Constants.R.kill_extend}秒延長されます。<br />
-        <br />
-        <span className={style.emphasis}>オーバーロード</span>：暴走が終わると{Constants.R.overload}
-        秒間オーバーロード状態になり、基本攻撃の射程距離が{Constants.R.range_penalty}減少し、ゲージが増加しません。<br />
-    </>
-);
+export const ViperRCode = 1044500
+export const DeathadderRCode = 1044501
+export const BlackmambaRCode = 1044502
+export const SidewinderRCode = 1044503
 
-export default r;
+export const difinitions = [
+    // viper
+    {code: ViperRCode, type: "viper", active: Constants.R0_1.damage, constant: Constants.R0_1},
+    // deathadder
+    {code: DeathadderRCode, type: "deathadder", active: Constants.R3.damage, constant: Constants.R3},
+    // blackmamba
+    {code: BlackmambaRCode, type: "blackmamba", active: Constants.R2.damage, constant: Constants.R2},
+    // sidewinder
+    {code: SidewinderRCode, type: "sidewinder", active: Constants.R1.damage, constant: Constants.R1}
+].reduce((prev, {code, type, active, constant}) => ({
+    ...prev,
+    [code]: {
+        skill: "R",
+        cooldown: 0,
+        values: ({ showEquation, skillLevel, config }) => {
+            const amp = new Decimal(config.gauge).times(Constants.R.damage_amp_per_vf[config.skillLevels.R]).toString();
+            const common = {
+                0: `${amp}%`, 
+                2: Constants.R.overflow,
+                3: `${Constants.R.movement_speed}%`,
+                4: Constants.R.area_damage_tick,
+                6: Constants.R.kill_extend,
+                7: Constants.R.overload,
+                9: `${Constants.R.range_penalty}m`,
+            } satisfies Record<number, number | string | ValueRatio>;
+            if (showEquation) {
+                return {
+                    ...common,
+                    5: Constants.R.area_damage.base[skillLevel],
+                    10: constant.damage.base[skillLevel],
+                    11: `${constant.damage.attack}%`,
+                    12: type == "blackmamba" ? Constants.R2.second : 
+                        type == "sidewinder" ? `${Constants.R1.slow.effect}%` : Constants.R.extend,
+                    13: type == "blackmamba" ? `${Constants.R2.second_damage[skillLevel]}%` :
+                        type == "sidewinder" ? Constants.R.extend : Constants.R.cooldown_reduction,
+                    14: type == "blackmamba" ? Constants.R2.airborne : 
+                        type == "sidewinder" ? Constants.R.cooldown_reduction :`${Constants.R.area_damage.attack}%`,
+                    15: `${Constants.R.area_damage.attack}%`,
+                    16: type == "sidewinder" ? Constants.R1.slow.duration : Constants.R.extend,
+                    17: Constants.R.cooldown_reduction,
+                    18: `${Constants.R.area_damage.attack}%`,
+                    21: `${Constants.R2.damage.additionalMaxHP}%` 
+
+                } as Record<number, number | string | ValueRatio>
+            } else {   
+                return {
+                    ...common,
+                    5: Constants.R.area_damage,
+                    10: constant.damage,
+                    12: type == "sidewinder" ? `${Constants.R1.slow.effect}%` : Constants.R.extend,
+                    13: type == "blackmamba" ? `${Constants.R2.second_damage[skillLevel]}%` : 
+                        type == "sidewinder" ? Constants.R.extend : Constants.R.cooldown_reduction,
+                    14: type == "sidewinder" ? Constants.R.cooldown_reduction : Constants.R2.airborne,
+                    15: Constants.R1.slow.duration,
+                    16: Constants.R.extend,
+                    17: Constants.R.cooldown_reduction
+                } as Record<number, number | string | ValueRatio>
+            }
+        }, 
+        expansion: () => ({
+            enumeratedValues: [
+                {labelIntlID: "ToolTipType/VFIncreaseBarrier", values: Constants.R.damage_amp_per_vf, percent: true},
+                {labelIntlID: "ToolTipType/VFOverAreaDamage", values: Constants.R.area_damage.base},
+                {labelIntlID: "ToolTipType/EchionActive4Damage", values: active.base}
+            ].concat((() => {
+                switch (code) {
+                    case 10440501:
+                        return [
+                            {labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.R3.attack_speed, percent: true}
+                        ]
+                    case 1044502:
+                        return [
+                            {labelIntlID: "ToolTipType/EchionActive4AddDamage", values: Constants.R2.second_damage, percent: true},
+                            {labelIntlID: "ToolTipType/SkillLifeStealRatio", values: Constants.R2.skill_lifesteal, percent: true}
+                        ]
+                    case 1044503:
+                        return [
+                            {labelIntlID: "StatType/IncreaseSkillDamage", values: Constants.R1.skill_damage_add, percent: true}
+                        ]
+                    default:
+                        return [];
+                }
+            })())
+        })
+    } satisfies TooltipInfo
+}), {} as Record<number, TooltipInfo>)

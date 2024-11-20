@@ -1,12 +1,10 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
+import { TooltipInfo } from "../dictionary";
 import Decimal from "decimal.js";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { CooldownOverride } from "../skills";
-import { UniqueValueStrategy } from "../unique-value-strategy";
 import { weaponType } from "./weapon-type";
+import { UniqueValueStrategy } from "../unique-value-strategy";
+
+export const code = 1044300;
 
 export const EchionWStrategy: UniqueValueStrategy = (config, status) => {
     const value = new Decimal(Constants.W.shield.base[config.skillLevels.W])
@@ -30,30 +28,26 @@ export const EchionWStrategy: UniqueValueStrategy = (config, status) => {
     }
 }
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        エキオンが最大{Constants.W.gauge_max_consumption}のVFゲージを消耗して自分の身体を保護する
-        <Value skill="W" ratio={Constants.W.shield} />のシールドを生成します。消耗したVFの
-        {Constants.W.multiplier}%の分、シールドの吸収量が増加します。<br />
-        生成されたシールドの{Constants.W.return_threshold}%以上のダメージを吸収すると、消耗したVFゲージの
-        {Constants.W.return_gauge[props.skillLevel]}%が返されます。
-    </>
-);
-
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "シールド吸収量", values: Constants.W.shield.base},
-        {title: "回収VFゲージ(%)", values: Constants.W.return_gauge, percent: true},
-        {title: "クールダウン", values: Constants.W.cooldown},
-    ]
-}
-
-export const cooldownOverride: CooldownOverride = (config, status) => {
-    if (weaponType(config.equipment.weapon) == "sidewinder") {
-        return v => v.times(100 - Constants.T1_2.w_cooldown_reduction).dividedBy(100);
-    } else {
-        return v => v;
-    }
+export const info: TooltipInfo = {
+    skill: "W",
+    cooldown: ({ config, status }) => {
+        return new Decimal(Constants.W.cooldown[config.skillLevels.W])
+            .subPercent(weaponType(config.equipment.weapon) == "sidewinder" ? Constants.T1_2.w_cooldown_reduction : 0)
+            .subPercent(status.cooldownReduction.calculatedValue);
+    },
+    values: ({ skillLevel, showEquation, config }) => ({
+        0: Constants.W.gauge_max_consumption,
+        1: showEquation ? Constants.W.shield.base[skillLevel] : Constants.W.shield,
+        2: showEquation ? `${Constants.W.shield.attack}%` : `${Constants.W.multiplier}%`,
+        3: showEquation ? `${Constants.W.multiplier}%` : `${Constants.W.return_threshold}`,
+        4: showEquation ? `${Constants.W.return_threshold}` : `${Constants.W.return_gauge[skillLevel]}%`,
+        5: `${Constants.W.return_gauge[skillLevel]}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.base},
+            {labelIntlID: "ToolTipType/VFPayback", values: Constants.W.return_gauge, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
+        ]  
+    })
 }

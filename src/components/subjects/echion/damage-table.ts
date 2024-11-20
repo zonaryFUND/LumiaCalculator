@@ -34,7 +34,7 @@ const table: DamageTableGenerator = props => {
             return [
                 {label: props.intl.formatMessage({id: "subject.echion.r"}), skill: "R" as any, value: Constants.R2.damage},
                 {label: props.intl.formatMessage({id: "subject.echion.r-heal"}), skill: "R" as any, value: Constants.R2.damage, damageDependentHeal: rMambaHeal, type: {type: "heal", target: "self"}},
-                {label: props.intl.formatMessage({id: "subject.echion.r-2hit"}), skill: "R" as any, value: Constants.R2.damage, multiplier: 200}
+                {label: props.intl.formatMessage({id: "subject.echion.r-2hit"}), skill: "R" as any, value: Constants.R2.damage, multiplier: Constants.R2.second_damage.map(d => d + 100)}
             ];
         } else if (armType == "deathadder") {
             return [{label: props.intl.formatMessage({id: "subject.echion.r"}), skill: "R" as any, value: Constants.R3.damage}];
