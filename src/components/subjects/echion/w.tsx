@@ -39,8 +39,8 @@ export const info: TooltipInfo = {
         0: Constants.W.gauge_max_consumption,
         1: showEquation ? Constants.W.shield.base[skillLevel] : Constants.W.shield,
         2: showEquation ? `${Constants.W.shield.attack}%` : `${Constants.W.multiplier}%`,
-        3: showEquation ? `${Constants.W.multiplier}%` : `${Constants.W.return_threshold}`,
-        4: showEquation ? `${Constants.W.return_threshold}` : `${Constants.W.return_gauge[skillLevel]}%`,
+        3: showEquation ? `${Constants.W.multiplier}%` : `${Constants.W.return_threshold}%`,
+        4: showEquation ? `${Constants.W.return_threshold}%` : `${Constants.W.return_gauge[skillLevel]}%`,
         5: `${Constants.W.return_gauge[skillLevel]}%`
     }),
     expansion: () => ({

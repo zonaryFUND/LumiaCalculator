@@ -29,8 +29,7 @@ export default defineSubject({
                         return R.ViperRCode;
                 }  
             })();
-            console.log(rCode)
-            /*
+
             const T = (() => {
                 switch (weapon) {
                     case "sidewinder":
@@ -43,14 +42,19 @@ export default defineSubject({
                         return T0;
                 }  
             })()
-                */
 
             return {
                 Q: Q.code,
                 W: W.code,
                 E: E.code,
-                R: rCode,
-                T: 0
+                R: {
+                    maxLevel: 4,
+                    code: rCode
+                },
+                T: {
+                    maxLevel: "none",
+                    code: T.code
+                }
             }
         },
         tooltip: {
@@ -58,12 +62,10 @@ export default defineSubject({
             [W.code]: W.info,
             [E.code]: E.info,
             ...R.difinitions,
-            /*
             [T0.code]: T0.info,
             [T1.code]: T1.info,
             [T2.code]: T2.info,
             [T3.code]: T3.info
-            */
         }
     }
 })

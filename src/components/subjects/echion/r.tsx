@@ -25,7 +25,7 @@ export const difinitions = [
         values: ({ showEquation, skillLevel, config }) => {
             const amp = new Decimal(config.gauge).times(Constants.R.damage_amp_per_vf[config.skillLevels.R]).toString();
             const common = {
-                0: `${amp}%`, 
+                0: `${Constants.R.damage_amp_per_vf[skillLevel]}%`, 
                 2: Constants.R.overflow,
                 3: `${Constants.R.movement_speed}%`,
                 4: Constants.R.area_damage_tick,

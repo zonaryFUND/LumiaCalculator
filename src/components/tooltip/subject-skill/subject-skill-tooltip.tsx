@@ -24,6 +24,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     const intl = useIntl();
     const skillInfo = SubjectTooltipDictionary[props.code];
     const skillLevel = props.config.skillLevels[skillInfo.skill];
+    const infoTextIntlID = (props.showEquation ? skillInfo.overrideIntlID?.coef : skillInfo.overrideIntlID?.desc) ?? `Skill/Group/${props.showEquation ? "Coef" : "Desc"}/${props.code}`;
     const values = skillInfo.values({skillLevel, showEquation: props.showEquation, config: props.config, status: props.status});
     const coefficientValues = es.mapValues(values, value => {
         if (typeof value == "object") {
@@ -46,6 +47,8 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     })();
     const expansionTooltip = intl.formatMessage({id: `Skill/Group/ExpansionTip/${props.code}`});
 
+    console.log(infoTextIntlID)
+
     return (
         <ValueContext.Provider value={props}>
             <div className={`${baseStyle.base} ${style.tooltip}`}>
@@ -62,7 +65,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                     </header>
                     <p>
                         <FormattedText 
-                            text={intl.formatMessage({id: `Skill/Group/${props.showEquation ? "Coef" : "Desc"}/${props.code}`})}
+                            text={intl.formatMessage({id: infoTextIntlID})}
                             values={coefficientValues}
                         />
                     </p>

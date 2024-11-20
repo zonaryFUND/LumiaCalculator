@@ -64,16 +64,39 @@ const subjectSkills: React.FC<Props> = props => {
                 (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => (
                     <div key={skill} className={style.vertical}>
                         {
-                            (Array.isArray(list[skill]) ? list[skill] : [list[skill]]).map(code => <Skill key={code} code={code} />)
+                            (() => {
+                                if (typeof list[skill] == "number") {
+                                    return <Skill key={list[skill]} code={list[skill]} />;
+                                } else if (Array.isArray(list[skill])) {
+                                    return (list[skill]).map(code => <Skill key={code} code={code} />)
+                                } else {
+                                    console.log(list[skill])
+                                    return (typeof list[skill].code == "number" ? [list[skill].code] : list[skill].code)
+                                        .map(code => <Skill key={code} code={code} />)
+                                }
+                            })()
                         }
                     </div>
                 ))
             }
+            {<div />}
             {/*<WeaponSkill id={props.weaponType} />*/}
             {
-                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => (
-                    <SkillLevelConfigurator key={skill} skill={skill} />  
-                ))
+                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => {
+                    if (typeof list[skill] == "object" && "maxLevel" in list[skill]) {
+                        if (list[skill].maxLevel == "none") return <div />;
+                        return <SkillLevelConfigurator 
+                            key={skill} 
+                            skill={skill} 
+                            max={list[skill].maxLevel}
+                        />;  
+                    } else {
+                        return <SkillLevelConfigurator 
+                            key={skill} 
+                            skill={skill} 
+                        />;  
+                    }
+                })
             }
             </SkillListContext.Provider>
         </div>

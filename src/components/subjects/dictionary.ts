@@ -8,7 +8,10 @@ import { Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
 
 export type SkillCode = number
 export type SkillKey = "Q" | "W" | "E" | "R" | "T";
-export type SkillListHook = (config: SubjectConfig) => Record<SkillKey, SkillCode | SkillCode[]>;
+export type SkillListHook = (config: SubjectConfig) => Record<SkillKey, SkillCode | SkillCode[] | {
+    maxLevel?: number | "none",
+    code: SkillCode | SkillCode[]
+}>;
 type TooltipValues = Record<number, number | string | ValueRatio>;
 
 export type ExpansionTooltipProps = {
@@ -30,6 +33,10 @@ export type TooltipInfo = {
     charge?: {
         time: number | number[] | { constant: number | number[] },
         max: number | number[]
+    }
+    overrideIntlID?: {
+        desc?: string
+        coef?: string
     }
     values: (props: { skillLevel: number, showEquation: boolean, config: SubjectConfig, status: Status }) => TooltipValues
     expansion: (props: { skillLevel: number, config: SubjectConfig }) => ExpansionTooltipProps
