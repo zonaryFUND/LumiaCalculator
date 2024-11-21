@@ -1,29 +1,43 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エヴァが貫通する光の球体を発射して、経路上の敵に<Value skill="Q" ratio={Constants.Q.first_damage} />
-            のスキルダメージを与えます。球体が射程距離の端まで飛ばされたり、スキルを再使用すると爆発して範囲内の敵に
-            <Value skill="Q" ratio={Constants.Q.second_damage} />のスキルダメージを与えます。<br />
-            爆発に敵が的中された場合、クールダウンが{Constants.Q.cooldown_reduction}秒減少します。<br />
-            <br />
-            スキルを的中させるとバイタルフォース{Constants.Q.vitalforce}を獲得します。
-        </>
-    );
-}
+export const code = 1036200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "球体ダメージ量", values: Constants.Q.first_damage.base},
-        {title: "爆発ダメージ量", values: Constants.Q.second_damage.base},
-        {title: "消費", values: Constants.Q.sp_cost},
-        {title: "クールダウン", values: Constants.Q.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            4: Constants.Q.vitalforce,
+            7: Constants.Q.cooldown_reduction
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.Q.first_damage.base[skillLevel],
+                2: Constants.Q.second_damage.base[skillLevel],
+                5: `${Constants.Q.first_damage.amp}%`,
+                6: `${Constants.Q.second_damage.amp}%`,
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                20: Constants.Q.first_damage,
+                21: Constants.Q.second_damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/SphereDamage", values: Constants.Q.first_damage.base},
+            {labelIntlID: "ToolTipType/ExplosionDamage", values: Constants.Q.second_damage.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
+        ]  
+    })
 }

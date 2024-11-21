@@ -1,29 +1,32 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エヴァが指定した地点に{Constants.W.duration}秒間維持できる位相の渦を生成して範囲内の敵に
-            <Value skill="W" ratio={Constants.W.first_damage} />
-            のスキルダメージを与えます。範囲内の敵は移動速度が{Constants.W.slow}%減少します。<br />
-            位相の渦の持続時間が終了すると、範囲内の敵に<Value skill="W" ratio={Constants.W.second_damage} />
-            のスキルダメージ を与え、中心部の敵を{Constants.W.airborne}秒間空中に浮かせます。<br />
-            <br />
-            スキルを的中させるとバイタルフォース{Constants.W.vitalforce}を獲得します。
-        </>
-    );
-}
+export const code = 1036300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.first_damage.base},
-        {title: "追加ダメージ量", values: Constants.W.second_damage.base},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.first_damage.base[skillLevel],
+        2: Constants.W.second_damage.base[skillLevel],
+        4: Constants.W.duration,
+        6: Constants.W.airborne,
+        8: `${Constants.W.slow}%`,
+        9: Constants.W.vitalforce,
+        10: `${Constants.W.first_damage.amp}%`,
+        11: `${Constants.W.second_damage.amp}%`,
+        20: Constants.W.first_damage,
+        21: Constants.W.second_damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.first_damage.base},
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.W.second_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
+        ]  
+    })
 }

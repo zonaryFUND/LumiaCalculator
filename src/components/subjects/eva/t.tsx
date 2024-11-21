@@ -1,29 +1,27 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            テレキネシス：エヴァはレベル6から箱、釣り、採集、復活、航空補給箱などを遠距離で操作できます。戦闘中には航空補給箱、隕石、生命の木獲得または実験体や動物のみ遠距離で操作できます。<br />
-            <br />
-            エヴァは{Constants.T.cooldown.constant}秒ごとに次の基本攻撃の射程距離が{Constants.T.basic_attack_range}増加し、
-            <Value skill="T" ratio={Constants.T.damage} />のスキルダメージを与えます。<br />
-            <br />
-            非戦闘状態では1秒ごとにバイタルフォース{Constants.T.vitalforce}を獲得します。実験体を倒すと
-            {Constants.T.vitalforce_kill}、アシストに関与するとバイタルフォース{Constants.T.vitalforce_assist}
-            を獲得します。強化基本攻撃が的中する場合、バイタルフォース{Constants.T.vitalforce_enhanced_attack}を獲得します。
-        </>
-    );
-}
+export const code = 1036100;
 
-export default t;
-
-export const values: ValuesProps = {
-    additionalInfo: <>強化基本攻撃はスキル攻撃とも見なされます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.T.damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    cooldown: Constants.T.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.T.damage.base[skillLevel],
+        2: Constants.T.cooldown.constant,
+        6: 6,
+        7: Constants.T.vitalforce_enhanced_attack,
+        8: 1,
+        9: Constants.T.vitalforce,
+        10: Constants.T.vitalforce_kill,
+        11: Constants.T.vitalforce_assist,
+        12: `${Constants.T.damage.amp}%`,
+        13: Constants.T.basic_attack_range,
+        20: Constants.T.damage
+    }), 
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base}
+        ]  
+    })
 }
