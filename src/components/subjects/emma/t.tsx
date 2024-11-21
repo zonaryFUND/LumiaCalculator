@@ -18,8 +18,8 @@ export const info: TooltipInfo = {
                 1: `${Constants.T.damage.maxSP}%`,
                 2: Constants.T.shield.base[skillLevel],
                 3: `${Constants.T.shield.maxSP}%`,
-                10: `${Constants.T.shield.amp}%`,
-                11: `${Constants.T.damage.amp}%`
+                10: `${Constants.T.shield.amp[skillLevel]}%`,
+                11: `${Constants.T.damage.amp[skillLevel]}%`
             } as Record<number, number | string | ValueRatio>
         } else {
             return {

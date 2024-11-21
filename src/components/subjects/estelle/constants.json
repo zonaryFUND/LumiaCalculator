@@ -82,6 +82,7 @@
             "range": 5,
             "damage": {
                 "base": [70,150,230],
+                "amp": 40,
                 "maxHP": 10
             },
             "airborne": 0.75
