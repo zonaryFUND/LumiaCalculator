@@ -1,23 +1,33 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const iremr: React.FC<SubjectSkillProps> = props => (
-    <>
-        ネコがイレムに変身します。<br />
-        <br />
-        ネコに変身したイレムは＜お魚＞に移動するとシールドを獲得します。<br />
-        シールドは{Constants.CatR.shield_duration}秒間維持され、<Value skill="R" ratio={Constants.CatR.shield} />のダメージを吸収します。
-    </>
-);
+export const code = 1061510;
 
-export default iremr;
+export const info: TooltipInfo = {
+    skill: "R",
+    cooldown: Constants.CatR.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            1: Constants.CatR.shield_duration
+        };
 
-export const values: ValuesProps = {
-    additionalInfo: <>イレム登場～はアイテムのクールダウン減少効果の影響を受けません。<br />ネコ状態のイレムは投げ武器を使用するため、基本攻撃は遠距離攻撃と見なされます。</>,
-    parameters: [
-        {title: "シールド吸収量", values: Constants.CatR.shield.base}
-    ]
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.CatR.shield.base[skillLevel],
+                3: `${Constants.CatR.shield.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                0: Constants.CatR.shield
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Shield", values: Constants.CatR.shield.base}
+        ]  
+    })
 }

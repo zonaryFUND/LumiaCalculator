@@ -1,29 +1,44 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import Decimal from "decimal.js";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const iremq: React.FC<SubjectSkillProps> = props => (
-    <>
-        スキルを使用すると次の基本攻撃で対象に突進し、<Value skill="Q" ratio={Constants.CatQ.damage} />
-        の追加スキルダメージを与えます。ネコの鈴が付けられた対象は攻撃されると{Constants.CatQ.bind}秒間束縛されます。<br />
-        <br />
-        以降、{new Decimal(Constants.CatQ.rush.tick).times(Constants.CatQ.rush.amount).toString()}秒間
-        {Constants.CatQ.rush.tick}秒ごとに素早く連続攻撃をして範囲内の敵にそれぞれ
-        <Value skill="Q" ratio={Constants.CatQ.rush_damage} />のスキルダメージを与えます。<br />
-        連続攻撃される対象が妨害効果を受けている場合、{Constants.CatQ.additional_damage}%の追加スキルダメージを与えます。
-    </>
-);
+export const code = 1061210;
 
-export default iremq;
-
-export const values: ValuesProps = {
-    additionalInfo: <>使用中基本攻撃の射程距離が増加します。</>,
-    parameters: [
-        {title: "1打追加ダメージ量", values: Constants.CatQ.damage.base},
-        {title: "連続攻撃ダメージ量", values: Constants.CatQ.rush_damage.base},
-        {title: "クールダウン", values: Constants.CatQ.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.CatQ.sp_cost
+    },
+    cooldown: Constants.CatQ.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            3: Constants.CatQ.rush.tick * Constants.CatQ.rush.amount,
+            4: Constants.CatQ.rush.tick,
+            5: Constants.CatQ.bind,
+            6: `${Constants.CatQ.additional_damage}%`
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.CatQ.damage.base[skillLevel],
+                1: Constants.CatQ.rush_damage.base[skillLevel],
+                8: `${Constants.CatQ.damage.amp}%`,
+                10: `${Constants.CatQ.rush_damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                0: Constants.CatQ.damage,
+                1: Constants.CatQ.rush_damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Irem_FirstDamage", values: Constants.CatQ.damage.base},
+            {labelIntlID: "ToolTipType/Irem_ContinueDamage", values: Constants.CatQ.rush_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.CatQ.cooldown},
+        ]  
+    })
 }

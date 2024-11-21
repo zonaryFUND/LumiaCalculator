@@ -1,29 +1,38 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const iremr: React.FC<SubjectSkillProps> = props => (
-    <>
-        イレムがネコに変身します。<br />
-        <br />
-        イレムが<span className={style.emphasis}>バウンシングボール</span>や
-        <span className={style.emphasis}>こっちだよ～</span>で＜お魚＞を生成すると、次の基本攻撃の射程距離が増加し、
-        <Value skill="R" ratio={Constants.IremR.damage} />のスキルダメージを与えます。また、
-        {Constants.IremR.bell}秒間維持されるネコの鈴を付けさせます。<br />
-        ネコの鈴が付けられた対象はイレムに視界を共有されます。<br />
-        ＜お魚＞は{Constants.common.fish}秒間維持され、最大{Constants.common.fish_max}まで生成できます。
-    </>
-);
+export const code = 1061500;
 
-export default iremr;
-
-export const values: ValuesProps = {
-    additionalInfo: <>ネコ変身！はアイテムのクールダウン減少効果の影響を受けません。<br />イレムの基本攻撃の射程距離は他の投げ武器を使用する実験体より{Constants.IremR.range_penalty}短いです。</>,
-    parameters: [
-        {title: "スキル増幅量", values: Constants.IremR.damage.amp},
-        {title: "ダメージ量", values: Constants.IremR.damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    cooldown: Constants.IremR.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            1: Constants.IremR.bell,
+            2: Constants.common.fish,
+            3: Constants.common.fish_max
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.IremR.damage.base[skillLevel],
+                5: `${Constants.IremR.damage.amp[skillLevel]}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                0: Constants.IremR.damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: Constants.IremR.range_penalty
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/ApDamage", values: Constants.IremR.damage.amp},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.IremR.damage.base},
+        ]  
+    })
 }

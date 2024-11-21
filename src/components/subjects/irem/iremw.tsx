@@ -1,25 +1,42 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const iremw: React.FC<SubjectSkillProps> = props => (
-    <>
-        イレムが魅力を発散して範囲内の敵の移動速度を{Constants.IremW.slow}%減少させ、
-        {Constants.IremW.channel}秒後範囲内の対象に<Value skill="W" ratio={Constants.IremW.damage} />
-        のスキルダメージを与えて{Constants.IremW.charm[props.skillLevel]}秒間魅惑させます。<br />
-        移動速度減少効果は範囲から離れても{Constants.IremW.slow_remain}秒間維持されます。
-    </>
-);
+export const code = 1061300;
 
-export default iremw;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.IremW.damage.base},
-        {title: "魅惑持続時間", values: Constants.IremW.charm},
-        {title: "消費", values: Constants.IremW.sp_cost},
-        {title: "クールダウン", values: Constants.IremW.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.IremW.sp_cost
+    },
+    cooldown: Constants.IremW.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            1: `${Constants.IremW.slow}%`,
+            2: Constants.IremW.channel,
+            3: Constants.IremW.charm[skillLevel],
+            4: Constants.IremW.slow_remain
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.IremW.damage.base[skillLevel],
+                6: `${Constants.IremW.damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                0: Constants.IremW.damage,
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.IremW.damage.base},
+            {labelIntlID: "ToolTipType/CharmDuration", values: Constants.IremW.charm},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.IremW.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.IremW.cooldown},
+        ]  
+    })
 }

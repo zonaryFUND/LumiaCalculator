@@ -16,8 +16,10 @@ const table: DamageTableGenerator = props => ({
         ],
         [{label: props.intl.formatMessage({id: "subject.irem.irem-w"}), skill: "W", value: Constants.IremW.damage}],
         [
+            {label: props.intl.formatMessage({id: "subject.irem.cat-q-rush"}), skill: "Q", value: Constants.CatQ.damage},
             {label: props.intl.formatMessage({id: "subject.irem.cat-q-punch"}), skill: "Q", value: Constants.CatQ.rush_damage},
-            {label: props.intl.formatMessage({id: "subject.irem.cat-q-punch-max-hit"}, {value: Constants.CatQ.rush.amount}), skill: "Q", value: Constants.CatQ.rush_damage, multiplier: Constants.CatQ.rush.amount * 100}
+            {label: props.intl.formatMessage({id: "subject.irem.cat-q-punch-cc"}), skill: "Q", value: Constants.CatQ.rush_damage, multiplier: Constants.CatQ.additional_damage + 100},
+            {label: props.intl.formatMessage({id: "subject.irem.cat-q-punch-max-hit"}, {value: Constants.CatQ.rush.amount}), skill: "Q", value: Constants.CatQ.rush_damage, multiplier: Constants.CatQ.rush.amount * (Constants.CatQ.additional_damage + 100)}
         ],
         [{label: props.intl.formatMessage({id: "subject.irem.cat-w"}), skill: "W", value: Constants.CatW.damage}],
         [{label: props.intl.formatMessage({id: "subject.irem.cat-e"}), skill: "E", value: Constants.CatE.damage}],

@@ -1,19 +1,25 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const ireme: React.FC<SubjectSkillProps> = props => (
-    <>
-        イレムが指定した方向に短く移動し、元の位置に＜お魚＞を生成します。
-    </>
-);
+export const code = 1061400;
 
-export default ireme;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "消費", values: Constants.IremE.sp_cost},
-        {title: "クールダウン", values: Constants.IremE.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.IremE.sp_cost
+    },
+    cooldown: Constants.IremE.cooldown,
+    values: ({ skillLevel, showEquation }) => ({}),
+    expansion: () => ({
+        tipValues: {
+            1: Constants.common.fish,
+            2: Constants.common.fish_max
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Cost", values: Constants.IremE.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.IremE.cooldown},
+        ]  
+    })
 }
+

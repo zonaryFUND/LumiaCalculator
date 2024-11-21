@@ -1,25 +1,38 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const catw: React.FC<SubjectSkillProps> = props => (
-    <>
-        イレムが空中で回転しながら尻尾を強く振り下ろし、範囲内の敵に
-        <Value skill="W" ratio={Constants.CatW.damage} />のスキルダメージを与えて
-        {Constants.CatW.airborne}秒間空中に浮かせます。<br />
-        このスキルが敵に的中すると<span className={style.emphasis}>こっちだよ～</span>と<span className={style.emphasis}>ネコジャンプ！</span>
-        のクールダウン{Constants.CatW.cooldown_reduction}秒が減少します。
-    </>
-);
+export const code = 1061310;
 
-export default catw;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.CatW.damage.base},
-        {title: "消費", values: Constants.CatW.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.CatW.sp_cost
+    },
+    cooldown: Constants.CatW.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            1: Constants.CatW.airborne,
+            2: Constants.CatW.cooldown_reduction
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.CatW.damage.base[skillLevel],
+                4: `${Constants.CatW.damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                0: Constants.CatW.damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.CatW.damage.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.CatW.sp_cost},
+        ]  
+    })
 }

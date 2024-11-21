@@ -1,22 +1,33 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const cate: React.FC<SubjectSkillProps> = props => (
-    <>
-        イレムが跳躍して着地する時、範囲内の敵に<Value skill="E" ratio={Constants.CatE.damage} />のスキルダメージを与えます。<br />
-        ＜お魚＞に向かって跳躍するとより遠くまで移動できます。
-    </>
-);
+export const code = 1061410;
 
-export default cate;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.CatE.damage.base},
-        {title: "消費", values: Constants.CatE.sp_cost},
-        {title: "クールダウン", values: Constants.CatE.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.CatE.sp_cost
+    },
+    cooldown: Constants.CatE.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.CatE.damage.base[skillLevel],
+                2: `${Constants.CatE.damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.CatE.damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.CatE.damage.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.CatE.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.CatE.cooldown},
+        ]  
+    })
 }
