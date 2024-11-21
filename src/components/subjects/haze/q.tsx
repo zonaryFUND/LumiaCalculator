@@ -1,30 +1,31 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            <span className={style.emphasis}>突撃小銃状態</span>：グレネード弾を発射し、的中した敵に<Value skill="Q" ratio={Constants.Q.outer_damage} />
-            のスキルダメージを与え、中心部に当たった敵には<Value skill="Q" ratio={Constants.Q.center_damage} />のスキルダメージを与えます。<br />
-            <br />
-            グレネード弾の弾は最大{Constants.Q.charge.max}発まで装填できます。
-        </>
-    );
-}
+export const code = 1058200;
 
-export default q;
-
-export const values: ValuesProps = {
-    additionalInfo: <>グレネードランチャーを使用し、直前まで使用していた武器が解除されます。</>,
-    parameters: [
-        {title: "40mmグレネード周辺部ダメージ量", values: Constants.Q.outer_damage.base},
-        {title: "40mmグレネード中心部ダメージ量", values: Constants.Q.center_damage.base},
-        {title: "40mmグレネードチャージ時間", values: Constants.Q.charge.time},
-        {title: "サブマシンガン連射ダメージ量", values: Constants.Q2.damage.base},
-        {title: "加速ロケットダメージ量", values: Constants.Q3.damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    charge: Constants.Q.charge,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.Q.outer_damage,
+        3: Constants.Q.center_damage,
+        20: Constants.Q.outer_damage.base[skillLevel],
+        22: `${Constants.Q.outer_damage.amp}%`,
+        23: Constants.Q.center_damage.base[skillLevel],
+        25: `${Constants.Q.center_damage.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Haze_GrenadeOuterDamage", values: Constants.Q.outer_damage.base},
+            {labelIntlID: "ToolTipType/Haze_GrenadeInnerDamage", values: Constants.Q.center_damage.base},
+            {labelIntlID: "ToolTipType/Haze_GrenadeCooldown", values: Constants.Q.charge.time},
+            {labelIntlID: "ToolTipType/Haze_SubmachinegunDamage", values: Constants.Q2.damage.base},
+            {labelIntlID: "ToolTipType/Haze_AccRocketDamage", values: Constants.Q3.damage.base}
+        ]  
+    })
 }

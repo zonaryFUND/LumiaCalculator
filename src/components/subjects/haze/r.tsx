@@ -1,37 +1,40 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            <span className={style.emphasis}>ロケットランチャーに武器切り替え</span>：ウェポンケースを振り回して敵の移動速度を{Constants.R.slow.duration}秒間{Constants.R.slow.effect}%減少させながら
-            <Value skill="R" ratio={Constants.R.switch_damage} />のスキルダメージを与え、{Constants.R.duration}秒間{Constants.R.ammo}発弾倉のロケットランチャーに切り替えます。<br />
-            <br />
-            ロケットランチャー状態では射程距離と攻撃速度が固定され、移動速度が{Constants.R.movement_speed_penalty}減少します。また、基本攻撃に致命打が適用されません。的中した敵の後方に
-            <Value skill="R" ratio={Constants.R.area_damage} />の範囲スキルダメージを追加で与えます。ロケットランチャー状態を維持する間、
-            <span className={style.emphasis}>40mmグレネード</span>スキルが<span className={style.emphasis}>加速ロケット</span>スキルに変更されます。<br />
-            <br />
-            ロケットランチャー状態が終了すると、余った弾の数に比例してクールダウンが最大{Constants.R.max_cooldown_reduction}%減少します。
-        </>
-    );
-}
+export const code = 1058500;
 
-export default r;
-
-export const values: ValuesProps = {
-    additionalInfo: <>
-        <span className={style.emphasis}>ロケットランチャー</span>を使用し、直前まで使用していた武器が解除されます。<br />
-        射程距離は{Constants.R.basic_attack_range}、攻撃速度は{Constants.R.attack_speed}に固定され、移動速度が{Constants.R.movement_speed_penalty}
-        減少して視界が{Constants.R.vision}増加します。<br />
-        <span className={style.emphasis}>ロケットランチャー状態</span>は弾倉がすべて消費されるか、持続時間が終了されるか、他の銃器を使用すると解除されます。
-    </>,
-    parameters: [
-        {title: "振り回しダメージ量", values: Constants.R.switch_damage.base},
-        {title: "ロケットダメージ量", values: Constants.R.area_damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.duration,
+        1: Constants.R.ammo,
+        3: Constants.R.slow.duration,
+        4: `${Constants.R.slow.effect}%`,
+        5: Constants.R.area_damage,
+        6: `${Constants.R.max_cooldown_reduction}%`,
+        7: Constants.R.switch_damage,
+        8: Constants.R.movement_speed_penalty,
+        20: Constants.R.area_damage.base[skillLevel],
+        22: `${Constants.R.area_damage.amp}%`,
+        23: Constants.R.switch_damage.base[skillLevel],
+        25: `${Constants.R.switch_damage.amp}%`
+    }),
+    expansion: () => ({
+        tipValues: {
+            0: Constants.R.basic_attack_range,
+            1: Constants.R.attack_speed,
+            2: Constants.R.movement_speed_penalty,
+            3: Constants.R.vision
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Haze_SwingDamage", values: Constants.R.switch_damage.base},
+            {labelIntlID: "ToolTipType/Haze_RocketDamage", values: Constants.R.area_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }

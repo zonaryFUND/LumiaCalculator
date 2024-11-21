@@ -1,30 +1,26 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            後ろに一歩下がり、前方に向けて散弾銃を発射します。的中した敵に<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与え、{Constants.W.stun}秒間気絶させます。<br />
-            <br />
-            <span className={style.emphasis}>サブマシンガン状態</span>または<span className={style.emphasis}>ロケットランチャー状態</span>で使用すると、武器を解除し、クールダウンを追加で
-            {Constants.W.er_cooldown_reduction}%減少させます。
-        </>
-    );
-}
+export const code = 1058300;
 
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>
-        このスキルは壁を越えられません。<br />
-        <span className={style.emphasis}>散弾銃</span>を使用し、直前まで使用していた武器が解除されます。
-    </>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.damage,
+        1: Constants.W.stun,
+        2: `${Constants.W.er_cooldown_reduction}%`,
+        20: Constants.W.damage.base[skillLevel],
+        22: `${Constants.W.damage.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
+        ]  
+    })
 }
