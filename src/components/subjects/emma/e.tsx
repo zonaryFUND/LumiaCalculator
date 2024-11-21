@@ -1,31 +1,28 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            <span className={style.level}>持続効果</span>：エマはスタミナを消耗するたびに、消費したスタミナの
-            {Constants.E.heal[props.skillLevel]}%だけ体力を回復します。<br />
-            <br />
-            エマが指定した敵にマジックビームを飛ばして敵を{Constants.E.morph[props.skillLevel]}
-            秒間移動以外の他の行動ができない兔に変身させ、<Value skill="E" ratio={Constants.E.damage} />
-            のスキルダメージを与えます。<br />
-            兔になった対象は移動速度が{Constants.E.movement_speed}減少します。
-        </>
-    );
-}
+export const code = 1019400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>瀕死状態の敵にはスキルを使用できません。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "スタミナ消費量の比率(%)", values: Constants.E.heal},
-        {title: "維持時間", values: Constants.E.morph}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.E.morph[skillLevel],
+        2: Constants.E.movement_speed,
+        3: `${Constants.E.heal[skillLevel]}%`,
+        4: Constants.E.damage.base[skillLevel],
+        5: `${Constants.E.damage.amp}%`,
+        20: Constants.E.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/StaminaCostRatio", values: Constants.E.heal},
+            {labelIntlID: "ToolTipType/Time", values: Constants.E.morph}
+        ]  
+    })
 }

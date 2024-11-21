@@ -1,27 +1,28 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エマが指定した位置へ帽子を投げると、{Constants.W.before_blast}秒後爆発して範囲内の敵に
-            <Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。<br />
-            帽子は{Constants.W.duration}秒間残ります。<br />
-            <br />
-            スキルを的中させるとマジックハットのクールダウンが{Constants.W.cooldown_reduction}%減少します。
-        </>
-    );
-}
+export const code = 1019300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.damage.base[skillLevel],
+        2: Constants.W.duration,
+        3: `${Constants.W.cooldown_reduction}%`,
+        4: Constants.W.before_blast,
+        5: `${Constants.W.damage.amp}%`,
+        20: Constants.W.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

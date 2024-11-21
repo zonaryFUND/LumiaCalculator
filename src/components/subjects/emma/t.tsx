@@ -1,27 +1,40 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エマは{Constants.T.cooldown.constant[props.skillLevel]}秒ごとに基本攻撃する時、攻撃速度が
-            {Constants.T.attack_speed}%増加し、<Value skill="T" ratio={Constants.T.damage} />
-            の追加スキルダメージを与え、<Value skill="T" ratio={Constants.T.shield} />のシールドを獲得します。
-        </>
-    );
-}
+export const code = 1019100;
 
-export default t;
-
-export const values: ValuesProps = {
-    additionalInfo: <>クールダウン減少の影響を受けません。</>,
-    parameters: [
-        {title: "ダメージ量スキル増幅係数", values: Constants.T.damage.amp, percent: true},
-        {title: "シールド吸収量", values: Constants.T.shield.base},
-        {title: "シールドスキル増幅係数", values: Constants.T.shield.amp, percent: true},
-        {title: "クールダウン", values: Constants.T.cooldown.constant}
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    cooldown: Constants.T.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.T.cooldown.constant[skillLevel],
+            5: `${Constants.T.attack_speed}%`
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: `${Constants.T.damage.maxSP}%`,
+                2: Constants.T.shield.base[skillLevel],
+                3: `${Constants.T.shield.maxSP}%`,
+                10: `${Constants.T.shield.amp}%`,
+                11: `${Constants.T.damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.T.damage,
+                3: Constants.T.shield,
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/DamageAmpCoef", values: Constants.T.damage.amp, percent: true},
+            {labelIntlID: "ToolTipType/Shield", values: Constants.T.shield.base},
+            {labelIntlID: "ToolTipType/ShieldSkillAmpCoef", values: Constants.T.shield.amp, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant}
+        ]  
+    })
 }
