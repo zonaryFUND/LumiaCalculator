@@ -1,31 +1,42 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エレナが指定した方向に回転しながら経路上の敵に<Value skill="W" ratio={Constants.W.damage} />
-            のスキルダメージを与え、<span className={style.emphasis}>クリスタルエレガンス</span>のクールダウンを
-            {Constants.W.q_cooldown_reduction}%減少させて自分の防御力を{Constants.W.defense}
-            %増加させます。<br />
-            <br />
-            <span className={style.emphasis}>氷床地帯</span>で使用すると、<span className={style.emphasis}>ダブルアクセル</span>
-            の移動距離が増加し、<span className={style.emphasis}>ダブルアクセル</span>のクールダウンが{Constants.W.enhanced_cooldown_reduction}%返されます。
-        </>
-    );
-}
+export const code = 1050300;
 
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>ダブルアクセルは最大{Constants.W.charge.max}回まで使用できます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "チャージ時間", values: Constants.W.charge.time},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    charge: Constants.W.charge,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            3: `${Constants.W.defense}%`,
+            6: `${Constants.W.q_cooldown_reduction}%`,
+            7: `${Constants.W.enhanced_cooldown_reduction}%`
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.W.damage.base[skillLevel],
+                8: `${Constants.W.damage.additionalMaxHP}%`,
+                9: `${Constants.W.damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                0: Constants.W.damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.W.charge.time},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

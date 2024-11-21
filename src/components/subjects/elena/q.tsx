@@ -1,26 +1,41 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エレナが前方の敵に<Value skill="Q" ratio={Constants.Q.first_damage} />
-            のスキルダメージを与えます。一定時間後、氷が爆発しながら同じ範囲に<Value skill="Q" ratio={Constants.Q.second_damage} />
-            のスキルダメージをもう一度与え、冬の女王の領地のクールダウンが{Constants.Q.cooldown_reduction}%減少します。
-        </>
-    );
-}
+export const code = 1050200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "1打ダメージ量", values: Constants.Q.first_damage.base},
-        {title: "2打ダメージ量", values: Constants.Q.second_damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.Q.first_damage.base[skillLevel],
+                1: `${Constants.Q.first_damage.defense}%`,
+                3: Constants.Q.second_damage.base[skillLevel],
+                4: `${Constants.Q.second_damage.defense}%`,
+                6: Constants.Q.cooldown_reduction,
+                7: `${Constants.Q.first_damage.amp}%`,
+                8: `${Constants.Q.second_damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.Q.first_damage,
+                1: Constants.Q.second_damage,
+                6: Constants.Q.cooldown_reduction
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/FirstDamage", values: Constants.Q.first_damage.base},
+            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.Q.second_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+        ]  
+    })
 }

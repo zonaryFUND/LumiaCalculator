@@ -1,27 +1,41 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            <span className={style.level}>持続効果</span>：エレナは1秒ごとに{Constants.E.stepsequence_recovery}の
-            <span className={style.emphasis}>ステップシークエンス</span>を回復します。氷床地帯では1秒ごとに{Constants.E.stepsequence_recovery_on_ice}
-            の<span className={style.emphasis}>ステップシークエンス</span>を回復します。<br />
-            <br />
-            エレナは1秒ごとに{Constants.E.stepsequence_cost}の<span className={style.emphasis}>ステップシークエンス</span>
-            を消耗して指定した方向にスケートで移動しながら経路上の敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えます。
-        </>
-    );
-}
+export const code = 1050400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            3: Constants.E.stepsequence_cost
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.E.damage.base[skillLevel],
+                1: `${Constants.E.damage.additionalMaxHP}%`,
+                4: `${Constants.E.damage.amp}%`,
+                6: Constants.E.stepsequence_recovery,
+                7: Constants.E.stepsequence_recovery_on_ice
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                0: Constants.E.damage,
+                4: Constants.E.stepsequence_recovery,
+                5: Constants.E.stepsequence_recovery_on_ice
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base}
+        ]  
+    })
 }

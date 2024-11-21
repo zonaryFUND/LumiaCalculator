@@ -68,6 +68,7 @@
             "defense": 35,
             "amp": 20
         },
+        "immune": 2.5,
         "cooldown": {
             "constant": [8,6,4]
         }

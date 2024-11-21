@@ -1,28 +1,38 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            エレナが指定した範囲に<span className={style.emphasis}>氷床地帯</span>を生成します。内側の範囲に的中した敵に
-            <Value skill="R" ratio={Constants.R.center_damage} />
-            のスキルダメージを与え、敵はわき出た氷によってすぐに気絶し、<span className={style.emphasis}>氷結</span>状態になります。
-            <span className={style.emphasis}>氷床地帯</span>に触れた敵は<Value skill="R" ratio={Constants.R.outer_damage} />
-            のスキルダメージを受けます。
-        </>
-    );
-}
+export const code = 1050500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.outer_damage.base},
-        {title: "氷柱ダメージ量", values: Constants.R.center_damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.R.outer_damage.base[skillLevel],
+                1: `${Constants.R.outer_damage.defense}%`,
+                3: Constants.R.center_damage.base[skillLevel],
+                4: `${Constants.R.center_damage.defense}%`,
+                5: `${Constants.R.outer_damage.amp}%`,
+                6: `${Constants.R.center_damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.R.outer_damage,
+                1: Constants.R.center_damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.outer_damage.base},
+            {labelIntlID: "ToolTipType/DamageIcePillar", values: Constants.R.center_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }
