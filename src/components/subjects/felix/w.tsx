@@ -1,26 +1,40 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            フェリックスが槍で強く突いて直線範囲に<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。3回目の連携で使用する時には他の効果が適用されます。<br />
-            <br />
-            <span className={style.emphasis}>3回目の連携</span>：<Value skill="W" ratio={Constants.W.enhanced_damage} />のスキルダメージを与え、近くの対象を
-            {Constants.W.bind}秒間束縛させた後、突進します。また、消耗した<span className={style.emphasis}>連携攻撃</span>の1スタックごとに束縛時間が{Constants.W.stack_bind_extend}%増加します。
-        </>
-    );
-}
+export const code = 1049300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "3回目の連携ダメージ量", values: Constants.W.enhanced_damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: {constant: Constants.T.shared_cooldown},
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.W.damage.base[skillLevel],
+                1: `${Constants.W.damage.attack}%`,
+                2: Constants.W.enhanced_damage.base[skillLevel],
+                3: `${Constants.W.enhanced_damage.attack}%`,
+                4: Constants.W.enhanced_damage.level,
+                5: Constants.W.bind,
+                6: Constants.W.stack_bind_extend
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.W.damage,
+                1: Constants.W.enhanced_damage,
+                2: Constants.W.bind,
+                3: Constants.W.stack_bind_extend
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/FinalSequenceDamage", values: Constants.W.enhanced_damage.base}
+        ]  
+    })
 }

@@ -1,51 +1,43 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { useValueContext } from "components/tooltip/value-context";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    const { status, showEquation } = useValueContext();
+export const code = 1049100;
 
-    const shield = (() => {
-        const duration = Constants.T.shield.duration;
-        const base = Constants.T.shield.effect.consumedStack;
-        const attack = Constants.T.shield.effect.attack;
-
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ skillLevel, showEquation, status }) => {
+        const base = {
+            1: Constants.T.shared_cooldown[skillLevel],
+            2: Constants.T.stack_cooldown_reduction,
+            3: Constants.T.max_stack,
+            4: Constants.T.shield.duration,
+        };
+        
         if (showEquation) {
-            return <>{duration}秒間<span className={style.emphasis}>消耗した1スタックあたり{base}</span><span className={style.attack}>(+攻撃力の{attack}%)</span></>
+            return {
+                ...base,
+                0: `${Constants.T.damage.attack[skillLevel]}%`,
+                5: Constants.T.shield.effect.consumedStack,
+                6: `${Constants.T.shield.effect.attack}%`
+            } as Record<number, number | string | ValueRatio>
         } else {
-            const zero = status.attackPower.calculatedValue.percent(attack);
-            return <>
-                消耗したスタックに比例して{duration}秒間
-                <span className={style.emphasis}>{zero.toString()}</span> ~ <span className={style.emphasis}>{zero.add(Constants.T.max_stack * base).toString()}</span>
-            </>
+            const shieldMin = {
+                attack: Constants.T.shield.effect.attack
+            };
+
+            return {
+                ...base,
+                0: Constants.T.damage,
+                5: {...shieldMin},
+                6: {base: Constants.T.shield.effect.consumedStack * 10, ...shieldMin}
+            } as Record<number, number | string | ValueRatio>
         }
-    })();
-
-    return (
-        <>
-            フェリックスは最大射程距離の敵を2回連続で攻撃します。2回目の攻撃は<Value skill="T" ratio={Constants.T.damage} />の基本攻撃ダメージを与えます。<br />
-            <br />
-            <span className={style.emphasis}>旋風斬</span>、<span className={style.emphasis}>疾風雷撃</span>、<span className={style.emphasis}>半月斬</span>
-            のクールダウンが共有されて{Constants.T.shared_cooldown[props.skillLevel]}秒になり、最大3回まで連携して使用することができます。<br />
-            <br />
-            <span className={style.emphasis}>連携攻撃</span>：次のスキルを連携する前に基本攻撃でダメージを与えると、<span className={style.emphasis}>連携攻撃</span>
-            のスタックが増加して最大{Constants.T.max_stack}スタックまで獲得できます。3回目の連携の時、<span className={style.emphasis}>連携攻撃</span>
-            のスタックを消耗して1スタックあたり{Constants.T.stack_cooldown_reduction}秒の共有クールダウンを減少させ、{shield}のシールドを獲得します。使用した3回目の連携に定められた効果が適用されます。<br />
-            <br />
-            共有クールダウンはクールダウン減少効果の影響を受けません。
-        </>
-    );
-}
-
-export default t;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "2打ダメージ量", values: Constants.T.damage.attack, percent: true},
-        {title: "共有クールダウン", values: Constants.T.shared_cooldown},
-    ]
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.T.damage.attack, percent: true},
+            {labelIntlID: "ToolTipType/ActiveSkillCooldown", values: Constants.T.shared_cooldown}
+        ]  
+    })
 }

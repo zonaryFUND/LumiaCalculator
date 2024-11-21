@@ -1,31 +1,41 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            フェリックスが槍先に力を入れ、前に突進しながら槍を突き出して
-            <Value skill="R" ratio={Constants.R.min_damage} /> ~ <Value skill="R" ratio={Constants.R.max_damage} />
-            のスキルダメージを与えます。最後まで力をチャージすると、的中した対象を{Constants.R.stun}秒間気絶させます。<br />
-            スキルを使用すると、基本スキルが3回目の連携に変更され、<span className={style.emphasis}>連携攻撃</span>のスタックが{Constants.R.stack_gain}増加します。<br />
-            <br />
-            力をチャージする間には突進方向を変更することができ、突進する時は妨害効果免疫状態になります。
-        </>
-    );
-}
+export const code = 1049500;
 
-export default r;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは壁を越えられません。</>,
-    parameters: [
-        {title: "最小ダメージ量", values: Constants.R.min_damage.base},
-        {title: "最大ダメージ量", values: Constants.R.max_damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown},
-        {title: "消費", values: Constants.R.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation, status }) => {
+        if (showEquation) {
+            return {
+                0: Constants.R.min_damage.base[skillLevel],
+                1: `${Constants.R.min_damage.attack}%`,
+                2: Constants.R.max_damage.base[skillLevel],
+                3: `${Constants.R.max_damage.attack}%`,
+                4: Constants.R.stun,
+                5: Constants.R.stack_gain
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.R.min_damage,
+                1: Constants.R.max_damage,
+                2: Constants.R.stun,
+                3: Constants.R.stack_gain
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MinDamage", values: Constants.R.min_damage.base},
+            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.R.max_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+        ]  
+    })
 }
