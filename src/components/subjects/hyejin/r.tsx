@@ -1,28 +1,41 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ヘジンが5つの霊符を召喚して周りの敵に<Value skill="R" ratio={Constants.R.first_damage} />のスキルダメージを与えます。<br />
-            霊符は{Constants.R.duration}秒間ヘジンの周辺を回り、衝突した敵にそれぞれ<Value skill="R" ratio={Constants.R.card_damage} />のスキルダメージを与えた後に消えます。
-        </>
-    );
-}
+export const code = 1012500;
 
-export default r;
-
-export const values: ValuesProps = {
-    additionalInfo: <>
-        キャスト中には移動速度が{Constants.R.movement_speed_penalty}%減少します。<br />
-        実験体及びボスモンスターにのみ的中します。
-    </>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.first_damage.base},
-        {title: "札ダメージ量", values: Constants.R.card_damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.R.first_damage.base[skillLevel],
+                2: `${Constants.R.first_damage.amp}%`,
+                3: Constants.R.duration,
+                4: Constants.R.card_damage.base[skillLevel],
+                6: `${Constants.R.card_damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.R.first_damage,
+                1: Constants.R.duration,
+                2: Constants.R.card_damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: `${Constants.R.movement_speed_penalty}%`
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.first_damage.base},
+            {labelIntlID: "ToolTipType/ProjectileDamage", values: Constants.R.card_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }

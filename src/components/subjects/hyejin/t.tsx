@@ -1,27 +1,23 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ヘジンは同じ対象にスキルを3回的中させると三災をかけて{Constants.T.fear[props.skillLevel]}秒間恐怖状態にさせ、
-            <Value skill="T" ratio={Constants.T.damage} />の追加スキルダメージを与えます。
-        </>
-    );
-}
+export const code = 1012100;
 
-export default t;
-
-export const values: ValuesProps = {
-    additionalInfo: <>
-        恐怖状態の対象は{Constants.T.fear_immune}秒間三災にかかりません。<br />
-        追加スキルダメージは最小{Constants.T.minimum_additional_damage}のダメージを与えます。
-    </>,
-    parameters: [
-        {title: "恐怖持続時間", values: Constants.T.fear},
-        {title: "合計スキル増幅係数", values: Constants.T.damage.amp, percent: true}
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ skillLevel, showEquation }) => ({
+        0: 3,
+        1: Constants.T.fear[skillLevel],
+        2: showEquation ? `${Constants.T.damage.amp[skillLevel]}%` : Constants.T.damage
+    }),
+    expansion: () => ({
+        tipValues: {
+            0: Constants.T.fear_immune,
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/FearTime", values: Constants.T.fear},
+            {labelIntlID: "ToolTipType/SkillSkillAmpCoef", values: Constants.T.damage.amp, percent: true}
+        ]  
+    })
 }

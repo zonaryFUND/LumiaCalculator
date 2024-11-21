@@ -1,23 +1,34 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ヘジンが指定した方向に制圧符を投げ、的中した対象に<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えます。<br />
-            的中した場合、クールダウンが{Constants.Q.cooldown_reduction}%減少します。
-        </>
-    );
-}
+export const code = 1012200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.Q.damage.base[skillLevel],
+                2: `${Constants.Q.damage.amp}%`,
+                3: `${Constants.Q.cooldown_reduction}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.Q.damage,
+                1: `${Constants.Q.cooldown_reduction}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
+        ]  
+    })
 }

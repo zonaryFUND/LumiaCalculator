@@ -1,24 +1,39 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ヘジンが指定した位置に吸霊符を召喚します。吸霊符の範囲内の敵は移動速度が{Constants.W.slow}%減少します。吸霊符は
-            {Constants.W.launch}秒後に発動され、敵に<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えて中央に引き寄せます。
-        </>
-    );
-}
+export const code = 1012300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: `${Constants.W.slow}%`,
+            1: Constants.W.launch,
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                2: Constants.W.damage.base[skillLevel],
+                4: `${Constants.W.damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                2: Constants.W.damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }
