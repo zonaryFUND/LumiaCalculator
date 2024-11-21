@@ -1,36 +1,60 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import style from "components/tooltip/tooltip.module.styl"
-import Value from "components/tooltip/value";
-import { useValueContext } from "components/tooltip/value-context";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const {stack, ...healWithoutStack} = Constants.W.finish_heal;
+export const code = 1076300;
 
-const w: React.FC<SubjectSkillProps> = props => {
-    const { showEquation } = useValueContext();
+export const info: TooltipInfo = {
+    skill: "W",
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const {stack, ...healWithoutStack} = Constants.W.finish_heal;
+        const base = {
+            0: Constants.W.qe_cooldown_reduction_per_stack,
+            1: Constants.W.damage_reduction.duration,
+            2: `${Constants.W.damage_reduction.effect}%`,
+            3: `${Constants.W.heal.lostHP}%`,
+        }
 
-    return (
-        <>
-            <span className={style.level}>持続効果</span>：ガーネットが<span className={style.emphasis}>我慢</span>以外の基本スキルを使用するたびに<span className={style.emphasis}>[苦痛]</span>スタックを獲得します。ガーネットはスキル終了時に保有していた<span className={style.emphasis}>[苦痛]</span>スタックをすべて消耗し、1スタックごとに<span className={style.emphasis}>押しつぶし＆突き刺し</span>と<span className={style.emphasis}>歪んだ執着</span>のクールダウンが{Constants.W.qe_cooldown_reduction_per_stack}秒ずつ減少します。<br />
-            <br />
-            チャージ：ガーネットが移動不可状態になって{Constants.W.damage_reduction.duration}秒間受けるダメージが{Constants.W.damage_reduction.effect}%減少し、チャージする間{Constants.W.heal_tick}秒ごとに<Value skill="W" ratio={Constants.W.heal} overrideExpression={{lostHP: {className: style.emphasis}}} />の体力を回復します。<br />
-            <br />
-            チャージ終了時：範囲内の敵に<Value skill="W" ratio={Constants.W.min_damage} /> ~ <Value skill="W" ratio={Constants.W.max_damage} />のスキルダメージを与え、{Constants.W.slow.duration}秒間移動速度を{Constants.W.slow.effect}%減少させます。<br />
-            最大チャージ時には対象を{Constants.W.max_charge_bind}秒間束縛させ、ガーネットは体力を<Value skill="W" ratio={healWithoutStack} /><span className={style.strong}>(+消耗した苦痛スタック1あたり{stack[props.skillLevel]})</span>回復します。
-        </>
-    );
-}
-
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "最小ダメージ量", values: Constants.W.min_damage.base},
-        {title: "最大ダメージ量", values: Constants.W.max_damage.base},
-        {title: "体力回復量", values: Constants.W.finish_heal.base},
-        {title: "苦痛スタック比例回復量", values: Constants.W.finish_heal.stack},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+        if (showEquation) {
+            return {
+                ...base,
+                4: Constants.W.min_damage.base[skillLevel],
+                5: `${Constants.W.min_damage.amp}%`,
+                6: `${Constants.W.min_damage.maxHP}%`,
+                7: Constants.W.max_damage.base[skillLevel],
+                8: `${Constants.W.max_damage.amp}%`,
+                9: `${Constants.W.max_damage.maxHP}%`,
+                10: Constants.W.slow.duration,
+                11: `${Constants.W.slow.effect}%`,
+                12: Constants.W.max_charge_bind,
+                13: Constants.W.finish_heal.base[skillLevel],
+                14: `${Constants.W.finish_heal.amp}%`,
+                15: `${Constants.W.finish_heal.maxHP}%`,
+                16: stack[skillLevel],
+                17: Constants.W.heal_tick
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                4: Constants.W.min_damage,
+                5: Constants.W.max_damage,
+                6: Constants.W.slow.duration,
+                7: `${Constants.W.slow.effect}%`,
+                8: Constants.W.max_charge_bind,
+                9: healWithoutStack,
+                10: stack[skillLevel],
+                11: Constants.W.heal_tick,
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MinDamage", values: Constants.W.min_damage.base},
+            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.W.max_damage.base},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.W.finish_heal.base},
+            {labelIntlID: "ToolTipType/PainHeal", values: Constants.W.finish_heal.stack},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
+        ]  
+    })
 }

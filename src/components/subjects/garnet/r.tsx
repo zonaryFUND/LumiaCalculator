@@ -1,24 +1,40 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ガーネットが指定した方向に鎖を投げて、初めて的中した敵実験体を{Constants.R.bind}秒間束縛し、<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えて{Constants.R.duration}秒間継続する刻印を付けます。持続時間の間、対象の体力が{Constants.R.reuse_threshold}%以下になると、スキルを再使用することができます。<br />
-            <br />
-            再使用：刻印が付けられた対象は鎖で引き寄せられ、ガーネットと一緒にアイアンメイデンの中に閉じ込められて倒されます。ガーネットはアイアンメイデンから出た後、{Constants.R.movement_speed.duration}秒間移動速度が{Constants.R.movement_speed.effect}%増加します。
-        </>
-    );
-}
+export const code = 1076500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.R.bind,
+                1: Constants.R.damage.base[skillLevel],
+                2: `${Constants.R.damage.amp}%`,
+                3: `${Constants.R.damage.targetHP}%`,
+                4: Constants.R.duration,
+                5: `${Constants.R.reuse_threshold}%`,
+                6: Constants.R.movement_speed.duration,
+                7: `${Constants.R.movement_speed.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.R.bind,
+                1: Constants.R.damage,
+                2: `${Constants.R.damage.targetHP}%`,
+                3: Constants.R.duration,
+                4: `${Constants.R.reuse_threshold}%`,
+                5: Constants.R.movement_speed.duration,
+                6: `${Constants.R.movement_speed.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }

@@ -1,24 +1,35 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ガーネットが指定した敵のところに素早く移動し、<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて{Constants.E.stun}秒間気絶させます。
-        </>
-    );
-}
+export const code = 1076400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは基本攻撃及びスキル攻撃判定とみなし、的中時効果が発動します。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "hp-ratio",
+        value: Constants.E.hp_cost_percent
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.E.damage.base[skillLevel],
+                1: `${Constants.E.damage.amp}%`,
+                2: `${Constants.E.damage.maxHP}%`,
+                3: Constants.E.stun
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.E.damage,
+                1: Constants.E.stun
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
+        ]  
+    })
 }

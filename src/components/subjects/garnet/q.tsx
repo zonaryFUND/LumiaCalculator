@@ -1,26 +1,44 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ガーネットが武器を振り下ろして範囲内の敵に<Value skill="Q" ratio={Constants.Q.Q1_damage} />のスキルダメージを与え、{Constants.Q.slow.duration}秒間移動速度を
-            {Constants.Q.slow.effect}%減少させます。的中した場合、{Constants.Q.reuse}秒間にスキルを再使用することができます。<br />
-            <br />
-            再使用：衝突によりガーネットが指定した方向に地面が突き出て、範囲内の敵に<Value skill="Q" ratio={Constants.Q.Q2_damage} />のスキルダメージを与えます。
-        </>
-    );
-}
+export const code = 1076200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.Q1_damage.base},
-        {title: "再使用ダメージ量", values: Constants.Q.Q2_damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "hp-ratio",
+        value: Constants.Q.hp_cost_percent
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.Q.Q1_damage.base[skillLevel],
+                1: `${Constants.Q.Q1_damage.amp}%`,
+                2: `${Constants.Q.Q1_damage.maxHP}%`,
+                3: Constants.Q.slow.duration,
+                4: `${Constants.Q.slow.effect}%`,
+                5: Constants.Q.reuse,
+                6: Constants.Q.Q2_damage.base[skillLevel],
+                7: `${Constants.Q.Q2_damage.amp}%`,
+                8: `${Constants.Q.Q2_damage.maxHP}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.Q.Q1_damage,
+                1: Constants.Q.slow.duration,
+                2: `${Constants.Q.slow.effect}%`,
+                3: Constants.Q.reuse,
+                4: Constants.Q.Q2_damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.Q1_damage.base},
+            {labelIntlID: "ToolTipType/ReactivateDamage", values: Constants.Q.Q2_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
+        ]  
+    })
 }
