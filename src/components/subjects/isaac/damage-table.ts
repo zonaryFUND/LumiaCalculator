@@ -18,7 +18,7 @@ const table: DamageTableGenerator = props => ({
         [{label: "W", "skill": "W", value: Constants.W.damage}],
         [{label: "E2", "skill": "E", value: Constants.E.damage}],
         [
-            {label: props.intl.formatMessage({id: "subject.isaac.r-nostack"}), "skill": "R", value: r(0)},
+            {label: props.intl.formatMessage({id: "subject.isaac.r-nostack"}), "skill": "R", value: Constants.R.damage},
             {label: props.intl.formatMessage({id: "subject.isaac.r-1stack"}), "skill": "R", value: r(1)},
             {label: props.intl.formatMessage({id: "subject.isaac.r-2stack"}), "skill": "R", value: r(2)}
         ],

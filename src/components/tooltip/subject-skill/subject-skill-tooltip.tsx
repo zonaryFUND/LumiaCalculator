@@ -77,6 +77,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
                                 <FormattedText text={expansionTooltip} values={expansionValues} />
                             }
                             <ExpansionValues {...expansion} skillLevel={skillLevel} />
+                            {skillInfo.calculatorMessage ? <p className={style.calcnote}>計算機作者注：{skillInfo.calculatorMessage}</p> : null}
                         </div>
                     ) : null
                 }

@@ -1,28 +1,48 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import Value from "components/tooltip/value";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            同じ敵を{Constants.T.threshold}回攻撃するたびに<Value skill="T" ratio={Constants.T.damage} />
-            の追加スキルダメージを与え、移動速度が{Constants.T.movement_speed[props.skillLevel]}%増加した後、
-            {Constants.T.duration}秒かけて元通りになります。与えた搾取ダメージ量の
-            {Constants.T.heal[props.skillLevel]}%を体力に回復します。野生動物の場合、回復効果が
-            {Constants.T.animal}%に減少します。
-        </>
-    );
-}
+export const code = 1059100;
 
-export default t;
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.T.threshold,
 
-export const values: ValuesProps = {
-    additionalInfo: <>搾取は基本攻撃やスキルに関係なく{Constants.T.threshold}回目の攻撃に発動します。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.T.damage.base},
-        {title: "体力回復量(%)", values: Constants.T.heal, percent: true},
-        {title: "移動速度増加量(%)", values: Constants.T.movement_speed, percent: true}
-    ]
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: Constants.T.damage.base[skillLevel],
+                2: `${Constants.T.damage.attack}%`,
+                5: `${Constants.T.movement_speed[skillLevel]}%`,
+                6: Constants.T.duration,
+                7: `${Constants.T.heal[skillLevel]}%`,
+                9: `${Constants.T.animal}%`,
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.T.damage,
+                3: `${Constants.T.movement_speed[skillLevel]}%`,
+                4: Constants.T.duration,
+                5: `${Constants.T.heal[skillLevel]}%`,
+                6: `${Constants.T.animal}%`,
+                7: `${Constants.T.damage.targetMaxHP[skillLevel]}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: Constants.T.threshold
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
+            {labelIntlID: "ToolTipType/MaxHpDamageRatio", values: Constants.T.damage.targetMaxHP, percent: true},
+            {labelIntlID: "ToolTipType/HpRegenRatio", values: Constants.T.heal, percent: true},
+            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true}
+        ]  
+    }),
+    calculatorMessage: "日本語翻訳ファイルでは詳細ツールチップに対象最大体力比例ダメージが記載されていません"
 }

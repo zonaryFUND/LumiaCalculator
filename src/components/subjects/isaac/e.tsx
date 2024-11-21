@@ -1,26 +1,43 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            アイザックが素早く突進し、{Constants.E.time_bound}秒間次のスキルを準備します。<br />
-            <br />
-            再使用：前方の敵を引き寄せてシールドを破壊し、<Value skill="E" ratio={Constants.E.damage} />
-            のスキルダメージを与えて{Constants.E.stun}秒間気絶させます。引き寄せられた敵は
-            {Constants.E.defense_down.duration}秒間防御力が{Constants.E.defense_down.effect}%減少します。
-        </>
-    );
-}
+export const code = 1059400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.E.time_bound
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: Constants.E.damage.base[skillLevel],
+                2: `${Constants.E.damage.attack}%`,
+                4: Constants.E.stun,
+                5: Constants.E.defense_down.duration,
+                6: `${Constants.E.defense_down.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.E.damage,
+                2: Constants.E.stun,
+                3: Constants.E.defense_down.duration,
+                4: `${Constants.E.defense_down.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+        ]  
+    })
 }
