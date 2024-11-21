@@ -1,6 +1,5 @@
 import { defineSubject } from "../dictionary";
 import damageTable from "./damage-table";
-import statusOverride from "./status-override";
 import * as Q from "./q";
 import * as W from "./w";
 import * as E from "./e";
@@ -9,23 +8,16 @@ import * as T from "./t";
 
 
 export default defineSubject({
-    code: 43,
+    code: 52,
     damageTable,
-    statusOverride,
 
     skills: {
         listExpression: () => ({
             Q: Q.code,
             W: W.code,
             E: E.code,
-            R: {
-                maxLevel: 5,
-                code: R.code
-            },
-            T: {
-                maxLevel: 2,
-                code: T.code
-            }
+            R: R.code,
+            T: T.code
         }),
         tooltip: {
             [Q.code]: Q.info,

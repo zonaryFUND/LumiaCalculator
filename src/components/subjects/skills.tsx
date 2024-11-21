@@ -65,12 +65,13 @@ const subjectSkills: React.FC<Props> = props => {
                     <div key={skill} className={style.vertical}>
                         {
                             (() => {
+                                if (list[skill] == undefined) return null;
+                                
                                 if (typeof list[skill] == "number") {
                                     return <Skill key={list[skill]} code={list[skill]} />;
                                 } else if (Array.isArray(list[skill])) {
                                     return (list[skill]).map(code => <Skill key={code} code={code} />)
                                 } else {
-                                    console.log(list[skill])
                                     return (typeof list[skill].code == "number" ? [list[skill].code] : list[skill].code)
                                         .map(code => <Skill key={code} code={code} />)
                                 }

@@ -21,7 +21,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.adina.sun-conjunction"}), skill: "R", value: Constants.R.sun_conjunction},
-            {label: props.intl.formatMessage({id: "subject.adina.sun-conjunction-dot-sum"}), skill: "R", value: Constants.Q.conjunction.damage}
+            {label: props.intl.formatMessage({id: "subject.adina.sun-conjunction-dot-sum"}), skill: "R", value: Constants.Q.conjunction.damage, type: {type: "true"}}
         ],
         [
             {label: props.intl.formatMessage({id: "subject.adina.moon-conjunction"}), skill: "R", value: Constants.R.moon_conjunction},

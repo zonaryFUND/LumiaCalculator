@@ -47,8 +47,6 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     })();
     const expansionTooltip = intl.formatMessage({id: `Skill/Group/ExpansionTip/${props.code}`});
 
-    console.log(infoTextIntlID)
-
     return (
         <ValueContext.Provider value={props}>
             <div className={`${baseStyle.base} ${style.tooltip}`}>

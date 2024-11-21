@@ -1,41 +1,54 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import baseStyle from "components/tooltip/tooltip.module.styl";
-import style from "./adina.module.styl";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            指定した方向に天体を発射し、的中した敵に<Value skill="Q" ratio={Constants.Q.damage} />
-            のスキルダメージを与えます。<br />
-            <br />
-            <span className={baseStyle.emphasis}>天体追加効果</span><br />
-            <span className={style.sun}>太陽</span>：ダメージ量が<Value skill="Q" ratio={Constants.Q.sun} />
-            増加します。<br />
-            <span className={style.moon}>月</span>：1人のみ的中され、{Constants.Q.moon}秒間気絶させます。<br />
-            <span className={style.star}>星</span>：彗星が素早く飛んでいき、経路上に
-            {Constants.Q.star.duration}秒間尾を残して味方の移動速度を
-            {Constants.Q.star.movement_speed}増加させます。<br />
-            <br />
-            <span className={style.sun}>太陽コンジャンクション効果</span>：
-            太陽が連続して並ぶと、より大きな太陽を発射して<Value skill="R" ratio={Constants.R.sun_conjunction} />
-            のスキルダメージを与え、
-            {Constants.Q.conjunction.duration}秒間
-            <span className={baseStyle.maxhp}>対象の最大体力の{Constants.Q.conjunction.damage.targetMaxHP}%</span>
-            の持続ダメージで敵を燃やします。
-        </>
-    )
-}
+export const code = 1052200;
 
-export default q;
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ showEquation, skillLevel, config }) => {
+        const conjunction = {
+            base: Constants.R.sun_conjunction.base[config.skillLevels.R],
+            amp: Constants.R.sun_conjunction.amp
+        }
 
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+        if (showEquation) {
+            return {
+                0: Constants.Q.damage.base[skillLevel],
+                2: Constants.Q.moon,
+                3: Constants.Q.star.duration,
+                4: `${Constants.Q.star.movement_speed}%`,
+                5: conjunction.base,
+                7: `${Constants.Q.damage.amp}%`,
+                8: `${conjunction.amp}%`,
+                9: Constants.Q.conjunction.duration,
+                10: `${Constants.Q.conjunction.damage.targetMaxHP}%`,
+                11: Constants.Q.sun.base,
+                12: `${Constants.Q.sun.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                2: Constants.Q.moon,
+                3: Constants.Q.star.duration,
+                4: `${Constants.Q.star.movement_speed}%`,
+                9: Constants.Q.conjunction.duration,
+                10: `${Constants.Q.conjunction.damage.targetMaxHP}%`,
+                20: Constants.Q.damage,
+                21: conjunction,
+                22: Constants.Q.sun
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+        ]  
+    })
 }
