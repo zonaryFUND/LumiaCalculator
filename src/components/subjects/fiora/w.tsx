@@ -1,22 +1,24 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            フィオラが武器を素早く2回振り回し、1回あたり<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えます。
-        </>
-    );
-}
+export const code = 1003300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        3: Constants.W.damage.base[skillLevel],
+        10: `${Constants.W.damage.amp}%`,
+        12: Constants.W.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+        ]  
+    })
 }

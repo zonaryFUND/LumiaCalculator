@@ -1,25 +1,24 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            マルシェ：フィオラが指定した方向に突進してぶつかった敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えます。<br />
-            敵に的中した場合、{Constants.E.reuse}秒間ロンペを使用できます。<br />
-            <br />
-            ロンペ：フィオラが指定した方向に突進します。
-        </>
-    );
-}
+export const code = 1003400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>マルシェは壁を越えられません。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.E.damage.base[skillLevel],
+        4: Constants.E.reuse,
+        14: `${Constants.E.damage.amp}%`,
+        15: Constants.E.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base}
+        ]  
+    })
 }

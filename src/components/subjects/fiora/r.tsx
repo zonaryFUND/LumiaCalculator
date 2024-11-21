@@ -1,32 +1,31 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            フィオラが指定した方向に短く突進しながら攻撃し、<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えて
-            {Constants.R.slow.duration}秒間敵の移動速度を{Constants.R.slow.effect}%減少させます。<br />
-            フレッシュは最大2回追加で使用することができます。<br />
-            <br />
-            最後に使用する時は<Value skill="R" ratio={Constants.R.finish_damage} />のスキルダメージを与えて敵を
-            {Constants.R.stun}秒間気絶させます。
-        </>
-    );
-}
+export const code = 1003500;
 
-export default r;
-
-export const values: ValuesProps = {
-    additionalInfo: <>
-        このスキルは壁を越えられません。<br />
-        敵との距離が近い場合にはその場で動かずにスキルを使用します。
-    </>,
-    parameters: [
-        {title: "[フレッシュ]1、2回目のダメージ量", values: Constants.R.damage.base},
-        {title: "[フレッシュ]3回目のダメージ量", values: Constants.R.finish_damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        1: Constants.R.damage.base[skillLevel],
+        9: Constants.R.slow.duration,
+        10: `${Constants.R.slow.effect}%`,
+        12: `${Constants.R.damage.amp}%`,
+        13: Constants.R.damage,
+        14: Constants.R.finish_damage,
+        15: Constants.R.stun,
+        16: Constants.R.finish_damage.base[skillLevel],
+        17: `${Constants.R.finish_damage.amp}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/FioraActive4FirstSecondDamage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/FioraActive4ThirdDamage", values: Constants.R.finish_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+        ]  
+    })
 }
