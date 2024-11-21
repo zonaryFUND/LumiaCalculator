@@ -1,38 +1,58 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import Value from "components/tooltip/value";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { useValueContext } from "components/tooltip/value-context";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    const { showEquation } = useValueContext();
+export const code = 1030300;
 
-    return (
-        <>
-            チャージ：Elevenが敵を長髪する準備をし、移動速度が{Constants.common.charging_slow_penalty}%減少します。<br />
-            <br />
-            使用：Elevenがハンバーガーを持ち上げて範囲内の敵を
-            {Constants.W.min_taunt[props.skillLevel]} ~ {Constants.W.max_taunt[props.skillLevel]}秒間挑発し、
-            <Value skill="W" ratio={Constants.W.min_damage} /> ~ <Value skill="W" ratio={Constants.W.max_damage} />
-            のスキルダメージを与えます。<br />
-            また、{Constants.W.damage_reduction_duration}秒間Elevenが受ける最終ダメージが
-            0% ~ {Constants.W.max_damage_reduction[props.skillLevel]}%減少します。
-        </>
-    );
-}
-
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}%が返されます。</>,
-    parameters: [
-        {title: "最小ダメージ量", values: Constants.W.min_damage.base},
-        {title: "最大ダメージ量", values: Constants.W.max_damage.base},
-        {title: "最小挑発時間", values: Constants.W.min_taunt},
-        {title: "最大挑発時間", values: Constants.W.max_taunt},
-        {title: "最終ダメージ減少量 - 最大", values: Constants.W.max_damage_reduction, percent: true},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: `${Constants.common.charging_slow_penalty}%`,
+            1: Constants.W.min_taunt[skillLevel],
+            2: Constants.W.max_taunt[skillLevel],
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                3: Constants.W.min_damage.base[skillLevel],
+                4: `${Constants.W.min_damage.attack}%`,
+                5: `${Constants.W.min_damage.additionalMaxHP}%`,
+                6: Constants.W.max_damage.base[skillLevel],
+                7: `${Constants.W.max_damage.attack}%`,
+                8: `${Constants.W.max_damage.additionalMaxHP}%`,
+                9: Constants.W.damage_reduction_duration,
+                10: "0%",
+                11: `${Constants.W.max_damage_reduction[skillLevel]}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                3: Constants.W.min_damage,
+                4: Constants.W.max_damage,
+                5: Constants.W.damage_reduction_duration,
+                6: "0%",
+                7: `${Constants.W.max_damage_reduction[skillLevel]}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: `${Constants.common.return_cooldown}%`
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MinDamage", values: Constants.W.min_damage.base},
+            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.W.max_damage.base},
+            {labelIntlID: "ToolTipType/ElevenTauntTime1", values: Constants.W.min_taunt},
+            {labelIntlID: "ToolTipType/ElevenTauntTime2", values: Constants.W.max_taunt},
+            {labelIntlID: "ToolTipType/ElevenFinalDamageReduction2", values: Constants.W.max_damage_reduction, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

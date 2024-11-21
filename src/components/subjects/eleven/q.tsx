@@ -1,31 +1,53 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import Value from "components/tooltip/value";
-import { useValueContext } from "components/tooltip/value-context";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            チャージ：Elevenがハンバーガーフォークを前に振り下ろす準備をし、移動速度が{Constants.common.charging_slow_penalty}%減少します。<br />
-            <br />
-            使用：Elevenがハンバーガーフォークを前方に振り下ろして敵に
-            <Value skill="Q" ratio={Constants.Q.min_damage} /> ~ <Value skill="Q" ratio={Constants.Q.max_damage} />
-            のスキルダメージを与え、{Constants.Q.slow_duration}秒間敵の移動速度を{Constants.Q.min_slow}% ~ {Constants.Q.max_slow}%減少させます。
-        </>
-    );
-}
+export const code = 1030200;
 
-export default q;
-
-export const values: ValuesProps = {
-    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}%が返されます。</>,
-    parameters: [
-        {title: "最小ダメージ量", values: Constants.Q.min_damage.base},
-        {title: "最大ダメージ量", values: Constants.Q.max_damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: `${Constants.common.charging_slow_penalty}%`
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: Constants.Q.min_damage.base[skillLevel],
+                2: `${Constants.Q.min_damage.attack}%`,
+                3: `${Constants.Q.min_damage.additionalMaxHP}%`,
+                4: Constants.Q.max_damage.base[skillLevel],
+                5: `${Constants.Q.max_damage.attack}%`,
+                6: `${Constants.Q.max_damage.additionalMaxHP}%`,
+                7: Constants.Q.slow_duration,
+                8: `${Constants.Q.min_slow}%`,
+                9: `${Constants.Q.max_slow}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.Q.min_damage,
+                2: Constants.Q.max_damage,
+                3: Constants.Q.slow_duration,
+                4: `${Constants.Q.min_slow}%`,
+                5: `${Constants.Q.max_slow}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: `${Constants.common.return_cooldown}%`
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MinDamage", values: Constants.Q.min_damage.base},
+            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.Q.max_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+        ]  
+    })
 }

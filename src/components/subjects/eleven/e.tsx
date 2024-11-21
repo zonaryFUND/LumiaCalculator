@@ -1,30 +1,42 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import style from "components/tooltip/tooltip.module.styl";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import Value from "components/tooltip/value";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { useValueContext } from "components/tooltip/value-context";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            チャージ：Elevenがハンバーガーフォークに乗って指定した地点にジャンプする準備をします。チャージ時間に比例して移動距離が増加します。
-            Elevenがハンバーガーフォークに乗って指定した地点にジャンプし、敵に
-            <Value skill="E" ratio={Constants.E.min_damage} /> ~ <Value skill="E" ratio={Constants.E.max_damage} />
-            のスキルダメージを与えながら押し出します。飛んで行く間、Elevenはすべての妨害効果免疫状態になります。
-        </>
-    );
-}
+export const code = 1030400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>チャージ中にスキルがキャンセルされたり、スキルを使用しなかった場合、クールダウンの{Constants.common.return_cooldown}%が返されます。</>,
-    parameters: [
-        {title: "最小ダメージ量", values: Constants.E.min_damage.base},
-        {title: "最大ダメージ量", values: Constants.E.max_damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.E.min_damage.base[skillLevel],
+                1: `${Constants.E.min_damage.attack}%`,
+                2: `${Constants.E.min_damage.additionalMaxHP}%`,
+                3: Constants.E.max_damage.base[skillLevel],
+                4: `${Constants.E.max_damage.attack}%`,
+                5: `${Constants.E.max_damage.additionalMaxHP}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.E.min_damage,
+                1: Constants.E.max_damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: `${Constants.common.return_cooldown}%`
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MinDamage", values: Constants.E.min_damage.base},
+            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.E.max_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }

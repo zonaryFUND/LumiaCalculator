@@ -1,24 +1,42 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            Elevenが{Constants.R.duration}秒間<Value skill="R" ratio={Constants.R.heal} {...props} />の体力を回復し、
-            {Constants.R.tick}秒ごとに周りの敵に<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えます。
-        </>
-    );
-}
+export const code = 1030500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "最大体力比例回復量", values: Constants.R.heal.maxHP, percent: true},
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown},
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.R.duration,
+            2: Constants.R.tick
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: `${Constants.R.heal.maxHP[skillLevel]}%`,
+                3: Constants.R.damage.base[skillLevel],
+                4: `${Constants.R.damage.attack}%`,
+                5: `${Constants.R.damage.additionalMaxHP}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.R.heal,
+                3: Constants.R.damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "StatType/MaxHpHealRatio", values: Constants.R.heal.maxHP, percent: true},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+        ]  
+    })
 }
