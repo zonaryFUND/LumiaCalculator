@@ -1,23 +1,25 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ハートはギターを弾くと{Constants.W.duration[props.skillLevel]}秒間攻撃力が
-            {Constants.W.attack[props.skillLevel]}増加し、基本攻撃の射程距離が{Constants.W.range}増加します。<br />
-        </>
-    );
-}
+export const code = 1008300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "攻撃力", values: Constants.W.attack},
-        {title: "持続時間(秒)", values: Constants.W.duration},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.duration[skillLevel],
+        1: Constants.W.attack[skillLevel],
+        8: Constants.W.range
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "StatType/AttackPower", values: Constants.W.attack},
+            {labelIntlID: "ToolTipType/MoveSpeedDowTime", values: Constants.W.duration},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost},
+        ]  
+    })
 }

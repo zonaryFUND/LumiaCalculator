@@ -1,27 +1,26 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ハートがアンプを取り出して{Constants.R.duration}秒間公演を始めます。領域内にいる間、すべての対象が死亡しなくなり、体力が
-            {Constants.R.threshold}%以下になると、ダメージを受けたり体力を回復することができなくなります。<br />
-            <br />
-            公演が終わると領域内にいるすべての対象の体力が<Value skill="R" ratio={Constants.R.heal} />回復します。
-        </>
-    );
-}
+export const code = 1008500;
 
-export default r;
-
-export const values: ValuesProps = {
-    additionalInfo: <>ハートは領域内でオブジェクトと相互作用できません。</>,
-    parameters: [
-        {title: "体力回復量", values: Constants.R.heal.base},
-        {title: "クールダウン", values: Constants.R.cooldown},
-        {title: "消費", values: Constants.R.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.duration,
+        2: Constants.R.heal,
+        6: Constants.R.heal,
+        7: `${Constants.R.threshold}%`,
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Heal", values: Constants.R.heal.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost},
+        ]  
+    })
 }
