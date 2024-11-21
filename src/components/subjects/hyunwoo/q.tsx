@@ -1,26 +1,31 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ヒョヌが指定した位置を強く踏んで、敵に<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与え、
-            {Constants.Q.slow.duration}秒間移動速度を{Constants.Q.slow.effect}%減少させます。敵にスキルを的中させた場合にはヒョヌの移動速度が
-            {Constants.Q.movement_speed.duration}秒間{Constants.Q.movement_speed.effect[props.skillLevel]}%増加します。
-        </>
-    );
-}
+export const code = 1007200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "移動速度増加量(%)", values: Constants.Q.movement_speed.effect},
-        {title: "クールダウン", values: Constants.Q.cooldown},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.Q.damage.base[skillLevel],
+        1: `${Constants.Q.damage.additionalAttack}%`,
+        2: Constants.Q.slow.duration,
+        3: `${Constants.Q.slow.effect}%`,
+        4: `${Constants.Q.damage.amp}%`,
+        5: Constants.Q.movement_speed.duration,
+        6: `${Constants.Q.movement_speed.effect[skillLevel]}%`,
+        20: Constants.Q.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.Q.movement_speed.effect},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+        ]  
+    })
 }

@@ -1,5 +1,6 @@
 import { DamageTable, DamageTableGenerator } from "../damage-table";
 import Constants from "./constants.json";
+import { hyunwooWDefenseStrategy } from "./w";
 
 const table: DamageTableGenerator = props => ({
     basicAttack: [
@@ -7,7 +8,7 @@ const table: DamageTableGenerator = props => ({
     ],
     skill: [
         [{label: "Q", skill: "Q", value: Constants.Q.damage}],
-        [{label: props.intl.formatMessage({id: "subject.hyunwoo.w-defense"}), skill: "W", value: Constants.W.defense, type: {type: "misc"}}],
+        [{label: props.intl.formatMessage({id: "subject.hyunwoo.w-defense"}), skill: "W", value: hyunwooWDefenseStrategy, type: {type: "misc"}}],
         [
             {label: "E", skill: "E", value: Constants.E.damage},
             {label: props.intl.formatMessage({id: "subject.hyunwoo.e-additional"}), skill: "E", value: Constants.E.wall_damage}

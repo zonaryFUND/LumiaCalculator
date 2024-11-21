@@ -1,27 +1,32 @@
-import * as React from "react";
-import Value from "components/tooltip/value";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ヒョヌが指定した方向に突進し、敵にぶつかると<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて敵を突き飛ばします。<br />
-            <br />
-            突き飛ばした敵が壁にぶつかった場合、<Value skill="E" ratio={Constants.E.wall_damage} />のスキルダメージを与えて
-            {Constants.E.stun}秒間気絶させます。
-        </>
-    );
-}
+export const code = 1007400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "現在の体力比例ダメージ量(%)", values: Constants.E.damage.targetHP},
-        {title: "ダメージ量", values: Constants.E.wall_damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: `${Constants.E.damage.targetHP[skillLevel]}%`,
+        1: Constants.E.stun,
+        2: Constants.E.wall_damage.base[skillLevel],
+        3: `${Constants.E.damage.additionalAttack}%`,
+        7: `${Constants.E.wall_damage.additionalAttack}%`,
+        8: `${Constants.E.damage.amp}%`,
+        9: `${Constants.E.wall_damage.amp}%`,
+        20: Constants.E.damage,
+        21: Constants.E.wall_damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/PresentHpDamageRatio", values: Constants.E.damage.targetHP},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.wall_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }
