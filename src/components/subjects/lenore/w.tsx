@@ -1,31 +1,47 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import style from "components/tooltip/tooltip.module.styl";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レノアが{Constants.W.shield.duration}秒間<Value skill="W" ratio={Constants.W.shield.effect} />のダメージを吸収するシールドを獲得し、周りの敵に
-            <Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えて{Constants.W.bind}秒間敵を束縛させます。<br />
-            <br />
-            <span className={style.emphasis}>強化効果：</span>シールド量が<span className={style.emphasis}>{Constants.W.enhance.shield}%</span>増加し、
-            {Constants.W.enhance.movement_speed.duration}秒間レノアの移動速度が
-            <span className={style.emphasis}>{Constants.W.enhance.movement_speed.effect}%</span>増加します。
-        </>
-    );
-}
+export const code = 1075300;
 
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルの束縛効果は対象の移動を中断させます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "シールド吸収量", values: Constants.W.shield.effect.base},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.W.shield.duration,
+                1: Constants.W.shield.effect.base[skillLevel],
+                2: `${Constants.W.shield.effect.amp}%`,
+                3: Constants.W.damage.base[skillLevel],
+                4: `${Constants.W.damage.amp}%`,
+                5: Constants.W.bind,
+                6: `${Constants.W.enhance.shield}%`,
+                7: Constants.W.enhance.movement_speed.duration,
+                8: `${Constants.W.enhance.movement_speed.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.W.shield.duration,
+                1: Constants.W.shield.effect,
+                2: Constants.W.damage,
+                3: Constants.W.bind,
+                4: `${Constants.W.enhance.shield}%`,
+                5: Constants.W.enhance.movement_speed.duration,
+                6: `${Constants.W.enhance.movement_speed.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.effect.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

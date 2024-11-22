@@ -9,12 +9,14 @@ export const accelerando = (config: SubjectConfig) => {
         .reduce((sum, id) => {
             if (!id) return sum;
             const value = EquipmentStatusDictionary[id].cooldownReduction?.toNumber() || 0;
-            return sum + value;
+            return (sum ?? 0) + value;
         }, 0)
-    const screamMax = Math.max(0, Constants.T.stack_conversion_limit - equipment);
+    const screamMax = Math.max(0, Constants.T.stack_conversion_limit - (equipment ?? 0));
 
-    return equipment + Math.min(screamMax, config.stack * Constants.T.stack_conversion);
+    return (equipment ?? 0) + Math.min(screamMax, config.stack * Constants.T.stack_conversion);
 }
+
+export const cdr = (accelerando: number) => new Decimal(accelerando / (100 + accelerando) * 100).round()
 
 const f: StatusOverrideFunc = (status, config) => {
     const accelerandoValue = accelerando(config);
@@ -22,7 +24,7 @@ const f: StatusOverrideFunc = (status, config) => {
         ...status,
         cooldownReduction: {
             ...status.cooldownReduction,
-            calculatedValue: new Decimal(accelerandoValue / (100 + accelerandoValue) * 100).round()
+            calculatedValue: cdr(accelerandoValue)
         }
     }
 };

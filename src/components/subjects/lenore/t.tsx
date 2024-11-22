@@ -1,42 +1,46 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { accelerando } from "./status-override";
-import { useValueContext } from "components/tooltip/value-context";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
+import { accelerando, cdr } from "./status-override";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    const { config } = useValueContext()
-    return (
-        <>
-            <span className={style.level}>持続効果：</span>レノアはクールダウン減少ステータスと<span className={style.strong}>悲鳴</span>スタックが
-            <span className={style.emphasis}>アッチェレランド</span>に変換されます。レノアは<span className={style.emphasis}>アッチェレランド</span>
-            の数値に応じてクールダウン減少が4%で適用されます。<br />
-            <br />
-            <span className={style.emphasis}>苦痛のメロディー：</span>体力が50%より低い実験体にスキルでダメージを与えると、<Value skill="T" ratio={Constants.T.additional_damage} overrideExpression={{stack: {format: "悲鳴スタック数"}}} />
-            のスキルダメージを追加で与えて悲鳴スタックを獲得します。同じ敵実験体を攻撃する場合、{Constants.T.cooldown.constant[props.skillLevel]}秒ごとに効果が適用されます。<br />
-            <br />
-            <span className={style.emphasis}>トリル：</span>レノアが基本スキルを使用する時、3回目に使用するスキルが強化されます。<br />
-            <br />
-            <br />
-            <span className={style.emphasis}>現在のアッチェレランド：</span>{accelerando(config)}
-        </>
-    );
-}
+export const code = 1075100;
 
-export default t;
+export const info: TooltipInfo = {
+    skill: "T",
+    cooldown: Constants.T.cooldown,
+    values: ({ skillLevel, showEquation, config }) => {
+        const accelerandoValue = accelerando(config);
+        const cdrValue = cdr(accelerandoValue);
 
-export const values: ValuesProps = {
-    additionalInfo: <>
-        クールダウン減少ステータス1%あたり1、<span className={style.strong}>悲鳴</span>スタック1あたり{Constants.T.stack_conversion}
-        の<span className={style.emphasis}>アッチェレランド</span>に変換されます。
-        <span className={style.emphasis}>アッチェレランド</span>{Constants.T.stack_conversion_limit}以上の場合、
-        <span className={style.strong}>悲鳴</span>スタックを<span className={style.emphasis}>アッチェレランド</span>数値に変換されません。
-    </>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.T.additional_damage.base},
-        {title: "クールダウン", values: Constants.T.cooldown.constant}
-    ]
+        if (showEquation) {
+            return {
+                0: `${Constants.T.stack_gain_threshold}`,
+                1: Constants.T.additional_damage.base[skillLevel],
+                2: `${Constants.T.additional_damage.amp}%`,
+                3: Constants.T.additional_damage.stack,
+                4: `${cdrValue.toString()}%`,
+                5: Constants.T.cooldown.constant[skillLevel],
+                6: accelerandoValue.toString()
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: `${Constants.T.stack_gain_threshold}`,
+                1: Constants.T.additional_damage,
+                2: `${cdrValue.toString()}%`,
+                3: Constants.T.cooldown.constant[skillLevel],
+                4: accelerandoValue.toString()
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: 1,
+            1: Constants.T.stack_conversion,
+            2: Constants.T.stack_conversion_limit
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.additional_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant},
+        ]  
+    })
 }
