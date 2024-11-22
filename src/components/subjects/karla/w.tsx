@@ -1,27 +1,48 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        カーラとつながったスピアを回収して経路上の敵に<Value skill="W" ratio={Constants.W.damage} />
-        のスキルダメージを与え、{Constants.W.slow.duration}秒間移動速度を{Constants.W.slow.effect}
-        %減少させます。ダメージを与えた場合、装填ゲージを{Constants.W.gauge[props.skillLevel]}獲得し、的中した数に応じてスピア起動のクールダウンが
-        {Constants.W.e_cooldown_reduction[props.skillLevel]}秒減少します。<br />
-        <br />
-        回収はクールダウン減少効果の影響を受けません。
-    </>
-);
+export const code = 1054300;
 
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>致命打確率の{Constants.W.damage.criticalChance}%が回収のダメージ量に追加されます。<br />回収しているスピアに的中されるたび、受けるダメージが{Constants.W.damage_reduction}%ずつ減少します。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "装填ゲージ獲得量", values: Constants.W.gauge},
-        {title: "スピア起動クールダウン減少量", values: Constants.W.e_cooldown_reduction}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation, status }) => {
+        if (showEquation) {
+            return {
+                0: Constants.W.damage.base[skillLevel],
+                1: `${Constants.W.damage.amp}%`,
+                2: Constants.W.slow.duration,
+                3: `${Constants.W.slow.effect}%`,
+                4: Constants.W.gauge[skillLevel],
+                5: Constants.W.e_cooldown_reduction[skillLevel],
+                6: `${Constants.W.damage.attack}%`,
+                7: `${status.criticalChance.calculatedValue.percent(Constants.W.damage.criticalChance).toString()}%`,
+                8: `${Constants.W.damage.criticalChance}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.W.damage,
+                1: Constants.W.slow.duration,
+                2: `${Constants.W.slow.effect}%`,
+                3: Constants.W.gauge[skillLevel],
+                4: Constants.W.e_cooldown_reduction[skillLevel]
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: `${Constants.W.damage_reduction}%`,
+            1: `${Constants.W.damage.criticalChance}%`
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/KarlaExtraPointModifyCoef", values: Constants.W.gauge},
+            {labelIntlID: "ToolTipType/KarlaSkill03CooldownReduce", values: Constants.W.e_cooldown_reduction}
+        ]  
+    })
 }

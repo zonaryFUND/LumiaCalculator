@@ -1,31 +1,40 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { CooldownOverride } from "../skills";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
+import Decimal from "decimal.js";
 
-const q: React.FC<SubjectSkillProps> = props => (
-    <>
-        スピアを発射して経路上の敵に<Value skill="Q" ratio={Constants.Q.damage} />
-        の基本攻撃ダメージを与え、到着地点にスピアを設置します。設置されたスピアはカーラと最大{Constants.Q.max}
-        個までつながり、{Constants.Q.range}m以上離れるとつながりが切れ、{Constants.Q.duration}
-        秒間地面に維持されます。貫通された2番目の対象からは<Value skill="Q" ratio={Constants.Q.second_damage} />のダメージを与えます。<br />
-        <br />
-        スピア貫通のクールダウンとキャスト時間が<span className={style.attackspeed}>攻撃速度(最大攻撃速度{Constants.T.max_attack_speed})</span>によって減少します。
-    </>
-);
+export const code = 1054200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "合計攻撃力", values: Constants.Q.damage.attack, percent: true},
-    ]
-}
-
-export const cooldownOverride: CooldownOverride = (config, status) => {
-    // NOTE: This multiplier is an estimated value.
-    return base => base.dividedBy(status.attackSpeed.calculatedValue).round2()
+export const info: TooltipInfo = {
+    skill: "Q",
+    cooldown: ({ status }) => {
+        // NOTE: This multiplier is an estimated value.
+        return new Decimal(Constants.Q.cooldown.constant).dividedBy(status.attackSpeed.calculatedValue).round2();
+    },
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            2: Constants.Q.max,
+            3: Constants.Q.range,
+            4: Constants.Q.duration,
+            5: Constants.T.max_attack_speed,
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: `${Constants.Q.damage.attack[skillLevel]}%`,
+                6: `${Constants.Q.second_damage.attack[skillLevel]}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.Q.damage,
+                6: Constants.Q.second_damage
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/SkillApCoef", values: Constants.Q.damage.attack, percent: true}
+        ]  
+    })
 }

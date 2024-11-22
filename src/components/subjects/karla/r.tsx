@@ -1,26 +1,48 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        指定した地点に巨大なスピアを設置して{Constants.R.range}m範囲内の敵を鎖で縛って<Value skill="R" ratio={Constants.R.first_damage} />
-        のスキルダメージを与え、移動速度を{Constants.R.slow[props.skillLevel]}%減少させます。
-        {Constants.R.duration}秒間、鎖から抜け出せなかった敵は巨大なスピアに引っ張られ、
-        <Value skill="R" ratio={Constants.R.second_damage} />のスキルダメージを受け、{Constants.R.stun}秒間気絶します。
-    </>
-);
+export const code = 1054500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "1打ダメージ量", values: Constants.R.first_damage.base},
-        {title: "2打ダメージ量", values: Constants.R.second_damage.base},
-        {title: "移動速度減少量", values: Constants.R.slow, percent: true},
-        {title: "クールダウン", values: Constants.E.cooldown},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation, status }) => {
+        if (showEquation) {
+            return {
+                0: Constants.R.range,
+                1: Constants.R.first_damage.base[skillLevel],
+                2: `${Constants.R.first_damage.amp}%`,
+                3: `${Constants.R.slow[skillLevel]}%`,
+                4: Constants.R.duration,
+                5: Constants.R.second_damage.base[skillLevel],
+                6: `${Constants.R.second_damage.amp}%`,
+                7: Constants.R.stun,
+                8: `${Constants.R.first_damage.attack}%`,
+                9: `${Constants.R.second_damage.attack}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.R.range,
+                1: Constants.R.first_damage,
+                2: `${Constants.R.slow[skillLevel]}%`,
+                3: Constants.R.duration,
+                4: Constants.R.second_damage,
+                5: Constants.R.stun
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/FirstDamage", values: Constants.R.first_damage.base},
+            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.R.second_damage.base},
+            {labelIntlID: "ToolTipType/DecreaseMovespeed", values: Constants.R.slow, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+        ]  
+    })
 }
