@@ -1,26 +1,32 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レノックスは鞭で2回攻撃を行い、最初の攻撃で周りの敵に<Value skill="W" ratio={Constants.W.first_damage} />
-            のダメージを与えて{Constants.W.slow.duration}秒間移動速度を{Constants.W.slow.effect}%減少させます。2回目の攻撃は対象に
-            <Value skill="W" ratio={Constants.W.second_damage} />のダメージを与えて対象を引き寄せます。
-        </>
-    );
-}
+export const code = 1020300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "1打ダメージ量", values: Constants.W.first_damage.base},
-        {title: "2打ダメージ量", values: Constants.W.second_damage.base},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.first_damage.base[skillLevel],
+        3: Constants.W.second_damage.base[skillLevel],
+        5: Constants.W.slow.duration,
+        6: `${Constants.W.slow.effect}%`,
+        9: `${Constants.W.first_damage.amp}%`,
+        10: `${Constants.W.second_damage.amp}%`,
+        11: Constants.W.first_damage,
+        12: Constants.W.second_damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/FirstDamage", values: Constants.W.first_damage.base},
+            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.W.second_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

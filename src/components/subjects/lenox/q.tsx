@@ -1,25 +1,41 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レノックスが範囲内の敵に<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えます。範囲の端の敵には
-            <Value skill="Q" ratio={Constants.Q.additional_damage} />のスキルダメージを追加で与えます。敵に攻撃を的中させると1スタックを獲得し、スタックごとに蛇の塒のクールダウンが
-            {Constants.Q.cooldown_reduction}秒減少します。(最大{Constants.Q.max_stack}スタック)
-        </>
-    );
-}
+export const code = 1020200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "最大体力ダメージ(%)", values: Constants.Q.additional_damage.maxHP, percent: true},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            3: Constants.Q.cooldown_reduction,
+            4: Constants.Q.max_stack
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.Q.damage.base[skillLevel],
+                2: `${Constants.Q.additional_damage.maxHP[skillLevel]}%`,
+                5: `${Constants.Q.damage.amp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                2: Constants.Q.additional_damage,
+                6: Constants.Q.damage,
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/SkillAddDamageMaxHpRatio", values: Constants.Q.additional_damage.maxHP, percent: true},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+        ]  
+    })
 }

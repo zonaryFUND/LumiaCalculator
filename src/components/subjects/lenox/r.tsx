@@ -1,31 +1,33 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レノックスが鞭をX字型に素早く2回振って、それぞれ<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与え、
-            {Constants.R.duration[props.skillLevel]}秒間青い蛇の効果を与えます。<br />
-            <br />
-            <span className={style.enhance}>青い蛇</span>：移動距離に応じて{Constants.R.tick}秒間{Constants.R.move_damage[props.skillLevel]}
-            の固定ダメージを与えます。2回とも的中した場合には移動距離に比例して{Constants.R.enhanced_move_damage[props.skillLevel]}の固定ダメージを与えます。
-        </>
-    );
-}
+export const code = 1020500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "固定ダメージ量", values: Constants.R.move_damage},
-        {title: "強化された固定固定ダメージ量", values: Constants.R.enhanced_move_damage},
-        {title: "維持時間", values: Constants.R.duration},
-        {title: "クールダウン", values: Constants.R.cooldown},
-        {title: "消費", values: Constants.R.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.damage.base[skillLevel],
+        2: Constants.R.move_damage[skillLevel],
+        3: Constants.R.duration[skillLevel],
+        4: Constants.R.tick,
+        5: Constants.R.enhanced_move_damage[skillLevel],
+        6: `${Constants.R.damage.amp}%`,
+        7: Constants.R.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/TrueDamage", values: Constants.R.move_damage},
+            {labelIntlID: "ToolTipType/FettedTrueDamage", values: Constants.R.enhanced_move_damage},
+            {labelIntlID: "ToolTipType/Time", values: Constants.R.duration},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+        ]  
+    })
 }

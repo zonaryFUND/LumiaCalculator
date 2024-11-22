@@ -1,24 +1,29 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レノックスが後ろから前へと鞭を振って、範囲内の敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与えて突き飛ばした後、対象の移動速度を
-            {Constants.E.slow.duration}秒間{Constants.E.slow.effect[props.skillLevel]}%減少させます。
-        </>
-    );
-}
+export const code = 1020400;
 
-export default e;
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.E.damage.base[skillLevel],
+        2: Constants.E.slow.duration,
+        3: `${Constants.E.slow.effect[skillLevel]}%`,
+        4: `${Constants.E.damage.amp}%`,
+        5: Constants.E.damage,
 
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "移動速度減少量(%)", values: Constants.E.slow.effect, percent: true},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.E.slow.effect, percent: true},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }
