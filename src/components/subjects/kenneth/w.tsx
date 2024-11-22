@@ -1,29 +1,49 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
+import { calculateValue } from "app-types/value-ratio/calculation";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ケネスは{Constants.W.duration}秒間炎で体を守り、受けるダメージが<Value skill="W" ratio={Constants.W.damage_reduction} />
-            <span className={style.emphasis}>%</span>減少します。また、{Constants.W.shield_duration}秒間
-            <Value skill="W" ratio={Constants.W.shield} />のダメージを吸収するシールドを獲得します。<br />
-            <br />
-            基本攻撃が的中すると、このスキルの持続時間が{Constants.W.extend}秒増加します。
-        </>
-    );
-}
+export const code = 1071300;
 
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは最大{Constants.W.max_duration}秒間維持されます。</>,
-    parameters: [
-        {title: "合計攻撃力", values: Constants.W.damage_reduction.attack, percent: true},
-        {title: "シールド吸収量", values: Constants.W.shield.base},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation, config, status }) => {
+        const base = {
+            0: Constants.W.duration
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: Constants.W.damage_reduction.base,
+                2: `${Constants.W.damage_reduction.attack[skillLevel]}%`,
+                3: Constants.W.shield_duration,
+                4: Constants.W.shield.base[skillLevel],
+                5: `${Constants.W.shield.attack}%`,
+                6: Constants.W.extend
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: `${calculateValue(Constants.W.damage_reduction, status, config, skillLevel).static.floor().toString()}%`,
+                2: Constants.W.shield_duration,
+                3: Constants.W.shield,
+                4: Constants.W.extend
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: Constants.W.max_duration
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/SkillApCoef", values: Constants.W.damage_reduction.attack, percent: true},
+            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+        ]  
+    })
 }

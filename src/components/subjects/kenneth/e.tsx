@@ -1,31 +1,45 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
+import { calculateValue } from "app-types/value-ratio/calculation";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ケネスが突進し、{Constants.E.duration}秒間基本攻撃を強化させて攻撃速度が{Constants.E.attack_speed[props.skillLevel]}
-            %増加し、基本攻撃で与える<span className={style.emphasis}>抑圧された怒り</span>のダメージ量の
-            {Constants.E.damage_conversion}%が固定ダメージに転換されます。<br />
-            <br />
-            敵に初めて的中した場合、<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを追加で与え、このスキルのクールダウンの
-            {Constants.E.cooldown_reduction[props.skillLevel]}%が返されます。
-        </>
-    );
-}
+export const code = 1071400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは他のスキルを使用している間にも使用できます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "攻撃速度増加量(%)", values: Constants.E.attack_speed, percent: true},
-        {title: "クールダウン減少量", values: Constants.E.cooldown_reduction, percent: true},
-        {title: "クールダウン", values: Constants.E.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation, config, status }) => {
+        const base = {
+            0: Constants.E.duration,
+            1: `${Constants.E.attack_speed[skillLevel]}%`
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                3: Constants.E.damage.base[skillLevel],
+                4: `${Constants.E.damage.attack}%`,
+                5: `${Constants.E.cooldown_reduction[skillLevel]}%`,
+                6: `${Constants.E.damage_conversion}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                3: Constants.E.damage,
+                4: `${Constants.E.cooldown_reduction[skillLevel]}%`,
+                5: `${Constants.E.damage_conversion}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.E.attack_speed, percent: true},
+            {labelIntlID: "ToolTipType/DecreaseCoolTime", values: Constants.E.cooldown_reduction, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+        ]  
+    })
 }

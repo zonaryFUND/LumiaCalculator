@@ -1,28 +1,39 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ケネスが斧を大きく振り回して<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えて、短い時間の間的中した対象を空中に浮かせます。<br />
-            <br />
-            <span className={style.emphasis}>抑圧された怒りー最大スタック</span>：ダメージ量が{Constants.Q.max_stack_damage}
-            %増加し、的中した敵1人あたり失った体力の{Constants.Q.max_stack_heal}%(最大{Constants.Q.max_stack_heal_max}%)を回復します。
-        </>
-    );
-}
+export const code = 1071200;
 
-export default q;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは基本攻撃及びスキル攻撃判定と見なされ、初めて敵に的中した時に効果が発動します。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "合計攻撃力", values: Constants.Q.damage.attack, percent: true},
-        {title: "クールダウン", values: Constants.Q.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.Q.damage.base[skillLevel],
+                1: `${Constants.Q.damage.attack[skillLevel]}%`,
+                2: `${Constants.Q.max_stack_damage}%`,
+                3: `${Constants.Q.max_stack_heal}%`,
+                4: `${Constants.Q.max_stack_heal_max}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.Q.damage,
+                1: `${Constants.Q.max_stack_damage}%`,
+                2: `${Constants.Q.max_stack_heal}%`,
+                3: `${Constants.Q.max_stack_heal_max}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/SkillApCoef", values: Constants.Q.damage.attack, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+        ]  
+    })
 }
