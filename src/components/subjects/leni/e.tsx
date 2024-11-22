@@ -1,28 +1,42 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import LeniValue from "./leni-value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レニがエアーホーンガンを発射します。<br />
-            敵または味方にそれぞれ違う効果が適用されます。<br />
-            <br />
-            敵：<LeniValue skill="E" ratio={Constants.E.damage} />のスキルダメージを与え、{Constants.E.stun}秒間気絶させます。<br />
-            味方：{Constants.E.duration}秒間<LeniValue skill="E" ratio={Constants.E.shield} />のシールドを付与します。
-        </>
-    );
-}
+export const code = 1069400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>味方実験体に的中した場合、レニも同じ効果を受けます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "味方のシールド吸収量", values: Constants.E.shield.base},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation, config, status }) => {
+        if (showEquation) {
+            return {
+                0: Constants.E.damage.base[skillLevel],
+                1: Constants.E.damage.level,
+                2: `${Constants.E.damage.amp}%`,
+                3: Constants.E.stun,
+                4: Constants.E.shield.base[skillLevel],
+                5: Constants.E.shield.level,
+                6: `${Constants.E.shield.amp}%`,
+                7: Constants.E.duration
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.E.damage,
+                1: Constants.E.stun,
+                2: Constants.E.shield,
+                3: Constants.E.duration
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/AllyShield", values: Constants.E.shield.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }

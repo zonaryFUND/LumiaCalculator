@@ -1,42 +1,51 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import LeniValue from "./leni-value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
-import { useValueContext } from "components/tooltip/value-context";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
+import { calculateValue } from "app-types/value-ratio/calculation";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    const { showEquation } = useValueContext();
-    const ms = (() => {
+export const code = 1069300;
+
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation, config, status }) => {
         if (showEquation) {
-            return <>{Constants.W.movement_speed.effect.base[props.skillLevel]}%<span className={style.level}>(+レニのレベル <span className={style.emphasis}>* {Constants.W.movement_speed.effect.level}</span>)</span></>
+            return {
+                0: Constants.W.damage.base[skillLevel],
+                1: Constants.W.damage.level,
+                2: `${Constants.W.damage.amp}%`,
+                6: Constants.W.slow.duration,
+                7: `${Constants.W.slow.center}%`,
+                8: `${Constants.W.slow.outer}%`,
+                9: Constants.W.ally_slow.duration,
+                10: `${Constants.W.ally_slow.effect}%`,
+                11: Constants.W.movement_speed.duration,
+                12: `${Constants.W.movement_speed.effect.base[skillLevel]}%`,
+                13: Constants.W.movement_speed.effect.level
+            } as Record<number, number | string | ValueRatio>
         } else {
-            return <LeniValue skill="W" ratio={Constants.W.movement_speed.effect} />;
+            return {
+                0: Constants.W.damage,
+                2: Constants.W.slow.duration,
+                3: `${Constants.W.slow.center}%`,
+                4: `${Constants.W.slow.outer}%`,
+                5: Constants.W.ally_slow.duration,
+                6: `${Constants.W.ally_slow.effect}%`,
+                7: Constants.W.movement_speed.duration,
+                8: `${calculateValue(Constants.W.movement_speed.effect, status, config, skillLevel).static.floor().toString()}%`
+            } as Record<number, number | string | ValueRatio>
         }
-    })();
-
-    return (
-        <>
-            レニが飛び跳ねて指定した位置にピコピコハンマーを振り下ろします。<br />
-            敵または味方にそれぞれ違う効果が適用されます。<br />
-            <br />
-            敵：<LeniValue skill="W" ratio={Constants.W.damage} />のスキルダメージを与えて{Constants.W.slow.duration}秒間移動速度を減少させます。<br />
-            真ん中の範囲に的中された敵は{Constants.W.slow.center}%、外側の範囲に的中された敵は{Constants.W.slow.outer}%の移動速度が減少します。<br />
-            味方：{Constants.W.ally_slow.duration}秒間移動速度を{Constants.W.ally_slow.effect}%減少させた後、
-            {Constants.W.movement_speed.duration}秒間移動速度を{ms}増加させます。
-        </>
-    );
-}
-
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>味方実験体に的中した場合、レニも同じ効果を受けます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "移動速度増加量(%)", values: Constants.W.movement_speed.effect.base},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.W.movement_speed.effect.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

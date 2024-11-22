@@ -1,27 +1,37 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import LeniValue from "./leni-value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レニがスプリングトラップを設置します。<br />
-            敵に的中させた場合には<LeniValue skill="R" ratio={Constants.R.damage} />のスキルダメージを与え、指定した方向に敵を跳ね飛ばします。<br />
-            飛ばされた敵が壁にぶつかった場合、敵の移動速度が{Constants.R.slow.duration}秒間{Constants.R.slow.effect}%減少します。<br />
-            <br />
-            スプリングトラップはレニも利用できます!
-        </>
-    );
-}
+export const code = 1069500;
 
-export default r;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは壁を越えられません。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation, config, status }) => {
+        if (showEquation) {
+            return {
+                0: Constants.R.damage.base[skillLevel],
+                1: Constants.R.damage.level,
+                2: `${Constants.R.damage.amp}%`,
+                3: Constants.R.slow.duration,
+                4: `${Constants.R.slow.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.R.damage,
+                1: Constants.R.slow.duration,
+                2: `${Constants.R.slow.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }
