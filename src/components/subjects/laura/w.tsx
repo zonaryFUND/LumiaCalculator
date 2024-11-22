@@ -1,29 +1,32 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ラウラが指定した方向に予告状を投げます。<br />
-            予告状が敵に的中した場合、<Value skill="W" ratio={Constants.W.damage} />のスキルダメージを与えて
-            {Constants.W.slow.duration}秒間移動速度を{Constants.W.slow.effect}%減少させます。<br />
-            的中した敵は{Constants.W.target_duration}秒間ラウラの<span className={style.emphasis}>ターゲット</span>になります。<br />
-            ラウラは<span className={style.emphasis}>ターゲット</span>になった対象を個別攻撃でダメージを与えるたびに体力を<Value skill="W" ratio={Constants.W.heal} />回復します。
-        </>
-    );
-}
+export const code = 1047300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "体力回復量", values: Constants.W.heal.base},
-        {title: "移動速度減少量(%)", values: Constants.W.slow.effect, percent: true},
-        {title: "クールダウン", values: Constants.W.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.slow.duration,
+        1: `${Constants.W.slow.effect[skillLevel]}%`,
+        2: Constants.W.target_duration,
+        3: Constants.W.damage.base[skillLevel],
+        4: `${Constants.W.damage.amp}%`,
+        5: Constants.W.heal.base[skillLevel],
+        6: `${Constants.W.heal.amp}%`,
+        20: Constants.W.damage,
+        21: Constants.W.heal
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.W.heal.base},
+            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.W.slow.effect, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
+        ]  
+    })
 }

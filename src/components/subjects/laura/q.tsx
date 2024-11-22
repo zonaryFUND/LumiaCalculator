@@ -1,26 +1,25 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ラウラが指定した方向に鞭を一回振り下ろして<Value skill="Q" ratio={Constants.Q.damage} />のスキルダメージを与えます。<br />
-            敵に的中した場合、{Constants.Q.reuse}秒間スキルを再使用できます。<br />
-            <br />
-            再使用：ラウラが指定した方向に短く突進します。
-        </>
-    );
-}
+export const code = 1047200;
 
-export default q;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは壁を越えられません。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.Q.damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.Q.reuse,
+        1: Constants.Q.damage.base[skillLevel],
+        2: `${Constants.Q.damage.amp}%`,
+        20: Constants.Q.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
+        ]  
+    })
 }

@@ -1,22 +1,19 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ラウラはスキル使用後、次の基本攻撃の攻撃速度が{}%増加し、対象周辺に扇形範囲で<Value skill="T" ratio={Constants.T.damage} />のスキルダメージを与えます。
-        </>
-    );
-}
+export const code = 1047100;
 
-export default t;
-
-export const values: ValuesProps = {
-    additionalInfo: <>使用中、基本攻撃の射程距離が少し増加します。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.T.damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.T.damage.base[skillLevel],
+        1: `${Constants.T.damage.amp}%`,
+        2: `${Constants.T.attack_speed}%`,
+        20: Constants.T.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base}
+        ]  
+    })
 }
