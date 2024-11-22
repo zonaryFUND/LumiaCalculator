@@ -1,6 +1,7 @@
 {
     "subject.leon.passive-additional": "T追加ダメージ",
-    "subject.leon.w-shield": "Wシールド",
+    "subject.leon.w-shield": "Wシールド(自分)",
+    "subject.leon.w-shield-ally": "Wシールド(味方)",
     "subject.leon.r-wave": "R波",
     "subject.leon.r-wall": "R壁ドン"
 }

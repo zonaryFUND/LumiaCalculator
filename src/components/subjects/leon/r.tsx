@@ -1,25 +1,30 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            レオンが波を召喚します。レオンは波に乗って一緒に前進し、経路上の敵に<Value skill="R" ratio={Constants.R.damage} />
-            のスキルダメージを与え、敵は波が消える瞬間まで押し出されます。波に押し出された敵が壁にぶつかると敵に<Value skill="R" ratio={Constants.R.wall_damage} />
-            のスキルダメージを与えて{Constants.R.airborne}秒間空中に浮かせます。波が消える時、その場に水溜りが生成されます。
-        </>
-    );
-}
+export const code = 1029500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "衝突ダメージ量", values: Constants.R.wall_damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.damage.base[skillLevel],
+        5: `${Constants.R.damage.amp}%`,
+        6: Constants.R.airborne,
+        7: Constants.R.wall_damage.base[skillLevel],
+        9: `${Constants.R.wall_damage.amp}%`,
+        20: Constants.R.damage,
+        21: Constants.R.wall_damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/CollisionDamage", values: Constants.R.wall_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }

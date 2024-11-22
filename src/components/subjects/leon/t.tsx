@@ -1,26 +1,26 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            基本攻撃をすると{Constants.T.cooldown.constant[props.skillLevel]}秒ごとに水溜りを生成します。レオンが水溜りの上にいると移動速度が
-            {Constants.T.movement_speed[props.skillLevel]}%、攻撃速度が{Constants.T.attack_speed[props.skillLevel]}%増加します。<br />
-            水中強打：レオンが水溜りの上にいると基本攻撃ダメージに<Value skill="T" ratio={Constants.T.damage} />の追加スキルダメージを与えます。
-        </>
-    );
-}
+export const code = 1029100;
 
-export default t;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "移動速度増加量(%)", values: Constants.T.movement_speed, percent: true},
-        {title: "追加攻撃速度(%)", values: Constants.T.attack_speed, percent: true},
-        {title: "ダメージ量", values: Constants.T.damage.base},
-        {title: "クールダウン", values: Constants.T.cooldown.constant}
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    cooldown: Constants.T.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: `${Constants.T.movement_speed[skillLevel]}%`,
+        1: `${Constants.T.attack_speed[skillLevel]}%`,
+        2: Constants.T.damage.base[skillLevel],
+        5: `${Constants.T.damage.amp}%`,
+        6: Constants.T.cooldown.constant[skillLevel],
+        20: Constants.T.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true},
+            {labelIntlID: "ToolTipType/AddAttackSpeedRatio", values: Constants.T.attack_speed, percent: true},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant}
+        ]  
+    })
 }
