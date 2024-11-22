@@ -1,30 +1,51 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
+
+export const code = 1001300;
 
 const maxHeal = {
     base: Constants.W.heal.base.map(v => v * 2),
     attack: Constants.W.heal.attack * 2
 }
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        ジャッキーがアドレナリンを活性化させ、移動速度が{Constants.W.movement_speed.effect}
-        %増加した後{Constants.W.movement_speed.duration}秒にわたって減少します。アドレナリン活性化中に出血状態の敵に向かって移動すると移動速度が追加で
-        {Constants.W.additional_movement_speed[props.skillLevel]}%増加し、出血状態の敵に基本攻撃が的中すると自分の失った体力に比例して
-        <Value skill="W" ratio={Constants.W.heal} /> ~ <Value skill="W" ratio={maxHeal} />の体力を回復します。
-    </>
-);
-
-export default w;
-
-export const values: ValuesProps = {
-    additionalInfo: <>体力回復量は自分の現在体力が最大体力の{Constants.W.heal_max_hp}%の場合に最大になります。</>,
-    parameters: [
-        {title: "追撃時移動速度(%)", values: Constants.W.additional_movement_speed, percent: true},
-        {title: "体力回復量", values: Constants.W.heal.base},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.W.movement_speed.duration,
+            1: `${Constants.W.movement_speed.effect}%`,
+            4: `${Constants.W.additional_movement_speed[skillLevel]}%`
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                2: Constants.W.heal.base[skillLevel],
+                3: maxHeal.base[skillLevel],
+                5: `${Constants.W.heal.attack}%`,
+                7: `${maxHeal.attack}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                2: Constants.W.heal,
+                3: maxHeal,
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        tipValues: {
+            0: `${Constants.W.heal_max_hp}%`  
+        },
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/ChaseMoveSpeed", values: Constants.W.additional_movement_speed, percent: true},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.W.heal.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

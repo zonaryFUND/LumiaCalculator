@@ -1,24 +1,45 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        アイソルがMok製爆弾を設置します。Mok製爆弾は{Constants.R.lifetime}秒間敵を感知でき、範囲内に敵が入ると爆発して
-        <Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えます。<br />
-        <br />
-        最大{Constants.R.charge.max}個まで保有でき、{Constants.R.max_place}個まで設置することができます。
-    </>
-);
+export const code = 1009500;
 
-export default r;
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    charge: Constants.R.charge,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.R.lifetime
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: Constants.R.damage.base[skillLevel],
+                2: `${Constants.R.damage.attack}%`,
+                3: `${Constants.R.damage.amp}%`,
+                4: Constants.R.charge.max,
+                5: Constants.R.max_place,
+                6: `${Constants.R.damage.targetHP}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.R.damage,
+                2: Constants.R.charge.max,
+                3: Constants.R.max_place,
+                4: `${Constants.R.damage.targetHP}%`
+            } as Record<number, number | string | ValueRatio>
+        }
 
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは「アイソルが設置したトラップ」判定が適用されます。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "チャージ時間", values: Constants.R.charge.time},
-    ]
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.R.charge.time}
+        ]  
+    })
 }

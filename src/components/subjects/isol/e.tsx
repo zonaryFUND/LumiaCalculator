@@ -1,26 +1,43 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        アイソルが前転しながら移動します。移動後
-        {Constants.E.hide_duration[props.skillLevel]}秒間隠密状態になります。移動以外の行動をすると隠密状態が解除されます。
-        {Constants.E.attack_duration}秒間1回目の基本攻撃ダメージは
-        <Value skill="E" ratio={Constants.E.damage} />のスキルダメージを追加で与えます。
-    </>
-);
+export const code = 1009400;
 
-export default e;
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.E.hide_duration[skillLevel],
+            1: Constants.W.tick,
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                1: Constants.E.damage.base[skillLevel],
+                2: `${Constants.E.damage.amp}%`,
+                3: Constants.E.attack_duration
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                1: Constants.E.damage,
+                2: Constants.E.attack_duration
+            } as Record<number, number | string | ValueRatio>
+        }
 
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは壁を越えられません。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "隠密時間", values: Constants.E.hide_duration},
-        {title: "クールダウン", values: Constants.E.cooldown},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/StealthTime", values: Constants.E.hide_duration},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }

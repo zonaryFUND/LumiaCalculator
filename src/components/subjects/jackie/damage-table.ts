@@ -19,7 +19,7 @@ const table: DamageTableGenerator = props => {
             ([
                 {label: props.intl.formatMessage({id: "subject.jackie.w-min"}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}},
                 {label: props.intl.formatMessage({id: "subject.jackie.w-max"}), skill: "W", value: Constants.W.heal, multiplier: Constants.W.heal_max_multiplier * 100, type: {type: "heal", target: "self"}}
-            ] as SubjectDamageTableUnit[]).concat(weaponType == "dual_swords" ? [
+            ] as SubjectDamageTableUnit[]).concat(weaponType == "DualSword" ? [
                 {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-min"}), skill: "W", value: Constants.W.heal, type: {type: "heal", target: "self"}, multiplier: Constants.R.dualsword_w_heal_multiplier * 100},
                 {label: props.intl.formatMessage({id: "subject.jackie.rw-dualsword-max"}), skill: "W", value: Constants.W.heal, multiplier: Constants.W.heal_max_multiplier * Constants.R.dualsword_w_heal_multiplier * 100, type: {type: "heal", target: "self"}}
             ] : [])

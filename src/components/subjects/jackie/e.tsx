@@ -1,21 +1,36 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        ジャッキーが指定した位置にジャンプし、周りの敵に<Value skill="E" ratio={Constants.E.damage} />
-        のスキルダメージを与え、{Constants.E.slow.duration}秒間敵の移動速度を{Constants.E.slow.effect}%減少させます。
-    </>
-);
+export const code = 1001400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "消費", values: Constants.E.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.E.damage.base[skillLevel],
+                1: `${Constants.E.damage.attack}%`,
+                2: Constants.E.slow.duration,
+                3: `${Constants.E.slow.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.E.damage,
+                1: Constants.E.slow.duration,
+                2: `${Constants.E.slow.effect}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+        ]  
+    })
 }

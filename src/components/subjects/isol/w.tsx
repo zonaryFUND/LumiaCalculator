@@ -1,29 +1,48 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        アイソルが{Constants.W.duration}秒間前方に銃を乱射して
-        {Constants.W.tick}秒ごとに<Value skill="W" ratio={Constants.W.damage} />
-        のスキルダメージを与え、対象の防御力を{Constants.W.defense_decline[props.skillLevel]}
-        ずつ減少させます。防御力減少は{Constants.W.defense_decline_duration}
-        秒間維持され、最大{Constants.W.defense_decline_max}回まで適用されます。
-    </>
-);
+export const code = 1009300;
 
-export default w;
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            0: Constants.W.duration,
+            1: Constants.W.tick,
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                2: Constants.W.damage.base[skillLevel],
+                3: `${Constants.W.damage.attack}%`,
+                4: Constants.W.defense_decline[skillLevel],
+                6: `${Constants.W.damage.amp}%`,
+                7: Constants.W.defense_decline_max,
+                8: Constants.W.defense_decline_duration
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                2: Constants.W.defense_decline[skillLevel],
+                3: Constants.W.defense_decline_duration,
+                7: Constants.W.damage,
+                9: Constants.W.defense_decline_max
+            } as Record<number, number | string | ValueRatio>
+        }
 
-export const values: ValuesProps = {
-    additionalInfo: <>
-        火網は敵の設置物にダメージを与えることができます
-    </>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "防御力減少量", values: Constants.W.defense_decline},
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "消費", values: Constants.W.sp_cost},
-    ]
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/DecreaseDefense", values: Constants.W.defense_decline},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

@@ -8,7 +8,7 @@ const table: DamageTableGenerator = props => {
     return {
         basicAttack: [
             "standard",
-            weaponType == "dual_swords" ? {label: props.intl.formatMessage({id: "subject.cathy.q-dualsword-attack"}), skill: "Q", value: {attack: Constants.Q.dual_sword}, type: {type: "basic"}} : undefined,
+            weaponType == "DualSword" ? {label: props.intl.formatMessage({id: "subject.cathy.q-dualsword-attack"}), skill: "Q", value: {attack: Constants.Q.dual_sword}, type: {type: "basic"}} : undefined,
             {label: props.intl.formatMessage({id: "subject.cathy.q-additional-damage"}), skill: "Q", value: Constants.Q.additional_damage}
         ].filter(v => v) as SubjectDamageTableUnit[],
         skill: [
