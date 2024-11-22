@@ -1,27 +1,22 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ダイリンが{Constants.W.cast}秒間酒を飲んで酔いを{Constants.W.bac}
-            獲得し、すべての基本攻撃を回避し、受けるダメージが{Constants.W.damage_reduction[props.skillLevel]}
-            %減少します。ダイリンが基本攻撃をすると酒飲みのクールダウンが{Constants.W.cooldown_reduction}秒減少します。<br />
-            <br />
-            <span className={style.emphasis}>大酒家</span>：酒飲みを完了した後、敵に与える基本攻撃ダメージ量が酔いの量に比例して
-            {Constants.W.basic_attack_amp}% ~ {Constants.W.basic_attack_amp * 100}%まで増加します。
-        </>
-    );
-}
+export const code = 1010300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "クールダウン", values: Constants.W.cooldown},
-        {title: "受けるダメージ減少(%)", values: Constants.W.damage_reduction, percent: true}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.cast,
+        1: `${Constants.W.basic_attack_amp}%`,
+        2: `${Constants.W.basic_attack_amp * 100}%`,
+        3: Constants.W.cooldown_reduction,
+        20: `${Constants.W.damage_reduction[skillLevel]}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/DecreaseReceiveDamageRatio", values: Constants.W.damage_reduction, percent: true}
+        ]  
+    })
 }

@@ -33,7 +33,7 @@ const subjectSkillTooltip: React.FC<Props> = props => {
             return value;
         }
     });
-    const expansion = skillInfo.expansion({skillLevel, config: props.config});
+    const expansion = skillInfo.expansion({skillLevel, config: props.config, status: props.status});
     const expansionValues = (() => {
         if (expansion.tipValues == undefined) return undefined;
 

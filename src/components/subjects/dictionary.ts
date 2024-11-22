@@ -39,7 +39,7 @@ export type TooltipInfo = {
         coef?: string
     }
     values: (props: { skillLevel: number, showEquation: boolean, config: SubjectConfig, status: Status }) => TooltipValues
-    expansion: (props: { skillLevel: number, config: SubjectConfig }) => ExpansionTooltipProps
+    expansion: (props: { skillLevel: number, config: SubjectConfig, status: Status }) => ExpansionTooltipProps
     calculatorMessage?: string
 }
 

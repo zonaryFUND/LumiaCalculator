@@ -1,37 +1,27 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const dict = {
-    gauge: {
-        format: "消耗した酔いの{ratio}%",
-        className: style.emphasis
-    }
-}
+export const code = 1010500;
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ダイリンが妨害効果免疫状態になって突進し、スキルを発動している{Constants.R.supression}秒間の間ぶつかった敵を制圧し、
-            {Constants.R.count}回連続で攻撃します。1打あたり敵の失った体力に比例して
-            <Value skill="R" ratio={Constants.R.min_damage} overrideExpression={dict} />
-            <span className={style.emphasis}></span> ~ <Value skill="R" ratio={Constants.R.max_damage} overrideExpression={dict} />
-            <span className={style.emphasis}></span>のスキルダメージを与えます。<br />
-            <br />
-            スキルを使用すると、酔いがすべて消耗され、消耗された酔いに比例してダメージ量が増加します。
-        </>
-    );
-}
-
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "最小ダメージ量", values: Constants.R.min_damage.base},
-        {title: "最大ダメージ量", values: Constants.R.max_damage.base},
-        {title: "クールダウン", values: Constants.R.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.R.min_damage.base[skillLevel],
+        1: `${Constants.R.min_damage.attack}%`,
+        2: Constants.R.max_damage.base[skillLevel],
+        3: `${Constants.R.max_damage.attack}%`,
+        7: Constants.R.supression,
+        20: Constants.R.min_damage,
+        21: Constants.R.max_damage,
+        22: `${Constants.R.min_damage.gauge}%`,
+        23: `${Constants.R.max_damage.gauge}%`
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/MinDamage", values: Constants.R.min_damage.base},
+            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.R.max_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
+        ]  
+    })
 }
