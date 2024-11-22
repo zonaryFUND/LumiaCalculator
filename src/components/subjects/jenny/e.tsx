@@ -1,30 +1,27 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        <span className={style.level}>持続効果</span>：基本攻撃をするたびにこのスキルのクールダウンが
-        {Constants.E.cooldown_reduction}秒減少し、{Constants.E.count}回目の基本攻撃は
-        <Value skill="E" ratio={Constants.E.damage} />の追加スキルダメージを与えます。<br />
-        この効果はペルソナスキルを使用するとすぐに活性化します。<br />
-        <br />
-        <span className={style.level}>使用効果</span>：ジェニーが指定した方向へ短い距離を移動して配役を切り替え、追加スキルダメージ効果を活性化させます。<br />
-        <br />
-        このスキルはクールダウン減少ステータスの影響を受けません。
-    </>
-);
+export const code = 1038400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>設置されていたスポットライトとレッドカーペットの効果は変わりません。</>,
-    parameters: [
-        {title: "クールダウン", values: Constants.E.cooldown.constant},
-        {title: "消費", values: Constants.E.sp_cost},
-        {title: "追加ダメージ量", values: Constants.E.damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.E.damage.base[skillLevel],
+        1: `${Constants.E.damage.amp}%`,
+        2: Constants.E.count,
+        3: Constants.E.cooldown_reduction,
+        20: Constants.E.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown.constant},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost},
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.E.damage.base},
+        ]  
+    })
 }

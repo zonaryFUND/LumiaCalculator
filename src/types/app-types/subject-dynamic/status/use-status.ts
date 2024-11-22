@@ -198,7 +198,11 @@ export function useStatus(config: SubjectConfig): Status {
         lifeSteal: {},
         omnisyphon: {},
         healPower: {},
-        tenacity: {},
+        tenacity: {
+            equipment: {
+                constant: maxEquipmentStatus("uniqueTenacity", equipments) ?? new Decimal(0)
+            }
+        },
         movementSpeed: {
             base: baseStatusValues.moveSpeed,
             equipment: movementSpeedEquipment
@@ -257,9 +261,7 @@ export function useStatus(config: SubjectConfig): Status {
         healPower: {
             calculatedValue: sumEquipmentStatus("healerGiveHpHealRatio", equipments) ?? new Decimal(0)
         },
-        tenacity: {
-            calculatedValue: maxEquipmentStatus("uniqueTenacity", equipments) ?? new Decimal(0)
-        },
+        tenacity: standardCalc(overriddenValue.tenacity, {}, 0),
         movementSpeed: movementSpeedSpeedCalc(overriddenValue.movementSpeed, {mastery: config.movementMastery}),
         visionRange: standardCalc(overriddenValue.visionRange, {}, 2),
         basicAttackRange: overriddenValue.basicAttackRange.calculatedValue ? {

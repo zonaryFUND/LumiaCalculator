@@ -1,24 +1,42 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        ヤンが前に突進し、次の基本攻撃を強化して<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを追加で与えます。次のニーストライクとトマホークスピンスキルダメージが的中すると、失った体力に比例して的中させたスキルダメージの
-        {Constants.E.heal.min}% ~ {Constants.E.heal.max}%の体力を回復します(体力が
-        {Constants.E.heal.max_threshold_hp}%以下の場合、最大回復量適用)。トマホークスピンキャスト中に使用できます。<br />
-        <span className={style.enhance}>強化効果</span>：<span className={style.emphasis}>ウィービング</span>のクールダウンを{Constants.E.cooldown_reduction}%減少させます。
-    </>
-);
+export const code = 1035400;
 
-export default e;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        const base = {
+            2: `${Constants.E.heal.min}%`,
+            3: `${Constants.E.heal.max}%`,
+            4: `${Constants.E.cooldown_reduction}%`
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: Constants.E.damage.base[skillLevel],
+                1: `${Constants.E.damage.additionalAttack}%`,
+                5: `${Constants.E.damage.amp}%`,
+                6: `${Constants.E.damage.targetMaxHP}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                ...base,
+                6: Constants.E.damage,
+                7: `${Constants.E.damage.targetMaxHP}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
+        ]  
+    })
 }

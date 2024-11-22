@@ -1,28 +1,29 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        ジェニーが指定した方向にレッドカーペットを設置して、的中した敵に<Value skill="W" ratio={Constants.W.first_damage} />
-        のスキルダメージを与え、{Constants.W.slow.duration}秒間移動速度を{Constants.W.slow.effect}%減少させます。<br />
-        <br />
-        スキルを再使用すると、レッドカーペットの上の敵に<Value skill="W" ratio={Constants.W.second_damage} />
-        のスキルダメージを与えます。カーペットを設置した時、ジェニーの配役によって追加効果が適用されます。<br />
-        <br />
-        <span className={style.strong}>赤ワイン</span>：レッドカーペットの上の敵を引っ張ります。<br />
-        <span className={style.strong}>ブラックティー</span>：レッドカーペットの上の敵を突き飛ばします。
-    </>
-);
+export const code = 1038300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.first_damage.base},
-        {title: "再使用ダメージ量", values: Constants.W.second_damage.base}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.first_damage.base[skillLevel],
+        2: `${Constants.W.slow.effect}%`,
+        3: Constants.W.second_damage.base[skillLevel],
+        5: Constants.W.slow.duration,
+        6: `${Constants.W.first_damage.amp}%`,
+        7: `${Constants.W.second_damage.amp}%`,
+        20: Constants.W.first_damage,
+        21: Constants.W.second_damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.first_damage.base},
+            {labelIntlID: "ToolTipType/ReactivateDamage", values: Constants.W.second_damage.base},
+        ]  
+    })
 }

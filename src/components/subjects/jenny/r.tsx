@@ -1,25 +1,29 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        ジェニーの周りに授賞式ステージを設置して、範囲内の敵の移動速度を
-        {Constants.R.slow[props.skillLevel]}%減少させ、ペルソナのクールダウンが初期化されます。<br />
-        ステージは{Constants.R.duration}秒後に消え、範囲内の敵に<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与え、
-        {Constants.R.charm}秒間敵を魅惑させます。
-    </>
-);
+export const code = 1038500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "移動速度減少量(%)", values: Constants.R.slow, percent: true},
-        {title: "クールダウン", values: Constants.R.cooldown},
-        {title: "消費", values: Constants.R.sp_cost},
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: `${Constants.R.slow[skillLevel]}%`,
+        1: Constants.R.duration,
+        2: Constants.R.damage.base[skillLevel],
+        4: Constants.R.charm,
+        6: `${Constants.R.damage.amp}%`,
+        20: Constants.R.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.R.slow, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+        ]  
+    })
 }

@@ -25,7 +25,17 @@ const misc: React.FC<Props> = props => {
             <tr className={table. separator} onClick={toggleHidden}><td colSpan={2}><div><p><FormattedMessage id="app.others" /></p>{hidden ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
             <Column 
                 name={<><HandFist /><FormattedMessage id="status.tenacity" /></>} 
-                value={props.status.tenacity.calculatedValue} 
+                value={props.status.tenacity.calculatedValue}
+                expand={
+                    props.status.tenacity.overrideAdditional == undefined ? null :
+                    <InnerTable>
+                        {
+                            props.status.tenacity.equipment?.constant == undefined ? null : 
+                            <Equipment constant={props.status.tenacity.equipment.constant} level={-1} percent />
+                        }
+                        <tr><td><FormattedMessage id={props.status.tenacity.overrideAdditional.nameKey} /></td><td>{props.status.tenacity.overrideAdditional.value?.toString()}%</td></tr>
+                    </InnerTable>
+                }
                 percent 
                 isHidden={hidden} 
             />

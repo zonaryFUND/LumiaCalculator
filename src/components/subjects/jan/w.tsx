@@ -1,24 +1,32 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
 
-const w: React.FC<SubjectSkillProps> = props => (
-    <>
-        ヤンがキックで敵に<Value skill="W" ratio={Constants.W.damage} />のダメージを与えます。外側の範囲に当たった敵を突き飛ばし、突き飛ばされた敵が壁にぶつかると{Constants.W.stun}秒間気絶させます。<br />
-        <span className={style.enhance}>強化効果</span>：ダメージ量が<Value skill="W" ratio={Constants.W.enhanced_damage} />
-        に増加して、トマホークスピンの範囲内にいるすべての敵を突き飛ばし、突き飛ばされた敵が壁にぶつかると{Constants.W.enhanced_stun}秒間気絶させます。
-    </>
-);
+export const code = 1035300;
 
-export default w;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.W.damage.base},
-        {title: "強化されたダメージ量", values: Constants.W.enhanced_damage.base},
-        {title: "消費", values: Constants.W.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "W",
+    consumption: {
+        type: "sp",
+        value: Constants.W.sp_cost
+    },
+    cooldown: Constants.W.cooldown,
+    values: ({ skillLevel, showEquation }) => ({
+        0: Constants.W.damage.base[skillLevel],
+        1: `${Constants.W.damage.additionalAttack}%`,
+        2: Constants.W.enhanced_damage.base[skillLevel],
+        3: `${Constants.W.enhanced_damage.additionalAttack}%`,
+        4: Constants.W.enhanced_stun,
+        5: Constants.W.stun,
+        6: `${Constants.W.damage.amp}%`,
+        7: `${Constants.W.enhanced_damage.amp}%`,
+        8: Constants.W.damage,
+        9: Constants.W.enhanced_damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/FettedDamage", values: Constants.W.enhanced_damage.base},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+        ]  
+    })
 }

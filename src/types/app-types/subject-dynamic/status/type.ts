@@ -66,7 +66,7 @@ export type Status = {
     omnisyphon: CalculatedStatusValue
     lifeSteal: CalculatedStatusValue
     healPower: CalculatedStatusValue
-    tenacity: CalculatedStatusValue
+    tenacity: StatusValue & CalculatedStatusValue
     movementSpeed: StatusValue & CalculatedStatusValue
     visionRange: StatusValue & CalculatedStatusValue
     basicAttackRange: StatusValue & CalculatedStatusValue
