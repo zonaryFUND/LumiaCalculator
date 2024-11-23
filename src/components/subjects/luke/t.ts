@@ -1,14 +1,15 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1022100;
 
 export const info: TooltipInfo = {
     skill: "T",
-    values: ({ skillLevel, showEquation }) => ({
-        0: `${Constants.T.subject_kill[skillLevel]}%`,
-        2: `${Constants.T.wickline_kill[skillLevel]}%`,
+    values: ({ }) => ({
+        0: RatioPercent(Constants.T.subject_kill),
+        2: RatioPercent(Constants.T.wickline_kill),
         3: Constants.T.evolution_stack[0],
         4: Constants.T.evolution_stack[1],
         5: Constants.T.evolution_stack[2],

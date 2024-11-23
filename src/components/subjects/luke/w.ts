@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1022300;
 
@@ -11,19 +12,19 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
-                0: Constants.W.damage.base[skillLevel],
-                1: `${Constants.W.damage.attack}%`,
+                0: Constants.W.damage.base,
+                1: RatioPercent(Constants.W.damage.attack),
                 3: Constants.W.duration,
-                4: Constants.W.basic_attack_damage.base[skillLevel],
-                5: `${Constants.W.basic_attack_damage.attack}%`,
+                4: Constants.W.basic_attack_damage.base,
+                5: RatioPercent(Constants.W.basic_attack_damage.attack),
                 7: Constants.W.attack_speed.duration,
-                8: `${Constants.W.attack_speed.one_stack}%`,
+                8: RatioPercent(Constants.W.attack_speed.one_stack),
                 9: Constants.W.attack_speed.max_stack,
-                10: `${Constants.W.heal}%`,
-                11: `${Constants.W.max_heal}%`
+                10: RatioPercent(Constants.W.heal),
+                11: RatioPercent(Constants.W.max_heal)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -31,10 +32,10 @@ export const info: TooltipInfo = {
                 1: Constants.W.duration,
                 2: Constants.W.basic_attack_damage,
                 3: Constants.W.attack_speed.duration,
-                4: `${Constants.W.attack_speed.one_stack}%`,
+                4: RatioPercent(Constants.W.attack_speed.one_stack),
                 5: Constants.W.attack_speed.max_stack,
-                6: `${Constants.W.heal}%`,
-                7: `${Constants.W.max_heal}%`
+                6: RatioPercent(Constants.W.heal),
+                7: RatioPercent(Constants.W.max_heal)
             } as Record<number, number | string | ValueRatio>
         }
     },
