@@ -1,35 +1,34 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            満足感：ルクは実験体のキルに関与すると自分が失った体力の{Constants.T.subject_kill[props.skillLevel]}%を回復し、ウィクラインのキルに関与した場合、自分が失った体力の
-            {Constants.T.wickline_kill[props.skillLevel]}%を回復します。<br />
-            <br />
-            掃除完了：ルクは実験体・野生動物を倒したり補給箱を獲得するたびに<span className={style.strong}>掃除完了</span>スタックを獲得します。<br />
-            {Constants.T.evolution_stack.map(v => `${v}`).join("/")}スタックごとに進化ポイントを獲得し、
-            {Constants.T.heal_amp_threshold}スタックからは{Constants.T.heal_amp_per}スタック毎に満足感の効果が1%増加します。<br />
-            <br />
-            ニワトリ、コウモリ {Constants.T.chicken_bat}<br />
-            イノシシ、ハウンド、オオカミ {Constants.T.boar_hound_wolf}<br />
-            クマ {Constants.T.bear}<br />
-            実験体 {Constants.T.subject}<br />
-            アルファ/オメガ {Constants.T.alpha_omega}<br />
-            ウィクライン {Constants.T.wickline}<br />
-            補給箱 食品{Constants.T.food_box}/英雄{Constants.T.epic_box}/伝説以上{Constants.T.legendary_box}
-        </>
-    );
-}
+export const code = 1022100;
 
-export default t;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "実験体処置時、体力回復効果(%)", values: Constants.T.subject_kill, percent: true},
-        {title: "ウィクライン処置時、体力回復効果(%)", values: Constants.T.wickline_kill, percent: true}
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ skillLevel, showEquation }) => ({
+        0: `${Constants.T.subject_kill[skillLevel]}%`,
+        2: `${Constants.T.wickline_kill[skillLevel]}%`,
+        3: Constants.T.evolution_stack[0],
+        4: Constants.T.evolution_stack[1],
+        5: Constants.T.evolution_stack[2],
+        6: Constants.T.heal_amp_threshold,
+        7: Constants.T.heal_amp_per,
+        8: "1%",
+        9: Constants.T.chicken_bat,
+        10: Constants.T.bear,
+        11: Constants.T.subject,
+        12: Constants.T.wickline,
+        14: Constants.T.food_box,
+        15: Constants.T.epic_box,
+        16: Constants.T.legendary_box,
+        17: Constants.T.alpha_omega,
+        18: Constants.T.boar_hound_wolf
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/HpRegenRatioPlayer", values: Constants.T.subject_kill, percent: true},
+            {labelIntlID: "ToolTipType/HpRegenRatioWickline", values: Constants.T.wickline_kill, percent: true}
+        ]  
+    })
 }

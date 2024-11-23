@@ -1,29 +1,43 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { ValueRatio } from "app-types/value-ratio";
 
-const q: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ルクが洗剤容器を投げて最初に的中した敵に<Value skill="Q" ratio={Constants.Q.first_damage} />のスキルダメージを与え、その敵の視界を獲得します。{Constants.Q.reuse}秒以内にスキルを再使用できます。<br />
-            <br />
-            再使用：ルクが洗剤容器に当たった敵に突進して敵のシールドを破壊し、<Value skill="Q" ratio={Constants.Q.second_damage} />のスキルダメージを与えます。<br />
-            <br />
-            <span className={style.strong}>進化効果</span>：対象の失った体力に比例して再使用時のダメージ量が最大{Constants.Q.enhance_max}%まで増加します。(対象の体力が{Constants.Q.enhance_max_target_hp}%の場合、最大値が適用されます。)
-        </>
-    );
-}
+export const code = 1022200;
 
-export default q;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "発射体ダメージ", values: Constants.Q.first_damage.base},
-        {title: "突進ダメージ", values: Constants.Q.second_damage.base},
-        {title: "クールダウン", values: Constants.Q.cooldown},
-        {title: "消費", values: Constants.Q.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "Q",
+    consumption: {
+        type: "sp",
+        value: Constants.Q.sp_cost
+    },
+    cooldown: Constants.Q.cooldown,
+    values: ({ skillLevel, showEquation }) => {
+        if (showEquation) {
+            return {
+                0: Constants.Q.first_damage.base[skillLevel],
+                1: `${Constants.Q.first_damage.attack}%`,
+                3: Constants.Q.reuse,
+                4: Constants.Q.second_damage.base[skillLevel],
+                5: `${Constants.Q.second_damage.attack}%`,
+                7: `${Constants.Q.enhance_max}%`,
+                8: `${Constants.Q.enhance_max_target_hp}%`
+            } as Record<number, number | string | ValueRatio>
+        } else {
+            return {
+                0: Constants.Q.first_damage,
+                1: Constants.Q.reuse,
+                2: Constants.Q.second_damage,
+                3: `${Constants.Q.enhance_max}%`,
+                4: `${Constants.Q.enhance_max_target_hp}%`
+            } as Record<number, number | string | ValueRatio>
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/BulletDamage", values: Constants.Q.first_damage.base},
+            {labelIntlID: "ToolTipType/DashDamage", values: Constants.Q.second_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+        ]  
+    })
 }
