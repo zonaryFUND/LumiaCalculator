@@ -2,32 +2,33 @@ import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
 import { accelerando, cdr } from "./status-override";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1075100;
 
 export const info: TooltipInfo = {
     skill: "T",
     cooldown: Constants.T.cooldown,
-    values: ({ skillLevel, showEquation, config }) => {
+    values: ({ showEquation, config }) => {
         const accelerandoValue = accelerando(config);
         const cdrValue = cdr(accelerandoValue);
 
         if (showEquation) {
             return {
-                0: `${Constants.T.stack_gain_threshold}`,
-                1: Constants.T.additional_damage.base[skillLevel],
-                2: `${Constants.T.additional_damage.amp}%`,
+                0: RatioPercent(Constants.T.stack_gain_threshold),
+                1: Constants.T.additional_damage.base,
+                2: RatioPercent(Constants.T.additional_damage.amp),
                 3: Constants.T.additional_damage.stack,
-                4: `${cdrValue.toString()}%`,
-                5: Constants.T.cooldown.constant[skillLevel],
+                4: RatioPercent(cdrValue.toString()),
+                5: Constants.T.cooldown.constant,
                 6: accelerandoValue.toString()
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
-                0: `${Constants.T.stack_gain_threshold}`,
+                0: RatioPercent(Constants.T.stack_gain_threshold),
                 1: Constants.T.additional_damage,
-                2: `${cdrValue.toString()}%`,
-                3: Constants.T.cooldown.constant[skillLevel],
+                2: RatioPercent(cdrValue.toString()),
+                3: Constants.T.cooldown.constant,
                 4: accelerandoValue.toString()
             } as Record<number, number | string | ValueRatio>
         }

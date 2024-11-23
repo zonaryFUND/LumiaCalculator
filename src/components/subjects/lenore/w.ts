@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1075300;
 
@@ -11,18 +12,18 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
                 0: Constants.W.shield.duration,
-                1: Constants.W.shield.effect.base[skillLevel],
-                2: `${Constants.W.shield.effect.amp}%`,
-                3: Constants.W.damage.base[skillLevel],
-                4: `${Constants.W.damage.amp}%`,
+                1: Constants.W.shield.effect.base,
+                2: RatioPercent(Constants.W.shield.effect.amp),
+                3: Constants.W.damage.base,
+                4: RatioPercent(Constants.W.damage.amp),
                 5: Constants.W.bind,
-                6: `${Constants.W.enhance.shield}%`,
+                6: RatioPercent(Constants.W.enhance.shield),
                 7: Constants.W.enhance.movement_speed.duration,
-                8: `${Constants.W.enhance.movement_speed.effect}%`
+                8: RatioPercent(Constants.W.enhance.movement_speed.effect)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -30,9 +31,9 @@ export const info: TooltipInfo = {
                 1: Constants.W.shield.effect,
                 2: Constants.W.damage,
                 3: Constants.W.bind,
-                4: `${Constants.W.enhance.shield}%`,
+                4: RatioPercent(Constants.W.enhance.shield),
                 5: Constants.W.enhance.movement_speed.duration,
-                6: `${Constants.W.enhance.movement_speed.effect}%`
+                6: RatioPercent(Constants.W.enhance.movement_speed.effect)
             } as Record<number, number | string | ValueRatio>
         }
     },
