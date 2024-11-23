@@ -28,7 +28,10 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     const values = skillInfo.values({skillLevel, showEquation: props.showEquation, config: props.config, status: props.status});
     const coefficientValues = es.mapValues(values, value => {
         if (typeof value == "object") {
-            return calculateValue(value, props.status, props.config, skillLevel).static.floor().toString();
+            const expression = "ratio" in value;
+            const ratio = expression ? value.ratio : value;
+            const calculated = calculateValue(ratio, props.status, props.config, skillLevel).static.floor();
+            return expression ? value.expression(calculated) : calculated.toString() 
         } else {
             return value;
         }
@@ -39,7 +42,10 @@ const subjectSkillTooltip: React.FC<Props> = props => {
 
         return es.mapValues(expansion.tipValues, value => {
             if (typeof value == "object") {
-                return calculateValue(value, props.status, props.config, skillLevel).static.floor().toString();
+                const expression = "ratio" in value;
+                const ratio = expression ? value.ratio : value;
+                const calculated = calculateValue(ratio, props.status, props.config, skillLevel).static.floor();
+                return expression ? value.expression(calculated) : calculated.toString() 
             } else {
                 return value;
             }

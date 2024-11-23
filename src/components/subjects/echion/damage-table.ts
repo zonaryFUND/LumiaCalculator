@@ -13,7 +13,7 @@ const table: DamageTableGenerator = props => {
         value: Constants.R1.skill_damage_add[props.config.skillLevels.R] + 100
     };
 
-    const armType = weaponType(props.config.equipment.weapon);
+    const armType = weaponType(props.config.equipment.Weapon);
     
     const rMambaHeal = Constants.R2.skill_lifesteal[props.config.skillLevels.R];
     const multiplier = [

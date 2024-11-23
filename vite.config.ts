@@ -1,11 +1,15 @@
 import path, { resolve } from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import checker from 'vite-plugin-checker';
 
 export default defineConfig({
     base: "./",
     root: "src",
-    plugins: [react()],
+    plugins: [
+        react(),
+        checker({typescript: true})
+    ],
     publicDir: resolve(__dirname, "public"),
     build: {
         outDir: resolve(__dirname, "dist"),

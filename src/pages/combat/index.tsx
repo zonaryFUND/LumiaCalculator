@@ -19,7 +19,6 @@ import saveStyle from "components/modal/save-build/index.module.styl";
 import ItemTooltip from "components/tooltip/item/item-tooltip";
 import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
 import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
-import { SubjectSkillProps } from "components/subjects/props";
 import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 import useStorageBoolean from "@app/storage/boolean";
@@ -124,13 +123,11 @@ const index: React.FC = props => {
                 style={{zIndex: 1000}}
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
-                    const [subject, skill] = content?.split("-");
                     const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
 
                     return (
                         <SubjectSkillTooltip
-                            code={+subject} 
-                            skill={skill as any} 
+                            code={+content} 
                             showEquation={damageInFormula}
                             status={side == "left" ? left.status : right.status} 
                             config={side == "left" ? left.config : right.config} 
@@ -164,13 +161,12 @@ const index: React.FC = props => {
                     const [item, onSlot] = content.split("%");
                     const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
 
-                    const props: SubjectSkillProps = {
-                        showEquation: damageInFormula || onSlot == undefined,
-                        config: side == "left" ? left.config : right.config,
-                        status: side == "left" ? left.status : right.status
-                    };
-
-                    return <ItemTooltip itemID={item} {...props} />;
+                    return <ItemTooltip 
+                        itemID={+item} 
+                        showEquation={damageInFormula || onSlot == undefined} 
+                        config={side == "left" ? left.config : right.config} 
+                        status={side == "left" ? left.status : right.status}
+                    />;
                 }}
             />
             <Modal
@@ -196,7 +192,7 @@ const index: React.FC = props => {
                 overlayClassName={common["modal-overlay"]}
             >
                 <SaveBuild 
-                    defaultName={intl.formatMessage({id: (saving == "left" ? left : right).config.subject})}
+                    defaultName={intl.formatMessage({id: `Character/Name/${(saving == "left" ? left : right).config.subject}`})}
                     onSave={name => {
                         (saving == "left" ? left.onSavePreset : right.onSavePreset)(name);
                         setSaving(null);

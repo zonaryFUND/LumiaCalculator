@@ -16,7 +16,7 @@ export default defineSubject({
 
     skills: {
         listExpression: (config) => {
-            const weapon = weaponType(config.equipment.weapon);
+            const weapon = weaponType(config.equipment.Weapon);
             const rCode = (() => {
                 switch (weapon) {
                     case "sidewinder":

@@ -1,41 +1,20 @@
-import { Equipment, SubjectConfig } from "app-types/subject-dynamic/config";
-import { OldSubjectID, SubjectCodeWithOldID } from "app-types/subject-static";
-import { Dispatch, SetStateAction } from "react";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "react-use";
+import { Migrate, SubjectConfigV1 } from "./migration-v1/config";
 
-function migrateConfig(rawConfig: SubjectConfig): SubjectConfig {
-    const migrateSubjectID = (id: OldSubjectID) => {
-        const codeStr = Object.entries(SubjectCodeWithOldID)
-            .find(([code, oldID]) => oldID == id)
-            ?.[0]
-        return codeStr ? +codeStr : 0
-    };
+export function useLocalStorageConfig(key: string): [SubjectConfig | undefined, (config: SubjectConfig) => void] {
+    const [rawConfig, saveRaw] = useLocalStorage<
+        (SubjectConfig & {version: "v2"}) | SubjectConfigV1 & {version: undefined}
+    >(key);
+    const config = useMemo(() => {
+        if (rawConfig == undefined) return undefined;
+        if (rawConfig.version == "v2") return rawConfig;
+        return Migrate(rawConfig);
+    }, [rawConfig]);
 
-    const migrateEquipment = (equipment: Equipment) => {
-        if (Object.values(equipment).findIndex(e => typeof e == "string") == -1) {
-            return equipment;
-        }
-
-        return {
-            weapon: null,
-            head: null,
-            chest: null,
-            arm: null,
-            leg: null
-        };
-    }
-
-    return {        
-        ...rawConfig,
-        subject: typeof rawConfig.subject == "string" ? migrateSubjectID(rawConfig.subject) : rawConfig.subject,
-        equipment: migrateEquipment(rawConfig.equipment)
-    }
-}
-
-export function useLocalStorageConfig(key: string): [SubjectConfig | undefined, Dispatch<SetStateAction<SubjectConfig | undefined>>] {
-    const [rawConfig, save] = useLocalStorage<SubjectConfig>(key);
-    return [
-        rawConfig ? migrateConfig(rawConfig) : undefined,
-        save
-    ]
+    const save = useCallback((config: SubjectConfig) => {
+        saveRaw({...config, version: "v2"});
+    }, []);
+    return [config, save];
 }

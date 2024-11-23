@@ -5,12 +5,16 @@ import Options from "./options";
 import Skill from "./skill";
 import baseStyle from "../tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
-import { SubjectSkillProps } from "components/subjects/props";
 import { ValueContext } from "../value-context";
 import { FormattedMessage } from "react-intl";
 import { EquipmentStatusDictionary } from "app-types/equipment";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { Status } from "app-types/subject-dynamic/status/type";
 
-type Props = SubjectSkillProps & {
+type Props = {
+    showEquation: boolean
+    config: SubjectConfig
+    status: Status
     itemID: EquipmentID
 }
 

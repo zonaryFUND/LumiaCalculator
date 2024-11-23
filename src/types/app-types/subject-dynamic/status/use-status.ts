@@ -49,12 +49,12 @@ export function useStatus(config: SubjectConfig): Status {
     , [config.equipment])
 
     const [weaponType, weaponBaseStatus] = useMemo(() => {
-        if (config.equipment.weapon == null) return [undefined, undefined];
+        if (config.equipment.Weapon == null) return [undefined, undefined];
 
-        const type = EquipmentStatusDictionary[config.equipment.weapon].type as WeaponTypeID;
+        const type = EquipmentStatusDictionary[config.equipment.Weapon].type as WeaponTypeID;
         const weaponBaseStatus = WeaponTypeStatus[type];
         return [type, weaponBaseStatus];
-    }, [config.equipment.weapon]);
+    }, [config.equipment.Weapon]);
 
     const masteryFactor = useMemo(() => {
         if (weaponType == undefined) return undefined;        

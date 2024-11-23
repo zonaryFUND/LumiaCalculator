@@ -22,12 +22,3 @@ export const info: TooltipInfo = {
         ]  
     })
 }
-
-
-const t: React.FC<SubjectSkillProps> = props => (
-    <>
-        カミロが敵にダメージを与えると3秒間シールドが生成されて<Value skill="T" ratio={Constants.T.shield} />
-        のダメージを防ぎ、攻撃速度が{Constants.T.attack_speed[props.skillLevel]}%増加します。<br />
-        基本攻撃とスキルで交互にダメージを与えると、オーレとシエレのクールダウンが{Constants.T.wt_cooldown_reduction}秒減少します。
-    </>
-)

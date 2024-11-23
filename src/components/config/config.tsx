@@ -1,12 +1,12 @@
-import { SubjectCodeWithOldID, OldSubjectID, SubjectCode } from "app-types/subject-static";
+import { SubjectCodeWithOldID, SubjectCode } from "app-types/subject-static";
 import * as React from "react";
-import { StateProps, StateWrapped } from "util/state";
+import { StateProps } from "util/state";
 import style from "./config.module.styl";
 import Images from "@app/resources/image";
 import PullDown from "components/common/pull-down";
 import EquipmentSlot from "./equipment-slot";
 import Modal from "react-modal";
-import { useThrottle, useToggle } from "react-use";
+import { useToggle } from "react-use";
 import SubjectList, { style as subjectsStyle } from "components/modal/subject-list";
 import common from "@app/common.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";

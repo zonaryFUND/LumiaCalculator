@@ -1,18 +1,19 @@
 import { PresetWithKey } from "@app/storage/preset";
 
-export const defaultSampleBuilds: PresetWithKey[] = [
+export const DefaultSamplePresets: PresetWithKey[] = [
     {
+        version: "v2",
         name: "サンプル1：フルビルドEleven",
         key: 0,
         isPremadeSample: true,
         config: {
-            subject: "eleven",
+            subject: 30,
             equipment: {
-                weapon: "squeaky_hammer",
-                chest: "blazing_dress",
-                head: "mythril_helm",
-                arm: "centipede_s_pauldron",
-                leg: "boots_of_hermes"
+                Weapon: 104502,
+                Chest: 202522,
+                Head: 201415,
+                Arm: 705601,
+                Leg: 204501
             },
             level: 20,
             weaponMastery: 20,

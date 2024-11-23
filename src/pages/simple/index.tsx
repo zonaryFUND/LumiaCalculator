@@ -61,9 +61,9 @@ const index: React.FC = props => {
     const status = useStatus(config);
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const weaponTypeID = React.useMemo(() => {
-        if (!equipment.weapon) return undefined;
-        return EquipmentStatusDictionary[equipment.weapon].type;
-    }, [equipment.weapon])
+        if (!equipment.Weapon) return undefined;
+        return EquipmentStatusDictionary[equipment.Weapon].type;
+    }, [equipment.Weapon])
 
     const parentRef = React.useRef<HTMLDivElement>(null);
     const [collapse, setCollapse] = React.useState(false);
@@ -174,13 +174,7 @@ const index: React.FC = props => {
                     if (!content) return null;
 
                     const [item, onSlot] = content.split("%");
-                    const props: SubjectSkillProps = {
-                        showEquation: damageInFormula || onSlot == undefined,
-                        config,
-                        status
-                    };
-
-                    return <ItemTooltip itemID={item} {...props} />;
+                    return <ItemTooltip itemID={+item} showEquation={damageInFormula || onSlot == undefined} config={config} status={status} />;
                 }}
             />            
             <Modal
@@ -203,7 +197,7 @@ const index: React.FC = props => {
                 overlayClassName={common["modal-overlay"]}
             >
                 <SaveBuild 
-                    defaultName={intl.formatMessage({id: config.subject})}
+                    defaultName={intl.formatMessage({id: `Character/Name/${config.subject}`})}
                     onSave={name => {
                         toggleShowingSave(false);
                         const key = saveNew(name, config);

@@ -4,9 +4,9 @@ import { EquipmentStatusDictionary } from "app-types/equipment";
 import { WeaponMasteryStatus } from "app-types/subject-static";
 
 export default function extractWeaponTypeID(config: SubjectConfig): WeaponTypeID | undefined {
-    if (config.equipment.weapon == undefined) return undefined;
+    if (config.equipment.Weapon == undefined) return undefined;
 
-    return EquipmentStatusDictionary[config.equipment.weapon].type as WeaponTypeID;
+    return EquipmentStatusDictionary[config.equipment.Weapon].type as WeaponTypeID;
 }
 
 export function AdaptiveTarget(config: SubjectConfig): "attackPower" | "skillAmp" {

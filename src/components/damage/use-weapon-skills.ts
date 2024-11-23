@@ -16,9 +16,9 @@ export default function useWeaponSkill(config: SubjectConfig): Response {
     const intl = useIntl();
 
     return React.useMemo(() => {
-        if (config.equipment.weapon == null) return {regular: [], basicAttackTriggered: []};
+        if (config.equipment.Weapon == null) return {regular: [], basicAttackTriggered: []};
 
-        const weaponType = EquipmentStatusDictionary[config.equipment.weapon].type as WeaponTypeID;
+        const weaponType = EquipmentStatusDictionary[config.equipment.Weapon].type as WeaponTypeID;
         const skillLevel = weaponSkillLevel(config.weaponMastery);
     
         const generator = WeaponSkillDamageTable[weaponType.toLowerCase()];
@@ -31,5 +31,5 @@ export default function useWeaponSkill(config: SubjectConfig): Response {
             regular: units.filter(u => u.triggeredOnBasicAttack != true),
             basicAttackTriggered: units.filter(u => u.triggeredOnBasicAttack)
         }
-    }, [config.equipment.weapon, config.weaponMastery]);
+    }, [config.equipment.Weapon, config.weaponMastery]);
 }

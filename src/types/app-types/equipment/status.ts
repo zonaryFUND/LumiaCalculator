@@ -79,8 +79,8 @@ export const PercentExpressedEquipmentStatusKeys: EquipmentStatusValueKey[] = Eq
 export type EquipmentSkill = {
     skillCode: number
     name: string
-    dmg: ValueRatio | {melee: ValueRatio, range: ValueRatio}
-    values: Record<string, unknown>
+    dmg?: ValueRatio | {melee: ValueRatio, range: ValueRatio}
+    values?: Record<string, unknown>
 }
 
 export type EquipmentStatus = {[key in EquipmentStatusValueKey]?: Decimal} & {

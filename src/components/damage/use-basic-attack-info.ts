@@ -10,8 +10,8 @@ export default function useBasicAttackInfo(config: SubjectConfig): {
     hitCount?: number
 } {
     return React.useMemo(() => {
-        if (config.equipment.weapon == null) return { };
-        const weaponType = EquipmentStatusDictionary[config.equipment.weapon].type as WeaponTypeID
+        if (config.equipment.Weapon == null) return { };
+        const weaponType = EquipmentStatusDictionary[config.equipment.Weapon].type as WeaponTypeID
         if (weaponType == "AssaultRifle") {
             return {
                 attackRatio: AssaultRifleAttackRatio.reduce((p, c) => p + c, 0),
@@ -30,5 +30,5 @@ export default function useBasicAttackInfo(config: SubjectConfig): {
             attackRatio: 100, 
             labelIntlID: "app.basic-attack"
         }
-    }, [config.equipment.weapon]);
+    }, [config.equipment.Weapon]);
 }

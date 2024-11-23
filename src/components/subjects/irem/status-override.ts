@@ -11,7 +11,7 @@ const f: StatusOverrideFunc = (status, config) => ({
     ...status,
     basicAttackRange: {
         ...status.basicAttackRange,
-        overrideAdditional: config.equipment.weapon == null ? undefined : {
+        overrideAdditional: config.equipment.Weapon == null ? undefined : {
             nameKey: "subject.irem.passive-attack-range",
             value: new Decimal(Constants.IremR.range_penalty * -1)
         }

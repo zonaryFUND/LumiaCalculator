@@ -32,7 +32,7 @@ export const info: TooltipInfo = {
     skill: "W",
     cooldown: ({ config, status }) => {
         return new Decimal(Constants.W.cooldown[config.skillLevels.W])
-            .subPercent(weaponType(config.equipment.weapon) == "sidewinder" ? Constants.T1_2.w_cooldown_reduction : 0)
+            .subPercent(weaponType(config.equipment.Weapon) == "sidewinder" ? Constants.T1_2.w_cooldown_reduction : 0)
             .subPercent(status.cooldownReduction.calculatedValue);
     },
     values: ({ skillLevel, showEquation, config }) => ({

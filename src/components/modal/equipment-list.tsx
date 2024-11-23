@@ -1,10 +1,8 @@
 import * as React from "react";
 import Item from "components/item/item";
 import style from "./equipment-list.module.styl";
-import { weaponIDsForType } from "app-types/equipment/weapon/id";
 import { EquipmentID } from "app-types/equipment/id";
 import { WeaponMasteryStatus } from "app-types/subject-static/mastery";
-import { SubjectID } from "app-types/subject-static";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
 import { styles } from "@app/util/style";
@@ -15,9 +13,10 @@ import { ArmorTypeID } from "app-types/equipment/armor";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { ArmArmorCodes, ChestArmorCodes, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
+import { SubjectCode } from "app-types/subject-static";
 
 type Props = {
-    subject: SubjectID
+    subject: SubjectCode
     equipment: [Equipment, React.Dispatch<React.SetStateAction<Equipment>>]
     slot: "Weapon" | ArmorTypeID
 }
@@ -69,7 +68,7 @@ const subjectsList: React.FC<Props> = props => {
     }, [props.slot, props.subject, layout]);
 
     const onClick = React.useCallback((id: EquipmentID | null) => () => {
-        props.equipment[1](prev => ({...prev, [props.slot.toLowerCase()]: id}))
+        props.equipment[1](prev => ({...prev, [props.slot]: id}))
     }, [props.slot]);
 
     return (
@@ -80,7 +79,7 @@ const subjectsList: React.FC<Props> = props => {
             </header>
             <div className={style.content}>
                 <section key="remove">
-                    <div onClick={onClick(null)} className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot.toLowerCase() as any] == null ? style.selected : undefined)}>
+                    <div onClick={onClick(null)} className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot] == null ? style.selected : undefined)}>
                         <Blank slot={props.slot} />
                         <p>外す</p>
                     </div>
@@ -92,7 +91,7 @@ const subjectsList: React.FC<Props> = props => {
                         <ul>
                             {
                                 section.ids.map(id => (
-                                <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot.toLowerCase() as any] ? style.selected : undefined)}>
+                                <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot] ? style.selected : undefined)}>
                                     <Item slot={props.slot} itemID={id} inSlot={false} />
                                     <p><FormattedMessage id={`Item/Name/${id}`} />{id}</p>
                                 </li>

@@ -1,7 +1,7 @@
 import { ItemSkillDamageTableGenerator } from "../item-skill";
 
-const tableValues: ItemSkillDamageTableGenerator = (importedValues) => [
-    {labelIntlID: "item-skill.dot", value: importedValues}
+const tableValues: ItemSkillDamageTableGenerator = (damage, importedValues) => [
+    {labelIntlID: "item-skill.dot", value: damage!}
 ]
 
 export default tableValues;

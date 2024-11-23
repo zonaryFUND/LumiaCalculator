@@ -43,8 +43,8 @@ export function createMitigation(status: Status, targetStatus: Status): Mitigati
     const penetration = status.armorPenetration.calculatedValue
         .add(targetDefense.percent(status.armorPenetrationRatio.calculatedValue).floor())
     
-    const summonedPenetration = status.summonedStatus ? status.summonedStatus.armorPenetration.add(
-        targetDefense.percent(status.summonedStatus.armorPenetrationRatio).floor()
+    const summonedPenetration = status.summoned ? status.summoned[0].status.armorPenetration.add(
+        targetDefense.percent(status.summoned[0].status.armorPenetrationRatio).floor()
     ) : undefined;
     
     const defenseMitigation = {

@@ -1,6 +1,6 @@
 import { StateWrapped } from "@app/util/state"
 import { SubjectCode } from "app-types/subject-static"
-import { SubjectConfig } from "./type"
+import { SubjectConfig, SubjectConfigDefault } from "./type"
 import React, { useCallback } from "react"
 
 type Response = StateWrapped<SubjectConfig> & {
@@ -8,18 +8,8 @@ type Response = StateWrapped<SubjectConfig> & {
     setConfig: (config: SubjectConfig) => void
 }
 
-export default function(storage?: { value?: SubjectConfig | undefined, update: React.Dispatch<React.SetStateAction<SubjectConfig | undefined>> }): Response {
-    const defaultConfig: SubjectConfig = storage?.value ?? {
-        subject: 1,
-        equipment: { weapon: null, chest: null, head: null, arm: null, leg: null },
-        level: 1,
-        weaponMastery: 1,
-        defenseMastery: 1,
-        movementMastery: 1,
-        skillLevels: { Q: 0, W: 0, E: 0, R: 0, T: 0 },
-        gauge: 0,
-        stack: 0
-    }
+export default function(storage?: { value?: SubjectConfig | undefined, update: (config: SubjectConfig) => void }): Response {
+    const defaultConfig: SubjectConfig = storage?.value ?? SubjectConfigDefault
 
     const [subject, setSubject] = React.useState<SubjectCode>(defaultConfig.subject);
     const [level, setLevel] = React.useState(defaultConfig.level);
@@ -32,7 +22,6 @@ export default function(storage?: { value?: SubjectConfig | undefined, update: R
     const [stack, setStack] = React.useState(defaultConfig.stack);
 
     const setConfig = useCallback((config: SubjectConfig) => {
-        console.log(config)
         setSubject(config.subject);
         setLevel(config.level);
         setWeaponMastery(config.weaponMastery);
@@ -45,7 +34,7 @@ export default function(storage?: { value?: SubjectConfig | undefined, update: R
     }, [])
 
     const updateSubject = React.useCallback((action: React.SetStateAction<SubjectCode>) => {
-        setEquipment({ weapon: null, chest: null, head: null, arm: null, leg: null });
+        setEquipment({ Weapon: null, Chest: null, Head: null, Arm: null, Leg: null });
         setSkillLevels({Q: 0, W: 0, E: 0, R: 0, T: 0});
         setGauge(0);
         setStack(0);

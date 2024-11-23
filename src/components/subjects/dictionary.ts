@@ -5,6 +5,7 @@ import { SubjectCode } from "app-types/subject-static";
 import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 import { Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
+import { ValueRatioToString } from "./valueratio-to-string";
 
 export type SkillCode = number
 export type SkillKey = "Q" | "W" | "E" | "R" | "T";
@@ -12,7 +13,7 @@ export type SkillListHook = (config: SubjectConfig) => Record<SkillKey, SkillCod
     maxLevel?: number | "none",
     code: SkillCode | SkillCode[]
 }>;
-type TooltipValues = Record<number, number | string | ValueRatio>;
+type TooltipValues = Record<number, number | string | ValueRatio | ValueRatioToString>;
 
 export type ExpansionTooltipProps = {
     tipValues?: TooltipValues

@@ -3,7 +3,7 @@
 import { PresetWithKey, SavedPresetsKey, usePresetStorage } from "@app/storage/preset";
 import * as React from "react";
 import { useLatest, useLocalStorage } from "react-use";
-import { defaultSampleBuilds } from "./default-sample";
+import { DefaultSamplePresets } from "./default-sample";
 import { Trash } from "@phosphor-icons/react";
 import style from "./index.module.styl";
 import { styles } from "@app/util/style";
@@ -22,7 +22,7 @@ const loadBuild: React.FC<Props> = props => {
 
     const onClick = React.useCallback((id: number)=> {
         if (latestSelected.current == id) {
-            const build = defaultSampleBuilds.concat(savedBuilds ?? []).find(b => b.key == id);
+            const build = DefaultSamplePresets.concat(savedBuilds ?? []).find(b => b.key == id);
             props.onSelect(build!);
         } else {
             setSelected(id);

@@ -10,7 +10,7 @@ export const info: TooltipInfo = {
         0: Constants.T.additional_attack_range,
         1: 0.01,
         2: Constants.T.amp_per_as[skillLevel],
-        6: additionalAmp(status, config).toString()
+        6: status.skillAmp.overrideAdditional?.value?.toString() ?? ""
     }),
     expansion: () => ({
         enumeratedValues: [
