@@ -2,6 +2,7 @@ import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio/calculation";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1069300;
 
@@ -12,31 +13,31 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation, config, status }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
-                0: Constants.W.damage.base[skillLevel],
+                0: Constants.W.damage.base,
                 1: Constants.W.damage.level,
-                2: `${Constants.W.damage.amp}%`,
+                2: RatioPercent(Constants.W.damage.amp),
                 6: Constants.W.slow.duration,
-                7: `${Constants.W.slow.center}%`,
-                8: `${Constants.W.slow.outer}%`,
+                7: RatioPercent(Constants.W.slow.center),
+                8: RatioPercent(Constants.W.slow.outer),
                 9: Constants.W.ally_slow.duration,
-                10: `${Constants.W.ally_slow.effect}%`,
+                10: RatioPercent(Constants.W.ally_slow.effect),
                 11: Constants.W.movement_speed.duration,
-                12: `${Constants.W.movement_speed.effect.base[skillLevel]}%`,
+                12: RatioPercent(Constants.W.movement_speed.effect.base),
                 13: Constants.W.movement_speed.effect.level
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 0: Constants.W.damage,
                 2: Constants.W.slow.duration,
-                3: `${Constants.W.slow.center}%`,
-                4: `${Constants.W.slow.outer}%`,
+                3: RatioPercent(Constants.W.slow.center),
+                4: RatioPercent(Constants.W.slow.outer),
                 5: Constants.W.ally_slow.duration,
-                6: `${Constants.W.ally_slow.effect}%`,
+                6: RatioPercent(Constants.W.ally_slow.effect),
                 7: Constants.W.movement_speed.duration,
-                8: `${calculateValue(Constants.W.movement_speed.effect, status, config, skillLevel).static.floor().toString()}%`
+                8: RatioPercent(Constants.W.movement_speed.effect)
             } as Record<number, number | string | ValueRatio>
         }
     },
