@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1029300;
 
@@ -11,12 +12,12 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: Constants.W.shield.base[skillLevel],
+    values: ({ }) => ({
+        0: Constants.W.shield.base,
         2: Constants.W.duration,
-        8: `${Constants.W.shield.amp}%`,
-        10: Constants.W.ally_shield.base[skillLevel],
-        12: `${Constants.W.ally_shield.amp}%`,
+        8: RatioPercent(Constants.W.shield.amp),
+        10: Constants.W.ally_shield.base,
+        12: RatioPercent(Constants.W.ally_shield.amp),
         20: Constants.W.shield,
         22: Constants.W.ally_shield
     }),
