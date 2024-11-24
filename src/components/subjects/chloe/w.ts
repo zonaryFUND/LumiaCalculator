@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1040300;
 
@@ -10,22 +11,22 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: Constants.W.damage.base[skillLevel],
-        2: `${Constants.W.slow}%`,
-        3: Constants.W.drop_damage.base[skillLevel],
-        4: `${Constants.W.drop_damage.attack}%`,
+    values: ({ showEquation }) => ({
+        0: Constants.W.damage.base,
+        2: RatioPercent(Constants.W.slow),
+        3: Constants.W.drop_damage.base,
+        4: RatioPercent(Constants.W.drop_damage.attack),
         5: Constants.W.drop_slow.duration,
-        6: Constants.W.nina_damage.base[skillLevel],
-        7: `${Constants.W.nina_damage.ninaAttack}%`,
+        6: Constants.W.nina_damage.base,
+        7: RatioPercent(Constants.W.nina_damage.ninaAttack),
         8: Constants.W.movement_speed.duration,
-        9: `${Constants.W.movement_speed.effect}%`,
+        9: RatioPercent(Constants.W.movement_speed.effect),
         10: Constants.W.airborne,
-        12: `${Constants.W.damage.attack}%`,
-        16: showEquation ? `${Constants.W.drop_slow.effect[skillLevel]}%` : Constants.W.damage,
+        12: RatioPercent(Constants.W.damage.attack),
+        16: showEquation ? RatioPercent(Constants.W.drop_slow.effect) : Constants.W.damage,
         17: Constants.W.drop_damage,
         18: Constants.W.nina_damage,
-        19: `${Constants.W.drop_slow.effect[skillLevel]}%`
+        19: RatioPercent(Constants.W.drop_slow.effect)
     }),
     expansion: () => ({
         enumeratedValues: [
