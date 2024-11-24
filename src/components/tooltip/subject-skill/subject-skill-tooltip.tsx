@@ -28,7 +28,6 @@ const subjectSkillTooltip: React.FC<Props> = props => {
     const values = skillInfo.values({skillLevel, showEquation: props.showEquation, config: props.config, status: props.status});
 
     const extractAndCalculateValue: (value: TooltipValue) => string | number = value => {
-        console.log(value)
         if (typeof value == "object" && "value" in value) {
             return value.expression(extractAndCalculateValue(value.value).toString());
         }
