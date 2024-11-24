@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1025200;
 
@@ -10,15 +11,15 @@ export const info: TooltipInfo = {
         value: Constants.Q.sp_cost
     },
     cooldown: Constants.Q.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: showEquation ? Constants.Q.damage.base[skillLevel] : Constants.Q.damage,
-        1: showEquation ? `${Constants.Q.damage.attack}%` : Constants.Q.slow.duration,
-        2: showEquation ? Constants.Q.slow.duration : `${Constants.Q.slow.effect[skillLevel]}%`,
-        3: showEquation ? `${Constants.Q.slow.effect[skillLevel]}%` : Constants.Q.enhanced_damage,
-        4: showEquation ? Constants.Q.enhanced_damage.base[skillLevel] : Constants.Q.enhanced_slow.duration,
-        5: showEquation ? `${Constants.Q.enhanced_damage.attack}%` : `${Constants.Q.enhanced_slow.effect[skillLevel]}%`,
+    values: ({ showEquation }) => ({
+        0: showEquation ? Constants.Q.damage.base : Constants.Q.damage,
+        1: showEquation ? RatioPercent(Constants.Q.damage.attack) : Constants.Q.slow.duration,
+        2: showEquation ? Constants.Q.slow.duration : RatioPercent(Constants.Q.slow.effect),
+        3: showEquation ? RatioPercent(Constants.Q.slow.effect) : Constants.Q.enhanced_damage,
+        4: showEquation ? Constants.Q.enhanced_damage.base : Constants.Q.enhanced_slow.duration,
+        5: showEquation ? RatioPercent(Constants.Q.enhanced_damage.attack) : RatioPercent(Constants.Q.enhanced_slow.effect),
         6: Constants.Q.enhanced_slow.duration,
-        7: `${Constants.Q.enhanced_slow.effect[skillLevel]}%`
+        7: RatioPercent(Constants.Q.enhanced_slow.effect)
     }),
     expansion: () => ({
         enumeratedValues: [
