@@ -1,17 +1,18 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1068100;
 
 export const info: TooltipInfo = {
     skill: "T",
     cooldown: Constants.T.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ }) => ({
         0: Constants.T.immune,
-        1: Constants.T.cooldown.constant[skillLevel],
+        1: Constants.T.cooldown.constant,
         2: Constants.T.heal,
-        10: Constants.T.heal.base[skillLevel],
-        11: `${Constants.T.heal.maxHP[skillLevel]}%`
+        10: Constants.T.heal.base,
+        11: RatioPercent(Constants.T.heal.maxHP)
     }),
     expansion: () => ({
         enumeratedValues: [

@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1068300;
 
@@ -10,22 +11,22 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ }) => ({
         0: Constants.W.duration,
-        1: `${Constants.W.damage_reduction}%`,
+        1: RatioPercent(Constants.W.damage_reduction),
         2: Constants.W.waves,
         3: Constants.W.damage,
         4: Constants.W.final_damage,
-        10: Constants.W.damage.base[skillLevel],
-        11: `${Constants.W.damage.amp}%`,
-        12: `${Constants.W.damage.additionalMaxHP}%`,
-        13: Constants.W.final_damage.base[skillLevel],
-        14: `${Constants.W.final_damage.amp}%`,
-        15: `${Constants.W.final_damage.additionalMaxHP}%`
+        10: Constants.W.damage.base,
+        11: RatioPercent(Constants.W.damage.amp),
+        12: RatioPercent(Constants.W.damage.additionalMaxHP),
+        13: Constants.W.final_damage.base,
+        14: RatioPercent(Constants.W.final_damage.amp),
+        15: RatioPercent(Constants.W.final_damage.additionalMaxHP)
     }),
     expansion: () => ({
         tipValues: {
-            0: `${Constants.W.self_slow}%`
+            0: RatioPercent(Constants.W.self_slow)
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/AlonsoActive2ProjectileDamage", values: Constants.W.damage.base},
