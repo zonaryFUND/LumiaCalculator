@@ -10,9 +10,9 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: Constants.W.duration[skillLevel],
-        1: Constants.W.attack[skillLevel],
+    values: ({ }) => ({
+        0: Constants.W.duration,
+        1: Constants.W.attack,
         8: Constants.W.range
     }),
     expansion: () => ({
