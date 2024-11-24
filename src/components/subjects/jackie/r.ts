@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1001500;
 
@@ -16,21 +17,21 @@ export const info: TooltipInfo = {
         value: Constants.R.sp_cost
     },
     cooldown: Constants.R.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         const base = {
-            0: Constants.R.duration[skillLevel],
+            0: Constants.R.duration,
             1: Constants.R.extend,
             2: Constants.R.finish_time
         }
         if (showEquation) {
             return {
                 ...base,
-                3: Constants.R.damage.base[skillLevel],
-                4: `${Constants.R.damage.attack}%`,
-                6: Constants.R.finish_damage.base[skillLevel],
-                7: maxDamage.base[skillLevel],
-                8: `${Constants.R.finish_damage.attack}%`,
-                10: `${maxDamage.attack}%`
+                3: Constants.R.damage.base,
+                4: RatioPercent(Constants.R.damage.attack),
+                6: Constants.R.finish_damage.base,
+                7: maxDamage.base,
+                8: RatioPercent(Constants.R.finish_damage.attack),
+                10: RatioPercent(maxDamage.attack)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -43,8 +44,8 @@ export const info: TooltipInfo = {
     },
     expansion: () => ({
         tipValues: {
-            0: `${Constants.R.finish_multiplier_max_hp}%`,
-            1: `${Constants.R.dualsword_multiplier}%`
+            0: RatioPercent(Constants.R.finish_multiplier_max_hp),
+            1: RatioPercent(Constants.R.dualsword_multiplier)
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.R.damage.base},

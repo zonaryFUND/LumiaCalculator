@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1001300;
 
@@ -16,19 +17,19 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         const base = {
             0: Constants.W.movement_speed.duration,
-            1: `${Constants.W.movement_speed.effect}%`,
-            4: `${Constants.W.additional_movement_speed[skillLevel]}%`
+            1: RatioPercent(Constants.W.movement_speed.effect),
+            4: RatioPercent(Constants.W.additional_movement_speed)
         }
         if (showEquation) {
             return {
                 ...base,
-                2: Constants.W.heal.base[skillLevel],
-                3: maxHeal.base[skillLevel],
-                5: `${Constants.W.heal.attack}%`,
-                7: `${maxHeal.attack}%`
+                2: Constants.W.heal.base,
+                3: maxHeal.base,
+                5: RatioPercent(Constants.W.heal.attack),
+                7: RatioPercent(maxHeal.attack)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -40,7 +41,7 @@ export const info: TooltipInfo = {
     },
     expansion: () => ({
         tipValues: {
-            0: `${Constants.W.heal_max_hp}%`  
+            0: RatioPercent(Constants.W.heal_max_hp)  
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/ChaseMoveSpeed", values: Constants.W.additional_movement_speed, percent: true},
