@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1017300;
 
@@ -14,7 +15,7 @@ export const info: TooltipInfo = {
     values: () => ({
         0: Constants.W.duration,
         1: Constants.W.flame_duration,
-        2: `${Constants.W.slow}%`
+        2: RatioPercent(Constants.W.slow)
     }),
     expansion: () => ({
         enumeratedValues: [
