@@ -3,6 +3,7 @@ import { TooltipInfo } from "../dictionary";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1065310;
 
@@ -41,15 +42,15 @@ export const info: TooltipInfo = {
             .subPercent(status.attackSpeed.additional?.clamp(0, 100).dividedBy(2) ?? 0)
             .subPercent(status.cooldownReduction.calculatedValue).round2();
     },
-    values: ({ skillLevel, showEquation, status }) => {
+    values: ({ showEquation, status }) => {
         const additionalProjectiles = projectileAmount(status);
         return {
-            0: Constants.MarleneW.projectiles.base[skillLevel] + (showEquation ? 0 : additionalProjectiles),
+            0: Constants.MarleneW.projectiles.base.map(v => showEquation ? 0 : additionalProjectiles),
             1: showEquation ? additionalProjectiles : Constants.MarleneW.damage,
-            2: showEquation ? Constants.MarleneW.damage.base[skillLevel] : Constants.MarleneW.t_stack_projectiles,
-            3: showEquation ? `${Constants.MarleneW.damage.additionalAttack}%` : `${Constants.MarleneW.multiple_hit}%`,
+            2: showEquation ? Constants.MarleneW.damage.base : Constants.MarleneW.t_stack_projectiles,
+            3: showEquation ? RatioPercent(Constants.MarleneW.damage.additionalAttack) : RatioPercent(Constants.MarleneW.multiple_hit),
             5: Constants.MarleneW.t_stack_projectiles,
-            6: `${Constants.MarleneW.multiple_hit}%`
+            6: RatioPercent(Constants.MarleneW.multiple_hit)
         }
     },
     expansion: () => ({

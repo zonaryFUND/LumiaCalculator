@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import Decimal from "decimal.js";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1065210;
 
@@ -14,13 +15,13 @@ export const info: TooltipInfo = {
             .subPercent(status.attackSpeed.additional?.clamp(0, 120).times(7).dividedBy(12) ?? 0)
             .subPercent(status.cooldownReduction.calculatedValue).round2();
     },
-    values: ({ skillLevel, showEquation }) => ({
-        0: showEquation ? Constants.MarleneQ.damage.base[skillLevel] : Constants.MarleneQ.damage,
-        1: showEquation ? `${Constants.MarleneQ.damage.additionalAttack}%` : `${Constants.MarleneQ.attack_speed.effect[skillLevel]}%`,
+    values: ({ showEquation }) => ({
+        0: showEquation ? Constants.MarleneQ.damage.base : Constants.MarleneQ.damage,
+        1: showEquation ? RatioPercent(Constants.MarleneQ.damage.additionalAttack) : RatioPercent(Constants.MarleneQ.attack_speed.effect),
         2: Constants.MarleneQ.attack_speed.duration,
         3: Constants.MarleneQ.max_stack,
         4: Constants.MarleneQ.attack_speed.duration,
-        5: `${Constants.MarleneQ.attack_speed.effect[skillLevel]}%`,
+        5: RatioPercent(Constants.MarleneQ.attack_speed.effect),
         6: Constants.MarleneQ.max_stack,
     }),
     expansion: () => ({

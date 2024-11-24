@@ -1,25 +1,26 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1065400;
 
 export const info: TooltipInfo = {
     skill: "E",
     cooldown: Constants.DebiE.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: showEquation ? Constants.DebiE.damage.base[skillLevel] : Constants.DebiE.damage,
-        1: showEquation ? `${Constants.DebiE.damage.additionalAttack}%` : Constants.DebiE.slow_after,
+    values: ({ showEquation }) => ({
+        0: showEquation ? Constants.DebiE.damage.base : Constants.DebiE.damage,
+        1: showEquation ? RatioPercent(Constants.DebiE.damage.additionalAttack) : Constants.DebiE.slow_after,
         2: Constants.DebiE.slow.duration,
         3: showEquation ? Constants.DebiE.slow_after : Constants.DebiE.debi_remain,
         4: showEquation ? Constants.DebiE.slow.duration : Constants.DebiE.second_damage,
         5: showEquation ? Constants.DebiE.debi_remain : Constants.DebiE.airborne,
-        6: showEquation ? Constants.DebiE.second_damage.base[skillLevel] : `${Constants.E.movement_speed.effect}%`,
-        7: showEquation ? `${Constants.DebiE.second_damage.additionalAttack}%` : Constants.E.movement_speed.duration,
-        8: `${Constants.DebiE.slow.effect}%`,
+        6: showEquation ? Constants.DebiE.second_damage.base : RatioPercent(Constants.E.movement_speed.effect),
+        7: showEquation ? RatioPercent(Constants.DebiE.second_damage.additionalAttack) : Constants.E.movement_speed.duration,
+        8: RatioPercent(Constants.DebiE.slow.effect),
         9: Constants.DebiE.airborne,
-        10: `${Constants.E.movement_speed.effect}%`,
+        10: RatioPercent(Constants.E.movement_speed.effect),
         11: Constants.E.movement_speed.duration,
-        12: `${Constants.DebiE.slow.effect}%`
+        12: RatioPercent(Constants.DebiE.slow.effect)
     }),
     expansion: () => ({
         enumeratedValues: [

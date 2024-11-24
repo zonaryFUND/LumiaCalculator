@@ -1,25 +1,26 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1065410;
 
 export const info: TooltipInfo = {
     skill: "E",
     cooldown: Constants.MarleneE.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: showEquation ? Constants.MarleneE.damage.base[skillLevel] : Constants.MarleneE.damage,
-        1: showEquation ? `${Constants.MarleneE.damage.additionalAttack}%` : Constants.MarleneE.airborne,
+    values: ({ showEquation }) => ({
+        0: showEquation ? Constants.MarleneE.damage.base : Constants.MarleneE.damage,
+        1: showEquation ? RatioPercent(Constants.MarleneE.damage.additionalAttack) : Constants.MarleneE.airborne,
         2: Constants.MarleneE.marlene_remain,
         3: showEquation ? Constants.MarleneE.airborne : Constants.MarleneE.second_damage,
         4: showEquation ? Constants.MarleneE.marlene_remain : Constants.MarleneE.slow_after,
-        5: showEquation ? Constants.MarleneE.second_damage.base[skillLevel] : Constants.MarleneE.slow.duration,
-        6: showEquation ? `${Constants.MarleneE.second_damage.additionalAttack}%` : `${Constants.E.movement_speed.effect}%`,
+        5: showEquation ? Constants.MarleneE.second_damage.base : Constants.MarleneE.slow.duration,
+        6: showEquation ? RatioPercent(Constants.MarleneE.second_damage.additionalAttack) : RatioPercent(Constants.E.movement_speed.effect),
         7: Constants.E.movement_speed.duration,
-        8: showEquation ? Constants.MarleneE.slow_after : `${Constants.MarleneE.slow.effect}%`,
+        8: showEquation ? Constants.MarleneE.slow_after : RatioPercent(Constants.MarleneE.slow.effect),
         9: Constants.MarleneE.slow.duration,
-        10: `${Constants.E.movement_speed.effect}%`,
+        10: RatioPercent(Constants.E.movement_speed.effect),
         11: Constants.E.movement_speed.duration,
-        12: `${Constants.MarleneE.slow.effect}%`
+        12: RatioPercent(Constants.MarleneE.slow.effect)
     }),
     expansion: () => ({
         enumeratedValues: [
