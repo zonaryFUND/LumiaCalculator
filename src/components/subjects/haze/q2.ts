@@ -1,8 +1,9 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import * as Q from "./q";
+import { RatioPercent } from "../valueratio-to-string";
 
-export const code = 1058220;
+export const code = 1058210;
 
 export const info: TooltipInfo = {
     skill: "Q",
@@ -10,15 +11,14 @@ export const info: TooltipInfo = {
         type: "sp",
         value: Constants.Q2.sp_cost
     },
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ }) => {
         const {amp_per_ammo, ...withoutAmmo} = Constants.Q2.damage
         return {
-            0: Constants.Q3.damage,
-            1: `${Constants.Q3.enhance}%`,
-            2: Constants.Q3.slow.duration,
-            3: `${Constants.Q3.slow.effect}%`,
-            20: Constants.Q3.damage.base[skillLevel],
-            22: `${Constants.Q3.damage.amp}%`
+            0: Constants.Q2.cast,
+            1: withoutAmmo,
+            2: RatioPercent(amp_per_ammo),
+            20: Constants.Q2.damage.base,
+            22: RatioPercent(Constants.Q2.damage.amp)
         }
     },
     expansion: Q.info.expansion
