@@ -12,7 +12,7 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         const base = {
             0: RatioPercent(Constants.common.charging_slow_penalty),
             1: Constants.W.min_taunt,
