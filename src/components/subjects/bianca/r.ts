@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1042500;
 
@@ -10,21 +11,21 @@ export const info: TooltipInfo = {
         value: Constants.R.hp_cost_percent
     },
     cooldown: Constants.R.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: showEquation ? Constants.R.first_damage.base[skillLevel] : Constants.R.first_damage,
-        2: `${Constants.R.first_damage.targetMaxHP}%`,
-        3: `${Constants.R.slow.effect}%`,
-        4: `${Constants.R.omnisyphon_amp[skillLevel]}%`,
-        5: showEquation ? `${Constants.R.min_damage.base[skillLevel]}` : Constants.R.min_damage,
+    values: ({ showEquation }) => ({
+        0: showEquation ? Constants.R.first_damage.base : Constants.R.first_damage,
+        2: RatioPercent(Constants.R.first_damage.targetMaxHP),
+        3: RatioPercent(Constants.R.slow.effect),
+        4: RatioPercent(Constants.R.omnisyphon_amp),
+        5: showEquation ? `${Constants.R.min_damage.base}` : Constants.R.min_damage,
         6: Constants.R.max_damage,
-        7: Constants.R.max_damage.base[skillLevel],
-        9: showEquation ? Constants.R.heal.base[skillLevel] : Constants.R.heal,
-        11: `${Constants.R.heal.lostHP}%`,
-        12: `${Constants.R.multiple_hit_heal_amp}%`,
-        13: showEquation ? `${Constants.R.first_damage.amp}%` : Constants.R.slow.duration,
-        14: `${Constants.R.min_damage.amp}%`,
-        15: `${Constants.R.max_damage.amp}%`,
-        16: `${Constants.R.heal.amp}%`,
+        7: Constants.R.max_damage.base,
+        9: showEquation ? Constants.R.heal.base : Constants.R.heal,
+        11: RatioPercent(Constants.R.heal.lostHP),
+        12: RatioPercent(Constants.R.multiple_hit_heal_amp),
+        13: showEquation ? RatioPercent(Constants.R.first_damage.amp) : Constants.R.slow.duration,
+        14: RatioPercent(Constants.R.min_damage.amp),
+        15: RatioPercent(Constants.R.max_damage.amp),
+        16: RatioPercent(Constants.R.heal.amp),
         17: Constants.R.slow.duration
     }),
     expansion: () => ({

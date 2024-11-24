@@ -1,23 +1,24 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1042100;
 
 export const info: TooltipInfo = {
     skill: "T",
     cooldown: Constants.T.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ showEquation }) => ({
         0: Constants.T.slow.duration,
-        1: `${Constants.T.slow.effect[skillLevel]}%`,
-        2: `${Constants.T.blood_conversion.skill_damage}%`,
-        3: `${Constants.T.blood_conversion.lost_hp}%`,
-        4: `${Constants.T.max_blood}%`,
-        5: `${Constants.T.blood_consumption}%`,
-        6: showEquation ? Constants.T.damage.base[skillLevel] : Constants.T.damage,
-        8: `${Constants.T.damage.targetMaxHP}%`,
+        1: RatioPercent(Constants.T.slow.effect),
+        2: RatioPercent(Constants.T.blood_conversion.skill_damage),
+        3: RatioPercent(Constants.T.blood_conversion.lost_hp),
+        4: RatioPercent(Constants.T.max_blood),
+        5: RatioPercent(Constants.T.blood_consumption),
+        6: showEquation ? Constants.T.damage.base : Constants.T.damage,
+        8: RatioPercent(Constants.T.damage.targetMaxHP),
         9: Constants.T.blood_heal_tick,
-        10: `${Constants.T.blood_heal_ratio}%`,
-        11: `${Constants.T.damage.amp}%`
+        10: RatioPercent(Constants.T.blood_heal_ratio),
+        11: RatioPercent(Constants.T.damage.amp)
     }),
     expansion: () => ({
         enumeratedValues: [

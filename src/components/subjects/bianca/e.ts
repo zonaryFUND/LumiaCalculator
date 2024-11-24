@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1042400;
 
@@ -10,19 +11,19 @@ export const info: TooltipInfo = {
         value: Constants.E.hp_cost_percent
     },
     cooldown: Constants.E.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ showEquation }) => ({
         0: Constants.E.max_charge,
         1: Constants.E.charge_remain,
-        4: showEquation ? Constants.E.min_damage.base[skillLevel] : Constants.E.min_damage,
+        4: showEquation ? Constants.E.min_damage.base : Constants.E.min_damage,
         5: Constants.E.max_damage,
-        6: Constants.E.max_damage.base[skillLevel],
-        8: showEquation ? Constants.E.heal.base[skillLevel] : Constants.E.heal,
+        6: Constants.E.max_damage.base,
+        8: showEquation ? Constants.E.heal.base : Constants.E.heal,
         10: Constants.E.additional_cost.per,
-        11: `${Constants.E.additional_cost.value}%`,
-        12: `${Constants.E.multiple_hit_heal_amp}%`,
-        13: `${Constants.E.min_damage.amp}%`,
-        14: `${Constants.E.max_damage.amp}%`,
-        15: `${Constants.E.heal.amp}%`
+        11: RatioPercent(Constants.E.additional_cost.value),
+        12: RatioPercent(Constants.E.multiple_hit_heal_amp),
+        13: RatioPercent(Constants.E.min_damage.amp),
+        14: RatioPercent(Constants.E.max_damage.amp),
+        15: RatioPercent(Constants.E.heal.amp)
     }),
     expansion: () => ({
         enumeratedValues: [
