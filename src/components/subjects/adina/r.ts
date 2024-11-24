@@ -6,7 +6,7 @@ export const code = 1052500;
 export const info: TooltipInfo = {
     skill: "R",
     cooldown: Constants.R.cooldown,
-    values: ({ showEquation, skillLevel, config, status }) => ({ }),
+    values: ({ }) => ({ }),
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/ConjunctionSunDamage", values: Constants.R.sun_conjunction.base},

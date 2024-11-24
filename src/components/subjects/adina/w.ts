@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1052300;
 
@@ -11,7 +12,7 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ showEquation, skillLevel, config }) => {
+    values: ({ showEquation, config }) => {
         const conjunction = {
             base: Constants.R.moon_conjunction.base[config.skillLevels.R],
             amp: Constants.R.moon_conjunction.amp
@@ -23,20 +24,20 @@ export const info: TooltipInfo = {
             4: Constants.W.moon,
             5: Constants.W.star.duration,
             6: Constants.W.conjunction.slow.duration,
-            7: `${Constants.W.conjunction.slow.effect}%`
+            7: RatioPercent(Constants.W.conjunction.slow.effect)
         }
 
         if (showEquation) {
             return {
                 ...base,
-                0: Constants.W.damage.base[skillLevel],
+                0: Constants.W.damage.base,
                 8: conjunction.base,
-                10: `${Constants.W.damage.amp}%`,
-                11: `${conjunction.amp}%`,
+                10: RatioPercent(Constants.W.damage.amp),
+                11: RatioPercent(conjunction.amp),
                 12: Constants.W.sun.base,
-                13: `${Constants.W.sun.amp}%`,
-                14: Constants.W.star.shield.base[skillLevel],
-                15: `${Constants.W.star.shield.amp}%`
+                13: RatioPercent(Constants.W.sun.amp),
+                14: Constants.W.star.shield.base,
+                15: RatioPercent(Constants.W.star.shield.amp)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {

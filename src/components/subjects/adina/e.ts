@@ -2,8 +2,14 @@ import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio/calculation";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1052400;
+
+const starHeal = {
+    base: Constants.E.damage.base.map(v => v * Constants.E.star / 100),
+    amp: Constants.E.damage.amp * Constants.E.star / 100
+}
 
 export const info: TooltipInfo = {
     skill: "E",
@@ -12,7 +18,7 @@ export const info: TooltipInfo = {
         value: Constants.E.sp_cost
     },
     cooldown: Constants.E.cooldown,
-    values: ({ showEquation, skillLevel, config, status }) => {
+    values: ({ showEquation, config }) => {
         const conjunctionHp = {
             base: Constants.R.star_conjunction.hp.base[config.skillLevels.R],
             amp: Constants.R.star_conjunction.hp.amp
@@ -30,25 +36,22 @@ export const info: TooltipInfo = {
         if (showEquation) {
             return {
                 ...base,
-                0: Constants.E.damage.base[skillLevel],
+                0: Constants.E.damage.base,
                 7: Constants.E.sun.base,
-                9: `${Constants.E.star}%`,
+                9: RatioPercent(Constants.E.star),
                 11: conjunctionHp.base,
-                12: `${conjunctionHp.amp}%`,
-                13: `${Constants.E.damage.amp}%`,
-                16: `${Constants.E.sun.amp}%`,
+                12: RatioPercent(conjunctionHp.amp),
+                13: RatioPercent(Constants.E.damage.amp),
+                16: RatioPercent(Constants.E.sun.amp),
                 17: conjunctionSp.base,
-                18: `${conjunctionSp.amp}%`,
+                18: RatioPercent(conjunctionSp.amp),
             } as Record<number, number | string | ValueRatio>
         } else {
-            const moonHeal = calculateValue(Constants.E.damage, status, config, skillLevel).static
-                .percent(Constants.E.star)
-                .floor();
             return {
                 ...base,
                 20: Constants.E.damage,
                 21: Constants.E.sun,
-                22: moonHeal.toString(),
+                22: starHeal,
                 24: conjunctionHp,
                 25: conjunctionSp
             } as Record<number, number | string | ValueRatio>

@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1052200;
 
@@ -11,7 +12,7 @@ export const info: TooltipInfo = {
         value: Constants.Q.sp_cost
     },
     cooldown: Constants.Q.cooldown,
-    values: ({ showEquation, skillLevel, config }) => {
+    values: ({ showEquation, config }) => {
         const conjunction = {
             base: Constants.R.sun_conjunction.base[config.skillLevels.R],
             amp: Constants.R.sun_conjunction.amp
@@ -19,25 +20,25 @@ export const info: TooltipInfo = {
 
         if (showEquation) {
             return {
-                0: Constants.Q.damage.base[skillLevel],
+                0: Constants.Q.damage.base,
                 2: Constants.Q.moon,
                 3: Constants.Q.star.duration,
-                4: `${Constants.Q.star.movement_speed}%`,
+                4: RatioPercent(Constants.Q.star.movement_speed),
                 5: conjunction.base,
-                7: `${Constants.Q.damage.amp}%`,
-                8: `${conjunction.amp}%`,
+                7: RatioPercent(Constants.Q.damage.amp),
+                8: RatioPercent(conjunction.amp),
                 9: Constants.Q.conjunction.duration,
-                10: `${Constants.Q.conjunction.damage.targetMaxHP}%`,
+                10: RatioPercent(Constants.Q.conjunction.damage.targetMaxHP),
                 11: Constants.Q.sun.base,
-                12: `${Constants.Q.sun.amp}%`
+                12: RatioPercent(Constants.Q.sun.amp)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 2: Constants.Q.moon,
                 3: Constants.Q.star.duration,
-                4: `${Constants.Q.star.movement_speed}%`,
+                4: RatioPercent(Constants.Q.star.movement_speed),
                 9: Constants.Q.conjunction.duration,
-                10: `${Constants.Q.conjunction.damage.targetMaxHP}%`,
+                10: RatioPercent(Constants.Q.conjunction.damage.targetMaxHP),
                 20: Constants.Q.damage,
                 21: conjunction,
                 22: Constants.Q.sun
