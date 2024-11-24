@@ -1,7 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
-import Decimal from "decimal.js";
-import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const ViperRCode = 1044500
 export const DeathadderRCode = 1044501
@@ -22,49 +21,48 @@ export const difinitions = [
     [code]: {
         skill: "R",
         cooldown: 0,
-        values: ({ showEquation, skillLevel, config }) => {
-            const amp = new Decimal(config.gauge).times(Constants.R.damage_amp_per_vf[config.skillLevels.R]).toString();
+        values: ({ showEquation }) => {
             const common = {
-                0: `${Constants.R.damage_amp_per_vf[skillLevel]}%`, 
+                0: RatioPercent(Constants.R.damage_amp_per_vf), 
                 2: Constants.R.overflow,
-                3: `${Constants.R.movement_speed}%`,
+                3: RatioPercent(Constants.R.movement_speed),
                 4: Constants.R.area_damage_tick,
                 6: Constants.R.kill_extend,
                 7: Constants.R.overload,
                 9: `${Constants.R.range_penalty}m`,
-            } satisfies Record<number, number | string | ValueRatio>;
+            };
             if (showEquation) {
                 return {
                     ...common,
-                    5: Constants.R.area_damage.base[skillLevel],
-                    10: constant.damage.base[skillLevel],
-                    11: `${constant.damage.attack}%`,
+                    5: Constants.R.area_damage.base,
+                    10: constant.damage.base,
+                    11: RatioPercent(constant.damage.attack),
                     12: type == "blackmamba" ? Constants.R2.second : 
-                        type == "sidewinder" ? `${Constants.R1.slow.effect}%` : Constants.R.extend,
-                    13: type == "blackmamba" ? `${Constants.R2.second_damage[skillLevel]}%` :
+                        type == "sidewinder" ? RatioPercent(Constants.R1.slow.effect) : Constants.R.extend,
+                    13: type == "blackmamba" ? RatioPercent(Constants.R2.second_damage) :
                         type == "sidewinder" ? Constants.R.extend : Constants.R.cooldown_reduction,
                     14: type == "blackmamba" ? Constants.R2.airborne : 
-                        type == "sidewinder" ? Constants.R.cooldown_reduction :`${Constants.R.area_damage.attack}%`,
-                    15: `${Constants.R.area_damage.attack}%`,
+                        type == "sidewinder" ? Constants.R.cooldown_reduction :RatioPercent(Constants.R.area_damage.attack),
+                    15: RatioPercent(Constants.R.area_damage.attack),
                     16: type == "sidewinder" ? Constants.R1.slow.duration : Constants.R.extend,
                     17: Constants.R.cooldown_reduction,
-                    18: `${Constants.R.area_damage.attack}%`,
-                    21: `${Constants.R2.damage.additionalMaxHP}%` 
+                    18: RatioPercent(Constants.R.area_damage.attack),
+                    21: RatioPercent(Constants.R2.damage.additionalMaxHP) 
 
-                } as Record<number, number | string | ValueRatio>
+                };
             } else {   
                 return {
                     ...common,
                     5: Constants.R.area_damage,
                     10: constant.damage,
-                    12: type == "sidewinder" ? `${Constants.R1.slow.effect}%` : Constants.R.extend,
-                    13: type == "blackmamba" ? `${Constants.R2.second_damage[skillLevel]}%` : 
+                    12: type == "sidewinder" ? RatioPercent(Constants.R1.slow.effect) : Constants.R.extend,
+                    13: type == "blackmamba" ? RatioPercent(Constants.R2.second_damage) : 
                         type == "sidewinder" ? Constants.R.extend : Constants.R.cooldown_reduction,
                     14: type == "sidewinder" ? Constants.R.cooldown_reduction : Constants.R2.airborne,
                     15: Constants.R1.slow.duration,
                     16: Constants.R.extend,
                     17: Constants.R.cooldown_reduction
-                } as Record<number, number | string | ValueRatio>
+                };
             }
         }, 
         expansion: () => ({

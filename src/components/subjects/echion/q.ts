@@ -1,25 +1,28 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import Decimal from "decimal.js";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1044200;
 
 export const info: TooltipInfo = {
     skill: "Q",
     cooldown: Constants.Q.cooldown,
-    values: ({ skillLevel, showEquation, config }) => {
+    values: ({ showEquation, config }) => {
+        const skillLevel = config.skillLevels.Q;
         const amp = new Decimal(config.gauge).times(Constants.R.damage_amp_per_vf[config.skillLevels.R]).toString();
+
         return {
-            0: showEquation ? Constants.Q.first_damage.base[skillLevel] : Constants.Q.first_damage,
-            1: `${Constants.Q.first_damage.attack}%`,
+            0: showEquation ? Constants.Q.first_damage.base : Constants.Q.first_damage,
+            1: RatioPercent(Constants.Q.first_damage.attack),
             2: Constants.Q.second,
             3: showEquation ? Constants.Q.second : Constants.Q.second_damage,
-            4: showEquation ? Constants.Q.second_damage.base[skillLevel] : Constants.Q.slow.duration,
-            5: showEquation ? `${Constants.Q.second_damage.attack}%` : `${Constants.Q.slow.effect[skillLevel]}%`,
+            4: showEquation ? Constants.Q.second_damage.base : Constants.Q.slow.duration,
+            5: showEquation ? RatioPercent(Constants.Q.second_damage.attack) : RatioPercent(Constants.Q.slow.effect),
             6: showEquation ? Constants.Q.slow.duration : `${Constants.Q.vf_gauge[skillLevel][0]}, ${Constants.Q.vf_gauge[skillLevel][1]}`,
-            7: showEquation ? `${Constants.Q.slow.effect[skillLevel]}%` : `${amp}%`,
+            7: showEquation ? RatioPercent(Constants.Q.slow.effect[skillLevel]) : RatioPercent(amp),
             8: `${Constants.Q.vf_gauge[skillLevel][0]}, ${Constants.Q.vf_gauge[skillLevel][1]}`,
-            9: `${amp}%`
+            9: RatioPercent(amp)
         }
     },
     expansion: () => ({

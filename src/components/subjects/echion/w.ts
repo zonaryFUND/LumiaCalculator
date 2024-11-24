@@ -3,6 +3,7 @@ import { TooltipInfo } from "../dictionary";
 import Decimal from "decimal.js";
 import { weaponType } from "./weapon-type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1044300;
 
@@ -35,13 +36,13 @@ export const info: TooltipInfo = {
             .subPercent(weaponType(config.equipment.Weapon) == "sidewinder" ? Constants.T1_2.w_cooldown_reduction : 0)
             .subPercent(status.cooldownReduction.calculatedValue);
     },
-    values: ({ skillLevel, showEquation, config }) => ({
+    values: ({ showEquation }) => ({
         0: Constants.W.gauge_max_consumption,
-        1: showEquation ? Constants.W.shield.base[skillLevel] : Constants.W.shield,
-        2: showEquation ? `${Constants.W.shield.attack}%` : `${Constants.W.multiplier}%`,
-        3: showEquation ? `${Constants.W.multiplier}%` : `${Constants.W.return_threshold}%`,
-        4: showEquation ? `${Constants.W.return_threshold}%` : `${Constants.W.return_gauge[skillLevel]}%`,
-        5: `${Constants.W.return_gauge[skillLevel]}%`
+        1: showEquation ? Constants.W.shield.base : Constants.W.shield,
+        2: showEquation ? RatioPercent(Constants.W.shield.attack) : RatioPercent(Constants.W.multiplier),
+        3: showEquation ? RatioPercent(Constants.W.multiplier) : RatioPercent(Constants.W.return_threshold),
+        4: showEquation ? RatioPercent(Constants.W.return_threshold) : RatioPercent(Constants.W.return_gauge),
+        5: RatioPercent(Constants.W.return_gauge)
     }),
     expansion: () => ({
         enumeratedValues: [

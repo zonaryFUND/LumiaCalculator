@@ -5,7 +5,7 @@ export const code = 1044100;
 
 export const info: TooltipInfo = {
     skill: "T",
-    values: ({ skillLevel, showEquation, config }) => ({}),
+    values: ({ }) => ({}),
     expansion: () => ({
         enumeratedValues: [] 
     })
