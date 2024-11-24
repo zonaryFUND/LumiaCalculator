@@ -1,8 +1,8 @@
 import fs from "fs";
 import readline from "readline";
 
-const rs = fs.createReadStream(__dirname + "/jp.txt");
-const ws = fs.createWriteStream(__dirname + "/src/intl/locales/ja/l10.json");
+const rs = fs.createReadStream("./jp.txt");
+const ws = fs.createWriteStream("./src/intl/locales/ja/l10.json");
 
 const rl = readline.createInterface({input: rs, output: ws});
 
