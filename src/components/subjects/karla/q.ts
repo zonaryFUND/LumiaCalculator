@@ -2,6 +2,7 @@ import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1054200;
 
@@ -11,7 +12,7 @@ export const info: TooltipInfo = {
         // NOTE: This multiplier is an estimated value.
         return new Decimal(Constants.Q.cooldown.constant).dividedBy(status.attackSpeed.calculatedValue).round2();
     },
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         const base = {
             2: Constants.Q.max,
             3: Constants.Q.range,
@@ -21,8 +22,8 @@ export const info: TooltipInfo = {
         if (showEquation) {
             return {
                 ...base,
-                1: `${Constants.Q.damage.attack[skillLevel]}%`,
-                6: `${Constants.Q.second_damage.attack[skillLevel]}%`
+                1: RatioPercent(Constants.Q.damage.attack),
+                6: RatioPercent(Constants.Q.second_damage.attack)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
