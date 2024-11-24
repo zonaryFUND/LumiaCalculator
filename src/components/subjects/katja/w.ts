@@ -6,7 +6,7 @@ export const code = 1072300;
 export const info: TooltipInfo = {
     skill: "W",
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ }) => ({
         1: Constants.W.enemy_reveal,
         2: Constants.W.duration
     }),

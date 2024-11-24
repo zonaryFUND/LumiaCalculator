@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1072500;
 
@@ -10,14 +11,14 @@ export const info: TooltipInfo = {
         value: Constants.R.sp_cost
     },
     cooldown: Constants.R.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: Constants.R.first_damage.base[skillLevel],
-        1: `${Constants.R.first_damage.attack}%`,
+    values: ({ }) => ({
+        0: Constants.R.first_damage.base,
+        1: RatioPercent(Constants.R.first_damage.attack),
         2: 3,
-        4: Constants.R.second_damage.base[skillLevel],
-        5: `${Constants.R.second_damage.attack}%`,
-        6: Constants.R.third_damage.base[skillLevel],
-        7: `${Constants.R.third_damage.attack}%`,
+        4: Constants.R.second_damage.base,
+        5: RatioPercent(Constants.R.second_damage.attack),
+        6: Constants.R.third_damage.base,
+        7: RatioPercent(Constants.R.third_damage.attack),
         20: Constants.R.first_damage,
         21: Constants.R.second_damage,
         22: Constants.R.third_damage,
@@ -25,7 +26,7 @@ export const info: TooltipInfo = {
     expansion: () => ({
         tipValues: {
             0: 3,
-            2: `${Constants.R.cooldown_return}%`
+            2: RatioPercent(Constants.R.cooldown_return)
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/FirstDamage", values: Constants.R.first_damage.base},
