@@ -2,12 +2,13 @@ import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio/calculation";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1071100;
 
 export const info: TooltipInfo = {
     skill: "T",
-    values: ({ skillLevel, showEquation, config, status }) => {
+    values: ({ showEquation }) => {
         const base = {
             0: Constants.T.duration,
             1: 1,
@@ -17,15 +18,15 @@ export const info: TooltipInfo = {
             return {
                 ...base,
                 3: Constants.T.damage.targetMaxHP.base,
-                4: `${Constants.T.damage.targetMaxHP.attack[skillLevel]}%`,
+                4: RatioPercent(Constants.T.damage.targetMaxHP.attack),
                 5: Constants.T.heal.base,
-                6: `${Constants.T.heal.attack}%`
+                6: RatioPercent(Constants.T.heal.attack)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 ...base,
-                3: `${calculateValue(Constants.T.damage.targetMaxHP, status, config, skillLevel).static.floor().toString()}%`,
-                4: `${calculateValue(Constants.T.heal, status, config, skillLevel).static.floor().toString()}%`
+                3: RatioPercent(Constants.T.damage.targetMaxHP),
+                4: RatioPercent(Constants.T.heal)
             } as Record<number, number | string | ValueRatio>
         }
     },
@@ -33,7 +34,7 @@ export const info: TooltipInfo = {
         tipValues: {
             0: Constants.T.max_heal,
             1: Constants.T.max_heal.base[skillLevel],
-            2: `${Constants.T.max_heal.attack}%`,
+            2: RatioPercent(Constants.T.max_heal.attack),
             3: Constants.T.animal_max
         },
         enumeratedValues: [

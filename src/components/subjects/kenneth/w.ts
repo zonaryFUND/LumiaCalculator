@@ -2,6 +2,7 @@ import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio/calculation";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1071300;
 
@@ -12,7 +13,7 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation, config, status }) => {
+    values: ({ showEquation }) => {
         const base = {
             0: Constants.W.duration
         }
@@ -20,16 +21,16 @@ export const info: TooltipInfo = {
             return {
                 ...base,
                 1: Constants.W.damage_reduction.base,
-                2: `${Constants.W.damage_reduction.attack[skillLevel]}%`,
+                2: RatioPercent(Constants.W.damage_reduction.attack),
                 3: Constants.W.shield_duration,
-                4: Constants.W.shield.base[skillLevel],
-                5: `${Constants.W.shield.attack}%`,
+                4: Constants.W.shield.base,
+                5: RatioPercent(Constants.W.shield.attack),
                 6: Constants.W.extend
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 ...base,
-                1: `${calculateValue(Constants.W.damage_reduction, status, config, skillLevel).static.floor().toString()}%`,
+                1: RatioPercent(Constants.W.damage_reduction),
                 2: Constants.W.shield_duration,
                 3: Constants.W.shield,
                 4: Constants.W.extend
