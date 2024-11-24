@@ -10,7 +10,7 @@ export const info: TooltipInfo = {
         value: Constants.IremE.sp_cost
     },
     cooldown: Constants.IremE.cooldown,
-    values: ({ skillLevel, showEquation }) => ({}),
+    values: ({ }) => ({}),
     expansion: () => ({
         tipValues: {
             1: Constants.common.fish,

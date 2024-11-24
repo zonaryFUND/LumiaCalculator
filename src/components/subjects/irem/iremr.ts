@@ -1,13 +1,14 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1061500;
 
 export const info: TooltipInfo = {
     skill: "R",
     cooldown: Constants.IremR.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         const base = {
             1: Constants.IremR.bell,
             2: Constants.common.fish,
@@ -16,8 +17,8 @@ export const info: TooltipInfo = {
         if (showEquation) {
             return {
                 ...base,
-                0: Constants.IremR.damage.base[skillLevel],
-                5: `${Constants.IremR.damage.amp[skillLevel]}%`
+                0: Constants.IremR.damage.base,
+                5: RatioPercent(Constants.IremR.damage.amp)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {

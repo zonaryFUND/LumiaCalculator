@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1061200;
 
@@ -17,13 +18,13 @@ export const info: TooltipInfo = {
         value: Constants.IremQ.sp_cost
     },
     cooldown: Constants.IremQ.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
-                0: Constants.IremQ.damage.base[skillLevel],
-                2: `${Constants.IremQ.damage.amp}%`,
-                3: maxDamageConstants.base[skillLevel],
-                5: `${maxDamageConstants.amp}%`,
+                0: Constants.IremQ.damage.base,
+                2: RatioPercent(Constants.IremQ.damage.amp),
+                3: maxDamageConstants.base,
+                5: RatioPercent(maxDamageConstants.amp),
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
