@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import Decimal from "decimal.js";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1039200;
 
@@ -20,18 +21,18 @@ export const info: TooltipInfo = {
         // cooldown aligns much better with in-game displayed values.
         return new Decimal(Constants.Q.cooldown.constant).subPercent(additionalAttackSpeed.clamp(0, 1.375).times(70).dividedBy(1.375)).round2();
     },
-    values: ({ skillLevel, showEquation }) => ({
-        0: showEquation ? Constants.Q.damage.base[skillLevel] : Constants.Q.damage,
-        1: showEquation ? `${Constants.Q.damage.attack}%` : Constants.Q.stack_duration,
+    values: ({ showEquation }) => ({
+        0: showEquation ? Constants.Q.damage.base : Constants.Q.damage,
+        1: showEquation ? RatioPercent(Constants.Q.damage.attack) : Constants.Q.stack_duration,
         2: showEquation ? Constants.Q.stack_duration : Constants.Q.movement_speed.duration,
-        3: showEquation ? Constants.Q.movement_speed.duration : `${Constants.Q.movement_speed.effect[skillLevel]}%`,
-        4: showEquation ? `${Constants.Q.movement_speed.effect[skillLevel]}%` : Constants.Q.Q2_first_damage,
-        5: showEquation ? Constants.Q.Q2_first_damage.base[skillLevel] : Constants.Q.Q2_second_damage,
-        6: showEquation ? `${Constants.Q.Q2_first_damage.attack}%` : Constants.Q.heal,
-        7: showEquation ? Constants.Q.Q2_second_damage.base[skillLevel] : Constants.Q.cooldown_reduction_max,
-        8: `${Constants.Q.Q2_second_damage.attack}%`,
-        9: Constants.Q.heal.base[skillLevel],
-        10: `${Constants.Q.heal.attack}%`,
+        3: showEquation ? Constants.Q.movement_speed.duration : RatioPercent(Constants.Q.movement_speed.effect),
+        4: showEquation ? RatioPercent(Constants.Q.movement_speed.effect) : Constants.Q.Q2_first_damage,
+        5: showEquation ? Constants.Q.Q2_first_damage.base : Constants.Q.Q2_second_damage,
+        6: showEquation ? RatioPercent(Constants.Q.Q2_first_damage.attack) : Constants.Q.heal,
+        7: showEquation ? Constants.Q.Q2_second_damage.base : Constants.Q.cooldown_reduction_max,
+        8: RatioPercent(Constants.Q.Q2_second_damage.attack),
+        9: Constants.Q.heal.base,
+        10: RatioPercent(Constants.Q.heal.attack),
         11: Constants.Q.cooldown_reduction_max
     }),
     expansion: () => ({
