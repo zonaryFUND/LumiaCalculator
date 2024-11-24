@@ -57,7 +57,7 @@
     "T": {
         "damage": {
             "base": [20,40,60],
-            "additionalMaxHP": 8
+            "targetMaxHP": 8
         },
         "stun": 0.5,
         "slow": {

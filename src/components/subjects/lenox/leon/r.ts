@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipInfo } from "../../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../valueratio-to-string";
 
 export const code = 1029500;
 
