@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1007200;
 
@@ -10,14 +11,14 @@ export const info: TooltipInfo = {
         value: Constants.Q.sp_cost
     },
     cooldown: Constants.Q.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
-        0: Constants.Q.damage.base[skillLevel],
-        1: `${Constants.Q.damage.additionalAttack}%`,
+    values: ({ }) => ({
+        0: Constants.Q.damage.base,
+        1: RatioPercent(Constants.Q.damage.additionalAttack),
         2: Constants.Q.slow.duration,
-        3: `${Constants.Q.slow.effect}%`,
-        4: `${Constants.Q.damage.amp}%`,
+        3: RatioPercent(Constants.Q.slow.effect),
+        4: RatioPercent(Constants.Q.damage.amp),
         5: Constants.Q.movement_speed.duration,
-        6: `${Constants.Q.movement_speed.effect[skillLevel]}%`,
+        6: RatioPercent(Constants.Q.movement_speed.effect),
         20: Constants.Q.damage
     }),
     expansion: () => ({

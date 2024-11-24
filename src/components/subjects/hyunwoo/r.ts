@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1007500;
 
@@ -10,24 +11,24 @@ export const info: TooltipInfo = {
         value: Constants.R.sp_cost
     },
     cooldown: Constants.R.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ }) => ({
         0: Constants.R.max_charge,
         2: Constants.R.stun,
         3: Constants.R.defense_down.duration,
-        4: `${Constants.R.defense_down.effect[skillLevel]}%`,
-        10: Constants.R.min_damage.base[skillLevel],
-        11: `${Constants.R.min_damage.additionalAttack}%`,
-        12: `${Constants.R.min_damage.amp}%`,
-        13: Constants.R.max_damage.base[skillLevel],
-        14: `${Constants.R.max_damage.additionalAttack}%`,
-        15: `${Constants.R.max_damage.amp}%`,
+        4: RatioPercent(Constants.R.defense_down.effect),
+        10: Constants.R.min_damage.base,
+        11: RatioPercent(Constants.R.min_damage.additionalAttack),
+        12: RatioPercent(Constants.R.min_damage.amp),
+        13: Constants.R.max_damage.base,
+        14: RatioPercent(Constants.R.max_damage.additionalAttack),
+        15: RatioPercent(Constants.R.max_damage.amp),
         20: Constants.R.min_damage,
         21: Constants.R.max_damage
     }),
     expansion: () => ({
         tipValues: {
             0: Constants.R.max_later_delay,
-            1: `${Constants.R.cooldown_payback}%`
+            1: RatioPercent(Constants.R.cooldown_payback)
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/MinDamage", values: Constants.R.min_damage.base},

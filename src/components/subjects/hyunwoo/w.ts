@@ -30,14 +30,14 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation, config, status }) => ({
-        0: Constants.W.defense.base[skillLevel],
+    values: ({ }) => ({
+        0: Constants.W.defense.base,
         1: Constants.W.defense.defense,
         2: Constants.W.cc_immune,
         3: Constants.W.duration,
         4: 1,
         5: 1,
-        20: hyunwooWDefenseStrategy(config, status).value.toString()
+        20: Constants.W.defense
     }),
     expansion: () => ({
         enumeratedValues: [
