@@ -10,10 +10,10 @@ export const info: TooltipInfo = {
         value: Constants.R.sp_cost
     },
     cooldown: Constants.R.cooldown,
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ }) => ({
         0: Constants.R.channeling,
         1: Constants.R.duration,
-        2: Constants.R.amp[skillLevel]
+        2: Constants.R.amp
     }),
     expansion: () => ({
         enumeratedValues: [
