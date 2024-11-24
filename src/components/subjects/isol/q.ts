@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1009200;
 
@@ -11,19 +12,19 @@ export const info: TooltipInfo = {
         value: Constants.Q.sp_cost
     },
     cooldown: Constants.Q.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
                 0: Constants.Q.duration,
-                1: Constants.Q.damage.base[skillLevel],
-                2: `${Constants.Q.damage.attack}%`,
-                3: `${Constants.Q.damage.amp}%`,
+                1: Constants.Q.damage.base,
+                2: RatioPercent(Constants.Q.damage.attack),
+                3: RatioPercent(Constants.Q.damage.amp),
                 4: Constants.Q.bind,
                 5: Constants.Q.duration_enemy,
                 6: Constants.Q.duration_reduction,
-                7: Constants.Q.additional_damage.base[skillLevel],
-                8: `${Constants.Q.additional_damage.attack}%`,
-                9: `${Constants.Q.additional_damage.amp}%`,
+                7: Constants.Q.additional_damage.base,
+                8: RatioPercent(Constants.Q.additional_damage.attack),
+                9: RatioPercent(Constants.Q.additional_damage.amp),
                 10: Constants.Q.additional_bind,
                 11: Constants.Q.bind_max
             } as Record<number, number | string | ValueRatio>

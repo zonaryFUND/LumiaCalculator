@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1009500;
 
@@ -11,19 +12,19 @@ export const info: TooltipInfo = {
         value: Constants.R.sp_cost
     },
     charge: Constants.R.charge,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         const base = {
             0: Constants.R.lifetime
         }
         if (showEquation) {
             return {
                 ...base,
-                1: Constants.R.damage.base[skillLevel],
-                2: `${Constants.R.damage.attack}%`,
-                3: `${Constants.R.damage.amp}%`,
+                1: Constants.R.damage.base,
+                2: RatioPercent(Constants.R.damage.attack),
+                3: RatioPercent(Constants.R.damage.amp),
                 4: Constants.R.charge.max,
                 5: Constants.R.max_place,
-                6: `${Constants.R.damage.targetHP}%`
+                6: RatioPercent(Constants.R.damage.targetHP)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -31,7 +32,7 @@ export const info: TooltipInfo = {
                 1: Constants.R.damage,
                 2: Constants.R.charge.max,
                 3: Constants.R.max_place,
-                4: `${Constants.R.damage.targetHP}%`
+                4: RatioPercent(Constants.R.damage.targetHP)
             } as Record<number, number | string | ValueRatio>
         }
 
