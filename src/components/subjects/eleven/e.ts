@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1030400;
 
@@ -11,15 +12,15 @@ export const info: TooltipInfo = {
         value: Constants.E.sp_cost
     },
     cooldown: Constants.E.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
-                0: Constants.E.min_damage.base[skillLevel],
-                1: `${Constants.E.min_damage.attack}%`,
-                2: `${Constants.E.min_damage.additionalMaxHP}%`,
-                3: Constants.E.max_damage.base[skillLevel],
-                4: `${Constants.E.max_damage.attack}%`,
-                5: `${Constants.E.max_damage.additionalMaxHP}%`
+                0: Constants.E.min_damage.base,
+                1: RatioPercent(Constants.E.min_damage.attack),
+                2: RatioPercent(Constants.E.min_damage.additionalMaxHP),
+                3: Constants.E.max_damage.base,
+                4: RatioPercent(Constants.E.max_damage.attack),
+                5: RatioPercent(Constants.E.max_damage.additionalMaxHP)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -30,7 +31,7 @@ export const info: TooltipInfo = {
     },
     expansion: () => ({
         tipValues: {
-            0: `${Constants.common.return_cooldown}%`
+            0: RatioPercent(Constants.common.return_cooldown)
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/MinDamage", values: Constants.E.min_damage.base},

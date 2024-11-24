@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1030300;
 
@@ -13,22 +14,22 @@ export const info: TooltipInfo = {
     cooldown: Constants.W.cooldown,
     values: ({ skillLevel, showEquation }) => {
         const base = {
-            0: `${Constants.common.charging_slow_penalty}%`,
-            1: Constants.W.min_taunt[skillLevel],
-            2: Constants.W.max_taunt[skillLevel],
+            0: RatioPercent(Constants.common.charging_slow_penalty),
+            1: Constants.W.min_taunt,
+            2: Constants.W.max_taunt,
         }
         if (showEquation) {
             return {
                 ...base,
-                3: Constants.W.min_damage.base[skillLevel],
-                4: `${Constants.W.min_damage.attack}%`,
-                5: `${Constants.W.min_damage.additionalMaxHP}%`,
-                6: Constants.W.max_damage.base[skillLevel],
-                7: `${Constants.W.max_damage.attack}%`,
-                8: `${Constants.W.max_damage.additionalMaxHP}%`,
+                3: Constants.W.min_damage.base,
+                4: RatioPercent(Constants.W.min_damage.attack),
+                5: RatioPercent(Constants.W.min_damage.additionalMaxHP),
+                6: Constants.W.max_damage.base,
+                7: RatioPercent(Constants.W.max_damage.attack),
+                8: RatioPercent(Constants.W.max_damage.additionalMaxHP),
                 9: Constants.W.damage_reduction_duration,
                 10: "0%",
-                11: `${Constants.W.max_damage_reduction[skillLevel]}%`
+                11: RatioPercent(Constants.W.max_damage_reduction)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -37,13 +38,13 @@ export const info: TooltipInfo = {
                 4: Constants.W.max_damage,
                 5: Constants.W.damage_reduction_duration,
                 6: "0%",
-                7: `${Constants.W.max_damage_reduction[skillLevel]}%`
+                7: RatioPercent(Constants.W.max_damage_reduction)
             } as Record<number, number | string | ValueRatio>
         }
     },
     expansion: () => ({
         tipValues: {
-            0: `${Constants.common.return_cooldown}%`
+            0: RatioPercent(Constants.common.return_cooldown)
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/MinDamage", values: Constants.W.min_damage.base},
