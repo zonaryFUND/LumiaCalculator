@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
-import { calculateValue } from "app-types/value-ratio/calculation";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1041400;
 
@@ -12,31 +12,31 @@ export const info: TooltipInfo = {
         value: Constants.E.sp_cost
     },
     cooldown: Constants.E.cooldown,
-    values: ({ skillLevel, showEquation, status, config }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
                 0: Constants.E.movement_speed.duration,
-                1: `${Constants.E.movement_speed.effect.base[skillLevel]}%`,
-                2: `${Constants.E.movement_speed.effect.amp}%`,
-                3: Constants.E.damage.base[skillLevel],
-                4: `${Constants.E.damage.amp}%`,
+                1: RatioPercent(Constants.E.movement_speed.effect.base),
+                2: RatioPercent(Constants.E.movement_speed.effect.amp),
+                3: Constants.E.damage.base,
+                4: RatioPercent(Constants.E.damage.amp),
                 5: Constants.E.shield_duration,
-                6: Constants.E.shield.base[skillLevel],
-                7: `${Constants.E.shield.amp}%`,
-                8: Constants.E.enhanced_damage.base[skillLevel],
-                9: `${Constants.E.enhanced_damage.amp}%`,
-                10: `${Constants.E.chase_movement_speed.base[skillLevel]}%`,
-                11: `${Constants.E.chase_movement_speed.amp}%`
+                6: Constants.E.shield.base,
+                7: RatioPercent(Constants.E.shield.amp),
+                8: Constants.E.enhanced_damage.base,
+                9: RatioPercent(Constants.E.enhanced_damage.amp),
+                10: RatioPercent(Constants.E.chase_movement_speed.base),
+                11: RatioPercent(Constants.E.chase_movement_speed.amp)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 0: Constants.E.movement_speed.duration,
-                1: `${calculateValue(Constants.E.movement_speed.effect, status, config, skillLevel).static.floor().toString()}%`,
+                1: RatioPercent(Constants.E.movement_speed.effect),
                 2: Constants.E.damage,
                 3: Constants.E.shield_duration,
                 4: Constants.E.shield,
                 5: Constants.E.enhanced_damage,
-                6: `${calculateValue(Constants.E.chase_movement_speed, status, config, skillLevel).static.floor().toString()}%`
+                6: RatioPercent(Constants.E.chase_movement_speed)
             } as Record<number, number | string | ValueRatio>
         }
     },

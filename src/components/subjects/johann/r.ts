@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1041500;
 
@@ -11,26 +12,26 @@ export const info: TooltipInfo = {
         value: Constants.R.sp_cost
     },
     cooldown: Constants.R.cooldown,
-    values: ({ skillLevel, showEquation, status, config }) => {
+    values: ({ showEquation }) => {
         const base = {
             4: Constants.R.duration,
-            5: Constants.R.defense[skillLevel],
-            6: Constants.R.heal_per_sec.base[skillLevel],
-            10: `${Constants.R.heal_per_sec.amp}%`
+            5: Constants.R.defense,
+            6: Constants.R.heal_per_sec.base,
+            10: RatioPercent(Constants.R.heal_per_sec.amp)
         }
         if (showEquation) {
             return {
                 ...base,
-                0: Constants.R.damage.base[skillLevel],
-                2: Constants.R.heal.base[skillLevel],
-                3: `${Constants.R.heal.targetLostHP[skillLevel]}%`,
-                8: `${Constants.R.damage.amp}%`
+                0: Constants.R.damage.base,
+                2: Constants.R.heal.base,
+                3: RatioPercent(Constants.R.heal.targetLostHP),
+                8: RatioPercent(Constants.R.damage.amp)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 ...base,
                 2: Constants.R.heal,
-                3: `${Constants.R.heal.targetLostHP}%`,
+                3: RatioPercent(Constants.R.heal.targetLostHP),
                 20: Constants.R.damage,
                 21: Constants.R.heal_per_sec
             } as Record<number, number | string | ValueRatio>
