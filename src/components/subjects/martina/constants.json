@@ -53,7 +53,7 @@
         "duration" :12,
         "damage": {
             "base": [110,140,170,200,230],
-            "attack": 98
+            "attack": 80
         },
         "bind": 1,
         "max_set": 3,
