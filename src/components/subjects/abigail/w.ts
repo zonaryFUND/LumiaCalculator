@@ -11,16 +11,16 @@ export const info: TooltipInfo = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel }) => {
+    values: ({ }) => {
         return {
-            0: `${Constants.W.additional_shield}%`,
+            0: RatioPercent(Constants.W.additional_shield),
             1: Constants.W.shield.duration,
-            2: Constants.W.damage.base[skillLevel],
-            3: `${Constants.W.damage.targetHP.base}%`,
-            4: `${Constants.W.damage.targetHP.amp}%`,
-            5: Constants.W.shield.amount.base[skillLevel],
-            6: `${Constants.W.shield.amount.amp}%`,
-            7: `${Constants.W.additional_shield_max}%`,
+            2: Constants.W.damage.base,
+            3: RatioPercent(Constants.W.damage.targetHP.base),
+            4: RatioPercent(Constants.W.damage.targetHP.amp),
+            5: Constants.W.shield.amount.base,
+            6: RatioPercent(Constants.W.shield.amount.amp),
+            7: RatioPercent(Constants.W.additional_shield_max),
             8: Constants.W.coordinates,
             20: Constants.W.damage,
             21: RatioPercent(Constants.W.damage.targetHP),

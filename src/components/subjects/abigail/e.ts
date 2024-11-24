@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1067400;
 
@@ -10,10 +11,10 @@ export const info: TooltipInfo = {
         value: Constants.E.sp_cost
     },
     cooldown: Constants.E.cooldown,
-    values: ({ skillLevel }) => {
+    values: ({ }) => {
         return {
-            0: Constants.E.damage.base[skillLevel],
-            1: `${Constants.E.damage.amp}%`,
+            0: Constants.E.damage.base,
+            1: RatioPercent(Constants.E.damage.amp),
             20: Constants.E.damage,
         }
     },
