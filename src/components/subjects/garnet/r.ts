@@ -1,33 +1,34 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1076500;
 
 export const info: TooltipInfo = {
     skill: "R",
     cooldown: Constants.R.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         if (showEquation) {
             return {
                 0: Constants.R.bind,
-                1: Constants.R.damage.base[skillLevel],
-                2: `${Constants.R.damage.amp}%`,
-                3: `${Constants.R.damage.targetHP}%`,
+                1: Constants.R.damage.base,
+                2: RatioPercent(Constants.R.damage.amp),
+                3: RatioPercent(Constants.R.damage.targetHP),
                 4: Constants.R.duration,
-                5: `${Constants.R.reuse_threshold}%`,
+                5: RatioPercent(Constants.R.reuse_threshold),
                 6: Constants.R.movement_speed.duration,
-                7: `${Constants.R.movement_speed.effect}%`
+                7: RatioPercent(Constants.R.movement_speed.effect)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 0: Constants.R.bind,
                 1: Constants.R.damage,
-                2: `${Constants.R.damage.targetHP}%`,
+                2: RatioPercent(Constants.R.damage.targetHP),
                 3: Constants.R.duration,
-                4: `${Constants.R.reuse_threshold}%`,
+                4: RatioPercent(Constants.R.reuse_threshold),
                 5: Constants.R.movement_speed.duration,
-                6: `${Constants.R.movement_speed.effect}%`
+                6: RatioPercent(Constants.R.movement_speed.effect)
             } as Record<number, number | string | ValueRatio>
         }
     },

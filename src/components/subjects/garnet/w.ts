@@ -1,37 +1,38 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
 import { ValueRatio } from "app-types/value-ratio";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1076300;
 
 export const info: TooltipInfo = {
     skill: "W",
     cooldown: Constants.W.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }) => {
         const {stack, ...healWithoutStack} = Constants.W.finish_heal;
         const base = {
             0: Constants.W.qe_cooldown_reduction_per_stack,
             1: Constants.W.damage_reduction.duration,
-            2: `${Constants.W.damage_reduction.effect}%`,
-            3: `${Constants.W.heal.lostHP}%`,
+            2: RatioPercent(Constants.W.damage_reduction.effect),
+            3: RatioPercent(Constants.W.heal.lostHP),
         }
 
         if (showEquation) {
             return {
                 ...base,
-                4: Constants.W.min_damage.base[skillLevel],
-                5: `${Constants.W.min_damage.amp}%`,
-                6: `${Constants.W.min_damage.maxHP}%`,
-                7: Constants.W.max_damage.base[skillLevel],
-                8: `${Constants.W.max_damage.amp}%`,
-                9: `${Constants.W.max_damage.maxHP}%`,
+                4: Constants.W.min_damage.base,
+                5: RatioPercent(Constants.W.min_damage.amp),
+                6: RatioPercent(Constants.W.min_damage.maxHP),
+                7: Constants.W.max_damage.base,
+                8: RatioPercent(Constants.W.max_damage.amp),
+                9: RatioPercent(Constants.W.max_damage.maxHP),
                 10: Constants.W.slow.duration,
-                11: `${Constants.W.slow.effect}%`,
+                11: RatioPercent(Constants.W.slow.effect),
                 12: Constants.W.max_charge_bind,
-                13: Constants.W.finish_heal.base[skillLevel],
-                14: `${Constants.W.finish_heal.amp}%`,
-                15: `${Constants.W.finish_heal.maxHP}%`,
-                16: stack[skillLevel],
+                13: Constants.W.finish_heal.base,
+                14: RatioPercent(Constants.W.finish_heal.amp),
+                15: RatioPercent(Constants.W.finish_heal.maxHP),
+                16: stack,
                 17: Constants.W.heal_tick
             } as Record<number, number | string | ValueRatio>
         } else {
@@ -40,10 +41,10 @@ export const info: TooltipInfo = {
                 4: Constants.W.min_damage,
                 5: Constants.W.max_damage,
                 6: Constants.W.slow.duration,
-                7: `${Constants.W.slow.effect}%`,
+                7: RatioPercent(Constants.W.slow.effect),
                 8: Constants.W.max_charge_bind,
                 9: healWithoutStack,
-                10: stack[skillLevel],
+                10: stack,
                 11: Constants.W.heal_tick,
             } as Record<number, number | string | ValueRatio>
         }
