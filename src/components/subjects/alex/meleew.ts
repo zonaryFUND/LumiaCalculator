@@ -1,5 +1,6 @@
 import Constants from "./constants.json";
 import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1027700;
 
@@ -10,9 +11,9 @@ export const info: TooltipInfo = {
         value: Constants.MeleeW.sp_cost
     },
     cooldown: Constants.MeleeW.cooldown,
-    values: ({ skillLevel }) => ({
-        0: Constants.MeleeW.damage.base[skillLevel],
-        1: `${Constants.MeleeW.damage.attack}%`,
+    values: ({ }) => ({
+        0: Constants.MeleeW.damage.base,
+        1: RatioPercent(Constants.MeleeW.damage.attack),
         20: Constants.MeleeW.damage,
     }),
     expansion: () => ({
