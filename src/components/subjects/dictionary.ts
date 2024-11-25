@@ -17,7 +17,7 @@ type TooltipValueUnit = number | number[] | string | ValueRatio;
 export type TooltipValue = TooltipValueUnit | TooltipValueToString;
 export type TooltipValueToString = { value: TooltipValueUnit, expression: (calculated: string) => string };
 
-type TooltipValues = Record<number, TooltipValue>;
+type TooltipValues = Partial<Record<number, TooltipValue>>;
 
 export type ExpansionTooltipProps = {
     tipValues?: TooltipValues
