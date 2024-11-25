@@ -7,7 +7,7 @@
         "cooldown_reduction": 3,
         "enhance_duration": 10,
         "sp_cost": [50,55,60,65,70],
-        "cooldown": 50
+        "cooldown": 8
     },
     "W": {
         "damage": {
