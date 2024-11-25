@@ -1,14 +1,13 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import style from "components/tooltip/tooltip.module.styl";
-import { useValueContext } from "components/tooltip/value-context";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 import { additionalPenetration } from "./status-override";
-import { UniqueValueStrategy } from "../unique-value-strategy";
-import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
+import Decimal from "decimal.js";
+import { UniqueValueStrategy } from "../unique-value-strategy";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
+
+export const code = 1031100;
 
 function rioBasicAttackMultiplier(status: Status): Decimal {
     const base = Constants.T.basic_attack_damage.base;
@@ -60,37 +59,34 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValue
     }
 } 
 
-const t: React.FC<SubjectSkillProps> = props => {
-    const { status, showEquation } = useValueContext();
-    const defense = (() => {
-        if (showEquation) {
-            return <><span className={style.emphasis}>{Constants.T.defense_decline.base[props.skillLevel]}%</span><span className={style.critical}>(+致命打確率の1%あたり{Constants.T.defense_decline.criticalChance}%)</span></>;
-        } else {
-            return <span className={style.emphasis}>{additionalPenetration(props.skillLevel, status).toString()}%</span>
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ showEquation, config, status }) => {
+        const base = {
+            0: 3
         }
-    })();
-
-    const basicAttack = (() => {
         if (showEquation) {
-            return <><span className={style.emphasis}>{Constants.T.basic_attack_damage.base}%</span><span className={style.critical}>(+致命打確率 * ({Constants.T.basic_attack_damage.criticalBase}% + 致命打ダメージ増加量))</span></>;
+            return {
+                ...base,
+                0: RatioPercent(Constants.T.defense_decline.criticalChance),
+                1: RatioPercent(Constants.T.basic_attack_damage.base),
+                2: "1%",
+                3: RatioPercent(Constants.T.defense_decline.base),
+                4: RatioPercent(Constants.T.basic_attack_damage.criticalBase)
+            }
         } else {
-            return <span className={style.emphasis}>{rioBasicAttackMultiplier(status).toString()}%</span>
+            return {
+                0: RatioPercent(additionalPenetration(config.skillLevels.T, status.criticalChance.calculatedValue).toString()),
+                1: RatioPercent(rioBasicAttackMultiplier(status).floor().toNumber())
+            }
         }
-    })()
 
-    return (
-        <>
-            莉央の基本攻撃とスキルは的中した対象の防御力を致命打確率に応じて{defense}だけ減少した状態のダメージを与えます。<br />
-            莉央の基本攻撃は致命打が発生しない代わりに{basicAttack}のダメージを与えます。<br />
-            基本攻撃ダメージ量は致命打確率に比例して増加します。
-        </>
-    );
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/DecreaseDefenseRatio", values: Constants.T.defense_decline.base, percent: true}
+        ]  
+    })
 }
 
-export default t;
 
-export const values: ValuesProps = {
-    parameters: [
-        {title: "防御力減少量(%)", values: Constants.T.defense_decline.base, percent: true}
-    ]
-}

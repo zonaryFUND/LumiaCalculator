@@ -1,31 +1,35 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
-const r: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ロッジが敵や地面に付着する爆弾を発射します。爆弾は{Constants.R.duration}秒後に爆発します。<br />
-            爆弾を敵に付着した場合、敵の移動速度が{Constants.R.slow}%減少し、爆発する時に<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与えます。<br />
-            爆弾が付着された対象はロッジに視界を共有します。<br />
-            <br />
-            爆弾が爆発する前に対象に基本攻撃を{Constants.R.basic_attack_launch}回的中させるとすぐに爆発し、対象の最大体力の{Constants.R.additional_damage[props.skillLevel]}
-            %の固定ダメージを追加で与えて{Constants.R.detonate_slow.duration}秒間移動速度を{Constants.R.detonate_slow.effect}%減少させます。スキルを的中させると
-            {Constants.R.skill_hit}回攻撃したことになります。<br />
-            <br />
-            爆弾をすぐに爆発させた場合にはセムテックス弾Mk-IIスキルのクールダウンが{Constants.R.cooldown_reduction}%減少し、
-            {Constants.R.movement_speed.duration}秒間移動速度が{Constants.R.movement_speed.effect}%増加します。
-        </>
-    );
-}
+export const code = 1021500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "最大体力追加ダメージ量", values: Constants.R.additional_damage, percent: true},
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ }) => ({
+        0: Constants.R.duration,
+        1: RatioPercent(Constants.R.slow),
+        2: Constants.R.damage.base,
+        3: RatioPercent(Constants.R.damage.attack),
+        4: Constants.R.basic_attack_launch,
+        5: RatioPercent(Constants.R.additional_damage),
+        6: RatioPercent(Constants.R.cooldown_reduction),
+        7: Constants.R.movement_speed.duration,
+        8: RatioPercent(Constants.R.movement_speed.effect),
+        9: Constants.R.skill_hit,
+        10: Constants.R.detonate_slow.duration,
+        11: RatioPercent(Constants.R.detonate_slow.effect),
+        20: Constants.R.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/MaxhpDamage", values: Constants.R.additional_damage, percent: true}
+        ]  
+    })
 }

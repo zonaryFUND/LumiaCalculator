@@ -1,26 +1,34 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
-const t: React.FC<SubjectSkillProps> = props => {
-    return (
-        <>
-            ロッジはスキルを使用した後、{Constants.T.duration}秒以内に基本攻撃をすると二回連続で攻撃して
-            <Value skill="T" ratio={Constants.T.first_damage} />と
-            <Value skill="T" ratio={Constants.T.second_damage} />の基本攻撃ダメージを与えます。<br />
-            <br />
-            ロッジはチョコレートが入った食べ物を食べると体力回復量の{Constants.T.food}%のスタミナを回復し、チョコレートが入った飲み物を飲むとスタミナ回復量の
-            {Constants.T.drink}%の体力を回復します。
-        </>
-    );
-}
+export const code = 1021100;
 
-export default t;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "2打攻撃力係数", values: Constants.T.second_damage.attack, percent: true},
-    ]
+export const info: TooltipInfo = {
+    skill: "T",
+    values: ({ showEquation }) => {
+        const base = {
+            2: Constants.T.duration,
+            3: RatioPercent(Constants.T.food),
+            4: RatioPercent(Constants.T.drink)
+        }
+        if (showEquation) {
+            return {
+                ...base,
+                0: RatioPercent(Constants.T.first_damage.attack),
+                1: RatioPercent(Constants.T.second_damage.attack)
+            }
+        } else {
+            return {
+                ...base,
+                0: Constants.T.first_damage,
+                1: Constants.T.second_damage
+            }
+        }
+    },
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/SecondDamageApcoef", values: Constants.T.second_damage.attack, percent: true}
+        ]  
+    })
 }
