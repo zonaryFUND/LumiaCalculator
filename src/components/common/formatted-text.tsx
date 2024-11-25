@@ -21,7 +21,7 @@ function decideTag(matched: string): "color" | "i" {
 }
 
 const formattedText: React.FC<Props> = ({text, values}) => {
-    const tagRegex = /<color=(#[0-9a-fA-F]{6}|[a-zA-Z]+)>|<\/color>|<i>|<\/i>/;
+    const tagRegex = /<color=(#[0-9a-fA-F]{3,6}|[a-zA-Z]+)>|<\/color>|<i>|<\/i>/;
     const parse = (text: string): React.ReactNode[] => {
         const match = text.match(tagRegex);
         if (!match) {
