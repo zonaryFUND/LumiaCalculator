@@ -12,7 +12,7 @@ export function attackSpeedCalc(seedValue: StatusValue, props: { mastery: number
 
     const multiplier = (seedValue.equipment?.ratio ?? new Decimal(0))
         .add(seedValue.perMastery?.ratio?.times(props.mastery) ?? 0)
-        .add(seedValue.overrideAdditional?.ratio ?? 0);
+        .add(seedValue.overrideAdditional?.ratio ?? 0)
 
     return {
         ...seedValue,
