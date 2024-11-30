@@ -1,22 +1,28 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
-const e: React.FC<SubjectSkillProps> = props => (
-    <>
-        雪が指定した方向に突進し、最初に対峙した敵に<Value skill="E" ratio={Constants.E.damage} />のスキルダメージを与え
-        {Constants.E.distance}m移動します。攻撃された対象は{Constants.E.basic_attack_disable}秒間基本攻撃が封鎖され、ダメージを受けた対象がいる場合は打ち落としのクールダウンが{Constants.E.cooldown_reduction}秒減少します。
-    </>
-);
+export const code = 1011400;
 
-export default e;
-
-export const values: ValuesProps = {
-    additionalInfo: <>このスキルは壁を越えられません。</>,
-    parameters: [
-        {title: "ダメージ量", values: Constants.E.damage.base},
-        {title: "クールダウン", values: Constants.E.cooldown}
-    ]
+export const info: TooltipInfo = {
+    skill: "E",
+    consumption: {
+        type: "sp",
+        value: Constants.E.sp_cost
+    },
+    cooldown: Constants.E.cooldown,
+    values: ({ }) => ({
+        0: Constants.E.damage.base,
+        1: RatioPercent(Constants.E.damage.attack),
+        2: Constants.E.distance,
+        3: Constants.E.basic_attack_disable,
+        4: Constants.E.cooldown_reduction,
+        20: Constants.E.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
+        ]  
+    })
 }

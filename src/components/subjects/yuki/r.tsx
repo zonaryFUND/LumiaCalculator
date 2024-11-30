@@ -1,23 +1,30 @@
-import * as React from "react";
 import Constants from "./constants.json";
-import Value from "components/tooltip/value";
-import { ValuesProps } from "../../tooltip/subject-skill/expansion-values";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
+import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
-const r: React.FC<SubjectSkillProps> = props => (
-    <>
-        雪が剣を持って空間を斬ります。 雪は自分が斬った敵に<Value skill="R" ratio={Constants.R.damage} />のスキルダメージを与え、刻印を付与して
-        {Constants.R.slow.duration}秒間敵の移動速度を{Constants.R.slow.effect}%減少させます。雪が剣を鞘に入れる瞬間、刻印が爆発し、対象の最大体力の{Constants.R.mark_damage.targetMaxHP[props.skillLevel]}%の固定ダメージを与えます。
-    </>
-);
+export const code = 1011500;
 
-export default r;
-
-export const values: ValuesProps = {
-    parameters: [
-        {title: "ダメージ量", values: Constants.R.damage.base},
-        {title: "最大体力追加ダメージ量", values: Constants.R.mark_damage.targetMaxHP, percent: true},
-        {title: "クールダウン", values: Constants.R.cooldown},
-        {title: "消費", values: Constants.R.sp_cost}
-    ]
+export const info: TooltipInfo = {
+    skill: "R",
+    consumption: {
+        type: "sp",
+        value: Constants.R.sp_cost
+    },
+    cooldown: Constants.R.cooldown,
+    values: ({ }) => ({
+        0: Constants.R.damage.base,
+        1: RatioPercent(Constants.R.damage.attack),
+        2: Constants.R.slow.duration,
+        3: RatioPercent(Constants.R.slow.effect),
+        6: RatioPercent(Constants.R.mark_damage.targetMaxHP),
+        20: Constants.R.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/MaxhpDamage", values: Constants.R.mark_damage.targetMaxHP, percent: true},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+        ]  
+    })
 }
