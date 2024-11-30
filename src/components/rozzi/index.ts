@@ -1,4 +1,4 @@
-import { defineSubject } from "../dictionary";
+import { defineSubject } from "../subjects/dictionary";
 import damageTable from "./damage-table";
 import * as Q from "./q";
 import * as W from "./w";
