@@ -34,9 +34,11 @@ const subjectsList: React.FC<Props> = props => {
     const [sort, setSort] = useLocalStorage("subject-list-sort", "in-game");
     const intl = useIntl();
     const jpNameWithCode = React.useMemo(() => {
-        return [...Array(SubjectCodeMax - 1).keys()]
+        return [...Array(SubjectCodeMax).keys()]
             .map(index => ({code: index + 1, name: intl.formatMessage({id: `Character/Name/${index + 1}`})}))
     }, []);
+
+    console.log(jpNameWithCode)
 
     const sorted = React.useMemo(() => {
         return jpNameWithCode
