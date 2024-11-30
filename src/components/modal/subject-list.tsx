@@ -62,7 +62,7 @@ const subjectsList: React.FC<Props> = props => {
         
         return [
             {index: "アルファベット", ids: filtered(/[a-zA-Z]/)},
-            {index: "あ", ids: filtered(/[あ-おア-オ]/)},
+            {index: "あ", ids: filtered(/[あ-おア-オヴ]/)},
             {index: "か", ids: filtered(/[か-こカ-コ]/)},
             {index: "さ", ids: filtered(/[さ-そサ-ソ]/)},
             {index: "た", ids: filtered(/[た-とタ-ト]/)},
