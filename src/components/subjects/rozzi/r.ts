@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../subjects/dictionary";
-import { RatioPercent } from "../subjects/valueratio-to-string";
+import { TooltipInfo } from "../dictionary";
+import { RatioPercent } from "../valueratio-to-string";
 
 export const code = 1021500;
 
