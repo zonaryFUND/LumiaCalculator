@@ -1,0 +1,18 @@
+{
+    "first_damage": {
+        "base": [20,35,50],
+        "additionalAttack": [20,30,40],
+        "amp": [5,6,7]
+    },
+    "first_count": 6,
+    "threshold": 4,
+    "reuse": 5,
+    "second_damage": {
+        "base": [100,175,250],
+        "additionalAttack": [100,125,150],
+        "amp": [40,50,60]
+    },
+    "cooldown": {
+        "constant": [30,25,20]
+    }
+}

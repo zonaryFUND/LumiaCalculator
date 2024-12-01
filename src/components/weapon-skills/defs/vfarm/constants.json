@@ -1,0 +1,16 @@
+{
+    "cast": 1,
+    "threshold": 50,
+    "charge_gauge": 45,
+    "gauge_consumption": 45,
+    "cooldown_reduction": 60,
+    "movement_speed": {
+        "duration": 0.85,
+        "effect": 20
+    },
+    "extend": [1.5,2.5,3.5],
+    "overload_reduction": [5,7,9],
+    "cooldown": {
+        "constant": [13,12,11]
+    }
+}

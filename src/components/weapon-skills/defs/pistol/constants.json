@@ -1,0 +1,14 @@
+{
+    "duration": 1,
+    "movement_speed": {
+        "base": [35,50,65],
+        "amp": 1
+    },
+    "attack_speed": {
+        "count": 2,
+        "effect": 70
+    },
+    "cooldown": {
+        "constant": [35,30,25]
+    }
+}

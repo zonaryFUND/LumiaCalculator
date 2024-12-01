@@ -1,13 +1,13 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio/calculation";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1071100;
 
-export const info: TooltipInfo = {
-    skill: "T",
+export const info: TooltipProps = {
+    skillKey: "T",
     values: ({ showEquation }) => {
         const base = {
             0: Constants.T.duration,

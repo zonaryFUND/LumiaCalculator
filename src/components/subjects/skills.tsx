@@ -1,13 +1,14 @@
 import * as React from "react";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
-import Decimal from "decimal.js";
-import { SubjectCodeWithOldID } from "app-types/subject-static";
-import { SkillCode, SkillKey, SubjectSkillListExpressionDictionary } from "./dictionary";
+import { SubjectSkillListExpressionDictionary } from "./dictionary";
 import style from "./skills.module.styl";
 import Images from "@app/resources/image";
 import { SubjectSideContext } from "./subject-side";
 import PullDown from "components/common/pull-down";
+import WeaponSkill from "components/weapon-skills/weapon-skill";
+import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
+import { SubjectDependentSkillKey, SubjectSkillKeys } from "app-types/skill";
+import { SkillTooltipID } from "components/tooltip/skill";
 
 type SkillListProps = {
     config: SubjectConfig
@@ -15,20 +16,20 @@ type SkillListProps = {
 }
 export const SkillListContext = React.createContext<SkillListProps | null>(null);
 
-const Skill: React.FC<{code: SkillCode}> = ({code}) => {
+const Skill: React.FC<{code: number}> = ({code}) => {
     const side = React.useContext(SubjectSideContext);
 
     return (
         <img 
             src={Images.skill[code]} 
-            data-tooltip-id="subject-skill" 
+            data-tooltip-id={SkillTooltipID} 
             data-tooltip-content={`${code}`}
             data-tooltip-subject-side={side}
         />
     );
 }
 
-const SkillLevelConfigurator: React.FC<{skill: "Q" | "W" | "E" | "R" | "T", max?: number}> = props => {
+const SkillLevelConfigurator: React.FC<{skill: SubjectDependentSkillKey, max?: number}> = props => {
     const context = React.useContext(SkillListContext);
 
     const value = context!.config.skillLevels[props.skill];
@@ -54,25 +55,25 @@ type Props = {
 }
 
 const subjectSkills: React.FC<Props> = props => {
-    console.log(props.config.subject)
     const list = SubjectSkillListExpressionDictionary[props.config.subject](props.config);
+    const weaponType = React.useMemo(() => extractWeaponTypeID(props.config), [props.config.equipment.Weapon]);
     
     return (
         <div className={style.skills}>
             <SkillListContext.Provider value={props}>
             {
-                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => (
+                SubjectSkillKeys.map(skill => (
                     <div key={skill} className={style.vertical}>
                         {
                             (() => {
-                                if (list[skill] == undefined) return null;
-                                
-                                if (typeof list[skill] == "number") {
-                                    return <Skill key={list[skill]} code={list[skill]} />;
-                                } else if (Array.isArray(list[skill])) {
-                                    return (list[skill]).map(code => <Skill key={code} code={code} />)
+                                const value = list[skill];
+                                if (value == undefined) return null;
+                                if (typeof value == "number") {
+                                    return <Skill key={value} code={value} />;
+                                } else if (Array.isArray(value)) {
+                                    return value.map(code => <Skill key={code} code={code} />)
                                 } else {
-                                    return (typeof list[skill].code == "number" ? [list[skill].code] : list[skill].code)
+                                    return (typeof value.code == "number" ? [value.code] : value.code)
                                         .map(code => <Skill key={code} code={code} />)
                                 }
                             })()
@@ -80,16 +81,18 @@ const subjectSkills: React.FC<Props> = props => {
                     </div>
                 ))
             }
-            {<div />}
-            {/*<WeaponSkill id={props.weaponType} />*/}
+            <div className={style.vertical}>
+                <WeaponSkill id={weaponType} />
+            </div>
             {
-                (["Q", "W", "E", "R", "T"] as SkillKey[]).map(skill => {
-                    if (typeof list[skill] == "object" && "maxLevel" in list[skill]) {
-                        if (list[skill].maxLevel == "none") return <div />;
+                SubjectSkillKeys.map(skill => {
+                    const value = list[skill];
+                    if (typeof value == "object" && "maxLevel" in value) {
+                        if (value.maxLevel == "none") return <div />;
                         return <SkillLevelConfigurator 
                             key={skill} 
                             skill={skill} 
-                            max={list[skill].maxLevel}
+                            max={value.maxLevel}
                         />;  
                     } else {
                         return <SkillLevelConfigurator 

@@ -1,13 +1,13 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1054200;
 
-export const info: TooltipInfo = {
-    skill: "Q",
+export const info: TooltipProps = {
+    skillKey: "Q",
     cooldown: ({ status }) => {
         // NOTE: This multiplier is an estimated value.
         return new Decimal(Constants.Q.cooldown.constant).dividedBy(status.attackSpeed.calculatedValue).round2();

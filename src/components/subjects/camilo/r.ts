@@ -1,8 +1,8 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Decimal from "decimal.js";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1039500;
 
@@ -26,8 +26,8 @@ export function CamiloRHealStrategy(val: "min" | "max"): UniqueValueStrategy {
     }
 }
 
-export const info: TooltipInfo = {
-    skill: "R",
+export const info: TooltipProps = {
+    skillKey: "R",
     consumption: {
         type: "sp",
         value: Constants.R.sp_cost

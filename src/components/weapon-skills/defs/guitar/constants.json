@@ -1,0 +1,14 @@
+{
+    "damage": {
+        "base": [100,150,200],
+        "additionalAttack": [100,130,160],
+        "amp": [60,70,80]
+    },
+    "slow": {
+        "duration": 1,
+        "effect": 99
+    },
+    "cooldown": {
+        "constant": 25
+    }
+}

@@ -1,11 +1,11 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import { additionalAmp } from "./status-override";
 
 export const code = 1024100;
 
-export const info: TooltipInfo = {
-    skill: "T",
+export const info: TooltipProps = {
+    skillKey: "T",
     values: ({ status, config }) => ({
         0: Constants.T.additional_attack_range,
         1: 0.01,

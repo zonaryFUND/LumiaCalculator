@@ -1,11 +1,11 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { RatioPercent } from "../valueratio-to-string";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1016600;
 
-export const info: TooltipInfo = {
-    skill: "Q",
+export const info: TooltipProps = {
+    skillKey: "Q",
     cooldown: Constants.BikeQ.cooldown,
     values: ({ }) => ({
         0: Constants.BikeQ.damage.base,

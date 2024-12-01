@@ -1,9 +1,9 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 
 export const [y, r, b] = [1048500, 1048510, 1048520];
-export const info: TooltipInfo = {
-    skill: "W",
+export const info: TooltipProps = {
+    skillKey: "W",
     consumption: {
         type: "sp",
         value: Constants.W.sp_cost

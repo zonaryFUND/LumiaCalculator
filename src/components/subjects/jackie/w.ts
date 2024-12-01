@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1001300;
 
@@ -10,8 +10,8 @@ const maxHeal = {
     attack: Constants.W.heal.attack * 2
 }
 
-export const info: TooltipInfo = {
-    skill: "W",
+export const info: TooltipProps = {
+    skillKey: "W",
     consumption: {
         type: "sp",
         value: Constants.W.sp_cost

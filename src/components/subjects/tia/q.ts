@@ -1,9 +1,9 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { RatioPercent } from "../valueratio-to-string";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
-const base: TooltipInfo = {
-    skill: "Q",
+const base: TooltipProps = {
+    skillKey: "Q",
     consumption: {
         type: "sp",
         value: Constants.Q.sp_cost
@@ -31,7 +31,7 @@ export const y = {
             3: RatioPercent(Constants.Q.y.slow.effect),
             4: Constants.Q.y.slow.duration
         })
-    } satisfies TooltipInfo
+    } satisfies TooltipProps
 }
 
 export const r = {
@@ -43,7 +43,7 @@ export const r = {
             3: RatioPercent(Constants.Q.r.slow.effect),
             4: Constants.Q.r.slow.duration
         })
-    } satisfies TooltipInfo
+    } satisfies TooltipProps
 }
 
 export const b = {
@@ -64,5 +64,5 @@ export const b = {
                 {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.Q.b.center_addition.base}
             ]
         })
-    } satisfies TooltipInfo
+    } satisfies TooltipProps
 }

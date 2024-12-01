@@ -1,0 +1,6 @@
+{
+    "duration": 2.5,
+    "cooldown": {
+        "constant": [40,32,24]
+    }
+}

@@ -1,9 +1,9 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import Decimal from "decimal.js";
 import { weaponType } from "./weapon-type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1044300;
 
@@ -29,8 +29,8 @@ export const EchionWStrategy: UniqueValueStrategy = (config, status) => {
     }
 }
 
-export const info: TooltipInfo = {
-    skill: "W",
+export const info: TooltipProps = {
+    skillKey: "W",
     cooldown: ({ config, status }) => {
         return new Decimal(Constants.W.cooldown[config.skillLevels.W])
             .subPercent(weaponType(config.equipment.Weapon) == "sidewinder" ? Constants.T1_2.w_cooldown_reduction : 0)

@@ -1,0 +1,14 @@
+{
+    "stack_gain": 3,
+    "max_stack": [50,75,100],
+    "stack_reduction_threshold": 6,
+    "stack_reduction": 10,
+    "per_stack": {
+        "duration": 0.1,
+        "basic_attack_addition": 0.1
+    },
+    "attack_speed": [20,30,40],
+    "cooldown": {
+        "constant": 17
+    }
+}

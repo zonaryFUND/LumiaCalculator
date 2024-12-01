@@ -11,8 +11,7 @@ import Subject from "../simple/subject";
 import BuffDebuffs from "./buff-debuffs";
 import Damage from "./damage";
 import ItemTooltip from "components/tooltip/item/item-tooltip";
-import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
-import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
+import TooltipPresenter from "components/tooltip/skill";
 import LoadBuild from "components/modal/load-build";
 import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";
@@ -34,7 +33,6 @@ import { useSelectedPresetKey } from "@app/storage/use-selected-preset-key";
 import { useIntl } from "react-intl";
 import { useLocalStorageConfig } from "@app/storage/config";
 import { EquipmentStatusDictionary } from "app-types/equipment";
-import { SubjectSkillProps } from "components/tooltip/subject-skill/props";
 
 const index: React.FC = props => {
     const intl = useIntl();
@@ -135,36 +133,10 @@ const index: React.FC = props => {
                     />
                 </CollapseTab>
             </div>
-            <Tooltip 
-                id="subject-skill"
-                className={`${style.tooltip}`}
-                style={{zIndex: 1000}}
-                render={({ content, activeAnchor }) => {
-                    if (!content) return null;
-                    return (
-                        <SubjectSkillTooltip
-                            code={+content} 
-                            showEquation={damageInFormula}
-                            status={status} 
-                            config={config} 
-                        />
-                    );
-                }}
-            />
-            <Tooltip 
-                id="weapon-skill"
-                className={`${style.tooltip}`}
-                style={{zIndex: 1000}}
-                render={({ content, activeAnchor }) => {
-                    if (!content) return null;
-                    return (
-                        <WeaponSkillTooltip 
-                            showEquation={damageInFormula}
-                            status={status} 
-                            config={config} 
-                        />
-                    );
-                }}
+            <TooltipPresenter 
+                showEquation={damageInFormula}
+                status={status} 
+                config={config} 
             />
             <Tooltip 
                 id="weapon"

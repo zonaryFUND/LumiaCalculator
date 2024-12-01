@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { CriticalMultipier, RatioPercent } from "../valueratio-to-string";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { CriticalMultipier, RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1065100;
 
@@ -9,8 +9,8 @@ const aaRatio = {
     basicAttackAmp: 100
 }
 
-export const info: TooltipInfo = {
-    skill: "T",
+export const info: TooltipProps = {
+    skillKey: "T",
     values: ({ skillLevel, showEquation, status }) => ({
         1: Constants.T.debi_defense,
         2: showEquation ? Constants.T.marlene_range : Constants.T.max_stack,

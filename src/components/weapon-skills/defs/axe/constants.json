@@ -1,0 +1,12 @@
+{
+    "damage": {
+        "base": [50,75,100],
+        "additionalAttack": [50,65,80],
+        "amp": 25,
+        "targetMaxHP": 6
+    },
+    "heal": 80,
+    "cooldown": {
+        "constant": [7,6,5]
+    }
+}

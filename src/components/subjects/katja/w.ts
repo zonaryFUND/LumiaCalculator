@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 
 export const code = 1072300;
 
-export const info: TooltipInfo = {
-    skill: "W",
+export const info: TooltipProps = {
+    skillKey: "W",
     cooldown: Constants.W.cooldown,
     values: ({ }) => ({
         1: Constants.W.enemy_reveal,

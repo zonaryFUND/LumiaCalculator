@@ -1,13 +1,13 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { RatioPercent } from "../valueratio-to-string";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1043500;
 
 const maxCooldownIncrease = Constants.R.cooldown_increase * Constants.R.max_level;
 
-export const info: TooltipInfo = {
-    skill: "R",
+export const info: TooltipProps = {
+    skillKey: "R",
     consumption: {
         type: "sp",
         value: Constants.R.sp_cost

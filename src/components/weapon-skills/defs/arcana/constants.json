@@ -1,0 +1,11 @@
+{
+    "count": 3,
+    "damage": {
+        "base": [30,50,70],
+        "amp": 25
+    },
+    "animal_enhance": 50,
+    "cooldown": {
+        "constant": [30,25,20]
+    }
+}

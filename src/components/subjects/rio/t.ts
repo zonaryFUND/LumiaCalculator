@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { RatioPercent } from "../valueratio-to-string";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 import { additionalPenetration } from "./status-override";
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
@@ -59,8 +59,8 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValue
     }
 } 
 
-export const info: TooltipInfo = {
-    skill: "T",
+export const info: TooltipProps = {
+    skillKey: "T",
     values: ({ showEquation, config, status }) => {
         const base = {
             0: 3

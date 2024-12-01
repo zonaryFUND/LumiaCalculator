@@ -1,12 +1,12 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import * as Q from "./q";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1058210;
 
-export const info: TooltipInfo = {
-    skill: "Q",
+export const info: TooltipProps = {
+    skillKey: "Q",
     consumption: {
         type: "sp",
         value: Constants.Q2.sp_cost

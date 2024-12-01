@@ -1,0 +1,12 @@
+{
+    "duration": 0.75,
+    "dash": 3,
+    "damage": {
+        "base": [100,150,200],
+        "additionalAttack": [150,175,200],
+        "amp": 70
+    },
+    "cooldown": {
+        "constant": 30
+    }
+}

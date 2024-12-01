@@ -22,7 +22,7 @@ export type DamageTable = {
     skill: SubjectDamageTableUnit[][]
 }
 
-export type WeaponSkillTableGenerator = (props: {intl: IntlShape}) => DamageTableUnit[];
+//export type WeaponSkillTableGenerator = (props: {intl: IntlShape}) => DamageTableUnit[];
 
 const subjectModules = import.meta.glob<{
     default: SubjectDamageTableUnit[][] | DamageTableGenerator
@@ -38,6 +38,7 @@ export const SubjectDamageTable = Object.entries(subjectModules).reduce((skills,
     }
 }, {}) as {[id: string]: (DamageTableGenerator)}
 
+/*
 const weaponSkillModules = import.meta.glob<{
     default: DamageTableUnit[] | WeaponSkillTableGenerator
 }>("./weapon-skills/damage-table/*.ts", {eager: true});
@@ -54,3 +55,4 @@ export const WeaponSkillDamageTable = Object.entries(weaponSkillModules).reduce(
             () => tableOrGenerator
     }
 }, {} as {[id: string]: WeaponSkillTableGenerator})
+*/

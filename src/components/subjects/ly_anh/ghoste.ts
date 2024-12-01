@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import * as lyanhe from "./lyanhe";
 
 export const code = 1063410;
 
-export const info: TooltipInfo = {
+export const info: TooltipProps = {
     ...lyanhe.info,
     consumption: {
         type: "hp",

@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { RatioPercent } from "../valueratio-to-string";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1003200;
 
@@ -9,8 +9,8 @@ const enhanced = {
     amp: Constants.Q.damage.amp + Constants.Q.additional_damage.amp
 }
 
-export const info: TooltipInfo = {
-    skill: "Q",
+export const info: TooltipProps = {
+    skillKey: "Q",
     consumption: {
         type: "sp",
         value: Constants.Q.sp_cost

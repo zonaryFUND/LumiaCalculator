@@ -1,0 +1,16 @@
+{
+    "range": 4,
+    "damage": {
+        "base": [100,150,200],
+        "additionalAttack": [60,90,120],
+        "amp": [50,60,70]
+    },
+    "double_range": 2,
+    "slow": {
+        "duration": 2,
+        "effect": 35
+    },
+    "cooldown": {
+        "constant": [30,25,20]
+    }
+}

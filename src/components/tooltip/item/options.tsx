@@ -19,21 +19,21 @@ const options: React.FC<EquipmentStatus> = props => {
                     if (key.includes("Lv") || key.includes("Level")) {
                         return (
                             <li key={key}>
-                                <FormattedText text={message} /> +{props[key].toFixed(1)}~{props[key].times(20).toFixed(1)}{percent}
+                                <FormattedText text={message} /> +{props[key]?.toFixed(1)}~{props[key]?.times(20).toFixed(1)}{percent}
                             </li>
                         )
                     } else if (key == "adaptiveForce") {
                         return (
                             <li key={key}>
-                                <><FormattedMessage id="StatType/AttackPower" /> +{props[key].toString()}</>
+                                <><FormattedMessage id="StatType/AttackPower" /> +{props[key]?.toString()}</>
                                 <> <FormattedMessage id="app.or" /> </>
-                                <><FormattedMessage id="StatType/SkillAmp" /> +{props[key].times(2).toString()}</>
+                                <><FormattedMessage id="StatType/SkillAmp" /> +{props[key]?.times(2).toString()}</>
                             </li>
                         );
                     } else {
                         return (
                             <li key={key}>
-                                <FormattedText text={message} /> +{props[key].toString()}{percent}
+                                <FormattedText text={message} /> +{props[key]?.toString()}{percent}
                             </li>
                         )
                     }

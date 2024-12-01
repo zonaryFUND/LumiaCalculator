@@ -1,0 +1,29 @@
+{
+    "duration": 10,
+    "vision": 30,
+    "cripping": {
+        "vision": 6,
+        "damage": {
+            "base": [100,200,300],
+            "additionalAttack": 160,
+            "amp": [30,35,40]
+        },
+        "target_vision": 3,
+        "slow": {
+            "duration": 0.5,
+            "effect": 90
+        }
+    },
+    "dead_to_rights": {
+        "vision": 1.5,
+        "damage": {
+            "base": [150,300,450],
+            "additionalAttack": 180,
+            "amp": [40,45,50]
+        },
+        "max_damage_multiplier": 2
+    },
+    "cooldown": {
+        "constant": [40,35,30]
+    }
+}

@@ -9,7 +9,7 @@ const table: DamageTableGenerator = props => {
         basicAttack: [
             "standard",
             {label: props.intl.formatMessage({id: "subject.yuki.passive-additional"}), skill: "T", value: Constants.T.damage, type: {type: "true"}},
-            weaponType == "dual_swords" ? 
+            weaponType == "DualSword" ? 
             {label: props.intl.formatMessage({id: "subject.yuki.q-aa-dual-sword"}), skill: "Q", value: Constants.Q.dual_sword_damage, type: {type: "basic"}} :
             {label: props.intl.formatMessage({id: "subject.yuki.q-aa"}), skill: "Q", value: Constants.Q.damage, type: {type: "basic"}}
         ],

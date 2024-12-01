@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { RatioPercent } from "../valueratio-to-string";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const ViperRCode = 1044500
 export const DeathadderRCode = 1044501
@@ -19,7 +19,7 @@ export const difinitions = [
 ].reduce((prev, {code, type, active, constant}) => ({
     ...prev,
     [code]: {
-        skill: "R",
+        skillKey: "R",
         cooldown: 0,
         values: ({ showEquation }) => {
             const common = {
@@ -90,5 +90,5 @@ export const difinitions = [
                 }
             })())
         })
-    } satisfies TooltipInfo
-}), {} as Record<number, TooltipInfo>)
+    } satisfies TooltipProps
+}), {} as Record<number, TooltipProps>)

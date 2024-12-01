@@ -17,8 +17,7 @@ import SaveBuild from "components/modal/save-build";
 import saveStyle from "components/modal/save-build/index.module.styl";
 
 import ItemTooltip from "components/tooltip/item/item-tooltip";
-import SubjectSkillTooltip from "components/tooltip/subject-skill/subject-skill-tooltip";
-import WeaponSkillTooltip from "components/tooltip/subject-skill/weapon-skill-tooltip";
+import TooltipPresenter from "components/tooltip/skill";
 import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 import useStorageBoolean from "@app/storage/boolean";
@@ -117,39 +116,10 @@ const index: React.FC = props => {
                     </SubjectSideContext.Provider>
                 </CollapseTab>
             </div>
-            <Tooltip 
-                id="subject-skill"
-                className={`${style.tooltip}`}
-                style={{zIndex: 1000}}
-                render={({ content, activeAnchor }) => {
-                    if (!content) return null;
-                    const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
-
-                    return (
-                        <SubjectSkillTooltip
-                            code={+content} 
-                            showEquation={damageInFormula}
-                            status={side == "left" ? left.status : right.status} 
-                            config={side == "left" ? left.config : right.config} 
-                        />
-                    );
-                }}
-            />
-            <Tooltip 
-                id="weapon-skill"
-                className={`${style.tooltip}`}
-                style={{zIndex: 1000}}
-                render={({ content, activeAnchor }) => {
-                    if (!content) return null;
-                    const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
-                    return (
-                        <WeaponSkillTooltip 
-                            showEquation={damageInFormula}
-                            status={side == "left" ? left.status : right.status} 
-                            config={side == "left" ? left.config : right.config} 
-                        />
-                    );
-                }}
+            <TooltipPresenter 
+                showEquation={damageInFormula}
+                config={[left.config, right.config]}
+                status={[left.status, right.status]}
             />
             <Tooltip 
                 id="weapon"

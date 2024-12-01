@@ -1,0 +1,23 @@
+{
+    "cloak": {
+        "duration": [1,1.5,2],
+        "movement_speed": 20
+    },
+    "dagger": {
+        "damage": {
+            "base": [10,30,50],
+            "additionalAttack": 50,
+            "amp": 15
+        },
+        "true_damage": {
+            "targetHP": 8
+        },
+        "slow": {
+            "duration": 1,
+            "effect": [20,35,50]
+        }
+    },
+    "cooldown": {
+        "constant": [30,25,20]
+    }
+}

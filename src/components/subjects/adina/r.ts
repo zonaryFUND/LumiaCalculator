@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 
 export const code = 1052500;
 
-export const info: TooltipInfo = {
-    skill: "R",
+export const info: TooltipProps = {
+    skillKey: "R",
     cooldown: Constants.R.cooldown,
     values: ({ }) => ({ }),
     expansion: () => ({

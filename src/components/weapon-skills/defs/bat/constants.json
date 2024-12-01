@@ -1,0 +1,12 @@
+{
+    "damage": {
+        "base": [110,220,330],
+        "additionalAttack": 150,
+        "amp": [40,55,70]
+    },
+    "knockback": 4,
+    "stun": 0.8,
+    "cooldown": {
+        "constant": 25
+    }
+}

@@ -1,12 +1,12 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import Decimal from "decimal.js";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1044400;
 
-export const info: TooltipInfo = {
-    skill: "E",
+export const info: TooltipProps = {
+    skillKey: "E",
     cooldown: Constants.E.cooldown,
     values: ({ showEquation, config }) => {
         const amp = new Decimal(config.gauge).times(Constants.R.damage_amp_per_vf[config.skillLevels.R]);

@@ -1,11 +1,11 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 
 export const code = 1012400;
 
-export const info: TooltipInfo = {
-    skill: "E",
+export const info: TooltipProps = {
+    skillKey: "E",
     consumption: {
         type: "sp",
         value: Constants.E.sp_cost

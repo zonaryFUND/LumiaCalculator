@@ -1,0 +1,24 @@
+import { RatioPercent } from "components/tooltip/skill/valueratio-to-string";
+import Constants from "./constants.json";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+
+export const code = 3003000;
+
+export const info: TooltipProps = {
+    skillKey: "D",
+    cooldown: Constants.cooldown,
+    values: ({ }) => ({
+        0: RatioPercent(Constants.damage.additionalAttack),
+        1: Constants.stun,
+        2: Constants.damage.base,
+        3: Constants.knockback,
+        4: RatioPercent(Constants.damage.amp),
+        20: Constants.damage
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.damage.base},
+            {labelIntlID: "ToolTipType/SkillSkillAmpCoef", values: Constants.damage.amp, percent: true}
+        ]  
+    })
+}

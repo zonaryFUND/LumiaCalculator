@@ -1,0 +1,10 @@
+{
+    "damage": {
+        "base": [80,140,200],
+        "additionalAttack": [60,70,80],
+        "amp": [20,35,50]
+    },
+    "cooldown": {
+        "constant": [30,22,14]
+    }
+}

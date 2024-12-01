@@ -1,17 +1,17 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
-import { RatioPercent } from "../valueratio-to-string";
+import { TooltipProps, TooltipValues } from "components/tooltip/skill/tooltip-props";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1018500;
 
-export const info: TooltipInfo = {
-    skill: "R",
+export const info: TooltipProps = {
+    skillKey: "R",
     consumption: {
         type: "sp",
         value: Constants.R.sp_cost
     },
     cooldown: Constants.R.cooldown,
-    values: ({ showEquation }) => {
+    values: ({ showEquation }): TooltipValues => {
         if (showEquation) {
             return {
                 0: Constants.R.damage.base,

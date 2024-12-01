@@ -1,0 +1,20 @@
+{
+    "after": 2.5,
+    "damage": {
+        "base": [100,200,300],
+        "additionalAttack": 100,
+        "amp": 30
+    },
+    "slow": {
+        "duration": 3,
+        "effect": 25
+    },
+    "center_damage": {
+        "base": [200,400,600],
+        "additionalAttack": 190,
+        "amp": 60
+    },
+    "cooldown": {
+        "constant": [35,30,25]
+    }
+}

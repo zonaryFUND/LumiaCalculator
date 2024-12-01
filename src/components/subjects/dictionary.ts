@@ -2,51 +2,13 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { DamageTableGenerator } from "./damage-table"
 import { StatusOverrideFunc } from "./status-override";
 import { SubjectCode } from "app-types/subject-static";
-import { ValueRatio } from "app-types/value-ratio";
-import Decimal from "decimal.js";
 import { Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 
-export type SkillCode = number
-export type SkillKey = "Q" | "W" | "E" | "R" | "T";
-export type SkillListHook = (config: SubjectConfig) => Record<SkillKey, SkillCode | SkillCode[] | {
+type SkillListHook = (config: SubjectConfig) => Record<"Q" | "W" | "E" | "R" | "T", number | number[] | {
     maxLevel?: number | "none",
-    code: SkillCode | SkillCode[]
+    code: number | number[]
 }>;
-
-type TooltipValueUnit = number | number[] | string | ValueRatio;
-export type TooltipValue = TooltipValueUnit | TooltipValueToString;
-export type TooltipValueToString = { value: TooltipValueUnit, expression: (calculated: string) => string };
-
-type TooltipValues = Partial<Record<number, TooltipValue>>;
-
-export type ExpansionTooltipProps = {
-    tipValues?: TooltipValues
-    enumeratedValues: {
-        labelIntlID: string
-        values: (number | string)[]
-        percent?: boolean
-    }[]
-}
-
-export type TooltipInfo = {
-    skill: SkillKey
-    consumption?: {
-        type: "sp" | "hp" | "hp-ratio"
-        value: number | number[]
-    }
-    cooldown?: number | number[] | { constant: number | number[] } | ((props: {config: SubjectConfig, status: Status}) => Decimal)
-    charge?: {
-        time: number | number[] | { constant: number | number[] },
-        max: number | number[]
-    }
-    overrideIntlID?: {
-        desc?: string
-        coef?: string
-    }
-    values: (props: { skillLevel: number, showEquation: boolean, config: SubjectConfig, status: Status }) => TooltipValues
-    expansion: (props: { skillLevel: number, config: SubjectConfig, status: Status }) => ExpansionTooltipProps
-    calculatorMessage?: string
-}
 
 export type SummonedStatusFunc = (masterStatus: Status, config: SubjectConfig) => SummonedStatus;
 type SummonInfo = {
@@ -65,7 +27,7 @@ export type SubjectModules = {
 
     skills: {
         listExpression: SkillListHook // | React.FC<SkillsStandardProps>
-        tooltip: Record<SkillCode, TooltipInfo>
+        tooltip: Record<number, TooltipProps>
     }
 
     statusOverride?: StatusOverrideFunc
@@ -102,7 +64,7 @@ export const [
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
-    {} as Record<SkillCode, TooltipInfo>,
+    {} as Record<number, TooltipProps>,
     {} as Record<SubjectCode, DamageTableGenerator>,
     {} as Record<SubjectCode, StatusOverrideFunc>,
     {} as Record<SubjectCode, SummonInfo[]>,

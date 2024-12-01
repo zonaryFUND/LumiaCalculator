@@ -1,9 +1,9 @@
 import Constants from "./constants.json";
-import { TooltipInfo } from "../dictionary";
+import { TooltipProps } from "components/tooltip/skill/tooltip-props";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
-import { RatioPercent } from "../valueratio-to-string";
+import { RatioPercent } from "../../tooltip/skill/valueratio-to-string";
 
 export const code = 1065310;
 
@@ -32,8 +32,8 @@ export const MarleneWStrategy: UniqueValueStrategy = (config, status) => {
     }
 }
 
-export const info: TooltipInfo = {
-    skill: "W",
+export const info: TooltipProps = {
+    skillKey: "W",
     cooldown: ({ status }) => {
         // NOTE: This multiplier is an estimated value.
         // The cooldown reduction of DebiQ peaks when her additional attack speed reaches 120%, 

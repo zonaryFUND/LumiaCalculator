@@ -8,7 +8,7 @@ export default defineConfig({
     root: "src",
     plugins: [
         react(),
-        checker({typescript: true})
+        checker({typescript: {root: "./"}})
     ],
     publicDir: resolve(__dirname, "public"),
     build: {

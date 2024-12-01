@@ -1,0 +1,17 @@
+{
+    "movement_speed_penalty": 45,
+    "min_damage": {
+        "base": [100,175,250],
+        "additionalAttack": 50,
+        "amp": 40
+    },
+    "max_damage": {
+        "base": [150,300,450],
+        "additionalAttack": 120,
+        "amp": 65
+    },
+    "stun": 1,
+    "cooldown": {
+        "constant": [28,24,20]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "count": 12,
+    "duration": 6,
+    "damage": {
+        "base": [60,90,120],
+        "additionalAttack": 50,
+        "amp": [20,25,30]
+    },
+    "slow": {
+        "duration": 1.5,
+        "effect": [30,40,50]
+    },
+    "multiple_reduction": 45,
+    "cooldown": {
+        "constant": 30
+    }
+}
