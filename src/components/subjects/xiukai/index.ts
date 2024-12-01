@@ -1,4 +1,4 @@
-import { defineSubject } from "../dictionary";
+import { defineSubject } from "../type";
 import damageTable from "./damage-table";
 import * as stack from "./stack";
 import statusOverride from "./status-override";

@@ -1,4 +1,4 @@
-import { defineSubject } from "../dictionary";
+import { defineSubject } from "../type";
 import damageTable from "./damage-table";
 import * as sentrygun from "./sentry-gun";
 import * as enhancedSentrygun from "./enhanced-sentry-gun";

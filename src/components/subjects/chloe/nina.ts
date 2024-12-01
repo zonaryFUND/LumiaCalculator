@@ -1,4 +1,4 @@
-import { SummonedStatusFunc } from "../dictionary";
+import { SummonedStatusFunc } from "../type";
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
 

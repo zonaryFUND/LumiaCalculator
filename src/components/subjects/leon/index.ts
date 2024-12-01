@@ -1,10 +1,10 @@
-import { defineSubject } from "../../dictionary";
 import damageTable from "./damage-table";
 import * as Q from "./q";
 import * as W from "./w";
 import * as E from "./e";
 import * as R from "./r";
 import * as T from "./t";
+import { defineSubject } from "../type";
 
 
 export default defineSubject({

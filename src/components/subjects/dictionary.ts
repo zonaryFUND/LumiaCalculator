@@ -1,41 +1,10 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { DamageTableGenerator } from "./damage-table"
 import { StatusOverrideFunc } from "./status-override";
 import { SubjectCode } from "app-types/subject-static";
-import { Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
 import { TooltipProps } from "components/tooltip/skill/tooltip-props";
+import { SkillListHook, SubjectModules, SubjectStackInfo, SummonInfo } from "./type";
 
-type SkillListHook = (config: SubjectConfig) => Record<"Q" | "W" | "E" | "R" | "T", number | number[] | {
-    maxLevel?: number | "none",
-    code: number | number[]
-}>;
 
-export type SummonedStatusFunc = (masterStatus: Status, config: SubjectConfig) => SummonedStatus;
-type SummonInfo = {
-    status: SummonedStatusFunc,
-    nameIntlID: string
-}
-
-type SubjectStackInfo = {
-    nameIntlID: string
-    max: number
-}
-
-export type SubjectModules = {
-    code: number
-    damageTable: DamageTableGenerator
-
-    skills: {
-        listExpression: SkillListHook // | React.FC<SkillsStandardProps>
-        tooltip: Record<number, TooltipProps>
-    }
-
-    statusOverride?: StatusOverrideFunc
-    summoned?: SummonInfo[]
-    stackInfo?: SubjectStackInfo
-}
-
-export function defineSubject(module: SubjectModules): SubjectModules { return module };
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});
 export const [
