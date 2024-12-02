@@ -1,8 +1,8 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 
 export const [y, r, b] = [1048500, 1048510, 1048520];
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "W",
     consumption: {
         type: "sp",

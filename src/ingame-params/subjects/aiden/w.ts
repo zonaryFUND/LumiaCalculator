@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1046300;
@@ -9,7 +9,7 @@ const maxConstant = {
     attack: Constants.W.damage.attack * Constants.W.max_multiplier
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "W",
     consumption: {
         type: "sp",

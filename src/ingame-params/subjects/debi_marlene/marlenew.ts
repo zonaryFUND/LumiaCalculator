@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
@@ -32,7 +32,7 @@ export const MarleneWStrategy: UniqueValueStrategy = (config, status) => {
     }
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "W",
     cooldown: ({ status }) => {
         // NOTE: This multiplier is an estimated value.

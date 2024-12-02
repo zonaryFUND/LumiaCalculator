@@ -9,7 +9,7 @@ export type TooltipValueToString = { value: TooltipValueUnit, expression: (calcu
 
 export type TooltipValues = {[key: number]: TooltipValue};
 
-export type TooltipProps = {
+export type SkillTooltipProps = {
     skillKey: "Q" | "W" | "E" | "R" | "T" | "D" 
     consumption?: {
         type: "sp" | "hp" | "hp-ratio"
@@ -25,11 +25,11 @@ export type TooltipProps = {
         coef?: string
     }
     values: (props: { skillLevel: number, showEquation: boolean, config: SubjectConfig, status: Status }) => TooltipValues
-    expansion: (props: { skillLevel: number, config: SubjectConfig, status: Status }) => ExpansionTooltipProps
+    expansion: (props: { skillLevel: number, config: SubjectConfig, status: Status }) => SkillExpansionTooltipProps
     calculatorMessage?: string
 }
 
-export type ExpansionTooltipProps = {
+export type SkillExpansionTooltipProps = {
     tipValues?: TooltipValues
     enumeratedValues: {
         labelIntlID: string

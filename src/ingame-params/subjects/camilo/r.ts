@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Decimal from "decimal.js";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -26,7 +26,7 @@ export function CamiloRHealStrategy(val: "min" | "max"): UniqueValueStrategy {
     }
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "R",
     consumption: {
         type: "sp",

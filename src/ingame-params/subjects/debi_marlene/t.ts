@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { CriticalMultipier, RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1065100;
@@ -9,7 +9,7 @@ const aaRatio = {
     basicAttackAmp: 100
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "T",
     values: ({ skillLevel, showEquation, status }) => ({
         1: Constants.T.debi_defense,

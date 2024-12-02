@@ -1,12 +1,12 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1043500;
 
 const maxCooldownIncrease = Constants.R.cooldown_increase * Constants.R.max_level;
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "R",
     consumption: {
         type: "sp",

@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
-import { TooltipProps, TooltipValues } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1018300;
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "W",
     consumption: {
         type: "sp",

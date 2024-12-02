@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const ViperRCode = 1044500
@@ -90,5 +90,5 @@ export const difinitions = [
                 }
             })())
         })
-    } satisfies TooltipProps
-}), {} as Record<number, TooltipProps>)
+    } satisfies SkillTooltipProps
+}), {} as Record<number, SkillTooltipProps>)

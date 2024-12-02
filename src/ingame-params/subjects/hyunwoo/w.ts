@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 
 export const code = 1007300;
@@ -23,7 +23,7 @@ export const hyunwooWDefenseStrategy: UniqueValueStrategy = (config, status) => 
     }
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "W",
     consumption: {
         type: "sp",

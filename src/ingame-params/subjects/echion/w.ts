@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import Decimal from "decimal.js";
 import { weaponType } from "./weapon-type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
@@ -29,7 +29,7 @@ export const EchionWStrategy: UniqueValueStrategy = (config, status) => {
     }
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "W",
     cooldown: ({ config, status }) => {
         return new Decimal(Constants.W.cooldown[config.skillLevels.W])

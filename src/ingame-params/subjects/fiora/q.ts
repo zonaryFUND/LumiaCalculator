@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1003200;
@@ -9,7 +9,7 @@ const enhanced = {
     amp: Constants.Q.damage.amp + Constants.Q.additional_damage.amp
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "Q",
     consumption: {
         type: "sp",

@@ -1,9 +1,9 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 
 export const code = 1027100;
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "T",
     values: ({ skillLevel }) => ({
         0: Constants.T.hide_duration,

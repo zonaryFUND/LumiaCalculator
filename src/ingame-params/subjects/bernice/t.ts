@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -10,7 +10,7 @@ export function BerniceCriticalDamage(status: Status): Decimal {
     return new Decimal(Constants.T.second_damage_multiplier).addPercent(status.criticalDamage.calculatedValue)
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "T",
     values: ({ showEquation, status }) => {
         const criticalDamage = BerniceCriticalDamage(status).toString();

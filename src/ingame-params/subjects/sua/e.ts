@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { TooltipProps, TooltipValues } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1028400;
@@ -9,7 +9,7 @@ const healMax = {
     amp: Constants.E.heal.amp * Constants.E.heal_max_multiplier
 }
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "E",
     consumption: {
         type: "sp",

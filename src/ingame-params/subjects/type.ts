@@ -1,6 +1,6 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status, StatusBeforeCalculation, SummonedStatus } from "app-types/subject-dynamic/status/type";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { UniqueValueStrategy } from "./unique-value-strategy";
 import { ValueRatio } from "app-types/value-ratio";
@@ -46,7 +46,7 @@ export type SubjectModules = {
 
     skills: {
         listExpression: SkillListHook // | React.FC<SkillsStandardProps>
-        tooltip: Record<number, TooltipProps>
+        tooltip: Record<number, SkillTooltipProps>
     }
 
     statusOverride?: StatusOverrideFunc

@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import * as lyanhw from "./lyanhw";
 
 export const code = 1063310;
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     ...lyanhw.info,
     consumption: {
         type: "hp",

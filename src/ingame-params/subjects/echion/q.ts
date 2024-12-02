@@ -1,11 +1,11 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import Decimal from "decimal.js";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1044200;
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "Q",
     cooldown: Constants.Q.cooldown,
     values: ({ showEquation, config }) => {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import TacticalSkillTable from "components/tactical-skill/damage-table";
+import TacticalSkillTable from "@app/ingame-params/tactical-skill/damage-table";
 import { useIntl } from "react-intl";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 

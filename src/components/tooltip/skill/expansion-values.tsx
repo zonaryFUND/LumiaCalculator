@@ -1,9 +1,9 @@
 import * as React from "react";
 import style from "./expansion-values.module.styl";
 import { FormattedMessage } from "react-intl";
-import { ExpansionTooltipProps } from "../../../ingame-params/tooltip-props";
+import { SkillExpansionTooltipProps } from "../../../ingame-params/tooltip-props";
 
-const values: React.FC<ExpansionTooltipProps & {skillLevel: number}> = props => (
+const values: React.FC<SkillExpansionTooltipProps & {skillLevel: number}> = props => (
     <ul className={style.values}>
         {
             props.enumeratedValues.map(parameter => {

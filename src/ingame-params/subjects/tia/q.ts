@@ -1,8 +1,8 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
-const base: TooltipProps = {
+const base: SkillTooltipProps = {
     skillKey: "Q",
     consumption: {
         type: "sp",
@@ -31,7 +31,7 @@ export const y = {
             3: RatioPercent(Constants.Q.y.slow.effect),
             4: Constants.Q.y.slow.duration
         })
-    } satisfies TooltipProps
+    } satisfies SkillTooltipProps
 }
 
 export const r = {
@@ -43,7 +43,7 @@ export const r = {
             3: RatioPercent(Constants.Q.r.slow.effect),
             4: Constants.Q.r.slow.duration
         })
-    } satisfies TooltipProps
+    } satisfies SkillTooltipProps
 }
 
 export const b = {
@@ -64,5 +64,5 @@ export const b = {
                 {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.Q.b.center_addition.base}
             ]
         })
-    } satisfies TooltipProps
+    } satisfies SkillTooltipProps
 }

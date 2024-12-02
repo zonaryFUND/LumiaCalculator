@@ -1,11 +1,11 @@
 import Constants from "./constants.json";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { calculateValue } from "app-types/value-ratio/calculation";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1010100;
 
-export const info: TooltipProps = {
+export const info: SkillTooltipProps = {
     skillKey: "T",
     values: ({ showEquation }) => ({
         0: Constants.T.threshold,

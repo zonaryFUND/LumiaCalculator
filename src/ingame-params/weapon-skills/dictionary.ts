@@ -1,5 +1,5 @@
 import { WeaponTypeID } from "app-types/equipment/weapon";
-import { TooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
 import { WeaponSkillDamageTableGenerator, WeaponSkillModule } from "./type";
 
 const modules = import.meta.glob<{ default: WeaponSkillModule }>("./defs/*/index.ts", {eager: true});
@@ -25,6 +25,6 @@ export const [
     ]
 }, [
     {} as {[weapon in WeaponTypeID]: WeaponSkillDamageTableGenerator},
-    {} as {[code: number]: TooltipProps}
+    {} as {[code: number]: SkillTooltipProps}
 ])
 
