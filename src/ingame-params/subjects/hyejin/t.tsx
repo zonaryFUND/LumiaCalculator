@@ -1,15 +1,15 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
-import { ValueRatio } from "app-types/value-ratio";
+import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1012100;
 
 export const info: SkillTooltipProps = {
     skillKey: "T",
-    values: ({ skillLevel, showEquation }) => ({
+    values: ({ showEquation }) => ({
         0: 3,
-        1: Constants.T.fear[skillLevel],
-        2: showEquation ? `${Constants.T.damage.amp[skillLevel]}%` : Constants.T.damage
+        1: Constants.T.fear,
+        2: showEquation ? RatioPercent(Constants.T.damage.amp) : Constants.T.damage
     }),
     expansion: () => ({
         tipValues: {

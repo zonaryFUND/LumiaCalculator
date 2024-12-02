@@ -1,5 +1,5 @@
 import { SubjectCode } from "app-types/subject-static";
-import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { DamageTableGenerator, SkillListHook, StatusOverrideFunc, SubjectModules, SubjectStackInfo, SummonInfo } from "./type";
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});

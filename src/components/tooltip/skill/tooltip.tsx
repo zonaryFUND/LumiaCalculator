@@ -7,7 +7,7 @@ import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-
 import { SubjectTooltipDictionary } from "@app/ingame-params/subjects/dictionary";
 import { WeaponSkillTooltipDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import { FormattedMessage, useIntl } from "react-intl";
-import { TooltipValue } from "../../../ingame-params/tooltip-props";
+import { TooltipValue } from "../../../ingame-params/skill-tooltip-props";
 import { calculateValue } from "app-types/value-ratio/calculation";
 import Images from "@app/resources/image";
 import FormattedText from "components/common/formatted-text";
@@ -35,7 +35,7 @@ const tooltip: React.FC<Props> = props => {
         }
     }, [skillInfo.skillKey, props.config.skillLevels]);
     const infoTextIntlID = (props.showEquation ? skillInfo.overrideIntlID?.coef : skillInfo.overrideIntlID?.desc) ?? `Skill/Group/${props.showEquation ? "Coef" : "Desc"}/${props.code}`;
-    const insertedValues = skillInfo.values({skillLevel, showEquation: props.showEquation, config: props.config, status: props.status});
+    const insertedValues = skillInfo.values({showEquation: props.showEquation, config: props.config, status: props.status});
 
     const extractAndCalculateValue: (value: TooltipValue) => string | number = value => {
         if (typeof value == "object" && "value" in value) {

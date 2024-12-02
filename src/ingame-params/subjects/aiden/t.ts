@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";

@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
-import { ValueRatio } from "app-types/value-ratio";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1012400;
 
@@ -11,16 +11,16 @@ export const info: SkillTooltipProps = {
         value: Constants.E.sp_cost
     },
     cooldown: Constants.E.cooldown,
-    values: ({ skillLevel, showEquation }) => {
+    values: ({ showEquation }): TooltipValues => {
         if (showEquation) {
             return {
-                0: Constants.E.damage.base[skillLevel],
-                2: `${Constants.E.damage.amp}%`
-            } as Record<number, number | string | ValueRatio>
+                0: Constants.E.damage.base,
+                2: RatioPercent(Constants.E.damage.amp)
+            }
         } else {
             return {
                 0: Constants.E.damage
-            } as Record<number, number | string | ValueRatio>
+            }
         }
     },
     expansion: () => ({

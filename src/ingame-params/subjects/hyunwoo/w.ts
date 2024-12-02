@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 
 export const code = 1007300;

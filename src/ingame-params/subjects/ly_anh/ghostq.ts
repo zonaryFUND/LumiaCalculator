@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
 import * as humanq from "./lyanhq";
-import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 
 export const code = 1063210;
 

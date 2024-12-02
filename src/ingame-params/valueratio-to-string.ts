@@ -1,5 +1,5 @@
 import { ValueRatio } from "app-types/value-ratio";
-import { TooltipValueToString } from "./tooltip-props";
+import { TooltipValueToString } from "./skill-tooltip-props";
 
 export const RatioPercent = (value: TooltipValueToString["value"]) => ({ 
     value, 

@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/tooltip-props";
+import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { CriticalMultipier, RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1065100;
@@ -11,7 +11,7 @@ const aaRatio = {
 
 export const info: SkillTooltipProps = {
     skillKey: "T",
-    values: ({ skillLevel, showEquation, status }) => ({
+    values: ({ showEquation }) => ({
         1: Constants.T.debi_defense,
         2: showEquation ? Constants.T.marlene_range : Constants.T.max_stack,
         3: showEquation ? RatioPercent(aaRatio.attack) : Constants.T.damage,
@@ -22,7 +22,7 @@ export const info: SkillTooltipProps = {
         8: showEquation ? CriticalMultipier(Constants.T.damage.criticalChance) : Constants.T.e_cooldown_reduction,
         9: showEquation ? RatioPercent(Constants.T.damage.criticalChance) : Constants.T.color_change_e_cdr,
         10: Constants.T.movement_speed.duration,
-        11: showEquation ? RatioPercent(Constants.T.movement_speed.effect) : Constants.T.debi_defense[skillLevel],
+        11: showEquation ? RatioPercent(Constants.T.movement_speed.effect) : Constants.T.debi_defense,
         12: showEquation ? Constants.T.max_ms_stack : Constants.T.marlene_range,
         13: Constants.T.e_cooldown_reduction,
         14: Constants.T.color_change_e_cdr

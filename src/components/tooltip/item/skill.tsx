@@ -1,6 +1,6 @@
 import * as React from "react";
 import style from "./skill.module.styl";
-import { ItemSkillTooltipDictionary } from "components/item-skills/item-skill";
+import { ItemSkillTooltipDictionary } from "@app/ingame-params/equipment-abilities/item-skill";
 import { EquipmentSkill } from "app-types/equipment";
 import FormattedText from "components/common/formatted-text";
 import { useIntl } from "react-intl";
