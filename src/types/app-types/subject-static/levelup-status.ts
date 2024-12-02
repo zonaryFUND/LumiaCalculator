@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import Dictionary from "dictionary/levelup-status.json";
+import Dictionary from "@app/ingame-params/json/levelup-status.json";
 import { SubjectCode } from "./base-status";
 
 type LevelUpStatusType = {

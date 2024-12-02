@@ -1,12 +1,11 @@
 import * as React from "react";
-import table from "components/common/table.module.styl";
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import { BasicAttackElement, SubjectDamageTableUnit } from "components/subjects/damage-table";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import SubTable from "./subtable";
 import useBasicAttackInfo from "components/damage/use-basic-attack-info";
 import { useIntl } from "react-intl";
+import { BasicAttackElement } from "@app/ingame-params/subjects/type";
 
 type Props = {
     elements: (BasicAttackElement | DamageTableUnit & { skillLevel?: number})[][]

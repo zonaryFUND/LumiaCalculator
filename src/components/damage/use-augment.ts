@@ -5,7 +5,7 @@ import { useIntl } from "react-intl";
 import { meleeOrRange, WeaponTypeID } from "app-types/equipment/weapon";
 import { AugmentTableValues } from "components/augment/table-value";
 import { ValueRatio } from "app-types/value-ratio";
-import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
+import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 
 type Unit = Omit<DamageTableUnit, "value"> & {

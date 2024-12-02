@@ -3,7 +3,7 @@ import { EquipmentStatusDictionary } from "app-types/equipment";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
-import { WeaponSkillDamageTableDictionary } from "components/weapon-skills/dictionary";
+import { WeaponSkillDamageTableDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import * as React from "react";
 import { useIntl } from "react-intl";
 

@@ -5,7 +5,7 @@ import StandardDamage from "./rows/standard-damage";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { ValueRatio } from "app-types/value-ratio";
-import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
+import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 import UniqueExpression from "./rows/unique-expression";
 
 type Props = {

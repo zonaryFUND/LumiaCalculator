@@ -1,12 +1,11 @@
 import Decimal from "decimal.js";
 import { EquipmentSkill, EquipmentStatus, EquipmentStatusValueKey, PercentExpressedEquipmentStatusKeys } from "./status";
-import Weapons from "dictionary/weapon.json";
-import WeaponSkill from "dictionary/weapon-skill.json";
-import Armors from "dictionary/armor.json";
-import ArmorSkill from "dictionary/armor-skill.json";
+import Weapons from "@app/ingame-params/json/weapon.json";
+import WeaponSkill from "@app/ingame-params/json/weapon-skill.json";
+import Armors from "@app/ingame-params/json/armor.json";
+import ArmorSkill from "@app/ingame-params/json/armor-skill.json";
 import { WeaponTypeID } from "./weapon"
 import * as es from "es-toolkit/object"
-import item from "components/item/item";
 import { ValueRatio } from "app-types/value-ratio";
 
 function mapValues(key: EquipmentStatusValueKey, value: number) {

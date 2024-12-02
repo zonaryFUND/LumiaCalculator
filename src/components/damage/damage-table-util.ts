@@ -1,16 +1,3 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
-import { SubjectDamageTableUnit } from "components/subjects/damage-table";
-
-/*
-export function extractskillLevel(props: SubjectDamageTableUnit, config: SubjectConfig): number {
-    if (props.skill == "other") return 0;
-    if (props.skill == "D") return weaponSkillLevel(config.weaponMastery);
-    if ((props.skill as any).tacticalLevel != undefined) return (props.skill as any).tacticalLevel;
-    return (config.skillLevels as any)[props.skill as string];
-}
-    */
-
 export type MultiplierExpression = {
     label?: string
     value: number

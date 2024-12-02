@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import Dictionary from "dictionary/weapon-type-status.json"
+import Dictionary from "@app/ingame-params/json/weapon-type-status.json"
 import { WeaponTypeID } from "./type-id";
 
 type Status = {

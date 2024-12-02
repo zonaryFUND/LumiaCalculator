@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import Dictionary from "dictionary/base-status.json";
+import Dictionary from "@app/ingame-params/json/base-status.json";
 
 type BaseStatusType = {
     maxHp: Decimal,

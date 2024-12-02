@@ -1,7 +1,6 @@
 import * as React from "react";
 import BasicAttack from "./subtables/basic-attack";
 import style from "../damage-table.module.styl";
-import { SubjectDamageTable } from "components/subjects/damage-table";
 import StandardDamage from "./subtables/rows/standard-damage";
 import SubjectSkill from "./subtables/subject-skill";
 import SubTable from "./subtables/subtable";
@@ -14,7 +13,7 @@ import useItemSkills from "../use-item-skills";
 import useWeaponSkill from "../use-weapon-skills";
 import useTacticalSkill from "../use-tactical-skill";
 import useAugment from "../use-augment";
-import { SubjectCodeWithOldID } from "app-types/subject-static";
+import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictionary";
 
 type Props = {
     status: Status
@@ -25,9 +24,8 @@ type Props = {
 
 const damageTable: React.FC<Props> = props => {
     const intl = useIntl();
-    const oldSubjectID = SubjectCodeWithOldID[props.config.subject];
     const subject = React.useMemo(() => 
-        SubjectDamageTable[oldSubjectID]({
+        SubjectDamageTableDictionary[props.config.subject]({
             config: props.config, 
             status: props.status,
             intl

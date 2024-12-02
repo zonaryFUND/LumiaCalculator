@@ -1,6 +1,6 @@
 import * as React from "react";
 import index from "./index.module.styl";
-import SubjectSkills from "components/subjects/skills";
+import SubjectSkills from "components/subject/skills";
 import Table from "components/damage/simple/damage-table";
 import style from "./damage.module.styl";
 import { styles } from "@app/util/style";

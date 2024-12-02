@@ -10,7 +10,7 @@ import Subject from "./subject";
 import Damage from "./damage";
 import style from "./index.module.styl";
 import { styles } from "@app/util/style";
-import { SubjectSideContext } from "components/subjects/subject-side";
+import { SubjectSideContext } from "@app/ingame-params/subjects/subject-side";
 import LoadBuild from "components/modal/load-build";
 import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";

@@ -1,7 +1,6 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectDamageTableUnit } from "components/subjects/damage-table";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import StandardDamage from "./rows/standard-damage";
@@ -9,7 +8,8 @@ import CriticalAvailable from "./rows/critical-available";
 import Decimal from "decimal.js";
 import { useCombatHPContext } from "../combat-hp-context";
 import { ValueRatio } from "app-types/value-ratio";
-import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
+import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
+import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 
 type Props = {
     label: string

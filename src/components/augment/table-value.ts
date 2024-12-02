@@ -5,7 +5,7 @@ import Fortification from "./fortification.json";
 import Support from "./support.json";
 import { ValueRatio } from "app-types/value-ratio";
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
+import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 import { calculateValue } from "app-types/value-ratio/calculation";
 import Decimal from "decimal.js";
 import ratioKey from "components/damage/simple/subtables/subrows/ratio-key";

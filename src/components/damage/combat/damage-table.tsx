@@ -1,6 +1,5 @@
 import * as React from "react";
 import style from "../damage-table.module.styl";
-import { SubjectDamageTable } from "components/subjects/damage-table";
 import table from "components/common/table.module.styl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
@@ -14,7 +13,7 @@ import useItemSkills from "../use-item-skills";
 import useWeaponSkill from "../use-weapon-skills";
 import useTacticalSkill from "../use-tactical-skill";
 import useAugment from "../use-augment";
-import { SubjectCodeWithOldID } from "app-types/subject-static";
+import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictionary";
 
 type Props = {
     hideHeader?: boolean
@@ -35,7 +34,7 @@ const damageTable: React.FC<Props> = props => {
     const ltr = React.useState<"ltr" | "rtl" | undefined>("ltr");
     const [attacker, defender] = ltr[0] == "ltr" ? [props.left, props.right] : [props.right, props.left]
 
-    const subject = SubjectDamageTable[SubjectCodeWithOldID[attacker.config.subject]]({
+    const subject = SubjectDamageTableDictionary[attacker.config.subject]({
         status: attacker.status,
         config: attacker.config,
         intl

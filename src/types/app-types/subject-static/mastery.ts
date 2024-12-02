@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import { WeaponTypeID } from "../equipment/weapon";
-import { SubjectCode, SubjectCodeWithOldID } from "./base-status"
-import Dictionary from "dictionary/mastery.json";
+import { SubjectCode } from "./base-status"
+import Dictionary from "@app/ingame-params/json/mastery.json";
 
 export type Mastery = {
     type: "basic_attack_amp" | "skill_amp" | "attack_power"

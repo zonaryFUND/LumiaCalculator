@@ -12,7 +12,7 @@ import common from "@app/common.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { FormattedMessage, useIntl } from "react-intl";
 import ThrottleSlider from "./throttle-slider";
-import { SubjectStackInfoDictionary } from "components/subjects/dictionary";
+import { SubjectStackInfoDictionary } from "@app/ingame-params/subjects/dictionary";
 
 export type ConfigModifierProps = {
     [K in keyof SubjectConfig]: StateProps<SubjectConfig[K]>

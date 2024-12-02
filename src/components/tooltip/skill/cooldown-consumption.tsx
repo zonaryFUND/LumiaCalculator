@@ -4,7 +4,7 @@ import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { extractArrayOrValue } from "@app/util/array";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { TooltipProps } from "./tooltip-props";
+import { TooltipProps } from "../../../ingame-params/tooltip-props";
 
 const cooldownComsumption: React.FC<TooltipProps & {skillLevel: number, config: SubjectConfig, status: Status}> = props => {
     const consumptionType = (() => {

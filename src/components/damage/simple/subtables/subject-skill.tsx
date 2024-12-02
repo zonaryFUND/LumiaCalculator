@@ -1,11 +1,11 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
-import { SubjectDamageTableUnit } from "components/subjects/damage-table";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import StandardDamage from "./rows/standard-damage";
 import CriticalAvailable from "./rows/critical-available";
 import UniqueExpression from "./rows/unique-expression";
 import { Status } from "app-types/subject-dynamic/status/type";
+import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 
 type Props = {
     tables: SubjectDamageTableUnit[][]

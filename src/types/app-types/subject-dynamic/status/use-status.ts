@@ -15,8 +15,8 @@ import { WeaponTypeID, WeaponTypeStatus } from "app-types/equipment/weapon";
 import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { defenseCalc } from "./defense-calculation";
-import { SubjectStatusOverrideDictionary, SubjectSummonInfoDictionary } from "components/subjects/dictionary";
-import { nameIntlID } from "components/subjects/barbara/sentry-gun";
+import { SubjectStatusOverrideDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { nameIntlID } from "@app/ingame-params/subjects/barbara/sentry-gun";
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
     return equipments

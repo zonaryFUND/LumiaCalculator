@@ -5,7 +5,7 @@ import Config, { ConfigModifierProps, CurrentHPProps } from "components/config/c
 import Status from "components/status/status-table";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status as StatusType } from "app-types/subject-dynamic/status/type";
-import SubjectSkills from "components/subjects/skills";
+import SubjectSkills from "components/subject/skills";
 import style from "./subject.module.styl";
 
 type Props = {

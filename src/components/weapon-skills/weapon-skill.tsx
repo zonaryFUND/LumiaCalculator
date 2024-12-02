@@ -1,9 +1,9 @@
 import * as React from "react";
 import Images from "@app/resources/image";
 import { Prohibit } from "@phosphor-icons/react"
-import { SubjectSideContext } from "components/subjects/subject-side";
+import { SubjectSideContext } from "@app/ingame-params/subjects/subject-side";
 import { WeaponTypeID } from "app-types/equipment/weapon";
-import { WeaponSkillCodeDictionary } from "./code";
+import { WeaponSkillCodeDictionary } from "../../ingame-params/weapon-skills/code";
 import style from "./weapon-skill.module.styl";
 
 type WeaponSkillProps = {

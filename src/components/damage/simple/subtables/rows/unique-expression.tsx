@@ -3,8 +3,7 @@ import { useToggle } from "react-use";
 
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { SubjectDamageTableUnit } from "components/subjects/damage-table";
-import { UniqueValueStrategy } from "components/subjects/unique-value-strategy";
+import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 import HealPower from "../subrows/heal-power";
 
 import InnerTable from "components/common/inner-table";
@@ -14,6 +13,7 @@ import style from "../../../damage-table.module.styl";
 import table from "components/common/table.module.styl";
 import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
+import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 
 type Props = Omit<SubjectDamageTableUnit, "value" | "skill"> & {
     strategy: UniqueValueStrategy
