@@ -1,6 +1,6 @@
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { EquipmentAbilityDamageTable } from "@app/ingame-params/equipment-abilities/item-skill";
+import { EquipmentAbilityDamageTable } from "@app/ingame-params/equipment-abilities/dictionary";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";

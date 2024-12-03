@@ -5,10 +5,11 @@ import style from "./skills.module.styl";
 import Images from "@app/resources/image";
 import { SubjectSideContext } from "../../ingame-params/subjects/subject-side";
 import PullDown from "components/common/pull-down";
-import WeaponSkill from "components/weapon-skills/weapon-skill";
 import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
 import { SubjectDependentSkillKey, SubjectSkillKeys } from "app-types/skill";
 import { SkillTooltipID } from "components/tooltip/skill";
+import { Prohibit } from "@phosphor-icons/react";
+import { WeaponSkillCodeDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 
 type SkillListProps = {
     config: SubjectConfig
@@ -16,16 +17,19 @@ type SkillListProps = {
 }
 export const SkillListContext = React.createContext<SkillListProps | null>(null);
 
-const Skill: React.FC<{code: number}> = ({code}) => {
+const Skill: React.FC<{code?: number}> = ({code}) => {
     const side = React.useContext(SubjectSideContext);
 
     return (
+        code ?
         <img 
             src={Images.skill[code]} 
             data-tooltip-id={SkillTooltipID} 
             data-tooltip-content={`${code}`}
             data-tooltip-subject-side={side}
         />
+        :
+        <div className={style.blank}><Prohibit size="2rem" /></div>
     );
 }
 
@@ -56,8 +60,11 @@ type Props = {
 
 const subjectSkills: React.FC<Props> = props => {
     const list = SubjectSkillListExpressionDictionary[props.config.subject](props.config);
-    const weaponType = React.useMemo(() => extractWeaponTypeID(props.config), [props.config.equipment.Weapon]);
-    
+    const weaponSkillCode = React.useMemo(() => {
+        const weaponType = extractWeaponTypeID(props.config);
+        return weaponType ? WeaponSkillCodeDictionary[weaponType] : undefined
+    }, [props.config.equipment.Weapon])
+
     return (
         <div className={style.skills}>
             <SkillListContext.Provider value={props}>
@@ -82,7 +89,7 @@ const subjectSkills: React.FC<Props> = props => {
                 ))
             }
             <div className={style.vertical}>
-                <WeaponSkill id={weaponType} />
+                <Skill code={weaponSkillCode} />
             </div>
             {
                 SubjectSkillKeys.map(skill => {

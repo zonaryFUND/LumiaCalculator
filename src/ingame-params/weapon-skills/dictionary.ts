@@ -5,11 +5,16 @@ import { WeaponSkillDamageTableGenerator, WeaponSkillModule } from "./type";
 const modules = import.meta.glob<{ default: WeaponSkillModule }>("./**/index.ts", {eager: true});
 
 export const [
+    WeaponSkillCodeDictionary,
     WeaponSkillDamageTableDictionary,
     WeaponSkillTooltipDictionary
- ] = Object.entries(modules).reduce(([tables, tooltips], [key, m]) => {
+ ] = Object.entries(modules).reduce(([codes, tables, tooltips], [key, m]) => {
     const tableOrGenerator = m.default.damageTable;
     return [
+        {
+            ...codes,
+            [m.default.id]: m.default.code
+        },
         {
             ...tables,
             ...(
@@ -24,6 +29,7 @@ export const [
         }
     ]
 }, [
+    {} as {[weapon in WeaponTypeID]: number},
     {} as {[weapon in WeaponTypeID]: WeaponSkillDamageTableGenerator},
     {} as {[code: number]: SkillTooltipProps}
 ])
