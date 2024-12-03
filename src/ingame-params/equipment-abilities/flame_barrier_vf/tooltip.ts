@@ -1,13 +1,14 @@
 import Constants from "./constants.json";
-import useSanitizedValueRatio from "../use-sanitize-value-ratio";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
+import SanitizeValueRatio from "../use-sanitize-value-ratio";
+import { EquipmentAbilityTooltipValues } from "../type";
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
-    const sanitizedDamage = useSanitizedValueRatio(damage!);
+const values: EquipmentAbilityTooltipValues = ({ importedDamage }) => {
+    const sanitizedDamage = SanitizeValueRatio(importedDamage);
     return {
         0: Constants.area,
         1: Constants.area,
-        3: `${sanitizedDamage.maxHP}%`,
+        3: RatioPercent(sanitizedDamage.maxHP!),
         4: sanitizedDamage
     }
 }

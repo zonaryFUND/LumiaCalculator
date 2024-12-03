@@ -1,10 +1,10 @@
-import { ItemSkillTooltipValuesHook } from "../item-skill";
+import { EquipmentAbilityTooltipValues } from "../type";
 
-const values: ItemSkillTooltipValuesHook = (_, values) => ({
-    1: values?.slow as number,
-    3: values?.as as number,
-    4: values?.duration as number,
-    5: values?.cooldown as number
+const values: EquipmentAbilityTooltipValues = ({ importedValues }) => ({
+    1: importedValues?.slow as number,
+    3: importedValues?.as as number,
+    4: importedValues?.duration as number,
+    5: importedValues?.cooldown as number
 })
 
 export default values;

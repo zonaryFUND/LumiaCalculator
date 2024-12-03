@@ -1,15 +1,14 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
-import { useValueContextOptional } from "components/tooltip/value-context";
-import useSanitizedValueRatio from "../use-sanitize-value-ratio";
+import SanitizeValueRatio from "../use-sanitize-value-ratio";
+import { EquipmentAbilityTooltipValues } from "../type";
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
-    const { showEquation } = useValueContextOptional();
-    const sanitizedDamage = useSanitizedValueRatio(damage!);
+const values: EquipmentAbilityTooltipValues = ({ showEquation, importedDamage }) => {
+    const sanitizedDamage = SanitizeValueRatio(importedDamage);
 
     return {
-        0: sanitizedDamage.base as number,
-        1: showEquation ? `${sanitizedDamage.amp}%` : sanitizedDamage,
+        0: sanitizedDamage.base!,
+        1: showEquation ? RatioPercent(sanitizedDamage.amp!) : sanitizedDamage,
         2: Constants.duration,
         3: Constants.duration,
         4: Constants.immune,

@@ -1,18 +1,14 @@
-import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
-import { useValueContextOptional } from "components/tooltip/value-context";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
-import useSanitizedValueRatio from "../use-sanitize-value-ratio";
+import SanitizeValueRatio from "../use-sanitize-value-ratio";
+import { EquipmentAbilityTooltipValues } from "../type";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
-    const { config, showEquation } = useValueContextOptional();
-    const sanitizedDamage = useSanitizedValueRatio(damage!);
+const values: EquipmentAbilityTooltipValues = ({ importedDamage, importedValues }) => {
+    const sanitizedDamage = SanitizeValueRatio(importedDamage);
 
     return {
-        1: sanitizedDamage.base as number,
-        2: sanitizedDamage.attack as number,
-        3: sanitizedDamage.level as number,
-        4: values?.heal as number,
+        1: sanitizedDamage.base!,
+        2: sanitizedDamage.attack!,
+        3: sanitizedDamage.level!,
+        4: importedValues?.heal,
         5: sanitizedDamage,
         6: sanitizedDamage
     }

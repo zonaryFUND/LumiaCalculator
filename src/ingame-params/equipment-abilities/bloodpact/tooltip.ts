@@ -1,12 +1,8 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
-import { useValueContextOptional } from "components/tooltip/value-context";
 import { AdaptiveTarget } from "app-types/subject-dynamic/config/extract-weapon-type-id";
-import { useIntl } from "react-intl";
+import { EquipmentAbilityTooltipValues } from "../type";
 
-const values: ItemSkillTooltipValuesHook = () => {
-    const intl = useIntl();
-    const { config, showEquation } = useValueContextOptional();
+const values: EquipmentAbilityTooltipValues = ({ showEquation, config }) => {
     const attack = config ? AdaptiveTarget(config) == "attackPower" : true;
 
     return {
@@ -19,7 +15,7 @@ const values: ItemSkillTooltipValuesHook = () => {
         11: showEquation ? Constants.cooldown : Constants.shield,
         13: showEquation ? Constants.adaptive : Constants.cooldown,
         14: Constants.adaptive * 2,
-        15: intl.formatMessage({id: `StatType/${attack ? "AttackPower" : "SkillAmp"}`}),
+        15: {intlID: `StatType/${attack ? "AttackPower" : "SkillAmp"}`},
         16: Constants.adaptive * (attack ? 1 : 2)
     }
 }

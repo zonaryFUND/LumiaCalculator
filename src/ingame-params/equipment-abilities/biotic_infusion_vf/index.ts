@@ -1,4 +1,10 @@
-export { default as tooltip } from "./tooltip";
-export { default as damageTable } from "./table-values";
+import { defineEquipmentAbility } from "../type";
 
-export const SkillCode = 6002011;
+import tooltipValues from "./tooltip";
+import damageTable from "./table-values";
+
+export default defineEquipmentAbility({
+    code: 6002011,
+    tooltipValues,
+    damageTable
+})

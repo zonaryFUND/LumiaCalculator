@@ -1,3 +1,7 @@
-export { default as tooltip } from "./tooltip";
+import { defineEquipmentAbility } from "../type";
+import tooltipValues from "./tooltip";
 
-export const SkillCode = 6015001;
+export default defineEquipmentAbility({
+    code: 6015001,
+    tooltipValues
+})

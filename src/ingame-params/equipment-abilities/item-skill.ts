@@ -1,31 +1,34 @@
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { ValueRatio } from "app-types/value-ratio";
+import { EquipmentAbilityDamageTableGenerator, EquipmentAbilityModule, EquipmentAbilityTooltipValues } from "./type";
 
-export type ItemSkillTooltipValues = {[key: number]: string | number | ValueRatio}
-export type ItemSkillTooltipValuesHook = (damage?: ValueRatio | {melee: ValueRatio, range: ValueRatio}, values?: Record<string, unknown>) => ItemSkillTooltipValues;
+export const modules = import.meta.glob<{ default: EquipmentAbilityModule }>("./**/index.ts", {eager: true})
 
-export type ItemSkillDamageTableUnit = Omit<DamageTableUnit, "label" | "value"> & { labelIntlID?: string, intlValue?: string, value: ValueRatio | {melee: ValueRatio, range: ValueRatio} };
-export type ItemSkillDamageTableGenerator = (damage?: ValueRatio | {melee: ValueRatio, range: ValueRatio}, values?: Record<string, any>) => ItemSkillDamageTableUnit[];
-
-export const modules = import.meta.glob<{
-    SkillCode: number | number[]
-    tooltip: ItemSkillTooltipValues | ItemSkillTooltipValuesHook,
-    damageTable?: ItemSkillDamageTableUnit[] | ItemSkillDamageTableGenerator
-}>("./**/index.ts", {eager: true})
-
-export const [ItemSkillTooltipDictionary, ItemSkillDamageTable] = Object.entries(modules).reduce((prev, [path, m]) => {
-    const tooltip: ItemSkillTooltipValuesHook = typeof m.tooltip == "function" ? m.tooltip : () => m.tooltip as ItemSkillTooltipValues;
-    const damageTable: ItemSkillDamageTableGenerator | undefined = m.damageTable == undefined ? undefined :
-        typeof m.damageTable == "function" ? m.damageTable : () => m.damageTable as ItemSkillDamageTableUnit[];
-
-    const codes = Array.isArray(m.SkillCode) ? m.SkillCode : [m.SkillCode];
+export const [
+    EquipmentAbilityTooltipDictionary, 
+    EquipmentAbilityDamageTable
+] = Object.entries(modules).reduce(([tooltips, damageTables], [path, m]) => {
+    if (m.default == undefined || m.default.code == undefined) return [tooltips, damageTables];
+    const codes = Array.isArray(m.default.code) ? m.default.code : [m.default.code];
     return codes.reduce(([tooltips, damageTables], code) => {
+        const damageTable = m.default.damageTable;
+        const generator: EquipmentAbilityDamageTableGenerator | undefined = 
+            damageTable == undefined ? undefined :
+            typeof damageTable == "function" ? damageTable :
+            () => damageTable;
+
         return [
-            {...tooltips, [code]: tooltip},
-            damageTable ? {...damageTables, [code]: damageTable} : damageTables
+            {
+                ...tooltips,
+                [code]: m.default.tooltipValues
+            },
+            {
+                ...damageTables,
+                ...(
+                    generator ? { [code]: generator} : {}
+                )
+            }
         ]
-    }, prev);
+    }, [tooltips, damageTables]);
 }, [
-    {} as Record<number, ItemSkillTooltipValuesHook>,
-    {} as Record<number, ItemSkillDamageTableGenerator>
+    {} as Record<number, EquipmentAbilityTooltipValues>,
+    {} as Record<number, EquipmentAbilityDamageTableGenerator>
 ]) 

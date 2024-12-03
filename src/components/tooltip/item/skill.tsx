@@ -1,37 +1,36 @@
 import * as React from "react";
 import style from "./skill.module.styl";
-import { ItemSkillTooltipDictionary } from "@app/ingame-params/equipment-abilities/item-skill";
+import { EquipmentAbilityTooltipDictionary } from "@app/ingame-params/equipment-abilities/item-skill";
 import { EquipmentSkill } from "app-types/equipment";
 import FormattedText from "components/common/formatted-text";
 import { useIntl } from "react-intl";
-import { useValueContextOptional } from "../value-context";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { useValueContext, useValueContextOptional } from "../value-context";
+import { ExtractAndCalculateValue } from "../extract-tooltip-value";
 
 const skill: React.FC<EquipmentSkill> = props => {
     const intl = useIntl();
 
-    const { config, status, showEquation } = useValueContextOptional();
+    const { config, status, showEquation } = useValueContext();
 
     const sanitizedCode = (() => {
         if (props.skillCode == 6017006) return 6017005; // Vigor-Circulation does not provide same code between name and description.
         return props.skillCode;
     })();
 
-    const values = ItemSkillTooltipDictionary[sanitizedCode](props.dmg, props.values);
+    const values = EquipmentAbilityTooltipDictionary[sanitizedCode]({
+        showEquation,
+        config,
+        status,
+        importedDamage: props.dmg, 
+        importedValues: props.values
+    });
 
     const sanitizedValues = Object.entries(values).reduce((prev, [key, value]) => {
-        const sanitizedValue = (() => {
-            if (typeof value == "object") {
-                return calculateValue(value, status!, config!).static.floor().toString();
-            }
-            return value;
-        })();
-
         return {
             ...prev,
-            [key.toString()]: sanitizedValue
+            [key.toString()]: ExtractAndCalculateValue(value, intl, config, status)
         }
-    }, {} as Record<string, string | number>);
+    }, {} satisfies Record<string, string | number>);
 
     return (
         <div className={style.skill}>

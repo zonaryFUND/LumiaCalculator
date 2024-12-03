@@ -1,23 +1,33 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
-import { useValueContextOptional } from "components/tooltip/value-context";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";
-import { ValueRatio } from "app-types/value-ratio";
+import { EquipmentAbilityTooltipValues } from "../type";
+import { FilterUndefined, RatioPercent, RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
+import { TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
-    const { config, status } = useValueContextOptional();
-    const range = weaponRange(config)
-
-    return {
-        1: `${("melee" in damage! ? damage.melee.targetMaxHP : undefined)}%`, 
-        2: damage! as ValueRatio,
-        3: `${(damage as ValueRatio).maxHP}%`,
+const values: EquipmentAbilityTooltipValues = ({ config, importedDamage }) => {
+    const range = weaponRange(config);
+    const base = {
         4: Constants.time_bound,
         5: Constants.cooldown,
-        6: range == "melee" ? "近距離" : "遠距離",
-        7: `${("melee" in damage! ? damage.range.targetMaxHP : undefined)}%`,
-        8: `${(damage as ValueRatio).amp}%`,
-        9: (damage as ValueRatio).level as number
+        6: {intlID: range == "melee" ? "Item/WeaponType/근거리" : "Item/WeaponType/원거리"} 
+    } satisfies TooltipValues;
+
+    if (importedDamage != undefined && "melee" in importedDamage) {
+        return FilterUndefined({
+            ...base,
+            1: RatioPercentOptional(importedDamage.melee.targetMaxHP),
+            7: RatioPercentOptional(importedDamage.range.targetMaxHP),
+        })
+    } else if (importedDamage != undefined) {
+        return FilterUndefined({
+            ...base,
+            2: importedDamage,
+            3: RatioPercentOptional(importedDamage.maxHP),
+            8: RatioPercentOptional(importedDamage.amp),
+            9: importedDamage.level
+        })
+    } else {
+        throw Error("importedDamage is invalid");
     }
 }
 

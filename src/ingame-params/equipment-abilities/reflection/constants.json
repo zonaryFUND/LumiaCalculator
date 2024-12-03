@@ -1,5 +1,5 @@
 {
-    "healing-reduction": {
+    "healing_reduction": {
         "duration": 4,
         "effect": 40
     },

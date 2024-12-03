@@ -1,8 +1,7 @@
-import { ValueRatio } from "app-types/value-ratio";
-import { ItemSkillDamageTableGenerator } from "../item-skill";
+import { EquipmentAbilityDamageTableGenerator } from "../type";
 
-const tableValues: ItemSkillDamageTableGenerator = importedValues => [
-    {labelIntlID: "item-skill.additional-damage", value: importedValues as ValueRatio, triggeredOnBasicAttack: true }
+const tableValues: EquipmentAbilityDamageTableGenerator = ({ importedDamage }) => [
+    {labelIntlID: "item-skill.additional-damage", value: importedDamage!, triggeredOnBasicAttack: true }
 ]
 
 export default tableValues;

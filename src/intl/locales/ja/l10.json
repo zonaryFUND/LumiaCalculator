@@ -1808,6 +1808,8 @@
     "SummonData/Name/1351": "小型カメラ",
     "SummonData/Name/1458": "ニムルドの門",
     "SummonData/Name/1480": "身代わり",
+    "Item/WeaponType/원거리": "遠距離",
+    "Item/WeaponType/근거리": "近距離",
     "Skill/Group/Name/1001100": "血祭り",
     "Skill/Group/Name/1001200": "連斬",
     "Skill/Group/Name/1001210": "連斬",

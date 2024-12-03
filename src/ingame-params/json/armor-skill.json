@@ -42,18 +42,14 @@
 		"name": "electric_shock",
 		"dmg": {
 			"melee": {
+				"base": 18,
 				"targetMaxHP": 2,
-				"levelProp": {
-					"from": 20,
-					"to": 58
-				}
+				"level": 2
 			},
 			"range": {
+				"base": 18,
 				"targetMaxHP": 1.5,
-				"levelProp": {
-					"from": 20,
-					"to": 58
-				}
+				"level": 2
 			}
 		}
 	},
@@ -324,18 +320,14 @@
 		"name": "electric_shock",
 		"dmg": {
 			"melee": {
+				"base": 26,
 				"targetMaxHP": 3.5,
-				"levelProp": {
-					"from": 30,
-					"to": 106
-				}
+				"level": 4
 			},
 			"range": {
+				"base": 26,
 				"targetMaxHP": 2.5,
-				"levelProp": {
-					"from": 30,
-					"to": 106
-				}
+				"level": 4
 			}
 		}
 	},
@@ -497,18 +489,14 @@
 		"name": "electric_shock",
 		"dmg": {
 			"melee": {
+				"base": 26,
 				"targetMaxHP": 3.5,
-				"levelProp": {
-					"from": 30,
-					"to": 106
-				}
+				"level": 4
 			},
 			"range": {
+				"base": 26,
 				"targetMaxHP": 2.5,
-				"levelProp": {
-					"from": 30,
-					"to": 106
-				}
+				"level": 4
 			}
 		}
 	},

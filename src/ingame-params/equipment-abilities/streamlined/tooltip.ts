@@ -1,13 +1,13 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
+import { EquipmentAbilityTooltipValues } from "../type";
 
-const values: ItemSkillTooltipValuesHook = (_, values) =>{
+const values: EquipmentAbilityTooltipValues = ({ importedValues }) =>{
     return {
         0: Constants.time_bound,
         1: Constants.threshold,
         2: Constants.cooldown,
         3: Constants.duration,
-        4: values?.ms as number
+        4: importedValues?.ms
     }
 }
 

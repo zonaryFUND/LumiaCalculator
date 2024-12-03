@@ -3,7 +3,8 @@ import { Status } from "app-types/subject-dynamic/status/type"
 import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js"
 
-type TooltipValueUnit = number | number[] | string | ValueRatio;
+export type RangeDependentValueRatio = { melee: ValueRatio, range: ValueRatio }
+type TooltipValueUnit = number | number[] | string | ValueRatio | RangeDependentValueRatio | { intlID: string, values?: TooltipValues };
 export type TooltipValue = TooltipValueUnit | TooltipValueToString;
 export type TooltipValueToString = { value: TooltipValueUnit, expression: (calculated: string) => string };
 

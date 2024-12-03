@@ -1,25 +1,26 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
 import { useValueContextOptional } from "components/tooltip/value-context";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";
+import { EquipmentAbilityTooltipValues } from "../type";
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
+const values: EquipmentAbilityTooltipValues = ({ importedDamage }) => {
     const { config } = useValueContextOptional();
     const range = weaponRange(config);
     const rangeDependentDamage = (() => {
-        if ("melee" in damage! && "range" in damage!) {
-            return damage![range];
+        if ("melee" in importedDamage! && "range" in importedDamage!) {
+            return importedDamage![range];
         }
 
         throw new Error("flame barrior tooltip needs its damage to be range-dependent value.");
     })();
 
     return {
-        0: range == "melee" ? "近距離" : "遠距離",
+        0: {intlID: range == "melee" ? "Item/WeaponType/근거리" : "Item/WeaponType/원거리"},
         1: Constants.area,
-        3: `${damage.melee.maxHP}%`,
+        3: RatioPercent(importedDamage.melee.maxHP!),
         4: rangeDependentDamage,
-        7: `${damage.range.maxHP}%`
+        7: RatioPercent(importedDamage.range.maxHP!)
     }
 }
 

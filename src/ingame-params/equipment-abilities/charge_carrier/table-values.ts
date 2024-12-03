@@ -1,7 +1,7 @@
-import { ItemSkillDamageTableGenerator, ItemSkillDamageTableUnit } from "../item-skill";
+import { EquipmentAbilityDamageTableGenerator } from "../type";
 
-const tableValues: ItemSkillDamageTableGenerator = (_, values) => [
-    {labelIntlID: "item-skill.shield", value: {base: values?.shield}, type: {type: "shield", target: "self"}}
+const tableValues: EquipmentAbilityDamageTableGenerator = ({ importedValues }) => [
+    {labelIntlID: "item-skill.shield", value: {base: importedValues?.shield}, type: {type: "shield", target: "self"}}
 ]
 
 export default tableValues;

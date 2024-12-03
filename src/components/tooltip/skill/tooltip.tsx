@@ -7,8 +7,6 @@ import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-
 import { SubjectTooltipDictionary } from "@app/ingame-params/subjects/dictionary";
 import { WeaponSkillTooltipDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import { FormattedMessage, useIntl } from "react-intl";
-import { TooltipValue } from "../../../ingame-params/skill-tooltip-props";
-import { calculateValue } from "app-types/value-ratio/calculation";
 import Images from "@app/resources/image";
 import FormattedText from "components/common/formatted-text";
 import CooldownComsumption from "./cooldown-consumption";
@@ -16,6 +14,7 @@ import ExpansionValues from "./expansion-values"
 
 import baseStyle from "../tooltip.module.styl";
 import style from "./tooltip.module.styl";
+import { ExtractAndCalculateValue } from "../extract-tooltip-value";
 
 type Props = {
     code: number
@@ -27,6 +26,7 @@ type Props = {
 const tooltip: React.FC<Props> = props => {
     const intl = useIntl();
     const skillInfo = React.useMemo(() => SubjectTooltipDictionary[props.code] ?? WeaponSkillTooltipDictionary[props.code], [props.code]);
+
     const skillLevel = React.useMemo(() => {
         if (skillInfo.skillKey == "D") {
             return weaponSkillLevel(props.config.weaponMastery);
@@ -37,25 +37,11 @@ const tooltip: React.FC<Props> = props => {
     const infoTextIntlID = (props.showEquation ? skillInfo.overrideIntlID?.coef : skillInfo.overrideIntlID?.desc) ?? `Skill/Group/${props.showEquation ? "Coef" : "Desc"}/${props.code}`;
     const insertedValues = skillInfo.values({showEquation: props.showEquation, config: props.config, status: props.status});
 
-    const extractAndCalculateValue: (value: TooltipValue) => string | number = value => {
-        if (typeof value == "object" && "value" in value) {
-            return value.expression(extractAndCalculateValue(value.value).toString());
-        }
-
-        if (Array.isArray(value)) {
-            return value[skillLevel];
-        } else if (typeof value == "object") {
-            return calculateValue(value, props.status, props.config, skillLevel).static.floor().toString();
-        } else {
-            return value;
-        }
-    }
-
-    const coefficientValues = es.mapValues(insertedValues, extractAndCalculateValue);
+    const coefficientValues = es.mapValues(insertedValues, value => ExtractAndCalculateValue(value, intl, props.config, props.status, skillLevel));
     const expansion = skillInfo.expansion({skillLevel, config: props.config, status: props.status});
     const expansionValues = (() => {
         if (expansion.tipValues == undefined) return undefined;
-        return es.mapValues(expansion.tipValues, extractAndCalculateValue);
+        return es.mapValues(expansion.tipValues, value => ExtractAndCalculateValue(value, intl, props.config, props.status, skillLevel));
     })();
     const expansionTooltip = intl.formatMessage({id: `Skill/Group/ExpansionTip/${props.code}`});
 

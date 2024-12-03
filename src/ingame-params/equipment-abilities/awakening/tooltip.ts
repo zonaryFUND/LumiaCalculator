@@ -1,11 +1,11 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValues } from "../item-skill";
+import { EquipmentAbilityTooltipValues } from "../type";
 
-const values: ItemSkillTooltipValues = {
+const values: EquipmentAbilityTooltipValues = () => ({
     0: Constants.duration,
     1: Constants.attack_speed,
     2: Constants.movement_speed,
     3: Constants.cooldown
-}
+})
 
 export default values;

@@ -1,26 +1,25 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
-import { useValueContextOptional } from "components/tooltip/value-context";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";
+import { EquipmentAbilityTooltipValues } from "../type";
+import { FilterUndefined, RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
-    const { config, showEquation } = useValueContextOptional();
+const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedDamage, importedValues }) => {
     const range = weaponRange(config);
     const rangeDependentDamage = (() => {
-        if ("melee" in damage! && "range" in damage!) {
-            return damage![range];
+        if (importedDamage != undefined && "melee" in importedDamage) {
+            return importedDamage[range];
         }
 
         throw new Error("circulation tooltip needs its damage to be range-dependent value.");
     })();
 
-    return {
-        3: values?.as as number,
+    return FilterUndefined({
+        3: importedValues?.as,
         8: Constants.duration,
-        10: damage!.melee.base as number,
-        11: showEquation ? `${damage!.melee.amp}%` : rangeDependentDamage,
-        12: `${damage!.range.amp}%`
-    }
+        10: importedDamage.melee.base,
+        11: showEquation ? RatioPercentOptional(importedDamage.melee.amp) : rangeDependentDamage,
+        12: RatioPercentOptional(importedDamage.range.amp)
+    })
 }
 
 export default values;

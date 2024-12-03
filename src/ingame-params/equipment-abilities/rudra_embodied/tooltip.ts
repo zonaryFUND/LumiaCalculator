@@ -1,18 +1,15 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
-import { useValueContextOptional } from "components/tooltip/value-context";
+import { EquipmentAbilityTooltipValues } from "../type";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
-    const { showEquation } = useValueContextOptional();
-
+const values: EquipmentAbilityTooltipValues = ({ showEquation, importedValues }) => {
     return {
         0: Constants.time_bound,
         1: Constants.threshold,
         2: Constants.cooldown,
         3: Constants.duration,
-        4: values?.ms as number,
-        11: showEquation ? values?.ad as number : values?.ms as number,
-        13: values?.ad as number
+        4: importedValues?.ms,
+        11: showEquation ? importedValues?.ad : importedValues?.ms,
+        13: importedValues?.ad
     }
 }
 

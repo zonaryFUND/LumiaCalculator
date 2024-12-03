@@ -16,6 +16,7 @@ const availableRegexs = [
     /ItemGrade\/[a-zA-Z]+/,
     /StatType\/[a-zA-z]+/,
     /Item\/Skills\/\d+/,
+    /Item\/WeaponType\/.*/,
     /Skill\/Group\/Name\/\d+/,
     /Skill\/Group\/Desc\/\d+/,
     /Skill\/Group\/Coef\/\d+/,

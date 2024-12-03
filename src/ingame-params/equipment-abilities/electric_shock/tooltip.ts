@@ -1,37 +1,34 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
-import { useValueContextOptional } from "components/tooltip/value-context";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";
+import { EquipmentAbilityTooltipValues } from "../type";
+import { FilterUndefined, RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
 
-const values: ItemSkillTooltipValuesHook = (damage, _) => {
-    const { config, showEquation } = useValueContextOptional();
-    const range = weaponRange(config);
-    const rangeDependentDamage = (() => {
-        if ("melee" in damage! && "range" in damage!) {
-            return damage![range];
-        }
+const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedDamage }) => {
+    if (importedDamage == undefined) throw new Error("electric shock needs imported damage");
+    if ("melee" in importedDamage == false) throw new Error("electric shock needs range-dependent damage");
 
-        throw new Error("electric shock tooltip needs its damage to be range-dependent value.");
-    })();
+    const base = {
+        0: Constants.max_stack
+    }
 
-    const levelProp = (rangeDependentDamage as any).levelProp;
-    const level = (levelProp.to - levelProp.to) / 19;
-    const levelFixed = {
-        targetMaxHP: rangeDependentDamage.targetMaxHP,
-        base: levelProp.from - level,
-        level
-    };
-
-    return {
-        0: Constants.max_stack,
-        1: `${(showEquation ? damage.melee.targetMaxHP : levelFixed.targetMaxHP)}%`,
-        4: (damage.melee as any).levelProp.from,
-        5: (damage.melee as any).levelProp.to,
-        6: showEquation ? `${damage.range.targetMaxHP}%` : levelFixed,
-        7: Constants.duration,
-        9: (damage.range as any).levelProp.from,
-        10: (damage.range as any).levelProp.to,
-        11: Constants.duration
+    if (showEquation) {
+        return FilterUndefined({
+            1: RatioPercentOptional(importedDamage.melee.targetMaxHP),
+            4: (importedDamage.melee.base as number) + (importedDamage.melee.level as number),
+            5: (importedDamage.melee.base as number) + (importedDamage.melee.level as number) * 20,
+            6: RatioPercentOptional(importedDamage.range.targetMaxHP),
+            9:(importedDamage.range.base as number) + (importedDamage.range.level as number),
+            10: (importedDamage.range.base as number) + (importedDamage.range.level as number) * 20,
+            11: Constants.duration
+        })
+    } else {
+        const rangeDependent = importedDamage[weaponRange(config)];
+        return FilterUndefined({
+            ...base,
+            1: RatioPercentOptional(rangeDependent.targetMaxHP),
+            6: rangeDependent,
+            7: Constants.duration,
+        })
     }
 }
 

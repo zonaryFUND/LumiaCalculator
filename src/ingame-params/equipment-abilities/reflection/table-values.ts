@@ -1,7 +1,7 @@
-import { ItemSkillDamageTableGenerator } from "../item-skill";
+import { EquipmentAbilityDamageTableGenerator } from "../type";
 
-const tableValues: ItemSkillDamageTableGenerator = (damage, importedValues) => [
-    {intlValue: "item-skill.reflection-threshold", value: damage!}
+const tableValues: EquipmentAbilityDamageTableGenerator = ({ importedDamage }) => [
+    {intlValue: "item-skill.reflection-threshold", value: importedDamage!}
 ]
 
 export default tableValues;

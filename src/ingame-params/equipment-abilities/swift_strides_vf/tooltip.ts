@@ -1,17 +1,20 @@
 import Constants from "./constants.json";
-import { ItemSkillTooltipValuesHook } from "../item-skill";
 import { useValueContextOptional } from "components/tooltip/value-context";
-import useSanitizedValueRatio from "../use-sanitize-value-ratio";
+import SanitizeValueRatio from "../use-sanitize-value-ratio";
 import { useIntl } from "react-intl";
+import { EquipmentAbilityTooltipValues } from "../type";
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
-const values: ItemSkillTooltipValuesHook = (damage, values) => {
-    const intl = useIntl();
-    const { showEquation } = useValueContextOptional();
-    const sanitizedDamage = useSanitizedValueRatio(damage!);
+const values: EquipmentAbilityTooltipValues = ({ showEquation, importedDamage, importedValues }) => {
+    const sanitizedDamage = SanitizeValueRatio(importedDamage);
 
-    const meleeMessage = intl.formatMessage({id: "Item/Skills/6007000/Melee"})
-        .replace("{0}", `${(values as any).slow.duration}`)
-        .replace("{1}", `${(values as any).slow.effect}%`)
+    const meleeMessage = {
+        intlID: "Item/Skills/6007000/Melee",
+        values: {
+            0: importedValues?.slow.duration,
+            1: RatioPercent(importedValues?.slow.effect)
+        }
+    }
 
     return {
         0: Constants.max_stack,
@@ -19,11 +22,11 @@ const values: ItemSkillTooltipValuesHook = (damage, values) => {
         2: Constants.distance_per_stack,
         3: Constants.ms,
         4: Constants.ms,
-        6: sanitizedDamage.base as number,
-        7: sanitizedDamage.base as number,
+        6: sanitizedDamage.base!,
+        7: sanitizedDamage.base!,
         9: meleeMessage,
-        10: (values as any).slow.effect,
-        11: (values as any).slow.duration
+        10: importedValues?.slow.effect,
+        11: importedValues?.slow.duration
     }
 }
 
