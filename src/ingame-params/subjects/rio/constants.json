@@ -95,7 +95,7 @@
     },
     "T": {
         "defense_decline": {
-            "base": [1,3,5],
+            "base": [2,5,8],
             "criticalChance": 0.1
         },
         "basic_attack_damage": {

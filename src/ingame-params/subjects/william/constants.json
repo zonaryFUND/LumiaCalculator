@@ -3,7 +3,7 @@
         "ball_duration": 4  
     },
     "Q": {
-        "duration": 4,
+        "duration": 5,
         "attack_speed": [70,80,90,100,110],
         "damage": {
             "attack": [105,108,111,114,117],

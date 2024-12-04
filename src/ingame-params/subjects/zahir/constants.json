@@ -14,7 +14,7 @@
     "W": {
         "chakram_gain": 2,
         "damage": {
-            "base": [40,65,90,115,140],
+            "base": [60,85,110,135,160],
             "amp": 50
         },
         "qe_cooldown_reduction": 40,

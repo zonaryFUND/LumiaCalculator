@@ -31,7 +31,7 @@
         "cooldown": [9,8.5,8,7.5,7]
     },
     "E": {
-        "cooldown_reduction": 0.8,
+        "cooldown_reduction": 0.7,
         "duration": 5,
         "damage": {
             "base": [60,95,130,165,200],
@@ -39,7 +39,7 @@
         },
         "sp_cost": [60,50,40,30,20],
         "cooldown": {
-            "constant": [12,11.5,11,10.5,10]
+            "constant": [11,10.5,10,9.5,9]
         }
     },
     "R": {

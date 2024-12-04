@@ -63,7 +63,7 @@
         "cooldown": [70,60,50]
     },
     "T": {
-        "vision": [20,24,28],
+        "vision": [14,17,20],
         "movement_speed": [2,4,6]
     }
 }

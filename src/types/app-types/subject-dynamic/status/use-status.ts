@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import * as React from "react";
 import { SubjectConfig } from "../config/type";
 import { Status, StatusBeforeCalculation } from "./type";
 import { BaseStatus, LevelUpStatus, WeaponMasteryStatus } from "app-types/subject-static";
@@ -6,7 +6,7 @@ import { EquipmentStatus, EquipmentStatusDictionary } from "app-types/equipment"
 import Decimal from "decimal.js";
 import { standardCalc } from "./standard-calculation";
 import { maxHPCalc } from "./maxhp-calclation"
-import { BaseBasicAttackRange, BaseCooldownCap, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
+import { BaseBasicAttackRange, BaseCooldownCap, BaseVision, BasicAttackReductionPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { defenseMasteryCalc } from "./defenseMasteryCalc";
 import { attackCalc } from "./attack-calculation";
 import { basicAttackAmpCalc } from "./basic-attack-amp-calculation";
@@ -16,7 +16,6 @@ import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { defenseCalc } from "./defense-calculation";
 import { SubjectStatusOverrideDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
-import { nameIntlID } from "@app/ingame-params/subjects/barbara/sentry-gun";
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
     return equipments
@@ -36,19 +35,19 @@ function maxEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentSta
 }
 
 export function useStatus(config: SubjectConfig): Status {
-    const [baseStatusValues, levelupStatusValues] = useMemo(() => {
+    const [baseStatusValues, levelupStatusValues] = React.useMemo(() => {
         return [
             BaseStatus[config.subject],
             LevelUpStatus[config.subject]
         ];
     }, [config.subject]);
 
-    const equipments = useMemo(() => Object.values(config.equipment)
+    const equipments = React.useMemo(() => Object.values(config.equipment)
         .filter((id): id is number => id !== null)
         .map(id => EquipmentStatusDictionary[id])
     , [config.equipment])
 
-    const [weaponType, weaponBaseStatus] = useMemo(() => {
+    const [weaponType, weaponBaseStatus] = React.useMemo(() => {
         if (config.equipment.Weapon == null) return [undefined, undefined];
 
         const type = EquipmentStatusDictionary[config.equipment.Weapon].type as WeaponTypeID;
@@ -56,7 +55,7 @@ export function useStatus(config: SubjectConfig): Status {
         return [type, weaponBaseStatus];
     }, [config.equipment.Weapon]);
 
-    const masteryFactor = useMemo(() => {
+    const masteryFactor = React.useMemo(() => {
         if (weaponType == undefined) return undefined;        
         return WeaponMasteryStatus[config.subject][weaponType];
     }, [config.subject, weaponType]);
@@ -176,7 +175,7 @@ export function useStatus(config: SubjectConfig): Status {
         },
         skillAmp: {
             equipment: {
-                ...equipmentValue("skillAmp", "skillAmpByLv"),
+                ...equipmentValue("skillAmp", "skillAmpByLevel"),
                 ratio: maxEquipmentStatus("uniqueSkillAmpRatio", equipments),
                 adaptive: masteryFactor?.type == "skill_amp" ? adaptive?.times(2) : undefined
             },
@@ -220,7 +219,7 @@ export function useStatus(config: SubjectConfig): Status {
         }
     }
 
-    const overrideFunc = useMemo(() => SubjectStatusOverrideDictionary[config.subject], [config.subject]);
+    const overrideFunc = React.useMemo(() => SubjectStatusOverrideDictionary[config.subject], [config.subject]);
     const overriddenValue = overrideFunc ? overrideFunc(baseValue, config) : baseValue;    
 
     const calculated: Status = {
@@ -270,7 +269,7 @@ export function useStatus(config: SubjectConfig): Status {
         } : basicAttackRangeCalc(overriddenValue.basicAttackRange)
     }
 
-    const summoned = useMemo(() => SubjectSummonInfoDictionary[config.subject], [config.subject]);
+    const summoned = React.useMemo(() => SubjectSummonInfoDictionary[config.subject], [config.subject]);
 
     return {
         ...calculated,

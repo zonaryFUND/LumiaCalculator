@@ -11,7 +11,7 @@
     "W": {
         "damage": {
             "base": [60,90,120,150,180],
-            "amp": 65
+            "amp": 60
         },
         "slow": {
             "duration": 1.5,
@@ -23,7 +23,7 @@
             "amp": 7
         },
         "sp_cost": 60,
-        "cooldown": [10,9.5,9,8.5,8]
+        "cooldown": [11,10.5,10,9.5,9]
     },
     "E": {
         "reuse": 1.5,
@@ -38,16 +38,16 @@
     "R": {
         "first_damage": {
             "base": [50,100,150],
-            "amp": 15
+            "amp": 10
         },
         "shield_duration": 1,
         "shield": {
             "base": [90,120,150],
-            "amp": 20
+            "amp": 15
         },
         "duration": 1,
         "second_damage": {
-            "base": [200,280,360],
+            "base": [170,250,330],
             "amp": 75
         },
         "additional_shield": {

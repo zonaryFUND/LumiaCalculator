@@ -62,9 +62,9 @@
         "chill": 20,
         "slow": 25,
         "frozen": 110,
-        "stun": 1.1,
+        "stun": 1,
         "damage": {
-            "base": [20,50,80],
+            "base": [20,40,60],
             "defense": 35,
             "amp": 20
         },

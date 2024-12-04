@@ -93,8 +93,7 @@ export const [
 ] = (() => {
     return Armors.reduce(([headIDs, chestIDs, armIDs, legIDs, status], entry) => {
         const {code, armorType, ...extractedStatus} = entry
-        const keysSanitized = es.mapKeys(extractedStatus, (_, key) => key == "skillAmpByLevel" ? "skillAmpByLv" : key);
-        const valuesMapped = es.mapValues(keysSanitized, (value, key) => {
+        const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
             if (typeof value != "number") return value;
             return mapValues(key as EquipmentStatusValueKey, value);
         });

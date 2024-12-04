@@ -17,8 +17,8 @@
     "W": {
         "duration": 1.25,
         "basic_attack_damage": 1,
-        "movement_speed": [8,11,14,17,20],
-        "defense": [10,12,14,16,18],
+        "movement_speed": [5,8,11,14,17],
+        "defense": [8,10,12,14,16],
         "damage": {
             "base": [80,115,150,185,220],
             "amp": 45,
@@ -49,7 +49,7 @@
         "taunt": [0.8,0.9,1,1.1,1.2],
         "reuse": 3,
         "sp_cost": [65,70,75,80,85],
-        "cooldown": [18,17,16,15,14]
+        "cooldown": [19,18,17,16,15]
     },
     "R": {
         "supression": 0.5,

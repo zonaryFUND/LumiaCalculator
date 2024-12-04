@@ -12,7 +12,6 @@ export function ExtractAndCalculateValue(
     status: Status,
     skillLevel?: number
 ): string | number {
-    console.log(value)
     if (typeof value == "object" && "value" in value) {
         return value.expression(ExtractAndCalculateValue(value.value, intl, config, status, skillLevel).toString());
     }

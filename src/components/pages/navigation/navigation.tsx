@@ -57,12 +57,12 @@ const navigation: React.FC<Props> = props => {
                 画像は<a className={style.link} href="https://drive.google.com/drive/folders/1bgW32L09YPpRgQKtH4C_TAd3Kr0N9Y90" target="_blank">ファンキット</a>より引用され、ゲーム内テキストおよび文章はエターナルリターンより引用されています。 <br />
                 <br />
                 <br />
-                致命的なバグや数値の設定ミスを発見した場合、お手数ですがGitHubリポジトリにissueを立てるか、<a className={style.link} href="https://forms.gle/VANo6tLDqr5vYbGe9" target="_blank">報告用Googleフォーム</a>に送信していただければ修正対応します。
+                <a className={style.link} href="https://forms.gle/VANo6tLDqr5vYbGe9" target="_blank">バグ報告用Googleフォーム</a>
             </div>
             <div className={style.warning}>
                 ルミア計算機はα版です。機能には未実装のものが含まれ、値は間違っているかもしれません。<br />
                 <br />
-                対応バージョン：1.34
+                対応バージョン：1.35
             </div>
         </nav>
         </IconContext.Provider>

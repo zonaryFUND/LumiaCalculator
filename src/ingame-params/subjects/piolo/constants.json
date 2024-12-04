@@ -53,11 +53,11 @@
     "E1": {
         "first_min_damage": {
             "base": [10,25,40,55,70],
-            "amp": 30
+            "amp": 25
         },
         "first_max_damage": {
             "base": [30,50,70,90,110],
-            "amp": 50
+            "amp": 45
         },
         "second_min_damage": {
             "base": [20,30,40,50,60],
@@ -79,8 +79,8 @@
     "R": {
         "focus_disappear": 3,
         "damage": {
-            "base": [100,200,300],
-            "amp": 65
+            "base": [100,190,280],
+            "amp": 60
         },
         "shield_duration": 4,
         "shield": {

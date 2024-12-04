@@ -11,7 +11,7 @@
         "duration": 2.5,
         "shield": {
             "base": [60,95,130,165,200],
-            "amp": 30
+            "amp": 35
         },
         "ally_shield": {
             "base": [50,75,100,125,150],
@@ -46,7 +46,7 @@
         "movement_speed": [10,15,20],
         "attack_speed": [30,40,50],
         "damage": {
-            "base": [20,40,60],
+            "base": [40,60,80],
             "amp": 30
         },
         "cooldown": {

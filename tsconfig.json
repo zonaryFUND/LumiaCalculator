@@ -16,11 +16,15 @@
     },
     "strict": true,
     "skipLibCheck": true,
-    "types": ["node", "vite/client"],
+    "types": ["node", "vite/client", "vitest/globals"],
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
   },
+  "include": [
+    "src",
+    "./vitest-setup.ts",
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "esnext"

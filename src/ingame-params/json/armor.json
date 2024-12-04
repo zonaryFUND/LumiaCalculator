@@ -175,7 +175,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 70,
+        "skillAmp": 73,
         "maxHp": 100,
         "attackSpeedRatio": 0.35,
         "code": 201505,
@@ -944,7 +944,7 @@
     },
     {
         "defense": 10,
-        "skillAmp": 55,
+        "skillAmp": 58,
         "maxHp": 200,
         "code": 205406,
         "armorType": "Arm",

@@ -2,7 +2,7 @@
     "Q": {
         "damage": {
             "base": [50,70,90,110,130],
-            "amp": 55
+            "amp": 60
         },
         "cooldown_reduction": 40,
         "sp_cost": [50,55,60,65,70],

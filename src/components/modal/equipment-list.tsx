@@ -37,6 +37,11 @@ function splitIdsWithRarity(ids: EquipmentID[]): {title: string, ids: EquipmentI
     ].filter(v => v.ids.length != 0)
 }
 
+function splitAndRemergeItems(ids: EquipmentID[]): { ids: EquipmentID[] }[] {
+    const splitted = splitIdsWithRarity(ids);
+    return [{ids :splitted.flatMap(({ ids }) => ids) }];
+}
+
 const priyaUnique: number[] = [201416, 201516];
 
 const subjectsList: React.FC<Props> = props => {
@@ -47,13 +52,13 @@ const subjectsList: React.FC<Props> = props => {
         switch (props.slot) {
             case "Head":    
                 const IDs = props.subject == 51 ? priyaUnique : HeadArmorCodes.filter(id => priyaUnique.includes(id) == false);
-                return {title: "頭", sections: layout == "in-game" ? [{ids: IDs}] : splitIdsWithRarity(IDs)};
+                return {title: "頭", sections: layout == "in-game" ? splitAndRemergeItems(IDs) : splitIdsWithRarity(IDs)};
             case "Chest":   
-                return {title: "胴", sections: layout == "in-game" ? [{ids: ChestArmorCodes}] : splitIdsWithRarity(ChestArmorCodes)};
+                return {title: "胴", sections: layout == "in-game" ? splitAndRemergeItems(ChestArmorCodes) : splitIdsWithRarity(ChestArmorCodes)};
             case "Arm":
-                return {title: "腕", sections: layout == "in-game" ? [{ids: ArmArmorCodes}] : splitIdsWithRarity(ArmArmorCodes)};
+                return {title: "腕", sections: layout == "in-game" ? splitAndRemergeItems(ArmArmorCodes) : splitIdsWithRarity(ArmArmorCodes)};
             case "Leg":
-                return {title: "脚", sections: layout == "in-game" ? [{ids: LegArmorCodes}] : splitIdsWithRarity(LegArmorCodes)};
+                return {title: "脚", sections: layout == "in-game" ? splitAndRemergeItems(LegArmorCodes) : splitIdsWithRarity(LegArmorCodes)};
             case "Weapon":
                 const availableTypes = Object.keys(WeaponMasteryStatus[props.subject]) as WeaponTypeID[];
                 const names = availableTypes.map(id => intl.formatMessage({id: `MasteryType/${id}`}))
@@ -93,7 +98,7 @@ const subjectsList: React.FC<Props> = props => {
                                 section.ids.map(id => (
                                 <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot] ? style.selected : undefined)}>
                                     <Item slot={props.slot} itemID={id} inSlot={false} />
-                                    <p><FormattedMessage id={`Item/Name/${id}`} />{id}</p>
+                                    <p><FormattedMessage id={`Item/Name/${id}`} /></p>
                                 </li>
                                 ))
                             }

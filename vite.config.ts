@@ -39,7 +39,10 @@ export default mergeConfig(
     }),
     defineVitestConfig({
         test: {
-            include: ['../test/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+            globals: true,
+            environment: "jsdom",
+            include: ['../test/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+            setupFiles: ['./vitest-setup.ts'],
         }
     })
 )

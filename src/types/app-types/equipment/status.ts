@@ -11,7 +11,7 @@ export const EquipmentStatusKeys = [
     "defense",
     // defenseByLv,
     "skillAmp",
-    "skillAmpByLv",
+    "skillAmpByLevel",
     // skillAmpRatio
     // skillAmpRatioByLevel
     "adaptiveForce",

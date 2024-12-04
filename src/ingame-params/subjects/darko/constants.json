@@ -6,7 +6,7 @@
         },
         "damage": {
             "base": [20,40,60,80,100],
-            "attack": 40,
+            "attack": 50,
             "targetMaxHP": [1,2,3,4,5]
         },
         "mark": 5,

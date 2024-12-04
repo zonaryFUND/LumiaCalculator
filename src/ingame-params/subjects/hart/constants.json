@@ -22,7 +22,7 @@
         "attack": [4,8,12,16,20],
         "range": 0.4,
         "sp_cost": [85,90,95,100,105],
-        "cooldown": 14
+        "cooldown": 13
     },
     "E": {
         "damage": {

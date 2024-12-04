@@ -14,7 +14,7 @@
         },
         "railgun_damage": {
             "base": [60,80,100,120,140],
-            "amp": 30
+            "amp": 35
         },
         "sentry_defence": 80,
         "sentry_attack_speed": 1.5,
@@ -41,7 +41,7 @@
             "base": [80,110,140,170,200],
             "amp": 60
         },
-        "stun": 0.5,
+        "stun": 0.6,
         "sp_cost": [60,70,80,90,100],
         "cooldown": [14,13,12,11,10]
     },
@@ -52,7 +52,7 @@
                 "base": 500,
                 "level": 150
             },
-            "duration": 6,
+            "duration": 8,
             "attack_speed": 0.2,
             "railgun_count": 3,
             "damage": {
@@ -67,8 +67,8 @@
         },
         "W": {
             "damage": {
-                "base": [220,310,400],
-                "amp": 100
+                "base": [250,325,400],
+                "amp": 110
             },
             "dot_duration": 4,
             "dot_damage": {
@@ -85,7 +85,7 @@
                 "base": [150,200,250],
                 "amp": 65
             },
-            "stun": 0.5,
+            "stun": 0.6,
             "dot_tick": 0.5,
             "area_duration": 2.5,
             "dot_damage": {

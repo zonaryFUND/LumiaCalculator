@@ -15,13 +15,13 @@ function replaceLineBreak(rawText: string): React.ReactNode[] {
 }
 
 function decideTag(matched: string): "color" | "i" {
-    if (matched.startsWith("<color")) return "color";
+    if (matched.startsWith("<color") || matched.startsWith("</color")) return "color";
     if (matched.startsWith("<i>")) return "i";
     throw new Error(`undefined pseudo tag found: ${matched}`);
 }
 
 const formattedText: React.FC<Props> = ({text, values}) => {
-    const tagRegex = /<color=(#[0-9a-fA-F]{3,6}|[a-zA-Z]+)>|<\/color>|<i>|<\/i>/;
+    const tagRegex = /<\/?color=(#[0-9a-fA-F]{3,6}|[a-zA-Z]+)>|<\/color>|<i>|<\/i>/;
     const parse = (text: string): React.ReactNode[] => {
         const match = text.match(tagRegex);
         if (!match) {

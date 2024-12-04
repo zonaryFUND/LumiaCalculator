@@ -3,7 +3,7 @@
         "count": 3,
         "attack_speed": [28,41,54,67,80],
         "damage": {
-            "base": [15,25,35,45,55],
+            "base": [10,20,30,40,50],
             "additionalMaxHP": 15
         },
         "heal": 180,
@@ -29,7 +29,7 @@
     "E": {
         "distance": 5,
         "damage": {
-            "base": [80,125,170,215,260],
+            "base": [60,105,150,195,240],
             "attack": 70
         },
         "knockback": 4,

@@ -8,26 +8,26 @@
             "blast_range": 1.5,
             "slow": {
                 "duration": 1,
-                "effect": 25
+                "effect": 30
             }
         },
         "r": {
             "slow": {
                 "duration": 1,
-                "effect": 35
+                "effect": 40
             }
         },
         "b": {
             "slow": {
                 "duration": 1,
-                "effect": 15
+                "effect": 20
             },
             "center_addition": {
                 "base": [60,90,120,150,180]
             },
             "center_slow": {
                 "duration": 1,
-                "effect": 60
+                "effect": 70
             }
         },
         "sp_cost": 70,

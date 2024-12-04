@@ -14,7 +14,7 @@ const options: React.FC<EquipmentStatus> = props => {
                     if (props[key] == undefined) return null;
                     const statKey = key[0].toUpperCase() + key.slice(1);
                     const percent = PercentExpressedEquipmentStatusKeys.includes(key) ? "%" : null;
-                    const message = intl.formatMessage({id: `StatType/${statKey}`});
+                    const message = intl.formatMessage({id: `StatType/${statKey == "SkillAmpByLevel" ? "SkillAmpByLv" : statKey}`});
 
                     if (key.includes("Lv") || key.includes("Level")) {
                         return (

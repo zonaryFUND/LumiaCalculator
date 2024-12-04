@@ -26,7 +26,7 @@
         "tick": 0.5,
         "damage": {
             "base": [20,30,40,50,60],
-            "amp": 18
+            "amp": 16
         },
         "slow": 30,
         "duration": 5,
