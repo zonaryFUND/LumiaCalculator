@@ -20,7 +20,6 @@ type Props = {
 
 const itemTooltip: React.FC<Props> = props => {
     const status = React.useMemo(() => EquipmentStatusDictionary[props.itemID], [props.itemID]);
-    const itemName = props.itemID;
 
     const [src, typeExpression] = React.useMemo(() => {
         const itemType = EquipmentStatusDictionary[props.itemID].type;

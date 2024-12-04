@@ -10,6 +10,7 @@ export const info: SkillTooltipProps = {
         8: Constants.T.duration,
         9: RatioPercent(Constants.T.defense_reduction),
         10: Constants.T.immune,
+        11: Constants.T.damage,
         20: showEquation ? Constants.T.damage.base : Constants.T.damage,
         21: RatioPercent(Constants.T.damage.amp)
     }),

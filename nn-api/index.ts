@@ -1,9 +1,9 @@
 import axios from "axios";
 import fs from "fs";
 import yargs from "yargs/yargs";
-import { APIKey } from "nn-api/credentials";
+import { APIKey } from "./credentials";
 import * as es from "es-toolkit";
-import { EquipmentStatusKeys } from "app-types/equipment";
+import { EquipmentStatusKeys } from "../src/types/app-types/equipment";
 import { BaseURL, FetchAPIResponse } from "./fetch";
 
 const argv = yargs(process.argv)

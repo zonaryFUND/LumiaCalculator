@@ -35,7 +35,7 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.T.basic_attack_damage.base},
-            {labelIntlID: "ToolTipType/MaxHpCoef", values: Constants.T.basic_attack_damage.targetMaxHP},
+            {labelIntlID: "StatType/MaxHpCoef", values: Constants.T.basic_attack_damage.targetMaxHP},
             {labelIntlID: "ToolTipType/DaggerDamage", values: Constants.T.knife_damage.base}
         ]  
     })

@@ -5,11 +5,11 @@ type Props = {
     values?: Record<number, string | number>
 }
 
-function replaceLineBreak(rawText: string): React.ReactNode[] {
+function replaceLineBreak(rawText: string, index: number): React.ReactNode[] {
     return rawText
         .split("\\n")
-        .reduce((prev, current, index) => {
-            if (prev.length > 0) return prev.concat([<br key={`${rawText}-${index}`} />, current]);
+        .reduce((prev, current, splittedIndex) => {
+            if (prev.length > 0) return prev.concat([<br key={`${rawText}-${index}-${splittedIndex}`} />, current]);
             return [current];
         }, [] as React.ReactNode[]);
 }
@@ -22,10 +22,10 @@ function decideTag(matched: string): "color" | "i" {
 
 const formattedText: React.FC<Props> = ({text, values}) => {
     const tagRegex = /<\/?color=(#[0-9a-fA-F]{3,6}|[a-zA-Z]+)>|<\/color>|<i>|<\/i>/;
-    const parse = (text: string): React.ReactNode[] => {
+    const parse = (text: string, index: number): React.ReactNode[] => {
         const match = text.match(tagRegex);
         if (!match) {
-            return text ? replaceLineBreak(text) : []
+            return text ? replaceLineBreak(text, index) : []
         }
 
         const tag = decideTag(match[0]);
@@ -33,11 +33,11 @@ const formattedText: React.FC<Props> = ({text, values}) => {
         const closingIndex = findMatchingClosingTag(tag, remainingText);
 
         return [
-            ...parse(text.slice(0, match.index!)),
+            ...parse(text.slice(0, match.index!), index),
             tag == "color" ?
-            <span key={remainingText} style={{color: match[1]}}>{parse(remainingText.slice(0, closingIndex))}</span> :
-            <i key={remainingText}>{parse(remainingText.slice(0, closingIndex))}</i>,
-            ...parse(remainingText.slice(closingIndex + `</${tag}>`.length))
+            <span key={remainingText} style={{color: match[1]}}>{parse(remainingText.slice(0, closingIndex), index + match.index!)}</span> :
+            <i key={remainingText}>{parse(remainingText.slice(0, closingIndex), index + match.index!)}</i>,
+            ...parse(remainingText.slice(closingIndex + `</${tag}>`.length), index + match.index! + match[0].length)
         ];
     }
 
@@ -65,7 +65,8 @@ const formattedText: React.FC<Props> = ({text, values}) => {
         text.replace(/\{(\d+)\}/g, (match, p) => {
             if (values && +p in values) return values[+p].toString();
             return match;
-        })
+        }),
+        0
     );
 }
 

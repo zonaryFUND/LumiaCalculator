@@ -41,7 +41,7 @@ export default mergeConfig(
         test: {
             globals: true,
             environment: "jsdom",
-            include: ['../test/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+            include: ['./**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
             setupFiles: ['./vitest-setup.ts'],
         }
     })

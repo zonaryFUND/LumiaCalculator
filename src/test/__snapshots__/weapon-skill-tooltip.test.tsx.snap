@@ -1,0 +1,4567 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'Arcana''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3024000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              VF媒介
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        自分の周りを回るVFエネルギー球体を3個を生成します。生成された球体は近くの敵に向かって飛んで行き、対象とその周りに
+        <span
+          style="color: white;"
+        >
+          30
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の25%)
+        </span>
+        のスキルダメージを与えます。
+        <br />
+        <br />
+        対象が野生動物の場合、ダメージ量が
+        <span
+          style="color: white;"
+        >
+          50%
+        </span>
+        増加します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            50
+             / 
+            70
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            25
+             / 
+            20
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Arcana''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3024000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              VF媒介
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        自分の周りを回るVFエネルギー球体を3個を生成します。生成された球体は近くの敵に向かって飛んで行き、対象とその周りに
+        <span
+          style="color: white;"
+        >
+          30
+        </span>
+        のスキルダメージを与えます。
+        <br />
+        <br />
+        対象が野生動物の場合、ダメージ量が
+        <span
+          style="color: white;"
+        >
+          50%
+        </span>
+        増加します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'AssaultRifle''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3010000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              過熱
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            17
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        基本攻撃で敵を攻撃するたびに銃弾1発あたり3の過熱スタックを獲得します。(最大50スタック)
+        <br />
+        6秒間基本攻撃をしない場合、1秒ごとに過熱スタックが10ずつ減少します。
+        <br />
+        <br />
+        過熱スキルを使用すると、弾丸を即時装填して0.1秒 ~ 5秒間過熱効果を活性化します。
+        <br />
+        過熱状態では基本攻撃追加ダメージが 0 ~ 5、攻撃速度が20%増加します。効果が持続される間には攻撃速度制限を無視します。
+        <br />
+        過熱持続時間と基本攻撃追加ダメージは過熱スタックに比例します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            攻撃速度
+          </h3>
+          <p>
+            [
+            <span>
+              20%
+            </span>
+             / 
+            30%
+             / 
+            40%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            最大過熱重畳
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            75
+             / 
+            100
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'AssaultRifle''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3010000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              過熱
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            17
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        基本攻撃で敵を攻撃するたびに銃弾1発あたり3の過熱スタックを獲得します。(最大50スタック)
+        <br />
+        6秒間基本攻撃をしない場合、1秒ごとに過熱スタックが10ずつ減少します。
+        <br />
+        <br />
+        過熱スキルを使用すると、弾丸を即時装填して0.1秒 ~ 5秒間過熱効果を活性化します。
+        <br />
+        過熱状態では基本攻撃追加ダメージが 0 ~ 5、攻撃速度が20%増加します。効果が持続される間には攻撃速度制限を無視します。
+        <br />
+        過熱持続時間と基本攻撃追加ダメージは過熱スタックに比例します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Axe''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3014000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              血の螺旋
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            7
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向に進みながら斧を振り回して範囲内のすべての敵に
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の50%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の25%)
+        </span>
+        <span
+          style="color: rgb(104, 138, 8);"
+        >
+          (+対象の最大体力の6%)
+        </span>
+        のスキルダメージを与えます。与えたダメージの80%を体力に回復します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        このスキルは壁を越えられません。
+      </i>
+      <br />
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            75
+             / 
+            100
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              50%
+            </span>
+             / 
+            65%
+             / 
+            80%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              7
+            </span>
+             / 
+            6
+             / 
+            5
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Axe''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3014000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              血の螺旋
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            7
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向に進みながら斧を振り回して範囲内のすべての敵に
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(104, 138, 8);"
+        >
+          (+対象の最大体力の6%)
+        </span>
+        のスキルダメージを与えます。与えたダメージの80%を体力に回復します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Bat''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3003000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              フルスイング
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        前方の全ての敵に 
+        <span
+          style="color: white;"
+        >
+          110
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の150%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の40%)
+        </span>
+        のスキルダメージを与え、4m ノックバックさせます。ノックバックされた敵が壁にぶつかった場合、0.8秒間気絶します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              110
+            </span>
+             / 
+            220
+             / 
+            330
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            合計スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              40%
+            </span>
+             / 
+            55%
+             / 
+            70%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Bat''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3003000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              フルスイング
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        前方の全ての敵に
+        <span
+          style="color: white;"
+        >
+          110
+        </span>
+        のスキルダメージを与え、4m ノックバックさせます。ノックバックされた敵が壁にぶつかった場合、0.8秒間気絶します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Bow''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3007000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              矢の雨
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            35
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した地点に矢の束を発射して矢の雨を降らせます。
+        <br />
+        発射した矢は2.5秒後に目標時点に降り、矢の雨に当たった対象に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の100%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の30%)
+        </span>
+        のスキルダメージを与えて3秒間移動速度を25%減少させます。矢の雨の中心にいる場合には
+        <span
+          style="color: white;"
+        >
+          200
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の190%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の60%)
+        </span>
+        のスキルダメージを受けます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            200
+             / 
+            300
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            内側ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              200
+            </span>
+             / 
+            400
+             / 
+            600
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              35
+            </span>
+             / 
+            30
+             / 
+            25
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Bow''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3007000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              矢の雨
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            35
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した地点に矢の束を発射して矢の雨を降らせます。
+        <br />
+        発射した矢は2.5秒後に目標時点に降り、矢の雨に当たった対象に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        のスキルダメージを与えて3秒間移動速度を25%減少させます。矢の雨の中心にいる場合には
+        <span
+          style="color: white;"
+        >
+          200
+        </span>
+        のスキルダメージを受けます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Camera''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3023000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              フラッシュ
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        フラッシュを使用して
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の60%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の30%)
+        </span>
+        のスキルダメージを与えます。自分を見ていた敵は100の追加スキルダメージを受け、2秒間視界が減少します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            100
+             / 
+            150
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            150
+             / 
+            200
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              60%
+            </span>
+             / 
+            90%
+             / 
+            120%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            合計スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              30%
+            </span>
+             / 
+            40%
+             / 
+            50%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Camera''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3023000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              フラッシュ
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        フラッシュを使用して
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        のスキルダメージを与えます。自分を見ていた敵は
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        の追加スキルダメージを受け、2秒間視界が減少します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'CrossBow''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3008000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              強弩
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            40
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ石弓を撃ちます。撃たれた対象は 
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の50%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の30%)
+        </span>
+        のスキルダメージを受けて押し出されます。対象が壁にぶつかったら1.25秒間気絶し、 
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の50%)
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          攻撃力の50%
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の30%)
+        </span>
+        のスキルダメージを追加で与えます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            100
+             / 
+            150
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              50%
+            </span>
+             / 
+            60%
+             / 
+            70%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              40
+            </span>
+             / 
+            32
+             / 
+            24
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'CrossBow''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3008000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              強弩
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            40
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ石弓を撃ちます。撃たれた対象は
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        のスキルダメージを受けて押し出されます。対象が壁にぶつかったら1.25秒間気絶し、
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        のスキルダメージを追加で与えます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'DirectFire''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3006000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              鉄菱投擲
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        一定範囲に6秒間維持される鉄菱をまいて鉄菱を踏んだ敵に
+        <span
+          style="color: white;"
+        >
+          60
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の50%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の20%)
+        </span>
+        のスキルダメージを与えて1.5秒間移動速度を30%減少させます。(鉄菱を踏むたびに45%ずつダメージが減少されます。)
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              60
+            </span>
+             / 
+            90
+             / 
+            120
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            合計スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              20%
+            </span>
+             / 
+            25%
+             / 
+            30%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            移動速度減少量(%)
+          </h3>
+          <p>
+            [
+            <span>
+              30%
+            </span>
+             / 
+            40%
+             / 
+            50%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'DirectFire''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3006000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              鉄菱投擲
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        一定範囲に6秒間維持される鉄菱をまいて鉄菱を踏んだ敵に
+        <span
+          style="color: white;"
+        >
+          60
+        </span>
+        のスキルダメージを与えて1.5秒間移動速度を30%減少させます。(鉄菱を踏むたびに45%ずつダメージが減少されます。)
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'DualSword''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3018000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              双剣乱舞
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        スキルを使用すると指定した方向へ突進し、経路上のすべての敵に
+        <span
+          style="color: white;"
+        >
+          20
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の20%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の5%)
+        </span>
+        のスキルダメージを6回与えます。
+        <br />
+        突進しながら敵に攻撃を4回成功すると5秒以内にもう一度スキルを使用できます。
+        <br />
+        スキルを再使用すると指定した方向へ突進しながら経路上のすべての敵に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の100%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の40%)
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        このスキルは壁を越えられません。
+      </i>
+      <br />
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            1打ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              20
+            </span>
+             / 
+            35
+             / 
+            50
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            2打ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            175
+             / 
+            250
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            25
+             / 
+            20
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            双剣乱舞第1式追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              20%
+            </span>
+             / 
+            30%
+             / 
+            40%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            双剣乱舞第1式スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              5%
+            </span>
+             / 
+            6%
+             / 
+            7%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            双剣乱舞第2式追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              100%
+            </span>
+             / 
+            125%
+             / 
+            150%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            双剣乱舞第2式スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              40%
+            </span>
+             / 
+            50%
+             / 
+            60%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'DualSword''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3018000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              双剣乱舞
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        スキルを使用すると指定した方向へ突進し、経路上のすべての敵に
+        <span
+          style="color: white;"
+        >
+          20
+        </span>
+        のスキルダメージを6回与えます。
+        <br />
+        突進しながら敵に攻撃を4回成功すると5秒以内にもう一度スキルを使用できます。
+        <br />
+        スキルを再び使用すると指定した方向へ突進しながら経路上のすべての敵に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Glove''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3001000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              アッパーカット
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            9
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した対象に近づき、
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          追加攻撃力の110% * (基本攻撃増幅)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の30%)
+        </span>
+        の基本攻撃ダメージを与え、最終ダメージの60%に値するダメージと50の固定ダメージを追加で与えます。アッパーカットは致命打が発生しません。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            追加ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              60%
+            </span>
+             / 
+            80%
+             / 
+            100%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            固定ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            60
+             / 
+            70
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              9
+            </span>
+             / 
+            7
+             / 
+            5
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Glove''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3001000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              アッパーカット
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            9
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した対象に近づき、
+        <span
+          style="color: white;"
+        >
+          0
+        </span>
+        の基本攻撃ダメージを与え、最終ダメージの60%に値するダメージと50の固定ダメージを追加で与えます。アッパーカットは致命打が発生しません。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Guitar''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3022000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              Love&...
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向に音波を発射し、一直線上にいる複数の敵に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の100%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の60%)
+        </span>
+        のスキルダメージを与えて移動速度を99%減少させます。減少された移動速度は1秒にわたって元に戻ります。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            150
+             / 
+            200
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              100%
+            </span>
+             / 
+            130%
+             / 
+            160%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            合計スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              60%
+            </span>
+             / 
+            70%
+             / 
+            80%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Guitar''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3022000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              Love&...
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向に音波を発射し、一直線上にいる複数の敵に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        のスキルダメージを与えて移動速度を99%減少させます。減少された移動速度は1秒にわたって元に戻ります。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Hammer''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3013000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              鎧つぶし
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ金槌を叩きつけ、
+        <span
+          style="color: white;"
+        >
+          205
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の70%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の70%)
+        </span>
+        のスキルダメージを与えて5秒間防御力を10%減少させます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              205
+            </span>
+             / 
+            350
+             / 
+            450
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            防御力減少量(%)
+          </h3>
+          <p>
+            [
+            <span>
+              10%
+            </span>
+             / 
+            15%
+             / 
+            20%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              25
+            </span>
+             / 
+            20
+             / 
+            15
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              70%
+            </span>
+             / 
+            100%
+             / 
+            130%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Hammer''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3013000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              鎧つぶし
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ金槌を叩きつけ、 
+        <span
+          style="color: white;"
+        >
+          205
+        </span>
+        のスキルダメージを与えて5秒間防御力を10%減少させます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'HighAngleFire''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3005000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              煙幕
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            40
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した位置に煙幕弾を投げ、爆発させます。煙幕は2.5秒間維持され、煙幕の中の敵は視界が減少されます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              40
+            </span>
+             / 
+            32
+             / 
+            24
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'HighAngleFire''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3005000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              煙幕
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            40
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した位置に煙幕弾を投げ、爆発させます。煙幕は2.5秒間維持され、煙幕の中の敵は視界が減少されます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Nunchaku''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3020000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              猛龍過江
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            28
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        チャージ：双節棍を素早く振り回して風を集め、移動速度が45%%減少します。
+        <br />
+        <br />
+        使用：指定した方向に飛ばして
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の50%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の40%)
+        </span>
+         ~ 
+        <span
+          style="color: white;"
+        >
+          150
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の120%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の65%)
+        </span>
+        のスキルダメージを与えます。最大までチャージした場合には対象を1秒間気絶させます。 
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            最小ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            175
+             / 
+            250
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            最大ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              150
+            </span>
+             / 
+            300
+             / 
+            450
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              28
+            </span>
+             / 
+            24
+             / 
+            20
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Nunchaku''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3020000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              猛龍過江
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            28
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        チャージ：双節棍を素早く振り回して風を集め、移動速度が45%%減少します。
+        <br />
+        <br />
+        使用：指定した方向に飛ばして
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+         ~ 
+        <span
+          style="color: white;"
+        >
+          150
+        </span>
+        のスキルダメージを与えます。最大までチャージした場合には対象を1秒間気絶させます。 
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'OneHandSword''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3015000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              マントと短剣
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        <span
+          style="color: white;"
+        >
+          マント
+        </span>
+        <br />
+        スキルを使用すると1秒間透明になり、移動速度が20%増加します。増加した移動速度は1秒に渡って減少します。
+        <br />
+        <br />
+        短剣
+        <br />
+        指定した敵の後ろに移動して 
+        <span
+          style="color: white;"
+        >
+          10
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の50%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の15%)
+        </span>
+        のスキルダメージと、対象の現在体力8%だけの固定ダメージを与え、1秒間移動速度を20%減少させます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            最小ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              10
+            </span>
+             / 
+            30
+             / 
+            50
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            維持時間
+          </h3>
+          <p>
+            [
+            <span>
+              1
+            </span>
+             / 
+            1.5
+             / 
+            2
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            移動速度減少量(%)
+          </h3>
+          <p>
+            [
+            <span>
+              20%
+            </span>
+             / 
+            35%
+             / 
+            50%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            25
+             / 
+            20
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'OneHandSword''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3015000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              マントと短剣
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        マント
+        <br />
+        スキルを使用すると1秒間透明になり、移動速度が20%増加します。増加した移動速度は1秒に渡って減少します。
+        <br />
+        <br />
+        短剣
+        <br />
+        指定した敵の後ろに移動して
+        <span
+          style="color: white;"
+        >
+          10
+        </span>
+        のスキルダメージと、対象の現在体力8%だけの固定ダメージを与え、1秒間移動速度を20%減少させます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Pistol''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3009000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              ムービングリロード
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            35
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        1秒間
+        <span
+          style="color: white;"
+        >
+          35%
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の1%)
+        </span>
+        早く移動して銃弾を装填します。装填を終えた後には、次の2回の基本攻撃速度が70%増加します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            移動速度
+          </h3>
+          <p>
+            [
+            <span>
+              35%
+            </span>
+             / 
+            50%
+             / 
+            65%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              35
+            </span>
+             / 
+            30
+             / 
+            25
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Pistol''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3009000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              ムービングリロード
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            35
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        1秒間
+        <span
+          style="color: white;"
+        >
+          35%
+        </span>
+        早く移動して銃弾を装填します。装填を終えた後には、次の2回の基本攻撃速度が70%増加します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Rapier''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3021000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              閃擊
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した対象に突進して
+        <span
+          style="color: white;"
+        >
+          80
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の60%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の20%)
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              80
+            </span>
+             / 
+            140
+             / 
+            200
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            22
+             / 
+            14
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              60%
+            </span>
+             / 
+            70%
+             / 
+            80%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            合計スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              20%
+            </span>
+             / 
+            35%
+             / 
+            50%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Rapier''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3021000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              閃擊
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した対象に突進して
+        <span
+          style="color: white;"
+        >
+          80
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'SniperRifle''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3011000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              狙撃
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            40
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ10秒間
+        <span
+          style="color: white;"
+        >
+          狙撃モード
+        </span>
+        を活性化します。
+        <br />
+        <span
+          style="color: white;"
+        >
+          狙撃モード
+        </span>
+        を活性化すると視界が30増加し、視界の角度が減少します。
+        <br />
+        視界内の指定した方向へスキルを使用し、
+        <span
+          style="color: white;"
+        >
+          阻止射撃
+        </span>
+        と
+        <span
+          style="color: white;"
+        >
+          デッドアイ
+        </span>
+        を使用できます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          阻止射撃
+        </span>
+        <br />
+        6の視界を持っています。対象に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の160%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の30%)
+        </span>
+        のスキルダメージを与え、{3}秒間対象の視界を獲得できます。ダメージを受けた対象は0.5秒間移動速度が90%減少します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          デッドアイ
+        </span>
+        <br />
+        1.5の視界を持っています。対象に
+        <span
+          style="color: white;"
+        >
+          150
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の180%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の40%)
+        </span>
+        のスキルダメージを与えます。
+        <span
+          style="color: white;"
+        >
+          デッドアイ
+        </span>
+        は対象の失った体力に応じてダメージ量が増加します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        デッドアイ最大ダメージ量:300
+        <br />
+        狙撃状態で移動したり、妨害効果を受けると狙撃モードが解除されます。
+        <br />
+        <br />
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            1打ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            200
+             / 
+            300
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            2打ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              150
+            </span>
+             / 
+            300
+             / 
+            450
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              40
+            </span>
+             / 
+            35
+             / 
+            30
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            阻止射撃スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              30%
+            </span>
+             / 
+            35%
+             / 
+            40%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            デッドアイスキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              40%
+            </span>
+             / 
+            45%
+             / 
+            50%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'SniperRifle''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3011000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              狙撃
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            40
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ10秒間
+        <span
+          style="color: white;"
+        >
+          狙撃モード
+        </span>
+        を活性化します。
+        <br />
+        <span
+          style="color: white;"
+        >
+          狙撃モード
+        </span>
+        を活性化すると視界が30増加し、視界の角度が減少します。
+        <br />
+        視界内の指定した方向へスキルを使用し、
+        <span
+          style="color: white;"
+        >
+          阻止射撃
+        </span>
+        と
+        <span
+          style="color: white;"
+        >
+          デッドアイ
+        </span>
+        を使用できます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          阻止射撃
+        </span>
+        <br />
+        6の視界を持っています。対象に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        のスキルダメージを与え、3秒間対象の視界を獲得できます。ダメージを受けた対象は0.5秒間移動速度が90%減少します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          デッドアイ
+        </span>
+        <br />
+        1.5の視界を持っています。対象に
+        <span
+          style="color: white;"
+        >
+          150
+        </span>
+        のスキルダメージを与えます。
+        <span
+          style="color: white;"
+        >
+          デッドアイ
+        </span>
+        は対象の失った体力に応じてダメージ量が増加します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Spear''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3019000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              影突き
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ強く槍を突いて4m以内の対象に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の60%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の50%)
+        </span>
+        のスキルダメージを与え、2m以内の敵には同じダメージをもう一度与えて、基本攻撃の射程距離に比例して後ろに押し出します。
+        <br />
+        攻撃された対象は2秒間移動速度が35%減少します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            150
+             / 
+            200
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              60%
+            </span>
+             / 
+            90%
+             / 
+            120%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            合計スキル増幅係数
+          </h3>
+          <p>
+            [
+            <span>
+              50%
+            </span>
+             / 
+            60%
+             / 
+            70%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            25
+             / 
+            20
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Spear''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3019000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              影突き
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        指定した方向へ強く槍を突いて4m以内の対象に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        のスキルダメージを与え、2m以内の敵には同じダメージをもう一度与えて、基本攻撃の射程距離に比例して後ろに押し出します。
+        <br />
+        攻撃された対象は2秒間移動速度が35%減少します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Tonfa''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3002000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              高速回転
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        スキルを使用すると0.75秒間すべての方向からのダメージを防御し、攻撃した対象から受けたダメージの20%を固定ダメージで返します。(攻撃の効果は防御できません。)
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            合計反射率
+          </h3>
+          <p>
+            [
+            <span>
+              20%
+            </span>
+             / 
+            30%
+             / 
+            40%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            25
+             / 
+            20
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Tonfa''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3002000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              高速回転
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        スキルを使用すると0.75秒間すべての方向からのダメージを防御し、攻撃した対象から受けたダメージの20%を固定ダメージで返します。(攻撃の効果は防御できません。)
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'TwoHandSword''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3016000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              受け流し
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        0.75秒間防御姿勢をとり、すべてのダメージと妨害効果免疫状態になります。その後3m突進し、敵に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の150%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の70%)
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              100
+            </span>
+             / 
+            150
+             / 
+            200
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              150%
+            </span>
+             / 
+            175%
+             / 
+            200%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'TwoHandSword''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3016000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              受け流し
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            30
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        0.75秒間防御姿勢をとり、すべてのダメージとデバフ効果免疫状態になります。その後3m突進し、敵に
+        <span
+          style="color: white;"
+        >
+          100
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'VFArm''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3025000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              VF安定化
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            13
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        エキオンが1秒間スキルをキャストします。VFゲージの状態に応じて効果が適用されます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          VFゲージ50未満：
+        </span>
+        45のゲージをチャージします。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          VFゲージ50以上：
+        </span>
+        ゲージ45を消耗して、武器スキルを除いたスキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          VF暴走状態：
+        </span>
+        暴走持続時間を1.5秒延長して、スキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          オーバーロード状態：
+        </span>
+        オーバーロード状態を5秒減少させます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            VF暴走持続時間増加量
+          </h3>
+          <p>
+            [
+            <span>
+              1.5
+            </span>
+             / 
+            2.5
+             / 
+            3.5
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            オーバーロード持続時間減少量
+          </h3>
+          <p>
+            [
+            <span>
+              5
+            </span>
+             / 
+            7
+             / 
+            9
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'VFArm''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3025000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              VF安定化
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            13
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        エキオンが1秒間スキルをキャストします。VFゲージの状態に応じて効果が適用されます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          VFゲージ50未満：
+        </span>
+        45のゲージをチャージします。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          VFゲージ50以上：
+        </span>
+        ゲージ45を消耗して、武器スキルを除いたスキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          VF暴走状態：
+        </span>
+        暴走持続時間を1.5秒延長して、スキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          オーバーロード状態：
+        </span>
+        オーバーロード状態を5秒減少させます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Whip''s skill > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3004000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              風裂き
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        鞭を2回振り回し、1回あたり
+        <span
+          style="color: white;"
+        >
+          40
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の40%)
+        </span>
+        <span
+          style="color: rgb(221, 160, 221);"
+        >
+          (+スキル増幅の30%)
+        </span>
+        のスキルダメージを与えて、敵の移動速度を1秒間25%減少させます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <i>
+        武器熟練度
+        <span
+          style="color: white;"
+        >
+          5Lv・10Lv・15Lv
+        </span>
+        の時にスキルレベルアップ
+      </i>
+      <br />
+      <i>
+        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+      </i>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              40
+            </span>
+             / 
+            70
+             / 
+            100
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              25
+            </span>
+             / 
+            20
+             / 
+            15
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            移動速度減少量(%)
+          </h3>
+          <p>
+            [
+            <span>
+              25%
+            </span>
+             / 
+            30%
+             / 
+            35%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'Whip''s skill > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3004000.png"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              風裂き
+               （レベル 
+              1
+              ）
+            </h1>
+            <p>
+              [
+              D
+              ]
+            </p>
+          </div>
+          <div
+            class="_cooldown_b84e51"
+          >
+            コストなし
+            <br />
+            クールダウン
+            25
+            秒
+          </div>
+        </div>
+      </header>
+      <p>
+        鞭を2回振り回し、1回あたり
+        <span
+          style="color: white;"
+        >
+          40
+        </span>
+        のスキルダメージを与えて、敵の移動速度を1秒間25%減少させます。
+      </p>
+    </div>
+  </div>
+</div>
+`;

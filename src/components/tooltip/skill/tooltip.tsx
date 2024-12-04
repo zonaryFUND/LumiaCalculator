@@ -43,7 +43,9 @@ const tooltip: React.FC<Props> = props => {
         if (expansion.tipValues == undefined) return undefined;
         return es.mapValues(expansion.tipValues, value => ExtractAndCalculateValue(value, intl, props.config, props.status, skillLevel));
     })();
-    const expansionTooltip = intl.formatMessage({id: `Skill/Group/ExpansionTip/${props.code}`});
+
+    const expansionTooltipKey = `Skill/Group/ExpansionTip/${props.code}`
+    const expansionTooltip = intl.messages[expansionTooltipKey] ? intl.formatMessage({id: expansionTooltipKey}) : null;
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip}`}>
@@ -69,9 +71,9 @@ const tooltip: React.FC<Props> = props => {
                 props.showEquation && (expansion.tipValues || expansion.enumeratedValues.length) ? (
                     <div className={style.values}>
                         {
-                            expansionTooltip.startsWith("Skill/Group/ExpansionTip") ? 
-                            null : 
-                            <FormattedText text={expansionTooltip} values={expansionValues} />
+                            expansionTooltip != null ?
+                            <FormattedText text={expansionTooltip} values={expansionValues} /> :
+                            null
                         }
                         <ExpansionValues {...expansion} skillLevel={skillLevel} />
                         {skillInfo.calculatorMessage ? <p className={style.calcnote}>計算機作者注：{skillInfo.calculatorMessage}</p> : null}

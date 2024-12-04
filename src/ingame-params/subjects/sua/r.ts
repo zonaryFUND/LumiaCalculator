@@ -52,6 +52,9 @@ export const info: SkillTooltipProps = {
                 8: Constants.RE.bookmark_damage,
                 9: Constants.RE.heal,
                 10: healMax,
+                11: RatioPercent(Constants.RQ.center_multiplier),
+                12: Constants.RQ.slow.duration,
+                13: RatioPercent(Constants.RQ.slow.effect),
                 14: Constants.RE.slow.duration,
                 15: RatioPercent(Constants.RE.slow.effect)
             }
