@@ -6,8 +6,8 @@
   "main": "index.tsx",
   "scripts": {
     "dev": "vite",
-    "build": "webpack --mode=production",
-    "deploy": "ts-node ./deploy.ts",
+    "build": "vite build",
+    "deploy": "tsx ./deploy.ts",
     "update-values": "tsx ./nn-api/index.ts update-values",
     "test": "tsx vitest"
   },
