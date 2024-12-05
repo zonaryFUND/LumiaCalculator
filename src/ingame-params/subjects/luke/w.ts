@@ -17,32 +17,22 @@ export const info: SkillTooltipProps = {
             return {
                 0: Constants.W.damage.base,
                 1: RatioPercent(Constants.W.damage.attack),
-                3: Constants.W.duration,
-                4: Constants.W.basic_attack_damage.base,
-                5: RatioPercent(Constants.W.basic_attack_damage.attack),
-                7: Constants.W.attack_speed.duration,
-                8: RatioPercent(Constants.W.attack_speed.one_stack),
-                9: Constants.W.attack_speed.max_stack,
-                10: RatioPercent(Constants.W.heal),
-                11: RatioPercent(Constants.W.max_heal)
+                2: RatioPercent(Constants.W.heal),
+                3: Constants.W.cooldown_reduction,
+                4: RatioPercent(Constants.W.max_heal)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 0: Constants.W.damage,
-                1: Constants.W.duration,
-                2: Constants.W.basic_attack_damage,
-                3: Constants.W.attack_speed.duration,
-                4: RatioPercent(Constants.W.attack_speed.one_stack),
-                5: Constants.W.attack_speed.max_stack,
-                6: RatioPercent(Constants.W.heal),
-                7: RatioPercent(Constants.W.max_heal)
+                1: RatioPercent(Constants.W.heal),
+                2: Constants.W.cooldown_reduction,
+                3: RatioPercent(Constants.W.max_heal)
             } as Record<number, number | string | ValueRatio>
         }
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/BulletDamage", values: Constants.W.damage.base},
-            {labelIntlID: "ToolTipType/AddSkillDamage", values: Constants.W.basic_attack_damage.base},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
             {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
         ]  
     })

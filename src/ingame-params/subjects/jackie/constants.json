@@ -17,7 +17,7 @@
             "duration": 5,
             "effect": 8
         },
-        "additional_movement_speed": [8,11,14,17,20],
+        "additional_movement_speed": [10,14,18,22,26],
         "heal": {
             "base": [10,20,30,40,50],
             "attack": 20

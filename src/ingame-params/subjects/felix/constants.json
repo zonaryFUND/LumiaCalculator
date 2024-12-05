@@ -40,6 +40,7 @@
             "attack": 50,
             "level": 3
         },
+        "stack_gain_max": 2,
         "cooldown_reduction": 1,
         "omnisyphon": {
             "duration": 4,

@@ -77,7 +77,7 @@
             },
             "movement_speed": {
                 "duration": 2,
-                "effect": 20
+                "effect": 25
             }
         },
         "E": {

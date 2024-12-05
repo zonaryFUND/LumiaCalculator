@@ -38,7 +38,11 @@ if (argv._[2] == "update-values") {
             .filter((entry: any) => entry.modeType == 0)
             .map((entry: any) => {
                 const zeroRemoved = es.pickBy(entry, (value) => value != 0);
-                return es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "armorType", "itemGrade"]);
+                return {
+                    ...es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "armorType", "itemGrade"]),
+                    ...(zeroRemoved.upgradeItemCode ? { david: { to: zeroRemoved.upgradeItemCode } } : {}),
+                    ...(zeroRemoved.markingType == "Upgrade" ? { david: { from: zeroRemoved.makeMaterial1 } } : {})
+                }
             });
     });
 } else if (argv._[2] == "jp") {

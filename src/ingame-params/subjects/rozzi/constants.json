@@ -17,7 +17,7 @@
         "duration": 3,
         "defense_down": [9,10,11,12,13],
         "healing_reduction": 45,
-        "movement_speed": 100,
+        "movement_speed": 120,
         "cooldown_reduction": 2,
         "sp_cost": [30,35,40,45,50],
         "cooldown": 6
@@ -48,7 +48,7 @@
         "cooldown_reduction": 50,
         "movement_speed": {
             "duration": 1,
-            "effect": 25
+            "effect": 30
         },
         "sp_cost": 90,
         "cooldown": 25
@@ -63,7 +63,9 @@
             "attack": [50,60,70],
             "basicAttackAmp": 100
         },
-        "food": 50,
-        "drink": 20
+        "attack": {
+            "duration_min": 10,
+            "effect": 1
+        }
     }
 }

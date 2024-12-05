@@ -11,6 +11,7 @@ export const info: SkillTooltipProps = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
+    charge: Constants.W.charge,
     values: ({ }) => ({
         0: Constants.W.damage.base,
         2: Constants.W.pawn_queen.airborne,
@@ -23,7 +24,7 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.W.charge.time},
             {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
         ]  
     })

@@ -10,14 +10,14 @@ export const info: SkillTooltipProps = {
     values: ({ showEquation }) => ({
         0: Constants.T.cooldown.constant,
         1: showEquation ? RatioPercent(Constants.T.damage.attack) : Constants.T.damage,
-        2: RatioPercent(Constants.T.movement_speed),
+        2: Constants.T.range.effect,
         3: Constants.T.duration,
-        4: Constants.common.ball_duration
+        4: Constants.common.ball_duration,
+        5: Constants.T.range.duration
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/SkillApCoef", values: Constants.T.damage.attack.map(v => v - 100), percent: true},
-            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true}
+            {labelIntlID: "ToolTipType/SkillApCoef", values: Constants.T.damage.attack.map(v => v - 100), percent: true}
         ]  
     })
 }

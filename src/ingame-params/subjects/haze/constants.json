@@ -1,12 +1,8 @@
 {
     "Q": {
-        "outer_damage": {
-            "base": [80,110,140,170,200],
+        "damage": {
+            "base": [80,115,150,185,220],
             "amp": 85
-        },
-        "center_damage": {
-            "base": [80,120,160,200,240],
-            "amp": 90
         },
         "cooldown": {
             "constant": 2.5
@@ -94,7 +90,7 @@
         },
         "movement_speed": {
             "duration": 1,
-            "effect": [6,15,24]
+            "effect": [6,18,30]
         }
     }
 }

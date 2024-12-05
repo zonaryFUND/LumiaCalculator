@@ -32,7 +32,7 @@
     "E": {
         "movement_speed": {
             "duration": 0.5,
-            "effect": [60,65,70,75,80]
+            "effect": [100,105,110,115,120]
         },
         "vitalforce": 30,
         "vision_duration": 3,

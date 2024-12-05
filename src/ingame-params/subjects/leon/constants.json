@@ -43,7 +43,7 @@
         "cooldown": [90,75,60]
     },
     "T": {
-        "movement_speed": [10,15,20],
+        "movement_speed": [12,18,24],
         "attack_speed": [30,40,50],
         "damage": {
             "base": [40,60,80],

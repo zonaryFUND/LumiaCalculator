@@ -1,6 +1,7 @@
 {
     "subject.leni.q-damage": "Qダメージ",
     "subject.leni.q-heal": "Q回復",
+    "subject.leni.w-movement-speed": "W移動速度増加",
     "subject.leni.e-damage": "Eダメージ",
     "subject.leni.e-shield": "Eシールド",
     "subject.leni.passive-additional": "T追加ダメージ"

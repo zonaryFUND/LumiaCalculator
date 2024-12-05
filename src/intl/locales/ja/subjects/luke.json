@@ -1,7 +1,7 @@
 {
     "subject.luke.w-additional": "W中追加ダメージ",
-    "subject.luke.q2-evolved-max": "進化Q2最大値",
-    "subject.luke.w-first": "W発動",
+    "subject.luke.q2-min": "Q2最小",
+    "subject.luke.q2-max": "Q2最大",
     "subject.luke.w-heal-min": "進化W回復(最小)",
     "subject.luke.w-heal-max": "進化W回復(最大)",
     "subject.luke.r-min": "R最小",

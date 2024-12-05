@@ -34,7 +34,7 @@
         "movement_speed": {
             "duration": 2,
             "effect": {
-                "base": [4,6,8,10,12],
+                "base": [5,7.5,10,12.5,15],
                 "amp": 1
             }
         },
@@ -52,7 +52,7 @@
             "amp": 20
         },
         "chase_movement_speed": {
-            "base": [5,7.5,10,12.5,15],
+            "base": [5,8,11,14,17],
             "amp": 2
         },
         "sp_cost": [70,80,90,100,110],

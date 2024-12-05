@@ -19,7 +19,15 @@ type Props = {
 }
 
 const itemTooltip: React.FC<Props> = props => {
-    const status = React.useMemo(() => EquipmentStatusDictionary[props.itemID], [props.itemID]);
+    const { status, imageID } = React.useMemo(() => {
+        const rawStatus = EquipmentStatusDictionary[props.itemID];
+        if (rawStatus.david?.from) {
+            const fromStatus = EquipmentStatusDictionary[rawStatus.david.from];
+            return { status: {...rawStatus, skill: fromStatus.skill}, imageID: rawStatus.david.from }
+        } else {
+            return { status: rawStatus, imageID: props.itemID };
+        }
+    }, [props.itemID]);
 
     const [src, typeExpression] = React.useMemo(() => {
         const itemType = EquipmentStatusDictionary[props.itemID].type;
@@ -32,9 +40,9 @@ const itemTooltip: React.FC<Props> = props => {
                 default:        return [Images.weapon, <FormattedMessage id={`MasteryType/${status.type}`} />];
             }
         })()
-          
-        return [Items[props.itemID], typeExpression];
-    }, [props.itemID]);
+
+        return [Items[imageID], typeExpression];
+    }, [props.itemID, status.david]);
 
     const ammo = (() => {
         if (status.ammo == undefined) return null;

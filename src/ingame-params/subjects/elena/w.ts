@@ -15,7 +15,6 @@ export const info: SkillTooltipProps = {
     charge: Constants.W.charge,
     values: ({ showEquation }) => {
         const base = {
-            3: RatioPercent(Constants.W.defense),
             6: RatioPercent(Constants.W.q_cooldown_reduction),
             7: RatioPercent(Constants.W.enhanced_cooldown_reduction)
         }

@@ -38,7 +38,7 @@
         "airborne": 0.5,
         "movement_speed": {
             "duration": 2,
-            "effect": 30
+            "effect": 40
         },
         "sp_cost": [90,95,100,105,110],
         "cooldown": [15,14,13,12,11]

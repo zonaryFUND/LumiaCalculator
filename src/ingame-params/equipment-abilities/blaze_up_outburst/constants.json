@@ -1,0 +1,7 @@
+{
+    "duration": 5,
+    "attack": 3,
+    "attack_speed": 5,
+    "max_stack": 10,
+    "penetration": 10
+}

@@ -1,6 +1,6 @@
 {
     "duration": 5,
     "attack_speed": 30,
-    "movement_speed": 12,
+    "movement_speed": 15,
     "cooldown": 20
 }

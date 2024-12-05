@@ -68,6 +68,7 @@ export type Status = {
     healPower: CalculatedStatusValue
     tenacity: StatusValue & CalculatedStatusValue
     movementSpeed: StatusValue & CalculatedStatusValue
+    slowResist: CalculatedStatusValue
     visionRange: StatusValue & CalculatedStatusValue
     basicAttackRange: StatusValue & CalculatedStatusValue
 

@@ -21,7 +21,10 @@ export default function useItemSkills(config: SubjectConfig): Response {
         return Object.values(config.equipment)
             .flatMap(id => {
                 if (id == null) return [];
-                return (EquipmentStatusDictionary[id].skill ?? [])
+                const rawStatus = EquipmentStatusDictionary[id];
+                const skill = rawStatus.david?.from ? EquipmentStatusDictionary[rawStatus.david.from].skill : rawStatus.skill;
+
+                return (skill ?? [])
                     .flatMap(ability => {
                         if (EquipmentAbilityDamageTable[ability.skillCode] == undefined) return [];
 

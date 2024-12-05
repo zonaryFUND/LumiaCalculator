@@ -57,7 +57,7 @@
         },
         "movement_speed": {
             "duration": 2,
-            "effect": [10,15,20]
+            "effect": [15,20,25]
         },
         "q_cooldown_reduction": 80,
         "cooldown_reduction": 50

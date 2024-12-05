@@ -206,6 +206,7 @@ export function useStatus(config: SubjectConfig): Status {
             base: baseStatusValues.moveSpeed,
             equipment: movementSpeedEquipment
         },
+        slowResist: {},
         visionRange: {
             base: BaseVision,
             equipment: visionEquipment
@@ -262,6 +263,9 @@ export function useStatus(config: SubjectConfig): Status {
         },
         tenacity: standardCalc(overriddenValue.tenacity, {}, 0),
         movementSpeed: movementSpeedSpeedCalc(overriddenValue.movementSpeed, {mastery: config.movementMastery}),
+        slowResist: {
+            calculatedValue: sumEquipmentStatus("slowResistRatio", equipments) ?? new Decimal(0)
+        },
         visionRange: standardCalc(overriddenValue.visionRange, {}, 2),
         basicAttackRange: overriddenValue.basicAttackRange.calculatedValue ? {
             ...overriddenValue.basicAttackRange,

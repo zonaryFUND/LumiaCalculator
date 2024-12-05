@@ -78,7 +78,7 @@
             "heal": 100,
             "movement_speed": {
                 "duration": 1.5,
-                "effect": [10,13,16,19,22]
+                "effect": [12,16,20,24,28]
             },
             "damage": {
                 "base": [40,75,110,145,180],

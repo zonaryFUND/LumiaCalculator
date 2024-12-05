@@ -24,13 +24,13 @@
         },
         "stun": 1,
         "mound_duration": 5,
-        "range": 0.5,
+        "defense": [10,13,16,19,22],
         "sp_cost": 70,
         "cooldown": 14
     },
     "E": {
+        "movement_speed": [14,17,20,23,26],
         "duration": 3,
-        "defense": [10,13,16,19,22],
         "sp_cost": [60,45,30,15,0],
         "cooldown": 0
     },
@@ -54,7 +54,10 @@
         "cooldown": {
             "constant": 1.5
         },
-        "movement_speed": [12,16,20],
+        "range": {
+            "duration": 5,
+            "effect": 0.5
+        },
         "damage": {
             "attack": [110,117,124],
             "basicAttackAmp": 100

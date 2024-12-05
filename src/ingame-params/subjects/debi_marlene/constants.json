@@ -22,7 +22,7 @@
     "E": {
         "movement_speed": {
             "duration": 1.5,
-            "effect": 20
+            "effect": 25
         }
     },
     "DebiE": {

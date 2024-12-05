@@ -43,8 +43,7 @@ const table: DamageTableGenerator = props => {
         ],
         skill: [
             [
-                {label: props.intl.formatMessage({id: "subject.haze.q-outer"}), skill: "Q", value: Constants.Q.outer_damage},
-                {label: props.intl.formatMessage({id: "subject.haze.q-center"}), skill: "Q", value: Constants.Q.center_damage}
+                {label: "Q", skill: "Q", value: Constants.Q.damage},
             ],
             [{label: "W", skill: "W", value: Constants.W.damage}],
             [

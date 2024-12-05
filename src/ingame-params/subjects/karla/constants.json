@@ -76,7 +76,7 @@
         },
         "slow": {
             "duration": 0.5,
-            "effect": 90
+            "effect": 99
         }
     }
 }

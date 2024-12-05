@@ -23,7 +23,8 @@ export const info: SkillTooltipProps = {
                 5: Constants.E.cooldown_reduction,
                 8: Constants.E.omnisyphon.duration,
                 9: Constants.E.omnisyphon.effect.perStack,
-                10: RatioPercent(Constants.E.omnisyphon.effect.attack)
+                10: RatioPercent(Constants.E.omnisyphon.effect.attack),
+                12: Constants.E.stack_gain_max
             } as Record<number, number | string | ValueRatio>
         } else {
             const minLifeSteal = {
@@ -42,6 +43,7 @@ export const info: SkillTooltipProps = {
                 3: Constants.E.omnisyphon.duration,
                 4: RatioPercent(minLifeSteal),
                 5: RatioPercent(maxLifeSteal),
+                6: Constants.E.stack_gain_max
             } as Record<number, number | string | ValueRatio>
         }
     },

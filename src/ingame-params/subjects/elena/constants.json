@@ -1,14 +1,14 @@
 {
     "Q": {
         "first_damage": {
-            "base": [25,40,55,70,85],
-            "defense": 30,
-            "amp": 25
+            "base": [20,35,50,65,80],
+            "amp": 25,
+            "additionalMaxHP": 8
         },
         "second_damage": {
-            "base": [45,70,9,120,145],
-            "defense": 45,
-            "amp": 35
+            "base": [40,70,100,130,160],
+            "amp": 35,
+            "additionalMaxHP": 10
         },
         "cooldown_reduction": 60,
         "sp_cost": [60,65,70,75,80],
@@ -21,7 +21,6 @@
             "amp": 50
         },
         "q_cooldown_reduction": 30,
-        "defense": 40,
         "enhanced_cooldown_reduction": 50,
         "sp_cost": [40,45,50,55,60],
         "cooldown": {
@@ -41,19 +40,20 @@
             "additionalMaxHP": 20,
             "amp": 80
         },
+        "defense": [10,14,18,22,26],
         "sp_cost": 50,
         "cooldown": 5
     },
     "R": {
         "center_damage": {
-            "base": [100,200,300],
-            "defense": 50,
-            "amp": 60
+            "base": [120,200,380],
+            "amp": 60,
+            "additionalMaxHP": 12
         },
         "outer_damage": {
-            "base": [80,160,240],
-            "defense": 30,
-            "amp": 30
+            "base": [90,160,230],
+            "amp": 30,
+            "additionalMaxHP": 8
         },
         "sp_cost": 100,
         "cooldown": [80,70,60]
@@ -65,8 +65,8 @@
         "stun": 1,
         "damage": {
             "base": [20,40,60],
-            "defense": 35,
-            "amp": 20
+            "amp": 20,
+            "additionalMaxHP": 10
         },
         "immune": 2.5,
         "cooldown": {

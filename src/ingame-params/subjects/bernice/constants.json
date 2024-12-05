@@ -42,7 +42,7 @@
     },
     "E": {
         "mark_duration": 6,
-        "movement_speed": [10,13,16,19,22],
+        "movement_speed": [10,14,18,22,26],
         "q_cooldown_reduction": 0.5,
         "r_cooldown_reduction": 0.5,
         "duration": 8,

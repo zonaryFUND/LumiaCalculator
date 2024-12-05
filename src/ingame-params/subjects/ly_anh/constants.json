@@ -42,7 +42,7 @@
         },
         "movement_speed": {
             "duration": 1,
-            "effect": 30
+            "effect": 40
         },
         "qe_cooldown_reduction": 1,
         "max_stack": 3,
@@ -87,7 +87,7 @@
             "attack": 60
         },
         "maxhp": [222,333,444],
-        "movement_speed": 20,
+        "movement_speed": 25,
         "attack_damage": {
             "attack": 100
         },

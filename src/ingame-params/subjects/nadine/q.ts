@@ -19,8 +19,6 @@ export const info: SkillTooltipProps = {
         4: Constants.Q.max_damage.base,
         5: RatioPercent(Constants.Q.min_damage.additionalAttack),
         6: RatioPercent(Constants.Q.max_damage.additionalAttack),
-        8: Constants.Q.max_range_on_some_stack.threshold,
-        9: Constants.Q.max_range_on_some_stack.value,
         12: RatioPercent(Constants.Q.min_damage.amp),
         13: RatioPercent(Constants.Q.max_damage.amp),
         14: Constants.Q.min_damage,

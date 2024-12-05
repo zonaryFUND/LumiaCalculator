@@ -4,7 +4,7 @@ import Column from "./column";
 import Mastery from "./expand/mastery";
 import Equipment from "./expand/equipment";
 import InnerTable from "components/common/inner-table";
-import { HandFist, SneakerMove, Eye, ArrowFatLineRight, CaretDown, CaretUp } from "@phosphor-icons/react"
+import { HandFist, SneakerMove, Boot, Eye, ArrowFatLineRight, CaretDown, CaretUp } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
@@ -53,6 +53,12 @@ const misc: React.FC<Props> = props => {
                     </InnerTable>
                 }
                 isHidden={hidden}
+            />
+            <Column 
+                name={<><Boot />移動速度減少耐性</>} 
+                value={props.status.slowResist.calculatedValue} 
+                isHidden={hidden}
+                percent
             />
             <Column 
                 name={<><Eye /><FormattedMessage id="status.vision" /></>} 

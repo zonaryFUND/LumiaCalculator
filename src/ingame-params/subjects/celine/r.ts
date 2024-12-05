@@ -23,6 +23,9 @@ export const info: SkillTooltipProps = {
         20: Constants.R.damage
     }),
     expansion: () => ({
+        tipValues: {
+            0: Constants.R.max_set
+        },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
             {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}

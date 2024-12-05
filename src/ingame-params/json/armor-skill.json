@@ -163,6 +163,17 @@
 		"skillCode": 6047001,
 		"name": "security_protocol"
 	},
+	"201526": {
+		"skillCode": 6053002,
+		"name": "blaze_up_amplified",
+		"values": {
+			"ms": 6
+		}
+	},
+	"201527": {
+		"skillCode": 6051001,
+		"name": "taser_gun_surge"
+	},
 	"202209": {
 		"skillCode": 6020001,
 		"name": "tranquility"
@@ -186,6 +197,21 @@
 	"202406": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
+	},
+	"202407": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 100
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1,
+			"slow": {
+				"effect": 20,
+				"duration": 2
+			}
+		}
 	},
 	"202410": {
 		"skillCode": 6006001,
@@ -219,6 +245,13 @@
 			}
 		}
 	},
+	"202421": {
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 20
+		}
+	},
 	"202501": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
@@ -227,21 +260,25 @@
 		"skillCode": 6016001,
 		"name": "bloodpact"
 	},
+	"202505": {
+		"skillCode": 6049001,
+		"name": "deferral "
+	},
 	"202506": {
-		"skillCode": 6001002,
-		"name": "flame_barrier",
-		"dmg": {
-			"melee": {
-				"maxHP": 4
-			},
-			"range": {
-				"maxHP": 3
-			}
-		}
+		"skillCode": 6054001,
+		"name": "blaze_up_outburst"
 	},
 	"202507": {
 		"skillCode": 6027001,
 		"name": "vanguard"
+	},
+	"202509": {
+		"skillCode": 6052001,
+		"name": "blaze_up_enhanced"
+	},
+	"202510": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"202511": {
 		"skillCode": 6030001,
@@ -253,6 +290,17 @@
 			}
 		}
 	},
+	"202512": {
+		"skillCode": 6050001,
+		"name": "rebellion"
+	},
+	"202514": {
+		"skillCode": 6053001,
+		"name": "blaze_up_amplified",
+		"values": {
+			"omnisyphon": 15
+		}
+	},
 	"202515": {
 		"skillCode": 6022101,
 		"name": "verdict"
@@ -260,6 +308,10 @@
 	"202516": {
 		"skillCode": 6032001,
 		"name": "encourage"
+	},
+	"202517": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"202518": {
 		"skillCode": 6036001,
@@ -272,6 +324,10 @@
 	"202522": {
 		"skillCode": 6041001,
 		"name": "debilitation_fog"
+	},
+	"202523": {
+		"skillCode": 6052002,
+		"name": "blaze_up "
 	},
 	"202524": {
 		"skillCode": 6036002,

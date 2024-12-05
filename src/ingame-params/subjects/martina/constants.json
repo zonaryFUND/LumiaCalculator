@@ -7,7 +7,7 @@
         "cooldown_reduction": 30,
         "movement_speed": {
             "duration": [1.8,1.9,2,2.1,2.2],
-            "effect": [10,15,20,25,30]
+            "effect": [15,20,25,30,35]
         },
         "sp_cost": [30,35,40,45,50],
         "cooldown": [7,6.5,6,5.5,5]
@@ -20,7 +20,7 @@
         "cooldown_reduction": 30,
         "movement_speed": {
             "duration": [1.8,1.9,2,2.1,2.2],
-            "effect": [10,15,20,25,30]
+            "effect": [15,20,25,30,35]
         },
         "attack_speed": {
             "duration" :3,
@@ -93,7 +93,7 @@
         "recording_movement_speed": 10,
         "recorded_movement_speed": {
             "duration" :3,
-            "effect": 30
+            "effect": 50
         },
         "max_stack": 5,
         "multiple_subject_recording_time": 1,

@@ -4,7 +4,6 @@ import style from "./equipment-list.module.styl";
 import { EquipmentID } from "app-types/equipment/id";
 import { WeaponMasteryStatus } from "app-types/subject-static/mastery";
 import SegmentedControl from "components/common/segmented-control";
-import { useLocalStorage } from "react-use";
 import { styles } from "@app/util/style";
 import common from "@app/common.module.styl";
 import Blank from "components/item/blank";
@@ -14,6 +13,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { ArmArmorCodes, ChestArmorCodes, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
 import { SubjectCode } from "app-types/subject-static";
+import { useLocalStorage } from "react-use";
 
 type Props = {
     subject: SubjectCode
@@ -21,9 +21,11 @@ type Props = {
     slot: "Weapon" | ArmorTypeID
 }
 
-function splitIdsWithRarity(ids: EquipmentID[]): {title: string, ids: EquipmentID[]}[] {
+function splitIdsWithRarity(ids: EquipmentID[], david: boolean = false): {title: string, ids: EquipmentID[]}[] {
     const splitted = ids.reduce((prev, id) => {
         const status = EquipmentStatusDictionary[id];
+        if (david != (status.david?.from != undefined)) return prev;
+
         return {
             ...prev,
             [status.itemGrade]: (prev[status.itemGrade] ?? []).concat(id)
@@ -46,19 +48,20 @@ const priyaUnique: number[] = [201416, 201516];
 
 const subjectsList: React.FC<Props> = props => {
     const intl = useIntl();
-    const [layout, setLayout] = useLocalStorage("equipment-list-sort", "in-game");
+    //const [layout, setLayout] = useLocalStorage("equipment-list-sort", "in-game");
+    const [david, setDavid] = useLocalStorage("equipment-list-david", "notDavid");
 
     const def: {title: string, sections: {title?: string, ids: EquipmentID[]}[]} = React.useMemo(() => {
         switch (props.slot) {
             case "Head":    
                 const IDs = props.subject == 51 ? priyaUnique : HeadArmorCodes.filter(id => priyaUnique.includes(id) == false);
-                return {title: "頭", sections: layout == "in-game" ? splitAndRemergeItems(IDs) : splitIdsWithRarity(IDs)};
-            case "Chest":   
-                return {title: "胴", sections: layout == "in-game" ? splitAndRemergeItems(ChestArmorCodes) : splitIdsWithRarity(ChestArmorCodes)};
+                return {title: "頭", sections: splitIdsWithRarity(IDs)};
+            case "Chest":
+                return {title: "胴", sections: splitIdsWithRarity(ChestArmorCodes, david == "david")};
             case "Arm":
-                return {title: "腕", sections: layout == "in-game" ? splitAndRemergeItems(ArmArmorCodes) : splitIdsWithRarity(ArmArmorCodes)};
+                return {title: "腕", sections: splitIdsWithRarity(ArmArmorCodes)};
             case "Leg":
-                return {title: "脚", sections: layout == "in-game" ? splitAndRemergeItems(LegArmorCodes) : splitIdsWithRarity(LegArmorCodes)};
+                return {title: "脚", sections: splitIdsWithRarity(LegArmorCodes)};
             case "Weapon":
                 const availableTypes = Object.keys(WeaponMasteryStatus[props.subject]) as WeaponTypeID[];
                 const names = availableTypes.map(id => intl.formatMessage({id: `MasteryType/${id}`}))
@@ -70,7 +73,7 @@ const subjectsList: React.FC<Props> = props => {
                     }))
                 }
         }
-    }, [props.slot, props.subject, layout]);
+    }, [props.slot, props.subject, david]);
 
     const onClick = React.useCallback((id: EquipmentID | null) => () => {
         props.equipment[1](prev => ({...prev, [props.slot]: id}))
@@ -80,7 +83,16 @@ const subjectsList: React.FC<Props> = props => {
         <>
             <header>
                 <h1>装備選択 {def.title}</h1>
-                {props.slot == "Weapon" ? null : <SegmentedControl name="equipment-sort" value={[layout, setLayout]} segments={[{title: "一括表示", value: "in-game"}, {title: "等級別表示", value: "rarity"}]} />}
+                {
+                    props.slot == "Chest" ? 
+                    <SegmentedControl 
+                        name="equipment-sort" 
+                        value={[david, setDavid]} 
+                        segments={[{title: "通常", value: "notDavid"}, {title: "David", value: "david"}]} 
+                    />
+                    : 
+                    null
+                }
             </header>
             <div className={style.content}>
                 <section key="remove">

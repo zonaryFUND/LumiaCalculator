@@ -9,8 +9,8 @@ export const info: SkillTooltipProps = {
     values: ({ showEquation }) => {
         const base = {
             2: Constants.T.duration,
-            3: RatioPercent(Constants.T.food),
-            4: RatioPercent(Constants.T.drink)
+            3: Constants.T.attack.duration_min,
+            4: Constants.T.attack.effect
         }
         if (showEquation) {
             return {

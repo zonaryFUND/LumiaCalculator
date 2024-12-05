@@ -2,6 +2,7 @@ import Decimal from "decimal.js";
 import { WeaponTypeID } from "./weapon";
 import { ArmorTypeID } from "./armor";
 import { ValueRatio } from "app-types/value-ratio";
+import { EquipmentID } from "./id";
 
 export type Tier = "Epic" | "Legend" | "Mythic";
 
@@ -34,6 +35,7 @@ export const EquipmentStatusKeys = [
     "normalLifeSteal",
     // skillLifeSteal
     "moveSpeed",
+    "moveSpeedRatio",
     // moveSpeedOutOfCombat
     "sightRange",
     // attackRange?: Decimal // unique only
@@ -53,6 +55,7 @@ export const EquipmentStatusKeys = [
     "penetrationDefenseRatio",
     // trapDamageReduce?: Decimal
     // trapDamageReduceRatio?: Decimal
+    "slowResistRatio",
     // hpHealedIncreaseRatio?: Decimal // incoming heal only, it is deprecated
     "healerGiveHpHealRatio",
     "uniqueAttackRange",
@@ -86,6 +89,10 @@ export type EquipmentSkill = {
 export type EquipmentStatus = {[key in EquipmentStatusValueKey]?: Decimal} & {
     type: WeaponTypeID | ArmorTypeID
     itemGrade: Tier
+    david?: {
+        to?: EquipmentID
+        from?: EquipmentID
+    }
     ammo?: Decimal
     skill?: EquipmentSkill[]
 }

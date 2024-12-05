@@ -14,7 +14,7 @@
             "amp": 16
         },
         "count": 5,
-        "movement_speed": [25,27.5,30,32.5,35],
+        "movement_speed": [28,32,36,40,44],
         "untargettable": 1,
         "second_damage": {
             "base": [60,95,130,165,200],

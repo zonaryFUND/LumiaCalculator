@@ -44,7 +44,7 @@
             "base": [90,135,180,225,270],
             "amp": 85
         },
-        "movement_speed": 70
+        "movement_speed": 100
     },
     "E": {
         "sp_cost": [70,75,80,85,90],

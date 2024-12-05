@@ -43,15 +43,15 @@
         "cooldown": [14,13.5,13,12.5,12]
     },
     "HumanR": {
-        "fuel_consumption": 16,
-        "movement_speed": [0.3,0.375,0.45],
+        "fuel_consumption": 18,
+        "movement_speed": [0.1,0.55,1],
         "defense": [14,22,30],
         "ms_penalty": {
             "duration": 2,
-            "effect": [-30,-15,0]
+            "effect": [-20,-10,0]
         },
         "threshold": 50,
-        "cooldown": [6,5,4]
+        "cooldown": [5,4,3]
     },
     "BikeQ": {
         "damage": {
@@ -81,7 +81,7 @@
         "damage": {
             "base": [20,60,100],
             "attack": 100,
-            "amp": 50
+            "amp": 40
         }
     },
     "T": {

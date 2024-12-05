@@ -70,7 +70,7 @@
         "kill_stack": 5,
         "movement_speed": {
             "duration": 3,
-            "effect": 35
+            "effect": 45
         },
         "sp_cost": [60,80,100],
         "cooldown": [60,50,40]

@@ -4,7 +4,7 @@ import Images from "@app/resources/image";
 import style from "./item.module.styl";
 import { styles } from "@app/util/style";
 import { ArmorTypeID } from "app-types/equipment/armor";
-import { EquipmentStatusDictionary } from "app-types/equipment";
+import { ArmorStatusDictionary, EquipmentStatusDictionary } from "app-types/equipment";
 
 type Props = {
     slot: "Weapon" | ArmorTypeID
@@ -25,6 +25,10 @@ const item: React.FC<Props> = props => {
 
     const src = React.useMemo(() => {
         if (props.itemID == undefined) return undefined;
+        const davidFrom = ArmorStatusDictionary[props.itemID]?.david?.from;
+        if (davidFrom) {
+            return Items[`${davidFrom}`]
+        }
         return Items[props.itemID];
     }, [props.itemID]);
 

@@ -52,7 +52,7 @@
         },
         "slow": {
             "duration": 0.2,
-            "effect": 90
+            "effect": 99
         },
         "coordinates": 5,
         "sp_cost": 100,

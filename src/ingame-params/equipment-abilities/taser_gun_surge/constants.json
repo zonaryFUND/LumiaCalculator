@@ -1,0 +1,12 @@
+{
+    "damage": {
+        "base": 50,
+        "attack": 30,
+        "level": 2
+    },
+    "defense_down": {
+        "duration": 4,
+        "effect": 10
+    },
+    "cooldown": 8
+}

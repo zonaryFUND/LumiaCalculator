@@ -15,7 +15,7 @@ export const info: SkillTooltipProps = {
         0: Constants.W.damage.base,
         1: RatioPercent(Constants.W.damage.attack),
         2: Constants.W.mound_duration,
-        3: Constants.W.range,
+        3: Constants.W.defense,
         4: Constants.W.slow.duration,
         5: RatioPercent(Constants.W.slow.effect),
         6: Constants.W.stun,
@@ -23,7 +23,8 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base}
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/IncreaseDefence", values: Constants.W.defense}
         ]  
     })
 }

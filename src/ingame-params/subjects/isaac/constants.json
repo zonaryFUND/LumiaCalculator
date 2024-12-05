@@ -50,7 +50,7 @@
             "attack": 60,
             "targetMaxHP": [2,3,4]
         },
-        "movement_speed": [5,15,25],
+        "movement_speed": [6,18,30],
         "duration": 2,
         "heal": [100,150,200],
         "animal": 70

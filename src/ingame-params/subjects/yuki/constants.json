@@ -44,7 +44,7 @@
         },
         "slow": {
             "duration": 1,
-            "effect": 90
+            "effect": 99
         },
         "mark_damage": {
             "targetMaxHP": [15,20,25]

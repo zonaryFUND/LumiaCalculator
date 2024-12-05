@@ -87,11 +87,8 @@
 		}
 	},
 	"101702": {
-		"skillCode": 6002005,
-		"name": "biotic_infusion",
-		"dmg": {
-			"amp": 40
-		}
+		"skillCode": 6039001,
+		"name": "brute_enforcer"
 	},
 	"102406": {
 		"skillCode": 6017001,
@@ -149,8 +146,13 @@
 		}
 	},
 	"102702": {
-		"skillCode": 6044001,
-		"name": "spirit_harvest"
+		"skillCode": 6019002,
+		"name": "lichs_grasp",
+		"values": {
+			"slow": 99,
+			"duration": 0.56,
+			"cooldown": 4
+		}
 	},
 	"103401": {
 		"skillCode": 6008201,
@@ -165,16 +167,16 @@
 		}
 	},
 	"103502": {
-		"skillCode": 6045001,
-		"name": "cataclasm"
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"103503": {
 		"skillCode": 6035001,
 		"name": "quickstep"
 	},
 	"103505": {
-		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"skillCode": 6045001,
+		"name": "cataclasm"
 	},
 	"103701": {
 		"skillCode": 6035001,
@@ -217,6 +219,21 @@
 	"104503": {
 		"skillCode": 6045001,
 		"name": "cataclasm"
+	},
+	"104504": {
+		"skillCode": 6007002,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"ms": 0.1,
+			"slow": {
+				"effect": 30,
+				"duration": 2
+			},
+			"tick": 0.2
+		}
 	},
 	"104701": {
 		"skillCode": 6046001,
@@ -280,10 +297,17 @@
 		"name": "critical_blow"
 	},
 	"105702": {
-		"skillCode": 6002005,
-		"name": "biotic_infusion",
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
 		"dmg": {
-			"amp": 40
+			"level": 8,
+			"amp": 25
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
 		}
 	},
 	"107402": {
@@ -513,10 +537,10 @@
 		}
 	},
 	"110701": {
-		"skillCode": 6013006,
-		"name": "magnetic_midnight",
+		"skillCode": 6004003,
+		"name": "smolder",
 		"dmg": {
-			"level": 11
+			"targetMaxHP": 0.7
 		},
 		"values": {
 			"slow": {
@@ -526,13 +550,17 @@
 		}
 	},
 	"110702": {
-		"skillCode": 6019001,
-		"name": "lichs_grasp",
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 25
+		},
 		"values": {
-			"slow": 20,
-			"duration": 1,
-			"as": 10,
-			"cooldown": 3
+			"slow": {
+				"effect": 20,
+				"duration": 1.5
+			}
 		}
 	},
 	"111403": {
@@ -587,6 +615,10 @@
 			}
 		}
 	},
+	"112404": {
+		"skillCode": 6042001,
+		"name": "blasting_bullet"
+	},
 	"112405": {
 		"skillCode": 6013003,
 		"name": "magnetic_midnight",
@@ -616,6 +648,10 @@
 				"ms": 0.1
 			}
 		}
+	},
+	"112407": {
+		"skillCode": 6044001,
+		"name": "spirit_harvest"
 	},
 	"112408": {
 		"skillCode": 6013003,
@@ -773,11 +809,8 @@
 		}
 	},
 	"114503": {
-		"skillCode": 6002005,
-		"name": "biotic_infusion",
-		"dmg": {
-			"amp": 40
-		}
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"114504": {
 		"skillCode": 6017002,
@@ -881,7 +914,7 @@
 		"skillCode": 6012002,
 		"name": "double_tap",
 		"dmg": {
-			"level": 8,
+			"level": 4,
 			"amp": 30,
 			"targetMaxHP": 6
 		}

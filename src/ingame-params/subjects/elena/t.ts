@@ -19,7 +19,7 @@ export const info: SkillTooltipProps = {
             return {
                 ...base,
                 3: Constants.T.damage.base,
-                6: RatioPercent(Constants.T.damage.defense),
+                6: RatioPercent(Constants.T.damage.additionalMaxHP),
                 7: RatioPercent(Constants.T.damage.amp),
                 8: Constants.T.chill
             } as Record<number, number | string | ValueRatio>

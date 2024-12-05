@@ -32,7 +32,13 @@
         },
         "duration": 6,
         "sp_cost": [90,100,110,120,130],
-        "cooldown": [11,10,9,8,7]
+        "cooldown": {
+            "constant": 3
+        },
+        "charge": {
+            "max": 2,
+            "time": [17,16,15,14,13]
+        }
     },
     "E": {
         "damage": {

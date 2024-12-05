@@ -16,9 +16,9 @@ export const info: SkillTooltipProps = {
         if (showEquation) {
             return {
                 0: Constants.Q.first_damage.base,
-                1: RatioPercent(Constants.Q.first_damage.defense),
+                1: RatioPercent(Constants.Q.first_damage.additionalMaxHP),
                 3: Constants.Q.second_damage.base,
-                4: RatioPercent(Constants.Q.second_damage.defense),
+                4: RatioPercent(Constants.Q.second_damage.additionalMaxHP),
                 6: Constants.Q.cooldown_reduction,
                 7: RatioPercent(Constants.Q.first_damage.amp),
                 8: RatioPercent(Constants.Q.second_damage.amp)
