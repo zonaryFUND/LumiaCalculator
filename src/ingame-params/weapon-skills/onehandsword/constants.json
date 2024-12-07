@@ -1,7 +1,7 @@
 {
     "cloak": {
         "duration": [1,1.5,2],
-        "movement_speed": 20
+        "movement_speed": 25
     },
     "dagger": {
         "damage": {

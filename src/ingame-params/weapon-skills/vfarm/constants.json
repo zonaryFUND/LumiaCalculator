@@ -6,7 +6,7 @@
     "cooldown_reduction": 60,
     "movement_speed": {
         "duration": 0.85,
-        "effect": 20
+        "effect": 25
     },
     "extend": [1.5,2.5,3.5],
     "overload_reduction": [5,7,9],

@@ -10,7 +10,7 @@
         "duration": 4.5,
         "movement_speed": {
             "base": 10,
-            "level": 0.3
+            "level": 0.6
         },
         "skill_damage_amp": {
             "base": 8,

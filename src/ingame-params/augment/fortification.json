@@ -48,7 +48,7 @@
             "maxHP": 15
         },
         "movement_speed": {
-            "effect": 35,
+            "effect": 50,
             "duration": 1
         },
         "cooldown": 30,
