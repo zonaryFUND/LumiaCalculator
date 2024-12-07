@@ -9,6 +9,7 @@ import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { ConfigModifierProps } from "components/config/config";
 import * as React from "react";
 import { useLocalStorage } from "react-use";
+import { useLocalStorageConfig } from "@app/storage/config";
 
 type Response = {
     config: SubjectConfig
@@ -28,7 +29,7 @@ export default function useCombatConfig(target: "left" | "right"): Response {
     const [
         storageConfig, 
         saveStorageConfig
-    ] = useLocalStorage<SubjectConfig>(target == "left" ? CombatCurrentLeftConfigKey : CombatCurrentRightConfigKey);
+    ] = useLocalStorageConfig(target == "left" ? CombatCurrentLeftConfigKey : CombatCurrentRightConfigKey);
     const config = useSubjectConfig({value: storageConfig, update: saveStorageConfig});
     const status = useStatus(config.value);
 
