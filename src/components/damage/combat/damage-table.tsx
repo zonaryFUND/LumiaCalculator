@@ -46,7 +46,7 @@ const damageTable: React.FC<Props> = props => {
     const tacticalSkills = useTacticalSkill(attacker.config);
 
     return (
-        <CombatHPContext.Provider value={{hp: attacker.hp, targetHP: defender.hp, targetMaxHP: defender.status.maxHP.calculatedValue, ltr: ltr[0]!}} >
+        <CombatHPContext.Provider value={{hp: attacker.hp, targetHP: defender.hp, targetMaxHP: defender.status.maxHp.calculatedValue, ltr: ltr[0]!}} >
         <MitigationContext.Provider value={createMitigation(attacker.status, defender.status)} >
         <section className={style.damage}>
             <header className={style.switch}>

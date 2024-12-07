@@ -25,14 +25,14 @@ const sp: React.FC<Props> = props => {
             </tr>
             <Column 
                 name={<><Lightning weight="fill" /><FormattedMessage id="status.maxsp" /></>} 
-                value={props.status.maxSP.calculatedValue} 
-                expand={<StandardExpand {...props.status.maxSP} level={props.level} digit={2} />}
+                value={props.status.maxSp.calculatedValue} 
+                expand={<StandardExpand {...props.status.maxSp} level={props.level} digit={2} />}
                 isHidden={hidden}
             />
             <Column 
                 name={<><Lightning /><FormattedMessage id="status.spregen"/></>} 
-                value={props.status.spReg.calculatedValue} 
-                expand={<StandardExpand {...props.status.spReg} level={props.level} digit={2} />}
+                value={props.status.spRegen.calculatedValue} 
+                expand={<StandardExpand {...props.status.spRegen} level={props.level} digit={2} />}
                 isHidden={hidden}
             />
         </tbody>

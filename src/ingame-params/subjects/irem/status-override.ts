@@ -9,8 +9,8 @@ import Constants from "./constants.json";
 
 const f: StatusOverrideFunc = (status, config) => ({
     ...status,
-    basicAttackRange: {
-        ...status.basicAttackRange,
+    attackRange: {
+        ...status.attackRange,
         overrideAdditional: config.equipment.Weapon == null ? undefined : {
             nameKey: "subject.irem.passive-attack-range",
             value: new Decimal(Constants.IremR.range_penalty * -1)

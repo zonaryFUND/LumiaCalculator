@@ -12,7 +12,7 @@ export const info: SkillTooltipProps = {
     },
     cooldown: Constants.W.cooldown,
     values: ({ showEquation, status }) => {
-        const additionalCount = status.defense.additional?.div(Constants.W.additional_hit_per__additional_defense).floor().toNumber() ?? 0;
+        const additionalCount = status.defense.additionalValue?.div(Constants.W.additional_hit_per__additional_defense).floor().toNumber() ?? 0;
         const base = {
             0: Constants.W.duration,            
             6: Constants.W.cooldown_reduction,

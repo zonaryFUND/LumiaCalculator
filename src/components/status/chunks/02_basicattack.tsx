@@ -77,17 +77,17 @@ const basicAttack: React.FC<Props> = props => {
             />
             <Column 
                 name={<><span className={style.basic_attack_amp}><Sword /><Plus weight="bold" /></span><FormattedMessage id="status.basic-attack-amp" /></>} 
-                value={props.status.basicAttackAmp.calculatedValue}
+                value={props.status.increaseBasicAttackDamageRatio.calculatedValue}
                 expand={
-                    props.status.basicAttackAmp.calculatedValue.isZero() ? null :
+                    props.status.increaseBasicAttackDamageRatio.calculatedValue.isZero() ? null :
                     <InnerTable>
-                        <Mastery perMastery={props.status.basicAttackAmp.perMastery!} name={<FormattedMessage id="status.weapon-mastery" />} mastery={props.weaponMastery} />
+                        <Mastery perMastery={props.status.increaseBasicAttackDamageRatio.perMastery!} name={<FormattedMessage id="status.weapon-mastery" />} mastery={props.weaponMastery} />
                         {
-                            props.status.basicAttackAmp.equipment?.perLevel ? 
+                            props.status.increaseBasicAttackDamageRatio.equipment?.perLevel ? 
                             <tr>
                                 <td><FormattedMessage id="app.equipment" /></td>
-                                <td>{props.status.basicAttackAmp.equipment.perLevel.toString()}% x <span className={table.small}><FormattedMessage id="app.level" /></span>{props.weaponMastery}
-                                <> = {props.status.basicAttackAmp.equipment.perLevel.times(props.level).toString()}%</></td>
+                                <td>{props.status.increaseBasicAttackDamageRatio.equipment.perLevel.toString()}% x <span className={table.small}><FormattedMessage id="app.level" /></span>{props.weaponMastery}
+                                <> = {props.status.increaseBasicAttackDamageRatio.equipment.perLevel.times(props.level).toString()}%</></td>
                             </tr> 
                             : null
                         }
@@ -150,16 +150,16 @@ const basicAttack: React.FC<Props> = props => {
             />
             <Column 
                 name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>} 
-                value={props.status.criticalChance.calculatedValue} 
+                value={props.status.criticalStrikeChance.calculatedValue} 
                 expand={
-                    props.status.criticalChance.overrideAdditional == undefined ? null :
+                    props.status.criticalStrikeChance.overrideAdditional == undefined ? null :
                     <InnerTable>
-                        <tr><td><FormattedMessage id="app.equipment" /></td><td>{props.status.criticalChance.equipment?.constant?.toString()}%</td></tr>
+                        <tr><td><FormattedMessage id="app.equipment" /></td><td>{props.status.criticalStrikeChance.equipment?.constant?.toString()}%</td></tr>
                         {
-                            props.status.criticalChance.overrideAdditional ?
+                            props.status.criticalStrikeChance.overrideAdditional ?
                             <tr>
-                                <td><FormattedMessage id={props.status.criticalChance.overrideAdditional.nameKey} /></td>
-                                <td>{props.status.criticalChance.overrideAdditional.value?.toString()}%</td>
+                                <td><FormattedMessage id={props.status.criticalStrikeChance.overrideAdditional.nameKey} /></td>
+                                <td>{props.status.criticalStrikeChance.overrideAdditional.value?.toString()}%</td>
                             </tr>
                             : null
                         }
@@ -170,7 +170,7 @@ const basicAttack: React.FC<Props> = props => {
             />
             <Column 
                 name={<><span className={style.critical_damage}><Crosshair /><Plus weight="bold" /></span><FormattedMessage id="status.critical-damage" /></>} 
-                value={props.status.criticalDamage.calculatedValue} 
+                value={props.status.criticalStrikeDamage.calculatedValue} 
                 percent 
                 isHidden={hidden} 
             />

@@ -48,16 +48,16 @@ const standardDamage: React.FC<Props> = props => {
     } = useDynamicValueCalculation(
         dynamicBasePotency,
         multiplier?.[0],
-        {hp, maxHP: props.status.maxHP.calculatedValue}, // sender
+        {hp, maxHP: props.status.maxHp.calculatedValue}, // sender
         props.targetSide == "anyToSelf" ? {
-            hp, maxHP: props.status.maxHP.calculatedValue // self-target
+            hp, maxHP: props.status.maxHp.calculatedValue // self-target
         } : {
             hp: targetHP, maxHP: targetMaxHP            // opponent target
         }
     )
 
     const totalPotency = staticPotency.add(dynamicPotency)
-    const healPower = props.type?.type == "heal" && props.status.healPower.calculatedValue.greaterThan(0) ? props.status.healPower.calculatedValue : null;
+    const healPower = props.type?.type == "heal" && props.status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ? props.status.healerGiveHpHealRatio.calculatedValue : null;
     const finalPotency = totalPotency.addPercent(healPower ?? 0);
     const mitigationContext = useMitigation();
 
@@ -103,7 +103,7 @@ const standardDamage: React.FC<Props> = props => {
         ) {
             return undefined
         } else {
-            return mitigatedValue.dividedBy(props.status.maxHP.calculatedValue)
+            return mitigatedValue.dividedBy(props.status.maxHp.calculatedValue)
                 .times(100).floor2();
         }
     })();

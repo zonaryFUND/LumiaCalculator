@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SubjectConfig } from "../config/type";
-import { Status, StatusBeforeCalculation } from "./type";
+import { BlankStatus, Status, StatusBeforeCalculation } from "./type";
 import { BaseStatus, LevelUpStatus, WeaponMasteryStatus } from "app-types/subject-static";
 import { EquipmentStatus, EquipmentStatusDictionary } from "app-types/equipment";
 import Decimal from "decimal.js";
@@ -16,6 +16,8 @@ import { movementSpeedSpeedCalc } from "./movement-speed-calculation";
 import { basicAttackRangeCalc } from "./basic-attack-range-calculation";
 import { defenseCalc } from "./defense-calculation";
 import { SubjectStatusOverrideDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { AddComponent, StatusValueDefault } from "./value/type";
+import { StatusValueComponent } from "./value/components";
 
 function sumEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentStatus[]): Decimal | undefined {
     return equipments
@@ -35,6 +37,24 @@ function maxEquipmentStatus(key: keyof EquipmentStatus, equipments: EquipmentSta
 }
 
 export function useStatus(config: SubjectConfig): Status {
+    const baseStatus = BaseStatus[config.subject];
+    const levelupStatus = BaseStatus[config.subject];
+    const equipmentStatus = Object.values(config.equipment)
+        .filter((id): id is number => id !== null)
+        .map(id => EquipmentStatusDictionary[id]);
+
+    return Object.keys(BlankStatus).reduce((prev, key) => {
+        const components: (StatusValueComponent | undefined)[] = [
+            baseStatus[key] != undefined ? { origin: "subject-status", calculationType: "sum", value: baseStatus[key] } : undefined
+        ]
+
+        return {
+            ...prev,
+            [key]: 0
+        }
+    }, BlankStatus);
+
+/*
     const [baseStatusValues, levelupStatusValues] = React.useMemo(() => {
         return [
             BaseStatus[config.subject],
@@ -103,7 +123,7 @@ export function useStatus(config: SubjectConfig): Status {
             perLevel: levelupStatusValues.maxHp,
             equipment: equipmentValue("maxHp", "maxHpByLv"),
         },
-        hpReg: {
+        hpRegen: {
             base: baseStatusValues.hpRegen,
             perLevel: levelupStatusValues.hpRegen,
             equipment: hpRegenEquipment,
@@ -118,19 +138,19 @@ export function useStatus(config: SubjectConfig): Status {
             perLevel: levelupStatusValues.maxSp,
             equipment: equipmentValue("maxSp")
         },
-        basicAttackReduction: {
+        preventBasicAttackDamagedRatio: {
             perMastery: {
                 ratio: BasicAttackReductionPerMastery
             }
         },
-        basicAttackReductionConstant: {},
-        skillReduction: {
+        preventBasicAttackDamaged: {},
+        preventSkillDamagedRatio: {
             perMastery: {
                 ratio: SkillReductionPerMastery
             },
             equipment: equipmentValue("preventSkillDamagedRatio")
         },
-        spReg: {
+        spRegen: {
             base: baseStatusValues.spRegen,
             perLevel: levelupStatusValues.spRegen,
             equipment: spRegenEquipment,
@@ -147,7 +167,7 @@ export function useStatus(config: SubjectConfig): Status {
                 value: masteryFactor.value
             } : undefined
         },
-        basicAttackAmp: {
+        increaseBasicAttackDamageRatio: {
             perMastery: masteryFactor?.type == "basic_attack_amp" ? {
                 ratio: masteryFactor.value
             } : undefined,
@@ -165,12 +185,12 @@ export function useStatus(config: SubjectConfig): Status {
                 ratio: masteryFactor.attackSpeed
             } : undefined
         },
-        criticalChance: {
+        criticalStrikeChance: {
             equipment: criticalChanceEquipment ? {
                 constant: criticalChanceEquipment.clamp(0, 100)
             } : undefined
         },
-        criticalDamage: {
+        criticalStrikeDamage: {
             calculatedValue: sumEquipmentStatus("criticalStrikeDamage", equipments) ?? new Decimal(0)
         },
         skillAmp: {
@@ -187,31 +207,31 @@ export function useStatus(config: SubjectConfig): Status {
             cap: cdrCap,
             calculatedValue: (sumEquipmentStatus("cooldownReduction", equipments) ?? new Decimal(0)).clamp(0, BaseCooldownCap.add(cdrCap))
         },
-        armorPenetration: {},
-        armorPenetrationRatio: {
+        penetrationDefense: {},
+        penetrationDefenseRatio: {
             equipment: {
                 constant: armorPenetrationRatio ?? new Decimal(0)
             },
             calculatedValue: armorPenetrationRatio ?? new Decimal(0),
         },
+        normalLifeSteal: {},
         lifeSteal: {},
-        omnisyphon: {},
-        healPower: {},
+        healerGiveHpHealRatio: {},
         tenacity: {
             equipment: {
                 constant: maxEquipmentStatus("uniqueTenacity", equipments) ?? new Decimal(0)
             }
         },
-        movementSpeed: {
+        moveSpeed: {
             base: baseStatusValues.moveSpeed,
             equipment: movementSpeedEquipment
         },
         slowResist: {},
-        visionRange: {
+        sightRange: {
             base: BaseVision,
             equipment: visionEquipment
         },
-        basicAttackRange: {
+        attackRange: {
             base: BaseBasicAttackRange,
             equipment: weaponBaseStatus ? {
                 constant: weaponBaseStatus.range,
@@ -225,52 +245,52 @@ export function useStatus(config: SubjectConfig): Status {
 
     const calculated: Status = {
         maxHP: maxHPCalc(overriddenValue.maxHP, {level: config.level}),
-        hpReg: standardCalc(overriddenValue.hpReg, {level: config.level}, 2),
+        hpRegen: standardCalc(overriddenValue.hpRegen, {level: config.level}, 2),
         defense: defenseCalc(overriddenValue.defense, config.level),
         maxSP: standardCalc(overriddenValue.maxSP, {level: config.level}, 0),
-        basicAttackReduction: defenseMasteryCalc(overriddenValue.basicAttackReduction, {mastery: config.defenseMastery}),
-        basicAttackReductionConstant: standardCalc(overriddenValue.basicAttackReductionConstant, {}, 0),
-        skillReduction: defenseMasteryCalc(overriddenValue.skillReduction, {mastery: config.defenseMastery}),
-        spReg: standardCalc(overriddenValue.spReg, {level: config.level}, 2),
+        preventBasicAttackDamagedRatio: defenseMasteryCalc(overriddenValue.preventBasicAttackDamagedRatio, {mastery: config.defenseMastery}),
+        preventBasicAttackDamaged: standardCalc(overriddenValue.preventBasicAttackDamaged, {}, 0),
+        preventSkillDamagedRatio: defenseMasteryCalc(overriddenValue.preventSkillDamagedRatio, {mastery: config.defenseMastery}),
+        spRegen: standardCalc(overriddenValue.spRegen, {level: config.level}, 2),
         attackPower: attackCalc(overriddenValue.attackPower, {level: config.level, mastery: config.weaponMastery}),
-        basicAttackAmp: basicAttackAmpCalc(overriddenValue.basicAttackAmp, {level: config.level, mastery: config.weaponMastery}),
+        increaseBasicAttackDamageRatio: basicAttackAmpCalc(overriddenValue.increaseBasicAttackDamageRatio, {level: config.level, mastery: config.weaponMastery}),
         attackSpeed: overriddenValue.attackSpeed.calculatedValue ? {
             ...overriddenValue.attackSpeed,
             calculatedValue: overriddenValue.attackSpeed.calculatedValue
         } : attackSpeedCalc(overriddenValue.attackSpeed, {mastery: config.weaponMastery}),
-        criticalChance: (() => {
-            const calculated = standardCalc(overriddenValue.criticalChance, {}, 0);
+        criticalStrikeChance: (() => {
+            const calculated = standardCalc(overriddenValue.criticalStrikeChance, {}, 0);
             return {
                 ...calculated,
                 calculatedValue: calculated.calculatedValue.clamp(0, 100)
             }
         })(),
-        criticalDamage: overriddenValue.criticalDamage as any,
+        criticalStrikeDamage: overriddenValue.criticalStrikeDamage as any,
         skillAmp: standardCalc(overriddenValue.skillAmp, {level: config.level, mastery: config.weaponMastery}, 0),
         cooldownReduction: overriddenValue.cooldownReduction as any,
-        armorPenetration: {
+        penetrationDefense: {
             calculatedValue: sumEquipmentStatus("penetrationDefense", equipments) ?? new Decimal(0)
         },
-        armorPenetrationRatio: standardCalc(overriddenValue.armorPenetrationRatio, {}, 0),
-        lifeSteal: {
+        penetrationDefenseRatio: standardCalc(overriddenValue.penetrationDefenseRatio, {}, 0),
+        normalLifeSteal: {
             calculatedValue: sumEquipmentStatus("lifeSteal", equipments) ?? new Decimal(0)
         },
-        omnisyphon: {
+        lifeSteal: {
             calculatedValue: sumEquipmentStatus("normalLifeSteal", equipments) ?? new Decimal(0)
         },
-        healPower: {
+        healerGiveHpHealRatio: {
             calculatedValue: sumEquipmentStatus("healerGiveHpHealRatio", equipments) ?? new Decimal(0)
         },
         tenacity: standardCalc(overriddenValue.tenacity, {}, 0),
-        movementSpeed: movementSpeedSpeedCalc(overriddenValue.movementSpeed, {mastery: config.movementMastery}),
+        moveSpeed: movementSpeedSpeedCalc(overriddenValue.moveSpeed, {mastery: config.movementMastery}),
         slowResist: {
             calculatedValue: sumEquipmentStatus("slowResistRatio", equipments) ?? new Decimal(0)
         },
-        visionRange: standardCalc(overriddenValue.visionRange, {}, 2),
-        basicAttackRange: overriddenValue.basicAttackRange.calculatedValue ? {
-            ...overriddenValue.basicAttackRange,
-            calculatedValue: overriddenValue.basicAttackRange.calculatedValue
-        } : basicAttackRangeCalc(overriddenValue.basicAttackRange)
+        sightRange: standardCalc(overriddenValue.sightRange, {}, 2),
+        attackRange: overriddenValue.attackRange.calculatedValue ? {
+            ...overriddenValue.attackRange,
+            calculatedValue: overriddenValue.attackRange.calculatedValue
+        } : basicAttackRangeCalc(overriddenValue.attackRange)
     }
 
     const summoned = React.useMemo(() => SubjectSummonInfoDictionary[config.subject], [config.subject]);
@@ -282,4 +302,5 @@ export function useStatus(config: SubjectConfig): Status {
             nameIntlID: s.nameIntlID
         }))
     }
+        */
 }

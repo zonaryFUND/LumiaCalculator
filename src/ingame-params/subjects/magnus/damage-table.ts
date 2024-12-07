@@ -3,7 +3,7 @@ import { DamageTable, DamageTableGenerator } from "../type";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => {
-    const wCount = props.status.defense.additional?.dividedBy(Constants.W.additional_hit_per__additional_defense).floor()
+    const wCount = props.status.defense.additionalValue?.dividedBy(Constants.W.additional_hit_per__additional_defense).floor()
         .add(Constants.W.count).toNumber() ?? 0;
 
     return {

@@ -8,6 +8,6 @@ export function defenseCalc(seedValue: StatusValue, level: number): StatusValue 
 
     return {
         ...standard,
-        additional
+        additionalValue: additional
     }
 }

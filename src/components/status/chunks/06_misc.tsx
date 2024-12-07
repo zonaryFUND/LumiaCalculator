@@ -41,15 +41,15 @@ const misc: React.FC<Props> = props => {
             />
             <Column 
                 name={<><SneakerMove /><FormattedMessage id="status.movement-speed" /></>} 
-                value={props.status.movementSpeed.calculatedValue} 
+                value={props.status.moveSpeed.calculatedValue} 
                 expand={
                     <InnerTable>
-                        <tr><td><FormattedMessage id="app.subject" /></td><td>{props.status.movementSpeed.base?.toString()}</td></tr>
+                        <tr><td><FormattedMessage id="app.subject" /></td><td>{props.status.moveSpeed.base?.toString()}</td></tr>
                         <Equipment 
-                            {...props.status.movementSpeed.equipment}
+                            {...props.status.moveSpeed.equipment}
                             level={props.level}
                         />
-                        <Mastery perMastery={props.status.movementSpeed.perMastery!} name={<FormattedMessage id="status.movement-mastery" />} mastery={props.movementMastery} />
+                        <Mastery perMastery={props.status.moveSpeed.perMastery!} name={<FormattedMessage id="status.movement-mastery" />} mastery={props.movementMastery} />
                     </InnerTable>
                 }
                 isHidden={hidden}
@@ -62,36 +62,36 @@ const misc: React.FC<Props> = props => {
             />
             <Column 
                 name={<><Eye /><FormattedMessage id="status.vision" /></>} 
-                value={props.status.visionRange.calculatedValue} 
+                value={props.status.sightRange.calculatedValue} 
                 expand={
-                    props.status.visionRange.equipment == undefined ? null :
+                    props.status.sightRange.equipment == undefined ? null :
                     <InnerTable>
-                        <tr><td><FormattedMessage id="app.standard-value" /></td><td>{props.status.visionRange.base?.toString()}</td></tr>
-                        <tr><td><FormattedMessage id="app.additional-value" /></td><td>{props.status.visionRange.equipment?.constant?.toString()}</td></tr>
+                        <tr><td><FormattedMessage id="app.standard-value" /></td><td>{props.status.sightRange.base?.toString()}</td></tr>
+                        <tr><td><FormattedMessage id="app.additional-value" /></td><td>{props.status.sightRange.equipment?.constant?.toString()}</td></tr>
                     </InnerTable>
                 }
                 isHidden={hidden}
             />
             <Column 
                 name={<><ArrowFatLineRight />基本攻撃射程</>} 
-                value={props.status.basicAttackRange.calculatedValue} 
+                value={props.status.attackRange.calculatedValue} 
                 expand={
-                    props.status.basicAttackRange.equipment == undefined ? null :
+                    props.status.attackRange.equipment == undefined ? null :
                     <InnerTable>
-                        <tr><td><FormattedMessage id="app.standard-value" /></td><td>{props.status.basicAttackRange.base?.toString()}</td></tr>
-                        <tr><td><FormattedMessage id="app.weapon" /></td><td>{props.status.basicAttackRange.equipment?.constant?.toString()}</td></tr>
-                        {props.status.basicAttackRange.equipment?.ratio ? <tr><td><FormattedMessage id="app.additional-value" /></td><td>{props.status.basicAttackRange.equipment.ratio.toString()}</td></tr> : null}
+                        <tr><td><FormattedMessage id="app.standard-value" /></td><td>{props.status.attackRange.base?.toString()}</td></tr>
+                        <tr><td><FormattedMessage id="app.weapon" /></td><td>{props.status.attackRange.equipment?.constant?.toString()}</td></tr>
+                        {props.status.attackRange.equipment?.ratio ? <tr><td><FormattedMessage id="app.additional-value" /></td><td>{props.status.attackRange.equipment.ratio.toString()}</td></tr> : null}
                         {
-                            props.status.basicAttackRange.overrideAdditional ?
+                            props.status.attackRange.overrideAdditional ?
                             <tr>
-                                <td><FormattedMessage id={props.status.basicAttackRange.overrideAdditional.nameKey} /></td>
-                                <td>{props.status.basicAttackRange.overrideAdditional.value?.toString()}</td>
+                                <td><FormattedMessage id={props.status.attackRange.overrideAdditional.nameKey} /></td>
+                                <td>{props.status.attackRange.overrideAdditional.value?.toString()}</td>
                             </tr>
                             : null
                         }
                         {
-                            props.status.basicAttackRange.overrideFix ?
-                            <tr className={style.fixedvalue}><td><FormattedMessage id={props.status.basicAttackRange.overrideFix.nameKey} /></td><td>{props.status.basicAttackRange.overrideFix.value.toString()}</td></tr>
+                            props.status.attackRange.overrideFix ?
+                            <tr className={style.fixedvalue}><td><FormattedMessage id={props.status.attackRange.overrideFix.nameKey} /></td><td>{props.status.attackRange.overrideFix.value.toString()}</td></tr>
                             : null
                         }
                     </InnerTable>

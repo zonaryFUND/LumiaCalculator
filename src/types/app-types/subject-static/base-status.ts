@@ -1,16 +1,8 @@
 import Decimal from "decimal.js";
 import Dictionary from "@app/ingame-params/json/base-status.json";
+import { Status } from "app-types/subject-dynamic/status/type";
 
-type BaseStatusType = {
-    maxHp: Decimal,
-    maxSp: Decimal,
-    hpRegen: Decimal,
-    spRegen: Decimal,
-    attackPower: Decimal,
-    defense: Decimal,
-    attackSpeed: Decimal,
-    moveSpeed: Decimal
-};
+type BaseStatusType = Partial<Record<keyof Status, Decimal>>;
 
 export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = Dictionary.reduce(([rawData, apiCodeDictionary, codeMax], entry) => {
     const sanitizedID = (() => {
@@ -33,8 +25,8 @@ export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = Dictionary.red
                 defense: new Decimal(entry.defense).round(),
                 attackSpeed: new Decimal(entry.attackSpeed).cut(2, "round"),
                 moveSpeed: new Decimal(entry.moveSpeed).cut(2, "round")
-            }
-        },
+            } as BaseStatusType
+        } satisfies Record<SubjectCode, BaseStatusType>,
         {
             ...apiCodeDictionary,
             [entry.code]: sanitizedID
@@ -42,8 +34,8 @@ export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = Dictionary.red
         Math.max(codeMax, entry.code)
     ];
 }, [
-    {} as {[subjectCode: SubjectCode]: BaseStatusType}, 
-    {} as {[apiCode: number]: string},
+    {} as Record<SubjectCode, BaseStatusType>, 
+    {} as Record<number, string>,
     0
 ]);
 

@@ -22,7 +22,7 @@ const acceleratorStrategy: UniqueValueStrategy = (config, status) => {
                     {ratioKey: "base"},
                     `${base} + `,
                     {ratioKey: "additionalAttack"},
-                    `${status.attackPower.additional?.toString()} x ${Havoc.accelerator.damage.additionalAttack}% + `,
+                    `${status.attackPower.additionalValue?.toString()} x ${Havoc.accelerator.damage.additionalAttack}% + `,
                     {ratioKey: "amp"},
                     `${status.skillAmp.calculatedValue.toString()} x ${Havoc.accelerator.damage.amp}% = ${value.toString()}`
                 ]
@@ -51,7 +51,7 @@ const redSpriteStrategy: UniqueValueStrategy = (config, status) => {
                     {ratioKey: "level"},
                     `${config.level} x ${Chaos.red_sprite.damage.level} + `,
                     {ratioKey: attackIsBigger ? "additionalAttack" : "amp"},
-                    `${(attackIsBigger ? status.attackPower.additional : status.skillAmp.calculatedValue)?.toString()} x ${attackIsBigger ? Chaos.red_sprite.damage.additionalAttack : Chaos.red_sprite.damage.amp}`
+                    `${(attackIsBigger ? status.attackPower.additionalValue : status.skillAmp.calculatedValue)?.toString()} x ${attackIsBigger ? Chaos.red_sprite.damage.additionalAttack : Chaos.red_sprite.damage.amp}`
                 ]
             }
         ]

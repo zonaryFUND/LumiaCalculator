@@ -12,7 +12,7 @@ export const NathaponeTStrategy: UniqueValueStrategy = (config, status) => {
     const as = Constants.T.damage.attackSpeed;
     const value = new Decimal(Constants.T.damage.base[config.skillLevels.T])
         .add(status.skillAmp.calculatedValue.percent(amp))
-        .add(status.attackSpeed.additional?.percent(as) ?? 0)
+        .add(status.attackSpeed.additionalValue?.percent(as) ?? 0)
 
     return {
         value,
@@ -23,7 +23,7 @@ export const NathaponeTStrategy: UniqueValueStrategy = (config, status) => {
                     { ratioKey: "amp" },
                     `${status.skillAmp.calculatedValue.toString()} x ${amp}% +`,
                     { ratioKey: "additionalAttackSpeed" },
-                    `${status.attackSpeed.additional?.toString() ?? 0} x ${as}% = ${value}`
+                    `${status.attackSpeed.additionalValue?.toString() ?? 0} x ${as}% = ${value}`
                 ]
             }
         ]

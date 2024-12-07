@@ -34,15 +34,15 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
     },
     additionalAttack: {
         label: "追加攻撃力",
-        extract: status.attackPower.additional ?? 0
+        extract: status.attackPower.additionalValue ?? 0
     },
     maxHP: {
         label: <FormattedMessage id="status.maxhp" />,
-        extract: status.maxHP.calculatedValue
+        extract: status.maxHp.calculatedValue
     },
     additionalMaxHP: {
         label: <FormattedMessage id="status.additional-maxhp" />,
-        extract: status.maxHP.additional ?? 0
+        extract: status.maxHp.additionalValue ?? 0
     },
     defense: {
         label: <FormattedMessage id="status.defense" />,
@@ -59,10 +59,10 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
     },
     basicAttackAmp: {
         reducer: (p, v) => {
-            if (status.basicAttackAmp.calculatedValue.greaterThan(0)) {
+            if (status.increaseBasicAttackDamageRatio.calculatedValue.greaterThan(0)) {
                 return [
                     p.length > 1 ? <React.Fragment key="before-aa-amp">({p})</React.Fragment> : <React.Fragment key="before-aa-amp">{p}</React.Fragment>,
-                    <React.Fragment key="aa-amp"> x (<span className={table.small}>基本攻撃増幅</span>{status.basicAttackAmp.calculatedValue.toString()}% + 1)</React.Fragment>
+                    <React.Fragment key="aa-amp"> x (<span className={table.small}>基本攻撃増幅</span>{status.increaseBasicAttackDamageRatio.calculatedValue.toString()}% + 1)</React.Fragment>
                 ]
             } else {
                 return p
@@ -72,7 +72,7 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
     criticalChance: {
         reducer: (p, v) => [
             <React.Fragment key="before-critical-chance">({p})</React.Fragment>, 
-            <React.Fragment key="critical-chance"> x (<span className={table.small}>致命打確率</span>{status.criticalChance.calculatedValue.toString()}% x {v})</React.Fragment>
+            <React.Fragment key="critical-chance"> x (<span className={table.small}>致命打確率</span>{status.criticalStrikeChance.calculatedValue.toString()}% x {v})</React.Fragment>
         ]
     },
     stack: {
@@ -86,7 +86,7 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
     },
     additionalAttackSpeed: {
         label: "追加攻撃速度(%)",
-        extract: status.attackSpeed.additional ?? 0
+        extract: status.attackSpeed.additionalValue ?? 0
     }
 })
 

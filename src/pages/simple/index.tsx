@@ -16,13 +16,16 @@ import preferenceStyle from "./preference.module.styl";
 import { useToggle } from "react-use";
 import CollapseTab from "components/common/collapse-tab";
 import { SimpleCurrentConfigKey } from "@app/storage/simple";
-import { useSubjectConfig } from "components/config/use-subject-config";
-import { useStatus } from "app-types/subject-dynamic/status/use-status";
+import { styles } from "@app/util/style";
+import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
+import { useStatus } from "app-types/subject-dynamic/status/calculate-status";
+import { WeaponTypeID } from "app-types/equipment/weapon";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
 import { NavigationButtonContext } from "components/pages/navigation";
 
 import Content from "components/pages/base/content";
+import { useSubjectConfig } from "components/config/use-subject-config";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -40,7 +43,7 @@ const index: React.FC = props => {
 
     const configProps = useSubjectConfig(SimpleCurrentConfigKey);
     const status = useStatus(configProps.value);
-    const hp = React.useState(status.maxHP.calculatedValue.toNumber());
+    const hp = React.useState(status.maxHp.calculatedValue.toNumber());
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);

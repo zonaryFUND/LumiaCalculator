@@ -33,8 +33,8 @@ const criticalAvailable: React.FC<Props> = props => {
         props.skillLevel
     ).static;
 
-    const criticalChance = props.status.criticalChance.calculatedValue
-    const criticalDamagePlus = props.status.criticalDamage.calculatedValue;
+    const criticalChance = props.status.criticalStrikeChance.calculatedValue
+    const criticalDamagePlus = props.status.criticalStrikeDamage.calculatedValue;
 
     const criticalDamage = regularDamage.addPercent(BaseCriticalDamagePercent.add(criticalDamagePlus));
 

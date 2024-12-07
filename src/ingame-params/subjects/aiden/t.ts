@@ -5,12 +5,12 @@ import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/stan
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const AidenTStrategy: UniqueValueStrategy = (config, status) => {
-    const regularDamage = status.attackPower.calculatedValue.addPercent(status.basicAttackAmp.calculatedValue)
+    const regularDamage = status.attackPower.calculatedValue.addPercent(status.increaseBasicAttackDamageRatio.calculatedValue)
     const chanceConversionRatio = Constants.T.critical_chance_convert[config.skillLevels.T];
     const multiplier = BaseCriticalDamagePercent
         .add(100)
         .minus(Constants.T.critical_damage)
-        .add(status.criticalChance.calculatedValue.mul(chanceConversionRatio));
+        .add(status.criticalStrikeChance.calculatedValue.mul(chanceConversionRatio));
     const value = regularDamage.percent(multiplier);
 
     return {
@@ -24,9 +24,9 @@ export const AidenTStrategy: UniqueValueStrategy = (config, status) => {
                     {intlID: "T致命打基本値"},
                     `${BaseCriticalDamagePercent.sub(Constants.T.critical_damage).toString()}% + `,
                     {intlID: "T致命打率変換"},
-                    `${status.criticalChance.calculatedValue.toString()} x ${chanceConversionRatio}% + `,
+                    `${status.criticalStrikeChance.calculatedValue.toString()} x ${chanceConversionRatio}% + `,
                     {ratioKey: "criticalDamage"},
-                    `${status.criticalDamage.calculatedValue.toString()}%) = ${value.toString()}`
+                    `${status.criticalStrikeDamage.calculatedValue.toString()}%) = ${value.toString()}`
                 ]
             }
         ]

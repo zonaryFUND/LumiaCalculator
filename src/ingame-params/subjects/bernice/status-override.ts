@@ -7,8 +7,8 @@ const range = new Decimal(Constants.common.basic_attack_range);
 
 const f: StatusOverrideFunc = (status, config) => ({
     ...status,
-    basicAttackRange: {
-        ...status.basicAttackRange,
+    attackRange: {
+        ...status.attackRange,
         equipment: {
             constant: range.sub(BaseBasicAttackRange)
         },

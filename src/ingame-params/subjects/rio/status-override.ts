@@ -9,12 +9,12 @@ export function additionalPenetration(tSkillLevel: number, criticalChance: Decim
 }
 
 const f: StatusOverrideFunc = (status, config) => {
-    const additional = additionalPenetration(config.skillLevels.T, status.criticalChance.equipment?.constant ?? new Decimal(0));
+    const additional = additionalPenetration(config.skillLevels.T, status.criticalStrikeChance.equipment?.constant ?? new Decimal(0));
 
     return {
         ...status,
-        armorPenetrationRatio: {
-            ...status.armorPenetrationRatio,
+        penetrationDefenseRatio: {
+            ...status.penetrationDefenseRatio,
             overrideAdditional: {
                 nameKey: "subject.rio.passive-penetration",
                 value: additional

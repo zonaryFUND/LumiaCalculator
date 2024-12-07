@@ -7,6 +7,6 @@ export function maxHPCalc(seedValue: StatusValue, props: { level: number }): Sta
 
     return {
         ...standardCalc(seedValue, props, 0),
-        additional
+        additionalValue: additional
     }
 }

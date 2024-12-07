@@ -12,7 +12,7 @@ export const info: SkillTooltipProps = {
         // The cooldown reduction of DebiW peaks when her additional attack speed reaches 100%, 
         // at which point it becomes 35% of the original cooldown.
         return new Decimal(Constants.DebiW.cooldown)
-            .subPercent(status.attackSpeed.additional?.clamp(0, 100).times(0.65) ?? 0)
+            .subPercent(status.attackSpeed.additionalValue?.clamp(0, 100).times(0.65) ?? 0)
             .subPercent(status.cooldownReduction.calculatedValue).round2();
     },
     values: ({ showEquation }) => ({

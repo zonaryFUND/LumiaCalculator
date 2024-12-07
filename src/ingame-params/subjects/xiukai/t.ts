@@ -8,7 +8,7 @@ export const info: SkillTooltipProps = {
     skillKey: "T",
     values: ({ status }) => ({
         0: RatioPercent(Constants.T.food),
-        1: status.maxHP.overrideAdditional?.value?.toString() ?? "",
+        1: status.maxHp.overrideAdditional?.value?.toString() ?? "",
         6: Constants.T.max_hp,
         11: Constants.T.max_stack
     }),

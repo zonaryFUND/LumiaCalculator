@@ -7,7 +7,7 @@ import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 export const code = 1025100;
 
 export function BerniceCriticalDamage(status: Status): Decimal {
-    return new Decimal(Constants.T.second_damage_multiplier).addPercent(status.criticalDamage.calculatedValue)
+    return new Decimal(Constants.T.second_damage_multiplier).addPercent(status.criticalStrikeDamage.calculatedValue)
 }
 
 export const info: SkillTooltipProps = {

@@ -5,7 +5,7 @@ import { StateProps } from "@app/util/state";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { useStatus } from "app-types/subject-dynamic/status/use-status";
+import { useStatus } from "app-types/subject-dynamic/status/calculate-status";
 import * as React from "react";
 import { useLocalStorage } from "react-use";
 import { useLocalStorageConfig } from "@app/storage/config";
@@ -54,12 +54,12 @@ export default function useCombatConfig(target: "left" | "right"): Response {
         storage.overwrite(currentPresetKey!, config.value)
     }, [currentPresetKey, config.value]);
     
-    const hp = React.useState(status.maxHP.calculatedValue.toNumber());
+    const hp = React.useState(status.maxHp.calculatedValue.toNumber());
     React.useEffect(() => {
-        if (status.maxHP.calculatedValue.lessThan(hp[0])) {
-            hp[1](status.maxHP.calculatedValue.toNumber())
+        if (status.maxHp.calculatedValue.lessThan(hp[0])) {
+            hp[1](status.maxHp.calculatedValue.toNumber())
         }
-    }, [status.maxHP])
+    }, [status.maxHp])
 
     return {
         config: config.value,

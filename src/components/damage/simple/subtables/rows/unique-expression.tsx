@@ -50,7 +50,7 @@ const uniqueExpression: React.FC<Props> = props => {
         </tr>
     });
 
-    const healPower = props.type?.type == "heal" && props.status.healPower.calculatedValue.greaterThan(0) ? props.status.healPower.calculatedValue : undefined;
+    const healPower = props.type?.type == "heal" && props.status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ? props.status.healerGiveHpHealRatio.calculatedValue : undefined;
     const healPowerConcerned = Array.isArray(sanitizedValue) ? sanitizedValue.map(v => v?.addPercent(healPower || 0)) : sanitizedValue.addPercent(healPower || 0);
 
     return (

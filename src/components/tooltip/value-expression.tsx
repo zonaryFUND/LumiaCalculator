@@ -65,7 +65,7 @@ const ValueExpression: React.FC<Props> = props => {
             {
                 props.brackets ? 
                 props.id == "basicAttackAmp" ? "*(" : 
-                props.id == "criticalChance" ? `+${status!.criticalChance.calculatedValue.percent(value as number).toString()}% = (` : "(+" 
+                props.id == "criticalChance" ? `+${status!.criticalStrikeChance.calculatedValue.percent(value as number).toString()}% = (` : "(+" 
                 : null
             }
             {

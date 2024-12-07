@@ -11,14 +11,14 @@ const f: SummonedStatusFunc = (chloeStatus, config) => {
     const tDefense = Constants.T.nina_defense[chloeTLevel];
 
     return {
-        maxHP: chloeStatus.maxHP.calculatedValue.percent(chloeRatio).add(tMaxHP),
+        maxHP: chloeStatus.maxHp.calculatedValue.percent(chloeRatio).add(tMaxHP),
         attackPower: chloeStatus.attackPower.calculatedValue.percent(chloeRatio).add(tAttack).add(Constants.nina.base_attack),
         defense: chloeStatus.defense.calculatedValue.percent(chloeRatio).add(tDefense).add(Constants.nina.base_defense),
         attackSpeed: new Decimal(Constants.nina.attack_speed),
-        criticalChance: chloeStatus.criticalChance.calculatedValue.percent(chloeRatio),
+        criticalChance: chloeStatus.criticalStrikeChance.calculatedValue.percent(chloeRatio),
         skillAmp: chloeStatus.skillAmp.calculatedValue.percent(chloeRatio),
-        armorPenetration: chloeStatus.armorPenetration.calculatedValue.percent(chloeRatio),
-        armorPenetrationRatio: chloeStatus.armorPenetrationRatio.calculatedValue.percent(chloeRatio)
+        armorPenetration: chloeStatus.penetrationDefense.calculatedValue.percent(chloeRatio),
+        armorPenetrationRatio: chloeStatus.penetrationDefenseRatio.calculatedValue.percent(chloeRatio)
     }
 }
 

@@ -21,19 +21,19 @@ const heal: React.FC<Props> = props => {
             <tr className={table.separator} onClick={toggleHidden}><td colSpan={2}><div><p><FormattedMessage id="app.heal" /></p>{hidden ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
             <Column 
                 name={<><Drop /><FormattedMessage id="status.lifesteal" /></>} 
-                value={props.status.lifeSteal.calculatedValue} 
+                value={props.status.normalLifeSteal.calculatedValue} 
                 percent 
                 isHidden={hidden} 
             />
             <Column 
                 name={<><Drop /><FormattedMessage id="status.omnisyphon" /></>} 
-                value={props.status.omnisyphon.calculatedValue} 
+                value={props.status.lifeSteal.calculatedValue} 
                 percent 
                 isHidden={hidden} 
             />
             <Column 
                 name={<><FirstAidKit /><FormattedMessage id="status.heal-power" /></>} 
-                value={props.status.healPower.calculatedValue} 
+                value={props.status.healerGiveHpHealRatio.calculatedValue} 
                 percent 
                 isHidden={hidden} 
             />

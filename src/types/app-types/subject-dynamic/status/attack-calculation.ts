@@ -8,7 +8,7 @@ export function attackCalc(seedValue: StatusValue, props: { level: number, maste
 
     return {
         ...standard,
-        additional,
+        additionalValue: additional,
         calculatedValue: standard.calculatedValue.addPercent(seedValue.overrideAdditional?.ratio ?? 0).round()
     }
 }

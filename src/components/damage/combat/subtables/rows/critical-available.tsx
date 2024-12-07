@@ -13,11 +13,11 @@ type Props = DamageTableUnit & {
 }
 
 const criticalAvailable: React.FC<Props> = props => {
-    const criticalChance = props.status.criticalChance.calculatedValue;
+    const criticalChance = props.status.criticalStrikeChance.calculatedValue;
     const showCritical = criticalChance.greaterThan(0);
     const showExpected = showCritical && criticalChance.lessThan(100);
 
-    const criticalDamage = BaseCriticalDamagePercent.add(100).add(props.status.criticalDamage.calculatedValue);
+    const criticalDamage = BaseCriticalDamagePercent.add(100).add(props.status.criticalStrikeDamage.calculatedValue);
     const expected = new Decimal(100).sub(criticalChance).add(criticalDamage.percent(criticalChance));
 
     const modifiedMultiplier = (added: number) => {

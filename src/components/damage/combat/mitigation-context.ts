@@ -40,8 +40,8 @@ function defenseMitigationPercentage(rawDefense: Decimal, penetration: Decimal):
 export function createMitigation(status: Status, targetStatus: Status): Mitigation {
     const targetDefense = targetStatus.defense.calculatedValue;
 
-    const penetration = status.armorPenetration.calculatedValue
-        .add(targetDefense.percent(status.armorPenetrationRatio.calculatedValue).floor())
+    const penetration = status.penetrationDefense.calculatedValue
+        .add(targetDefense.percent(status.penetrationDefenseRatio.calculatedValue).floor())
     
     const summonedPenetration = status.summoned ? status.summoned[0].status.armorPenetration.add(
         targetDefense.percent(status.summoned[0].status.armorPenetrationRatio).floor()
@@ -56,13 +56,13 @@ export function createMitigation(status: Status, targetStatus: Status): Mitigati
         {
             labelIntlID: "app.mitigation.defense-mastery",
             mitigationType: "ratio",
-            value: targetStatus.basicAttackReduction.calculatedValue
+            value: targetStatus.preventBasicAttackDamagedRatio.calculatedValue
         },
-        targetStatus.basicAttackReductionConstant.overrideAdditional ?
+        targetStatus.preventBasicAttackDamaged.overrideAdditional ?
         {
-            labelIntlID: targetStatus.basicAttackReductionConstant.overrideAdditional.nameKey,
+            labelIntlID: targetStatus.preventBasicAttackDamaged.overrideAdditional.nameKey,
             mitigationType: "constant",
-            value: targetStatus.basicAttackReductionConstant.calculatedValue
+            value: targetStatus.preventBasicAttackDamaged.calculatedValue
         } : undefined
     ].filter((e): e is {
         labelIntlID: string
@@ -72,7 +72,7 @@ export function createMitigation(status: Status, targetStatus: Status): Mitigati
 
     const skillMitigation = [{
         labelIntlID: "app.mitigation.defense-mastery",
-        value: targetStatus.skillReduction.calculatedValue
+        value: targetStatus.preventSkillDamagedRatio.calculatedValue
     }];
 
     return {

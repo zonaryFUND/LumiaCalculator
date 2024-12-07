@@ -11,10 +11,10 @@ export const code = 1031100;
 
 function rioBasicAttackMultiplier(status: Status): Decimal {
     const base = Constants.T.basic_attack_damage.base;
-    const multiplied = new Decimal(Constants.T.basic_attack_damage.criticalBase).add(status.criticalDamage.calculatedValue)
+    const multiplied = new Decimal(Constants.T.basic_attack_damage.criticalBase).add(status.criticalStrikeDamage.calculatedValue)
 
     return new Decimal(base)
-        .add(status.criticalChance.calculatedValue.mul(multiplied).div(100))
+        .add(status.criticalStrikeChance.calculatedValue.mul(multiplied).div(100))
 }
 
 export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValueStrategy {
@@ -29,7 +29,7 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValue
         const tRatio = rioBasicAttackMultiplier(status);
         const value = status.attackPower.calculatedValue
             .percent(bowRatio)
-            .addPercent(status.basicAttackAmp.calculatedValue)
+            .addPercent(status.increaseBasicAttackDamageRatio.calculatedValue)
             .percent(tRatio)
 
         return {
@@ -41,7 +41,7 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValue
                         {ratioKey: "attack"},
                         `${status.attackPower.calculatedValue.toString()} x ${bowRatio}% x (`,
                         {ratioKey: "basicAttackAmp"},
-                        `${status.basicAttackAmp.calculatedValue.toString()}% + 1) = ${value.toString()}`
+                        `${status.increaseBasicAttackDamageRatio.calculatedValue.toString()}% + 1) = ${value.toString()}`
                     ]
                 },
                 {
@@ -49,9 +49,9 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValue
                     expression: [
                         `${Constants.T.basic_attack_damage.base}% + (`,
                         {ratioKey: "criticalChance"},
-                        `${status.criticalChance.calculatedValue.toString()}% x (${BaseCriticalDamagePercent}% + `,
+                        `${status.criticalStrikeChance.calculatedValue.toString()}% x (${BaseCriticalDamagePercent}% + `,
                         {ratioKey: "criticalDamage"},
-                        `${status.criticalDamage.calculatedValue.toString()}%)) = ${tRatio}%`
+                        `${status.criticalStrikeDamage.calculatedValue.toString()}%)) = ${tRatio}%`
                     ]
                 }
             ]
@@ -76,7 +76,7 @@ export const info: SkillTooltipProps = {
             }
         } else {
             return {
-                0: RatioPercent(additionalPenetration(config.skillLevels.T, status.criticalChance.calculatedValue).toString()),
+                0: RatioPercent(additionalPenetration(config.skillLevels.T, status.criticalStrikeChance.calculatedValue).toString()),
                 1: RatioPercent(rioBasicAttackMultiplier(status).floor().toNumber())
             }
         }

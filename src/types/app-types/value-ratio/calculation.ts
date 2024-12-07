@@ -34,23 +34,23 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
                 case "level":
                     return prev.static.add(selectedValue.times(config.level));
                 case "maxHP":
-                    return prev.static.add(status.maxHP.calculatedValue.percent(selectedValue));
+                    return prev.static.add(status.maxHp.calculatedValue.percent(selectedValue));
                 case "additionalMaxHP":
-                    return prev.static.add(status.maxHP.additional?.percent(selectedValue) ?? 0);
+                    return prev.static.add(status.maxHp.additionalValue?.percent(selectedValue) ?? 0);
                 case "maxSP":
-                    return prev.static.add(status.maxSP.calculatedValue.percent(selectedValue));
+                    return prev.static.add(status.maxSp.calculatedValue.percent(selectedValue));
                 case "defense":
                     return prev.static.add(status.defense.calculatedValue.percent(selectedValue));
                 case "attack":
                     return prev.static.add(status.attackPower.calculatedValue.percent(selectedValue));
                 case "additionalAttack":
-                    return prev.static.add(status.attackPower.additional?.percent(selectedValue) ?? 0);
+                    return prev.static.add(status.attackPower.additionalValue?.percent(selectedValue) ?? 0);
                 case "basicAttackAmp":
-                    return prev.static.addPercent(status.basicAttackAmp.calculatedValue);
+                    return prev.static.addPercent(status.increaseBasicAttackDamageRatio.calculatedValue);
                 case "criticalChance":
-                    return prev.static.addPercent(status.criticalChance.calculatedValue.percent(selectedValue));
+                    return prev.static.addPercent(status.criticalStrikeChance.calculatedValue.percent(selectedValue));
                 case "additionalAttackSpeed":
-                    return prev.static.add(status.attackSpeed.additional?.percent(selectedValue) ?? 0);
+                    return prev.static.add(status.attackSpeed.additionalValue?.percent(selectedValue) ?? 0);
                 case "amp":
                     return prev.static.add(status.skillAmp.calculatedValue.percent(selectedValue));
                 case "stack":

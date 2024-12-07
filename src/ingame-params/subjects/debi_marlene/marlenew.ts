@@ -11,7 +11,7 @@ export function projectileAmount(status: Status): number {
     // NOTE: This multiplier is an estimated value.
     // The number of extra projectiles from additional attack speed peaks when it reaches 100%. 
     // Unlike other calculations in-game, this projectile count calculation truncates any decimal places.
-    return status.attackPower.additional?.clamp(0, 100).times(0.07).floor().toNumber() ?? 0;
+    return status.attackPower.additionalValue?.clamp(0, 100).times(0.07).floor().toNumber() ?? 0;
 }
 
 export const MarleneWStrategy: UniqueValueStrategy = (config, status) => {
@@ -25,7 +25,7 @@ export const MarleneWStrategy: UniqueValueStrategy = (config, status) => {
                 expression: [
                     `${base} + min(100, `,
                     { ratioKey: "additionalAttackSpeed" },
-                    `${status.attackSpeed.additional?.toString()}) x 0.07 = ${value}`
+                    `${status.attackSpeed.additionalValue?.toString()}) x 0.07 = ${value}`
                 ]
             }
         ]
@@ -39,7 +39,7 @@ export const info: SkillTooltipProps = {
         // The cooldown reduction of DebiQ peaks when her additional attack speed reaches 120%, 
         // at which point it becomes 30% of the original cooldown.
         return new Decimal(Constants.MarleneW.cooldown)
-            .subPercent(status.attackSpeed.additional?.clamp(0, 100).dividedBy(2) ?? 0)
+            .subPercent(status.attackSpeed.additionalValue?.clamp(0, 100).dividedBy(2) ?? 0)
             .subPercent(status.cooldownReduction.calculatedValue).round2();
     },
     values: ({ showEquation, status }) => {

@@ -13,7 +13,7 @@ const f: StatusOverrideFunc = (status, config) => {
 
     return {
         ...status,
-        basicAttackReductionConstant: {
+        preventBasicAttackDamaged: {
             overrideAdditional: {
                 nameKey: "subject.garnet.passive-damage-reduction",
                 value

@@ -17,7 +17,7 @@ const criticalHit: React.FC<Props> = props => {
             <td>
                 {props.regularDamage.toString()}
                 <> x </>
-                (175% + <span className={table.small}><FormattedMessage id="status.critical-damage" /></span>{props.status.criticalDamage.calculatedValue.toString()}%)
+                (175% + <span className={table.small}><FormattedMessage id="status.critical-damage" /></span>{props.status.criticalStrikeDamage.calculatedValue.toString()}%)
                 <> = </>
                 {props.criticalDamage.toString()}
             </td>

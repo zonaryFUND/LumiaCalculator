@@ -22,8 +22,8 @@ type Props = SubjectConfig & {
 const toughness: React.FC<Props> = props => {
     const {value: hidden, toggleValue: toggleHidden} = useStorageBoolean(ToughnessTableHiddenKey);
     const effectiveToughness = React.useMemo(() => {
-        return props.status.maxHP.calculatedValue.times(props.status.defense.calculatedValue.add(100).dividedBy(100));
-    }, [props.status.maxHP.calculatedValue, props.status.defense.calculatedValue]);
+        return props.status.maxHp.calculatedValue.times(props.status.defense.calculatedValue.add(100).dividedBy(100));
+    }, [props.status.maxHp.calculatedValue, props.status.defense.calculatedValue]);
 
     return (
         <tbody>
@@ -32,14 +32,14 @@ const toughness: React.FC<Props> = props => {
             </tr>
             <Column 
                 name={<><FirstAid weight="fill" /><FormattedMessage id="status.maxhp"/></>} 
-                value={props.status.maxHP.calculatedValue} 
-                expand={<StandardExpand {...props.status.maxHP} level={props.level} digit={0} />}
+                value={props.status.maxHp.calculatedValue} 
+                expand={<StandardExpand {...props.status.maxHp} level={props.level} digit={0} />}
                 isHidden={hidden}
             />
             <Column 
                 name={<><FirstAid /><FormattedMessage id="status.hpregen"/></>} 
-                value={props.status.hpReg.calculatedValue} 
-                expand={<StandardExpand {...props.status.hpReg} level={props.level} digit={2} />}
+                value={props.status.hpRegen.calculatedValue} 
+                expand={<StandardExpand {...props.status.hpRegen} level={props.level} digit={2} />}
                 isHidden={hidden}
             />
             <Column 
@@ -51,24 +51,24 @@ const toughness: React.FC<Props> = props => {
             <Column 
                 name={<><span className={style.reduction}><Shield /><Sword /></span><FormattedMessage id="status.basic-attack-damage-reduction" /></>} 
                 value={
-                    props.status.basicAttackReductionConstant.calculatedValue.greaterThan(0) ?
+                    props.status.preventBasicAttackDamaged.calculatedValue.greaterThan(0) ?
                     <>
-                        {props.status.basicAttackReduction.calculatedValue.toString()}
+                        {props.status.preventBasicAttackDamagedRatio.calculatedValue.toString()}
                         <>% / </>
-                        {props.status.basicAttackReductionConstant.calculatedValue.toString()}
+                        {props.status.preventBasicAttackDamaged.calculatedValue.toString()}
                     </> :
-                    props.status.basicAttackReduction.calculatedValue
+                    props.status.preventBasicAttackDamagedRatio.calculatedValue
                 } 
                 percent 
                 isHidden={hidden}
                 expand={
                     <InnerTable>
-                        <Mastery perMastery={props.status.basicAttackReduction.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />
+                        <Mastery perMastery={props.status.preventBasicAttackDamagedRatio.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />
                         {
-                            props.status.basicAttackReductionConstant.overrideAdditional ?
+                            props.status.preventBasicAttackDamaged.overrideAdditional ?
                             <tr>
-                                <td><FormattedMessage id={props.status.basicAttackReductionConstant.overrideAdditional.nameKey} /></td>
-                                <td>{props.status.basicAttackReductionConstant.overrideAdditional.value?.floor().toString()}</td>
+                                <td><FormattedMessage id={props.status.preventBasicAttackDamaged.overrideAdditional.nameKey} /></td>
+                                <td>{props.status.preventBasicAttackDamaged.overrideAdditional.value?.floor().toString()}</td>
                             </tr> 
                             :
                             null
@@ -78,13 +78,13 @@ const toughness: React.FC<Props> = props => {
             />
             <Column 
                 name={<><span className={style.reduction}><Shield /><ArrowFatLinesUp weight="fill" /></span><FormattedMessage id="status.skill-damage-reduction" /></>} 
-                value={props.status.skillReduction.calculatedValue} 
+                value={props.status.preventSkillDamagedRatio.calculatedValue} 
                 percent 
                 isHidden={hidden}
                 expand={
                     <InnerTable>
-                        <Mastery perMastery={props.status.skillReduction.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />
-                        {props.status.skillReduction.equipment ? <Equipment {...props.status.skillReduction.equipment} level={props.level} percent={true} /> : null} 
+                        <Mastery perMastery={props.status.preventSkillDamagedRatio.perMastery!} name={<FormattedMessage id="status.defense-mastery" />} mastery={props.defenseMastery} />
+                        {props.status.preventSkillDamagedRatio.equipment ? <Equipment {...props.status.preventSkillDamagedRatio.equipment} level={props.level} percent={true} /> : null} 
                     </InnerTable>
                 }
             />

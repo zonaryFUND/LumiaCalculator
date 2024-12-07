@@ -5,7 +5,7 @@ import Weapons from "@app/ingame-params/json/weapon.json";
 import Armors from "@app/ingame-params/json/armor.json";
 import { Locales } from "@app/App";
 import { SubjectConfigDefault } from "app-types/subject-dynamic/config";
-import { useStatus } from "app-types/subject-dynamic/status/use-status";
+import { useStatus } from "app-types/subject-dynamic/status/calculate-status";
 import { IntlProvider } from "react-intl";
 import Tooltip from "@app/components/tooltip/item/item-tooltip"
 

@@ -28,8 +28,8 @@ const f: StatusOverrideFunc = (status, config) => ({
         },
         calculatedValue: new Decimal(Constants.T.attack_speed)
     },
-    basicAttackRange: {
-        ...status.basicAttackRange,
+    attackRange: {
+        ...status.attackRange,
         overrideAdditional: {
             nameKey: "subject.adela.passive-range",
             value: new Decimal(Constants.T.additional_attack_range)

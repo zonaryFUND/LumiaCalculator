@@ -18,6 +18,6 @@ export function attackSpeedCalc(seedValue: StatusValue, props: { mastery: number
         ...seedValue,
         calculatedValue: constant
             .addPercent(multiplier).round2(),
-        additional: multiplier
+        additionalValue: multiplier
     }
 }
