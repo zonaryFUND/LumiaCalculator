@@ -22,7 +22,7 @@ export const info: SkillTooltipProps = {
                 0: Constants.R.max_stack,
                 1: Constants.R.stack_damage.base,
                 2: RatioPercent(Constants.R.stack_damage.attack),
-                3: "0%",
+                3: RatioPercent(Constants.R.stack_damage.targetMaxHP),
                 4: Constants.R.stack_slow.duration,
                 5: RatioPercent(Constants.R.stack_slow.effect),
                 6: Constants.R.damage.base,
