@@ -20,7 +20,9 @@ const table: DamageTableGenerator = props => ({
         [{label: "E", skill: "E", value: Constants.E.damage}],
         [
             {label: props.intl.formatMessage({id: "subject.luke.r-min"}), skill: "R", value: Constants.R.damage},
-            {label: props.intl.formatMessage({id: "subject.luke.r-max"}), skill: "R", value: Constants.R.damage, multiplier: Constants.R.max_multiplier * 100}
+            {label: props.intl.formatMessage({id: "subject.luke.r-max"}), skill: "R", value: Constants.R.damage, multiplier: Constants.R.max_multiplier * 100},
+            {label: props.intl.formatMessage({id: "subject.luke.r-additional-1stack"}), skill: "R", value: Constants.R.stack_damage},
+            {label: props.intl.formatMessage({id: "subject.luke.r-additional-max-stack"}, {value: Constants.R.max_stack}), skill: "R", value: Constants.R.stack_damage, multiplier: Constants.R.max_stack * 100}
         ]
     ]   
 })

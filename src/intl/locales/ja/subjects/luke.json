@@ -5,5 +5,7 @@
     "subject.luke.w-heal-min": "進化W回復(最小)",
     "subject.luke.w-heal-max": "進化W回復(最大)",
     "subject.luke.r-min": "R最小",
-    "subject.luke.r-max": "R最大"
+    "subject.luke.r-max": "R最大",
+    "subject.luke.r-additional-1stack": "Rパッシブ追加ダメージ(1スタック)",
+    "subject.luke.r-additional-max-stack": "Rパッシブ追加ダメージ最大({value}スタック)"
 }
