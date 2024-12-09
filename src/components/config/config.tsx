@@ -13,6 +13,7 @@ import { SubjectConfig } from "app-types/subject-dynamic/config/type";
 import { FormattedMessage, useIntl } from "react-intl";
 import ThrottleSlider from "./throttle-slider";
 import { SubjectStackInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 
 export type ConfigModifierProps = {
     [K in keyof SubjectConfig]: StateProps<SubjectConfig[K]>
@@ -25,6 +26,7 @@ export type CurrentHPProps = {
 
 const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
     const intl = useIntl();
+    const uiType = useResponsiveUIType();
     const subjectID = SubjectCodeWithOldID[props.subject[0]];
     const [selectingSubject, toggleSelectingSubject] = useToggle(false);
     const onChangeSubject = React.useCallback((code: SubjectCode) => {
@@ -93,7 +95,13 @@ const config: React.FC<ConfigModifierProps & CurrentHPProps> = props => {
                 </div>
 
                 <div>
-                    <h3>装備</h3>
+                    <h3>
+                        装備<span>
+                            {
+                                uiType == "mobile" ? "ダブルタップでツールチップを表示" : "マウスオーバーでツールチップを表示"
+                            }
+                        </span>
+                    </h3>
                     <div className={style.equipment}>
                     <EquipmentSlot slot="Weapon" subject={props.subject[0]} equipment={props.equipment} />
                     <EquipmentSlot slot="Chest" subject={props.subject[0]} equipment={props.equipment} />

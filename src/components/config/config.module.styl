@@ -4,6 +4,10 @@
     gap: 12px
     padding: 8px
 
+    h3
+        span
+            font-size: 0.8rem
+
 .top
     display: flex
     gap: 8px
@@ -34,8 +38,9 @@
 
 
 .equipment
-    text-align: center
-    margin-right: -2px
+    display: grid
+    justify-content: space-between
+    gap: 2px
+    grid-template-columns: repeat(5, 1fr)
+    max-width: 380px
     
-    >*
-        margin-right: 2px

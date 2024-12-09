@@ -17,7 +17,7 @@ import SaveBuild from "components/modal/save-build";
 import saveStyle from "components/modal/save-build/index.module.styl";
 
 import ItemTooltip from "components/tooltip/item/item-tooltip";
-import TooltipPresenter from "components/tooltip/skill";
+import TooltipPresenter from "components/tooltip";
 import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 import useStorageBoolean from "@app/storage/boolean";
@@ -89,7 +89,7 @@ const index: React.FC = props => {
                         <Gear fontSize={44} weight="fill" onClick={toggleShowingPreference}  />
                     </div>
                 </header>
-                <CollapseTab collapse={collapse}>
+                <CollapseTab>
                     <SubjectSideContext.Provider value="left">
                         <Subject
                             config={left.config}

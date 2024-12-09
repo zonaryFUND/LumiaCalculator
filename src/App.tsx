@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Base from "components/pages/base";
 import Modal from "react-modal"
 import Simple from "./pages/simple";
 import Combat from "./pages/combat";
-import Navigation from 'components/pages/navigation/navigation';
+import Navigation, { NavigationButtonContext, useNavigationButtonState } from 'components/pages/navigation';
 import { Route, Routes } from 'react-router';
 import { IntlProvider } from 'react-intl';
+import { OpenModalItemProps, TooltipContext, useOpenModalItemRef, useOpenModalSkillRef } from 'components/tooltip/tooltip-context';
+import { TooltipRefProps } from 'react-tooltip';
 
 const files = import.meta.glob<Record<"default", Record<string, string>>>("./intl/locales/**/*.json", {eager: true});
 export const Locales = Object.entries(files).reduce((locales, [path, m]) => {
@@ -25,16 +28,27 @@ function App({}: AppProps) {
         Modal.setAppElement("#root");
     });
 
+    const navigation = useNavigationButtonState();
+
+    const skillTooltipRef = useOpenModalSkillRef();
+    const itemTooltipRef = useOpenModalItemRef();
+
     return (
         <IntlProvider locale={"ja"} messages={Locales["ja"]} onError={error => {
             
         }} >
-            <Navigation />
-            <Routes>
-                <Route path="/" element={<Simple />} />
-                <Route path="/simple" element={<Simple />} />
-                <Route path="/combat" element={<Combat />} />
-            </Routes>
+            <NavigationButtonContext.Provider value={navigation}>
+            <TooltipContext.Provider value={{openModalSkill: skillTooltipRef, openModalItem: itemTooltipRef}}>
+                <Navigation />
+                <Base>
+                    <Routes>
+                        <Route path="/" element={<Simple />} />
+                        <Route path="/simple" element={<Simple />} />
+                        <Route path="/combat" element={<Combat />} />
+                    </Routes>
+                </Base>
+            </TooltipContext.Provider>
+            </NavigationButtonContext.Provider>
         </IntlProvider>
     );
 }

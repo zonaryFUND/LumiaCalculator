@@ -1,6 +1,11 @@
 .tooltip
     width: 500px
+    max-width: 100vw
+    max-height: 90vh
     font-weight: bold
+
+    @media screen and (max-width: 1000px)
+        overflow-y: scroll
 
     .header
         display: flex

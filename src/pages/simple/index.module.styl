@@ -1,9 +1,4 @@
-.simple
-    padding: 16px
-    height: 100vh
-    position: relative
-
-.parent
+.pcsimple
     display: flex
     flex-direction: column
     align-items: stretch
@@ -12,6 +7,13 @@
     gap: 16px
     margin: 0 auto
     max-width: 1300px
+
+.mobilesimple
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    width: 100%
+    height: 100%
 
 .header
     display: flex
@@ -61,32 +63,6 @@
     .config
         color: var(--c3)
 
-.row
-    display: flex
-    flex-direction: column
-    flex-shrink: 2
-    min-width: 300px
-    max-width: 400px
-    width: 100%
-    height: 100%
-    background: white
-
-    >header
-        background: var(--c4)
-        color: white
-        padding: 8px
-        font-size: 10px
-    
-    h2
-        font-size: 1.5rem   
-
-    h3
-        font-size: 1.2rem
-        margin-bottom: 2px
-
-.content
-    overflow-y: scroll
-    flex-grow: 1
 
 .simple
     .tooltip

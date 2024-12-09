@@ -7,27 +7,28 @@ import { ArmorTypeID } from "app-types/equipment/armor";
 
 type Props = {
     slot: "Weapon" | ArmorTypeID
+    onClick: () => void
 }
 
 const blank: React.FC<Props> = props => {
     const icon = React.useMemo(() => {
         switch (props.slot) {
             case "Weapon":
-                return <Sword size="2rem" />;
+                return <Sword size="90%" />;
             case "Chest":
-                return <TShirt size="2rem" />;
+                return <TShirt size="90%" />;
             case "Head":
-                return <BaseballCap size="2rem" />;
+                return <BaseballCap size="90%" />;
             case "Arm":
-                return <Hand size="2rem" />;
+                return <Hand size="90%" />;
             case "Leg":
-                return <Sneaker size="2rem" />;
+                return <Sneaker size="90%" />;
         }
         
     }, [props.slot]);
 
     return (
-        <div className={styles(style.blank, base.base)}>
+        <div className={styles(style.blank, base.base)} onClick={props.onClick}>
             {icon}
         </div>
     );

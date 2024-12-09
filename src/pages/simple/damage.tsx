@@ -1,9 +1,8 @@
 import * as React from "react";
-import index from "./index.module.styl";
 import SubjectSkills from "components/subject/skills";
 import Table from "components/damage/simple/damage-table";
 import style from "./damage.module.styl";
-import { styles } from "@app/util/style";
+import TabUnit from "components/common/tab/tab-unit";
 
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { Status } from "app-types/subject-dynamic/status/type";
@@ -14,26 +13,17 @@ type Props = {
     config: SubjectConfig
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
     weaponType?: WeaponTypeID
-    hideHeader?: boolean
 }
 
 const damages: React.FC<Props> = props => {
     return (
-        <div className={styles(index.row, style.damage)}>
-            {
-                props.hideHeader ? null :
-                <header>
-                    <h1>ダメージ</h1>
-                </header>
-            }
-            <div className={index.content}>
+        <TabUnit title="ダメージ">
             <section className={style.skill}>
                 <h3>スキル</h3>
                 <SubjectSkills config={props.config} setSkillLevels={props.setSkillLevels} />
             </section>
             <Table status={props.status} config={props.config} weaponType={props.weaponType} />
-            </div>
-        </div>
+        </TabUnit>
     )
 };
 

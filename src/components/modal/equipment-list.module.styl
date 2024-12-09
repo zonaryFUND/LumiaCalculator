@@ -4,7 +4,7 @@
     align-items: stretch
     position: absolute
     background: var(--base)
-    max-width: 600px
+    max-width: min(600px, 95vw)
     height: 80vh
     margin: auto
     inset: 0
@@ -15,16 +15,35 @@
     >*
         padding: 16px
 
-    header
+    >header
         display: flex
+        flex-direction: column
         justify-content: space-between
-        align-items: center
+        align-items: stretch
         border-bottom: 1px solid lightgray
         padding: 0 0 16px
         margin: 16px 16px 0
 
         h1
+            display: flex
+            justify-content: space-between
+            align-items: center
             font-size: 2rem
+
+        p
+            font-size: 0.8rem
+
+    section header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 8px
+
+        p
+            font-size: 0.8rem
+            line-height: 0.9rem
+            text-align: right
+
 
     .content
         flex: 1
@@ -35,8 +54,8 @@
         display: grid
         place-content: start
         grid-template-columns: repeat(auto-fill, 76px)
-        column-gap: 12px
-        row-gap: 16px
+        column-gap: 8px
+        row-gap: 8px
         align-items: start
     
 
@@ -50,6 +69,9 @@
         align-items: center
         position: relative
         justify-content: center
+
+        >div
+            aspect-ratio: 74 / 41
 
         p
             position: relative

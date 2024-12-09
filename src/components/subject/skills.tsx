@@ -7,7 +7,7 @@ import { SubjectSideContext } from "../../ingame-params/subjects/subject-side";
 import PullDown from "components/common/pull-down";
 import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
 import { SubjectDependentSkillKey, SubjectSkillKeys } from "app-types/skill";
-import { SkillTooltipID } from "components/tooltip/skill";
+import { SkillTooltipID } from "components/tooltip";
 import { Prohibit } from "@phosphor-icons/react";
 import { WeaponSkillCodeDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 

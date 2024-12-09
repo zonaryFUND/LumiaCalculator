@@ -1,6 +1,6 @@
 import * as React from "react";
 import Modal from "react-modal";
-import { useToggle } from "react-use";
+import { useLatest, useToggle } from "react-use";
 
 import { ArmorTypeID } from "app-types/equipment/armor";
 import { Equipment } from "app-types/subject-dynamic/config/equipment";
@@ -16,6 +16,9 @@ import common from "@app/common.module.styl";
 import style from "./equipment-slot.module.styl";
 import { SubjectCode } from "app-types/subject-static";
 import { ArmorStatusDictionary } from "app-types/equipment";
+import { TooltipContext } from "components/tooltip/tooltip-context";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
+import { SubjectSideContext } from "@app/ingame-params/subjects/subject-side";
 
 
 type Props = {
@@ -35,6 +38,7 @@ const equipmentSlot: React.FC<Props> = props => {
         ];
     }, [props.equipment[0].Chest]);
 
+
     const onSelect: React.Dispatch<React.SetStateAction<Equipment>> = React.useCallback(equipment => {
         props.equipment[1](equipment);
         toggleSelecting(false);
@@ -51,11 +55,16 @@ const equipmentSlot: React.FC<Props> = props => {
 
     return (
         <div className={style.slot}>
-            <div className={styles(style.equipment, common["hover-bright"])} onClick={toggleSelecting}>
+            <div className={styles(style.equipment, common["hover-bright"])}>
                 {
                     props.equipment[0][props.slot] ?
-                    <Item itemID={props.equipment[0][props.slot]} slot={props.slot} inSlot={true} /> :
-                    <Blank slot={props.slot} />
+                    <Item 
+                        itemID={props.equipment[0][props.slot]!} 
+                        slot={props.slot} 
+                        inSlot={true} 
+                        onSingleClick={toggleSelecting}
+                    /> :
+                    <Blank slot={props.slot} onClick={toggleSelecting} />
                 }
             </div>
             {

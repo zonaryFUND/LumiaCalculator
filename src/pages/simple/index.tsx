@@ -11,7 +11,7 @@ import Subject from "../simple/subject";
 import BuffDebuffs from "./buff-debuffs";
 import Damage from "./damage";
 import ItemTooltip from "components/tooltip/item/item-tooltip";
-import TooltipPresenter from "components/tooltip/skill";
+import TooltipPresenter from "components/tooltip";
 import LoadBuild from "components/modal/load-build";
 import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";
@@ -19,9 +19,8 @@ import saveStyle from "components/modal/save-build/index.module.styl";
 import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 
-import { useToggle, useWindowSize } from "react-use";
+import { useToggle } from "react-use";
 import CollapseTab from "components/common/collapse-tab";
-import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
 import { SimpleCurrentConfigKey, SimpleCurrentSelectedKey as SimpleCurrentSelectedPresetKey } from "@app/storage/simple";
 import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
@@ -33,10 +32,19 @@ import { useSelectedPresetKey } from "@app/storage/use-selected-preset-key";
 import { useIntl } from "react-intl";
 import { useLocalStorageConfig } from "@app/storage/config";
 import { EquipmentStatusDictionary } from "app-types/equipment";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
+import { NavigationButtonContext } from "components/pages/navigation";
+import { styles } from "@app/util/style";
 
 const index: React.FC = props => {
     const intl = useIntl();
-    const { width } = useWindowSize();
+
+    const navigation = React.useContext(NavigationButtonContext);
+    React.useEffect(() => {
+        navigation?.[1]({
+            title: "シンプル"
+        })
+    }, [])
 
     const [storageConfig, saveConfig] = useLocalStorageConfig(SimpleCurrentConfigKey);
     const {
@@ -53,7 +61,7 @@ const index: React.FC = props => {
         setConfig
     } = useSubjectConfig({value: storageConfig, update: saveConfig});
 
-    const c = React.useCallback(() => {}, [])
+    const uiType = useResponsiveUIType()
 
 
     const status = useStatus(config);
@@ -62,12 +70,6 @@ const index: React.FC = props => {
         if (!equipment.Weapon) return undefined;
         return EquipmentStatusDictionary[equipment.Weapon].type;
     }, [equipment.Weapon])
-
-    const parentRef = React.useRef<HTMLDivElement>(null);
-    const [collapse, setCollapse] = React.useState(false);
-    React.useEffect(() => {
-        setCollapse(width < 996);
-    }, [width]);
 
     const [showingLoad, toggleShowingLoad] = useToggle(false);
     const [showingSave, toggleShowingSave] = useToggle(false);
@@ -91,9 +93,10 @@ const index: React.FC = props => {
     const [showingPreference, toggleShowingPreference] = useToggle(false);
 
     return (
-        <main className={style.simple} style={{paddingLeft: width > 1400 ? 266 : 80}}>
-            <div className={styles(style.parent, collapse ? style.collapse : undefined)} ref={parentRef}>
-                <header className={style.header} style={collapse ? {flexDirection: "column"} : undefined}>
+        <div className={uiType == "mobile" ? style.mobilesimple : style.pcsimple}>
+            {
+                uiType == "mobile" ? null :   
+                <header className={style.header}>
                     <div className={style.storage}>
                         <h1>保存名：{currentPreset?.name ?? "-----"}</h1>
                         <div>
@@ -106,49 +109,36 @@ const index: React.FC = props => {
                         <Gear fontSize={44} weight="fill" onClick={toggleShowingPreference}  />
                     </div>
                 </header>
-                <CollapseTab collapse={collapse}>
-                    <Subject 
-                        config={config!}
-                        modifier={{
-                            subject: [subject, setSubject],
-                            level: [level, setLevel],
-                            skillLevels: [skillLevels, setSkillLevels],
-                            weaponMastery: [weaponMastery, setWeaponMastery],
-                            defenseMastery: [defenseMastery, setDefenseMastery],
-                            movementMastery: [movementMastery, setMovementMastery],
-                            equipment: [equipment, setEquipment],
-                            gauge: [gauge, setGauge],
-                            stack: [stack, setStack]
-                        }}
-                        status={status}
-                        hideHeader={collapse}
-                    />
-                    <BuffDebuffs hideHeader={collapse} />
-                    <Damage
-                        config={config}
-                        status={status}
-                        setSkillLevels={setSkillLevels}
-                        weaponType={weaponTypeID as (WeaponTypeID | undefined)}
-                        hideHeader={collapse}
-                    />
-                </CollapseTab>
-            </div>
+            }
+
+            <CollapseTab>
+                <Subject 
+                    config={config!}
+                    modifier={{
+                        subject: [subject, setSubject],
+                        level: [level, setLevel],
+                        skillLevels: [skillLevels, setSkillLevels],
+                        weaponMastery: [weaponMastery, setWeaponMastery],
+                        defenseMastery: [defenseMastery, setDefenseMastery],
+                        movementMastery: [movementMastery, setMovementMastery],
+                        equipment: [equipment, setEquipment],
+                        gauge: [gauge, setGauge],
+                        stack: [stack, setStack]
+                    }}
+                    status={status}
+                />
+                <Damage
+                    config={config}
+                    status={status}
+                    setSkillLevels={setSkillLevels}
+                    weaponType={weaponTypeID as (WeaponTypeID | undefined)}
+                />
+            </CollapseTab>
             <TooltipPresenter 
                 showEquation={damageInFormula}
                 status={status} 
                 config={config} 
-            />
-            <Tooltip 
-                id="weapon"
-                className={style.tooltip}
-                style={{zIndex: 1000}}
-                render={({ content, activeAnchor }) => {
-                    if (!content) return null;
-
-                    const [item, onSlot] = content.split("%");
-                    return <ItemTooltip itemID={+item} showEquation={damageInFormula || onSlot == undefined} config={config} status={status} />;
-                }}
-            />            
+            />         
             <Modal
                 isOpen={showingLoad}
                 shouldCloseOnOverlayClick
@@ -186,7 +176,7 @@ const index: React.FC = props => {
             >
                 <Preference damageInFormula={[damageInFormula, setDamageInFormula]} />
             </Modal>
-        </main>
+        </div>
     )
 };
 

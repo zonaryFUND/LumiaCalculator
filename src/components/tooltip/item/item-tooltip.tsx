@@ -19,6 +19,7 @@ type Props = {
 }
 
 const itemTooltip: React.FC<Props> = props => {
+    console.log(props.itemID)
     const { status, imageID } = React.useMemo(() => {
         const rawStatus = EquipmentStatusDictionary[props.itemID];
         if (rawStatus.david?.from) {

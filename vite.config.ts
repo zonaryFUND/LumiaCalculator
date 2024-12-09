@@ -13,16 +13,18 @@ export default mergeConfig(
             checker({typescript: {root: "./"}})
         ],
         publicDir: resolve(__dirname, "public"),
+        css: {
+
+        },
         build: {
             outDir: resolve(__dirname, "dist"),
             emptyOutDir: true,
             copyPublicDir: true,
             rollupOptions: {
-                input: {
-                    "": resolve(__dirname, "src/index.html"),
-                },
                 output: {
-                    entryFileNames: "assets/bundle.js"
+                    entryFileNames: `assets/[name].js`,
+                    chunkFileNames: `assets/[name].js`,
+                    assetFileNames: `assets/[name].[ext]`,
                 }
             }
         },

@@ -14,6 +14,7 @@ import { WeaponTypeID } from "app-types/equipment/weapon";
 import { ArmArmorCodes, ChestArmorCodes, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
 import { SubjectCode } from "app-types/subject-static";
 import { useLocalStorage } from "react-use";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 
 type Props = {
     subject: SubjectCode
@@ -39,19 +40,14 @@ function splitIdsWithRarity(ids: EquipmentID[], david: boolean = false): {title:
     ].filter(v => v.ids.length != 0)
 }
 
-function splitAndRemergeItems(ids: EquipmentID[]): { ids: EquipmentID[] }[] {
-    const splitted = splitIdsWithRarity(ids);
-    return [{ids :splitted.flatMap(({ ids }) => ids) }];
-}
-
 const priyaUnique: number[] = [201416, 201516];
 
 const subjectsList: React.FC<Props> = props => {
     const intl = useIntl();
-    //const [layout, setLayout] = useLocalStorage("equipment-list-sort", "in-game");
+    const uiType = useResponsiveUIType();
     const [david, setDavid] = useLocalStorage("equipment-list-david", "notDavid");
 
-    const def: {title: string, sections: {title?: string, ids: EquipmentID[]}[]} = React.useMemo(() => {
+    const def: {title: string, sections: {title?: string, mastery?: React.ReactElement, ids: EquipmentID[]}[]} = React.useMemo(() => {
         switch (props.slot) {
             case "Head":    
                 const IDs = props.subject == 51 ? priyaUnique : HeadArmorCodes.filter(id => priyaUnique.includes(id) == false);
@@ -64,13 +60,31 @@ const subjectsList: React.FC<Props> = props => {
                 return {title: "脚", sections: splitIdsWithRarity(LegArmorCodes)};
             case "Weapon":
                 const availableTypes = Object.keys(WeaponMasteryStatus[props.subject]) as WeaponTypeID[];
-                const names = availableTypes.map(id => intl.formatMessage({id: `MasteryType/${id}`}))
+                const names = availableTypes.map(id => intl.formatMessage({id: `MasteryType/${id}`}));
+                const masteryInfo = WeaponMasteryStatus[props.subject];
                 return {
-                    title: names.join("、"), 
-                    sections: availableTypes.map((id, i) => ({
-                        title: names.length == 1 ? undefined : names[i],
-                        ids: WeaponTypeCodes[id]
-                    }))
+                    title: "武器", 
+                    sections: availableTypes.map((id, i) => {
+                        const masteryStatus = masteryInfo[id];
+                        const targetMasteryStatus = (() => {
+                            switch (masteryStatus?.type) {
+                                case "attack_power":
+                                    return `攻撃力${masteryStatus.value.toString()}/熟練度`
+                                case "basic_attack_amp":
+                                    return `基本攻撃増幅${masteryStatus.value.toString()}%/熟練度`
+                                case "skill_amp":
+                                    return `スキル増幅${masteryStatus.value.toString()}%/熟練度`
+                            }
+                        })();
+
+                        const attackSpeed = `攻撃速度${masteryStatus?.attackSpeed.toString()}%/熟練度`
+
+                        return {
+                            title: names[i],
+                            mastery: <>{targetMasteryStatus}<br />{attackSpeed}</>,
+                            ids: WeaponTypeCodes[id]
+                        }
+                    })
                 }
         }
     }, [props.slot, props.subject, david]);
@@ -82,34 +96,45 @@ const subjectsList: React.FC<Props> = props => {
     return (
         <>
             <header>
-                <h1>装備選択 {def.title}</h1>
-                {
-                    props.slot == "Chest" ? 
-                    <SegmentedControl 
-                        name="equipment-sort" 
-                        value={[david, setDavid]} 
-                        segments={[{title: "通常", value: "notDavid"}, {title: "David", value: "david"}]} 
-                    />
-                    : 
-                    null
-                }
+                <h1>
+                    装備選択 {def.title}
+                    {
+                        props.slot == "Chest" ? 
+                        <SegmentedControl 
+                            name="equipment-sort" 
+                            value={[david, setDavid]} 
+                            segments={[{title: "通常", value: "notDavid"}, {title: "David", value: "david"}]} 
+                        />
+                        : 
+                        null
+                    }
+                </h1>
+                <p>{uiType == "mobile" ? "ダブルタップでツールチップを表示" : "マウスオーバーでツールチップを表示"}</p>
             </header>
             <div className={style.content}>
                 <section key="remove">
-                    <div onClick={onClick(null)} className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot] == null ? style.selected : undefined)}>
-                        <Blank slot={props.slot} />
+                    <div className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot] == null ? style.selected : undefined)}>
+                        <Blank slot={props.slot} onClick={onClick(null)} />
                         <p>外す</p>
                     </div>
                 </section>
             {
                 def.sections.map(section => (
                     <section key={section.title || "empty"}>
-                        {section.title ? <h3>{section.title}</h3> : null}
+                        <header>
+                            {section.title ? <h3>{section.title}</h3> : null}
+                            {section.mastery ? <p>{section.mastery}</p> : null}
+                        </header>
                         <ul>
                             {
                                 section.ids.map(id => (
-                                <li key={id} onClick={onClick(id)} className={styles(common["hover-bright"], id == props.equipment[0][props.slot] ? style.selected : undefined)}>
-                                    <Item slot={props.slot} itemID={id} inSlot={false} />
+                                <li key={id} className={styles(common["hover-bright"], id == props.equipment[0][props.slot] ? style.selected : undefined)}>
+                                    <Item 
+                                        slot={props.slot} 
+                                        itemID={id} 
+                                        inSlot={false}
+                                        onSingleClick={onClick(id)}
+                                    />
                                     <p><FormattedMessage id={`Item/Name/${id}`} /></p>
                                 </li>
                                 ))
