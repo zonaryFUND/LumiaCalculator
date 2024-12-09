@@ -4,10 +4,6 @@
     gap: 12px
     padding: 8px
 
-    h3
-        span
-            font-size: 0.8rem
-
 .top
     display: flex
     gap: 8px
@@ -18,12 +14,46 @@
         justify-content: space-between
         flex: 1
 
+    .data
+        display: flex
+        margin-left: auto
+        gap: 4px
+
+        button
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            width: 50px
+            height: 50px
+
+            p
+                font-size: 10px
+
     img
         cursor: pointer        
         box-shadow: 0 0 5px rgba(0,0,0,0.5)
         width: 100px
         background: var(--c5)
         border-radius: 4px
+
+.david
+    position: relative
+    height: 20px
+
+    label
+        position: absolute
+        white-space: nowrap
+        font-size: 1rem
+        overflow: visible
+        
+        input
+            width: 20px
+            height: 20px
+
+        *
+            display: inline
+            vertical-align: middle
 
 .mastery
     display: flex
@@ -42,5 +72,5 @@
     justify-content: space-between
     gap: 2px
     grid-template-columns: repeat(5, 1fr)
-    max-width: 380px
-    
+    max-width: 100%
+    width: 380px

@@ -19,7 +19,7 @@ export const WeaponMasteryStatus = Dictionary.reduce((prev, entry) => {
             default: return "attack_power";
         }
     })();
-    const value = new Decimal(entry.secondOptionSection1Value).times(100);
+    const value = new Decimal(entry.secondOptionSection1Value).times(type == "attack_power" ? 1 : 100);
     const attackSpeed = new Decimal(entry.firstOptionSection1Value).times(100);
 
     return {

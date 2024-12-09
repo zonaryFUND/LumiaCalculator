@@ -1,19 +1,26 @@
+import { usePresetStorage } from "@app/storage/preset";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 import * as React from "react";
+import { useIntl } from "react-intl";
 import { useGetSet } from "react-use";
 
 type Props = {
-    defaultName: string
-    onSave: (name: string) => void
+    currentConfig: SubjectConfig
+    onDone: () => void
 }
 
 const saveBuild: React.FC<Props> = props => {
-    const [name, setName] = useGetSet(props.defaultName);
+    const intl = useIntl();
+    const [name, setName] = useGetSet(intl.formatMessage({id: `Character/Name/${props.currentConfig.subject}`}));
     const onChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
         setName(event.currentTarget.value);
     }, []);
 
+    const { saveNew } = usePresetStorage()
+
     const onDone = React.useCallback(() => {
-        props.onSave(name());
+        saveNew(name(), props.currentConfig);
+        props.onDone();
     }, []);
 
     const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = React.useCallback(event => {

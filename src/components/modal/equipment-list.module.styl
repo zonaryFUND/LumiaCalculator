@@ -4,7 +4,8 @@
     align-items: stretch
     position: absolute
     background: var(--base)
-    max-width: min(600px, 95vw)
+    width: 95vw
+    max-width: 600px
     height: 80vh
     margin: auto
     inset: 0
@@ -28,10 +29,11 @@
             display: flex
             justify-content: space-between
             align-items: center
-            font-size: 2rem
+            font-size: 1.4rem
 
         p
             font-size: 0.8rem
+            margin-top: 4px
 
     section header
         display: flex
@@ -57,26 +59,35 @@
         column-gap: 8px
         row-gap: 8px
         align-items: start
-    
+
+        @media screen and (max-width: 1023px) 
+            grid-template-columns: repeat(auto-fill, 62px)
 
     .blank
         width: 74px
         margin-bottom: 48px
 
     li,.blank
-        display: flex
+        display: inline-flex
         flex-direction: column
-        align-items: center
         position: relative
         justify-content: center
+        text-align: center
+        cursor: pointer
 
         >div
             aspect-ratio: 74 / 41
 
         p
-            position: relative
-            font-size: 12px
-            text-align: center
+            font-size: 0.75rem
+            font-weight: bold
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+            z-index: 1
+
+            @media screen and (max-width: 1023px) 
+                font-size: 0.7rem
 
     .selected::before
         content: ""
@@ -91,7 +102,7 @@
             color: var(--bg)
 
     h3
-        font-size: 1.5rem
+        font-size: 1.2rem
 
     section:not(:last-child)
         margin-bottom: 16px

@@ -5,7 +5,7 @@ import { styles } from "@app/util/style";
 
 type Props = {
     title: string
-    preferredWidth?: number
+    className?: string
     children: React.ReactElement | React.ReactElement[]
 }
 
@@ -13,7 +13,9 @@ const tabUnit: React.FC<Props> = props => {
     const uiType = useResponsiveUIType();
 
     return (
-        <div className={styles(uiType == "mobile" ? style.mobiletab : style.pctab, style.tab)}>
+        <div 
+            className={styles(uiType == "mobile" ? style.mobiletab : style.pctab, style.tab, props.className)}
+        >
             {
                 uiType == "mobile" ? null :
                 <header>

@@ -23,9 +23,9 @@ type Props = {
 const subTable: React.FC<Props> = props => {
     const { ltr } = useCombatHPContext();
     const hpRatioHeader = [
-        <td key="self">自己体力比</td>,
+        <td key="self">←体力比</td>,
         <td key="effect">効果量</td>,
-        <td key="target">対象体力比</td>
+        <td key="target">体力比→</td>
     ]
 
     return (

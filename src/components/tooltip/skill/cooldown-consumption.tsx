@@ -1,12 +1,14 @@
 import * as React from "react";
-import style from "./cooldown-consumption.module.styl";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { extractArrayOrValue } from "@app/util/array";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { SkillTooltipProps } from "../../../ingame-params/skill-tooltip-props";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
+import style from "./tooltip.module.styl";
 
 const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, config: SubjectConfig, status: Status}> = props => {
+    const uiType = useResponsiveUIType();
     const consumptionType = (() => {
         switch (props.consumption?.type) {
             case "hp":
@@ -41,7 +43,7 @@ const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, con
     })();
 
     return (
-        <div className={style.cooldown}>
+        <p className={style.cooldown}>
             {consumptionType}{consumptionValue}{props.consumption?.type == "hp-ratio" ? "%" : null}<br />
             {
                 cooldown != null ?
@@ -50,10 +52,10 @@ const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, con
             }
             {
                 charge != null ?
-                (cooldown ? <>(チャージ時間{charge}秒)</> : <>チャージ時間{charge}秒</>) :
+                (cooldown ? <>{uiType == "mobile" ? <br/> : null}(チャージ時間{charge}秒)</> : <>チャージ時間{charge}秒</>) :
                 null
             }
-        </div>
+        </p>
     );
 };
 

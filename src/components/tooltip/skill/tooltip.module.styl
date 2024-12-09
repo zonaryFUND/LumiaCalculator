@@ -1,29 +1,56 @@
 .tooltip
     width: 800px
+    max-width: 100%
 
-    .main
+    >*
         padding: 20px
 
+        @media screen and (max-width: 1023px) 
+            padding: 12px
+        
+    .main
         header
             display: flex
+            position: relative
+            gap: 24px
             margin-left: -8px
+            margin-bottom: 16px
 
-            >:first-child
-                margin-right: 24px
+            @media screen and (max-width: 1023px) 
+                gap: 16px
+                margin-left: -4px
+                margin-bottom: 8px
+                padding-top: 1.5rem
 
             >:last-child
                 flex-grow: 1
 
+            .skill
+                @media screen and (max-width: 1023px) 
+                    position: absolute
+                    top: -1.5rem
+                    right: 0
+
+            .cooldown
+                font-size: 1rem
+                line-height: 1.1rem
+
+                @media screen and (max-width: 1023px) 
+                    font-size: 0.9rem
+                    line-height: 1rem
+
             img
                 width: 80px
-                height: 80px
+                height: 80px                
+
+                @media screen and (max-width: 1023px) 
+                    width: 60px
+                    height: 60px
 
             .name
                 display: flex
                 position: relative
                 justify-content: space-between
-                font-size: 20px
-                line-height: 20px
 
                 *
                     color: rgb(255,182,46)
@@ -42,18 +69,20 @@
                 bottom: 0
                 background-color: rgb(83,120,134)
 
+                @media screen and (max-width: 1023px) 
+                    left: -8px
+
             >div
                 display: flex
                 flex-direction: column
                 justify-content: space-between
 
-        p
-            margin: 20px 0 0
-
     .values
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        gap: 12px
         background: black
-        padding: 16px 20px 20px
 
 .calcnote
-    padding-top: 8px
-    font-size: 14px
+    font-size: 0.8rem

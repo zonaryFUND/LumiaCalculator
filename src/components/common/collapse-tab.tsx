@@ -7,6 +7,7 @@ import "swiper/css"
 
 type Props = {
     children: React.ReactElement[]
+    tabs: string[]
 }
 
 const collapseTab: React.FC<Props> = props => {
@@ -29,7 +30,7 @@ const collapseTab: React.FC<Props> = props => {
     return (
         uiType == "mobile" ?
         <>
-            <TabSelector tabs={["実験体", "ダメージ"]} tab={[tab, onTabChange]} />
+            <TabSelector tabs={props.tabs} tab={[tab, onTabChange]} />
             <Swiper
                 onSwiper={swiper => { swiperRef.current = swiper }}
                 className={style.swiper}

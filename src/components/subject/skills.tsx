@@ -10,6 +10,8 @@ import { SubjectDependentSkillKey, SubjectSkillKeys } from "app-types/skill";
 import { SkillTooltipID } from "components/tooltip";
 import { Prohibit } from "@phosphor-icons/react";
 import { WeaponSkillCodeDictionary } from "@app/ingame-params/weapon-skills/dictionary";
+import { TooltipContext } from "components/tooltip/tooltip-context";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 
 type SkillListProps = {
     config: SubjectConfig
@@ -18,7 +20,20 @@ type SkillListProps = {
 export const SkillListContext = React.createContext<SkillListProps | null>(null);
 
 const Skill: React.FC<{code?: number}> = ({code}) => {
+    const uiType = useResponsiveUIType();
     const side = React.useContext(SubjectSideContext);
+    const tooltipContext = React.useContext(TooltipContext);
+
+    const onClick: React.MouseEventHandler<HTMLElement> = React.useCallback(event => {
+        if (uiType != "mobile" || code == undefined) {
+            return
+        }
+
+        tooltipContext?.openModalSkill.current({
+            skillCode: code,
+            subjectSide: side
+        });
+    }, [])
 
     return (
         code ?
@@ -27,6 +42,7 @@ const Skill: React.FC<{code?: number}> = ({code}) => {
             data-tooltip-id={SkillTooltipID} 
             data-tooltip-content={`${code}`}
             data-tooltip-subject-side={side}
+            onClick={onClick}
         />
         :
         <div className={style.blank}><Prohibit size="2rem" /></div>
@@ -109,6 +125,7 @@ const subjectSkills: React.FC<Props> = props => {
                     }
                 })
             }
+            <div />
             </SkillListContext.Provider>
         </div>
     )

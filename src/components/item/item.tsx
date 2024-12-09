@@ -71,7 +71,7 @@ const item: React.FC<Props> = props => {
                 clickCountRef.current = 0;
             }, 200);
         }
-    }, [])
+    }, [props.itemID])
 
     return (
         <div

@@ -1,17 +1,12 @@
 import * as React from "react";
-import index from "./index.module.styl";
 import Table from "components/damage/combat/damage-table";
-import style from "./damage.module.styl";
-import { styles } from "@app/util/style";
 
 import { Status } from "app-types/subject-dynamic/status/type";
-import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
-import { CombatHPContext } from "components/damage/combat/combat-hp-context";
-import SegmentedControl from "components/common/segmented-control";
-import { StateProps } from "@app/util/state";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import TabUnit from "components/common/tab/tab-unit";
+import style from "./damage.module.styl";
 
 type Props = {
-    hideHeader?: boolean    
     leftStatus: Status
     leftConfig: SubjectConfig
     leftHP: number
@@ -22,28 +17,20 @@ type Props = {
 
 const damages: React.FC<Props> = props => {
     return (
-        <div className={styles(index.row, style.damage)}>
-            {
-                props.hideHeader ? null :
-                <header>
-                    <h1>実験体</h1>
-                </header>
-            }
-            <div className={index.content}>
-                <Table
-                    left={{
-                        config: props.leftConfig,
-                        status: props.leftStatus,
-                        hp: props.leftHP
-                    }}
-                    right={{
-                        config: props.rightConfig,
-                        status: props.rightStatus,
-                        hp: props.rightHP
-                    }}
-                />
-            </div>
-        </div>
+        <TabUnit title="ダメージ" className={style.damage}>
+            <Table
+                left={{
+                    config: props.leftConfig,
+                    status: props.leftStatus,
+                    hp: props.leftHP
+                }}
+                right={{
+                    config: props.rightConfig,
+                    status: props.rightStatus,
+                    hp: props.rightHP
+                }}
+            />
+        </TabUnit>
     )
 };
 

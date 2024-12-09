@@ -15,16 +15,24 @@
 
     li
         display: flex
+        flex-wrap: wrap
         justify-content: space-between
         align-items: center
 
+    h3,p
+        flex: 0 1 max-content
+
     h3
         color: rgb(128,219,96)
-        margin-right: 10px
+        align-self: flex-start
 
     p
-        flex-shrink: 0
         color: rgb(88,88,88)
+        align-self: flex-end
+        margin-left: auto
 
         span
             color: white
+
+    li&:not(:last-child)
+        margin-bottom: 16px

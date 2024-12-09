@@ -1,6 +1,9 @@
 import * as React from "react";
-import { TooltipRefProps } from "react-tooltip";
-import { createContext } from "vm";
+
+export type OpenModalSkillProps = {
+    skillCode: number,
+    subjectSide: "left" | "right" | undefined        
+}
 
 export type OpenModalItemProps = {
     itemCode: number,
@@ -8,13 +11,15 @@ export type OpenModalItemProps = {
     subjectSide: "left" | "right" | undefined
 }
 
+
+
 type Props = {
-    openModalSkill: React.MutableRefObject<() => void>
+    openModalSkill: React.MutableRefObject<(props: OpenModalSkillProps) => void>
     openModalItem: React.MutableRefObject<(props: OpenModalItemProps) => void>
 }
 
 export function useOpenModalSkillRef(): Props["openModalSkill"] {
-    return React.useRef<() => void>(() => {});
+    return React.useRef<(props: OpenModalSkillProps) => void>(() => {});
 }
 
 export function useOpenModalItemRef(): Props["openModalItem"] {

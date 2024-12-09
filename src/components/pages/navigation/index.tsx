@@ -12,7 +12,7 @@ import { StateProps } from "@app/util/state";
 type Props = {
     title?: string
     left?: React.ReactElement[]
-    right?: React.ReactElement[]
+    right?: React.ReactElement[] | React.ReactElement
 }
 
 export const useNavigationButtonState = () => React.useState<Props>({})
@@ -29,13 +29,14 @@ const navigation: React.FC = props => {
                 uiType == "mobile" ? 
                 <button className={style.menu} onClick={toggleShowSideBar}>
                     <List weight="bold" fontSize={30} color="white" />
+                    <p>Menu</p>
                 </button>
                 : null
             }
             <CSSTransition in={uiType == "mobile" && showSideBar} mountOnEnter classNames={opacity} timeout={250}>
                 <div className={style.bg} onClick={toggleShowSideBar} />
             </CSSTransition>
-            <SideBar hidden={uiType == "mobile" && !showSideBar} />
+            <SideBar hidden={uiType == "mobile" && !showSideBar} toggle={uiType == "mobile" ? toggleShowSideBar : undefined} />
         </>
     )
 }

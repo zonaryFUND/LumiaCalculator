@@ -1,13 +1,11 @@
 import * as React from "react";
 import BasicAttack from "./subtables/basic-attack";
 import style from "../damage-table.module.styl";
-import StandardDamage from "./subtables/rows/standard-damage";
 import SubjectSkill from "./subtables/subject-skill";
 import SubTable from "./subtables/subtable";
 import table from "components/common/table.module.styl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { WeaponTypeID } from "app-types/equipment/weapon";
 import { useIntl } from "react-intl";
 import useItemSkills from "../use-item-skills";
 import useWeaponSkill from "../use-weapon-skills";
@@ -19,7 +17,6 @@ type Props = {
     status: Status
     targetStatus?: Status
     config: SubjectConfig
-    weaponType?: WeaponTypeID
 }
 
 const damageTable: React.FC<Props> = props => {
@@ -30,7 +27,7 @@ const damageTable: React.FC<Props> = props => {
             status: props.status,
             intl
         })
-    , [props.config.subject, props.status, props.config.skillLevels, props.weaponType]);
+    , [props.config.subject, props.status, props.config.skillLevels]);
 
     const weaponSkill = useWeaponSkill(props.config);
     const itemSkills = useItemSkills(props.config);

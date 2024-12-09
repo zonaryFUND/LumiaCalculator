@@ -12,6 +12,7 @@ import { CSSTransition } from "react-transition-group";
 
 type Props = {
     hidden: boolean
+    toggle?: () => void
 }
 
 const navigation: React.FC<Props> = props => {
@@ -34,13 +35,13 @@ const navigation: React.FC<Props> = props => {
         <IconContext.Provider value={{width: 40}}>
         <CSSTransition in={!props.hidden} mountOnEnter classNames={slide} nodeRef={slideNodeRef} timeout={250}>
             <nav className={styles(style.nav, leftBarStyle)} ref={slideNodeRef}>
-                <h1>ルミア計算機</h1>
+                <h1>ルミア計算機(α)</h1>
                 <hr />
-                <Link to="/simple" className={style.button}>
+                <Link to="/simple" className={style.button} onClick={props.toggle}>
                     <Calculator />
                     <h2>シンプル</h2>
                 </Link>
-                <Link to="/combat" className={style.button}>
+                <Link to="/combat" className={style.button} onClick={props.toggle}>
                     <Sword />
                     <h2>対戦</h2>
                 </Link>
@@ -52,10 +53,12 @@ const navigation: React.FC<Props> = props => {
                     <ChartLine />
                     <h2>成長対戦(作成中)</h2>
                 </div>
+                {/*
                 <Link to="/database" className={style.button}>
                     <Database />
                     <h2>データベース</h2>
                 </Link>
+                */}
                 <hr />
                 <a className={styles(style.button, style.link)} href="https://playeternalreturn.com" target="_blank">
                     <ArrowSquareOut />
@@ -66,6 +69,7 @@ const navigation: React.FC<Props> = props => {
                     <h2>GitHub</h2>
                 </a>
                 <hr />
+                <a className={style.link} href="https://docs.google.com/forms/d/e/1FAIpQLSf0HSztPWL6t4CzM0Iufqx6bGwY7qRJo9Gel9Nfih9-G2xyMw/viewform">バグ報告</a>
                 <div className={style.warning}>
                     対応バージョン：1.36a
                 </div>

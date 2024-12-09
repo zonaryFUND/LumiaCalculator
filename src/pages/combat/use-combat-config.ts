@@ -6,7 +6,6 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import useSubjectConfig from "app-types/subject-dynamic/config/use-subject-config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { useStatus } from "app-types/subject-dynamic/status/use-status";
-import { ConfigModifierProps } from "components/config/config";
 import * as React from "react";
 import { useLocalStorage } from "react-use";
 import { useLocalStorageConfig } from "@app/storage/config";
@@ -15,7 +14,6 @@ type Response = {
     config: SubjectConfig
     setConfig: (config: SubjectConfig) => void
     status: Status
-    modifier: ConfigModifierProps
     hp: StateProps<number>
 
     currentPreset: PresetWithKey | undefined
@@ -25,6 +23,7 @@ type Response = {
     onDeleteCurrentPreset: () => void
 }
 
+/*
 export default function useCombatConfig(target: "left" | "right"): Response {
     const [
         storageConfig, 
@@ -76,3 +75,4 @@ export default function useCombatConfig(target: "left" | "right"): Response {
         onDeleteCurrentPreset: () => setCurrentPresetKey(undefined)
     }
 }
+    */

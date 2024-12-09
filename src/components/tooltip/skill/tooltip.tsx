@@ -15,6 +15,7 @@ import ExpansionValues from "./expansion-values"
 import baseStyle from "../tooltip.module.styl";
 import style from "./tooltip.module.styl";
 import { ExtractAndCalculateValue } from "../extract-tooltip-value";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 
 type Props = {
     code: number
@@ -25,6 +26,7 @@ type Props = {
 
 const tooltip: React.FC<Props> = props => {
     const intl = useIntl();
+    const uiType = useResponsiveUIType();
     const skillInfo = React.useMemo(() => SubjectTooltipDictionary[props.code] ?? WeaponSkillTooltipDictionary[props.code], [props.code]);
 
     const skillLevel = React.useMemo(() => {
@@ -55,7 +57,7 @@ const tooltip: React.FC<Props> = props => {
                     <div>
                         <div className={style.name}>
                             <h1><FormattedMessage id={`Skill/Group/Name/${props.code}`} /> （レベル {skillLevel + 1}）</h1>
-                            <p>[{skillInfo.skillKey}]</p>
+                            <p className={style.skill}>[{skillInfo.skillKey}]</p>
                         </div>
                         <CooldownComsumption {...skillInfo} skillLevel={skillLevel} config={props.config} status={props.status} />
                     </div>
@@ -72,7 +74,7 @@ const tooltip: React.FC<Props> = props => {
                     <div className={style.values}>
                         {
                             expansionTooltip != null ?
-                            <FormattedText text={expansionTooltip} values={expansionValues} /> :
+                            <p><FormattedText text={expansionTooltip} values={expansionValues} /></p> :
                             null
                         }
                         <ExpansionValues {...expansion} skillLevel={skillLevel} />

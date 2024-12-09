@@ -8,7 +8,7 @@ const topBar: React.FC = props => {
         <div className={style.topbar}>
             <div />
             <h1>{context?.[0].title}</h1>
-            <div />
+            {context?.[0].right ?? <div />}
         </div>
     )
 }

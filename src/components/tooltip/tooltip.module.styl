@@ -4,10 +4,27 @@
 
 .base
     *
-        font-size: 18px
         font-weight: bold
-        line-height: 22px
         color: rgb(172,172,172)
+
+    h1
+        font-size: 1.3rem
+        line-height: 1.4rem
+
+        @media screen and (max-width: 1023px)
+            font-size: 1.1rem
+            line-height: 1.15rem
+
+    h2,h3,li,p
+        font-size: 1.2rem
+        line-height: 1.4rem
+
+
+        @media screen and (max-width: 1023px)
+            font-size: 1rem
+            line-height: 1.15rem
+            
+        
 
 .modaloverlay
     display: flex
@@ -15,8 +32,10 @@
     align-items: center
 
 .modalbase
-    background: rgba(black, 0.7)
-    scale: 0.9
+    max-width: 90vw
+    max-height: 80vh
+    overflow-y: scroll
+    background: rgba(black, 0.85)
 
 p .attack
     color: rgb(255,215,117)

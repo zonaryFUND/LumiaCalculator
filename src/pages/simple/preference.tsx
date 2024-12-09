@@ -9,7 +9,6 @@ const preference: React.FC<Props> = props => {
     return (
         <div>
             <label>
-                <Switch {...props.damageInFormula} />
                 <div>
                     <h3>
                         ツールチップのダメージをレシオで表記する
@@ -18,6 +17,7 @@ const preference: React.FC<Props> = props => {
                         スキルやスキル付き装備にマウスオーバーしたときのツールチップに表示されるダメージ量を、最終的な量ではなく10+(攻撃力の50%)のようにレシオで表記します
                     </p>
                 </div>
+                <Switch {...props.damageInFormula} />
             </label>
             
         </div>
