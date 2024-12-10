@@ -920,17 +920,6 @@
 		}
 	},
 	"116410": {
-		"skillCode": 6007003,
-		"name": "swift_strides",
-		"dmg": {
-			"base": 120
-		},
-		"values": {
-			"tick": 0.2,
-			"ms": 0.1
-		}
-	},
-	"116502": {
 		"skillCode": 6017002,
 		"name": "vigor",
 		"dmg": {
@@ -944,6 +933,17 @@
 				"ad": 10,
 				"ms": 0.08
 			}
+		}
+	},
+	"116502": {
+		"skillCode": 6007003,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 120
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1
 		}
 	},
 	"116701": {

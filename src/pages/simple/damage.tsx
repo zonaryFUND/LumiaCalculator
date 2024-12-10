@@ -11,6 +11,7 @@ import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 type Props = {
     status: Status
     config: SubjectConfig
+    hp: number
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
 }
 
@@ -29,7 +30,7 @@ const damages: React.FC<Props> = props => {
                 </h3>
                 <SubjectSkills config={props.config} setSkillLevels={props.setSkillLevels} />
             </section>
-            <Table status={props.status} config={props.config} />
+            <Table status={props.status} config={props.config} hp={props.hp} />
         </TabUnit>
     )
 };

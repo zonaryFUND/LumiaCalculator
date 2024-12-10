@@ -28,7 +28,11 @@ if (argv._[2] == "update-values") {
             .filter((entry: any) => entry.modeType == 0)
             .map((entry: any) => {
                 const zeroRemoved = es.pickBy(entry, (value) => value != 0);
-                return es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "weaponType", "itemGrade"]);
+                return {
+                    ...es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "weaponType", "itemGrade"]),
+                    ...(zeroRemoved.makeMaterial2 == 401405 ? { shard: "red" } : {}),
+                    ...(zeroRemoved.makeMaterial2 == 401406 ? { shard: "blue" } : {})
+                }
             });
     });
     await new Promise(resolve => setTimeout(resolve, 1000))

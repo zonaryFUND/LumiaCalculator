@@ -45,6 +45,15 @@ const item: React.FC<Props> = props => {
         }
     }, [props.itemID])
 
+    const shardClass = React.useMemo(() => {
+        if (props.itemID == null) return undefined;
+        switch (EquipmentStatusDictionary[props.itemID].shard) {
+            case undefined: return undefined;
+            case "red":     return style.redshard;
+            case "blue":     return style.blueshard;
+        }
+    }, [props.itemID])
+
     const uiType = useResponsiveUIType();
     const clickCountRef = React.useRef(0);
     const tooltipContext = React.useContext(TooltipContext);
@@ -75,7 +84,7 @@ const item: React.FC<Props> = props => {
 
     return (
         <div
-            className={styles(className, style.base)} 
+            className={styles(className, shardClass, style.base)} 
             data-tooltip-id="weapon"
             data-tooltip-content={`${props.itemID}${props.inSlot ? "%slot" : ""}`}
             onClick={onClick}

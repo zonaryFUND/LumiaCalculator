@@ -93,6 +93,7 @@ export type EquipmentStatus = {[key in EquipmentStatusValueKey]?: Decimal} & {
         to?: EquipmentID
         from?: EquipmentID
     }
+    shard?: "blue" | "red"
     ammo?: Decimal
     skill?: EquipmentSkill[]
 }

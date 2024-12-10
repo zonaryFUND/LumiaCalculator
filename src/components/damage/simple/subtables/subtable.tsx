@@ -13,6 +13,7 @@ type Props = {
     elements: (Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy} & {skillLevel?: number})[][]
     config: SubjectConfig
     status: Status
+    hp: number
 }
 
 const subTable: React.FC<Props> = props => {
@@ -42,7 +43,8 @@ const subTable: React.FC<Props> = props => {
                                 status={props.status} 
                                 config={props.config} 
                                 {...unit} 
-                                value={unit.value} 
+                                value={unit.value}
+                                hp={props.hp}
                             />;
                         }
                     })

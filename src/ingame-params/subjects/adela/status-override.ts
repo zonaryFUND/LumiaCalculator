@@ -8,7 +8,6 @@ export function additionalAmp(attackSpeed: StatusValue & AdditionalStatusValue, 
     const ratio = (attackSpeed.equipment?.ratio ?? new Decimal(0)).add(attackSpeed.perMastery?.ratio?.times(config.weaponMastery) ?? 0)
     const value = attackSpeed.base!.add(attackSpeed.equipment?.constant ?? 0).addPercent(ratio)
     const additionalAS = value?.sub(Constants.T.attack_speed).clamp(0, 10000);
-    console.log(additionalAS.toString())
     return additionalAS.times(Constants.T.amp_per_as[config.skillLevels.T] * 100) ?? new Decimal(0);
 }
 

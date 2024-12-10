@@ -1,6 +1,6 @@
 import { SubjectCode } from "app-types/subject-static";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { DamageTableGenerator, SkillListHook, StatusOverrideFunc, SubjectModules, SubjectStackInfo, SummonInfo } from "./type";
+import { DamageTableGenerator, SkillListHook, StatusOverrideFunc, SubjectGaugeInfo, SubjectModules, SubjectStackInfo, SummonInfo } from "./type";
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});
 export const [
@@ -9,14 +9,16 @@ export const [
     SubjectDamageTableDictionary,
     SubjectStatusOverrideDictionary,
     SubjectSummonInfoDictionary,
-    SubjectStackInfoDictionary
+    SubjectStackInfoDictionary,
+    SubjectGaugeInfoDictionary
 ] = Object.entries(modules).reduce(([
         skillLists, 
         tooltips, 
         damageTables, 
         statusOverrides, 
         summons,
-        stackInfo
+        stackInfo,
+        gaugeInfo
     ], [key, m]) => {
     const subjectCode = m.default.code;
     return [
@@ -25,7 +27,8 @@ export const [
         {...damageTables, [subjectCode]: m.default.damageTable},
         {...statusOverrides, ...(m.default.statusOverride ? { [subjectCode]: m.default.statusOverride } : {}) },
         {...summons, ...(m.default.summoned ? { [subjectCode]: m.default.summoned } : {})},
-        {...stackInfo, ...(m.default.stackInfo ? { [subjectCode]: m.default.stackInfo } : {})}
+        {...stackInfo, ...(m.default.stackInfo ? { [subjectCode]: m.default.stackInfo } : {})},
+        {...gaugeInfo, ...(m.default.gaugeInfo ? { [subjectCode]: m.default.gaugeInfo } : {})}
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
@@ -33,5 +36,6 @@ export const [
     {} as Record<SubjectCode, DamageTableGenerator>,
     {} as Record<SubjectCode, StatusOverrideFunc>,
     {} as Record<SubjectCode, SummonInfo[]>,
-    {} as Record<SubjectCode, SubjectStackInfo>
+    {} as Record<SubjectCode, SubjectStackInfo>,
+    {} as Record<SubjectCode, SubjectGaugeInfo>
 ])

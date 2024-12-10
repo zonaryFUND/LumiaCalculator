@@ -13,6 +13,10 @@ import { weaponType } from "./weapon-type";
 export default defineSubject({
     code: 44,
     damageTable,
+    gaugeInfo: {
+        nameIntlID: "subject.echion.gauge-consumption",
+        threshold: 50
+    },
 
     skills: {
         listExpression: (config) => {

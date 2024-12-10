@@ -13,12 +13,15 @@ import StaticValueEquation from "../subrows/static-value-equation";
 import MultiplyEquation from "../subrows/mutiply-equation";
 import HealPower from "../subrows/heal-power";
 import { DamageTableUnit } from "app-types/damage-table/unit";
+import Decimal from "decimal.js";
+import { omit } from "es-toolkit";
 
 type Props = Omit<DamageTableUnit, "value"> & {
     skillLevel?: number
     value: ValueRatio
     config: SubjectConfig
     status: Status
+    hp: number
 }
 
 const standardDamage: React.FC<Props> = props => {
@@ -62,6 +65,7 @@ const standardDamage: React.FC<Props> = props => {
         }
     })();
 
+    const lostHP = props.status.maxHP.calculatedValue.sub(props.hp);
     const [dynamicFinalValue, dynamicSubRows] = (() => {
         if (dynamicBaseValue == undefined) return [[] as React.ReactElement[], [] as React.ReactElement[]];
         
@@ -79,9 +83,15 @@ const standardDamage: React.FC<Props> = props => {
                 })();
 
                 if (multiplier) {
+                    const ratio = dynamicValueHealConcerned.percent(multiplier[0]);
                     return {
                         key,
-                        value: <FormattedMessage id={valueIntlID} values={{ratio: dynamicValueHealConcerned.percent(multiplier[0]).toString()}} />,
+                        value: (
+                            <>
+                                <FormattedMessage id={valueIntlID} values={{ratio: ratio.toString()}} />,
+                                {key == "lostHP" ? `(${lostHP.percent(ratio).floor().toString()})` : null}
+                            </>
+                        ),
                         subrows: [
                             <MultiplyEquation key={`${key}-multiply`} baseValue={dynamicValueHealConcerned} multiplier={multiplier} percent={percent} />
                         ]
@@ -92,7 +102,12 @@ const standardDamage: React.FC<Props> = props => {
                     const showConstant = !showEquation && (!dynamicValueOnly || healPower);
                     return {
                         key,
-                        value: <FormattedMessage id={valueIntlID} values={{ratio: dynamicValueHealConcerned.toString()}} />,
+                        value: (
+                            <>
+                                <FormattedMessage id={valueIntlID} values={{ratio: dynamicValueHealConcerned.toString()}} />
+                                {key == "lostHP" ? `(${lostHP.percent(dynamicValueHealConcerned).floor().toString()})` : null}
+                            </>
+                        ),
                         subrows: [
                             showEquation ?
                             <StaticValueEquation

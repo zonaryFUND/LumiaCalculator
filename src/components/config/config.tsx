@@ -1,4 +1,4 @@
-import { SubjectCodeWithOldID, SubjectCode } from "app-types/subject-static";
+import { SubjectCode } from "app-types/subject-static";
 import * as React from "react";
 import { StateProps } from "util/state";
 import style from "./config.module.styl";
@@ -11,7 +11,7 @@ import SubjectList, { style as subjectsStyle } from "components/modal/subject-li
 import common from "@app/common.module.styl";
 import { FormattedMessage, useIntl } from "react-intl";
 import ThrottleSlider from "./throttle-slider";
-import { SubjectStackInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { SubjectGaugeInfoDictionary, SubjectStackInfoDictionary } from "@app/ingame-params/subjects/dictionary";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import { Upload, Download } from "@phosphor-icons/react"
 import { SubjectConfigProps } from "./use-subject-config";
@@ -30,7 +30,6 @@ export type CurrentHPProps = {
 const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
     const intl = useIntl();
     const uiType = useResponsiveUIType();
-    const subjectID = SubjectCodeWithOldID[props.subject[0]];
     const [selectingSubject, toggleSelectingSubject] = useToggle(false);
     const onChangeSubject = React.useCallback((code: SubjectCode) => {
         props.subject[1](code);
@@ -41,14 +40,9 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
         return SubjectStackInfoDictionary[props.subject[0]];
     }, [props.subject[0]]);
 
-    const gaugeTitle = React.useMemo(() => {
-        switch (subjectID) {
-            case "echion":
-                return "暴走ゲージ";
-            case "li_dailin":
-                return "酔いゲージ";
-        }
-    }, [subjectID]);
+    const gaugeInfo = React.useMemo(() => {
+        return SubjectGaugeInfoDictionary[props.subject[0]];
+    }, [props.subject[0]]);
 
     const [isDavid, showDavidCheckbox] = React.useMemo(() => {
         if (props.equipment[0].Chest == null) return [false, false];
@@ -98,34 +92,38 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                         <PullDown label="防御" value={{max: 20, current: props.defenseMastery[0], set: props.defenseMastery[1]}} layout="config" />
                         <PullDown label="移動" value={{max: 20, current: props.movementMastery[0], set: props.movementMastery[1]}} layout="config" />
                     </div>
-                    {
-                        props.currentHP ?
-                        <ThrottleSlider 
-                            label="現在HP"
-                            value={props.currentHP}
-                            max={props.maxHP!}
-                        /> :
-                        null
-                    }
-                    {
-                        gaugeTitle ?
-                        <ThrottleSlider 
-                            label={gaugeTitle}
-                            value={props.gauge}
-                            max={100}
-                        /> :
-                        null
-                    }
-                    {
-                        stackInfo ? 
-                        <ThrottleSlider 
-                            label={intl.formatMessage({id: stackInfo.nameIntlID})}
-                            value={props.stack}
-                            max={stackInfo.max}
-                        /> :
-                        null
-                    }
                 </div>
+                {
+                    props.currentHP ?
+                    <ThrottleSlider 
+                        style="hp"
+                        label="現在HP"
+                        value={props.currentHP}
+                        max={props.maxHP!}
+                    /> :
+                    null
+                }
+                {
+                    gaugeInfo ?
+                    <ThrottleSlider 
+                        style="gauge"
+                        label={intl.formatMessage({id: gaugeInfo.nameIntlID})}
+                        threshold={gaugeInfo.threshold}
+                        value={props.gauge}
+                        max={100}
+                    /> :
+                    null
+                }
+                {
+                    stackInfo ? 
+                    <ThrottleSlider 
+                        style="stack"
+                        label={intl.formatMessage({id: stackInfo.nameIntlID})}
+                        value={props.stack}
+                        max={stackInfo.max}
+                    /> :
+                    null
+                }
 
                 <div>
                     <h3>

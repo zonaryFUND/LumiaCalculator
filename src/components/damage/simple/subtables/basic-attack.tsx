@@ -13,6 +13,7 @@ import { BasicAttackElement } from "@app/ingame-params/subjects/type";
 type Props = {
     status: Status
     config: SubjectConfig
+    hp: number
     elements: (BasicAttackElement | DamageTableUnit & { skillLevel?: number })[][]
 }
 
@@ -72,6 +73,7 @@ const basicAttack: React.FC<Props> = props => {
                                 value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
                                 config={props.config}
                                 status={props.status}
+                                hp={props.hp}
                             />
                         }
     
@@ -103,6 +105,7 @@ const basicAttack: React.FC<Props> = props => {
                                     value={definition.value}
                                     config={props.config}
                                     status={props.status}
+                                    hp={props.hp}
                                 />
                             }
                         }

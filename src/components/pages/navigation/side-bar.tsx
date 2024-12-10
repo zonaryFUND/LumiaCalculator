@@ -69,7 +69,7 @@ const navigation: React.FC<Props> = props => {
                     <h2>GitHub</h2>
                 </a>
                 <hr />
-                <a className={style.link} href="https://docs.google.com/forms/d/e/1FAIpQLSf0HSztPWL6t4CzM0Iufqx6bGwY7qRJo9Gel9Nfih9-G2xyMw/viewform">バグ報告</a>
+                <a className={styles(style.link, style.report)} href="https://docs.google.com/forms/d/e/1FAIpQLSf0HSztPWL6t4CzM0Iufqx6bGwY7qRJo9Gel9Nfih9-G2xyMw/viewform">バグ報告</a>
                 <div className={style.warning}>
                     対応バージョン：1.36a
                 </div>

@@ -11,6 +11,7 @@ type Props = {
     tables: SubjectDamageTableUnit[][]
     config: SubjectConfig
     status: Status
+    hp: number
 }
 
 const subjectSkill: React.FC<Props> = props => {
@@ -52,6 +53,7 @@ const subjectSkill: React.FC<Props> = props => {
                                 config={props.config} 
                                 {...unit} 
                                 value={unit.value} 
+                                hp={props.hp}
                             />;
                         }
                     })

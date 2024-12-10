@@ -29,6 +29,7 @@ const index: React.FC = props => {
             title: "対戦",
             right: (
                 <button className={style.navbutton}>
+                    <p>Config</p>
                     <Gear fontSize={28} weight="fill" onClick={toggleShowingPreference}  />
                 </button>
             )
@@ -89,6 +90,7 @@ const index: React.FC = props => {
                 <SubjectSideContext.Provider value="left">
                     <Subject
                         {...left}
+                        hp={leftHP}
                         status={leftStatus}
                     />
                 </SubjectSideContext.Provider>
@@ -103,6 +105,7 @@ const index: React.FC = props => {
                 <SubjectSideContext.Provider value="right">
                     <Subject
                         {...right}
+                        hp={rightHP}
                         status={rightStatus}
                     />
                 </SubjectSideContext.Provider>

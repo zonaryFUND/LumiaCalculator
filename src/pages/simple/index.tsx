@@ -31,6 +31,7 @@ const index: React.FC = props => {
             title: "シンプル",
             right: (
                 <button className={style.navbutton}>
+                    <p>Config</p>
                     <Gear fontSize={28} weight="fill" onClick={toggleShowingPreference}  />
                 </button>
             )
@@ -39,6 +40,7 @@ const index: React.FC = props => {
 
     const configProps = useSubjectConfig(SimpleCurrentConfigKey);
     const status = useStatus(configProps.value);
+    const hp = React.useState(status.maxHP.calculatedValue.toNumber());
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
@@ -56,11 +58,13 @@ const index: React.FC = props => {
             <CollapseTab tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
                 <Subject 
                     {...configProps}
+                    hp={hp}
                     status={status}
                 />
                 <Damage
                     config={configProps.value}
                     status={status}
+                    hp={hp[0]}
                     setSkillLevels={configProps.skillLevels[1]}
                 />
                 <BuffDebuffs />

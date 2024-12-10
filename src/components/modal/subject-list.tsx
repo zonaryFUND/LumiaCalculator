@@ -38,8 +38,6 @@ const subjectsList: React.FC<Props> = props => {
             .map(index => ({code: index + 1, name: intl.formatMessage({id: `Character/Name/${index + 1}`})}))
     }, []);
 
-    console.log(jpNameWithCode)
-
     const sorted = React.useMemo(() => {
         return jpNameWithCode
             .toSorted((a, b) => a.name > b.name ? 1 : -1)
@@ -63,7 +61,7 @@ const subjectsList: React.FC<Props> = props => {
         }
         
         return [
-            {index: "アルファベット", ids: filtered(/[a-zA-Z]/)},
+            {index: "A-Z", ids: filtered(/[a-zA-Z]/)},
             {index: "あ", ids: filtered(/[あ-おア-オヴ]/)},
             {index: "か", ids: filtered(/[か-こカ-コ]/)},
             {index: "さ", ids: filtered(/[さ-そサ-ソ]/)},

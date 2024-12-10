@@ -35,6 +35,11 @@ export type SummonInfo = {
     nameIntlID: string
 }
 
+export type SubjectGaugeInfo = {
+    nameIntlID: string
+    threshold: number
+}
+
 export type SubjectStackInfo = {
     nameIntlID: string
     max: number
@@ -52,6 +57,7 @@ export type SubjectModules = {
     statusOverride?: StatusOverrideFunc
     summoned?: SummonInfo[]
     stackInfo?: SubjectStackInfo
+    gaugeInfo?: SubjectGaugeInfo
 }
 
 export function defineSubject(module: SubjectModules): SubjectModules { return module };

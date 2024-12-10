@@ -96,7 +96,6 @@ const staticValueEquation: React.FC<Props> = props => {
             const sanitizedValue = (() => {
                 if (Array.isArray(value)) {
                     if (props.skillLevel == undefined) {
-                        console.log(props)
                         throw new Error(`level-dependent damage ratio is passed without its skill level. `)
                     }
                     return value[props.skillLevel];

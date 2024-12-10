@@ -1,20 +1,107 @@
-.range-slider.grad {
-  --progress-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) inset;
-  --progress-flll-shadow: var(--progress-shadow);
-  --fill-color: linear-gradient(to right, LightCyan, var(--primary-color));
-  --thumb-shadow: 0 0 4px rgba(0, 0, 0, 0.3),
-    -3px 9px 9px rgba(255, 255, 255, 0.33) inset,
-    -1px 3px 2px rgba(255, 255, 255, 0.33) inset,
-    0 0 0 99px var(--primary-color) inset;
+.slider
+    h4
+        font-size: 0.9rem
 
-  input {
-    &:hover {
-      --thumb-transform: scale(1.2);
-    }
+        span
+            display: inline-block
+            margin-left: 10px
+            width: 40px
+            text-align: right
 
-    &:active {
-      --thumb-shadow: inherit;
-      --thumb-transform: scale(1);
-    }
-  }
-}
+    label
+        display: block
+        position: relative
+        width: 100%
+        height: 15px
+  
+    input[type="range"]
+        display: block
+        position: relative
+        appearance: none
+        cursor: pointer
+        width: 100%
+        height: 100%
+        border: 1px solid gray
+
+    input[type="range"]::before
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        right: 0
+        height: 100%
+        background: black
+        pointer-events: none
+
+    input[type="range"]::after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        clip-path: inset(0 calc(100% - var(--value)) 0 0)
+        pointer-events: none
+        
+    input[type="range"]::-webkit-slider-thumb
+        appearance: none
+        width: 0px
+        height: 0px
+        background-color: transparent
+        border: none
+
+    label
+        ul
+            display: flex
+            position: absolute
+            justify-content: space-between
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            pointer-events: none
+
+        li
+            display: block
+            margin-top: auto
+            width: 2px
+            height: 10px
+            background: gray
+            transform: translateX(-1px)
+
+    .hp
+        input::after
+            background: var(--color)
+        
+        li:first-child
+            visibility: hidden
+
+        li:not(:nth-of-type(10n+1))
+            height: 5px
+
+        li:nth-of-type(5n+1)
+            height: 7px
+
+        li:nth-of-type(10n+1)
+            height: 10px
+
+    .gauge
+        input::after
+            background: var(--color)
+
+        .threshold
+            height: 10px
+
+        li
+            height: 5px
+            
+        li:first-child,li:last-child
+            visibility: hidden
+
+    .stack
+        input::after
+            background: linear-gradient(to right, var(--c3), var(--c2))
+
+        li:first-child,li:last-child
+            visibility: hidden

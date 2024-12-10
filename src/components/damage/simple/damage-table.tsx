@@ -15,7 +15,7 @@ import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictio
 
 type Props = {
     status: Status
-    targetStatus?: Status
+    hp: number
     config: SubjectConfig
 }
 
@@ -49,35 +49,41 @@ const damageTable: React.FC<Props> = props => {
                         }
                         status={props.status} 
                         config={props.config}
+                        hp={props.hp}
                     />
                     <SubjectSkill 
                         tables={subject.skill}
                         config={props.config}
                         status={props.status}
+                        hp={props.hp}
                     />
                     <SubTable
                         label="武器スキル"
                         elements={[weaponSkill.regular]}
                         config={props.config}
                         status={props.status}
+                        hp={props.hp}
                     />
                     <SubTable 
                         label="アイテムスキル"
                         elements={[itemSkills.regular]}
                         config={props.config}
                         status={props.status}
+                        hp={props.hp}
                     />
                     <SubTable 
                         label="特性"
                         elements={augments}
                         config={props.config}
                         status={props.status}
+                        hp={props.hp}
                     />
                     <SubTable 
                         label="戦術スキル"
                         elements={tacticalSkills}
                         config={props.config}
                         status={props.status}
+                        hp={props.hp}
                     />
                 </table>
             </div>

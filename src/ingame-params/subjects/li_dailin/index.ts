@@ -10,6 +10,10 @@ import * as T from "./t";
 export default defineSubject({
     code: 10,
     damageTable,
+    gaugeInfo: {
+        nameIntlID: "subject.lidailin.bac",
+        threshold: 40
+    },
 
     skills: {
         listExpression: () => ({
