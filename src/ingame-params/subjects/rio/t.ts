@@ -14,7 +14,7 @@ function rioBasicAttackMultiplier(status: Status): Decimal {
     const multiplied = new Decimal(Constants.T.basic_attack_damage.criticalBase).add(status.criticalDamage.calculatedValue)
 
     return new Decimal(base)
-        .add(status.criticalChance.calculatedValue.mul(multiplied))
+        .add(status.criticalChance.calculatedValue.mul(multiplied).div(100))
 }
 
 export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValueStrategy {

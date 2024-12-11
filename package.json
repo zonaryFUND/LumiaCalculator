@@ -9,7 +9,7 @@
     "build": "vite build",
     "deploy": "tsx ./deploy.ts",
     "update-values": "tsx ./nn-api/index.ts update-values",
-    "test": "tsx vitest"
+    "test": "vitest"
   },
   "author": "zonaryFUND",
   "license": "MIT",
@@ -46,6 +46,7 @@
     "gh-pages": "^6.1.1",
     "jsdom": "^25.0.1",
     "path": "^0.12.7",
+    "sharp": "^0.33.5",
     "stylus": "^0.64.0",
     "tsx": "^4.19.2",
     "typescript": "^5.4.5",

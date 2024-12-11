@@ -10,7 +10,7 @@ exports[`'Arcana''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3024000.png"
+          src="3024000"
         />
         <div>
           <div
@@ -22,21 +22,23 @@ exports[`'Arcana''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -66,19 +68,21 @@ exports[`'Arcana''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -130,7 +134,7 @@ exports[`'Arcana''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3024000.png"
+          src="3024000"
         />
         <div>
           <div
@@ -142,21 +146,23 @@ exports[`'Arcana''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -192,7 +198,7 @@ exports[`'AssaultRifle''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3010000.png"
+          src="3010000"
         />
         <div>
           <div
@@ -204,21 +210,23 @@ exports[`'AssaultRifle''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             17
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -237,19 +245,21 @@ exports[`'AssaultRifle''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -301,7 +311,7 @@ exports[`'AssaultRifle''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3010000.png"
+          src="3010000"
         />
         <div>
           <div
@@ -313,21 +323,23 @@ exports[`'AssaultRifle''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             17
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -357,7 +369,7 @@ exports[`'Axe''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3014000.png"
+          src="3014000"
         />
         <div>
           <div
@@ -369,21 +381,23 @@ exports[`'Axe''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             7
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -414,23 +428,25 @@ exports[`'Axe''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        このスキルは壁を越えられません。
-      </i>
-      <br />
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          このスキルは壁を越えられません。
+        </i>
+        <br />
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -498,7 +514,7 @@ exports[`'Axe''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3014000.png"
+          src="3014000"
         />
         <div>
           <div
@@ -510,21 +526,23 @@ exports[`'Axe''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             7
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -556,7 +574,7 @@ exports[`'Bat''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3003000.png"
+          src="3003000"
         />
         <div>
           <div
@@ -568,21 +586,23 @@ exports[`'Bat''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -608,19 +628,21 @@ exports[`'Bat''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -672,7 +694,7 @@ exports[`'Bat''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3003000.png"
+          src="3003000"
         />
         <div>
           <div
@@ -684,21 +706,23 @@ exports[`'Bat''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -725,7 +749,7 @@ exports[`'Bow''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3007000.png"
+          src="3007000"
         />
         <div>
           <div
@@ -737,21 +761,23 @@ exports[`'Bow''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             35
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -795,19 +821,21 @@ exports[`'Bow''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -875,7 +903,7 @@ exports[`'Bow''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3007000.png"
+          src="3007000"
         />
         <div>
           <div
@@ -887,21 +915,23 @@ exports[`'Bow''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             35
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -936,7 +966,7 @@ exports[`'Camera''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3023000.png"
+          src="3023000"
         />
         <div>
           <div
@@ -948,21 +978,23 @@ exports[`'Camera''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -988,19 +1020,21 @@ exports[`'Camera''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -1084,7 +1118,7 @@ exports[`'Camera''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3023000.png"
+          src="3023000"
         />
         <div>
           <div
@@ -1096,21 +1130,23 @@ exports[`'Camera''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1143,7 +1179,7 @@ exports[`'CrossBow''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3008000.png"
+          src="3008000"
         />
         <div>
           <div
@@ -1155,21 +1191,23 @@ exports[`'CrossBow''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             40
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1216,19 +1254,21 @@ exports[`'CrossBow''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -1296,7 +1336,7 @@ exports[`'CrossBow''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3008000.png"
+          src="3008000"
         />
         <div>
           <div
@@ -1308,21 +1348,23 @@ exports[`'CrossBow''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             40
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1355,7 +1397,7 @@ exports[`'DirectFire''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3006000.png"
+          src="3006000"
         />
         <div>
           <div
@@ -1367,21 +1409,23 @@ exports[`'DirectFire''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1407,19 +1451,21 @@ exports[`'DirectFire''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -1487,7 +1533,7 @@ exports[`'DirectFire''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3006000.png"
+          src="3006000"
         />
         <div>
           <div
@@ -1499,21 +1545,23 @@ exports[`'DirectFire''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1540,7 +1588,7 @@ exports[`'DualSword''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3018000.png"
+          src="3018000"
         />
         <div>
           <div
@@ -1552,21 +1600,23 @@ exports[`'DualSword''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1612,23 +1662,25 @@ exports[`'DualSword''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        このスキルは壁を越えられません。
-      </i>
-      <br />
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          このスキルは壁を越えられません。
+        </i>
+        <br />
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -1760,7 +1812,7 @@ exports[`'DualSword''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3018000.png"
+          src="3018000"
         />
         <div>
           <div
@@ -1772,21 +1824,23 @@ exports[`'DualSword''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1823,7 +1877,7 @@ exports[`'Glove''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3001000.png"
+          src="3001000"
         />
         <div>
           <div
@@ -1835,21 +1889,23 @@ exports[`'Glove''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             9
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -1870,19 +1926,21 @@ exports[`'Glove''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -1950,7 +2008,7 @@ exports[`'Glove''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3001000.png"
+          src="3001000"
         />
         <div>
           <div
@@ -1962,21 +2020,23 @@ exports[`'Glove''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             9
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2003,7 +2063,7 @@ exports[`'Guitar''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3022000.png"
+          src="3022000"
         />
         <div>
           <div
@@ -2015,21 +2075,23 @@ exports[`'Guitar''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2055,19 +2117,21 @@ exports[`'Guitar''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -2135,7 +2199,7 @@ exports[`'Guitar''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3022000.png"
+          src="3022000"
         />
         <div>
           <div
@@ -2147,21 +2211,23 @@ exports[`'Guitar''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2188,7 +2254,7 @@ exports[`'Hammer''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3013000.png"
+          src="3013000"
         />
         <div>
           <div
@@ -2200,21 +2266,23 @@ exports[`'Hammer''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2240,19 +2308,21 @@ exports[`'Hammer''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -2336,7 +2406,7 @@ exports[`'Hammer''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3013000.png"
+          src="3013000"
         />
         <div>
           <div
@@ -2348,21 +2418,23 @@ exports[`'Hammer''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2389,7 +2461,7 @@ exports[`'HighAngleFire''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3005000.png"
+          src="3005000"
         />
         <div>
           <div
@@ -2401,21 +2473,23 @@ exports[`'HighAngleFire''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             40
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2425,19 +2499,21 @@ exports[`'HighAngleFire''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -2473,7 +2549,7 @@ exports[`'HighAngleFire''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3005000.png"
+          src="3005000"
         />
         <div>
           <div
@@ -2485,21 +2561,23 @@ exports[`'HighAngleFire''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             40
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2520,7 +2598,7 @@ exports[`'Nunchaku''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3020000.png"
+          src="3020000"
         />
         <div>
           <div
@@ -2532,21 +2610,23 @@ exports[`'Nunchaku''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             28
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2591,19 +2671,21 @@ exports[`'Nunchaku''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -2671,7 +2753,7 @@ exports[`'Nunchaku''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3020000.png"
+          src="3020000"
         />
         <div>
           <div
@@ -2683,21 +2765,23 @@ exports[`'Nunchaku''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             28
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2733,7 +2817,7 @@ exports[`'OneHandSword''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3015000.png"
+          src="3015000"
         />
         <div>
           <div
@@ -2745,21 +2829,23 @@ exports[`'OneHandSword''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2769,7 +2855,7 @@ exports[`'OneHandSword''s skill > detailed tooltip match snapshot 1`] = `
           マント
         </span>
         <br />
-        スキルを使用すると1秒間透明になり、移動速度が20%増加します。増加した移動速度は1秒に渡って減少します。
+        スキルを使用すると1秒間透明になり、移動速度が25%増加します。増加した移動速度は1秒に渡って減少します。
         <br />
         <br />
         短剣
@@ -2796,19 +2882,21 @@ exports[`'OneHandSword''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -2892,7 +2980,7 @@ exports[`'OneHandSword''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3015000.png"
+          src="3015000"
         />
         <div>
           <div
@@ -2904,27 +2992,29 @@ exports[`'OneHandSword''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
         マント
         <br />
-        スキルを使用すると1秒間透明になり、移動速度が20%増加します。増加した移動速度は1秒に渡って減少します。
+        スキルを使用すると1秒間透明になり、移動速度が25%増加します。増加した移動速度は1秒に渡って減少します。
         <br />
         <br />
         短剣
@@ -2952,7 +3042,7 @@ exports[`'Pistol''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3009000.png"
+          src="3009000"
         />
         <div>
           <div
@@ -2964,21 +3054,23 @@ exports[`'Pistol''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             35
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -2986,7 +3078,7 @@ exports[`'Pistol''s skill > detailed tooltip match snapshot 1`] = `
         <span
           style="color: white;"
         >
-          35%
+          40%
         </span>
         <span
           style="color: rgb(221, 160, 221);"
@@ -2999,19 +3091,21 @@ exports[`'Pistol''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -3022,12 +3116,12 @@ exports[`'Pistol''s skill > detailed tooltip match snapshot 1`] = `
           <p>
             [
             <span>
-              35%
+              40%
             </span>
              / 
-            50%
+            60%
              / 
-            65%
+            80%
             ]
           </p>
         </li>
@@ -3063,7 +3157,7 @@ exports[`'Pistol''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3009000.png"
+          src="3009000"
         />
         <div>
           <div
@@ -3075,21 +3169,23 @@ exports[`'Pistol''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             35
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3097,7 +3193,7 @@ exports[`'Pistol''s skill > tooltip match snapshot 1`] = `
         <span
           style="color: white;"
         >
-          35%
+          40%
         </span>
         早く移動して銃弾を装填します。装填を終えた後には、次の2回の基本攻撃速度が70%増加します。
       </p>
@@ -3116,7 +3212,7 @@ exports[`'Rapier''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3021000.png"
+          src="3021000"
         />
         <div>
           <div
@@ -3128,21 +3224,23 @@ exports[`'Rapier''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3168,19 +3266,21 @@ exports[`'Rapier''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -3264,7 +3364,7 @@ exports[`'Rapier''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3021000.png"
+          src="3021000"
         />
         <div>
           <div
@@ -3276,21 +3376,23 @@ exports[`'Rapier''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3317,7 +3419,7 @@ exports[`'SniperRifle''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3011000.png"
+          src="3011000"
         />
         <div>
           <div
@@ -3329,21 +3431,23 @@ exports[`'SniperRifle''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             40
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3436,20 +3540,22 @@ exports[`'SniperRifle''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        デッドアイ最大ダメージ量:300
-        <br />
-        狙撃状態で移動したり、妨害効果を受けると狙撃モードが解除されます。
-        <br />
-        <br />
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
+      <p>
+        <i>
+          デッドアイ最大ダメージ量:300
+          <br />
+          狙撃状態で移動したり、妨害効果を受けると狙撃モードが解除されます。
+          <br />
+          <br />
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -3549,7 +3655,7 @@ exports[`'SniperRifle''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3011000.png"
+          src="3011000"
         />
         <div>
           <div
@@ -3561,21 +3667,23 @@ exports[`'SniperRifle''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             40
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3659,7 +3767,7 @@ exports[`'Spear''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3019000.png"
+          src="3019000"
         />
         <div>
           <div
@@ -3671,21 +3779,23 @@ exports[`'Spear''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3713,19 +3823,21 @@ exports[`'Spear''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -3809,7 +3921,7 @@ exports[`'Spear''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3019000.png"
+          src="3019000"
         />
         <div>
           <div
@@ -3821,21 +3933,23 @@ exports[`'Spear''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3864,7 +3978,7 @@ exports[`'Tonfa''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3002000.png"
+          src="3002000"
         />
         <div>
           <div
@@ -3876,21 +3990,23 @@ exports[`'Tonfa''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -3900,19 +4016,21 @@ exports[`'Tonfa''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -3964,7 +4082,7 @@ exports[`'Tonfa''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3002000.png"
+          src="3002000"
         />
         <div>
           <div
@@ -3976,21 +4094,23 @@ exports[`'Tonfa''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -4011,7 +4131,7 @@ exports[`'TwoHandSword''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3016000.png"
+          src="3016000"
         />
         <div>
           <div
@@ -4023,21 +4143,23 @@ exports[`'TwoHandSword''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -4063,19 +4185,21 @@ exports[`'TwoHandSword''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -4127,7 +4251,7 @@ exports[`'TwoHandSword''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3016000.png"
+          src="3016000"
         />
         <div>
           <div
@@ -4139,21 +4263,23 @@ exports[`'TwoHandSword''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             30
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -4180,7 +4306,7 @@ exports[`'VFArm''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3025000.png"
+          src="3025000"
         />
         <div>
           <div
@@ -4192,21 +4318,23 @@ exports[`'VFArm''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             13
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -4226,7 +4354,7 @@ exports[`'VFArm''s skill > detailed tooltip match snapshot 1`] = `
         >
           VFゲージ50以上：
         </span>
-        ゲージ45を消耗して、武器スキルを除いたスキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        ゲージ45を消耗して、武器スキルを除いたスキルクールダウンを60%減少させて移動速度が0.85秒間25%増加します。
         <br />
         <br />
         <span
@@ -4234,7 +4362,7 @@ exports[`'VFArm''s skill > detailed tooltip match snapshot 1`] = `
         >
           VF暴走状態：
         </span>
-        暴走持続時間を1.5秒延長して、スキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        暴走持続時間を1.5秒延長して、スキルクールダウンを60%減少させて移動速度が0.85秒間25%増加します。
         <br />
         <br />
         <span
@@ -4248,19 +4376,21 @@ exports[`'VFArm''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -4312,7 +4442,7 @@ exports[`'VFArm''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3025000.png"
+          src="3025000"
         />
         <div>
           <div
@@ -4324,21 +4454,23 @@ exports[`'VFArm''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             13
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -4358,7 +4490,7 @@ exports[`'VFArm''s skill > tooltip match snapshot 1`] = `
         >
           VFゲージ50以上：
         </span>
-        ゲージ45を消耗して、武器スキルを除いたスキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        ゲージ45を消耗して、武器スキルを除いたスキルクールダウンを60%減少させて移動速度が0.85秒間25%増加します。
         <br />
         <br />
         <span
@@ -4366,7 +4498,7 @@ exports[`'VFArm''s skill > tooltip match snapshot 1`] = `
         >
           VF暴走状態：
         </span>
-        暴走持続時間を1.5秒延長して、スキルクールダウンを60%減少させて移動速度が0.85秒間20%増加します。
+        暴走持続時間を1.5秒延長して、スキルクールダウンを60%減少させて移動速度が0.85秒間25%増加します。
         <br />
         <br />
         <span
@@ -4391,7 +4523,7 @@ exports[`'Whip''s skill > detailed tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3004000.png"
+          src="3004000"
         />
         <div>
           <div
@@ -4403,21 +4535,23 @@ exports[`'Whip''s skill > detailed tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>
@@ -4443,19 +4577,21 @@ exports[`'Whip''s skill > detailed tooltip match snapshot 1`] = `
     <div
       class="_values_f527a8"
     >
-      <i>
-        武器熟練度
-        <span
-          style="color: white;"
-        >
-          5Lv・10Lv・15Lv
-        </span>
-        の時にスキルレベルアップ
-      </i>
-      <br />
-      <i>
-        クールダウン固定: このスキルはクールダウン減少の影響を受けません。
-      </i>
+      <p>
+        <i>
+          武器熟練度
+          <span
+            style="color: white;"
+          >
+            5Lv・10Lv・15Lv
+          </span>
+          の時にスキルレベルアップ
+        </i>
+        <br />
+        <i>
+          クールダウン固定: このスキルはクールダウン減少の影響を受けません。
+        </i>
+      </p>
       <ul
         class="_values_5ffb5e"
       >
@@ -4523,7 +4659,7 @@ exports[`'Whip''s skill > tooltip match snapshot 1`] = `
     >
       <header>
         <img
-          src="/@fs/C:/Users/zonar/ercalc_resources/resources/weapon-skills/3004000.png"
+          src="3004000"
         />
         <div>
           <div
@@ -4535,21 +4671,23 @@ exports[`'Whip''s skill > tooltip match snapshot 1`] = `
               1
               ）
             </h1>
-            <p>
+            <p
+              class="_skill_f527a8"
+            >
               [
               D
               ]
             </p>
           </div>
-          <div
-            class="_cooldown_b84e51"
+          <p
+            class="_cooldown_f527a8"
           >
             コストなし
             <br />
             クールダウン
             25
             秒
-          </div>
+          </p>
         </div>
       </header>
       <p>

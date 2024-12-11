@@ -1,9 +1,8 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
-import { describe, expect, test } from "vitest"
-import { Locales } from "../App"
 import { SubjectModules } from "../ingame-params/subjects/type";
 import Bed from "./skill-tooltip-bed";
+import { Locales } from "../App"
 
 const modules = import.meta.glob<{default: SubjectModules}>("../ingame-params/subjects/*/index.ts", {eager: true});
 const SubjectSkills = Object.values(modules).reduce((prev, current) => {
