@@ -101,9 +101,9 @@
         "dead_body_recording_time": 2,
         "dead_body_mastery": 650,
         "max_dead_body_stack": 3,
-        "reshooting_prohibit": 60,
+        "reshooting_prohibit": 30,
         "sp_cost": 100,
-        "cooldown": [25,20,1]
+        "cooldown": [20,15,1]
     },
     "R2": {
         "count": 8,

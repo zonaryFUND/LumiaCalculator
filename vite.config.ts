@@ -20,6 +20,7 @@ export default mergeConfig(
             outDir: resolve(__dirname, "dist"),
             emptyOutDir: true,
             copyPublicDir: true,
+            assetsInlineLimit: 0,
             rollupOptions: {
                 output: {
                     entryFileNames: `assets/[name].js`,

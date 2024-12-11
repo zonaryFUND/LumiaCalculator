@@ -74,7 +74,7 @@
         "reuse_threshold": 25,
         "movement_speed": {
             "duration": 2,
-            "effect": 30
+            "effect": 40
         },
         "cooldown": [80,70,60]
     },

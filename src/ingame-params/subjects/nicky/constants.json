@@ -23,7 +23,7 @@
     },
     "W": {
         "duration": 0.75,
-        "damage_reduction": [55,60,65,70,75],
+        "damage_reduction": [60,65,70,75,80],
         "e2_duration": 7,
         "damage": {
             "base": [100,125,150,175,200],

@@ -26,7 +26,7 @@
             "shield": 30,
             "movement_speed": {
                 "duration": 2,
-                "effect": 20
+                "effect": 25
             }
         },
         "sp_cost": [50,60,70,80,90],

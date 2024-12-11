@@ -48,7 +48,7 @@
         },
         "movement_speed": {
             "duration": 2,
-            "effect": [5,8,11,14,17]
+            "effect": [8,11,14,17,20]
         },
         "rush_damage": {
             "base": [55,85,115,145,175],

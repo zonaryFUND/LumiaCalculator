@@ -59,7 +59,7 @@
     "R": {
         "duration": 5,
         "summoned_attack_speed": [20,25,30],
-        "nina_movement_speed": [20,25,30],
+        "nina_movement_speed": [25,30,35],
         "we_cooldown_reduction": 30,
         "damage": {
             "base": [30,60,90]

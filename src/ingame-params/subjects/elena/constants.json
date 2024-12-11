@@ -60,8 +60,8 @@
     },
     "T": {
         "chill": 20,
-        "slow": 25,
-        "frozen": 110,
+        "slow": 20,
+        "frozen": 115,
         "stun": 1,
         "damage": {
             "base": [20,40,60],

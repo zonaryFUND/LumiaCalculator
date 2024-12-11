@@ -36,7 +36,7 @@
         "duration": 4,
         "threshold": 10,
         "heal": {
-            "base": [200,275,350]
+            "base": [250,375,500]
         },
         "sp_cost": [100,110,120],
         "cooldown": [80,70,60]

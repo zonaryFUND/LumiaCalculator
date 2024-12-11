@@ -43,7 +43,7 @@
         "cooldown": [14,13.5,13,12.5,12]
     },
     "HumanR": {
-        "fuel_consumption": 18,
+        "fuel_consumption": 16,
         "movement_speed": [0.1,0.55,1],
         "defense": [14,22,30],
         "ms_penalty": {
@@ -74,7 +74,7 @@
             "amp": 60
         },
         "ms_max_damage": [42,70,98,126,154],
-        "cooldown": [13,12,11,10,9]
+        "cooldown": [12,11,10,9,8]
     },
     "BikeR": {
         "duration": 5,
