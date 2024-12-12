@@ -465,7 +465,7 @@
     },
     {
         "defense": 43,
-        "maxHpByLv": 22,
+        "maxHpByLv": 24,
         "code": 202421,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -574,7 +574,7 @@
         "attackPowerByLv": 3,
         "defense": 17,
         "spRegenRatio": 2,
-        "attackSpeedRatio": 0.46,
+        "attackSpeedRatio": 0.42,
         "code": 202509,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -583,7 +583,7 @@
         }
     },
     {
-        "attackPower": 15,
+        "attackPower": 12,
         "attackPowerByLv": 3,
         "defense": 15,
         "criticalStrikeChance": 0.33,
@@ -606,9 +606,9 @@
         }
     },
     {
-        "attackPower": 20,
+        "attackPower": 15,
         "attackPowerByLv": 3,
-        "defense": 25,
+        "defense": 22,
         "spRegenRatio": 1,
         "cooldownReduction": 0.2,
         "code": 202512,
@@ -815,7 +815,7 @@
         "itemGrade": "Epic"
     },
     {
-        "skillAmp": 24,
+        "skillAmp": 28,
         "attackSpeedRatio": 0.3,
         "code": 203506,
         "armorType": "Arm",
@@ -854,7 +854,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 55,
+        "skillAmp": 60,
         "attackSpeedRatio": 0.42,
         "code": 203413,
         "armorType": "Arm",
@@ -1444,7 +1444,7 @@
     },
     {
         "defense": 50,
-        "maxHpByLv": 24,
+        "maxHpByLv": 26,
         "code": 202604,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -1527,7 +1527,7 @@
         "attackPowerByLv": 3,
         "defense": 20,
         "spRegenRatio": 2,
-        "attackSpeedRatio": 0.5,
+        "attackSpeedRatio": 0.46,
         "code": 202611,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -1536,7 +1536,7 @@
         }
     },
     {
-        "attackPower": 20,
+        "attackPower": 17,
         "attackPowerByLv": 3,
         "defense": 18,
         "criticalStrikeChance": 0.35,
@@ -1559,9 +1559,9 @@
         }
     },
     {
-        "attackPower": 30,
+        "attackPower": 25,
         "attackPowerByLv": 3,
-        "defense": 25,
+        "defense": 22,
         "spRegenRatio": 1,
         "cooldownReduction": 0.2,
         "code": 202614,

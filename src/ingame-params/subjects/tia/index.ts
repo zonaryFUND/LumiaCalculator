@@ -16,10 +16,16 @@ export default defineSubject({
     skills: {
         listExpression: () => ({
             Q: [Q.y.code, Q.r.code, Q.b.code],
-            W: [W.y, W.r, W.b],
+            W: {
+                code: [W.y, W.r, W.b],
+                maxLevel: 3
+            },
             E: [E.y, E.r, E.b],
             R: R.code,
-            T: T.code
+            T: {
+                code: T.code,
+                maxLevel: 5
+            }
         }),
         tooltip: {
             [Q.y.code]: Q.y.info,

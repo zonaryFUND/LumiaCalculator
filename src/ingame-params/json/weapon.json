@@ -856,7 +856,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 91,
+        "skillAmp": 88,
         "moveSpeedRatio": 0.02,
         "code": 112407,
         "weaponType": "HighAngleFire",
@@ -1000,7 +1000,7 @@
     {
         "attackPower": 43,
         "skillAmp": 70,
-        "moveSpeed": 0.06,
+        "moveSpeedRatio": 0.02,
         "code": 114501,
         "weaponType": "Bow",
         "itemGrade": "Epic"
@@ -1008,7 +1008,7 @@
     {
         "attackPower": 65,
         "attackSpeedRatio": 0.3,
-        "moveSpeed": 0.06,
+        "moveSpeedRatio": 0.02,
         "code": 114406,
         "weaponType": "Bow",
         "itemGrade": "Epic"
@@ -1049,7 +1049,7 @@
     {
         "attackPower": 80,
         "attackSpeedRatio": 0.4,
-        "moveSpeed": 0.08,
+        "moveSpeedRatio": 0.03,
         "code": 114505,
         "weaponType": "Bow",
         "itemGrade": "Legend"
@@ -1779,7 +1779,7 @@
     {
         "attackPower": 72,
         "cooldownReduction": 0.15,
-        "moveSpeed": 0.06,
+        "moveSpeedRatio": 0.02,
         "code": 131403,
         "weaponType": "VFArm",
         "itemGrade": "Epic"
@@ -1838,7 +1838,7 @@
     {
         "attackPower": 78,
         "cooldownReduction": 0.2,
-        "moveSpeed": 0.06,
+        "moveSpeedRatio": 0.02,
         "uniqueCooldownLimit": 0.05,
         "code": 131507,
         "weaponType": "VFArm",
@@ -1847,7 +1847,7 @@
     {
         "attackPower": 84,
         "cooldownReduction": 0.2,
-        "moveSpeed": 0.06,
+        "moveSpeedRatio": 0.02,
         "uniqueCooldownLimit": 0.05,
         "uniqueTenacity": 0.3,
         "code": 131508,
@@ -1857,7 +1857,7 @@
     {
         "attackPower": 94,
         "cooldownReduction": 0.3,
-        "moveSpeed": 0.08,
+        "moveSpeedRatio": 0.03,
         "uniqueCooldownLimit": 0.1,
         "code": 131509,
         "weaponType": "VFArm",
@@ -1878,7 +1878,7 @@
         "attackPower": 13,
         "adaptiveForce": 57,
         "moveSpeedRatio": 0.03,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 101702,
         "weaponType": "OneHandSword",
         "itemGrade": "Mythic",
@@ -1897,7 +1897,7 @@
     {
         "attackPower": 22,
         "adaptiveForce": 58,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 102702,
         "weaponType": "TwoHandSword",
         "itemGrade": "Mythic",
@@ -1916,7 +1916,7 @@
     {
         "attackPower": 48,
         "adaptiveForce": 58,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 104702,
         "weaponType": "Hammer",
         "itemGrade": "Mythic",
@@ -1935,7 +1935,7 @@
     {
         "attackPower": 50,
         "adaptiveForce": 57,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 105702,
         "weaponType": "Axe",
         "itemGrade": "Mythic",
@@ -1956,7 +1956,7 @@
         "attackPower": 33,
         "defense": 8,
         "adaptiveForce": 60,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 107702,
         "weaponType": "Spear",
         "itemGrade": "Mythic",
@@ -1976,7 +1976,7 @@
         "attackPower": 25,
         "adaptiveForce": 58,
         "attackSpeedRatio": 0.3,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 109702,
         "weaponType": "Whip",
         "itemGrade": "Mythic",
@@ -1995,7 +1995,7 @@
     {
         "attackPower": 30,
         "adaptiveForce": 56,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 110702,
         "weaponType": "Glove",
         "itemGrade": "Mythic",
@@ -2016,7 +2016,7 @@
         "attackPower": 20,
         "defense": 8,
         "adaptiveForce": 57,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 111702,
         "weaponType": "Tonfa",
         "itemGrade": "Mythic",
@@ -2035,7 +2035,7 @@
     {
         "attackPower": 40,
         "adaptiveForce": 54,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 112702,
         "weaponType": "HighAngleFire",
         "itemGrade": "Mythic",
@@ -2054,7 +2054,7 @@
     {
         "attackPower": 30,
         "adaptiveForce": 57,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 113702,
         "weaponType": "DirectFire",
         "itemGrade": "Mythic",
@@ -2073,7 +2073,7 @@
     {
         "attackPower": 29,
         "adaptiveForce": 56,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 114702,
         "weaponType": "Bow",
         "itemGrade": "Mythic",
@@ -2092,7 +2092,7 @@
     {
         "attackPower": 40,
         "adaptiveForce": 58,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 115702,
         "weaponType": "CrossBow",
         "itemGrade": "Mythic",
@@ -2112,7 +2112,7 @@
         "attackPower": 25,
         "adaptiveForce": 53,
         "attackSpeedRatio": 0.3,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 117702,
         "weaponType": "AssaultRifle",
         "itemGrade": "Mythic",
@@ -2134,7 +2134,7 @@
         "adaptiveForce": 56,
         "attackSpeedRatio": 0.4,
         "sightRange": 1.5,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 118702,
         "weaponType": "SniperRifle",
         "itemGrade": "Mythic",
@@ -2154,7 +2154,7 @@
     {
         "attackPower": 30,
         "adaptiveForce": 56,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 119702,
         "weaponType": "Nunchaku",
         "itemGrade": "Mythic",
@@ -2175,7 +2175,7 @@
     {
         "attackPower": 5,
         "adaptiveForce": 58,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 120702,
         "weaponType": "Rapier",
         "itemGrade": "Mythic",
@@ -2194,7 +2194,7 @@
     {
         "attackPower": 25,
         "adaptiveForce": 55,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 121702,
         "weaponType": "Guitar",
         "itemGrade": "Mythic",
@@ -2214,7 +2214,7 @@
         "attackPower": 40,
         "skillAmp": 110,
         "cooldownReduction": 0.15,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 130702,
         "weaponType": "Arcana",
         "itemGrade": "Mythic",
@@ -2234,7 +2234,7 @@
         "attackPower": 28,
         "adaptiveForce": 58,
         "attackSpeedRatio": 0.3,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 116702,
         "weaponType": "Pistol",
         "itemGrade": "Mythic",
@@ -2253,7 +2253,7 @@
     {
         "attackPower": 55,
         "adaptiveForce": 57,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 108702,
         "weaponType": "Bat",
         "itemGrade": "Mythic",
@@ -2272,7 +2272,7 @@
     {
         "attackPower": 16,
         "adaptiveForce": 56,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 103702,
         "weaponType": "DualSword",
         "itemGrade": "Mythic",
@@ -2293,7 +2293,7 @@
         "attackPower": 25,
         "adaptiveForce": 55,
         "sightRange": 1.5,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 122702,
         "weaponType": "Camera",
         "itemGrade": "Mythic",

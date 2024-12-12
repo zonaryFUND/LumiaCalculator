@@ -17,7 +17,7 @@ export default defineSubject({
             W: W.code,
             E: E.code,
             R: R.code,
-            T: T.code
+            T: T.code,
         }),
         tooltip: {
             [Q.code]: Q.info,

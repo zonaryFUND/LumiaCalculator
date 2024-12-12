@@ -18,8 +18,14 @@ export default defineSubject({
             Q: Q.code,
             W: W.code,
             E: E.code,
-            R: R.code,
-            T: T.code
+            R: {
+                code: R.code,
+                maxLevel: 5
+            },
+            T: {
+                code: T.code,
+                maxLevel: 2
+            }
         }),
         tooltip: {
             [Q.code]: Q.info,
