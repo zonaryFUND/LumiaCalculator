@@ -99,7 +99,7 @@
             "criticalChance": 0.1
         },
         "basic_attack_damage": {
-            "base": 105,
+            "base": 103,
             "criticalBase": 75
         }
     }
