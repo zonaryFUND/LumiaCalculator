@@ -65,7 +65,7 @@ const standardDamage: React.FC<Props> = props => {
         }
     })();
 
-    const lostHP = props.status.maxHP.calculatedValue.sub(props.hp);
+    const lostHP = props.status.maxHp.calculatedValue.sub(props.hp);
     const [dynamicFinalValue, dynamicSubRows] = (() => {
         if (dynamicBaseValue == undefined) return [[] as React.ReactElement[], [] as React.ReactElement[]];
         

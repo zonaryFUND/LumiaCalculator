@@ -6,13 +6,13 @@ import Decimal from "decimal.js";
 
 export const code = 1034100;
 
-export const NathaponeTStrategy: UniqueValueStrategy = (config, status) => {
+export const NathaponeTStrategy: UniqueValueStrategy = ({ config, status }) => {
     const base = Constants.T.damage.base[config.skillLevels.T];
     const amp = Constants.T.damage.amp;
     const as = Constants.T.damage.attackSpeed;
     const value = new Decimal(Constants.T.damage.base[config.skillLevels.T])
         .add(status.skillAmp.calculatedValue.percent(amp))
-        .add(status.attackSpeed.additionalValue?.percent(as) ?? 0)
+        .add(status.attackSpeed.multiplier.percent(as) ?? 0)
 
     return {
         value,
@@ -21,9 +21,9 @@ export const NathaponeTStrategy: UniqueValueStrategy = (config, status) => {
                 expression :[
                     `${base} + `,
                     { ratioKey: "amp" },
-                    `${status.skillAmp.calculatedValue.toString()} x ${amp}% +`,
+                    `${status.skillAmp.calculatedValue.toString()} x ${amp}% + `,
                     { ratioKey: "additionalAttackSpeed" },
-                    `${status.attackSpeed.additionalValue?.toString() ?? 0} x ${as}% = ${value}`
+                    `${status.attackSpeed.multiplier.toString() ?? 0} x ${as}% = ${value}`
                 ]
             }
         ]

@@ -57,6 +57,8 @@
     "status.tenacity": "行動妨害耐性",
     "status.movement-speed": "移動速度",
     "status.vision": "視界範囲",
+    "status.equipment-constant": "装備(定数)",
+    "status.equipment-ratio": "装備(%)",
 
     "subject.adela.passive-amp": "T攻撃速度変換",
     "subject.adela.passive-attack-speed": "T固定値",

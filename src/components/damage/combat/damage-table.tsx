@@ -67,7 +67,8 @@ const damageTable: React.FC<Props> = props => {
                         ]}
                         attacker={{
                             config: attacker.config,
-                            status: attacker.status
+                            status: attacker.status,
+                            hp: attacker.hp
                         }}
                     />
                     <SubTable 
@@ -75,7 +76,8 @@ const damageTable: React.FC<Props> = props => {
                         elements={subject.skill}
                         attacker={{
                             config: attacker.config,
-                            status: attacker.status
+                            status: attacker.status,
+                            hp: attacker.hp
                         }}
                     />
                     <SubTable 
@@ -83,7 +85,8 @@ const damageTable: React.FC<Props> = props => {
                         elements={[weaponSkill.regular]}
                         attacker={{
                             config: attacker.config,
-                            status: attacker.status
+                            status: attacker.status,
+                            hp: attacker.hp
                         }}
                     />
                     <SubTable 
@@ -91,7 +94,8 @@ const damageTable: React.FC<Props> = props => {
                         elements={[itemSkills.regular]}
                         attacker={{
                             config: attacker.config,
-                            status: attacker.status
+                            status: attacker.status,
+                            hp: attacker.hp
                         }}
                     />
                     <SubTable 
@@ -99,7 +103,8 @@ const damageTable: React.FC<Props> = props => {
                         elements={augments}
                         attacker={{
                             config: attacker.config,
-                            status: attacker.status
+                            status: attacker.status,
+                            hp: attacker.hp
                         }}
                     />
                     <SubTable 
@@ -107,7 +112,8 @@ const damageTable: React.FC<Props> = props => {
                         elements={tacticalSkills}
                         attacker={{
                             config: attacker.config,
-                            status: attacker.status
+                            status: attacker.status,
+                            hp: attacker.hp
                         }}
                     />
                 </table>

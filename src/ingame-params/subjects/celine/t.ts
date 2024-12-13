@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { additionalAmp } from "./status-override";
+import { AdditionalAmp } from "./status-override";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1043100;
@@ -17,7 +17,7 @@ export const info: SkillTooltipProps = {
         1: Constants.T.damage,
         2: RatioPercent(Constants.T.damage.amp),
         3: Constants.T.cooldown_conversion,
-        4: status.skillAmp.overrideAdditional?.value?.toString() ?? "",
+        4: AdditionalAmp(status.cooldownReduction.calculatedValue).toString(),
         5: Constants.T.damage.base
     }),
     expansion: () => ({

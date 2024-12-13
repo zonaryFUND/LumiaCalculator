@@ -5,7 +5,6 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import StandardDamage from "./rows/standard-damage";
 import CriticalAvailable from "./rows/critical-available";
-import Decimal from "decimal.js";
 import { useCombatHPContext } from "../combat-hp-context";
 import { ValueRatio } from "app-types/value-ratio";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
@@ -16,7 +15,8 @@ type Props = {
     elements: (SubjectDamageTableUnit | Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy} & {skillLevel?: number})[][]
     attacker: {
         config: SubjectConfig
-        status: Status
+        status: Status,
+        hp: number
     }
 }
 
@@ -47,7 +47,7 @@ const subTable: React.FC<Props> = props => {
                         })();
 
                         if (typeof unit.value == "function") {
-                            const { value } = unit.value(props.attacker.config, props.attacker.status);
+                            const { value } = unit.value(props.attacker);
                             if (Array.isArray(value)) {
                                 return value
                                     .map((v, index) => {

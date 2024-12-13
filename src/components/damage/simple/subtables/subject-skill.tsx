@@ -33,6 +33,7 @@ const subjectSkill: React.FC<Props> = props => {
                                 key={unit.label} 
                                 status={props.status} 
                                 config={props.config} 
+                                hp={props.hp}
                                 {...unit} 
                                 strategy={unit.value} 
                             />;  

@@ -1,8 +1,5 @@
 import * as React from "react";
-import { useToggle } from "react-use";
 import Column from "./column";
-import Mastery from "./expand/mastery";
-import Equipment from "./expand/equipment";
 import InnerTable from "components/common/inner-table";
 import { ArrowFatLinesUp, Hourglass, CaretDown, CaretUp } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
@@ -12,6 +9,7 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import table from "components/common/table.module.styl";
 import { SkillTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
+import ExpandStatus from "./expand-status";
 
 type Props = SubjectConfig & {
     status: Status
@@ -27,50 +25,21 @@ const skill: React.FC<Props> = props => {
                 value={props.status.skillAmp.calculatedValue}
                 expand={
                     props.status.skillAmp.calculatedValue.isZero() ? null :
-                    <InnerTable>
-                        {
-                            props.status.skillAmp.equipment?.constant || props.status.skillAmp.perLevel ?
-                            <Equipment 
-                                {...props.status.skillAmp.equipment}
-                                level={props.level}
-                                label={<FormattedMessage id="app.constant-value" />}
-                            /> 
-                            : null
-                        }
-                        {
-                            props.status.skillAmp.overrideAdditional ?
-                            <tr>
-                                <td><FormattedMessage id={props.status.skillAmp.overrideAdditional.nameKey} /></td>
-                                <td>{props.status.skillAmp.overrideAdditional.value?.toString()}</td>
-                            </tr>
-                            : null
-                        }
-                        {
-                            props.status.skillAmp.equipment?.adaptive ?
-                            <tr><td><FormattedMessage id="status.adaptive"/></td><td>{props.status.skillAmp.equipment.adaptive.toString()}</td></tr>
-                            : null
-                        }
-                        {
-                            props.status.skillAmp.equipment?.ratio ?
-                            <tr><td>%<FormattedMessage id="status.skill-amp" /></td><td>{props.status.skillAmp.equipment.ratio.toString()}%</td></tr>
-                            : null
-                        }
-                        {
-                            props.status.skillAmp.perMastery ? 
-                            <Mastery perMastery={props.status.skillAmp.perMastery} name={<FormattedMessage id="status.weapon-mastery" />} mastery={props.weaponMastery} />
-                            : null
-                        }
-                    </InnerTable>
+                    <ExpandStatus {...props.status.skillAmp} />
                 }
                 isHidden={hidden}
             />
+            
             <Column 
                 name={<><Hourglass /><FormattedMessage id="status.cooldown-reduction" /></>} 
                 value={props.status.cooldownReduction.calculatedValue} 
                 expand={
-                    props.status.cooldownReduction.cap.isZero() ? null :
+                    props.status.cooldownLimit.calculatedValue.isZero() ? null :
                     <InnerTable>
-                        <tr><td><FormattedMessage id="status.max-cooldown-reduction" /></td><td>+{props.status.cooldownReduction.cap.toString()}%</td></tr>
+                        <tr>
+                            <td><FormattedMessage id="status.max-cooldown-reduction" /></td>
+                            <td>+{props.status.cooldownLimit.calculatedValue.toString()}%</td>
+                        </tr>
                     </InnerTable>
                 }
                 percent

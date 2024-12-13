@@ -12,6 +12,7 @@ type Props = {
     attacker: {
         config: SubjectConfig
         status: Status
+        hp: number
     }
 }
 

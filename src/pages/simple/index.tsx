@@ -18,7 +18,7 @@ import CollapseTab from "components/common/collapse-tab";
 import { SimpleCurrentConfigKey } from "@app/storage/simple";
 import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
-import { useStatus } from "app-types/subject-dynamic/status/calculate-status";
+import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
@@ -42,8 +42,8 @@ const index: React.FC = props => {
     }, [])
 
     const configProps = useSubjectConfig(SimpleCurrentConfigKey);
-    const status = useStatus(configProps.value);
-    const hp = React.useState(status.maxHp.calculatedValue.toNumber());
+    const [status, hp] = useStatus(configProps.value);
+
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);

@@ -7,7 +7,7 @@ import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 export const code = 1039500;
 
 export function CamiloRHealStrategy(val: "min" | "max"): UniqueValueStrategy {
-    return (config, status) => {
+    return ({ config, status }) => {
         const base = Constants.R.heal.base[config.skillLevels.R];
         const multiplier = Constants.R.heal.perHit[config.skillLevels.R] * (val == "min" ? 1 : Constants.R.heal.maxHit);
         const value = new Decimal(base).addPercent(multiplier);

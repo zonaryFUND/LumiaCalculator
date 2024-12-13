@@ -20,7 +20,7 @@ import { useToggle } from "react-use";
 import { useSubjectConfig } from "components/config/use-subject-config";
 import Content from "components/pages/base/content";
 import { NavigationButtonContext } from "components/pages/navigation";
-import { useStatus } from "app-types/subject-dynamic/status/calculate-status";
+import { useStatus } from "app-types/subject-dynamic/status/use-status";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -40,22 +40,10 @@ const index: React.FC = props => {
     const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
 
     const left = useSubjectConfig(CombatCurrentLeftConfigKey);
-    const leftStatus = useStatus(left.value);
-    const leftHP = React.useState(leftStatus.maxHp.calculatedValue.toNumber());
-    React.useEffect(() => {
-        if (leftStatus.maxHp.calculatedValue.lessThan(leftHP[0])) {
-            leftHP[1](leftStatus.maxHp.calculatedValue.toNumber())
-        }
-    }, [leftStatus.maxHp])
+    const [leftStatus, leftHP] = useStatus(left.value);
 
     const right = useSubjectConfig(CombatCurrentRightConfigKey);
-    const rightStatus = useStatus(right.value);
-    const rightHP = React.useState(rightStatus.maxHp.calculatedValue.toNumber())
-    React.useEffect(() => {
-        if (rightStatus.maxHp.calculatedValue.lessThan(rightHP[0])) {
-            rightHP[1](rightStatus.maxHp.calculatedValue.toNumber())
-        }
-    }, [rightStatus.maxHp])
+    const [rightStatus, rightHP] = useStatus(right.value);
 
     React.useEffect(() => {
         if (!makeMasteryAlign) return;
@@ -110,6 +98,11 @@ const index: React.FC = props => {
                     />
                 </SubjectSideContext.Provider>
             </CollapseTab>
+            <TooltipPresenter 
+                showEquation={damageInFormula}
+                status={[leftStatus, rightStatus]} 
+                config={[left.value, right.value]} 
+            />
             <Modal
                 isOpen={showingPreference}
                 shouldCloseOnOverlayClick

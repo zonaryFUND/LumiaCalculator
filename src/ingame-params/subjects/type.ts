@@ -1,5 +1,5 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status, StatusBeforeCalculation, SummonedStatus } from "app-types/subject-dynamic/status/type";
+import { Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { UniqueValueStrategy } from "./unique-value-strategy";
@@ -21,13 +21,12 @@ export type DamageTable = {
     skill: SubjectDamageTableUnit[][]
 }
 
-
 export type SkillListHook = (config: SubjectConfig) => Record<"Q" | "W" | "E" | "R" | "T", number | number[] | {
     maxLevel?: number | "none",
     code: number | number[]
 }>;
 
-export type StatusOverrideFunc = (status: StatusBeforeCalculation, config: SubjectConfig) => StatusBeforeCalculation;
+export type StatusOverrideFunc = (status: Status, config: SubjectConfig, currentHP: number) => Status;
 
 export type SummonedStatusFunc = (masterStatus: Status, config: SubjectConfig) => SummonedStatus;
 export type SummonInfo = {

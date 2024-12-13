@@ -58,9 +58,9 @@ export function createMitigation(status: Status, targetStatus: Status): Mitigati
             mitigationType: "ratio",
             value: targetStatus.preventBasicAttackDamagedRatio.calculatedValue
         },
-        targetStatus.preventBasicAttackDamaged.overrideAdditional ?
+        targetStatus.preventBasicAttackDamaged.calculatedValue.greaterThan(0) ?
         {
-            labelIntlID: targetStatus.preventBasicAttackDamaged.overrideAdditional.nameKey,
+            labelIntlID: "aaaa",
             mitigationType: "constant",
             value: targetStatus.preventBasicAttackDamaged.calculatedValue
         } : undefined

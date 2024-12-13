@@ -1,11 +1,10 @@
 import * as React from "react";
-import { useToggle } from "react-use";
 import Column from "./column";
-import StandardExpand from "./expand/standard";
 import { Lightning, CaretDown, CaretUp } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
+import ExpandStatus from "./expand-status";
 
 import table from "components/common/table.module.styl";
 import { SpTableHiddenKey } from "@app/storage/status";
@@ -26,13 +25,13 @@ const sp: React.FC<Props> = props => {
             <Column 
                 name={<><Lightning weight="fill" /><FormattedMessage id="status.maxsp" /></>} 
                 value={props.status.maxSp.calculatedValue} 
-                expand={<StandardExpand {...props.status.maxSp} level={props.level} digit={2} />}
+                expand={<ExpandStatus {...props.status.maxSp} />}
                 isHidden={hidden}
             />
             <Column 
                 name={<><Lightning /><FormattedMessage id="status.spregen"/></>} 
                 value={props.status.spRegen.calculatedValue} 
-                expand={<StandardExpand {...props.status.spRegen} level={props.level} digit={2} />}
+                expand={<ExpandStatus {...props.status.spRegen} />}
                 isHidden={hidden}
             />
         </tbody>

@@ -2,7 +2,7 @@ import { DamageTableGenerator } from "../type";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => {
-    const wCount = (props.status.attackSpeed.additionalValue?.dividedBy(30).floor().clamp(0, Constants.W.max_bullets - Constants.W.bullets).toNumber() ?? 0) + Constants.W.bullets;
+    const wCount = (props.status.attackSpeed.multiplier.dividedBy(30).floor().clamp(0, Constants.W.max_bullets - Constants.W.bullets).toNumber() ?? 0) + Constants.W.bullets;
 
     return {
         basicAttack: ["standard"],

@@ -12,6 +12,7 @@ import { Prohibit } from "@phosphor-icons/react";
 import { WeaponSkillCodeDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import { TooltipContext } from "components/tooltip/tooltip-context";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
+import { useLatest } from "react-use";
 
 type SkillListProps = {
     config: SubjectConfig
@@ -24,14 +25,15 @@ const Skill: React.FC<{code?: number}> = ({code}) => {
     const side = React.useContext(SubjectSideContext);
     const tooltipContext = React.useContext(TooltipContext);
 
+    const latest = useLatest({ code, side });
     const onClick: React.MouseEventHandler<HTMLElement> = React.useCallback(event => {
-        if (uiType != "mobile" || code == undefined) {
+        if (uiType != "mobile" || latest.current.code == undefined) {
             return
         }
 
         tooltipContext?.openModalSkill.current({
-            skillCode: code,
-            subjectSide: side
+            skillCode: latest.current.code,
+            subjectSide: latest.current.side
         });
     }, [])
 

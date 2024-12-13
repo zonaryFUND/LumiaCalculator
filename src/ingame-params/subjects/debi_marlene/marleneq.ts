@@ -12,7 +12,7 @@ export const info: SkillTooltipProps = {
         // The cooldown reduction of DebiQ peaks when her additional attack speed reaches 120%, 
         // at which point it becomes 30% of the original cooldown.
         return new Decimal(Constants.MarleneQ.cooldown)
-            .subPercent(status.attackSpeed.additionalValue?.clamp(0, 120).times(7).dividedBy(12) ?? 0)
+            .subPercent(status.attackSpeed.multiplier.clamp(0, 120).times(7).dividedBy(12) ?? 0)
             .subPercent(status.cooldownReduction.calculatedValue).round2();
     },
     values: ({ showEquation }) => ({

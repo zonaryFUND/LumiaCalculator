@@ -1,8 +1,5 @@
 import * as React from "react";
-import { useToggle } from "react-use";
 import Column from "./column";
-import Equipment from "./expand/equipment";
-import InnerTable from "components/common/inner-table";
 import { ShieldSlash, CaretDown, CaretUp } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";
@@ -11,6 +8,8 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import table from "components/common/table.module.styl";
 import { PenetrationTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
+
+import ExpandStatus from "./expand-status";
 
 type Props = SubjectConfig & {
     status: Status
@@ -30,20 +29,8 @@ const penetration: React.FC<Props> = props => {
                 name={<><ShieldSlash /><FormattedMessage id="status.armor-penetration-ratio" /></>} 
                 value={props.status.penetrationDefenseRatio.calculatedValue} 
                 expand={
-                    props.status.penetrationDefenseRatio.overrideAdditional ?
-                    <InnerTable>
-                        <Equipment 
-                            constant={props.status.penetrationDefenseRatio.equipment?.constant}
-                            percent
-                            level={props.level}
-                        />
-                        <tr>
-                            <td><FormattedMessage id={props.status.penetrationDefenseRatio.overrideAdditional.nameKey} /></td>
-                            <td>{props.status.penetrationDefenseRatio.overrideAdditional.value?.toString()}%</td>
-                        </tr>
-                    </InnerTable> 
-                    :
-                    null
+                    props.status.penetrationDefenseRatio.components.findIndex(c => c.origin != "equipment") > -1 ?
+                    <ExpandStatus {...props.status.penetrationDefenseRatio} percent /> : null
                 }
                 percent 
                 isHidden={hidden} 

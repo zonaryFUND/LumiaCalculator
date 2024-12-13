@@ -7,7 +7,7 @@ type EquationExpressionUnit = string | { intlID: string } | { ratioKey: RatioKey
 
 export type EquationExpression = {labelIntlID?: string, expression: EquationExpressionUnit[]};
 
-export type UniqueValueStrategy = (config: SubjectConfig, status: Status) => {
+export type UniqueValueStrategy = (props: { config: SubjectConfig, status: Status, hp: number }) => {
     value: Decimal | [Decimal, Decimal | undefined, Decimal | undefined]
     equationExpression: EquationExpression[]
 }

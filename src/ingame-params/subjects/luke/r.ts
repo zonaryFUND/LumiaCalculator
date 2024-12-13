@@ -52,10 +52,11 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
+            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.R.stack_damage.base},
+            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.R.stack_slow.effect, percent: true},
             {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost},
-            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.R.stack_slow.effect, percent: true}
+            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
         ]  
     })
 }

@@ -3,5 +3,8 @@
     "subject.sissela.q-pass": "Q通過",
     "subject.sissela.q-blast": "Q着弾",
     "subject.sissela.e-shield": "Eシールド",
-    "subject.sissela.e-damage": "Eダメージ"
+    "subject.sissela.e-damage": "Eダメージ",
+    "subject.sissela.r-losthp": "消耗体力比(%)",
+    "subject.sissela.t-amp": "T増幅",
+    "subject.sissela.t-heal": "T回復/秒"
 }

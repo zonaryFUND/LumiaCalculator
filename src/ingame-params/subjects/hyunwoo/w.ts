@@ -4,7 +4,7 @@ import { UniqueValueStrategy } from "../unique-value-strategy";
 
 export const code = 1007300;
 
-export const hyunwooWDefenseStrategy: UniqueValueStrategy = (config, status) => {
+export const hyunwooWDefenseStrategy: UniqueValueStrategy = ({ config, status }) => {
     const base = Constants.W.defense.base[config.skillLevels.W];
     const defRatio = Constants.W.defense.defense;
     const value = status.defense.calculatedValue.div(defRatio).floor().add(base);

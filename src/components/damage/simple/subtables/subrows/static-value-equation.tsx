@@ -86,7 +86,7 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
     },
     additionalAttackSpeed: {
         label: "追加攻撃速度(%)",
-        extract: status.attackSpeed.additionalValue ?? 0
+        extract: status.attackSpeed.multiplier ?? 0
     }
 })
 

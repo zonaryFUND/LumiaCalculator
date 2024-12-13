@@ -5,7 +5,7 @@ import Constants from "./constants.json";
 import { NinaRatioStrategy } from "./nina-ratio-strategy";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 
-const ninaBasicAttackStrategy: UniqueValueStrategy = (config, status) => {
+const ninaBasicAttackStrategy: UniqueValueStrategy = ({ config, status }) => {
     const ninaStatus = status.summoned![0].status;
     const regularDamage = new Decimal(ninaStatus.attackPower);
     const criticalAvailable = ninaStatus.criticalChance.greaterThan(0);

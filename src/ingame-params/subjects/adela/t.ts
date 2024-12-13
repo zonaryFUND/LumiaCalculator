@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { additionalAmp } from "./status-override";
+import { AdditionalAmp } from "./status-override";
 
 export const code = 1024100;
 
@@ -10,7 +10,7 @@ export const info: SkillTooltipProps = {
         0: Constants.T.additional_attack_range,
         1: 0.01,
         2: Constants.T.amp_per_as,
-        6: additionalAmp(status.attackSpeed, config).toString() ?? ""
+        6: AdditionalAmp(status.attackSpeed, config).toString() ?? ""
     }),
     expansion: () => ({
         enumeratedValues: [

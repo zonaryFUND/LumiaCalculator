@@ -1,6 +1,7 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
+import { AdditionalAmp } from "./status-override";
 
 export const code = 1048100;
 
@@ -25,7 +26,7 @@ export const info: SkillTooltipProps = {
     }),
     expansion: ({ status }) => ({
         tipValues: {
-            16: status.skillAmp.overrideAdditional?.value?.toString() ?? ""
+            16: AdditionalAmp(status.cooldownReduction.calculatedValue).toString()
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Squirrel1_FixedDamage", values: Constants.T.yr.damage.base},

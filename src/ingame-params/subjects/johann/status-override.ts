@@ -1,17 +1,21 @@
 import Constants from "./constants.json";
 import { StatusOverrideFunc } from "../type";
-import Decimal from "decimal.js";
+import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 
 const f: StatusOverrideFunc = (status, config) => {
     return {
         ...status,
-        tenacity: {
-            ...status.tenacity,
-            overrideAdditional: {
-                nameKey: "T",
-                value: new Decimal(Constants.T.tenacity[config.skillLevels.T])
+        tenacity: AddComponent(status.tenacity,
+            {
+                origin: "perpetual_status",
+                calculationType: "sum",
+                intlID: "T",
+                value: {
+                    type: "constant",
+                    value: Constants.T.tenacity[config.skillLevels.T]
+                }
             }
-        }
+        )
     }
 };
 

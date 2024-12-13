@@ -86,6 +86,7 @@ const basicAttack: React.FC<Props> = props => {
                                     strategy={definition.value}
                                     config={props.config}
                                     status={props.status}
+                                    hp={props.hp}
                                 />
                             } else if (definition.type?.type == "basic" && definition.type.critical == undefined) {
                                 return <CriticalAvailable 

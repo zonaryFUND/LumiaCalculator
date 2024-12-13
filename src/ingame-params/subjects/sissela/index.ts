@@ -1,5 +1,6 @@
 import { defineSubject } from "../type";
 import damageTable from "./damage-table";
+import statusOverride from "./status-override";
 import * as Q from "./q";
 import * as W from "./w";
 import * as E from "./e";
@@ -10,6 +11,7 @@ import * as T from "./t";
 export default defineSubject({
     code: 15,
     damageTable,
+    statusOverride,
 
     skills: {
         listExpression: () => ({

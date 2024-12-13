@@ -1,24 +1,27 @@
 import Constants from "./constants.json";
 import { StatusOverrideFunc } from "../type";
 import Decimal from "decimal.js";
-import { standardCalc } from "app-types/subject-dynamic/status/standard-calculation";
+import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 
 const f: StatusOverrideFunc = (status, config) => {
-    const tLevel = config.skillLevels.T;
-    const maxHP = standardCalc(status.maxHP, {level: config.level}, 0).calculatedValue;
-    const amp = standardCalc(status.skillAmp, {level: config.level, mastery: config.weaponMastery}, 0).calculatedValue;
-    const value = new Decimal(Constants.T.reduction.base[tLevel])
-        .add(amp.percent(Constants.T.reduction.amp))
-        .add(maxHP.percent(Constants.T.reduction.maxHP));
+    const value = new Decimal(Constants.T.reduction.base[config.skillLevels.T])
+        .add(status.skillAmp.calculatedValue.percent(Constants.T.reduction.amp))
+        .add(status.maxHp.calculatedValue.percent(Constants.T.reduction.maxHP))
+        .floor();
 
     return {
         ...status,
-        preventBasicAttackDamaged: {
-            overrideAdditional: {
-                nameKey: "subject.garnet.passive-damage-reduction",
-                value
+        preventBasicAttackDamaged: AddComponent(status.preventBasicAttackDamaged,
+            {
+                origin: "perpetual_status",
+                calculationType: "sum",
+                intlID: "subject.garnet.passive-damage-reduction",
+                value: {
+                    type: "constant",
+                    value
+                }
             }
-        }
+        )
     }
 };
 

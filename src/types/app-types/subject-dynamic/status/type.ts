@@ -1,5 +1,5 @@
 import Decimal from "decimal.js"
-import { StatusValue, StatusValueDefault } from "./value/type"
+import { MovementSpeedValue, StatusValue, StatusValueDefault } from "./value/type"
 
 export type SummonedStatus = {
     maxHP: Decimal
@@ -35,7 +35,7 @@ export type Status = {
     normalLifeSteal: StatusValue    // AA only
     healerGiveHpHealRatio: StatusValue
     tenacity: StatusValue
-    moveSpeed: StatusValue
+    moveSpeed: MovementSpeedValue
     slowResist: StatusValue
     sightRange: StatusValue
     attackRange: StatusValue
@@ -69,7 +69,7 @@ export const BlankStatus: Status = {
     normalLifeSteal: StatusValueDefault,    // AA only
     healerGiveHpHealRatio: StatusValueDefault,
     tenacity: StatusValueDefault,
-    moveSpeed: StatusValueDefault,
+    moveSpeed: { components: [], calculatedValue: new Decimal(0), rawResult: new Decimal(0) },
     slowResist: StatusValueDefault,
     sightRange: StatusValueDefault,
     attackRange: StatusValueDefault

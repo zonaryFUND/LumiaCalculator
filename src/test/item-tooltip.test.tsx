@@ -5,14 +5,14 @@ import Weapons from "@app/ingame-params/json/weapon.json";
 import Armors from "@app/ingame-params/json/armor.json";
 import { Locales } from "@app/App";
 import { SubjectConfigDefault } from "app-types/subject-dynamic/config";
-import { useStatus } from "app-types/subject-dynamic/status/calculate-status";
+import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { IntlProvider } from "react-intl";
 import Tooltip from "@app/components/tooltip/item/item-tooltip"
 
 const config = SubjectConfigDefault;
 
 const Bed: React.FC<{code: number, showEquation: boolean}> = ({ code, showEquation }) => {
-    const status = useStatus(config);
+    const [status] = useStatus(config);
     return (
         <IntlProvider locale="ja" messages={Locales["ja"]}>
             <Tooltip 

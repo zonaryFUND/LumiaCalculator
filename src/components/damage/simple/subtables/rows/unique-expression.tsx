@@ -19,11 +19,16 @@ type Props = Omit<SubjectDamageTableUnit, "value" | "skill"> & {
     strategy: UniqueValueStrategy
     config: SubjectConfig
     status: Status
+    hp: number
 }
 
 const uniqueExpression: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
-    const { value, equationExpression } = props.strategy(props.config, props.status);
+    const { value, equationExpression } = props.strategy({ 
+        config: props.config, 
+        status: props.status,
+        hp: props.hp
+    });
     const sanitizedValue = (() => {
         if (Array.isArray(value)) {
             return [value[0], value[1], value[2] || value[1]];

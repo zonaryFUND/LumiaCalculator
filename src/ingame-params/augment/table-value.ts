@@ -10,7 +10,7 @@ import { calculateValue } from "app-types/value-ratio/calculation";
 import Decimal from "decimal.js";
 import ratioKey from "components/damage/simple/subtables/subrows/ratio-key";
 
-const acceleratorStrategy: UniqueValueStrategy = (config, status) => {
+const acceleratorStrategy: UniqueValueStrategy = ({ config, status }) => {
     const base = Havoc.accelerator.damage.base[config.level - 1];
     const value = calculateValue(Havoc.accelerator.damage, status, config, config.level - 1).static;
     return {
@@ -31,7 +31,7 @@ const acceleratorStrategy: UniqueValueStrategy = (config, status) => {
     }
 }
 
-const redSpriteStrategy: UniqueValueStrategy = (config, status) => {
+const redSpriteStrategy: UniqueValueStrategy = ({ config, status }) => {
     const {amp, ...attackBased} = Chaos.red_sprite.damage;
     const {additionalAttack, ...ampBased} = Chaos.red_sprite.damage;
 

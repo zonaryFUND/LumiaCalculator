@@ -1,21 +1,23 @@
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
 import { StatusOverrideFunc } from "../type";
-import { StatusBeforeCalculation } from "app-types/subject-dynamic/status/type";
+import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 
-export function additionalAmp(status: StatusBeforeCalculation): Decimal {
-    return status.cooldownReduction.calculatedValue?.times(Constants.T.cooldown_conversion / 10) ?? new Decimal(0);
+export function AdditionalAmp(cooldown: Decimal): Decimal {
+    return cooldown.times(Constants.T.cooldown_conversion / 10);
 }
 
 const f: StatusOverrideFunc = (status, config) => ({
     ...status,
-    skillAmp: {
-        ...status.skillAmp,
-        overrideAdditional: {
-            nameKey: "subject.tia.passive-amp",
-            value: additionalAmp(status)
+    skillAmp: AddComponent(status.skillAmp, status.cooldownReduction.calculatedValue.greaterThan(0) ? {
+        origin: "perpetual_status",
+        calculationType: "sum",
+        intlID: "subject.tia.passive-amp",
+        value: {
+            type: "constant",
+            value: AdditionalAmp(status.cooldownReduction.calculatedValue)
         }
-    }
+    } : undefined)
 });
 
 export default f;

@@ -1,17 +1,18 @@
 import Constants from "./constants.json";
-import Decimal from "decimal.js";
 import { StatusOverrideFunc } from "../type";
+import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 
 const f: StatusOverrideFunc = (status, config) => ({
     ...status,
-    attackSpeed: {
-        ...status.attackSpeed,
-        overrideFix: {
-            nameKey: "subject.nathapon.passive-attack-speed",
-            value: new Decimal(Constants.common.attackSpeed)
-        },
-        calculatedValue: new Decimal(Constants.common.attackSpeed)
-    }
+    attackSpeed: AddComponent(status.attackSpeed, {
+        origin: "perpetual_status",
+        calculationType: "fix",
+        intlID: "subject.nathapon.passive-attack-speed",
+        value: {
+            type: "constant",
+            value: Constants.common.attackSpeed
+        }
+    })
 });
 
 export default f;

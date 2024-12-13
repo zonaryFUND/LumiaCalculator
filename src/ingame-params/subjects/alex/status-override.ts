@@ -1,27 +1,33 @@
 import Constants from "./constants.json";
 import { StatusOverrideFunc } from "../type";
-import Decimal from "decimal.js";
 import weaponRange from "app-types/subject-dynamic/config/weapon-range";
+import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 
 const f: StatusOverrideFunc = (status, config) => {
     const range = weaponRange(config);
 
     return {
         ...status,
-        attackSpeed: {
-            ...status.attackSpeed,
-            overrideAdditional: {
-                nameKey: "subject.alex.e-attack-speed",
-                ratio: new Decimal(Constants.common.e_as[config.skillLevels.E])
+        attackSpeed: AddComponent(status.attackSpeed,
+            {
+                origin: "perpetual_status",
+                calculationType: "mul",
+                intlID: "subject.alex.e-attack-speed",
+                value: {
+                    type: "constant",
+                    value: Constants.common.e_as[config.skillLevels.E]
+                }
             }
-        },
-        defense: {
-            ...status.defense,
-            overrideAdditional: range == "range" ? undefined : {
-                nameKey: "subject.alex.passive-defense",
-                value: new Decimal(Constants.T.defense[config.skillLevels.T])
+        ),
+        defense: AddComponent(status.defense, range == "range" ? undefined : {
+            origin: "perpetual_status",
+            calculationType: "sum",
+            intlID: "subject.alex.passive-defense",
+            value: {
+                type: "constant",
+                value: Constants.T.defense[config.skillLevels.T]
             }
-        }
+        })
     };
 }
 

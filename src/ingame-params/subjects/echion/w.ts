@@ -7,7 +7,7 @@ import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1044300;
 
-export const EchionWStrategy: UniqueValueStrategy = (config, status) => {
+export const EchionWStrategy: UniqueValueStrategy = ({ config, status }) => {
     const value = new Decimal(Constants.W.shield.base[config.skillLevels.W])
         .add(status.attackPower.calculatedValue.percent(Constants.W.shield.attack))
         .add(Math.min(config.gauge, Constants.W.gauge_max_consumption) * Constants.W.multiplier / 100);

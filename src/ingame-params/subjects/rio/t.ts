@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
-import { additionalPenetration } from "./status-override";
+import { AdditionalPenetration } from "./status-override";
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
 import { UniqueValueStrategy } from "../unique-value-strategy";
@@ -18,7 +18,7 @@ function rioBasicAttackMultiplier(status: Status): Decimal {
 }
 
 export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValueStrategy {
-    return (config, status) => {
+    return ({ config, status }) => {
         const bowRatio = (() => {
             switch (bow) {
                 case "daikyu":      return Constants.Q.daikyu.attack;
@@ -76,7 +76,7 @@ export const info: SkillTooltipProps = {
             }
         } else {
             return {
-                0: RatioPercent(additionalPenetration(config.skillLevels.T, status.criticalStrikeChance.calculatedValue).toString()),
+                0: RatioPercent(AdditionalPenetration(config.skillLevels.T, status.criticalStrikeChance.calculatedValue).toString()),
                 1: RatioPercent(rioBasicAttackMultiplier(status).floor().toNumber())
             }
         }

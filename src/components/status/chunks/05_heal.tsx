@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useToggle } from "react-use";
 import Column from "./column";
 import { Drop, FirstAidKit, CaretDown, CaretUp } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";

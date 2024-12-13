@@ -12,14 +12,12 @@ export const info: SkillTooltipProps = {
         value: Constants.Q.sp_cost
     },
     cooldown: ({ status }) => {
-        const additionalAttackSpeed = status.attackSpeed.calculatedValue.minus(status.attackSpeed.base ?? 0)
-
         // NOTE: This multiplier is an estimated value.
         // The cooldown reduction of Q peaks when his attack speed reaches 1.49 (base plus 1.38), 
         // at which point it becomes 30% of the original cooldown.
         // Assuming that the attack speed at which cooldowns saturate is 1.375 before rounding, rather than the displayed value of 1.38, 
         // cooldown aligns much better with in-game displayed values.
-        return new Decimal(Constants.Q.cooldown.constant).subPercent(additionalAttackSpeed.clamp(0, 1.375).times(70).dividedBy(1.375)).round2();
+        return new Decimal(Constants.Q.cooldown.constant).subPercent(status.attackSpeed.additionalValue.clamp(0, 1.375).times(70).dividedBy(1.375)).round2();
     },
     values: ({ showEquation }) => ({
         0: showEquation ? Constants.Q.damage.base : Constants.Q.damage,

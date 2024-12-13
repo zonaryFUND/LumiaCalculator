@@ -4,7 +4,7 @@ import { UniqueValueStrategy } from "../unique-value-strategy";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
-export const AidenTStrategy: UniqueValueStrategy = (config, status) => {
+export const AidenTStrategy: UniqueValueStrategy = ({ config, status }) => {
     const regularDamage = status.attackPower.calculatedValue.addPercent(status.increaseBasicAttackDamageRatio.calculatedValue)
     const chanceConversionRatio = Constants.T.critical_chance_convert[config.skillLevels.T];
     const multiplier = BaseCriticalDamagePercent

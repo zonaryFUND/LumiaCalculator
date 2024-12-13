@@ -3,6 +3,7 @@ import { StatusOverrideFunc } from "../type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import Decimal from "decimal.js";
 import { EquipmentStatusDictionary } from "app-types/equipment";
+import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 
 export const accelerando = (config: SubjectConfig) => {
     const equipment = Object.values(config.equipment)
@@ -22,10 +23,18 @@ const f: StatusOverrideFunc = (status, config) => {
     const accelerandoValue = accelerando(config);
     return {
         ...status,
-        cooldownReduction: {
+        cooldownReduction: AddComponent({
             ...status.cooldownReduction,
-            calculatedValue: cdr(accelerandoValue)
-        }
+            max: undefined   
+        }, {
+            origin: "perpetual_status",
+            calculationType: "fix",
+            intlID: "accelerando",
+            value: {
+                type: "constant",
+                value: cdr(accelerandoValue)
+            }
+        })
     }
 };
 

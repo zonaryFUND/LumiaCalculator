@@ -19,7 +19,7 @@ const table: DamageTableGenerator = props => {
         .div(Constants.E.damage.amp_per).floor()
         .add(Constants.E.damage.base[props.config.skillLevels.E]);
 
-    const eStrategy: UniqueValueStrategy = (config, status) => {
+    const eStrategy: UniqueValueStrategy = ({ config, status }) => {
         return {
             value: eValue,
             equationExpression: [
