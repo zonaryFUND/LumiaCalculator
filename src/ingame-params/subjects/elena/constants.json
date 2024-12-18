@@ -17,7 +17,7 @@
     "W": {
         "damage": {
             "base": [50,70,90,110,130],
-            "additionalMaxHP": 10,
+            "additionalMaxHP": 8,
             "amp": 50
         },
         "q_cooldown_reduction": 30,
@@ -40,7 +40,7 @@
             "additionalMaxHP": 20,
             "amp": 80
         },
-        "defense": [10,14,18,22,26],
+        "defense": [10,13,16,19,22],
         "sp_cost": 50,
         "cooldown": 5
     },

@@ -4,8 +4,8 @@
             "base": [100,140,180,220,260],
             "amp": 40
         },
-        "movement_speed": 15,
-        "near_movement_speed": [20,22.5,25,27.5,30],
+        "movement_speed": 20,
+        "near_movement_speed": [25,27.5,30,32.5,35],
         "basic_attack_damage": {
             "level": 10,
             "targetMaxHP": [6,6.5,7,7.5,8]

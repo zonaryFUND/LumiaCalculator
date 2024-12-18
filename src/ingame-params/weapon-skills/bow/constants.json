@@ -3,7 +3,7 @@
     "damage": {
         "base": [100,200,300],
         "additionalAttack": 100,
-        "amp": 30
+        "amp": 40
     },
     "slow": {
         "duration": 3,
@@ -15,6 +15,6 @@
         "amp": 60
     },
     "cooldown": {
-        "constant": [35,30,25]
+        "constant": [30,27,24]
     }
 }

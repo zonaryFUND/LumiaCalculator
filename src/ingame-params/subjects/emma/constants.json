@@ -17,7 +17,7 @@
         "before_blast": 0.5,
         "damage": {
             "base": [80,125,170,215,260],
-            "amp": 80
+            "amp": 85
         },
         "duration": 7,
         "cooldown_reduction": 30,

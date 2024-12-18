@@ -44,7 +44,7 @@
     },
     "T": {
         "movement_speed": [12,18,24],
-        "attack_speed": [30,40,50],
+        "attack_speed": [30,35,40],
         "damage": {
             "base": [40,60,80],
             "amp": 30

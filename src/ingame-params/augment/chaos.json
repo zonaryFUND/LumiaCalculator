@@ -61,7 +61,7 @@
         "heal": {
             "additionalAttack": 70,
             "amp": 20,
-            "maxHP": 8,
+            "maxHP": 10,
             "lostHP": 10
         },
         "additional_heal_per_hit": 40,

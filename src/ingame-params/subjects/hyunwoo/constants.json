@@ -56,7 +56,7 @@
         },
         "defense_down": {
             "duration": 5,
-            "effect": [15,20,25]
+            "effect": [20,25,30]
         },
         "stun": 0.5,
         "max_later_delay": 0.35,

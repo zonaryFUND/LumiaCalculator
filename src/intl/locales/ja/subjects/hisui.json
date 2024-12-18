@@ -1,0 +1,13 @@
+{
+    "subject.hisui.q-first": "Q初撃",
+    "subject.hisui.q-second": "Q追撃",
+    "subject.hisui.w1-first": "W1初撃",
+    "subject.hisui.w1-second": "W1追撃",
+    "subject.hisui.w2-second-last-target": "W2最終対象",
+    "subject.hisui.w3-first-1hit": "W3初撃",
+    "subject.hisui.w3-first-allhit": "W3初撃全ヒット({value})",
+    "subject.hisui.w3-second": "W3追撃",
+    "subject.hisui.r-reuse-first": "R再使用初撃",
+    "subject.hisui.r-reuse-second": "R再使用追撃",
+    "subject.hisui.r-additional": "R追加ダメージ"
+}

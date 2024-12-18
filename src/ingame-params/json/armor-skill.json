@@ -167,7 +167,7 @@
 		"skillCode": 6053002,
 		"name": "blaze_up_amplified",
 		"values": {
-			"ms": 6
+			"moveSpeed": 6
 		}
 	},
 	"201527": {
@@ -298,7 +298,7 @@
 		"skillCode": 6053001,
 		"name": "blaze_up_amplified",
 		"values": {
-			"omnisyphon": 15
+			"lifeSteal": 15
 		}
 	},
 	"202515": {
@@ -393,11 +393,11 @@
 		"dmg": {
 			"melee": {
 				"base": 10,
-				"amp": 28
+				"amp": 27
 			},
 			"range": {
 				"base": 10,
-				"amp": 23
+				"amp": 22
 			}
 		},
 		"values": {
@@ -440,11 +440,11 @@
 		"name": "circulation",
 		"dmg": {
 			"melee": {
-				"base": 10,
+				"base": 5,
 				"amp": 25
 			},
 			"range": {
-				"base": 10,
+				"base": 5,
 				"amp": 20
 			}
 		},

@@ -17,7 +17,7 @@
         "damage": {
             "base": [70,90,110,130,150],
             "attack": 20,
-            "amp": 80,
+            "amp": 75,
             "criticalChance": 65
         },
         "slow": {

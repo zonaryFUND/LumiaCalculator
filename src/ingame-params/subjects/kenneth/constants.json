@@ -14,7 +14,7 @@
         "duration": 4,
         "damage_reduction": {
             "base": 3,
-            "attack": [5,5.25,5.5,5.75,6]
+            "attack": [4,4.25,4.5,4.75,5]
         },
         "shield_duration": 0.75,
         "shield": {

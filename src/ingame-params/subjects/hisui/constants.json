@@ -1,0 +1,104 @@
+{
+    "Q": {
+        "first_damage": {
+            "base": [70,75,80,85,90],
+            "additionalAttack": [70,75,80,85,90]
+        },
+        "second_damage": {
+            "base": [50,65,80,95,110],
+            "additionalAttack": [90,95,100,105,110]
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 30
+        },
+        "cooldown": {
+            "constant": [10,9.5,9,8.5,8]
+        }
+    },
+    "W": {
+        "W1": {
+            "first_damage": {
+                "base": [15,30,45,60,75],
+                "additionalAttack": 50
+            },
+            "second_damage": {
+                "base": [20,40,60,80,100],
+                "additionalAttack": 90,
+                "targetMaxHP": 4
+            },
+            "shield": {
+                "base": [10,15,20,25,30],
+                "additionalAttack": 40
+            }
+        },
+        "W2": {
+            "damage": {
+                "base": [30,50,70,90,110],
+                "additionalAttack": 100
+            },
+            "final_target_damage": {
+                "base": [50,80,110,140,170],
+                "additionalAttack": 130
+            },
+            "airborne": 0.25
+        },
+        "W3": {
+            "first_damage": {
+                "base": 10,
+                "additionalAttack": [15,20,25,30,35]
+            },
+            "count": 4,
+            "max_count": 8,
+            "first_heal": 100,
+            "second_damage": {
+                "base": [50,80,110,140,170],
+                "additionalAttack": 100
+            },
+            "second_heal": 100,
+            "animal_heal": 30
+        }
+    },
+    "E": {
+        "damage": {
+            "base": [70,100,130,160,190],
+            "additionalAttack": 110
+        },
+        "cooldown": {
+            "constant": 15
+        }
+    },
+    "R": {
+        "duration": 15,
+        "range": 1,
+        "additional_damage": {
+            "base": 20,
+            "additionalAttack": [20,30,40]
+        },
+        "first_damage": {
+            "base": [80,120,160],
+            "additionalAttack": 100
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 40
+        },
+        "second_damage": {
+            "additionalAttack": [70,95,120],
+            "targetMaxHP": 10
+        },
+        "execution_threshold": 10,
+        "cooldown": [70,55,40]
+    },
+    "T": {
+        "as_per_level": 0.02,
+        "as_conversion": 0.15,
+        "duration": 5,
+        "max_stack": 2,
+        "qe_cooldown_reduction": [10,15,20],
+        "movement_speed": {
+            "duration": 1,
+            "effect": [10,15,20]
+        }
+    }
+}

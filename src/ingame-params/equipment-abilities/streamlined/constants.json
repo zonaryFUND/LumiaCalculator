@@ -3,5 +3,5 @@
     "threshold": 3,
     "duration": 3,
     "ms": 25,
-    "cooldown": 12
+    "cooldown": 10
 }

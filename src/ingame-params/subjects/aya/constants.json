@@ -49,7 +49,7 @@
         "duration": 1.5,
         "shield": {
             "base": [50,75,100],
-            "attack": 40,
+            "attack": 50,
             "amp": 25
         },
         "cooldown_reduction": 1,

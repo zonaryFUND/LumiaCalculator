@@ -1,5 +1,5 @@
 {
-    "duration": 3,
-    "melee": 20,
-    "range": 10
+    "duration": 5,
+    "attack_speed": 4,
+    "max_stack": 5
 }

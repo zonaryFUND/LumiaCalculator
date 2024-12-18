@@ -1,7 +1,7 @@
 {
     "Q": {
         "damage": {
-            "base": [80,100,120,140,160],
+            "base": [100,120,140,160,180],
             "additionalAttack": 65,
             "amp": 50,
             "targetMaxHP": 6
@@ -48,8 +48,8 @@
             "targetMaxHP": 5
         },
         "heal": {
-            "min": 60,
-            "max": 120,
+            "min": 65,
+            "max": 130,
             "max_threshold_hp": 40
         },
         "cooldown_reduction": 40,
