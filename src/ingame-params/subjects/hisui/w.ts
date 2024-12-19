@@ -1,12 +1,17 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
+import Decimal from "decimal.js";
 
 export const code = 1078300;
 
+export function w3Count(asMultiplier: Decimal): number {
+    return asMultiplier.div(35).floor().add(Constants.W.W3.count).clamp(0, Constants.W.W3.max_count).toNumber();
+}
+
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    values: ({ showEquation }): TooltipValues => {
+    values: ({ status, showEquation }): TooltipValues => {
         if (showEquation) {
             return {
                 0: Constants.W.W1.first_damage.base,
@@ -24,7 +29,7 @@ export const info: SkillTooltipProps = {
                 12: Constants.W.W2.airborne,
                 13: Constants.W.W3.first_damage.base,
                 14: RatioPercent(Constants.W.W3.first_damage.additionalAttack),
-                15: Constants.W.W3.count,
+                15: w3Count(status.attackSpeed.multiplier),
                 16: Constants.W.W3.max_count,
                 17: RatioPercent(Constants.W.W3.first_heal),
                 18: Constants.W.W3.second_damage.base,
@@ -42,7 +47,7 @@ export const info: SkillTooltipProps = {
                 6: Constants.W.W2.final_target_damage,
                 7: Constants.W.W2.airborne,
                 8: Constants.W.W3.first_damage,
-                9: Constants.W.W3.count,
+                9: w3Count(status.attackSpeed.multiplier),
                 10: RatioPercent(Constants.W.W3.first_heal),
                 11: Constants.W.W3.second_damage,
                 12: RatioPercent(Constants.W.W3.second_heal)

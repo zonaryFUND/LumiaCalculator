@@ -13,6 +13,7 @@
     "subject.hisui.w3-first-allhit-heal": "W3初撃による回復全ヒット({value})",
     "subject.hisui.w3-second-heal": "W3追撃による回復",
     "subject.hisui.r-reuse-first": "R再使用初撃",
+    "subject.hisui.r-reuse-first-2hit": "R再使用初撃(2ヒット)",
     "subject.hisui.r-reuse-second": "R再使用追撃",
     "subject.hisui.r-additional": "R追加ダメージ",
     "subject.hisui.passive-attack": "T攻撃速度変換",

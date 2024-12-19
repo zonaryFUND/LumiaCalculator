@@ -17,8 +17,8 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed.effect, percent: true},
-            {labelIntlID: "ToolTipType/DecreaseCoolTime", values: Constants.T.qe_cooldown_reduction, percent: true}
+            {labelIntlID: "ToolTipType/DecreaseCoolTime", values: Constants.T.qe_cooldown_reduction, percent: true},
+            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed.effect, percent: true}
         ]  
     })
 }
