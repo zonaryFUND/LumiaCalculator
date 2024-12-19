@@ -1,12 +1,15 @@
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import Constants from "./constants.json";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
+import Decimal from "decimal.js";
 
 export const code = 1078200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    cooldown: Constants.Q.cooldown,
+    cooldown: ({ config, status }) => {
+        return new Decimal(Constants.Q.cooldown.constant[config.skillLevels.Q]).subPercent(status.attackSpeed.multiplier.clamp(0, 140).div(140).times(50)).floor2()
+    },
     values: ({ showEquation }): TooltipValues  => {
         if (showEquation) {
             return {
