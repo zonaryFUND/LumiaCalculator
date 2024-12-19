@@ -3,7 +3,7 @@ import { EquipmentAbilityTooltipValues } from "../type";
 
 const values: EquipmentAbilityTooltipValues = ({ importedValues }) => ({
     0: Constants.skill_damage,
-    1: importedValues?.ms ?? importedValues?.omnisyphon,
+    1: importedValues?.moveSpeed ?? importedValues?.lifeSteal,
     2: Constants.max_stack,
     3: Constants.duration,
 })
