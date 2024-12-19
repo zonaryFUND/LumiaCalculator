@@ -30,7 +30,8 @@
             "shield": {
                 "base": [10,15,20,25,30],
                 "additionalAttack": 40
-            }
+            },
+            "shield_enhance": 50
         },
         "W2": {
             "damage": {
@@ -91,6 +92,7 @@
         "cooldown": [70,55,40]
     },
     "T": {
+        "base_as": 0.8,
         "as_per_level": 0.02,
         "as_conversion": 0.15,
         "duration": 5,

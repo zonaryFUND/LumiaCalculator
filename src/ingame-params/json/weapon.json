@@ -753,7 +753,7 @@
     {
         "attackPower": 42,
         "defense": 8,
-        "skillAmp": 85,
+        "skillAmp": 88,
         "cooldownReduction": 0.15,
         "code": 111405,
         "weaponType": "Tonfa",
@@ -770,7 +770,7 @@
     {
         "attackPower": 47,
         "defense": 8,
-        "skillAmp": 91,
+        "skillAmp": 94,
         "code": 111501,
         "weaponType": "Tonfa",
         "itemGrade": "Legend"
@@ -857,7 +857,6 @@
     {
         "attackPower": 40,
         "skillAmp": 88,
-        "moveSpeedRatio": 0.02,
         "code": 112407,
         "weaponType": "HighAngleFire",
         "itemGrade": "Legend"
@@ -1467,7 +1466,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 46,
+        "attackPower": 48,
         "attackSpeedRatio": 0.4,
         "criticalStrikeChance": 0.2,
         "code": 120403,
@@ -1475,7 +1474,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 59,
+        "attackPower": 62,
         "criticalStrikeChance": 0.22,
         "criticalStrikeDamage": 0.09,
         "code": 120404,
@@ -1483,7 +1482,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 57,
+        "attackPower": 61,
         "attackSpeedRatio": 0.4,
         "criticalStrikeChance": 0.1,
         "criticalStrikeDamage": 0.07,
@@ -1558,14 +1557,14 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 66,
+        "attackPower": 70,
         "attackSpeedRatio": 0.3,
         "code": 121405,
         "weaponType": "Guitar",
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 57,
+        "attackPower": 60,
         "attackSpeedRatio": 0.23,
         "code": 121406,
         "weaponType": "Guitar",

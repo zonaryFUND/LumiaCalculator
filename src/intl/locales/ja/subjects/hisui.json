@@ -3,11 +3,18 @@
     "subject.hisui.q-second": "Q追撃",
     "subject.hisui.w1-first": "W1初撃",
     "subject.hisui.w1-second": "W1追撃",
+    "subject.hisui.w1-shield": "W1シールド基礎値",
+    "subject.hisui.w1-shield-max": "W1シールド最大値",
     "subject.hisui.w2-second-last-target": "W2最終対象",
     "subject.hisui.w3-first-1hit": "W3初撃",
     "subject.hisui.w3-first-allhit": "W3初撃全ヒット({value})",
     "subject.hisui.w3-second": "W3追撃",
+    "subject.hisui.w3-first-1hit-heal": "W3初撃による回復",
+    "subject.hisui.w3-first-allhit-heal": "W3初撃による回復全ヒット({value})",
+    "subject.hisui.w3-second-heal": "W3追撃による回復",
     "subject.hisui.r-reuse-first": "R再使用初撃",
     "subject.hisui.r-reuse-second": "R再使用追撃",
-    "subject.hisui.r-additional": "R追加ダメージ"
+    "subject.hisui.r-additional": "R追加ダメージ",
+    "subject.hisui.passive-attack": "T攻撃速度変換",
+    "subject.hisui.passive-as": "T攻撃速度レベル比例固定値"
 }

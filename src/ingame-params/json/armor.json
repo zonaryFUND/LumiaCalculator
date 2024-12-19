@@ -7,7 +7,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 19,
+        "attackPower": 22,
         "maxSp": 400,
         "criticalStrikeChance": 0.28,
         "code": 201404,
@@ -54,7 +54,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 10,
+        "defense": 12,
         "maxHp": 120,
         "spRegenRatio": 0.5,
         "code": 201412,
@@ -147,7 +147,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 22,
+        "attackPower": 25,
         "maxSp": 500,
         "criticalStrikeChance": 0.35,
         "criticalStrikeDamage": 0.05,
@@ -341,7 +341,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 26,
+        "defense": 28,
         "maxHpByLv": 18,
         "cooldownReduction": 0.1,
         "code": 202410,
@@ -377,7 +377,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 38,
+        "defense": 40,
         "maxHpByLv": 20,
         "cooldownReduction": 0.15,
         "code": 202415,
@@ -595,7 +595,7 @@
         }
     },
     {
-        "defense": 28,
+        "defense": 25,
         "skillAmp": 16,
         "skillAmpByLevel": 5,
         "code": 202511,
@@ -680,7 +680,7 @@
     {
         "attackPowerByLv": 3,
         "defense": 15,
-        "attackSpeedRatio": 0.1,
+        "attackSpeedRatio": 0.15,
         "criticalStrikeChance": 0.33,
         "code": 202523,
         "armorType": "Chest",
@@ -815,7 +815,7 @@
         "itemGrade": "Epic"
     },
     {
-        "skillAmp": 28,
+        "skillAmp": 30,
         "attackSpeedRatio": 0.3,
         "code": 203506,
         "armorType": "Arm",
@@ -847,7 +847,7 @@
     },
     {
         "attackPower": 25,
-        "defense": 10,
+        "defense": 12,
         "attackSpeedRatio": 0.35,
         "code": 203408,
         "armorType": "Arm",
@@ -968,7 +968,7 @@
     },
     {
         "attackPower": 46,
-        "moveSpeedRatio": 0.02,
+        "moveSpeedRatio": 0.03,
         "penetrationDefense": 13,
         "code": 705614,
         "armorType": "Arm",
@@ -1301,7 +1301,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 12,
+        "defense": 14,
         "maxHpByLv": 18,
         "cooldownReduction": 0.2,
         "uniqueCooldownLimit": 0.05,
@@ -1331,8 +1331,8 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 18,
-        "attackSpeedRatio": 0.15,
+        "attackPower": 20,
+        "attackSpeedRatio": 0.2,
         "criticalStrikeChance": 0.35,
         "code": 201518,
         "armorType": "Head",
@@ -1381,7 +1381,7 @@
     },
     {
         "defense": 36,
-        "maxHpByLv": 20,
+        "maxHpByLv": 23,
         "cooldownReduction": 0.15,
         "code": 202521,
         "armorType": "Chest",
@@ -1409,8 +1409,8 @@
         "itemGrade": "Mythic"
     },
     {
-        "defense": 42,
-        "maxHpByLv": 25,
+        "defense": 43,
+        "maxHpByLv": 24,
         "cooldownReduction": 0.15,
         "code": 202601,
         "armorType": "Chest",
@@ -1420,7 +1420,7 @@
         }
     },
     {
-        "defense": 49,
+        "defense": 47,
         "maxHpByLv": 22,
         "cooldownReduction": 0.15,
         "code": 202602,
@@ -1431,8 +1431,8 @@
         }
     },
     {
-        "defense": 40,
-        "maxHpByLv": 28,
+        "defense": 39,
+        "maxHpByLv": 27,
         "spRegenRatio": 1,
         "sightRange": 1,
         "code": 202603,
@@ -1443,7 +1443,7 @@
         }
     },
     {
-        "defense": 50,
+        "defense": 48,
         "maxHpByLv": 26,
         "code": 202604,
         "armorType": "Chest",
@@ -1453,8 +1453,8 @@
         }
     },
     {
-        "defense": 32,
-        "skillAmp": 50,
+        "defense": 31,
+        "skillAmp": 48,
         "skillAmpByLevel": 5,
         "code": 202605,
         "armorType": "Chest",
@@ -1464,7 +1464,7 @@
         }
     },
     {
-        "defense": 30,
+        "defense": 28,
         "skillAmp": 35,
         "skillAmpByLevel": 5,
         "uniqueSkillAmpRatio": 0.25,
@@ -1476,10 +1476,10 @@
         }
     },
     {
-        "attackPower": 30,
+        "attackPower": 29,
         "attackPowerByLv": 3,
         "defense": 20,
-        "lifeSteal": 0.18,
+        "lifeSteal": 0.16,
         "code": 202607,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -1489,7 +1489,7 @@
     },
     {
         "attackPowerByLv": 3,
-        "defense": 25,
+        "defense": 24,
         "attackSpeedRatio": 0.1,
         "code": 202608,
         "armorType": "Chest",
@@ -1499,7 +1499,7 @@
         }
     },
     {
-        "defense": 50,
+        "defense": 48,
         "maxHpByLv": 27,
         "code": 202609,
         "armorType": "Chest",
@@ -1510,7 +1510,7 @@
     },
     {
         "defense": 30,
-        "skillAmp": 35,
+        "skillAmp": 32,
         "skillAmpByLevel": 5,
         "spRegenRatio": 1.2,
         "cooldownReduction": 0.2,
@@ -1523,7 +1523,7 @@
         }
     },
     {
-        "attackPower": 12,
+        "attackPower": 10,
         "attackPowerByLv": 3,
         "defense": 20,
         "spRegenRatio": 2,
@@ -1536,9 +1536,9 @@
         }
     },
     {
-        "attackPower": 17,
+        "attackPower": 16,
         "attackPowerByLv": 3,
-        "defense": 18,
+        "defense": 17,
         "criticalStrikeChance": 0.35,
         "code": 202612,
         "armorType": "Chest",
@@ -1548,8 +1548,8 @@
         }
     },
     {
-        "defense": 30,
-        "skillAmp": 25,
+        "defense": 27,
+        "skillAmp": 22,
         "skillAmpByLevel": 5,
         "code": 202613,
         "armorType": "Chest",
@@ -1559,7 +1559,7 @@
         }
     },
     {
-        "attackPower": 25,
+        "attackPower": 23,
         "attackPowerByLv": 3,
         "defense": 22,
         "spRegenRatio": 1,
@@ -1572,7 +1572,7 @@
         }
     },
     {
-        "attackPower": 20,
+        "attackPower": 18,
         "attackPowerByLv": 3,
         "defense": 20,
         "penetrationDefense": 12,
@@ -1584,7 +1584,7 @@
         }
     },
     {
-        "defense": 30,
+        "defense": 28,
         "skillAmp": 35,
         "skillAmpByLevel": 5,
         "spRegenRatio": 1,
@@ -1596,10 +1596,10 @@
         }
     },
     {
-        "attackPower": 20,
+        "attackPower": 19,
         "attackPowerByLv": 3,
         "defense": 25,
-        "penetrationDefense": 14,
+        "penetrationDefense": 13,
         "code": 202617,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -1608,7 +1608,7 @@
         }
     },
     {
-        "defense": 30,
+        "defense": 28,
         "skillAmp": 15,
         "skillAmpByLevel": 5,
         "spRegenRatio": 1,
@@ -1620,7 +1620,7 @@
         }
     },
     {
-        "defense": 40,
+        "defense": 38,
         "maxHpByLv": 26,
         "attackSpeedRatio": 0.42,
         "code": 202619,
@@ -1632,8 +1632,8 @@
     },
     {
         "attackPowerByLv": 3,
-        "defense": 18,
-        "attackSpeedRatio": 0.18,
+        "defense": 17,
+        "attackSpeedRatio": 0.21,
         "criticalStrikeChance": 0.35,
         "code": 202620,
         "armorType": "Chest",
@@ -1644,7 +1644,7 @@
     },
     {
         "attackPowerByLv": 3,
-        "defense": 30,
+        "defense": 29,
         "maxHp": 250,
         "code": 202621,
         "armorType": "Chest",
@@ -1654,9 +1654,9 @@
         }
     },
     {
-        "attackPower": 15,
+        "attackPower": 14,
         "attackPowerByLv": 3,
-        "defense": 24,
+        "defense": 23,
         "attackSpeedRatio": 0.35,
         "code": 202622,
         "armorType": "Chest",
@@ -1667,9 +1667,9 @@
     },
     {
         "defense": 25,
-        "skillAmp": 40,
+        "skillAmp": 37,
         "skillAmpByLevel": 5,
-        "lifeSteal": 0.15,
+        "lifeSteal": 0.14,
         "code": 202623,
         "armorType": "Chest",
         "itemGrade": "Mythic",
@@ -1678,11 +1678,11 @@
         }
     },
     {
-        "attackPower": 30,
+        "attackPower": 29,
         "attackPowerByLv": 3,
         "defense": 10,
         "lifeSteal": 0.22,
-        "moveSpeedRatio": 0.04,
+        "moveSpeedRatio": 0.03,
         "code": 202624,
         "armorType": "Chest",
         "itemGrade": "Mythic",
@@ -1691,8 +1691,8 @@
         }
     },
     {
-        "defense": 35,
-        "skillAmp": 50,
+        "defense": 34,
+        "skillAmp": 48,
         "skillAmpByLevel": 5,
         "hpRegenRatio": 1,
         "cooldownReduction": 0.3,
@@ -1705,8 +1705,8 @@
         }
     },
     {
-        "defense": 42,
-        "maxHpByLv": 23,
+        "defense": 40,
+        "maxHpByLv": 26,
         "cooldownReduction": 0.15,
         "code": 202626,
         "armorType": "Chest",
@@ -1716,8 +1716,8 @@
         }
     },
     {
-        "defense": 50,
-        "maxHpByLv": 28,
+        "defense": 49,
+        "maxHpByLv": 27,
         "code": 202627,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -1726,7 +1726,7 @@
         }
     },
     {
-        "defense": 30,
+        "defense": 29,
         "skillAmpByLevel": 5,
         "maxHp": 250,
         "code": 202628,
@@ -1737,7 +1737,7 @@
         }
     },
     {
-        "defense": 35,
+        "defense": 33,
         "skillAmp": 40,
         "skillAmpByLevel": 5,
         "cooldownReduction": 0.15,

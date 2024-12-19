@@ -1,16 +1,44 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
-export const code = 1058500;
+export const code = 1078500;
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
     cooldown: Constants.R.cooldown,
-    values: ({ }) => ({
-    }),
+    values: ({ showEquation }): TooltipValues => {
+        if (showEquation) {
+            return {
+                0: Constants.R.duration,
+                1: Constants.R.range,
+                2: Constants.R.additional_damage.base,
+                3: RatioPercent(Constants.R.additional_damage.additionalAttack),
+                4: Constants.R.first_damage.base,
+                5: RatioPercent(Constants.R.first_damage.additionalAttack),
+                6: Constants.R.slow.duration,
+                7: RatioPercent(Constants.R.slow.effect),
+                8: RatioPercent(Constants.R.second_damage.additionalAttack),
+                9: RatioPercent(Constants.R.second_damage.targetMaxHP),
+                10: RatioPercent(Constants.R.execution_threshold)
+            }
+        } else {
+            return {
+                0: Constants.R.duration,
+                1: Constants.R.range,
+                2: Constants.R.additional_damage,
+                3: Constants.R.first_damage,
+                4: Constants.R.slow.duration,
+                5: RatioPercent(Constants.R.slow.effect),
+                6: Constants.R.second_damage,
+                7: RatioPercent(Constants.R.second_damage.targetMaxHP),
+                8: RatioPercent(Constants.R.execution_threshold)
+            }
+        }
+    },
     expansion: () => ({
         enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
         ]  
     })
 }
