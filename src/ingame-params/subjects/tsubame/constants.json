@@ -5,8 +5,8 @@
     "Q": {
         "amount": 3,
         "damage": {
-            "base": [60,90,120,150,180],
-            "attack": 80
+            "base": [50,80,110,140,170],
+            "attack": 75
         },
         "slow_duration": 1,
         "slow": 30,
