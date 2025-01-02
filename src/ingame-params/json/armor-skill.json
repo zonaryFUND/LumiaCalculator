@@ -298,7 +298,7 @@
 		"skillCode": 6053001,
 		"name": "blaze_up_amplified",
 		"values": {
-			"lifeSteal": 15
+			"lifeSteal": 12
 		}
 	},
 	"202515": {
@@ -512,11 +512,8 @@
 		"name": "quickstep"
 	},
 	"205407": {
-		"skillCode": 6015007,
-		"name": "streamlined",
-		"values": {
-			"ms": 20
-		}
+		"skillCode": 6015002,
+		"name": "zephyr"
 	},
 	"205408": {
 		"skillCode": 6017026,

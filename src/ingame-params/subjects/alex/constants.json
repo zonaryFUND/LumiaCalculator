@@ -34,7 +34,7 @@
     "RangeQ": {
         "damage": {
             "base": [60,85,110,135,160],
-            "attack": 75
+            "attack": 80
         },
         "attack_up": {
             "duration": 20,

@@ -3,9 +3,11 @@ import { StatusOverrideFunc } from "../type";
 import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 import Decimal from "decimal.js";
 
-const f: StatusOverrideFunc = (status, config) => {
-    const value = status.attackSpeed.multiplier.times(Constants.T.as_conversion);
+export function AdditionalAttack(attackSpeedMultiplier: Decimal): Decimal {
+    return attackSpeedMultiplier.times(Constants.T.as_conversion)
+}
 
+const f: StatusOverrideFunc = (status, config) => {
     return {
         ...status,
         attackPower: AddComponent(status.attackPower,
@@ -15,7 +17,7 @@ const f: StatusOverrideFunc = (status, config) => {
                 intlID: "subject.hisui.passive-attack",
                 value: {
                     type: "constant",
-                    value
+                    value: AdditionalAttack(status.attackSpeed.multiplier)
                 }
             }
         ),

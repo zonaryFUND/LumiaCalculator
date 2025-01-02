@@ -46,7 +46,7 @@
     "T": {
         "threshold": 3,
         "damage": {
-            "base": [30,40,50],
+            "base": [20,30,40],
             "attack": 60,
             "targetMaxHP": [2,3,4]
         },

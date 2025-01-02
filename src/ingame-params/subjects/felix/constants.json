@@ -5,8 +5,8 @@
             "attack": 65
         },
         "enhanced_damage": {
-            "base": [60,90,120,150,180],
-            "attack": 70,
+            "base": [60,85,110,135,160],
+            "attack": 65,
             "level": 3
         },
         "airborne": 0.075,
@@ -33,7 +33,7 @@
     "E": {
         "damage": {
             "base": [19,38,57,76,95],
-            "attack": 50
+            "attack": 45
         },
         "enhanced_damage": {
             "base": [22,44,66,88,110],

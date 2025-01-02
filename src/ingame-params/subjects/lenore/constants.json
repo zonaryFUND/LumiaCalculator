@@ -13,7 +13,7 @@
         "shield": {
             "duration": 2.5,
             "effect": {
-                "base": [50,65,80,95,110],
+                "base": [70,85,100,115,130],
                 "amp": 35
             }
         },
@@ -72,7 +72,7 @@
         "stack_conversion": 3,
         "stack_conversion_limit": 70,
         "cooldown": {
-            "constant": [12,10,8]
+            "constant": [11,9,7]
         }
     }
 }

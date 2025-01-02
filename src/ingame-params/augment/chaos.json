@@ -80,7 +80,7 @@
             "targetHP": 8
         },
         "duration": 2,
-        "cooldown": 12
+        "cooldown": 11
     },
     "stopping_power": {
         "armor_penetration": {

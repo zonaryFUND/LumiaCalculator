@@ -29,12 +29,13 @@ export const info: SkillTooltipProps = {
         14: showEquation ? Constants.R.E.stun : Constants.R.W.movement_speed.duration,
         15: showEquation ? Constants.R.E.dot_tick : RatioPercent(Constants.R.W.movement_speed.effect),
         16: showEquation ? Constants.R.E.dot_damage.base : Constants.R.W.movement_speed.duration,
-        17: RatioPercent(Constants.R.E.dot_damage.amp),
+        17: showEquation ? RatioPercent(Constants.R.E.dot_damage.amp) : RatioPercent(Constants.R.W.damage.targetMaxHP),
         18: RatioPercent(Constants.R.E.slow),
         19: Constants.R.Q.hp.level,
         20: Constants.R.W.movement_speed.duration,
         21: RatioPercent(Constants.R.W.movement_speed.effect),
-        22: Constants.R.W.movement_speed.duration
+        22: Constants.R.W.movement_speed.duration,
+        23: RatioPercent(Constants.R.W.damage.targetMaxHP)
     }),
     expansion: ({ }) => ({
         tipValues: {

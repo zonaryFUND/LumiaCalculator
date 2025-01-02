@@ -62240,6 +62240,1353 @@ exports[`'バーバラ''s > skill '磁力手榴弾' > tooltip matchs snapshot 1`
 </div>
 `;
 
+exports[`'ヒスイ''s > skill '剣の記憶' > detailed tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078100"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              剣の記憶
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              T
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+          </p>
+        </div>
+      </header>
+      <p>
+        <span
+          style="color: green;"
+        >
+          持続効果：
+        </span>
+        ヒスイの基本攻撃は追加攻撃速度の影響を受けません。ヒスイはレベルに応じて基本攻撃速度が0.02ずつ増加します。また、ヒスイは追加攻撃速度1%ごとに攻撃力の0.15%を追加攻撃力に変換して獲得します。
+        <br />
+        <br />
+        ヒスイはスキルを使用するたびに
+        <span
+          style="color: white;"
+        >
+          剣の記憶
+        </span>
+        スタックを5秒間獲得します。(最大2スタック)
+        <br />
+        基本攻撃すると、
+        <span
+          style="color: white;"
+        >
+          剣の記憶
+        </span>
+        スタックを消耗して
+        <span
+          style="color: white;"
+        >
+          連撃斬
+        </span>
+        と
+        <span
+          style="color: white;"
+        >
+          月輪斬
+        </span>
+        のクールダウンを10%減少させ、1秒間移動速度を10%増加させます。
+        <br />
+        <br />
+        追加攻撃速度：{5}
+        <br />
+        追加獲得攻撃力：{8}
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            クールダウン減少量
+          </h3>
+          <p>
+            [
+            <span>
+              10%
+            </span>
+             / 
+            15%
+             / 
+            20%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            移動速度増加量(%)
+          </h3>
+          <p>
+            [
+            <span>
+              10%
+            </span>
+             / 
+            15%
+             / 
+            20%
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '剣の記憶' > tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078100"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              剣の記憶
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              T
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+          </p>
+        </div>
+      </header>
+      <p>
+        <span
+          style="color: green;"
+        >
+          持続効果：
+        </span>
+        ヒスイの基本攻撃は追加攻撃速度の影響を受けません。ヒスイはレベルに応じて基本攻撃速度が0.02ずつ増加します。また、ヒスイは追加攻撃速度1%ごとに攻撃力の0.15%を追加攻撃力に変換して獲得します。
+        <br />
+        <br />
+        ヒスイはスキルを使用するたびに
+        <span
+          style="color: white;"
+        >
+          剣の記憶
+        </span>
+        スタックを5秒間獲得します。(最大2スタック)
+        <br />
+        基本攻撃すると、
+        <span
+          style="color: white;"
+        >
+          剣の記憶
+        </span>
+        スタックを消耗して
+        <span
+          style="color: white;"
+        >
+          連撃斬
+        </span>
+        と
+        <span
+          style="color: white;"
+        >
+          月輪斬
+        </span>
+        のクールダウンを10%減少させ、1秒間移動速度を10%増加させます。
+        <br />
+        <br />
+        追加攻撃速度：{5}
+        <br />
+        追加獲得攻撃力：{8}
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '居合一閃' > detailed tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078300"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              居合一閃
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              W
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+          </p>
+        </div>
+      </header>
+      <p>
+        <span
+          style="color: green;"
+        >
+          持続効果：
+        </span>
+        ヒスイはスキルや武器スキルが的中すると、
+        <span
+          style="color: white;"
+        >
+          居合
+        </span>
+        スタックを獲得します。
+        <span
+          style="color: white;"
+        >
+          居合
+        </span>
+        スタック数に応じて使用できるスキルが変わり、スタックがない状態ではスキルを使用できません。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          1スタック - 一刀両断：
+        </span>
+        ヒスイは抜刀して
+        <span
+          style="color: white;"
+        >
+          15
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の50%)
+        </span>
+        のスキルダメージを与え、納刀しながら同じ範囲に
+        <span
+          style="color: white;"
+        >
+          20
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の85%)
+        </span>
+        <span
+          style="color: rgb(104, 138, 8);"
+        >
+          (+対象の最大体力の3%)
+        </span>
+        <br />
+        のスキルダメージをもう一度与えます。抜刀が的中した場合、
+        <span
+          style="color: white;"
+        >
+          10
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の40%)
+        </span>
+        のシールドを獲得し、的中させた実験体の数に比例してシールド量が50%増加します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          2スタック - 一閃：
+        </span>
+        ヒスイが経路上のすべての敵に
+        <span
+          style="color: white;"
+        >
+          30
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の100%)
+        </span>
+        のスキルダメージを与えながら経路上で最も遠くにいる敵の後ろまで移動します。最後に貫かれた敵には
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の130%)
+        </span>
+        のスキルダメージを与えながら対象を0.25秒間空中に浮かせます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          3スタック - 日輪乱舞：
+        </span>
+        ヒスイが対象指定不可状態になり、範囲内の敵に
+        <span
+          style="color: white;"
+        >
+          10
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の15%)
+        </span>
+        のスキルダメージを
+        <span
+          style="color: white;"
+        >
+          4
+        </span>
+        <span
+          style="color: rgb(173, 164, 120);"
+        >
+          (追加攻撃速度に比例して最大8回)
+        </span>
+        回与え、与えたダメージの100%を体力に回復します。最後の一撃は
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の100%)
+        </span>
+        のスキルダメージを与え、与えたダメージの100%を体力に回復します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <p>
+        <i>
+          追加攻撃速度に比例してスキルキャスト時間が減少します。
+        </i>
+        <br />
+        <i>
+          クールダウン固定：クールダウン減少ステータスの影響を受けません。
+        </i>
+        <br />
+        <i>
+          野生動物には
+          <span
+            style="color: white;"
+          >
+            3スタック - 日輪乱舞
+          </span>
+          の回復効果が30%に減少します。
+        </i>
+      </p>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            [1スタック ‐ 一刀両断] 抜刀ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              15
+            </span>
+             / 
+            30
+             / 
+            45
+             / 
+            60
+             / 
+            75
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            [1スタック ‐ 一刀両断] 納刀ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              20
+            </span>
+             / 
+            40
+             / 
+            60
+             / 
+            80
+             / 
+            100
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            [1スタック ‐ 一刀両断] シールド量
+          </h3>
+          <p>
+            [
+            <span>
+              10
+            </span>
+             / 
+            15
+             / 
+            20
+             / 
+            25
+             / 
+            30
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            [2式 ‐ 一閃] 基本ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              30
+            </span>
+             / 
+            50
+             / 
+            70
+             / 
+            90
+             / 
+            110
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            [2式 ‐ 一閃] 最も遠い対象ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            80
+             / 
+            110
+             / 
+            140
+             / 
+            170
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            [3式 ‐ 日輪乱舞] 追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              15%
+            </span>
+             / 
+            20%
+             / 
+            25%
+             / 
+            30%
+             / 
+            35%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            [3式 ‐ 日輪乱舞] 最後の攻撃ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            80
+             / 
+            110
+             / 
+            140
+             / 
+            170
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '居合一閃' > tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078300"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              居合一閃
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              W
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+          </p>
+        </div>
+      </header>
+      <p>
+        <span
+          style="color: green;"
+        >
+          持続効果：
+        </span>
+        ヒスイはスキルや武器スキルが的中すると、
+        <span
+          style="color: white;"
+        >
+          居合
+        </span>
+        スタックを獲得します。
+        <span
+          style="color: white;"
+        >
+          居合
+        </span>
+        スタック数に応じて使用できるスキルが変わり、スタックがない状態ではスキルを使用できません。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          1スタック - 一刀両断：
+        </span>
+        ヒスイは抜刀して
+        <span
+          style="color: white;"
+        >
+          15
+        </span>
+        のスキルダメージを与え、納刀しながら同じ範囲に
+        <span
+          style="color: white;"
+        >
+          20
+        </span>
+        <span
+          style="color: rgb(104, 138, 8);"
+        >
+          (+対象の最大体力の3%)
+        </span>
+        のスキルダメージをもう一度与えます。抜刀が的中した場合、
+        <span
+          style="color: white;"
+        >
+          10
+        </span>
+        のシールドを獲得し、的中させた実験体の数に比例してシールド量が50%増加します。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          2スタック - 一閃：
+        </span>
+        ヒスイが経路上のすべての敵に
+        <span
+          style="color: white;"
+        >
+          30
+        </span>
+        のスキルダメージを与えながら経路上で最も遠くにいる敵の後ろまで移動します。最後に貫かれた敵には
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        のスキルダメージを与えながら対象を0.25秒間空中に浮かせます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          3スタック - 日輪乱舞：
+        </span>
+        ヒスイが対象指定不可状態になり、範囲内の敵に
+        <span
+          style="color: white;"
+        >
+          10
+        </span>
+        のスキルダメージを
+        <span
+          style="color: white;"
+        >
+          4回
+        </span>
+        与え、与えたダメージの100%を体力に回復します。最後の一撃は
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        のスキルダメージを与え、与えたダメージの100%を体力に回復します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '月輪斬' > detailed tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078400"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              月輪斬
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              E
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+            クールダウン
+            15
+            秒
+          </p>
+        </div>
+      </header>
+      <p>
+        ヒスイが後ろに一歩下がった後、姿勢を取り戻して、脇差を抜きながら前方に移動し、経路上の敵と到着地点の敵に
+        <span
+          style="color: white;"
+        >
+          70
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の110%)
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <p>
+        <i>
+          追加攻撃速度に比例してクールダウンとキャスト時間が減少します。
+        </i>
+        <br />
+        <i>
+          クールダウン固定：クールダウン減少ステータスの影響を受けません。
+        </i>
+      </p>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              70
+            </span>
+             / 
+            100
+             / 
+            130
+             / 
+            160
+             / 
+            190
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '月輪斬' > tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078400"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              月輪斬
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              E
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+            クールダウン
+            15
+            秒
+          </p>
+        </div>
+      </header>
+      <p>
+        ヒスイが後ろに一歩下がった後、姿勢を取り戻して、脇差を抜きながら前方に移動し、経路上の敵と到着地点の敵に
+        <span
+          style="color: white;"
+        >
+          70
+        </span>
+        のスキルダメージを与えます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '物干し竿 / 燕返し' > detailed tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078500"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              物干し竿 / 燕返し
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              R
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+            クールダウン
+            70
+            秒
+          </p>
+        </div>
+      </header>
+      <p>
+        ヒスイが物干し竿を抜き、15秒間基本攻撃の射程距離が1増加します。基本攻撃またはスキルでダメージを与えるたびに
+        <span
+          style="color: white;"
+        >
+          20
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の20%)
+        </span>
+        の追加ダメージを与えます。ヒスイが物干し竿を手にしている間はスキルを再使用することができます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          再使用：
+        </span>
+        ヒスイが姿勢を構えている間、残像が前方に刀を2回振ってそれぞれ
+        <span
+          style="color: white;"
+        >
+          80
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の100%)
+        </span>
+        のスキルダメージを与え、1秒間移動速度を40%減少させます。その後、中央に刀を振り下ろして
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          追加攻撃力の60%
+        </span>
+        <span
+          style="color: rgb(104, 138, 8);"
+        >
+          (+対象の最大体力の8%)
+        </span>
+        の固定ダメージを与え、体力が10%未満の敵は処刑します。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <p>
+        <i>
+          連続攻撃スキルの場合、追加ダメージは対象1人あたり1回のみ適用されます。
+        </i>
+      </p>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            追加ダメージ攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              20%
+            </span>
+             / 
+            30%
+             / 
+            40%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            1、2打目 ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              80
+            </span>
+             / 
+            120
+             / 
+            160
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            3打目 ダメージ量係数
+          </h3>
+          <p>
+            [
+            <span>
+              60%
+            </span>
+             / 
+            85%
+             / 
+            110%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              70
+            </span>
+             / 
+            55
+             / 
+            40
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '物干し竿 / 燕返し' > tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078500"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              物干し竿 / 燕返し
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              R
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+            クールダウン
+            70
+            秒
+          </p>
+        </div>
+      </header>
+      <p>
+        ヒスイが物干し竿を抜き、15秒間基本攻撃の射程距離が1増加します。基本攻撃またはスキルでダメージを与えるたびに
+        <span
+          style="color: white;"
+        >
+          20
+        </span>
+        の追加ダメージを与えます。ヒスイが物干し竿を手にしている間はスキルを再使用することができます。
+        <br />
+        <br />
+        <span
+          style="color: white;"
+        >
+          再使用：
+        </span>
+        ヒスイが姿勢を構えている間、残像が前方に刀を振ってそれぞれ
+        <span
+          style="color: white;"
+        >
+          80
+        </span>
+        のスキルダメージを与え、1秒間移動速度を40%減少させます。その後、中央に刀を振り下ろして
+        <span
+          style="color: white;"
+        >
+          0
+        </span>
+        <span
+          style="color: rgb(104, 138, 8);"
+        >
+          (+対象の最大体力の8%)
+        </span>
+        の固定ダメージを与え、体力が10%未満の敵は処刑します。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '連撃斬' > detailed tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078200"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              連撃斬
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              Q
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+            クールダウン
+            10
+            秒
+          </p>
+        </div>
+      </header>
+      <p>
+        ヒスイが打刀を振って
+        <span
+          style="color: white;"
+        >
+          70
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の70%)
+        </span>
+        <br />
+        のスキルダメージを与え、振り下ろしながら
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        <span
+          style="color: rgb(255, 215, 117);"
+        >
+          (+追加攻撃力の90%)
+        </span>
+        のスキルダメージを与えて対象の移動速度を1秒間30%減少させます。
+      </p>
+    </div>
+    <div
+      class="_values_f527a8"
+    >
+      <p>
+        <i>
+          追加攻撃速度に比例してクールダウンとキャスト時間が減少します。
+        </i>
+        <br />
+        <i>
+          クールダウン固定：クールダウン減少ステータスの影響を受けません。
+        </i>
+      </p>
+      <ul
+        class="_values_5ffb5e"
+      >
+        <li>
+          <h3>
+            1打ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              70
+            </span>
+             / 
+            75
+             / 
+            80
+             / 
+            85
+             / 
+            90
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            1打目 追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              70%
+            </span>
+             / 
+            75%
+             / 
+            80%
+             / 
+            85%
+             / 
+            90%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            2打ダメージ量
+          </h3>
+          <p>
+            [
+            <span>
+              50
+            </span>
+             / 
+            65
+             / 
+            80
+             / 
+            95
+             / 
+            110
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            2打目 追加攻撃力係数
+          </h3>
+          <p>
+            [
+            <span>
+              90%
+            </span>
+             / 
+            95%
+             / 
+            100%
+             / 
+            105%
+             / 
+            110%
+            ]
+          </p>
+        </li>
+        <li>
+          <h3>
+            クールダウン
+          </h3>
+          <p>
+            [
+            <span>
+              10
+            </span>
+             / 
+            9.5
+             / 
+            9
+             / 
+            8.5
+             / 
+            8
+            ]
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヒスイ''s > skill '連撃斬' > tooltip matchs snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_f527a8"
+  >
+    <div
+      class="_main_f527a8"
+    >
+      <header>
+        <img
+          src="1078200"
+        />
+        <div>
+          <div
+            class="_name_f527a8"
+          >
+            <h1>
+              連撃斬
+               （レベル 
+              1
+              ）
+            </h1>
+            <p
+              class="_skill_f527a8"
+            >
+              [
+              Q
+              ]
+            </p>
+          </div>
+          <p
+            class="_cooldown_f527a8"
+          >
+            コストなし
+            <br />
+            クールダウン
+            10
+            秒
+          </p>
+        </div>
+      </header>
+      <p>
+        ヒスイが打刀を振って
+        <span
+          style="color: white;"
+        >
+          70
+        </span>
+        のスキルダメージを与え、振り下ろしながら
+        <span
+          style="color: white;"
+        >
+          50
+        </span>
+        のスキルダメージを与えて対象の移動速度を1秒間30%減少させます。
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ヒョヌ''s > skill 'アトミックパンチ' > detailed tooltip matchs snapshot 1`] = `
 <div>
   <div

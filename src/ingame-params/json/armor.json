@@ -465,7 +465,7 @@
     },
     {
         "defense": 43,
-        "maxHpByLv": 24,
+        "maxHpByLv": 25,
         "code": 202421,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -761,7 +761,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 39,
+        "attackPower": 40,
         "penetrationDefense": 8,
         "code": 203407,
         "armorType": "Arm",
@@ -1013,7 +1013,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 27,
+        "attackPower": 29,
         "attackSpeedRatio": 0.3,
         "moveSpeedRatio": 0.025,
         "code": 205408,
@@ -1134,7 +1134,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 16,
+        "attackPower": 18,
         "spRegenRatio": 0.5,
         "cooldownReduction": 0.1,
         "moveSpeed": 0.22,
@@ -1253,7 +1253,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 23,
+        "attackPower": 25,
         "spRegenRatio": 1,
         "cooldownReduction": 0.15,
         "moveSpeed": 0.25,
@@ -1293,7 +1293,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 10,
+        "defense": 12,
         "maxHp": 120,
         "cooldownReduction": 0.15,
         "code": 205404,
@@ -1301,7 +1301,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 14,
+        "defense": 15,
         "maxHpByLv": 18,
         "cooldownReduction": 0.2,
         "uniqueCooldownLimit": 0.05,
@@ -1339,7 +1339,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 80,
+        "skillAmp": 83,
         "maxSp": 300,
         "moveSpeedRatio": 0.02,
         "code": 201519,
@@ -1356,7 +1356,7 @@
     },
     {
         "attackPower": 30,
-        "attackSpeedRatio": 0.3,
+        "attackSpeedRatio": 0.35,
         "code": 201521,
         "armorType": "Head",
         "itemGrade": "Legend"
@@ -1444,7 +1444,7 @@
     },
     {
         "defense": 48,
-        "maxHpByLv": 26,
+        "maxHpByLv": 27,
         "code": 202604,
         "armorType": "Chest",
         "itemGrade": "Legend",

@@ -12,7 +12,7 @@
         "slow_threshold": 2,
         "slow": {
             "duration": 1,
-            "effect": 30
+            "effect": 35
         },
         "sp_cost": 100,
         "cooldown": 4

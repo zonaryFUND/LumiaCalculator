@@ -59,9 +59,9 @@
         },
         "tick": 0.5,
         "damage": {
-            "base": [4, 7, 10],
-            "attack": 2,
-            "additionalMaxHP": 2
+            "base": [6,9,12],
+            "attack": 3,
+            "additionalMaxHP": 3
         },
         "cooldown": [80,70,60],
         "sp_cost": 70

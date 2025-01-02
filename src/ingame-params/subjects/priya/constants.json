@@ -22,7 +22,7 @@
         "movement_speed": {
             "duration": 1,
             "effect": [12,13,14,15,16],
-            "ally_effect": [8,9,10,11,12]
+            "ally_effect": [10,11,12,13,14]
         },
         "damage": {
             "base": [60,100,140,180,220],
@@ -35,7 +35,7 @@
         "basic_attack_flower": 6,
         "shield_duration": 2.5,
         "shield": {
-            "base": [50,70,90,110,130],
+            "base": [60,80,100,120,140],
             "amp": 25
         },
         "sp_cost": 65,

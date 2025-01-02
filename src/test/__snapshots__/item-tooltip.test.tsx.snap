@@ -1410,6 +1410,156 @@ exports[`'V.I.C.G ''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'V.I.C.G''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          V.I.C.G
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          カメラ
+        </p>
+      </div>
+      <img
+        src="122404"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          58
+        </li>
+        <li>
+          攻撃速度
+           +
+          20
+          %
+        </li>
+        <li>
+          視界範囲
+           +
+          1
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            意念
+          </span>
+           
+        </h3>
+        <p>
+          スキルを使用すると意念をチャージします。チャージした状態で次の3秒以内に行われる基本攻撃は
+          <span
+            style="color: rgb(0, 128, 0);"
+          >
+            (+キャラクターレベル * 8)
+          </span>
+          の追加スキルダメージを与えます。(クールダウン：2秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'V.I.C.G''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          V.I.C.G
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          カメラ
+        </p>
+      </div>
+      <img
+        src="122404"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          58
+        </li>
+        <li>
+          攻撃速度
+           +
+          20
+          %
+        </li>
+        <li>
+          視界範囲
+           +
+          1
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            意念
+          </span>
+           
+        </h3>
+        <p>
+          (近距離)スキルを使用すると意念をチャージします。チャージした状態で次の3秒以内に行われる基本攻撃は
+          <span
+            style="color: rgb(0, 128, 0);"
+          >
+            {8}
+          </span>
+          の追加スキルダメージを与えます。(クールダウン：2秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'XCR''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -1895,6 +2045,92 @@ exports[`'アイゼン ''s > tooltip match snapshot 1`] = `
       <div>
         <h1>
           アイゼン 
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204304"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          移動速度
+           +
+          0.22
+        </li>
+        <li>
+          防御貫通
+           +
+          10
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'アイゼン''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          アイゼン
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204304"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          移動速度
+           +
+          0.22
+        </li>
+        <li>
+          防御貫通
+           +
+          10
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'アイゼン''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          アイゼン
         </h1>
         <p>
           英雄

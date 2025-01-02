@@ -45,13 +45,13 @@
     },
     "heavy_kneepads": {
         "shield": {
-            "maxHP": 15
+            "maxHP": 18
         },
         "movement_speed": {
             "effect": 50,
             "duration": 1
         },
-        "cooldown": 30,
+        "cooldown": 25,
         "animal_cooldown_reduction": 70
     },
     "bitter_retribution": {
@@ -90,7 +90,7 @@
         "cooldown": 20
     },
     "steadfast": {
-        "tenacity": 10
+        "tenacity": 12
     },
     "dine_n_dash": {
         "food_consumption_reduction": 3,

@@ -17,7 +17,7 @@
     "W": {
         "movement_speed": [20,24,28,32,36],
         "ms_duration": 2,
-        "attack_speed": [20,25,30,35,40],
+        "attack_speed": [15,20,25,30,35],
         "as_duration": 3,
         "cooldown_reduction": 1,
         "cooldown": [12,11.5,11,10.5,10],
@@ -31,8 +31,8 @@
     },
     "R": {
         "damage": {
-            "base": [100,175,250],
-            "attack": 85
+            "base": [80,160,240],
+            "attack": 80
         },
         "max_multiplier": 50,
         "max_multiplier_threshold": 40,

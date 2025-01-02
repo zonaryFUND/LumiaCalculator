@@ -39,7 +39,7 @@
             "attack": 40
         },
         "basic_attack_launch": 5,
-        "additional_damage": [3,6,9],
+        "additional_damage": [4,7,10],
         "detonate_slow": {
             "duration": 1,
             "effect": 30

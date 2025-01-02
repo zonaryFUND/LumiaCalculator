@@ -60,7 +60,7 @@
         "cooldown": 3
     },
     "thorn_shackles": {
-        "effect": 5,
+        "effect": 6,
         "duration": 6,
         "cooldown": 10
     },

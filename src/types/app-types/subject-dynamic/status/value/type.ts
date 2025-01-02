@@ -5,6 +5,7 @@ import { FasterBaseMoveSpeed, MoveSpeedCalculationConstants } from "./move-speed
 export type StatusValue = {
     components: StatusValueComponent[]
     additionalValue: Decimal
+    sum: Decimal
     multiplier: Decimal
     calculatedValue: Decimal
     digit: number
@@ -14,6 +15,7 @@ export type StatusValue = {
 export const StatusValueDefault: StatusValue = {
     components: [],
     additionalValue: new Decimal(0),
+    sum: new Decimal(0),
     multiplier: new Decimal(100),
     calculatedValue: new Decimal(0),
     digit: 0
@@ -27,6 +29,7 @@ export type MovementSpeedValue = {
 
 export function ValueBeforeFix(components: StatusValueComponent[], digit: number): { 
     base: Decimal, 
+    sum: Decimal,
     multiplier: Decimal, 
     calculated: Decimal, 
     components: {
@@ -56,15 +59,16 @@ export function ValueBeforeFix(components: StatusValueComponent[], digit: number
             }
         }, [new Decimal(0), new Decimal(0)])
 
-        return [baseSum.cut(digit, "round"), sum.cut(digit, "round")]
+        return [baseSum, sum]
     })();
 
     const multiplier = mulComponents.reduce((prev, current) => prev.add(current.value.value), new Decimal(100));
 
     return {
         base: baseSum,
+        sum,
         multiplier: multiplier.sub(100),
-        calculated: sum.percent(multiplier).cut(digit, "round"),
+        calculated: sum.percent(multiplier),
         components: {
             sum: sumComponents,
             mul: mulComponents,
@@ -79,13 +83,15 @@ export function AddComponent(toOrDigit: StatusValue | number, ...components: (St
     const mergedComponents = [...(to?.components ?? []), ...(components.filter((c): c is StatusValueComponent => c != undefined))];
     const beforeFix = ValueBeforeFix(mergedComponents, digit);
    
-    const finalValue = beforeFix.components.fix.reduce((prev, current) => new Decimal(current.value.value), beforeFix.calculated).cut(digit, "round");
+    const finalValue = beforeFix.components.fix.reduce((prev, current) => new Decimal(current.value.value), beforeFix.calculated);
+    console.log({final: finalValue.toString()})
 
     return {
         components: [...beforeFix.components.sum, ...beforeFix.components.mul, ...beforeFix.components.fix],
         additionalValue: finalValue.sub(beforeFix.base),
+        sum: beforeFix.sum,
         multiplier: beforeFix.multiplier,
-        calculatedValue: to?.max ? finalValue.clamp(0, to.max) : finalValue,
+        calculatedValue: (to?.max ? finalValue.clamp(0, to.max) : finalValue).cut(digit, "floor"),
         digit,
         max: to?.max
     }

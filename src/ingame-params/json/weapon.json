@@ -694,7 +694,7 @@
     },
     {
         "attackPower": 60,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "code": 110501,
         "weaponType": "Glove",
         "itemGrade": "Legend"
@@ -1231,7 +1231,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 83,
+        "attackPower": 86,
         "attackSpeedRatio": 0.4,
         "code": 117406,
         "weaponType": "AssaultRifle",
@@ -1439,7 +1439,7 @@
     },
     {
         "attackPower": 25,
-        "skillAmp": 62,
+        "skillAmp": 65,
         "spRegenRatio": 1,
         "cooldownReduction": 0.15,
         "code": 120302,
@@ -1493,7 +1493,7 @@
     },
     {
         "attackPower": 28,
-        "skillAmp": 70,
+        "skillAmp": 73,
         "maxHp": 80,
         "code": 120406,
         "weaponType": "Rapier",
@@ -2098,7 +2098,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 38,
+        "attackPower": 40,
         "adaptiveForce": 53,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
@@ -2160,7 +2160,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 7,
+        "attackPower": 10,
         "adaptiveForce": 52,
         "attackSpeedRatio": 0.25,
         "criticalStrikeChance": 0.2,

@@ -78,22 +78,22 @@
         },
         "first_damage": {
             "base": [80,120,160],
-            "additionalAttack": 100
+            "additionalAttack": 95
         },
         "slow": {
             "duration": 1,
             "effect": 40
         },
         "second_damage": {
-            "additionalAttack": [60,85,110],
-            "targetMaxHP": 8
+            "additionalAttack": [50,70,90],
+            "targetMaxHP": 6
         },
         "execution_threshold": 10,
         "cooldown": [70,55,40]
     },
     "T": {
         "base_as": 0.8,
-        "as_per_level": 0.02,
+        "as_per_level": 0.025,
         "as_conversion": 0.15,
         "duration": 5,
         "max_stack": 2,
