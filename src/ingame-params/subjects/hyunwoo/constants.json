@@ -72,7 +72,7 @@
             "amp": 35
         },
         "heal": {
-            "maxHP": [8,12,16]
+            "maxHP": [7,11,15]
         },
         "w_cooldown_reduction": 2
     }

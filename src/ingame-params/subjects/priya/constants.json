@@ -57,10 +57,10 @@
     },
     "R": {
         "unstoppable": 1,
-        "damage_reduction": 40,
+        "damage_reduction": 50,
         "first_damage": {
             "base": [80,150,220],
-            "amp": 50
+            "amp": 55
         },
         "echo_damage": {
             "base": [80,150,220],

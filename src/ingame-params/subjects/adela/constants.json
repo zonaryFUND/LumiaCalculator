@@ -2,7 +2,7 @@
     "Q": {
         "pawn_damage": {
             "base": [40,80,120,160,200],
-            "amp": 65
+            "amp": 60
         },
         "movement_speed": [6,7,8,9,10],
         "queen_damage": {
@@ -20,7 +20,7 @@
     "W": {
         "damage": {
             "base": [20,60,100,140,180],
-            "amp": 85
+            "amp": 80
         },
         "pawn_queen": {
             "damage": 40,

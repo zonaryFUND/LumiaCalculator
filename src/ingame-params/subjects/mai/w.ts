@@ -15,20 +15,19 @@ export const info: SkillTooltipProps = {
     values: ({ }) => ({
         0: Constants.W.damage.base,
         2: Constants.W.duration,
-        3: Constants.W.basic_attack_damage,
+        3: RatioPercent(Constants.W.damage_decline),
         4: RatioPercent(Constants.W.movement_speed),
         5: Constants.W.charge.max,
         7: Constants.W.charge_time_reduction,
-        10: RatioPercent(Constants.W.defense),
         11: RatioPercent(Constants.W.damage.amp),
-        12: RatioPercent(Constants.W.defense),
+        12: RatioPercent(Constants.W.damage.defense),
         20: Constants.W.damage
     }),
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
             {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.W.movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/IncreaseDefenceRatio", values: Constants.W.defense, percent: true},
+            {labelIntlID: "ToolTipType/DecreaseReceiveDamageRatio", values: Constants.W.damage_decline, percent: true},
             {labelIntlID: "ToolTipType/ChargingTime", values: Constants.W.charge.time}
         ]  
     })

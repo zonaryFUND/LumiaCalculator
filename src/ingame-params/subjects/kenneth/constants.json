@@ -50,7 +50,7 @@
         },
         "second_count": 2,
         "third_damage": {
-            "base": [40,155,270],
+            "base": [70,170,270],
             "attack": 130
         },
         "airborne": 0.5,

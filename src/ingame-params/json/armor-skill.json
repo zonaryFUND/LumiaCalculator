@@ -566,10 +566,10 @@
 		"name": "flame_barrier",
 		"dmg": {
 			"melee": {
-				"maxHP": 3
+				"maxHP": 3.5
 			},
 			"range": {
-				"maxHP": 2
+				"maxHP": 2.5
 			}
 		}
 	},

@@ -63,13 +63,14 @@
     "T": {
         "attack_speed": 40,
         "damage": {
+            "base": [70,90,110],
             "amp": [30,40,50],
-            "maxSP": 8
+            "maxSP": 1
         },
         "shield": {
-            "base": [30,65,100],
-            "amp": [20,25,30],
-            "maxSP": 10
+            "base": [140,180,220],
+            "amp": [25,30,35],
+            "maxSP": 2
         },
         "cooldown": {
             "constant": [12,9,6]

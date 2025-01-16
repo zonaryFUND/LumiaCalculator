@@ -67,7 +67,7 @@
             "amp": 10
         },
         "moon": 1,
-        "star": 45,
+        "star": 40,
         "conjunction": 4,
         "sp_cost": [80,90,100,110,120],
         "cooldown": [10,9.5,9,8.5,8]

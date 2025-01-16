@@ -44,7 +44,7 @@
     },
     "HumanR": {
         "fuel_consumption": 16,
-        "movement_speed": [0.1,0.55,1],
+        "movement_speed": [0.2,0.45,0.7],
         "defense": [14,22,30],
         "ms_penalty": {
             "duration": 2,
@@ -63,7 +63,7 @@
     "BikeW": {
         "damage": {
             "base": [60,100,140,180,220],
-            "amp": 70
+            "amp": 65
         },
         "airborne": 0.65,
         "cooldown": [8,7.5,7,6.5,6]
@@ -71,7 +71,7 @@
     "BikeE": {
         "damage": {
             "base": [40,70,100,130,160],
-            "amp": 60
+            "amp": 55
         },
         "ms_max_damage": [42,70,98,126,154],
         "cooldown": [12,11,10,9,8]

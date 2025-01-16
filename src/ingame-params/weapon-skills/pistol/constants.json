@@ -1,7 +1,7 @@
 {
     "duration": 1,
     "movement_speed": {
-        "base": [40,60,80],
+        "base": [40,55,70],
         "amp": 1
     },
     "attack_speed": {

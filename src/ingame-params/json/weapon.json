@@ -18,7 +18,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 51,
+        "attackPower": 54,
         "attackSpeedRatio": 0.25,
         "code": 101404,
         "weaponType": "OneHandSword",
@@ -114,7 +114,7 @@
     },
     {
         "attackPower": 36,
-        "skillAmp": 85,
+        "skillAmp": 87,
         "spRegenRatio": 0.5,
         "code": 102408,
         "weaponType": "TwoHandSword",
@@ -171,7 +171,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 98,
+        "skillAmp": 100,
         "code": 102502,
         "weaponType": "TwoHandSword",
         "itemGrade": "Legend"
@@ -185,7 +185,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 43,
+        "attackPower": 45,
         "attackSpeedRatio": 0.2,
         "normalLifeSteal": 0.1,
         "code": 103401,
@@ -210,7 +210,7 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 74,
+        "skillAmp": 76,
         "code": 103404,
         "weaponType": "DualSword",
         "itemGrade": "Epic"
@@ -328,7 +328,7 @@
     },
     {
         "attackPower": 105,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.3,
         "code": 104504,
         "weaponType": "Hammer",
         "itemGrade": "Legend"
@@ -351,7 +351,7 @@
     },
     {
         "attackPower": 50,
-        "skillAmp": 72,
+        "skillAmp": 74,
         "uniqueAttackRange": 0.3,
         "code": 105404,
         "weaponType": "Axe",
@@ -374,7 +374,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 73,
+        "attackPower": 76,
         "attackSpeedRatio": 0.2,
         "moveSpeedRatio": 0.02,
         "code": 105407,
@@ -565,7 +565,7 @@
     },
     {
         "attackPower": 80,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "code": 108505,
         "weaponType": "Bat",
         "itemGrade": "Legend"
@@ -646,7 +646,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 59,
+        "attackPower": 61,
         "maxHp": 100,
         "moveSpeedRatio": 0.02,
         "code": 110407,
@@ -727,7 +727,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 75,
+        "skillAmp": 78,
         "cooldownReduction": 0.15,
         "code": 111402,
         "weaponType": "Tonfa",
@@ -736,7 +736,7 @@
     {
         "attackPower": 40,
         "defense": 5,
-        "skillAmp": 79,
+        "skillAmp": 82,
         "code": 111403,
         "weaponType": "Tonfa",
         "itemGrade": "Epic"
@@ -753,7 +753,7 @@
     {
         "attackPower": 42,
         "defense": 8,
-        "skillAmp": 88,
+        "skillAmp": 93,
         "cooldownReduction": 0.15,
         "code": 111405,
         "weaponType": "Tonfa",
@@ -827,7 +827,7 @@
     },
     {
         "attackPower": 65,
-        "attackSpeedRatio": 0.1,
+        "attackSpeedRatio": 0.15,
         "code": 112402,
         "weaponType": "HighAngleFire",
         "itemGrade": "Epic"
@@ -919,7 +919,7 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 73,
+        "skillAmp": 75,
         "code": 113409,
         "weaponType": "DirectFire",
         "itemGrade": "Epic"
@@ -950,7 +950,7 @@
     },
     {
         "attackPower": 66,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "code": 113501,
         "weaponType": "DirectFire",
         "itemGrade": "Legend"
@@ -973,8 +973,8 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 55,
-        "attackSpeedRatio": 0.15,
+        "attackPower": 57,
+        "attackSpeedRatio": 0.2,
         "code": 114401,
         "weaponType": "Bow",
         "itemGrade": "Epic"
@@ -1013,7 +1013,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 26,
+        "attackPower": 24,
         "adaptiveForce": 57,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 0.15,
@@ -1032,7 +1032,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 70,
+        "attackPower": 67,
         "attackSpeedRatio": 0.25,
         "code": 114504,
         "weaponType": "Bow",
@@ -1062,7 +1062,7 @@
     },
     {
         "attackPower": 42,
-        "skillAmp": 62,
+        "skillAmp": 65,
         "cooldownReduction": 0.15,
         "code": 115403,
         "weaponType": "CrossBow",
@@ -1154,7 +1154,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 65,
+        "attackPower": 68,
         "attackSpeedRatio": 0.3,
         "code": 116407,
         "weaponType": "Pistol",
@@ -1216,15 +1216,15 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 70,
-        "criticalStrikeChance": 0.22,
+        "attackPower": 61,
+        "attackSpeedRatio": 0.15,
         "code": 117404,
         "weaponType": "AssaultRifle",
         "itemGrade": "Epic"
     },
     {
         "attackPower": 35,
-        "skillAmp": 61,
+        "skillAmp": 63,
         "cooldownReduction": 0.15,
         "code": 117405,
         "weaponType": "AssaultRifle",
@@ -1360,7 +1360,7 @@
     },
     {
         "attackPower": 47,
-        "skillAmp": 95,
+        "skillAmp": 92,
         "attackSpeedRatio": 0.3,
         "sightRange": 1.5,
         "code": 118505,
@@ -1369,7 +1369,7 @@
     },
     {
         "attackPower": 38,
-        "skillAmp": 81,
+        "skillAmp": 83,
         "code": 119301,
         "weaponType": "Nunchaku",
         "itemGrade": "Epic"
@@ -1383,7 +1383,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 60,
+        "attackPower": 63,
         "attackSpeedRatio": 0.3,
         "code": 119402,
         "weaponType": "Nunchaku",
@@ -1391,7 +1391,7 @@
     },
     {
         "attackPower": 75,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "criticalStrikeChance": 0.25,
         "code": 119403,
         "weaponType": "Nunchaku",
@@ -1431,7 +1431,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 70,
+        "attackPower": 73,
         "attackSpeedRatio": 0.25,
         "code": 119504,
         "weaponType": "Nunchaku",
@@ -1466,7 +1466,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 48,
+        "attackPower": 50,
         "attackSpeedRatio": 0.4,
         "criticalStrikeChance": 0.2,
         "code": 120403,
@@ -1500,7 +1500,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 59,
+        "attackPower": 61,
         "criticalStrikeChance": 0.24,
         "code": 120407,
         "weaponType": "Rapier",
@@ -1534,7 +1534,7 @@
     },
     {
         "attackPower": 42,
-        "skillAmp": 63,
+        "skillAmp": 68,
         "cooldownReduction": 0.15,
         "code": 121402,
         "weaponType": "Guitar",
@@ -1571,7 +1571,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 55,
+        "attackPower": 58,
         "attackSpeedRatio": 0.25,
         "criticalStrikeChance": 0.2,
         "code": 121407,
@@ -1580,7 +1580,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 89,
+        "skillAmp": 91,
         "cooldownReduction": 0.2,
         "uniqueCooldownLimit": 0.05,
         "code": 121501,
@@ -1631,14 +1631,14 @@
     },
     {
         "attackPower": 70,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "sightRange": 1.5,
         "code": 122403,
         "weaponType": "Camera",
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 58,
+        "attackPower": 60,
         "attackSpeedRatio": 0.2,
         "sightRange": 1,
         "code": 122404,
@@ -1647,7 +1647,7 @@
     },
     {
         "attackPower": 22,
-        "skillAmp": 61,
+        "skillAmp": 63,
         "cooldownReduction": 0.15,
         "sightRange": 1,
         "code": 122405,
@@ -1674,7 +1674,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 75,
+        "attackPower": 77,
         "attackSpeedRatio": 0.33,
         "sightRange": 1.5,
         "code": 122503,
@@ -1683,7 +1683,7 @@
     },
     {
         "attackPower": 43,
-        "skillAmp": 85,
+        "skillAmp": 86,
         "cooldownReduction": 0.15,
         "sightRange": 1.5,
         "code": 122504,
@@ -1693,7 +1693,7 @@
     {
         "attackPower": 30,
         "skillAmp": 69,
-        "cooldownReduction": 0.05,
+        "cooldownReduction": 0.1,
         "code": 130401,
         "weaponType": "Arcana",
         "itemGrade": "Epic"
@@ -1895,7 +1895,7 @@
     },
     {
         "attackPower": 22,
-        "adaptiveForce": 58,
+        "adaptiveForce": 59,
         "penetrationDefenseRatio": 0.08,
         "code": 102702,
         "weaponType": "TwoHandSword",
@@ -2060,7 +2060,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 29,
+        "attackPower": 26,
         "adaptiveForce": 50,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,

@@ -44,7 +44,7 @@
         "damage": {
             "base": [10,20,30,40,50],
             "additionalAttack": 60,
-            "amp": 45,
+            "amp": 50,
             "targetMaxHP": 5
         },
         "heal": {

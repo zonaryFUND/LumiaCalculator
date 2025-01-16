@@ -15,7 +15,7 @@
     "Q2": {
         "damage": {
             "base": [50,80,110,140,170],
-            "attack": 80
+            "attack": 85
         },
         "cooldown_reduction": 30,
         "movement_speed": {
@@ -53,7 +53,7 @@
         "duration" :12,
         "damage": {
             "base": [110,140,170,200,230],
-            "attack": 80
+            "attack": 85
         },
         "bind": 1,
         "max_set": 3,

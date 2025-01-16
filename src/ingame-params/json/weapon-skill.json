@@ -341,18 +341,8 @@
 		"name": "healing_reduction_weak"
 	},
 	"107502": {
-		"skillCode": 6013003,
-		"name": "magnetic_midnight",
-		"dmg": {
-			"level": 8,
-			"amp": 25
-		},
-		"values": {
-			"slow": {
-				"effect": 20,
-				"duration": 1.5
-			}
-		}
+		"skillCode": 6015002,
+		"name": "zephyr"
 	},
 	"107701": {
 		"skillCode": 6007001,
@@ -370,18 +360,8 @@
 		}
 	},
 	"107702": {
-		"skillCode": 6013003,
-		"name": "magnetic_midnight",
-		"dmg": {
-			"level": 8,
-			"amp": 25
-		},
-		"values": {
-			"slow": {
-				"effect": 20,
-				"duration": 1.5
-			}
-		}
+		"skillCode": 6015002,
+		"name": "zephyr"
 	},
 	"108404": {
 		"skillCode": 6008201,
@@ -971,6 +951,21 @@
 		},
 		"values": {
 			"heal": 66
+		}
+	},
+	"117404": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 4,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
 		}
 	},
 	"117406": {

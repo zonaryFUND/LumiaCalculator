@@ -99,7 +99,7 @@
         "consume_threshold": 400
     },
     "cavalcade": {
-        "effect": 5,
+        "effect": 4,
         "range": 3.5
     }
 }

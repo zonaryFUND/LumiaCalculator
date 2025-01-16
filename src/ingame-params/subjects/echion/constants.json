@@ -83,7 +83,7 @@
         "second": 0.85,
         "second_damage": [55,70,85,100],
         "airborne": 0.75,
-        "skill_lifesteal": [25,30,35,40],
+        "skill_lifesteal": [20,25,30,35],
         "cooldown": {
             "constant": 4
         }

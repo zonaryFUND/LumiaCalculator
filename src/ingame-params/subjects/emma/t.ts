@@ -20,7 +20,8 @@ export const info: SkillTooltipProps = {
                 2: Constants.T.shield.base,
                 3: RatioPercent(Constants.T.shield.maxSP),
                 10: RatioPercent(Constants.T.shield.amp),
-                11: RatioPercent(Constants.T.damage.amp)
+                11: RatioPercent(Constants.T.damage.amp),
+                12: Constants.T.damage.base
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -32,6 +33,7 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
             {labelIntlID: "ToolTipType/DamageAmpCoef", values: Constants.T.damage.amp, percent: true},
             {labelIntlID: "ToolTipType/Shield", values: Constants.T.shield.base},
             {labelIntlID: "ToolTipType/ShieldSkillAmpCoef", values: Constants.T.shield.amp, percent: true},

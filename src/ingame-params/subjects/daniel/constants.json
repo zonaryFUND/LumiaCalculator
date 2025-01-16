@@ -50,12 +50,12 @@
         "silence": 0.5,
         "duration": 2,
         "damage": {
-            "base": [20,35,50],
+            "base": [10,30,50],
             "attack": 30
         },
         "damage_count": 4,
         "finish_damage": {
-            "base": [60,115,170],
+            "base": [40,105,170],
             "attack": 90
         },
         "window_after_attack": 4,

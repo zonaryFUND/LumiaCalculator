@@ -37,14 +37,14 @@
         "supression": 1.2,
         "count": 4,
         "min_damage": {
-            "base": [30,80,130],
+            "base": [20,70,120],
             "attack": 60,
             "gauge": 50
         },
         "max_damage": {
-            "base": [45,120,195],
+            "base": [30,105,180],
             "attack": 90,
-            "gauge": 50
+            "gauge": 75
         },
         "bac_ratio": 50,
         "cooldown": [80,70,60]
