@@ -5,7 +5,7 @@
             "amp": 50
         },
         "additional_damage": {
-            "maxHP": [3,5,7,9,11]
+            "maxHP": [2,4,6,8,10]
         },
         "cooldown_reduction": 0.5,
         "max_stack": 2,

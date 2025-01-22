@@ -89,6 +89,10 @@
 			}
 		}
 	},
+	"201504": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"201505": {
 		"skillCode": 6033002,
 		"name": "photon_launcher",
