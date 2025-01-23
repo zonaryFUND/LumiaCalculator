@@ -89,7 +89,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 25,
+        "attackPower": 27,
         "attackSpeedRatio": 0.3,
         "code": 201417,
         "armorType": "Head",
@@ -168,7 +168,7 @@
         "skillAmp": 85,
         "maxSp": 400,
         "cooldownReduction": 0.15,
-        "moveSpeedRatio": 0.025,
+        "moveSpeedRatio": 0.02,
         "code": 201504,
         "armorType": "Head",
         "itemGrade": "Legend"
@@ -182,7 +182,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 30,
+        "attackPower": 32,
         "attackSpeedRatio": 0.42,
         "code": 201506,
         "armorType": "Head",
@@ -406,7 +406,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 23,
+        "defense": 25,
         "skillAmpByLevel": 5,
         "spRegenRatio": 1,
         "cooldownReduction": 0.15,
@@ -861,7 +861,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 85,
+        "skillAmp": 88,
         "maxSp": 350,
         "spRegenRatio": 1,
         "code": 203501,
@@ -1356,7 +1356,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 30,
+        "attackPower": 33,
         "attackSpeedRatio": 0.35,
         "code": 201521,
         "armorType": "Head",
