@@ -691,8 +691,8 @@
     },
     {
         "attackPowerByLv": 3,
-        "defense": 27,
-        "maxHp": 200,
+        "defense": 30,
+        "maxHp": 250,
         "code": 202524,
         "armorType": "Chest",
         "itemGrade": "Legend",
@@ -1645,8 +1645,8 @@
     },
     {
         "attackPowerByLv": 3,
-        "defense": 31,
-        "maxHp": 250,
+        "defense": 34,
+        "maxHp": 300,
         "code": 202621,
         "armorType": "Chest",
         "itemGrade": "Legend",
