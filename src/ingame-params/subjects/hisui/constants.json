@@ -42,7 +42,7 @@
                 "base": [50,80,110,140,170],
                 "additionalAttack": 130
             },
-            "airborne": 0.25
+            "airborne": 0.4
         },
         "W3": {
             "first_damage": {

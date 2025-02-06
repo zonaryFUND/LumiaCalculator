@@ -41,10 +41,10 @@
                 "base": [160,240,320],
                 "amp": 80
             },
-            "cooldown_reduction": 50
+            "cooldown_reduction": 55
         },
         "W": {
-            "bind": [0.8,0.9,1],
+            "bind": [0.9,1,1.1],
             "duration": 5,
             "damage": {
                 "base": [100,140,180],
@@ -56,11 +56,11 @@
             }   
         },
         "E": {
-            "range": [4,5,6],
-            "duration": 8
+            "range": [4,4.5,5],
+            "duration": 5
         },
         "sp_cost": [160,120,80],
-        "cooldown": [19,17,15]
+        "cooldown": [20,18,16]
     },
     "T": {
         "max_stack": [5,4,3],

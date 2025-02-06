@@ -40,7 +40,7 @@
         },
         "slow": {
             "duration": 1,
-            "effect": 30
+            "effect": 50
         },
         "knife_damage": {
             "base": [10,40,70],

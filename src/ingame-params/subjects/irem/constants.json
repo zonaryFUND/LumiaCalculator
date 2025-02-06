@@ -46,7 +46,7 @@
     "CatW": {
         "damage": {
             "base": [40,80,120,160,200],
-            "amp": 70
+            "amp": 75
         },
         "airborne": 0.8,
         "cooldown_reduction": 1,

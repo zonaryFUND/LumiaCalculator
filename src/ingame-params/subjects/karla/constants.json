@@ -1,7 +1,7 @@
 {
     "Q": {
         "damage": {
-            "attack": [105,115,125,135,145]
+            "attack": [120,130,140,150,160]
         },
         "max": 2,
         "range": 9,
@@ -62,7 +62,7 @@
     "T": {
         "max_attack_speed": 1.1,
         "amp_conversion": 1.2,
-        "charge_time": [14,12,10],
+        "charge_time": [13,11,9],
         "damage": {
             "base": [5,10,15],
             "attack": 3,

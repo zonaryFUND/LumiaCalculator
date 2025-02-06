@@ -1,8 +1,8 @@
 {
     "Q": {
         "damage": {
-            "base": [20,40,60,80,100],
-            "attack": 80,
+            "base": [10,30,50,70,90],
+            "attack": 75,
             "basicAttackAmp": 100
         },
         "stack_duration": 6,

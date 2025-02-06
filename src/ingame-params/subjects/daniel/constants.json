@@ -28,7 +28,7 @@
         "blast_duration": 2.5,
         "damage": {
             "base": [20,40,60,80,100],
-            "attack": 40
+            "attack": 50
         },
         "slow": {
             "duration": 1,

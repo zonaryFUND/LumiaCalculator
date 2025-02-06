@@ -60,7 +60,7 @@
             "basicAttackAmp": 100
         },
         "second_damage": {
-            "attack": [50,60,70],
+            "attack": [55,60,65],
             "basicAttackAmp": 100
         },
         "attack": {

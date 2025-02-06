@@ -67,7 +67,7 @@
         },
         "damage": {
             "base": [2,6,10],
-            "attack": 10
+            "attack": 15
         }
     }
 }

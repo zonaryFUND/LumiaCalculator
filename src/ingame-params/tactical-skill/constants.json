@@ -3,16 +3,16 @@
 
     },
     "quake": {
-        "slow": 50,
+        "slow": [40,50],
         "first_damage": {
             "base": [50, 100],
             "level": 10,
             "additionalMaxHP": 10
         },
         "dot_damage": {
-            "base": 20,
+            "base": 10,
             "level": 2,
-            "additionalMaxHP": 1.5
+            "additionalMaxHP": 2.5
         },
         "duration": 6,
         "tick": 0.5
@@ -20,7 +20,7 @@
     "protocol_violation": {
         "hp_increase": {
             "base": [200,300],
-            "level": [10,15]
+            "level": [15,20]
         },
         "damage_increase": [10,15]
     },

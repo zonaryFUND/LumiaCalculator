@@ -3,7 +3,7 @@
     "count": 3,
     "tick": 0.5,
     "damage": {
-        "base": 10,
+        "base": 20,
         "amp": 15,
         "targetMaxHP": 0.5
     },

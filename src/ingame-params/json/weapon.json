@@ -18,7 +18,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 54,
+        "attackPower": 56,
         "attackSpeedRatio": 0.25,
         "code": 101404,
         "weaponType": "OneHandSword",
@@ -32,7 +32,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 58,
+        "attackPower": 60,
+        "attackSpeedRatio": 0.15,
         "code": 101407,
         "weaponType": "OneHandSword",
         "itemGrade": "Epic"
@@ -46,7 +47,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 69,
+        "attackPower": 71,
         "attackSpeedRatio": 0.5,
         "moveSpeedRatio": 0.02,
         "code": 101405,
@@ -63,7 +64,8 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 70,
+        "attackPower": 72,
+        "attackSpeedRatio": 0.2,
         "code": 101502,
         "weaponType": "OneHandSword",
         "itemGrade": "Legend"
@@ -153,7 +155,7 @@
     },
     {
         "attackPower": 38,
-        "skillAmp": 77,
+        "skillAmp": 74,
         "cooldownReduction": 0.15,
         "code": 102413,
         "weaponType": "TwoHandSword",
@@ -178,7 +180,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 80,
+        "skillAmp": 77,
         "cooldownReduction": 0.15,
         "code": 102503,
         "weaponType": "TwoHandSword",
@@ -685,7 +687,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 77,
+        "attackPower": 75,
         "attackSpeedRatio": 0.2,
         "moveSpeedRatio": 0.02,
         "code": 110412,
@@ -981,7 +983,7 @@
     },
     {
         "attackPower": 43,
-        "skillAmp": 60,
+        "skillAmp": 62,
         "attackSpeedRatio": 0.25,
         "cooldownReduction": 0.15,
         "code": 114403,
@@ -998,7 +1000,7 @@
     },
     {
         "attackPower": 43,
-        "skillAmp": 70,
+        "skillAmp": 73,
         "moveSpeedRatio": 0.02,
         "code": 114501,
         "weaponType": "Bow",
@@ -1147,7 +1149,7 @@
     {
         "attackPower": 35,
         "skillAmp": 68,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "lifeSteal": 0.04,
         "code": 116406,
         "weaponType": "Pistol",
@@ -1982,7 +1984,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 35,
+        "attackPower": 42,
         "adaptiveForce": 50,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,

@@ -1,0 +1,10 @@
+{
+    "subject.justyna.q1-2hit": "Q1 2ヒット",
+    "subject.justyna.w-2hit": "W2ヒット",
+    "subject.justyna.e-additional": "E追加ダメージ",
+    "subject.justyna.r-1hit": "R1ヒット",
+    "subject.justyna.r-maxhit": "R最大ヒット({value})",
+    "subject.justyna.t-additional-marked": "T追加ダメージ(マークあり)",
+    "subject.justyna.t-additional-notmarked": "T追加ダメージ(マークなし)",
+    "subject.justyna.t-movement-speed": "T移動速度増加"
+}

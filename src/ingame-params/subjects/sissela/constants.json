@@ -2,7 +2,7 @@
     "Q": {
         "first_damage": {
             "base": [30,40,50,60,70],
-            "amp": 30
+            "amp": 25
         },
         "second_damage": {
             "base": [70,105,140,175,210],

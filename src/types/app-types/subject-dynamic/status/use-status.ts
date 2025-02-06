@@ -112,6 +112,7 @@ export function useStatus(config: SubjectConfig): [Status, StateProps<number>] {
             EquipmentCombined(sumEquipmentStatus("skillAmp"), config.level, sumEquipmentStatus("skillAmpByLevel")),
             masteryStatus?.type == "skill_amp" ? Adaptive("equipment", "app.adaptive-equipment", "amp", adaptive) : undefined,
             EquipmentConstant("mul", maxEquipmentStatus("uniqueSkillAmpRatio")),
+            EquipmentConstant("mul", sumEquipmentStatus("skillAmpRatio")),
             masteryStatus?.type == "skill_amp" ? Mastery("mul", config.weaponMastery, masteryStatus.value) : undefined
         ),
         cooldownReduction: AddComponent(0,

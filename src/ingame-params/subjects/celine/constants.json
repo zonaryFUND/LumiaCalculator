@@ -51,8 +51,8 @@
     "T": {
         "count": 3,
         "damage": {
-            "base": 30,
-            "amp": [25,50]
+            "base": 50,
+            "amp": [30,55]
         },
         "cooldown_conversion": 1
     }

@@ -19,7 +19,7 @@
             "duration": 2,
             "effect": [15,17,19,21,23]
         },
-        "cooldown": [15,14,13,12,11]
+        "cooldown": [14,13,12,11,10]
     },
     "E": {
         "first_damage": {

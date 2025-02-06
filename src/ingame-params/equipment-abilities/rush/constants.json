@@ -1,6 +1,6 @@
 {
     "damage": {
-        "targetHP": 5
+        "targetHP": 6
     },
     "duration": 6,
     "attack_speed": 10

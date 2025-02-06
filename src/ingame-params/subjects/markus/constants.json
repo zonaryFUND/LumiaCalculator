@@ -43,7 +43,7 @@
             "attack": 70
         },
         "slow": {
-            "duration": 1.25,
+            "duration": 1.5,
             "effect": 75
         },
         "defense_down": {
