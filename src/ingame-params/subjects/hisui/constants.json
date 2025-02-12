@@ -100,7 +100,7 @@
         "qe_cooldown_reduction": [10,15,20],
         "movement_speed": {
             "duration": 1,
-            "effect": [10,15,20]
+            "effect": [10,20,30]
         }
     }
 }
