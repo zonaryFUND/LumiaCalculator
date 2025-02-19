@@ -11,12 +11,12 @@
         },
         "slow": {
             "duration": 1,
-            "effect": 35
+            "effect": 30
         },
         "w_cooldown_reduction": 1,
         "gauge_cost": 50,
         "cooldown": {
-            "constant": 0.8
+            "constant": 1
         }
     },
     "W": {
@@ -26,10 +26,10 @@
         },
         "slow": {
             "duration": 0.5,
-            "effect": [20,22.5,25,27.5,30]
+            "effect": [15,17.5,20,22.5,25]
         },
         "duration": 5,
-        "cooldown": [10,9.5,9,8.5,8]
+        "cooldown": [11,10.5,10,9.5,9]
     },
     "E": {
         "duration": 5,
@@ -65,17 +65,13 @@
         },
         "recharge_threshold": 50,
         "recharge_duration": 3,
-        "movement_speed": {
-            "base": 3,
-            "amp": 1
-        },
         "mark_damage": {
             "base": [40,60,80],
             "amp": 20
         },
         "target_damage": 100,
         "splash_damage": 50,
-        "energy_syphon": 30,
+        "energy_syphon": 25,
         "animal_energy_syphon_ratio": 50
     }
 }

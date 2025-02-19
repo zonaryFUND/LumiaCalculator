@@ -57,17 +57,17 @@
             "base": [16,20,24],
             "amp": 15
         },
-        "slow": 40,
+        "slow": 50,
         "final_damage": {
             "min": {
                 "base": [100,150,200],
                 "amp": 50,
-                "additionalMaxHP": 4
+                "additionalMaxHP": 5
             },
             "max": {
                 "base": [200,300,400],
                 "amp": 100,
-                "additionalMaxHP": 8
+                "additionalMaxHP": 10
             }
         },
         "sp_cost": 120,

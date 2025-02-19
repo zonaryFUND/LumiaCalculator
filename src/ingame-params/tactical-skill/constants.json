@@ -22,7 +22,7 @@
             "base": [200,300],
             "level": [15,20]
         },
-        "damage_increase": [10,15]
+        "damage_increase": [8,12]
     },
     "electric_shift": {
 

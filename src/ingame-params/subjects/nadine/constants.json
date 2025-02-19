@@ -4,13 +4,13 @@
         "movement_speed_penalty": 20,
         "max_range": 2,
         "min_damage": {
-            "base": [60,90,120,150,180],
+            "base": [60,95,130,165,200],
             "additionalAttack": 110,
             "amp": 65,
             "stack": 1
         },
         "max_damage": {
-            "base": [120,180,240,300,360],
+            "base": [120,190,260,330,400],
             "additionalAttack": 220,
             "amp": 130,
             "stack": 1

@@ -47,12 +47,12 @@
     "R": {
         "tick": 0.1,
         "damage": {
-            "base": [3,9,15],
+            "base": [5,10,15],
             "amp": 5
         },
         "max_stack": 5,
         "stack_damage": {
-            "base": [20,50,80],
+            "base": [30,55,80],
             "amp": 30
         },
         "min_vf": 20,

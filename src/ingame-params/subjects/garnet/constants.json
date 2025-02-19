@@ -15,7 +15,7 @@
             "amp": 50,
             "maxHP": 6
         },
-        "hp_cost_percent": 2,
+        "hp_cost_percent": 3,
         "cooldown": [6,5.5,5,4.5,4]
     },
     "W": {

@@ -18,9 +18,7 @@ export const info: SkillTooltipProps = {
                 6: Constants.T.energy_regain.tick,
                 7: Constants.T.energy_regain.amount,
                 8: Constants.T.recharge_threshold,
-                9: Constants.T.recharge_duration,
-                10: RatioPercent(Constants.T.movement_speed.base),
-                11: RatioPercent(Constants.T.movement_speed.amp)
+                9: Constants.T.recharge_duration
             }
         } else {
             return {
@@ -32,8 +30,7 @@ export const info: SkillTooltipProps = {
                 5: Constants.T.energy_regain.tick,
                 6: Constants.T.energy_regain.amount,
                 7: Constants.T.recharge_threshold,
-                8: Constants.T.recharge_duration,
-                9: RatioPercent(Constants.T.movement_speed)
+                8: Constants.T.recharge_duration
             }
         }
     },

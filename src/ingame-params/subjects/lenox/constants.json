@@ -54,7 +54,7 @@
     },
     "T": {
         "shield": {
-            "maxHP": [6,10,14]
+            "maxHP": [7,11,15]
         },
         "duration": 3,
         "fishing": {

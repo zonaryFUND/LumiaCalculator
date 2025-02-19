@@ -6,7 +6,7 @@
     "MeleeQ": {
         "damage": {
             "base": [60,85,110,135,160],
-            "attack": 80
+            "attack": 70
         },
         "attack_up": {
             "duration": 20,

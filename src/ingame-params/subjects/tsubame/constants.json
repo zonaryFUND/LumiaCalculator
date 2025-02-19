@@ -52,6 +52,7 @@
                 "base": [3,6,9],
                 "additionalAttack": 3
             }
-        }
+        },
+        "range": 5
     }
 }

@@ -19,7 +19,7 @@
         "damage": {
             "base": [80,110,140,170,200],
             "targetHP": {
-                "base": 6,
+                "base": 8,
                 "amp": 2
             }
         },

@@ -37,7 +37,7 @@
         },
         "additionalDamage": {
             "stack": [2,5,8],
-            "attack": 6
+            "attack": 5
         },
         "slow": 99,
         "cooldown": [80,70,60],

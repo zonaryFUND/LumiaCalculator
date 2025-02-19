@@ -45,7 +45,7 @@
     "HumanR": {
         "fuel_consumption": 16,
         "movement_speed": [0.2,0.45,0.7],
-        "defense": [14,22,30],
+        "defense": [15,20,25],
         "ms_penalty": {
             "duration": 2,
             "effect": [-20,-10,0]

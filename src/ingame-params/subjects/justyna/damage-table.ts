@@ -24,8 +24,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.justyna.t-additional-marked"}), skill: "T", value: Constants.T.mark_damage},
-            {label: props.intl.formatMessage({id: "subject.justyna.t-additional-notmarked"}), skill: "T", value: Constants.T.mark_damage, multiplier: Constants.T.splash_damage},
-            {label: props.intl.formatMessage({id: "subject.justyna.t-movement-speed"}), skill: "T", value: Constants.T.movement_speed, type: {type: "misc", percentExpression: true}}
+            {label: props.intl.formatMessage({id: "subject.justyna.t-additional-notmarked"}), skill: "T", value: Constants.T.mark_damage, multiplier: Constants.T.splash_damage}
         ]
     ]   
 })
