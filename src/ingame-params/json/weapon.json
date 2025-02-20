@@ -360,9 +360,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 80,
-        "criticalStrikeChance": 0.17,
-        "cooldownReduction": 0.1,
+        "attackPower": 85,
+        "attackSpeedRatio": 0.2,
         "moveSpeedRatio": 0.02,
         "code": 105405,
         "weaponType": "Axe",
@@ -377,7 +376,7 @@
     },
     {
         "attackPower": 76,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "moveSpeedRatio": 0.02,
         "code": 105407,
         "weaponType": "Axe",
@@ -1093,7 +1092,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 80,
+        "attackPower": 82,
         "attackSpeedRatio": 0.35,
         "code": 115501,
         "weaponType": "CrossBow",
@@ -1110,7 +1109,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 78,
+        "attackPower": 80,
         "attackSpeedRatio": 0.45,
         "code": 115503,
         "weaponType": "CrossBow",
@@ -1147,7 +1146,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 35,
+        "attackPower": 40,
         "skillAmp": 68,
         "attackSpeedRatio": 0.3,
         "lifeSteal": 0.04,
@@ -1186,7 +1185,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 83,
+        "skillAmp": 85,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 0.15,
         "code": 116502,
@@ -1249,7 +1248,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 87,
+        "skillAmp": 90,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 0.15,
         "code": 117502,
@@ -1677,7 +1676,7 @@
     },
     {
         "attackPower": 77,
-        "attackSpeedRatio": 0.33,
+        "attackSpeedRatio": 0.4,
         "sightRange": 1.5,
         "code": 122503,
         "weaponType": "Camera",
@@ -1685,7 +1684,7 @@
     },
     {
         "attackPower": 43,
-        "skillAmp": 86,
+        "skillAmp": 88,
         "cooldownReduction": 0.15,
         "sightRange": 1.5,
         "code": 122504,
