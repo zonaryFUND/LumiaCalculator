@@ -8,7 +8,7 @@ export const code = 1078200;
 export const info: SkillTooltipProps = {
     skillKey: "Q",
     cooldown: ({ config, status }) => {
-        return new Decimal(Constants.Q.cooldown.constant[config.skillLevels.Q]).subPercent(status.attackSpeed.multiplier.clamp(0, 140).div(140).times(50)).floor2()
+        return new Decimal(Constants.Q.cooldown.constant[config.skillLevels.Q]).subPercent(status.attackSpeed.multiplier.clamp(0, 140).div(140).times(60)).floor2()
     },
     values: ({ showEquation }): TooltipValues  => {
         if (showEquation) {

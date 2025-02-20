@@ -57,6 +57,7 @@
     },
     "R": {
         "unstoppable": 1,
+        "self_silence": 1,
         "damage_reduction": 50,
         "first_damage": {
             "base": [80,150,220],

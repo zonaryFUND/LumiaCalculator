@@ -20,6 +20,7 @@ export const info: SkillTooltipProps = {
         7: RatioPercent(Constants.R.damage_reduction),
         8: RatioPercent(Constants.R.first_damage.amp),
         9: RatioPercent(Constants.R.echo_damage.amp),
+        10: Constants.R.self_silence,
         20: Constants.R.first_damage,
         21: Constants.R.echo_damage
     }),
