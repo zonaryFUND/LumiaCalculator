@@ -2,7 +2,7 @@
     "Q": {
         "hp": {
             "base": 100,
-            "level": 100
+            "level": 90
         },
         "duration": 12,
         "railgun_count": 4,
@@ -63,7 +63,7 @@
                 "base": [100,125,150],
                 "amp": 50
             },
-            "sentry_defence": 120
+            "sentry_defence": 130
         },
         "W": {
             "damage": {
@@ -84,7 +84,7 @@
         "E": {
             "damage": {
                 "base": [150,200,250],
-                "amp": 65
+                "amp": 60
             },
             "stun": 0.6,
             "dot_tick": 0.5,

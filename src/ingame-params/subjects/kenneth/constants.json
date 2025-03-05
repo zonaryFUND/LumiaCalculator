@@ -19,7 +19,7 @@
         "shield_duration": 0.75,
         "shield": {
             "base": [40,55,70,85,100],
-            "attack": 60
+            "attack": 70
         },
         "extend": 0.75,
         "max_duration": 7,

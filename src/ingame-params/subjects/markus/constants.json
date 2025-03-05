@@ -4,7 +4,7 @@
         "attack_speed": [28,41,54,67,80],
         "damage": {
             "base": [10,20,30,40,50],
-            "additionalMaxHP": 18
+            "additionalMaxHP": 20
         },
         "heal": 180,
         "duration": 5,
@@ -44,7 +44,7 @@
         },
         "slow": {
             "duration": 1.5,
-            "effect": 75
+            "effect": 90
         },
         "defense_down": {
             "duration": 4,

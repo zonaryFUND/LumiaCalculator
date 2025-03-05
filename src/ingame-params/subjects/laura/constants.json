@@ -20,7 +20,7 @@
         "target_duration": 3,
         "heal": {
             "base": [30,35,40,45,50],
-            "amp": 9
+            "amp": 12
         },
         "sp_cost": 60,
         "cooldown": [11,10.5,10,9.5,9]

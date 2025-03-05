@@ -16,7 +16,7 @@
         "conjunction": {
             "duration": 2,
             "damage": {
-                "targetMaxHP": 6
+                "targetMaxHP": 8
             }
         },
         "sp_cost": [50,55,60,65,70],

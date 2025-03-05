@@ -4,7 +4,7 @@
         "movement_speed_penalty": 20,
         "damage": {
             "base": [50,90,130,170,210],
-            "amp": 65
+            "amp": 70
         },
         "heal_duration": 2.5,
         "heal": {
@@ -13,7 +13,7 @@
         },
         "screen_damage": {
             "base": [70,110,150,190,230],
-            "amp": 65
+            "amp": 70
         },
         "screen_heal": {
             "base": [45,75,105,135,165],
@@ -40,7 +40,7 @@
         "target_duration": 4,
         "damage": {
             "base": [30,60,90,120,150],
-            "amp": 70
+            "amp": 65
         },
         "bind": [0.9,0.95,1,1.05,1.1],
         "sp_cost": [45,50,55,60,65],

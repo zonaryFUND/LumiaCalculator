@@ -51,7 +51,7 @@
         "duration": 2,
         "damage": {
             "base": [10,30,50],
-            "attack": 30
+            "attack": 25
         },
         "damage_count": 4,
         "finish_damage": {

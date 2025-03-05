@@ -19,7 +19,7 @@
     },
     "protocol_violation": {
         "hp_increase": {
-            "base": [200,300],
+            "base": [150,250],
             "level": [15,20]
         },
         "damage_increase": [8,12]

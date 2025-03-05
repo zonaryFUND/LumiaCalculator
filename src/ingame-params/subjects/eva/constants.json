@@ -5,8 +5,8 @@
             "amp": 40
         },
         "second_damage": {
-            "base": [45,75,105,135,165],
-            "amp": 45
+            "base": [45,80,115,150,185],
+            "amp": 40
         },
         "cooldown_reduction": 1,
         "vitalforce": 5,
@@ -52,7 +52,7 @@
         },
         "max_stack": 5,
         "stack_damage": {
-            "base": [30,55,80],
+            "base": [30,50,70],
             "amp": 30
         },
         "min_vf": 20,

@@ -24,7 +24,7 @@
     "E": {
         "first_damage": {
             "base": [50,75,100,125,150],
-            "amp": 60,
+            "amp": 70,
             "maxHP": 7
         },
         "airborne": 0.8,

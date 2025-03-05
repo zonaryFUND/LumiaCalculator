@@ -1,5 +1,5 @@
 {
-    "movement_speed_penalty": 45,
+    "movement_speed_penalty": 35,
     "min_damage": {
         "base": [100,175,250],
         "additionalAttack": 50,

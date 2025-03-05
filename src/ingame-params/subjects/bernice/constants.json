@@ -54,7 +54,7 @@
     "R": {
         "first_damage": {
             "base": [150,200,250],
-            "attack": 85
+            "attack": 75
         },
         "bind": 1.25,
         "second_damage": {

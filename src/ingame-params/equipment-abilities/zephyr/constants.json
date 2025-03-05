@@ -1,7 +1,7 @@
 {
     "time_bound": 4,
     "threshold": 3,
-    "duration": 2,
+    "duration": 2.5,
     "ms": 15,
     "shield": {
         "base": 200

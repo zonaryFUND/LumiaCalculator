@@ -19,7 +19,7 @@
             "base": [16,22,28,34,40],
             "additionalAttack": 50,
             "amp": 18,
-            "targetMaxHP": 2
+            "targetMaxHP": 2.5
         },
         "count": 11,
         "cooldown_reduction": 0.5,

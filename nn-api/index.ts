@@ -59,4 +59,14 @@ if (argv._[2] == "update-values") {
     const url = response.data.data.l10Path;
     const file = await axios.get(url);
     fs.writeFileSync("./jp.txt", file.data, "utf-8");
+}  else if (argv._[2] == "kr") {
+    const response = await axios.get(`${BaseURL}v1/l10n/Korean`, {
+        headers: {
+            accept: "application/json",
+            "x-api-key": APIKey
+        }
+    });
+    const url = response.data.data.l10Path;
+    const file = await axios.get(url);
+    fs.writeFileSync("./kr.txt", file.data, "utf-8");
 }

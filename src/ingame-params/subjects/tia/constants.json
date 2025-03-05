@@ -68,10 +68,10 @@
         "cooldown_conversion": 12,
         "yr": {
             "damage": {
-                "base": [60,120,180,240,300],
+                "base": [60,115,170,225,280],
                 "amp": 160
             },
-            "duration": 1.6,
+            "duration": 1.4,
             "count": 4
         },
         "rb": {

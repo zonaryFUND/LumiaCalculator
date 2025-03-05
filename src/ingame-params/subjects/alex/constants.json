@@ -74,13 +74,13 @@
                 "attack": 60
             },
             "center": {
-                "base": [100,180,260],
+                "base": [90,165,240],
                 "attack": 75
             }
         },
         "first_slow": {
             "duration": 0.6,
-            "effect": 40
+            "effect": 30
         },
         "later_damage": {
             "outer": {
@@ -88,7 +88,7 @@
                 "attack": 30
             },
             "center": {
-                "base": [30,60,90],
+                "base": [30,55,80],
                 "attack": 45
             },
             "tick": 0.69,

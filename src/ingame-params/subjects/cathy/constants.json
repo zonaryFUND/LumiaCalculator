@@ -1,7 +1,7 @@
 {
     "Q": {
         "additional_damage": {
-            "amp": 55
+            "amp": 50
         },
         "damage": {
             "base": [70,100,130,160,190],
@@ -72,7 +72,7 @@
         "shield_duration": 2,
         "shield": {
             "base": [50,100,150],
-            "amp": 50
+            "amp": 45
         },
         "movement_speed": [5,10,15],
         "cooldown": {
