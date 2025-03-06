@@ -55,7 +55,7 @@
     },
     {
         "defense": 12,
-        "maxHp": 120,
+        "maxHp": 150,
         "spRegenRatio": 0.5,
         "code": 201412,
         "armorType": "Head",
@@ -197,7 +197,7 @@
     },
     {
         "defense": 15,
-        "maxHpByLv": 16,
+        "maxHpByLv": 18,
         "spRegenRatio": 0.5,
         "code": 201508,
         "armorType": "Head",
@@ -246,7 +246,7 @@
     },
     {
         "defense": 10,
-        "skillAmp": 85,
+        "skillAmp": 80,
         "code": 201526,
         "armorType": "Head",
         "itemGrade": "Legend"
@@ -632,7 +632,7 @@
     },
     {
         "defense": 25,
-        "skillAmp": 30,
+        "skillAmp": 25,
         "skillAmpByLevel": 5,
         "spRegenRatio": 1,
         "code": 202514,
@@ -1603,7 +1603,7 @@
     },
     {
         "defense": 28,
-        "skillAmp": 35,
+        "skillAmp": 30,
         "skillAmpByLevel": 5,
         "spRegenRatio": 1,
         "code": 202616,

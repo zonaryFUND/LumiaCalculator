@@ -72,7 +72,7 @@
     },
     {
         "attackPower": 20,
-        "adaptiveForce": 59,
+        "adaptiveForce": 57,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 0.15,
         "moveSpeedRatio": 0.03,
@@ -754,7 +754,7 @@
     {
         "attackPower": 42,
         "defense": 8,
-        "skillAmp": 93,
+        "skillAmp": 90,
         "cooldownReduction": 0.15,
         "code": 111405,
         "weaponType": "Tonfa",
@@ -813,7 +813,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 90,
+        "attackPower": 87,
         "attackSpeedRatio": 0.35,
         "code": 112404,
         "weaponType": "HighAngleFire",
@@ -1132,7 +1132,7 @@
     },
     {
         "attackPower": 35,
-        "skillAmp": 61,
+        "skillAmp": 64,
         "cooldownReduction": 0.15,
         "code": 116404,
         "weaponType": "Pistol",
@@ -1185,7 +1185,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 85,
+        "skillAmp": 90,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 0.15,
         "code": 116502,
@@ -1558,7 +1558,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 70,
+        "attackPower": 66,
         "attackSpeedRatio": 0.3,
         "code": 121405,
         "weaponType": "Guitar",
@@ -2161,9 +2161,9 @@
         "shard": "blue"
     },
     {
-        "attackPower": 10,
+        "attackPower": 12,
         "adaptiveForce": 52,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "criticalStrikeChance": 0.2,
         "criticalStrikeDamage": 0.1,
         "penetrationDefenseRatio": 0.07,
