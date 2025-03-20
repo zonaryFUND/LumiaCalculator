@@ -23,7 +23,7 @@
             "defense": 10
         },
         "cc_immune": 1,
-        "sp_cost": 50,
+        "sp_cost": 30,
         "cooldown": [16,15,14,13,12]
     },
     "E": {
@@ -61,7 +61,7 @@
         "stun": 0.5,
         "max_later_delay": 0.35,
         "cooldown_payback": 50,
-        "sp_cost": 150,
+        "sp_cost": 100,
         "cooldown": [60,55,50]
     },
     "T": {

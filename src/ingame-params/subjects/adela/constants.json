@@ -12,7 +12,7 @@
         "stun": 1,
         "stack_reset": 6,
         "duration": 6,
-        "sp_cost": [50,55,60,65,70],
+        "sp_cost": [40,45,50,55,60],
         "cooldown": {
             "constant": [2.4,2.2,2,1.8,1.6]
         }
@@ -31,7 +31,7 @@
             "airborne": 1.25
         },
         "duration": 6,
-        "sp_cost": [90,100,110,120,130],
+        "sp_cost": [60,70,80,90,100],
         "cooldown": {
             "constant": 3
         },
@@ -55,7 +55,7 @@
         },
         "reuse": 4,
         "duration": 6,
-        "sp_cost": [70,85,100,115,130],
+        "sp_cost": [60,65,70,75,80],
         "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {

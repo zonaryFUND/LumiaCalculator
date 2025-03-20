@@ -178,6 +178,29 @@
 		"skillCode": 6051001,
 		"name": "taser_gun_surge"
 	},
+	"201528": {
+		"skillCode": 6038001,
+		"name": "crushing_blow",
+		"dmg": {
+			"base": 20,
+			"additionalMaxHP": 10,
+			"level": 3
+		},
+		"values": {
+			"heal": {
+				"base": 50,
+				"additionalMaxHP": 18
+			}
+		}
+	},
+	"201529": {
+		"skillCode": 6035001,
+		"name": "quickstep"
+	},
+	"201701": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
+	},
 	"202209": {
 		"skillCode": 6020001,
 		"name": "tranquility"
@@ -273,7 +296,7 @@
 		"name": "blaze_up_outburst"
 	},
 	"202507": {
-		"skillCode": 6027001,
+		"skillCode": 6027101,
 		"name": "vanguard"
 	},
 	"202509": {
@@ -339,7 +362,23 @@
 	},
 	"202525": {
 		"skillCode": 6048001,
-		"name": "awakening"
+		"name": "awakening",
+		"values": {
+			"as": 30,
+			"ms": 15
+		}
+	},
+	"202527": {
+		"skillCode": 6001002,
+		"name": "flame_barrier",
+		"dmg": {
+			"melee": {
+				"maxHP": 4
+			},
+			"range": {
+				"maxHP": 3
+			}
+		}
 	},
 	"203306": {
 		"skillCode": 6008201,
@@ -491,6 +530,17 @@
 			}
 		}
 	},
+	"203515": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
+	},
+	"204405": {
+		"skillCode": 6048011,
+		"name": "awakening",
+		"values": {
+			"penetration": 0.12
+		}
+	},
 	"204411": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
@@ -510,6 +560,10 @@
 	"204506": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
+	},
+	"204511": {
+		"skillCode": 6022101,
+		"name": "verdict"
 	},
 	"205401": {
 		"skillCode": 6035001,
@@ -579,7 +633,18 @@
 	},
 	"705607": {
 		"skillCode": 6038001,
-		"name": "crushing_blow"
+		"name": "crushing_blow",
+		"dmg": {
+			"base": 20,
+			"additionalMaxHP": 10,
+			"level": 2
+		},
+		"values": {
+			"heal": {
+				"base": 30,
+				"additionalMaxHP": 15
+			}
+		}
 	},
 	"705620": {
 		"skillCode": 6028001,

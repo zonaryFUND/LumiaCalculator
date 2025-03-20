@@ -5,7 +5,7 @@
             "amp": 55
         },
         "reuse": 3,
-        "sp_cost": 70,
+        "sp_cost": 50,
         "cooldown": [4.5,4,3.5,3,2.5]
     },
     "W": {

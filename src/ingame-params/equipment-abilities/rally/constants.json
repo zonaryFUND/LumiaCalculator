@@ -1,10 +1,10 @@
 {
     "tick": 0.5,
     "damage": {
-        "base": 20,
+        "base": 10,
         "attack": 30,
         "targetMaxHP": 0.5
     },
     "duration": 5,
-    "cooldown": 25
+    "cooldown": 10
 }

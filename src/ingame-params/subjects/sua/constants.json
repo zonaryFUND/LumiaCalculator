@@ -15,7 +15,7 @@
             "effect": [50,55,60,65,70]
         },
         "center_multiplier": 30,
-        "sp_cost": [50,60,70,80,90],
+        "sp_cost": [50,55,60,65,70],
         "cooldown": [15,13.5,12,10.5,9]
     },
     "W": {
@@ -29,7 +29,7 @@
             "base": [30,60,90,120,150],
             "amp": 30
         },
-        "sp_cost": 100,
+        "sp_cost": 80,
         "cooldown": [20,19.5,19,18.5,18]
     },
     "E": {
@@ -52,7 +52,7 @@
         "heal_max_multiplier": 1.5,
         "heal_max_hp": 40,
         "cooldown_reduction": 20,
-        "sp_cost": 110,
+        "sp_cost": 80,
         "cooldown": [18,17,16,15,14]
     },
     "RQ": {

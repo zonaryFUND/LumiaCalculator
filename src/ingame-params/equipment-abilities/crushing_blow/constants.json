@@ -1,12 +1,3 @@
 {
-    "cooldown": 4,
-    "damage": {
-        "base": 20,
-        "additionalMaxHP": 10,
-        "level": 2
-    },
-    "heal": {
-        "base": 30,
-        "additionalMaxHP": 15
-    }
+    "cooldown": 4
 }

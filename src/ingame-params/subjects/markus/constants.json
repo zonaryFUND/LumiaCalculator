@@ -23,7 +23,7 @@
         },
         "airborne": 1,
         "r_combo_knockback": 3,
-        "sp_cost": [70,80,90,100,110],
+        "sp_cost": [50,55,60,65,70],
         "cooldown": [12,11,10,9,8]
     },
     "E": {

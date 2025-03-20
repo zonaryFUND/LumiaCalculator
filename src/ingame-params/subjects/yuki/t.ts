@@ -1,16 +1,26 @@
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 
 export const code = 1011100;
 
 export const info: SkillTooltipProps = {
     skillKey: "T",
-    values: ({ }) => ({
-        0: Constants.T.damage.base    
-    }),
+    values: ({ showEquation }): TooltipValues => {
+        if (showEquation) {
+            return {
+                0: Constants.T.damage.base,
+                1: RatioPercent(Constants.T.damage.attack)
+            }
+        } else {
+            return {
+                0: Constants.T.damage
+            }
+        }
+    },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/TrueDamage", values: Constants.T.damage.base}
+            {labelIntlID: "ToolTipType/R1AdditionalAttackPower", values: Constants.T.damage.attack, percent: true}
         ]  
     })
 }

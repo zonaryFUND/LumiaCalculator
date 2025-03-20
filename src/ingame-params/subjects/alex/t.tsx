@@ -12,7 +12,9 @@ export const info: SkillTooltipProps = {
         2: Constants.T.movement_speed.duration,
         3: RatioPercent(Constants.T.movement_speed.effect),
         5: Constants.T.defense,
-        6: 6,
+        7: Constants.T.supply_level[0],
+        8: Constants.T.supply_level[1],
+        9: Constants.T.supply_level[2]
     }),
     expansion: () => ({
         enumeratedValues: [

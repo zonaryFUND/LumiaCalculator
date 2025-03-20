@@ -70,7 +70,7 @@
         "cooldown": 20
     },
     "circular_system": {
-        "ratio": 35,
+        "ratio": 50,
         "duration": 3
     },
     "open_wounds": {

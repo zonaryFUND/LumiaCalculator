@@ -13,6 +13,7 @@ export const info: SkillTooltipProps = {
         const base = {
             0: Constants.vision,
             1: Constants.cripping.vision,
+            3: Constants.cripping.target_vision,
             4: Constants.dead_to_rights.vision,
             6: Constants.cripping.slow.duration,
             7: RatioPercent(Constants.cripping.slow.effect),
@@ -26,14 +27,15 @@ export const info: SkillTooltipProps = {
                 8: RatioPercent(Constants.cripping.damage.amp),
                 9: RatioPercent(Constants.dead_to_rights.damage.amp),
                 10: Constants.cripping.damage.base,
-                11: Constants.dead_to_rights.damage.base
+                11: Constants.dead_to_rights.damage.base,
+                12: Constants.bullets
             }
         } else {   
             return {
                 ...base,
                 2: Constants.cripping.damage,
-                3: Constants.cripping.target_vision,
                 5: Constants.dead_to_rights.damage,
+                8: Constants.bullets
             }
         }
     }, 
@@ -44,11 +46,9 @@ export const info: SkillTooltipProps = {
                 0: damage.toString()
             },
             enumeratedValues: [
-                {labelIntlID: "ToolTipType/FirstDamage", values: Constants.cripping.damage.base},
-                {labelIntlID: "ToolTipType/SecondDamage", values: Constants.dead_to_rights.damage.base},
+                {labelIntlID: "ToolTipType/R2BaseDamage", values: Constants.cripping.damage.base},
                 {labelIntlID: "ToolTipType/CoolTime", values: Constants.cooldown.constant},
-                {labelIntlID: "ToolTipType/LegShotSkillAmpCoef", values: Constants.cripping.damage.amp, percent: true},
-                {labelIntlID: "ToolTipType/DeadEyeSkillAmpCoef", values: Constants.dead_to_rights.damage.amp, percent: true}
+                {labelIntlID: "ToolTipType/LegShotSkillAmpCoef", values: Constants.cripping.damage.amp, percent: true}
             ]  
         }
     }

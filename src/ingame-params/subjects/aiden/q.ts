@@ -29,8 +29,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/SwordDamage", values: Constants.Q.damage.base},
             {labelIntlID: "ToolTipType/VoltGunDamage", values: Constants.Q.range_damage.base},
             {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.Q.slow.effect, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown.constant},
-            {labelIntlID: "ToolTipType/SwordCost", values: Constants.Q.range_sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown.constant}
         ]  
     })
 }

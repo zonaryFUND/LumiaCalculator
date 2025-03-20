@@ -49,7 +49,7 @@
 		"name": "rudra_embodied",
 		"values": {
 			"ms": 24,
-			"ad": 16
+			"ad": 12
 		}
 	},
 	"101501": {
@@ -64,7 +64,7 @@
 		"name": "rudra_embodied",
 		"values": {
 			"ms": 24,
-			"ad": 21
+			"ad": 16
 		}
 	},
 	"101504": {
@@ -517,10 +517,10 @@
 		}
 	},
 	"110701": {
-		"skillCode": 6004003,
-		"name": "smolder",
+		"skillCode": 6013006,
+		"name": "magnetic_midnight",
 		"dmg": {
-			"targetMaxHP": 0.7
+			"level": 11
 		},
 		"values": {
 			"slow": {
@@ -696,6 +696,21 @@
 	"113409": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
+	},
+	"113410": {
+		"skillCode": 6017001,
+		"name": "vigor",
+		"dmg": {
+			"targetHP": 2
+		},
+		"values": {
+			"duration": 5,
+			"as": 4,
+			"stack": 4,
+			"max": {
+				"ad": 10
+			}
+		}
 	},
 	"113411": {
 		"skillCode": 6002005,
@@ -952,6 +967,10 @@
 		"values": {
 			"heal": 66
 		}
+	},
+	"117403": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"117404": {
 		"skillCode": 6017001,

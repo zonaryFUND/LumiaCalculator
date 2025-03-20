@@ -58,7 +58,7 @@
         "attack_speed": 10,
         "movement_speed": 40,
         "extend": 3,
-        "sp_cost": 150,
+        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

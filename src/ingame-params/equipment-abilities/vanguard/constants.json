@@ -1,9 +1,11 @@
 {
-    "threshold_maxhp": 600,
     "time_bound": 5,
     "threshold_damage": 500,
     "duration": 6,
-    "damage_mitigation": 15,
+    "damage_mitigation": {
+        "melee": 15,
+        "range": 10
+    },
     "area": 6,
     "as": 30,
     "cooldown": 8

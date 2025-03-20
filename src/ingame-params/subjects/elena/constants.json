@@ -11,7 +11,7 @@
             "additionalMaxHP": 10
         },
         "cooldown_reduction": 60,
-        "sp_cost": [60,65,70,75,80],
+        "sp_cost": [40,45,50,55,60],
         "cooldown": [8,7,6,5,4]
     },
     "W": {

@@ -1,3 +1,4 @@
+import skill from "components/status/chunks/03_skill";
 import { DamageTableGenerator } from "../type";
 import Constants from "./constants.json";
 import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
@@ -8,12 +9,13 @@ const table: DamageTableGenerator = props => {
     return {
         basicAttack: [
             "standard",
-            {label: props.intl.formatMessage({id: "subject.yuki.passive-additional"}), skill: "T", value: Constants.T.damage, type: {type: "true"}},
+            {label: props.intl.formatMessage({id: "subject.yuki.passive-additional"}), skill: "T", value: Constants.T.damage},
             weaponType == "DualSword" ? 
             {label: props.intl.formatMessage({id: "subject.yuki.q-aa-dual-sword"}), skill: "Q", value: Constants.Q.dual_sword_damage, type: {type: "basic"}} :
             {label: props.intl.formatMessage({id: "subject.yuki.q-aa"}), skill: "Q", value: Constants.Q.damage, type: {type: "basic"}}
         ],
         skill: [
+            [{label: props.intl.formatMessage({id: "subject.yuki.w-damage-reduction"}), skill: "W", value: Constants.W.damage_reduction, type: {type: "misc", percentExpression: true}}],
             [{label: "E", skill: "E", value: Constants.E.damage}],
             [
                 {label: props.intl.formatMessage({id: "subject.yuki.r-slash"}), skill: "R", value: Constants.R.damage},

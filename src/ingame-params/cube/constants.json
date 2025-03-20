@@ -3,37 +3,16 @@
         "dot_duration": 3,
         "damage": {
             "melee": {
-                "base": 5,
+                "base": 10,
                 "level": 4
             },
             "range": {
-                "base": 3,
+                "base": 7,
                 "level": 3
             }
         },
         "cooldown": 6,
-        "duration": 120
-    },
-    "purple": {
-        "cdr": 15,
-        "max_cdr": 5,
-        "amp": 3,
-        "sp_regeneration": {
-            "tick": 3,
-            "effet": 15
-        },
-        "damage": {
-            "melee": {
-                "base": 50,
-                "amp": 6
-            },
-            "range": {
-                "base": 30,
-                "amp": 6
-            }
-        },
-        "cooldown": 8,
-        "duration": 120
+        "duration": 140
     },
     "yellow": {
         "credit": {
@@ -46,15 +25,15 @@
         "heal": {
             "durataion": 4,
             "effect": {
-                "maxHP": 6
+                "maxHP": 7
             }
         },
-        "duration": 120
+        "duration": 140
     },
     "blue": {
         "movement_speed": 1.5,
-        "ms_not_in_combat": 0.08,
-        "attack_speed": 10,
+        "ms_not_in_combat": 0.1,
+        "attack_speed": 15,
         "on_get": {
             "duration": 5,
             "effect": 30
@@ -63,6 +42,6 @@
             "effect": 1.5,
             "max_stack": 4
         },
-        "duration": 120
+        "duration": 140
     }
 }

@@ -29,7 +29,7 @@
             "amp": 55
         },
         "reuse": 4,
-        "sp_cost": 100,
+        "sp_cost": 80,
         "cooldown": 9
     },
     "R": {
@@ -46,7 +46,7 @@
             "amp": 80
         },
         "stun": 0.75,
-        "sp_cost": 150,
+        "sp_cost": 100,
         "cooldown": [70,60,50]
     },
     "T": {

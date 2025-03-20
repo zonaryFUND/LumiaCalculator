@@ -31,7 +31,7 @@
     "E": {
         "movement_speed": [14,17,20,23,26],
         "duration": 3,
-        "sp_cost": [60,45,30,15,0],
+        "sp_cost": [40,30,20,10,0],
         "cooldown": 0
     },
     "R": {

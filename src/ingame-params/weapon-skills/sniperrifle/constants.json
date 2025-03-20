@@ -1,25 +1,26 @@
 {
     "duration": 10,
     "vision": 30,
+    "bullets": 3,
     "cripping": {
-        "vision": 6,
+        "vision": 3,
         "damage": {
             "base": [100,200,300],
-            "additionalAttack": 160,
-            "amp": [30,35,40]
+            "additionalAttack": 140,
+            "amp": [25,30,35]
         },
-        "target_vision": 3,
+        "target_vision": 2,
         "slow": {
             "duration": 0.5,
             "effect": 90
         }
     },
     "dead_to_rights": {
-        "vision": 1.5,
+        "vision": 3,
         "damage": {
-            "base": [150,300,450],
+            "base": 150,
             "additionalAttack": 180,
-            "amp": [40,45,50]
+            "amp": 40
         },
         "max_damage_multiplier": 2
     },

@@ -6,7 +6,7 @@
         },
         "time_bound": 2,
         "cooldown_reduction": 2,
-        "sp_cost": [60,65,70,75,80],
+        "sp_cost": [40,45,50,55,60],
         "cooldown": 5
     },
     "W": {
@@ -28,7 +28,7 @@
             "attack": 50
         },
         "stun": 0.3,
-        "sp_cost": [70,80,90,100,110],
+        "sp_cost": [60,70,80,90,100],
         "cooldown": [18,17,16,15,14]
     },
     "R": {

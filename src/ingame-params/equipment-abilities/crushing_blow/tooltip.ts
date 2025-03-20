@@ -1,13 +1,19 @@
 import Constants from "./constants.json";
 import { EquipmentAbilityTooltipValues } from "../type";
+import SanitizeValueRatio from "../use-sanitize-value-ratio";
+import { TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 
-const values: EquipmentAbilityTooltipValues = ({ showEquation }) => ({
-    0: Constants.cooldown,
-    1: showEquation ? Constants.damage.base : Constants.damage,
-    2: showEquation ? Constants.damage.additionalMaxHP : Constants.heal,
-    3: Constants.damage.level,
-    4: Constants.heal.base,
-    5: Constants.heal.additionalMaxHP
-})
+const values: EquipmentAbilityTooltipValues = ({ importedDamage, importedValues, showEquation }): TooltipValues => {
+    const sanitizedDamage = SanitizeValueRatio(importedDamage);
+
+    return {
+        0: Constants.cooldown,
+        1: showEquation ? sanitizedDamage.base! : sanitizedDamage,
+        2: showEquation ? sanitizedDamage.additionalMaxHP : importedValues!.heal,
+        3: sanitizedDamage.level!,
+        4: importedValues!.heal.base,
+        5: importedValues!.heal.additionalMaxHP
+    }
+}
 
 export default values;

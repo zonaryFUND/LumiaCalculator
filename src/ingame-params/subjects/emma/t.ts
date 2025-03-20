@@ -16,9 +16,7 @@ export const info: SkillTooltipProps = {
         if (showEquation) {
             return {
                 ...base,
-                1: RatioPercent(Constants.T.damage.maxSP),
                 2: Constants.T.shield.base,
-                3: RatioPercent(Constants.T.shield.maxSP),
                 10: RatioPercent(Constants.T.shield.amp),
                 11: RatioPercent(Constants.T.damage.amp),
                 12: Constants.T.damage.base

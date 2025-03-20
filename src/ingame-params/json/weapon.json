@@ -889,9 +889,8 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 46,
+        "attackPower": 62,
         "attackSpeedRatio": 0.4,
-        "criticalStrikeChance": 0.33,
         "code": 113401,
         "weaponType": "DirectFire",
         "itemGrade": "Epic"
@@ -926,10 +925,9 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 60,
-        "criticalStrikeDamage": 0.06,
+        "attackPower": 56,
+        "attackSpeedRatio": 0.2,
         "moveSpeedRatio": 0.02,
-        "uniqueAttackRange": 0.4,
         "code": 113410,
         "weaponType": "DirectFire",
         "itemGrade": "Epic"
@@ -1070,8 +1068,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 80,
-        "uniqueAttackRange": 0.3,
+        "attackPower": 77,
+        "attackSpeedRatio": 0.15,
         "code": 115404,
         "weaponType": "CrossBow",
         "itemGrade": "Epic"
@@ -1203,8 +1201,8 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 72,
-        "uniqueAttackRange": 0.35,
+        "attackPower": 77,
+        "normalLifeSteal": 0.1,
         "code": 117403,
         "weaponType": "AssaultRifle",
         "itemGrade": "Epic"
@@ -1572,9 +1570,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 58,
-        "attackSpeedRatio": 0.25,
-        "criticalStrikeChance": 0.2,
+        "attackPower": 64,
+        "attackSpeedRatio": 0.4,
         "code": 121407,
         "weaponType": "Guitar",
         "itemGrade": "Epic"

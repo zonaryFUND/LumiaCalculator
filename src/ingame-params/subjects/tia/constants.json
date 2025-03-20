@@ -30,7 +30,7 @@
                 "effect": 70
             }
         },
-        "sp_cost": 70,
+        "sp_cost": 50,
         "cooldown": {
             "constant": 0.5
         }
@@ -39,7 +39,7 @@
         "y": [8,6.5,5],
         "r": [6,4.5,3],
         "b": [7,5.5,4],
-        "sp_cost": 30,
+        "sp_cost": 25,
         "cooldown": {
             "constant": 0.02
         }

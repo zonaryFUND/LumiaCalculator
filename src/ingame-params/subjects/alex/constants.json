@@ -5,7 +5,7 @@
     },
     "MeleeQ": {
         "damage": {
-            "base": [60,85,110,135,160],
+            "base": [40,70,100,130,160],
             "attack": 70
         },
         "attack_up": {
@@ -33,7 +33,7 @@
     },
     "RangeQ": {
         "damage": {
-            "base": [60,85,110,135,160],
+            "base": [40,70,100,130,160],
             "attack": 80
         },
         "attack_up": {
@@ -64,7 +64,7 @@
             "effect": [30,35,40,45,50]
         },
         "weapon_swap": 4,
-        "sp_cost": 90,
+        "sp_cost": 80,
         "cooldown": 12
     },
     "R": {
@@ -102,6 +102,7 @@
         "cooldown": [90,75,60]
     },
     "T": {
+        "supply_level": [5,6,7],
         "hide_duration": 4,
         "movement_speed": {
             "area": 8,

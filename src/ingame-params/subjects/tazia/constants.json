@@ -16,7 +16,7 @@
         },
         "glass_duration": 7,
         "knockback_immune": 8,
-        "sp_cost": [70,65,60,55,50],
+        "sp_cost": [70,60,50,40,30],
         "cooldown": {
             "constant": 0.75
         },
@@ -52,7 +52,7 @@
         "reuse": 4,
         "glass_additional_damage": 10,
         "glass_additional_max": 50,
-        "sp_cost": 60,
+        "sp_cost": 50,
         "cooldown": [13,12,11,10,9]
     },
     "R": {

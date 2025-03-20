@@ -17,7 +17,7 @@
         },
         "range_cooldown_reduction": 50,
         "sp_cost": 20,
-        "range_sp_cost": [20,25,30,35,40],
+        "range_sp_cost": 50,
         "cooldown": {
             "constant": [5,4.5,4,3.5,3]
         }
@@ -79,7 +79,7 @@
             "duration": 1,
             "effect": 40
         },
-        "sp_cost": 120,
+        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

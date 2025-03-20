@@ -20,7 +20,7 @@
             "amp": 80,
             "targetMaxHP": 6
         },
-        "airborne": 0.75,
+        "airborne": 0.6,
         "sp_cost": 50,
         "cooldown": [12,11,10,9,8]
     },
@@ -53,7 +53,7 @@
             "max_threshold_hp": 40
         },
         "cooldown_reduction": 40,
-        "sp_cost": 90,
+        "sp_cost": 60,
         "cooldown": [13,12,11,10,9]
     },
     "R": {

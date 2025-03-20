@@ -3,7 +3,7 @@
     "damage": {
         "base": 60,
         "level": 3,
-        "amp": 30
+        "amp": 25
     },
     "cooldown": 8
 }

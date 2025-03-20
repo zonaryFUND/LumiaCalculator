@@ -5,7 +5,7 @@ const values: EquipmentAbilityTooltipValues = () => ({
     0: Constants.attack_speed,
     1: Constants.attack,
     2: Constants.max_stack,
-    3: Constants.penetration,
+    3: Constants.movement_speed,
     4: Constants.duration
 })
 

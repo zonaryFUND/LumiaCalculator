@@ -10,7 +10,7 @@
         "max_stack": 3,
         "red_attack_speed": 3,
         "black_movement_speed": 2,
-        "sp_cost": [80,85,90,95,100],
+        "sp_cost": [60,65,70,75,80],
         "cooldown": [9,8.5,8,7.5,7]
     },
     "W": {

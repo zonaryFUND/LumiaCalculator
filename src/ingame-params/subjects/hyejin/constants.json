@@ -5,7 +5,7 @@
             "amp": 85
         },
         "cooldown_reduction": 60,
-        "sp_cost": 60,
+        "sp_cost": 50,
         "cooldown": [7,6,5,4,3]
     },
     "W": {

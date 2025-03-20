@@ -17,7 +17,7 @@
             "duration": 1.5,
             "effect": 30
         },
-        "sp_cost": [80,90,100,110,120],
+        "sp_cost": [60,65,70,75,80],
         "cooldown": [10,9,8,7,6]
     },
     "W": {
@@ -43,7 +43,7 @@
             "base": [20,35,50,65,80],
             "attack": 30
         },
-        "sp_cost": [80,90,100,110,120],
+        "sp_cost": [60,70,80,90,100],
         "cooldown": [10,9,8,7,6]
     },
     "R": {
@@ -51,7 +51,7 @@
         "duration": 2,
         "damage": {
             "base": [10,30,50],
-            "attack": 25
+            "attack": 30
         },
         "damage_count": 4,
         "finish_damage": {

@@ -1,5 +1,7 @@
 {
-    "penetration_threshold": 30,
-    "hp_threshold": 8,
+    "hp_threshold": {
+        "melee": 8,
+        "range": 5
+    },
     "cooldown": 1
 }
