@@ -268,8 +268,8 @@
     },
     {
         "defense": 15,
-        "adaptiveForce": 40,
-        "attackSpeedRatio": 0.25,
+        "adaptiveForce": 35,
+        "attackSpeedRatio": 0.2,
         "lifeSteal": 0.12,
         "code": 201529,
         "armorType": "Head",
@@ -1074,7 +1074,7 @@
     },
     {
         "defense": 10,
-        "adaptiveForce": 42,
+        "adaptiveForce": 45,
         "cooldownReduction": 0.2,
         "code": 203515,
         "armorType": "Arm",
