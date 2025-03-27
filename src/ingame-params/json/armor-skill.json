@@ -538,7 +538,7 @@
 		"skillCode": 6048011,
 		"name": "awakening",
 		"values": {
-			"penetration": 0.12
+			"penetration": 0.1
 		}
 	},
 	"204411": {

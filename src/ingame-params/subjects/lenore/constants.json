@@ -14,7 +14,7 @@
             "duration": 2.5,
             "effect": {
                 "base": [70,85,100,115,130],
-                "amp": 35
+                "amp": 30
             }
         },
         "damage": {

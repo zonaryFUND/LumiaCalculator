@@ -31,7 +31,7 @@
             "base": [60,90,120,150,180],
             "amp": 50
         },
-        "airborne": 0.35,
+        "airborne": 0.5,
         "enhanced_airborne": 0.8,
         "sp_cost": [60,70,80,90,100],
         "cooldown": [15,14,13,12,11]

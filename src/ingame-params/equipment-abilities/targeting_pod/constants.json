@@ -6,7 +6,7 @@
     },
     "heal": {
         "base": 5,
-        "level": 3
+        "level": 2
     },
     "cooldown": 5
 }
