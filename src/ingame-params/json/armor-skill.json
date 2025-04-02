@@ -534,13 +534,6 @@
 		"skillCode": 6008202,
 		"name": "healing_reduction_strong"
 	},
-	"204405": {
-		"skillCode": 6048011,
-		"name": "awakening",
-		"values": {
-			"penetration": 0.12
-		}
-	},
 	"204411": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
@@ -562,8 +555,11 @@
 		"name": "healing_reduction_weak"
 	},
 	"204511": {
-		"skillCode": 6022101,
-		"name": "verdict"
+		"skillCode": 6048011,
+		"name": "awakening",
+		"values": {
+			"penetration": 0.12
+		}
 	},
 	"205401": {
 		"skillCode": 6035001,

@@ -52,7 +52,7 @@
         "damage": {
             "base": [100,150,200],
             "additionalAttack": 90,
-            "amp": 85,
+            "amp": 80,
             "stack": 1
         },
         "attack_speed": 10,

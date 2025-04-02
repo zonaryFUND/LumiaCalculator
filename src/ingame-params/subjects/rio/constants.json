@@ -33,11 +33,11 @@
         "multiple_hit": 20,
         "daikyu_damage": {
             "base": [90,100,110,120,130],
-            "attack": 80
+            "attack": 90
         },
         "daikyu_behind_damage": {
             "base": [45,50,55,60,65],
-            "attack": 40
+            "attack": 45
         },
         "daikyu_slow": {
             "duration": 1,

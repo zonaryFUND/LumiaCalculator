@@ -50,7 +50,7 @@
             "additionalAttack": 60,
             "targetMaxHP": {
                 "base": [3,6,9],
-                "additionalAttack": 3
+                "additionalAttack": 4
             }
         },
         "range": 5

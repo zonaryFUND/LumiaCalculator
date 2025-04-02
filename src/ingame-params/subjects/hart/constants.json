@@ -45,7 +45,7 @@
         "sp": [4,6,8],
         "evoluted_sound_wave": 2,
         "damage": {
-            "attack": [4,7,10],
+            "attack": [3,6,9],
             "basicAttackAmp": 100
         }
     }

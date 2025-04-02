@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 
-export const BasicAttackReductionPerMastery = new Decimal(0.9);
-export const SkillReductionPerMastery = new Decimal(0.7);
+export const BasicAttackReductionPerMastery = new Decimal(1);
+export const SkillReductionPerMastery = new Decimal(0.8);
 export const BaseCooldownCap = new Decimal(30);
 export const MovementSpeedPerMastery = new Decimal(0.005);
 export const BaseVision = new Decimal(8.5);

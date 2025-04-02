@@ -61,7 +61,7 @@
         "slow": 30,
         "damage": {
             "base": [60,100,140],
-            "amp": 35
+            "amp": 40
         },
         "hit_slow": {
             "duration": 1,

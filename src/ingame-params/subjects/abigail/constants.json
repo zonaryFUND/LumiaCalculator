@@ -61,7 +61,7 @@
     "T": {
         "damage": {
             "base": [30,65,100],
-            "amp": 45
+            "amp": 40
         },
         "defense_reduction": {
             "duration": 4,

@@ -27,7 +27,7 @@
     "W": {
         "damage": {
             "base": [90,125,160,195,230],
-            "amp": 75
+            "amp": 80
         },
         "movement_speed": {
             "duration": 2,

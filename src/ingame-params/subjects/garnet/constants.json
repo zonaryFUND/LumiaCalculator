@@ -44,7 +44,7 @@
             "effect": 50
         },
         "max_stack": 5,
-        "max_charge_bind": 0.8,
+        "max_charge_bind": 0.9,
         "finish_heal": {
             "base": [20,40,60,80,100],
             "amp": 40,
