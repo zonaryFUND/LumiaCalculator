@@ -4,10 +4,15 @@
             "base": [60,100,140,180,220],
             "attack": 100
         },
-        "variable_damage": {
-            "base": [100,150,200,250,300],
-            "attack": 200
+        "slow": {
+            "duration": 0.75,
+            "effect": 50
         },
+        "variable_damage": {
+            "base": [60,100,140,180,220],
+            "attack": 100
+        },
+        "enhance_target_hp_threshold": 30,
         "enhanced_damage": {
             "base": [100,150,200,250,300],
             "attack": 200

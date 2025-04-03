@@ -1,9 +1,12 @@
 {
-    "subject.istván.q-enhanced": "もうひとつの可能性Q強化",
+    "subject.istván.q-enhanced": "強化Q追撃",
+    "subject.istván.q-enhanced-lowtarget": "強化Q低体力対象",
     "subject.istván.w-damage": "Wダメージ",
-    "subject.istván.w-sheild": "Wシールド",
-    "subject.istván.w-heal-min": "もうひとつの可能性W回復(最小値)",
-    "subject.istván.w-heal-max": "もうひとつの可能性W回復(最大値)",
+    "subject.istván.w-shield": "Wシールド",
+    "subject.istván.w-enhanced-damage": "強化W追撃ダメージ",
+    "subject.istván.w-heal-min": "強化W回復(最小値)",
+    "subject.istván.w-heal-max": "強化W回復(最大値)",
+    "subject.istván.e-enhanced": "強化E追撃",
     "subject.istván.r-first": "R初撃",
     "subject.istván.r-second": "R追撃"
 }

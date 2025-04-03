@@ -8,7 +8,7 @@ import * as T from "./t";
 
 
 export default defineSubject({
-    code: 1,
+    code: 80,
     damageTable,
 
     skills: {

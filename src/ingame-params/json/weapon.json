@@ -1084,7 +1084,7 @@
     },
     {
         "attackPower": 42,
-        "skillAmp": 74,
+        "skillAmp": 71,
         "code": 115406,
         "weaponType": "CrossBow",
         "itemGrade": "Epic"
@@ -1389,7 +1389,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 75,
+        "attackPower": 77,
         "attackSpeedRatio": 0.3,
         "criticalStrikeChance": 0.25,
         "code": 119403,
@@ -1430,8 +1430,8 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 73,
-        "attackSpeedRatio": 0.25,
+        "attackPower": 75,
+        "attackSpeedRatio": 0.3,
         "code": 119504,
         "weaponType": "Nunchaku",
         "itemGrade": "Legend"
@@ -1456,7 +1456,7 @@
     },
     {
         "attackPower": 28,
-        "skillAmp": 84,
+        "skillAmp": 86,
         "spRegenRatio": 1.5,
         "cooldownReduction": 0.15,
         "sightRange": 1,
@@ -1507,7 +1507,7 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 88,
+        "skillAmp": 90,
         "sightRange": 1,
         "code": 120501,
         "weaponType": "Rapier",

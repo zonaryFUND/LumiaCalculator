@@ -13,16 +13,22 @@ export const info: SkillTooltipProps = {
     },
     cooldown: Constants.R.cooldown,
     values: ({ showEquation }) => {
-        if (showEquation) {
-            return {
-            } as Record<number, number | string | ValueRatio>
-        } else {
-            return {
-            } as Record<number, number | string | ValueRatio>
+        return {
+            0: Constants.R.slow.duration,
+            1: RatioPercent(Constants.R.slow.effect),
+            2: Constants.R.damage.base,
+            3: RatioPercent(Constants.R.damage.attack),
+            4: Constants.R.second_damage.base,
+            5: RatioPercent(Constants.R.second_damage.attack),
+            20: Constants.R.damage,
+            21: Constants.R.second_damage
         }
     },
     expansion: () => ({
         enumeratedValues: [
+            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/IstvanCloneDamage", values: Constants.R.second_damage.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
         ]  
     })
 }
