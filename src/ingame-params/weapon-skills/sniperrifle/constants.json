@@ -25,6 +25,6 @@
         "max_damage_multiplier": 2
     },
     "cooldown": {
-        "constant": [40,35,30]
+        "constant": [35,30,25]
     }
 }

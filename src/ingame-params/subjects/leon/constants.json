@@ -25,7 +25,7 @@
             "base": [70,105,140,175,210],
             "amp": 80
         },
-        "airborne": 0.6,
+        "airborne": 0.7,
         "sp_cost": [60,65,70,75,80],
         "cooldown": [16,15,14,13,12]
     },
@@ -46,7 +46,7 @@
         "movement_speed": [12,18,24],
         "attack_speed": [30,35,40],
         "damage": {
-            "base": [40,60,80],
+            "base": [30,50,70],
             "amp": 30
         },
         "cooldown": {
