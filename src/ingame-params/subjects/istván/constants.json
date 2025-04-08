@@ -1,7 +1,7 @@
 {
     "Q": {
         "damage": {
-            "base": [60,100,140,180,220],
+            "base": [40,80,120,160,200],
             "attack": 100
         },
         "slow": {
@@ -9,10 +9,10 @@
             "effect": 50
         },
         "variable_damage": {
-            "base": [60,100,140,180,220],
+            "base": [40,80,120,160,200],
             "attack": 100
         },
-        "enhance_target_hp_threshold": 30,
+        "enhance_target_hp_threshold": 20,
         "enhanced_damage": {
             "base": [100,150,200,250,300],
             "attack": 200
@@ -65,7 +65,7 @@
     },
     "R": {
         "damage": {
-            "base": [100,170,240],
+            "base": [80,160,240],
             "attack": 100
         },
         "slow": {
@@ -74,7 +74,7 @@
         },
         "second_damage": {
             "base": [50,100,150],
-            "attack": 60
+            "attack": 50
         },
         "sp_cost": 100,
         "cooldown": [80,70,60]
