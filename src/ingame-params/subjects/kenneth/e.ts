@@ -39,8 +39,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
             {labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.E.attack_speed, percent: true},
-            {labelIntlID: "ToolTipType/DecreaseCoolTime", values: Constants.E.cooldown_reduction, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
+            {labelIntlID: "ToolTipType/DecreaseCoolTime", values: Constants.E.cooldown_reduction, percent: true}
         ]  
     })
 }

@@ -66,7 +66,7 @@
         "max_stack": [5,4,3],
         "heal": {
             "base": [50,100,150],
-            "amp": 20
+            "amp": 15
         },
         "cooldown": {
             "constant": 7

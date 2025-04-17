@@ -11,7 +11,7 @@
     },
     "W": {
         "heal": {
-            "base": [20,55,90,125,160],
+            "base": [40,80,120,160,200],
             "maxHP": 6,
             "stack": 1
         },
@@ -60,10 +60,10 @@
         "food": 20,
         "max_stack": 100,
         "stack_gain": {
-            "uncommon": 4,
-            "rare": 7,
-            "epic": 10,
-            "legendary": 12
+            "uncommon": 6,
+            "rare": 9,
+            "epic": 12,
+            "legendary": 15
         },
         "max_hp": [1,2,3]
     }

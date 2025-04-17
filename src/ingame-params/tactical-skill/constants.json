@@ -79,8 +79,8 @@
     },
     "healing_wind": {
         "heal": {
-            "base": [100,150],
-            "level": [15,25]
+            "base": [150,200],
+            "level": [15,20]
         },
         "defense": {
             "duration": 3,

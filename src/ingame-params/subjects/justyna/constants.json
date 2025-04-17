@@ -7,7 +7,7 @@
         "reuse": 3,
         "reuse_damage": {
             "base": [70,115,160,205,250],
-            "amp": 80
+            "amp": 75
         },
         "slow": {
             "duration": 1,

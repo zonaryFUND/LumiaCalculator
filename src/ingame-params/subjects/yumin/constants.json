@@ -31,7 +31,7 @@
         "cooldown": [9,8.5,8,7.5,7]
     },
     "E": {
-        "cooldown_reduction": 0.7,
+        "cooldown_reduction": 0.8,
         "duration": 5,
         "damage": {
             "base": [60,95,130,165,200],

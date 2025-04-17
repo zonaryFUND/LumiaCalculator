@@ -56,7 +56,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 76,
+        "skillAmp": 79,
         "cooldownReduction": 0.15,
         "moveSpeedRatio": 0.02,
         "code": 101501,
@@ -83,7 +83,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 94,
+        "skillAmp": 97,
         "moveSpeedRatio": 0.02,
         "code": 101504,
         "weaponType": "OneHandSword",
@@ -1578,7 +1578,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 91,
+        "skillAmp": 95,
         "cooldownReduction": 0.2,
         "uniqueCooldownLimit": 0.05,
         "code": 121501,

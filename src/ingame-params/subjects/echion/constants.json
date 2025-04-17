@@ -46,7 +46,7 @@
             "attack": 8
         },
         "kill_extend": 5,
-        "overload": 12,
+        "overload": 10,
         "range_penalty": 0.3,
         "extend": 1,
         "cooldown_reduction": 0.5
@@ -69,7 +69,7 @@
             "duration": 1,
             "effect": 90
         },
-        "skill_damage_add": [35,45,55,65],
+        "skill_damage_add": [40,50,60,70],
         "cooldown": {
             "constant": 3
         }
@@ -108,7 +108,7 @@
     "T3_2": {
         "attack_speed_duration": 5,
         "damage": {
-            "attack": 35,
+            "attack": 40,
             "basicAttackAmp": 100
         }
     }

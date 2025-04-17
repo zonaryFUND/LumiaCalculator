@@ -10,8 +10,8 @@
         "duration_enemy": 6,
         "duration_reduction": 0.5,
         "additional_damage": {
-            "base": [9,13,17,21,25],
-            "attack":7,
+            "base": [10,15,20,25,30],
+            "attack": 9,
             "amp": 5
         },
         "additional_bind": 0.1,

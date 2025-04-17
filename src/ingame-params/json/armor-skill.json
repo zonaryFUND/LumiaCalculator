@@ -436,11 +436,11 @@
 		"dmg": {
 			"melee": {
 				"base": 10,
-				"amp": 27
+				"amp": 25
 			},
 			"range": {
 				"base": 10,
-				"amp": 22
+				"amp": 20
 			}
 		},
 		"values": {
@@ -484,11 +484,11 @@
 		"dmg": {
 			"melee": {
 				"base": 5,
-				"amp": 25
+				"amp": 23
 			},
 			"range": {
 				"base": 5,
-				"amp": 20
+				"amp": 18
 			}
 		},
 		"values": {

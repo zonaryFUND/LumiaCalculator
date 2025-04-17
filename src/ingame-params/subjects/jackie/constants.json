@@ -43,7 +43,7 @@
         "duration": [9,11,13],
         "damage": {
             "base": [20,40,60],
-            "attack": 30
+            "attack": 22
         },
         "extend": 5,
         "finish_time": 3,

@@ -90,7 +90,7 @@
         "vision": [0.75,1,1.25],
         "stay": 15,
         "attack_speed": [10,20,30],
-        "defense": [4,8,12],
+        "defense": [6,10,14],
         "fish_food": 10
     }
 }

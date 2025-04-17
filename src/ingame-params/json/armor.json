@@ -149,7 +149,7 @@
     {
         "attackPower": 25,
         "criticalStrikeChance": 0.35,
-        "criticalStrikeDamage": 0.06,
+        "criticalStrikeDamage": 0.07,
         "code": 201502,
         "armorType": "Head",
         "itemGrade": "Legend"
@@ -164,7 +164,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 85,
+        "skillAmp": 82,
         "maxSp": 400,
         "cooldownReduction": 0.15,
         "moveSpeedRatio": 0.02,
@@ -213,7 +213,7 @@
     },
     {
         "attackPower": 30,
-        "defense": 12,
+        "defense": 14,
         "spRegenRatio": 1,
         "attackSpeedRatio": 0.2,
         "code": 201523,
@@ -253,7 +253,7 @@
     },
     {
         "attackPower": 30,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "moveSpeedRatio": 0.02,
         "code": 201527,
         "armorType": "Head",
@@ -686,7 +686,7 @@
         }
     },
     {
-        "defense": 35,
+        "defense": 38,
         "maxHpByLv": 24,
         "attackSpeedRatio": 0.38,
         "code": 202517,
@@ -838,13 +838,14 @@
     },
     {
         "attackPower": 26,
+        "defense": 5,
         "criticalStrikeChance": 0.24,
         "code": 203415,
         "armorType": "Arm",
         "itemGrade": "Epic"
     },
     {
-        "skillAmp": 30,
+        "skillAmp": 32,
         "attackSpeedRatio": 0.3,
         "code": 203506,
         "armorType": "Arm",
@@ -867,7 +868,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 13,
+        "defense": 15,
         "maxHpByLv": 19,
         "attackSpeedRatio": 0.3,
         "code": 203404,
@@ -883,7 +884,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 60,
+        "skillAmp": 64,
         "attackSpeedRatio": 0.42,
         "code": 203413,
         "armorType": "Arm",
@@ -1011,7 +1012,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 85,
+        "skillAmp": 88,
         "spRegenRatio": 1,
         "cooldownReduction": 0.15,
         "code": 205508,
@@ -1026,7 +1027,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 75,
+        "skillAmp": 77,
         "spRegenRatio": 1,
         "code": 205505,
         "armorType": "Arm",
@@ -1066,7 +1067,7 @@
     },
     {
         "defense": 10,
-        "skillAmp": 58,
+        "skillAmp": 60,
         "maxHp": 200,
         "code": 205406,
         "armorType": "Arm",
@@ -1393,7 +1394,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 68,
+        "skillAmp": 70,
         "cooldownReduction": 0.15,
         "code": 705620,
         "armorType": "Head",

@@ -34,9 +34,9 @@
             "base": [10,20,30,40,50],
             "attack": 20
         },
-        "cooldown_reduction": [30,40,50,60,70],
+        "cooldown_reduction": [50,55,60,65,70],
         "sp_cost": 35,
-        "cooldown": [15,14,13,12,11]
+        "cooldown": 10
     },
     "R": {
         "first_damage": {
