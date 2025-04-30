@@ -368,6 +368,10 @@
 			"ms": 15
 		}
 	},
+	"202526": {
+		"skillCode": 6039001,
+		"name": "brute_enforcer"
+	},
 	"202527": {
 		"skillCode": 6001002,
 		"name": "flame_barrier",
@@ -607,10 +611,6 @@
 			}
 		}
 	},
-	"702602": {
-		"skillCode": 6039001,
-		"name": "brute_enforcer"
-	},
 	"705601": {
 		"skillCode": 6016003,
 		"name": "colossal"
@@ -640,6 +640,13 @@
 				"base": 30,
 				"additionalMaxHP": 15
 			}
+		}
+	},
+	"705614": {
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 25
 		}
 	},
 	"705620": {

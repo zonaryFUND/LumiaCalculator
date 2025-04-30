@@ -5,8 +5,8 @@
             "attack": [150,155,160,165,170]
         },
         "max_stack_damage": 25,
-        "max_stack_heal": 12,
-        "max_stack_heal_max": 30,
+        "max_stack_heal": 14,
+        "max_stack_heal_max": 33,
         "sp_cost": 40,
         "cooldown": [10,9,8,7,6]
     },
@@ -51,7 +51,7 @@
         "second_count": 2,
         "third_damage": {
             "base": [70,170,270],
-            "attack": 130
+            "attack": 150
         },
         "airborne": 0.5,
         "sp_cost": [100,150,200],

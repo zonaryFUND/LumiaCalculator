@@ -52,7 +52,7 @@
         "maxHP": [100,175,250],
         "gauge_consumption": 25,
         "damage": {
-            "base": [40,50,60],
+            "base": [50,60,70],
             "amp": 25
         },
         "heal": {
@@ -78,6 +78,6 @@
         "healing_reduction": [11,13,15],
         "duration": 6,
         "max_stack": 4,
-        "movement_speed": [4,7,10]
+        "movement_speed": [6,9,12]
     }
 }

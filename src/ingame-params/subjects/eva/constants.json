@@ -19,7 +19,7 @@
             "base": [40,70,100,130,160],
             "amp": 45
         },
-        "slow": 35,
+        "slow": 40,
         "second_damage": {
             "base": [40,70,100,130,160],
             "amp": 40
@@ -32,7 +32,7 @@
     "E": {
         "movement_speed": {
             "duration": 0.5,
-            "effect": [100,105,110,115,120]
+            "effect": [120,125,130,135,140]
         },
         "vitalforce": 30,
         "vision_duration": 3,

@@ -74,7 +74,7 @@
         "range": 1,
         "additional_damage": {
             "base": 20,
-            "additionalAttack": [20,30,40]
+            "additionalAttack": [20,35,50]
         },
         "first_damage": {
             "base": [80,120,160],

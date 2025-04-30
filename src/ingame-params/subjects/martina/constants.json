@@ -84,7 +84,7 @@
             "attack": 40
         },
         "stun": 1,
-        "heal": [16,28,40,52,64],
+        "heal": [30,40,50,60,70],
         "sp_cost": 90,
         "cooldown": [22,20,18,16,14]
     },
@@ -139,7 +139,7 @@
             "from": 1,
             "to": 0.2
         },
-        "engagement_ping_range": 30,
+        "engagement_ping_range": 40,
         "mark_threshold": 4,
         "mark_damage": {
             "base": 50,

@@ -11,7 +11,7 @@
         },
         "movement_speed": {
             "duration": 2,
-            "effect": [6,7,8,9,10]
+            "effect": [8,9,10,11,12]
         },
         "sp_cost": [40,45,50,55,60],
         "cooldown": [9,8,7,6,5]
@@ -72,7 +72,7 @@
             "amp": 35
         },
         "heal": {
-            "maxHP": [7,11,15]
+            "maxHP": [8,12,16]
         },
         "w_cooldown_reduction": 2
     }

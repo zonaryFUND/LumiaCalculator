@@ -7,7 +7,7 @@
         "tick": 0.12,
         "damage": {
             "base": [8,16,24,32,40],
-            "amp": 12
+            "amp": 14
         },
         "enhance": [1,5,10],
         "enhanced_damage": {
@@ -53,11 +53,11 @@
     "E1": {
         "first_min_damage": {
             "base": [10,25,40,55,70],
-            "amp": 25
+            "amp": 30
         },
         "first_max_damage": {
             "base": [30,50,70,90,110],
-            "amp": 45
+            "amp": 50
         },
         "second_min_damage": {
             "base": [20,30,40,50,60],

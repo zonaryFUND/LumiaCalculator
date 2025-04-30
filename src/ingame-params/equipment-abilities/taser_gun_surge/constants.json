@@ -1,7 +1,7 @@
 {
     "damage": {
         "base": 50,
-        "attack": 40,
+        "attack": 50,
         "level": 2
     },
     "defense_down": {

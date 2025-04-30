@@ -805,7 +805,7 @@
     },
     {
         "attackPower": 33,
-        "skillAmp": 63,
+        "skillAmp": 65,
         "attackSpeedRatio": 0.2,
         "cooldownReduction": 0.15,
         "code": 112302,
@@ -835,7 +835,7 @@
     },
     {
         "attackPower": 33,
-        "skillAmp": 77,
+        "skillAmp": 79,
         "code": 112501,
         "weaponType": "HighAngleFire",
         "itemGrade": "Epic"
@@ -857,7 +857,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 88,
+        "skillAmp": 90,
         "code": 112407,
         "weaponType": "HighAngleFire",
         "itemGrade": "Legend"
@@ -872,7 +872,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 88,
+        "skillAmp": 90,
         "cooldownReduction": 0.15,
         "code": 112502,
         "weaponType": "HighAngleFire",
@@ -1090,7 +1090,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 82,
+        "attackPower": 84,
         "attackSpeedRatio": 0.35,
         "code": 115501,
         "weaponType": "CrossBow",
@@ -1108,7 +1108,7 @@
     },
     {
         "attackPower": 80,
-        "attackSpeedRatio": 0.45,
+        "attackSpeedRatio": 0.48,
         "code": 115503,
         "weaponType": "CrossBow",
         "itemGrade": "Legend"
@@ -1630,7 +1630,7 @@
     {
         "attackPower": 70,
         "attackSpeedRatio": 0.25,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "code": 122403,
         "weaponType": "Camera",
         "itemGrade": "Legend"
@@ -1655,7 +1655,7 @@
     {
         "attackPower": 45,
         "skillAmp": 87,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "code": 122501,
         "weaponType": "Camera",
         "itemGrade": "Legend"
@@ -1665,7 +1665,7 @@
         "adaptiveForce": 57,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 0.15,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "penetrationDefenseRatio": 0.1,
         "code": 122502,
         "weaponType": "Camera",
@@ -1674,7 +1674,7 @@
     {
         "attackPower": 77,
         "attackSpeedRatio": 0.4,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "code": 122503,
         "weaponType": "Camera",
         "itemGrade": "Legend"
@@ -1683,7 +1683,7 @@
         "attackPower": 43,
         "skillAmp": 88,
         "cooldownReduction": 0.15,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "code": 122504,
         "weaponType": "Camera",
         "itemGrade": "Legend"
@@ -2279,7 +2279,7 @@
         "attackPower": 28,
         "adaptiveForce": 52,
         "attackSpeedRatio": 0.4,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "penetrationDefenseRatio": 0.07,
         "code": 122701,
         "weaponType": "Camera",
@@ -2289,7 +2289,7 @@
     {
         "attackPower": 25,
         "adaptiveForce": 55,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "penetrationDefenseRatio": 0.08,
         "code": 122702,
         "weaponType": "Camera",

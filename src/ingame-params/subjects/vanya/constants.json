@@ -1,7 +1,7 @@
 {
     "Q": {
         "damage": {
-            "base": [50,70,90,110,130],
+            "base": [50,75,100,125,150],
             "amp": 60
         },
         "cooldown_reduction": 40,
@@ -58,7 +58,7 @@
     "T": {
         "basic_attack_damage": {
             "base": [20,50,80],
-            "amp": 45
+            "amp": 50
         },
         "max_stack": 4,
         "duration": 3,

@@ -28,8 +28,7 @@ export const info: SkillTooltipProps = {
                 7: RatioPercent(Constants.W.max_damage.attack),
                 8: RatioPercent(Constants.W.max_damage.additionalMaxHP),
                 9: Constants.W.damage_reduction_duration,
-                10: "0%",
-                11: RatioPercent(Constants.W.max_damage_reduction)
+                10: RatioPercent(Constants.W.max_damage_reduction)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -37,8 +36,7 @@ export const info: SkillTooltipProps = {
                 3: Constants.W.min_damage,
                 4: Constants.W.max_damage,
                 5: Constants.W.damage_reduction_duration,
-                6: "0%",
-                7: RatioPercent(Constants.W.max_damage_reduction)
+                6: RatioPercent(Constants.W.max_damage_reduction)
             } as Record<number, number | string | ValueRatio>
         }
     },

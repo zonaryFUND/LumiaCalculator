@@ -66,7 +66,7 @@
         "max_stack": 3,
         "critical_wound": {
             "targetMaxHP": 4,
-            "amp": 22
+            "amp": 25
         },
         "healing_reduction": 60,
         "shield_duration": 2,

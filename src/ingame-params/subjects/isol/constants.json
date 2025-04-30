@@ -25,7 +25,7 @@
         "damage": {
             "base": [10,15,20,25,30],
             "attack": 60,
-            "amp": 22
+            "amp": 24
         },
         "defense_decline": [2,2,3,3,3],
         "defense_decline_duration": 4,

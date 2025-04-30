@@ -19,7 +19,13 @@
             "duration": 2,
             "effect": [15,17,19,21,23]
         },
-        "cooldown": [14,13,12,11,10]
+        "charge": {
+            "time": [16,15,14,13,12],
+            "max": 2
+        },
+        "cooldown": {
+            "constant": 4
+        }
     },
     "E": {
         "first_damage": {

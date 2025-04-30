@@ -21,13 +21,16 @@ export const info: SkillTooltipProps = {
                 ...base,
                 0: Constants.Q.damage.base,
                 3: RatioPercent(Constants.Q.damage.attack),
-                4: Constants.Q.additional_stack
+                4: Constants.Q.additional_stack,
+                5: Constants.Q.through_damage.base,
+                6: RatioPercent(Constants.Q.through_damage.attack)
             }
         } else {   
             return {
                 ...base,
                 0: Constants.Q.damage,
-                3: Constants.Q.additional_stack
+                3: Constants.Q.additional_stack,
+                4: Constants.Q.through_damage
             }
         }
         

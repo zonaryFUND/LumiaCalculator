@@ -62,8 +62,8 @@
     },
     "R1": {
         "damage": {
-            "base": [95,190,230,270],
-            "attack": 85
+            "base": [95,200,240,280],
+            "attack": 110
         },
         "slow": {
             "duration": 1,
@@ -77,8 +77,8 @@
     "R2": {
         "damage": {
             "base": [60,150,205,260],
-            "attack": 80,
-            "additionalMaxHP": 10
+            "attack": 90,
+            "additionalMaxHP": 12
         },
         "second": 0.85,
         "second_damage": [55,70,85,100],
@@ -90,8 +90,8 @@
     },
     "R3": {
         "damage": {
-            "base": [90,180,225,270],
-            "attack": 85
+            "base": [90,200,250,300],
+            "attack": 110
         },
         "attack_speed": [8,10,12,14]
     },

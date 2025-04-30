@@ -36,7 +36,7 @@
         "slow": 30,
         "damage": {
             "base": [60,120,180],
-            "attack": 40
+            "attack": 50
         },
         "basic_attack_launch": 5,
         "additional_damage": [4,7,10],

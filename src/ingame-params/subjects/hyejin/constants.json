@@ -45,7 +45,7 @@
         "damage": {
             "amp": [10,25,40]
         },
-        "fear_immune": 8,
+        "fear_immune": 6,
         "minimum_additional_damage": 1
     }
 }

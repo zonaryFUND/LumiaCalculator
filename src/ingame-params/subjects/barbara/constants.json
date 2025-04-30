@@ -9,7 +9,7 @@
         "railgun_charge": 3,
         "w_cooldown_reduction": 10,
         "damage": {
-            "base": [30,40,50,60,70],
+            "base": [40,50,60,70,80],
             "amp": 20
         },
         "railgun_damage": {
@@ -102,7 +102,7 @@
         "making_time_reduction": 20,
         "attack_speed": 100,
         "damage": {
-            "base": [30,40,50],
+            "base": [50,75,100],
             "amp": [35,45,55]
         },
         "cooldown": {

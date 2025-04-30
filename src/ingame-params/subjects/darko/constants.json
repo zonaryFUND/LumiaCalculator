@@ -21,7 +21,7 @@
         },
         "shield_duration": 3,
         "slow": {
-            "duration": 1,
+            "duration": 1.5,
             "effect": [20,22.5,25,27.5,30]
         },
         "additional_shield": {
@@ -60,7 +60,7 @@
     "T": {
         "defense": {
             "duration": 4,
-            "effect": [4,8,12]
+            "effect": [6,10,14]
         },
         "cooldown": 8
     }
