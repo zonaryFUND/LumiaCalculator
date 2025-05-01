@@ -1378,7 +1378,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 35,
+        "attackPower": 33,
         "defense": 10,
         "lifeSteal": 0.1,
         "code": 205401,
@@ -1826,7 +1826,7 @@
         "armorType": "Chest",
         "itemGrade": "Mythic",
         "david": {
-            "from": 202527
+            "from": 202103
         }
     }
 ]
