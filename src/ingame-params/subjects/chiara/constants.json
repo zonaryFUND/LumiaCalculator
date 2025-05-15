@@ -50,7 +50,7 @@
     "R": {
         "range": 1,
         "maxHP": [100,175,250],
-        "gauge_consumption": 25,
+        "gauge_consumption": 20,
         "damage": {
             "base": [50,60,70],
             "amp": 25
@@ -59,7 +59,7 @@
             "base": [2,7,12],
             "amp": 4
         },
-        "gauge_gain": 40,
+        "gauge_gain": 30,
         "finish_damage": {
             "base": [100,150,200],
             "amp": 40

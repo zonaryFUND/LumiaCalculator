@@ -17,8 +17,7 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Heal", values: Constants.W.heal.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.W.heal.base}
         ]  
     })
 }

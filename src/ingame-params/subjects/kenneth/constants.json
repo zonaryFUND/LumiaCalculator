@@ -11,7 +11,7 @@
         "cooldown": [10,9,8,7,6]
     },
     "W": {
-        "duration": 4,
+        "duration": 5,
         "damage_reduction": {
             "base": 3,
             "attack": [4,4.25,4.5,4.75,5]
@@ -21,7 +21,7 @@
             "base": [40,55,70,85,100],
             "attack": 70
         },
-        "extend": 0.75,
+        "extend": 0.5,
         "max_duration": 7,
         "sp_cost": 40,
         "cooldown": [14,13,12,11,10]

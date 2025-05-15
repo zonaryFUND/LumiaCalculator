@@ -15,10 +15,10 @@
         },
         "enhanced_heal": {
             "base": [40,55,70,85,100],
-            "amp": 22
+            "amp": 20
         },
         "sp_cost": 50,
-        "cooldown": [10,9,8,7,6]
+        "cooldown": [11,10,9,8,7]
     },
     "W": {
         "duration": 6,
@@ -49,7 +49,7 @@
         "shield_duration": 2.5,
         "shield": {
             "base": [30,60,90,120,150],
-            "amp": 20
+            "amp": 30
         },
         "chase_movement_speed": {
             "base": [5,8,11,14,17],

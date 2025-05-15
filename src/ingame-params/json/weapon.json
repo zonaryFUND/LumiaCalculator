@@ -1709,7 +1709,7 @@
         "attackPower": 30,
         "skillAmp": 59,
         "cooldownReduction": 0.15,
-        "healerGiveHpHealRatio": 0.08,
+        "healerGiveHpHealRatio": 0.06,
         "code": 130403,
         "weaponType": "Arcana",
         "itemGrade": "Epic"

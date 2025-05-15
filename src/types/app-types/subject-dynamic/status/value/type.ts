@@ -84,7 +84,6 @@ export function AddComponent(toOrDigit: StatusValue | number, ...components: (St
     const beforeFix = ValueBeforeFix(mergedComponents, digit);
    
     const finalValue = beforeFix.components.fix.reduce((prev, current) => new Decimal(current.value.value), beforeFix.calculated);
-    console.log({final: finalValue.toString()})
 
     return {
         components: [...beforeFix.components.sum, ...beforeFix.components.mul, ...beforeFix.components.fix],

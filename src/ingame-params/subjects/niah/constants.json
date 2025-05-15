@@ -1,0 +1,83 @@
+{
+    "Q": {
+        "damage": {
+            "base": [60,95,130,165,200],
+            "amp": 55
+        },
+        "w_cooldown_reduction": 1,
+        "pull_damage": {
+            "base": [40,65,90,115,140],
+            "amp": 55
+        },
+        "slow": {
+            "duration": 1,
+            "effect": 30
+        },
+        "pull_q_cooldown_reduction": 35,
+        "max_buttons": 3,
+        "duration": 8,
+        "prural_hit": 40,
+        "cooldown": [6,5.5,5,4.5,4],
+        "sp_cost": [20,25,30,35,40]
+    },
+    "W": {
+        "damage": {
+            "base": [60,100,140,180,220],
+            "amp": 65
+        },
+        "pull_damage": {
+            "base": [10,15,20,25,30]
+        },
+        "duration": 6,
+        "cooldown": [13,12.5,12,11.5,11],
+        "sp_cost": [50,55,60,65,70]
+    },
+    "E": {
+        "duration": 2.5,
+        "immortal": 0.5,
+        "heal": {
+            "maxHP": {
+                "base": 30,
+                "amp": 1
+            }
+        },
+        "movement_speed": {
+            "duration": 1,
+            "effect": {
+                "base": 30,
+                "amp": 2
+            }
+        },
+        "cooldown": [32,29,26,23,20],
+        "sp_cost": [100,110,120,130,140]
+    },
+    "R": {
+        "shield": {
+            "base": [50,85,120],
+            "amp": [25,30,35],
+            "stack": [5,10,15]
+        },
+        "cc_immune": 6,
+        "stun": 0.45,
+        "extend": 0.3,
+        "damage_threshold": 8,
+        "inner_damage": {
+            "base": [50,75,100],
+            "amp": 55
+        },
+        "q_cooldown": [2.5,2.25,2],
+        "cooldown": [80,70,60],
+        "sp_cost": [100,120,140]
+    },
+    "T": {
+        "stack_base": {
+            "base": [30,60,90],
+            "amp": 15
+        },
+        "stack": {
+            "base": [2,6,10],
+            "amp": 2.5
+        },
+        "duration": 5
+    }
+}
