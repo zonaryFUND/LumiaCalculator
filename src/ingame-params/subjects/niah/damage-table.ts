@@ -18,6 +18,7 @@ const table: DamageTableGenerator = props => ({
             {label: props.intl.formatMessage({id: "subject.niah.e-ms"}), skill: "E", value: Constants.E.movement_speed.effect, type: {type: "misc", percentExpression: true}},
         ],
         [
+            {label: props.intl.formatMessage({id: "subject.niah.r-damage"}), skill: "R", value: Constants.R.inner_damage},
             {label: props.intl.formatMessage({id: "subject.niah.r-shield-nostack"}), skill: "R", value: Constants.R.shield, type: {type: "shield", target: "self"}},
             {label: props.intl.formatMessage({id: "subject.niah.r-shield-stack"}), skill: "R", value: {base: Constants.R.shield.stack}, type: {type: "shield", target: "self"}}
         ],

@@ -20,13 +20,6 @@ const criticalAvailable: React.FC<Props> = props => {
     const criticalDamage = BaseCriticalDamagePercent.add(100).add(props.status.criticalStrikeDamage.calculatedValue);
     const expected = new Decimal(100).sub(criticalChance).add(criticalDamage.percent(criticalChance));
 
-    const modifiedMultiplier = (added: number) => {
-        if (props.multiplier == undefined) return added;
-        if (typeof props.multiplier == "number") return [props.multiplier, added];
-        if (typeof props.multiplier[0] == "number") return props.multiplier.concat(added);
-        return props.multiplier.concat({value: added});
-    };
-
     return (
         <>
             <StandardDamage 
@@ -38,7 +31,7 @@ const criticalAvailable: React.FC<Props> = props => {
                 <StandardDamage 
                     {...props}
                     label={`${props.label}${showExpected ? "(致命打)" : "(確定致命打)"}`}
-                    multiplier={modifiedMultiplier(criticalDamage.toNumber()) as any}
+                    critical={criticalDamage}
                 />
                 : null
             }
@@ -47,7 +40,7 @@ const criticalAvailable: React.FC<Props> = props => {
                 <StandardDamage 
                     {...props}
                     label={`${props.label}(期待値)`}
-                    multiplier={modifiedMultiplier(expected.toNumber()) as any}
+                    critical={expected}
                 />
                 : null
             }

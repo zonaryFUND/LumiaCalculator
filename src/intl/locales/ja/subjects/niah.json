@@ -6,6 +6,7 @@
     "subject.niah.w-second": "Wボタン引き寄せ時領域内固定ダメージ",
     "subject.niah.e-heal": "E回復",
     "subject.niah.e-ms": "E移動速度増加",
+    "subject.niah.r-damage": "Rダメージ",
     "subject.niah.r-shield-nostack": "Rシールド最小(0スタック)",
     "subject.niah.r-shield-stack": "Rシールド バッテリー1あたり追加量",
     "subject.niah.passive-base": "T基礎蓄積量",

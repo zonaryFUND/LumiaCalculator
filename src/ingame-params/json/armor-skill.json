@@ -325,6 +325,10 @@
 		"skillCode": 6050001,
 		"name": "rebellion"
 	},
+	"202513": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"202514": {
 		"skillCode": 6053001,
 		"name": "blaze_up_amplified",

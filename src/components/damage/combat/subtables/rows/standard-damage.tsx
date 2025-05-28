@@ -23,6 +23,7 @@ import { FormattedDate, FormattedMessage } from "react-intl";
 type Props = Omit<DamageTableUnit, "value"> & {
     skillLevel?: number
     value: ValueRatio | Decimal
+    critical?: Decimal
     config: SubjectConfig
     status: Status
     targetSide?: "anyToSelf" | "both" | "anyToOpponent" // never use "both" when value contains target-specific key
@@ -40,7 +41,7 @@ const standardDamage: React.FC<Props> = props => {
     const { hp, targetHP, targetMaxHP, ltr } = useCombatHPContext();
     const multiplier = extractMultiplier(props.skillLevel, props.multiplier);
 
-    const staticPotency = staticBasePotency.percent(multiplier?.[0] ?? 100);
+    const staticPotency = staticBasePotency.percent(props.critical ?? 100).percent(multiplier?.[0] ?? 100);
 
     const { 
         potencyDictionary: dynamicPotencyDictionary,

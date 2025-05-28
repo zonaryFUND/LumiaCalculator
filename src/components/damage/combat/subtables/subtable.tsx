@@ -32,7 +32,7 @@ const subTable: React.FC<Props> = props => {
         <tbody>
             <tr className={table.separator}>
                 <td>{props.label}</td>
-                {ltr == "ltr" ? hpRatioHeader : hpRatioHeader.toReversed()}
+                {hpRatioHeader}
             </tr>
             {
                 props.elements.flatMap((chunk, index) => {
