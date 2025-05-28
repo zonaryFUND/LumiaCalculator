@@ -13,19 +13,19 @@
             "duration": 1,
             "effect": [10,15,20,25,30]
         },
-        "vf_gauge": [[10,14],[11,16],[12,18],[13,20],[14,22]],
+        "vf_gauge": [[12,16],[13,18],[14,20],[15,22],[16,24]],
         "cooldown": 5
     },
     "W": {
         "gauge_max_consumption": 50,
         "shield": {
-            "base": [50,65,80,95,110],
+            "base": [40,55,70,85,100],
             "attack": 20
         },
         "multiplier": 400,
         "return_threshold": 100,
         "return_gauge": [60,70,80,90,100],
-        "cooldown": [10,9.5,9,8.5,8]
+        "cooldown": [9,8.5,8,7.5,7]
     },
     "E": {
         "damage": {
@@ -33,7 +33,7 @@
             "attack": 40
         },
         "mark": 6,
-        "vf_gauge": [15,16,17,18,19],
+        "vf_gauge": [16,17,18,19,20],
         "cooldown": [16,15,14,13,12]
     },
     "R": {
@@ -46,7 +46,7 @@
             "attack": 8
         },
         "kill_extend": 5,
-        "overload": 10,
+        "overload": 8,
         "range_penalty": 0.3,
         "extend": 1,
         "cooldown_reduction": 0.5

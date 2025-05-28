@@ -8,7 +8,7 @@
         "vortex_tick": 0.5,
         "vortex_duration": 2,
         "vortex_damage": {
-            "base": [60,80,100,120,140],
+            "base": [50,70,90,110,130],
             "amp": 40
         },
         "sp_cost": [50,55,60,65,70],

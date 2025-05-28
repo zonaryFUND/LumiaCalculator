@@ -39,7 +39,7 @@
         "itemGrade": "Epic"
     },
     {
-        "skillAmp": 68,
+        "skillAmp": 67,
         "cooldownReduction": 0.15,
         "code": 201409,
         "armorType": "Head",
@@ -111,6 +111,21 @@
         "itemGrade": "Epic"
     },
     {
+        "skillAmp": 69,
+        "cooldownReduction": 0.1,
+        "code": 201420,
+        "armorType": "Head",
+        "itemGrade": "Epic"
+    },
+    {
+        "attackPower": 8,
+        "attackSpeedRatio": 0.28,
+        "criticalStrikeChance": 0.28,
+        "code": 201421,
+        "armorType": "Head",
+        "itemGrade": "Epic"
+    },
+    {
         "defense": 15,
         "maxHpByLv": 17,
         "cooldownReduction": 0.15,
@@ -147,7 +162,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 28,
+        "attackPower": 30,
         "criticalStrikeChance": 0.35,
         "criticalStrikeDamage": 0.07,
         "code": 201502,
@@ -276,6 +291,15 @@
         "itemGrade": "Mythic"
     },
     {
+        "attackPower": 25,
+        "defense": 10,
+        "attackSpeedRatio": 0.35,
+        "cooldownReduction": 0.2,
+        "code": 201530,
+        "armorType": "Head",
+        "itemGrade": "Legend"
+    },
+    {
         "skillAmp": 75,
         "maxSp": 300,
         "cooldownReduction": 0.15,
@@ -316,7 +340,6 @@
     {
         "defense": 25,
         "maxHpByLv": 21,
-        "sightRange": 1,
         "code": 202402,
         "armorType": "Chest",
         "itemGrade": "Epic"
@@ -1018,7 +1041,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 10,
+        "defense": 12,
         "maxHpByLv": 20,
         "code": 705601,
         "armorType": "Arm",
@@ -1065,7 +1088,7 @@
     },
     {
         "defense": 10,
-        "skillAmp": 63,
+        "skillAmp": 65,
         "maxHp": 200,
         "code": 205406,
         "armorType": "Arm",
@@ -1237,7 +1260,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 20,
+        "defense": 18,
         "maxHp": 150,
         "moveSpeed": 0.25,
         "uniqueTenacity": 0.3,
@@ -1432,7 +1455,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 25,
+        "defense": 28,
         "skillAmpByLevel": 5,
         "maxHp": 200,
         "code": 202518,
@@ -1443,14 +1466,14 @@
         }
     },
     {
-        "defense": 15,
+        "defense": 13,
         "maxHpByLv": 16,
         "code": 201522,
         "armorType": "Head",
         "itemGrade": "Legend"
     },
     {
-        "defense": 36,
+        "defense": 33,
         "maxHpByLv": 23,
         "cooldownReduction": 0.15,
         "code": 202521,

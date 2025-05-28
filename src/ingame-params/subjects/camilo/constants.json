@@ -8,7 +8,7 @@
         "stack_duration": 6,
         "movement_speed": {
             "duration": 1,
-            "effect": [3,6,9,12,15]
+            "effect": [4,8,12,16,20]
         },
         "max_stack": 2,
         "Q2_first_damage": {

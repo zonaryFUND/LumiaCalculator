@@ -5,6 +5,7 @@ import Decimal from "decimal.js";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import table from "components/common/table.module.styl";
+import { calculateValue } from "app-types/value-ratio/calculation";
 
 type Props = {
     label?: React.ReactElement
@@ -21,7 +22,7 @@ type EquationBuildConfigDefinition = {
     extract: Decimal.Value
     omitPercent?: boolean
 } | {
-    reducer: (prev: React.ReactElement[], value: number) => React.ReactElement[]
+    reducer: (prev: React.ReactElement[], value: number | React.ReactElement) => React.ReactElement[]
 }
 
 const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[key in RatioKeys]: EquationBuildConfigDefinition}> = (config, status) => ({
@@ -90,39 +91,47 @@ const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[
     }
 })
 
-const staticValueEquation: React.FC<Props> = props => {
-    const equation = (Object.entries(props.ratio) as [RatioKeys, number | number[]][])
-        .reduce((prev, [key, value]) => {
-            const sanitizedValue = (() => {
-                if (Array.isArray(value)) {
-                    if (props.skillLevel == undefined) {
-                        throw new Error(`level-dependent damage ratio is passed without its skill level. `)
-                    }
-                    return value[props.skillLevel];
-                } else {
-                    return value;
+const Equation: React.FC<Props> = props => (Object.entries(props.ratio))
+    .reduce((prev, [key, value]) => {
+        /*
+        if (typeof value == "object" && !Array.isArray(value)) {
+            return prev.concat(<>{"{"}<Equation {...props} ratio={value} /> = {calculateValue(value, props.status, props.config, props.skillLevel).static.toString()}%{"}"}</>);
+        }
+            */
+
+        const sanitizedValue = (() => {
+            if (Array.isArray(value)) {
+                if (props.skillLevel == undefined) {
+                    throw new Error(`level-dependent damage ratio is passed without its skill level. `)
                 }
-            })();
-
-            const buildConfig = EquationBuildConfig(props.config, props.status)[key];
-            if (buildConfig == undefined) {
-                return prev;
-            } else if ("label" in buildConfig) {
-                const plus = prev.length > 0 ? "+" : null;
-                const added = <>
-                    <span className={table.small}>{buildConfig.label}</span>
-                    {buildConfig.extract.toString()} x {sanitizedValue}
-                    {buildConfig.omitPercent ? null : "%"}
-                </>;
-                return prev.concat(<React.Fragment key={key}>{plus}{added}</React.Fragment>);
+                return value[props.skillLevel];
+            } else if (typeof value == "object") {
+                return <>{"{"}<Equation {...props} ratio={value} /> = {calculateValue(value, props.status, props.config, props.skillLevel).static.toString()}{"}"}</>;    
             } else {
-                return buildConfig.reducer(prev, sanitizedValue);
+                return value;
             }
-        }, [] as React.ReactElement[]);
+        })();
 
+        const buildConfig = EquationBuildConfig(props.config, props.status)[key as keyof ValueRatio];
+        if (buildConfig == undefined) {
+            return prev;
+        } else if ("label" in buildConfig) {
+            const plus = prev.length > 0 ? "+" : null;
+            const added = <>
+                <span className={table.small}>{buildConfig.label}</span>
+                {buildConfig.extract.toString()} x {sanitizedValue}
+                {buildConfig.omitPercent ? null : "%"}
+            </>;
+            return prev.concat(<React.Fragment key={key}>{plus}{added}</React.Fragment>);
+        } else {
+            return buildConfig.reducer(prev, sanitizedValue);
+        }
+    }, [] as React.ReactElement[]);
+
+const staticValueEquation: React.FC<Props> = props => {
     return <tr>
         {props.label ? <td>{props.label}</td> : null}
-        <td colSpan={props.label ? undefined : 2}>{equation} = {props.calculated}{props.percent ? "%" : null}</td>
+        <td colSpan={props.label ? undefined : 2}><Equation {...props} /> = {props.calculated}{props.percent ? "%" : null}</td>
     </tr>;
 }
 

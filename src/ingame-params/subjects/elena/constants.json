@@ -59,9 +59,9 @@
         "cooldown": [80,70,60]
     },
     "T": {
-        "chill": 18,
+        "chill": 20,
         "slow": 20,
-        "frozen": 115,
+        "frozen": 120,
         "stun": 1,
         "damage": {
             "base": [20,40,60],

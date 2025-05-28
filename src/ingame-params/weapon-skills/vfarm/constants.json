@@ -9,7 +9,7 @@
         "effect": 25
     },
     "extend": [1.5,2.5,3.5],
-    "overload_reduction": [5,7,9],
+    "overload_reduction": [4,6,8],
     "cooldown": {
         "constant": [13,12,11]
     }

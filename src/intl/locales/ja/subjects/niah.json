@@ -1,0 +1,13 @@
+{
+    "subject.niah.q-drop": "Q落下",
+    "subject.niah.q-pull": "Q引き寄せ",
+    "subject.niah.q-pull-prural": "Q引き寄せ(複数ヒット時の1あたりダメージ)",
+    "subject.niah.w-first": "W発動",
+    "subject.niah.w-second": "Wボタン引き寄せ時領域内固定ダメージ",
+    "subject.niah.e-heal": "E回復",
+    "subject.niah.e-ms": "E移動速度増加",
+    "subject.niah.r-shield-nostack": "Rシールド最小(0スタック)",
+    "subject.niah.r-shield-stack": "Rシールド バッテリー1あたり追加量",
+    "subject.niah.passive-base": "T基礎蓄積量",
+    "subject.niah.passive-stack": "T1スタックあたり蓄積量"
+}

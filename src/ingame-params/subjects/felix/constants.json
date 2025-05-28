@@ -61,7 +61,7 @@
             "attack": 200
         },
         "stun": 1,
-        "stack_gain": 4,
+        "stack_gain": 6,
         "sp_cost": [120,150,180],
         "cooldown": [60,50,40]
     },

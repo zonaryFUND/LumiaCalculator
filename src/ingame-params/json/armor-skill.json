@@ -77,6 +77,10 @@
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
 	},
+	"201420": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"201501": {
 		"skillCode": 6002001,
 		"name": "biotic_infusion",
