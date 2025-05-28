@@ -2,12 +2,12 @@
     "Q": {
         "damage": {
             "base": [60,95,130,165,200],
-            "amp": 55
+            "amp": 65
         },
         "w_cooldown_reduction": 1,
         "pull_damage": {
-            "base": [40,65,90,115,140],
-            "amp": 50
+            "base": [30,55,80,105,130],
+            "amp": 40
         },
         "slow": {
             "duration": 1,
@@ -16,7 +16,7 @@
         "pull_q_cooldown_reduction": 35,
         "max_buttons": 3,
         "duration": 8,
-        "prural_hit": 50,
+        "prural_hit": 45,
         "cooldown": [6,5.5,5,4.5,4],
         "sp_cost": [20,25,30,35,40]
     },
@@ -58,7 +58,7 @@
             "stack": [5,10,15]
         },
         "cc_immune": 6,
-        "stun": 0.45,
+        "stun": 0.4,
         "extend": 0.3,
         "damage_threshold": 8,
         "inner_damage": {
