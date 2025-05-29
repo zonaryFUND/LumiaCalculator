@@ -39,8 +39,8 @@ export const info: SkillTooltipProps = {
             0: RatioPercent(Constants.T.animal_energy_syphon_ratio)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/JustynaEnergy", values: Constants.T.max_energy},
-            {labelIntlID: "ToolTipType/AdditionalDamage", values: Constants.T.mark_damage.base}
+            {labelIntlID: "ToolTipType/Damage", values: Constants.T.mark_damage.base},
+            {labelIntlID: "ToolTipType/JustynaEnergy", values: Constants.T.max_energy}
         ]  
     })
 }

@@ -44,7 +44,7 @@ export const info: SkillTooltipProps = {
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.Q.pull_damage.base},
+            {labelIntlID: "ToolTipType/BulletDamage", values: Constants.Q.pull_damage.base},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
             {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
         ]  

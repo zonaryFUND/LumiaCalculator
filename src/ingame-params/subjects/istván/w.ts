@@ -45,6 +45,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
             {labelIntlID: "ToolTipType/IstvanCloneDamage", values: Constants.W.variable_damage.base},
+            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.effect.base},
             {labelIntlID: "ToolTipType/MinHpHeal", values: Constants.W.heal.base},
             {labelIntlID: "ToolTipType/MaxHpHeal", values: healMax.base},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}

@@ -42,6 +42,7 @@ export const info: SkillTooltipProps = {
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Shield", values: Constants.R.shield.base},
+            {labelIntlID: "ToolTipType/ShieldSkillAmpCoef", values: Constants.R.shield.amp, percent: true},
             {labelIntlID: "ToolTipType/StackShield", values: Constants.R.shield.stack},
             {labelIntlID: "ToolTipType/Damage", values: Constants.R.inner_damage.base},
             {labelIntlID: "ToolTipType/NiahAcive1Cooldown", values: Constants.R.q_cooldown},
