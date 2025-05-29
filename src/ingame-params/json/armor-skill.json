@@ -432,7 +432,7 @@
 		"dmg": {
 			"melee": {
 				"base": 26,
-				"targetMaxHP": 3.5,
+				"targetMaxHP": 4,
 				"level": 4
 			},
 			"range": {
@@ -609,7 +609,7 @@
 		"dmg": {
 			"melee": {
 				"base": 26,
-				"targetMaxHP": 3.5,
+				"targetMaxHP": 4,
 				"level": 4
 			},
 			"range": {

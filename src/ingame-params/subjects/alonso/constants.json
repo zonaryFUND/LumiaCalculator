@@ -8,7 +8,7 @@
         "near_movement_speed": [30,32.5,35,37.5,40],
         "basic_attack_damage": {
             "level": 10,
-            "targetMaxHP": [6,6.5,7,7.5,8]
+            "targetMaxHP": [6,7,8,9,10]
         },
         "stun": 0.7,
         "sp_cost": [30,35,40,45,50],

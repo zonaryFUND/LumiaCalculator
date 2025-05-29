@@ -119,7 +119,7 @@
     },
     {
         "attackPower": 8,
-        "attackSpeedRatio": 0.28,
+        "attackSpeedRatio": 0.32,
         "criticalStrikeChance": 0.28,
         "code": 201421,
         "armorType": "Head",
@@ -172,7 +172,7 @@
     {
         "skillAmp": 75,
         "maxSp": 400,
-        "moveSpeedRatio": 0.04,
+        "moveSpeedRatio": 0.035,
         "uniqueSkillAmpRatio": 0.25,
         "code": 201503,
         "armorType": "Head",
@@ -230,7 +230,7 @@
         "attackPower": 30,
         "defense": 15,
         "spRegenRatio": 1,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "code": 201523,
         "armorType": "Head",
         "itemGrade": "Legend"
@@ -284,7 +284,7 @@
     {
         "defense": 15,
         "adaptiveForce": 35,
-        "attackSpeedRatio": 0.15,
+        "attackSpeedRatio": 0.25,
         "lifeSteal": 0.12,
         "code": 201529,
         "armorType": "Head",
@@ -464,7 +464,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 24,
+        "defense": 26,
         "maxHpByLv": 20,
         "attackSpeedRatio": 0.3,
         "code": 202422,
@@ -612,7 +612,7 @@
     {
         "attackPower": 10,
         "attackPowerByLv": 3,
-        "defense": 17,
+        "defense": 20,
         "spRegenRatio": 2,
         "attackSpeedRatio": 0.42,
         "code": 202509,
@@ -696,7 +696,6 @@
     },
     {
         "defense": 23,
-        "skillAmp": 10,
         "skillAmpByLevel": 5,
         "spRegenRatio": 1,
         "code": 202516,
@@ -1260,7 +1259,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 18,
+        "defense": 16,
         "maxHp": 150,
         "moveSpeed": 0.25,
         "uniqueTenacity": 0.3,
@@ -1361,9 +1360,9 @@
         "itemGrade": "Mythic"
     },
     {
-        "skillAmp": 80,
+        "skillAmp": 75,
         "maxHp": 130,
-        "healerGiveHpHealRatio": 0.12,
+        "healerGiveHpHealRatio": 0.15,
         "code": 705604,
         "armorType": "Arm",
         "itemGrade": "Legend"

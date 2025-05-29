@@ -76,7 +76,7 @@
         },
         "max_shield": {
             "base": [70,135,200],
-            "amp": 80
+            "amp": 70
         },
         "cooldown": {
             "constant": [8,6.5,5]

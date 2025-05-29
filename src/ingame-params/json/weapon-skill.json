@@ -407,7 +407,7 @@
 		"skillCode": 6015003,
 		"name": "charge_carrier",
 		"values": {
-			"shield": 105
+			"shield": 150
 		}
 	},
 	"109406": {
@@ -432,7 +432,7 @@
 		"skillCode": 6015003,
 		"name": "charge_carrier",
 		"values": {
-			"shield": 180
+			"shield": 250
 		}
 	},
 	"109702": {

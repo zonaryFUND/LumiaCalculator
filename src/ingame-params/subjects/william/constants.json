@@ -6,7 +6,7 @@
         "duration": 5,
         "attack_speed": [70,80,90,100,110],
         "damage": {
-            "attack": [105,108,111,114,117],
+            "attack": [103,106,109,112,115],
             "basicAttackAmp": 100
         },
         "extend_duration": 1,

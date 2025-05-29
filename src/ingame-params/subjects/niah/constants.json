@@ -58,12 +58,12 @@
             "stack": [5,10,15]
         },
         "cc_immune": 6,
-        "stun": 0.4,
+        "stun": 0.3,
         "extend": 0.3,
         "damage_threshold": 8,
         "inner_damage": {
             "base": [50,75,100],
-            "amp": 55
+            "amp": 45
         },
         "q_cooldown": [2.5,2.25,2],
         "cooldown": [80,70,60],

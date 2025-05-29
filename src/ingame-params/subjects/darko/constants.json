@@ -46,8 +46,8 @@
     },
     "R": {
         "damage": {
-            "base": [75,150,225],
-            "attack": 40,
+            "base": [50,125,200],
+            "attack": 30,
             "targetMaxHP": 25
         },
         "slow": {

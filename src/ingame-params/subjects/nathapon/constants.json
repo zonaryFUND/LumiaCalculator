@@ -18,7 +18,7 @@
         "slow": 40,
         "finish_damage": {
             "base": [50,85,120,155,190],
-            "amp": 80
+            "amp": 75
         },
         "bind": 1.6,
         "sp_cost": 80,

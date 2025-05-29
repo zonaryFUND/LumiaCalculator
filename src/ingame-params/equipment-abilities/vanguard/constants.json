@@ -1,7 +1,7 @@
 {
     "time_bound": 5,
     "threshold_damage": 500,
-    "duration": 6,
+    "duration": 5,
     "damage_mitigation": {
         "melee": 15,
         "range": 10

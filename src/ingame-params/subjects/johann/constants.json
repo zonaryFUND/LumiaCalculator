@@ -48,7 +48,7 @@
         },
         "shield_duration": 2.5,
         "shield": {
-            "base": [30,60,90,120,150],
+            "base": [50,80,110,140,170],
             "amp": 30
         },
         "chase_movement_speed": {

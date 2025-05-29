@@ -25,7 +25,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 60,
+        "attackPower": 63,
         "maxHp": 140,
         "code": 101406,
         "weaponType": "OneHandSword",
@@ -188,7 +188,7 @@
     },
     {
         "attackPower": 45,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "normalLifeSteal": 0.1,
         "code": 103401,
         "weaponType": "DualSword",
@@ -630,7 +630,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 67,
+        "attackPower": 64,
         "defense": 6,
         "spRegenRatio": 0.5,
         "attackSpeedRatio": 0.3,
@@ -670,7 +670,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 57,
+        "attackPower": 59,
         "defense": 4,
         "hpRegenRatio": 0.6,
         "code": 110410,
@@ -678,7 +678,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 60,
+        "attackPower": 62,
         "criticalStrikeChance": 0.29,
         "criticalStrikeDamage": 0.05,
         "code": 110411,
@@ -813,7 +813,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 87,
+        "attackPower": 84,
         "attackSpeedRatio": 0.35,
         "code": 112404,
         "weaponType": "HighAngleFire",
@@ -926,7 +926,7 @@
     },
     {
         "attackPower": 56,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "moveSpeedRatio": 0.02,
         "code": 113410,
         "weaponType": "DirectFire",
@@ -1040,6 +1040,7 @@
     {
         "attackPower": 45,
         "skillAmp": 90,
+        "moveSpeedRatio": 0.02,
         "code": 114407,
         "weaponType": "Bow",
         "itemGrade": "Legend"
@@ -1153,7 +1154,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 68,
+        "attackPower": 70,
         "attackSpeedRatio": 0.3,
         "code": 116407,
         "weaponType": "Pistol",
@@ -1167,7 +1168,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 78,
+        "attackPower": 80,
         "attackSpeedRatio": 0.35,
         "code": 116410,
         "weaponType": "Pistol",
@@ -1533,7 +1534,7 @@
     },
     {
         "attackPower": 42,
-        "skillAmp": 68,
+        "skillAmp": 70,
         "cooldownReduction": 0.15,
         "code": 121402,
         "weaponType": "Guitar",

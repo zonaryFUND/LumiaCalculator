@@ -28,7 +28,7 @@
             "attack": 50
         },
         "slow": {
-            "duration": 1.2,
+            "duration": 1.5,
             "effect": 55
         },
         "thrash": 30,

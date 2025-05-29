@@ -32,7 +32,7 @@
     "E": {
         "damage": {
             "base": [40,75,110,145,180],
-            "attack": 100
+            "attack": 90
         },
         "distance": 2,
         "attack_speed_down": {
