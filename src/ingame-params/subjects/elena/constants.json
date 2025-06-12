@@ -3,12 +3,12 @@
         "first_damage": {
             "base": [20,35,50,65,80],
             "amp": 25,
-            "additionalMaxHP": 8
+            "additionalMaxHP": 10
         },
         "second_damage": {
             "base": [40,70,100,130,160],
             "amp": 35,
-            "additionalMaxHP": 10
+            "additionalMaxHP": 12
         },
         "cooldown_reduction": 60,
         "sp_cost": [40,45,50,55,60],

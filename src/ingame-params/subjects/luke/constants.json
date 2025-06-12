@@ -50,7 +50,7 @@
             "targetMaxHP": 2
         },
         "stack_slow": {
-            "duration": 1,
+            "duration": 1.25,
             "effect": [6,7,8]
         },
         "damage": {
@@ -69,7 +69,7 @@
     },
     "T": {
         "attack_speed": {
-            "duration": 4,
+            "duration": 5,
             "effect": [3,4,5],
             "max_stack": 8
         },

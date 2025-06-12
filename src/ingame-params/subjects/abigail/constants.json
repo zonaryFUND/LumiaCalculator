@@ -10,7 +10,7 @@
         },
         "movement_speed": {
             "duration": 0.5,
-            "effect": 12
+            "effect": 15
         },
         "sp_cost": [30,35,40,45,50],
         "cooldown": [8,7,6,5,4]

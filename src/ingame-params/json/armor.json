@@ -7,7 +7,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 16,
+        "attackPower": 17,
         "attackSpeedRatio": 0.15,
         "criticalStrikeChance": 0.28,
         "code": 201404,
@@ -39,7 +39,7 @@
         "itemGrade": "Epic"
     },
     {
-        "skillAmp": 67,
+        "skillAmp": 69,
         "cooldownReduction": 0.15,
         "code": 201409,
         "armorType": "Head",
@@ -89,7 +89,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 27,
+        "attackPower": 25,
         "attackSpeedRatio": 0.35,
         "code": 201417,
         "armorType": "Head",
@@ -118,7 +118,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 8,
+        "attackPower": 10,
         "attackSpeedRatio": 0.32,
         "criticalStrikeChance": 0.28,
         "code": 201421,
@@ -575,7 +575,7 @@
         }
     },
     {
-        "defense": 38,
+        "defense": 40,
         "maxHpByLv": 20,
         "attackSpeedRatio": 0.15,
         "code": 202506,
@@ -825,7 +825,7 @@
         "itemGrade": "Epic"
     },
     {
-        "skillAmp": 55,
+        "skillAmp": 57,
         "maxSp": 300,
         "cooldownReduction": 0.15,
         "code": 203410,
@@ -857,8 +857,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 26,
-        "defense": 5,
+        "attackPower": 20,
+        "attackSpeedRatio": 0.15,
         "criticalStrikeChance": 0.24,
         "code": 203415,
         "armorType": "Arm",
@@ -882,7 +882,7 @@
     {
         "defense": 8,
         "skillAmp": 45,
-        "maxHp": 100,
+        "maxHp": 120,
         "code": 205405,
         "armorType": "Arm",
         "itemGrade": "Epic"
@@ -1120,7 +1120,7 @@
     },
     {
         "moveSpeed": 0.22,
-        "penetrationDefense": 10,
+        "penetrationDefense": 11,
         "code": 204304,
         "armorType": "Leg",
         "itemGrade": "Epic"
@@ -1423,7 +1423,7 @@
     },
     {
         "attackPower": 22,
-        "attackSpeedRatio": 0.22,
+        "attackSpeedRatio": 0.25,
         "criticalStrikeChance": 0.35,
         "code": 201518,
         "armorType": "Head",

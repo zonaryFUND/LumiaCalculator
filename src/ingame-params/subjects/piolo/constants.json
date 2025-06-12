@@ -79,12 +79,12 @@
     "R": {
         "focus_disappear": 3,
         "damage": {
-            "base": [100,190,280],
+            "base": [100,210,320],
             "amp": 60
         },
         "shield_duration": 4,
         "shield": {
-            "base": [40,90,140],
+            "base": [40,100,160],
             "amp": 50
         },
         "cooldown_reduction": 1,

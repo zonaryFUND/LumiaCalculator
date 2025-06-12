@@ -1,7 +1,7 @@
 {
     "tick": 0.5,
     "damage": {
-        "base": 10,
+        "base": 20,
         "attack": 30,
         "targetMaxHP": 0.5
     },

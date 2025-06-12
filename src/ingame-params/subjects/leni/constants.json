@@ -47,7 +47,7 @@
         "stun": 0.6,
         "duration": 2.5,
         "shield": {
-            "base": [40,55,70,85,100],
+            "base": [50,65,80,95,110],
             "level": 4,
             "amp": 20
         },
@@ -70,7 +70,7 @@
     "T": {
         "duration": 5,
         "damage": {
-            "base": [10,20,30],
+            "base": [15,25,35],
             "level": 4
         },
         "cooldown_reduction": [0.5,1,1.5]

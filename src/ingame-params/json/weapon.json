@@ -83,7 +83,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 97,
+        "skillAmp": 100,
         "moveSpeedRatio": 0.02,
         "code": 101504,
         "weaponType": "OneHandSword",
@@ -226,7 +226,7 @@
     },
     {
         "attackPower": 31,
-        "skillAmp": 82,
+        "skillAmp": 85,
         "cooldownReduction": 0.15,
         "code": 103502,
         "weaponType": "DualSword",
@@ -273,7 +273,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 92,
+        "attackPower": 95,
         "attackSpeedRatio": 0.3,
         "code": 104403,
         "weaponType": "Hammer",
@@ -329,7 +329,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 105,
+        "attackPower": 110,
         "attackSpeedRatio": 0.3,
         "code": 104504,
         "weaponType": "Hammer",
@@ -452,7 +452,7 @@
     },
     {
         "attackPower": 60,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "code": 107406,
         "weaponType": "Spear",
         "itemGrade": "Legend"
@@ -526,8 +526,9 @@
     },
     {
         "attackPower": 74,
-        "criticalStrikeChance": 0.25,
-        "criticalStrikeDamage": 0.07,
+        "attackSpeedRatio": 0.1,
+        "criticalStrikeChance": 0.22,
+        "criticalStrikeDamage": 0.05,
         "code": 104407,
         "weaponType": "Bat",
         "itemGrade": "Epic"
@@ -565,7 +566,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 80,
+        "attackPower": 82,
         "attackSpeedRatio": 0.25,
         "code": 108505,
         "weaponType": "Bat",
@@ -997,14 +998,14 @@
     },
     {
         "attackPower": 43,
-        "skillAmp": 73,
+        "skillAmp": 75,
         "moveSpeedRatio": 0.02,
         "code": 114501,
         "weaponType": "Bow",
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 65,
+        "attackPower": 67,
         "attackSpeedRatio": 0.3,
         "moveSpeedRatio": 0.02,
         "code": 114406,
@@ -1046,7 +1047,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 80,
+        "attackPower": 82,
         "attackSpeedRatio": 0.4,
         "moveSpeedRatio": 0.03,
         "code": 114505,
@@ -1123,7 +1124,7 @@
     },
     {
         "attackPower": 29,
-        "skillAmp": 87,
+        "skillAmp": 90,
         "attackSpeedRatio": 0.3,
         "code": 116403,
         "weaponType": "Pistol",
@@ -1154,7 +1155,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 70,
+        "attackPower": 72,
         "attackSpeedRatio": 0.3,
         "code": 116407,
         "weaponType": "Pistol",
@@ -1162,7 +1163,7 @@
     },
     {
         "attackPower": 23,
-        "skillAmp": 65,
+        "skillAmp": 68,
         "code": 116409,
         "weaponType": "Pistol",
         "itemGrade": "Epic"
@@ -1431,7 +1432,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 75,
+        "attackPower": 77,
         "attackSpeedRatio": 0.3,
         "code": 119504,
         "weaponType": "Nunchaku",
@@ -1484,7 +1485,7 @@
     {
         "attackPower": 61,
         "attackSpeedRatio": 0.4,
-        "criticalStrikeChance": 0.1,
+        "criticalStrikeChance": 0.15,
         "criticalStrikeDamage": 0.07,
         "moveSpeedRatio": 0.03,
         "code": 120405,

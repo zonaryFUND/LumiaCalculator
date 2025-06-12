@@ -2,12 +2,12 @@
     "Q": {
         "damage": {
             "base": [20,40,60,80,100],
-            "attack": 65
+            "attack": 70
         },
         "count": 3,
         "bac": 40,
         "enhanced_damage": {
-            "base": [40,60,80,100,120],
+            "base": [40,65,90,115,140],
             "attack": 85
         },
         "cooldown": [11,10.5,10,9.5,9]

@@ -21,7 +21,7 @@
             "base": [15,24,33,42,51],
             "attack": 5
         },
-        "slow": 30,
+        "slow": 35,
         "duration": 3,
         "drop_damage": {
             "base": [20,40,60,80,100],

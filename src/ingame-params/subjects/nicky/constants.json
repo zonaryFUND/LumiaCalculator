@@ -68,11 +68,11 @@
     },
     "T": {
         "hp_conversion": 20,
-        "enraged_duration": 6,
+        "enraged_duration": 5,
         "attack_speed": [30,40,50],
         "damage": {
             "base": [20,60,100],
-            "amp": 40
+            "amp": 35
         }
     }
 }

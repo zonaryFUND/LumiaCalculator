@@ -48,10 +48,10 @@
             "attack": 50,
             "amp": 70
         },
-        "slow": [30,35,40],
+        "slow": [35,40,45],
         "duration": 3,
         "second_damage": {
-            "base": [70,155,240],
+            "base": [80,170,260],
             "attack": 80,
             "amp": 90
         },

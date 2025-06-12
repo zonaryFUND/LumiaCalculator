@@ -11,7 +11,7 @@
         "moon": 0.7,
         "star": {
             "duration": 4,
-            "movement_speed": 12
+            "movement_speed": 15
         },
         "conjunction": {
             "duration": 2,

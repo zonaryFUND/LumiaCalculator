@@ -33,7 +33,7 @@
             "amp": 70,
             "maxHP": 7
         },
-        "airborne": 0.8,
+        "airborne": 0.9,
         "reuse": 3,
         "second_damage": {
             "base": [60,95,130,165,200],

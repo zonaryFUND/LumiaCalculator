@@ -15,7 +15,7 @@
             "attack": 80
         },
         "duration": 3,
-        "defense_down": [9,10,11,12,13],
+        "defense_down": [11,12,13,14,15],
         "healing_reduction": 45,
         "movement_speed": 120,
         "cooldown_reduction": 2,

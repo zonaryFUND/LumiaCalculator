@@ -27,7 +27,7 @@
             "attack": 60,
             "amp": 24
         },
-        "defense_decline": [2,2,3,3,3],
+        "defense_decline": [2,2,3,3,4],
         "defense_decline_duration": 4,
         "defense_decline_max": 6,
         "sp_cost": [50,55,60,65,70],

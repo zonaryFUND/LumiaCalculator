@@ -62,12 +62,12 @@
             "min": {
                 "base": [100,150,200],
                 "amp": 50,
-                "additionalMaxHP": 5
+                "additionalMaxHP": 8
             },
             "max": {
                 "base": [200,300,400],
                 "amp": 100,
-                "additionalMaxHP": 10
+                "additionalMaxHP": 16
             }
         },
         "sp_cost": 120,

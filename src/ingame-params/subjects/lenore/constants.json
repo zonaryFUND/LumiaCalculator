@@ -19,9 +19,9 @@
         },
         "damage": {
             "base": [80,110,140,170,200],
-            "amp": 55
+            "amp": 60
         },
-        "bind": 0.27,
+        "bind": 0.33,
         "enhance": {
             "shield": 30,
             "movement_speed": {

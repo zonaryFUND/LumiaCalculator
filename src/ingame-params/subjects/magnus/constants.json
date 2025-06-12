@@ -44,9 +44,9 @@
         "stack_gain": [4,7,10],
         "max_speed": 2,
         "damage": {
-            "base": [110,230,350],
+            "base": [100,250,400],
             "additionalAttack": 150,
-            "amp": 85,
+            "amp": 90,
             "targetHP": 20
         },
         "sp_cost": [100,125,150],
