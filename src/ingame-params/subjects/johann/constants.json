@@ -22,7 +22,7 @@
     },
     "W": {
         "duration": 6,
-        "slow": 30,
+        "slow": 35,
         "attack_speed": [30,32.5,35,37.5,40],
         "mastery_addition": 20,
         "effect_remain": 3,

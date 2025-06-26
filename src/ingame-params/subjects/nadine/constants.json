@@ -36,7 +36,7 @@
         "cooldown": [14,13,12,11,10]
     },
     "E": {
-        "duration": 7,
+        "duration": 6,
         "wire_length": 11,
         "attack_speed": {
             "base": [30,35,40,45,50],

@@ -54,7 +54,7 @@
         "duration": 3,
         "movement_speed": {
             "duration": 2,
-            "effect": [8,16,24]
+            "effect": [8,14,20]
         },
         "damage": {
             "base": [30,45,60],

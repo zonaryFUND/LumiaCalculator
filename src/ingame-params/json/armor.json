@@ -284,7 +284,7 @@
     {
         "defense": 15,
         "adaptiveForce": 35,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "lifeSteal": 0.12,
         "code": 201529,
         "armorType": "Head",
@@ -857,7 +857,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 20,
+        "attackPower": 22,
         "attackSpeedRatio": 0.15,
         "criticalStrikeChance": 0.24,
         "code": 203415,
@@ -1848,7 +1848,7 @@
         "armorType": "Chest",
         "itemGrade": "Mythic",
         "david": {
-            "from": 202527
+            "from": 202103
         }
     }
 ]

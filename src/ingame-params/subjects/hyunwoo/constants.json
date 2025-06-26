@@ -34,8 +34,8 @@
             "targetHP": [5,8,11,14,17]
         },
         "wall_damage": {
-            "base": [60,95,130,165,200],
-            "additionalAttack": 55,
+            "base": [80,115,150,185,220],
+            "additionalAttack": 60,
             "amp": 90
         },
         "stun": 1.2,

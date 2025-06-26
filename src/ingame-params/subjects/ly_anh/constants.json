@@ -77,11 +77,11 @@
             "miss": 10
         },
         "hp_cost": [20,25,30,35,40],
-        "cooldown": [14,13,12,11,10]
+        "cooldown": [11,10.5,10,9.5,9]
     },
     "LyAnhR": {
         "thrash_decline": 25,
-        "range": 15,
+        "range": 16,
         "damage": {
             "base": [200,300,400],
             "attack": 60

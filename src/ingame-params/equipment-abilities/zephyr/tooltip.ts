@@ -8,7 +8,8 @@ const values: EquipmentAbilityTooltipValues = () => ({
     3: Constants.duration,
     4: Constants.ms,
     10: Constants.shield.base,
-    11: Constants.ms
+    11: Constants.ms,
+    13: Constants.shield.level
 })
 
 export default values;

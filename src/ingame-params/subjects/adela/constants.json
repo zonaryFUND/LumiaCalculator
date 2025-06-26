@@ -62,7 +62,7 @@
         "channel": 2,
         "damage": {
             "base": [150,275,400],
-            "amp": 100
+            "amp": 95
         },
         "per_piece": {
             "targetMaxHP": 3

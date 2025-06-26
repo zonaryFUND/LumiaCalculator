@@ -33,7 +33,7 @@
         },
         "duration": 10,
         "card_damage": {
-            "base": [80,125,170],
+            "base": [80,115,150],
             "amp": 50
         },
         "movement_speed_penalty": 10,

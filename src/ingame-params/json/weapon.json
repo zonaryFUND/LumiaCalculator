@@ -703,7 +703,7 @@
     },
     {
         "attackPower": 38,
-        "skillAmp": 86,
+        "skillAmp": 90,
         "cooldownReduction": 0.15,
         "code": 110502,
         "weaponType": "Glove",
@@ -815,7 +815,7 @@
     },
     {
         "attackPower": 84,
-        "attackSpeedRatio": 0.35,
+        "attackSpeedRatio": 0.3,
         "code": 112404,
         "weaponType": "HighAngleFire",
         "itemGrade": "Legend"

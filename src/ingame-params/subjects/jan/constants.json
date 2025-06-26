@@ -43,8 +43,8 @@
     "E": {
         "damage": {
             "base": [15,25,35,45,55],
-            "additionalAttack": 60,
-            "amp": 50,
+            "additionalAttack": 70,
+            "amp": 45,
             "targetMaxHP": 6
         },
         "heal": {

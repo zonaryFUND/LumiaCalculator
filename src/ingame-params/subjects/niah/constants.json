@@ -42,7 +42,7 @@
             }
         },
         "movement_speed": {
-            "duration": 1,
+            "duration": 1.5,
             "effect": {
                 "base": 30,
                 "amp": 2

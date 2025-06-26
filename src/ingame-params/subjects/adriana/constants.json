@@ -44,7 +44,7 @@
             "constant": 1
         },
         "charge": {
-            "time": [26,24,22],
+            "time": [24,22,20],
             "max": 3
         }
     },
@@ -55,6 +55,6 @@
             "amp": 40
         },
         "defense_reduction": [9,12,15],
-        "immune": 9
+        "immune": 8
     }
 }

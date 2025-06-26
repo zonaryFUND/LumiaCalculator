@@ -4,7 +4,8 @@
     "duration": 2.5,
     "ms": 15,
     "shield": {
-        "base": 200
+        "base": 100,
+        "level": 10
     },
     "cooldown": 12
 }
