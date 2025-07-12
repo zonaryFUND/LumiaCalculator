@@ -31,18 +31,19 @@ const skill: React.FC<Props> = props => {
             />
             
             <Column 
-                name={<><Hourglass /><FormattedMessage id="status.cooldown-reduction" /></>} 
-                value={props.status.cooldownReduction.calculatedValue} 
-                expand={
-                    props.status.cooldownLimit.calculatedValue.isZero() ? null :
-                    <InnerTable>
-                        <tr>
-                            <td><FormattedMessage id="status.max-cooldown-reduction" /></td>
-                            <td>+{props.status.cooldownLimit.calculatedValue.toString()}%</td>
-                        </tr>
-                    </InnerTable>
-                }
-                percent
+                name={<><Hourglass /><FormattedMessage id="StatType/CooldownReduction" /></>} 
+                value={<>{props.status.cooldownReduction.rawHasteValue.toString()}({props.status.cooldownReduction.calculatedValue.floor().toString()}%)</>} 
+                isHidden={hidden}
+                
+            />
+            <Column 
+                name={<><Hourglass /><FormattedMessage id="StatType/UltCooldownReduction" /></>} 
+                value={<>{props.status.ultCooldownReduction.rawHasteValue.toString()}({props.status.ultCooldownReduction.calculatedValue.floor().toString()}%)</>} 
+                isHidden={hidden}
+            />
+            <Column 
+                name={<><Hourglass /><FormattedMessage id="StatType/TacticalCooldownReduction" /></>} 
+                value={<>{props.status.tacticalSkillCooldownReduction.rawHasteValue.toString()}({props.status.tacticalSkillCooldownReduction.calculatedValue.floor().toString()}%)</>} 
                 isHidden={hidden}
             />
         </tbody>

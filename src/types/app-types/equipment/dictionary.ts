@@ -117,4 +117,6 @@ export const [
     ]);
 })();
 
+console.log(ArmorStatusDictionary)
+
 export const EquipmentStatusDictionary = {...WeaponStatusDictionary, ...ArmorStatusDictionary};

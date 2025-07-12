@@ -15,21 +15,19 @@ export default function useAugment(config: SubjectConfig): Unit[][] {
     const intl = useIntl();
     const range = weaponRange(config);
 
-    return React.useMemo(() => {
-        return AugmentTableValues(intl).map(chunk => 
-            chunk.map(unit => {
-                if ("melee" in unit.value) {
-                    return {
-                        ...unit,
-                        value: unit.value[range]
-                    }
-                } else {
-                    return {
-                        ...unit,
-                        value: unit.value
-                    };
+    return AugmentTableValues(intl, config).map(chunk => 
+        chunk.map(unit => {
+            if ("melee" in unit.value) {
+                return {
+                    ...unit,
+                    value: unit.value[range]
                 }
-            })
-        )
-    }, [range])
+            } else {
+                return {
+                    ...unit,
+                    value: unit.value
+                };
+            }
+        })
+    )
 }

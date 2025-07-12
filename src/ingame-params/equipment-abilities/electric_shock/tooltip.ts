@@ -13,6 +13,7 @@ const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedD
 
     if (showEquation) {
         return FilterUndefined({
+            ...base,
             1: RatioPercentOptional(importedDamage.melee.targetMaxHP),
             4: (importedDamage.melee.base as number) + (importedDamage.melee.level as number),
             5: (importedDamage.melee.base as number) + (importedDamage.melee.level as number) * 20,

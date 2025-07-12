@@ -36,6 +36,11 @@
             "additionalAttack": 85,
             "amp": 100
         },
+        "wall_damage": {
+            "base": [20,30,40,50,60],
+            "additionalAttack": 20,
+            "amp": 15
+        },
         "enhanced_stun": 0.8,
         "sp_cost": [60,65,70,75,80],
         "cooldown": 15

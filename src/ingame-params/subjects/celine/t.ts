@@ -17,7 +17,7 @@ export const info: SkillTooltipProps = {
         1: Constants.T.damage,
         2: RatioPercent(Constants.T.damage.amp),
         3: Constants.T.cooldown_conversion,
-        4: AdditionalAmp(status.cooldownReduction.calculatedValue).toString(),
+        4: AdditionalAmp(status.cooldownReduction.rawHasteValue).toString(),
         5: Constants.T.damage.base
     }),
     expansion: () => ({

@@ -19,7 +19,7 @@
         },
         "qe_cooldown_reduction": 40,
         "cooldown": {
-            "constant": 0.45
+            "constant": 0.5
         },
         "charge": {
             "time": 7,

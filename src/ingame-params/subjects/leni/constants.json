@@ -60,6 +60,11 @@
             "level": 12,
             "amp": 40
         },
+        "wall_damage": {
+            "base": [40,80,120],
+            "amp": 20,
+            "targetMaxHP": 8
+        },
         "slow": {
             "duration": 1.5,
             "effect": 80
@@ -73,6 +78,6 @@
             "base": [15,25,35],
             "level": 4
         },
-        "cooldown_reduction": [0.5,1,1.5]
+        "cooldown_reduction": [0.5,0.75,1]
     }
 }

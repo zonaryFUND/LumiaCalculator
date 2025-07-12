@@ -6,6 +6,8 @@ import { EquipmentID } from "./id";
 
 export type Tier = "Epic" | "Legend" | "Mythic";
 
+
+
 export const EquipmentStatusKeys = [
     "attackPower",
     "attackPowerByLv",
@@ -30,7 +32,7 @@ export const EquipmentStatusKeys = [
     "criticalStrikeDamage",
     // preventCriticalStrikeDamaged
     "cooldownReduction",
-    // cooldownLimit // unique only
+    // cooldownLimit
     "lifeSteal",
     "normalLifeSteal",
     // skillLifeSteal
@@ -66,7 +68,10 @@ export const EquipmentStatusKeys = [
     // uniquePenetrationDefense
     // uniquePenetrationDefenseRatio
     // uniqueLifeSteal
-    "uniqueSkillAmpRatio"
+    "uniqueSkillAmpRatio",
+    "ultCooldownReduction",
+    "weaponCooldownReduction",
+    "tacticalCooldownReduction"
 ] as const;
 
 export type EquipmentStatusValueKey = typeof EquipmentStatusKeys[number]
@@ -74,7 +79,6 @@ export type EquipmentStatusValueKey = typeof EquipmentStatusKeys[number]
 export const PercentExpressedEquipmentStatusKeys: EquipmentStatusValueKey[] = EquipmentStatusKeys.filter(key => 
     key.includes("Ratio") || 
     key.includes("criticalStrike") ||
-    key.includes("ooldown") ||
     key.includes("ifeSteal") ||
     key == "uniqueTenacity"
 );

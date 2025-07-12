@@ -67,7 +67,9 @@
         "cooldown": [90,75,60]
     },
     "T": {
-        "bullet": [2,3,4],
+        "ammo": [3,4,5],
+        "auto_charge": 2,
+        "bullet": 4,
         "base_damage": {
             "attack": 100,
             "basicAttackAmp": 100

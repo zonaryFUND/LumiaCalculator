@@ -1,73 +1,70 @@
 {
     "Q": {
-        "first_damage": {
-            "base": [10,20,30,40,50],
-            "attack": 60,
-            "targetMaxHP": 7
-        },
-        "second_damage": {
+        "damage": {
             "base": [20,40,60,80,100],
-            "attack": 80
+            "attack": 65,
+            "targetHP": 5
         },
-        "sp_cost": [50,60,70,80,90],
-        "cooldown": [8,7.5,7,6.5,6]
+        "heal": 50,
+        "max_stack_target_additional_damage": 30,
+        "reuse": 3,
+        "sp_cost": [40,45,50,55,60],
+        "cooldown": [11,10,9,8,7]
     },
     "W": {
-        "movement_speed": {
-            "duration": 5,
-            "effect": 8
-        },
-        "additional_movement_speed": [10,14,18,22,26],
-        "heal": {
+        "damage": {
             "base": [10,20,30,40,50],
-            "attack": 20
+            "additionalAttack": [20,30,40,50,60]
         },
-        "heal_max_multiplier": 2,
-        "heal_max_hp": 40,
-        "sp_cost": [50,60,70,80,90],
-        "cooldown": 12
+        "slow": {
+            "duration": 0.85,
+            "effect": [60,65,70,75,80]
+        },
+        "dualsword_attack_ratio": 120,
+        "sp_cost": [30,35,40,45,50],
+        "cooldown": 6
     },
     "E": {
+        "max_stack_cooldown_reduction": 0.5,
         "damage": {
             "base": [50,90,130,170,210],
             "attack": 80
         },
-        "slow": {
-            "duration": 1,
-            "effect": 30
-        },
-        "sp_cost": [50,60,70,80,90],
-        "cooldown": 15
+        "sp_cost": [50,55,60,65,70],
+        "cooldown": [16,15,14,13,12]
     },
     "R": {
-        "duration": [9,11,13],
-        "damage": {
-            "base": [20,40,60],
-            "attack": 22
-        },
+        "duration": [8,9,10],
+        "movement_speed": [10,15,20],
+        "attack_speed": [20,30,40],
         "extend": 5,
-        "finish_time": 3,
-        "finish_damage": {
-            "base": [80,180,280],
-            "attack": 70
+        "damage": {
+            "base": [50,125,200],
+            "attack": 60
         },
-        "finish_multiplier_max": 1.5,
-        "finish_multiplier_max_hp": 50,
-        "dualsword_multiplier": 160,
-        "dualsword_w_heal_multiplier": 2,
+        "finish_multiplier_max": 2,
+        "finish_multiplier_max_hp": 30,
+        "heal": 30,
         "sp_cost": [100,125,150],
         "cooldown": [60,55,50]
     },
     "T": {
-        "duration": 3,
         "bleeding_duration": 6,
         "bleeding_damage": {
-            "base": [30,60,90],
-            "attack": 48
+            "base": [10,20,30],
+            "attack": 25
         },
+        "max_bleeding": 5,
+        "adrenaline": 5,
         "damage": {
-            "base": [2,6,10],
+            "base": [10,30,50],
+            "attack": [14,17,20]
+        },
+        "heal": {
+            "base": [10,20,30],
             "attack": 15
-        }
+        },
+        "max_heal_multiplier": 2,
+        "max_heal_threshold": 40
     }
 }

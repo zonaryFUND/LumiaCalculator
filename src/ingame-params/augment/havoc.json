@@ -88,20 +88,34 @@
         "threshold": 40,
         "effect": 8
     },
-    "anima_reaper": {
+    "bear_mask": {
+        "base": {
+            "adaptiveForce": 2
+        },
         "max_stack": 80,
-        "adaptive_ratio": 0.1,
-        "stack": {
-            "subject": 10,
-            "bear_or_boss": 8
+        "stack_buff": {
+            "per": 10,
+            "adaptive": 1
         }
     },
-    "endorphin": {
-        "damage_conversion": 20,
-        "regeneration_amp": 100
+    "boar_mask": {
+        "base": {
+            "maxHP": 20
+        },
+        "max_stack": 80,
+        "stack_buff": {
+            "per": 10,
+            "maxHP": 20
+        }
     },
-    "carnivore": {
-        "total": 750,
-        "instant": 100
+    "wolf_mask": {
+        "base": {
+            "attackSpeed": 4
+        },
+        "max_stack": 80,
+        "stack_buff": {
+            "per": 10,
+            "maxHP": 2.5
+        }
     }
 }

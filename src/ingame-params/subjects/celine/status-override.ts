@@ -15,7 +15,7 @@ const f: StatusOverrideFunc = (status, config) => ({
         intlID: "subject.celine.passive-amp",
         value: {
             type: "constant",
-            value: AdditionalAmp(status.cooldownReduction.calculatedValue)
+            value: AdditionalAmp(status.cooldownReduction.rawHasteValue)
         }
     } : undefined)
 });

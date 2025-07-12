@@ -9,7 +9,7 @@
             "attack": 65,
             "level": 3
         },
-        "airborne": 0.075,
+        "airborne": 0.09,
         "stack_damage_conversion": {
             "base": [2,4,6,8,10]
         },
@@ -26,7 +26,7 @@
             "attack": 60,
             "level": 3
         },
-        "bind": 0.5,
+        "bind": 0.6,
         "stack_bind_extend": 10,
         "sp_cost": 80
     },
@@ -40,13 +40,12 @@
             "attack": 50,
             "level": 3
         },
-        "stack_gain_max": 2,
-        "cooldown_reduction": 1,
+        "stack_gain_max": 1,
         "omnisyphon": {
             "duration": 4,
             "effect": {
                 "perStack": 1,
-                "attack": 2
+                "attack": 3
             }
         },
         "sp_cost": [40,50,60,70,80]
@@ -61,18 +60,19 @@
             "attack": 200
         },
         "stun": 1,
-        "stack_gain": 6,
+        "stack_gain": 4,
         "sp_cost": [120,150,180],
         "cooldown": [60,50,40]
     },
     "T": {
+        "duration": 2,
         "damage": {
             "attack": [15,20,25],
             "basicAttackAmp": 100
         },
-        "shared_cooldown": [10,9,8],
-        "max_stack": 10,
-        "stack_cooldown_reduction": 0.7,
+        "shared_cooldown": [11,10,9],
+        "max_stack": 8,
+        "stack_cooldown_reduction": 1,
         "shield": {
             "duration": 2.5,
             "effect": {

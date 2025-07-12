@@ -1,0 +1,9 @@
+{
+    "range": 2.5,
+    "threshold": 2,
+    "damage": {
+        "base": 10,
+        "additionalMaxHP": 12,
+        "level": 2
+    }
+}

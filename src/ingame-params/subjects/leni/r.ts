@@ -19,19 +19,25 @@ export const info: SkillTooltipProps = {
                 1: Constants.R.damage.level,
                 2: RatioPercent(Constants.R.damage.amp),
                 3: Constants.R.slow.duration,
-                4: RatioPercent(Constants.R.slow.effect)
+                4: RatioPercent(Constants.R.slow.effect),
+                5: Constants.R.wall_damage.base,
+                6: RatioPercent(Constants.R.wall_damage.targetMaxHP),
+                7: RatioPercent(Constants.R.wall_damage.amp)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
                 0: Constants.R.damage,
                 1: Constants.R.slow.duration,
-                2: RatioPercent(Constants.R.slow.effect)
+                2: RatioPercent(Constants.R.slow.effect),
+                3: Constants.R.wall_damage,
+                4: RatioPercent(Constants.R.wall_damage.targetMaxHP)
             } as Record<number, number | string | ValueRatio>
         }
     },
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
+            {labelIntlID: "ToolTipType/WallDamage", values: Constants.R.wall_damage.base},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
         ]  
     })

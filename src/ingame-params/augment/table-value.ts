@@ -9,6 +9,7 @@ import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-st
 import { calculateValue } from "app-types/value-ratio/calculation";
 import Decimal from "decimal.js";
 import ratioKey from "components/damage/simple/subtables/subrows/ratio-key";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 const acceleratorStrategy: UniqueValueStrategy = ({ config, status }) => {
     const base = Havoc.accelerator.damage.base[config.level - 1];
@@ -62,7 +63,12 @@ type AugmentDamageTableUnit = Omit<DamageTableUnit, "value"> & {
     value: ValueRatio | {melee: ValueRatio, range: ValueRatio} | UniqueValueStrategy
 }
 
-export function AugmentTableValues(intl: IntlShape): AugmentDamageTableUnit[][] {
+export function AugmentTableValues(intl: IntlShape, config: SubjectConfig): AugmentDamageTableUnit[][] {
+    const blastingCactus = {
+        base: Support.blast_cactus.damage.base[config.level - 1],
+        targetMaxHP: Support.blast_cactus.damage.targetMaxHP
+    }
+
     return [
         [
             {label: intl.formatMessage({id: "絶対武力ダメージ"}), value: Havoc.frailty_infliction.damage, type: {type: "true"}},
@@ -77,7 +83,8 @@ export function AugmentTableValues(intl: IntlShape): AugmentDamageTableUnit[][] 
             {label: "渦流ダメージ", value: Chaos.syphon_maelstorm.damage},
             {label: "渦流回復(1人ヒット)", value: Chaos.syphon_maelstorm.heal, type: {type: "heal", target: "self"}},
             {label: "渦流回復(3人ヒット)", value: Chaos.syphon_maelstorm.heal, type: {type: "heal", target: "self"}, multiplier: 100 + Chaos.syphon_maelstorm.additional_heal_max},
-            {label: "傷の悪化", value: Chaos.open_wounds.damage}
+            {label: "傷の悪化", value: Chaos.open_wounds.damage},
+            {label: "サーキュラーシステム回復", value: Chaos.circular_system.heal, type: {type: "heal", target: "self"}}
         ],
         [
             {label: "金剛防御力上昇", value: Fortification.diamond_shard.defense.effect, type: {type: "misc"}},
@@ -96,7 +103,9 @@ export function AugmentTableValues(intl: IntlShape): AugmentDamageTableUnit[][] 
             {label: "治癒ドローン", value: Support.healing_drone.heal, type: {type: "heal", target: "any"}},
             {label: "献身シールド1回分", value: Support.sentinel.shield, type: {type: "shield", target: "any"}},
             {label: "狩りの戦慄回復最小値", value: Support.thrill_of_the_hant.heal_min, type: {type: "heal", target: "self"}},
-            {label: "狩りの戦慄回復最大値", value: Support.thrill_of_the_hant.heal_min, type: {type: "heal", target: "self"}, multiplier: 100 * Support.thrill_of_the_hant.heal_max_multiplier}
+            {label: "狩りの戦慄回復最大値", value: Support.thrill_of_the_hant.heal_min, type: {type: "heal", target: "self"}, multiplier: 100 * Support.thrill_of_the_hant.heal_max_multiplier},
+            {label: "サボテン爆弾", value: blastingCactus},
+            {label: "サボテン爆弾不発", value: blastingCactus, multiplier: 100 - Support.blast_cactus.unexploded_decline},
         ]
     ];
 }

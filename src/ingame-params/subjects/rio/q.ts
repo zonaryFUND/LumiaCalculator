@@ -16,6 +16,7 @@ export const info: SkillTooltipProps = {
             4: "1%",
             5: RatioPercent(Constants.Q.daikyu_damage_enhance),
             6: {value: Constants.Q.daikyu_range, expression: v => `${v}m`},
+            10: 2
         } satisfies Record<number, TooltipValue>
         if (showEquation) {
             return {

@@ -25,6 +25,8 @@ const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, con
     })();
     const consumptionValue = props.consumption ? extractArrayOrValue(props.consumption.value, props.skillLevel) : null;
 
+    const cooldownReduction = props.skillKey == "R" ? props.status.ultCooldownReduction.calculatedValue : props.status.cooldownReduction.calculatedValue;
+
     const cooldown = (() => {
         if (props.cooldown == undefined) return null;
         if (typeof props.cooldown == "function") return props.cooldown({config: props.config, status: props.status}).toString();
@@ -32,7 +34,7 @@ const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, con
             return extractArrayOrValue(props.cooldown.constant, props.skillLevel);
         }
     
-        return new Decimal(extractArrayOrValue(props.cooldown, props.skillLevel)).subPercent(props.status.cooldownReduction.calculatedValue).floor2().toString();
+        return new Decimal(extractArrayOrValue(props.cooldown, props.skillLevel)).subPercent(cooldownReduction).floor2().toString();
     })();
 
     const charge = (() => {
@@ -41,7 +43,7 @@ const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, con
             return extractArrayOrValue(props.charge.time.constant, props.skillLevel);
         }
 
-        return new Decimal(extractArrayOrValue(props.charge.time, props.skillLevel)).subPercent(props.status.cooldownReduction.calculatedValue).floor2().toString();
+        return new Decimal(extractArrayOrValue(props.charge.time, props.skillLevel)).subPercent(cooldownReduction).floor2().toString();
     })();
 
     return (

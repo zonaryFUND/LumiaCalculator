@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -12,7 +12,7 @@ export const info: SkillTooltipProps = {
         value: Constants.E.sp_cost
     },
     cooldown: {constant: Constants.T.shared_cooldown},
-    values: ({ showEquation }) => {
+    values: ({ showEquation }): TooltipValues => {
         if (showEquation) {
             return {
                 0: Constants.E.damage.base,
@@ -20,12 +20,11 @@ export const info: SkillTooltipProps = {
                 2: Constants.E.enhanced_damage.base,
                 3: RatioPercent(Constants.E.enhanced_damage.attack),
                 4: Constants.E.enhanced_damage.level,
-                5: Constants.E.cooldown_reduction,
                 8: Constants.E.omnisyphon.duration,
                 9: Constants.E.omnisyphon.effect.perStack,
                 10: RatioPercent(Constants.E.omnisyphon.effect.attack),
                 12: Constants.E.stack_gain_max
-            } as Record<number, number | string | ValueRatio>
+            }
         } else {
             const minLifeSteal = {
                 base: 1,
@@ -39,12 +38,11 @@ export const info: SkillTooltipProps = {
             return {
                 0: Constants.E.damage,
                 1: Constants.E.enhanced_damage,
-                2: Constants.E.cooldown_reduction,
                 3: Constants.E.omnisyphon.duration,
                 4: RatioPercent(minLifeSteal),
                 5: RatioPercent(maxLifeSteal),
                 6: Constants.E.stack_gain_max
-            } as Record<number, number | string | ValueRatio>
+            }
         }
     },
     expansion: () => ({

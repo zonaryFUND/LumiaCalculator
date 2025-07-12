@@ -32,7 +32,9 @@ export const info: SkillTooltipProps = {
                 12: Constants.R.daikyu_acceleration,
                 13: RatioPercent(Constants.R.daikyu_enhance.velocity),
                 14: RatioPercent(Constants.R.daikyu_enhance.damage),
-                15: RatioPercent(Constants.R.daikyu_enhance.slow_duration)
+                15: RatioPercent(Constants.R.daikyu_enhance.slow_duration),
+                16: Constants.R.hankyu_wall_damage.base,
+                17: RatioPercent(Constants.R.hankyu_wall_damage.attack)
             }
         } else {
             return {
@@ -48,7 +50,8 @@ export const info: SkillTooltipProps = {
                 9: Constants.R.daikyu_acceleration,
                 10: RatioPercent(Constants.R.daikyu_enhance.velocity),
                 11: RatioPercent(Constants.R.daikyu_enhance.damage),
-                12: RatioPercent(Constants.R.daikyu_enhance.slow_duration)
+                12: RatioPercent(Constants.R.daikyu_enhance.slow_duration),
+                13: Constants.R.hankyu_wall_damage
             }
         }
 
@@ -57,6 +60,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/ShortBowDamage", values: Constants.R.hankyu_first_damage.base},
             {labelIntlID: "ToolTipType/ShortBowLastDamage", values: Constants.R.hankyu_second_damage.base},
+            {labelIntlID: "ToolTipType/WallDamage", values: Constants.R.hankyu_wall_damage.base},
             {labelIntlID: "ToolTipType/YumiFirstDamage", values: Constants.R.daikyu_damage.base},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
             {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}

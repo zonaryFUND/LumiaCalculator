@@ -29,6 +29,10 @@
 			}
 		}
 	},
+	"201404": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"201405": {
 		"skillCode": 6033003,
 		"name": "photon_launcher",
@@ -93,6 +97,10 @@
 			}
 		}
 	},
+	"201502": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"201504": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
@@ -118,7 +126,7 @@
 		"dmg": {
 			"targetMaxHP": {
 				"base": 0.8,
-				"amp": 0.25
+				"amp": 0.2
 			}
 		}
 	},
@@ -132,6 +140,10 @@
 			"ratio": 7.5
 		}
 	},
+	"201509": {
+		"skillCode": 6051001,
+		"name": "taser_gun_surge"
+	},
 	"201518": {
 		"skillCode": 6034001,
 		"name": "extended_fury",
@@ -143,8 +155,8 @@
 		}
 	},
 	"201519": {
-		"skillCode": 6044001,
-		"name": "spirit_harvest"
+		"skillCode": 6056001,
+		"name": "spot_on"
 	},
 	"201520": {
 		"skillCode": 6040001,
@@ -171,6 +183,10 @@
 		"skillCode": 6047001,
 		"name": "security_protocol"
 	},
+	"201525": {
+		"skillCode": 6055001,
+		"name": "combat_instinct"
+	},
 	"201526": {
 		"skillCode": 6053002,
 		"name": "blaze_up_amplified",
@@ -179,8 +195,13 @@
 		}
 	},
 	"201527": {
-		"skillCode": 6051001,
-		"name": "taser_gun_surge"
+		"skillCode": 6058001,
+		"name": "master",
+		"dmg": {
+			"base": 60,
+			"attack": 50,
+			"level": 2
+		}
 	},
 	"201528": {
 		"skillCode": 6038001,
@@ -200,6 +221,21 @@
 	"201529": {
 		"skillCode": 6035001,
 		"name": "quickstep"
+	},
+	"201530": {
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 100
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1,
+			"slow": {
+				"effect": 20,
+				"duration": 2
+			}
+		}
 	},
 	"201701": {
 		"skillCode": 6008202,
@@ -230,39 +266,19 @@
 		"name": "healing_reduction_weak"
 	},
 	"202407": {
-		"skillCode": 6007001,
-		"name": "swift_strides",
-		"dmg": {
-			"base": 100
-		},
-		"values": {
-			"tick": 0.2,
-			"ms": 0.1,
-			"slow": {
-				"effect": 20,
-				"duration": 2
-			}
-		}
+		"skillCode": 6054101,
+		"name": "blaze_up_endurance"
 	},
 	"202410": {
-		"skillCode": 6006001,
-		"name": "reflection",
-		"dmg": {
-			"base": 150
-		},
+		"skillCode": 6015007,
+		"name": "streamlined",
 		"values": {
-			"ratio": 4.5
+			"ms": 18
 		}
 	},
 	"202415": {
-		"skillCode": 6006001,
-		"name": "reflection",
-		"dmg": {
-			"base": 300
-		},
-		"values": {
-			"ratio": 7.5
-		}
+		"skillCode": 6057001,
+		"name": "gap"
 	},
 	"202416": {
 		"skillCode": 6001002,
@@ -317,7 +333,7 @@
 		"dmg": {
 			"targetMaxHP": {
 				"base": 0.8,
-				"amp": 0.25
+				"amp": 0.2
 			}
 		}
 	},
@@ -480,6 +496,10 @@
 			"heal": 40
 		}
 	},
+	"203504": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
+	},
 	"203505": {
 		"skillCode": 6006001,
 		"name": "reflection",
@@ -546,7 +566,15 @@
 		"skillCode": 6008202,
 		"name": "healing_reduction_strong"
 	},
+	"204409": {
+		"skillCode": 6059001,
+		"name": "turbulence"
+	},
 	"204411": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"204415": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
 	},
@@ -577,6 +605,19 @@
 		"skillCode": 6035001,
 		"name": "quickstep"
 	},
+	"205404": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
+	"205406": {
+		"skillCode": 6058101,
+		"name": "master",
+		"dmg": {
+			"base": 60,
+			"amp": 40,
+			"level": 2
+		}
+	},
 	"205407": {
 		"skillCode": 6015002,
 		"name": "zephyr"
@@ -602,6 +643,10 @@
 		"values": {
 			"ms": 20
 		}
+	},
+	"205601": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"701451": {
 		"skillCode": 6024001,

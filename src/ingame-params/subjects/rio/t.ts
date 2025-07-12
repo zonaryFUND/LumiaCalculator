@@ -17,13 +17,13 @@ function rioBasicAttackMultiplier(status: Status): Decimal {
         .add(status.criticalStrikeChance.calculatedValue.mul(multiplied).div(100))
 }
 
-export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValueStrategy {
+export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-3"): UniqueValueStrategy {
     return ({ config, status }) => {
         const bowRatio = (() => {
             switch (bow) {
                 case "daikyu":      return Constants.Q.daikyu.attack;
                 case "hankyu":      return Constants.Q.hankyu.attack;
-                case "hankyu-2":    return Constants.Q.hankyu.attack * 2;
+                case "hankyu-3":    return Constants.Q.hankyu.attack * 3;
             }
         })();
         const tRatio = rioBasicAttackMultiplier(status);
@@ -34,7 +34,7 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-2"): UniqueValue
 
         return {
             value,
-            equationExpression: bow == "hankyu-2" ? [] : [
+            equationExpression: bow == "hankyu-3" ? [] : [
                 {
                     labelIntlID: "app.standard-value",
                     expression: [

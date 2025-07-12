@@ -25,9 +25,6 @@ export const info: SkillTooltipProps = {
         15: RatioPercent(Constants.W.final_damage.additionalMaxHP)
     }),
     expansion: () => ({
-        tipValues: {
-            0: RatioPercent(Constants.W.self_slow)
-        },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/AlonsoActive2ProjectileDamage", values: Constants.W.damage.base},
             {labelIntlID: "ToolTipType/AlonsoActive2FinishDamage", values: Constants.W.final_damage.base},

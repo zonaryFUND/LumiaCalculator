@@ -15,24 +15,26 @@ export const info: SkillTooltipProps = {
     values: ({ showEquation }) => {
         if (showEquation) {
             return {
-                0: Constants.Q.first_damage.base,
-                1: Constants.Q.second_damage.base,
-                2: RatioPercent(Constants.Q.first_damage.attack),
-                4: RatioPercent(Constants.Q.second_damage.attack),
-                6: RatioPercent(Constants.Q.first_damage.targetMaxHP),
+                0: Constants.Q.damage.base,
+                1: RatioPercent(Constants.Q.damage.attack),
+                2: RatioPercent(Constants.Q.damage.targetHP),
+                3: RatioPercent(Constants.Q.heal),
+                4: RatioPercent(Constants.Q.max_stack_target_additional_damage),
+                5: Constants.Q.reuse
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
-                0: Constants.Q.first_damage,
-                1: Constants.Q.second_damage,
-                2: RatioPercent(Constants.Q.first_damage.targetMaxHP)
-            } as Record<number, number | string | ValueRatio>
+                0: Constants.Q.damage,
+                1: RatioPercent(Constants.Q.damage.targetHP),
+                2: RatioPercent(Constants.Q.heal),
+                3: RatioPercent(Constants.Q.max_stack_target_additional_damage),
+                4: Constants.Q.reuse
+            }
         }
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/FirstDamage", values: Constants.Q.first_damage.base},
-            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.Q.second_damage.base},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
             {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
         ]  

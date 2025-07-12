@@ -1,5 +1,5 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import Decimal from "decimal.js";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -12,20 +12,33 @@ export function BerniceCriticalDamage(status: Status): Decimal {
 
 export const info: SkillTooltipProps = {
     skillKey: "T",
-    values: ({ showEquation, status }) => {
+    values: ({ showEquation, status }): TooltipValues => {
         const criticalDamage = BerniceCriticalDamage(status).toString();
-        return {
-            0: Constants.T.bullet,
-            1: Constants.T.base_damage,
-            2: showEquation ? RatioPercent(Constants.T.base_damage.attack) : Constants.T.additional_damage,
-            3: showEquation ? RatioPercent(Constants.T.additional_damage.attack) : Constants.T.reload,
-            4: showEquation ? Constants.T.reload : RatioPercent(criticalDamage),
-            5: RatioPercent(criticalDamage)
-        };
+        if (showEquation) {
+            return {
+                0: Constants.T.bullet,
+                2: RatioPercent(Constants.T.base_damage.attack),
+                3: RatioPercent(Constants.T.additional_damage.attack),
+                4: Constants.T.reload,
+                5: RatioPercent(criticalDamage),
+                7: Constants.T.auto_charge,
+                8: Constants.T.ammo
+            }
+        } else {
+            return {
+                0: Constants.T.bullet,
+                1: Constants.T.base_damage,
+                2: Constants.T.additional_damage,
+                3: Constants.T.reload,
+                4: RatioPercent(criticalDamage),
+                6: Constants.T.auto_charge,
+                7: Constants.T.ammo
+            }
+        }
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/ShotGunBullet", values: Constants.T.bullet},
+            {labelIntlID: "ToolTipType/MaxBullet", values: Constants.T.ammo},
             {labelIntlID: "ToolTipType/ReloadTime", values: Constants.T.reload},
         ]  
     })

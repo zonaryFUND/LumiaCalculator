@@ -12,6 +12,12 @@ export type StatusValue = {
     max?: number
 }
 
+export type CooldownStatusValue = {
+    components: StatusValueComponent[]
+    rawHasteValue: Decimal
+    calculatedValue: Decimal
+}
+
 export const StatusValueDefault: StatusValue = {
     components: [],
     additionalValue: new Decimal(0),
@@ -93,6 +99,26 @@ export function AddComponent(toOrDigit: StatusValue | number, ...components: (St
         calculatedValue: (to?.max ? finalValue.clamp(0, to.max) : finalValue).cut(digit, "floor"),
         digit,
         max: to?.max
+    }
+}
+
+export function AddComponentCooldown(
+    to: {
+        base?: CooldownStatusValue,
+        prev?: CooldownStatusValue
+    }, ...components: (StatusValueComponent | undefined)[]
+): CooldownStatusValue {
+    const mergedComponents = [...(to.prev?.components ?? []), ...(components.filter((c): c is StatusValueComponent => c != undefined))];
+    const beforeFix = ValueBeforeFix(mergedComponents, 0);
+   
+    const baseHaste = to.base?.rawHasteValue ?? new Decimal(0);
+    const finalHasteValue = baseHaste.add(beforeFix.calculated);
+    const calculatedValue = finalHasteValue.dividedBy(finalHasteValue.add(100)).times(100);
+
+    return {
+        components: [...beforeFix.components.sum, ...beforeFix.components.mul, ...beforeFix.components.fix],
+        rawHasteValue: beforeFix.calculated,
+        calculatedValue
     }
 }
 

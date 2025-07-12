@@ -4,7 +4,7 @@ import { StatusOverrideFunc } from "../type";
 import { AddComponent } from "app-types/subject-dynamic/status/value/type";
 
 export function AdditionalAmp(cooldown: Decimal): Decimal {
-    return cooldown.times(Constants.T.cooldown_conversion / 10);
+    return cooldown.times(Constants.T.cooldown_conversion);
 }
 
 const f: StatusOverrideFunc = (status, config) => ({
@@ -15,7 +15,7 @@ const f: StatusOverrideFunc = (status, config) => ({
         intlID: "subject.tia.passive-amp",
         value: {
             type: "constant",
-            value: AdditionalAmp(status.cooldownReduction.calculatedValue)
+            value: AdditionalAmp(status.cooldownReduction.rawHasteValue)
         }
     } : undefined)
 });

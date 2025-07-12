@@ -847,6 +847,10 @@
 			"amp": 15
 		}
 	},
+	"115405": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"115406": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
@@ -881,9 +885,9 @@
 	},
 	"116403": {
 		"skillCode": 6012001,
-		"name": "last_word",
+		"name": "magic_bullet",
 		"dmg": {
-			"amp": 45,
+			"amp": 40,
 			"targetMaxHP": 8
 		},
 		"values": {
@@ -907,7 +911,7 @@
 	},
 	"116409": {
 		"skillCode": 6012002,
-		"name": "double_tap",
+		"name": "magic_bullet",
 		"dmg": {
 			"level": 4,
 			"amp": 30,
@@ -959,9 +963,9 @@
 	},
 	"116702": {
 		"skillCode": 6012001,
-		"name": "last_word",
+		"name": "magic_bullet",
 		"dmg": {
-			"amp": 45,
+			"amp": 40,
 			"targetMaxHP": 8
 		},
 		"values": {
@@ -1180,14 +1184,8 @@
 		"name": "cataclasm"
 	},
 	"121401": {
-		"skillCode": 6013004,
-		"name": "magnetic_midnight",
-		"values": {
-			"slow": {
-				"effect": 25,
-				"duration": 1
-			}
-		}
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"121405": {
 		"skillCode": 6017002,
@@ -1219,6 +1217,10 @@
 				"ad": 10
 			}
 		}
+	},
+	"121501": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"121503": {
 		"skillCode": 6045001,

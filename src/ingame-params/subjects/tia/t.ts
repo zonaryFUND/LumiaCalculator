@@ -16,6 +16,7 @@ export const info: SkillTooltipProps = {
         10: RatioPercent(Constants.T.rb.movement_speed.effect),
         12: Constants.T.by.damage.base,
         15: Constants.T.by.bind,
+        17: Constants.T.cooldown_conversion,
         18: Constants.T.yr.damage,
         19: Constants.T.rb.damage,
         20: Constants.T.by.damage,
@@ -26,7 +27,7 @@ export const info: SkillTooltipProps = {
     }),
     expansion: ({ status }) => ({
         tipValues: {
-            16: AdditionalAmp(status.cooldownReduction.calculatedValue).toString()
+            16: AdditionalAmp(status.cooldownReduction.rawHasteValue).toString()
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Squirrel1_FixedDamage", values: Constants.T.yr.damage.base},

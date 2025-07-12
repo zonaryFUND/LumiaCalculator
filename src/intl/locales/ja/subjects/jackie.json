@@ -1,11 +1,15 @@
 {
-    "subject.jackie.passive-additional": "T更新時追加ダメージ",
-    "subject.jackie.r-additional": "R中追加ダメージ",
-    "subject.jackie.w-min": "W回復最小値",
-    "subject.jackie.w-max": "W回復最大値",
-    "subject.jackie.rw-dualsword-min": "R中W回復最小値",
-    "subject.jackie.rw-dualsword-max": "R中W回復最大値",
-    "subject.jackie.r2-min": "R2最小値",
-    "subject.jackie.r2-max": "R2最大値",
-    "subject.jackie.passive-dot-sum": "T出血固定ダメージ合計"
+    "subject.jackie.q-heal": "Q自己回復",
+    "subject.jackie.q-enhanced": "Q出血最大スタック対象",
+    "subject.jackie.q-enhanced-heal": "Q出血最大スタック対象自己回復",
+    "subject.jackie.w-dualsword-attack": "W効果時基本攻撃力",
+    "subject.jackie.w-additional": "W追加ダメージ",
+    "subject.jackie.r-min": "R最小値",
+    "subject.jackie.r-min-heal": "R最小値自己回復",
+    "subject.jackie.r-max": "R最大値",
+    "subject.jackie.passive-dot-sum": "T出血1スタックダメージ合計",
+    "subject.jackie.passive-dot-sum-max": "T出血最大スタック({value})ダメージ合計",
+    "subject.jackie.passive-additional": "Tアドレナリン状態追加ダメージ",
+    "subject.jackie.passive-heal-min": "Tアドレナリン状態回復量(最小)",
+    "subject.jackie.passive-heal-max": "Tアドレナリン状態回復量(最大)"
 }

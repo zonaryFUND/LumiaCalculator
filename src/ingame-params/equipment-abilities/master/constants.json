@@ -1,0 +1,8 @@
+{
+    "time": 0.5,
+    "slow": {
+        "duration": 1,
+        "effect": 25
+    },
+    "cooldown": 10
+}

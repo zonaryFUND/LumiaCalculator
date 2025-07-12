@@ -4,9 +4,9 @@ import { Status } from "./type";
 import { BaseStatus, LevelUpStatus, WeaponMasteryStatus } from "app-types/subject-static";
 import { EquipmentStatusDictionary, EquipmentStatusValueKey } from "app-types/equipment";
 import Decimal from "decimal.js";
-import { BaseBasicAttackRange, BaseCooldownCap, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
+import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { WeaponTypeID, WeaponTypeStatus } from "app-types/equipment/weapon";
-import { AddComponent, AddComponentMovementSpeed, StatusValueDefault } from "./value/type";
+import { AddComponent, AddComponentCooldown, AddComponentMovementSpeed, StatusValueDefault } from "./value/type";
 import { Adaptive, EquipmentCombined, EquipmentConstant, EquipmentLevelDependent, Mastery, StatusValueComponent, SubjectStatus, WeaponBasedValue } from "./value/components";
 import { SubjectStatusOverrideDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
 import { StateProps } from "@app/util/state";
@@ -49,7 +49,7 @@ export function useStatus(config: SubjectConfig): [Status, StateProps<number>] {
     }, [config.subject, weaponType]);
 
     const adaptive = sumEquipmentStatus("adaptiveForce");
-    const cooldownLimit = maxEquipmentStatus("uniqueCooldownLimit")
+    const cooldownReduction = AddComponentCooldown({}, EquipmentConstant("sum", sumEquipmentStatus("cooldownReduction")))
 
     const status: Status = {
         // toughness
@@ -115,10 +115,9 @@ export function useStatus(config: SubjectConfig): [Status, StateProps<number>] {
             EquipmentConstant("mul", sumEquipmentStatus("skillAmpRatio")),
             masteryStatus?.type == "skill_amp" ? Mastery("mul", config.weaponMastery, masteryStatus.value) : undefined
         ),
-        cooldownReduction: AddComponent(0,
-            EquipmentConstant("sum", sumEquipmentStatus("cooldownReduction")?.clamp(0, new Decimal(BaseCooldownCap).add(cooldownLimit ?? 0))),
-        ),
-        cooldownLimit: AddComponent(0, EquipmentConstant("sum", cooldownLimit)),
+        cooldownReduction,
+        ultCooldownReduction: AddComponentCooldown({base: cooldownReduction}, EquipmentConstant("sum", sumEquipmentStatus("ultCooldownReduction"))),
+        tacticalSkillCooldownReduction: AddComponentCooldown({}, EquipmentConstant("sum", sumEquipmentStatus("tacticalCooldownReduction"))),
 
         // penetration
         penetrationDefense: AddComponent(0,

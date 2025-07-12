@@ -1,11 +1,16 @@
 {
     "damage": {
-        "base": [110,220,330],
-        "additionalAttack": 150,
-        "amp": [40,55,70]
+        "base": [100,200,300],
+        "additionalAttack": 110,
+        "amp": [20,35,50]
+    },
+    "wall_damage": {
+        "base": [50,100,150],
+        "additionalAttack": 60,
+        "amp": 30
     },
     "knockback": 4,
-    "stun": 0.8,
+    "stun": [0.8,0.9,1],
     "cooldown": {
         "constant": 25
     }

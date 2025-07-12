@@ -24,7 +24,8 @@ export const info: SkillTooltipProps = {
                 5: RatioPercent(Constants.E.daikyu_damage.attack),
                 6: Constants.E.daikyu_range,
                 7: Constants.E.daikyu_range_damage.base,
-                8: RatioPercent(Constants.E.daikyu_range_damage.attack)
+                8: RatioPercent(Constants.E.daikyu_range_damage.attack),
+                12: 3
             }
         } else {
             return {
@@ -32,7 +33,8 @@ export const info: SkillTooltipProps = {
                 1: Constants.E.hankyu_damage,
                 3: Constants.E.daikyu_damage,
                 4: Constants.E.daikyu_range,
-                5: Constants.E.daikyu_range_damage
+                5: Constants.E.daikyu_range_damage,
+                6: 3
             }
         }
 

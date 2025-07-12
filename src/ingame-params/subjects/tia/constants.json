@@ -65,7 +65,7 @@
         "cooldown": [90,70,50]
     },
     "T": {
-        "cooldown_conversion": 12,
+        "cooldown_conversion": 1,
         "yr": {
             "damage": {
                 "base": [60,115,170,225,280],

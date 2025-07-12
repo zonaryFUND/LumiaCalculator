@@ -70,7 +70,11 @@
         "cooldown": 20
     },
     "circular_system": {
-        "ratio": 50,
+        "heal": {
+            "base": 10,
+            "level": 1,
+            "maxHP": 0.5
+        },
         "duration": 3
     },
     "open_wounds": {
@@ -94,10 +98,18 @@
     },
     "overwatch": {
         "cooldown": 5,
-        "adaptive_conversion": 5,
-        "max_conversion": 10
+        "threshold": 40,
+        "adaptive": 5
     },
     "r_echarger": {
-        "effect": 15
+        "effect": 15,
+        "r_buff": {
+            "duration": 5,
+            "adaptive": {
+                "base": 5,
+                "level": 0.5
+            }
+        },
+        "cooldown": 25
     }
 }

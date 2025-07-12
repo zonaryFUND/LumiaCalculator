@@ -69,7 +69,11 @@
             "amp": 20,
             "stack": 2
         },
-        "stack_conversion": 3,
+        "stack_conversion": 1,
+        "cdr_per_accelerando": 2,
+        "max_cdr": 40,
+        "r_cdr_conversion": 3,
+        "max_rcdr": 50,
         "stack_conversion_limit": 70,
         "cooldown": {
             "constant": [11,9,7]

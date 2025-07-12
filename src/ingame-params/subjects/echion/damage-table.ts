@@ -63,7 +63,7 @@ const table: DamageTableGenerator = props => {
                 {label: props.intl.formatMessage({id: "subject.echion.e-heal"}), skill: "E", value: Constants.E.damage, multiplier, type: {type: "heal", target: "self"}, damageDependentHeal: rMambaHeal}
             ]
             .filter(e => e != null),
-            [{label: props.intl.formatMessage({id: "subject.echion.r-true-damage"}, {value: Constants.R.area_damage_tick}), skill: "R" as any, value: Constants.R.area_damage}]
+            [{label: props.intl.formatMessage({id: "subject.echion.r-true-damage"}, {value: Constants.R.area_damage_tick}), skill: "R" as any, value: Constants.R.area_damage, type: {type: "true"}}]
                 .concat(r as any)         
         ]   
     } as any

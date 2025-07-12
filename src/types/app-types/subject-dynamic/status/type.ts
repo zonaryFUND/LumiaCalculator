@@ -1,5 +1,5 @@
 import Decimal from "decimal.js"
-import { MovementSpeedValue, StatusValue, StatusValueDefault } from "./value/type"
+import { CooldownStatusValue, MovementSpeedValue, StatusValue, StatusValueDefault } from "./value/type"
 
 export type SummonedStatus = {
     maxHP: Decimal
@@ -27,8 +27,10 @@ export type Status = {
     criticalStrikeChance: StatusValue
     criticalStrikeDamage: StatusValue
     skillAmp: StatusValue
-    cooldownReduction: StatusValue
-    cooldownLimit: StatusValue
+    cooldownReduction: CooldownStatusValue
+    // cooldownLimit: StatusValue
+    ultCooldownReduction: CooldownStatusValue
+    tacticalSkillCooldownReduction: CooldownStatusValue
     penetrationDefense: StatusValue
     penetrationDefenseRatio: StatusValue
     lifeSteal: StatusValue   // every damage
@@ -61,8 +63,9 @@ export const BlankStatus: Status = {
     criticalStrikeChance: StatusValueDefault,
     criticalStrikeDamage: StatusValueDefault,
     skillAmp: StatusValueDefault,
-    cooldownReduction: StatusValueDefault,
-    cooldownLimit: StatusValueDefault,
+    cooldownReduction: {...StatusValueDefault, rawHasteValue: new Decimal(0)},
+    ultCooldownReduction: {...StatusValueDefault, rawHasteValue: new Decimal(0)},
+    tacticalSkillCooldownReduction: {...StatusValueDefault, rawHasteValue: new Decimal(0)},
     penetrationDefense: StatusValueDefault,
     penetrationDefenseRatio: StatusValueDefault,
     lifeSteal: StatusValueDefault,   // every damage

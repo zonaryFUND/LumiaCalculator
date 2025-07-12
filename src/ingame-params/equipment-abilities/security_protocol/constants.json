@@ -2,7 +2,7 @@
     "duration": 2,
     "shield": {
         "base": 50,
-        "maxHP": 7
+        "maxHP": 6
     },
     "threshold": 40,
     "enhance": 30,

@@ -1,14 +1,8 @@
 import Constants from "./constants.json";
-import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { ValueRatio } from "app-types/value-ratio";
+import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1001300;
-
-const maxHeal = {
-    base: Constants.W.heal.base.map(v => v * 2),
-    attack: Constants.W.heal.attack * 2
-}
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
@@ -17,35 +11,30 @@ export const info: SkillTooltipProps = {
         value: Constants.W.sp_cost
     },
     cooldown: Constants.W.cooldown,
-    values: ({ showEquation }) => {
-        const base = {
-            0: Constants.W.movement_speed.duration,
-            1: RatioPercent(Constants.W.movement_speed.effect),
-            4: RatioPercent(Constants.W.additional_movement_speed)
-        }
+    values: ({ showEquation }): TooltipValues => {
         if (showEquation) {
             return {
-                ...base,
-                2: Constants.W.heal.base,
-                3: maxHeal.base,
-                5: RatioPercent(Constants.W.heal.attack),
-                7: RatioPercent(maxHeal.attack)
-            } as Record<number, number | string | ValueRatio>
+                0: Constants.W.damage.base,
+                1: RatioPercent(Constants.W.damage.additionalAttack),
+                2: Constants.W.slow.duration,
+                3: RatioPercent(Constants.W.slow.effect)
+            }
         } else {
             return {
-                ...base,
-                2: Constants.W.heal,
-                3: maxHeal,
-            } as Record<number, number | string | ValueRatio>
+                0: Constants.W.damage,
+                1: Constants.W.slow.duration,
+                2: RatioPercent(Constants.W.slow.effect)
+            }
         }
     },
     expansion: () => ({
         tipValues: {
-            0: RatioPercent(Constants.W.heal_max_hp)  
+            0: RatioPercent(Constants.W.dualsword_attack_ratio)  
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/ChaseMoveSpeed", values: Constants.W.additional_movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/Heal", values: Constants.W.heal.base},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
+            {labelIntlID: "ToolTipType/AddtionalApCoef", values: Constants.W.damage.additionalAttack, percent: true},
+            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.W.slow.effect, percent: true},
             {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
         ]  
     })

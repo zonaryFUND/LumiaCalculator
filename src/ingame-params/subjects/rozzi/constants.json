@@ -5,7 +5,7 @@
             "attack": 100
         },
         "time_bound": 2,
-        "cooldown_reduction": 2,
+        "cooldown_reduction": 40,
         "sp_cost": [40,45,50,55,60],
         "cooldown": 5
     },
@@ -18,7 +18,7 @@
         "defense_down": [11,12,13,14,15],
         "healing_reduction": 45,
         "movement_speed": 120,
-        "cooldown_reduction": 2,
+        "cooldown_reduction": 40,
         "sp_cost": [30,35,40,45,50],
         "cooldown": 6
     },
