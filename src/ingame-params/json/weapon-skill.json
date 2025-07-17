@@ -887,7 +887,7 @@
 		"skillCode": 6012001,
 		"name": "magic_bullet",
 		"dmg": {
-			"amp": 40,
+			"amp": 35,
 			"targetMaxHP": 8
 		},
 		"values": {

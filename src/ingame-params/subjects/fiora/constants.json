@@ -53,7 +53,7 @@
         "max_stack": 4,
         "damage": {
             "base": [20,60,100],
-            "amp": 40
+            "amp": 45
         },
         "movement_speed": {
             "duration": 2,

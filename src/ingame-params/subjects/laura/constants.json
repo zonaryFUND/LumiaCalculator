@@ -33,7 +33,7 @@
         },
         "airborne": 0.55,
         "sp_cost": [60,65,70,75,80],
-        "cooldown": [18,17,16,15,14]
+        "cooldown": [17,16,15,14,13]
     },
     "R": {
         "first_damage": {

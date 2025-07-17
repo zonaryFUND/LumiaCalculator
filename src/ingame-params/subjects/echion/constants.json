@@ -20,7 +20,7 @@
         "gauge_max_consumption": 50,
         "shield": {
             "base": [20,40,60,80,100],
-            "attack": 60
+            "attack": 50
         },
         "multiplier": 200,
         "return_threshold": 100,
@@ -69,7 +69,7 @@
             "duration": 1,
             "effect": 90
         },
-        "skill_damage_add": [30,40,50,60],
+        "skill_damage_add": [20,30,40,50],
         "cooldown": {
             "constant": 3
         }
@@ -78,7 +78,7 @@
         "damage": {
             "base": [50,140,195,250],
             "attack": 80,
-            "additionalMaxHP": 12
+            "additionalMaxHP": 10
         },
         "second": 0.85,
         "second_damage": [55,70,85,100],

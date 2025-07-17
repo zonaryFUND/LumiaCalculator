@@ -5,7 +5,7 @@
             "amp": 80
         },
         "duration": 7,
-        "cooldown_reduction": 20,
+        "cooldown_reduction": 15,
         "slow": {
             "duration": 2,
             "effect": 40
@@ -20,7 +20,7 @@
             "amp": 85
         },
         "duration": 7,
-        "cooldown_reduction": 30,
+        "cooldown_reduction": 25,
         "sp_cost": [50,55,60,65,70],
         "cooldown": [11,10.5,10,9.5,9]
     },

@@ -59,7 +59,7 @@
         },
         "cooldown_reduction": 40,
         "sp_cost": 60,
-        "cooldown": [12,11,10,9,8]
+        "cooldown": [10,9.5,9,8.5,8]
     },
     "R": {
         "duration": 6.5,

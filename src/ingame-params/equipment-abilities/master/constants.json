@@ -2,7 +2,7 @@
     "time": 0.5,
     "slow": {
         "duration": 1,
-        "effect": 25
+        "effect": 40
     },
     "cooldown": 10
 }

@@ -44,7 +44,7 @@
         "pull_basic_attack_range": 10,
         "mark_remain_range": 8,
         "sp_cost": 50,
-        "cooldown": [14,13,12,11,10]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
         "cast": 1.35,

@@ -9,7 +9,7 @@
             "attack": 65,
             "level": 3
         },
-        "airborne": 0.09,
+        "airborne": 0.08,
         "stack_damage_conversion": {
             "base": [2,4,6,8,10]
         },
