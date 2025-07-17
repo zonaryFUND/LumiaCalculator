@@ -1,8 +1,9 @@
 import Decimal from "decimal.js";
-import { EquipmentSkill, EquipmentStatus, EquipmentStatusValueKey, PercentExpressedEquipmentStatusKeys } from "./status";
+import { EquipmentSkill, EquipmentStatus, EquipmentStatusKeys, EquipmentStatusValueKey, PercentExpressedEquipmentStatusKeys } from "./status";
 import Weapons from "@app/ingame-params/json/weapon.json";
 import WeaponSkill from "@app/ingame-params/json/weapon-skill.json";
 import Armors from "@app/ingame-params/json/armor.json";
+import DavidUpgrade from "@app/ingame-params/json/david-upgrade.json";
 import ArmorSkill from "@app/ingame-params/json/armor-skill.json";
 import { WeaponTypeID } from "./weapon"
 import * as es from "es-toolkit/object"
@@ -82,41 +83,59 @@ export const [
     return [sortedCodes, statusDictionary];
 })();
 
-
-
 export const [
     HeadArmorCodes,
     ChestArmorCodes,
     ArmArmorCodes,
     LegArmorCodes,
-    ArmorStatusDictionary
+    ArmorStatusDictionary,
+    DavidChestArmorUpgradeDictionary
 ] = (() => {
-    return Armors.reduce(([headIDs, chestIDs, armIDs, legIDs, status], entry) => {
+    const armors = Armors.reduce(({headIDs, chestIDs, armIDs, legIDs, status}, entry) => {
         const {code, armorType, ...extractedStatus} = entry
         const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
             if (typeof value != "number") return value;
             return mapValues(key as EquipmentStatusValueKey, value);
         });
 
-        return [
-            entry.armorType == "Head" ? headIDs.concat(entry.code) : headIDs,
-            entry.armorType == "Chest" ? chestIDs.concat(entry.code) : chestIDs,
-            entry.armorType == "Arm" ? armIDs.concat(entry.code) : armIDs,
-            entry.armorType == "Leg" ? legIDs.concat(entry.code) : legIDs,
-            {
+        return {
+            headIDs: entry.armorType == "Head" ? headIDs.concat(entry.code) : headIDs,
+            chestIDs: entry.armorType == "Chest" ? chestIDs.concat(entry.code) : chestIDs,
+            armIDs: entry.armorType == "Arm" ? armIDs.concat(entry.code) : armIDs,
+            legIDs: entry.armorType == "Leg" ? legIDs.concat(entry.code) : legIDs,
+            status: {
                 ...status,
                 [entry.code]: {...valuesMapped, type: armorType, skill: abilities(code.toString(), ArmorSkill)} as EquipmentStatus
             }
-        ]
-    }, [
-        [] as number[],
-        [] as number[],
-        [] as number[],
-        [] as number[],
-        {} as {[code: number]: EquipmentStatus}
-    ]);
-})();
+        }
+    }, {
+        headIDs: [] as number[],
+        chestIDs: [] as number[],
+        armIDs: [] as number[],
+        legIDs: [] as number[],
+        status: {} as {[code: number]: EquipmentStatus}
+    });
 
-console.log(ArmorStatusDictionary)
+    const davidUpgrade = Object.entries(DavidUpgrade).reduce((prev, jsonTuple) => {
+        const status = Object.entries(jsonTuple[1]).reduce((prev, [key, value]) => {
+            if ((EquipmentStatusKeys).includes(key as any)) {
+                return {...prev, [key]: new Decimal(value)};
+            } else {
+                return prev;
+            }
+        }, {} as {[key in EquipmentStatusValueKey]: Decimal});
+        
+        return {...prev, [+jsonTuple[0]]: status}
+    }, {} as {[id: number]: {[key in EquipmentStatusValueKey]: Decimal}})
+    
+    return [
+        armors.headIDs,
+        armors.chestIDs,
+        armors.armIDs,
+        armors.legIDs,
+        armors.status, 
+        davidUpgrade
+    ]
+})();
 
 export const EquipmentStatusDictionary = {...WeaponStatusDictionary, ...ArmorStatusDictionary};

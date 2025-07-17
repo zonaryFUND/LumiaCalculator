@@ -12,6 +12,7 @@ import { SubjectSideContext } from "@app/ingame-params/subjects/subject-side";
 type Props = {
     slot: "Weapon" | ArmorTypeID
     itemID: EquipmentID
+    isDavid: boolean
     inSlot: boolean
     onSingleClick: () => void
 }
@@ -29,10 +30,6 @@ const item: React.FC<Props> = props => {
 
     const src = React.useMemo(() => {
         if (props.itemID == undefined) return undefined;
-        const davidFrom = ArmorStatusDictionary[props.itemID]?.david?.from;
-        if (davidFrom) {
-            return Items[`${davidFrom}`]
-        }
         return Items[props.itemID];
     }, [props.itemID]);
 
@@ -73,6 +70,7 @@ const item: React.FC<Props> = props => {
                 } else {
                     tooltipContext?.openModalItem.current({
                         itemCode: props.itemID,
+                        isDavid: props.isDavid,
                         onSlot: props.inSlot,
                         subjectSide: side
                     });
@@ -86,7 +84,7 @@ const item: React.FC<Props> = props => {
         <div
             className={styles(className, shardClass, style.base)} 
             data-tooltip-id="weapon"
-            data-tooltip-content={`${props.itemID}${props.inSlot ? "%slot" : ""}`}
+            data-tooltip-content={`${props.itemID}${props.isDavid ? "_D" : ""}${props.inSlot ? "%slot" : ""}`}
             onClick={onClick}
         >
             <img 

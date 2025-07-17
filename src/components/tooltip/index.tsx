@@ -72,10 +72,13 @@ const tooltipPresenter: React.FC<Props> = props => {
                     const status = Array.isArray(props.status) ? props.status[side == "left" ? 0 : 1] : props.status;
 
                     const [item, onSlot] = content.split("%");
+                    const [itemID, isDavid] = item.split("_");
+
                     return (
                         <ItemTooltip 
-                            itemID={+item} 
-                            showEquation={props.showEquation || onSlot == undefined} 
+                            itemID={+itemID} 
+                            showEquation={props.showEquation || onSlot == undefined}
+                            isDavid={isDavid != undefined}
                             config={config} 
                             status={status} 
                         />
@@ -119,7 +122,8 @@ const tooltipPresenter: React.FC<Props> = props => {
                         return (
                             <ItemTooltip 
                                 itemID={+modalItemProps.itemCode} 
-                                showEquation={props.showEquation || !modalItemProps.onSlot} 
+                                showEquation={props.showEquation || !modalItemProps.onSlot}
+                                isDavid={modalItemProps.isDavid}
                                 config={config} 
                                 status={status} 
                             /> 

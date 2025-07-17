@@ -11,9 +11,9 @@ import { Equipment } from "app-types/subject-dynamic/config";
 import { ArmorTypeID } from "app-types/equipment/armor";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WeaponTypeID } from "app-types/equipment/weapon";
-import { ArmArmorCodes, ChestArmorCodes, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
+import { ArmArmorCodes, ChestArmorCodes, DavidChestArmorUpgradeDictionary, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
 import { SubjectCode } from "app-types/subject-static";
-import { useLocalStorage } from "react-use";
+import { useLatest, useLocalStorage } from "react-use";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 
 type Props = {
@@ -24,8 +24,9 @@ type Props = {
 
 function splitIdsWithRarity(ids: EquipmentID[], david: boolean = false): {title: string, ids: EquipmentID[]}[] {
     const splitted = ids.reduce((prev, id) => {
+        if (david && DavidChestArmorUpgradeDictionary[id] == undefined) return prev;
+
         const status = EquipmentStatusDictionary[id];
-        if (david != (status.david?.from != undefined)) return prev;
 
         return {
             ...prev,
@@ -46,6 +47,7 @@ const subjectsList: React.FC<Props> = props => {
     const intl = useIntl();
     const uiType = useResponsiveUIType();
     const [david, setDavid] = useLocalStorage("equipment-list-david", "notDavid");
+    const latestDavid = useLatest(david);
 
     const def: {title: string, sections: {title?: string, mastery?: React.ReactElement, ids: EquipmentID[]}[]} = React.useMemo(() => {
         switch (props.slot) {
@@ -90,7 +92,21 @@ const subjectsList: React.FC<Props> = props => {
     }, [props.slot, props.subject, david]);
 
     const onClick = React.useCallback((id: EquipmentID | null) => () => {
-        props.equipment[1](prev => ({...prev, [props.slot]: id}))
+        props.equipment[1](prev => {
+            if (props.slot == "Chest") {
+                console.log(david)
+                return {
+                    ...prev,
+                    isChestDavid: latestDavid.current == "david",
+                    [props.slot]: id
+                }
+            } else {
+                return {
+                    ...prev,
+                    [props.slot]: id        
+                }
+            }
+        })
     }, [props.slot]);
 
     return (
@@ -132,6 +148,7 @@ const subjectsList: React.FC<Props> = props => {
                                     <Item 
                                         slot={props.slot} 
                                         itemID={id} 
+                                        isDavid={david == "david"}
                                         inSlot={false}
                                         onSingleClick={onClick(id)}
                                     />

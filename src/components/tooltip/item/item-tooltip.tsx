@@ -7,27 +7,35 @@ import baseStyle from "../tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
 import { ValueContext } from "../value-context";
 import { FormattedMessage } from "react-intl";
-import { EquipmentStatusDictionary } from "app-types/equipment";
+import { DavidChestArmorUpgradeDictionary, EquipmentStatusDictionary, EquipmentStatusValueKey } from "app-types/equipment";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
+import Decimal from "decimal.js";
 
 type Props = {
     showEquation: boolean
     config: SubjectConfig
+    isDavid: boolean
     status: Status
     itemID: EquipmentID
 }
 
 const itemTooltip: React.FC<Props> = props => {
-    const { status, imageID } = React.useMemo(() => {
+    const { status, isDavid } = React.useMemo(() => {
         const rawStatus = EquipmentStatusDictionary[props.itemID];
-        if (rawStatus.david?.from) {
-            const fromStatus = EquipmentStatusDictionary[rawStatus.david.from];
-            return { status: {...rawStatus, skill: fromStatus.skill}, imageID: rawStatus.david.from }
+        const davidUpgrade = props.isDavid ? DavidChestArmorUpgradeDictionary[props.itemID] : undefined;
+        if (davidUpgrade != undefined) {
+            const status = Object.entries(davidUpgrade).reduce((prev, [statusKey, value]) => {
+                return {
+                    ...prev,
+                    [statusKey]: (prev[statusKey as EquipmentStatusValueKey] ?? new Decimal(0)).add(value)
+                }
+            }, rawStatus);
+            return { status, isDavid: true };
         } else {
-            return { status: rawStatus, imageID: props.itemID };
+            return { status: rawStatus, isDavid: false };
         }
-    }, [props.itemID]);
+    }, [props.isDavid, props.itemID]);
 
     const [src, typeExpression] = React.useMemo(() => {
         const itemType = EquipmentStatusDictionary[props.itemID].type;
@@ -41,19 +49,14 @@ const itemTooltip: React.FC<Props> = props => {
             }
         })()
 
-        return [Items[imageID], typeExpression];
+        return [Items[props.itemID], typeExpression];
     }, [props.itemID, status.david]);
-
-    const ammo = (() => {
-        if (status.ammo == undefined) return null;
-        return <p className={style.ammo}><span>装弾数: </span>{`${status.ammo}発`}</p>
-    })();
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip} ${style[status.itemGrade.toLowerCase()]}`}>
             <header className={style.header}>
                 <div>
-                    <h1><FormattedMessage id={`Item/Name/${props.itemID}`} /></h1>
+                    <h1><FormattedMessage id={`Item/Name/${props.itemID}${isDavid ? "_D" : ""}`} /></h1>
                     <p><FormattedMessage id={`ItemGrade/${status.itemGrade}`} /></p>
                     <p>{typeExpression}</p>
                 </div>
@@ -61,7 +64,6 @@ const itemTooltip: React.FC<Props> = props => {
             </header>
             <div className={style.content}>
                 <Options {...status} />
-                {ammo}
                 <ValueContext.Provider value={props}>
                     {status.skill ? status.skill.map(op => <Skill key={op.skillCode} {...props} {...op} />) : null}
                 </ValueContext.Provider>

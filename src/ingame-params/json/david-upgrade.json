@@ -1,0 +1,186 @@
+{
+    "202415": {
+        "name": "バトルスーツ",
+        "defense": 3,
+        "maxHpByLv": 4,
+        "code": 202601
+    },
+    "202407": {
+        "name": "ミスリル鎧",
+        "defense": 6,
+        "code": 202602
+    },
+    "202416": {
+        "name": "炎のドレス",
+        "defense": 3,
+        "maxHpByLv": 4,
+        "code": 202603
+    },
+    "202421": {
+        "name": "ミスリルクロップ",
+        "defense": 5,
+        "maxHpByLv": 2,
+        "code": 202604
+    },
+    "202501": {
+        "name": "カバナ",
+        "defense": 3,
+        "skillAmp": 5,
+        "code": 202605
+    },
+    "202503": {
+        "name": "聖法衣",
+        "defense": 3,
+        "skillAmp": 5,
+        "code": 202606
+    },
+    "202505": {
+        "name": "アオザイ",
+        "attackPower": 4,
+        "lifeSteal": 0.04,
+        "code": 202607
+    },
+    "202506": {
+        "name": "ファントムジャケット",
+        "defense": 4,
+        "attackSpeedRatio": 0.1,
+        "code": 202608
+    },
+    "202507": {
+        "name": "ガーディアンスーツ",
+        "defense": 5,
+        "maxHpByLv": 2,
+        "code": 202609
+    },
+    "202508": {
+        "name": "真銀ドレス",
+        "defense": 2,
+        "skillAmp": 7,
+        "code": 202610
+    },
+    "202509": {
+        "name": "仙女の降臨",
+        "attackPower": 2,
+        "defense": 3,
+        "attackSpeedRatio": 0.04,
+        "code": 202611
+    },
+    "202510": {
+        "name": "ゴースト",
+        "attackPower": 4,
+        "defense": 2,
+        "criticalStrikeChance": 0.02,
+        "code": 202612
+    },
+    "202511": {
+        "name": "血色のマント",
+        "defense": 2,
+        "skillAmp": 6,
+        "code": 202613
+    },
+    "202512": {
+        "name": "血の掟",
+        "attackPower": 8,
+        "code": 202614
+    },
+    "202513": {
+        "name": "ロックスタージャケット",
+        "attackPower": 5,
+        "penetrationDefense": 2,
+        "code": 202615
+    },
+    "202514": {
+        "name": "クチュリエ",
+        "defense": 3,
+        "skillAmp": 5,
+        "code": 202616
+    },
+    "202515": {
+        "name": "タクティカル・アーマー",
+        "attackPower": 4,
+        "defense": 4,
+        "penetrationDefense": 1,
+        "code": 202617
+    },
+    "202516": {
+        "name": "エルフドレス",
+        "defense": 5,
+        "skillAmp": 5,
+        "code": 202618
+    },
+    "202517": {
+        "name": "タイタンアーマー",
+        "defense": 3,
+        "maxHpByLv": 2,
+        "attackSpeedRatio": 0.04,
+        "code": 202619
+    },
+    "202523": {
+        "name": "ギリースーツ",
+        "attackPowerByLv": 2,
+        "attackSpeedRatio": 0.06,
+        "criticalStrikeChance": 0.02,
+        "code": 202620
+    },
+    "202524": {
+        "name": "スペクター",
+        "defense": 4,
+        "maxHp": 50,
+        "code": 202621
+    },
+    "202525": {
+        "name": "賢者のローブ",
+        "attackPower": 4,
+        "defense": 3,
+        "attackSpeedRatio": 0.05,
+        "code": 202622
+    },
+    "202209": {
+        "name": "ビキニ",
+        "skillAmp": 7,
+        "lifeSteal": 0.04,
+        "code": 202623
+    },
+    "202504": {
+        "name": "バーガンディ47",
+        "attackPower": 4,
+        "lifeSteal": 0.04,
+        "code": 202624
+    },
+    "202502": {
+        "name": "クイーンオブハート",
+        "defense": 4,
+        "skillAmp": 8,
+        "code": 202625
+    },
+    "202521": {
+        "name": "レーシングスーツ",
+        "defense": 4,
+        "maxHpByLv": 3,
+        "code": 202626
+    },
+    "202522": {
+        "name": "幽霊花嫁のドレス",
+        "defense": 4,
+        "maxHpByLv": 3,
+        "code": 202627
+    },
+    "202518": {
+        "name": "レヴェナント",
+        "defense": 4,
+        "maxHp": 50,
+        "code": 202628
+    },
+    "202526": {
+        "name": "異端審判官",
+        "defense": 3,
+        "skillAmp": 5,
+        "code": 202629
+    },
+    "202527": {
+        "name": "黒炎竜の鎧",
+        "defense": 5,
+        "maxHpByLv": 2,
+        "code": 202630
+    }
+}

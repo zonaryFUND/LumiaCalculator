@@ -18,13 +18,13 @@ export default function useItemSkills(config: SubjectConfig): Response {
     const range = weaponRange(config);
 
     return React.useMemo(() => {
-        return Object.values(config.equipment)
-            .flatMap(id => {
+        const {isChestDavid, ...equipment} = config.equipment;
+        return Object.entries(equipment)
+            .flatMap(([position, id]) => {
                 if (id == null) return [];
                 const rawStatus = EquipmentStatusDictionary[id];
-                const skill = rawStatus.david?.from ? EquipmentStatusDictionary[rawStatus.david.from].skill : rawStatus.skill;
 
-                return (skill ?? [])
+                return (rawStatus.skill ?? [])
                     .flatMap(ability => {
                         if (EquipmentAbilityDamageTable[ability.skillCode] == undefined) return [];
 
@@ -32,7 +32,7 @@ export default function useItemSkills(config: SubjectConfig): Response {
                             importedDamage: ability.dmg,
                             importedValues: ability.values
                         }).map(entry => {
-                            const itemWithSkillName = `${ignorePseudoTag(intl.formatMessage({id: `Item/Skills/${ability.skillCode}/Name`}))}(${intl.formatMessage({id: `Item/Name/${id}`})})`;
+                            const itemWithSkillName = `${ignorePseudoTag(intl.formatMessage({id: `Item/Skills/${ability.skillCode}/Name`}))}(${intl.formatMessage({id: `Item/Name/${id}${position == "Chest" && isChestDavid ? "_D" : ""}`})})`;
                             const label = entry.labelIntlID ? intl.formatMessage({id: entry.labelIntlID}, {item: itemWithSkillName, value: entry.intlValue}) : itemWithSkillName;
                             const value = "melee" in entry.value ? entry.value[range] : entry.value;
                             return {...entry, label, value}

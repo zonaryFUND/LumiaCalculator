@@ -2,7 +2,7 @@ import * as React from "react";
 import { SubjectConfig } from "../config/type";
 import { Status } from "./type";
 import { BaseStatus, LevelUpStatus, WeaponMasteryStatus } from "app-types/subject-static";
-import { EquipmentStatusDictionary, EquipmentStatusValueKey } from "app-types/equipment";
+import { DavidChestArmorUpgradeDictionary, EquipmentStatusDictionary, EquipmentStatusValueKey } from "app-types/equipment";
 import Decimal from "decimal.js";
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { WeaponTypeID, WeaponTypeStatus } from "app-types/equipment/weapon";
@@ -16,9 +16,26 @@ export function useStatus(config: SubjectConfig): [Status, StateProps<number>] {
     const baseStatus = React.useMemo(() => BaseStatus[config.subject], [config.subject]);
     const levelupStatus = React.useMemo(() => LevelUpStatus[config.subject], [config.subject]);
     const equipmentStatus = React.useMemo(() => 
-        Object.values(config.equipment)
-            .filter((id): id is number => id !== null)
-            .map(id => EquipmentStatusDictionary[id])
+        Object.entries(config.equipment)
+            .flatMap(([key, id]) => {
+                if (id == null || typeof id != "number") {
+                    return [];
+                }
+
+                const status = EquipmentStatusDictionary[id];
+                const upgrade = DavidChestArmorUpgradeDictionary[id];
+                if (key == "Chest" && config.equipment.isChestDavid && upgrade != undefined) {
+                    const upgrade = DavidChestArmorUpgradeDictionary[id];
+                    return Object.entries(upgrade).reduce((prev, [statusKey, value]) => {
+                        return {
+                            ...prev,
+                            [statusKey]: (prev[statusKey as EquipmentStatusValueKey] ?? new Decimal(0)).add(value)
+                        }
+                    }, status);
+                } else {
+                    return status;
+                }
+            })
     , [config.equipment]);
 
     const sumEquipmentStatus = (key: EquipmentStatusValueKey): Decimal | undefined => {

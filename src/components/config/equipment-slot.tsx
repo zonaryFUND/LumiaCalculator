@@ -38,6 +38,7 @@ const equipmentSlot: React.FC<Props> = props => {
                     props.equipment[0][props.slot] ?
                     <Item 
                         itemID={props.equipment[0][props.slot]!} 
+                        isDavid={props.equipment[0].isChestDavid == true}
                         slot={props.slot} 
                         inSlot={true} 
                         onSingleClick={toggleSelecting}

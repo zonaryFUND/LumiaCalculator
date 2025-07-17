@@ -7,6 +7,7 @@ export type OpenModalSkillProps = {
 
 export type OpenModalItemProps = {
     itemCode: number,
+    isDavid: boolean,
     onSlot: boolean,
     subjectSide: "left" | "right" | undefined
 }

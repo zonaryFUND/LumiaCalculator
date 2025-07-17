@@ -18,6 +18,7 @@ const Bed: React.FC<{code: number, showEquation: boolean}> = ({ code, showEquati
             <Tooltip 
                 showEquation={showEquation}
                 config={config}
+                isDavid={false}
                 status={status}
                 itemID={+code}
             />

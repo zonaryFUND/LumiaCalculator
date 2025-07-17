@@ -1,8 +1,9 @@
 import * as React from "react";
 import { useLocalStorageConfig } from "@app/storage/config";
-import { SubjectConfig, SubjectConfigDefault } from "app-types/subject-dynamic/config";
+import { Equipment, SubjectConfig, SubjectConfigDefault } from "app-types/subject-dynamic/config";
 import { SubjectCode } from "app-types/subject-static";
 import { StateWrapped } from "@app/util/state";
+import { ArmArmorCodes, ChestArmorCodes, DavidChestArmorUpgradeDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
 
 export type SubjectConfigProps = {
     value: SubjectConfig
@@ -11,7 +12,24 @@ export type SubjectConfigProps = {
 
 export function useSubjectConfig(storageKey: string): SubjectConfigProps {
     const [storageConfig, saveStorageConfig] = useLocalStorageConfig(storageKey);
-    const defaultConfig = storageConfig ?? SubjectConfigDefault;
+    const defaultConfig: SubjectConfig = (() => {
+        if (storageConfig) {
+            const equipment = storageConfig.equipment;
+            const allWeaponCodes = Object.values(WeaponTypeCodes).flat();
+            const Chest = equipment.Chest && ChestArmorCodes.includes(equipment.Chest) ? equipment.Chest : null;
+            const sanitizedEquipment: Equipment = {
+                Weapon: equipment.Weapon && allWeaponCodes.includes(equipment.Weapon) ? equipment.Weapon : null,
+                Head: equipment.Head && HeadArmorCodes.includes(equipment.Head) ? equipment.Head : null,
+                Chest,
+                isChestDavid: equipment.isChestDavid && Chest != null && DavidChestArmorUpgradeDictionary[Chest] != undefined,
+                Arm: equipment.Arm && ArmArmorCodes.includes(equipment.Arm) ? equipment.Arm : null,
+                Leg: equipment.Leg && LegArmorCodes.includes(equipment.Leg) ? equipment.Leg : null
+            };
+            return {...storageConfig, equipment: sanitizedEquipment};
+        } else {
+            return SubjectConfigDefault;
+        }
+    })();
 
     const [subject, setSubject] = React.useState<SubjectCode>(defaultConfig.subject);
     const [level, setLevel] = React.useState(defaultConfig.level);

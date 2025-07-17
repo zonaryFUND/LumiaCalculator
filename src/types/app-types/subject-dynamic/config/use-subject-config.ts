@@ -2,14 +2,37 @@ import { StateWrapped } from "@app/util/state"
 import { SubjectCode } from "app-types/subject-static"
 import { SubjectConfig, SubjectConfigDefault } from "./type"
 import React, { useCallback } from "react"
+import { Equipment } from "./equipment"
+import { DavidChestArmorUpgradeDictionary, HeadArmorCodes, WeaponTypeCodes } from "app-types/equipment"
 
 type Response = StateWrapped<SubjectConfig> & {
     value: SubjectConfig
     setConfig: (config: SubjectConfig) => void
 }
 
+/*
 export default function(storage?: { value?: SubjectConfig | undefined, update: (config: SubjectConfig) => void }): Response {
-    const defaultConfig: SubjectConfig = storage?.value ?? SubjectConfigDefault
+    const defaultConfig: SubjectConfig = (() => {
+        if (storage?.value) {
+            const equipment = storage.value.equipment;
+            console.log(equipment)
+            const allWeaponCodes = Object.values(WeaponTypeCodes).flat();
+            const Chest = equipment.Chest && HeadArmorCodes.includes(equipment.Chest) ? equipment.Chest : null;
+            const sanitizedEquipment: Equipment = {
+                Weapon: equipment.Weapon && allWeaponCodes.includes(equipment.Weapon) ? equipment.Weapon : null,
+                Head: equipment.Head && HeadArmorCodes.includes(equipment.Head) ? equipment.Head : null,
+                Chest,
+                isChestDavid: equipment.isChestDavid && Chest != null && DavidChestArmorUpgradeDictionary[Chest] != undefined,
+                Arm: equipment.Arm && HeadArmorCodes.includes(equipment.Arm) ? equipment.Arm : null,
+                Leg: equipment.Leg && HeadArmorCodes.includes(equipment.Leg) ? equipment.Leg : null
+            }
+            return {...storage.value, equipment: sanitizedEquipment};
+        } else {
+            return SubjectConfigDefault;
+        }
+    })();
+
+    console.log(defaultConfig)
 
     const [subject, setSubject] = React.useState<SubjectCode>(defaultConfig.subject);
     const [level, setLevel] = React.useState(defaultConfig.level);
@@ -59,3 +82,4 @@ export default function(storage?: { value?: SubjectConfig | undefined, update: (
         setConfig
     }
 }
+    */

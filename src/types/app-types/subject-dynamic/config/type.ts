@@ -20,6 +20,7 @@ export const SubjectConfigDefault: SubjectConfig = {
         Weapon: null,
         Head: null,
         Chest: null,
+        isChestDavid: false,
         Arm: null,
         Leg: null
     },

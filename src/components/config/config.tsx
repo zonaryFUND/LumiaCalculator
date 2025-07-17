@@ -20,7 +20,7 @@ import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";
 import saveStyle from "components/modal/save-build/index.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { ArmorStatusDictionary } from "app-types/equipment";
+import { ArmorStatusDictionary, DavidChestArmorUpgradeDictionary } from "app-types/equipment";
 
 export type CurrentHPProps = {
     currentHP?: StateProps<number>
@@ -44,21 +44,13 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
         return SubjectGaugeInfoDictionary[props.subject[0]];
     }, [props.subject[0]]);
 
-    const [isDavid, showDavidCheckbox] = React.useMemo(() => {
-        if (props.equipment[0].Chest == null) return [false, false];
-        const status = ArmorStatusDictionary[props.equipment[0].Chest];
-        return [
-            status.david?.from != undefined,
-            status.david != undefined
-        ];
+    const davidUpgrade = React.useMemo(() => {
+        if (props.equipment[0].Chest == null) return undefined;
+
+        return DavidChestArmorUpgradeDictionary[props.equipment[0].Chest];
     }, [props.equipment[0].Chest]);
     const onChangeDavidCheckBox = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-        const to = event.target.checked;
-        
-        props.equipment[1](prev => {
-            const Chest = ArmorStatusDictionary[prev.Chest!].david?.[to ? "to" : "from"]!;
-            return {...prev, Chest}
-        })
+        props.equipment[1](prev => ({...prev, isChestDavid: event.target.checked}));
     }, [])
 
     // data
@@ -142,8 +134,8 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                         <div />
                         <div className={style.david}>
                         {
-                            showDavidCheckbox ? 
-                            <label><input type="checkbox" checked={isDavid} onChange={onChangeDavidCheckBox} />David</label> : 
+                            davidUpgrade != undefined ? 
+                            <label><input type="checkbox" checked={props.equipment[0].isChestDavid} onChange={onChangeDavidCheckBox} />David</label> : 
                             null
                         }
                         </div>

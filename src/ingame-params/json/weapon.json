@@ -40,7 +40,7 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 80,
+        "skillAmp": 82,
         "maxHp": 50,
         "code": 101408,
         "weaponType": "OneHandSword",
@@ -116,7 +116,7 @@
     },
     {
         "attackPower": 36,
-        "skillAmp": 89,
+        "skillAmp": 90,
         "spRegenRatio": 0.5,
         "code": 102408,
         "weaponType": "TwoHandSword",
@@ -181,7 +181,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 93,
+        "skillAmp": 97,
         "code": 102503,
         "weaponType": "TwoHandSword",
         "itemGrade": "Legend"
@@ -226,7 +226,7 @@
     },
     {
         "attackPower": 31,
-        "skillAmp": 84,
+        "skillAmp": 88,
         "cooldownReduction": 15,
         "code": 103502,
         "weaponType": "DualSword",
@@ -353,7 +353,7 @@
     },
     {
         "attackPower": 50,
-        "skillAmp": 76,
+        "skillAmp": 78,
         "uniqueAttackRange": 0.3,
         "code": 105404,
         "weaponType": "Axe",
@@ -462,7 +462,7 @@
     {
         "attackPower": 35,
         "defense": 6,
-        "skillAmp": 87,
+        "skillAmp": 89,
         "code": 107407,
         "weaponType": "Spear",
         "itemGrade": "Epic"
@@ -601,7 +601,7 @@
     },
     {
         "attackPower": 28,
-        "skillAmp": 50,
+        "skillAmp": 55,
         "maxHp": 100,
         "code": 109405,
         "weaponType": "Whip",
@@ -644,7 +644,7 @@
     },
     {
         "attackPower": 41,
-        "skillAmp": 70,
+        "skillAmp": 72,
         "maxHp": 100,
         "code": 110406,
         "weaponType": "Glove",
@@ -742,7 +742,7 @@
     {
         "attackPower": 40,
         "defense": 5,
-        "skillAmp": 85,
+        "skillAmp": 86,
         "code": 111403,
         "weaponType": "Tonfa",
         "itemGrade": "Epic"
@@ -834,7 +834,7 @@
     },
     {
         "attackPower": 65,
-        "attackSpeedRatio": 0.15,
+        "attackSpeedRatio": 0.2,
         "code": 112402,
         "weaponType": "HighAngleFire",
         "itemGrade": "Epic"
@@ -1012,7 +1012,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 67,
+        "attackPower": 69,
         "attackSpeedRatio": 0.3,
         "moveSpeedRatio": 0.02,
         "code": 114406,
@@ -1085,7 +1085,7 @@
     },
     {
         "attackPower": 51,
-        "skillAmp": 82,
+        "skillAmp": 85,
         "cooldownReduction": 15,
         "code": 115405,
         "weaponType": "CrossBow",
@@ -1153,7 +1153,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 68,
+        "skillAmp": 70,
         "attackSpeedRatio": 0.3,
         "lifeSteal": 0.04,
         "code": 116406,
@@ -1232,7 +1232,7 @@
     },
     {
         "attackPower": 35,
-        "skillAmp": 69,
+        "skillAmp": 71,
         "cooldownReduction": 10,
         "code": 117405,
         "weaponType": "AssaultRifle",
@@ -1377,7 +1377,7 @@
     },
     {
         "attackPower": 38,
-        "skillAmp": 83,
+        "skillAmp": 85,
         "code": 119301,
         "weaponType": "Nunchaku",
         "itemGrade": "Epic"
@@ -1621,7 +1621,7 @@
     },
     {
         "attackPower": 25,
-        "skillAmp": 75,
+        "skillAmp": 77,
         "sightRange": 1,
         "code": 122401,
         "weaponType": "Camera",
