@@ -67,7 +67,7 @@
     "T": {
         "duration": 2,
         "damage": {
-            "attack": [15,20,25],
+            "attack": [10,15,20],
             "basicAttackAmp": 100
         },
         "shared_cooldown": [11,10,9],

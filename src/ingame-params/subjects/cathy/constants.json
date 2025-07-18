@@ -11,7 +11,7 @@
         "cast_acceleration_attack_speed": 1,
         "dual_sword": 110,
         "sp_cost": [50,55,60,65,70],
-        "cooldown": 16
+        "cooldown": 15
     },
     "W": {
         "inner_damage": {

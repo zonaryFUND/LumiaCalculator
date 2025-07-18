@@ -24,7 +24,7 @@
         },
         "cc_immune": 1,
         "sp_cost": 30,
-        "cooldown": [16,15,14,13,12]
+        "cooldown": [15,14,13,12,11]
     },
     "E": {
         "damage": {
