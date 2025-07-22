@@ -601,6 +601,14 @@
 			"penetration": 0.12
 		}
 	},
+	"205201": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 12
+		}
+	},
 	"205401": {
 		"skillCode": 6035001,
 		"name": "quickstep"
@@ -625,6 +633,14 @@
 	"205408": {
 		"skillCode": 6017026,
 		"name": "rush"
+	},
+	"205502": {
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 50,
+			"amp": 15
+		}
 	},
 	"205505": {
 		"skillCode": 6002005,

@@ -2,6 +2,6 @@
     "duration": 5,
     "attack": 3,
     "attack_speed": 3,
-    "max_stack": 10,
-    "movement_speed": 10
+    "max_stack": 8,
+    "movement_speed": 8
 }

@@ -29,7 +29,7 @@
         "taunt": 0.7,
         "weapon_swap": 4,
         "sp_cost": [50,55,60,65,70],
-        "cooldown": 12
+        "cooldown": 13
     },
     "RangeQ": {
         "damage": {
@@ -65,7 +65,7 @@
         },
         "weapon_swap": 4,
         "sp_cost": 80,
-        "cooldown": 12
+        "cooldown": 13
     },
     "R": {
         "first_damage": {
