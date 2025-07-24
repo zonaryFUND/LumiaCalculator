@@ -26,10 +26,10 @@
         "duration": 7,
         "damage": {
             "base": [30,40,50,60,70],
-            "amp": 26
+            "amp": 24
         },
         "sp_cost": [30,35,40,45,50],
-        "cooldown": [11,10.5,10,9.5,9]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "E": {
         "range_increase": 1,

@@ -1,0 +1,18 @@
+{
+    "subject.xuelin.passive-additional": "T追加ダメージ",
+    "subject.xuelin.q-throw": "Q投擲",
+    "subject.xuelin.q-dot-1hit": "残留Q1ヒット",
+    "subject.xuelin.q-dot-max-hit": "残留Q最大ヒット({value})",
+    "subject.xuelin.q-retrieve-dot-1hit": "回収Q1ヒット",
+    "subject.xuelin.q-retrieve-dot-max-hit": "回収Q最大ヒット({value})",
+    "subject.xuelin.w-enhanced": "防御成功W",
+    "subject.xuelin.e-through": "E通過",
+    "subject.xuelin.e-chase": "E追撃",
+    "subject.xuelin.r-first": "R起動",
+    "subject.xuelin.r-additional": "R追加ダメージ",
+    "subject.xuelin.r-enhanced": "R強化追加ダメージ",
+    "subject.xuelin.r-e-chase": "R中E追加攻撃ダメージ",
+    "subject.xuelin.r-e-chase-same-target": "R中E追加攻撃ダメージ(2回目以降)",
+    "subject.xuelin.t-heal": "T回復"
+
+}

@@ -6,7 +6,7 @@
         },
         "additional_damage": {
             "base": [50,95,140,185,230],
-            "amp": 25
+            "amp": 30
         },
         "slow": {
             "duration": 1.5,

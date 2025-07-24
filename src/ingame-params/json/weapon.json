@@ -1773,6 +1773,7 @@
         "attackPower": 57,
         "attackSpeedRatio": 0.15,
         "increaseBasicAttackDamageRatioByLv": 0.008,
+        "uniqueAttackRange": 0.2,
         "code": 131401,
         "weaponType": "VFArm",
         "itemGrade": "Epic"
@@ -1797,6 +1798,7 @@
         "attackPower": 63,
         "attackSpeedRatio": 0.2,
         "increaseBasicAttackDamageRatioByLv": 0.01,
+        "uniqueAttackRange": 0.2,
         "code": 131501,
         "weaponType": "VFArm",
         "itemGrade": "Legend"
@@ -1805,6 +1807,7 @@
         "attackPower": 70,
         "attackSpeedRatio": 0.3,
         "increaseBasicAttackDamageRatioByLv": 0.01,
+        "uniqueAttackRange": 0.2,
         "uniqueTenacity": 0.3,
         "code": 131502,
         "weaponType": "VFArm",
@@ -1815,6 +1818,7 @@
         "attackSpeedRatio": 0.35,
         "increaseBasicAttackDamageRatioByLv": 0.01,
         "penetrationDefenseRatio": 0.12,
+        "uniqueAttackRange": 0.2,
         "code": 131503,
         "weaponType": "VFArm",
         "itemGrade": "Mythic"

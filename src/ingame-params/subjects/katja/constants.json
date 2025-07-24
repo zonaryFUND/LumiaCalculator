@@ -2,11 +2,11 @@
     "Q": {
         "min_damage": {
             "base": [40,80,120,160,200],
-            "attack": 60
+            "attack": 70
         },
         "max_damage": {
             "base": [60,120,180,240,300],
-            "attack": 90
+            "attack": 105
         },
         "attack_speed": {
             "duration": 4,

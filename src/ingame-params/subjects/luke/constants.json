@@ -47,7 +47,7 @@
         "stack_damage": {
             "base": [20,45,70],
             "attack": 10,
-            "targetMaxHP": 2
+            "targetMaxHP": 2.5
         },
         "stack_slow": {
             "duration": 1.25,

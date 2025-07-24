@@ -125,7 +125,7 @@
 		"name": "debilitation",
 		"dmg": {
 			"targetMaxHP": {
-				"base": 0.8,
+				"base": 0.7,
 				"amp": 0.2
 			}
 		}
@@ -332,7 +332,7 @@
 		"name": "debilitation",
 		"dmg": {
 			"targetMaxHP": {
-				"base": 0.8,
+				"base": 0.7,
 				"amp": 0.2
 			}
 		}
