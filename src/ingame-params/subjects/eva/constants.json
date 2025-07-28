@@ -10,7 +10,6 @@
         },
         "cooldown_reduction": 1,
         "vitalforce": 5,
-        "sp_cost": [75,70,65,60,55],
         "cooldown": [9,8,7,6,5]
     },
     "W": {
@@ -26,12 +25,11 @@
         },
         "airborne": 1,
         "vitalforce": 5,
-        "sp_cost": 80,
         "cooldown": [11,10.5,10,9.5,9]
     },
     "E": {
         "movement_speed": {
-            "duration": 0.5,
+            "duration": 0.65,
             "effect": [120,125,130,135,140]
         },
         "vitalforce": 30,
@@ -41,7 +39,6 @@
             "base": [30,35,40,45,50],
             "amp": 20
         },
-        "sp_cost": [60,65,70,75,80],
         "cooldown": 9
     },
     "R": {

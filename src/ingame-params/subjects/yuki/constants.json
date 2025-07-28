@@ -22,7 +22,7 @@
         "cooldown_reduction": 1,
         "channeling": 1,
         "damage_reduction": {
-            "base": 5,
+            "base": 10,
             "attack": 15
         },
         "e_cooldown_reduction": 3,

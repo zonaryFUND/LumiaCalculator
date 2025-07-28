@@ -2,7 +2,7 @@
     "gap": 7,
     "damage": {
         "base": 50,
-        "amp": 30,
+        "amp": 25,
         "level": 2
     },
     "vision": 3,

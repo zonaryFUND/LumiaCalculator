@@ -4,7 +4,7 @@
             "base": [60,75,90,105,120],
             "attack": 70
         },
-        "cooldown_reduction": 30,
+        "cooldown_reduction": 35,
         "movement_speed": {
             "duration": [1.8,1.9,2,2.1,2.2],
             "effect": [15,20,25,30,35]
@@ -74,7 +74,7 @@
             "effect": 15
         },
         "sp_cost": 90,
-        "cooldown": [22,20,18,16,14]
+        "cooldown": [18,17,16,15,14]
     },
     "E2": {
         "duration": 5,
@@ -84,7 +84,7 @@
             "attack": 40
         },
         "stun": 1,
-        "heal": [30,40,50,60,70],
+        "heal": [50,55,60,65,70],
         "sp_cost": 90,
         "cooldown": [22,20,18,16,14]
     },

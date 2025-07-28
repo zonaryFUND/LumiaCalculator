@@ -11,7 +11,7 @@
         },
         "extend_duration": 1,
         "sp_cost": [10,20,30,40,50],
-        "cooldown": 6
+        "cooldown": 5
     },
     "W": {
         "damage": {

@@ -87,8 +87,7 @@ export function useStatus(config: SubjectConfig): [Status, StateProps<number>] {
             Mastery("sum", config.defenseMastery, BasicAttackReductionPerMastery)
         ),
         preventSkillDamagedRatio: AddComponent(1,
-            Mastery("sum", config.defenseMastery, SkillReductionPerMastery),
-            EquipmentConstant("sum", sumEquipmentStatus("preventSkillDamagedRatio"))
+            Mastery("sum", config.defenseMastery, SkillReductionPerMastery)
         ),
 
         // sp

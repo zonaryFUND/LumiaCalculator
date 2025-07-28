@@ -34,7 +34,7 @@
         "amp": [10,20,30],
         "duration": 1.5,
         "sp_cost": 150,
-        "cooldown": [90,75,60]
+        "cooldown": [80,70,60]
     },
     "T": {
         "ally_losthp_threshold": 25,

@@ -7,6 +7,9 @@ type Status = {
     range: Decimal
 }
 
+/**
+ * 武器種ごとに設定されている、実験体の基礎値に追加される攻撃速度/射程の値が格納されているjsonを洗浄した辞書
+ */
 export const WeaponTypeStatus = Dictionary.reduce((prev, entry) => {
     return {
         ...prev,
