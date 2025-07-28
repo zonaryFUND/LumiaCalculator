@@ -15,7 +15,7 @@
         "retrieve_tick": 0.5,
         "retrieve_dot_damage": {
             "base": [30,35,40,45,50],
-            "attack": 35
+            "attack": 30
         },
         "sp_cost": [10,20,30,40,50],
         "cooldown": [12,11,10,9,8]
