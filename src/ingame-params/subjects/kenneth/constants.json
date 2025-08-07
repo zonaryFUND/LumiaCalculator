@@ -31,7 +31,7 @@
         "attack_speed": [30,35,40,45,50],
         "damage_conversion": 20,
         "damage": {
-            "base": [10,20,30,40,50],
+            "base": [8,16,24,32,40],
             "attack": 20
         },
         "cooldown_reduction": [50,55,60,65,70],

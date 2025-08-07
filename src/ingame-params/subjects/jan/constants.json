@@ -26,14 +26,14 @@
     },
     "W": {
         "damage": {
-            "base": [60,90,120,150,180],
-            "additionalAttack": 60,
+            "base": [50,80,110,140,170],
+            "additionalAttack": 65,
             "amp": 85
         },
         "stun": 0.8,
         "enhanced_damage": {
-            "base": [100,135,170,205,240],
-            "additionalAttack": 85,
+            "base": [80,115,150,185,220],
+            "additionalAttack": 95,
             "amp": 100
         },
         "wall_damage": {

@@ -1,5 +1,5 @@
 {
-    "melee": 12,
+    "melee": 15,
     "range": 10,
-    "effect_range": 7
+    "effect_range": 8
 }

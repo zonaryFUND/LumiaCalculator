@@ -9,7 +9,7 @@
             "base": [60,100,140,180,220],
             "amp": 130
         },
-        "cooldown_reduction": 50,
+        "cooldown_reduction": 55,
         "q2_damage": {
             "base": [30,55,80,105,130],
             "amp": 65
@@ -39,7 +39,7 @@
     "E": {
         "damage": {
             "base": [60,90,120,150,180],
-            "amp": 80
+            "amp": 85
         },
         "slow": {
             "duration": 2,

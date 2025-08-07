@@ -49,7 +49,7 @@
         },
         "multiple_hit_heal_amp": 40,
         "hp_cost_percent": 5,
-        "cooldown": [16,14,12,10,8]
+        "cooldown": [14,12.5,11,9.5,8]
     },
     "R": {
         "first_damage": {

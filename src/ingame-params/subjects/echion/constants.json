@@ -62,8 +62,8 @@
     },
     "R1": {
         "damage": {
-            "base": [80,150,190,230],
-            "attack": 110
+            "base": [40,80,125,170],
+            "additionalAttack": 200
         },
         "slow": {
             "duration": 1,
@@ -99,7 +99,7 @@
         "upgrade": 1
     },
     "T1_2": {
-        "w_cooldown_reduction": 30
+        "w_cooldown_reduction": 15
     },
     "T2_2": {
         "additional_gauge": 3,

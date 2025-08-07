@@ -35,7 +35,7 @@
         "duration": 5,
         "damage": {
             "base": [60,95,130,165,200],
-            "amp": 55
+            "amp": 50
         },
         "sp_cost": [60,50,40,30,20],
         "cooldown": {

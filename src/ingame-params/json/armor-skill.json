@@ -237,6 +237,21 @@
 			}
 		}
 	},
+	"201532": {
+		"skillCode": 6038001,
+		"name": "crushing_blow",
+		"dmg": {
+			"base": 20,
+			"additionalMaxHP": 10,
+			"level": 3
+		},
+		"values": {
+			"heal": {
+				"base": 50,
+				"additionalMaxHP": 18
+			}
+		}
+	},
 	"201701": {
 		"skillCode": 6008202,
 		"name": "healing_reduction_strong"
@@ -389,7 +404,7 @@
 		"name": "awakening",
 		"values": {
 			"as": 30,
-			"ms": 15
+			"ms": 12
 		}
 	},
 	"202526": {
@@ -702,12 +717,12 @@
 		"dmg": {
 			"base": 20,
 			"additionalMaxHP": 10,
-			"level": 2
+			"level": 3
 		},
 		"values": {
 			"heal": {
-				"base": 30,
-				"additionalMaxHP": 15
+				"base": 50,
+				"additionalMaxHP": 18
 			}
 		}
 	},

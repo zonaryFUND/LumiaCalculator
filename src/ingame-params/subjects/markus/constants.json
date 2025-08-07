@@ -34,7 +34,7 @@
         },
         "knockback": 4,
         "sp_cost": [30,35,40,45,50],
-        "cooldown": [11,10,9,8,7]
+        "cooldown": [12,11,10,9,8]
     },
     "R": {
         "tectonic_rift": 3,

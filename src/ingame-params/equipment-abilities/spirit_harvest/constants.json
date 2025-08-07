@@ -6,7 +6,7 @@
     },
     "second_damage": {
         "base": 50,
-        "amp": 50
+        "amp": 45
     },
     "cooldown": 8
 }

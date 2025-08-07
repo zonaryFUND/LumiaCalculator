@@ -37,7 +37,7 @@
         "duration": 4,
         "invulnerable": 0.5,
         "damage_reduction": {
-            "base": [20,25,30,35,40],
+            "base": [20,24,28,32,36],
             "amp": 3
         },
         "sp_cost": [50,55,60,65,70],
@@ -96,7 +96,7 @@
             "maxHP": [2,3,4],
             "amp": 25
         },
-        "revive": [1,1.5,2],
+        "revive": [0.5,0.75,1],
         "additional_heal": {
             "targetMaxHP": {
                 "base": [5,10,15],

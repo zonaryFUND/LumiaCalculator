@@ -13,7 +13,7 @@
             "duration": 1,
             "effect": 40
         },
-        "pull_q_cooldown_reduction": 35,
+        "pull_q_cooldown_reduction": 40,
         "max_buttons": 3,
         "duration": 8,
         "prural_hit": 45,

@@ -55,7 +55,7 @@
         "mark_damage": {
             "targetMaxHP": {
                 "base": [6,10,14],
-                "attack": 4   
+                "attack": 5   
             }
         },
         "sp_cost": [100,125,150],

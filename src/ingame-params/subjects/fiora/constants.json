@@ -30,7 +30,7 @@
         },
         "reuse": 4,
         "sp_cost": 80,
-        "cooldown": 9
+        "cooldown": 8
     },
     "R": {
         "damage": {

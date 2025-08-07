@@ -181,7 +181,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 97,
+        "skillAmp": 102,
         "code": 102503,
         "weaponType": "TwoHandSword",
         "itemGrade": "Legend"
@@ -369,14 +369,14 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 76,
+        "attackPower": 77,
         "attackSpeedRatio": 0.25,
         "code": 105406,
         "weaponType": "Axe",
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 72,
+        "attackPower": 70,
         "attackSpeedRatio": 0.25,
         "cooldownReduction": 10,
         "moveSpeedRatio": 0.02,
@@ -700,7 +700,7 @@
     },
     {
         "attackPower": 60,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "code": 110501,
         "weaponType": "Glove",
         "itemGrade": "Legend"
@@ -758,7 +758,7 @@
     },
     {
         "attackPower": 42,
-        "defense": 8,
+        "defense": 6,
         "skillAmp": 86,
         "cooldownReduction": 15,
         "code": 111405,
@@ -950,7 +950,7 @@
     },
     {
         "attackPower": 41,
-        "skillAmp": 87,
+        "skillAmp": 88,
         "code": 113412,
         "weaponType": "DirectFire",
         "itemGrade": "Legend"
@@ -1192,7 +1192,7 @@
     {
         "attackPower": 40,
         "skillAmp": 86,
-        "attackSpeedRatio": 0.3,
+        "attackSpeedRatio": 0.4,
         "cooldownReduction": 15,
         "code": 116502,
         "weaponType": "Pistol",
@@ -1210,7 +1210,7 @@
     },
     {
         "attackPower": 73,
-        "attackSpeedRatio": 0.15,
+        "attackSpeedRatio": 0.2,
         "normalLifeSteal": 0.1,
         "code": 117403,
         "weaponType": "AssaultRifle",
@@ -1559,7 +1559,7 @@
     },
     {
         "attackPower": 62,
-        "attackSpeedRatio": 0.35,
+        "attackSpeedRatio": 0.3,
         "normalLifeSteal": 0.15,
         "code": 121404,
         "weaponType": "Guitar",
@@ -1906,7 +1906,7 @@
     },
     {
         "attackPower": 22,
-        "adaptiveForce": 59,
+        "adaptiveForce": 60,
         "penetrationDefenseRatio": 0.08,
         "code": 102702,
         "weaponType": "TwoHandSword",

@@ -9,13 +9,13 @@ export const SidewinderRCode = 1044503
 
 export const difinitions = [
     // viper
-    {code: ViperRCode, type: "viper", active: Constants.R0_1.damage, constant: Constants.R0_1},
+    {code: ViperRCode, type: "viper", active: Constants.R0_1.damage, constant: Constants.R0_1.damage},
     // deathadder
-    {code: DeathadderRCode, type: "deathadder", active: Constants.R3.damage, constant: Constants.R3},
+    {code: DeathadderRCode, type: "deathadder", active: Constants.R3.damage, constant: Constants.R3.damage},
     // blackmamba
-    {code: BlackmambaRCode, type: "blackmamba", active: Constants.R2.damage, constant: Constants.R2},
+    {code: BlackmambaRCode, type: "blackmamba", active: Constants.R2.damage, constant: Constants.R2.damage},
     // sidewinder
-    {code: SidewinderRCode, type: "sidewinder", active: Constants.R1.damage, constant: Constants.R1}
+    {code: SidewinderRCode, type: "sidewinder", active: Constants.R1.damage, constant: Constants.R1.damage}
 ].reduce((prev, {code, type, active, constant}) => ({
     ...prev,
     [code]: {
@@ -32,11 +32,16 @@ export const difinitions = [
                 9: `${Constants.R.range_penalty}m`,
             };
             if (showEquation) {
+                const attackRatio = (() => {
+                    if ("attack" in constant) return constant.attack;
+                    return constant.additionalAttack;
+                })();
+
                 return {
                     ...common,
                     5: Constants.R.area_damage.base,
-                    10: constant.damage.base,
-                    11: RatioPercent(constant.damage.attack),
+                    10: constant.base,
+                    11: RatioPercent(attackRatio),
                     12: type == "blackmamba" ? Constants.R2.second : 
                         type == "sidewinder" ? RatioPercent(Constants.R1.slow.effect) : Constants.R.extend,
                     13: type == "blackmamba" ? RatioPercent(Constants.R2.second_damage) :
@@ -54,7 +59,7 @@ export const difinitions = [
                 return {
                     ...common,
                     5: Constants.R.area_damage,
-                    10: constant.damage,
+                    10: constant,
                     12: type == "sidewinder" ? RatioPercent(Constants.R1.slow.effect) : Constants.R.extend,
                     13: type == "blackmamba" ? RatioPercent(Constants.R2.second_damage) : 
                         type == "sidewinder" ? Constants.R.extend : Constants.R.cooldown_reduction,

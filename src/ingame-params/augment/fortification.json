@@ -91,7 +91,7 @@
     },
     "steadfast": {
         "tenacity": {
-            "base": 6,
+            "base": 8,
             "level": 0.5
         }
     },

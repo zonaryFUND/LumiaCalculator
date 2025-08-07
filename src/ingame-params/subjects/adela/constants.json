@@ -4,7 +4,7 @@
             "base": [40,80,120,160,200],
             "amp": 60
         },
-        "movement_speed": [6,7,8,9,10],
+        "movement_speed": [4,5,6,7,8],
         "queen_damage": {
             "base": [50,95,140,185,230],
             "amp": 75

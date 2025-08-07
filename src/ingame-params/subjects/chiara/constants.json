@@ -61,10 +61,10 @@
         },
         "gauge_gain": 30,
         "finish_damage": {
-            "base": [100,150,200],
-            "amp": 35
+            "base": [90,130,170],
+            "amp": 30
         },
-        "additional_damage_per_stack": 10,
+        "additional_damage_per_stack": 15,
         "animal_heal": 10,
         "animal_gauge": 50,
         "gauge_consumption_acceleration": {

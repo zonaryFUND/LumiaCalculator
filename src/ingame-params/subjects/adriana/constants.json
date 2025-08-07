@@ -26,7 +26,7 @@
         "tick": 0.5,
         "damage": {
             "base": [28,36,44,52,60],
-            "amp": 16
+            "amp": 15
         },
         "slow": 30,
         "duration": 5,
@@ -54,7 +54,7 @@
             "base": [20,35,50],
             "amp": 40
         },
-        "defense_reduction": [9,12,15],
+        "defense_reduction": [6,9,12],
         "immune": 8
     }
 }

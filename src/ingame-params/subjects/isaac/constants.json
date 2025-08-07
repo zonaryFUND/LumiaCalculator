@@ -25,7 +25,7 @@
         "stun": 0.65,
         "defense_down": {
             "duration": 3,
-            "effect": 12
+            "effect": 10
         },
         "cooldown": [15,14,13,12,11],
         "sp_cost": 75

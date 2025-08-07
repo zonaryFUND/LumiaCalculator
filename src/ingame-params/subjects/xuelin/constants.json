@@ -76,7 +76,7 @@
         },
         "e_chase_damage": {
             "base": [100,200,300],
-            "attack": 85
+            "attack": 75
         },
         "second_chase_decline": 80,
         "sp_cost": 140,
@@ -86,7 +86,7 @@
         "max_stack": 3,
         "damage": {
             "base": [20,40,60],
-            "attack": [30,40,50]
+            "attack": [20,30,40]
         },
         "qe_cooldown_reduction": 2,
         "heal": {

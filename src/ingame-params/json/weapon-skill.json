@@ -146,13 +146,8 @@
 		}
 	},
 	"102702": {
-		"skillCode": 6019002,
-		"name": "lichs_grasp",
-		"values": {
-			"slow": 99,
-			"duration": 0.56,
-			"cooldown": 4
-		}
+		"skillCode": 6044001,
+		"name": "spirit_harvest"
 	},
 	"103401": {
 		"skillCode": 6008201,
@@ -1345,7 +1340,7 @@
 		},
 		"values": {
 			"slow": {
-				"effect": 30,
+				"effect": 20,
 				"duration": 1
 			}
 		}
@@ -1424,7 +1419,7 @@
 		},
 		"values": {
 			"slow": {
-				"effect": 40,
+				"effect": 30,
 				"duration": 1
 			}
 		}
@@ -1443,7 +1438,7 @@
 		},
 		"values": {
 			"slow": {
-				"effect": 40,
+				"effect": 30,
 				"duration": 1
 			}
 		}
@@ -1462,7 +1457,7 @@
 		},
 		"values": {
 			"slow": {
-				"effect": 40,
+				"effect": 30,
 				"duration": 1
 			}
 		}
