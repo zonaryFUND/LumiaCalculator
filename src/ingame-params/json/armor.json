@@ -326,7 +326,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 16,
+        "defense": 15,
         "maxHpByLv": 20,
         "hpRegenRatio": 1,
         "code": 201532,
@@ -850,7 +850,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 40,
+        "attackPower": 38,
         "penetrationDefense": 9,
         "code": 203407,
         "armorType": "Arm",

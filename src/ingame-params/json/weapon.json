@@ -363,7 +363,6 @@
         "attackPower": 80,
         "attackSpeedRatio": 0.2,
         "cooldownReduction": 10,
-        "moveSpeedRatio": 0.02,
         "code": 105405,
         "weaponType": "Axe",
         "itemGrade": "Epic"
@@ -379,7 +378,6 @@
         "attackPower": 70,
         "attackSpeedRatio": 0.25,
         "cooldownReduction": 10,
-        "moveSpeedRatio": 0.02,
         "code": 105407,
         "weaponType": "Axe",
         "itemGrade": "Legend"

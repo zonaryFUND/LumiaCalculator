@@ -35,12 +35,12 @@
     },
     "R": {
         "duration": [8,9,10],
-        "movement_speed": [10,15,20],
+        "movement_speed": [8,12,16],
         "attack_speed": [20,30,40],
         "extend": 5,
         "damage": {
             "base": [50,125,200],
-            "attack": 50
+            "attack": 40
         },
         "finish_multiplier_max": 2,
         "finish_multiplier_max_hp": 30,

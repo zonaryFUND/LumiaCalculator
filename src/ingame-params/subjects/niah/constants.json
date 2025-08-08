@@ -37,7 +37,7 @@
         "immortal": 0.5,
         "heal": {
             "maxHP": {
-                "base": 30,
+                "base": 40,
                 "amp": 1
             }
         },

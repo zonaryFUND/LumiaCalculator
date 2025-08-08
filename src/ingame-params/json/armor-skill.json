@@ -636,8 +636,8 @@
 		"skillCode": 6058101,
 		"name": "master",
 		"dmg": {
-			"base": 60,
-			"amp": 40,
+			"base": 40,
+			"amp": 35,
 			"level": 2
 		}
 	},
