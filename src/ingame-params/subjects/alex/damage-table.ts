@@ -1,10 +1,10 @@
-import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
+import { weaponTypeIDOf } from "app-types/subject-dynamic/config";
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import Constants from "./constants.json";
 
 const table: DamageTableGenerator = props => {
     const rMax = Constants.R.later_damage.amount;
-    const weaponType = extractWeaponTypeID(props.config);
+    const weaponType = weaponTypeIDOf(props.config);
 
     function common(weaponDependent: SubjectDamageTableUnit[][]): DamageTable {
         return {

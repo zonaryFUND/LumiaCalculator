@@ -1,11 +1,10 @@
 import * as React from "react";
-import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
+import { weaponTypeIDOf, SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
 import { SubjectSkillListExpressionDictionary } from "../../ingame-params/subjects/dictionary";
 import style from "./skills.module.styl";
 import Images from "@app/resources/image";
 import { SubjectSideContext } from "../../ingame-params/subjects/subject-side";
 import PullDown from "components/common/pull-down";
-import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
 import { SubjectDependentSkillKey, SubjectSkillKeys } from "app-types/skill";
 import { SkillTooltipID } from "components/tooltip";
 import { Prohibit } from "@phosphor-icons/react";
@@ -79,7 +78,7 @@ type Props = {
 const subjectSkills: React.FC<Props> = props => {
     const list = SubjectSkillListExpressionDictionary[props.config.subject](props.config);
     const weaponSkillCode = React.useMemo(() => {
-        const weaponType = extractWeaponTypeID(props.config);
+        const weaponType = weaponTypeIDOf(props.config);
         return weaponType ? WeaponSkillCodeDictionary[weaponType] : undefined
     }, [props.config.equipment.Weapon])
 

@@ -1,9 +1,8 @@
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig, weaponRangeOf } from "app-types/subject-dynamic/config";
 import { EquipmentAbilityDamageTable } from "@app/ingame-params/equipment-abilities/dictionary";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import { EquipmentStatusDictionary } from "app-types/equipment";
 import { ignorePseudoTag } from "components/common/ignore-pseudo-tag";
 import { Status } from "app-types/subject-dynamic/status/type";
@@ -15,7 +14,7 @@ type Response = {
 
 export default function useItemSkills(config: SubjectConfig): Response {
     const intl = useIntl();
-    const range = weaponRange(config);
+    const range = weaponRangeOf(config);
 
     return React.useMemo(() => {
         const {isChestDavid, ...equipment} = config.equipment;

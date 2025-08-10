@@ -1,11 +1,11 @@
 import Constants from "./constants.json";
 import SanitizeValueRatio from "../use-sanitize-value-ratio";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { FilterUndefined, RatioPercent, RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
+import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedDamage, importedValues }) => {
-    const range = weaponRange(config);
+    const range = weaponRangeOf(config);
     const sanitizedDamage = SanitizeValueRatio(importedDamage);
 
     const meleeMessage = {

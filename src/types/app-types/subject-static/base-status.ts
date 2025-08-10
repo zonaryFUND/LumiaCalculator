@@ -2,6 +2,9 @@ import Decimal from "decimal.js";
 import { NimbleAPIJSON } from "@params-json";
 import { Status } from "app-types/subject-dynamic/status/type";
 
+/**
+ * 実験体のステータスJSONのうち、共通してゼロであるものを除いた、基礎ステータス数値の部分オブジェクト
+ */
 type BaseStatusType = {
     maxHp: Decimal
     maxSp: Decimal
@@ -17,14 +20,6 @@ const [
     baseStatus, 
     subjectCodeMax
 ] = NimbleAPIJSON.SubjectBaseStatus.reduce(([rawData, codeMax], entry) => {
-    const sanitizedID = (() => {
-        const lowercase = entry.name.toLowerCase();
-        if (lowercase == "lidailin") return "li_dailin";
-        if (lowercase == "debimarlene") return "debi_marlene";
-        if (lowercase == "lyanh") return "ly_anh";
-        return lowercase;
-    })();
-
     return [
         {
             ...rawData,

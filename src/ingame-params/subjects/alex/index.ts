@@ -9,7 +9,7 @@ import * as MeleeE from "./meleee";
 import * as RangeE from "./rangee";
 import * as R from "./r";
 import * as T from "./t";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
+import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
 
 export default defineSubject({
@@ -19,7 +19,7 @@ export default defineSubject({
 
     skills: {
         listExpression: (config) => {
-            const range = weaponRange(config);
+            const range = weaponRangeOf(config);
 
             if (range == "melee") {
                 return {

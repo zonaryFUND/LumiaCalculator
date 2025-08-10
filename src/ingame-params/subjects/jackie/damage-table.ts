@@ -1,9 +1,9 @@
+import { weaponTypeIDOf } from "app-types/subject-dynamic/config";
 import { DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import Constants from "./constants.json";
-import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
 
 const table: DamageTableGenerator = props => {
-    const weaponType = extractWeaponTypeID(props.config);
+    const weaponType = weaponTypeIDOf(props.config);
 
     return {
         basicAttack: [

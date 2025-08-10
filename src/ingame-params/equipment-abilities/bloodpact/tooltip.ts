@@ -1,9 +1,9 @@
 import Constants from "./constants.json";
-import { AdaptiveTarget } from "app-types/subject-dynamic/config/extract-weapon-type-id";
 import { EquipmentAbilityTooltipValues } from "../type";
+import { adaptiveForceTargetOf } from "app-types/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, config }) => {
-    const attack = config ? AdaptiveTarget(config) == "attackPower" : true;
+    const attack = config ? adaptiveForceTargetOf(config) == "attackPower" : true;
 
     return {
         0: Constants.threshold,

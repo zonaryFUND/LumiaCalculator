@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { FilterUndefined, RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
+import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedDamage }) => {
     if (importedDamage == undefined) throw new Error("electric shock needs imported damage");
@@ -23,7 +23,7 @@ const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedD
             11: Constants.duration
         })
     } else {
-        const rangeDependent = importedDamage[weaponRange(config)];
+        const rangeDependent = importedDamage[weaponRangeOf(config)];
         return FilterUndefined({
             ...base,
             1: RatioPercentOptional(rangeDependent.targetMaxHP),

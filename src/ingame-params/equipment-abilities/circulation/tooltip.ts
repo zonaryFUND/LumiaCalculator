@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { FilterUndefined, RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
+import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedDamage, importedValues }) => {
-    const range = weaponRange(config);
+    const range = weaponRangeOf(config);
     const rangeDependentDamage = (() => {
         if (importedDamage != undefined && "melee" in importedDamage) {
             return importedDamage[range];

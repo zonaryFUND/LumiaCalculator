@@ -1,12 +1,12 @@
 import Constants from "./constants.json";
-import { useValueContextOptional } from "components/tooltip/value-context";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
+import { useValueContext, useValueContextOptional } from "components/tooltip/value-context";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
+import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ importedDamage }) => {
-    const { config } = useValueContextOptional();
-    const range = weaponRange(config);
+    const { config } = useValueContext();
+    const range = weaponRangeOf(config);
     const rangeDependentDamage = (() => {
         if ("melee" in importedDamage! && "range" in importedDamage!) {
             return importedDamage![range];

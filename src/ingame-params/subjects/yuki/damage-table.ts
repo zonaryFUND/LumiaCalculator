@@ -1,10 +1,10 @@
 import skill from "components/status/chunks/03_skill";
 import { DamageTableGenerator } from "../type";
 import Constants from "./constants.json";
-import extractWeaponTypeID from "app-types/subject-dynamic/config/extract-weapon-type-id";
+import { weaponTypeIDOf } from "app-types/subject-dynamic/config";
 
 const table: DamageTableGenerator = props => {
-    const weaponType = extractWeaponTypeID(props.config);
+    const weaponType = weaponTypeIDOf(props.config);
 
     return {
         basicAttack: [

@@ -1,10 +1,10 @@
 import Constants from "./constants.json";
 import { StatusOverrideFunc } from "../type";
-import weaponRange from "app-types/subject-dynamic/config/weapon-range";
 import { AddComponent } from "app-types/subject-dynamic/status/value/type";
+import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
 const f: StatusOverrideFunc = (status, config) => {
-    const range = weaponRange(config);
+    const range = weaponRangeOf(config);
 
     return {
         ...status,
