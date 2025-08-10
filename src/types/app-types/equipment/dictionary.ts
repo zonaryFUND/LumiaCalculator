@@ -1,10 +1,6 @@
 import Decimal from "decimal.js";
 import { EquipmentSkill, EquipmentStatus, EquipmentStatusKeys, EquipmentStatusValueKey, PercentExpressedEquipmentStatusKeys } from "./status";
-import Weapons from "@app/ingame-params/json/weapon.json";
-import WeaponSkill from "@app/ingame-params/json/weapon-skill.json";
-import Armors from "@app/ingame-params/json/armor.json";
-import DavidUpgrade from "@app/ingame-params/json/david-upgrade.json";
-import ArmorSkill from "@app/ingame-params/json/armor-skill.json";
+import { NimbleAPIJSON, FabricatedJSON } from "@params-json";
 import { WeaponTypeID } from "./weapon"
 import * as es from "es-toolkit/object"
 import { ValueRatio } from "app-types/value-ratio";
@@ -43,7 +39,7 @@ export const [
     WeaponTypeCodes,
     WeaponStatusDictionary
 ] = (() => {
-    const [codes, statusDictionary] = Weapons.reduce(([codes, status], entry) => {
+    const [codes, statusDictionary] = NimbleAPIJSON.WeaponStatus.reduce(([codes, status], entry) => {
         const {code, weaponType, ...extractedStatus} = entry;
         const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
             if (typeof value != "number") return value;
@@ -66,7 +62,7 @@ export const [
             },
             {
                 ...status,
-                [entry.code]: {...valuesMapped, type: weaponType, skill: abilities(code.toString(), WeaponSkill)} as EquipmentStatus
+                [entry.code]: {...valuesMapped, type: weaponType, skill: abilities(code.toString(), FabricatedJSON.WeaponAbility)} as EquipmentStatus
             }
         ]
     }, [
@@ -91,7 +87,7 @@ export const [
     ArmorStatusDictionary,
     DavidChestArmorUpgradeDictionary
 ] = (() => {
-    const armors = Armors.reduce(({headIDs, chestIDs, armIDs, legIDs, status}, entry) => {
+    const armors = NimbleAPIJSON.ArmorStatus.reduce(({headIDs, chestIDs, armIDs, legIDs, status}, entry) => {
         const {code, armorType, ...extractedStatus} = entry
         const valuesMapped = es.mapValues(extractedStatus, (value, key) => {
             if (typeof value != "number") return value;
@@ -105,7 +101,7 @@ export const [
             legIDs: entry.armorType == "Leg" ? legIDs.concat(entry.code) : legIDs,
             status: {
                 ...status,
-                [entry.code]: {...valuesMapped, type: armorType, skill: abilities(code.toString(), ArmorSkill)} as EquipmentStatus
+                [entry.code]: {...valuesMapped, type: armorType, skill: abilities(code.toString(), FabricatedJSON.ArmorAbility)} as EquipmentStatus
             }
         }
     }, {
@@ -116,7 +112,7 @@ export const [
         status: {} as {[code: number]: EquipmentStatus}
     });
 
-    const davidUpgrade = Object.entries(DavidUpgrade).reduce((prev, jsonTuple) => {
+    const davidUpgrade = Object.entries(FabricatedJSON.DavidUpgradeStatus).reduce((prev, jsonTuple) => {
         const status = Object.entries(jsonTuple[1]).reduce((prev, [key, value]) => {
             if ((EquipmentStatusKeys).includes(key as any)) {
                 return {...prev, [key]: new Decimal(value)};

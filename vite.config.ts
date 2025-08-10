@@ -32,6 +32,7 @@ export default mergeConfig(
         resolve: {
             alias: {
                 "@app": path.resolve(__dirname, "./src"),
+                "@params-json": path.resolve(__dirname, "./src/params-json"),
                 "dictionary": path.resolve(__dirname, "./src/dictionary-jsons"),
                 "app-types": path.resolve(__dirname, "./src/types/app-types"),
                 "components": path.resolve(__dirname, "./src/components"),

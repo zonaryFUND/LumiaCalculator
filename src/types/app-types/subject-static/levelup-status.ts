@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import Dictionary from "@app/ingame-params/json/levelup-status.json";
+import { NimbleAPIJSON } from "@params-json";
 import { SubjectCode } from "./base-status";
 
 type LevelUpStatusType = {
@@ -11,7 +11,7 @@ type LevelUpStatusType = {
     defense: Decimal
 };
 
-export const LevelUpStatus = Dictionary.reduce((rawData, entry) => {
+export const LevelUpStatus = NimbleAPIJSON.LevelUpStatus.reduce((rawData, entry) => {
     return {
         ...rawData,
         [entry.code]: {

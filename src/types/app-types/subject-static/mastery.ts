@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import { WeaponTypeID } from "../equipment/weapon";
 import { SubjectCode } from "./base-status"
-import Dictionary from "@app/ingame-params/json/mastery.json";
+import { NimbleAPIJSON } from "@params-json"
 
 export type Mastery = {
     type: "basic_attack_amp" | "skill_amp" | "attack_power"
@@ -9,7 +9,7 @@ export type Mastery = {
     attackSpeed: Decimal
 }
 
-export const WeaponMasteryStatus = Dictionary.reduce((prev, entry) => {
+export const WeaponMasteryStatus = NimbleAPIJSON.SubjectMasteryIncrement.reduce((prev, entry) => {
     if (entry.characterCode == 0) return prev;
 
     const type = (() => {

@@ -11,6 +11,7 @@
       "app-types/*": ["./src/types/app-types/*"],
       "components/*": ["./src/components/*"],
       "@app/*": ["./src/*"],
+      "@params-json": ["./src/params-json"],
       "resources/*": ["../resources/*"],
       "util/*": ["./src/util/*"]
     },

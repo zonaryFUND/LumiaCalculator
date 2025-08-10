@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
-import Dictionary from "@app/ingame-params/json/weapon-type-status.json"
 import { WeaponTypeID } from "./type-id";
+import { NimbleAPIJSON } from "@app/params-json";
 
 type Status = {
     attackSpeed: Decimal
@@ -10,7 +10,7 @@ type Status = {
 /**
  * 武器種ごとに設定されている、実験体の基礎値に追加される攻撃速度/射程の値が格納されているjsonを洗浄した辞書
  */
-export const WeaponTypeStatus = Dictionary.reduce((prev, entry) => {
+export const WeaponTypeStatus = NimbleAPIJSON.WeaponTypeStatus.reduce((prev, entry) => {
     return {
         ...prev,
         [entry.type]: {

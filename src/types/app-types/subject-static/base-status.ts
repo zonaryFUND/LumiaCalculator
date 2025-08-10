@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import Dictionary from "@app/ingame-params/json/base-status.json";
+import { NimbleAPIJSON } from "@params-json";
 import { Status } from "app-types/subject-dynamic/status/type";
 
 type BaseStatusType = {
@@ -13,7 +13,7 @@ type BaseStatusType = {
     moveSpeed: Decimal
 };
 
-export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = Dictionary.reduce(([rawData, apiCodeDictionary, codeMax], entry) => {
+export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = NimbleAPIJSON.SubjectBaseStatus.reduce(([rawData, apiCodeDictionary, codeMax], entry) => {
     const sanitizedID = (() => {
         const lowercase = entry.name.toLowerCase();
         if (lowercase == "lidailin") return "li_dailin";
