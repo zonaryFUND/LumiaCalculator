@@ -7,7 +7,7 @@ import baseStyle from "../tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
 import { ValueContext } from "../value-context";
 import { FormattedMessage } from "react-intl";
-import { DavidChestArmorUpgradeDictionary, EquipmentStatusDictionary, EquipmentStatusValueKey } from "app-types/equipment";
+import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "app-types/equipment";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
@@ -28,7 +28,7 @@ const itemTooltip: React.FC<Props> = props => {
             const status = Object.entries(davidUpgrade).reduce((prev, [statusKey, value]) => {
                 return {
                     ...prev,
-                    [statusKey]: (prev[statusKey as EquipmentStatusValueKey] ?? new Decimal(0)).add(value)
+                    [statusKey]: (prev[statusKey as keyof EquipmentBaseStatus] ?? new Decimal(0)).add(value)
                 }
             }, rawStatus);
             return { status, isDavid: true };
@@ -50,7 +50,7 @@ const itemTooltip: React.FC<Props> = props => {
         })()
 
         return [Items[props.itemID], typeExpression];
-    }, [props.itemID, status.david]);
+    }, [props.itemID]);
 
     return (
         <div className={`${baseStyle.base} ${style.tooltip} ${style[status.itemGrade.toLowerCase()]}`}>

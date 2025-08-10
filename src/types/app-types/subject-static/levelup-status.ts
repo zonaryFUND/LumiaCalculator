@@ -11,6 +11,11 @@ type LevelUpStatusType = {
     defense: Decimal
 };
 
+/**
+ * 各実験体のレベルアップ時上昇ステータス（Lv1ごと）
+ * 
+ * Key: 実験体ID（数値）
+ */
 export const LevelUpStatus = NimbleAPIJSON.LevelUpStatus.reduce((rawData, entry) => {
     return {
         ...rawData,
@@ -23,4 +28,4 @@ export const LevelUpStatus = NimbleAPIJSON.LevelUpStatus.reduce((rawData, entry)
             defense: new Decimal(entry.defense).cut(1, "round")
         }
     };
-}, {} as {[subjectCode: SubjectCode]: LevelUpStatusType});
+}, {} as Record<SubjectCode, LevelUpStatusType>);

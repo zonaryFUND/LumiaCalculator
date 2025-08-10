@@ -10,42 +10,137 @@ import { EquipmentID } from "./id";
 export type Tier = "Epic" | "Legend" | "Mythic";
 
 /**
- * 装備に設定されたステータスDictionaryの全Key
- * Nimble APIのレスポンスで設定されたものと一致させている
- * APIレスポンスのKeyのうち、現在使われていないステータスに対応するものはコメントアウトされる
+ * 装備品のステータスのうち、固有スキルや等級などの情報を除く、数値ステータスの部分。
+ * 
+ * NimbleNeuron APIレスポンスで定義されたKeyのうち、現Verのゲームで用いられていない数値はコメントアウトされている。
  */
-export const EquipmentStatusKeys = [
-    "attackPower",
-    "attackPowerByLv",
-    "defense",
-    // defenseByLv,
-    "skillAmp",
-    "skillAmpByLevel",
-    "skillAmpRatio",
+export type EquipmentBaseStatus = {
+    /**
+     * 攻撃力
+     */
+    attackPower: Decimal
+    
+    /**
+     * レベル比例攻撃力
+     */
+    
+    attackPowerByLv: Decimal
+    /**
+     * 防御力
+     */
+    
+    defense: Decimal
+
+    // defenseByLv
+
+    /**
+     * スキル増幅
+     */
+    skillAmp: Decimal
+    
+    /**
+     * レベル比例スキル増幅
+     */
+    skillAmpByLevel: Decimal
+    
+    /**
+     * スキル増幅（％表記）
+     */
+    skillAmpRatio: Decimal
+
     // skillAmpRatioByLevel
-    "adaptiveForce",
+
+    /**
+     * 適応型能力
+     */
+    adaptiveForce: Decimal
+
     // "adaptiveForceByLevel",
-    "maxHp",
-    "maxHpByLv",
-    "maxSp",
-    "hpRegenRatio",
+
+    /**
+     * 最大体力
+     */
+    maxHp: Decimal
+
+    /**
+     * レベル比例最大体力
+     */
+    maxHpByLv: Decimal
+
+    /**
+     * 最大スタミナ
+     */
+    maxSp: Decimal
+
+    /**
+     * 体力再生（％表記）
+     */
+    hpRegenRatio: Decimal
+
     // hpRegen
-    "spRegenRatio",
+
+    /**
+     * スタミナ再生（％表記）
+     */
+    spRegenRatio: Decimal
+
     // spRegen
-    "attackSpeedRatio",
+
+    /**
+     * 攻撃速度（％表記）
+     */
+    attackSpeedRatio: Decimal
+
     // attackSpeedRatioByLv
-    "criticalStrikeChance",
-    "criticalStrikeDamage",
+
+    /**
+     * 致命打確率（％表記）
+     */
+    criticalStrikeChance: Decimal
+
+    /**
+     * 致命打ダメージ上昇量（％表記）
+     */
+    criticalStrikeDamage: Decimal
+
     // preventCriticalStrikeDamaged
-    "cooldownReduction",
+
+    /**
+     * クールダウン減少
+     */
+    cooldownReduction: Decimal
+
     // cooldownLimit
-    "lifeSteal",
-    "normalLifeSteal",
+
+    /**
+     * ダメージ吸血
+     */
+    lifeSteal: Decimal
+    
+    /**
+     * 生命力吸収
+     */
+    normalLifeSteal: Decimal
+
     // skillLifeSteal
-    "moveSpeed",
-    "moveSpeedRatio",
+
+    /**
+     * 移動速度
+     */
+    moveSpeed: Decimal
+
+    /**
+     * 移動速度（％表記）
+     */
+    moveSpeedRatio: Decimal
+
     // moveSpeedOutOfCombat
-    "sightRange",
+
+    /**
+     * 視界範囲
+     */
+    sightRange: Decimal
+
     // attackRange?: Decimal // unique only
     // increaseBasicAttackDamage?: Decimal
     // increaseBasicAttackDamageByLv?: Decimal
@@ -54,46 +149,94 @@ export const EquipmentStatusKeys = [
     // preventBasicAttackDamagedRatio?: Decimal
     // preventBasicAttackDamagedRatioByLv?: Decimal
     // increaseBasicAttackDamageRatio?: Decimal
-    "increaseBasicAttackDamageRatioByLv",
+
+    /**
+     * レベル比例基本攻撃増幅（％表記）
+     */
+    increaseBasicAttackDamageRatioByLv: Decimal
+
     // preventSkillDamaged?: Decimal
     // preventSkillDamagedByLv?: Decimal
     // "preventSkillDamagedRatio",
     // preventSkillDamagedRatioByLv": Decimal
-    "penetrationDefense",
-    "penetrationDefenseRatio",
+
+    /**
+     * 防御貫通
+     */
+    penetrationDefense: Decimal
+
+    /**
+     * 防御貫通（％表記）
+     */
+    penetrationDefenseRatio: Decimal
+
     // trapDamageReduce?: Decimal
     // trapDamageReduceRatio?: Decimal
-    "slowResistRatio",
+
+    /**
+     * 移動速度減少耐性（％表記）
+     */
+    slowResistRatio: Decimal
+
     // hpHealedIncreaseRatio?: Decimal // incoming heal only, it is deprecated
-    "healerGiveHpHealRatio",
-    "uniqueAttackRange",
+
+    /**
+     * 与える回復増加（％表記）
+     */
+    healerGiveHpHealRatio: Decimal
+
+    /**
+     * （固有）基本攻撃射程距離
+     */
+    uniqueAttackRange: Decimal
+
     // uniqueHpHealedIncreaseRatio?: Decimal
-    "uniqueCooldownLimit",
-    "uniqueTenacity",
+    // uniqueCooldownLimit: Decimal
+
+    /**
+     * （固有）妨害耐性（％表記）
+     */
+    uniqueTenacity: Decimal
+
     // uniqueMoveSpeed
     // uniquePenetrationDefense
     // uniquePenetrationDefenseRatio
     // uniqueLifeSteal
-    "uniqueSkillAmpRatio",
-    "ultCooldownReduction",
-    "weaponCooldownReduction",
-    "tacticalCooldownReduction"
-] as const;
+
+    /**
+     * （固有）スキル増幅（％表記）
+     */
+    uniqueSkillAmpRatio: Decimal
+
+    /**
+     * 究極技クールダウン減少
+     */
+    ultCooldownReduction: Decimal
+
+    /**
+     * 武器スキルクールダウン減少
+     */
+    weaponCooldownReduction: Decimal
+
+    /**
+     * 戦術スキルクールダウン減少
+     */
+    tacticalCooldownReduction: Decimal
+}
 
 /**
- * 装備に設定されたステータスのKey型
+ * ある装備ステータスKeyがパーセント表記されるべきものかどうか
+ * パーセント表記されるステータスはNimble APIレスポンスJSONにおいて小数表記されており、ゲーム内表記に合わせるには100倍する必要がある
+ * 
+ * @param key 装備ステータスの数値に対応するKey
+ * @returns 
  */
-export type EquipmentStatusValueKey = typeof EquipmentStatusKeys[number]
-
-/**
- * 装備ステータスKeyのうち、その値をツールチップ等で％表記すべきもの
- */
-export const PercentExpressedEquipmentStatusKeys: EquipmentStatusValueKey[] = EquipmentStatusKeys.filter(key => 
-    key.includes("Ratio") || 
-    key.includes("criticalStrike") ||
-    key.includes("ifeSteal") ||
-    key == "uniqueTenacity"
-);
+export function IsPercentExpressedEquipmentStatusKey(key: keyof EquipmentBaseStatus): boolean {
+    return key.includes("Ratio") ||
+        key.includes("criticalStrike") ||
+        key.includes("ifeSteal") ||
+        key == "uniqueTenacity"
+}
 
 /**
  * 装備に付与された固有スキルの定義情報
@@ -109,13 +252,9 @@ export type EquipmentSkill = {
 /**
  * 装備のステータス、固有スキルなどの全情報
  */
-export type EquipmentStatus = {[key in EquipmentStatusValueKey]?: Decimal} & {
+export type EquipmentStatus = Partial<EquipmentBaseStatus> & {
     type: WeaponTypeID | ArmorTypeID
     itemGrade: Tier
-    david?: {
-        to?: EquipmentID
-        from?: EquipmentID
-    }
     shard?: "blue" | "red"
     skill?: EquipmentSkill[]
 }

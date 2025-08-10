@@ -3,7 +3,7 @@ import { useLocalStorageConfig } from "@app/storage/config";
 import { Equipment, SubjectConfig, SubjectConfigDefault } from "app-types/subject-dynamic/config";
 import { SubjectCode } from "app-types/subject-static";
 import { StateWrapped } from "@app/util/state";
-import { ArmArmorCodes, ChestArmorCodes, DavidChestArmorUpgradeDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
+import { ArmArmorCodes, ChestArmorCodes, DavidChestArmorUpgradeDictionary, HeadArmorCodes, LegArmorCodes, WeaponCodes } from "app-types/equipment";
 
 export type SubjectConfigProps = {
     value: SubjectConfig
@@ -15,7 +15,7 @@ export function useSubjectConfig(storageKey: string): SubjectConfigProps {
     const defaultConfig: SubjectConfig = (() => {
         if (storageConfig) {
             const equipment = storageConfig.equipment;
-            const allWeaponCodes = Object.values(WeaponTypeCodes).flat();
+            const allWeaponCodes = Object.values(WeaponCodes).flat();
             const Chest = equipment.Chest && ChestArmorCodes.includes(equipment.Chest) ? equipment.Chest : null;
             const sanitizedEquipment: Equipment = {
                 Weapon: equipment.Weapon && allWeaponCodes.includes(equipment.Weapon) ? equipment.Weapon : null,

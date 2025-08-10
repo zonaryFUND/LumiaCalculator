@@ -13,7 +13,10 @@ type BaseStatusType = {
     moveSpeed: Decimal
 };
 
-export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = NimbleAPIJSON.SubjectBaseStatus.reduce(([rawData, apiCodeDictionary, codeMax], entry) => {
+const [
+    baseStatus, 
+    subjectCodeMax
+] = NimbleAPIJSON.SubjectBaseStatus.reduce(([rawData, codeMax], entry) => {
     const sanitizedID = (() => {
         const lowercase = entry.name.toLowerCase();
         if (lowercase == "lidailin") return "li_dailin";
@@ -36,16 +39,24 @@ export const [BaseStatus, SubjectCodeWithOldID, SubjectCodeMax] = NimbleAPIJSON.
                 moveSpeed: new Decimal(entry.moveSpeed).cut(2, "round")
             } satisfies BaseStatusType
         } satisfies Record<SubjectCode, BaseStatusType>,
-        {
-            ...apiCodeDictionary,
-            [entry.code]: sanitizedID
-        },
         Math.max(codeMax, entry.code)
     ];
 }, [
     {} as Record<SubjectCode, BaseStatusType>, 
-    {} as Record<number, string>,
     0
 ]);
 
+/**
+ * 実験体の基礎ステータス（Lv1、無装備時）
+ */
+export const BaseStatus = baseStatus;
+
+/**
+ * 実験体IDの最大値（リスト列挙用）
+ */
+export const SubjectCodeMax = subjectCodeMax;
+
+/**
+ * 実験体ID（数字）
+ */
 export type SubjectCode = number;

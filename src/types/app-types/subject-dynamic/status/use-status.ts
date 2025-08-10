@@ -2,7 +2,7 @@ import * as React from "react";
 import { SubjectConfig } from "../config/type";
 import { Status } from "./type";
 import { BaseStatus, LevelUpStatus, WeaponMasteryStatus } from "app-types/subject-static";
-import { DavidChestArmorUpgradeDictionary, EquipmentStatusDictionary, EquipmentStatusValueKey } from "app-types/equipment";
+import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "app-types/equipment";
 import Decimal from "decimal.js";
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { WeaponTypeID, WeaponTypeStatus } from "app-types/equipment/weapon";
@@ -29,7 +29,7 @@ export function useStatus(config: SubjectConfig): [Status, StateProps<number>] {
                     return Object.entries(upgrade).reduce((prev, [statusKey, value]) => {
                         return {
                             ...prev,
-                            [statusKey]: (prev[statusKey as EquipmentStatusValueKey] ?? new Decimal(0)).add(value)
+                            [statusKey]: (prev[statusKey as keyof EquipmentBaseStatus] ?? new Decimal(0)).add(value)
                         }
                     }, status);
                 } else {
@@ -38,14 +38,14 @@ export function useStatus(config: SubjectConfig): [Status, StateProps<number>] {
             })
     , [config.equipment]);
 
-    const sumEquipmentStatus = (key: EquipmentStatusValueKey): Decimal | undefined => {
+    const sumEquipmentStatus = (key: keyof EquipmentBaseStatus): Decimal | undefined => {
         return equipmentStatus
             .map(s => s[key])
             .filter((v): v is Decimal => v != undefined)
             .reduce((prev, current) => (prev ?? new Decimal(0)).add(current), undefined as Decimal | undefined);
     }
 
-    const maxEquipmentStatus = (key: EquipmentStatusValueKey): Decimal | undefined => {
+    const maxEquipmentStatus = (key: keyof EquipmentBaseStatus): Decimal | undefined => {
         return equipmentStatus
             .map(s => s[key])
             .filter((v): v is Decimal => v != undefined)

@@ -3,7 +3,7 @@ import { SubjectCode } from "app-types/subject-static"
 import { SubjectConfig, SubjectConfigDefault } from "./type"
 import React, { useCallback } from "react"
 import { Equipment } from "./equipment"
-import { DavidChestArmorUpgradeDictionary, HeadArmorCodes, WeaponTypeCodes } from "app-types/equipment"
+import { DavidChestArmorUpgradeDictionary, HeadArmorCodes, WeaponCodes } from "app-types/equipment"
 
 type Response = StateWrapped<SubjectConfig> & {
     value: SubjectConfig

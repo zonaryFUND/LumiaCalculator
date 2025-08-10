@@ -11,7 +11,7 @@ import { Equipment } from "app-types/subject-dynamic/config";
 import { ArmorTypeID } from "app-types/equipment/armor";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WeaponTypeID } from "app-types/equipment/weapon";
-import { ArmArmorCodes, ChestArmorCodes, DavidChestArmorUpgradeDictionary, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponTypeCodes } from "app-types/equipment";
+import { ArmArmorCodes, ChestArmorCodes, DavidChestArmorUpgradeDictionary, EquipmentStatusDictionary, HeadArmorCodes, LegArmorCodes, WeaponCodes } from "app-types/equipment";
 import { SubjectCode } from "app-types/subject-static";
 import { useLatest, useLocalStorage } from "react-use";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
@@ -84,7 +84,7 @@ const subjectsList: React.FC<Props> = props => {
                         return {
                             title: names[i],
                             mastery: <>{targetMasteryStatus}<br />{attackSpeed}</>,
-                            ids: WeaponTypeCodes[id]
+                            ids: WeaponCodes[id]
                         }
                     })
                 }
