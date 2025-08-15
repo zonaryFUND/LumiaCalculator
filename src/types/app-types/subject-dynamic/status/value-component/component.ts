@@ -72,6 +72,13 @@ export type StatusValueComponent = {
         }
 }
 
+/**
+ * 基礎値/レベル比例値を与えて、ステータス部分要素の値部分を適切な型で構成する
+ * @param level 現在の実験体のレベル
+ * @param oneBased 1始まりかどうか　実験体ステータスは1始まりだが装備ステータスはレベル比例値がLv1から加算される
+ * @param values 基礎値およびレベル比例値
+ * @returns 
+ */
 export function createComponentValue(
     level: number,
     oneBased: boolean,
@@ -117,158 +124,4 @@ export function createComponentValue(
             value: new Decimal(level).sub(oneBased ? 1 : 0).times(values.levelProportional!).add(values.base!)
         };
     }
-}
-
-export function subjectStatus(
-    base: Decimal.Value,
-    level: Decimal.Value,
-    levelupValue: Decimal.Value | undefined
-): StatusValueComponent {
-    return {
-        origin: "subject-status",
-        calculationType: "sum",
-        value: levelupValue != undefined ?
-            {
-                type: "combined",
-                constant: base,
-                incrementalFactor: {
-                    type: "level",
-                    oneBased: true,
-                    value: level
-                },
-                multiplier: levelupValue,
-                value: new Decimal(level).sub(1).times(levelupValue).add(base)
-            } 
-            : 
-            {
-                type: "constant",
-                value: base
-            }
-    }
-}
-
-export function Mastery(
-    calculationType: "sum" | "mul",
-    mastery: Decimal.Value,
-    multiplier: Decimal.Value
-): StatusValueComponent {
-    return {
-        origin: "subject-status",
-        calculationType,
-        intlID: "app.mastery",
-        value: {
-            type: "level-dependent",
-            incrementalFactor: {
-                type: "mastery",
-                value: mastery
-            },
-            multiplier,
-            value: new Decimal(mastery).mul(multiplier)
-        }
-    }
-}
-
-export function WeaponBasedValue(
-    subject: Decimal.Value,
-    weapon?: Decimal.Value
-): (StatusValueComponent | undefined) {
-    return {
-        origin: "weapon-base",
-        calculationType: "sum",
-        value: {
-            type: "weapon-base",
-            subject,
-            weapon,
-            value: new Decimal(subject).add(weapon ?? 0)
-        }
-    }
-}
-
-export function Adaptive(origin: StatusValueComponent["origin"], intlID: string, type: "attack" | "amp", value: Decimal.Value | undefined): StatusValueComponent | undefined {
-    if (value == undefined) return undefined;
-    return {
-        origin,
-        calculationType: "sum",
-        intlID,
-        value: {
-            type: "constant",
-            value: new Decimal(value).mul(type == "attack" ? 1 : 2)
-        }
-    }
-}
-
-export function equipmentStatus(
-    values: {
-        constant?: Decimal.Value,
-        levelProportional?: Decimal.Value
-    },
-    level: number
-): StatusValueComponent | undefined {
-    const key = 
-        (values.constant == undefined ? 0 : 1) +
-        (values.levelProportional == undefined ? 0 : 2);
-
-    switch (key) {
-        case 0:
-            return undefined;
-    }
-}
-
-export function equipmentConstant(calculationType: "sum" | "mul", value: Decimal.Value | undefined): StatusValueComponent | undefined {
-    if (value == undefined) return undefined;
-    return {
-        origin: "equipment",
-        calculationType: calculationType,
-        value: {
-            type: "constant",
-            value
-        }
-    }
-}
-
-export function EquipmentLevelDependent(level: Decimal.Value, value: Decimal.Value | undefined): StatusValueComponent | undefined {
-    if (value == undefined) return undefined;
-
-    return {
-        origin: "equipment",
-        calculationType: "sum",
-        value: {
-            type: "level-dependent",
-            incrementalFactor: {
-                type: "level",
-                value: level
-            },
-            multiplier: value,
-            value: new Decimal(value).times(level)
-        }
-    }
-}
-
-export function equipmentCombined(
-    base: Decimal.Value | undefined,
-    level: Decimal.Value,
-    levelupValue: Decimal.Value | undefined
-): StatusValueComponent | undefined {
-    if (base != undefined && levelupValue != undefined) {
-        return {
-            origin: "equipment",
-            calculationType: "sum",
-            value: {
-                type: "combined",
-                constant: base,
-                incrementalFactor: {
-                    type: "level",
-                    value: level
-                },
-                multiplier: levelupValue,
-                value: new Decimal(level).times(levelupValue).add(base)
-            }
-        }
-    }
-
-    if (base == undefined) {
-        return EquipmentLevelDependent(level, levelupValue);
-    }
-
-    return equipmentConstant("sum", base);
 }

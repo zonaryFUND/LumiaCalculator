@@ -4,12 +4,18 @@ import { ComponentStatus, ComponentStatusValue, Status } from "./type";
 import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "app-types/equipment";
 import Decimal from "decimal.js";
 import { WeaponTypeStatus } from "app-types/equipment/weapon";
-import { createComponentValue, equipmentConstant, StatusValueComponent } from "./value-component/component";
+import { createComponentValue, StatusValueComponent } from "./value-component/component";
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { calculateCooldownValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
 import * as es from "es-toolkit";
-import { SubjectPerpetualStatusDictionary } from "@app/ingame-params/subjects/dictionary";
+import { SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
 
+/**
+ * 実験体設定および現在のHPから現在ステータスを計算する
+ * @param config 実験体設定
+ * @param currentHPRatio 最大HPに対する現在のHPの割合（％）
+ * @returns 
+ */
 export function statusOf(config: SubjectConfig, currentHPRatio: number): Status {
     const level1Status = BaseStatus[config.subject];
     const levelupStatus = LevelUpStatus[config.subject];
@@ -324,20 +330,30 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             components: [
                 statusComponent("sum", "moveSpeed"),
                 (() => {
-                    const eqConst = equipmentConstant("sum", sumOfEquipmentStatus("moveSpeed"));
-                    if (eqConst == undefined) return undefined;
+                    const sum = sumOfEquipmentStatus("moveSpeed");
+                    if (sum == undefined) return undefined;
                     return {
-                        ...eqConst,
-                        intlID: "status.equipment-constant"
+                        origin: "equipment",
+                        intlID: "status.equipment-constant",
+                        calculationType: "sum",
+                        value: {
+                            type: "constant",
+                            value: sum
+                        }
                     }
                 })(),
                 masteryComponent("sum", config.movementMastery, MovementSpeedPerMastery),
                 (() => {
-                    const eqRatio = equipmentConstant("mul", sumOfEquipmentStatus("moveSpeedRatio"));
-                    if (eqRatio == undefined) return undefined;
+                    const sum = sumOfEquipmentStatus("moveSpeedRatio");
+                    if (sum == undefined) return undefined;
                     return {
-                        ...eqRatio,
-                        intlID: "status.equipment-ratio"
+                        origin: "equipment",
+                        intlID: "status.equipment-ratio",
+                        calculationType: "mul",
+                        value: {
+                            type: "constant",
+                            value: sum
+                        }
                     }
                 })()
             ].filter((c): c is StatusValueComponent => c != undefined)
@@ -377,6 +393,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         
     }, baseComponentStatus);
 
+    // ステータス変換によって得られる値を計算するために、その部分要素なしのステータスをまず計算する
     const statusWithoutConversion: Status = {
         ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed"]), v => calculateStatusValue(v)),
         cooldownReduction: calculateCooldownValue(componentStatus.cooldownReduction),
@@ -386,11 +403,22 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     };
 
 
-    return {
+    const finalStatus: Status = {
         ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed"]), v => calculateStatusValue(v, statusWithoutConversion)),
         cooldownReduction: calculateCooldownValue(componentStatus.cooldownReduction, statusWithoutConversion),
         ultCooldownReduction: calculateCooldownValue(componentStatus.ultCooldownReduction, statusWithoutConversion),
         tacticalSkillCooldownReduction: calculateCooldownValue(componentStatus.tacticalSkillCooldownReduction, statusWithoutConversion),
         moveSpeed: calculateMovementSpeedValue(componentStatus.moveSpeed, statusWithoutConversion)
     };
+
+    const summonedInfo = SubjectSummonInfoDictionary[config.subject];
+
+    return {
+        ...finalStatus,
+        summoned: summonedInfo.length == 0 ? undefined :
+            summonedInfo.map(info => ({
+                nameIntlID: info.nameIntlID,
+                status: info.status(finalStatus, config)
+            }))
+    }
 }

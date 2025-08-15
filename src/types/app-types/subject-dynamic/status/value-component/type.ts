@@ -61,8 +61,22 @@ export type CooldownStatusValue = {
     calculatedValue: Decimal
 }
 
+/**
+ * 移動速度の値を表す構造体
+ */
 export type MovementSpeedValue = {
+    /**
+     * そのステータスを構成する原因、要素
+     */
     components: StatusValueComponent[]
+
+    /**
+     * 補正を行ったあとの最終的な移動速度
+     */
     calculatedValue: Decimal
+    
+    /**
+     * 補正前の移動速度
+     */
     rawResult: Decimal
 }
