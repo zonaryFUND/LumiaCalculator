@@ -1,7 +1,6 @@
 import Constants from "./constants.json";
 import Decimal from "decimal.js";
-import { StatusOverrideFunc } from "../type";
-import { AddComponent } from "app-types/subject-dynamic/status/value/type";
+import { SubjectPerpetualStatus } from "../type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 
 function Additional(target: "amp" | "heal", currentHPRatio: Decimal, tSkillLevel: number): number {
@@ -33,19 +32,18 @@ export const AdditionalHealStrategy: UniqueValueStrategy = ({ config, status, hp
     }
 }
 
-const f: StatusOverrideFunc = (status, config, hp) => {
-    return {
-        ...status,
-        skillAmp: AddComponent(status.skillAmp, {
+const f: SubjectPerpetualStatus = (config, hpRatio) => ({
+    skillAmp: [
+        {
             origin: "perpetual_status",
             calculationType: "sum",
             intlID: "T",
             value: {
                 type: "constant",
-                value: Additional("amp", new Decimal(1).sub(new Decimal(hp).div(status.maxHp.calculatedValue)).times(100), config.skillLevels.T)
+                value: Additional("amp", new Decimal(hpRatio), config.skillLevels.T)
             }
-        })
-    }
-};
+        }
+    ]
+});
 
 export default f;

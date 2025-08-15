@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
-import { AdditionalPenetration } from "./status-override";
+import { AdditionalPenetration } from "./perpetual-status";
 import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
 import { UniqueValueStrategy } from "../unique-value-strategy";

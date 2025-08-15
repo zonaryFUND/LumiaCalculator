@@ -1,6 +1,6 @@
 import { defineSubject } from "../type";
 import damageTable from "./damage-table";
-import statusOverride from "./status-override";
+import perpetualStatus from "./perpetual-status";
 import * as stack from "./stack";
 import * as Q from "./q";
 import * as W from "./w";
@@ -12,7 +12,7 @@ import * as T from "./t";
 export default defineSubject({
     code: 75,
     damageTable,
-    statusOverride,
+    perpetualStatus,
     stackInfo: {
         nameIntlID: stack.StackName,
         max: stack.MaxStack

@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
-import { accelerando } from "./status-override";
+import { accelerando } from "./perpetual-status";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1075100;

@@ -1,6 +1,6 @@
 import { defineSubject } from "../type";
 import damageTable from "./damage-table";
-import statusOverride from "./status-override";
+import perpetualStatus from "./perpetual-status";
 import * as IremQ from "./iremq";
 import * as CatQ from "./catq";
 import * as IremW from "./iremw";
@@ -15,7 +15,7 @@ import * as T from "./t";
 export default defineSubject({
     code: 61,
     damageTable,
-    statusOverride,
+    perpetualStatus,
 
     skills: {
         listExpression: () => ({

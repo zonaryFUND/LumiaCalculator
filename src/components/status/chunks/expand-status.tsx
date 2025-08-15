@@ -4,7 +4,7 @@ import { FormattedMessage } from "react-intl";
 import style from "./expand-status.module.styl";
 import table from "components/common/table.module.styl";
 import Decimal from "decimal.js";
-import { StatusValueComponent } from "app-types/subject-dynamic/status/value/components";
+import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
 
 type Props = {
     components: (StatusValueComponent & { percent?: boolean })[]
@@ -98,6 +98,15 @@ const expandStatus: React.FC<Props> = props => {
                                 </tr>
                             );
                         }
+                        case "status-conversion":
+                            const label = <span className={table.small}><FormattedMessage id={component.intlID} /></span>;
+
+                            return (
+                                <tr key={`${i}-combined`}>
+                                    <td><FormattedMessage id={labelIntlID} /></td>
+                                    <td>{component.value.value?.toString()}{percent}</td>
+                                </tr>
+                            );
                     }
                 })
             }

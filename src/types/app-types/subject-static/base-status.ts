@@ -5,7 +5,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
 /**
  * 実験体のステータスJSONのうち、共通してゼロであるものを除いた、基礎ステータス数値の部分オブジェクト
  */
-type BaseStatusType = {
+export type BaseStatusType = {
     maxHp: Decimal
     maxSp: Decimal
     hpRegen: Decimal

@@ -5,13 +5,13 @@ import * as W from "./w";
 import * as E from "./e";
 import * as R from "./r";
 import * as T from "./t";
-import statusOverride from "./status-override";
+import perpetualStatus from "./perpetual-status";
 
 
 export default defineSubject({
     code: 24,
     damageTable,
-    statusOverride,
+    perpetualStatus,
 
     skills: {
         listExpression: () => ({

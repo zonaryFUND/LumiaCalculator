@@ -1,10 +1,11 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
+import { ComponentStatus, Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { UniqueValueStrategy } from "./unique-value-strategy";
 import { ValueRatio } from "app-types/value-ratio";
 import { IntlShape } from "react-intl";
+import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
 
 export type SubjectDamageTableUnit = Omit<DamageTableUnit, "value" | "triggeredOnBasicAttack"> & {
     value: ValueRatio | UniqueValueStrategy
@@ -26,7 +27,7 @@ export type SkillListHook = (config: SubjectConfig) => Record<"Q" | "W" | "E" | 
     code: number | number[]
 }>;
 
-export type StatusOverrideFunc = (status: Status, config: SubjectConfig, currentHP: number) => Status;
+export type SubjectPerpetualStatus = (config: SubjectConfig, currentHPRatio: number) => Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>
 
 export type SummonedStatusFunc = (masterStatus: Status, config: SubjectConfig) => SummonedStatus;
 export type SummonInfo = {
@@ -53,7 +54,7 @@ export type SubjectModules = {
         tooltip: Record<number, SkillTooltipProps>
     }
 
-    statusOverride?: StatusOverrideFunc
+    perpetualStatus?: SubjectPerpetualStatus
     summoned?: SummonInfo[]
     stackInfo?: SubjectStackInfo
     gaugeInfo?: SubjectGaugeInfo

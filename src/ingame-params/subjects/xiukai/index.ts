@@ -1,7 +1,7 @@
 import { defineSubject } from "../type";
 import damageTable from "./damage-table";
 import * as stack from "./stack";
-import statusOverride from "./status-override";
+import perpetualStatus from "./perpetual-status";
 import * as Q from "./q";
 import * as W from "./w";
 import * as E from "./e";
@@ -16,7 +16,7 @@ export default defineSubject({
         nameIntlID: stack.StackName,
         max: stack.MaxStack
     },
-    statusOverride,
+    perpetualStatus,
 
     skills: {
         listExpression: () => ({

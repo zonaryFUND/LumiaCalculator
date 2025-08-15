@@ -1,5 +1,6 @@
 import Decimal from "decimal.js"
-import { CooldownStatusValue, MovementSpeedValue, StatusValue, StatusValueDefault } from "./value/type"
+import { CooldownStatusValue, MovementSpeedValue, StatusValue } from "./value-component/type"
+import { StatusValueComponent } from "./value-component/component"
 
 export type SummonedStatus = {
     maxHP: Decimal
@@ -12,68 +13,49 @@ export type SummonedStatus = {
     armorPenetrationRatio: Decimal
 }
 
-export type Status = {
-    maxHp: StatusValue
-    hpRegen: StatusValue
-    defense: StatusValue
-    preventBasicAttackDamagedRatio: StatusValue
-    preventBasicAttackDamaged: StatusValue // hidden status for calculation
-    preventSkillDamagedRatio: StatusValue
-    maxSp: StatusValue
-    spRegen: StatusValue
-    attackPower: StatusValue
-    increaseBasicAttackDamageRatio: StatusValue
-    attackSpeed: StatusValue
-    criticalStrikeChance: StatusValue
-    criticalStrikeDamage: StatusValue
-    skillAmp: StatusValue
+export type ComponentStatusValue = {
+    digit: number
+    max?: number
+    components: StatusValueComponent[]
+}
+
+export type ComponentStatus = {
+    maxHp: ComponentStatusValue
+    hpRegen: ComponentStatusValue
+    defense: ComponentStatusValue
+    preventBasicAttackDamagedRatio: ComponentStatusValue
+    preventBasicAttackDamaged: ComponentStatusValue // hidden status for calculation(garnet T)
+    preventSkillDamagedRatio: ComponentStatusValue
+    maxSp: ComponentStatusValue
+    spRegen: ComponentStatusValue
+    attackPower: ComponentStatusValue
+    increaseBasicAttackDamageRatio: ComponentStatusValue
+    attackSpeed: ComponentStatusValue
+    criticalStrikeChance: ComponentStatusValue
+    criticalStrikeDamage: ComponentStatusValue
+    skillAmp: ComponentStatusValue
+    cooldownReduction: ComponentStatusValue
+    ultCooldownReduction: ComponentStatusValue
+    tacticalSkillCooldownReduction: ComponentStatusValue
+    penetrationDefense: ComponentStatusValue
+    penetrationDefenseRatio: ComponentStatusValue
+    lifeSteal: ComponentStatusValue
+    normalLifeSteal: ComponentStatusValue
+    healerGiveHpHealRatio: ComponentStatusValue
+    tenacity: ComponentStatusValue
+    moveSpeed: ComponentStatusValue
+    slowResist: ComponentStatusValue
+    sightRange: ComponentStatusValue
+    attackRange: ComponentStatusValue
+}
+
+export type Status = Record<keyof Omit<ComponentStatus, "cooldownReduction" | "ultCooldownReduction" | "tacticalSkillCooldownReduction" | "moveSpeed">, StatusValue> & {
     cooldownReduction: CooldownStatusValue
-    // cooldownLimit: StatusValue
     ultCooldownReduction: CooldownStatusValue
     tacticalSkillCooldownReduction: CooldownStatusValue
-    penetrationDefense: StatusValue
-    penetrationDefenseRatio: StatusValue
-    lifeSteal: StatusValue   // every damage
-    normalLifeSteal: StatusValue    // AA only
-    healerGiveHpHealRatio: StatusValue
-    tenacity: StatusValue
     moveSpeed: MovementSpeedValue
-    slowResist: StatusValue
-    sightRange: StatusValue
-    attackRange: StatusValue
-
     summoned?: {
         nameIntlID: string
         status: SummonedStatus
     }[]
-}
-
-export const BlankStatus: Status = {
-    maxHp: StatusValueDefault,
-    hpRegen: StatusValueDefault,
-    defense: StatusValueDefault,
-    preventBasicAttackDamagedRatio: StatusValueDefault,
-    preventBasicAttackDamaged: StatusValueDefault,
-    preventSkillDamagedRatio: StatusValueDefault,
-    maxSp: StatusValueDefault,
-    spRegen: StatusValueDefault,
-    attackPower: StatusValueDefault,
-    increaseBasicAttackDamageRatio: StatusValueDefault,
-    attackSpeed: StatusValueDefault,
-    criticalStrikeChance: StatusValueDefault,
-    criticalStrikeDamage: StatusValueDefault,
-    skillAmp: StatusValueDefault,
-    cooldownReduction: {...StatusValueDefault, rawHasteValue: new Decimal(0)},
-    ultCooldownReduction: {...StatusValueDefault, rawHasteValue: new Decimal(0)},
-    tacticalSkillCooldownReduction: {...StatusValueDefault, rawHasteValue: new Decimal(0)},
-    penetrationDefense: StatusValueDefault,
-    penetrationDefenseRatio: StatusValueDefault,
-    lifeSteal: StatusValueDefault,   // every damage
-    normalLifeSteal: StatusValueDefault,    // AA only
-    healerGiveHpHealRatio: StatusValueDefault,
-    tenacity: StatusValueDefault,
-    moveSpeed: { components: [], calculatedValue: new Decimal(0), rawResult: new Decimal(0) },
-    slowResist: StatusValueDefault,
-    sightRange: StatusValueDefault,
-    attackRange: StatusValueDefault
 }

@@ -1,14 +1,12 @@
 import Constants from "./constants.json";
-import { StatusOverrideFunc } from "../type";
-import { AddComponent } from "app-types/subject-dynamic/status/value/type";
+import { SubjectPerpetualStatus } from "../type";
 import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
-const f: StatusOverrideFunc = (status, config) => {
+const f: SubjectPerpetualStatus = (config) => {
     const range = weaponRangeOf(config);
 
     return {
-        ...status,
-        attackSpeed: AddComponent(status.attackSpeed,
+        attackSpeed: [
             {
                 origin: "perpetual_status",
                 calculationType: "mul",
@@ -18,8 +16,8 @@ const f: StatusOverrideFunc = (status, config) => {
                     value: Constants.common.e_as[config.skillLevels.E]
                 }
             }
-        ),
-        defense: AddComponent(status.defense, range == "range" ? undefined : {
+        ],
+        defense: range == "range" ? [] : [{
             origin: "perpetual_status",
             calculationType: "sum",
             intlID: "subject.alex.passive-defense",
@@ -27,7 +25,7 @@ const f: StatusOverrideFunc = (status, config) => {
                 type: "constant",
                 value: Constants.T.defense[config.skillLevels.T]
             }
-        })
+        }]
     };
 }
 

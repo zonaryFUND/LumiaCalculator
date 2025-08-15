@@ -2,7 +2,7 @@ import { calculateValue } from "app-types/value-ratio/calculation";
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Constants from "./constants.json";
-import { AdditionalAmpStrategy, AdditionalHealStrategy } from "./status-override";
+import { AdditionalAmpStrategy, AdditionalHealStrategy } from "./perpetual-status";
 
 const rStrategy: UniqueValueStrategy = ({ config, status, hp }) => {
     const skillLevel = config.skillLevels.R;

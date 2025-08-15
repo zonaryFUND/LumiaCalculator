@@ -3,15 +3,15 @@ import { render } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { Locales } from "@app/App";
 import { SubjectConfigDefault } from "app-types/subject-dynamic/config";
-import { useStatus } from "app-types/subject-dynamic/status/use-status";
 import { IntlProvider } from "react-intl";
 import Tooltip from "@app/components/tooltip/item/item-tooltip"
 import { NimbleAPIJSON } from "@app/params-json";
+import { statusOf } from "app-types/subject-dynamic/status/calculation";
 
 const config = SubjectConfigDefault;
 
 const Bed: React.FC<{code: number, showEquation: boolean}> = ({ code, showEquation }) => {
-    const [status] = useStatus(config);
+    const status = statusOf(config, 100);
     return (
         <IntlProvider locale="ja" messages={Locales["ja"]}>
             <Tooltip 

@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { AdditionalAmp } from "./status-override";
+import { AdditionalAmp } from "./perpetual-status";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const code = 1043100;

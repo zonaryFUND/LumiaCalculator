@@ -1,6 +1,6 @@
 import { defineSubject } from "../type";
 import damageTable from "./damage-table";
-import statusOverride from "./status-override";
+import perpetualStatus from "./perpetual-status";
 import * as MeleeQ from "./meleeq";
 import * as RangeQ from "./rangeq";
 import * as MeleeW from "./meleew";
@@ -15,7 +15,7 @@ import { weaponRangeOf } from "app-types/subject-dynamic/config";
 export default defineSubject({
     code: 27,
     damageTable,
-    statusOverride,
+    perpetualStatus,
 
     skills: {
         listExpression: (config) => {

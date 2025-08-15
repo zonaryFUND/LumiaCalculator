@@ -20,7 +20,7 @@ import { useToggle } from "react-use";
 import { useSubjectConfig } from "components/config/use-subject-config";
 import Content from "components/pages/base/content";
 import { NavigationButtonContext } from "components/pages/navigation";
-import { useStatus } from "app-types/subject-dynamic/status/use-status";
+import { statusOf } from "app-types/subject-dynamic/status/calculation";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -40,10 +40,12 @@ const index: React.FC = props => {
     const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
 
     const left = useSubjectConfig(CombatCurrentLeftConfigKey);
-    const [leftStatus, leftHP] = useStatus(left.value);
+    const leftHP = React.useState(100);
+    const leftStatus = statusOf(left.value, leftHP[0]);
 
     const right = useSubjectConfig(CombatCurrentRightConfigKey);
-    const [rightStatus, rightHP] = useStatus(right.value);
+    const rightHP = React.useState(100);
+    const rightStatus = statusOf(right.value, rightHP[0]);
 
     React.useEffect(() => {
         if (!makeMasteryAlign) return;

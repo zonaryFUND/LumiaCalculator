@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { AdditionalAmp } from "./status-override";
+import { AdditionalAmp } from "./perpetual-status";
 
 export const code = 1024100;
 

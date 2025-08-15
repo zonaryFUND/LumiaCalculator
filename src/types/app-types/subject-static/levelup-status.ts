@@ -2,7 +2,7 @@ import Decimal from "decimal.js";
 import { NimbleAPIJSON } from "@params-json";
 import { SubjectCode } from "./base-status";
 
-type LevelUpStatusType = {
+export type LevelUpStatusType = {
     maxHp: Decimal,
     maxSp: Decimal,
     hpRegen: Decimal,
