@@ -23,7 +23,8 @@ export const DefaultSamplePresets: PresetWithKey[] = [
                 Q: 4, W: 4, E: 4, R: 2, T: 2
             },
             gauge: 0,
-            stack: 0
+            stack: 0,
+            perpetualOuterBuffs: []
         }
     }
 ]

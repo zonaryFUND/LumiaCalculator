@@ -34,7 +34,8 @@ export const info: SkillTooltipProps = {
     cooldown: ({ config, status }) => {
         return new Decimal(Constants.W.cooldown[config.skillLevels.W])
             .subPercent(weaponType(config.equipment.Weapon) == "sidewinder" ? Constants.T1_2.w_cooldown_reduction : 0)
-            .subPercent(status.cooldownReduction.calculatedValue);
+            .subPercent(status.cooldownReduction.calculatedValue)
+            .floor2();
     },
     values: ({ showEquation }) => ({
         0: Constants.W.gauge_max_consumption,

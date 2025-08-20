@@ -40,6 +40,7 @@ export function useSubjectConfig(storageKey: string): SubjectConfigProps {
     const [skillLevels, setSkillLevels] = React.useState(defaultConfig.skillLevels);
     const [gauge, setGauge] = React.useState(defaultConfig.gauge);
     const [stack, setStack] = React.useState(defaultConfig.stack);
+    const [perpetualOuterBuffs, setPerpetualOuterBuffs] = React.useState(defaultConfig.perpetualOuterBuffs);
 
     const setConfig = React.useCallback((config: SubjectConfig) => {
         setSubject(config.subject);
@@ -62,15 +63,15 @@ export function useSubjectConfig(storageKey: string): SubjectConfigProps {
     }, []);
 
     React.useEffect(() => {
-        saveStorageConfig({ subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack });
+        saveStorageConfig({ subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack, perpetualOuterBuffs });
     }, [subject, level, weaponMastery, defenseMastery, movementMastery, equipment, skillLevels, gauge, stack]);
 
     const config: SubjectConfig = {
-        subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack
+        subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack, perpetualOuterBuffs
     };
 
     return {
-        value: { subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack },
+        value: { subject, equipment, level, weaponMastery, defenseMastery, movementMastery, skillLevels, gauge, stack, perpetualOuterBuffs },
         setConfig,
         subject: [subject, updateSubject],
         equipment: [equipment, setEquipment],
@@ -81,5 +82,6 @@ export function useSubjectConfig(storageKey: string): SubjectConfigProps {
         skillLevels: [skillLevels, setSkillLevels],
         gauge: [gauge, setGauge],
         stack: [stack, setStack],
+        perpetualOuterBuffs: [perpetualOuterBuffs, setPerpetualOuterBuffs]
     }
 }

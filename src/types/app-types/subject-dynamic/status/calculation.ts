@@ -380,8 +380,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         }
     }
 
-    const perpetulStatus = SubjectPerpetualStatusDictionary[config.subject](config, currentHPRatio);
-    const componentStatus = Object.entries(perpetulStatus ?? {}).reduce((prev, [key, components]) => {
+    const subjectPerpetulStatus = SubjectPerpetualStatusDictionary[config.subject] ? SubjectPerpetualStatusDictionary[config.subject](config, currentHPRatio) : {};
+    const componentStatus = Object.entries(subjectPerpetulStatus).reduce((prev, [key, components]) => {
         const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
         return {
             ...prev,
@@ -415,10 +415,11 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
 
     return {
         ...finalStatus,
-        summoned: summonedInfo.length == 0 ? undefined :
+        summoned: (summonedInfo?.length ?? 0) > 0 ? 
             summonedInfo.map(info => ({
                 nameIntlID: info.nameIntlID,
                 status: info.status(finalStatus, config)
             }))
+            : undefined
     }
 }

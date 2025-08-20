@@ -115,7 +115,7 @@
         "max_stack": 80,
         "stack_buff": {
             "per": 10,
-            "maxHP": 2.5
+            "attackSpeed": 2.5
         }
     }
 }

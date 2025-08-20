@@ -20,7 +20,8 @@ import loadStyle from "components/modal/load-build/index.module.styl";
 import SaveBuild from "components/modal/save-build";
 import saveStyle from "components/modal/save-build/index.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { ArmorStatusDictionary, DavidChestArmorUpgradeDictionary } from "app-types/equipment";
+import { DavidChestArmorUpgradeDictionary } from "app-types/equipment";
+import PerpetualBuffs from "./perpetual-buffs";
 
 export type CurrentHPProps = {
     currentHP?: StateProps<number>
@@ -144,6 +145,13 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                         <div />
                     </div>
                 </div>
+
+                {/*
+                <div>
+                    <h3>永続バフ</h3>
+                    <PerpetualBuffs buffs={config.buffs} />
+                </div>
+                */}
             </div>
             <Modal 
                 isOpen={selectingSubject} 

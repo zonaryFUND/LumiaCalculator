@@ -3,7 +3,7 @@ import fs from "fs";
 import yargs from "yargs/yargs";
 import { APIKey } from "./credentials";
 import * as es from "es-toolkit";
-import { EquipmentStatusKeys } from "../src/types/app-types/equipment";
+import { EquipmentBaseStatus } from "../src/types/app-types/equipment";
 import { BaseURL, FetchAPIResponse } from "./fetch";
 
 const argv = yargs(process.argv)
@@ -11,7 +11,43 @@ const argv = yargs(process.argv)
     .command("jp", "fetch japanese language data")
     .parseSync();
 
-const jsonDir = "./src/ingame-params/json"
+const jsonDir = "./src/params-json/nimbleapi";
+
+const dummyStatusForKeys: Record<keyof EquipmentBaseStatus, 0> = {
+        attackPower: 0,
+        attackPowerByLv: 0,
+        defense: 0,
+        skillAmp: 0,
+        skillAmpByLevel: 0,
+        skillAmpRatio: 0,
+        adaptiveForce: 0,
+        maxHp: 0,
+        maxHpByLv: 0,
+        maxSp: 0,
+        hpRegenRatio: 0,
+        spRegenRatio: 0,
+        attackSpeedRatio: 0,
+        criticalStrikeChance: 0,
+        criticalStrikeDamage: 0,
+        cooldownReduction: 0,
+        lifeSteal: 0,
+        normalLifeSteal: 0,
+        moveSpeed: 0,
+        moveSpeedRatio: 0,
+        sightRange: 0,
+        increaseBasicAttackDamageRatioByLv: 0,
+        penetrationDefense: 0,
+        penetrationDefenseRatio: 0,
+        slowResistRatio: 0,
+        healerGiveHpHealRatio: 0,
+        uniqueAttackRange: 0,
+        uniqueTenacity: 0,
+        uniqueSkillAmpRatio: 0,
+        ultCooldownReduction: 0,
+        weaponCooldownReduction: 0,
+        tacticalCooldownReduction: 0
+}
+const equipmentStatusKeys = Object.keys(dummyStatusForKeys);
 
 if (argv._[2] == "update-values") {
     await FetchAPIResponse("v2/data/Character", `${jsonDir}/base-status.json`);
@@ -29,7 +65,7 @@ if (argv._[2] == "update-values") {
             .map((entry: any) => {
                 const zeroRemoved = es.pickBy(entry, (value) => value != 0);
                 return {
-                    ...es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "weaponType", "itemGrade"]),
+                    ...es.pick(zeroRemoved, [...equipmentStatusKeys, "code", "weaponType", "itemGrade"]),
                     ...(zeroRemoved.makeMaterial2 == 401405 ? { shard: "red" } : {}),
                     ...(zeroRemoved.makeMaterial2 == 401406 ? { shard: "blue" } : {})
                 }
@@ -43,7 +79,7 @@ if (argv._[2] == "update-values") {
             .map((entry: any) => {
                 const zeroRemoved = es.pickBy(entry, (value) => value != 0);
                 return {
-                    ...es.pick(zeroRemoved, [...EquipmentStatusKeys, "code", "armorType", "itemGrade"]),
+                    ...es.pick(zeroRemoved, [...equipmentStatusKeys, "code", "armorType", "itemGrade"]),
                     ...(zeroRemoved.upgradeItemCode ? { david: { to: zeroRemoved.upgradeItemCode } } : {}),
                     ...(zeroRemoved.markingType == "Upgrade" ? { david: { from: zeroRemoved.makeMaterial1 } } : {})
                 }
