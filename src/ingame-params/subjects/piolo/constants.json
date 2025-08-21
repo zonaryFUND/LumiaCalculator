@@ -79,7 +79,7 @@
     "R": {
         "focus_disappear": 3,
         "damage": {
-            "base": [100,210,320],
+            "base": [100,225,350],
             "amp": 60
         },
         "shield_duration": 4,

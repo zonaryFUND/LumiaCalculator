@@ -158,7 +158,7 @@
 		"name": "primodal_hex",
 		"dmg": {
 			"base": 25,
-			"amp": 12
+			"amp": 10
 		}
 	},
 	"103502": {
@@ -204,7 +204,7 @@
 		"name": "primodal_hex",
 		"dmg": {
 			"base": 25,
-			"amp": 12
+			"amp": 10
 		}
 	},
 	"104502": {
@@ -449,7 +449,7 @@
 		"name": "primodal_hex",
 		"dmg": {
 			"base": 25,
-			"amp": 12
+			"amp": 10
 		}
 	},
 	"110410": {
@@ -543,7 +543,7 @@
 		"name": "primodal_hex",
 		"dmg": {
 			"base": 25,
-			"amp": 12
+			"amp": 10
 		}
 	},
 	"111405": {
@@ -675,7 +675,7 @@
 		"name": "primodal_hex",
 		"dmg": {
 			"base": 25,
-			"amp": 12
+			"amp": 10
 		}
 	},
 	"113408": {
@@ -719,7 +719,7 @@
 		"name": "primodal_hex",
 		"dmg": {
 			"base": 50,
-			"amp": 15
+			"amp": 10
 		}
 	},
 	"113501": {
@@ -1280,7 +1280,7 @@
 		"name": "primodal_hex",
 		"dmg": {
 			"base": 25,
-			"amp": 12
+			"amp": 10
 		}
 	},
 	"130402": {

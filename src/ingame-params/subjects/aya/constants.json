@@ -50,7 +50,7 @@
         "shield": {
             "base": [50,75,100],
             "attack": 50,
-            "amp": 30
+            "amp": 35
         },
         "cooldown_reduction": 1,
         "cooldown": {

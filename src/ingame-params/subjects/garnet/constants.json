@@ -59,7 +59,7 @@
             "amp": 55,
             "maxHP": 6
         },
-        "stun": 0.35,
+        "stun": 0.4,
         "hp_cost_percent": 2,
         "cooldown": [9,8.5,8,7.5,7]
     },

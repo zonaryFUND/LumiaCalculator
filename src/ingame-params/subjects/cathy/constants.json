@@ -7,7 +7,7 @@
             "base": [90,120,150,180,210],
             "amp": 80
         },
-        "cooldown_reduction": [40,45,50,55,60],
+        "cooldown_reduction": [50,55,60,65,70],
         "cast_acceleration_attack_speed": 1,
         "dual_sword": 110,
         "sp_cost": [50,55,60,65,70],

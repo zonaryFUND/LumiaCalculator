@@ -25,9 +25,9 @@
             "defense": 30
         },
         "cooldown": {
-            "constant": 5
+            "constant": 4
         },
-        "charge_time_reduction": 1,
+        "charge_time_reduction": 1.5,
         "sp_cost": 50,
         "charge": {
             "time": [26,25,24,23,22],
@@ -63,7 +63,7 @@
     },
     "T": {
         "damage": {
-            "defense": [25,30,35]
+            "defense": [30,35,40]
         },
         "level": [6,11,16,20]
     }

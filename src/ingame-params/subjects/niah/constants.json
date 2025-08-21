@@ -58,7 +58,7 @@
             "stack": [5,10,15]
         },
         "cc_immune": 6,
-        "stun": 0.3,
+        "stun": 0.4,
         "extend": 0.3,
         "damage_threshold": 8,
         "inner_damage": {

@@ -30,7 +30,7 @@
     "force_field": {
         "duration": 3,
         "shield": {
-            "base": [200,300],
+            "base": [100,200],
             "additionalMaxHP": [75,100]
         },
         "tenacity": {

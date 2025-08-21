@@ -68,7 +68,7 @@
     "IremR": {
         "damage": {
             "base": [10,50,90,130],
-            "amp": [30,35,40,45]
+            "amp": [25,30,35,40]
         },
         "bell": 4,
         "range_penalty": 1,
@@ -78,7 +78,7 @@
     },
     "CatR": {
         "shield": {
-            "base": [40,65,90,115],
+            "base": [20,45,70,95],
             "amp": 30
         },
         "shield_duration": 2.5,

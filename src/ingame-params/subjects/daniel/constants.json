@@ -24,7 +24,7 @@
         "vision_range": 2,
         "vision_decrease": 2,
         "duration": 7,
-        "stored_damage": [13,16,19,22,25],
+        "stored_damage": [16,19,22,25,28],
         "blast_duration": 2.5,
         "damage": {
             "base": [20,40,60,80,100],

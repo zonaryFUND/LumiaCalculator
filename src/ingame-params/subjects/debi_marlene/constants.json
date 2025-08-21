@@ -108,7 +108,7 @@
         "basic_attack_damage": 90,
         "max_stack": 5,
         "damage": {
-            "base": [10,15,20],
+            "base": [15,20,25],
             "additionalAttack": 70,
             "criticalChance": 50
         },

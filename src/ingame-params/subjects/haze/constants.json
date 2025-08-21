@@ -40,7 +40,7 @@
     "W": {
         "damage": {
             "base": [80,120,160,200,240],
-            "amp": 75
+            "amp": 70
         },
         "stun": 0.65,
         "er_cooldown_reduction": 20,

@@ -9,8 +9,8 @@
     },
     "W": {
         "damage": {
-            "base": [60,75,90,105,120],
-            "amp": 40
+            "base": [60,80,100,120,140],
+            "amp": 45
         },
         "slow": {
             "duration": 0.3,
@@ -44,7 +44,7 @@
             "cooldown_reduction": 60
         },
         "W": {
-            "bind": [0.9,1,1.1],
+            "bind": [1,1.1,1.2],
             "duration": 5,
             "damage": {
                 "base": [100,140,180],
