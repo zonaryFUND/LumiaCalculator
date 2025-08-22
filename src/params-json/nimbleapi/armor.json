@@ -352,7 +352,7 @@
     },
     {
         "skillAmp": 80,
-        "penetrationDefenseRatio": 0.07,
+        "penetrationDefenseRatio": 0.08,
         "code": 201533,
         "armorType": "Head",
         "itemGrade": "Legend"
