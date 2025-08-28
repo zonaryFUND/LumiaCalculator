@@ -1432,7 +1432,7 @@
     },
     {
         "defense": 15,
-        "maxHp": 100,
+        "maxHp": 120,
         "cooldownReduction": 10,
         "moveSpeed": 0.25,
         "code": 204512,

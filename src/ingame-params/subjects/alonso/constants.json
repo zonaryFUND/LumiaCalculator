@@ -56,7 +56,7 @@
             "base": [16,20,24],
             "amp": 15
         },
-        "slow": 50,
+        "slow": 60,
         "final_damage": {
             "min": {
                 "base": [100,150,200],
