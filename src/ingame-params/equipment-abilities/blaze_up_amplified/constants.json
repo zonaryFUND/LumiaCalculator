@@ -1,5 +1,5 @@
 {
     "duration": 5,
-    "skill_damage": 3,
-    "max_stack": 5
+    "skill_damage": 2.5,
+    "max_stack": 6
 }

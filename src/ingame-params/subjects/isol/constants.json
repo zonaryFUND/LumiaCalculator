@@ -11,8 +11,8 @@
         "duration_reduction": 0.5,
         "additional_damage": {
             "base": [10,15,20,25,30],
-            "attack": 9,
-            "amp": 5
+            "attack": 7,
+            "amp": 4
         },
         "additional_bind": 0.1,
         "bind_max": 1,

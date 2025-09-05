@@ -10,7 +10,7 @@
             "base": [40,50,60,70,80],
             "attack": 40
         },
-        "e_cooldown_reduction": 70,
+        "e_cooldown_reduction": 60,
         "retrieve_duration": 2.5,
         "retrieve_tick": 0.5,
         "retrieve_dot_damage": {

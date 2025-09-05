@@ -882,7 +882,7 @@
 		"skillCode": 6012001,
 		"name": "magic_bullet",
 		"dmg": {
-			"amp": 35,
+			"amp": 30,
 			"targetMaxHP": 8
 		},
 		"values": {
@@ -909,7 +909,7 @@
 		"name": "magic_bullet",
 		"dmg": {
 			"level": 4,
-			"amp": 30,
+			"amp": 25,
 			"targetMaxHP": 6
 		}
 	},
@@ -960,7 +960,7 @@
 		"skillCode": 6012001,
 		"name": "magic_bullet",
 		"dmg": {
-			"amp": 40,
+			"amp": 30,
 			"targetMaxHP": 8
 		},
 		"values": {

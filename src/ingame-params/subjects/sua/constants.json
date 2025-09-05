@@ -51,7 +51,7 @@
         },
         "heal_max_multiplier": 1.5,
         "heal_max_hp": 40,
-        "cooldown_reduction": 25,
+        "cooldown_reduction": 30,
         "sp_cost": 80,
         "cooldown": [16,15,14,13,12]
     },
@@ -103,7 +103,7 @@
         },
         "heal_max_multiplier": 1.5,
         "heal_max_hp": 40,
-        "cooldown_reduction": 25
+        "cooldown_reduction": 30
     },
     "R": {
         "cooldown": [30,24,18]

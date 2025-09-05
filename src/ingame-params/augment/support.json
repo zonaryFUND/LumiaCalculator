@@ -67,7 +67,7 @@
     },
     "power_of_intimidation": {
         "range": 3,
-        "damage_increase": 3,
+        "damage_increase": 4,
         "max_stack": 3,
         "effect_decline": 25
     },

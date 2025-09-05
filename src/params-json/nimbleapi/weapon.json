@@ -123,7 +123,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 50,
+        "attackPower": 53,
         "attackSpeedRatio": 0.2,
         "code": 102409,
         "weaponType": "TwoHandSword",
@@ -1098,7 +1098,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 84,
+        "attackPower": 86,
         "attackSpeedRatio": 0.35,
         "code": 115501,
         "weaponType": "CrossBow",
@@ -1106,7 +1106,7 @@
     },
     {
         "attackPower": 35,
-        "adaptiveForce": 59,
+        "adaptiveForce": 57,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 15,
         "penetrationDefenseRatio": 0.1,
@@ -1115,7 +1115,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 80,
+        "attackPower": 82,
         "attackSpeedRatio": 0.48,
         "code": 115503,
         "weaponType": "CrossBow",
@@ -1272,7 +1272,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 75,
+        "attackPower": 72,
         "attackSpeedRatio": 0.3,
         "code": 117504,
         "weaponType": "AssaultRifle",
@@ -2100,7 +2100,7 @@
     },
     {
         "attackPower": 40,
-        "adaptiveForce": 58,
+        "adaptiveForce": 56,
         "penetrationDefenseRatio": 0.08,
         "code": 115702,
         "weaponType": "CrossBow",

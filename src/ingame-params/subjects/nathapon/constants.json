@@ -58,7 +58,7 @@
             "attackSpeed": 20,
             "amp": 65
         },
-        "stack_damage_amp": [4,7,10],
+        "stack_damage_amp": [3,6,9],
         "max_stack": 3
     }
 }

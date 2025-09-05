@@ -7,7 +7,7 @@
         "charge_reduction": 50,
         "bloomed_damage": {
             "base": [60,80,100,120,140],
-            "amp": 50
+            "amp": 55
         },
         "sp_cost": [70,65,60,55,50],
         "cooldown": {

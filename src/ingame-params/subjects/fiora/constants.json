@@ -10,7 +10,7 @@
         },
         "slow": {
             "duration": 1.5,
-            "effect": 30
+            "effect": 40
         },
         "sp_cost": [40,45,50,55,60],
         "cooldown": [8,7,6,5,4]

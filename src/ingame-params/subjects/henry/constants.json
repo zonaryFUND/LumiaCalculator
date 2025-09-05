@@ -1,0 +1,88 @@
+{
+    "Q": {
+        "damage": {
+            "base": [40,65,90,115,140],
+            "amp": 60
+        },
+        "additional_damage": {
+            "base": 10,
+            "level": 1
+        },
+        "reuse": 3,
+        "reuse_damage": {
+            "base": [60,85,110,135,160],
+            "amp": 65,
+            "targetMaxHP": 5
+        },
+        "reuse_additional_damage": {
+            "base": 20,
+            "level": 2
+        },
+        "second_hit_multiplier": 70,
+        "sp_cost": 40,
+        "cooldown": [9,8,7,6,5]
+    },
+    "W": {
+        "duration": 4,
+        "tick": 0.5,
+        "damage": {
+            "base": [10,20,30,40,50],
+            "amp": 20,
+            "targetMaxHP": [1,1,2,2,3]
+        },
+        "slow": 25,
+        "cooldown_reduction": 5,
+        "e_extend": 1,
+        "sp_cost": 60,
+        "cooldown": [14,13.5,13,12.5,12]
+    },
+    "E": {
+        "channeling": 0.7,
+        "bind": 0.8,
+        "damage": {
+            "base": [40,80,120,160,200],
+            "amp": 60
+        },
+        "movement_speed": {
+            "duration": 2,
+            "effect": 40
+        },
+        "q_cooldown_reduction": 40,
+        "w_cooldown_reduction": 20,
+        "sp_cost": 50,
+        "cooldown": [13,12.5,12,11.5,11]
+    },
+    "R": {
+        "cc_immune": 1.5,
+        "damage": {
+            "base": [100,150,200],
+            "amp": 50
+        },
+        "shield": {
+            "base": [50,100,150],
+            "amp": 35,
+            "maxHP": 8
+        },
+        "bullet_slow": 80,
+        "slow": 40,
+        "finish_damage": {
+            "base": [150,250,350],
+            "amp": 100
+        },
+        "stun": 0.8,
+        "sp_cost": 100,
+        "cooldown": [80,70,60]
+    },
+    "T": {
+        "time_bound": 2.5,
+        "threshold": 35,
+        "timer": 2,
+        "damage": {
+            "base": [40,70,100],
+            "amp": 30,
+            "targetLostHP": [8,12,16]
+        },
+        "enexploded_cooldown_reduction": 80,
+        "cooldown": [12,10,8]
+    }
+}

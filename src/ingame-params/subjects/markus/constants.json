@@ -59,7 +59,7 @@
             "base": [20,40,60],
             "targetMaxHP": 10
         },
-        "stun": 0.5,
+        "stun": 0.6,
         "slow": {
             "duration": 2,
             "effect": 30

@@ -17,7 +17,7 @@
     "W": {
         "shield": {
             "base": [50,75,100,125,150],
-            "attack": 50
+            "attack": 55
         },
         "shield_duration": 3,
         "slow": {
@@ -25,7 +25,7 @@
             "effect": [20,22.5,25,27.5,30]
         },
         "additional_shield": {
-            "maxHP": 7
+            "maxHP": 6
         },
         "attack": {
             "duration": 4,

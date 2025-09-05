@@ -15,14 +15,14 @@
     "W": {
         "cast": 0.8,
         "bac": 45,
-        "damage_reduction": [55,60,65,70,75],
+        "damage_reduction": [50,55,60,65,70],
         "cooldown_reduction": 0.5,
         "basic_attack_amp": 0.2,
         "cooldown": [9,8,7,6,5]
     },
     "E": {
         "damage": {
-            "base": [80,130,180,230,280],
+            "base": [50,100,150,200,250],
             "attack": 90
         },
         "slow": {

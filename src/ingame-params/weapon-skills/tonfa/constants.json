@@ -1,6 +1,6 @@
 {
     "duration": 0.75,
-    "reflected_ratio": [20,30,40],
+    "reflected_ratio": [15,25,35],
     "cooldown": {
         "constant": [30,25,20]
     }
