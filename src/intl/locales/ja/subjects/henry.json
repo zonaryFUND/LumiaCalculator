@@ -1,0 +1,12 @@
+{
+    "subject.henry.q1-multiplier": "Q1 2体目以降ヒット",
+    "subject.henry.q1-additional": "Q1追加ダメージ",
+    "subject.henry.q2-multiplier": "Q2 2体目以降ヒット",
+    "subject.henry.q2-additional": "Q2追加ダメージ",
+    "subject.henry.w-1tick": "W(1ティック)",
+    "subject.henry.w-max-hit": "W最大ヒット({value}ティック)",
+    "subject.henry.w-e": "W範囲内E",
+    "subject.henry.r1": "R発動",
+    "subject.henry.r1-shield": "Rシールド",
+    "subject.henry.r2": "R爆発"
+}

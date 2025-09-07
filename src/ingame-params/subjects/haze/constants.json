@@ -17,7 +17,7 @@
         "cast": 0.5,
         "damage": {
             "base": [40,80,120,160,200],
-            "amp": 70,
+            "amp": 65,
             "amp_per_ammo": 3
         },
         "sp_cost": 40

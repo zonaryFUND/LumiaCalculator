@@ -61,7 +61,7 @@
     "T": {
         "basic_attack_hit_stack": 1,
         "skill_hit_stack": 2,
-        "defense": [1,2,3],
+        "defense": [1.5,2,2.5],
         "max_stack": 10,
         "hpRegen": [3,4,5]
     }
