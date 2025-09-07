@@ -1,7 +1,7 @@
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import Constants from "./constants.json";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { calculateValue } from "app-types/value-ratio";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 
 export const code = 3011000;
@@ -40,7 +40,7 @@ export const info: SkillTooltipProps = {
         }
     }, 
     expansion: ({ config, status }) => {
-        const damage = calculateValue(Constants.dead_to_rights.damage, status, config, weaponSkillLevel(config.weaponMastery)).static.times(Constants.dead_to_rights.max_damage_multiplier);
+        const damage = calculateValue(Constants.dead_to_rights.damage, status, config, "D").static.times(Constants.dead_to_rights.max_damage_multiplier);
         return {
             tipValues: {
                 0: damage.toString()

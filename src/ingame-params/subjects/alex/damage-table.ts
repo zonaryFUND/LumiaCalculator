@@ -12,12 +12,12 @@ const table: DamageTableGenerator = props => {
             skill: [
                 ...weaponDependent,
                 [
-                    {label: props.intl.formatMessage({id: "subject.alex.r-first-outer"}), skill: "R", value: Constants.R.first_damage.outer},
-                    {label: props.intl.formatMessage({id: "subject.alex.r-first-center"}), skill: "R", value: Constants.R.first_damage.center},
-                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer"}), skill: "R", value: Constants.R.later_damage.outer},
-                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center"}), skill: "R", value: Constants.R.later_damage.center},
-                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.outer, multiplier: rMax * 100},
-                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center-max-hit"}, {value: rMax}), skill: "R", value: Constants.R.later_damage.center, multiplier: rMax * 100},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-first-outer"}), origin: "R", value: Constants.R.first_damage.outer},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-first-center"}), origin: "R", value: Constants.R.first_damage.center},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer"}), origin: "R", value: Constants.R.later_damage.outer},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center"}), origin: "R", value: Constants.R.later_damage.center},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-outer-max-hit"}, {value: rMax}), origin: "R", value: Constants.R.later_damage.outer, multiplier: rMax * 100},
+                    {label: props.intl.formatMessage({id: "subject.alex.r-pulse-center-max-hit"}, {value: rMax}), origin: "R", value: Constants.R.later_damage.center, multiplier: rMax * 100},
                 ]
             ]
         }
@@ -26,15 +26,15 @@ const table: DamageTableGenerator = props => {
     if (weaponType == "Pistol" || weaponType == "DirectFire") {
         // ranged
         return common([
-            [{label: props.intl.formatMessage({id: "subject.alex.rangeq"}), skill: "Q", value: Constants.RangeQ.damage}],
-            [{label: props.intl.formatMessage({id: "subject.alex.rangew"}), skill: "W", value: Constants.RangeW.damage}],            
-            [{label: props.intl.formatMessage({id: "subject.alex.rangee"}), skill: "E", value: Constants.RangeE.damage}]            
+            [{label: props.intl.formatMessage({id: "subject.alex.rangeq"}), origin: "Q", value: Constants.RangeQ.damage}],
+            [{label: props.intl.formatMessage({id: "subject.alex.rangew"}), origin: "W", value: Constants.RangeW.damage}],            
+            [{label: props.intl.formatMessage({id: "subject.alex.rangee"}), origin: "E", value: Constants.RangeE.damage}]            
         ])
     } else {
         // melee
         return common([
-            [{label: props.intl.formatMessage({id: "subject.alex.meleeq"}), skill: "Q", value: Constants.MeleeQ.damage}],
-            [{label: props.intl.formatMessage({id: "subject.alex.meleew"}), skill: "W", value: Constants.MeleeW.damage}]
+            [{label: props.intl.formatMessage({id: "subject.alex.meleeq"}), origin: "Q", value: Constants.MeleeQ.damage}],
+            [{label: props.intl.formatMessage({id: "subject.alex.meleew"}), origin: "W", value: Constants.MeleeW.damage}]
         ])
     }
 }

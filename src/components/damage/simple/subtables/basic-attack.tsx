@@ -60,6 +60,7 @@ const basicAttack: React.FC<Props> = props => {
                                 key="standard"
                                 label={intl.formatMessage({id: standardBasicAttackLabelIntlID})}
                                 value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
+                                origin="other"
                                 config={props.config}
                                 status={props.status}
                             />
@@ -71,6 +72,7 @@ const basicAttack: React.FC<Props> = props => {
                                 label={intl.formatMessage({id: standardBasicAttackLabelIntlID})}
                                 type={{type: "basic", critical: "none"}}
                                 value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
+                                origin="other"
                                 config={props.config}
                                 status={props.status}
                                 hp={props.hp}
@@ -78,7 +80,6 @@ const basicAttack: React.FC<Props> = props => {
                         }
     
                         if (typeof definition == "object" && definition.damageDependentHeal == undefined) {
-                            const skillLevel = ("skill" in definition) ? props.config.skillLevels[definition.skill] : definition.skillLevel;
                             if (typeof definition.value == "function") {
                                 return <UniqueExpression 
                                     key={definition.label}
@@ -92,7 +93,7 @@ const basicAttack: React.FC<Props> = props => {
                                 return <CriticalAvailable 
                                     key={definition.label}
                                     label={definition.label}
-                                    skillLevel={skillLevel}
+                                    origin={definition.origin}
                                     value={definition.value}
                                     config={props.config}
                                     status={props.status}
@@ -102,7 +103,6 @@ const basicAttack: React.FC<Props> = props => {
                                 return <StandardDamage 
                                     key={definition.label}
                                     {...definition}
-                                    skillLevel={skillLevel}
                                     value={definition.value}
                                     config={props.config}
                                     status={props.status}

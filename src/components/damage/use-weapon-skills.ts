@@ -2,14 +2,13 @@ import { DamageTableUnit } from "app-types/damage-table/unit";
 import { EquipmentStatusDictionary } from "app-types/equipment";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 import { WeaponSkillDamageTableDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import * as React from "react";
 import { useIntl } from "react-intl";
 
 type Response = {
-    regular: (DamageTableUnit & {skillLevel: number})[]
-    basicAttackTriggered: (DamageTableUnit & {skillLevel: number})[]
+    regular: DamageTableUnit[]
+    basicAttackTriggered: DamageTableUnit[]
 }
 
 export default function useWeaponSkill(config: SubjectConfig): Response {
@@ -19,13 +18,12 @@ export default function useWeaponSkill(config: SubjectConfig): Response {
         if (config.equipment.Weapon == null) return {regular: [], basicAttackTriggered: []};
 
         const weaponType = EquipmentStatusDictionary[config.equipment.Weapon].type as WeaponTypeID;
-        const skillLevel = weaponSkillLevel(config.weaponMastery);
     
         const generator = WeaponSkillDamageTableDictionary[weaponType];
         if (generator == undefined) return {regular: [], basicAttackTriggered: []};
 
-        const units = (generator({intl}))
-            .map(unit => ({...unit, skillLevel}));
+        const units: DamageTableUnit[] = (generator({intl}))
+            .map(unit => ({...unit, origin: "D" }));
     
         return {
             regular: units.filter(u => u.triggeredOnBasicAttack != true),

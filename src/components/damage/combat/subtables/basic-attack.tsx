@@ -31,6 +31,7 @@ const basicAttack: React.FC<Props> = props => {
                     const unit: DamageTableUnit = {
                         label: intl.formatMessage({id: standardBasicAttackLabelIntlID}),
                         value: {attack: standardBasicAttackRatio, basicAttackAmp: 100},
+                        origin: "other",
                         type: {
                             type: "basic", 
                             critical: element == "disable-critical" ? "none" : undefined,

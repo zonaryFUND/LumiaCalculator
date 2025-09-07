@@ -4,13 +4,21 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import StandardDamage from "./rows/standard-damage";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 import UniqueExpression from "./rows/unique-expression";
 
+type Unit = Omit<DamageTableUnit, "value"> & 
+    {
+        value: ValueRatio | UniqueValueStrategy
+    } &
+    {
+        origin: ValueOrigin
+    }
+
 type Props = {
     label: string
-    elements: (Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy} & {skillLevel?: number})[][]
+    elements: Unit[][]
     config: SubjectConfig
     status: Status
     hp: number
@@ -40,7 +48,6 @@ const subTable: React.FC<Props> = props => {
                         } else {
                             return <StandardDamage 
                                 key={unit.label}
-                                skillLevel={unit.skillLevel}
                                 status={props.status} 
                                 config={props.config} 
                                 {...unit} 

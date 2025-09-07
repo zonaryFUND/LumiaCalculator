@@ -5,19 +5,19 @@ const table: DamageTableGenerator = props => ({
     basicAttack: ["standard"],
     skill: [
         [
-            {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: props.intl.formatMessage({id: "subject.lenox.q-outer"}), skill: "Q", value: {...Constants.Q.damage, ...Constants.Q.additional_damage}},
+            {label: "Q", origin: "Q", value: Constants.Q.damage},
+            {label: props.intl.formatMessage({id: "subject.lenox.q-outer"}), origin: "Q", value: {...Constants.Q.damage, ...Constants.Q.additional_damage}},
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.lenox.w-swing"}), skill: "W", value: Constants.W.first_damage},
-            {label: props.intl.formatMessage({id: "subject.lenox.w-pull"}), skill: "W", value: Constants.W.second_damage}
+            {label: props.intl.formatMessage({id: "subject.lenox.w-swing"}), origin: "W", value: Constants.W.first_damage},
+            {label: props.intl.formatMessage({id: "subject.lenox.w-pull"}), origin: "W", value: Constants.W.second_damage}
         ],
-        [{label: "E", skill: "E", value: Constants.E.damage}],
+        [{label: "E", origin: "E", value: Constants.E.damage}],
         [
-            {label: props.intl.formatMessage({id: "subject.lenox.r-1hit"}), skill: "R", value: Constants.R.damage},
-            {label: props.intl.formatMessage({id: "subject.lenox.r-2hit"}), skill: "R", value: Constants.R.damage, multiplier: 200},
+            {label: props.intl.formatMessage({id: "subject.lenox.r-1hit"}), origin: "R", value: Constants.R.damage},
+            {label: props.intl.formatMessage({id: "subject.lenox.r-2hit"}), origin: "R", value: Constants.R.damage, multiplier: 200},
         ],
-        [{label: props.intl.formatMessage({id: "subject.lenox.passive-shield"}), skill: "T", value: Constants.T.shield, type: {type: "shield", target: "self"}}]
+        [{label: props.intl.formatMessage({id: "subject.lenox.passive-shield"}), origin: "T", value: Constants.T.shield, type: {type: "shield", target: "self"}}]
     ]   
 })
 

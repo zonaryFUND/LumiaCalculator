@@ -1,0 +1,19 @@
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { ValueOrigin } from "./calculation";
+import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
+
+/**
+ * 実験体設定およびダメージ等効果発生源の設定からスキルレベルを抽出する
+ * 
+ * 返されるスキルレベルは配列のインデックスであり、したがってゲーム内表示値-1である
+ * @param config 実験体設定構造体
+ * @param origin 発生源スキル
+ * @returns スキルレベル（AA/アイテムスキル/特性の場合`undefined`）
+ */
+export function extractSkillLevel(config: SubjectConfig, origin: ValueOrigin): number | undefined {
+    if (origin == "other") return undefined;
+    if (origin == "tactical1") return 0;
+    if (origin == "tactical2") return 1;
+    if (origin == "D") return weaponSkillLevel(config.weaponMastery);
+    return config.skillLevels[origin];
+}

@@ -9,22 +9,22 @@ const rSet = {
 const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: props.intl.formatMessage({id: "subject.eva.passive-additional"}), skill: "T", value: Constants.T.damage}
+        {label: props.intl.formatMessage({id: "subject.eva.passive-additional"}), origin: "T", value: Constants.T.damage}
     ],
     skill: [
         [
-            {label: props.intl.formatMessage({id: "subject.eva.q-pass"}), skill: "Q", value: Constants.Q.first_damage},
-            {label: props.intl.formatMessage({id: "subject.eva.q-blast"}), skill: "Q", value: Constants.Q.second_damage},
+            {label: props.intl.formatMessage({id: "subject.eva.q-pass"}), origin: "Q", value: Constants.Q.first_damage},
+            {label: props.intl.formatMessage({id: "subject.eva.q-blast"}), origin: "Q", value: Constants.Q.second_damage},
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.eva.w-first"}), skill: "W", value: Constants.W.first_damage},
-            {label: props.intl.formatMessage({id: "subject.eva.w-blast"}), skill: "W", value: Constants.W.second_damage},
+            {label: props.intl.formatMessage({id: "subject.eva.w-first"}), origin: "W", value: Constants.W.first_damage},
+            {label: props.intl.formatMessage({id: "subject.eva.w-blast"}), origin: "W", value: Constants.W.second_damage},
         ],
-        [{label: props.intl.formatMessage({id: "subject.eva.e-additional"}), skill: "E", value: Constants.E.damage}],
+        [{label: props.intl.formatMessage({id: "subject.eva.e-additional"}), origin: "E", value: Constants.E.damage}],
         [   
-            {label: props.intl.formatMessage({id: "subject.eva.r-base"}), skill: "R", value: Constants.R.damage},
-            {label: props.intl.formatMessage({id: "subject.eva.r-additional"}, {value: Constants.R.max_stack}), skill: "R", value: Constants.R.stack_damage},
-            {label: props.intl.formatMessage({id: "subject.eva.r-set"}, {value: Constants.R.max_stack, set: Constants.R.max_stack * Constants.R.tick}), skill: "R", value: rSet}
+            {label: props.intl.formatMessage({id: "subject.eva.r-base"}), origin: "R", value: Constants.R.damage},
+            {label: props.intl.formatMessage({id: "subject.eva.r-additional"}, {value: Constants.R.max_stack}), origin: "R", value: Constants.R.stack_damage},
+            {label: props.intl.formatMessage({id: "subject.eva.r-set"}, {value: Constants.R.max_stack, set: Constants.R.max_stack * Constants.R.tick}), origin: "R", value: rSet}
         ]
     ]
 })

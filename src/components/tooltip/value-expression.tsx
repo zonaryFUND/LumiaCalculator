@@ -1,14 +1,13 @@
 import * as React from "react";
 import style from "./tooltip.module.styl";
 import { FormattedMessage } from "react-intl";
-import { RatioKeys, ValueElement, ValueRatio } from "app-types/value-ratio";
+import { ValueElement, ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
-import { useValueContext, useValueContextOptional } from "./value-context";
-import attackSpeed from "components/status/chunks/attack-speed";
+import { useValueContextOptional } from "./value-context";
 
 type Props = {
-    id: RatioKeys
-    level?: number
+    id: keyof ValueRatio
+    skillLevel?: number
     ratio: ValueElement
     criticalMultiplier?: Decimal
     brackets?: boolean
@@ -44,12 +43,12 @@ const ValueExpression: React.FC<Props> = props => {
     const def = defaultDictionary[props.id];
     const value = (() => {
         if (typeof props.ratio === "number") return props.ratio;
-        if (Array.isArray(props.ratio)) return props.ratio[props.level ?? 0];
+        if (Array.isArray(props.ratio)) return props.ratio[props.skillLevel ?? 0];
         return (
             <>
             {
                 Object.entries(props.ratio).map(([key, value]) => 
-                    <ValueExpression key={key} id={key as keyof ValueRatio} level={props.level} ratio={value}  />        
+                    <ValueExpression key={key} id={key as keyof ValueRatio} skillLevel={props.skillLevel} ratio={value}  />        
                 )
             }
             </>

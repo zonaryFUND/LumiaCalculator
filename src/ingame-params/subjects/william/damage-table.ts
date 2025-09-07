@@ -7,16 +7,16 @@ const table: DamageTableGenerator = props => {
     return {
         basicAttack: [
             "standard",
-            {label: props.intl.formatMessage({id: "subject.william.aa-during-q"}), skill: "Q", value: Constants.Q.damage, type: {type: "basic"}},
-            {label: props.intl.formatMessage({id: "subject.william.aa-after-t"}), skill: "T", value: Constants.T.damage, type: {type: "basic"}},
-            {label: props.intl.formatMessage({id: "subject.william.aa-after-t-during-q"}), skill: "Q", value: {attack: qt, basicAttackAmp: 100}, type: {type: "basic"}},
+            {label: props.intl.formatMessage({id: "subject.william.aa-during-q"}), origin: "Q", value: Constants.Q.damage, type: {type: "basic"}},
+            {label: props.intl.formatMessage({id: "subject.william.aa-after-t"}), origin: "T", value: Constants.T.damage, type: {type: "basic"}},
+            {label: props.intl.formatMessage({id: "subject.william.aa-after-t-during-q"}), origin: "Q", value: {attack: qt, basicAttackAmp: 100}, type: {type: "basic"}},
         ],
         skill: [
             [  
-                {label: "W", skill: "W", value: Constants.W.damage},
-                {label: props.intl.formatMessage({id: "subject.william.w-2hit"}), skill: "W", value: Constants.W.damage, multiplier: 200}
+                {label: "W", origin: "W", value: Constants.W.damage},
+                {label: props.intl.formatMessage({id: "subject.william.w-2hit"}), origin: "W", value: Constants.W.damage, multiplier: 200}
             ],
-            [{label: "R", skill: "R", value: Constants.R.damage}]
+            [{label: "R", origin: "R", value: Constants.R.damage}]
         ]   
     } 
 }

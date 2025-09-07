@@ -3,8 +3,8 @@ import * as React from "react";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { useToggle } from "react-use";
-import { ValueRatio } from "app-types/value-ratio";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { extractSkillLevel, ValueRatio } from "app-types/value-ratio";
+import { calculateValue } from "app-types/value-ratio";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
@@ -18,19 +18,18 @@ import { DamageTableUnit } from "app-types/damage-table/unit";
 import { extractMultiplier } from "components/damage/damage-table-util";
 
 type Props =  DamageTableUnit & {
-    skillLevel?: number
     config: SubjectConfig
     status: Status
 }
 
 const criticalAvailable: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
-
+    const skillLevel = extractSkillLevel(props.config, props.origin);
     const regularDamage = calculateValue(
         props.value, 
         props.status, 
         props.config, 
-        props.skillLevel
+        props.origin
     ).static;
 
     const criticalChance = props.status.criticalStrikeChance.calculatedValue
@@ -40,7 +39,7 @@ const criticalAvailable: React.FC<Props> = props => {
 
     const expectedValue = regularDamage.percent(new Decimal(100).sub(criticalChance))
         .add(criticalDamage.percent(criticalChance));
-    const multiplier = extractMultiplier(props.skillLevel, props.multiplier);
+    const multiplier = extractMultiplier(skillLevel, props.multiplier);
 
     return (
         <>
@@ -77,7 +76,7 @@ const criticalAvailable: React.FC<Props> = props => {
                             <>
                                 <StaticValueEquation
                                     label={<FormattedMessage id="app.standard-value" />}
-                                    skillLevel={props.skillLevel}
+                                    origin={props.origin}
                                     config={props.config}
                                     status={props.status}
                                     ratio={props.value}

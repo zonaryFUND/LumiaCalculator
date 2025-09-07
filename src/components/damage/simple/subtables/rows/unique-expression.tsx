@@ -15,7 +15,7 @@ import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
 import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 
-type Props = Omit<SubjectDamageTableUnit, "value" | "skill"> & {
+type Props = Omit<SubjectDamageTableUnit, "value"> & {
     strategy: UniqueValueStrategy
     config: SubjectConfig
     status: Status

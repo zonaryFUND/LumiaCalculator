@@ -2,17 +2,42 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import Decimal from "decimal.js";
 import { ValueRatio } from "./type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SkillKey } from "app-types/skill";
+import { extractSkillLevel } from "./extraction";
 
 type Response = { 
     static: Decimal
     dynamic?: {[K in keyof ValueRatio]: Decimal}
-    dynamicValueOnly: boolean
 }
 
-export function calculateValue(ratio: ValueRatio, status: Status, config: SubjectConfig, skillLevel?: number): Response {
+/**
+ * 効果発生源を表す型
+ * 
+ * - スキルのキー（`QWERD`）
+ * - 戦術スキル（レベル1を`tactical1`、レベル2を`tactical2`として渡す）
+ * - バニラ仕様の基本攻撃、アイテムや特性（`other`）
+ */
+export type ValueOrigin = SkillKey | "tactical1" | "tactical2" | "other"
+
+/**
+ * スキルなどの威力を表すレシオと実験体の現在のビルド/ステータスから具体的な威力を計算する
+ * 
+ * 対象体力や現在体力などの動的な値のレシオを持つ威力の場合、当該動的レシオだけをフィルタして別途返す
+ * 
+ * @param ratio 威力レシオ構造体
+ * @param status 発生源である実験体の現在ステータス
+ * @param config 発生源である実験体のビルド設定
+ * @param skill 発生源であるスキル
+ * @returns 以下のフィールドをもつオブジェクト
+ * - static　対象体力や自身の現在体力などの動的な値に依存しない計算値
+ * - dynamic　対象体力や自身の現在体力などの動的な値に依存する値のレシオ値オブジェクト
+ */
+export function calculateValue(ratio: ValueRatio, status: Status, config: SubjectConfig, origin: ValueOrigin): Response {
     const values = Object.keys(ratio).reduce((prev: Response, key) => {
         const value = ratio[key as keyof ValueRatio];
         if (value == undefined) return prev;
+
+        const skillLevel = extractSkillLevel(config, origin)
 
         const selectedValue: Decimal = (() => {
             if (Array.isArray(value)) {
@@ -21,7 +46,7 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
                 }
                 return new Decimal(value[skillLevel]);
             } else if (typeof value == "object") {
-                return calculateValue(value as ValueRatio, status, config, skillLevel).static;
+                return calculateValue(value as ValueRatio, status, config, origin).static;
             } else {
                 return new Decimal(value);
             }
@@ -74,10 +99,9 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
 
         return { 
             static: staticValue ?? prev.static, 
-            dynamic: dynamicValue, 
-            dynamicValueOnly: prev.dynamicValueOnly && staticValue == undefined  // If there exists at least one or more staticValue keys, always returns false.
+            dynamic: dynamicValue
         };
-    }, {static: new Decimal(0), dynamic: undefined, dynamicValueOnly: true});
+    }, {static: new Decimal(0), dynamic: undefined});
 
     return values
 }

@@ -1,8 +1,8 @@
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { isValueRatio, RatioKeys, ValueRatio } from "app-types/value-ratio";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { ValueRatio } from "app-types/value-ratio";
+import { calculateValue } from "app-types/value-ratio";
 import { extractMultiplier } from "components/damage/damage-table-util";
 import * as React from "react";
 import { useToggle } from "react-use";
@@ -18,7 +18,6 @@ import DamageDependentHeal from "../subrows/damage-dependent-heal";
 import style from "../../../damage-table.module.styl";
 import table from "components/common/table.module.styl";
 import useDynamicValueCalculation from "./use-dynamic-value-calculation";
-import { FormattedDate, FormattedMessage } from "react-intl";
 
 type Props = Omit<DamageTableUnit, "value"> & {
     skillLevel?: number
@@ -31,11 +30,11 @@ type Props = Omit<DamageTableUnit, "value"> & {
 
 const standardDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
-    const {static: staticBasePotency, dynamic: dynamicBasePotency, dynamicValueOnly} = (() => {
-        if (isValueRatio(props.value)) {
-            return calculateValue(props.value, props.status, props.config, props.skillLevel);
+    const {static: staticBasePotency, dynamic: dynamicBasePotency} = (() => {
+        if (Decimal.isDecimal(props.value)) {
+            return { static: props.value, dynamic: undefined　};
         } else {
-            return { static: props.value, dynamic: undefined, dynamicValueOnly: false };
+            return calculateValue(props.value, props.status, props.config, props.origin);
         }
     })();
     const { hp, targetHP, targetMaxHP, ltr } = useCombatHPContext();
@@ -139,7 +138,7 @@ const standardDamage: React.FC<Props> = props => {
             :
             <Potency
                 key="potency"
-                staticPotency={dynamicValueOnly ? undefined : staticPotency}
+                staticPotency={staticPotency}
                 dynamicPotencyDictionary={dynamicPotencyDictionary}
                 sum={totalPotency}
             />,

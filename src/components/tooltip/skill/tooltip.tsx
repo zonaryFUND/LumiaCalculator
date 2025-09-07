@@ -16,6 +16,9 @@ import baseStyle from "../tooltip.module.styl";
 import style from "./tooltip.module.styl";
 import { ExtractAndCalculateValue } from "../extract-tooltip-value";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
+import { extractArrayOrValue } from "@app/util/array";
+import { extractSkillLevel } from "app-types/value-ratio";
+import { config } from "process";
 
 type Props = {
     code: number
@@ -29,21 +32,16 @@ const tooltip: React.FC<Props> = props => {
     const uiType = useResponsiveUIType();
     const skillInfo = React.useMemo(() => SubjectTooltipDictionary[props.code] ?? WeaponSkillTooltipDictionary[props.code], [props.code]);
 
-    const skillLevel = React.useMemo(() => {
-        if (skillInfo.skillKey == "D") {
-            return weaponSkillLevel(props.config.weaponMastery);
-        } else {    
-            return props.config.skillLevels[skillInfo.skillKey];
-        }
-    }, [skillInfo.skillKey, props.config.skillLevels]);
+    const skillLevel = extractSkillLevel(props.config, skillInfo.skillKey)!;
+    
     const infoTextIntlID = (props.showEquation ? skillInfo.overrideIntlID?.coef : skillInfo.overrideIntlID?.desc) ?? `Skill/Group/${props.showEquation ? "Coef" : "Desc"}/${props.code}`;
     const insertedValues = skillInfo.values({showEquation: props.showEquation, config: props.config, status: props.status});
 
-    const coefficientValues = es.mapValues(insertedValues, value => ExtractAndCalculateValue(value, intl, props.config, props.status, skillLevel));
+    const coefficientValues = es.mapValues(insertedValues, value => ExtractAndCalculateValue(value, intl, props.config, props.status, skillInfo.skillKey));
     const expansion = skillInfo.expansion({skillLevel, config: props.config, status: props.status});
     const expansionValues = (() => {
         if (expansion.tipValues == undefined) return undefined;
-        return es.mapValues(expansion.tipValues, value => ExtractAndCalculateValue(value, intl, props.config, props.status, skillLevel));
+        return es.mapValues(expansion.tipValues, value => ExtractAndCalculateValue(value, intl, props.config, props.status, skillInfo.skillKey));
     })();
 
     const expansionTooltipKey = `Skill/Group/ExpansionTip/${props.code}`

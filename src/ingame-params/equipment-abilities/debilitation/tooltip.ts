@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import SanitizeValueRatio from "../use-sanitize-value-ratio";
 import { ValueRatio } from "app-types/value-ratio";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { calculateValue } from "app-types/value-ratio";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { FilterUndefined } from "@app/ingame-params/valueratio-to-string";
 
@@ -14,7 +14,7 @@ const values: EquipmentAbilityTooltipValues = ({ config, status, importedDamage 
         1: targetMaxHP.amp,
         2: Constants.duration,
         3: Constants.max_stack,
-        4: calculateValue(targetMaxHP, status, config).static.toFixed(1)
+        4: calculateValue(targetMaxHP, status, config, "other").static.toFixed(1)
     })
 }
 

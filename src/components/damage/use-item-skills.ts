@@ -5,7 +5,6 @@ import * as React from "react";
 import { useIntl } from "react-intl";
 import { EquipmentStatusDictionary } from "app-types/equipment";
 import { ignorePseudoTag } from "components/common/ignore-pseudo-tag";
-import { Status } from "app-types/subject-dynamic/status/type";
 
 type Response = {
     basicAttackTriggered: DamageTableUnit[]
@@ -34,7 +33,7 @@ export default function useItemSkills(config: SubjectConfig): Response {
                             const itemWithSkillName = `${ignorePseudoTag(intl.formatMessage({id: `Item/Skills/${ability.skillCode}/Name`}))}(${intl.formatMessage({id: `Item/Name/${id}${position == "Chest" && isChestDavid ? "_D" : ""}`})})`;
                             const label = entry.labelIntlID ? intl.formatMessage({id: entry.labelIntlID}, {item: itemWithSkillName, value: entry.intlValue}) : itemWithSkillName;
                             const value = "melee" in entry.value ? entry.value[range] : entry.value;
-                            return {...entry, label, value}
+                            return {...entry, label, value, origin: "other"} satisfies DamageTableUnit
                         }) ?? [];
                     });
             })

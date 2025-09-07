@@ -1,9 +1,9 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { RatioKeys, ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 
-type EquationExpressionUnit = string | { intlID: string } | { ratioKey: RatioKeys }
+type EquationExpressionUnit = string | { intlID: string } | { ratioKey: keyof ValueRatio }
 
 export type EquationExpression = {labelIntlID?: string, expression: EquationExpressionUnit[]};
 

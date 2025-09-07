@@ -28,7 +28,7 @@ const skill: React.FC<EquipmentSkill> = props => {
     const sanitizedValues = Object.entries(values).reduce((prev, [key, value]) => {
         return {
             ...prev,
-            [key.toString()]: ExtractAndCalculateValue(value, intl, config, status)
+            [key.toString()]: ExtractAndCalculateValue(value, intl, config, status, "other")
         }
     }, {} satisfies Record<string, string | number>);
 

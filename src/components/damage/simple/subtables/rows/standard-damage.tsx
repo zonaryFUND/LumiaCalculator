@@ -4,20 +4,18 @@ import { useToggle } from "react-use";
 import table from "components/common/table.module.styl";
 import InnerTable from "components/common/inner-table";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { RatioKeys, ValueRatio } from "app-types/value-ratio";
+import { extractSkillLevel, ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage } from "react-intl";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { calculateValue } from "app-types/value-ratio";
 import { extractMultiplier } from "../../../damage-table-util";
 import StaticValueEquation from "../subrows/static-value-equation";
 import MultiplyEquation from "../subrows/mutiply-equation";
 import HealPower from "../subrows/heal-power";
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import Decimal from "decimal.js";
-import { omit } from "es-toolkit";
 
 type Props = Omit<DamageTableUnit, "value"> & {
-    skillLevel?: number
+    origin?: ValueOrigin
     value: ValueRatio
     config: SubjectConfig
     status: Status
@@ -27,15 +25,16 @@ type Props = Omit<DamageTableUnit, "value"> & {
 const standardDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
 
-    const {static: staticBaseValue, dynamic: dynamicBaseValue, dynamicValueOnly} = calculateValue(props.value, props.status, props.config, props.skillLevel);
+    const {static: staticBaseValue, dynamic: dynamicBaseValue} = calculateValue(props.value, props.status, props.config, props.origin);
 
-    const multiplier = extractMultiplier(props.skillLevel, props.multiplier);    
+    const skillLevel = extractSkillLevel(props.config, props.origin)
+    const multiplier = extractMultiplier(skillLevel, props.multiplier);    
     const healPower = (props.type?.type == "heal") && props.status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ?
             props.status.healerGiveHpHealRatio.calculatedValue : null;
     const percent = React.useMemo(() => props.type && ("percentExpression" in props.type) && props.type.percentExpression, [props.type]);
 
     const [staticFinalValue, staticSubRows] = (() => {
-        if (dynamicValueOnly) return [null, [] as React.ReactElement[]]
+        if (staticBaseValue.isZero()) return [null, [] as React.ReactElement[]]
 
         const staticBaseValueHealConcerned = staticBaseValue.addPercent(healPower || 0);
         if (multiplier) {
@@ -52,7 +51,7 @@ const standardDamage: React.FC<Props> = props => {
                     <StaticValueEquation
                         key="equation"
                         label={dynamicBaseValue != undefined ? <FormattedMessage id="app.static-value" /> : undefined}
-                        skillLevel={props.skillLevel}
+                        origin={props.origin}
                         config={props.config}
                         status={props.status}
                         ratio={props.value}
@@ -97,9 +96,9 @@ const standardDamage: React.FC<Props> = props => {
                         ]
                     }
                 } else {
-                    const targetRatio = props.value[key as RatioKeys];
+                    const targetRatio = props.value[key as keyof ValueRatio];
                     const showEquation = typeof targetRatio == "object" && !Array.isArray(targetRatio);
-                    const showConstant = !showEquation && (!dynamicValueOnly || healPower);
+                    const showConstant = !showEquation && (!staticBaseValue.isZero() || healPower);
                     return {
                         key,
                         value: (
@@ -113,7 +112,7 @@ const standardDamage: React.FC<Props> = props => {
                             <StaticValueEquation
                                 key={`${key}-equation`}
                                 label={<FormattedMessage id={labelIntlID} />}
-                                skillLevel={props.skillLevel}
+                                origin={props.origin}
                                 config={props.config}
                                 status={props.status}
                                 ratio={targetRatio as ValueRatio}
@@ -129,7 +128,7 @@ const standardDamage: React.FC<Props> = props => {
                 }
             })
             .reduce((prev, {key, value, subrows}, index) => {
-                const encloseValueInBrackets = index > 0 || !dynamicValueOnly;
+                const encloseValueInBrackets = index > 0 || !staticBaseValue.isZero();
                 return [
                     prev[0].concat(<React.Fragment key={key}>
                         {encloseValueInBrackets ? <>(+</> : null}

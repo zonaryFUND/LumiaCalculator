@@ -40,25 +40,25 @@ const ninaBasicAttackStrategy: UniqueValueStrategy = ({ config, status }) => {
 const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: props.intl.formatMessage({id: "subject.chloe.nina-aa"}), skill: "T", value: ninaBasicAttackStrategy, type: {type: "basic"}}
+        {label: props.intl.formatMessage({id: "subject.chloe.nina-aa"}), origin: "T", value: ninaBasicAttackStrategy, type: {type: "basic"}}
     ],
     skill: [
-        [{label: "Q", skill: "Q", value: NinaRatioStrategy("Q", Constants.Q.damage)}],
+        [{label: "Q", origin: "Q", value: NinaRatioStrategy("Q", Constants.Q.damage)}],
         [
-            {label: props.intl.formatMessage({id: "subject.chloe.w-string-damage-per-sec"}), skill: "W", value: Constants.W.damage, type: {type: "true"}},
-            {label: props.intl.formatMessage({id: "subject.chloe.w-string-damage-max"}, {value: Constants.W.duration}), skill: "W", value: Constants.W.damage, type: {type: "true"}, multiplier: Constants.W.duration * 100},
-            {label: props.intl.formatMessage({id: "subject.chloe.w-blade"}), skill: "W", value: Constants.W.drop_damage},
-            {label: props.intl.formatMessage({id: "subject.chloe.w-nina"}), skill: "W", value: NinaRatioStrategy("W", Constants.W.nina_damage)}
+            {label: props.intl.formatMessage({id: "subject.chloe.w-string-damage-per-sec"}), origin: "W", value: Constants.W.damage, type: {type: "true"}},
+            {label: props.intl.formatMessage({id: "subject.chloe.w-string-damage-max"}, {value: Constants.W.duration}), origin: "W", value: Constants.W.damage, type: {type: "true"}, multiplier: Constants.W.duration * 100},
+            {label: props.intl.formatMessage({id: "subject.chloe.w-blade"}), origin: "W", value: Constants.W.drop_damage},
+            {label: props.intl.formatMessage({id: "subject.chloe.w-nina"}), origin: "W", value: NinaRatioStrategy("W", Constants.W.nina_damage)}
         ],
         [
-            {label: "E1", skill: "E", value: Constants.E.first_damage},
-            {label: "E2", skill: "E", value: NinaRatioStrategy("E", Constants.E.second_damage)}
+            {label: "E1", origin: "E", value: Constants.E.first_damage},
+            {label: "E2", origin: "E", value: NinaRatioStrategy("E", Constants.E.second_damage)}
         ],
         [
-            {label: props.intl.formatMessage({id: "subject.chloe.r-min"}), skill: "R", value: Constants.R.damage, type: {type: "true"}},
-            {label: props.intl.formatMessage({id: "subject.chloe.r-max"}), skill: "R", value: Constants.R.damage, multiplier: Constants.R.damage_max_multipler * 100, type: {type: "true"}},
+            {label: props.intl.formatMessage({id: "subject.chloe.r-min"}), origin: "R", value: Constants.R.damage, type: {type: "true"}},
+            {label: props.intl.formatMessage({id: "subject.chloe.r-max"}), origin: "R", value: Constants.R.damage, multiplier: Constants.R.damage_max_multipler * 100, type: {type: "true"}},
         ],
-       [{label: props.intl.formatMessage({id: "subject.chloe.passive-nina"}), skill: "T", value: NinaRatioStrategy("T", Constants.T.damage)}]
+       [{label: props.intl.formatMessage({id: "subject.chloe.passive-nina"}), origin: "T", value: NinaRatioStrategy("T", Constants.T.damage)}]
     ]
 })
 

@@ -1,9 +1,9 @@
-import { RatioKeys } from "app-types/value-ratio";
+import { ValueRatio } from "app-types/value-ratio";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 
 type Props = {
-    label: RatioKeys
+    label: keyof ValueRatio
 }
 
 const ratioKey: React.FC<Props> = props => {

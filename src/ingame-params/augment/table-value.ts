@@ -6,14 +6,13 @@ import Support from "./support.json";
 import { ValueRatio } from "app-types/value-ratio";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { calculateValue } from "app-types/value-ratio";
 import Decimal from "decimal.js";
-import ratioKey from "components/damage/simple/subtables/subrows/ratio-key";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 const acceleratorStrategy: UniqueValueStrategy = ({ config, status }) => {
     const base = Havoc.accelerator.damage.base[config.level - 1];
-    const value = calculateValue(Havoc.accelerator.damage, status, config, config.level - 1).static;
+    const value = calculateValue({ ...Havoc.accelerator.damage, base }, status, config, "other").static;
     return {
         value,
         equationExpression: [
@@ -36,8 +35,8 @@ const redSpriteStrategy: UniqueValueStrategy = ({ config, status }) => {
     const {amp, ...attackBased} = Chaos.red_sprite.damage;
     const {additionalAttack, ...ampBased} = Chaos.red_sprite.damage;
 
-    const attackBasedDamage = calculateValue(attackBased, status, config).static;
-    const ampBasedDamage = calculateValue(ampBased, status, config).static;
+    const attackBasedDamage = calculateValue(attackBased, status, config, "other").static;
+    const ampBasedDamage = calculateValue(ampBased, status, config, "other").static;
 
     const attackIsBigger = attackBasedDamage.greaterThan(ampBasedDamage);
     const value = Decimal.max(attackBasedDamage, ampBasedDamage);
@@ -59,7 +58,7 @@ const redSpriteStrategy: UniqueValueStrategy = ({ config, status }) => {
     }
 }
 
-type AugmentDamageTableUnit = Omit<DamageTableUnit, "value"> & {
+type AugmentDamageTableUnit = Omit<DamageTableUnit, "value" | "origin"> & {
     value: ValueRatio | {melee: ValueRatio, range: ValueRatio} | UniqueValueStrategy
 }
 

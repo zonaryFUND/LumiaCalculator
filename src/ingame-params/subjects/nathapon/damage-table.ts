@@ -15,15 +15,15 @@ const table: DamageTableGenerator = props => {
     return {    
         basicAttack: [
             "disable-critical" as any,
-            {label: props.intl.formatMessage({id: "subject.nathapon.passive-additional"}), skill: "T", value: NathaponeTStrategy}
-        ].concat(array({label: props.intl.formatMessage({id: "subject.nathapon.e-pull"}), skill: "E", value: Constants.E.second_damage})),
+            {label: props.intl.formatMessage({id: "subject.nathapon.passive-additional"}), origin: "T", value: NathaponeTStrategy}
+        ].concat(array({label: props.intl.formatMessage({id: "subject.nathapon.e-pull"}), origin: "E", value: Constants.E.second_damage})),
         skill: [
-            array({label: "Q", skill: "Q", value: Constants.Q.damage}),
+            array({label: "Q", origin: "Q", value: Constants.Q.damage}),
             [
-                ...array({label: props.intl.formatMessage({id: "subject.nathapon.w-1tick"}), skill: "W", value: Constants.W.damage}),
-                ...array({label: props.intl.formatMessage({id: "subject.nathapon.w-finish"}), skill: "W", value: Constants.W.finish_damage}),
+                ...array({label: props.intl.formatMessage({id: "subject.nathapon.w-1tick"}), origin: "W", value: Constants.W.damage}),
+                ...array({label: props.intl.formatMessage({id: "subject.nathapon.w-finish"}), origin: "W", value: Constants.W.finish_damage}),
             ],
-            array({label: props.intl.formatMessage({id: "subject.nathapon.e-hit"}), skill: "E", value: Constants.E.first_damage})
+            array({label: props.intl.formatMessage({id: "subject.nathapon.e-hit"}), origin: "E", value: Constants.E.first_damage})
         ]   
     }
 }

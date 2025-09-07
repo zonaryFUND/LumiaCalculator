@@ -7,10 +7,8 @@ import { ValueRatio } from "app-types/value-ratio";
 import { IntlShape } from "react-intl";
 import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
 
-export type SubjectDamageTableUnit = Omit<DamageTableUnit, "value" | "triggeredOnBasicAttack"> & {
+export type SubjectDamageTableUnit = Omit<DamageTableUnit, "triggeredOnBasicAttack"> & {
     value: ValueRatio | UniqueValueStrategy
-    
-    skill: "Q" | "W" | "E" | "R" | "T"
 }
 
 export type DamageTableGenerator = (props: {config: SubjectConfig, status: Status, intl: IntlShape}) => DamageTable;

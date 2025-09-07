@@ -9,17 +9,17 @@ const table: DamageTableGenerator = props => {
     return {
         basicAttack: [
             "standard",
-            {label: props.intl.formatMessage({id: "subject.yuki.passive-additional"}), skill: "T", value: Constants.T.damage},
+            {label: props.intl.formatMessage({id: "subject.yuki.passive-additional"}), origin: "T", value: Constants.T.damage},
             weaponType == "DualSword" ? 
-            {label: props.intl.formatMessage({id: "subject.yuki.q-aa-dual-sword"}), skill: "Q", value: Constants.Q.dual_sword_damage, type: {type: "basic"}} :
-            {label: props.intl.formatMessage({id: "subject.yuki.q-aa"}), skill: "Q", value: Constants.Q.damage, type: {type: "basic"}}
+            {label: props.intl.formatMessage({id: "subject.yuki.q-aa-dual-sword"}), origin: "Q", value: Constants.Q.dual_sword_damage, type: {type: "basic"}} :
+            {label: props.intl.formatMessage({id: "subject.yuki.q-aa"}), origin: "Q", value: Constants.Q.damage, type: {type: "basic"}}
         ],
         skill: [
-            [{label: props.intl.formatMessage({id: "subject.yuki.w-damage-reduction"}), skill: "W", value: Constants.W.damage_reduction, type: {type: "misc", percentExpression: true}}],
-            [{label: "E", skill: "E", value: Constants.E.damage}],
+            [{label: props.intl.formatMessage({id: "subject.yuki.w-damage-reduction"}), origin: "W", value: Constants.W.damage_reduction, type: {type: "misc", percentExpression: true}}],
+            [{label: "E", origin: "E", value: Constants.E.damage}],
             [
-                {label: props.intl.formatMessage({id: "subject.yuki.r-slash"}), skill: "R", value: Constants.R.damage},
-                {label: props.intl.formatMessage({id: "subject.yuki.r-mark"}), skill: "R", value: Constants.R.mark_damage, type: {type: "true"}}
+                {label: props.intl.formatMessage({id: "subject.yuki.r-slash"}), origin: "R", value: Constants.R.damage},
+                {label: props.intl.formatMessage({id: "subject.yuki.r-mark"}), origin: "R", value: Constants.R.mark_damage, type: {type: "true"}}
             ]
         ]   
     }

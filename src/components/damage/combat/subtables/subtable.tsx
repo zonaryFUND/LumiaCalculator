@@ -12,7 +12,7 @@ import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 
 type Props = {
     label: string
-    elements: (SubjectDamageTableUnit | Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy} & {skillLevel?: number})[][]
+    elements: (SubjectDamageTableUnit | Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy})[][]
     attacker: {
         config: SubjectConfig
         status: Status,
@@ -41,11 +41,6 @@ const subTable: React.FC<Props> = props => {
                         <tr key={`separator-${index}`} className={table.border}><td colSpan={5}></td></tr>;
 
                     const elements = chunk.flatMap(unit => {
-                        const skillLevel = (() => {
-                            if ("skillLevel" in unit) return unit.skillLevel;
-                            return "skill" in unit ? props.attacker.config.skillLevels[unit.skill] : undefined;
-                        })();
-
                         if (typeof unit.value == "function") {
                             const { value } = unit.value(props.attacker);
                             if (Array.isArray(value)) {
@@ -63,7 +58,6 @@ const subTable: React.FC<Props> = props => {
                                             {...unit}
                                             label={label}
                                             value={v}
-                                            skillLevel={skillLevel}
                                             config={props.attacker.config}
                                             status={props.attacker.status}
                                         />
@@ -75,7 +69,6 @@ const subTable: React.FC<Props> = props => {
                                         {...unit}
                                         key={unit.label}
                                         value={value}
-                                        skillLevel={skillLevel}
                                         config={props.attacker.config}
                                         status={props.attacker.status}
                                     />
@@ -88,7 +81,6 @@ const subTable: React.FC<Props> = props => {
                                         {...unit}
                                         key={unit.label}
                                         value={unit.value}
-                                        skillLevel={skillLevel}
                                         config={props.attacker.config}
                                         status={props.attacker.status}
                                     />
@@ -107,7 +99,6 @@ const subTable: React.FC<Props> = props => {
                                             key={`${unit.label}(自分へ)`}
                                             label={`${unit.label}(自分へ)`}
                                             value={unit.value}
-                                            skillLevel={skillLevel}
                                             config={props.attacker.config}
                                             status={props.attacker.status}
                                             targetSide="anyToSelf"
@@ -117,7 +108,6 @@ const subTable: React.FC<Props> = props => {
                                             key={`${unit.label}(相手へ)`}
                                             label={`${unit.label}(相手へ)`}
                                             value={unit.value}
-                                            skillLevel={skillLevel}
                                             config={props.attacker.config}
                                             status={props.attacker.status}
                                             targetSide="anyToOpponent"
@@ -129,7 +119,6 @@ const subTable: React.FC<Props> = props => {
                                             {...unit}
                                             key={unit.label}
                                             value={unit.value}
-                                            skillLevel={skillLevel}
                                             config={props.attacker.config}
                                             status={props.attacker.status}
                                             targetSide="both"
@@ -142,7 +131,6 @@ const subTable: React.FC<Props> = props => {
                                         {...unit}
                                         key={unit.label}
                                         value={unit.value}
-                                        skillLevel={skillLevel}
                                         config={props.attacker.config}
                                         status={props.attacker.status}
                                     />

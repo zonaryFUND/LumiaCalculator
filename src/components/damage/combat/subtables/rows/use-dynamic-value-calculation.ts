@@ -1,4 +1,4 @@
-import { RatioKeys } from "app-types/value-ratio";
+import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 
 type PotencyDictionaryElement = {
@@ -9,7 +9,7 @@ type PotencyDictionaryElement = {
 
 type Response = {
     potencyDictionary?: {
-        [key in RatioKeys]: {
+        [key in keyof ValueRatio]: {
             ratio: number,
             value: Decimal,
             calculated: Decimal
@@ -19,7 +19,7 @@ type Response = {
 }
 
 export default function useDynamicValueCalculation(
-    basePotency: Partial<{[key in RatioKeys]: Decimal}> | undefined,
+    basePotency: Partial<{[key in keyof ValueRatio]: Decimal}> | undefined,
     multiplier: number | undefined,
     sender: {
         hp: Decimal.Value
@@ -66,5 +66,5 @@ export default function useDynamicValueCalculation(
                 },
                 potency: prev.potency.add(calculatedValue)
             };
-        }, { potencyDictionary: {} as {[key in RatioKeys]: PotencyDictionaryElement}, potency: new Decimal(0) });
+        }, { potencyDictionary: {} as {[key in keyof ValueRatio]: PotencyDictionaryElement}, potency: new Decimal(0) });
 }

@@ -1,4 +1,3 @@
-import * as React from "react";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig, weaponRangeOf } from "app-types/subject-dynamic/config";
 import { useIntl } from "react-intl";
@@ -19,11 +18,13 @@ export default function useAugment(config: SubjectConfig): Unit[][] {
             if ("melee" in unit.value) {
                 return {
                     ...unit,
+                    origin: "other",
                     value: unit.value[range]
                 }
             } else {
                 return {
                     ...unit,
+                    origin: "other",
                     value: unit.value
                 };
             }

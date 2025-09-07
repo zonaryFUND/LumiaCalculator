@@ -1,15 +1,15 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { RatioKeys, ValueRatio } from "app-types/value-ratio";
+import { extractSkillLevel, ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import table from "components/common/table.module.styl";
-import { calculateValue } from "app-types/value-ratio/calculation";
+import { calculateValue } from "app-types/value-ratio";
 
 type Props = {
     label?: React.ReactElement
-    skillLevel?: number
+    origin: ValueOrigin
     config: SubjectConfig
     status: Status
     ratio: ValueRatio
@@ -25,7 +25,7 @@ type EquationBuildConfigDefinition = {
     reducer: (prev: React.ReactElement[], value: number | React.ReactElement) => React.ReactElement[]
 }
 
-const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[key in RatioKeys]: EquationBuildConfigDefinition}> = (config, status) => ({
+const EquationBuildConfig: (config: SubjectConfig, status: Status) => Partial<{[key in keyof ValueRatio]: EquationBuildConfigDefinition}> = (config, status) => ({
     base: {
         reducer: (p, v) => p.concat(<React.Fragment key="base">{v}</React.Fragment>)
     },
@@ -101,12 +101,13 @@ const Equation: React.FC<Props> = props => (Object.entries(props.ratio))
 
         const sanitizedValue = (() => {
             if (Array.isArray(value)) {
-                if (props.skillLevel == undefined) {
-                    throw new Error(`level-dependent damage ratio is passed without its skill level. `)
+                const skillLevel = extractSkillLevel(props.config, props.origin);
+                if (skillLevel == undefined) {
+                    throw new Error(`level-dependent damage ratio is passed with non-level dependent origin. `)
                 }
-                return value[props.skillLevel];
+                return value[skillLevel];
             } else if (typeof value == "object") {
-                return <>{"{"}<Equation {...props} ratio={value} /> = {calculateValue(value, props.status, props.config, props.skillLevel).static.toString()}{"}"}</>;    
+                return <>{"{"}<Equation {...props} ratio={value} /> = {calculateValue(value, props.status, props.config, props.origin).static.toString()}{"}"}</>;    
             } else {
                 return value;
             }

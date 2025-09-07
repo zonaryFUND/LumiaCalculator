@@ -1,13 +1,13 @@
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
-import { RatioKeys } from "app-types/value-ratio";
 import table from "components/common/table.module.styl";
+import { ValueRatio } from "app-types/value-ratio";
 
 type Props = {
-    staticPotency?: Decimal
+    staticPotency: Decimal
     dynamicPotencyDictionary?: { 
-        [key in RatioKeys]: {ratio: number, value: Decimal, calculated: Decimal} 
+        [key in keyof ValueRatio]: {ratio: number, value: Decimal, calculated: Decimal} 
     }
     sum: Decimal
 }
@@ -45,7 +45,7 @@ const potency: React.FC<Props> = props => {
                 </React.Fragment>
 
                 return prev.concat(element);
-            }, staticPotency ? [staticPotency] : [])
+            }, [staticPotency])
     })();
 
     return (

@@ -1,7 +1,7 @@
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { WeaponSkillDamageTableUnit } from "../type";
 import Constants from "./constants.json";
 
-const table: DamageTableUnit[] = [
+const table: WeaponSkillDamageTableUnit[] = [
     {label: "D", value: Constants.damage}
 ]   
 

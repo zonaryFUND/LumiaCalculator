@@ -11,17 +11,17 @@ const table: DamageTableGenerator = props => ({
     basicAttack: ["standard"],
     skill: [
         [
-            {label: "Q", skill: "Q", value: Constants.Q.damage},
-            {label: props.intl.formatMessage({id: "subject.zahir.q-enhanced"}), skill: "Q", value: Constants.Q.enhanced_damage}
+            {label: "Q", origin: "Q", value: Constants.Q.damage},
+            {label: props.intl.formatMessage({id: "subject.zahir.q-enhanced"}), origin: "Q", value: Constants.Q.enhanced_damage}
         ],
-        [{label: "W", skill: "W", value: Constants.W.damage}],
-        [{label: "E", skill: "E", value: Constants.E.damage}],
+        [{label: "W", origin: "W", value: Constants.W.damage}],
+        [{label: "E", origin: "E", value: Constants.E.damage}],
         [
-            {label: props.intl.formatMessage({id: "subject.zahir.r-first"}), skill: "R", value: Constants.R.first_damage},
-            {label: props.intl.formatMessage({id: "subject.zahir.r-second"}), skill: "R", value: Constants.R.second_damage},
-            {label: props.intl.formatMessage({id: "subject.zahir.r-max-hit"}, {value: 4}), skill: "R", value: maxR}
+            {label: props.intl.formatMessage({id: "subject.zahir.r-first"}), origin: "R", value: Constants.R.first_damage},
+            {label: props.intl.formatMessage({id: "subject.zahir.r-second"}), origin: "R", value: Constants.R.second_damage},
+            {label: props.intl.formatMessage({id: "subject.zahir.r-max-hit"}, {value: 4}), origin: "R", value: maxR}
         ],
-        [{label: "T", skill: "T", value: Constants.T.damage}]
+        [{label: "T", origin: "T", value: Constants.T.damage}]
     ]
 })
 

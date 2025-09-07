@@ -26,7 +26,6 @@ const subjectSkill: React.FC<Props> = props => {
                     
                     const elements = chunk.map(unit => {
                         if (unit.damageDependentHeal != undefined) return null;
-                        const skillLevel = props.config.skillLevels[unit.skill];
                         
                         if (typeof unit.value == "function") {
                             return <UniqueExpression 
@@ -40,7 +39,6 @@ const subjectSkill: React.FC<Props> = props => {
                         } else if (unit.type?.type == "basic" && unit.type.critical != "none") {
                             return <CriticalAvailable 
                                 key={unit.label}
-                                skillLevel={skillLevel}
                                 {...unit}
                                 status={props.status}
                                 config={props.config}
@@ -49,7 +47,6 @@ const subjectSkill: React.FC<Props> = props => {
                         } else {
                             return <StandardDamage 
                                 key={unit.label} 
-                                skillLevel={skillLevel}
                                 status={props.status} 
                                 config={props.config} 
                                 {...unit} 

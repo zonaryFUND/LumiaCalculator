@@ -2,7 +2,7 @@
 /**
  * 武器熟練度から武器スキルのレベルを得る
  * @param mastery 武器熟練度
- * @returns 
+ * @returns ゲーム内のスキルレベル-1
  */
 export function weaponSkillLevel(mastery: number): number {
     if (mastery < 10) return 0;

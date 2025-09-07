@@ -9,7 +9,7 @@ type EquipmentAbilityImportedProps = {
     importedValues?: Record<string, any>
 }
 
-export type EquipmentAbilityDamageTableUnit = Omit<DamageTableUnit, "label" | "value"> & { 
+export type EquipmentAbilityDamageTableUnit = Omit<DamageTableUnit, "label" | "value" | "origin"> & { 
     labelIntlID?: string 
     intlValue?: string
     value: ValueRatio | RangeDependentValueRatio 
