@@ -50,7 +50,7 @@
         "q_cooldown_reduction": 40,
         "w_cooldown_reduction": 20,
         "sp_cost": 50,
-        "cooldown": [13,12.5,12,11.5,11]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
         "cc_immune": 1.5,
