@@ -115,12 +115,12 @@
             "attack": 90
         },
         "ghost_basic_attack": {
-            "attack": 125
+            "attack": 100
         },
         "additional_damage": {
             "attack": [8,16,24]
         },
-        "possesed_heal": 100,
+        "possesed_heal": 125,
         "ghost_heal": 200,
         "human_thrash": 20,
         "possessed_thrash": 10
