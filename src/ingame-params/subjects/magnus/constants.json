@@ -14,7 +14,7 @@
     },
     "W": {
         "duration": 4,
-        "additional_hit_per__additional_defense": 40,
+        "additional_hit_per__additional_defense": 35,
         "damage": {
             "base": [16,22,28,34,40],
             "additionalAttack": 50,

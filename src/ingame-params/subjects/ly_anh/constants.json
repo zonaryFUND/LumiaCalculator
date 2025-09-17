@@ -7,7 +7,7 @@
         "on_hit_cooldown": 1,
         "thrash": 30,
         "hp_cost": 4,
-        "cooldown": [5,4.5,4,3.5,3]
+        "cooldown": [4,3.5,3,2.5,2]
     },
     "GhostQ": {
         "damage": {
@@ -115,7 +115,7 @@
             "attack": 90
         },
         "ghost_basic_attack": {
-            "attack": 100
+            "attack": 125
         },
         "additional_damage": {
             "attack": [8,16,24]

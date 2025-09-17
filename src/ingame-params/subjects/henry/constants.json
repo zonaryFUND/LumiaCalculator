@@ -26,7 +26,7 @@
         "duration": 4,
         "tick": 0.5,
         "damage": {
-            "base": [10,20,30,40,50],
+            "base": [8,16,24,32,40],
             "amp": 20,
             "targetMaxHP": [1,1,2,2,3]
         },
@@ -34,7 +34,7 @@
         "cooldown_reduction": 5,
         "e_extend": 1,
         "sp_cost": 60,
-        "cooldown": [14,13.5,13,12.5,12]
+        "cooldown": 12
     },
     "E": {
         "channeling": 0.7,
@@ -63,7 +63,7 @@
             "amp": 35,
             "maxHP": 8
         },
-        "bullet_slow": 80,
+        "bullet_slow": 90,
         "slow": 40,
         "finish_damage": {
             "base": [150,250,350],

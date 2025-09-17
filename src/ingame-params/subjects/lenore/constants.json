@@ -26,7 +26,7 @@
             "shield": 30,
             "movement_speed": {
                 "duration": 2,
-                "effect": 25
+                "effect": 30
             }
         },
         "sp_cost": [50,60,70,80,90],
@@ -38,7 +38,7 @@
             "amp": 70
         },
         "enhance_slow": {
-            "duration": 1.25,
+            "duration": 1.5,
             "effect": 70
         },
         "sp_cost": [50,60,70,80,90],

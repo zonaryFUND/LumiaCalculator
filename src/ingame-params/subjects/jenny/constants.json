@@ -54,11 +54,11 @@
     },
     "T": {
         "buff_duration": 6,
-        "attack_speed": [30,50,70],
+        "attack_speed": [30,45,60],
         "movement_speed": 3,
         "act_duration": 3,
         "hp": {
-            "base": 200,
+            "base": 100,
             "maxHP": [2,11,20]
         },
         "cooldown": {

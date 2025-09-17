@@ -48,7 +48,7 @@
         },
         "defense_down": {
             "duration": 4,
-            "effect": 15
+            "effect": 20
         },
         "cooldown_reduction": 3,
         "sp_cost": [100,120,140],
