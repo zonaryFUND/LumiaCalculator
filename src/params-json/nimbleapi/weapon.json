@@ -1183,7 +1183,7 @@
     {
         "attackPower": 85,
         "attackSpeedRatio": 0.5,
-        "moveSpeedRatio": 0.02,
+        "moveSpeedRatio": 0.03,
         "code": 116501,
         "weaponType": "Pistol",
         "itemGrade": "Legend"
@@ -1254,7 +1254,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 91,
+        "skillAmp": 93,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 15,
         "code": 117502,
@@ -2150,7 +2150,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 26,
+        "attackPower": 23,
         "adaptiveForce": 56,
         "attackSpeedRatio": 0.3,
         "criticalStrikeChance": 0.25,
