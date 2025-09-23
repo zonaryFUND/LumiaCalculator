@@ -54,12 +54,12 @@
         "max_stack": 5,
         "basic_attack_damage": {
             "base": [10,20,30],
-            "amp": 40,
+            "amp": 45,
             "targetMaxHP": [2,3,4]
         },
         "knife_range": 5,
         "knife_damage": {
-            "base": [40,70,100],
+            "base": [50,80,110],
             "amp": 30
         }
     }

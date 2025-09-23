@@ -37,8 +37,8 @@
     "E": {
         "shield_duration": 2.5,
         "shield": {
-            "base": [60,95,130,165,200],
-            "defense": 40,
+            "base": [70,105,140,175,210],
+            "defense": 50,
             "amp": 40
         },
         "damage": {
