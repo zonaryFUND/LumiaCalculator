@@ -27,8 +27,7 @@ export const info: SkillTooltipProps = {
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
-            {labelIntlID: "ToolTipType/MaxHpDamageRatio", values: Constants.W.damage.targetMaxHP, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
+            {labelIntlID: "ToolTipType/MaxHpDamageRatio", values: Constants.W.damage.targetMaxHP, percent: true}
         ]  
     })
 }

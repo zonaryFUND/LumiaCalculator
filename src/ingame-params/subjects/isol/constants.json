@@ -23,7 +23,7 @@
         "duration": 1.67,
         "tick": 0.33,
         "damage": {
-            "base": [10,15,20,25,30],
+            "base": [13,16,19,22,25],
             "attack": 60,
             "amp": 24
         },
@@ -48,7 +48,7 @@
         "damage": {
             "base": [100,200,300],
             "attack": 40,
-            "amp": 70,
+            "amp": 65,
             "targetHP": 15
         },
         "sp_cost": 80,

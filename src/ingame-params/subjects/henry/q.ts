@@ -15,7 +15,7 @@ export const info: SkillTooltipProps = {
         const common: TooltipValues = {
             2: Constants.Q.reuse,
             3: RatioPercent(Constants.Q.second_hit_multiplier),
-            4: Constants.Q.reuse_damage.targetMaxHP,
+            4: RatioPercent(Constants.Q.reuse_damage.targetMaxHP),
             5: Constants.Q.damage,
             6: Constants.Q.reuse_damage,
             7: Constants.Q.additional_damage.level,

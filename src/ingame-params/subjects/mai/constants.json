@@ -18,7 +18,7 @@
         "duration": 1.25,
         "basic_attack_damage": 1,
         "movement_speed": [8,11,14,17,20],
-        "damage_decline": [32,34,36,38,40],
+        "damage_decline": [37,39,41,43,45],
         "damage": {
             "base": [80,115,150,185,220],
             "amp": 45,
@@ -37,8 +37,8 @@
     "E": {
         "shield_duration": 2.5,
         "shield": {
-            "base": [60,95,130,165,200],
-            "defense": 40,
+            "base": [70,105,140,175,210],
+            "defense": 50,
             "amp": 40
         },
         "damage": {

@@ -44,7 +44,7 @@
         "movement_speed": {
             "duration": 2,
             "effect": {
-                "base": 30,
+                "base": 40,
                 "amp": 2
             }
         },

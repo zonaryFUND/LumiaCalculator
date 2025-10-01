@@ -37,7 +37,7 @@
         "distance": 2,
         "attack_speed_down": {
             "duration": 1,
-            "effect": 30
+            "effect": 40
         },
         "cooldown_reduction": 3,
         "sp_cost": 50,

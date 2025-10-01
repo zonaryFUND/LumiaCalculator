@@ -53,12 +53,12 @@
         "count": 6,
         "damage": {
             "base": [60,95,130],
-            "amp": 50,
-            "maxHP": 3.5
+            "amp": 55,
+            "maxHP": 4
         },
         "slow": {
             "duration": 0.3,
-            "effect": [30,40,50]
+            "effect": [40,50,60]
         },
         "sp_cost": [50,75,100],
         "cooldown": [80,70,60]
