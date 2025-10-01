@@ -1174,14 +1174,14 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 80,
+        "attackPower": 82,
         "attackSpeedRatio": 0.35,
         "code": 116410,
         "weaponType": "Pistol",
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 85,
+        "attackPower": 87,
         "attackSpeedRatio": 0.5,
         "moveSpeedRatio": 0.03,
         "code": 116501,
@@ -1786,7 +1786,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 70,
+        "attackPower": 68,
         "cooldownReduction": 15,
         "moveSpeedRatio": 0.02,
         "code": 131403,
@@ -1848,7 +1848,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 76,
+        "attackPower": 74,
         "cooldownReduction": 20,
         "moveSpeedRatio": 0.02,
         "code": 131507,

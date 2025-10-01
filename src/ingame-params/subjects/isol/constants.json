@@ -49,7 +49,7 @@
             "base": [100,200,300],
             "attack": 40,
             "amp": 65,
-            "targetHP": 15
+            "targetHP": 12
         },
         "sp_cost": 80,
         "charge": {

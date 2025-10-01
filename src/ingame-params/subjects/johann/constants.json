@@ -40,11 +40,11 @@
         },
         "damage": {
             "base": [50,80,110,140,170],
-            "amp": 45
+            "amp": 50
         },
         "enhanced_damage": {
             "base": [80,1115,150,185,220],
-            "amp": 60
+            "amp": 65
         },
         "shield_duration": 2.5,
         "shield": {

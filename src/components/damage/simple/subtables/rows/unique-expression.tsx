@@ -22,6 +22,9 @@ type Props = Omit<SubjectDamageTableUnit, "value"> & {
     hp: number
 }
 
+/**
+ * 固有の計算ロジックを有する効果量について、その値セル、および計算式サブセルを構成する
+ */
 const uniqueExpression: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
     const { value, equationExpression } = props.strategy({ 
@@ -31,8 +34,10 @@ const uniqueExpression: React.FC<Props> = props => {
     });
     const sanitizedValue = (() => {
         if (Array.isArray(value)) {
+            // 致命打の可能性がある基本攻撃属性ダメージ
             return [value[0], value[1], value[2] || value[1]];
         } else {
+            // その他
             return value;
         }
     })();

@@ -29,7 +29,7 @@
             "additionalMaxHP": 20
         },
         "sp_cost": [50,60,70,80,90],
-        "cooldown": [16,15,14,13,12]
+        "cooldown": [14,13.5,13,12.5,12]
     },
     "E": {
         "damage": {
