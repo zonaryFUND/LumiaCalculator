@@ -38,16 +38,16 @@ const standardDamage: React.FC<Props> = props => {
         }
     })();
     const { hp, targetHP, targetMaxHP, ltr } = useCombatHPContext();
-    const multiplier = extractMultiplier(props.skillLevel, props.multiplier);
+    const multiplier = extractMultiplier(props.multiplier, props.skillLevel);
 
-    const staticPotency = staticBasePotency.percent(props.critical ?? 100).percent(multiplier?.[0] ?? 100);
+    const staticPotency = staticBasePotency.percent(props.critical ?? 100).percent(multiplier?.mergedMultiplier ?? 100);
 
     const { 
         potencyDictionary: dynamicPotencyDictionary,
         potency: dynamicPotency
     } = useDynamicValueCalculation(
         dynamicBasePotency,
-        multiplier?.[0],
+        multiplier?.mergedMultiplier,
         {hp, maxHP: props.status.maxHp.calculatedValue}, // sender
         props.targetSide == "anyToSelf" ? {
             hp, maxHP: props.status.maxHp.calculatedValue // self-target

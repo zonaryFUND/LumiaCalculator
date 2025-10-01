@@ -25,7 +25,8 @@ const availableRegexs = [
     /SummonData\/Name\/\d+/,
     /Group\/Evolution\/Desc\/\d+/,
     /Group\/EvolutionCoef\/Desc\/\d+/,
-    /CharacterState\/Group\/Name\/\d+/
+    /CharacterState\/Group\/Name\/\d+/,
+    /레벨/
 ]
 
 const result: Record<string, string> = {};
