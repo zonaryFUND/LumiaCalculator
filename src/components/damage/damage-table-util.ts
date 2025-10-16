@@ -1,12 +1,23 @@
+import { ValueTableUnitMultiplier } from "app-types/damage-table/unit"
+
 export type MultiplierExpression = {
     label?: string
     value: number
 }
 
-export function extractMultiplier(skillLevel?: number, multiplier?: number | number[] | {label?: string, value: number | number[]}[]): [number, MultiplierExpression[]] | undefined {
+export type ExtractedMultiplier = {
+    mergedMultiplier: number
+    individualExpressions: MultiplierExpression[]
+}
+
+export function extractMultiplier(multiplier?: ValueTableUnitMultiplier, skillLevel?: number): ExtractedMultiplier | undefined {
     if (multiplier == undefined) return undefined;
 
-    if (typeof multiplier == "number") return [multiplier, [{value: multiplier}]];
+    if (typeof multiplier == "number") 
+        return {
+            mergedMultiplier: multiplier,
+            individualExpressions: [{value: multiplier}]
+        };
 
     if (typeof multiplier[0] == "number") {
         if (skillLevel == undefined) {
@@ -14,17 +25,32 @@ export function extractMultiplier(skillLevel?: number, multiplier?: number | num
         }
 
         const value = multiplier[skillLevel] as number;
-        return [value, [{value}]];
+        return {
+            mergedMultiplier: multiplier[0],
+            individualExpressions: [{value}]
+        }
     }
 
     return multiplier.reduce((prev, current) => {
-        if (typeof current == "number") return [prev[0] * current / 100, prev[1].concat({value: current})];
-        if (typeof current.value == "number") return [prev[0] * current.value / 100, prev[1].concat({label: current.label, value: current.value})];
+        if (typeof current == "number") 
+            return {
+                mergedMultiplier: prev.mergedMultiplier * current / 100,
+                individualExpressions: prev.individualExpressions.concat({value: current})
+            };
+
+        if (typeof current.value == "number") 
+            return {
+                mergedMultiplier: prev.mergedMultiplier * current.value / 100,
+                individualExpressions: prev.individualExpressions.concat({label: current.label, value: current.value})
+            }
 
         if (skillLevel == undefined) {
             throw new Error("level-dependent multiplier is extracted without its skill level.")
         }
 
-        return [prev[0] * current.value[skillLevel] / 100, prev[1].concat({label: current.label, value: current.value[skillLevel]})];
-    }, [100, [] as MultiplierExpression[]]);
+        return {
+            mergedMultiplier: prev.mergedMultiplier * current.value[skillLevel] / 100,
+            individualExpressions: prev.individualExpressions.concat({label: current.label, value: current.value[skillLevel]})
+        }
+    }, {mergedMultiplier: 100, individualExpressions: [] as MultiplierExpression[]});
 }

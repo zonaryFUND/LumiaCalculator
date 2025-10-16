@@ -36,7 +36,7 @@
         },
         "moon": 1.25,
         "star": {
-            "duration": 1.5,
+            "duration": 2,
             "shield": {
                 "base": [60,90,120,150,180],
                 "amp": 30

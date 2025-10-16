@@ -28,7 +28,7 @@ const standardDamage: React.FC<Props> = props => {
     const {static: staticBaseValue, dynamic: dynamicBaseValue} = calculateValue(props.value, props.status, props.config, props.origin);
 
     const skillLevel = extractSkillLevel(props.config, props.origin)
-    const multiplier = extractMultiplier(skillLevel, props.multiplier);    
+    const multiplier = extractMultiplier(props.multiplier, skillLevel);    
     const healPower = (props.type?.type == "heal") && props.status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ?
             props.status.healerGiveHpHealRatio.calculatedValue : null;
     const percent = React.useMemo(() => props.type && ("percentExpression" in props.type) && props.type.percentExpression, [props.type]);
@@ -38,9 +38,10 @@ const standardDamage: React.FC<Props> = props => {
 
         const staticBaseValueHealConcerned = staticBaseValue.addPercent(healPower || 0);
         if (multiplier) {
+            const finalValue = staticBaseValueHealConcerned.percent(multiplier.mergedMultiplier);
             return [
-                staticBaseValueHealConcerned.percent(multiplier[0]),
-                [<MultiplyEquation key="multiply" baseValue={staticBaseValueHealConcerned} multiplier={multiplier} percent={percent} />]
+                finalValue,
+                [<MultiplyEquation key="multiply" baseValue={staticBaseValueHealConcerned} multipliers={multiplier.individualExpressions} finalValue={finalValue} percent={percent} />]
             ]
         } else {
             const baseOnly = Object.keys(props.value).length == 1 && "base" in props.value;
@@ -82,7 +83,7 @@ const standardDamage: React.FC<Props> = props => {
                 })();
 
                 if (multiplier) {
-                    const ratio = dynamicValueHealConcerned.percent(multiplier[0]);
+                    const ratio = dynamicValueHealConcerned.percent(multiplier.mergedMultiplier);
                     return {
                         key,
                         value: (
@@ -92,7 +93,7 @@ const standardDamage: React.FC<Props> = props => {
                             </>
                         ),
                         subrows: [
-                            <MultiplyEquation key={`${key}-multiply`} baseValue={dynamicValueHealConcerned} multiplier={multiplier} percent={percent} />
+                            <MultiplyEquation key={`${key}-multiply`} baseValue={dynamicValueHealConcerned} multipliers={multiplier.individualExpressions} finalValue={ratio} percent={percent} />
                         ]
                     }
                 } else {

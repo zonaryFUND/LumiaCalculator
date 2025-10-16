@@ -2,7 +2,7 @@
     "Q": {
         "damage": {
             "base": [30,40,50,60,70],
-            "attack": [150,155,160,165,170]
+            "attack": [160,165,170,175,180]
         },
         "max_stack_damage": 25,
         "max_stack_heal": 14,

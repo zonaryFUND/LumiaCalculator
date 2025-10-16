@@ -46,7 +46,7 @@
     "E": {
         "damage": {
             "base": [15,25,35,45,55],
-            "additionalAttack": 70,
+            "additionalAttack": 80,
             "amp": 45,
             "targetMaxHP": 6
         },

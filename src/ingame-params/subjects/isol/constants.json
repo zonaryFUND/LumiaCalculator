@@ -46,7 +46,7 @@
             "base": [100,200,300],
             "attack": 40,
             "amp": 65,
-            "targetHP": 15
+            "targetHP": 12
         },
         "charge": {
             "time": [30,22,14],

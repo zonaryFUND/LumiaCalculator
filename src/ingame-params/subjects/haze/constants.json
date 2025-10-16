@@ -22,7 +22,7 @@
     },
     "Q3": {
         "damage": {
-            "base": [60,85,110,135,160],
+            "base": [80,105,130,155,180],
             "amp": 40
         },
         "slow": {
@@ -67,7 +67,7 @@
         "ammo": 4,
         "movement_speed_penalty": 0.3,
         "area_damage": {
-            "base": [60,110,160],
+            "base": [80,130,180],
             "amp": 40
         },
         "max_cooldown_reduction": 20,

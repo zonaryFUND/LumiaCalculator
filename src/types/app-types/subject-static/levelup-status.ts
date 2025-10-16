@@ -2,10 +2,28 @@ import Decimal from "decimal.js";
 import { NimbleAPIJSON } from "@params-json";
 import { SubjectCode } from "./base-status";
 
+/**
+ * 実験体がレベルアップするごとに得られるステータス値を格納するオブジェクト
+ */
 export type LevelUpStatusType = {
-    maxHp: Decimal,
-    hpRegen: Decimal,
-    attackPower: Decimal,
+    /**
+     * 最大体力
+     */
+    maxHp: Decimal
+
+    /**
+     * 体力再生
+     */
+    hpRegen: Decimal
+
+    /**
+     * 攻撃力
+     */
+    attackPower: Decimal
+
+    /**
+     * 防御力
+     */
     defense: Decimal
 };
 

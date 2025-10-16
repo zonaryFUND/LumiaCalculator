@@ -62,7 +62,7 @@
         "shield_duration": 2.5,
         "shield": {
             "base": [40,70,100],
-            "amp": 25
+            "amp": 30
         }
     }
 }

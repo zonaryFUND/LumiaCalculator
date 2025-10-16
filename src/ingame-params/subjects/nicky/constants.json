@@ -26,7 +26,7 @@
         "e2_duration": 7,
         "damage": {
             "base": [100,125,150,175,200],
-            "amp": 60
+            "amp": 65
         },
         "slow": {
             "duration": 1.5,

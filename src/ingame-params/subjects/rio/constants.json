@@ -3,7 +3,7 @@
         "max_stack": 3,
         "hankyu_duration": 2,
         "movement_speed": [3,6,9,12,15],
-        "attack_speed": [20,22.5,25,27.5,30],
+        "attack_speed": [20,25,30,35,40],
         "daikyu_range_extend": 0.4,
         "daikyu_damage_enhance": 0.3,
         "hankyu": {
@@ -32,7 +32,7 @@
         },
         "multiple_hit": 20,
         "daikyu_damage": {
-            "base": [90,100,110,120,130],
+            "base": [90,105,120,135,150],
             "attack": 90
         },
         "daikyu_behind_damage": {

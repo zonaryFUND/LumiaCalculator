@@ -53,8 +53,8 @@
         "max_bleeding": 5,
         "adrenaline": 5,
         "damage": {
-            "base": [10,30,50],
-            "attack": [14,17,20]
+            "base": [10,25,40],
+            "attack": [14,16,18]
         },
         "heal": {
             "base": [10,20,30],
