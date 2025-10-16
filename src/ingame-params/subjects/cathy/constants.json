@@ -10,7 +10,6 @@
         "cooldown_reduction": [50,55,60,65,70],
         "cast_acceleration_attack_speed": 1,
         "dual_sword": 110,
-        "sp_cost": [50,55,60,65,70],
         "cooldown": 15
     },
     "W": {
@@ -26,7 +25,6 @@
             "duration": 2,
             "effect": 30
         },
-        "sp_cost": [70,75,80,85,90],
         "cooldown": [12,11.5,11,10.5,10]
     },
     "E": {
@@ -40,7 +38,6 @@
             "base": [30,50,70,90,110],
             "amp": 50
         },
-        "sp_cost": 70,
         "cooldown": [15,14,13,12,11]
     },
     "R": {
@@ -55,7 +52,6 @@
         },
         "max_damage_ratio": 2,
         "max_damage_target_hp": 30,
-        "sp_cost": [100,125,150],
         "cooldown": [80,70,60]
     },
     "T": {

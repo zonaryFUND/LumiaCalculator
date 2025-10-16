@@ -6,10 +6,6 @@ export const code = 1060200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     cooldown: Constants.Q.cooldown,
     charge: Constants.Q.charge,
     values: ({ showEquation }): TooltipValues => {
@@ -45,7 +41,6 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
             {labelIntlID: "ToolTipType/ReinforcedDamage", values: Constants.Q.spada_damage.base},
             {labelIntlID: "ToolTipType/ReinforcedExplosionDamage", values: Constants.Q.spada_blast_damage.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost},
             {labelIntlID: "ToolTipType/ChargingTime", values: Constants.Q.charge.time}
         ]  
     })

@@ -5,10 +5,6 @@ export const code = 1061400;
 
 export const info: SkillTooltipProps = {
     skillKey: "E",
-    consumption: {
-        type: "sp",
-        value: Constants.IremE.sp_cost
-    },
     cooldown: Constants.IremE.cooldown,
     values: ({ }) => ({}),
     expansion: () => ({
@@ -17,7 +13,6 @@ export const info: SkillTooltipProps = {
             2: Constants.common.fish_max
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Cost", values: Constants.IremE.sp_cost},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.IremE.cooldown},
         ]  
     })

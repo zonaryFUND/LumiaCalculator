@@ -13,7 +13,6 @@
             "duration": 1.5,
             "effect": [10,15,20,25,30]
         },
-        "sp_cost": [70,75,80,85,90],
         "cooldown": 5
     },
     "W": {
@@ -40,7 +39,6 @@
             "duration": 2,
             "effect": 40
         },
-        "sp_cost": [70,75,80,85,90],
         "cooldown": [15,14,13,12,11]
     },
     "E": {
@@ -53,7 +51,6 @@
             "base": [50,80,110,140,170],
             "ninaAttack": 60
         },
-        "sp_cost": [80,85,90,95,100],
         "cooldown": [13,12.5,12,11,5,11]
     },
     "R": {
@@ -67,7 +64,6 @@
         "damage_max_multipler": 2.5,
         "attacked_damage": 70,
         "linked_damage": 60,
-        "sp_cost": [80,70,60],
         "cooldown": [80,70,60]
     },
     "T": {

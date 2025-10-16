@@ -8,7 +8,6 @@
         "heal": 50,
         "max_stack_target_additional_damage": 30,
         "reuse": 3,
-        "sp_cost": [40,45,50,55,60],
         "cooldown": [11,10,9,8,7]
     },
     "W": {
@@ -21,7 +20,6 @@
             "effect": [60,65,70,75,80]
         },
         "dualsword_attack_ratio": 120,
-        "sp_cost": [30,35,40,45,50],
         "cooldown": 6
     },
     "E": {
@@ -30,7 +28,6 @@
             "base": [50,90,130,170,210],
             "attack": 80
         },
-        "sp_cost": [50,55,60,65,70],
         "cooldown": [16,15,14,13,12]
     },
     "R": {
@@ -45,7 +42,6 @@
         "finish_multiplier_max": 2,
         "finish_multiplier_max_hp": 30,
         "heal": 30,
-        "sp_cost": [100,125,150],
         "cooldown": [60,55,50]
     },
     "T": {

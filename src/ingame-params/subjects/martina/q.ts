@@ -6,10 +6,6 @@ export const code = 1057200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     cooldown: Constants.Q.cooldown,
     values: ({ }) => ({
         0: Constants.Q.damage.base,
@@ -24,8 +20,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
             {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.Q.movement_speed.effect, percent: true},
             {labelIntlID: "ToolTipType/MoveSpeedUpTime", values: Constants.Q.movement_speed.duration},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
         ]  
     })
 }

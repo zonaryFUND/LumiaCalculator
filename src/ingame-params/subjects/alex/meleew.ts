@@ -6,10 +6,6 @@ export const code = 1027700;
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    consumption: {
-        type: "sp",
-        value: Constants.MeleeW.sp_cost
-    },
     cooldown: Constants.MeleeW.cooldown,
     values: ({ }) => ({
         0: Constants.MeleeW.damage.base,
@@ -19,7 +15,6 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.MeleeW.damage.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.MeleeW.sp_cost},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.MeleeW.cooldown},
         ]  
     })

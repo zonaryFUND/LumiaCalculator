@@ -6,10 +6,6 @@ export const code = 1007400;
 
 export const info: SkillTooltipProps = {
     skillKey: "E",
-    consumption: {
-        type: "sp",
-        value: Constants.E.sp_cost
-    },
     cooldown: Constants.E.cooldown,
     values: ({ }) => ({
         0: RatioPercent(Constants.E.damage.targetHP),
@@ -26,8 +22,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/PresentHpDamageRatio", values: Constants.E.damage.targetHP},
             {labelIntlID: "ToolTipType/Damage", values: Constants.E.wall_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
         ]  
     })
 }

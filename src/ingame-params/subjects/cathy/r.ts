@@ -11,10 +11,6 @@ const maxDamage = {
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
     cooldown: Constants.R.cooldown,
     values: ({ showEquation }) => ({
         0: RatioPercent(Constants.R.heal.targetMaxHP),
@@ -35,8 +31,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/MinDamage", values: Constants.R.min_damage.base},
             {labelIntlID: "ToolTipType/MaxDamage", values: maxDamage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
         ]  
     })
 }

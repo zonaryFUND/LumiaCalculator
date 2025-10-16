@@ -26,7 +26,6 @@
             "attack": 50
         },
         "cooldown_reduction_max": 3.5,
-        "sp_cost": [40,45,50,55,60],
         "cooldown": {
             "constant": 5
         }
@@ -38,7 +37,6 @@
             "basicAttackAmp": 100
         },
         "count": 4,
-        "sp_cost": [50,55,60,65,70],
         "cooldown": [18,16.5,15,13.5,12]
     },
     "E": {
@@ -52,7 +50,6 @@
             "attack": 20
         },
         "twostep_duration": [9,8,7,6,5],
-        "sp_cost": [40,45,50,55,60],
         "cooldown": 0
     },
     "R": {
@@ -74,7 +71,6 @@
         },
         "duration": 12,
         "reuse": 2,       
-        "sp_cost": 90,
         "cooldown": [80,60,40]
     },
     "T": {

@@ -7,10 +7,7 @@ export const code = 1012500;
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
+
     cooldown: Constants.R.cooldown,
     values: ({ showEquation }) => {
         if (showEquation) {

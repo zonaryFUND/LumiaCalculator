@@ -6,10 +6,6 @@ export const code = 1025300;
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    consumption: {
-        type: "sp",
-        value: Constants.W.sp_cost
-    },
     cooldown: Constants.W.cooldown,
     charge: Constants.W.charge,
     values: ({ showEquation }) => ({
@@ -27,8 +23,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/Time", values: Constants.W.duration},
             {labelIntlID: "ToolTipType/MaxInstall", values: Constants.W.setup},
             {labelIntlID: "ToolTipType/MaxChargeCount", values: Constants.W.charge.max},
-            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.W.charge.time},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost},
+            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.W.charge.time}
         ]  
     })
 }

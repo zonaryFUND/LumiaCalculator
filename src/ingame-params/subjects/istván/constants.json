@@ -17,7 +17,6 @@
             "base": [100,150,200,250,300],
             "attack": 200
         },
-        "sp_cost": 40,
         "cooldown": [4.5,4,3.5,3,2.5]
     },
     "W": {
@@ -43,7 +42,6 @@
         "heal_max_multiplier": 1.5,
         "heal_max_hp": 40,
         "animal_target_heal": 40,
-        "sp_cost": [60],
         "cooldown": [8,7.5,7,6.5,6]
     },
     "E": {
@@ -60,7 +58,6 @@
             "attack": 80
         },
         "airborne": 0.6,
-        "sp_cost": 60,
         "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
@@ -76,7 +73,6 @@
             "base": [50,100,150],
             "attack": 50
         },
-        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

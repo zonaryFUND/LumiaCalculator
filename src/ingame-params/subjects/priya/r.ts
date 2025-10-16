@@ -6,10 +6,6 @@ export const code = 1051500;
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
     cooldown: Constants.R.cooldown,
     values: ({ }) => ({
         0: Constants.R.first_damage.base,
@@ -29,7 +25,6 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/FirstDamage", values: Constants.R.first_damage.base},
             {labelIntlID: "ToolTipType/EchoDamage", values: Constants.R.echo_damage.base},
             {labelIntlID: "ToolTipType/HpRegenRatio", values: Constants.R.heal.targetMaxHP, percent: true},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
         ]  
     })

@@ -189,28 +189,6 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             ]
         },
 
-        // スタミナ
-        maxSp: {
-            digit: 0,
-            components: [
-                statusComponent("sum", "maxSp"),
-                equipmentComponent(
-                    "sum",
-                    {base: sumOfEquipmentStatus("maxSp")}
-                )
-            ].filter((c): c is StatusValueComponent => c != undefined)
-        },
-        spRegen: {
-            digit: 2,
-            components: [
-                statusComponent("sum", "spRegen"),
-                equipmentComponent(
-                    "mul",
-                    {base: sumOfEquipmentStatus("spRegenRatio")}
-                )
-            ].filter((c): c is StatusValueComponent => c != undefined)
-        },
-
         // basic attack
         attackPower: {
             digit: 0,

@@ -6,10 +6,6 @@ export const code = 1027600;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.MeleeQ.sp_cost
-    },
     cooldown: Constants.MeleeQ.cooldown,
     values: ({ }) => ({
         0: Constants.MeleeQ.damage.base,

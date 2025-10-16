@@ -6,10 +6,6 @@ export const code = 1026200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     charge: Constants.Q.charge,
     values: ({ showEquation }) => ({
         0: showEquation ? Constants.Q.hp.base : Constants.Q.hp,
@@ -32,8 +28,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/TurretNormalAttack", values: Constants.Q.damage.base},
             {labelIntlID: "ToolTipType/TurretRailgunDamage", values: Constants.Q.railgun_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.charge.time},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.charge.time}
         ]  
     })
 }

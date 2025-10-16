@@ -9,7 +9,6 @@
         },
         "cooldown_reduction": 0.5,
         "max_stack": 2,
-        "sp_cost": [50,45,40,35,30],
         "cooldown": 3
     },
     "W": {
@@ -25,7 +24,6 @@
             "base": [50,75,100,125,150],
             "amp": 60
         },
-        "sp_cost": [60,65,70,75,80],
         "cooldown": [18,16.5,15,13.5,12]
     },
     "E": {
@@ -37,7 +35,6 @@
             "duration": 1.25,
             "effect": [30,35,40,45,50]
         },
-        "sp_cost": [60,65,70,76,80],
         "cooldown": 8
     },
     "R": {
@@ -49,7 +46,6 @@
         "tick": 0.23,
         "move_damage": [5,15,25],
         "enhanced_move_damage": [25,35,45],
-        "sp_cost": [100,120,140],
         "cooldown": [80,70,60]
     },
     "T": {

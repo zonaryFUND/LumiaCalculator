@@ -6,10 +6,6 @@ export const code = 1056400;
 
 export const info: SkillTooltipProps = {
     skillKey: "E",
-    consumption: {
-        type: "sp",
-        value: Constants.E.sp_cost
-    },
     cooldown: Constants.E.cooldown,
     values: ({ showEquation }): TooltipValues => {
         if (showEquation) {
@@ -47,8 +43,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/Piolo_E1_DashMinDamage", values: Constants.E1.second_min_damage.base},
             {labelIntlID: "ToolTipType/Piolo_E1_DashMaxDamage", values: Constants.E1.second_max_damage.base},
             {labelIntlID: "ToolTipType/E2_Damage", values: Constants.E2.damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
         ]  
     })
 }

@@ -7,10 +7,6 @@ export const code = 1009500;
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
     charge: Constants.R.charge,
     values: ({ showEquation }) => {
         const base = {

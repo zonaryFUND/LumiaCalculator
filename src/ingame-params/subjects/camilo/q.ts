@@ -7,10 +7,6 @@ export const code = 1039200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     cooldown: ({ status }) => {
         // NOTE: This multiplier is an estimated value.
         // The cooldown reduction of Q peaks when his attack speed reaches 1.49 (base plus 1.38), 
@@ -39,8 +35,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/FirstDamage", values: Constants.Q.Q2_first_damage.base},
             {labelIntlID: "ToolTipType/SecondDamage", values: Constants.Q.Q2_second_damage.base},
             {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.Q.movement_speed.effect, percent: true},
-            {labelIntlID: "ToolTipType/Heal", values: Constants.Q.heal.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.Q.heal.base}
         ]  
     })
 }

@@ -19,7 +19,6 @@
             "level": 2
         },
         "second_hit_multiplier": 70,
-        "sp_cost": 40,
         "cooldown": [9,8,7,6,5]
     },
     "W": {
@@ -33,7 +32,6 @@
         "slow": 25,
         "cooldown_reduction": 5,
         "e_extend": 1,
-        "sp_cost": 60,
         "cooldown": 12
     },
     "E": {
@@ -49,7 +47,6 @@
         },
         "q_cooldown_reduction": 40,
         "w_cooldown_reduction": 20,
-        "sp_cost": 50,
         "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
@@ -70,7 +67,6 @@
             "amp": 100
         },
         "stun": 0.8,
-        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

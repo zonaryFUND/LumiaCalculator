@@ -11,8 +11,7 @@
         },
         "mark": 5,
         "mark_enhance": [8,16,24,32,40],
-        "cooldown": 3,
-        "sp_cost": 40
+        "cooldown": 3
     },
     "W": {
         "shield": {
@@ -32,8 +31,7 @@
             "effect": [1,2,3,4,5]
         },
         "max_hit": 4,
-        "cooldown": 9,
-        "sp_cost": 80
+        "cooldown": 9
     },
     "E": {
         "damage": {
@@ -41,8 +39,7 @@
             "attack": 85
         },
         "airborne": 0.5,
-        "cooldown": [14,13,12,11,10],
-        "sp_cost": 80
+        "cooldown": [14,13,12,11,10]
     },
     "R": {
         "damage": {
@@ -54,8 +51,7 @@
             "duration": 0.5,
             "effect": 80
         },
-        "cooldown": [90,75,60],
-        "sp_cost": 100
+        "cooldown": [90,75,60]
     },
     "T": {
         "defense": {

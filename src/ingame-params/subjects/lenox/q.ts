@@ -7,10 +7,6 @@ export const code = 1020200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     cooldown: Constants.Q.cooldown,
     values: ({ showEquation }) => {
         const base = {
@@ -35,8 +31,7 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/SkillAddDamageMaxHpRatio", values: Constants.Q.additional_damage.maxHP, percent: true},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.Q.sp_cost}
+            {labelIntlID: "ToolTipType/SkillAddDamageMaxHpRatio", values: Constants.Q.additional_damage.maxHP, percent: true}
         ]  
     })
 }

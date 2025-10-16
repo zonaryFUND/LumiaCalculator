@@ -7,9 +7,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
  */
 export type BaseStatusType = {
     maxHp: Decimal
-    maxSp: Decimal
     hpRegen: Decimal
-    spRegen: Decimal
     attackPower: Decimal
     defense: Decimal
     attackSpeed: Decimal
@@ -25,9 +23,7 @@ const [
             ...rawData,
             [entry.code]: {
                 maxHp: new Decimal(entry.maxHp).round(),
-                maxSp: new Decimal(entry.maxSp).round(),
                 hpRegen: new Decimal(entry.hpRegen).cut(2, "round"),
-                spRegen: new Decimal(entry.spRegen).cut(2, "round"),
                 attackPower: new Decimal(entry.attackPower).round(),
                 defense: new Decimal(entry.defense).round(),
                 attackSpeed: new Decimal(entry.attackSpeed).cut(2, "round"),

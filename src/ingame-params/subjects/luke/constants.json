@@ -15,7 +15,6 @@
             "duration": 3,
             "effect": 10
         },
-        "sp_cost": [50,60,70,80,90],
         "cooldown": [15,13,11,9,7]
     },
     "W": {
@@ -26,7 +25,6 @@
         "heal": 13,
         "max_heal": 33,
         "cooldown_reduction": 1,
-        "sp_cost": [30,35,40,45,50],
         "cooldown": 10
     },
     "E": {
@@ -39,7 +37,6 @@
             "effect": 70
         },
         "execute_threshold": 5,
-        "sp_cost": [60,65,70,75,80],
         "cooldown": [14,13,12,11,10]
     },
     "R": {
@@ -64,7 +61,6 @@
         },
         "vision": 1,
         "evoluted_slow": 99,
-        "sp_cost": [100,125,150],
         "cooldown": [80,70,60]
     },
     "T": {

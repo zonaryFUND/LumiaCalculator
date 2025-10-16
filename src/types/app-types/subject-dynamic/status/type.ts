@@ -32,8 +32,6 @@ export type ComponentStatus = {
     preventBasicAttackDamagedRatio: ComponentStatusValue
     preventBasicAttackDamaged: ComponentStatusValue // hidden status for calculation(garnet T)
     preventSkillDamagedRatio: ComponentStatusValue
-    maxSp: ComponentStatusValue
-    spRegen: ComponentStatusValue
     attackPower: ComponentStatusValue
     increaseBasicAttackDamageRatio: ComponentStatusValue
     attackSpeed: ComponentStatusValue

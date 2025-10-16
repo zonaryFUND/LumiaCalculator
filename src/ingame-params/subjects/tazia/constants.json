@@ -16,7 +16,6 @@
         },
         "glass_duration": 7,
         "knockback_immune": 8,
-        "sp_cost": [70,60,50,40,30],
         "cooldown": {
             "constant": 0.75
         },
@@ -32,7 +31,6 @@
             "base": [50,85,120,155,190],
             "amp": 55
         },
-        "sp_cost": 100,
         "cooldown": [20,19,18,17,16]
     },
     "E": {
@@ -52,7 +50,6 @@
         "reuse": 4,
         "glass_additional_damage": 10,
         "glass_additional_max": 50,
-        "sp_cost": 50,
         "cooldown": [13,12,11,10,9]
     },
     "R": {
@@ -75,7 +72,6 @@
         },
         "glass_additional_damage": 30,
         "glass_additional_max": 120,
-        "sp_cost": [100,120,140],
         "cooldown": [80,70,60]
     },
     "T": {

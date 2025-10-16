@@ -7,7 +7,6 @@
         "max_stack_damage": 25,
         "max_stack_heal": 14,
         "max_stack_heal_max": 33,
-        "sp_cost": 40,
         "cooldown": [10,9,8,7,6]
     },
     "W": {
@@ -23,7 +22,6 @@
         },
         "extend": 0.5,
         "max_duration": 7,
-        "sp_cost": 40,
         "cooldown": [14,13,12,11,10]
     },
     "E": {
@@ -35,7 +33,6 @@
             "attack": 20
         },
         "cooldown_reduction": [50,55,60,65,70],
-        "sp_cost": 35,
         "cooldown": 10
     },
     "R": {
@@ -54,7 +51,6 @@
             "attack": 150
         },
         "airborne": 0.5,
-        "sp_cost": [100,150,200],
         "cooldown": [80,70,60]
     },
     "T": {

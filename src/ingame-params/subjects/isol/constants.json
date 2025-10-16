@@ -16,7 +16,6 @@
         },
         "additional_bind": 0.1,
         "bind_max": 1,
-        "sp_cost": [40,45,50,55,60],
         "cooldown": [11,10,9,8,7]
     },
     "W": {
@@ -30,7 +29,6 @@
         "defense_decline": [2,2,3,3,4],
         "defense_decline_duration": 4,
         "defense_decline_max": 6,
-        "sp_cost": [50,55,60,65,70],
         "cooldown": [12,11,10,9,8]
     },
     "E": {
@@ -40,7 +38,6 @@
             "base": [40,65,90,115,140],
             "amp": 65
         },
-        "sp_cost": [40,50,60,70,80],
         "cooldown": [15,14,13,12,11]
     },
     "R": {
@@ -51,7 +48,6 @@
             "amp": 65,
             "targetHP": 15
         },
-        "sp_cost": 80,
         "charge": {
             "time": [30,22,14],
             "max": 2

@@ -7,10 +7,6 @@ export const code = 1064300;
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    consumption: {
-        type: "sp",
-        value: Constants.W.sp_cost
-    },
     cooldown: Constants.W.cooldown,
     values: ({ status }) => ({
         0: Constants.W.first_damage,
@@ -29,8 +25,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/VanyaWindDamage", values: Constants.W.first_damage.base},
             {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.W.movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/VanyaCloudDamage", values: Constants.W.second_damage.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+            {labelIntlID: "ToolTipType/VanyaCloudDamage", values: Constants.W.second_damage.base}
         ]  
     })
 }

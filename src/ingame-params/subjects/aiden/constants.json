@@ -16,7 +16,6 @@
             "effect": [25,30,35,40,45]
         },
         "range_cooldown_reduction": 50,
-        "sp_cost": 20,
         "range_sp_cost": 50,
         "cooldown": {
             "constant": [5,4.5,4,3.5,3]
@@ -38,7 +37,6 @@
             "attack": 50
         },
         "bind": [0.7,0.8,0.9,1,1.1],
-        "sp_cost": 75,
         "cooldown": [15,14,13,12,11]
     },
     "E": {
@@ -54,7 +52,6 @@
             "base": [55,85,115,145,175],
             "attack": 55
         },
-        "sp_cost": 50,
         "cooldown": [16,15,14,13,12]
     },
     "R": {
@@ -79,7 +76,6 @@
             "duration": 1,
             "effect": 40
         },
-        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

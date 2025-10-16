@@ -7,10 +7,6 @@ export const code = 1041400;
 
 export const info: SkillTooltipProps = {
     skillKey: "E",
-    consumption: {
-        type: "sp",
-        value: Constants.E.sp_cost
-    },
     cooldown: Constants.E.cooldown,
     values: ({ showEquation }) => {
         if (showEquation) {
@@ -47,7 +43,6 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/Shield", values: Constants.E.shield.base},
             {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.E.movement_speed.effect.base, percent: true},
             {labelIntlID: "ToolTipType/ChaseMoveSpeed", values: Constants.E.chase_movement_speed.base, percent: true},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
         ]  
     })

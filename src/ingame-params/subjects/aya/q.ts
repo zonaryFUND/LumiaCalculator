@@ -6,10 +6,6 @@ export const code = 1002200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     cooldown: Constants.Q.cooldown,
     values: ({ showEquation }) => ({
         0: showEquation ? RatioPercent(Constants.Q.second_damage.attack) : Constants.Q.second_damage,

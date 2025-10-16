@@ -12,10 +12,6 @@ const maxDamage = {
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
     cooldown: Constants.R.cooldown,
     values: ({ showEquation }): TooltipValues => {
         const base = {
@@ -51,8 +47,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.R.movement_speed, percent: true},
             {labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.R.movement_speed, percent: true},
             {labelIntlID: "ToolTipType/ChainSawDamage", values: Constants.R.damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
         ]  
     })
 }

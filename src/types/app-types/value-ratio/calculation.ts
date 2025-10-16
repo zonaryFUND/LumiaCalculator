@@ -62,8 +62,6 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
                     return prev.static.add(status.maxHp.calculatedValue.percent(selectedValue));
                 case "additionalMaxHP":
                     return prev.static.add(status.maxHp.additionalValue?.percent(selectedValue) ?? 0);
-                case "maxSP":
-                    return prev.static.add(status.maxSp.calculatedValue.percent(selectedValue));
                 case "defense":
                     return prev.static.add(status.defense.calculatedValue.percent(selectedValue));
                 case "attack":

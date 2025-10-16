@@ -11,10 +11,6 @@ const maxConstant = {
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    consumption: {
-        type: "sp",
-        value: Constants.W.sp_cost
-    },
     cooldown: Constants.W.cooldown,
     values: ({ }) => ({
         0: Constants.W.damage.base,

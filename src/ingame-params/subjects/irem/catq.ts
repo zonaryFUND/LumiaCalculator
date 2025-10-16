@@ -7,10 +7,6 @@ export const code = 1061210;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.CatQ.sp_cost
-    },
     cooldown: Constants.CatQ.cooldown,
     values: ({ showEquation }) => {
         const base = {

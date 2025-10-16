@@ -6,10 +6,6 @@ export const code = 1031300;
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    consumption: {
-        type: "sp",
-        value: Constants.W.sp_cost
-    },
     cooldown: Constants.W.cooldown,
     values: ({ showEquation }): TooltipValues => {
         if (showEquation) {
@@ -47,8 +43,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/ShortBowDamage", values: Constants.W.hankyu_damage.base},
             {labelIntlID: "ToolTipType/YumiFirstDamage", values: Constants.W.daikyu_damage.base},
             {labelIntlID: "ToolTipType/YumiSecondDamage", values: Constants.W.daikyu_behind_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
         ]  
     })
 }

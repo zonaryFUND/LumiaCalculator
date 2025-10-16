@@ -6,10 +6,6 @@ export const code = 1066500;
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
     cooldown: Constants.R.cooldown,
     values: ({ showEquation, config }) => {
         const baseQDamage = {
@@ -57,7 +53,6 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
             {labelIntlID: "ToolTipType/ArdaActive1Damage", values: Constants.R.Q.damage.base},
             {labelIntlID: "ToolTipType/ArdaActive2Damage", values: Constants.R.W.damage.base},

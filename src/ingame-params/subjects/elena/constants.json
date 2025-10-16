@@ -11,7 +11,6 @@
             "additionalMaxHP": 10
         },
         "cooldown_reduction": 60,
-        "sp_cost": [40,45,50,55,60],
         "cooldown": [8,7,6,5,4]
     },
     "W": {
@@ -22,7 +21,6 @@
         },
         "q_cooldown_reduction": 30,
         "enhanced_cooldown_reduction": 50,
-        "sp_cost": [40,45,50,55,60],
         "cooldown": {
             "constant": 0.65
         },
@@ -41,7 +39,6 @@
             "amp": 80
         },
         "defense": [14,17,20,23,26],
-        "sp_cost": 50,
         "cooldown": 5
     },
     "R": {
@@ -55,7 +52,6 @@
             "amp": 30,
             "additionalMaxHP": 8
         },
-        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

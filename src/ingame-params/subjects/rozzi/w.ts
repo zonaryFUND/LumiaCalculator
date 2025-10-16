@@ -6,10 +6,6 @@ export const code = 1021300;
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    consumption: {
-        type: "sp",
-        value: Constants.W.sp_cost
-    },
     cooldown: Constants.W.cooldown,
     values: ({ }) => ({
         0: Constants.W.damage.base,
@@ -24,7 +20,6 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost},
             {labelIntlID: "ToolTipType/DecreaseDefenseRatio", values: Constants.W.defense_down, percent: true}
         ]  
     })

@@ -13,7 +13,6 @@
             "duration": 2,
             "effect": [8,9,10,11,12]
         },
-        "sp_cost": [40,45,50,55,60],
         "cooldown": [9,8,7,6,5]
     },
     "W": {
@@ -23,7 +22,6 @@
             "defense": 10
         },
         "cc_immune": 1,
-        "sp_cost": 30,
         "cooldown": [15,14,13,12,11]
     },
     "E": {
@@ -39,7 +37,6 @@
             "amp": 90
         },
         "stun": 1.2,
-        "sp_cost": [70,75,80,85,90],
         "cooldown": [14,13,12,11,10]
     },
     "R": {
@@ -61,7 +58,6 @@
         "stun": 0.5,
         "max_later_delay": 0.35,
         "cooldown_payback": 50,
-        "sp_cost": 100,
         "cooldown": [60,55,50]
     },
     "T": {

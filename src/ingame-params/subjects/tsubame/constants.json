@@ -15,8 +15,7 @@
         "slow_duration": 1,
         "slow": 30,
         "additional_stack": 2,
-        "cooldown": [7,6.5,6,5.5,5],
-        "sp_cost": [30,35,40,45,50]
+        "cooldown": [7,6.5,6,5.5,5]
     },
     "W": {
         "movement_speed": [20,25,30,35,40],
@@ -24,14 +23,12 @@
         "attack_speed": [15,20,25,30,35],
         "as_duration": 3,
         "cooldown_reduction": 1,
-        "cooldown": [12,11.5,11,10.5,10],
-        "sp_cost": [100,80,60,40,20]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "E": {
         "duration": 0.3,
         "reuse": 4,
-        "cooldown": [15,14.5,14,13.5,13],
-        "sp_cost": [100,90,80,70,60]
+        "cooldown": [15,14.5,14,13.5,13]
     },
     "R": {
         "damage": {
@@ -43,8 +40,7 @@
         "cooldown_reduction": 80,
         "cooldown": {
             "constant": [50,40,30]
-        },
-        "sp_cost": 50
+        }
     },
     "T": {
         "stack_duration": 6,

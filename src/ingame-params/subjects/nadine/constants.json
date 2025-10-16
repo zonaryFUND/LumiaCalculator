@@ -16,7 +16,6 @@
             "stack": 1
         },
         "payback": 50,
-        "sp_cost": [60,65,70,75,80],
         "cooldown": 7
     },
     "W": {
@@ -32,7 +31,6 @@
         "multiple_stepped_multipler": 30,
         "duration": 45,
         "max_trap": 3,
-        "sp_cost": 50,
         "cooldown": [14,13,12,11,10]
     },
     "E": {
@@ -43,7 +41,6 @@
             "amp": 5
         },
         "remain": 3,
-        "sp_cost": [70,75,80,85,90],
         "cooldown": [17,16,15,14,13]
     },
     "R": {
@@ -58,7 +55,6 @@
         "attack_speed": 10,
         "movement_speed": 40,
         "extend": 3,
-        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

@@ -10,7 +10,6 @@
         "max_stack": 3,
         "red_attack_speed": 3,
         "black_movement_speed": 2,
-        "sp_cost": [60,65,70,75,80],
         "cooldown": [9,8.5,8,7.5,7]
     },
     "W": {
@@ -26,7 +25,6 @@
             "base": [30,55,80,105,130],
             "amp": 40
         },
-        "sp_cost": 100,
         "cooldown": 16
     },
     "E": {
@@ -36,7 +34,6 @@
             "base": [60,90,120,150,180],
             "amp": 58
         },
-        "sp_cost": [30,35,40,45,50],
         "cooldown": {
             "constant": [13,12,11,10,9]
         }
@@ -49,7 +46,6 @@
             "amp": 70
         },
         "charm": 0.8,
-        "sp_cost": [100,125,150],
         "cooldown": [80,65,50]
     },
     "T": {

@@ -6,10 +6,6 @@ export const code = 1027200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.RangeQ.sp_cost
-    },
     cooldown: Constants.RangeQ.cooldown,
     values: ({ }) => ({
         0: Constants.RangeQ.damage.base,

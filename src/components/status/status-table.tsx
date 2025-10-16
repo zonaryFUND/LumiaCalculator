@@ -7,7 +7,6 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { useIntl } from "react-intl";
 import Toughness from "./chunks/00_toughness";
-import Sp from "./chunks/01_sp";
 import BasicAttack from "./chunks/02_basicattack";
 import Skill from "./chunks/03_skill";
 import Penetration from "./chunks/04_penetration";
@@ -57,7 +56,6 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                             shownStatus[0] == undefined || props.status.summoned == undefined ?
                             <>
                                 <Toughness {...props} />
-                                <Sp {...props} />
                                 <BasicAttack {...props} />
                                 <Skill {...props} />
                                 <Penetration {...props} />

@@ -7,10 +7,6 @@ export const code = 1055500;
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
     cooldown: Constants.R.cooldown,
     values: ({ showEquation }) => {
         if (showEquation) {
@@ -63,8 +59,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/EstelleProtection4_1", values: Constants.R.self.shield.base},
             {labelIntlID: "ToolTipType/EstelleSkillDamage4_2", values: Constants.R.ally.damage.base},
             {labelIntlID: "ToolTipType/EstelleProtection4_2", values: Constants.R.ally.shield.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
         ]  
     })
 }

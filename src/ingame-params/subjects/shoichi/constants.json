@@ -6,7 +6,6 @@
         },
         "cooldown_reduction": 3,
         "enhance_duration": 10,
-        "sp_cost": [50,55,60,65,70],
         "cooldown": 8
     },
     "W": {
@@ -14,7 +13,6 @@
             "base": [40,60,80,100,120],
             "amp": 60
         },
-        "sp_cost": 40,
         "cooldown": [16,15,14,13,12]
     },
     "E": {
@@ -30,7 +28,6 @@
         "damage_increase": 25,
         "cooldown_reduction": 1,
         "kill_cooldown_reduction": 90,
-        "sp_cost": 80,
         "cooldown": [13,12,11,10,9]
     },
     "R": {
@@ -46,7 +43,6 @@
             "base": [10,40,70],
             "amp": 25
         },
-        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

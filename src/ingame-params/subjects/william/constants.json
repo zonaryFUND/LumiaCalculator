@@ -10,7 +10,6 @@
             "basicAttackAmp": 100
         },
         "extend_duration": 1,
-        "sp_cost": [10,20,30,40,50],
         "cooldown": 5
     },
     "W": {
@@ -25,13 +24,11 @@
         "stun": 1,
         "mound_duration": 5,
         "defense": [10,13,16,19,22],
-        "sp_cost": 70,
         "cooldown": 14
     },
     "E": {
         "movement_speed": [14,17,20,23,26],
         "duration": 3,
-        "sp_cost": [40,30,20,10,0],
         "cooldown": 0
     },
     "R": {
@@ -47,7 +44,6 @@
             "duration": 2,
             "effect": 60
         },
-        "sp_cost": [100,110,120],
         "cooldown": [60,50,40]
     },
     "T": {

@@ -4,10 +4,6 @@ import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 const base: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     cooldown: Constants.Q.cooldown,
     values: ({ }) => ({
         0: Constants.Q.damage.base,

@@ -6,7 +6,6 @@
         },
         "time_bound": 2,
         "cooldown_reduction": 40,
-        "sp_cost": [40,45,50,55,60],
         "cooldown": 5
     },
     "W": {
@@ -19,7 +18,6 @@
         "healing_reduction": 45,
         "movement_speed": 120,
         "cooldown_reduction": 40,
-        "sp_cost": [30,35,40,45,50],
         "cooldown": 6
     },
     "E": {
@@ -28,7 +26,6 @@
             "attack": 50
         },
         "stun": 0.3,
-        "sp_cost": [60,70,80,90,100],
         "cooldown": [18,17,16,15,14]
     },
     "R": {
@@ -50,7 +47,6 @@
             "duration": 1,
             "effect": 30
         },
-        "sp_cost": 90,
         "cooldown": 25
     },
     "T": {

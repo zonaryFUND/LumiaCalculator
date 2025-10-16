@@ -11,10 +11,6 @@ const maxShield = {
 
 export const info: SkillTooltipProps = {
     skillKey: "W",
-    consumption: {
-        type: "sp",
-        value: Constants.W.sp_cost
-    },
     cooldown: Constants.W.cooldown,
     values: ({ showEquation }) => ({
         0: Constants.W.duration,
@@ -39,8 +35,7 @@ export const info: SkillTooltipProps = {
             {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.base},
             {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
             {labelIntlID: "ToolTipType/SkillAddDamageMaxHpRatio", values: Constants.W.damage.targetMaxHP, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.W.sp_cost},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
         ]  
     })
 }

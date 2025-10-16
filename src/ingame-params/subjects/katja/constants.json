@@ -12,7 +12,6 @@
             "duration": 4,
             "effect": [20,25,30,35,40]
         },
-        "sp_cost": [20,23,26,29,32],
         "cooldown": [7,6,5,4,3]
     },
     "W": {
@@ -33,7 +32,6 @@
             "duration": 2,
             "effect": 40
         },
-        "sp_cost": 60,
         "cooldown": [12,11,10,9,8]
     },
     "R": {
@@ -50,7 +48,6 @@
             "attack": 200
         },
         "cooldown_return": 35,
-        "sp_cost": 100,
         "cooldown": [80,70,60]
     },
     "T": {

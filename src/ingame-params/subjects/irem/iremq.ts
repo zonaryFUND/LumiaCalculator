@@ -13,10 +13,6 @@ const maxDamageConstants = {
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.IremQ.sp_cost
-    },
     cooldown: Constants.IremQ.cooldown,
     values: ({ showEquation }) => {
         if (showEquation) {
@@ -40,7 +36,6 @@ export const info: SkillTooltipProps = {
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.IremQ.damage.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.IremQ.sp_cost},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.IremQ.cooldown},
         ]  
     })

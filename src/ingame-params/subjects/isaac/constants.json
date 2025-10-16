@@ -4,8 +4,7 @@
             "base": [30,70,110,150,190],
             "attack": 70
         },
-        "cooldown": [10,9,8,7,6],
-        "sp_cost": [50,55,60,65,70]
+        "cooldown": [10,9,8,7,6]
     },
     "W": {
         "damage": {
@@ -13,8 +12,7 @@
             "attack": 65
         },
         "cooldown_reduction": 25,
-        "cooldown": [9,7.5,6,4.5,3],
-        "sp_cost": 50
+        "cooldown": [9,7.5,6,4.5,3]
     },
     "E": {
         "time_bound": 2.5,
@@ -27,8 +25,7 @@
             "duration": 3,
             "effect": 10
         },
-        "cooldown": [15,14,13,12,11],
-        "sp_cost": 75
+        "cooldown": [15,14,13,12,11]
     },
     "R": {
         "damage": {
@@ -40,8 +37,7 @@
             "attack": 5
         },
         "slow": 99,
-        "cooldown": [80,70,60],
-        "sp_cost": [60,80,100]
+        "cooldown": [80,70,60]
     },
     "T": {
         "threshold": 3,

@@ -117,7 +117,6 @@
     {
         "attackPower": 36,
         "skillAmp": 90,
-        "spRegenRatio": 0.5,
         "code": 102408,
         "weaponType": "TwoHandSword",
         "itemGrade": "Epic"
@@ -493,7 +492,6 @@
     },
     {
         "attackPower": 75,
-        "spRegenRatio": 0.8,
         "attackSpeedRatio": 0.3,
         "normalLifeSteal": 0.12,
         "code": 108403,
@@ -635,7 +633,6 @@
     {
         "attackPower": 64,
         "defense": 6,
-        "spRegenRatio": 0.5,
         "attackSpeedRatio": 0.3,
         "code": 110405,
         "weaponType": "Glove",
@@ -1174,14 +1171,14 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 80,
+        "attackPower": 82,
         "attackSpeedRatio": 0.35,
         "code": 116410,
         "weaponType": "Pistol",
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 85,
+        "attackPower": 87,
         "attackSpeedRatio": 0.5,
         "moveSpeedRatio": 0.03,
         "code": 116501,
@@ -1447,7 +1444,6 @@
     {
         "attackPower": 25,
         "skillAmp": 69,
-        "spRegenRatio": 1,
         "cooldownReduction": 10,
         "code": 120302,
         "weaponType": "Rapier",
@@ -1465,7 +1461,6 @@
     {
         "attackPower": 28,
         "skillAmp": 84,
-        "spRegenRatio": 1.5,
         "cooldownReduction": 15,
         "sightRange": 1,
         "code": 120402,
@@ -1551,7 +1546,6 @@
     {
         "attackPower": 42,
         "skillAmp": 86,
-        "spRegenRatio": 0.5,
         "code": 121403,
         "weaponType": "Guitar",
         "itemGrade": "Epic"
@@ -1786,7 +1780,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 70,
+        "attackPower": 68,
         "cooldownReduction": 15,
         "moveSpeedRatio": 0.02,
         "code": 131403,
@@ -1848,7 +1842,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 76,
+        "attackPower": 74,
         "cooldownReduction": 20,
         "moveSpeedRatio": 0.02,
         "code": 131507,

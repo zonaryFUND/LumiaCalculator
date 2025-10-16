@@ -6,14 +6,12 @@
             "base": [25,35,45,55,65],
             "amp": [24,26,28,30,32]
         },
-        "sp_cost": [15,25,35,45,55],
         "cooldown": 4
     },
     "W": {
         "duration": 5,
         "flame_duration": 5,
         "slow": 30,
-        "sp_cost": 30,
         "cooldown": {
             "constant": 0.3
         },
@@ -30,7 +28,6 @@
         },
         "slow": 30,
         "duration": 5,
-        "sp_cost": 40,
         "cooldown": [19,18,17,16,15]
     },
     "R": {
@@ -39,7 +36,6 @@
             "amp": 40
         },
         "duration": 5,
-        "sp_cost": [25,45,65],
         "cooldown": {
             "constant": 1
         },

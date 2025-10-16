@@ -13,7 +13,6 @@
             "effect": 7,
             "max_stack": 2
         },
-        "sp_cost": 50,
         "cooldown": [7,6.5,6,5.5,5]
     },
     "MeleeW": {
@@ -21,14 +20,12 @@
             "base": [40,75,110,145,180],
             "attack": 80
         },
-        "sp_cost": [50,55,60,65,70],
         "cooldown": [11,10.5,10,9.5,9]
     },
     "MeleeE": {
         "duration": 5,
         "taunt": 0.7,
         "weapon_swap": 4,
-        "sp_cost": [50,55,60,65,70],
         "cooldown": 13
     },
     "RangeQ": {
@@ -41,7 +38,6 @@
             "effect": 4,
             "max_stack": 2
         },
-        "sp_cost": 50,
         "cooldown": [7,6.5,6,5.5,5]
     },
     "RangeW": {
@@ -51,7 +47,6 @@
         },
         "duration": [2,2.5,3,3.5,4,4],
         "range": 0.5,
-        "sp_cost": [25,35,45,55,65],
         "cooldown": [13,12.5,12,11.5,11]
     },
     "RangeE": {
@@ -64,7 +59,6 @@
             "effect": [30,35,40,45,50]
         },
         "weapon_swap": 4,
-        "sp_cost": 80,
         "cooldown": 13
     },
     "R": {
@@ -98,7 +92,6 @@
             "duration": 0.6,
             "effect": 20
         },
-        "sp_cost": 100,
         "cooldown": [90,75,60]
     },
     "T": {

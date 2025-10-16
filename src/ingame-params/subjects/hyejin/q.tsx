@@ -1,16 +1,11 @@
 import Constants from "./constants.json";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
-import { ValueRatio } from "app-types/value-ratio";
 
 export const code = 1012200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    consumption: {
-        type: "sp",
-        value: Constants.Q.sp_cost
-    },
     cooldown: Constants.Q.cooldown,
     values: ({ showEquation }): TooltipValues => {
         if (showEquation) {

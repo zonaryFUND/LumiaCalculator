@@ -12,7 +12,6 @@
             "duration": 2,
             "effect": [4,6,8,10,12]
         },
-        "sp_cost": [40,35,30,25,20],
         "cooldown": [7,6,5,4,3]
     },
     "W": {
@@ -23,7 +22,6 @@
         },
         "airborne": 1,
         "r_combo_knockback": 3,
-        "sp_cost": [50,55,60,65,70],
         "cooldown": [12,11,10,9,8]
     },
     "E": {
@@ -33,7 +31,6 @@
             "attack": 70
         },
         "knockback": 4,
-        "sp_cost": [30,35,40,45,50],
         "cooldown": [12,11,10,9,8]
     },
     "R": {
@@ -51,7 +48,6 @@
             "effect": 20
         },
         "cooldown_reduction": 3,
-        "sp_cost": [100,120,140],
         "cooldown": [80,70,60]
     },
     "T": {

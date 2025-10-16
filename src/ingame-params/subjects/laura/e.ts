@@ -6,10 +6,6 @@ export const code = 1047400;
 
 export const info: SkillTooltipProps = {
     skillKey: "E",
-    consumption: {
-        type: "sp",
-        value: Constants.E.sp_cost
-    },
     cooldown: Constants.E.cooldown,
     values: ({ showEquation }) => ({
         0: Constants.E.reuse,
@@ -21,7 +17,6 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.E.sp_cost},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
         ]  
     })

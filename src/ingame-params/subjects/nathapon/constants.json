@@ -7,7 +7,6 @@
             "base": [50,90,130,170,210],
             "amp": 75
         },
-        "sp_cost": 60,
         "cooldown": [5,4.5,4,3.5,3]       
     },
     "W": {
@@ -21,7 +20,6 @@
             "amp": 75
         },
         "bind": 1.6,
-        "sp_cost": 80,
         "cooldown": [14,13,12,11,10]
     },
     "E": {
@@ -43,13 +41,11 @@
         },
         "pull_basic_attack_range": 10,
         "mark_remain_range": 8,
-        "sp_cost": 50,
         "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
         "cast": 1.35,
         "statis": 2.5,
-        "sp_cost": [120,110,100],
         "cooldown": [80,70,60]
     },
     "T": {

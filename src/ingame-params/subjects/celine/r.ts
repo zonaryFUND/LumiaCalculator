@@ -8,10 +8,6 @@ const maxCooldownIncrease = Constants.R.cooldown_increase * Constants.R.max_leve
 
 export const info: SkillTooltipProps = {
     skillKey: "R",
-    consumption: {
-        type: "sp",
-        value: Constants.R.sp_cost
-    },
     cooldown: Constants.R.cooldown,
     values: ({ }) => ({
         2: Constants.R.damage.base,
@@ -27,8 +23,7 @@ export const info: SkillTooltipProps = {
             0: Constants.R.max_set
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.R.sp_cost}
+           {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base}
         ]  
     })
 }
