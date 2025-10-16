@@ -7,7 +7,8 @@ const values: EquipmentAbilityTooltipValues = ({ importedValues }) =>{
         1: Constants.threshold,
         2: Constants.cooldown,
         3: Constants.duration,
-        4: importedValues?.ms
+        4: importedValues?.ms,
+        20: Constants.dot_period
     }
 }
 

@@ -15,7 +15,9 @@ export const info: SkillTooltipProps = {
         4: showEquation ? Constants.Q.railgun_count : Constants.Q.railgun_charge,
         5: showEquation ? Constants.Q.railgun_charge : Constants.Q.w_cooldown_reduction,
         6: Constants.Q.w_cooldown_reduction,
-        7: Constants.Q.hp.level
+        7: Constants.Q.hp.level,
+        8: Constants.Q.retrieve_range,
+        9: Constants.Q.remain
     }),
     expansion: ({ }) => ({
         tipValues: {

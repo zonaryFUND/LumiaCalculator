@@ -49,7 +49,7 @@ type Props = {
  */
 const staticValueEquation: React.FC<Props> = props => {
     function equation(ratio: ValueRatio): React.ReactElement[] {
-        return Object.entries(props.ratio).reduce((prev, [key, value]): React.ReactElement[] => {
+        return Object.entries(ratio).reduce((prev, [key, value]): React.ReactElement[] => {
             const sanitizedValue = (() => {
                 if (Array.isArray(value)) {
                     // スキルレベル依存レシオ

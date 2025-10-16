@@ -6,7 +6,10 @@ const table: DamageTableGenerator = props => ({
     skill: [
         [{label: "Q", origin: "Q", value: Constants.Q.damage}],
         [{label: "W", origin: "W", value: Constants.W.damage}],
-        [{label: "E", origin: "E", value: Constants.E.damage}],
+        [
+            {label: props.intl.formatMessage({id: "subject.hyejin.e-card"}), origin: "E", value: Constants.E.damage},
+            {label: props.intl.formatMessage({id: "subject.hyejin.e-move"}), origin: "E", value: Constants.E.second_damage},
+        ],
         [
             {label: props.intl.formatMessage({id: "subject.hyejin.r-initial"}), origin: "R", value: Constants.R.first_damage},
             {label: props.intl.formatMessage({id: "subject.hyejin.r-omen"}), origin: "R", value: Constants.R.card_damage},

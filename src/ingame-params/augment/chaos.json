@@ -29,10 +29,10 @@
     },
     "red_sprite": {
         "damage": {
-            "base": 15,
+            "base": 10,
             "level": 2,
             "additionalAttack": 20,
-            "amp": 25
+            "amp": 22
         },
         "cooldown": 10,
         "damage_amp": {

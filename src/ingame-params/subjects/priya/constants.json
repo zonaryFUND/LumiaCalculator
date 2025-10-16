@@ -34,10 +34,11 @@
         "basic_attack_flower": 6,
         "shield_duration": 2,
         "shield": {
-            "base": [60,80,100,120,140],
-            "amp": 20
+            "base": [100,115,130,145,160],
+            "amp": 25
         },
-        "cooldown": [15,14,13,12,11]
+        "stacked_shield_decline": 40,
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "E": {
         "damage": {

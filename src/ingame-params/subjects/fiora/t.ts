@@ -14,11 +14,15 @@ export const info: SkillTooltipProps = {
         5: RatioPercent(Constants.T.cooldown_reduction),
         6: RatioPercent(Constants.T.damage.amp),
         7: Constants.T.damage.base,
-        20: Constants.T.damage
+        8: RatioPercent(Constants.T.heal.amp),
+        9: Constants.T.heal.base,
+        20: Constants.T.damage,
+        21: Constants.T.heal
     }),
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.T.heal.base},
             {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed.effect, percent: true},
         ]  
     })

@@ -12,7 +12,6 @@ export const info: SkillTooltipProps = {
         1: RatioPercent(Constants.W.slow),
         2: RatioPercent(Constants.W.attack_speed),
         3: Constants.W.effect_remain,
-        4: RatioPercent(Constants.W.cooldown_reduction),
         7: RatioPercent(Constants.W.mastery_addition)
     }),
     expansion: () => ({

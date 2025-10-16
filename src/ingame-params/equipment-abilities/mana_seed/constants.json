@@ -1,0 +1,7 @@
+{
+    "amp_per_stack": 1,
+    "cooldown": 15,
+    "time_pass_stack_gain": 5,
+    "max_stack": 20,
+    "cooldown_reduction": 20
+}

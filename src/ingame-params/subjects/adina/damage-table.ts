@@ -30,8 +30,6 @@ const table: DamageTableGenerator = props => ({
         [
             {label: props.intl.formatMessage({id: "subject.adina.star-conjunction-heal"}), origin: "R", value: Constants.R.star_conjunction.hp, type: {type: "heal", target: "any"}},
             {label: props.intl.formatMessage({id: "subject.adina.star-conjunction-heal-sum"}), origin: "R", value: Constants.R.star_conjunction.hp, type: {type: "heal", target: "any"}, multiplier: Constants.E.conjunction * 100},
-            {label: props.intl.formatMessage({id: "subject.adina.star-conjunction-sp-heal"}), origin: "R", value: Constants.R.star_conjunction.sp, type: {type: "heal", target: "any"}},
-            {label: props.intl.formatMessage({id: "subject.adina.star-conjunction-sp-heal-sum"}), origin: "R", value: Constants.R.star_conjunction.sp, type: {type: "heal", target: "any"}, multiplier: Constants.E.conjunction * 100},
         ],
         [
             {label: props.intl.formatMessage({id: "subject.adina.passive-movement-speed"}), origin: "T", value: Constants.T.movement_speed, type: {type: "misc", percentExpression: true}}

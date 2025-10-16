@@ -2,5 +2,8 @@
     "subject.fiora.q-inner": "Q中",
     "subject.fiora.q-tip": "Q先端",
     "subject.fiora.w-max-hit": "W({value}ヒット)",
-    "subject.fiora.r-finish": "R最終"
+    "subject.fiora.r-finish": "R最終",
+    "subject.fiora.t-damage": "Tダメージ",
+    "subject.fiora.t-heal": "T回復"
+    
 }

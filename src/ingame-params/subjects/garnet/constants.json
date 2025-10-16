@@ -9,14 +9,14 @@
             "duration": 1,
             "effect": 35
         },
-        "reuse": 5,
+        "reuse": 4,
         "Q2_damage": {
             "base": [50,75,100,125,150],
             "amp": 50,
             "maxHP": 6
         },
         "hp_cost_percent": 3,
-        "cooldown": [6,5.5,5,4.5,4]
+        "cooldown": [6.5,6,5.5,5,4.5]
     },
     "W": {
         "qe_cooldown_reduction_per_stack": 0.6,

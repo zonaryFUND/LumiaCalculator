@@ -17,6 +17,8 @@ const skill: React.FC<EquipmentSkill> = props => {
         return props.skillCode;
     })();
 
+    console.log(EquipmentAbilityTooltipDictionary[sanitizedCode])
+
     const values = EquipmentAbilityTooltipDictionary[sanitizedCode]({
         showEquation,
         config,

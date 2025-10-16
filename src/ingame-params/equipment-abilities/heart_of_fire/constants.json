@@ -1,0 +1,11 @@
+{
+    "tick": 4,
+    "area": 3,
+    "damage": {
+        "base": 20,
+        "maxHP": 6
+    },
+    "heal": 200,
+    "max_heal": 600,
+    "cooldown": 1
+}

@@ -27,7 +27,7 @@
             "base": [70,90,110,130,150],
             "attack": 65
         },
-        "cooldown": [14,13.5,13,12.5,12]
+        "cooldown": [15,14.5,14,13.5,13]
     },
     "R": {
         "duration": 4,
@@ -38,7 +38,6 @@
         "cooldown": [80,70,60]
     },
     "T": {
-        "sp": [4,6,8],
         "evoluted_sound_wave": 2,
         "damage": {
             "attack": [3,6,9],

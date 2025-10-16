@@ -1,0 +1,15 @@
+{
+    "incoming_damage": 350,
+    "duration": 12,
+    "max_stack": 8,
+    "hard_cc_stack_gain": 1,
+    "defense_per_stack": 3,
+    "shield": {
+        "duration": 3,
+        "effect": {
+            "base": 100,
+            "additionalMaxHP": 100
+        }
+    },
+    "movement_speed": 10
+}

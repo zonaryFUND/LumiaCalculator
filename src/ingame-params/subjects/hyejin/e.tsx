@@ -11,17 +11,21 @@ export const info: SkillTooltipProps = {
         if (showEquation) {
             return {
                 0: Constants.E.damage.base,
-                2: RatioPercent(Constants.E.damage.amp)
+                1: RatioPercent(Constants.E.damage.amp),
+                2: Constants.E.second_damage.base,
+                3: RatioPercent(Constants.E.second_damage.amp)
             }
         } else {
             return {
-                0: Constants.E.damage
+                0: Constants.E.damage,
+                1: Constants.E.second_damage
             }
         }
     },
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/ProjectileDamage", values: Constants.E.damage.base},
+            {labelIntlID: "ToolTipType/ArriveDamage", values: Constants.E.second_damage.base},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
         ]  
     })
