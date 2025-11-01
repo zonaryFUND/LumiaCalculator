@@ -4,7 +4,7 @@
             "base": 100,
             "level": 90
         },
-        "duration": 12,
+        "duration": 10,
         "railgun_count": 4,
         "railgun_charge": 3,
         "w_cooldown_reduction": 10,
@@ -21,7 +21,9 @@
         "charge": {
             "max": 2,
             "time": [16,15,14,13,12]
-        }
+        },
+        "retrieve_range": 11,
+        "remain": 1.5
     },
     "W": {
         "damage": {
@@ -60,7 +62,9 @@
                 "base": [100,125,150],
                 "amp": 50
             },
-            "sentry_defence": 130
+            "sentry_defence": 130,
+            "retrieve_range": 11,
+            "remain": 1.5
         },
         "W": {
             "damage": {

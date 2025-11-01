@@ -1,0 +1,10 @@
+{
+    "period": 4,
+    "range": 3,
+    "damage": {
+        "base": 20,
+        "maxHP": 6
+    },
+    "heal": 200,
+    "max_heal": 600
+}

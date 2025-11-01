@@ -79,13 +79,9 @@
             "amp": 45
         },
         "star_conjunction": {
-            "hp": {
+            "heal": {
                 "base": [18,38,58,78],
                 "amp": 4
-            },
-            "sp": {
-                "base": [30,50,70,90],
-                "amp": 8
             }
         },
         "cooldown": {

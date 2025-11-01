@@ -3,5 +3,6 @@
     "threshold": 3,
     "duration": 3,
     "ms": 30,
-    "cooldown": 10
+    "cooldown": 10,
+    "dot_trigger_period": 3
 }

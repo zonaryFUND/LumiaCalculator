@@ -23,6 +23,9 @@ export const info: SkillTooltipProps = {
         21: Constants.W.shield
     }),
     expansion: () => ({
+        tipValues: {
+            0: RatioPercent(Constants.W.shield_reduction)
+        },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
             {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.base},

@@ -879,7 +879,7 @@
     },
     {
         "defense": 16,
-        "maxHp": 220,
+        "maxHp": 240,
         "code": 203409,
         "armorType": "Arm",
         "itemGrade": "Epic"
@@ -1185,8 +1185,8 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 5,
-        "maxHp": 120,
+        "defense": 8,
+        "maxHp": 100,
         "hpRegenRatio": 0.5,
         "moveSpeed": 0.22,
         "code": 204303,
@@ -1194,7 +1194,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 10,
+        "defense": 8,
         "moveSpeed": 0.22,
         "uniqueTenacity": 0.2,
         "code": 204401,

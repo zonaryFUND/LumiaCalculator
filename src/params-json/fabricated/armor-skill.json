@@ -260,6 +260,14 @@
 			}
 		}
 	},
+	"201533": {
+		"skillCode": 6061001,
+		"name": "blaze_of_glory"
+	},
+	"201534": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
+	},
 	"201701": {
 		"skillCode": 6008202,
 		"name": "healing_reduction_strong"
@@ -420,15 +428,17 @@
 		"name": "brute_enforcer"
 	},
 	"202527": {
-		"skillCode": 6001002,
-		"name": "flame_barrier",
+		"skillCode": 6062001,
+		"name": "heart_of_fire"
+	},
+	"202528": {
+		"skillCode": 6034001,
+		"name": "extended_fury",
 		"dmg": {
-			"melee": {
-				"maxHP": 4
-			},
-			"range": {
-				"maxHP": 3
-			}
+			"level": 3
+		},
+		"values": {
+			"extend": 25
 		}
 	},
 	"203306": {
@@ -466,20 +476,8 @@
 		"name": "healing_reduction_weak"
 	},
 	"203408": {
-		"skillCode": 6024001,
-		"name": "electric_shock",
-		"dmg": {
-			"melee": {
-				"base": 26,
-				"targetMaxHP": 4,
-				"level": 4
-			},
-			"range": {
-				"base": 26,
-				"targetMaxHP": 2.5,
-				"level": 4
-			}
-		}
+		"skillCode": 6060001,
+		"name": "time_edge"
 	},
 	"203413": {
 		"skillCode": 6017006,
@@ -589,6 +587,10 @@
 		"skillCode": 6008202,
 		"name": "healing_reduction_strong"
 	},
+	"203516": {
+		"skillCode": 6063001,
+		"name": "fáfnir's_scales "
+	},
 	"204409": {
 		"skillCode": 6059001,
 		"name": "turbulence"
@@ -623,6 +625,10 @@
 		"values": {
 			"penetration": 0.12
 		}
+	},
+	"204513": {
+		"skillCode": 6008202,
+		"name": "healing_reduction_strong"
 	},
 	"205201": {
 		"skillCode": 6014001,
@@ -664,6 +670,10 @@
 			"base": 50,
 			"amp": 15
 		}
+	},
+	"205504": {
+		"skillCode": 6064001,
+		"name": "mana_seed"
 	},
 	"205505": {
 		"skillCode": 6002005,

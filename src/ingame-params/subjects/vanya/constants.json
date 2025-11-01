@@ -44,7 +44,7 @@
             "amp": 35
         },
         "drowsy": 2.25,
-        "sleep": 2,
+        "sleep": 1.5,
         "wakeup_damage": {
             "base": [100,180,240],
             "amp": 65

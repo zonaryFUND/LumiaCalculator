@@ -16,12 +16,8 @@ export const info: SkillTooltipProps = {
     cooldown: Constants.E.cooldown,
     values: ({ showEquation, config }) => {
         const conjunctionHp = {
-            base: Constants.R.star_conjunction.hp.base[config.skillLevels.R],
-            amp: Constants.R.star_conjunction.hp.amp
-        }
-        const conjunctionSp = {
-            base: Constants.R.star_conjunction.sp.base[config.skillLevels.R],
-            amp: Constants.R.star_conjunction.sp.amp
+            base: Constants.R.star_conjunction.heal.base[config.skillLevels.R],
+            amp: Constants.R.star_conjunction.heal.amp
         }
 
         const base = {
@@ -39,8 +35,6 @@ export const info: SkillTooltipProps = {
                 12: RatioPercent(conjunctionHp.amp),
                 13: RatioPercent(Constants.E.damage.amp),
                 16: RatioPercent(Constants.E.sun.amp),
-                17: conjunctionSp.base,
-                18: RatioPercent(conjunctionSp.amp),
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -49,7 +43,6 @@ export const info: SkillTooltipProps = {
                 21: Constants.E.sun,
                 22: starHeal,
                 24: conjunctionHp,
-                25: conjunctionSp
             } as Record<number, number | string | ValueRatio>
         }
     },

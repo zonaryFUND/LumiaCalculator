@@ -300,26 +300,6 @@
         "thirdOptionSection4Value": 0
     },
     {
-        "code": 10305,
-        "type": "Hammer",
-        "characterCode": 85,
-        "firstOption": "AttackSpeedRatio",
-        "firstOptionSection1Value": 0.04,
-        "firstOptionSection2Value": 0.04,
-        "firstOptionSection3Value": 0.04,
-        "firstOptionSection4Value": 0.04,
-        "secondOption": "IncreaseBasicAttackDamageRatio",
-        "secondOptionSection1Value": 0.032,
-        "secondOptionSection2Value": 0.032,
-        "secondOptionSection3Value": 0.032,
-        "secondOptionSection4Value": 0.032,
-        "thirdOption": "None",
-        "thirdOptionSection1Value": 0,
-        "thirdOptionSection2Value": 0,
-        "thirdOptionSection3Value": 0,
-        "thirdOptionSection4Value": 0
-    },
-    {
         "code": 10401,
         "type": "Axe",
         "characterCode": 1,

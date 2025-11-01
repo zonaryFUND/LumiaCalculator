@@ -6,7 +6,8 @@ const values: EquipmentAbilityTooltipValues = () => ({
     1: Constants.armor,
     2: Constants.max_stack,
     3: Constants.ms.duration,
-    4: Constants.ms.effect
+    4: Constants.ms.effect,
+    20: Constants.dot_trigger_period
 })
 
 export default values;

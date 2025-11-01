@@ -6,7 +6,7 @@
         },
         "additional_damage": {
             "base": [50,95,140,185,230],
-            "amp": 30
+            "amp": 20
         },
         "slow": {
             "duration": 1.5,
@@ -27,12 +27,12 @@
             "amp": 55
         },
         "reuse": 4,
-        "cooldown": 8
+        "cooldown": 9
     },
     "R": {
         "damage": {
             "base": [100,160,220],
-            "amp": 50
+            "amp": 40
         },
         "slow": {
             "duration": 1,
@@ -50,6 +50,10 @@
         "damage": {
             "base": [20,60,100],
             "amp": 45
+        },
+        "heal": {
+            "base": [20,45,70],
+            "amp": 35
         },
         "movement_speed": {
             "duration": 2,

@@ -29,10 +29,10 @@
     },
     "red_sprite": {
         "damage": {
-            "base": 15,
+            "base": 10,
             "level": 2,
             "additionalAttack": 20,
-            "amp": 25
+            "amp": 22
         },
         "cooldown": 10,
         "damage_amp": {
@@ -43,7 +43,11 @@
             "range": 4,
             "damage_reduction": 20
         },
-        "cooldown_reduction": 0.5
+        "cooldown_reduction": {
+            "single_target": 15,
+            "aoe": 6,
+            "dot": 2
+        }
     },
     "syphon_maelstorm": {
         "time_bound": 3,

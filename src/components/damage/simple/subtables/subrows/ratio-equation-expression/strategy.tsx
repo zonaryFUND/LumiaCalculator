@@ -61,7 +61,7 @@ export const RatioUnitExpressionStrategyDictionary: Partial<Record<keyof ValueRa
         element: <> x (<span className={table.small}><FormattedMessage id="StatType/CriticalStrikeChance" /></span>{status.criticalStrikeChance.calculatedValue.toString()}% x {ratio})</>
     }),
     additionalAttackSpeed: standardExpressionStrategy(<FormattedMessage id="ToolTipType/AddAttackSpeedRatio" />, (_, status) => status.attackSpeed.additionalValue),
-    amp: standardExpressionStrategy(<FormattedMessage id="StatType/IncreaseSkillDamageRatior" />, (_, status) => status.skillAmp.calculatedValue),
+    amp: standardExpressionStrategy(<FormattedMessage id="StatType/IncreaseSkillDamageRatio" />, (_, status) => status.skillAmp.calculatedValue),
     stack: withoutPercentExpressionStrategy(<FormattedMessage id="app.stack" />, (config) => config.stack),
     gauge: standardExpressionStrategy(<FormattedMessage id="app.gauge" />, (config) => config.gauge)
 }

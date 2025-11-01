@@ -10,7 +10,6 @@ export const info: SkillTooltipProps = {
     values: ({ }) => ({
         0: Constants.E.morph,
         2: Constants.E.movement_speed,
-        3: RatioPercent(Constants.E.heal),
         4: Constants.E.damage.base,
         5: RatioPercent(Constants.E.damage.amp),
         20: Constants.E.damage
@@ -18,7 +17,6 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
-            {labelIntlID: "ToolTipType/StaminaCostRatio", values: Constants.E.heal},
             {labelIntlID: "ToolTipType/Time", values: Constants.E.morph}
         ]  
     })

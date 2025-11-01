@@ -12,18 +12,20 @@ export const info: SkillTooltipProps = {
             1: RatioPercent(Constants.R.max_multiplier),
             2: RatioPercent(Constants.R.max_multiplier_threshold),
             3: Constants.T.max_stack,
-            4: RatioPercent(Constants.R.cooldown_reduction)
+            4: RatioPercent(Constants.R.cooldown_reduction[2])
         }
         if (showEquation) {
             return {
                 ...base,
                 0: Constants.R.damage.base,
-                5: RatioPercent(Constants.R.damage.attack)
+                5: RatioPercent(Constants.R.damage.attack),
+                6: RatioPercent(Constants.R.cooldown_reduction[0])
             }
         } else {
             return {
                 ...base,
-                0: Constants.R.damage
+                0: Constants.R.damage,
+                5: RatioPercent(Constants.R.cooldown_reduction[0])
             }
         }
     },

@@ -4,5 +4,6 @@
         "melee": 3,
         "range": 2
     },
-    "max_stack": 8
+    "max_stack": 8,
+    "dot_trigger_period": 1
 }
