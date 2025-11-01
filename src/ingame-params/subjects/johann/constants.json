@@ -26,7 +26,7 @@
         "mastery_addition": 20,
         "effect_remain": 3,
         "retrieve_range": 15,        
-        "cooldown": [12,11.5,11,10.5,10]
+        "cooldown": [11,10.5,10,9.5,9]
     },
     "E": {
         "movement_speed": {

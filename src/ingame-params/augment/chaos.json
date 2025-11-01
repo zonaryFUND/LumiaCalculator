@@ -44,8 +44,8 @@
             "damage_reduction": 20
         },
         "cooldown_reduction": {
-            "single_target": 15,
-            "aoe": 6,
+            "single_target": 12,
+            "aoe": 5,
             "dot": 2
         }
     },

@@ -32,7 +32,7 @@
     "R": {
         "damage": {
             "base": [100,160,220],
-            "amp": 40
+            "amp": 45
         },
         "slow": {
             "duration": 1,
