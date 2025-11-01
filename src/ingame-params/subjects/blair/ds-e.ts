@@ -33,8 +33,7 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.DualSwordsE.damage.base},
-            {labelIntlID: "ToolTipType/AddtionalApCoef", values: Constants.DualSwordsE.damage.additionalAttack, percent: true},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.DualSwordsE.vp_cost},
+            {labelIntlID: "ToolTipType/AddtionalApCoef", values: Constants.DualSwordsE.damage.additionalAttack, percent: true}
         ]  
     })
 }

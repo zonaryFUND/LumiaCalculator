@@ -26,14 +26,14 @@
             "base": [60,105,150,195,240],
             "amp": 20
         },
-        "shield_duration": 3,
+        "shield_duration": 2.5,
         "damage": {
             "base": [90,110,130,150,170],
             "amp": 70
         },
         "stun": 0.6,
         "cooldown_reduction": 2,
-        "cooldown": [10,9.5,9,8.5,8]
+        "cooldown": [11,10.5,10,9.5,9]
     },
     "R": {
         "cast": 1,

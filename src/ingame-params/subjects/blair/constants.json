@@ -48,7 +48,7 @@
             "effect": 80
         },
         "cooldown": 9,
-        "vp_cost": [60,55,50,45,40]
+        "vp_cost": 40
     },
     "DoubleBladedSwordQ": {
         "first_damage": {
@@ -94,7 +94,7 @@
         },
         "max_combo_hit": 4,
         "cooldown": 9,
-        "vp_cost": [60,55,50,45,40]
+        "vp_cost": 40
     },
     "R": {
         "duration": 15,

@@ -47,8 +47,7 @@ export const info: SkillTooltipProps = {
         tipValues: Constants.DoubleBladedSwordE.combo_shield.base,
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.DoubleBladedSwordE.damage.base},
-            {labelIntlID: "ToolTipType/Shield", values: Constants.DoubleBladedSwordE.shield.effect.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.DoubleBladedSwordE.vp_cost}
+            {labelIntlID: "ToolTipType/Shield", values: Constants.DoubleBladedSwordE.shield.effect.base}
         ]  
     })
 }
