@@ -47,7 +47,7 @@
         "max_stack": 3,
         "damage": {
             "base": 30,
-            "additionalAttack": 60,
+            "additionalAttack": 45,
             "targetMaxHP": {
                 "base": [3,6,9],
                 "additionalAttack": 4

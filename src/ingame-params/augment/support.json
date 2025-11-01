@@ -24,12 +24,12 @@
         "threshold": 40,
         "duration": 3,
         "heal": {
-            "targetMaxHP": {
-                "base": 3,
+            "lostHP": {
+                "base": 4,
                 "level": 0.5
             }
         },
-        "cooldown": 35,
+        "cooldown": 30,
         "multiple_reduction": 50
     },
     "sentinel": {
@@ -67,7 +67,7 @@
     },
     "power_of_intimidation": {
         "range": 3,
-        "damage_increase": 4,
+        "damage_increase": 3.5,
         "max_stack": 3,
         "effect_decline": 25
     },

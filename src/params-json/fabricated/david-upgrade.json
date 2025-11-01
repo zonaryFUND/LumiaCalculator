@@ -182,5 +182,10 @@
         "defense": 5,
         "maxHpByLv": 2,
         "code": 202630
+    },
+    "201534": {
+        "name": "赤い星",
+        "attackPower": 3,
+        "attackSpeedRatio": 5
     }
 }

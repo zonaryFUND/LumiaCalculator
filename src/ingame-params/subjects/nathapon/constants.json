@@ -37,7 +37,7 @@
         },
         "second_damage": {
             "base": [30,50,70,90,110],
-            "amp": 35
+            "amp": 40
         },
         "pull_basic_attack_range": 10,
         "mark_remain_range": 8,

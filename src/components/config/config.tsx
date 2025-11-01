@@ -93,6 +93,7 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                         label="現在HP"
                         value={props.currentHP}
                         max={props.maxHP!}
+                        changeColorOnMax={false}
                     /> :
                     null
                 }
@@ -103,7 +104,8 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                         label={intl.formatMessage({id: gaugeInfo.nameIntlID})}
                         threshold={gaugeInfo.threshold}
                         value={props.gauge}
-                        max={100}
+                        max={gaugeInfo.max ?? 100}
+                        changeColorOnMax={gaugeInfo.changeColorOnMax}
                     /> :
                     null
                 }
@@ -114,6 +116,7 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                         label={intl.formatMessage({id: stackInfo.nameIntlID})}
                         value={props.stack}
                         max={stackInfo.max}
+                        changeColorOnMax={false}
                     /> :
                     null
                 }

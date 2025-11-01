@@ -80,8 +80,8 @@
         },
         "star_conjunction": {
             "heal": {
-                "base": [18,38,58,78],
-                "amp": 4
+                "base": [20,40,60,80],
+                "amp": 5
             }
         },
         "cooldown": {

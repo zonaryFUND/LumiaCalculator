@@ -19,6 +19,8 @@ const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, con
                 return "スタミナ "
             case "energy":
                 return "エネルギー"
+            case "vp":
+                return "気力"
             case undefined:
                 return "コストなし"
         }

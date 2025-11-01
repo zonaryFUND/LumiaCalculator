@@ -63,7 +63,7 @@
     "R": {
         "damage": {
             "base": [80,160,240],
-            "attack": 100
+            "attack": 90
         },
         "slow": {
             "duration": 1,

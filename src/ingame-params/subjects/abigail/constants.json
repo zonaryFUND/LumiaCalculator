@@ -61,7 +61,7 @@
         },
         "defense_reduction": {
             "duration": 4,
-            "effect": [5,10,15]
+            "effect": [4,8,12]
         },
         "cooldown_reduction": 2,
         "cooldown": {

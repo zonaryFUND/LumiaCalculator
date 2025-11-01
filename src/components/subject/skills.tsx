@@ -12,6 +12,7 @@ import { WeaponSkillCodeDictionary } from "@app/ingame-params/weapon-skills/dict
 import { TooltipContext } from "components/tooltip/tooltip-context";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import { useLatest } from "react-use";
+import { SkillCodes } from "@app/ingame-params/subjects/type";
 
 type SkillListProps = {
     config: SubjectConfig
@@ -70,6 +71,18 @@ const SkillLevelConfigurator: React.FC<{skill: SubjectDependentSkillKey, max?: n
     )
 }
 
+const Skills: React.FC<{codes: SkillCodes | undefined}> = props => {
+    if (props.codes == undefined) return null;
+    if (typeof props.codes == "number") {
+        return <Skill key={props.codes} code={props.codes} />;
+    } else if (Array.isArray(props.codes)) {
+        return props.codes.map(code => <Skill key={code} code={code} />)
+    } else {
+        return (typeof props.codes.code == "number" ? [props.codes.code] : props.codes.code)
+            .map(code => <Skill key={code} code={code} />)
+    }
+}
+
 type Props = {
     config: SubjectConfig
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
@@ -77,9 +90,14 @@ type Props = {
 
 const subjectSkills: React.FC<Props> = props => {
     const list = SubjectSkillListExpressionDictionary[props.config.subject](props.config);
-    const weaponSkillCode = React.useMemo(() => {
-        const weaponType = weaponTypeIDOf(props.config);
-        return weaponType ? WeaponSkillCodeDictionary[weaponType] : undefined
+    const weaponSkill = React.useMemo(() => {
+        console.log(list)
+        if (list.D) {
+            return <Skills codes={list.D} />
+        } else {
+            const weaponType = weaponTypeIDOf(props.config);
+            return <Skill code={weaponType ? WeaponSkillCodeDictionary[weaponType] : undefined} />
+        }
     }, [props.config.equipment.Weapon])
 
     return (
@@ -88,25 +106,15 @@ const subjectSkills: React.FC<Props> = props => {
             {
                 SubjectSkillKeys.map(skill => (
                     <div key={skill} className={style.vertical}>
-                        {
-                            (() => {
-                                const value = list[skill];
-                                if (value == undefined) return null;
-                                if (typeof value == "number") {
-                                    return <Skill key={value} code={value} />;
-                                } else if (Array.isArray(value)) {
-                                    return value.map(code => <Skill key={code} code={code} />)
-                                } else {
-                                    return (typeof value.code == "number" ? [value.code] : value.code)
-                                        .map(code => <Skill key={code} code={code} />)
-                                }
-                            })()
-                        }
+                        <Skills codes={list[skill]} />
                     </div>
                 ))
             }
+            {
+                
+            }
             <div className={style.vertical}>
-                <Skill code={weaponSkillCode} />
+                {weaponSkill}
             </div>
             {
                 SubjectSkillKeys.map(skill => {

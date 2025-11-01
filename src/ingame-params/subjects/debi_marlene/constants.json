@@ -22,7 +22,7 @@
     "E": {
         "movement_speed": {
             "duration": 1.5,
-            "effect": 25
+            "effect": 30
         }
     },
     "DebiE": {
@@ -98,7 +98,7 @@
         "second_damage_count": 5,
         "second_damage": {
             "base": [5,10,15],
-            "additionalAttack": 10
+            "additionalAttack": 15
         },
         "cooldown": [80,70,60]
     },

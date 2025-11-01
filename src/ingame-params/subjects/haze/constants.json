@@ -52,7 +52,7 @@
         },
         "effect_count": 8,
         "max_cooldown_reduction": 20,
-        "cooldown": [13,12.5,12,11.5,11]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
         "switch_damage": {
@@ -79,7 +79,7 @@
     "T": {
         "swap_time": 0.75,
         "damage": {
-            "base": [40,80,120],
+            "base": [60,90,120],
             "amp": 55
         },
         "movement_speed": {

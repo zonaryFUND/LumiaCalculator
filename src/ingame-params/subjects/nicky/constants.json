@@ -26,10 +26,10 @@
         "e2_duration": 7,
         "damage": {
             "base": [100,125,150,175,200],
-            "amp": 65
+            "amp": 70
         },
         "slow": {
-            "duration": 1.5,
+            "duration": 2,
             "effect": 65
         },
         "cooldown": [8,7.5,7,6.5,6]

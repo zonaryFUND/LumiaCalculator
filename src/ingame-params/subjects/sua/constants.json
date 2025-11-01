@@ -120,6 +120,6 @@
         "heal": 55,
         "max_stack": 3,
         "attack_speed": 100,
-        "cooldown_reduction": 1
+        "cooldown_reduction": 1.2
     }
 }

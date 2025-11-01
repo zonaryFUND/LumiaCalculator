@@ -79,7 +79,7 @@
     },
     {
         "defense": 15,
-        "maxHpByLv": 18,
+        "maxHpByLv": 20,
         "cooldownReduction": 25,
         "code": 201415,
         "armorType": "Head",
@@ -142,7 +142,7 @@
     },
     {
         "defense": 16,
-        "maxHpByLv": 17,
+        "maxHpByLv": 18,
         "cooldownReduction": 15,
         "code": 201403,
         "armorType": "Head",
@@ -183,7 +183,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 82,
+        "skillAmp": 80,
         "moveSpeedRatio": 0.035,
         "uniqueSkillAmpRatio": 0.25,
         "code": 201503,
@@ -331,7 +331,7 @@
     },
     {
         "defense": 15,
-        "maxHpByLv": 18,
+        "maxHpByLv": 17,
         "hpRegenRatio": 1,
         "code": 201532,
         "armorType": "Head",
@@ -646,7 +646,7 @@
     },
     {
         "defense": 28,
-        "skillAmp": 25,
+        "skillAmp": 28,
         "skillAmpByLevel": 5,
         "cooldownReduction": 25,
         "code": 202508,
@@ -1004,7 +1004,7 @@
     },
     {
         "defense": 20,
-        "maxHpByLv": 20,
+        "maxHpByLv": 22,
         "cooldownReduction": 25,
         "code": 203504,
         "armorType": "Arm",
@@ -1027,7 +1027,7 @@
     },
     {
         "attackPower": 30,
-        "maxHp": 200,
+        "maxHp": 230,
         "cooldownReduction": 20,
         "code": 203508,
         "armorType": "Arm",
@@ -1065,7 +1065,7 @@
     },
     {
         "attackPower": 25,
-        "defense": 20,
+        "defense": 18,
         "cooldownReduction": 15,
         "code": 203513,
         "armorType": "Arm",
@@ -1082,7 +1082,7 @@
     {
         "attackPower": 40,
         "cooldownReduction": 15,
-        "penetrationDefense": 12,
+        "penetrationDefense": 11,
         "code": 705614,
         "armorType": "Arm",
         "itemGrade": "Legend"
@@ -1494,14 +1494,14 @@
     },
     {
         "defense": 12,
-        "maxHpByLv": 18,
+        "maxHpByLv": 20,
         "cooldownReduction": 20,
         "code": 205601,
         "armorType": "Arm",
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 32,
+        "attackPower": 33,
         "defense": 10,
         "cooldownReduction": 10,
         "code": 205401,

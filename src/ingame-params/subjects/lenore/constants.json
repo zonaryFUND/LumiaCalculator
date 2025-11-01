@@ -33,7 +33,7 @@
     "E": {
         "damage": {
             "base": [60,95,130,165,200],
-            "amp": 70
+            "amp": 75
         },
         "enhance_slow": {
             "duration": 1.5,

@@ -2,10 +2,8 @@ import * as React from "react";
 import { useValueContext, useValueContextOptional } from "./value-context";
 import { calculateValue, extractSkillLevel, ValueOrigin } from "app-types/value-ratio";
 import { ValueRatio } from "app-types/value-ratio";
-import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 import style from "./tooltip.module.styl";
 import ValueExpression from "./value-expression";
-import Decimal from "decimal.js";
 
 type OverrideKey = keyof ValueRatio | "result"
 

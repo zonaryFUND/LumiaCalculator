@@ -12,7 +12,8 @@ export default defineSubject({
     damageTable,
     gaugeInfo: {
         nameIntlID: "subject.lidailin.bac",
-        threshold: 40
+        threshold: 40,
+        changeColorOnMax: true
     },
 
     skills: {

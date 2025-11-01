@@ -1,3 +1,4 @@
+import { SubjectConfig } from "../config";
 
 /**
  * 武器熟練度から武器スキルのレベルを得る

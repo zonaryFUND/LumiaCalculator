@@ -3,7 +3,6 @@ import * as es from "es-toolkit";
 
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 import { SubjectTooltipDictionary } from "@app/ingame-params/subjects/dictionary";
 import { WeaponSkillTooltipDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import { FormattedMessage, useIntl } from "react-intl";

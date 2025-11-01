@@ -19,7 +19,7 @@
     "Q2": {
         "center_damage": {
             "base": [60,95,130,165,200],
-            "amp": 80
+            "amp": 85
         },
         "slow": {
             "duration": 1.2,

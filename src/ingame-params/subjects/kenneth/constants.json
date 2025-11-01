@@ -64,7 +64,7 @@
         },
         "heal": {
             "base": 50,
-            "attack": 5
+            "attack": 7
         },
         "max_heal": {
             "base": [30,40,50],

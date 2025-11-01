@@ -10,7 +10,8 @@ export const [
     SubjectPerpetualStatusDictionary,
     SubjectSummonInfoDictionary,
     SubjectStackInfoDictionary,
-    SubjectGaugeInfoDictionary
+    SubjectGaugeInfoDictionary,
+    SubjectWeaponSkillOverrideDictionary
 ] = Object.entries(modules).reduce(([
         skillLists, 
         tooltips, 
@@ -18,7 +19,8 @@ export const [
         statusOverrides, 
         summons,
         stackInfo,
-        gaugeInfo
+        gaugeInfo,
+        weaponSkillOverride
     ], [key, m]) => {
     const subjectCode = m.default.code;
     return [
@@ -28,7 +30,8 @@ export const [
         {...statusOverrides, ...(m.default.perpetualStatus ? { [subjectCode]: m.default.perpetualStatus } : {}) },
         {...summons, ...(m.default.summoned ? { [subjectCode]: m.default.summoned } : {})},
         {...stackInfo, ...(m.default.stackInfo ? { [subjectCode]: m.default.stackInfo } : {})},
-        {...gaugeInfo, ...(m.default.gaugeInfo ? { [subjectCode]: m.default.gaugeInfo } : {})}
+        {...gaugeInfo, ...(m.default.gaugeInfo ? { [subjectCode]: m.default.gaugeInfo } : {})},
+        {...weaponSkillOverride, ...(m.default.weaponSkillLevelOverride ? { [subjectCode]: m.default.weaponSkillLevelOverride } : {}) }
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
@@ -37,5 +40,6 @@ export const [
     {} as Record<SubjectCode, SubjectPerpetualStatus>,
     {} as Record<SubjectCode, SummonInfo[]>,
     {} as Record<SubjectCode, SubjectStackInfo>,
-    {} as Record<SubjectCode, SubjectGaugeInfo>
+    {} as Record<SubjectCode, SubjectGaugeInfo>,
+    {} as Record<SubjectCode, (mastery: number) => number>,
 ])
