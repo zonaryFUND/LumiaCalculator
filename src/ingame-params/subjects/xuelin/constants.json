@@ -87,7 +87,7 @@
         "qe_cooldown_reduction": 1.5,
         "heal": {
             "base": [20,40,60],
-            "attack": 50
+            "attack": 40
         },
         "animal_heal": 60
     }

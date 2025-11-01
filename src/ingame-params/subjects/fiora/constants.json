@@ -2,11 +2,11 @@
     "Q": {
         "damage": {
             "base": [80,110,140,170,200],
-            "amp": 70
+            "amp": 75
         },
         "additional_damage": {
             "base": [50,95,140,185,230],
-            "amp": 20
+            "amp": 15
         },
         "slow": {
             "duration": 1.5,
@@ -27,7 +27,7 @@
             "amp": 55
         },
         "reuse": 4,
-        "cooldown": 9
+        "cooldown": 8.5
     },
     "R": {
         "damage": {

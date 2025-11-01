@@ -59,7 +59,7 @@
             "rare": 1
         },
         "cooldown": {
-            "constant": [18,13,8]
+            "constant": [13,10,7]
         }
     }
 }

@@ -44,7 +44,7 @@
         "max_cost": 50,
         "gauge_cost": 50,
         "cooldown": {
-            "constant": 2.5
+            "constant": 2.7
         }
     },
     "R": {

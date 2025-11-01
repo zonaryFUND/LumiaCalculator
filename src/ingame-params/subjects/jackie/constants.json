@@ -8,7 +8,7 @@
         "heal": 50,
         "max_stack_target_additional_damage": 30,
         "reuse": 3,
-        "cooldown": [11,10,9,8,7]
+        "cooldown": [12,11,10,9,8]
     },
     "W": {
         "damage": {

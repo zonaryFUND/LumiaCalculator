@@ -43,7 +43,7 @@
     "T": {
         "fear": [0.9,1.1,1.3],
         "damage": {
-            "amp": [10,25,40]
+            "amp": [10,20,30]
         },
         "fear_immune": 6,
         "minimum_additional_damage": 1

@@ -14,7 +14,7 @@
     },
     "ghost_light": {
         "threshold": {
-            "hp": 33,
+            "hp": 30,
             "time": 3
         },
         "damage": {
