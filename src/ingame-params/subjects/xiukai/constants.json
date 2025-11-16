@@ -51,7 +51,7 @@
         "damage": {
             "base": [60,95,130],
             "amp": 55,
-            "maxHP": 4
+            "maxHP": 5
         },
         "slow": {
             "duration": 0.4,

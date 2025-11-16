@@ -2,7 +2,7 @@
     "Q": {
         "max_stack": 3,
         "hankyu_duration": 2,
-        "movement_speed": [3,6,9,12,15],
+        "movement_speed": [4,6,8,10,12],
         "attack_speed": [20,25,30,35,40],
         "daikyu_range_extend": 0.4,
         "daikyu_damage_enhance": 0.3,

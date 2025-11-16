@@ -27,7 +27,7 @@
         },
         "slow": {
             "duration": 1,
-            "effect": 50
+            "effect": 70
         },
         "stack_gain": 3,
         "enhanced_damage": {

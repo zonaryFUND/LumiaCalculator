@@ -12,7 +12,7 @@
     "W": {
         "damage": {
             "base": [40,60,80,100,120],
-            "amp": 25
+            "amp": 30
         },
         "slow": 40,
         "finish_damage": {
@@ -46,6 +46,7 @@
     "R": {
         "cast": 1.35,
         "statis": 2.5,
+        "range": [11,12,13],
         "cooldown": [80,70,60]
     },
     "T": {
@@ -54,7 +55,7 @@
             "attackSpeed": 20,
             "amp": 65
         },
-        "stack_damage_amp": [3,6,9],
+        "stack_damage_amp": [4,7,10],
         "max_stack": 3
     }
 }

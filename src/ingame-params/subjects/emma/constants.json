@@ -19,7 +19,7 @@
             "amp": 85
         },
         "duration": 7,
-        "cooldown_reduction": 25,
+        "cooldown_reduction": 30,
         "cooldown": [11,10.5,10,9.5,9]
     },
     "E": {

@@ -11,7 +11,7 @@
         },
         "movement_speed": {
             "duration": 2,
-            "effect": [8,9,10,11,12]
+            "effect": [11,12,13,14,15]
         },
         "cooldown": [9,8,7,6,5]
     },

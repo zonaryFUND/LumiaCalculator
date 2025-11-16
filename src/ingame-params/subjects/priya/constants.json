@@ -46,10 +46,10 @@
             "amp": 60
         },
         "slow": {
-            "duration": 1,
+            "duration": 1.2,
             "effect": 70
         },
-        "bind": 1,
+        "bind": 1.2,
         "movement_speed": 18,
         "cooldown": 11
     },

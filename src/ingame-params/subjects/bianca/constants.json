@@ -54,7 +54,7 @@
     "R": {
         "first_damage": {
             "base": [50,100,150],
-            "amp": 45,
+            "amp": 50,
             "targetMaxHP": 11
         },
         "slow": {

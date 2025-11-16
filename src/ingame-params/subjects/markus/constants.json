@@ -20,7 +20,7 @@
             "attack": 60,
             "additionalMaxHP": 10
         },
-        "airborne": 1,
+        "airborne": 0.8,
         "r_combo_knockback": 3,
         "cooldown": [12,11,10,9,8]
     },

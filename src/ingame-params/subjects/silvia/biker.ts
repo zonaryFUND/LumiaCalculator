@@ -14,7 +14,6 @@ export const info: SkillTooltipProps = {
             return {
                 ...base,
                 0: Constants.BikeR.damage.base,
-                2: RatioPercent(Constants.BikeR.damage.attack),
                 3: RatioPercent(Constants.BikeR.damage.amp)
             }
         } else {

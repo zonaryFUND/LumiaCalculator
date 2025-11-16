@@ -19,7 +19,7 @@
             "amp": 35
         },
         "slow": {
-            "duration": 1,
+            "duration": 1.2,
             "center": 80,
             "outer": 40
         },

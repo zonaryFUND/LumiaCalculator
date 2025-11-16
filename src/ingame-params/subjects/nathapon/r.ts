@@ -13,6 +13,7 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
+            {labelIntlID: "ToolTipType/SkillRange", values: Constants.R.range},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
         ]  
     })

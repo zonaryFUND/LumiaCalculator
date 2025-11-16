@@ -79,7 +79,7 @@
     },
     {
         "defense": 15,
-        "maxHpByLv": 20,
+        "maxHpByLv": 22,
         "cooldownReduction": 25,
         "code": 201415,
         "armorType": "Head",
@@ -101,7 +101,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 25,
+        "attackPower": 26,
         "defense": 10,
         "attackSpeedRatio": 0.15,
         "code": 201419,
@@ -142,7 +142,7 @@
     },
     {
         "defense": 16,
-        "maxHpByLv": 18,
+        "maxHpByLv": 20,
         "cooldownReduction": 15,
         "code": 201403,
         "armorType": "Head",
@@ -151,7 +151,7 @@
     {
         "attackPower": 35,
         "cooldownReduction": 20,
-        "penetrationDefense": 12,
+        "penetrationDefense": 13,
         "code": 201408,
         "armorType": "Head",
         "itemGrade": "Legend"
@@ -237,7 +237,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 28,
+        "attackPower": 30,
         "defense": 10,
         "attackSpeedRatio": 0.15,
         "cooldownReduction": 10,
@@ -246,8 +246,8 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 14,
-        "maxHpByLv": 22,
+        "defense": 15,
+        "maxHpByLv": 24,
         "cooldownReduction": 20,
         "code": 201524,
         "armorType": "Head",
@@ -376,10 +376,7 @@
         "lifeSteal": 0.1,
         "code": 202209,
         "armorType": "Chest",
-        "itemGrade": "Mythic",
-        "david": {
-            "to": 202623
-        }
+        "itemGrade": "Mythic"
     },
     {
         "defense": 24,
@@ -416,7 +413,7 @@
     },
     {
         "attackPowerByLv": 3,
-        "defense": 18,
+        "defense": 20,
         "penetrationDefense": 10,
         "code": 202406,
         "armorType": "Chest",
@@ -440,7 +437,7 @@
     },
     {
         "attackPowerByLv": 3,
-        "defense": 17,
+        "defense": 20,
         "cooldownReduction": 15,
         "penetrationDefense": 6,
         "code": 202411,
@@ -471,10 +468,7 @@
         "cooldownReduction": 15,
         "code": 202415,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202601
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 25,
@@ -534,20 +528,14 @@
         "cooldownReduction": 15,
         "code": 202407,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202602
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 40,
         "maxHpByLv": 23,
         "code": 202416,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202603
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 40,
@@ -556,10 +544,7 @@
         "slowResistRatio": 0.2,
         "code": 202421,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202604
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 25,
@@ -568,10 +553,7 @@
         "cooldownReduction": 10,
         "code": 202501,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202605
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 30,
@@ -581,10 +563,7 @@
         "cooldownReduction": 30,
         "code": 202502,
         "armorType": "Chest",
-        "itemGrade": "Mythic",
-        "david": {
-            "to": 202625
-        }
+        "itemGrade": "Mythic"
     },
     {
         "defense": 30,
@@ -593,10 +572,7 @@
         "uniqueSkillAmpRatio": 0.25,
         "code": 202503,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202606
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPower": 15,
@@ -606,22 +582,16 @@
         "lifeSteal": 0.1,
         "code": 202504,
         "armorType": "Chest",
-        "itemGrade": "Mythic",
-        "david": {
-            "to": 202624
-        }
+        "itemGrade": "Mythic"
     },
     {
         "attackPower": 25,
         "attackPowerByLv": 3,
-        "defense": 20,
+        "defense": 22,
         "lifeSteal": 0.12,
         "code": 202505,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202607
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 42,
@@ -629,20 +599,14 @@
         "attackSpeedRatio": 0.15,
         "code": 202506,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202608
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 45,
-        "maxHpByLv": 25,
+        "maxHpByLv": 27,
         "code": 202507,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202609
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 28,
@@ -651,10 +615,7 @@
         "cooldownReduction": 25,
         "code": 202508,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202610
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPower": 10,
@@ -663,10 +624,7 @@
         "attackSpeedRatio": 0.42,
         "code": 202509,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202611
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPower": 12,
@@ -675,10 +633,7 @@
         "criticalStrikeChance": 0.33,
         "code": 202510,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202612
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 25,
@@ -686,22 +641,16 @@
         "skillAmpByLevel": 5,
         "code": 202511,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202613
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPower": 20,
         "attackPowerByLv": 3,
-        "defense": 22,
+        "defense": 25,
         "cooldownReduction": 20,
         "code": 202512,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202614
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPower": 13,
@@ -711,10 +660,7 @@
         "penetrationDefense": 10,
         "code": 202513,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202615
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 25,
@@ -723,10 +669,7 @@
         "cooldownReduction": 10,
         "code": 202514,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202616
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPower": 18,
@@ -735,20 +678,14 @@
         "penetrationDefense": 12,
         "code": 202515,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202617
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 25,
         "skillAmpByLevel": 5,
         "code": 202516,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202618
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 35,
@@ -757,10 +694,7 @@
         "cooldownReduction": 10,
         "code": 202517,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202619
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPowerByLv": 3,
@@ -769,10 +703,7 @@
         "criticalStrikeChance": 0.33,
         "code": 202523,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202620
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPowerByLv": 3,
@@ -780,10 +711,7 @@
         "maxHp": 250,
         "code": 202524,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202621
-        }
+        "itemGrade": "Legend"
     },
     {
         "attackPower": 15,
@@ -793,10 +721,7 @@
         "ultCooldownReduction": 20,
         "code": 202525,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202622
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 30,
@@ -805,10 +730,7 @@
         "cooldownReduction": 15,
         "code": 202526,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202629
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 45,
@@ -816,10 +738,7 @@
         "cooldownReduction": 10,
         "code": 202527,
         "armorType": "Chest",
-        "itemGrade": "Mythic",
-        "david": {
-            "to": 202630
-        }
+        "itemGrade": "Mythic"
     },
     {
         "attackPower": 15,
@@ -829,10 +748,7 @@
         "criticalStrikeChance": 0.33,
         "code": 201534,
         "armorType": "Chest",
-        "itemGrade": "Mythic",
-        "david": {
-            "to": 202630
-        }
+        "itemGrade": "Mythic"
     },
     {
         "skillAmp": 56,
@@ -965,8 +881,8 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 10,
-        "attackSpeedRatio": 0.4,
+        "attackPower": 15,
+        "attackSpeedRatio": 0.35,
         "criticalStrikeChance": 0.35,
         "code": 203408,
         "armorType": "Arm",
@@ -1019,7 +935,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 80,
+        "skillAmp": 82,
         "cooldownReduction": 25,
         "code": 203507,
         "armorType": "Arm",
@@ -1042,7 +958,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "skillAmp": 88,
+        "skillAmp": 85,
         "penetrationDefenseRatio": 0.15,
         "code": 203510,
         "armorType": "Arm",
@@ -1072,7 +988,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 33,
+        "attackPower": 35,
         "defense": 10,
         "criticalStrikeChance": 0.34,
         "code": 203514,
@@ -1088,7 +1004,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 12,
+        "defense": 15,
         "maxHpByLv": 16,
         "cooldownReduction": 10,
         "code": 705603,
@@ -1143,7 +1059,7 @@
         "attackPower": 25,
         "attackSpeedRatio": 0.33,
         "criticalStrikeChance": 0.35,
-        "criticalStrikeDamage": 0.1,
+        "criticalStrikeDamage": 0.08,
         "code": 205501,
         "armorType": "Arm",
         "itemGrade": "Legend"
@@ -1452,7 +1368,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "adaptiveForce": 28,
+        "adaptiveForce": 27,
         "cooldownReduction": 20,
         "moveSpeed": 0.27,
         "code": 204513,
@@ -1478,7 +1394,7 @@
     },
     {
         "defense": 10,
-        "maxHp": 150,
+        "maxHp": 200,
         "attackSpeedRatio": 0.3,
         "code": 205309,
         "armorType": "Arm",
@@ -1493,7 +1409,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 12,
+        "defense": 15,
         "maxHpByLv": 20,
         "cooldownReduction": 20,
         "code": 205601,
@@ -1559,10 +1475,7 @@
         "maxHp": 200,
         "code": 202518,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202628
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 10,
@@ -1578,20 +1491,14 @@
         "cooldownReduction": 15,
         "code": 202521,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202626
-        }
+        "itemGrade": "Legend"
     },
     {
         "defense": 45,
         "maxHpByLv": 24,
         "code": 202522,
         "armorType": "Chest",
-        "itemGrade": "Legend",
-        "david": {
-            "to": 202627
-        }
+        "itemGrade": "Legend"
     },
     {
         "adaptiveForce": 50,

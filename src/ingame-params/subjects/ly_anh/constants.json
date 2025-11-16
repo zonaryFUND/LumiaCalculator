@@ -92,7 +92,7 @@
             "attack": 100
         },
         "attack_speed": {
-            "base": [30,40,50],
+            "base": [20,30,40],
             "attack": 10
         },
         "fear_count": 4,

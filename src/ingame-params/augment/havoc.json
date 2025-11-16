@@ -101,7 +101,7 @@
     },
     "boar_mask": {
         "base": {
-            "maxHP": 20
+            "maxHP": 25
         },
         "max_stack": 80,
         "stack_buff": {

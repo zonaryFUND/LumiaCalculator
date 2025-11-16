@@ -20,11 +20,11 @@
     "ironclad": {
         "damage_reduction": {
             "melee": {
-                "base": 10,
+                "base": 12,
                 "level": 1
             },
             "range": {
-                "base": 5,
+                "base": 7,
                 "level": 1
             }
         },

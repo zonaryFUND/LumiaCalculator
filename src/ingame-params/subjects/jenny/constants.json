@@ -51,7 +51,7 @@
     "T": {
         "buff_duration": 6,
         "attack_speed": [30,45,60],
-        "movement_speed": 3,
+        "movement_speed": 4,
         "act_duration": 3,
         "hp": {
             "base": 100,

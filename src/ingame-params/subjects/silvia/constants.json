@@ -76,9 +76,8 @@
     "BikeR": {
         "duration": 5,
         "damage": {
-            "base": [20,60,100],
-            "attack": 100,
-            "amp": 35
+            "base": [50,90,130],
+            "amp": 40
         }
     },
     "T": {

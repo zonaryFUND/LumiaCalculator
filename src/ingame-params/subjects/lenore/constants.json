@@ -4,7 +4,7 @@
             "base": [60,80,100,120,140],
             "amp": 60
         },
-        "additional_damage": 30,
+        "additional_damage": 35,
         "same_target_reduction": 55,
         "cooldown": [7,6.5,6,5.5,5]
     },
@@ -37,7 +37,7 @@
         },
         "enhance_slow": {
             "duration": 1.5,
-            "effect": 70
+            "effect": 90
         },
         "cooldown": [15,14,13,12,11]
     },
@@ -72,7 +72,7 @@
         "max_rcdr": 50,
         "stack_conversion_limit": 70,
         "cooldown": {
-            "constant": [11,9,7]
+            "constant": [9,8,7]
         }
     }
 }

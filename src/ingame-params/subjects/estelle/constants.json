@@ -11,7 +11,7 @@
     "W": {
         "damage": {
             "base": [20,50,80,110,140],
-            "amp": 55
+            "amp": 60
         },
         "slow": {
             "duration": 1,
@@ -52,7 +52,7 @@
             "shield": {
                 "base": [100,150,200],
                 "amp": 50,
-                "lostHP": 15
+                "lostHP": 20
             },
             "duration": 2.5,
             "channel": 0.55,
@@ -70,7 +70,7 @@
             "shield": {
                 "base": [100,200,300],
                 "amp": 50,
-                "targetLostHP": 10
+                "targetLostHP": 15
             },
             "duration": 2.5,
             "channel": 3,

@@ -1284,7 +1284,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 71,
+        "attackPower": 70,
         "criticalStrikeChance": 0.26,
         "sightRange": 1,
         "code": 118403,
@@ -1292,10 +1292,10 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 79,
+        "attackPower": 76,
         "attackSpeedRatio": 0.3,
         "criticalStrikeChance": 0.33,
-        "sightRange": 1.5,
+        "sightRange": 1,
         "code": 118404,
         "weaponType": "SniperRifle",
         "itemGrade": "Legend"
@@ -2224,7 +2224,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 32,
+        "attackPower": 36,
         "adaptiveForce": 50,
         "attackSpeedRatio": 0.35,
         "penetrationDefenseRatio": 0.07,
