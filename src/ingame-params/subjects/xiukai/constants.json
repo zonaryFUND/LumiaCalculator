@@ -54,7 +54,7 @@
             "maxHP": 4
         },
         "slow": {
-            "duration": 0.3,
+            "duration": 0.4,
             "effect": [40,50,60]
         },
         "cooldown": [80,70,60]

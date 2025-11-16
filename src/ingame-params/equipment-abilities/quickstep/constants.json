@@ -5,5 +5,9 @@
         "range": 2
     },
     "max_stack": 8,
+<<<<<<< HEAD
     "dot_period": 1
+=======
+    "dot_trigger_period": 1
+>>>>>>> recovery-9.0
 }

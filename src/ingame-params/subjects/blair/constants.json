@@ -1,0 +1,158 @@
+{
+    "DualSwordsQ": {
+        "first_damage": {
+            "base": [20,40,60,80,100],
+            "additionalAttack": [100,110,120,130,140],
+            "targetMaxHP": {
+                "base": [1,1.5,2,2.5,3],
+                "additionalAttack": 5
+            }
+        },
+        "second_damage": {
+            "base": [20,50,80,110,140],
+            "additionalAttack": [100,110,120,130,140]
+        },
+        "cooldown": [10,9.5,9,8.5,8],
+        "vp_cost": [60,55,50,45,40]
+    },
+    "DualSwordsW": {
+        "damage": {
+            "base": [60,90,120,150,180],
+            "additionalAttack": 100
+        },
+        "first_hit_enhancement": 100,
+        "defense_down": {
+            "duration": 4,
+            "effect": [12,13,14,15,16]
+        },
+        "cooldown": 10,
+        "vp_cost": 30
+    },
+    "E": {
+        "movement_speed": {
+            "duration": 1.5,
+            "effect": 25
+        }
+    },
+    "DualSwordsE": {
+        "damage": {
+            "base": [40,70,100,130,160],
+            "additionalAttack": [90,95,100,105,110]
+        },
+        "slow": {
+            "duration": 0.75,
+            "effect": 80
+        },
+        "combo_slow": {
+            "duration": 0.75,
+            "effect": 80
+        },
+        "cooldown": 9,
+        "vp_cost": 40
+    },
+    "DoubleBladedSwordQ": {
+        "first_damage": {
+            "base": [40,65,90,115,140],
+            "attack": 80
+        },
+        "second_damage": {
+            "base": [40,65,90,115,140],
+            "attack": 80
+        },
+        "heal": {
+            "base": 30,
+            "additionalAttack": [50,55,60,65,70]
+        },
+        "cooldown": [10,9.5,9,8.5,8],
+        "vp_cost": [60,55,50,45,40]
+    },
+    "DoubleBladedSwordW": {
+        "duration": 1,
+        "tick": 0.125,
+        "damage": {
+            "base": [10,20,30,40,50],
+            "attack": 40
+        },
+        "cooldown": [20,19.5,19,18.5,18],
+        "vp_cost": 30
+    },
+    "DoubleBladedSwordE": {
+        "damage": {
+            "base": [30,50,70,90,110],
+            "additionalAttack": 70
+        },
+        "shield": {
+            "duration": 1.5,
+            "effect": {
+                "base": [50,70,90,110,130],
+                "additionalAttack": 110
+            }
+        },
+        "combo_shield": {
+            "base": [30,50,70,90],
+            "additionalAttack": 50
+        },
+        "max_combo_hit": 4,
+        "cooldown": 9,
+        "vp_cost": 40
+    },
+    "R": {
+        "duration": 15,
+        "vp_regen": 2.5,
+        "attack_speed": [20,25,30],
+        "detect_range": 8,
+        "undetect_range": 30,
+        "damage": {
+            "base": [100,200,300],
+            "additionalAttack": 100,
+            "gauge": 2
+        },
+        "vp_heal": [20,30,40],
+        "cooldown": [90,75,60]
+    },
+    "T": {
+        "dual_swords": {
+            "attack_speed": 15,
+            "attack": 80,
+            "additional_damage": {
+                "base": [10,20,30],
+                "additionalAttack": [20,25,30]
+            },
+            "cooldown_reduction": [5,7.5,15],
+            "vp_heal": 15
+        },
+        "double_bladed_sword": {
+            "range": 0.8,
+            "attack": 100,
+            "additional_damage": {
+                "base": [20,40,60],
+                "additionalAttack": [40,50,60]
+            },
+            "cooldown_reduction": [10,15,20],
+            "vp_heal": 30
+        },
+        "shift_duration": 2.5,
+        "heal": {
+            "base": 12,
+            "additionalAttack": 0.05
+        },
+        "vp_heal": 30,
+        "animal_heal": 30
+    },
+    "D": {
+        "damage": {
+            "attack": [70,90,110,130]
+        },
+        "heal": {
+            "base": 12,
+            "additionalAttack": 0.05
+        },
+        "reuse_threshold": 5,
+        "vp_cost_increase": 100,
+        "animal_heal": 30,
+        "cooldown": {
+            "constant": 0.3
+        },
+        "vp_cost": 40
+    }
+}

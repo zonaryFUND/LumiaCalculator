@@ -1,6 +1,7 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { ValueOrigin } from "./calculation";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
+import { SubjectWeaponSkillOverrideDictionary } from "@app/ingame-params/subjects/dictionary";
 
 /**
  * 実験体設定およびダメージ等効果発生源の設定からスキルレベルを抽出する
@@ -14,6 +15,10 @@ export function extractSkillLevel(config: SubjectConfig, origin: ValueOrigin): n
     if (origin == "other") return undefined;
     if (origin == "tactical1") return 0;
     if (origin == "tactical2") return 1;
-    if (origin == "D") return weaponSkillLevel(config.weaponMastery);
+    if (origin == "D") {
+        const override = SubjectWeaponSkillOverrideDictionary[config.subject];
+        return override ? override(config.weaponMastery) : weaponSkillLevel(config.weaponMastery);
+    }
+
     return config.skillLevels[origin];
 }

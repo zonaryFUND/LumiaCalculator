@@ -14,7 +14,7 @@
     },
     "ghost_light": {
         "threshold": {
-            "hp": 33,
+            "hp": 30,
             "time": 3
         },
         "damage": {
@@ -43,7 +43,11 @@
             "range": 4,
             "damage_reduction": 20
         },
-        "cooldown_reduction": 0.5
+        "cooldown_reduction": {
+            "single_target": 12,
+            "aoe": 5,
+            "dot": 2
+        }
     },
     "syphon_maelstorm": {
         "time_bound": 3,

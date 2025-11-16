@@ -1,0 +1,23 @@
+{
+    "subject.blair.vp": "気力",
+    "subject.blair.passive-additional": "T追加ダメージ(双剣2回分/両剣1回分)",
+    "subject.blair.ds-q-first": "双剣Q初撃",
+    "subject.blair.ds-q-second": "双剣Q追撃",
+    "subject.blair.ds-w": "双剣W",
+    "subject.blair.ds-w-first": "双剣W(最初のヒット)",
+    "subject.blair.ds-e": "双剣E",
+    "subject.blair.dbs-q-first": "両剣Q初撃",
+    "subject.blair.dbs-q-second": "両剣Q追撃",
+    "subject.blair.dbs-q-heal": "両剣Q回復",
+    "subject.blair.dbs-q-heal-max": "両剣Q回復最大({value}ヒット時)",
+    "subject.blair.dbs-w": "両剣W1ヒット",
+    "subject.blair.dbs-w-max-hit": "両剣W最大ヒット({value})",
+    "subject.blair.dbs-e-damage": "両剣Eダメージ",
+    "subject.blair.dbs-e-shield": "両剣Eシールド",
+    "subject.blair.dbs-e-combo-shield": "両剣E連携攻撃シールド(1ヒット)",
+    "subject.blair.dbs-e-combo-shield-max": "両剣E連携攻撃最大シールド({value}ヒット)",
+    "subject.blair.t-heal": "Tシフト状態スキルダメージ比回復",
+    "subject.blair.d-damage": "Dダメージ",
+    "subject.blair.d-heal": "D与ダメージ比回復",
+    "subject.blair.d-heal-amount": "D回復量"
+}

@@ -1,10 +1,10 @@
 {
     "gap": 6.5,
     "damage": {
-        "base": 50,
+        "base": 25,
         "amp": 25,
         "level": 2
     },
     "vision": 3,
-    "cooldown": 8
+    "cooldown": 9
 }

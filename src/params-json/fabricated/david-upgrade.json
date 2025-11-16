@@ -186,6 +186,10 @@
     "201534": {
         "name": "赤い星",
         "attackPower": 3,
+<<<<<<< HEAD
         "attackSpeedRatio": 0.05
+=======
+        "attackSpeedRatio": 5
+>>>>>>> recovery-9.0
     }
 }

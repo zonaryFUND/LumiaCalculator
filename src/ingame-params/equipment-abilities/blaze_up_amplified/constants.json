@@ -2,5 +2,9 @@
     "duration": 5,
     "skill_damage": 2.5,
     "max_stack": 6,
+<<<<<<< HEAD
     "dot_period": 1
+=======
+    "dot_trigger_period": 1
+>>>>>>> recovery-9.0
 }

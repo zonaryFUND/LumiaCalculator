@@ -18,12 +18,18 @@ export type BasicAttackElement = SubjectDamageTableUnit | "standard" | "disable-
 export type DamageTable = {
     basicAttack: BasicAttackElement[]
     skill: SubjectDamageTableUnit[][]
+    weaponSkill?: DamageTableUnit[]
 }
 
-export type SkillListHook = (config: SubjectConfig) => Record<"Q" | "W" | "E" | "R" | "T", number | number[] | {
+// 実験体の各固有スキルについて、キーに対応するl10nコード、またはその配列、あるいはそれに非標準の最大レベルを追加したもの
+export type SkillCodes = number | number[] | { 
     maxLevel?: number | "none",
     code: number | number[]
-}>;
+ }
+
+export type SkillListHook = (config: SubjectConfig) => Record<"Q" | "W" | "E" | "R" | "T", SkillCodes> & {
+    D?: SkillCodes
+};
 
 export type SubjectPerpetualStatus = (config: SubjectConfig, currentHPRatio: number) => Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>
 
@@ -35,7 +41,9 @@ export type SummonInfo = {
 
 export type SubjectGaugeInfo = {
     nameIntlID: string
-    threshold: number
+    threshold?: number
+    max?: number
+    changeColorOnMax: boolean
 }
 
 export type SubjectStackInfo = {
@@ -56,6 +64,8 @@ export type SubjectModules = {
     summoned?: SummonInfo[]
     stackInfo?: SubjectStackInfo
     gaugeInfo?: SubjectGaugeInfo
+
+    weaponSkillLevelOverride?: (mastery: number) => number
 }
 
 export function defineSubject(module: SubjectModules): SubjectModules { return module };

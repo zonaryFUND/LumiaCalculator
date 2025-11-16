@@ -20,7 +20,7 @@
     "W": {
         "damage": {
             "base": [50,80,110,140,170],
-            "attack": 80
+            "attack": 85
         },
         "heal": 13,
         "max_heal": 33,

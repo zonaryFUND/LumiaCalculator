@@ -62,7 +62,7 @@
             "amp": 95
         },
         "per_piece": {
-            "targetMaxHP": 3
+            "targetMaxHP": 3.5
         },
         "other_pieces": 40,
         "cooldown": [80,70,60]

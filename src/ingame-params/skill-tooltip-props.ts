@@ -13,7 +13,11 @@ export type TooltipValues = {[key: number]: TooltipValue};
 export type SkillTooltipProps = {
     skillKey: "Q" | "W" | "E" | "R" | "T" | "D" 
     consumption?: {
+<<<<<<< HEAD
         type: "hp" | "hp-ratio" | "energy"
+=======
+        type: "sp" | "hp" | "hp-ratio" | "energy" | "vp"
+>>>>>>> recovery-9.0
         value: number | number[]
     }
     cooldown?: number | number[] | { constant: number | number[] } | ((props: {config: SubjectConfig, status: Status}) => Decimal)

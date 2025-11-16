@@ -29,7 +29,7 @@ const damageTable: React.FC<Props> = props => {
         })
     , [props.config.subject, props.status, props.config.skillLevels]);
 
-    const weaponSkill = useWeaponSkill(props.config);
+    const weaponSkill = useWeaponSkill(props.config, props.status);
     const itemSkills = useItemSkills(props.config);
     const augments = useAugment(props.config);
     const tacticalSkills = useTacticalSkill(props.config);

@@ -8,7 +8,11 @@ const values: EquipmentAbilityTooltipValues = ({ importedValues }) =>{
         2: Constants.cooldown,
         3: Constants.duration,
         4: importedValues?.ms,
+<<<<<<< HEAD
         20: Constants.dot_period
+=======
+        20: Constants.dot_trigger_period
+>>>>>>> recovery-9.0
     }
 }
 

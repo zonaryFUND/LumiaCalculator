@@ -25,8 +25,13 @@
         "attack_speed": [30,32.5,35,37.5,40],
         "mastery_addition": 20,
         "effect_remain": 3,
+<<<<<<< HEAD
         "retrieve_range": 15,
         "cooldown": [12,11.5,11,10.5,10]
+=======
+        "retrieve_range": 15,        
+        "cooldown": [11,10.5,10,9.5,9]
+>>>>>>> recovery-9.0
     },
     "E": {
         "movement_speed": {

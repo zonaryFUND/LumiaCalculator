@@ -15,7 +15,8 @@ export default defineSubject({
     damageTable,
     gaugeInfo: {
         nameIntlID: "subject.echion.gauge-consumption",
-        threshold: 50
+        threshold: 50,
+        changeColorOnMax: true
     },
 
     skills: {

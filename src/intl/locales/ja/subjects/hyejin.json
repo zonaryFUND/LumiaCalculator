@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "subject.hyejin.e-card": "E札",
     "subject.hyejin.e-move": "E移動",
+=======
+    "subject.hyejin.e-projectile": "E札",
+    "subject.hyejin.e-arrive": "E到着",
+>>>>>>> recovery-9.0
     "subject.hyejin.r-initial": "R発動時周囲",
     "subject.hyejin.r-omen": "R札",
     "subject.hyejin.r-omen-max-hit": "R札全ヒット({value})",

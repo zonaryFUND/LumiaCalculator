@@ -11,7 +11,7 @@
         "reuse": 3,
         "reuse_damage": {
             "base": [60,85,110,135,160],
-            "amp": 65,
+            "amp": 70,
             "targetMaxHP": 5
         },
         "reuse_additional_damage": {

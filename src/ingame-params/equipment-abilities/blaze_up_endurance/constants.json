@@ -3,5 +3,9 @@
     "defense": 2,
     "max_stack": 6,
     "movement_speed": 6,
+<<<<<<< HEAD
     "dot_period": 1
+=======
+    "dot_trigger_period": 1
+>>>>>>> recovery-9.0
 }

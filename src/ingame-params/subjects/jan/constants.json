@@ -12,7 +12,7 @@
         },
         "defense_reduction": {
             "duration": 4,
-            "effect": 20
+            "effect": 15
         },
         "Q2_damage": {
             "base": [65,90,115,140,165],
@@ -46,9 +46,9 @@
     "E": {
         "damage": {
             "base": [15,25,35,45,55],
-            "additionalAttack": 80,
+            "additionalAttack": 100,
             "amp": 45,
-            "targetMaxHP": 6
+            "targetMaxHP": 5
         },
         "heal": {
             "min": 65,

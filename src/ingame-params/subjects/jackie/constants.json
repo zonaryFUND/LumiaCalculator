@@ -8,7 +8,7 @@
         "heal": 50,
         "max_stack_target_additional_damage": 30,
         "reuse": 3,
-        "cooldown": [11,10,9,8,7]
+        "cooldown": [12,11,10,9,8]
     },
     "W": {
         "damage": {
@@ -32,7 +32,7 @@
     },
     "R": {
         "duration": [8,9,10],
-        "movement_speed": [8,12,16],
+        "movement_speed": [8,10,12],
         "attack_speed": [20,30,40],
         "extend": 5,
         "damage": {

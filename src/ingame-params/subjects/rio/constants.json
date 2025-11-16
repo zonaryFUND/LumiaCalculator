@@ -7,7 +7,7 @@
         "daikyu_range_extend": 0.4,
         "daikyu_damage_enhance": 0.3,
         "hankyu": {
-            "attack": 35,
+            "attack": 36,
             "basicAttackAmp": 100
         },
         "daikyu": {

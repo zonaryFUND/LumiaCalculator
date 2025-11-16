@@ -97,6 +97,10 @@
     },
     "dine_n_dash": {
         "food_consumption_reduction": 3,
+<<<<<<< HEAD
+=======
+        "hp_threshold": 75,
+>>>>>>> recovery-9.0
         "consume_threshold": 660
     },
     "cavalcade": {

@@ -26,7 +26,8 @@
         "max_additional_adaptive": {
             "base": 7,
             "level": 0.5
-        }
+        },
+        "period": 4
     },
     "adrenaline": {
         "duration": 5,

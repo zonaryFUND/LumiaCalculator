@@ -13,7 +13,11 @@ export const info: SkillTooltipProps = {
                 0: Constants.E.damage.base,
                 1: RatioPercent(Constants.E.damage.amp),
                 2: Constants.E.second_damage.base,
+<<<<<<< HEAD
                 3: RatioPercent(Constants.E.second_damage.amp)
+=======
+                3: RatioPercent(Constants.E.second_damage.amp),
+>>>>>>> recovery-9.0
             }
         } else {
             return {

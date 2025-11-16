@@ -6,11 +6,11 @@
         "amount": 3,
         "through_damage": {
             "base": [20,40,60,80,100],
-            "attack": 50
+            "attack": 45
         },
         "damage": {
             "base": [40,60,80,100,120],
-            "attack": 60
+            "attack": 55
         },
         "slow_duration": 1,
         "slow": 30,
@@ -47,7 +47,7 @@
         "max_stack": 3,
         "damage": {
             "base": 30,
-            "additionalAttack": 60,
+            "additionalAttack": 45,
             "targetMaxHP": {
                 "base": [3,6,9],
                 "additionalAttack": 4

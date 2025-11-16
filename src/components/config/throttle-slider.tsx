@@ -9,6 +9,7 @@ type Props = {
     label: string
     value: StateProps<number>
     max: number
+    changeColorOnMax: boolean
 }
 
 const throttleSlider: React.FC<Props> = props => {
@@ -36,7 +37,9 @@ const throttleSlider: React.FC<Props> = props => {
         if (props.style == "gauge") {
             inputRef.current?.style.setProperty(
                 "--color", 
-                tempValue == 100 ? "red" : tempValue >= (props.threshold ?? 0) ? "yellow" : "white"
+                props.changeColorOnMax && tempValue == props.max ? "red" : 
+                tempValue >= (props.threshold ?? 0) ? "yellow" : 
+                "white"
             );
         } else if (props.style == "hp") {
             const ulWidth = Math.floor(props.max / 100) * 10000 / props.max;

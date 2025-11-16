@@ -44,7 +44,7 @@
         "max_cost": 50,
         "gauge_cost": 50,
         "cooldown": {
-            "constant": 2.5
+            "constant": 3
         }
     },
     "R": {
@@ -64,7 +64,7 @@
             "amount": 3
         },
         "recharge_threshold": 50,
-        "recharge_duration": 3,
+        "recharge_duration": 4,
         "mark_damage": {
             "base": [40,60,80],
             "amp": 20

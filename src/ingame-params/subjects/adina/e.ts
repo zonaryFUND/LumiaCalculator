@@ -16,8 +16,13 @@ export const info: SkillTooltipProps = {
     cooldown: Constants.E.cooldown,
     values: ({ showEquation, config }) => {
         const conjunctionHp = {
+<<<<<<< HEAD
             base: Constants.R.star_conjunction.hp.base[config.skillLevels.R],
             amp: Constants.R.star_conjunction.hp.amp
+=======
+            base: Constants.R.star_conjunction.heal.base[config.skillLevels.R],
+            amp: Constants.R.star_conjunction.heal.amp
+>>>>>>> recovery-9.0
         }
 
         const base = {

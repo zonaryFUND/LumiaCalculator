@@ -5,8 +5,8 @@
             "amp": 30
         },
         "second_damage": {
-            "base": [60,95,130,165,200],
-            "amp": 70
+            "base": [70,105,140,175,210],
+            "amp": 65
         },
         "hp_cost": 50,
         "cooldown": [8,7,6,5,4]
@@ -26,14 +26,14 @@
             "base": [60,105,150,195,240],
             "amp": 20
         },
-        "shield_duration": 3,
+        "shield_duration": 2.5,
         "damage": {
             "base": [90,110,130,150,170],
             "amp": 70
         },
         "stun": 0.6,
         "cooldown_reduction": 2,
-        "cooldown": [10,9.5,9,8.5,8]
+        "cooldown": [11,10.5,10,9.5,9]
     },
     "R": {
         "cast": 1,
