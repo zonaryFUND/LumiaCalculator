@@ -24,11 +24,7 @@ const table: DamageTableGenerator = props => ({
         ],
         [
             {label: props.intl.formatMessage({id: "subject.fiora.t-damage"}), origin: "T", value: Constants.T.damage},
-<<<<<<< HEAD
-            {label: props.intl.formatMessage({id: "subject.fiora.t-heal"}), origin: "T", value: Constants.T.heal, type: {type: "heal", target: "self"}}
-=======
             {label: props.intl.formatMessage({id: "subject.fiora.t-heal"}), origin: "T", value: Constants.T.heal, type: {type: "heal", target: "self"}},
->>>>>>> recovery-9.0
         ]
     ]   
 })

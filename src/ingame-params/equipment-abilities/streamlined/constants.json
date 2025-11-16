@@ -4,9 +4,5 @@
     "duration": 3,
     "ms": 30,
     "cooldown": 10,
-<<<<<<< HEAD
-    "dot_period": 3
-=======
     "dot_trigger_period": 3
->>>>>>> recovery-9.0
 }

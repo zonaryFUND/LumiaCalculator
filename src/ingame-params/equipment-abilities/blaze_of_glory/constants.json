@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-    "threshold": 75,
-=======
     "threshold": 70,
->>>>>>> recovery-9.0
     "damage_amp": 12,
     "cooldown": 4
 }

@@ -37,11 +37,7 @@
             "base": [100,115,130,145,160],
             "amp": 25
         },
-<<<<<<< HEAD
-        "stacked_shield_decline": 40,
-=======
         "shield_reduction": 40,
->>>>>>> recovery-9.0
         "cooldown": [12,11.5,11,10.5,10]
     },
     "E": {

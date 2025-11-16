@@ -1,20 +1,10 @@
 {
-<<<<<<< HEAD
-    "tick": 4,
-    "area": 3,
-=======
     "period": 4,
     "range": 3,
->>>>>>> recovery-9.0
     "damage": {
         "base": 20,
         "maxHP": 6
     },
     "heal": 200,
-<<<<<<< HEAD
-    "max_heal": 600,
-    "cooldown": 1
-=======
     "max_heal": 600
->>>>>>> recovery-9.0
 }

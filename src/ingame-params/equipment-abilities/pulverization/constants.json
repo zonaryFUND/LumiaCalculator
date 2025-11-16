@@ -6,9 +6,5 @@
         "duration": 2,
         "effect": 0.06
     },
-<<<<<<< HEAD
-    "dot_period": 1
-=======
     "dot_trigger_period": 1
->>>>>>> recovery-9.0
 }

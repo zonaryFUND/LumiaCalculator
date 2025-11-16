@@ -84,11 +84,7 @@
             "targetMaxHP": 3
         },
         "unexploded_decline": 70,
-<<<<<<< HEAD
-        "animal_damage":150
-=======
         "animal_damage": 150
->>>>>>> recovery-9.0
     },
     "coin_toss": {
         "coin": [7, 12]

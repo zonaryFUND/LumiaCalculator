@@ -2,15 +2,9 @@ import Constants from "./constants.json";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 
-<<<<<<< HEAD
-const values: EquipmentAbilityTooltipValues = ({ showEquation }) => {
-    const base: TooltipValues = {
-        0: Constants.incoming_damage,
-=======
 const values: EquipmentAbilityTooltipValues = ({ showEquation }): TooltipValues => {
     const base = {
         0: Constants.damage_per_stack,
->>>>>>> recovery-9.0
         1: Constants.duration,
         2: Constants.max_stack,
         3: Constants.defense_per_stack,

@@ -11,11 +11,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/ConjunctionSunDamage", values: Constants.R.sun_conjunction.base},
             {labelIntlID: "ToolTipType/ConjunctionMoonDamage", values: Constants.R.moon_conjunction.base},
-<<<<<<< HEAD
-            {labelIntlID: "ToolTipType/ConjunctionStarHeal", values: Constants.R.star_conjunction.hp.base},
-=======
             {labelIntlID: "ToolTipType/ConjunctionStarHeal", values: Constants.R.star_conjunction.heal.base}
->>>>>>> recovery-9.0
         ]  
     })
 }
