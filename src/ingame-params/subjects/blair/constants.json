@@ -108,7 +108,7 @@
             "gauge": 2
         },
         "vp_heal": [20,30,40],
-        "cooldown": [90,75,60]
+        "cooldown": [80,70,60]
     },
     "T": {
         "dual_swords": {
@@ -151,7 +151,7 @@
         "vp_cost_increase": 100,
         "animal_heal": 30,
         "cooldown": {
-            "constant": 0.3
+            "constant": 0.2
         },
         "vp_cost": 40
     }
