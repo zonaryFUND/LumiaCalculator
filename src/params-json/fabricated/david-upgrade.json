@@ -187,5 +187,10 @@
         "name": "赤い星",
         "attackPower": 3,
         "attackSpeedRatio": 5
+    },
+    "202529": {
+        "name": "赤い星",
+        "attackPower": 3,
+        "attackSpeedRatio": 5
     }
 }

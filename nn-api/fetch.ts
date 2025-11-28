@@ -5,7 +5,7 @@ import { APIKey } from "nn-api/credentials";
 export const BaseURL = "https://open-api.bser.io/";
 
 export async function FetchAPIResponse(
-    path: string, 
+    path: string,
     writeTo: string,
     modify?: (data: any) => any
 ) {

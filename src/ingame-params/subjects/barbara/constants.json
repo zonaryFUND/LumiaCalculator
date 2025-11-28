@@ -54,7 +54,7 @@
                 "level": 150
             },
             "duration": 8,
-            "attack_speed": 0.2,
+            "attack_speed": 0.3,
             "railgun_count": 3,
             "damage": {
                 "base": [90,110,130],

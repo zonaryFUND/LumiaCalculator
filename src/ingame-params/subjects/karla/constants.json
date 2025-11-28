@@ -16,7 +16,7 @@
     "W": {
         "damage": {
             "base": [70,90,110,130,150],
-            "attack": 20,
+            "attack": 30,
             "amp": 75,
             "criticalChance": 65
         },

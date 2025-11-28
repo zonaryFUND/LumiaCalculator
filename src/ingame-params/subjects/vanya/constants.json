@@ -47,7 +47,7 @@
         "sleep": 1.5,
         "wakeup_damage": {
             "base": [100,180,240],
-            "amp": 65
+            "amp": 70
         },
         "cooldown": [80,70,60]
     },

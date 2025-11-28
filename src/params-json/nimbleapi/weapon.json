@@ -19,7 +19,7 @@
     },
     {
         "attackPower": 58,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "code": 101404,
         "weaponType": "OneHandSword",
         "itemGrade": "Epic"
@@ -195,7 +195,7 @@
     },
     {
         "attackPower": 64,
-        "attackSpeedRatio": 0.45,
+        "attackSpeedRatio": 0.38,
         "code": 103402,
         "weaponType": "DualSword",
         "itemGrade": "Legend"
@@ -253,6 +253,22 @@
         "skillAmp": 86,
         "maxHp": 100,
         "code": 103505,
+        "weaponType": "DualSword",
+        "itemGrade": "Legend"
+    },
+    {
+        "attackPower": 50,
+        "attackSpeedRatio": 0.25,
+        "cooldownReduction": 10,
+        "code": 103506,
+        "weaponType": "DualSword",
+        "itemGrade": "Epic"
+    },
+    {
+        "attackPower": 60,
+        "attackSpeedRatio": 0.3,
+        "cooldownReduction": 15,
+        "code": 103507,
         "weaponType": "DualSword",
         "itemGrade": "Legend"
     },
@@ -353,7 +369,6 @@
     {
         "attackPower": 50,
         "skillAmp": 78,
-        "uniqueAttackRange": 0.3,
         "code": 105404,
         "weaponType": "Axe",
         "itemGrade": "Epic"
@@ -391,9 +406,8 @@
     },
     {
         "attackPower": 55,
-        "skillAmp": 84,
+        "skillAmp": 80,
         "cooldownReduction": 15,
-        "uniqueAttackRange": 0.3,
         "code": 105501,
         "weaponType": "Axe",
         "itemGrade": "Legend"
@@ -410,7 +424,7 @@
     },
     {
         "attackPower": 55,
-        "skillAmp": 95,
+        "skillAmp": 98,
         "code": 105503,
         "weaponType": "Axe",
         "itemGrade": "Legend"
@@ -631,6 +645,14 @@
         "itemGrade": "Legend"
     },
     {
+        "attackPower": 30,
+        "skillAmp": 70,
+        "maxHp": 180,
+        "code": 109503,
+        "weaponType": "Whip",
+        "itemGrade": "Legend"
+    },
+    {
         "attackPower": 64,
         "defense": 6,
         "attackSpeedRatio": 0.3,
@@ -647,7 +669,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 61,
+        "attackPower": 63,
         "maxHp": 100,
         "moveSpeedRatio": 0.02,
         "code": 110407,
@@ -671,8 +693,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 59,
-        "defense": 4,
+        "attackPower": 60,
+        "defense": 6,
         "hpRegenRatio": 0.6,
         "code": 110410,
         "weaponType": "Glove",
@@ -737,7 +759,7 @@
     },
     {
         "attackPower": 40,
-        "defense": 5,
+        "defense": 6,
         "skillAmp": 90,
         "code": 111403,
         "weaponType": "Tonfa",
@@ -867,7 +889,7 @@
     },
     {
         "attackPower": 33,
-        "skillAmp": 63,
+        "skillAmp": 66,
         "attackSpeedRatio": 0.2,
         "code": 112408,
         "weaponType": "HighAngleFire",
@@ -915,7 +937,8 @@
     },
     {
         "attackPower": 41,
-        "skillAmp": 91,
+        "skillAmp": 80,
+        "cooldownReduction": 10,
         "code": 113408,
         "weaponType": "DirectFire",
         "itemGrade": "Legend"
@@ -1008,7 +1031,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 69,
+        "attackPower": 70,
         "attackSpeedRatio": 0.3,
         "moveSpeedRatio": 0.02,
         "code": 114406,
@@ -1050,9 +1073,10 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 82,
+        "attackPower": 80,
         "attackSpeedRatio": 0.4,
-        "moveSpeedRatio": 0.03,
+        "normalLifeSteal": 0.12,
+        "moveSpeedRatio": 0.02,
         "code": 114505,
         "weaponType": "Bow",
         "itemGrade": "Legend"
@@ -1073,16 +1097,16 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 77,
-        "attackSpeedRatio": 0.15,
+        "attackPower": 76,
+        "attackSpeedRatio": 0.18,
         "code": 115404,
         "weaponType": "CrossBow",
         "itemGrade": "Epic"
     },
     {
         "attackPower": 51,
-        "skillAmp": 85,
-        "cooldownReduction": 15,
+        "skillAmp": 82,
+        "cooldownReduction": 10,
         "code": 115405,
         "weaponType": "CrossBow",
         "itemGrade": "Legend"
@@ -1142,7 +1166,8 @@
     },
     {
         "attackPower": 75,
-        "attackSpeedRatio": 0.4,
+        "attackSpeedRatio": 0.3,
+        "cooldownReduction": 10,
         "code": 116405,
         "weaponType": "Pistol",
         "itemGrade": "Epic"
@@ -1157,7 +1182,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 72,
+        "attackPower": 70,
         "attackSpeedRatio": 0.3,
         "code": 116407,
         "weaponType": "Pistol",
@@ -1178,8 +1203,9 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 87,
-        "attackSpeedRatio": 0.5,
+        "attackPower": 85,
+        "attackSpeedRatio": 0.4,
+        "cooldownReduction": 15,
         "moveSpeedRatio": 0.03,
         "code": 116501,
         "weaponType": "Pistol",
@@ -1251,9 +1277,8 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 93,
-        "attackSpeedRatio": 0.3,
-        "cooldownReduction": 15,
+        "skillAmp": 84,
+        "cooldownReduction": 10,
         "code": 117502,
         "weaponType": "AssaultRifle",
         "itemGrade": "Legend"
@@ -1269,7 +1294,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 72,
+        "attackPower": 74,
         "attackSpeedRatio": 0.3,
         "code": 117504,
         "weaponType": "AssaultRifle",
@@ -1302,7 +1327,8 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 82,
+        "skillAmp": 72,
+        "attackSpeedRatio": 0.15,
         "cooldownReduction": 10,
         "sightRange": 1,
         "code": 118405,
@@ -1337,13 +1363,13 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 95,
+        "attackPower": 99,
         "code": 118502,
         "weaponType": "SniperRifle",
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 82,
+        "attackPower": 84,
         "attackSpeedRatio": 0.5,
         "normalLifeSteal": 0.11,
         "sightRange": 1,
@@ -1485,8 +1511,8 @@
     },
     {
         "attackPower": 61,
-        "attackSpeedRatio": 0.4,
-        "criticalStrikeChance": 0.15,
+        "attackSpeedRatio": 0.33,
+        "criticalStrikeChance": 0.25,
         "criticalStrikeDamage": 0.07,
         "moveSpeedRatio": 0.03,
         "code": 120405,
@@ -1505,6 +1531,14 @@
         "attackPower": 61,
         "criticalStrikeChance": 0.24,
         "code": 120407,
+        "weaponType": "Rapier",
+        "itemGrade": "Epic"
+    },
+    {
+        "attackPower": 55,
+        "maxHp": 100,
+        "attackSpeedRatio": 0.2,
+        "code": 120408,
         "weaponType": "Rapier",
         "itemGrade": "Epic"
     },
@@ -1528,6 +1562,14 @@
         "itemGrade": "Mythic"
     },
     {
+        "attackPower": 60,
+        "maxHp": 120,
+        "attackSpeedRatio": 0.25,
+        "code": 120503,
+        "weaponType": "Rapier",
+        "itemGrade": "Legend"
+    },
+    {
         "attackPower": 42,
         "skillAmp": 70,
         "cooldownReduction": 10,
@@ -1545,7 +1587,7 @@
     },
     {
         "attackPower": 42,
-        "skillAmp": 86,
+        "skillAmp": 88,
         "code": 121403,
         "weaponType": "Guitar",
         "itemGrade": "Epic"
@@ -1559,7 +1601,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 66,
+        "attackPower": 68,
         "attackSpeedRatio": 0.3,
         "code": 121405,
         "weaponType": "Guitar",
@@ -1630,7 +1672,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 65,
+        "attackPower": 63,
         "attackSpeedRatio": 0.25,
         "cooldownReduction": 10,
         "sightRange": 1,
@@ -1676,7 +1718,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 70,
+        "attackPower": 72,
         "attackSpeedRatio": 0.4,
         "cooldownReduction": 15,
         "sightRange": 1,
@@ -1686,7 +1728,7 @@
     },
     {
         "attackPower": 43,
-        "skillAmp": 86,
+        "skillAmp": 92,
         "cooldownReduction": 15,
         "sightRange": 1,
         "code": 122504,

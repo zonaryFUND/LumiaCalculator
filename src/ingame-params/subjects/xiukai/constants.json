@@ -6,7 +6,7 @@
             "maxHP": 8
         },
         "slow": [30,35,40,45,50],
-        "cooldown": 7
+        "cooldown": 6
     },
     "W": {
         "heal": {

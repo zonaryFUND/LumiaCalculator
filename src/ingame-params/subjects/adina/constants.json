@@ -46,7 +46,7 @@
             "stun": 1.25,
             "slow": {
                 "duration": 2.5,
-                "effect": 50
+                "effect": 60
             }
         },
         "cooldown": [9,8.5,8,7.5,7]

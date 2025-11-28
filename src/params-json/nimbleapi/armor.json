@@ -54,7 +54,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 11,
+        "defense": 12,
         "maxHp": 100,
         "cooldownReduction": 10,
         "code": 201412,
@@ -312,7 +312,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 20,
+        "attackPower": 22,
         "defense": 10,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 20,
@@ -465,7 +465,7 @@
     {
         "defense": 35,
         "maxHpByLv": 20,
-        "cooldownReduction": 15,
+        "cooldownReduction": 20,
         "code": 202415,
         "armorType": "Chest",
         "itemGrade": "Legend"
@@ -741,10 +741,20 @@
         "itemGrade": "Mythic"
     },
     {
+        "attackPower": 10,
+        "attackPowerByLv": 3,
+        "defense": 20,
+        "attackSpeedRatio": 0.2,
+        "criticalStrikeChance": 0.33,
+        "code": 202529,
+        "armorType": "Chest",
+        "itemGrade": "Legend"
+    },
+    {
         "attackPower": 15,
         "attackPowerByLv": 3,
         "defense": 20,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.2,
         "criticalStrikeChance": 0.33,
         "code": 201534,
         "armorType": "Chest",
@@ -881,7 +891,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 15,
+        "attackPower": 17,
         "attackSpeedRatio": 0.35,
         "criticalStrikeChance": 0.35,
         "code": 203408,
@@ -919,7 +929,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 20,
+        "defense": 22,
         "maxHpByLv": 22,
         "cooldownReduction": 25,
         "code": 203504,
@@ -952,7 +962,7 @@
     {
         "attackPower": 30,
         "attackSpeedRatio": 0.3,
-        "penetrationDefenseRatio": 0.2,
+        "penetrationDefenseRatio": 0.18,
         "code": 203509,
         "armorType": "Arm",
         "itemGrade": "Mythic"
@@ -1035,7 +1045,7 @@
     {
         "attackPower": 35,
         "attackSpeedRatio": 0.35,
-        "moveSpeedRatio": 0.025,
+        "moveSpeedRatio": 0.03,
         "code": 205407,
         "armorType": "Arm",
         "itemGrade": "Legend"
@@ -1222,7 +1232,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 15,
+        "defense": 16,
         "attackSpeedRatio": 0.42,
         "moveSpeed": 0.25,
         "slowResistRatio": 0.25,

@@ -22,8 +22,8 @@
             "base": [50,80,110,140,170],
             "attack": 85
         },
-        "heal": 13,
-        "max_heal": 33,
+        "heal": 15,
+        "max_heal": 35,
         "cooldown_reduction": 1,
         "cooldown": 10
     },

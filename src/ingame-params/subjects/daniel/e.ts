@@ -10,7 +10,7 @@ export const info: SkillTooltipProps = {
     values: ({ }) => ({
         1: Constants.E.duration,
         2: Constants.E.damage.base,
-        3: RatioPercent(Constants.E.damage.attack),
+        3: RatioPercent(Constants.E.damage.additionalAttack),
         20: Constants.E.damage
     }), 
     expansion: () => ({

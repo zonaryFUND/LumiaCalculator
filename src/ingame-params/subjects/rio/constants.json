@@ -11,7 +11,7 @@
             "basicAttackAmp": 100
         },
         "daikyu": {
-            "attack": 103,
+            "attack": 102,
             "basicAttackAmp": 100
         },
         "daikyu_as_penalty": 0.22,
@@ -100,7 +100,7 @@
             "criticalChance": 0.1
         },
         "basic_attack_damage": {
-            "base": 103,
+            "base": 102,
             "criticalBase": 75
         }
     }

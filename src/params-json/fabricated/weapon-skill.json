@@ -153,6 +153,10 @@
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
 	},
+	"103402": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"103404": {
 		"skillCode": 6014001,
 		"name": "primodal_hex",
@@ -162,8 +166,19 @@
 		}
 	},
 	"103502": {
-		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"skillCode": 6007001,
+		"name": "swift_strides",
+		"dmg": {
+			"base": 150
+		},
+		"values": {
+			"tick": 0.2,
+			"ms": 0.1,
+			"slow": {
+				"effect": 20,
+				"duration": 2
+			}
+		}
 	},
 	"103503": {
 		"skillCode": 6035001,
@@ -238,6 +253,10 @@
 		"skillCode": 6045001,
 		"name": "cataclasm"
 	},
+	"105404": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"105406": {
 		"skillCode": 6007002,
 		"name": "swift_strides",
@@ -272,6 +291,10 @@
 	"105408": {
 		"skillCode": 6046001,
 		"name": "critical_blow"
+	},
+	"105501": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
 	},
 	"105503": {
 		"skillCode": 6013003,
@@ -423,12 +446,13 @@
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
 	},
+	"109503": {
+		"skillCode": 6015002,
+		"name": "zephyr"
+	},
 	"109701": {
-		"skillCode": 6015003,
-		"name": "charge_carrier",
-		"values": {
-			"shield": 250
-		}
+		"skillCode": 6015002,
+		"name": "zephyr"
 	},
 	"109702": {
 		"skillCode": 6013003,
@@ -843,8 +867,18 @@
 		}
 	},
 	"115405": {
-		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 15
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1
+			}
+		}
 	},
 	"115406": {
 		"skillCode": 6008201,
@@ -997,8 +1031,11 @@
 		}
 	},
 	"117502": {
-		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"skillCode": 6002005,
+		"name": "biotic_infusion",
+		"dmg": {
+			"amp": 40
+		}
 	},
 	"117504": {
 		"skillCode": 6017002,
@@ -1089,6 +1126,10 @@
 			}
 		}
 	},
+	"119403": {
+		"skillCode": 6008201,
+		"name": "healing_reduction_weak"
+	},
 	"119404": {
 		"skillCode": 6008201,
 		"name": "healing_reduction_weak"
@@ -1160,6 +1201,15 @@
 	"120501": {
 		"skillCode": 6045001,
 		"name": "cataclasm"
+	},
+	"120503": {
+		"skillCode": 6058001,
+		"name": "master",
+		"dmg": {
+			"base": 60,
+			"attack": 50,
+			"level": 2
+		}
 	},
 	"120701": {
 		"skillCode": 6013006,

@@ -53,7 +53,7 @@
             "stack": 1
         },
         "attack_speed": 10,
-        "movement_speed": 40,
+        "movement_speed": 30,
         "extend": 3,
         "cooldown": [80,70,60]
     },

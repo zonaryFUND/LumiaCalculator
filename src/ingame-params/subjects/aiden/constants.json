@@ -12,7 +12,7 @@
             "basicAttackAmp": 100
         },
         "slow": {
-            "duration": 0.45,
+            "duration": 0.6,
             "effect": [25,30,35,40,45]
         },
         "range_cooldown_reduction": 50,
@@ -28,7 +28,7 @@
         },
         "max_multiplier": 2,
         "slow": {
-            "duration": 0.65,
+            "duration": 0.8,
             "effect": 45
         },
         "field_duration": 2.5,
@@ -80,7 +80,7 @@
     },
     "T": {
         "duration": 10,
-        "attack_speed": 0.2,
+        "attack_speed": 0.15,
         "critical_damage": 20,
         "critical_chance_convert": [0.2,0.3,0.4],
         "range": [4,4.5,5],

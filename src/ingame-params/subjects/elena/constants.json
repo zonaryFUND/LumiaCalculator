@@ -43,13 +43,13 @@
     },
     "R": {
         "center_damage": {
-            "base": [120,200,380],
+            "base": [150,230,310],
             "amp": 60,
             "additionalMaxHP": 12
         },
         "outer_damage": {
-            "base": [90,160,230],
-            "amp": 30,
+            "base": [110,180,250],
+            "amp": 40,
             "additionalMaxHP": 8
         },
         "cooldown": [80,70,60]

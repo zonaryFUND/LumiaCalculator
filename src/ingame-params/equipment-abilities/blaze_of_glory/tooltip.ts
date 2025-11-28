@@ -3,7 +3,6 @@ import { EquipmentAbilityTooltipValues } from "../type";
 import { TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation }): TooltipValues => ({
-    0: Constants.threshold,
     1: Constants.damage_amp,
     2: Constants.cooldown
 })

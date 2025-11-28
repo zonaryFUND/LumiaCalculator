@@ -11,7 +11,10 @@ const table: DamageTableGenerator = props => ({
             {label: "Q", origin: "Q", value: Constants.Q.damage},
             {label: props.intl.formatMessage({id: "subject.daniel.q-center"}), origin: "Q", value: Constants.Q.center_damage},
         ],
-        [{label: props.intl.formatMessage({id: "subject.daniel.w-blast-base"}), origin: "W", value: Constants.W.damage}],
+        [
+            {label: props.intl.formatMessage({id: "subject.daniel.w-blast-base"}), origin: "W", value: Constants.W.damage},
+            {label: props.intl.formatMessage({id: "subject.daniel.w-store"}), origin: "W", value: Constants.W.stored_damage, type: {type: "misc", percentExpression: true}}
+        ],
         [
             {label: props.intl.formatMessage({id: "subject.daniel.r-1hit"}), origin: "R", value: Constants.R.damage},
             {label: props.intl.formatMessage({id: "subject.daniel.r-max-hit"}, {value: Constants.R.damage_count}), origin: "R", value: Constants.R.damage, multiplier: Constants.R.damage_count * 100},

@@ -17,9 +17,7 @@ export const info: SkillTooltipProps = {
                 6: Constants.T.max_stack,
                 7: RatioPercent(Constants.T.attack_speed),
                 8: Constants.T.aoe_damage.base,
-                9: RatioPercent(Constants.T.aoe_damage.amp),
-                11: RatioPercent(Constants.T.damage.attack),
-                12: RatioPercent(Constants.T.aoe_damage.attack),
+                9: RatioPercent(Constants.T.aoe_damage.amp)
             }
         } else {   
             return {

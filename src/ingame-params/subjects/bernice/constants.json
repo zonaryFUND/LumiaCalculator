@@ -5,7 +5,7 @@
     "Q": {
         "damage": {
             "base": [60,90,120,150,180],
-            "attack": 90
+            "attack": 100
         },
         "slow": {
             "duration": 1.5,

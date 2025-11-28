@@ -1,11 +1,15 @@
 {
-    "blink": {
-
-    },
+    "blink": {},
     "quake": {
-        "slow": [40,50],
+        "slow": [
+            40,
+            50
+        ],
         "first_damage": {
-            "base": [50, 100],
+            "base": [
+                50,
+                100
+            ],
             "level": 10,
             "additionalMaxHP": 10
         },
@@ -19,38 +23,51 @@
     },
     "protocol_violation": {
         "hp_increase": {
-            "base": [150,250],
-            "level": [15,20]
+            "base": [
+                150,
+                250
+            ],
+            "level": [
+                15,
+                20
+            ]
         },
-        "damage_increase": [12,15]
+        "damage_increase": [
+            12,
+            15
+        ]
     },
-    "electric_shift": {
-
-    },
+    "electric_shift": {},
     "force_field": {
         "duration": 3,
         "shield": {
-            "base": [100,200],
-            "additionalMaxHP": [75,100]
+            "base": [
+                100,
+                200
+            ],
+            "additionalMaxHP": [
+                75,
+                100
+            ]
         },
         "tenacity": {
             "base": 10,
             "additionalMaxHP": 3
         }
     },
-    "totem": {
-
-    },
-    "nullification": {
-
-    },
-    "soul_stealer": {
-
-    },
+    "totem": {},
+    "nullification": {},
+    "soul_stealer": {},
     "the_strider": {
         "damage": {
-            "base": [100,150],
-            "level": [5,10]
+            "base": [
+                100,
+                150
+            ],
+            "level": [
+                5,
+                10
+            ]
         }
     },
     "blader_of_truth": {
@@ -66,21 +83,25 @@
     "false_oath": {
         "heal_min": {
             "melee": {
-                "base": 60
+                "base": 50
             },
             "range": {
-                "base": 40
+                "base": 30
             }
         },
         "heal_max_multiplier": 1.5,
-        "damage_increase": {
-
-        }
+        "damage_increase": {}
     },
     "healing_wind": {
         "heal": {
-            "base": [150,200],
-            "level": [15,20]
+            "base": [
+                150,
+                200
+            ],
+            "level": [
+                15,
+                20
+            ]
         },
         "defense": {
             "duration": 3,

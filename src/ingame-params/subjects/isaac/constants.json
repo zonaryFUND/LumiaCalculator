@@ -44,7 +44,7 @@
         "damage": {
             "base": [20,30,40],
             "attack": 60,
-            "targetMaxHP": [2,3,4]
+            "targetMaxHP": [3,4,5]
         },
         "movement_speed": [6,18,30],
         "duration": 2,

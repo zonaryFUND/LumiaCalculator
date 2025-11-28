@@ -10,7 +10,7 @@
             "targetMaxHP": [1,2,3,4,5]
         },
         "mark": 5,
-        "mark_enhance": [8,16,24,32,40],
+        "mark_enhance": [10,20,30,40,50],
         "cooldown": 3
     },
     "W": {

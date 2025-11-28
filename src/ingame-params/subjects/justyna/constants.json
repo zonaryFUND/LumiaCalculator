@@ -6,12 +6,12 @@
         },
         "reuse": 3,
         "reuse_damage": {
-            "base": [70,120,170,220,270],
-            "amp": 75
+            "base": [70,115,160,205,250],
+            "amp": 70
         },
         "slow": {
             "duration": 1,
-            "effect": 30
+            "effect": 25
         },
         "w_cooldown_reduction": 1,
         "gauge_cost": 50,
@@ -26,7 +26,7 @@
         },
         "slow": {
             "duration": 0.5,
-            "effect": [15,17.5,20,22.5,25]
+            "effect": [10,12.5,15,17.5,20]
         },
         "duration": 5,
         "cooldown": [11,10.5,10,9.5,9]

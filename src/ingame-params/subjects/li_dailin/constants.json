@@ -52,7 +52,7 @@
     "T": {
         "attack_speed": 40,
         "damage": {
-            "attack": [35,45,55],
+            "attack": [30,40,50],
             "basicAttackAmp": 1
         },
         "threshold": 40,

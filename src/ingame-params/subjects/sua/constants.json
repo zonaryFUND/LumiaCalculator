@@ -18,9 +18,9 @@
         "cooldown": [12,11,10,9,8]
     },
     "W": {
-        "shield_duration": 2.5,
+        "shield_duration": 2,
         "shield": {
-            "base": [80,105,130,155,180],
+            "base": [40,65,90,115,140],
             "amp": 30
         },
         "blind_duration": [1.1,1.15,1.2,1.25,1.3],
@@ -70,9 +70,9 @@
         "center_multiplier": 30
     },
     "RW": {
-        "shield_duration": 2.5,
+        "shield_duration": 2,
         "shield": {
-            "base": [80,180,280],
+            "base": [50,150,250],
             "amp": 30
         },
         "blind_duration": [1.1,1.2,1.3],
@@ -107,15 +107,13 @@
     },
     "T": {
         "damage": {
-            "base": [60,120,180],
-            "attack": 40,
-            "amp": 46
+            "base": [100,160,220],
+            "amp": 50
         },
         "aoe_range": 2,
         "aoe_damage": {
-            "base": [20,50,80],
-            "attack": 20,
-            "amp": 23
+            "base": [50,80,110],
+            "amp": 25
         },
         "heal": 55,
         "max_stack": 3,
