@@ -22,6 +22,8 @@ import saveStyle from "components/modal/save-build/index.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { DavidChestArmorUpgradeDictionary } from "app-types/equipment";
 import PerpetualBuffs from "./perpetual-buffs";
+import { calculateValue } from "app-types/value-ratio";
+import Decimal from "decimal.js";
 
 export type CurrentHPProps = {
     currentHP?: StateProps<number>
@@ -104,7 +106,11 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                         label={intl.formatMessage({id: gaugeInfo.nameIntlID})}
                         threshold={gaugeInfo.threshold}
                         value={props.gauge}
-                        max={gaugeInfo.max ?? 100}
+                        max={(() => {
+                            if (gaugeInfo.max == undefined) return 100;
+                            if (typeof gaugeInfo.max == "number") return gaugeInfo.max;
+                            return (props.maxHP ?? 0) * gaugeInfo.max.maxHPRatio / 100
+                        })()}
                         changeColorOnMax={gaugeInfo.changeColorOnMax}
                     /> :
                     null

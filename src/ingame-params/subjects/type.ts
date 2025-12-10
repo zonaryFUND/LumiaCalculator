@@ -42,7 +42,7 @@ export type SummonInfo = {
 export type SubjectGaugeInfo = {
     nameIntlID: string
     threshold?: number
-    max?: number
+    max?: number | { maxHPRatio: number }
     changeColorOnMax: boolean
 }
 

@@ -103,7 +103,7 @@
         "cooldown": [80,70,60]
     },
     "T": {
-        "debi_defense": [5,10,15],
+        "debi_defense": [4,8,12],
         "marlene_range": 4,
         "basic_attack_damage": 90,
         "max_stack": 5,

@@ -57,7 +57,7 @@
             "base": [60,80,100,120,140],
             "attack": 80
         },
-        "airborne": 0.6,
+        "airborne": 0.8,
         "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
@@ -79,7 +79,7 @@
         "max_stack": 4,
         "movement_speed": {
             "duration": 1.5,
-            "effect": [8,16,24]
+            "effect": [8,18,28]
         }
     }
 }

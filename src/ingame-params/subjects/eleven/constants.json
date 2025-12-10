@@ -52,7 +52,7 @@
     "R": {
         "duration": 7,
         "heal": {
-            "maxHP": [30, 50, 70]
+            "maxHP": [40,60,80]
         },
         "tick": 0.5,
         "damage": {

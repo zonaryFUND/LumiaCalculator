@@ -91,8 +91,8 @@
     },
     "steadfast": {
         "tenacity": {
-            "base": 8,
-            "level": 0.5
+            "base": 12,
+            "level": 0.4
         }
     },
     "dine_n_dash": {

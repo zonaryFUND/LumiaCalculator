@@ -36,12 +36,12 @@
     },
     "R": {
         "first_damage": {
-            "base": [250,400,550],
-            "attack": 140
+            "base": [300,450,600],
+            "attack": 150
         },
         "second_damage": {
-            "base": [300,450,600],
-            "attack": 160
+            "base": [350,500,650],
+            "attack": 180
         },
         "third_damage": {
             "base": [400,700,1000],

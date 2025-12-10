@@ -18,8 +18,6 @@
         },
         "sentry_defence": 80,
         "sentry_attack_speed": 1.5,
-        "retrieve_range": 11,
-        "remain": 1.5,
         "charge": {
             "max": 2,
             "time": [16,15,14,13,12]
@@ -30,7 +28,7 @@
     "W": {
         "damage": {
             "base": [90,125,160,195,230],
-            "amp": 80
+            "amp": 85
         },
         "movement_speed": {
             "duration": 2,
@@ -71,7 +69,7 @@
         "W": {
             "damage": {
                 "base": [200,250,300],
-                "amp": 80,
+                "amp": 85,
                 "targetMaxHP": 20
             },
             "dot_duration": 4,

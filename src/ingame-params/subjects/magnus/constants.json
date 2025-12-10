@@ -36,7 +36,7 @@
             "base": [20,40,60,80,100],
             "additionalAttack": 30,
             "amp": 20,
-            "targetMaxHP": 4
+            "targetMaxHP": 6
         },
         "knockback": 3,
         "stun": [0.7,0.85,1,1.15,1.3],

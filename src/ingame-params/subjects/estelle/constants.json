@@ -5,7 +5,7 @@
             "amp": 35,
             "maxHP": 5
         },
-        "stun": 0.6,
+        "stun": 0.7,
         "cooldown": 7
     },
     "W": {
@@ -27,7 +27,7 @@
             "amp": 25,
             "maxHP": 0.5
         },
-        "slow_max": 32,
+        "slow_max": 40,
         "cooldown": 7
     },
     "E": {

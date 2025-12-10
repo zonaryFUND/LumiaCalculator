@@ -88,7 +88,7 @@ const standardDamage: React.FC<Props> = props => {
                         key,
                         value: (
                             <>
-                                <FormattedMessage id={valueIntlID} values={{ratio: ratio.toString()}} />,
+                                <FormattedMessage id={valueIntlID} values={{ratio: ratio.toString()}} />
                                 {key == "lostHP" ? `(${lostHP.percent(ratio).floor().toString()})` : null}
                             </>
                         ),

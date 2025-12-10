@@ -980,6 +980,26 @@
         "thirdOptionSection4Value": 0
     },
     {
+        "code": 11006,
+        "type": "Hammer",
+        "characterCode": 85,
+        "firstOption": "AttackSpeedRatio",
+        "firstOptionSection1Value": 0.035,
+        "firstOptionSection2Value": 0.035,
+        "firstOptionSection3Value": 0.035,
+        "firstOptionSection4Value": 0.035,
+        "secondOption": "SkillAmpRatio",
+        "secondOptionSection1Value": 0.045,
+        "secondOptionSection2Value": 0.045,
+        "secondOptionSection3Value": 0.045,
+        "secondOptionSection4Value": 0.045,
+        "thirdOption": "None",
+        "thirdOptionSection1Value": 0,
+        "thirdOptionSection2Value": 0,
+        "thirdOptionSection3Value": 0,
+        "thirdOptionSection4Value": 0
+    },
+    {
         "code": 11101,
         "type": "Spear",
         "characterCode": 3,

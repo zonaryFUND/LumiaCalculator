@@ -40,7 +40,7 @@
             },
             "final_target_damage": {
                 "base": [50,80,110,140,170],
-                "additionalAttack": 130
+                "additionalAttack": 140
             },
             "airborne": 0.5
         },

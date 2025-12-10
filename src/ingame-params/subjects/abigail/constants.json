@@ -45,7 +45,7 @@
         "untargetable": 0.7,
         "damage": {
             "base": [150,275,400],
-            "amp": 80
+            "amp": 85
         },
         "slow": {
             "duration": 0.2,

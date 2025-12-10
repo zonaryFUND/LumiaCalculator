@@ -14,7 +14,7 @@
             "amp": 25
         },
         "Q2_enable_enhanced_attack": 2,
-        "movement_speed_penalty": 20
+        "movement_speed_penalty": 15
     },
     "Q2": {
         "center_damage": {
@@ -35,7 +35,7 @@
     },
     "W1": {
         "duration": 0.8,
-        "movement_speed_penalty": 20
+        "movement_speed_penalty": 15
     },
     "W2": {
         "damage": {
@@ -64,7 +64,7 @@
             "base": [40,60,80,100,120],
             "amp": 50
         },
-        "movement_speed_penalty": 20
+        "movement_speed_penalty": 15
     },
     "E2": {
         "damage": {

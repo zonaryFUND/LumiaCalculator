@@ -64,8 +64,8 @@
         "stack_threshold": [10,9,8],
         "damage": {
             "base": [40,70,100],
-            "attack": 40,
-            "amp": 35
+            "attack": 50,
+            "amp": 40
         },
         "heal": {
             "maxHP": [7,11,15]

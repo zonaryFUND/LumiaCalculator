@@ -19,7 +19,7 @@
             "additionalMaxHP": 8,
             "amp": 50
         },
-        "q_cooldown_reduction": 30,
+        "q_cooldown_reduction": 40,
         "enhanced_cooldown_reduction": 50,
         "cooldown": {
             "constant": 0.65

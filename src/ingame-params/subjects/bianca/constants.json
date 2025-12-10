@@ -48,8 +48,8 @@
             "amp": 40
         },
         "multiple_hit_heal_amp": 40,
-        "hp_cost_percent": 5,
-        "cooldown": [14,12.5,11,9.5,8]
+        "hp_cost_percent": 3,
+        "cooldown": [12,11,10,9,8]
     },
     "R": {
         "first_damage": {
@@ -59,7 +59,7 @@
         },
         "slow": {
             "duration": 2,
-            "effect": 50
+            "effect": 60
         },
         "omnisyphon_amp": [20,30,40],
         "min_damage": {

@@ -1,0 +1,11 @@
+{
+    "subject.mirka.impulse": "リパルス",
+    "subject.mirka.passive-damage-1tick": "T1ティック",
+    "subject.mirka.passive-damage-max": "T合計({value}秒)",
+    "subject.mirka.q-enhanced": "強化Q",
+    "subject.mirka.q-enhanced-aftereffect-1hit": "強化Q余震1ヒット",
+    "subject.mirka.q-enhanced-aftereffect-max-hit": "強化Q余震全ヒット({value})",
+    "subject.mirka.w-impulse-gain-increase": "Wシールド吸収時リパルスゲージ獲得量増加",
+    "subject.mirka.e2-enhanced": "強化E2"
+
+}
