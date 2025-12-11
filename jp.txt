@@ -1175,6 +1175,7 @@ ToolTipType/SecondAttackPower┃2打目 攻撃力係数(%)
 ToolTipType/HealAdditionalAttackPower┃体力回復量の追加攻撃力係数(%)
 ToolTipType/BlairActive3CombineShield┃[連携攻撃] シールド量
 ToolTipType/BlairActive4VpRecovery┃的中時の気力回復量
+ToolTipType/MirkaActive1_2_Damage┃余震ダメージ量
 ToolTipCoef/RemainBullet┃<color=#dda0dd>(+余った弾1 * スキル増幅の{0}%)</color>
 DayNight/Day┃昼
 DayNight/Night┃夜
@@ -1546,6 +1547,7 @@ Skin/Name/1017001┃放火兵アドリアナ
 Skin/Name/1017002┃害虫駆除アドリアナ
 Skin/Name/1017003┃メイドアドリアナ
 Skin/Name/1017004┃ウィドリアナ
+Skin/Name/1017005┃悪役令嬢 アドリアナ
 Skin/Name/1018000┃彰一
 Skin/Name/1018001┃ヒットマン 彰一
 Skin/Name/1018002┃ウィンターカーニバル彰一
@@ -2131,6 +2133,7 @@ Skin/Desc/1071002┃あの眩しい花火が、失った色を取り戻してく
 Skin/Desc/1076002┃この指に結ばれた赤い鎖が、いつか必ず私たちを会わせてくれるはず...
 Skin/Desc/1011006┃みんな楽しんでいるようで何よりです。招待した甲斐がありましたね。
 Skin/Desc/1049005┃修練に終わりはないって言うけど、今回だけは成果を見せる番だ！
+Skin/Desc/1017005┃フフ...もっと足掻いてみて...這いつくばっている姿を上から見下ろすのも楽しいわね...
 Skin/Desc/1013004┃泣くなよ。しょっぱいジンジャーブレッドは良くないからな。\n<color=#FFBB00>[一部台詞変更]</color>
 Skin/Desc/1072003┃注文はこいつに、チップは僕に。
 Skin/Desc/1078002┃何度でも斬り落としてやるよ。お前たちの恨みが消えるその日までな！
@@ -2229,6 +2232,14 @@ Collection/Name/24034/2┃2025 落ち葉コレクションⅡ
 Collection/Name/24035/1┃2025 秋のログインコレクション
 Collection/Name/24036┃ヘンリー「時は動き出す」
 Collection/Name/24037┃ブレア「何？ 」
+Collection/Name/24038┃ミルカ「あたしらを見くびるなよ」
+Collection/Name/24039/1┃スターコレクションⅠ
+Collection/Name/24039/2┃スターコレクションⅡ
+Collection/Name/24039/3┃スターコレクションⅢ
+Collection/Name/24039/4┃スターコレクションⅣ
+Collection/Name/24039/5┃スターコレクションⅤ
+Collection/Name/24040┃ゴールドスター交換
+Collection/Name/24041┃ゴールドスターボックス交換
 SeasonCollection/Name/30001/1┃スプラッシュ！ -  第1段階
 SeasonCollection/Name/30001/2┃スプラッシュ！ -  第2段階
 SeasonCollection/Name/30001/3┃スプラッシュ！ -  第3段階
@@ -2243,7 +2254,7 @@ SeasonCollection/Name/30002/5┃祭り -  第5段階
 SeasonCollection/Name/30002/6┃祭り -  第6段階
 ItemTag/Main_Attack┃<color=#ffb62f>基本攻撃</color>
 ItemTag/Main_Skill┃<color=#ffb62f>スキル攻撃</color>
-ItemTag/Main_Tank┃<color=#ffb62f>タンカー</color>
+ItemTag/Main_Tank┃<color=#ffb62f>タンク</color>
 ItemTag/Main_Hybrid┃<color=#ffb62f>ハイブリッド</color>
 ItemTag/Main_Trap┃トラップダメージ
 ItemTag/Sub1_Cooldown┃クールダウン減少
@@ -3478,6 +3489,12 @@ Emotion_Leon05_NP┃見守っている レオン
 Emotion_Leon06_NP┃よくやった レオン
 Emotion_Leon07_NP┃ムスッ レオン
 Emotion_Leon08_NP┃キャリーした レオン
+Emotion_Mirka01_NP┃す、すまん... ミルカ
+Emotion_Mirka02_NP┃やんのか？ ミルカ
+Emotion_Mirka03_NP┃ハハハハ！ ミルカ
+Emotion_Mirka04_NP┃はっ...！ ミルカ
+Emotion_Winter_Mirka_2085006┃ミルカ Hi
+Emotion_SNS_Mirka_2085007┃ミルカ 接近禁止
 Emotion_Winter_Blair_2084006┃ブレア Hi
 ItemType/EMBLEM_MARK/Name┃プロフィールアイコン
 EMBLEM_MARK_FREE1┃Aglaiaアイコン
@@ -4087,6 +4104,9 @@ EMBLEM_MARK_EVENT_103223┃SEASON 7 CHAMPION BUM
 EMBLEM_MARK_EVENT_103224┃運命の赤い約束 ガーネット Hi アイコン
 EMBLEM_MARK_EVENT_103225┃鬼火に惑わされし イアン ピース アイコン
 EMBLEM_MARK_EVENT_103226┃何？ ブレア アイコン
+EMBLEM_MARK_EVENT_103227┃ブレア Hi アイコン
+EMBLEM_MARK_EVENT_103228┃ミルカ Hi アイコン
+EMBLEM_MARK_EVENT_103229┃ミルカ 接近禁止 アイコン
 EMBLEM_MARK_ERPASS_104001┃氷の結晶アイコン
 EMBLEM_MARK_ERPASS_104002┃プレゼントする木アイコン
 EMBLEM_MARK_ERPASS_104003┃赤い鼻アイコン
@@ -4325,6 +4345,7 @@ EMBLEM_BG_SHOP_202558┃S9 Daegu Suseong Guardians 背景
 EMBLEM_BG_SHOP_202559┃S9 GJ Slasher 背景
 EMBLEM_BG_SHOP_202560┃S9 Gyeonggi Innate 背景
 EMBLEM_BG_SHOP_202561┃S9 DAEJEON AutoArms 背景
+EMBLEM_BG_SHOP_202562┃冬のプレゼント 背景
 EMBLEM_BG_S3_IRON_SOLO┃シーズン3アイアン(ソロ)背景
 EMBLEM_BG_S3_IRON_DUO┃シーズン3アイアン(デュオ)背景
 EMBLEM_BG_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)背景
@@ -4778,6 +4799,7 @@ EMBLEM_OUTLINE_SHOP_302558┃S9 Daegu Suseong Guardians フレーム
 EMBLEM_OUTLINE_SHOP_302559┃S9 GJ Slasher フレーム
 EMBLEM_OUTLINE_SHOP_302560┃S9 Gyeonggi Innate フレーム
 EMBLEM_OUTLINE_SHOP_302561┃S9 DAEJEON AutoArms フレーム
+EMBLEM_OUTLINE_SHOP_302562┃冬のプレゼント フレーム
 EMBLEM_OUTLINE_S3_IRON_SOLO┃シーズン3アイアン(ソロ)フレーム
 EMBLEM_OUTLINE_S3_IRON_DUO┃シーズン3アイアン(デュオ)フレーム
 EMBLEM_OUTLINE_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)フレーム
@@ -5119,1028 +5141,6 @@ EMBLEM_OUTLINE_ERPASS_304055┃運命の赤い約束 ガーネット フレー�
 EMBLEM_OUTLINE_ERPASS_304056┃鬼火に惑わされし イアン フレーム
 EMBLEM_OUTLINE_ERPASS_304057┃運命の青い約束 ケネス フレーム
 EMBLEM_OUTLINE_COLLECTION_319001┃ハイパーカプセルフレーム
-Goods/Name/1304001┃ERポイント
-GroupItemAttribute/KR┃韓国語
-GroupItemAttribute/EN┃英語
-GroupItemAttribute/JA┃日本語
-GroupItemAttribute/CN┃中国語
-ItemType/ANNOUNCE/Name┃中継アナウンス
-ItemType/ANNOUNCE/Desc┃中継音声を選択できます。
-Goods/Name/1401000┃ランダム
-Goods/Name/1401051┃基本(韓国語)
-Goods/Name/1401052┃基本(英語)
-Goods/Name/1401053┃基本(日本語)
-Goods/Name/1401021┃生存の声(韓国語)
-Goods/Name/1403014┃基本(中国語)
-Goods/Name/1404011┃ゲームキャスター(日本語)
-Goods/Name/1404012┃ゲームキャスター(韓国語)
-Goods/Name/1404013┃ゲームキャスター(英語)
-Goods/Name/1404021┃莉央(韓国語)
-Goods/Name/1404022┃莉央(英語)
-Goods/Name/1404023┃莉央(日本語)
-Goods/Name/1404031┃フェリックス(韓国語)
-Goods/Name/1404032┃フェリックス(英語)
-Goods/Name/1404033┃フェリックス(日本語)
-Goods/Name/1404041┃アディナ(韓国語)
-Goods/Name/1404042┃アディナ(英語)
-Goods/Name/1404043┃アディナ(日本語)
-Goods/Name/1404051┃ルク(韓国語)
-Goods/Name/1404052┃ルク(英語)
-Goods/Name/1404053┃ルク(日本語)
-Goods/Name/1404061┃バーバラ(韓国語)
-Goods/Name/1404062┃バーバラ(英語)
-Goods/Name/1404063┃バーバラ(日本語)
-Goods/Name/1404071┃ピオロ(韓国語)
-Goods/Name/1404072┃ピオロ(英語)
-Goods/Name/1404073┃ピオロ(日本語)
-Goods/Name/1404081┃アイザック(韓国語)
-Goods/Name/1404082┃アイザック(英語)
-Goods/Name/1404083┃アイザック(日本語)
-Goods/Name/1404091┃ダイリン(韓国語)
-Goods/Name/1404092┃ダイリン(英語)
-Goods/Name/1404093┃ダイリン(日本語)
-Goods/Name/1404101┃デビー&マーリン(韓国語)
-Goods/Name/1404102┃デビー&マーリン(英語)
-Goods/Name/1404103┃デビー&マーリン(日本語)
-Goods/Name/1404111┃彰一(韓国語)
-Goods/Name/1404112┃彰一(英語)
-Goods/Name/1404113┃彰一(日本語)
-Goods/Name/1404121┃ダニエル(韓国語)
-Goods/Name/1404122┃ダニエル(英語)
-Goods/Name/1404123┃ダニエル(日本語)
-Goods/Name/1404131┃ニッキー(韓国語)
-Goods/Name/1404132┃ニッキー(英語)
-Goods/Name/1404133┃ニッキー(日本語)
-Goods/Name/1404141┃イレム(韓国語)
-Goods/Name/1404142┃イレム(英語)
-Goods/Name/1404143┃イレム(日本語)
-Goods/Name/1404151┃カミロ(韓国語)
-Goods/Name/1404152┃カミロ(英語)
-Goods/Name/1404153┃カミロ(日本語)
-Goods/Name/1406001┃キャスターSia(韓国語)
-Goods/Name/1406011┃キャスターShin Il(韓国語)
-Goods/Name/1406021┃キャスターEvis&Gold Blin(韓国語)
-Goods/Name/1406031┃キャスターKim In Yeong&NongRoute(韓国語)
-Goods/Name/1406041┃キャスターShuviSenpai & Superior(英語)
-Goods/Name/1406051┃キャスター局員 & 角煮 (日本語)
-Goods/Name/1404161┃ヨハン(韓国語)
-Goods/Name/1404162┃ヨハン(英語)
-Goods/Name/1404163┃ヨハン(日本語)
-Goods/Name/1404171┃ビアンカ(韓国語)
-Goods/Name/1404172┃ビアンカ(英語)
-Goods/Name/1404173┃ビアンカ(日本語)
-Goods/Name/1404181┃ダルコ(韓国語)
-Goods/Name/1404182┃ダルコ(英語)
-Goods/Name/1404183┃ダルコ(日本語)
-Goods/Name/1404191┃スア(韓国語)
-Goods/Name/1404192┃スア(英語)
-Goods/Name/1404193┃スア(日本語)
-Goods/Name/1404201┃ティア(韓国語)
-Goods/Name/1404202┃ティア(英語)
-Goods/Name/1404203┃ティア(日本語)
-Goods/Name/1404211┃エイデン(韓国語)
-Goods/Name/1404212┃エイデン(英語)
-Goods/Name/1404213┃エイデン(日本語)
-Goods/Name/1404221┃アルダ(韓国語)
-Goods/Name/1404222┃アルダ(英語)
-Goods/Name/1404223┃アルダ(日本語)
-Goods/Name/1404231┃レニ(韓国語)
-Goods/Name/1404232┃レニ(英語)
-Goods/Name/1404233┃レニ(日本語)
-Goods/Name/1404241┃ユミン(韓国語)
-Goods/Name/1404242┃ユミン(英語)
-Goods/Name/1404243┃ユミン(日本語)
-Goods/Name/1404251┃Eleven(韓国語)
-Goods/Name/1404252┃Eleven(英語)
-Goods/Name/1404253┃Eleven(日本語)
-Goods/Name/1404261┃ヒョヌ(韓国語)
-Goods/Name/1404262┃ヒョヌ(英語)
-Goods/Name/1404263┃ヒョヌ(日本語)
-Goods/Name/1404271┃ヴァーニャ(韓国語)
-Goods/Name/1404272┃ヴァーニャ(英語)
-Goods/Name/1404273┃ヴァーニャ(日本語)
-GoodsGroup/Name/1401051┃基本
-GoodsGroup/Name/1401021┃生存の声
-GoodsGroup/Name/1403014┃基本(中国語)
-GoodsGroup/Name/1404011┃ゲームキャスター
-GoodsGroup/Name/1404021┃莉央
-GoodsGroup/Name/1404031┃フェリックス
-GoodsGroup/Name/1404041┃アディナ
-GoodsGroup/Name/1404051┃ルク
-GoodsGroup/Name/1404061┃バーバラ
-GoodsGroup/Name/1404071┃ピオロ
-GoodsGroup/Name/1404081┃アイザック
-GoodsGroup/Name/1404091┃ダイリン
-GoodsGroup/Name/1404101┃デビー&マーリン
-GoodsGroup/Name/1404111┃彰一
-GoodsGroup/Name/1404121┃ダニエル
-GoodsGroup/Name/1404131┃ニッキー
-GoodsGroup/Name/1404141┃イレム
-GoodsGroup/Name/1404151┃カミロ
-GoodsGroup/Name/1404161┃ヨハン
-GoodsGroup/Name/1404171┃ビアンカ
-GoodsGroup/Name/1404181┃ダルコ
-GoodsGroup/Name/1404191┃スア
-GoodsGroup/Name/1404201┃ティア
-GoodsGroup/Name/1404211┃エイデン
-GoodsGroup/Name/1404221┃アルダ
-GoodsGroup/Name/1404231┃レニ
-GoodsGroup/Name/1404241┃ユミン
-GoodsGroup/Name/1404251┃Eleven
-GoodsGroup/Name/1404261┃ヒョヌ
-GoodsGroup/Name/1404271┃ヴァーニャ
-GoodsGroup/Name/1406001┃キャスターSia
-GoodsGroup/Name/1406011┃キャスターShin Il
-GoodsGroup/Name/1406021┃キャスターEvis&Gold Blin
-GoodsGroup/Name/1406031┃キャスターKim In Yeong&NongRoute
-GoodsGroup/Name/1406041┃キャスターShuviSenpai & Superior
-GoodsGroup/Name/1406051┃キャスター局員 & 角煮
-ItemType/SPRAY/Name┃スプレー
-ItemType/SPRAY/Desc┃地面に目印を残すことができます。
-Goods/Name/1501001┃なし
-Goods/Name/1502001┃魔法少女莉央
-Goods/Name/1503001┃クリスマスツリー
-Goods/Name/1503002┃アングリー雪だるま
-Goods/Name/1503003┃ジンジャーブレッドマン
-Goods/Name/1503004┃クリスマススティックキャンディー
-Goods/Name/1503005┃たいやき
-Goods/Name/1503006┃クリスマスケーキ
-Goods/Name/1503007┃ローストチキン
-Goods/Name/1503008┃笑顔のトラ
-Goods/Name/1503009┃TigerNation
-Goods/Name/1503010┃GEN.G
-Goods/Name/1503011┃ポンイヨ
-Goods/Name/1503012┃Gen.G ERCC
-Goods/Name/1503013┃Naverゲームラウンジスプレー
-Goods/Name/1503014┃蓮華ウィルソン
-Goods/Name/1503015┃遊園地フェリックスの花
-Goods/Name/1503016┃I love Boogi
-Goods/Name/1503017┃Cheer up Boogi
-Goods/Name/1503018┃アイスクリームウィルソン
-Goods/Name/1503019┃フラミンゴとウィルソン
-Goods/Name/1503020┃フラダンスウィルソン
-Goods/Name/1503021┃ popo出動
-Goods/Name/1503022┃ネコイレム
-Goods/Name/1503023┃Sparky_smirky
-Goods/Name/1503024┃Sparky_chill
-Goods/Name/1503025┃Sparky_wonder
-Goods/Name/1503026┃Sparky_angry
-Goods/Name/1503027┃ピースサインEleven
-Goods/Name/1503028┃バレンタインギフトボックス
-Goods/Name/1503029┃バレンタインエヴァのプレゼント
-Goods/Name/1503030┃スア頭コン！
-Goods/Name/1503031┃にっこり…イアン
-Goods/Name/1503032┃ヴァーニャおやすみ
-Goods/Name/1503033┃マグパンチ
-Goods/Name/1503034┃にっこりヤン
-Goods/Name/1503035┃自信満々ビアンカ
-Goods/Name/1503036┃そこ！エレナ
-Goods/Name/1503037┃Eleven一口ちょうだい
-Goods/Name/1503038┃もぐもぐEleven
-Goods/Name/1503039┃Elevenチュワプ
-Goods/Name/1503040┃探索するヨハン
-Goods/Name/1503041┃投げキスカミロ
-Goods/Name/1503042┃悪夢を見るヴァーニャ
-Goods/Name/1503043┃怒ったニッキーの猫
-Goods/Name/1503044┃勝利のニッキー
-Goods/Name/1503045┃プンプンニッキー
-Goods/Name/1504001┃べー(ハート)
-Goods/Name/1504002┃マッチ売りの少女
-Goods/Name/1504003┃ウイナーリース
-Goods/Name/1504004┃生命の木
-Goods/Name/1504005┃サンタメイジ
-Goods/Name/1504006┃サンタナジャ
-Goods/Name/1504007┃クリスマスプレゼント
-Goods/Name/1504008┃雪だるまウィルソン
-Goods/Name/1504009┃隕石は持って行くわ！
-Goods/Name/1504010┃ゴーストは怖いよ…
-Goods/Name/1504011┃悪霊退散
-Goods/Name/1504012┃成仏する幽霊
-Goods/Name/1504013┃悪魔ウィルソン
-Goods/Name/1504014┃ウィジャボード
-Goods/Name/1504015┃生命の木ゲット！
-Goods/Name/1504016┃サプライズ~
-Goods/Name/1504017┃エネルギードリンク
-Goods/Name/1504018┃泣くスイカ
-Goods/Name/1504019┃莉央アイスクリーム
-Goods/Name/1504020┃信号灯
-Goods/Name/1504021┃アルファ処置
-Goods/Name/1504022┃オメガ処置
-Goods/Name/1504023┃マイク
-Goods/Name/1504024┃LEDべー
-Goods/Name/1504025┃ミラーボール
-Goods/Name/1504026┃キャッシーの医療メス
-Goods/Name/1504027┃ハンバーガー
-Goods/Name/1504028┃眠るクマ
-Goods/Name/1504029┃ダイリンガオー！
-Goods/Name/1504030┃アイマスク
-Goods/Name/1504031┃パジャマ姿のティアのリス
-Goods/Name/1504032┃通行禁止
-Goods/Name/1504033┃水泳禁止
-Goods/Name/1504034┃宝の地図
-Goods/Name/1504035┃ウィクラインキル
-Goods/Name/1504036┃足ヒレ
-Goods/Name/1504037┃イレム暑いニャー
-Goods/Name/1504038┃クルーズ旅行
-Goods/Name/1504039┃アヤそれはダメです！
-Goods/Name/1504040┃屋敷の監視人
-Goods/Name/1504041┃アヤの武器籠
-Goods/Name/1504042┃ルミア掃除中
-Goods/Name/1504043┃この先、敵があるぞ
-Goods/Name/1504044┃ハリケーンランタン
-Goods/Name/1504045┃ウィドリアナの火炎瓶
-Goods/Name/1504046┃お魚ネクタイ
-Goods/Name/1504047┃カミロのバラ
-Goods/Name/1504048┃トマトジュース
-Goods/Name/1504049┃ウィドリアナパシャッ！
-Goods/Name/1504050┃ビアンカZzz...
-Goods/Name/1504051┃エヴァのココナッツ
-Goods/Name/1504052┃ダイリンのパンダ
-Goods/Name/1504053┃ヴァーニャの星
-Goods/Name/1504054┃アビゲイルのルーレット
-Goods/Name/1504055┃莉央のぬいぐるみ猫
-Goods/Name/1504056┃ジェニーのハート
-Goods/Name/1504057┃シャーロットの堕ちた証
-Goods/Name/1504058┃アロンソの地獄の味
-Goods/Name/1504059┃シセラの悪魔ウィルソン
-Goods/Name/1504060┃ラウラの予告状
-Goods/Name/1504061┃エステルの失望
-Goods/Name/1504062┃カティアの紋章
-Goods/Name/1504063┃つばめの舌出しスイカ
-Goods/Name/1504064┃クロエの海辺の操り棒
-Goods/Name/1504065┃アディナの海辺の光
-Goods/Name/1504066┃ガーネットの赤い約束
-Goods/Name/1504067┃イアンの鬼の花
-Goods/Name/1504068┃ケネスの青い約束
-Goods/Name/1503046┃問題解決エイデン
-Goods/Name/1503047┃驚いたナタポン
-Goods/Name/1503048┃金をよこせ！レノックス
-Goods/Name/1503049┃熱唱するプリヤ
-Goods/Name/1503050┃気づいたレオン
-Goods/Name/1503051┃召し上がれアドリアナ
-Goods/Name/1503052┃閃いたバーバラ
-Goods/Name/1503053┃もうダメだ...アロンソ
-Goods/Name/1503054┃うめえ！アロンソ
-Goods/Name/1503055┃遅い…！バレンタインタジア
-Goods/Name/1503056┃プレゼントよ バレンタインタジア
-Goods/Name/1503057┃割れない心バレンタインタジア
-ItemType/GRAVE/Name┃墓石
-ItemType/GRAVE/Desc┃処置した実験体の枕元に墓石が置かれます。
-Goods/Name/1601001┃なし
-Goods/Name/1603001┃2024 クリスマス
-Goods/Name/1604001┃アングリー雪だるま
-Goods/Name/1604002┃クリスマススティックキャンディー
-Goods/Name/1604003┃ジンジャーブレッドマン
-Goods/Name/1604004┃花瓶
-Goods/Name/1604005┃クリスマス
-Goods/Name/1604006┃雪うさぎ
-Goods/Name/1604007┃雪だるま
-Goods/Name/1604008┃クリスマスツリー
-Goods/Name/1604009┃シャドーモンスター
-Goods/Name/1604010┃トーテムポール
-Goods/Name/1604011┃司書の墓石
-Goods/Name/1604012┃R.I.P
-Goods/Name/1604013┃ガーゴイル石像
-Goods/Name/1604014┃アイソルのシャベル
-Goods/Name/1604015┃ビーチボール
-Goods/Name/1604016┃砂の城
-Goods/Name/1604017┃おさわり禁止
-Goods/Name/1604018┃カクテル
-Goods/Name/1604019┃ヤシの木
-Goods/Name/1604020┃パラソル
-Goods/Name/1604021┃ネオン看板
-Goods/Name/1604022┃ホログラム幽霊
-Goods/Name/1604023┃ゲーム機
-Goods/Name/1604024┃アイテム自販機
-Goods/Name/1604025┃事故注意
-Goods/Name/1604026┃患者監視装置
-Goods/Name/1604027┃風呂敷包み
-Goods/Name/1604028┃イノヒョヌの肉
-Goods/Name/1604029┃ロボット
-Goods/Name/1604030┃レゴ
-Goods/Name/1604031┃眠るクマ
-Goods/Name/1604032┃安全注意
-Goods/Name/1604033┃スーツケース
-Goods/Name/1604034┃救命ボート
-Goods/Name/1604035┃クーラーボックス
-Goods/Name/1604036┃フラミンゴチューブ
-Goods/Name/1604037┃パイナップル
-Goods/Name/1604038┃サーフボード
-Goods/Name/1604039┃普通のティーワゴン
-Goods/Name/1604040┃普通のランドリーバスケット
-Goods/Name/1604041┃デザートトレー
-Goods/Name/1604042┃真空掃除機
-Goods/Name/1604043┃鉢植えバラ
-Goods/Name/1604044┃普通の掃除用具入れ
-Goods/Name/1604045┃アレムの無線機
-Goods/Name/1604046┃洋服掛け
-Goods/Name/1604047┃道しるべ
-Goods/Name/1604048┃イノシシ遊具
-Goods/Name/1604049┃ヒョヌの顔ハメ看板
-Goods/Name/1604050┃ニッキーのパンチマシーン
-Goods/Name/1604051┃クジラの噴水
-Goods/Name/1604052┃K.O.
-Goods/Name/1604053┃砂埋め
-Goods/Name/1604054┃黄金のさいころ
-Goods/Name/1604055┃ストレート失敗
-Goods/Name/1604056┃VIP看板
-Goods/Name/1604057┃地獄への扉
-Goods/Name/1604058┃死神
-Goods/Name/1604059┃ジャック・オー・ランタン
-Goods/Name/1604060┃終わりを告げる軍帽
-Goods/Name/1604061┃まだまだだ、立ち上がれ！
-Goods/Name/1604062┃征服の旗
-Goods/Name/1604063┃歌う貝殻
-Goods/Name/1604064┃つばめ式晩餐
-Goods/Name/1604065┃無念無想ラッコ
-Goods/Name/1604066┃お狐様の像
-Goods/Name/1604067┃箱の中の金魚
-Goods/Name/1604068┃タコおじさん
-Goods/Name/1612001┃疫病ドクターの死
-Goods/Name/1612002┃ビーチバレーボールニッキーの猫
-Goods/Name/1612003┃システムショック
-Goods/Name/1612004┃ドリーマー
-Goods/Name/1612005┃夏祭りのマジシャン
-Goods/Name/1612006┃フィオラのオムレツ
-Goods/Name/1612007┃ウィドリアナの注射器
-Goods/Name/1612008┃夕暮れのココナッツ
-Goods/Name/1612009┃シャイバニー莉央のルーレット
-Goods/Name/1612010┃堕天使のヘイロー
-Goods/Name/1612011┃責任の重さ
-Goods/Name/1612012┃極楽じゃ...墓石
-Goods/Name/1612013┃ガラポン抽選機
-GroupItemAttribute/Inst┃Inst.
-GroupItemAttribute/Piano┃Piano
-GroupItemAttribute/Vocal┃Vocal.
-ItemType/BGM/Name┃BGM
-ItemType/BGM/Desc┃ロビーのBGMを選択できます。
-BGM_None┃なし
-Goods/Name/1701000┃ランダム
-Goods/Name/1701001┃基本
-Goods/Name/1701002┃Eternal World(Kor ver.)
-Goods/Name/1701003┃Eternal World (Inst ver.)
-Goods/Name/1703001┃Intro BGM
-Goods/Name/1703002┃Caprice No. 24
-Goods/Name/1703003┃microchip (Oliver Buckland)
-Goods/Name/1703004┃基本(Piano ver. by Samsol Sound)
-Goods/Name/1703005┃Eternal World (Piano ver. by Samsol Sound)
-Goods/Name/1703006┃Fearless
-Goods/Name/1703007┃Fearless (Inst.)
-Goods/Name/1703008┃月ウサギのそだてかた BGM
-Goods/Name/1703009┃月ウサギのそだてかた BGM (Inst.)
-Goods/Name/1703010┃Summertime (NC.A)
-Goods/Name/1703011┃Summertime (Inst.)
-Goods/Name/1703012┃ニシキカムロ (Byeol Eun)
-Goods/Name/1703013┃ニシキカムロ (Inst.)
-Goods/Name/1703014┃ニシキカムロ (眉村ちあき)
-Goods/Name/1704001┃Emma Character Song(Kor ver.)
-Goods/Name/1704002┃Emma Character Song(Inst ver.)
-Goods/Name/1799999┃なし
-GoodsGroup/Name/1701001┃基本
-GoodsGroup/Name/1701002┃Eternal World
-GoodsGroup/Name/1703001┃Intro BGM
-GoodsGroup/Name/1703002┃Caprice No. 24
-GoodsGroup/Name/1703003┃microchip (Oliver Buckland)
-GoodsGroup/Name/1703006┃Fearless
-GoodsGroup/Name/1703008┃月ウサギのそだてかた BGM
-GoodsGroup/Name/1703010┃Summertime
-GoodsGroup/Name/1703012┃ニシキカムロ (Byeol Eun)
-GoodsGroup/Name/1703014┃ニシキカムロ (眉村ちあき)
-GoodsGroup/Name/1704001┃Emma Character Song
-GoodsGroup/Name/1799999┃なし
-Goods/Name/2202001┃ニックネーム変更券
-ItemType/DRONE/Name┃ドローンスキン
-ItemType/DRONE/Desc┃ゲーム内の偵察ドローンやEMPドローンの外観を選択できます。
-Goods/Name/2501001┃基本ドローン
-Goods/Name/2503001┃2024 クリスマス
-Goods/Name/2504001┃カラス
-Goods/Name/2504002┃鬼火
-Goods/Name/2504003┃花火
-Goods/Name/2504004┃パラシュート
-Goods/Name/2504005┃飛行ロボット
-Goods/Name/2504006┃ロボット型蝶々
-Goods/Name/2504007┃UFO
-Goods/Name/2504008┃ヘリコプター
-Goods/Name/2504009┃雨雲
-Goods/Name/2504010┃タコバルーン
-Goods/Name/2504011┃シャンデリア
-Goods/Name/2504012┃メインディッシュ
-Goods/Name/2504013┃ガンマ風船
-Goods/Name/2504014┃ウィドリアナ風船
-Goods/Name/2504015┃真珠貝
-Goods/Name/2504016┃電気クラゲ
-Goods/Name/2504017┃カジノルーレット
-Goods/Name/2504018┃ミラーボール
-Goods/Name/2504019┃幽霊ウィルソンベー
-Goods/Name/2504020┃目玉コウモリ
-Goods/Name/2504021┃トイソルジャー
-Goods/Name/2504022┃訓練所所長カティア風船
-Goods/Name/2504023┃ヒトデ
-Goods/Name/2504024┃海辺の人形ニナ風船
-Goods/Name/2504025┃運命の赤い約束 ガーネット風船
-Goods/Name/2504026┃和傘
-ItemType/CAMERA/Name┃カメラスキン
-ItemType/CAMERA/Desc┃ゲーム内のカメラアイテムの外観を選択できます。
-Goods/Name/2601001┃基本カメラ
-Goods/Name/2603001┃2024 クリスマス
-Goods/Name/2604001┃将軍標
-Goods/Name/2604002┃悪魔の目玉
-Goods/Name/2604003┃トーテムポール
-Goods/Name/2604004┃貝飾りの灯台
-Goods/Name/2604005┃360度カメラ
-Goods/Name/2604006┃テレビ
-Goods/Name/2604007┃ムードライト
-Goods/Name/2604008┃ペンギン
-Goods/Name/2604009┃潜水艦の潜望鏡
-Goods/Name/2604010┃扇風機
-Goods/Name/2604011┃監視中のネコ
-Goods/Name/2604012┃監視中の花瓶
-Goods/Name/2604013┃運命の水晶玉
-Goods/Name/2604014┃カミロオルゴール
-Goods/Name/2604015┃海辺のカモメ
-Goods/Name/2604016┃タコランタン
-Goods/Name/2604017┃猫のぬいぐるみ
-Goods/Name/2604018┃サンドバッグ
-Goods/Name/2604019┃悪魔の炎
-Goods/Name/2604020┃夢幻のろうそく立て
-Goods/Name/2604021┃盗み食いをする猫
-Goods/Name/2604022┃射撃ターゲット
-Goods/Name/2604023┃ひょっこり魚
-Goods/Name/2604024┃チョウチンアンコウの誘惑
-Goods/Name/2604025┃招き猫
-Goods/Name/2604026┃だるま
-ItemType/LOBBY_SCREEN/Name┃ロビー画面
-ItemType/LOBBY_SCREEN/Desc┃ロビー画面の外観を選択できます。
-Goods/Name/2701000┃ランダム
-Goods/Name/2701001┃エターナルワールド
-Goods/Name/2701004┃実験開始
-Goods/Name/2702001┃エマのマジックショー
-Goods/Name/2702002┃冬のプレゼント
-Goods/Name/2703001┃路地裏
-Goods/Name/2703002┃工場
-Goods/Name/2703003┃森
-Goods/Name/2703004┃寺
-Goods/Name/2703005┃港
-Goods/Name/2703006┃ホテル
-Goods/Name/2703007┃殺人衝動
-Goods/Name/2703008┃幽霊島
-Goods/Name/2703009┃ワイルドカード
-Goods/Name/2703010┃ドッペルゲンガー
-Goods/Name/2703011┃羊の皮を被った狼
-Goods/Name/2703012┃変数
-Goods/Name/2703013┃狩人の夜
-Goods/Name/2703014┃宝ゴブリン
-Goods/Name/2703015┃ゾンビ
-Goods/Name/2704005┃ハンター
-Goods/Name/2704006┃サマー
-Goods/Name/2704007┃ネオン
-Goods/Name/2704008┃着ぐるみパジャマ
-Goods/Name/2704009┃学校
-Goods/Name/2704010┃バカンス
-Goods/Name/2704011┃武装メイド
-Goods/Name/2704012┃チェンジ
-Goods/Name/2704013┃夕焼け
-Goods/Name/2704014┃ラッキー★
-Goods/Name/2704015┃レギオン
-Goods/Name/2704016┃アカデミー
-Goods/Name/2704017┃スプラッシュ！
-Goods/Name/2704018┃祭り
-Goods/Name/2705001┃1周年記念
-Goods/Name/2705002┃ヒスイ＆ユスティナ
-Goods/Name/2705003┃月ウサギのそだてかた
-Goods/Name/2705004┃放課後デビー&マーリン
-Goods/Name/2705005┃2周年記念
-Goods/Name/2705006┃トロピカル·ディメンションアビゲイル
-Goods/Name/2705007┃ゴーストハンター ヒスイ
-ItemType/KILLANNOUNCE_ICONPACK/Name┃アナウンスアイコン
-ItemType/KILLANNOUNCE_ICONPACK/Desc┃ゲーム内で処置時に表示されるUIアイコンを選択できます。
-Goods/Name/2801001┃不屈
-Goods/Name/2804001┃支配者
-Goods/Name/2804002┃最終生存アイソル
-Goods/Name/2804003┃最終生存ヘジン
-Goods/Name/2804004┃最終生存キアラ
-Goods/Name/2804005┃神の目
-Goods/Name/2804006┃サボテン
-Goods/Name/2804007┃最終生存ヒョヌ
-Goods/Name/2804008┃最終生存ザヒル
-Goods/Name/2804009┃最終生存レノックス
-Goods/Name/2804010┃最終生存キャッシー
-Goods/Name/2804011┃キューブ
-Goods/Name/2804012┃治癒
-Goods/Name/2804013┃イノシシ
-Goods/Name/2804014┃しば犬
-Goods/Name/2804015┃トラ
-Goods/Name/2804016┃ユニコーン
-Goods/Name/2804017┃三叉槍
-Goods/Name/2804018┃サメ
-Goods/Name/2804019┃ヤシの木
-Goods/Name/2804020┃錨
-Goods/Name/2804021┃ノーブル
-Goods/Name/2804022┃ハウスキーパー
-Goods/Name/2804023┃ホワイトローズ
-Goods/Name/2804024┃ターゲット
-Goods/Name/2804025┃アレムネコ
-Goods/Name/2804026┃ウィドリアナマーク
-Goods/Name/2804027┃アンステルの盾
-Goods/Name/2804028┃裁縫道具
-Goods/Name/2804029┃エヴァの花
-Goods/Name/2804030┃ダイリンの酒壺
-Goods/Name/2804031┃ヴァーニャの蝶々
-Goods/Name/2804032┃ニッキーパンチ！
-Goods/Name/2804033┃莉央の矢
-Goods/Name/2804034┃ジェニーの拳銃
-Goods/Name/2804035┃堕天使のヘイロー
-Goods/Name/2804036┃魔王の威厳
-Goods/Name/2804037┃夢幻のウィルソン
-Goods/Name/2804038┃カティア照準
-Goods/Name/2804039┃ラウラの魅惑
-Goods/Name/2804040┃エステルの盾
-Goods/Name/2804041┃つばめの手裏剣
-Goods/Name/2804042┃クロエの刃の刺繍
-Goods/Name/2804043┃アディナの五芒星
-Goods/Name/2804044┃運命の赤い約束 ガーネット
-Goods/Name/2804045┃鬼火に惑わされし イアン
-Goods/Name/2804046┃運命の青い約束 ケネス
-ItemType/TEAMSLOT_BG/Name┃チームスロット背景
-Goods/Name/3401001┃基本チームスロット背景
-Goods/Name/3402001┃ホリデーベア
-Goods/Name/3402501┃S4 All ways Incheon チームスロット背景
-Goods/Name/3402502┃S4 Gyeonggi Innate チームスロット背景
-Goods/Name/3402503┃S4 GJ Slasher チームスロット背景
-Goods/Name/3402504┃S4 DH.CNJ チームスロット背景
-Goods/Name/3402505┃S4 BNK FearX チームスロット背景
-Goods/Name/3402506┃S4 MIRAEN SEJONG チームスロット背景
-Goods/Name/3402507┃S4 DAEJEON CYBERS チームスロット背景
-Goods/Name/3402508┃S4 Seongnam ROX チームスロット背景
-Goods/Name/3402509┃S5 BNK FearX チームスロット背景
-Goods/Name/3402510┃S5 MIRAEN SEJONG チームスロット背景
-Goods/Name/3402511┃S5 Seongnam ROX チームスロット背景
-Goods/Name/3402512┃S5 Gyeonggi Innate チームスロット背景
-Goods/Name/3402513┃S5 DAEJEON CYBERS チームスロット背景
-Goods/Name/3402514┃S5 All ways Incheon チームスロット背景
-Goods/Name/3402515┃S5 GJ Slasher チームスロット背景
-Goods/Name/3402516┃S5 DH.CNJ チームスロット背景
-Goods/Name/3402517┃S6 BNK FearX チームスロット背景
-Goods/Name/3402518┃S6 MIRAEN SEJONG チームスロット背景
-Goods/Name/3402519┃S6 Gyeongnam Sparkle チームスロット背景
-Goods/Name/3402520┃S6 Seongnam ROX チームスロット背景
-Goods/Name/3402521┃S6 Gyeonggi Innate チームスロット背景
-Goods/Name/3402522┃S6 DH.CNJ チームスロット背景
-Goods/Name/3402523┃S6 All ways Incheon チームスロット背景
-Goods/Name/3402524┃S6 DAEJEON CYBERS チームスロット背景
-Goods/Name/3402525┃S6 GJ Slasher チームスロット背景
-Goods/Name/3402526┃S7 FN SEJONG チームスロット背景
-Goods/Name/3402527┃S7 Gyeonggi Innate チームスロット背景
-Goods/Name/3402528┃S7 DAEJEON AutoArms チームスロット背景
-Goods/Name/3402529┃S7 Seongnam ROX チームスロット背景
-Goods/Name/3402530┃S7 Gyeongnam Sparkle チームスロット背景
-Goods/Name/3402531┃S7 GJ Slasher チームスロット背景
-Goods/Name/3402532┃S7 New Rise Gangwon チームスロット背景
-Goods/Name/3402533┃S7 Busan BeSPA チームスロット背景
-Goods/Name/3402534┃S7 CNJ esports チームスロット背景
-Goods/Name/3402535┃S7 all ways INCHEON チームスロット背景
-Goods/Name/3402536┃S7 Jecheon Phalanx チームスロット背景
-Goods/Name/3402537┃S7 Daegu Suseong Guardians チームスロット背景
-Goods/Name/3402538┃S8 Seongnam ROX チームスロット背景
-Goods/Name/3402539┃S8 FN SEJONG チームスロット背景
-Goods/Name/3402540┃S8 Jecheon Phalanx チームスロット背景
-Goods/Name/3402541┃S8 New Rise Gangwon チームスロット背景
-Goods/Name/3402542┃S8 all ways INCHEON チームスロット背景
-Goods/Name/3402543┃S8 Busan BeSPA チームスロット背景
-Goods/Name/3402544┃S8 CNJ esports チームスロット背景
-Goods/Name/3402545┃S8 Gyeongnam Sparkle チームスロット背景
-Goods/Name/3402546┃S8 Daegu Suseong Guardians チームスロット背景
-Goods/Name/3402547┃S8 GJ Slasher チームスロット背景
-Goods/Name/3402548┃S8 Gyeonggi Innate チームスロット背景
-Goods/Name/3402549┃S8 DAEJEON AutoArms チームスロット背景
-Goods/Name/3402550┃S9 Seongnam ROX チームスロット背景
-Goods/Name/3402551┃S9 FN SEJONG チームスロット背景
-Goods/Name/3402552┃S9 Jecheon Phalanx チームスロット背景
-Goods/Name/3402553┃S9 New Rise Gangwon チームスロット背景
-Goods/Name/3402554┃S9 all ways INCHEON チームスロット背景
-Goods/Name/3402555┃S9 Busan BeSPA チームスロット背景
-Goods/Name/3402556┃S9 CNJ esports チームスロット背景
-Goods/Name/3402557┃S9 Gyeongnam Sparkle チームスロット背景
-Goods/Name/3402558┃S9 Daegu Suseong Guardians チームスロット背景
-Goods/Name/3402559┃S9 GJ Slasher チームスロット背景
-Goods/Name/3402560┃S9 Gyeonggi Innate チームスロット背景
-Goods/Name/3402561┃S9 DAEJEON AutoArms チームスロット背景
-Goods/Name/3403001┃機械回路
-Goods/Name/3403002┃星空の夜
-Goods/Name/3403003┃秋の紅葉
-Goods/Name/3403004┃クリスマスツリー
-Goods/Name/3403005┃新年の始まり
-Goods/Name/3403006┃2024 青龍の祝福
-Goods/Name/3403007┃金色の新年
-Goods/Name/3403008┃ゴーストハンター雪
-Goods/Name/3403009┃指名手配
-Goods/Name/3403010┃ER Creator&Partner(BiliBili)
-Goods/Name/3403011┃ER パートナー
-Goods/Name/3403012┃1周年記念
-Goods/Name/3403013┃ラッキー★
-Goods/Name/3403014┃秋の感謝祭
-Goods/Name/3403015┃アグライア
-Goods/Name/3403016┃2024 クリスマス
-Goods/Name/3403017┃ニア
-Goods/Name/3403018┃放課後の写真
-Goods/Name/3403019┃放課後の日常
-Goods/Name/3403021┃トロピカル·ディメンションアビゲイル 休暇
-Goods/Name/3403022┃トロピカル·ディメンションアビゲイル 楽しいひと時
-Goods/Name/3403023┃レニベア
-Goods/Name/3403024┃シュリン
-Goods/Name/3403025┃ヘンリー
-Goods/Name/3403026┃ゴーストハンター ヒスイ 集結
-Goods/Name/3403027┃ゴーストハンター ヒスイ 狩り
-Goods/Name/3419001┃冬の雪花
-ItemType/EVENT/Name┃収集品アイテム
-Goods/Name/3503001┃[N] 収集品アイテム
-Goods/Name/3503002┃[E] 収集品アイテム
-Goods/Name/3503003┃[W] 収集品アイテム
-Goods/Name/3503004┃[2] 収集品アイテム
-Goods/Name/3503005┃[0] 収集品アイテム
-Goods/Name/3503006┃[2] 収集品アイテム
-Goods/Name/3503007┃[4] 収集品アイテム
-Goods/Name/3503008┃白い花
-Goods/Name/3503009┃緑の花
-Goods/Name/3503010┃青い花
-Goods/Name/3503011┃紫の花
-Goods/Name/3503012┃黄色い花
-Goods/Name/3503013┃デビーカード
-Goods/Name/3503014┃マーリンカード
-Goods/Name/3503015┃デビー&マーリンカード
-Goods/Name/3503016┃紅葉カード
-Goods/Name/3503017┃真祖の祝福カード
-Goods/Name/3503018┃ラッキースタンプ(LUCKY)
-Goods/Name/3503019┃ラッキースタンプ(WINNER)
-Goods/Name/3503020┃ラッキースタンプ(7)
-Goods/Name/3503021┃クリスマスカード
-Goods/Name/3503022┃S6 eスポーツサポーターコイン
-Goods/Name/3503023┃レギオントークンカード
-Goods/Name/3503024┃生徒会長のカード
-Goods/Name/3503025┃チェンジカード
-Goods/Name/3503026┃シルバースター
-Goods/Name/3503027┃ゴールドスター
-Goods/Name/3503028┃5月の確率UPスキンカード
-Goods/Name/3503029┃S7 eスポーツサポーターコイン
-Goods/Name/3503030┃サイコロの目 1
-Goods/Name/3503031┃サイコロの目 2
-Goods/Name/3503032┃サイコロの目 3
-Goods/Name/3503033┃サイコロの目 4
-Goods/Name/3503034┃サイコロの目 5
-Goods/Name/3503035┃サイコロの目 6
-Goods/Name/3503036┃1倍カード
-Goods/Name/3503037┃2倍カード
-Goods/Name/3503038┃3倍カード
-Goods/Name/3503039┃サイコロピース
-Goods/Name/3503040┃2周年サマーカード
-Goods/Name/3503041┃2周年スペシャルサマーカード
-Goods/Name/3503042┃S8 eスポーツサポーターコイン
-Goods/Name/3503043┃落ち葉カード
-Goods/Desc/3503043┃2025 落ち葉コレクションを完成させてみましょう！\n2025 落ち葉コレクションの達成条件は収集品からご確認いただけます。
-Goods/Name/3503044┃S9 eスポーツサポーターコイン
-ItemType/WILD_CARD_SKIN/Name┃[スキン専用] ワイルドカード
-ItemType/WILD_CARD_ETC/Name┃ワイルドカード
-Goods/Name/3602002┃[スキン専用] ワイルドカード
-Goods/Name/3602003┃[スキン専用] ワイルドカード
-Goods/Name/3602004┃[スキン専用] ワイルドカード
-Goods/Name/3602012┃ワイルドカード
-Goods/Name/3602013┃ワイルドカード
-Goods/Name/3602014┃ワイルドカード
-ItemType/EXCHANGE_COLLECTIBLE/Name┃交換ピース
-ItemType/COLLECTIBLE/Name┃シーズンピース
-Goods/Name/4018000┃交換ピース
-Goods/Name/4018001┃祭りピース1
-Goods/Name/4018002┃祭りピース2
-Goods/Name/4018003┃祭りピース3
-Goods/Name/4018004┃祭りピース4
-Goods/Name/4018005┃祭りピース5
-Goods/Name/4018006┃祭りピース6
-Goods/Name/4018007┃祭りピース7
-Goods/Name/4018008┃祭りピース8
-Goods/Name/4018009┃祭りピース9
-Goods/Name/4018010┃祭りピース10
-Goods/Name/4018011┃祭りピース11
-Goods/Name/4018012┃祭りピース12
-Goods/Name/4018013┃祭りピース13
-Goods/Name/4018014┃祭りピース14
-Goods/Name/4018015┃祭りピース15
-Goods/Name/4018016┃祭りピース16
-Goods/Name/4018017┃祭りピース17
-Goods/Name/4018018┃祭りピース18
-Goods/Name/4018019┃祭りピース19
-Goods/Name/4018020┃祭りピース20
-Goods/Name/4018021┃祭りピース21
-Goods/Name/4018022┃祭りピース22
-Goods/Name/4018023┃祭りピース23
-Goods/Name/4018024┃祭りピース24
-Goods/Name/4018025┃祭りピース25
-Goods/Name/4018026┃祭りピース26
-Goods/Name/4018027┃祭りピース27
-Goods/Name/4018028┃祭りピース28
-Goods/Name/4018029┃祭りピース29
-Goods/Name/4018030┃祭りピース30
-Goods/Name/4018031┃祭りピース31
-Goods/Name/4018032┃祭りピース32
-Goods/Name/4018033┃祭りピース33
-Goods/Name/4018034┃祭りピース34
-Goods/Name/4018035┃祭りピース35
-Goods/Name/4018036┃祭りピース36
-Goods/Name/4018037┃祭りピース37
-Goods/Name/4018038┃祭りピース38
-Goods/Name/4018039┃祭りピース39
-Goods/Name/4018040┃祭りピース40
-Goods/Name/4018041┃祭りピース41
-Goods/Name/4018042┃祭りピース42
-Goods/Name/4018043┃祭りピース43
-Goods/Name/4018044┃祭りピース44
-Goods/Name/4018045┃祭りピース45
-Goods/Name/4018046┃祭りピース46
-Goods/Name/4018047┃祭りピース47
-Goods/Name/4018048┃祭りピース48
-Goods/Name/4018049┃祭りピース49
-Goods/Name/4018050┃祭りピース50
-Goods/Name/4018051┃祭りピース51
-Goods/Name/4018052┃祭りピース52
-Goods/Name/4018053┃祭りピース53
-Goods/Name/4018054┃祭りピース54
-ItemType/REROLL_TICKET/Name┃モジュール
-Goods/Name/4402001┃デュアルモジュール
-ItemType/SEASON_PASS/Name┃シーズンパック
-ItemType/CHARACTER/Name┃キャラクター
-ItemType/EVENT_NP/Name┃イベントNP
-ItemType/RANDOM_BOX/Name┃データボックス
-ItemType/RANDOM_KEY/Name┃データキー
-ItemType/LOOT_TOKEN/Name┃トークン
-Goods/Name/3102001┃スキンデータボックス
-Goods/Name/3102002┃研究所データボックス
-Goods/Desc/3102001┃確定的にスキンやスキンピースを獲得できます。\nランクリワード及び特殊な形で活用されたアイテムは含まれません。\nデータボックスはショップのパッケージまたはその他商品から購入できます。
-Goods/Desc/3102002┃様々なアイテムやピースを獲得できます。\nランクリワード及び特殊な形で活用されたアイテムは含まれません。\nデータボックスはショップのパッケージまたはその他商品から購入できます。
-Goods/Name/3102003┃デイリーボックス
-Goods/Desc/3102003┃研究所データボックス·データキー·NP·データピース·トークン·シーズンピースパックの内、1つを獲得できます。
-Goods/Name/3102004┃今日のクエストランダム報酬
-Goods/Desc/3102004┃今日のクエストを完了し、受け取れなかった報酬です。
-Goods/Name/3102005┃高級/レアスキン補給券
-Goods/Desc/3102005┃アイテムリストの中で所持していないスキンの内、一つを獲得できます。\nアイテムリストのスキンを全て所持している場合、すべてのスキンの内、一つを獲得します。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102006┃サマー＆ハンターボックス
-Goods/Desc/3102006┃スキンを確定的に獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102007┃英雄スキンピースボックス
-Goods/Desc/3102007┃英雄スキンピースとデータピース(レア)を獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102008┃ボーナスボックス
-Goods/Desc/3102008┃獲得できなかったボーナスボックスです。
-Goods/Name/3102009┃ホリデーデータボックス
-Goods/Desc/3102009┃ホリデー記念アイテムを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102011┃レアスキンデータボックス
-Goods/Desc/3102011┃レアスキンを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103002┃金の福袋
-Goods/Desc/3103002┃4つのいろんなアイテムを獲得できる金の福袋です。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103003┃福袋
-Goods/Desc/3103003┃A-Coinまたは収集品のアイテムを獲得できる福袋です。\n福袋はショップから購入できます。
-Goods/Name/3104009┃シーズン9データボックス
-Goods/Desc/3104009┃シーズン9 FREE ER PASSの商品をランダムで獲得できます。
-Goods/Name/3190001┃ホリデースキン選択券
-Goods/Desc/3190001┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190002┃英雄スキンピース選択券
-Goods/Desc/3190002┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190003┃実験体選択券(初心者)
-Goods/Desc/3190003┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190004┃レアスキン選択券
-Goods/Desc/3190004┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190005┃高級/レアスキン選択券
-Goods/Desc/3190005┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190006┃高級スキン選択券
-Goods/Desc/3190006┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190007┃実験体選択券
-Goods/Desc/3190007┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190008┃英雄スキン選択券
-Goods/Desc/3190008┃リストの中から一つを選択して獲得できます。
-Goods/Name/3190009┃スペシャル高級/レアスキン選択券
-Goods/Desc/3190009┃リストの中から一つを選択して獲得できます。
-Goods/Name/3202000┃データキー
-Goods/Desc/3202000┃すべてのボックスを開封するためにはデータキーが必要です。
-Goods/Name/3303000┃バカンストークン
-Goods/Desc/3303000┃シーズントークンはER PASS、シーズンパック購入または製作所から完全なアイテムを分解すると一定の確率で獲得できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
-Goods/Name/3303001┃武装メイドトークン
-Goods/Desc/3303001┃武装メイドトークンは＜ER PASS：武装メイド＞から獲得及び交換所で交換できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
-Goods/Name/3303002┃チェンジトークン
-Goods/Desc/3303002┃チェンジトークンはER PASSで獲得したり交換所から交換して獲得することができます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
-Goods/Name/3303003┃夕焼けトークン
-Goods/Desc/3303003┃夕焼けトークンはER PASS：夕焼けから獲得または交換所からトークンと交換できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
-Goods/Name/3303004┃ラッキー★トークン
-Goods/Desc/3303004┃ラッキー★トークンは＜ER PASS：ラッキー★＞から獲得または交換所でトークンと交換できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
-Goods/Name/3303005┃レギオントークン
-Goods/Desc/3303005┃レギオントークンは＜ER PASS：レギオン＞から獲得または交換所でトークンと交換できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
-Goods/Name/3303006┃アカデミートークン
-Goods/Desc/3303006┃アカデミートークンは＜ER PASS：アカデミー＞から獲得または交換所でトークンと交換できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
-Goods/Name/3303007┃スプラッシュトークン
-Goods/Desc/3303007┃スプラッシュトークンは＜ER PASS：スプラッシュ！＞やシーズンパックの購入、交換所でのトークン交換、\nまたは製作所で完全なアイテムを分解する際に、一定の確率で獲得できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
-Goods/Name/3303008┃祭りトークン
-Goods/Desc/3303008┃祭りトークンは＜ER PASS：祭り＞やシーズンパック購入、交換所でのトークン交換、\nまたは製作所で完全なアイテムを分解する際に、一定の確率で獲得できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
-Goods/Name/3303301┃ホリデートークン
-Goods/Desc/3303301┃ホリデーデータボックスを使用して獲得できます。イベント終了後、ホリデートークンはなくなります。
-Goods/Name/3303302┃ハッピートークン
-Goods/Desc/3303302┃ハッピートークンは幸運玉及びハッピーパッケージを購入すると獲得できます。\nイベント終了後、使用していないハッピートークンはなくなります。
-Goods/Name/3303303┃ベーカリーカフェトークン
-Goods/Desc/3303303┃ベーカリーカフェトークンはエマのパンバスケットを使用すると獲得できます。イベント終了後、使用していないベーカリーカフェトークンはなくなります。
-Goods/Name/3303304┃ホワイトトークン
-Goods/Desc/3303304┃ホワイトトークンはトークン交換所で使用できます。\nレッドトークンやチャレンジボックスなどの商品と交換できます。\nトークンはイベント終了後、消滅します。
-Goods/Name/3303305┃レッドトークン
-Goods/Desc/3303305┃レッドトークンはトークン交換所で使用できます。\nラッキー★トークンやラッキー★ボール、またはラッキー★ボックスなどの商品と交換できます。\nトークンはイベント終了後、消滅します。
-Goods/Name/3303306┃2025 落ち葉トークン
-Goods/Desc/3303306┃2025 落ち葉トークンボックスまたはログインコレクションから獲得できます。\n「製作所」の交換所から2025 落ち葉トークンを使ってアイテムを交換できます。\nトークンはイベント終了後、消滅します。
-Goods/Name/3303990┃ERトークン
-Goods/Desc/3303990┃ERトークン交換所で使用できるトークンです。\nイベント終了後、トークンは消滅します。
-Goods/Name/3303999┃マイレージ
-Goods/Desc/3303999┃NP商品を購入するとマイレージを獲得します。
-BoxRewardInfoWindow/Contents/ContentsBg/Url/LinkToDropTable┃全体確率一覧
-Goods/Name/3102015┃夕焼けトークン X 10
-Goods/Desc/3102015┃夕焼けトークンはER PASSやシーズンパック購入または交換所からトークンを交換したり、\n製作所から完全なアイテムを分解すると一定の確率で獲得できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
-Goods/Name/4000000┃[더미] 영웅 등급 스킨 선택권
-Goods/Desc/4000000┃여러가지 아이템들 중 1개를 선택하여 확정적으로 획득할 수 있습니다.\n랭크 보상 및 일부 특수하게 활용된 아이템은 포함되지 않습니다.
-Goods/Name/3102012┃旧正月データボックス
-Goods/Desc/3102012┃完全なスキンを1つ獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストから確認できます。
-Goods/Name/3102013┃シークレットデータボックス
-Goods/Desc/3102013┃様々なアイテムの中で1つをランダムに獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認でき、購入と同時に使用します。
-Goods/Name/3102014┃シーズントークンランダムボックス
-Goods/Desc/3102014┃現シーズンのシーズントークンを3個から10個まで獲得できるランダムボックスです。\n獲得するトークンの数は確率に応じて異なります。\n出現するアイテムはアイテムリストで確認でき、購入と同時に使用します。
-Goods/Name/3102081┃S4 ボーナススキンデータボックス
-Goods/Desc/3102081┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102082┃S5 ボーナススキンデータボックス
-Goods/Desc/3102082┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102083┃S6 ボーナススキンデータボックス
-Goods/Desc/3102083┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102084┃S7 ボーナススキンデータボックス
-Goods/Desc/3102084┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102085┃S8 ボーナススキンデータボックス
-Goods/Desc/3102085┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102086┃S9 ボーナススキンデータボックス
-Goods/Desc/3102086┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103004┃白い花箱
-Goods/Desc/3103004┃白い花箱、緑の花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜白い花＞を獲得できます。
-Goods/Name/3103005┃緑の花箱
-Goods/Desc/3103005┃緑の花箱、青い花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜緑の花＞を獲得できます。
-Goods/Name/3103006┃青い花箱
-Goods/Desc/3103006┃青い花箱、紫の花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜青い花＞を獲得できます。
-Goods/Name/3103007┃紫の花箱
-Goods/Desc/3103007┃紫の花箱、黄色い花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜紫の花＞を獲得できます。
-Goods/Name/3103008┃黄色い花箱
-Goods/Desc/3103008┃チェンジトークン、黄色い花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜黄色い花＞を獲得できます。
-Goods/Name/3103009┃幸運玉(第1段階)
-Goods/Desc/3103009┃※ 確率に応じてハッピートークンを1個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
-Goods/Name/3103010┃幸運玉(第2段階)
-Goods/Desc/3103010┃※ 確率に応じてハッピートークンを1個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
-Goods/Name/3103011┃幸運玉(第3段階)
-Goods/Desc/3103011┃※ 確率に応じてハッピートークンを2個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
-Goods/Name/3103012┃幸運玉(第4段階)
-Goods/Desc/3103012┃※ 確率に応じてハッピートークンを4個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
-Goods/Name/3103013┃幸運玉(第5段階)
-Goods/Desc/3103013┃※ 確率に応じてハッピートークンを8個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
-Goods/Name/3103014┃幸運玉(第6段階)
-Goods/Desc/3103014┃※ 確率に応じてハッピートークンを16個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
-Goods/Name/3103015┃幸運玉(第7段階)
-Goods/Desc/3103015┃※ 確率に応じてハッピートークンを32個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
-Goods/Name/3103016┃幸運玉(第8段階)
-Goods/Desc/3103016┃※ 確定的にハッピートークンを50個獲得します。
-Goods/Name/3103017┃彰一のドーナツボックス
-Goods/Desc/3103017┃様々なアイテムを4種獲得できる彰一のドーナツボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103018┃エマのパンバスケット
-Goods/Desc/3103018┃エマのパンバスケットからはメイドアデラのベーカリーカフェイベントのアイテムとトークンを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103019┃シセラのパン袋
-Goods/Desc/3103019┃シセラのパン袋からはメイドアデラのベーカリーカフェイベントのアイテムを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103020┃ドームカバー
-Goods/Desc/3103020┃ドームカバーからはレアスキンアイテムを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103021┃スキンデータボックス：サマー
-Goods/Desc/3103021┃スキンを必ず獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103022┃研究所データボックス：サマー
-Goods/Desc/3103022┃様々なアイテムの中で1つをランダムに獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103023┃デビー&マーリンカードボックス
-Goods/Desc/3103023┃デビー&マーリンのカードを獲得できるボックスです。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102016┃秋の感謝祭スキンボックス
-Goods/Desc/3102016┃完全なスキンを1つ獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103024┃ラッキー★ボックス
-Goods/Desc/3103024┃ラッキー★ボックスからはA-Coinを獲得できます。\n確率に応じて出現するアイテムの内1つを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103025┃ラッキー★ボール
-Goods/Desc/3103025┃ラッキー★ボールからはA-Coinを獲得できます。\n確率に応じて出現するアイテムの内1つを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103026┃チャレンジボックス
-Goods/Desc/3103026┃確率に応じてレッドトークン50個またはホワイトトークン50個を獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103028┃紅葉コレクションⅠ報酬
-Goods/Desc/3103028┃紅葉コレクションⅠ報酬を完成させると受け取れる報酬です。\n使用すると、＜100イベントNP(7日)＞とラッキー★トークン5個を獲得することができます。
-Goods/Name/3103029┃紅葉コレクションⅡ報酬
-Goods/Desc/3103029┃紅葉コレクションⅡ報酬を完成させると受け取れる報酬です。\n使用すると、＜200イベントNP(7日)＞とラッキー★トークン10個、スキンデータセット1個を獲得することができます。
-Goods/Name/3102017┃真祖の祝福データボックス
-Goods/Desc/3102017┃完全なスキンまたはスキンピース1つと真祖の祝福カード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3190010┃真祖の祝福スキン選択券
-Goods/Desc/3190010┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102018┃デイリースタンプボックス
-Goods/Desc/3102018┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103030┃2024 クリスマスデータボックス
-Goods/Desc/3103030┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103031┃2024 クリスマスコレクションⅥ 報酬
-Goods/Desc/3103031┃収集品「2024 クリスマスコレクションⅥ」の完成報酬です。\n使用すると、2024 クリスマス墓石とカメラ、ドローンのスキンを獲得できます。
-Goods/Name/3103032┃ホワイトスターボックス
-Goods/Desc/3103032┃ホワイトスターボックス、グリーンスターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を獲得できます。
-Goods/Name/3103033┃グレーンスターボックス
-Goods/Desc/3103033┃グリーンスターボックス、ブルースターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を3個獲得できます。
-Goods/Name/3103034┃ブルースターボックス
-Goods/Desc/3103034┃ブルースターボックス、パープルスターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を7個獲得できます。
-Goods/Name/3103035┃パープルスターボックス
-Goods/Desc/3103035┃パープルスターボックス、ゴールドスターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を15個獲得できます。
-Goods/Name/3103036┃ゴールドスターボックス
-Goods/Desc/3103036┃スプラッシュトークン5個を獲得でき、確率に応じてスプラッシュトークン、収集品アイテム＜ゴールドスター＞、A-Coinの内、1つを獲得できます。
-Goods/Name/3103037┃ERトークンランダムボックス
-Goods/Desc/3103037┃ERトークン 1個または100 A-Coinをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3103038┃200イベントNP(7日) + 祭りトークン 10個
-Goods/Desc/3103038┃200イベントNP(7日)と祭りトークン 10個を獲得できます。
-Goods/Name/3102019┃2025 金の福袋
-Goods/Desc/3102019┃4つのいろんなアイテムを獲得できる＜2025 金の福袋＞です。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102020┃悪魔の袋
-Goods/Desc/3102020┃3 ~ 100個のレギオントークンとレギオントークンカード1個を獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102021┃生徒会長のスキンデータボックス
-Goods/Desc/3102021┃完全なスキンまたはスキンピース1つと生徒会長のカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3190011┃生徒会長のスキン選択券
-Goods/Desc/3190011┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102022┃チェンジスキンデータボックス
-Goods/Desc/3102022┃完全なスキンまたはスキンピース1つとチェンジカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3190012┃チェンジスキン選択券
-Goods/Desc/3190012┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102023┃5月の確率UPスキンデータボックス
-Goods/Desc/3102023┃完全なスキンまたはスキンピース1つと5月の確率UPスキンカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3190013┃5月の確率UPスキン選択券
-Goods/Desc/3190013┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102024┃金のサイコロ
-Goods/Desc/3102024┃確率に応じて4つのアイテムリストの中からそれぞれ一つをランダムに獲得できます。(アイテム4つ獲得可能)\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102025┃サイコロ
-Goods/Desc/3102025┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3190014┃サイコロの目選択券
-Goods/Desc/3190014┃6つのサイコロの目から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102026┃2周年記念サマーボックス
-Goods/Desc/3102026┃完全なスキンまたはスキンピース1つと2周年サマーカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3102027┃2025 落ち葉トークンボックス
-Goods/Desc/3102027┃2025 落ち葉トークン25個を獲得できます。\n確率に応じて2025 落ち葉トークンを20/30/40/50個を更に獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/3190015┃2周年記念サマースキン選択券
-Goods/Desc/3190015┃リストの中から一つを選択して獲得できます。\n獲得できるアイテムはアイテムリストで確認できます。
-Goods/Name/3199001┃シーズンピースパック
-Goods/Desc/3199001┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/3199002┃シーズンピースパック(一般)
-Goods/Desc/3199002┃一般等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/3199003┃シーズンピースパック(高級)
-Goods/Desc/3199003┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/3199011┃シーズンピースパック
-Goods/Desc/3199011┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/3199012┃シーズンピースパック(一般)
-Goods/Desc/3199012┃一般等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/3199013┃シーズンピースパック(高級)
-Goods/Desc/3199013┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/3199014┃シーズンピースパック
-Goods/Desc/3199014┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/3199015┃シーズンピースパック
-Goods/Desc/3199015┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
-Goods/Name/1┃シークレットDrops
-Goods/Name/2┃Secret BOX (Mini)
-Goods/Name/3┃実験体ランダムボックス
-Goods/Name/6┃シークレットDrops Box
-Goods/Desc/1┃報酬として300イベントNPまたは1,500A-Coinを受領できます。
-Goods/Desc/2┃報酬として300イベントNPまたは1,500A-Coinを受領できます。
-Goods/Desc/3┃キャラクターを1人獲得できます。
-Goods/Desc/6┃報酬として300イベントNP(1日)または1,500A-Coinを受領できます。\nイベントや無償で配布される報酬・ボックスの確率は公開されません。
-Goods/Name/3143001┃eSports Box (EA S7)
-Goods/Name/3143002┃eSports Box (EA S8)
-Goods/Name/3143003┃eSports Box (EA S9)
-Goods/Name/3143004┃eSports Box (S1)
-Goods/Name/3143005┃eSports Box (S2)
-Goods/Name/3143006┃eSports Box (S3)
-Goods/Name/3143007┃eSports Box (S4)
-Goods/Name/3143008┃eSports Box (S5)
-Goods/Name/3143009┃eSports Box (2024 同好会大会)
-Goods/Name/3143010┃eSports Box (S6)
-Goods/Name/3143011┃eSports Box (2024 ナショナルリーグ)
-Goods/Desc/3143001┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143002┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143003┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143004┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143005┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143006┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143007┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143008┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143009┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143010┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Desc/3143011┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
-Goods/Name/9999999┃未所持スキン補給チケット<#00ffee>No.01</color>
-Goods/Name/9999998┃未所持スキン補給チケット<#00ffee>No.02</color>
-Goods/Name/3119001┃未所持スキン補給チケット<#00ffee>No.01</color>
-Goods/Name/3119002┃未所持スキン補給チケット<#00ffee>No.02</color>
-Goods/Name/3119003┃未所持スキン補給チケット<#00ffee>No.03</color>
-Goods/Name/3119004┃エモート選別カード
-Goods/Desc/3119004┃アイテムリストの中から所持していないアイテムを1つランダムに獲得できます。\n選別カードで得られるアイテムリストは毎週木曜日午後12時(JST)に変更されます。
-Goods/Name/3119005┃プロフィール選別カード
-Goods/Desc/3119005┃アイテムリストの中から所持していないアイテムを1つランダムに獲得できます。\n選別カードで得られるアイテムリストは毎週木曜日午後12時(JST)に変更されます。
-Goods/Name/3199021┃シーズンピース(一般) 1個
-Goods/Name/3199022┃シーズンピース(一般) 2個
-Goods/Name/3199023┃シーズンピース(一般) 3個
-Goods/Name/3199024┃シーズンピース(一般) 5個
-Goods/Name/3180001┃シーズントークン 1個
-Goods/Name/3180002┃シーズントークン 2個
-Goods/Name/3180003┃シーズントークン 3個
-Goods/Name/3180004┃シーズントークン 4個
 Shop/NPPromotion1┃{0} NP
 Shop/NPPromotion2┃ + {0}ボーナスNP
 Product/Name/NP800┃NP 800
@@ -6518,6 +5518,9 @@ Product/Name/S7_Star_Box_Pack_03┃ホワイトスターボックスパッケー
 Product/Name/S8_Star_Box_Pack_01┃スターボックスパッケージ
 Product/Name/S8_Star_Box_Pack_02┃グリーンスターボックスパッケージ
 Product/Name/S8_Star_Box_Pack_03┃ホワイトスターボックスパッケージ
+Product/Name/S9_Star_Box_Pack_01┃スターボックスパッケージ
+Product/Name/S9_Star_Box_Pack_02┃グリーンスターボックスパッケージ
+Product/Name/S9_Star_Box_Pack_03┃ホワイトスターボックスパッケージ
 Product/Name/GildedReaperLuke_CollectPack_01┃死神ルクコレクションパッケージ
 Product/Name/Niah_Event_Pack_01┃ニア登場記念パッケージ
 Product/Name/EVENT_NPASS_S7_Premium_Token_1010┃S7 プレミアムトークンブックⅡ
@@ -6684,7 +5687,15 @@ Product/Name/WEGAME_IAP_S09_DaeguGuardians_Pack_01┃S9 Daegu Suseong Guardians 
 Product/Name/WEGAME_IAP_S09_GJSlasher_Pack_01┃S9 GJ Slasher パッケージ
 Product/Name/WEGAME_IAP_S09_GyeonggiInnate_Pack_01┃S9 Gyeonggi Innate パッケージ
 Product/Name/WEGAME_IAP_S09_DAEJEONAutoArms_Pack_01┃S9 DAEJEON AutoArms パッケージ
+Product/Name/S9_Mirka_Emote_Pack_01┃ミルカエモートパッケージ
+Product/Name/EVENT_NPASS_S9_Premium_Token_1025┃S9 プレミアムトークンブックⅡ
+Product/Name/EVENT_NPASS_S9_Basic_Token_1026┃S9 ベーシックトークンブックⅡ
+Product/Name/S9_2025_Winter_Pack_01┃2025 ウィンタースペシャルパッケージ
+Product/Name/S9_2025_Winter_Skin_Bundle_Pack_01┃冬スキンお買い得パッケージ発売
 Product/Name/LOOTBOX_SKINxKEY_SET_10_S9_BONUS┃スキンデータセット(11個入り)
+Product/Name/S9_Hyper_Seq_Pack_01┃2026 年明けパッケージⅠ
+Product/Name/S9_Hyper_Seq_Pack_02┃2026 年明けパッケージⅡ
+Product/Name/S9_Hyper_Seq_Pack_03┃2026 年明けパッケージⅢ
 Shop/Desc/Aya_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
 Shop/Desc/Hyunwoo_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の56%が払い戻され、メールボックスに支給されます。
 Shop/Desc/Adriana_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
@@ -6918,9 +5929,9 @@ Shop/Desc/S6_Select_Voucher_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n
 Shop/Desc/S6_Select_Voucher_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- スペシャル高級/レアスキン選択券 1個\n- 英雄スキンピース選択券 1個\n- レギオントークン 50個\n- シーズン6 A-Coinクエストブック\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S7_Change_SkinBox_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- チェンジスキンデータボックス 10個\n- データキー 10個\n- アカデミートークン 15個\n- A-Coin Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S7_Change_SkinBox_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- チェンジスキンデータボックス 1個\n- データキー 1個\n- アカデミートークン 1個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S7_Star_Box_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ブルースターボックス 2個\n- グリーンスターボックス 5個\n- ホワイトスターボックス 10個\n- スプラッシュトークン 10個\n- A-Coin Boost(1日)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\nスプラッシュトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S7_Star_Box_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- グリーンスターボックス 1個\n- A-Coin Boost(1時間)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\nスプラッシュトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S7_Star_Box_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- ホワイトスターボックス 4個\n- XP Boost(1時間)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\nスプラッシュトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S7_Star_Box_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ブルースターボックス 2個\n- グリーンスターボックス 5個\n- ホワイトスターボックス 10個\n- 祭りトークン 10個\n- A-Coin Boost(1日)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n祭りトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S7_Star_Box_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- グリーンスターボックス 1個\n- A-Coin Boost(1時間)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n祭りトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S7_Star_Box_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- ホワイトスターボックス 4個\n- XP Boost(1時間)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n祭りトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/GildedReaperLuke_CollectPack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 死神ルクエモート2種\n- 死神ルクアイコン\n- 死神ルクフレーム\n- 死神ルク背景\n- A-Coin Boost(3日)\n- ER Point boost(3日)\n\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/Niah_Event_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ニアエモート\n- ニア背景\n- ニアフレーム\n- ニアチームスロット背景\n- A-Coin Boost(3日)\n- ER Point boost(3日)\n\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2025_May_SkinBox_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 5月の確率UPスキンデータボックス 10個\n- データキー 10個\n- アカデミートークン 15個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -7019,7 +6030,13 @@ Shop/Desc/S09_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\
 Shop/Desc/S09_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 GJ Slasher エモート\n- S9 GJ Slasher アイコン\n- S9 GJ Slasher 背景\n- S9 GJ Slasher フレーム\n- S9 GJ Slasher チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_GyeonggiInnate_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Gyeonggi Innate エモート\n- S9 Gyeonggi Innate アイコン\n- S9 Gyeonggi Innate 背景\n- S9 Gyeonggi Innate フレーム\n- S9 Gyeonggi Innate チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Gyeonggi Innate パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_DAEJEONAutoArms_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 DAEJEON AutoArms エモート\n- S9 DAEJEON AutoArms アイコン\n- S9 DAEJEON AutoArms 背景\n- S9 DAEJEON AutoArms フレーム\n- S9 DAEJEON AutoArms チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 DAEJEON AutoArms パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S9_Mirka_Emote_Pack_01┃新しく発売されたミルカのエモート4種を割引価格で手に入れましょう！\n\n<b><color=#FFBB00>[内容]</color></b>\n- ミルカエモート 4種\n- XP Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S9_2025_Winter_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 冬のプレゼント ロビー画面\n- 冬のプレゼント 背景\n- 冬のプレゼント フレーム\n- 祭りトークン 10個\n- シーズンピースパック 20個\n- シーズンピースパック(高級) 10個\n- 10,000 A-Coin \n- A-Coin Boost(1日)\n- ER Point Boost(1日)\n- XP Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 祭りトークンは「製作所」内の交換所から使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S9_2025_Winter_Skin_Bundle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 聖夜の巫女ヘジン\n- トナカイルク\n- 新年うさぎクロエ\n- 雪遊びイレム\n- スノーボーダーレオン\n- 冬のクローバーシセラ\n- 聖夜レノックス\n- 冬の街中エレナ\n- モクレンの花ヘジン\n- 極地探検ナタポン\n- 祭りトークン 10個\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ すべてのスキンを所持している場合、購入価格は100NPに調整されます。\n※ 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/LOOTBOX_SKINxKEY_SET_10_S9_BONUS┃スキンデータボックスとデータキーが11個ずつ含まれている商品です。\nスキンデータボックスからはスキンやスキンピースを獲得できます。\n\n<color=orange>ランクリワード及び特殊な形で活用されたアイテムは含まれません。</color>\n\n<color=#FFBB00>イベント期間中、＜S9 ボーナススキンデータボックス＞を1個獲得できます。</color>\n詳細は告知よりご確認ください。\n\n購入したデータボックスは製作所からデータキーを使用して開けることができます。
+Shop/Desc/S9_Hyper_Seq_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エモート選別カード 1個\n- プロフィール選別カード 1個\n- ワイルドカード (高級) 1個\n- ラッキー★ボックス 3個\n- 5,000 A-Coin\n- 祭りトークン 5個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S9_Hyper_Seq_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- ワイルドカード (高級) 1個\n- ワイルドカード (レア) 1個\n- 高級/レアスキン補給券 1個\n- ラッキー★ボックス 10個\n- シーズンピースパック(高級) 5個\n- 10,000 A-Coin\n- 祭りトークン 15個\n- XP Boost(1日)\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S9_Hyper_Seq_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- [スキン専用] ワイルドカード (英雄) 1個\n- ワイルドカード (英雄) 1個\n- ラッキー★ボックス 10個\n- シーズンピースパック 30個\n- シーズンピースパック(高級) 10個\n- 50,000 A-Coin\n- 祭りトークン 30個\n- ER Point Boost(1日)\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Product/Name/SEASON_PASS_S5┃シーズン5パック
 Shop/Desc/SEASON_PASS_S5┃シーズン5にリリースされる商品をお得な価格で事前購入してみてください!
 Product/Name/SEASON_PASS_S6┃シーズン6パック
@@ -7269,6 +6286,8 @@ Shop/Desc/EVENT_NPASS_S8_Basic_Token_1016┃<color=#ffdf72>最大25個のスプ�
 Shop/Desc/EVENT_NPASS_S9_Premium_Token_1022┃<color=#ffdf72>最大75個の祭りトークン</color><color=#B2EBF4>を獲得できるプレミアムトークンブックです。\n商品を購入すると、報酬を獲得できます。</color>\n\n<size=18>[レベルポイント]</size>\nレベルを上げるためには、1レベルごとに10ポイントが必要です。 ミッションを達成したり、レベルポイントを購入してレベルを上げることができます。(1ポイントあたり2NP)\nレベルポイントはトークンブック購入後に購入できます。
 Shop/Desc/EVENT_NPASS_S9_Basic_Token_1023┃<color=#ffdf72>最大25個の祭りトークン</color><color=#B2EBF4>を獲得できるベーシックトークンブックです。\n商品を購入すると、報酬を獲得できます。</color>\n\n<size=18>[レベルポイント]</size>\nレベルを上げるためには、1レベルごとに10ポイントが必要です。 ミッションを達成したり、レベルポイントを購入してレベルを上げることができます。(1ポイントあたり2NP)\nレベルポイントはトークンブック購入後に購入できます。
 Shop/Desc/EVENT_NPASS_S9_AllInOne_1024┃<color=#ffdf72>様々なアイテム</color><color=#B2EBF4>を獲得できるクエストブックです。\n商品を購入すると、レベルに応じて報酬を獲得できます。</color></size>\n\n<size=18>[レベルポイント]</size>\nレベルを上げるためには、1レベルごとに100ポイントが必要です。 ミッションを達成したり、レベルポイントを購入してレベルを上げることができます。(1ポイントあたり2NP)\nレベルポイントはクエストブック購入後に購入できます。
+Shop/Desc/EVENT_NPASS_S9_Premium_Token_1025┃<color=#ffdf72>最大75個の祭りトークン</color><color=#B2EBF4>を獲得できるプレミアムトークンブックです。\n商品を購入すると、報酬を獲得できます。</color>\n\n<size=18>[レベルポイント]</size>\nレベルを上げるためには、1レベルごとに10ポイントが必要です。 ミッションを達成したり、レベルポイントを購入してレベルを上げることができます。(1ポイントあたり2NP)\nレベルポイントはトークンブック購入後に購入できます。
+Shop/Desc/EVENT_NPASS_S9_Basic_Token_1026┃<color=#ffdf72>最大25個の祭りトークン</color><color=#B2EBF4>を獲得できるベーシックトークンブックです。\n商品を購入すると、報酬を獲得できます。</color>\n\n<size=18>[レベルポイント]</size>\nレベルを上げるためには、1レベルごとに10ポイントが必要です。 ミッションを達成したり、レベルポイントを購入してレベルを上げることができます。(1ポイントあたり2NP)\nレベルポイントはトークンブック購入後に購入できます。
 Season1000/Name┃1周年記念クエストブック
 Season1001/Name┃クムドリ&クムスニクエストブック
 Season1002/Name┃Dessert39クエストブック
@@ -7292,6 +6311,8 @@ Season1021/Name┃秋の感謝祭記念贈り物クエストブック
 Season1022/Name┃S9 プレミアムトークンブック
 Season1023/Name┃S9 ベーシックトークンブック
 Season1024/Name┃All in Oneクエストブック
+Season1025/Name┃S9 プレミアムトークンブックⅡ
+Season1026/Name┃S9 ベーシックトークンブックⅡ
 Season2000/Name┃1周年記念A-Coinクエストブック
 Season2001/Name┃バカンス A-Coinクエストブック
 Season2002/Name┃武装メイド A-Coinクエストブック
@@ -7872,744 +6893,6 @@ TacticalSkillSet/Code/Name/500222┃偽りの誓約
 TacticalSkillSet/Code/Name/500231┃治癒の風
 TacticalSkillSet/Code/Name/500232┃治癒の風
 아웃게임 전술 스킬 쿨다운┃クールダウン：{0}秒
-오늘의 도전┃今日のクエスト
-오늘의 도전과제를 모두 완수하였습니다.┃今日のクエストを完了しました。
-도전과제 변경 가능┃クエスト内容は1日に1回変更できます。\n新しいクエスト内容に変更しますか？
-도전과제 변경 초과┃クエストを変更できません（1日1回まで）
-미션 갱신 에러┃ミッション更新エラー
-매칭중에는 변경할 수 없습니다.┃マッチング中は変更できません。
-이벤트 미션┃イベントミッション
-또는┃または
-그리고┃そして
-카카오 PC방 미션┃ネットカフェ特別イベントミッション
-미션 그룹 변경 불가┃遂行できるミッションがないため、移動できません。
-미션 보상 획득 완료┃すでに報酬を獲得しました。
-Mission/1/1┃一般/ランク対戦プレイ
-Mission/2/1┃一般/ランク対戦プレイ
-Mission/3/1┃一般/ランク対戦プレイ<color=#FFBB00>(イベント)</color>
-Mission/4/1┃一般/ランク対戦プレイ<color=#FFBB00>(イベント)</color>
-Mission/21/1┃ランク対戦プレイ
-Mission/11/1┃一般対戦プレイ
-Mission/31/1┃プレイヤーキル達成
-Mission/32/1┃プレイヤーキル達成
-Mission/33/1┃プレイヤーキル達成
-Mission/34/1┃プレイヤーキル達成
-Mission/35/1┃プレイヤーキル達成
-Mission/36/1┃プレイヤーキル達成
-Mission/41/1┃野生動物キル達成
-Mission/42/1┃野生動物キル達成
-Mission/43/1┃野生動物キル達成
-Mission/44/1┃野生動物キル達成
-Mission/45/1┃野生動物キル達成
-Mission/46/1┃野生動物キル達成
-Mission/47/1┃野生動物キル達成
-Mission/51/1┃7位以上を記録
-Mission/52/1┃5位以上を記録
-Mission/53/1┃3位以上を記録
-Mission/61/1┃<color=white>ジャガイモ</color>アイテム獲得
-Mission/62/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
-Mission/63/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
-Mission/64/1┃<color=white>ジャガイモ</color>アイテム獲得
-Mission/65/1┃<color=white>タラ</color>アイテム獲得
-Mission/66/1┃<color=#D05EFF>隕石</color>アイテム獲得
-Mission/67/1┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
-Mission/68/1┃<color=#D05EFF>フォースコアー</color>アイテム獲得
-Mission/69/1┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/71/1┃プレイヤーを攻撃してダメージを与える
-Mission/72/1┃プレイヤーを攻撃してダメージを与える
-Mission/73/1┃プレイヤーを攻撃してダメージを与える
-Mission/74/1┃プレイヤーを攻撃してダメージを与える
-Mission/75/1┃プレイヤーを攻撃してダメージを与える
-Mission/76/1┃プレイヤーを攻撃してダメージを与える
-Mission/77/1┃プレイヤーを攻撃してダメージを与える
-Mission/81/1┃野生動物を攻撃してダメージを与える
-Mission/82/1┃野生動物を攻撃してダメージを与える
-Mission/83/1┃野生動物を攻撃してダメージを与える
-Mission/84/1┃野生動物を攻撃してダメージを与える
-Mission/85/1┃野生動物を攻撃してダメージを与える
-Mission/86/1┃野生動物を攻撃してダメージを与える
-Mission/87/1┃野生動物を攻撃してダメージを与える
-Mission/88/1┃野生動物を攻撃してダメージを与える
-Mission/89/1┃野生動物を攻撃してダメージを与える
-Mission/91/1┃ニワトリ処置
-Mission/92/1┃ニワトリ処置
-Mission/93/1┃ニワトリ処置
-Mission/94/1┃ニワトリ処置
-Mission/95/1┃ニワトリ処置
-Mission/96/1┃ニワトリ処置
-Mission/97/1┃ニワトリ処置
-Mission/101/1┃コウモリ処置
-Mission/102/1┃コウモリ処置
-Mission/103/1┃コウモリ処置
-Mission/104/1┃コウモリ処置
-Mission/105/1┃コウモリ処置
-Mission/106/1┃コウモリ処置
-Mission/107/1┃コウモリ処置
-Mission/111/1┃イノシシ処置
-Mission/112/1┃イノシシ処置
-Mission/113/1┃イノシシ処置
-Mission/114/1┃イノシシ処置
-Mission/115/1┃イノシシ処置
-Mission/116/1┃イノシシ処置
-Mission/117/1┃イノシシ処置
-Mission/121/1┃ハウンド処置
-Mission/122/1┃ハウンド処置
-Mission/123/1┃ハウンド処置
-Mission/124/1┃ハウンド処置
-Mission/125/1┃ハウンド処置
-Mission/126/1┃ハウンド処置
-Mission/127/1┃ハウンド処置
-Mission/131/1┃オオカミ処置
-Mission/132/1┃オオカミ処置
-Mission/133/1┃オオカミ処置
-Mission/134/1┃オオカミ処置
-Mission/135/1┃オオカミ処置
-Mission/136/1┃オオカミ処置
-Mission/137/1┃オオカミ処置
-Mission/141/1┃クマ処置
-Mission/142/1┃クマ処置
-Mission/143/1┃クマ処置
-Mission/144/1┃クマ処置
-Mission/145/1┃クマ処置
-Mission/146/1┃クマ処置
-Mission/147/1┃クマ処置
-Mission/151/1┃ウィクライン処置
-Mission/1000101/1┃一般/ランク対戦プレイ
-Mission/1000102/1┃一般対戦プレイ
-Mission/1000103/1┃一般/ランク対戦プレイ
-Mission/1000201/2┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/1000201/3┃一般/ランク対戦デュオプレイ
-Mission/1000202/2┃コバルトモードプレイ
-Mission/1000202/3┃一般/ランク対戦プレイ
-Mission/1000301/2┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/1000301/3┃一般/ランク対戦デュオプレイ
-Mission/1000302/2┃コバルトモードプレイ
-Mission/1000302/3┃一般/ランク対戦プレイ
-Mission/1000303/2┃コバルトモードプレイ
-Mission/1000303/3┃一般/ランク対戦プレイ
-Mission/1000104/1┃コバルトモード勝利
-Mission/1000104/2┃一般/ランク対戦プレイ
-Mission/1000104/3┃コバルトモード勝利
-Mission/1000105/1┃コバルトモード勝利
-Mission/1000105/2┃一般/ランク対戦プレイ
-Mission/1000105/3┃コバルトモード勝利
-Mission/1010101/1┃実験体キル達成
-Mission/1010102/1┃実験体キル達成
-Mission/1010103/1┃実験体キル達成
-Mission/1010104/1┃実験体キル達成
-Mission/1010105/1┃実験体キル達成
-Mission/1010106/1┃実験体キル達成
-Mission/1010107/1┃実験体キル達成
-Mission/1010108/1┃実験体キル達成
-Mission/1010109/1┃実験体キル達成
-Mission/1020101/1┃野生動物キル達成
-Mission/1020102/1┃野生動物キル達成
-Mission/1020103/1┃野生動物キル達成
-Mission/1020104/1┃野生動物キル達成
-Mission/1020105/1┃野生動物キル達成
-Mission/1020106/1┃野生動物キル達成
-Mission/1020107/1┃野生動物キル達成
-Mission/1020108/1┃野生動物キル達成
-Mission/1020109/1┃野生動物キル達成
-Mission/1020110/1┃野生動物キル達成
-Mission/1020111/1┃野生動物キル達成
-Mission/1020112/1┃野生動物キル達成
-Mission/1020113/1┃野生動物キル達成
-Mission/1020114/1┃野生動物キル達成
-Mission/1020115/1┃野生動物キル達成
-Mission/1020116/1┃野生動物キル達成
-Mission/1020117/1┃野生動物キル達成
-Mission/1020118/1┃野生動物キル達成
-Mission/1030101/1┃10位以上を記録
-Mission/1030201/1┃7位以上を記録
-Mission/1030301/1┃5位以上を記録
-Mission/1030302/1┃5位以上を記録
-Mission/1030303/1┃5位以上を記録
-Mission/1030401/1┃3位以上を記録
-Mission/1030402/1┃3位以上を記録
-Mission/1030403/1┃3位以上を記録
-Mission/1040101/1┃<color=white>枝</color>アイテム獲得
-Mission/1040201/1┃<color=white>革</color>アイテム獲得
-Mission/1040301/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
-Mission/1040302/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
-Mission/1040401/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
-Mission/1040402/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
-Mission/1040501/1┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/1040502/1┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/1040503/1┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/1040504/1┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/1040601/1┃<color=#D05EFF>隕石</color>アイテム獲得
-Mission/1040602/1┃<color=#D05EFF>隕石</color>アイテム獲得
-Mission/1040603/1┃<color=#D05EFF>隕石</color>アイテム獲得
-Mission/1040701/1┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
-Mission/1040702/1┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
-Mission/1040801/1┃<color=#D05EFF>フォースコアー</color>アイテム獲得
-Mission/1040802/1┃<color=#D05EFF>フォースコアー</color>アイテム獲得
-Mission/1050101/1┃実験体を攻撃してダメージを与える
-Mission/1050201/1┃実験体を攻撃してダメージを与える
-Mission/1050301/1┃実験体を攻撃してダメージを与える
-Mission/1050401/1┃実験体を攻撃してダメージを与える
-Mission/1050402/1┃実験体を攻撃してダメージを与える
-Mission/1050403/1┃実験体を攻撃してダメージを与える
-Mission/1050404/1┃実験体を攻撃してダメージを与える
-Mission/1050405/1┃実験体を攻撃してダメージを与える
-Mission/1050406/1┃実験体を攻撃してダメージを与える
-Mission/1050407/1┃実験体を攻撃してダメージを与える
-Mission/1050408/1┃実験体を攻撃してダメージを与える
-Mission/1060101/1┃野生動物を攻撃してダメージを与える
-Mission/1060201/1┃野生動物を攻撃してダメージを与える
-Mission/1060301/1┃野生動物を攻撃してダメージを与える
-Mission/1060401/1┃野生動物を攻撃してダメージを与える
-Mission/1060402/1┃野生動物を攻撃してダメージを与える
-Mission/1060501/1┃野生動物を攻撃してダメージを与える
-Mission/1060502/1┃野生動物を攻撃してダメージを与える
-Mission/1060503/1┃野生動物を攻撃してダメージを与える
-Mission/1060504/1┃野生動物を攻撃してダメージを与える
-Mission/1060505/1┃野生動物を攻撃してダメージを与える
-Mission/1060506/1┃野生動物を攻撃してダメージを与える
-Mission/1060507/1┃野生動物を攻撃してダメージを与える
-Mission/1060508/1┃野生動物を攻撃してダメージを与える
-Mission/1060601/1┃野生動物を攻撃してダメージを与える
-Mission/1070101/1┃ニワトリ処置
-Mission/1070102/1┃ニワトリ処置
-Mission/1070103/1┃ニワトリ処置
-Mission/1070104/1┃ニワトリ処置
-Mission/1070105/1┃ニワトリ処置
-Mission/1070106/1┃ニワトリ処置
-Mission/1070107/1┃ニワトリ処置
-Mission/1070108/1┃ニワトリ処置
-Mission/1070109/1┃ニワトリ処置
-Mission/1070201/1┃コウモリ処置
-Mission/1070202/1┃コウモリ処置
-Mission/1070203/1┃コウモリ処置
-Mission/1070204/1┃コウモリ処置
-Mission/1070205/1┃コウモリ処置
-Mission/1070206/1┃コウモリ処置
-Mission/1070207/1┃コウモリ処置
-Mission/1070208/1┃コウモリ処置
-Mission/1070209/1┃コウモリ処置
-Mission/1070301/1┃イノシシ処置
-Mission/1070302/1┃イノシシ処置
-Mission/1070303/1┃イノシシ処置
-Mission/1070304/1┃イノシシ処置
-Mission/1070305/1┃イノシシ処置
-Mission/1070306/1┃イノシシ処置
-Mission/1070307/1┃イノシシ処置
-Mission/1070308/1┃イノシシ処置
-Mission/1070309/1┃イノシシ処置
-Mission/1070401/1┃ハウンド処置
-Mission/1070402/1┃ハウンド処置
-Mission/1070403/1┃ハウンド処置
-Mission/1070404/1┃ハウンド処置
-Mission/1070405/1┃ハウンド処置
-Mission/1070406/1┃ハウンド処置
-Mission/1070407/1┃ハウンド処置
-Mission/1070408/1┃ハウンド処置
-Mission/1070409/1┃ハウンド処置
-Mission/1070501/1┃オオカミ処置
-Mission/1070502/1┃オオカミ処置
-Mission/1070503/1┃オオカミ処置
-Mission/1070504/1┃オオカミ処置
-Mission/1070505/1┃オオカミ処置
-Mission/1070506/1┃オオカミ処置
-Mission/1070507/1┃オオカミ処置
-Mission/1070508/1┃オオカミ処置
-Mission/1070509/1┃オオカミ処置
-Mission/1070601/1┃クマ処置
-Mission/1070602/1┃クマ処置
-Mission/1070603/1┃クマ処置
-Mission/1070604/1┃クマ処置
-Mission/1070605/1┃クマ処置
-Mission/1070606/1┃クマ処置
-Mission/1070607/1┃クマ処置
-Mission/1070608/1┃クマ処置
-Mission/1070609/1┃クマ処置
-Mission/1070701/1┃ウィクライン処置
-Mission/1070702/1┃ウィクライン処置
-Mission/1070703/1┃ウィクライン処置
-Mission/1070704/1┃ウィクライン処置
-Mission/1110101/1┃狩り熟練度を達成
-Mission/1110102/1┃狩り熟練度を達成
-Mission/1110103/1┃狩り熟練度を達成
-Mission/1110201/1┃製作熟練度を達成
-Mission/1110202/1┃製作熟練度を達成
-Mission/1110203/1┃製作熟練度を達成
-Mission/1110301/1┃探索熟練度を達成
-Mission/1110302/1┃探索熟練度を達成
-Mission/1110303/1┃探索熟練度を達成
-Mission/1110401/1┃移動熟練度を達成
-Mission/1110402/1┃移動熟練度を達成
-Mission/1110501/1┃体力熟練度を達成
-Mission/1110502/1┃体力熟練度を達成
-Mission/1110601/1┃防御熟練度を達成
-Mission/1110602/1┃防御熟練度を達成
-Mission/1110603/1┃防御熟練度を達成
-Mission/1110701/1┃瞑想熟練度を達成
-Mission/1110702/1┃瞑想熟練度を達成
-Mission/1110801/1┃トラップ熟練度を達成
-Mission/1110802/1┃トラップ熟練度を達成
-Mission/1110901/1┃グローブ熟練度を達成
-Mission/1111001/1┃トンファー熟練度を達成
-Mission/1111101/1┃ハンマー熟練度を達成
-Mission/1111201/1┃斧熟練度を達成
-Mission/1111301/1┃バット熟練度を達成
-Mission/1111401/1┃鞭熟練度を達成
-Mission/1111501/1┃短剣熟練度を達成
-Mission/1111601/1┃両手剣熟練度を達成
-Mission/1111701/1┃双剣熟練度を達成
-Mission/1111801/1┃槍熟練度を達成
-Mission/1111901/1┃投擲熟練度を達成
-Mission/1112001/1┃暗器熟練度を達成
-Mission/1112101/1┃弓熟練度を達成
-Mission/1112201/1┃弩熟練度を達成
-Mission/1112301/1┃拳銃熟練度を達成
-Mission/1112401/1┃突撃小銃熟練度を達成
-Mission/1112501/1┃狙撃銃熟練度を達成
-Mission/1112601/1┃ヌンチャク熟練度を達成
-Mission/1112701/1┃レイピア熟練度を達成
-Mission/1112801/1┃ギター熟練度を達成
-Mission/1070801/1┃アルファ処置
-Mission/1070802/1┃アルファ処置
-Mission/1070803/1┃アルファ処置
-Mission/1070804/1┃アルファ処置
-Mission/1070901/1┃オメガ処置
-Mission/1070902/1┃オメガ処置
-Mission/1070903/1┃オメガ処置
-Mission/1070904/1┃オメガ処置
-Mission/1210101/1┃クレジット獲得
-Mission/1210102/1┃クレジット獲得
-Mission/1210103/1┃クレジット獲得
-Mission/1220101/1┃遠隔ドローン呼び出し
-Mission/1220102/1┃遠隔ドローン呼び出し
-Mission/1220103/1┃遠隔ドローン呼び出し
-Mission/1230101/1┃Kiosk利用
-Mission/1230102/1┃Kiosk利用
-Mission/1230103/1┃Kiosk利用
-Mission/8000101/1┃コバルトモード勝利
-Mission/8000101/2┃一般/ランク対戦プレイ
-Mission/8000101/3┃コバルトモード勝利
-Mission/8000201/1┃コバルトモード実験体処置
-Mission/8000301/1┃コバルトモード増幅装置占領
-Mission/8000401/1┃コバルトモード死なずに実験体2キル
-Mission/8000402/1┃コバルトモード死なずに実験体3キル
-Mission/8000501/1┃コバルトモード連続3キル以上の実験体処置
-Mission/8000601/1┃コバルトモード交戦で連続2キル達成
-Mission/8000602/1┃コバルトモード交戦で連続3キル達成
-Mission/8000701/1┃コバルトモードクレジット使用
-Mission/8000702/1┃コバルトモードクレジット使用
-Mission/8000703/1┃コバルトモードクレジット使用
-Mission/8000801/1┃コバルトモードクレジット獲得
-Mission/8000802/1┃コバルトモードクレジット獲得
-Mission/8000803/1┃コバルトモードクレジット獲得
-Mission/8000901/1┃コバルトモード絶対武力特性使用
-Mission/8000902/1┃コバルトモード絶対武力特性使用
-Mission/8000903/1┃コバルトモード吸血鬼特性使用
-Mission/8000904/1┃コバルトモード霹靂特性使用
-Mission/8000905/1┃コバルトモード金剛特性使用
-Mission/8000906/1┃コバルトモード不壊特性使用
-Mission/8000907/1┃コバルトモード絶対武力特性使用
-Mission/8000908/1┃コバルトモード超再生特性使用
-Mission/8000909/1┃コバルトモード増幅ドローン特性使用
-Mission/8000910/1┃コバルトモード治癒ドローン特性使用
-Mission/8001001/1┃コバルトモード事前チーム構成でプレイ
-Mission/8001101/1┃コバルトモードプレイ
-Mission/8001102/1┃コバルトモードプレイ
-Mission/8001201/1┃コバルトモード1レベルインフュージョン購入
-Mission/8001202/1┃コバルトモード2レベルインフュージョン購入
-Mission/8001203/1┃コバルトモード3レベルインフュージョン購入
-Mission/8001301/1┃コバルトモードすべての増幅装置を占領して維持
-Mission/8001401/1┃コバルトモードヒールパック獲得
-Mission/8001402/1┃コバルトモードヒールパック獲得
-Mission/8001403/1┃コバルトモードヒールパック獲得
-Mission/8001404/1┃コバルトモードヒールパック獲得
-Mission/8001501/2┃実験体キル達成
-Mission/8001501/3┃コバルトモード死なずに実験体2キル
-Mission/8001601/2┃実験体キル達成
-Mission/8001601/3┃コバルトモード交戦で連続2キル達成
-Mission/8001701/2┃クレジット獲得
-Mission/8001701/3┃コバルトモードクレジット使用
-Mission/8001801/2┃クレジット獲得
-Mission/8001801/3┃コバルトモードクレジット獲得
-Mission/8001901/2┃遠隔ドローン呼び出し
-Mission/8001901/3┃コバルトモード1レベルインフュージョン購入
-Mission/8002001/2┃実験体キル達成
-Mission/8002001/3┃コバルトモードヒールパック獲得
-Mission/8002101/2┃コバルトモード実験体処置
-Mission/8002101/3┃実験体キル達成
-Mission/8002201/2┃コバルトモード増幅装置占領
-Mission/8002201/3┃ウィクライン処置
-Mission/8002301/2┃コバルトモード死なずに実験体2キル
-Mission/8002301/3┃実験体を攻撃してダメージを与える
-Mission/8002401/2┃コバルトモード死なずに実験体3キル
-Mission/8002401/3┃<color=#D05EFF>フォースコアー</color>アイテム獲得
-Mission/8002501/2┃コバルトモード連続3キル以上の実験体処置
-Mission/8002501/3┃5位以上を記録
-Mission/8002601/2┃コバルトモード交戦で連続2キル達成
-Mission/8002601/3┃野生動物キル達成
-Mission/8002701/2┃コバルトモード交戦で連続3キル達成
-Mission/8002701/3┃<color=#D05EFF>生命の木</color>アイテム獲得
-Mission/8002801/2┃コバルトモードクレジット使用
-Mission/8002801/3┃オメガ処置
-Mission/8002901/2┃コバルトモードクレジット使用
-Mission/8002901/3┃5位以上を記録
-Mission/8003001/2┃コバルトモードクレジット使用
-Mission/8003001/3┃実験体キル達成
-Mission/8003101/2┃コバルトモードクレジット獲得
-Mission/8003101/3┃クマ処置
-Mission/8003201/2┃コバルトモードクレジット獲得
-Mission/8003201/3┃野生動物キル達成
-Mission/8003301/2┃コバルトモードクレジット獲得
-Mission/8003301/3┃イノシシ処置
-Mission/8003401/2┃コバルトモード絶対武力特性使用
-Mission/8003401/3┃オメガ処置
-Mission/8003501/2┃コバルトモード絶対武力特性使用
-Mission/8003501/3┃5位以上を記録
-Mission/8003601/2┃コバルトモード吸血鬼特性使用
-Mission/8003601/3┃実験体を攻撃してダメージを与える
-Mission/8003701/2┃コバルトモード霹靂特性使用
-Mission/8003701/3┃<color=#2AC0FF>ステーキ</color>アイテム獲得
-Mission/8003801/2┃コバルトモード金剛特性使用
-Mission/8003801/3┃クマ処置
-Mission/8003901/2┃コバルトモード不壊特性使用
-Mission/8003901/3┃ニワトリ処置
-Mission/8004001/2┃コバルトモード絶対武力特性使用
-Mission/8004001/3┃ハウンド処置
-Mission/8004101/2┃コバルトモード超再生特性使用
-Mission/8004101/3┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
-Mission/8004201/2┃コバルトモード増幅ドローン特性使用
-Mission/8004201/3┃実験体を攻撃してダメージを与える
-Mission/8004301/2┃コバルトモード治癒ドローン特性使用
-Mission/8004301/3┃野生動物を攻撃してダメージを与える
-Mission/8004401/2┃コバルトモード事前チーム構成でプレイ
-Mission/8004401/3┃オオカミ処置
-Mission/8004501/2┃コバルトモードプレイ
-Mission/8004501/3┃ハウンド処置
-Mission/8004601/2┃コバルトモードプレイ
-Mission/8004601/3┃イノシシ処置
-Mission/8004701/2┃コバルトモード1レベルインフュージョン購入
-Mission/8004701/3┃7位以上を記録
-Mission/8004801/2┃コバルトモード2レベルインフュージョン購入
-Mission/8004801/3┃野生動物を攻撃してダメージを与える
-Mission/8004901/2┃コバルトモード3レベルインフュージョン購入
-Mission/8004901/3┃防御熟練度を達成
-Mission/8005001/2┃コバルトモードすべての増幅装置を占領して維持
-Mission/8005001/3┃クレジット獲得
-Mission/8005101/2┃コバルトモードヒールパック獲得
-Mission/8005101/3┃野生動物キル達成
-Mission/8005201/2┃コバルトモードヒールパック獲得
-Mission/8005201/3┃オオカミ処置
-Mission/8005301/2┃コバルトモードヒールパック獲得
-Mission/8005301/3┃野生動物キル達成
-Mission/8005401/2┃コバルトモードヒールパック獲得
-Mission/8005401/3┃クレジット獲得
-Mission/81010101/1┃実験体キル達成
-Mission/91010101/1┃実験体キル達成
-Mission/81020108/1┃野生動物キル達成
-Mission/91020108/1┃野生動物キル達成
-Mission/81020111/1┃野生動物キル達成
-Mission/81020112/1┃野生動物キル達成
-Mission/81020113/1┃野生動物キル達成
-Mission/81020114/1┃野生動物キル達成
-Mission/91020111/1┃野生動物キル達成
-Mission/91020112/1┃野生動物キル達成
-Mission/91020113/1┃野生動物キル達成
-Mission/91020114/1┃野生動物キル達成
-Mission/81040101/1┃<color=white>枝</color>アイテム獲得
-Mission/81040201/1┃<color=white>革</color>アイテム獲得
-Mission/91040101/1┃<color=white>枝</color>アイテム獲得
-Mission/91040201/1┃<color=white>革</color>アイテム獲得
-Mission/81050401/1┃実験体を攻撃してダメージを与える
-Mission/81050402/1┃実験体を攻撃してダメージを与える
-Mission/81050403/1┃実験体を攻撃してダメージを与える
-Mission/81050404/1┃実験体を攻撃してダメージを与える
-Mission/91050401/1┃実験体を攻撃してダメージを与える
-Mission/91050402/1┃実験体を攻撃してダメージを与える
-Mission/91050403/1┃実験体を攻撃してダメージを与える
-Mission/91050404/1┃実験体を攻撃してダメージを与える
-Mission/81060501/1┃野生動物を攻撃してダメージを与える
-Mission/81060502/1┃野生動物を攻撃してダメージを与える
-Mission/81060503/1┃野生動物を攻撃してダメージを与える
-Mission/81060504/1┃野生動物を攻撃してダメージを与える
-Mission/91060501/1┃野生動物を攻撃してダメージを与える
-Mission/91060502/1┃野生動物を攻撃してダメージを与える
-Mission/91060503/1┃野生動物を攻撃してダメージを与える
-Mission/91060504/1┃野生動物を攻撃してダメージを与える
-Mission/81220101/1┃遠隔ドローン呼び出し
-Mission/91220101/1┃遠隔ドローン呼び出し
-Mission/1111/2┃狩り熟練度を獲得
-Mission/1121/2┃製作熟練度を獲得
-Mission/1131/2┃探索熟練度を獲得
-Mission/1141/2┃移動熟練度を獲得
-Mission/1151/2┃体力熟練度を獲得
-Mission/1161/2┃防御熟練度を獲得
-Mission/1171/2┃瞑想熟練度を獲得
-Mission/1181/2┃トラップ熟練度を獲得
-Mission/1201/2┃グローブ熟練度を獲得
-Mission/1211/2┃トンファー熟練度を獲得
-Mission/1221/2┃ハンマー熟練度を獲得
-Mission/1231/2┃斧熟練度を獲得
-Mission/1241/2┃バット熟練度を獲得
-Mission/1251/2┃鞭熟練度を獲得
-Mission/1261/2┃短剣熟練度を獲得
-Mission/1271/2┃両手剣熟練度を獲得
-Mission/1281/2┃双剣熟練度を獲得
-Mission/1291/2┃槍熟練度を獲得
-Mission/1301/2┃投擲熟練度を獲得
-Mission/1311/2┃暗器熟練度を獲得
-Mission/1321/2┃弓熟練度を獲得
-Mission/1331/2┃弩熟練度を獲得
-Mission/1341/2┃拳銃熟練度を獲得
-Mission/1351/2┃突撃小銃熟練度を獲得
-Mission/1361/2┃狙撃銃熟練度を獲得
-Mission/1371/2┃ヌンチャク熟練度を獲得
-Mission/1381/2┃レイピア熟練度を獲得
-Mission/1391/2┃ギター熟練度を獲得
-Mission/1401/2┃<color=white>枝</color>アイテム獲得
-Mission/1411/2┃<color=white>革</color>アイテム獲得
-일반랭크대전 플레이하기┃生存する準備はできましたか？
-플레이어 처치하기┃自分のレベルや装備、周りの敵の数を確認して\n\n相手より有利だと思った場合には迷わず戦いましょう！\n\n他の生存者を倒していくと、最終生存する確率が高くなります！
-야생동물 처치하기┃野生動物は決まった位置に登場します。\n\n倒された野生動物は同じ場所に再び現れます。\n\n野生動物狩りはクレジットと熟練度はもちろん、材料も得られます！
-x위 이상하기┃戦わずに生き残ることがいい選択になる場合もあります。\n\n生存者の数に注意しながら慎重に戦ってください！
-나뭇가지 아이템 획득┃<color=white>枝</color>は全地域に配置された木の枝から採取で獲得できます。\n\nマップの色んな場所にありますが、それだけ多く使われる材料です。\n枝一つだけちゃんと獲得しておくと、インベントリがきれいになることもあります。
-가죽 아이템 획득┃<color=white>皮</color>は野生動物狩りをすると獲得できます。\n\n皮は様々な武器と防具の材料になります。
-꿀 아이템 획득┃<color=white>はちみつ</color>はルミア島に位置している箱の中で見つけられます。\n\n製作ガイドでアイテムをクリックすると獲得できる位置を確認できます。
-꿀탄 우유 아이템 획득┃<color=white>牛乳</color>と<color=white>はちみつ</color>を合わせて<color=#35FF94>ハニーミルク</color>を作ることができます。\n\n\n\nルミア島の箱から<color=white>牛乳</color>と<color=white>はちみつ</color>を見つけて<color=#35FF94>ハニーミルク</color>を作ってみましょう！
-마늘빵 아이템 획득┃<color=white>にんにく</color>と <color=white>パン</color>を合わせて<color=#35FF94>ガーリックブレッド</color>を作ることができます。\n\nルミア島の箱の中から<color=white>にんにく</color>と <color=white>パン</color>を見つけて<color=#35FF94>ガーリックブレッド</color>を作ってみましょう！
-구운 마늘 아이템 획득┃<color=white>にんにく</color>を<color=#2AC0FF>にんにく焼き</color>に料理できます。\n\nルミア島の箱から<color=white>にんにく</color>を見つけたら<color=white>焚き火</color>のところに行って<color=#2AC0FF>にんにく焼き</color>を作ってみましょう。
-감자 아이템 획득┃ルミア島の北の方にある<color=white>ジャガイモ</color>を採取しましょう。\n\n採取した<color=white>ジャガイモ</color>を焚き火で料理するとより立派な食べ物を作ることができます！
-대구 아이템 획득┃水の近くに設置された釣り竿を使って釣りをすると<color=white>タラ</color>を釣り上げることができます。\n\n釣り上げた<color=white>タラ</color>を焚き火で料理するとより立派な食べ物を作ることができます！
-운석 아이템 획득┃隕石誘導技術によって毎日1回、隕石が落とされます。\n2日目以降4日目まで昼になるとランダムに落とされ、落ちる1分前に落下地点が予告されます。\n\n落ちてくる隕石に当たると大きなダメージを受けますが、\n落ちた後には<color=#D05EFF>隕石</color>を採取できるので事前に落下地点の近くへ移動しましょう。
-생명의 나무 아이템 획득┃少量のVF(ヴァイタルフォース)を長い間蓄積した木は特別な力を発揮します。\n世界樹とも呼ばれる<color=#D05EFF>生命の木</color>を採取してみてください。\n\n2日目の昼と3日目の昼に生成され、1分前に予告されます。
-VF혈액샘플 아이템 획득┃VFはヴァイタルフォースの略称で、物理的に説明できない現象を起こす自然界の第5の力として注目されています。\n\n特に、体内の受容体を形成してVFを覚醒すると、強力な異能の力と再生能力を獲得できますが、このような現象を究明することがルミア島の実験の目的の一つです。\n\nDr.ウィクラインを倒す時、VFを濃縮させた<color=#D05EFF>VF血液サンプル</color>を獲得できます。\nウィクラインは4日目の夜から研究所を出てルミア島を歩き回ります。
-포스코어 아이템 획득┃<color=#D05EFF>フォースコア</color>はVFを濃縮させて固定した鉱石です。これを使うと伝説や神話に出てきた道具を再現できます。\n\n<color=#D05EFF>隕石</color>と<color=#D05EFF>生命の木</color>を組み合わせたり、オメガを倒すと獲得できます。
-플레이어/야생동물 피해 주기┃敵により大きなダメージを与えるためには強くなる必要があります。\n\nまずは武器を作って敵を攻撃し、武器熟練度を稼ぎましょう。
-닭 처치하기┃ニワトリは一番弱い野生動物です。\nニワトリを倒すと<color=white>皮</color>を獲得できます。運が良ければ<color=white>肉</color>と<color=white>羽</color>も獲得できます。\n\nニワトリを倒して材料を獲得し、その材料で装備と食べ物を作ってみましょう。
-박쥐 처치하기┃コウモリは実験が開始されてから30秒後に登場します。\nコウモリを倒すと<color=white>望遠カメラ</color>と<color=white>皮</color>などを一つ獲得し、一定時間の間視界を確保します。\n\n倒したコウモリは160秒後、同じ位置でまた現れます。
-멧돼지 처치하기┃イノシシは実験が開始されてから60秒後に登場します。\nイノシシを倒すと<color=white>肉</color>2つと<color=white>皮</color>などを一つ獲得できます。 イノシシの突進攻撃をに気をつけてください。\n\n倒したイノシシは150秒後、同じ位置でまた現れます。
-들개 처치하기┃ハウンドは実験が開始されてから30秒後に登場します。\nハウンドを倒すと<color=white>皮</color>と<color=white>一般等級の材料アイテム</color>を一つ獲得できます。ハウンドの初攻撃は治癒効果を減少させるので気をつけてください。\n\n倒したハウンドは160秒後、同じ位置でまた現れます。
-늑대 처치하기┃オオカミは実験が開始されてから90秒後に登場します。\n\nオオカミを倒すと<color=white>肉</color>と<color=white>皮</color>、<color=#35FF94>高級等級の材料アイテム</color>を1つ獲得します。\n10レベル以上のオオカミからはたまに<color=#D05EFF>生命の木</color>や<color=#D05EFF>隕石</color>を獲得することができます。\nオオカミは普通2匹が一緒にいます。攻撃するともう近くのオオカミを呼んで一緒に攻撃するので注意してください。\n\n倒したオオカミは190秒後、同じ位置でまた現れます。
-곰 처치하기┃クマは実験が開始されてから150秒後に登場します。\n\nクマを倒すと<color=white>肉</color>と<color=white>皮</color>、<color=#35FF94>高級等級の材料アイテム</color>を一つ獲得できます。\n7レベル以上のクマからはたまに<color=#D05EFF>生命の木</color>、<color=#D05EFF>隕石</color>、<color=#D05EFF>ミスリル</color>、<color=#D05EFF>フォースコアー</color>を獲得することができます。\nクマの強打に当たると気絶してしまいます。ご注意ください！\n\n倒したクマは250秒後、同じ位置でまた現れます。
-위클라인 박사 처치하기┃Dr.ウィクラインはアグライアの研究員に推定されますが、詳しい正体は謎に包まれています。\n\nDr.ウィクラインは4日目の夜になると研究所から出てきて島を歩き回ります。\n\n実験体には手強い相手ですが、倒すと\n<color=#D05EFF>VF血液サンプル</color>と追加アイテムを1つ得られるため挑戦してみる価値があります。\n\nまた、Dr.ウィクラインを倒すと、3分間VF強化バフを獲得します。\nVF強化は実験体のVFを活性化させ、基本攻撃またはスキルで敵にダメージを与えると3秒間追加ダメージを与えるVF撹乱のデバフ効果を与えます。
-사냥 숙련도 달성하기┃野生動物を狩って狩り熟練度獲得しましょう。\n\n狩り熟練度は野生動物にダメージを与えたり、ダメージを受けると獲得できます。\n\n狩りの熟練度が上がると野生動物に与えるダメージが増加します。
-제작 숙련도 달성하기┃アイテムを製作して製作熟練度を獲得しましょう。\n\n武器・頭防具・服・腕/装具防具・脚防具・回復アイテムを製作すると熟練度を獲得できます。\n\n製作熟練度が上がると非戦闘時の体力再生が増加します。
-탐색 숙련도 달성하기┃ルミア島を探索しながら探索熟練度を獲得しましょう。\n\nアイテム箱や航空補給箱を開けたり、資源を採取したり、保安コンソールを作動させると熟練度を獲得できます。
-이동 숙련도 달성하기┃島を歩き回って、移動熟練度を獲得しましょう。\n\n移動熟練度は移動距離、新しい地域への移動、脚防具製作で獲得できます。\n\n移動熟練度が上がると移動速度が増加します。
-체력 숙련도 달성하기┃体力熟練度を獲得しましょう。\n\n体力熟練度は体力を消耗したりダメージを受ける時、そして回復アイテムを製作するときに獲得できます。
-방어 숙련도 달성하기┃死なない程度のダメージを受けると、防御熟練度を獲得できます。\n\n防御熟練度はトラップを踏んだり、生存者や野生動物からダメージを受けたり、そして頭防具を製作するときに獲得できます。\n\n防御熟練度が上がると受けるダメージが減少します。
-명상 숙련도 달성하기┃瞑想熟練度を獲得しましょう。\n\n瞑想熟練度はスタミナを消費したり飲み物を製作すると獲得できます。\n\n瞑想熟練度が上がると最大スタミナが増加します。
-함정 숙련도 달성하기┃トラップを積極的に使用してトラップ熟練度を獲得しましょう。\n\nトラップ熟練度はトラップでダメージを与えるか、ダメージを受けた時、そしてトラップの製作と設置で獲得できます。\n\nトラップ熟練度が上がるとトラップのダメージ量が増加します。
-무기 숙련도 달성하기┃敵を攻撃して武器熟練度を獲得しましょう。\n\n武器熟練度は生存者や野生動物にダメージを与えたり、武器を製作すると獲得できます。\n\n武器熟練度が上がると基本攻撃がスキルが強化されます。
-알파 처치하기┃VF(ヴァイタルフォース)を使うアンドロイドです。\n\n2日目の夜になると、すべての地域の内2か所からランダムに登場します。\n\nアルファを倒すと<color=#D05EFF>ミスリル</color>と<color=#35FF94>偵察ドローン</color>を獲得できます。
-오메가 처치하기┃VF(ヴァイタルフォース)を使うアンドロイドです。\n\n3日目の夜になると、アルファが登場しなかった地域でランダムに登場します。\n\nVFを使って特別な能力を発揮しますが、不安定な構造によって一定以上のダメージを受けると弱点を出して気絶します。\n\nオメガを倒すと<color=#D05EFF>フォースコア</color>と<color=#2AC0FF>EMPドローン</color>を獲得できます。
-루미아 크레딧 획득하기┃<color=#F4FF63>クレジット</color>はルミア島で行われる実験の一環として使用される資源です。\n\n一定量保有したままゲームを開始し、長く生存または野生動物や変異体、実験体を倒した時に獲得できます。\n\nまた、<color=#F4FF63>クレジット</color>を使って遠隔ドローンやKioskを利用することができます。
-루미아 전송드론 사용하기┃遠隔ドローンはルミア島で行われる実験中の実験体を観察するためのステルスドローンです。\n\n実験の質的向上を追求する研究員により、<color=#F4FF63>クレジット</color>を通じて一般材料を転送してもらえる機能が追加されました！\n\nアイテムの探索が円滑でなかったり、禁止区域によって希望する材料が手に入らない場合、遠隔ドローンを使用してください！
-루미아 전송콘솔 사용하기┃Kioskはルミア島で行われる生存実験をより劇的な結果を導き出すために追加された装置です。\n\n実験体は一定量の<color=#F4FF63>クレジット</color>を使って特殊材料を注文することができます。
-코발트 모드 승리하기┃エターナルリターンの2つ目のモード、コバルト・プロトコルをプレイしてみましょう！\n\n戦闘中心の軽いモード！アイテム探索やルートなどないこのモードでは戦闘能力を上げて脱落する恐れなどないゲームをプレイできます。\n相手チームのライフポイントをすべて消耗させて勝利しましょう！
-코발트 모드 실험체 처치하기┃脱落を恐れる必要のないコバルトプロトコルで敵を倒しに行く時間です！
-코발트 모드 증폭 장치 점령하기┃コバルトモードで増幅装置を占領し、相手チームのライフポイントを差し引くことができます。\n\n増幅装置は味方に良い効果も提供しますので、相手チームより先に占領しましょう！
-코발트 모드 죽지 않고 실험체 연속 처치하기┃死なずに連続キルを達成しましょう！\n\n死なずに記録した処置数が高くなるほど追加クレジットを得ることができます。
-코발트 모드 연속 킬 저지하기┃コバルトモードで相手の連続キルを阻止すると、自分とチーム員全員が追加クレジットを得ることができます。\n\n死を恐れなくてもいいコバルトモードには、永遠の勝者も敗者も存在しません。
-코발트 모드 교전에서 연속 킬 달성하기┃一度の交戦で連続キルを達成しましょう！\n\nコバルトモードでは一定時間内に複数人の敵を処置すると、専用アナウンスが聞けます。
-코발트 모드 크레딧 사용하기┃合成機でクレジットを使って、インフュージョンとアイテムを購入しましょう！\n\nコバルトモードにのみ存在するインフュージョンを購入し、気に入らない装備は交換して、特殊なスキルを使って戦ってみましょう！
-코발트 모드 크레딧 획득하기┃コバルトモードでは様々な方法でクレジットを得ることができます。\n\n野生動物を狩ったり、相手を倒したり、じっとしているだけでもクレジットがゲットできます！\nまた、チームがライフポイントが遅れている場合は、一定量のボーナスクレジットを追加で獲得することができます。
-코발트 모드 특정 메인 특성 사용하기┃コバルトプロトコルでは特性のページなしで、キャラクター選択画面でコア特性だけを選択してプレイすることができます!\nどんな能力があるのか気になるコア特性があればコバルトプロトコルをプレイしてみてください!
-코발트 모드 사전 팀 구성으로 플레이┃4人で一緒にエターナルリターンをプレイできる唯一の方法、コバルト・プロトコル！\n\n友達・知人または偶然に出会ってフレンドになった人と一緒にコバルトモードをプレイしてみましょう！
-코발트 모드 플레이하기┃エターナルリターンの2つ目のモード、コバルト・プロトコルをプレイしてみましょう！\n\n戦闘中心の軽いモード！アイテム探索やルートなどないこのモードでは戦闘能力を上げて脱落する恐れなどないゲームをプレイできます。
-코발트 모드 특정 레벨 인퓨전 구매하기┃コバルトプロトコルの合成機で購入できるインフュージョンの一部は2、3段階にアップグレードできます。\n\nより高い段階のインフュージョンはより強力な効果を持っています！
-코발트 모드 모든 증폭 장치를 점령하고 유지하기┃コバルト戦場中央の増幅装置は強力なバフを提供し、敵のライフポイントを一定時間ごとに奪います！\nすべての増幅装置を占領してコバルトプロトコル戦場の主人公になってみましょう！
-코발트 모드 힐팩 획득하기┃いろんな場所にあるヒールパックを獲得すれば、自分と味方の体力を回復できます！\n\n交戦を覆すことができる強力な変数。ヒールパックの効果をコバルトプロトコルで体験してみてください！
-발렌타인 이벤트 미션 보상┃<color=#10adff>報酬：バレンタインタジアスキン
-Mission/10000001/1┃[ルミア島] 一般/ランク対戦2回プレイ
-Mission/10000002/1┃[ルミア島] TK7回以上する
-Mission/10000003/1┃[ルミア島] 野生動物20回処置
-Mission/10000004/1┃[ルミア島] 3位以上を記録
-Mission/10000005/1┃[ルミア島] 「枝」2個以上獲得
-Mission/10000006/1┃[ルミア島] 「皮」2個以上獲得
-Mission/10000007/1┃[ルミア島] 「望遠カメラ」5個以上獲得
-Mission/10000008/1┃[ルミア島] 「隕石」1個以上獲得
-Mission/10000009/1┃[ルミア島] 「生命の木」1個以上獲得
-Mission/10000010/1┃[ルミア島] 実験体を攻撃してダメージを与える
-Mission/10000011/1┃[ルミア島] 野生動物を攻撃してダメージを与える
-Mission/10000012/1┃[ルミア島] ニワトリ20回処置
-Mission/10000013/1┃[ルミア島] コウモリ15回処置
-Mission/10000014/1┃[ルミア島] イノシシ8回処置
-Mission/10000015/1┃[ルミア島] ハウンド7回処置
-Mission/10000016/1┃[ルミア島] オオカミ7回処置
-Mission/10000017/1┃[ルミア島] クマ3回処置
-Mission/10000018/1┃[ルミア島] ウィクライン処置
-Mission/10000019/1┃[ルミア島] アルファ処置
-Mission/10000020/1┃[ルミア島] オメガ処置
-Mission/10000021/1┃[ルミア島] 狩り熟練度10レベル以上達成
-Mission/10000022/1┃[ルミア島] 製作熟練度10レベル以上達成
-Mission/10000023/1┃[ルミア島] 探索熟練度10レベル以上達成
-Mission/10000024/1┃[ルミア島] 移動熟練度10レベル以上達成
-Mission/10000025/1┃[ルミア島] 防御熟練度10レベル以上達成
-Mission/10000026/1┃[ルミア島] クレジット900以上獲得
-Mission/10000027/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
-Mission/10000028/1┃[ルミア島] Kiosk3回以上利用
-Mission/10000029/1┃[ルミア島] ハイパーループ7回使用
-Mission/10000030/1┃[ルミア島] 伝説等級アイテム製作3回
-Mission/10000031/1┃[ルミア島] 食べ物10回使用
-Mission/10000032/1┃[ルミア島] エモート3回使用
-Mission/10000033/1┃[ルミア島] 10分以上生存
-Mission/10000101/1┃[ルミア島] 一般/ランク対戦2回プレイ
-Mission/10000102/1┃[ルミア島] TK7回以上する
-Mission/10000103/1┃[ルミア島] 野生動物20回処置
-Mission/10000104/1┃[ルミア島] 3位以上を記録
-Mission/10000105/1┃[ルミア島] 「枝」2個以上獲得
-Mission/10000106/1┃[ルミア島] 「皮」2個以上獲得
-Mission/10000107/1┃[ルミア島] 「望遠カメラ」5個以上獲得
-Mission/10000108/1┃[ルミア島] 「隕石」1個以上獲得
-Mission/10000109/1┃[ルミア島] 「生命の木」1個以上獲得
-Mission/10000110/1┃[ルミア島] 実験体を攻撃してダメージを与える
-Mission/10000111/1┃[ルミア島] 野生動物を攻撃してダメージを与える
-Mission/10000112/1┃[ルミア島] ニワトリ20回処置
-Mission/10000113/1┃[ルミア島] コウモリ15回処置
-Mission/10000114/1┃[ルミア島] イノシシ8回処置
-Mission/10000115/1┃[ルミア島] ハウンド7回処置
-Mission/10000116/1┃[ルミア島] オオカミ7回処置
-Mission/10000117/1┃[ルミア島] クマ3回処置
-Mission/10000118/1┃[ルミア島] ウィクライン処置
-Mission/10000119/1┃[ルミア島] アルファ処置
-Mission/10000120/1┃[ルミア島] オメガ処置
-Mission/10000121/1┃[ルミア島] 狩り熟練度10レベル以上達成
-Mission/10000122/1┃[ルミア島] 製作熟練度10レベル以上達成
-Mission/10000123/1┃[ルミア島] 探索熟練度10レベル以上達成
-Mission/10000124/1┃[ルミア島] 移動熟練度10レベル以上達成
-Mission/10000125/1┃[ルミア島] 防御熟練度10レベル以上達成
-Mission/10000126/1┃[ルミア島] クレジット900以上獲得
-Mission/10000127/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
-Mission/10000128/1┃[ルミア島] Kiosk3回以上利用
-Mission/10000129/1┃[ルミア島] ハイパーループ7回使用
-Mission/10000130/1┃[ルミア島] 伝説等級アイテム製作3回
-Mission/10000131/1┃[ルミア島] 食べ物10回使用
-Mission/10000132/1┃[ルミア島] エモート3回使用
-Mission/10000133/1┃[ルミア島] 10分以上生存
-Mission/10000201/1┃[ルミア島] 一般/ランク対戦プレイ
-Mission/10000202/1┃[ルミア島] TK7回以上する
-Mission/10000203/1┃[ルミア島] 野生動物20回処置
-Mission/10000204/1┃[ルミア島] 「枝」2個以上獲得
-Mission/10000205/1┃[ルミア島] 「皮」2個以上獲得
-Mission/10000206/1┃[ルミア島] 「望遠カメラ」5個以上獲得
-Mission/10000207/1┃[ルミア島] 「隕石」1個以上獲得
-Mission/10000208/1┃[ルミア島] 「生命の木」1個以上獲得
-Mission/10000209/1┃[ルミア島] 実験体を攻撃してダメージを与える
-Mission/10000210/1┃[ルミア島] 野生動物を攻撃してダメージを与える
-Mission/10000211/1┃[ルミア島] ニワトリ20回処置
-Mission/10000212/1┃[ルミア島] コウモリ15回処置
-Mission/10000213/1┃[ルミア島] イノシシ8回処置
-Mission/10000214/1┃[ルミア島] ハウンド7回処置
-Mission/10000215/1┃[ルミア島] オオカミ7回処置
-Mission/10000216/1┃[ルミア島] クマ3回処置
-Mission/10000217/1┃[ルミア島] 狩り熟練度10レベル以上達成
-Mission/10000218/1┃[ルミア島] 製作熟練度10レベル以上達成
-Mission/10000219/1┃[ルミア島] 探索熟練度10レベル以上達成
-Mission/10000220/1┃[ルミア島] 移動熟練度10レベル以上達成
-Mission/10000221/1┃[ルミア島] 防御熟練度10レベル以上達成
-Mission/10000222/1┃[ルミア島] クレジット900以上獲得
-Mission/10000223/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
-Mission/10000224/1┃[ルミア島] Kiosk3回以上利用
-Mission/10000225/1┃[ルミア島] ハイパーループ7回使用
-Mission/10000226/1┃[ルミア島] 食べ物10回使用
-Mission/10000227/1┃[ルミア島] 10分以上生存
-Mission/10000228/1┃ゲームにログイン
-Mission/10000229/1┃[ルミア島] 味方に「MVP！」1回使用
-Mission/10001001/1┃[ルミア島] 一般/ランク対戦プレイ
-Mission/10011001/1┃ゲームにログイン
-Mission/10000301/1┃[ルミア島] 一般/ランク対戦プレイ
-Mission/10000302/1┃[ルミア島] TK7回以上する
-Mission/10000303/1┃[ルミア島] 野生動物20回処置
-Mission/10000304/1┃[ルミア島] 「枝」2個以上獲得
-Mission/10000305/1┃[ルミア島] 「皮」2個以上獲得
-Mission/10000306/1┃[ルミア島] 「望遠カメラ」5個以上獲得
-Mission/10000307/1┃[ルミア島] 「隕石」1個以上獲得
-Mission/10000308/1┃[ルミア島] 「生命の木」1個以上獲得
-Mission/10000309/1┃[ルミア島] 実験体を攻撃してダメージを与える
-Mission/10000310/1┃[ルミア島] 野生動物を攻撃してダメージを与える
-Mission/10000311/1┃[ルミア島] ニワトリ20回処置
-Mission/10000312/1┃[ルミア島] コウモリ15回処置
-Mission/10000313/1┃[ルミア島] イノシシ8回処置
-Mission/10000314/1┃[ルミア島] ハウンド7回処置
-Mission/10000315/1┃[ルミア島] オオカミ7回処置
-Mission/10000316/1┃[ルミア島] クマ3回処置
-Mission/10000317/1┃[ルミア島] 狩り熟練度10レベル以上達成
-Mission/10000318/1┃[ルミア島] 製作熟練度10レベル以上達成
-Mission/10000319/1┃[ルミア島] 探索熟練度10レベル以上達成
-Mission/10000320/1┃[ルミア島] 移動熟練度10レベル以上達成
-Mission/10000321/1┃[ルミア島] 防御熟練度10レベル以上達成
-Mission/10000322/1┃[ルミア島] クレジット900以上獲得
-Mission/10000323/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
-Mission/10000324/1┃[ルミア島] Kiosk3回以上利用
-Mission/10000325/1┃[ルミア島] ハイパーループ7回使用
-Mission/10000326/1┃[ルミア島] 食べ物10回使用
-Mission/10000327/1┃[ルミア島] 10分以上生存
-Mission/10000328/1┃ゲームにログイン
-Mission/10000329/1┃[ルミア島] 味方に「MVP！」1回使用
-Mission/10000401/1┃ゲームにログイン
-Mission/10000501/1┃[ルミア島] 一般/ランク対戦2回プレイ
-Mission/10000502/1┃[ルミア島] TK7回以上する
-Mission/10000503/1┃[ルミア島] 野生動物20回処置
-Mission/10000504/1┃[ルミア島] 3位以上を記録
-Mission/10000505/1┃[ルミア島] 「枝」2個以上獲得
-Mission/10000506/1┃[ルミア島] 「皮」2個以上獲得
-Mission/10000507/1┃[ルミア島] 「望遠カメラ」5個以上獲得
-Mission/10000508/1┃[ルミア島] 「隕石」1個以上獲得
-Mission/10000509/1┃[ルミア島] 「生命の木」1個以上獲得
-Mission/10000510/1┃[ルミア島] 実験体を攻撃してダメージを与える
-Mission/10000511/1┃[ルミア島] 野生動物を攻撃してダメージを与える
-Mission/10000512/1┃[ルミア島] ニワトリ20回処置
-Mission/10000513/1┃[ルミア島] コウモリ15回処置
-Mission/10000514/1┃[ルミア島] イノシシ8回処置
-Mission/10000515/1┃[ルミア島] ハウンド7回処置
-Mission/10000516/1┃[ルミア島] オオカミ7回処置
-Mission/10000517/1┃[ルミア島] クマ3回処置
-Mission/10000518/1┃[ルミア島] ウィクライン処置
-Mission/10000519/1┃[ルミア島] アルファ処置
-Mission/10000520/1┃[ルミア島] オメガ処置
-Mission/10000521/1┃[ルミア島] 狩り熟練度10レベル以上達成
-Mission/10000522/1┃[ルミア島] 製作熟練度10レベル以上達成
-Mission/10000523/1┃[ルミア島] 探索熟練度10レベル以上達成
-Mission/10000524/1┃[ルミア島] 移動熟練度10レベル以上達成
-Mission/10000525/1┃[ルミア島] 防御熟練度10レベル以上達成
-Mission/10000526/1┃[ルミア島] クレジット900以上獲得
-Mission/10000527/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
-Mission/10000528/1┃[ルミア島] Kiosk3回以上利用
-Mission/10000529/1┃[ルミア島] ハイパーループ7回使用
-Mission/10000530/1┃[ルミア島] 伝説等級アイテム製作3回
-Mission/10000531/1┃[ルミア島] 食べ物10回使用
-Mission/10000532/1┃[ルミア島] エモート3回使用
-Mission/10000533/1┃[ルミア島] 10分以上生存
-Mission/10000601/1┃[ルミア島] 一般/ランク対戦プレイ
-Mission/10000602/1┃[ルミア島] TK7回以上する
-Mission/10000603/1┃[ルミア島] 野生動物20回処置
-Mission/10000604/1┃[ルミア島] 「枝」2個以上獲得
-Mission/10000605/1┃[ルミア島] 「皮」2個以上獲得
-Mission/10000606/1┃[ルミア島] 「望遠カメラ」5個以上獲得
-Mission/10000607/1┃[ルミア島] 「隕石」1個以上獲得
-Mission/10000608/1┃[ルミア島] 「生命の木」1個以上獲得
-Mission/10000609/1┃[ルミア島] 実験体を攻撃してダメージを与える
-Mission/10000610/1┃[ルミア島] 野生動物を攻撃してダメージを与える
-Mission/10000611/1┃[ルミア島] ニワトリ20回処置
-Mission/10000612/1┃[ルミア島] コウモリ15回処置
-Mission/10000613/1┃[ルミア島] イノシシ8回処置
-Mission/10000614/1┃[ルミア島] ハウンド7回処置
-Mission/10000615/1┃[ルミア島] オオカミ7回処置
-Mission/10000616/1┃[ルミア島] クマ3回処置
-Mission/10000617/1┃[ルミア島] 狩り熟練度10レベル以上達成
-Mission/10000618/1┃[ルミア島] 製作熟練度10レベル以上達成
-Mission/10000619/1┃[ルミア島] 探索熟練度10レベル以上達成
-Mission/10000620/1┃[ルミア島] 移動熟練度10レベル以上達成
-Mission/10000621/1┃[ルミア島] 防御熟練度10レベル以上達成
-Mission/10000622/1┃[ルミア島] クレジット900以上獲得
-Mission/10000623/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
-Mission/10000624/1┃[ルミア島] Kiosk3回以上利用
-Mission/10000625/1┃[ルミア島] ハイパーループ7回使用
-Mission/10000626/1┃[ルミア島] 食べ物10回使用
-Mission/10000627/1┃[ルミア島] 10分以上生存
-Mission/10000628/1┃ゲームにログイン
-Mission/10000629/1┃[ルミア島] 味方に「MVP！」1回使用
-서비스약관┃Terms of Service
-개인정보동의┃Privacy Policy
 보유하지 않은 캐릭터입니다.┃未所持キャラクターです。\nショップで購入後使用できます。
 매칭 중 캐릭 변경 금지┃マッチング中にはキャラクターを変更できません。
 로딩 중┃ロード中\n< X キーを押すと座って休憩します。 >
@@ -9170,6 +7453,7 @@ Esc/Minimize┃最小化
 BasicSetting/CameraLockCoordinateSetting┃固定カメラ使用中ののカメラ移動方式を設定します。
 고정 카메라 - 캐릭터 중심┃キャラクター中心
 고정 카메라 - 화면 중심┃画面中心
+고정 카메라 - 마우스 중심┃マウス中心(Beta)
 카메라 이동 속도┃カメラ移動速度
 마우스 감도 조절┃マウス感度調節(ゲーム)
 화면┃画面
@@ -9269,6 +7553,7 @@ UID 보기┃UIDを見る
 시즌 종료까지 남은 시간┃シーズン終了まで残り時間
 ER패스 미해금 미션┃解除まで{0}
 아직 해금되지 않은 주차입니다┃まだ解禁されていません。
+주┃週
 주 일┃{0}週{1}日
 일 시┃{0}日 {1}時
 시 분┃{0}時 {1}分
@@ -9447,6 +7732,10 @@ BattleZoneDown_explanation┃戦場で敵を倒した時に獲得するポイン
 AutoResurrectionDown_explanation┃全滅防止段階で、敵を瀕死状態にさせた時に得られるポイントです。
 AutoResurrectionAfterDown_explanation┃全滅防止段階以降に、敵を瀕死状態にさせた時に得られるポイントです。
 AutoResurrectionTeamWiped_explanation┃ブレイク・クラッチが発生した時、全滅させたチームの中に全滅防止段階で瀕死状態になった敵がいる場合に得られるポイントです。
+랭크보상수령조건안내┃ランクリワードを受け取るためには、一定回数以上のランク対戦をプレイしなければなりません。\n離脱・放棄したゲームはプレイ回数に含まれません。
+랭크보상수령조건┃ランクリワード受領条件：{2}{0}/{1}</color>
+랭크보상수령조건달성┃<color=#00E300>ランクリワード受領条件達成</color>
+랭크보상수령조건미달성┃<color=#FF4B4C>ランクリワード受領条件未達成</color>
 유예포인트┃猶予ポイント : {0}
 휴면강등적용티어의유예포인트설명┃猶予ポイントはゲームにつき{0}ポイントずつ積み立てられます。(最大{1}ポイント)\n{2}日以上ゲームをプレイしなかった場合は{3}日ごとに{4}ポイントずつ削減します。\n猶予ポイントが0になると、その翌日から毎日RPが{5}ポイントずつ削減します。
 DecayWarning/PopupContents┃もうすぐ猶予ポイントが消滅またはすでに消滅した状態です。\n休眠降格が始まると、RPが減少してティアが降格されることがあります。
@@ -9488,7 +7777,7 @@ DeferPointDemotion/PopupContents┃猶予ポイントが消滅し、{0}ティア
 연습모드/즉시하이퍼루프┃即時移動
 연습모드/전체숙련도올리기┃レベル(全体熟練度)上昇
 연습모드/체력채우기┃体力回復
-연습모드/스태미너채우기┃スタミナ回復
+연습모드/스태미너채우기┃スキルの資源回復
 연습모드/쿨타임초기화┃クールダウン初期化
 연습모드/캐릭터초기화┃実験体初期化
 연습모드/아이템획득┃アイテム獲得
@@ -9521,6 +7810,7 @@ GameSetting/PickPointToInAreaIndicatorActive┃位置を指定するスキルを
 GameSetting/GadgetVaultUIUXSetting┃ガジェットヴォルトのUIを変更できます。\nクイックスロット併合方式：クイックスロットの下にガジェットが表示され、クイックスロット内のガジェットをクリックして使用するガジェットを変更できます。\nホイール方式：ガジェットヴォルトのショートカットキーを長押しして、使用するガジェットを変更できます。ガジェットヴォルトのショートカットキーを短くクリックすると、装備したガジェットを使用できます。
 가젯볼트UIUX설정/퀵슬롯병합┃クイックスロット併合方式
 가젯볼트UIUX설정/휠┃ホイール方式
+건너뛰기┃戻る
 최대 사거리 고정 툴팁┃位置を指定するスキルを使用する時、マウスが最大射程距範囲の外に出ても最大射程距離内でスキルを使用します。
 즉시 시전 사거리 표시┃即時キャスト射程距離表示
 즉시 시전 사거리 표시 툴팁┃即時キャストを選択した一部スキルのショートカットキーを押した状態では射程距離を表示するように設定します。
@@ -10254,8 +8544,8 @@ Replay/CameraMoveGroup/MoveLumi┃カメラ視点：LUMI
 Replay/CameraMoveGroup/MoveBori┃カメラ視点：B0-R1
 Replay/CameraMoveGroup/MoveTreeOfLife┃カメラ視点：生命の木
 Replay/CameraMoveGroup/MoveMeteorite┃カメラ視点：隕石
-Replay/CameraMoveGroup/MoveMythicSupplyBox┃カメラ視点：補給箱（神話等級）
-Replay/CameraMoveGroup/MoveEpicSupplyBox┃カメラ視点：補給箱（英雄等級）
+Replay/CameraMoveGroup/MoveMythicSupplyBox┃カメラ視点：補給箱（神話）
+Replay/CameraMoveGroup/MoveEpicSupplyBox┃カメラ視点：補給箱（英雄）
 Replay/CameraMoveGroup/MovePlaceInBattle┃カメラ視点：現在戦闘中の場所
 Replay/CameraMoveGroup/MoveRestrictedArea┃カメラ視点：臨時セーフゾーン
 Replay/CameraMoveGroup/CameraZoomIn┃観戦カメラズームイン
@@ -11087,7 +9377,7 @@ Game/Result/SeasonCollection/Title┃{0} / シーズンピース
 Game/Result/Reward/NotExist┃獲得したゲームリザルト報酬がありません。
 Game/Result/Reward/Title┃ゲームリザルト
 DualModule/Tooltip/Title┃デュアルモジュール
-DualModule/Tooltip/Info┃<color=#FFFFFF>スキンデータボックス</color>を開けて<color=#D05EFF>完全な英雄等級スキン</color>を獲得する場合、<color=#FFFFFF>自動で使用</color>され、登場した英雄等級スキンにデュアルモジュール効果を適用します。\n(デュアルモジュールは英雄等級スキンごとに使用されます。所持量が足りない場合には、登場順でデュアルモジュール効果が適用されます。)\n\n<color=#FFFFFF>[デュアルモジュール効果]</color>\n完全な英雄等級スキンが<color=#FFFFFF>もう一つ登場</color>し、2つの英雄等級スキンの内、1つを<color=#FFFFFF>選択して獲得</color>できます。
+DualModule/Tooltip/Info┃<color=#FFFFFF>スキンデータボックス</color>を開けて<color=#D05EFF>完全な英雄等級スキン</color>を獲得する場合、<color=#FFFFFF>自動で使用</color>され、登場した英雄等級スキンにデュアルモジュール効果を適用します。\nただし、研究効果やイベント効果で獲得した完全なスキンには適用されません。\n(デュアルモジュールは英雄等級スキンごとに使用されます。所持量が足りない場合には、登場順でデュアルモジュール効果が適用されます。)\n\n<color=#FFFFFF>[デュアルモジュール効果]</color>\n完全な英雄等級スキンが<color=#FFFFFF>もう一つ登場</color>し、2つの英雄等級スキンの内、1つを<color=#FFFFFF>選択して獲得</color>できます。
 DualModule/SkinSelect/Info┃獲得するスキンを選んでください。
 CharacterGuide/1/OneHandSword┃<color=orange>短剣</color>は強力な瞬間攻撃力を持っています。マントと短剣スキルで、一瞬消えてからまた現れて固有ダメージを与えます。
 CharacterGuide/1/TwoHandSword┃<color=orange>両手剣</color>は序盤には他の武器に比べて弱い方ですが、後半には一番強力な武器です。武器スキル受け流しは敵の攻撃を一回防ぐので、後半にはもっと恐ろしくなります。
@@ -11878,6 +10168,8 @@ ER 패스 기간 툴팁┃期間終了後にはERパスを購入または進め�
 ER 포인트 감소 불가┃購入数量を確認してください。
 ER 포인트 증가 불가┃これ以上ERポイントを購入できません。
 ER 패스 추후 공개 알림┃今は獲得できない報酬です。\n発売後に獲得できます。
+도전과제 모드 변경 확인┃今日のクエストのゲームモードを変更しますか？\nクエストの進捗度は初期化されます。
+모드 전환┃モード変更
 일괄 획득┃一括獲得
 ER 포인트 구매┃ERポイント購入
 ER 패스 업그레이드┃ERパスアップグレード
@@ -12603,6 +10895,18 @@ GameResult/OperatorText/MatchingMode/LoneWolfCustom/MatchingTeamMode/1/GameRank/
 GameResult/OperatorText/MatchingMode/SquadRumbleCobalt/MatchingTeamMode/4/GameRank/1┃テスト終了。見事な結果ね。
 GameResult/OperatorText/MatchingMode/SquadRumbleCobalt/MatchingTeamMode/4/GameRank/2┃運がなかったわね。
 GameResult/OperatorText/MatchingMode/SquadRumbleCobalt/MatchingTeamMode/4/GameRank/-3┃次は最後まで戦ってみましょう。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/1┃勝利したんだ。すごいわね。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/2┃これだけでも十分な研究結果よ。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/3┃興味深い結果ね。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/4┃興味深い結果ね。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/5┃興味深い結果ね。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/6┃興味深い結果ね。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/7┃そうね...まあ、データを収集する過程の一つだと思っておくわ。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/8┃たまにはオペレーターに助けてもらうのはどうかしら。私の助けが必要に見えるわ。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/-1┃...
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/-2┃... 
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/-3┃次は最後まで戦ってみましょう。
+GameResult/OperatorText/MatchingMode/SquadRumble/MatchingTeamMode/3/GameRank/1-1┃勝ったわね。昨日食べたカツ丼のおかげかしら？
 글자수카운트┃({0}/{1}byte)
 정보 보기┃情報を見る
 세부 목록┃詳細リスト
@@ -12656,6 +10960,10 @@ Option/ColorWeaknessMode/MyTeam2Noise┃味方２騒音の色
 Option/ColorWeaknessMode/MyTeam3Noise┃味方３騒音の色
 Option/ColorWeaknessMode/EnemyNoise┃敵の騒音の色
 Option/ColorWeaknessMode/InstallationObjectColor┃環境オブジェクト色
+Option/ColorWeaknessMode/AliveWildAnimalColor┃生存中の野生動物の色
+Option/ColorWeaknessMode/DeadWildAnimalColor┃死亡した野生動物の色
+Option/ColorWeaknessMode/AllySummonObject┃味方の召喚物の色
+Option/ColorWeaknessMode/EnemyTeamSummonObject┃敵の召喚物の色
 닉네임을 가진 유저를 찾을 수 없습니다┃ユーザーが見つかりませんでした。
 받은 친구 요청이 없습니다┃届いたフレンド申請がありません。
 검색할 유저의 닉네임을 입력하세요┃検索するニックネームを入力
@@ -12861,6 +11169,7 @@ SeasonToBeAdded/Name┃新シーズン \n D - {0}
 400001_Title┃年末年始 生存者への特別補給
 400002_Title┃2周年記念特別ログインボーナス
 400003_Title┃秋の感謝祭記念ログインイベント
+400004_Title┃ウィンターログインボーナス
 10000101_7_Title┃＜ウィドリアナチュワプ＞SET
 10000101_7_Desc┃- ＜ウィドリアナチュワプ＞アイコン\n- ＜ウィドリアナチュワプ＞エモート
 10000101_14_Title┃スキンデータセット
@@ -12933,17 +11242,31 @@ SeasonToBeAdded/Name┃新シーズン \n D - {0}
 40000301_6_Desc┃- スキンデータボックス 2個\nデータキー 2個\nラッキー★ボックス 1個
 40000301_7_Title┃秋の感謝祭記念ログインイベント 7日目
 40000301_7_Desc┃- 200イベントNP(7日)\nラッキー★ボール 1個
+40000401_1_Title┃ウィンターログインボーナス 1日目
+40000401_1_Desc┃ブレア Hi エモート
+40000401_2_Title┃ウィンターログインボーナス 2日目
+40000401_2_Desc┃シーズンピースパック 5個
+40000401_3_Title┃ウィンターログインボーナス 3日目
+40000401_3_Desc┃ブレア Hi アイコン
+40000401_4_Title┃ウィンターログインボーナス 4日目
+40000401_4_Desc┃2,000 A-Coin \nシーズンピースパック(一般) 10個
+40000401_5_Title┃ウィンターログインボーナス 5日目
+40000401_5_Desc┃ミルカ Hi エモート
+40000401_6_Title┃ウィンターログインボーナス 6日目
+40000401_6_Desc┃スキンデータセット 1個
+40000401_7_Title┃ウィンターログインボーナス 7日目
+40000401_7_Desc┃ミルカ Hi アイコン
 ExtraSlot_Name┃ボーナスボックス
 ExtraSlot_Warning┃シーズンログインボーナスを全て受け取った後、ボーナスボックスが活性化されます。ボーナスボックスは毎日更新され、更新時間ごとに受領できます。
 100001_PolicyToolTip┃シーズンごとに行われるログインボーナスはシーズン開始後からシーズンが終了されるまで行われます。\nエターナルリターンイベントポリシーを遵守してください。
 400001_PolicyToolTip┃イベント補給はイベント期間中にのみ獲得できます。\nイベント期間終了後には報酬を獲得できません。\nエターナルリターンイベントポリシーを遵守してください。
-200001_Title┃生存者のための特別補給
-200001_Nadja_Name┃Dr.ナジャ
 Announce_Operator_Nadja_Attendance_01┃来たわね。これからの実験のためのプレゼントよ。よろしくね。
 Announce_Operator_Nadja_Attendance_02┃待っていたわ。これはプレゼントよ。
 Announce_Operator_Nadja_Attendance_03┃調子はどう？コーヒーでも飲む？プレゼントを忘れないようにね。
 Announce_Operator_Nadja_Attendance_04┃準備はいい？これももらっておいて。
 Announce_Operator_Nadja_Attendance_05┃今日も来てくれたのね？来てくれて嬉しいわ。
+200001_Title┃生存者のための特別補給
+200001_Nadja_Name┃Dr.ナジャ
 200001_PolicyToolTip┃「生存者のための特別補給」はアカウントあたり1回のみ提供されます。\nすべての報酬を受領した後には「生存者のための特別補給」は表示されなくなります。\n「生存者のための特別補給」はシーズンログインボーナスと同時に利用できます。\nエターナルリターンイベントポリシーを遵守してください。
 적군탈주사안내┃{0}({1})が長時間待機によりゲームから退出されました。
 아군탈주사안내┃{0}({1})が長時間待機によりゲームから退出されました。
@@ -13415,6 +11738,1781 @@ LobbyStrategyDictionaryWindow/Legend/Mutant┃変異体
 LobbyStrategyDictionaryWindow/Legend/Group┃群れ
 아이콘 표시 On/Off┃アイコン表示 On/Off
 야생 동물 도감┃動物位置確認
+UserAuth/Error/NotSamePhoneNumber┃本人確認のために登録した番号ではありません。
+UserAuth/Error/RequestWaitTime┃本人確認認証要請は30秒ごとに可能です。
+UserAuth/Error/AuthLockTime┃残り時間：{0}
+UserAuth/Error/ExpiredRequest┃認証制限時間を超えました。
+UserAuth/Error/NotAvailableYet┃エラーが発生しました。しばらくしてからもう一度お試しください。
+UserAuth/Error/BlockThrottling┃一時的なトラフィック増加により、エラーが発生しました。同じ認証コードでもう一度お試しください。
+SMSVerifyPopup/URL/PrivacyPolicy┃https://support.playeternalreturn.com/hc/en-us/articles/900002782726
+Goods/Name/1304001┃ERポイント
+GroupItemAttribute/KR┃韓国語
+GroupItemAttribute/EN┃英語
+GroupItemAttribute/JA┃日本語
+GroupItemAttribute/CN┃中国語
+ItemType/ANNOUNCE/Name┃中継アナウンス
+ItemType/ANNOUNCE/Desc┃中継音声を選択できます。
+Goods/Name/1401000┃ランダム
+Goods/Name/1401051┃基本(韓国語)
+Goods/Name/1401052┃基本(英語)
+Goods/Name/1401053┃基本(日本語)
+Goods/Name/1401021┃生存の声(韓国語)
+Goods/Name/1403014┃基本(中国語)
+Goods/Name/1404011┃ゲームキャスター(日本語)
+Goods/Name/1404012┃ゲームキャスター(韓国語)
+Goods/Name/1404013┃ゲームキャスター(英語)
+Goods/Name/1404021┃莉央(韓国語)
+Goods/Name/1404022┃莉央(英語)
+Goods/Name/1404023┃莉央(日本語)
+Goods/Name/1404031┃フェリックス(韓国語)
+Goods/Name/1404032┃フェリックス(英語)
+Goods/Name/1404033┃フェリックス(日本語)
+Goods/Name/1404041┃アディナ(韓国語)
+Goods/Name/1404042┃アディナ(英語)
+Goods/Name/1404043┃アディナ(日本語)
+Goods/Name/1404051┃ルク(韓国語)
+Goods/Name/1404052┃ルク(英語)
+Goods/Name/1404053┃ルク(日本語)
+Goods/Name/1404061┃バーバラ(韓国語)
+Goods/Name/1404062┃バーバラ(英語)
+Goods/Name/1404063┃バーバラ(日本語)
+Goods/Name/1404071┃ピオロ(韓国語)
+Goods/Name/1404072┃ピオロ(英語)
+Goods/Name/1404073┃ピオロ(日本語)
+Goods/Name/1404081┃アイザック(韓国語)
+Goods/Name/1404082┃アイザック(英語)
+Goods/Name/1404083┃アイザック(日本語)
+Goods/Name/1404091┃ダイリン(韓国語)
+Goods/Name/1404092┃ダイリン(英語)
+Goods/Name/1404093┃ダイリン(日本語)
+Goods/Name/1404101┃デビー&マーリン(韓国語)
+Goods/Name/1404102┃デビー&マーリン(英語)
+Goods/Name/1404103┃デビー&マーリン(日本語)
+Goods/Name/1404111┃彰一(韓国語)
+Goods/Name/1404112┃彰一(英語)
+Goods/Name/1404113┃彰一(日本語)
+Goods/Name/1404121┃ダニエル(韓国語)
+Goods/Name/1404122┃ダニエル(英語)
+Goods/Name/1404123┃ダニエル(日本語)
+Goods/Name/1404131┃ニッキー(韓国語)
+Goods/Name/1404132┃ニッキー(英語)
+Goods/Name/1404133┃ニッキー(日本語)
+Goods/Name/1404141┃イレム(韓国語)
+Goods/Name/1404142┃イレム(英語)
+Goods/Name/1404143┃イレム(日本語)
+Goods/Name/1404151┃カミロ(韓国語)
+Goods/Name/1404152┃カミロ(英語)
+Goods/Name/1404153┃カミロ(日本語)
+Goods/Name/1406001┃キャスターSia(韓国語)
+Goods/Name/1406011┃キャスターShin Il(韓国語)
+Goods/Name/1406021┃キャスターEvis&Gold Blin(韓国語)
+Goods/Name/1406031┃キャスターKim In Yeong&NongRoute(韓国語)
+Goods/Name/1406041┃キャスターShuviSenpai & Superior(英語)
+Goods/Name/1406051┃キャスター局員 & 角煮 (日本語)
+Goods/Name/1404161┃ヨハン(韓国語)
+Goods/Name/1404162┃ヨハン(英語)
+Goods/Name/1404163┃ヨハン(日本語)
+Goods/Name/1404171┃ビアンカ(韓国語)
+Goods/Name/1404172┃ビアンカ(英語)
+Goods/Name/1404173┃ビアンカ(日本語)
+Goods/Name/1404181┃ダルコ(韓国語)
+Goods/Name/1404182┃ダルコ(英語)
+Goods/Name/1404183┃ダルコ(日本語)
+Goods/Name/1404191┃スア(韓国語)
+Goods/Name/1404192┃スア(英語)
+Goods/Name/1404193┃スア(日本語)
+Goods/Name/1404201┃ティア(韓国語)
+Goods/Name/1404202┃ティア(英語)
+Goods/Name/1404203┃ティア(日本語)
+Goods/Name/1404211┃エイデン(韓国語)
+Goods/Name/1404212┃エイデン(英語)
+Goods/Name/1404213┃エイデン(日本語)
+Goods/Name/1404221┃アルダ(韓国語)
+Goods/Name/1404222┃アルダ(英語)
+Goods/Name/1404223┃アルダ(日本語)
+Goods/Name/1404231┃レニ(韓国語)
+Goods/Name/1404232┃レニ(英語)
+Goods/Name/1404233┃レニ(日本語)
+Goods/Name/1404241┃ユミン(韓国語)
+Goods/Name/1404242┃ユミン(英語)
+Goods/Name/1404243┃ユミン(日本語)
+Goods/Name/1404251┃Eleven(韓国語)
+Goods/Name/1404252┃Eleven(英語)
+Goods/Name/1404253┃Eleven(日本語)
+Goods/Name/1404261┃ヒョヌ(韓国語)
+Goods/Name/1404262┃ヒョヌ(英語)
+Goods/Name/1404263┃ヒョヌ(日本語)
+Goods/Name/1404271┃ヴァーニャ(韓国語)
+Goods/Name/1404272┃ヴァーニャ(英語)
+Goods/Name/1404273┃ヴァーニャ(日本語)
+GoodsGroup/Name/1401051┃基本
+GoodsGroup/Name/1401021┃生存の声
+GoodsGroup/Name/1403014┃基本(中国語)
+GoodsGroup/Name/1404011┃ゲームキャスター
+GoodsGroup/Name/1404021┃莉央
+GoodsGroup/Name/1404031┃フェリックス
+GoodsGroup/Name/1404041┃アディナ
+GoodsGroup/Name/1404051┃ルク
+GoodsGroup/Name/1404061┃バーバラ
+GoodsGroup/Name/1404071┃ピオロ
+GoodsGroup/Name/1404081┃アイザック
+GoodsGroup/Name/1404091┃ダイリン
+GoodsGroup/Name/1404101┃デビー&マーリン
+GoodsGroup/Name/1404111┃彰一
+GoodsGroup/Name/1404121┃ダニエル
+GoodsGroup/Name/1404131┃ニッキー
+GoodsGroup/Name/1404141┃イレム
+GoodsGroup/Name/1404151┃カミロ
+GoodsGroup/Name/1404161┃ヨハン
+GoodsGroup/Name/1404171┃ビアンカ
+GoodsGroup/Name/1404181┃ダルコ
+GoodsGroup/Name/1404191┃スア
+GoodsGroup/Name/1404201┃ティア
+GoodsGroup/Name/1404211┃エイデン
+GoodsGroup/Name/1404221┃アルダ
+GoodsGroup/Name/1404231┃レニ
+GoodsGroup/Name/1404241┃ユミン
+GoodsGroup/Name/1404251┃Eleven
+GoodsGroup/Name/1404261┃ヒョヌ
+GoodsGroup/Name/1404271┃ヴァーニャ
+GoodsGroup/Name/1406001┃キャスターSia
+GoodsGroup/Name/1406011┃キャスターShin Il
+GoodsGroup/Name/1406021┃キャスターEvis&Gold Blin
+GoodsGroup/Name/1406031┃キャスターKim In Yeong&NongRoute
+GoodsGroup/Name/1406041┃キャスターShuviSenpai & Superior
+GoodsGroup/Name/1406051┃キャスター局員 & 角煮
+ItemType/SPRAY/Name┃スプレー
+ItemType/SPRAY/Desc┃地面に目印を残すことができます。
+Goods/Name/1501001┃なし
+Goods/Name/1502001┃魔法少女莉央
+Goods/Name/1503001┃クリスマスツリー
+Goods/Name/1503002┃アングリー雪だるま
+Goods/Name/1503003┃ジンジャーブレッドマン
+Goods/Name/1503004┃クリスマススティックキャンディー
+Goods/Name/1503005┃たいやき
+Goods/Name/1503006┃クリスマスケーキ
+Goods/Name/1503007┃ローストチキン
+Goods/Name/1503008┃笑顔のトラ
+Goods/Name/1503009┃TigerNation
+Goods/Name/1503010┃GEN.G
+Goods/Name/1503011┃ポンイヨ
+Goods/Name/1503012┃Gen.G ERCC
+Goods/Name/1503013┃Naverゲームラウンジスプレー
+Goods/Name/1503014┃蓮華ウィルソン
+Goods/Name/1503015┃遊園地フェリックスの花
+Goods/Name/1503016┃I love Boogi
+Goods/Name/1503017┃Cheer up Boogi
+Goods/Name/1503018┃アイスクリームウィルソン
+Goods/Name/1503019┃フラミンゴとウィルソン
+Goods/Name/1503020┃フラダンスウィルソン
+Goods/Name/1503021┃ popo出動
+Goods/Name/1503022┃ネコイレム
+Goods/Name/1503023┃Sparky_smirky
+Goods/Name/1503024┃Sparky_chill
+Goods/Name/1503025┃Sparky_wonder
+Goods/Name/1503026┃Sparky_angry
+Goods/Name/1503027┃ピースサインEleven
+Goods/Name/1503028┃バレンタインギフトボックス
+Goods/Name/1503029┃バレンタインエヴァのプレゼント
+Goods/Name/1503030┃スア頭コン！
+Goods/Name/1503031┃にっこり…イアン
+Goods/Name/1503032┃ヴァーニャおやすみ
+Goods/Name/1503033┃マグパンチ
+Goods/Name/1503034┃にっこりヤン
+Goods/Name/1503035┃自信満々ビアンカ
+Goods/Name/1503036┃そこ！エレナ
+Goods/Name/1503037┃Eleven一口ちょうだい
+Goods/Name/1503038┃もぐもぐEleven
+Goods/Name/1503039┃Elevenチュワプ
+Goods/Name/1503040┃探索するヨハン
+Goods/Name/1503041┃投げキスカミロ
+Goods/Name/1503042┃悪夢を見るヴァーニャ
+Goods/Name/1503043┃怒ったニッキーの猫
+Goods/Name/1503044┃勝利のニッキー
+Goods/Name/1503045┃プンプンニッキー
+Goods/Name/1504001┃べー(ハート)
+Goods/Name/1504002┃マッチ売りの少女
+Goods/Name/1504003┃ウイナーリース
+Goods/Name/1504004┃生命の木
+Goods/Name/1504005┃サンタメイジ
+Goods/Name/1504006┃サンタナジャ
+Goods/Name/1504007┃クリスマスプレゼント
+Goods/Name/1504008┃雪だるまウィルソン
+Goods/Name/1504009┃隕石は持って行くわ！
+Goods/Name/1504010┃ゴーストは怖いよ…
+Goods/Name/1504011┃悪霊退散
+Goods/Name/1504012┃成仏する幽霊
+Goods/Name/1504013┃悪魔ウィルソン
+Goods/Name/1504014┃ウィジャボード
+Goods/Name/1504015┃生命の木ゲット！
+Goods/Name/1504016┃サプライズ~
+Goods/Name/1504017┃エネルギードリンク
+Goods/Name/1504018┃泣くスイカ
+Goods/Name/1504019┃莉央アイスクリーム
+Goods/Name/1504020┃信号灯
+Goods/Name/1504021┃アルファ処置
+Goods/Name/1504022┃オメガ処置
+Goods/Name/1504023┃マイク
+Goods/Name/1504024┃LEDべー
+Goods/Name/1504025┃ミラーボール
+Goods/Name/1504026┃キャッシーの医療メス
+Goods/Name/1504027┃ハンバーガー
+Goods/Name/1504028┃眠るクマ
+Goods/Name/1504029┃ダイリンガオー！
+Goods/Name/1504030┃アイマスク
+Goods/Name/1504031┃パジャマ姿のティアのリス
+Goods/Name/1504032┃通行禁止
+Goods/Name/1504033┃水泳禁止
+Goods/Name/1504034┃宝の地図
+Goods/Name/1504035┃ウィクラインキル
+Goods/Name/1504036┃足ヒレ
+Goods/Name/1504037┃イレム暑いニャー
+Goods/Name/1504038┃クルーズ旅行
+Goods/Name/1504039┃アヤそれはダメです！
+Goods/Name/1504040┃屋敷の監視人
+Goods/Name/1504041┃アヤの武器籠
+Goods/Name/1504042┃ルミア掃除中
+Goods/Name/1504043┃この先、敵があるぞ
+Goods/Name/1504044┃ハリケーンランタン
+Goods/Name/1504045┃ウィドリアナの火炎瓶
+Goods/Name/1504046┃お魚ネクタイ
+Goods/Name/1504047┃カミロのバラ
+Goods/Name/1504048┃トマトジュース
+Goods/Name/1504049┃ウィドリアナパシャッ！
+Goods/Name/1504050┃ビアンカZzz...
+Goods/Name/1504051┃エヴァのココナッツ
+Goods/Name/1504052┃ダイリンのパンダ
+Goods/Name/1504053┃ヴァーニャの星
+Goods/Name/1504054┃アビゲイルのルーレット
+Goods/Name/1504055┃莉央のぬいぐるみ猫
+Goods/Name/1504056┃ジェニーのハート
+Goods/Name/1504057┃シャーロットの堕ちた証
+Goods/Name/1504058┃アロンソの地獄の味
+Goods/Name/1504059┃シセラの悪魔ウィルソン
+Goods/Name/1504060┃ラウラの予告状
+Goods/Name/1504061┃エステルの失望
+Goods/Name/1504062┃カティアの紋章
+Goods/Name/1504063┃つばめの舌出しスイカ
+Goods/Name/1504064┃クロエの海辺の操り棒
+Goods/Name/1504065┃アディナの海辺の光
+Goods/Name/1504066┃ガーネットの赤い約束
+Goods/Name/1504067┃イアンの鬼の花
+Goods/Name/1504068┃ケネスの青い約束
+Goods/Name/1503046┃問題解決エイデン
+Goods/Name/1503047┃驚いたナタポン
+Goods/Name/1503048┃金をよこせ！レノックス
+Goods/Name/1503049┃熱唱するプリヤ
+Goods/Name/1503050┃気づいたレオン
+Goods/Name/1503051┃召し上がれアドリアナ
+Goods/Name/1503052┃閃いたバーバラ
+Goods/Name/1503053┃もうダメだ...アロンソ
+Goods/Name/1503054┃うめえ！アロンソ
+Goods/Name/1503055┃遅い…！バレンタインタジア
+Goods/Name/1503056┃プレゼントよ バレンタインタジア
+Goods/Name/1503057┃割れない心バレンタインタジア
+ItemType/GRAVE/Name┃墓石
+ItemType/GRAVE/Desc┃処置した実験体の枕元に墓石が置かれます。
+Goods/Name/1601001┃なし
+Goods/Name/1603001┃2024 クリスマス
+Goods/Name/1604001┃アングリー雪だるま
+Goods/Name/1604002┃クリスマススティックキャンディー
+Goods/Name/1604003┃ジンジャーブレッドマン
+Goods/Name/1604004┃花瓶
+Goods/Name/1604005┃クリスマス
+Goods/Name/1604006┃雪うさぎ
+Goods/Name/1604007┃雪だるま
+Goods/Name/1604008┃クリスマスツリー
+Goods/Name/1604009┃シャドーモンスター
+Goods/Name/1604010┃トーテムポール
+Goods/Name/1604011┃司書の墓石
+Goods/Name/1604012┃R.I.P
+Goods/Name/1604013┃ガーゴイル石像
+Goods/Name/1604014┃アイソルのシャベル
+Goods/Name/1604015┃ビーチボール
+Goods/Name/1604016┃砂の城
+Goods/Name/1604017┃おさわり禁止
+Goods/Name/1604018┃カクテル
+Goods/Name/1604019┃ヤシの木
+Goods/Name/1604020┃パラソル
+Goods/Name/1604021┃ネオン看板
+Goods/Name/1604022┃ホログラム幽霊
+Goods/Name/1604023┃ゲーム機
+Goods/Name/1604024┃アイテム自販機
+Goods/Name/1604025┃事故注意
+Goods/Name/1604026┃患者監視装置
+Goods/Name/1604027┃風呂敷包み
+Goods/Name/1604028┃イノヒョヌの肉
+Goods/Name/1604029┃ロボット
+Goods/Name/1604030┃レゴ
+Goods/Name/1604031┃眠るクマ
+Goods/Name/1604032┃安全注意
+Goods/Name/1604033┃スーツケース
+Goods/Name/1604034┃救命ボート
+Goods/Name/1604035┃クーラーボックス
+Goods/Name/1604036┃フラミンゴチューブ
+Goods/Name/1604037┃パイナップル
+Goods/Name/1604038┃サーフボード
+Goods/Name/1604039┃普通のティーワゴン
+Goods/Name/1604040┃普通のランドリーバスケット
+Goods/Name/1604041┃デザートトレー
+Goods/Name/1604042┃真空掃除機
+Goods/Name/1604043┃鉢植えバラ
+Goods/Name/1604044┃普通の掃除用具入れ
+Goods/Name/1604045┃アレムの無線機
+Goods/Name/1604046┃洋服掛け
+Goods/Name/1604047┃道しるべ
+Goods/Name/1604048┃イノシシ遊具
+Goods/Name/1604049┃ヒョヌの顔ハメ看板
+Goods/Name/1604050┃ニッキーのパンチマシーン
+Goods/Name/1604051┃クジラの噴水
+Goods/Name/1604052┃K.O.
+Goods/Name/1604053┃砂埋め
+Goods/Name/1604054┃黄金のさいころ
+Goods/Name/1604055┃ストレート失敗
+Goods/Name/1604056┃VIP看板
+Goods/Name/1604057┃地獄への扉
+Goods/Name/1604058┃死神
+Goods/Name/1604059┃ジャック・オー・ランタン
+Goods/Name/1604060┃終わりを告げる軍帽
+Goods/Name/1604061┃まだまだだ、立ち上がれ！
+Goods/Name/1604062┃征服の旗
+Goods/Name/1604063┃歌う貝殻
+Goods/Name/1604064┃つばめ式晩餐
+Goods/Name/1604065┃無念無想ラッコ
+Goods/Name/1604066┃お狐様の像
+Goods/Name/1604067┃箱の中の金魚
+Goods/Name/1604068┃タコおじさん
+Goods/Name/1612001┃疫病ドクターの死
+Goods/Name/1612002┃ビーチバレーボールニッキーの猫
+Goods/Name/1612003┃システムショック
+Goods/Name/1612004┃ドリーマー
+Goods/Name/1612005┃夏祭りのマジシャン
+Goods/Name/1612006┃フィオラのオムレツ
+Goods/Name/1612007┃ウィドリアナの注射器
+Goods/Name/1612008┃夕暮れのココナッツ
+Goods/Name/1612009┃シャイバニー莉央のルーレット
+Goods/Name/1612010┃堕天使のヘイロー
+Goods/Name/1612011┃責任の重さ
+Goods/Name/1612012┃極楽じゃ...墓石
+Goods/Name/1612013┃ガラポン抽選機
+GroupItemAttribute/Inst┃Inst.
+GroupItemAttribute/Piano┃Piano
+GroupItemAttribute/Vocal┃Vocal.
+ItemType/BGM/Name┃BGM
+ItemType/BGM/Desc┃ロビーのBGMを選択できます。
+BGM_None┃なし
+Goods/Name/1701000┃ランダム
+Goods/Name/1701001┃基本
+Goods/Name/1701002┃Eternal World(Kor ver.)
+Goods/Name/1701003┃Eternal World (Inst ver.)
+Goods/Name/1703001┃Intro BGM
+Goods/Name/1703002┃Caprice No. 24
+Goods/Name/1703003┃microchip (Oliver Buckland)
+Goods/Name/1703004┃基本(Piano ver. by Samsol Sound)
+Goods/Name/1703005┃Eternal World (Piano ver. by Samsol Sound)
+Goods/Name/1703006┃Fearless
+Goods/Name/1703007┃Fearless (Inst.)
+Goods/Name/1703008┃月ウサギのそだてかた BGM
+Goods/Name/1703009┃月ウサギのそだてかた BGM (Inst.)
+Goods/Name/1703010┃Summertime (NC.A)
+Goods/Name/1703011┃Summertime (Inst.)
+Goods/Name/1703012┃ニシキカムロ (Byeol Eun)
+Goods/Name/1703013┃ニシキカムロ (Inst.)
+Goods/Name/1703014┃ニシキカムロ (眉村ちあき)
+Goods/Name/1704001┃Emma Character Song(Kor ver.)
+Goods/Name/1704002┃Emma Character Song(Inst ver.)
+Goods/Name/1799999┃なし
+GoodsGroup/Name/1701001┃基本
+GoodsGroup/Name/1701002┃Eternal World
+GoodsGroup/Name/1703001┃Intro BGM
+GoodsGroup/Name/1703002┃Caprice No. 24
+GoodsGroup/Name/1703003┃microchip (Oliver Buckland)
+GoodsGroup/Name/1703006┃Fearless
+GoodsGroup/Name/1703008┃月ウサギのそだてかた BGM
+GoodsGroup/Name/1703010┃Summertime
+GoodsGroup/Name/1703012┃ニシキカムロ (Byeol Eun)
+GoodsGroup/Name/1703014┃ニシキカムロ (眉村ちあき)
+GoodsGroup/Name/1704001┃Emma Character Song
+GoodsGroup/Name/1799999┃なし
+Goods/Name/2202001┃ニックネーム変更券
+ItemType/DRONE/Name┃ドローンスキン
+ItemType/DRONE/Desc┃ゲーム内の偵察ドローンやEMPドローンの外観を選択できます。
+Goods/Name/2501001┃基本ドローン
+Goods/Name/2503001┃2024 クリスマス
+Goods/Name/2504001┃カラス
+Goods/Name/2504002┃鬼火
+Goods/Name/2504003┃花火
+Goods/Name/2504004┃パラシュート
+Goods/Name/2504005┃飛行ロボット
+Goods/Name/2504006┃ロボット型蝶々
+Goods/Name/2504007┃UFO
+Goods/Name/2504008┃ヘリコプター
+Goods/Name/2504009┃雨雲
+Goods/Name/2504010┃タコバルーン
+Goods/Name/2504011┃シャンデリア
+Goods/Name/2504012┃メインディッシュ
+Goods/Name/2504013┃ガンマ風船
+Goods/Name/2504014┃ウィドリアナ風船
+Goods/Name/2504015┃真珠貝
+Goods/Name/2504016┃電気クラゲ
+Goods/Name/2504017┃カジノルーレット
+Goods/Name/2504018┃ミラーボール
+Goods/Name/2504019┃幽霊ウィルソンベー
+Goods/Name/2504020┃目玉コウモリ
+Goods/Name/2504021┃トイソルジャー
+Goods/Name/2504022┃訓練所所長カティア風船
+Goods/Name/2504023┃ヒトデ
+Goods/Name/2504024┃海辺の人形ニナ風船
+Goods/Name/2504025┃運命の赤い約束 ガーネット風船
+Goods/Name/2504026┃和傘
+ItemType/CAMERA/Name┃カメラスキン
+ItemType/CAMERA/Desc┃ゲーム内のカメラアイテムの外観を選択できます。
+Goods/Name/2601001┃基本カメラ
+Goods/Name/2603001┃2024 クリスマス
+Goods/Name/2604001┃将軍標
+Goods/Name/2604002┃悪魔の目玉
+Goods/Name/2604003┃トーテムポール
+Goods/Name/2604004┃貝飾りの灯台
+Goods/Name/2604005┃360度カメラ
+Goods/Name/2604006┃テレビ
+Goods/Name/2604007┃ムードライト
+Goods/Name/2604008┃ペンギン
+Goods/Name/2604009┃潜水艦の潜望鏡
+Goods/Name/2604010┃扇風機
+Goods/Name/2604011┃監視中のネコ
+Goods/Name/2604012┃監視中の花瓶
+Goods/Name/2604013┃運命の水晶玉
+Goods/Name/2604014┃カミロオルゴール
+Goods/Name/2604015┃海辺のカモメ
+Goods/Name/2604016┃タコランタン
+Goods/Name/2604017┃猫のぬいぐるみ
+Goods/Name/2604018┃サンドバッグ
+Goods/Name/2604019┃悪魔の炎
+Goods/Name/2604020┃夢幻のろうそく立て
+Goods/Name/2604021┃盗み食いをする猫
+Goods/Name/2604022┃射撃ターゲット
+Goods/Name/2604023┃ひょっこり魚
+Goods/Name/2604024┃チョウチンアンコウの誘惑
+Goods/Name/2604025┃招き猫
+Goods/Name/2604026┃だるま
+ItemType/LOBBY_SCREEN/Name┃ロビー画面
+ItemType/LOBBY_SCREEN/Desc┃ロビー画面の外観を選択できます。
+Goods/Name/2701000┃ランダム
+Goods/Name/2701001┃エターナルワールド
+Goods/Name/2701004┃実験開始
+Goods/Name/2702001┃エマのマジックショー
+Goods/Name/2702002┃冬のプレゼント
+Goods/Name/2703001┃路地裏
+Goods/Name/2703002┃工場
+Goods/Name/2703003┃森
+Goods/Name/2703004┃寺
+Goods/Name/2703005┃港
+Goods/Name/2703006┃ホテル
+Goods/Name/2703007┃殺人衝動
+Goods/Name/2703008┃幽霊島
+Goods/Name/2703009┃ワイルドカード
+Goods/Name/2703010┃ドッペルゲンガー
+Goods/Name/2703011┃羊の皮を被った狼
+Goods/Name/2703012┃変数
+Goods/Name/2703013┃狩人の夜
+Goods/Name/2703014┃宝ゴブリン
+Goods/Name/2703015┃ゾンビ
+Goods/Name/2704005┃ハンター
+Goods/Name/2704006┃サマー
+Goods/Name/2704007┃ネオン
+Goods/Name/2704008┃着ぐるみパジャマ
+Goods/Name/2704009┃学校
+Goods/Name/2704010┃バカンス
+Goods/Name/2704011┃武装メイド
+Goods/Name/2704012┃チェンジ
+Goods/Name/2704013┃夕焼け
+Goods/Name/2704014┃ラッキー★
+Goods/Name/2704015┃レギオン
+Goods/Name/2704016┃アカデミー
+Goods/Name/2704017┃スプラッシュ！
+Goods/Name/2704018┃祭り
+Goods/Name/2705001┃1周年記念
+Goods/Name/2705002┃ヒスイ＆ユスティナ
+Goods/Name/2705003┃月ウサギのそだてかた
+Goods/Name/2705004┃放課後デビー&マーリン
+Goods/Name/2705005┃2周年記念
+Goods/Name/2705006┃トロピカル·ディメンションアビゲイル
+Goods/Name/2705007┃ゴーストハンター ヒスイ
+ItemType/KILLANNOUNCE_ICONPACK/Name┃アナウンスアイコン
+ItemType/KILLANNOUNCE_ICONPACK/Desc┃ゲーム内で処置時に表示されるUIアイコンを選択できます。
+Goods/Name/2801001┃不屈
+Goods/Name/2804001┃支配者
+Goods/Name/2804002┃最終生存アイソル
+Goods/Name/2804003┃最終生存ヘジン
+Goods/Name/2804004┃最終生存キアラ
+Goods/Name/2804005┃神の目
+Goods/Name/2804006┃サボテン
+Goods/Name/2804007┃最終生存ヒョヌ
+Goods/Name/2804008┃最終生存ザヒル
+Goods/Name/2804009┃最終生存レノックス
+Goods/Name/2804010┃最終生存キャッシー
+Goods/Name/2804011┃キューブ
+Goods/Name/2804012┃治癒
+Goods/Name/2804013┃イノシシ
+Goods/Name/2804014┃しば犬
+Goods/Name/2804015┃トラ
+Goods/Name/2804016┃ユニコーン
+Goods/Name/2804017┃三叉槍
+Goods/Name/2804018┃サメ
+Goods/Name/2804019┃ヤシの木
+Goods/Name/2804020┃錨
+Goods/Name/2804021┃ノーブル
+Goods/Name/2804022┃ハウスキーパー
+Goods/Name/2804023┃ホワイトローズ
+Goods/Name/2804024┃ターゲット
+Goods/Name/2804025┃アレムネコ
+Goods/Name/2804026┃ウィドリアナマーク
+Goods/Name/2804027┃アンステルの盾
+Goods/Name/2804028┃裁縫道具
+Goods/Name/2804029┃エヴァの花
+Goods/Name/2804030┃ダイリンの酒壺
+Goods/Name/2804031┃ヴァーニャの蝶々
+Goods/Name/2804032┃ニッキーパンチ！
+Goods/Name/2804033┃莉央の矢
+Goods/Name/2804034┃ジェニーの拳銃
+Goods/Name/2804035┃堕天使のヘイロー
+Goods/Name/2804036┃魔王の威厳
+Goods/Name/2804037┃夢幻のウィルソン
+Goods/Name/2804038┃カティア照準
+Goods/Name/2804039┃ラウラの魅惑
+Goods/Name/2804040┃エステルの盾
+Goods/Name/2804041┃つばめの手裏剣
+Goods/Name/2804042┃クロエの刃の刺繍
+Goods/Name/2804043┃アディナの五芒星
+Goods/Name/2804044┃運命の赤い約束 ガーネット
+Goods/Name/2804045┃鬼火に惑わされし イアン
+Goods/Name/2804046┃運命の青い約束 ケネス
+ItemType/TEAMSLOT_BG/Name┃チームスロット背景
+Goods/Name/3401001┃基本チームスロット背景
+Goods/Name/3402001┃ホリデーベア
+Goods/Name/3402501┃S4 All ways Incheon チームスロット背景
+Goods/Name/3402502┃S4 Gyeonggi Innate チームスロット背景
+Goods/Name/3402503┃S4 GJ Slasher チームスロット背景
+Goods/Name/3402504┃S4 DH.CNJ チームスロット背景
+Goods/Name/3402505┃S4 BNK FearX チームスロット背景
+Goods/Name/3402506┃S4 MIRAEN SEJONG チームスロット背景
+Goods/Name/3402507┃S4 DAEJEON CYBERS チームスロット背景
+Goods/Name/3402508┃S4 Seongnam ROX チームスロット背景
+Goods/Name/3402509┃S5 BNK FearX チームスロット背景
+Goods/Name/3402510┃S5 MIRAEN SEJONG チームスロット背景
+Goods/Name/3402511┃S5 Seongnam ROX チームスロット背景
+Goods/Name/3402512┃S5 Gyeonggi Innate チームスロット背景
+Goods/Name/3402513┃S5 DAEJEON CYBERS チームスロット背景
+Goods/Name/3402514┃S5 All ways Incheon チームスロット背景
+Goods/Name/3402515┃S5 GJ Slasher チームスロット背景
+Goods/Name/3402516┃S5 DH.CNJ チームスロット背景
+Goods/Name/3402517┃S6 BNK FearX チームスロット背景
+Goods/Name/3402518┃S6 MIRAEN SEJONG チームスロット背景
+Goods/Name/3402519┃S6 Gyeongnam Sparkle チームスロット背景
+Goods/Name/3402520┃S6 Seongnam ROX チームスロット背景
+Goods/Name/3402521┃S6 Gyeonggi Innate チームスロット背景
+Goods/Name/3402522┃S6 DH.CNJ チームスロット背景
+Goods/Name/3402523┃S6 All ways Incheon チームスロット背景
+Goods/Name/3402524┃S6 DAEJEON CYBERS チームスロット背景
+Goods/Name/3402525┃S6 GJ Slasher チームスロット背景
+Goods/Name/3402526┃S7 FN SEJONG チームスロット背景
+Goods/Name/3402527┃S7 Gyeonggi Innate チームスロット背景
+Goods/Name/3402528┃S7 DAEJEON AutoArms チームスロット背景
+Goods/Name/3402529┃S7 Seongnam ROX チームスロット背景
+Goods/Name/3402530┃S7 Gyeongnam Sparkle チームスロット背景
+Goods/Name/3402531┃S7 GJ Slasher チームスロット背景
+Goods/Name/3402532┃S7 New Rise Gangwon チームスロット背景
+Goods/Name/3402533┃S7 Busan BeSPA チームスロット背景
+Goods/Name/3402534┃S7 CNJ esports チームスロット背景
+Goods/Name/3402535┃S7 all ways INCHEON チームスロット背景
+Goods/Name/3402536┃S7 Jecheon Phalanx チームスロット背景
+Goods/Name/3402537┃S7 Daegu Suseong Guardians チームスロット背景
+Goods/Name/3402538┃S8 Seongnam ROX チームスロット背景
+Goods/Name/3402539┃S8 FN SEJONG チームスロット背景
+Goods/Name/3402540┃S8 Jecheon Phalanx チームスロット背景
+Goods/Name/3402541┃S8 New Rise Gangwon チームスロット背景
+Goods/Name/3402542┃S8 all ways INCHEON チームスロット背景
+Goods/Name/3402543┃S8 Busan BeSPA チームスロット背景
+Goods/Name/3402544┃S8 CNJ esports チームスロット背景
+Goods/Name/3402545┃S8 Gyeongnam Sparkle チームスロット背景
+Goods/Name/3402546┃S8 Daegu Suseong Guardians チームスロット背景
+Goods/Name/3402547┃S8 GJ Slasher チームスロット背景
+Goods/Name/3402548┃S8 Gyeonggi Innate チームスロット背景
+Goods/Name/3402549┃S8 DAEJEON AutoArms チームスロット背景
+Goods/Name/3402550┃S9 Seongnam ROX チームスロット背景
+Goods/Name/3402551┃S9 FN SEJONG チームスロット背景
+Goods/Name/3402552┃S9 Jecheon Phalanx チームスロット背景
+Goods/Name/3402553┃S9 New Rise Gangwon チームスロット背景
+Goods/Name/3402554┃S9 all ways INCHEON チームスロット背景
+Goods/Name/3402555┃S9 Busan BeSPA チームスロット背景
+Goods/Name/3402556┃S9 CNJ esports チームスロット背景
+Goods/Name/3402557┃S9 Gyeongnam Sparkle チームスロット背景
+Goods/Name/3402558┃S9 Daegu Suseong Guardians チームスロット背景
+Goods/Name/3402559┃S9 GJ Slasher チームスロット背景
+Goods/Name/3402560┃S9 Gyeonggi Innate チームスロット背景
+Goods/Name/3402561┃S9 DAEJEON AutoArms チームスロット背景
+Goods/Name/3403001┃機械回路
+Goods/Name/3403002┃星空の夜
+Goods/Name/3403003┃秋の紅葉
+Goods/Name/3403004┃クリスマスツリー
+Goods/Name/3403005┃新年の始まり
+Goods/Name/3403006┃2024 青龍の祝福
+Goods/Name/3403007┃金色の新年
+Goods/Name/3403008┃ゴーストハンター雪
+Goods/Name/3403009┃指名手配
+Goods/Name/3403010┃ER Creator&Partner(BiliBili)
+Goods/Name/3403011┃ER パートナー
+Goods/Name/3403012┃1周年記念
+Goods/Name/3403013┃ラッキー★
+Goods/Name/3403014┃秋の感謝祭
+Goods/Name/3403015┃アグライア
+Goods/Name/3403016┃2024 クリスマス
+Goods/Name/3403017┃ニア
+Goods/Name/3403018┃放課後の写真
+Goods/Name/3403019┃放課後の日常
+Goods/Name/3403021┃トロピカル·ディメンションアビゲイル 休暇
+Goods/Name/3403022┃トロピカル·ディメンションアビゲイル 楽しいひと時
+Goods/Name/3403023┃レニベア
+Goods/Name/3403024┃シュリン
+Goods/Name/3403025┃ヘンリー
+Goods/Name/3403026┃ゴーストハンター ヒスイ 集結
+Goods/Name/3403027┃ゴーストハンター ヒスイ 狩り
+Goods/Name/3419001┃冬の雪花
+ItemType/EVENT/Name┃収集品アイテム
+Goods/Name/3503001┃[N] 収集品アイテム
+Goods/Name/3503002┃[E] 収集品アイテム
+Goods/Name/3503003┃[W] 収集品アイテム
+Goods/Name/3503004┃[2] 収集品アイテム
+Goods/Name/3503005┃[0] 収集品アイテム
+Goods/Name/3503006┃[2] 収集品アイテム
+Goods/Name/3503007┃[4] 収集品アイテム
+Goods/Name/3503008┃白い花
+Goods/Name/3503009┃緑の花
+Goods/Name/3503010┃青い花
+Goods/Name/3503011┃紫の花
+Goods/Name/3503012┃黄色い花
+Goods/Name/3503013┃デビーカード
+Goods/Name/3503014┃マーリンカード
+Goods/Name/3503015┃デビー&マーリンカード
+Goods/Name/3503016┃紅葉カード
+Goods/Name/3503017┃真祖の祝福カード
+Goods/Name/3503018┃ラッキースタンプ(LUCKY)
+Goods/Name/3503019┃ラッキースタンプ(WINNER)
+Goods/Name/3503020┃ラッキースタンプ(7)
+Goods/Name/3503021┃クリスマスカード
+Goods/Name/3503022┃S6 eスポーツサポーターコイン
+Goods/Name/3503023┃レギオントークンカード
+Goods/Name/3503024┃生徒会長のカード
+Goods/Name/3503025┃チェンジカード
+Goods/Name/3503026┃シルバースター
+Goods/Name/3503027┃ゴールドスター
+Goods/Name/3503028┃5月の確率UPスキンカード
+Goods/Name/3503029┃S7 eスポーツサポーターコイン
+Goods/Name/3503030┃サイコロの目 1
+Goods/Name/3503031┃サイコロの目 2
+Goods/Name/3503032┃サイコロの目 3
+Goods/Name/3503033┃サイコロの目 4
+Goods/Name/3503034┃サイコロの目 5
+Goods/Name/3503035┃サイコロの目 6
+Goods/Name/3503036┃1倍カード
+Goods/Name/3503037┃2倍カード
+Goods/Name/3503038┃3倍カード
+Goods/Name/3503039┃サイコロピース
+Goods/Name/3503040┃2周年サマーカード
+Goods/Name/3503041┃2周年スペシャルサマーカード
+Goods/Name/3503042┃S8 eスポーツサポーターコイン
+Goods/Name/3503043┃落ち葉カード
+Goods/Desc/3503043┃2025 落ち葉コレクションを完成させてみましょう！\n2025 落ち葉コレクションの達成条件は収集品からご確認いただけます。
+Goods/Name/3503044┃S9 eスポーツサポーターコイン
+ItemType/WILD_CARD_SKIN/Name┃[スキン専用] ワイルドカード
+ItemType/WILD_CARD_ETC/Name┃ワイルドカード
+Goods/Name/3602002┃[スキン専用] ワイルドカード
+Goods/Name/3602003┃[スキン専用] ワイルドカード
+Goods/Name/3602004┃[スキン専用] ワイルドカード
+Goods/Name/3602012┃ワイルドカード
+Goods/Name/3602013┃ワイルドカード
+Goods/Name/3602014┃ワイルドカード
+ItemType/EXCHANGE_COLLECTIBLE/Name┃交換ピース
+ItemType/COLLECTIBLE/Name┃シーズンピース
+Goods/Name/4018000┃交換ピース
+Goods/Name/4018001┃祭りピース1
+Goods/Name/4018002┃祭りピース2
+Goods/Name/4018003┃祭りピース3
+Goods/Name/4018004┃祭りピース4
+Goods/Name/4018005┃祭りピース5
+Goods/Name/4018006┃祭りピース6
+Goods/Name/4018007┃祭りピース7
+Goods/Name/4018008┃祭りピース8
+Goods/Name/4018009┃祭りピース9
+Goods/Name/4018010┃祭りピース10
+Goods/Name/4018011┃祭りピース11
+Goods/Name/4018012┃祭りピース12
+Goods/Name/4018013┃祭りピース13
+Goods/Name/4018014┃祭りピース14
+Goods/Name/4018015┃祭りピース15
+Goods/Name/4018016┃祭りピース16
+Goods/Name/4018017┃祭りピース17
+Goods/Name/4018018┃祭りピース18
+Goods/Name/4018019┃祭りピース19
+Goods/Name/4018020┃祭りピース20
+Goods/Name/4018021┃祭りピース21
+Goods/Name/4018022┃祭りピース22
+Goods/Name/4018023┃祭りピース23
+Goods/Name/4018024┃祭りピース24
+Goods/Name/4018025┃祭りピース25
+Goods/Name/4018026┃祭りピース26
+Goods/Name/4018027┃祭りピース27
+Goods/Name/4018028┃祭りピース28
+Goods/Name/4018029┃祭りピース29
+Goods/Name/4018030┃祭りピース30
+Goods/Name/4018031┃祭りピース31
+Goods/Name/4018032┃祭りピース32
+Goods/Name/4018033┃祭りピース33
+Goods/Name/4018034┃祭りピース34
+Goods/Name/4018035┃祭りピース35
+Goods/Name/4018036┃祭りピース36
+Goods/Name/4018037┃祭りピース37
+Goods/Name/4018038┃祭りピース38
+Goods/Name/4018039┃祭りピース39
+Goods/Name/4018040┃祭りピース40
+Goods/Name/4018041┃祭りピース41
+Goods/Name/4018042┃祭りピース42
+Goods/Name/4018043┃祭りピース43
+Goods/Name/4018044┃祭りピース44
+Goods/Name/4018045┃祭りピース45
+Goods/Name/4018046┃祭りピース46
+Goods/Name/4018047┃祭りピース47
+Goods/Name/4018048┃祭りピース48
+Goods/Name/4018049┃祭りピース49
+Goods/Name/4018050┃祭りピース50
+Goods/Name/4018051┃祭りピース51
+Goods/Name/4018052┃祭りピース52
+Goods/Name/4018053┃祭りピース53
+Goods/Name/4018054┃祭りピース54
+ItemType/REROLL_TICKET/Name┃モジュール
+Goods/Name/4402001┃デュアルモジュール
+ItemType/SEASON_PASS/Name┃シーズンパック
+ItemType/CHARACTER/Name┃キャラクター
+ItemType/EVENT_NP/Name┃イベントNP
+ItemType/RANDOM_BOX/Name┃データボックス
+ItemType/RANDOM_KEY/Name┃データキー
+ItemType/LOOT_TOKEN/Name┃トークン
+Goods/Name/3102001┃スキンデータボックス
+Goods/Name/3102002┃研究所データボックス
+Goods/Desc/3102001┃確定的にスキンやスキンピースを獲得できます。\nランクリワード及び特殊な形で活用されたアイテムは含まれません。\nデータボックスはショップのパッケージまたはその他商品から購入できます。
+Goods/Desc/3102002┃様々なアイテムやピースを獲得できます。\nランクリワード及び特殊な形で活用されたアイテムは含まれません。\nデータボックスはショップのパッケージまたはその他商品から購入できます。
+Goods/Name/3102003┃デイリーボックス
+Goods/Desc/3102003┃研究所データボックス·データキー·NP·データピース·トークン·シーズンピースパックの内、1つを獲得できます。
+Goods/Name/3102004┃今日のクエストランダム報酬
+Goods/Desc/3102004┃今日のクエストを完了し、受け取れなかった報酬です。
+Goods/Name/3102005┃高級/レアスキン補給券
+Goods/Desc/3102005┃アイテムリストの中で所持していないスキンの内、一つを獲得できます。\nアイテムリストのスキンを全て所持している場合、すべてのスキンの内、一つを獲得します。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102006┃サマー＆ハンターボックス
+Goods/Desc/3102006┃スキンを確定的に獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102007┃英雄スキンピースボックス
+Goods/Desc/3102007┃英雄スキンピースとデータピース(レア)を獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102008┃ボーナスボックス
+Goods/Desc/3102008┃獲得できなかったボーナスボックスです。
+Goods/Name/3102009┃ホリデーデータボックス
+Goods/Desc/3102009┃ホリデー記念アイテムを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102011┃レアスキンデータボックス
+Goods/Desc/3102011┃レアスキンを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103002┃金の福袋
+Goods/Desc/3103002┃4つのいろんなアイテムを獲得できる金の福袋です。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103003┃福袋
+Goods/Desc/3103003┃A-Coinまたは収集品のアイテムを獲得できる福袋です。\n福袋はショップから購入できます。
+Goods/Name/3104009┃シーズン9データボックス
+Goods/Desc/3104009┃シーズン9 FREE ER PASSの商品をランダムで獲得できます。
+Goods/Name/3190001┃ホリデースキン選択券
+Goods/Desc/3190001┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190002┃英雄スキンピース選択券
+Goods/Desc/3190002┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190003┃実験体選択券(初心者)
+Goods/Desc/3190003┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190004┃レアスキン選択券
+Goods/Desc/3190004┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190005┃高級/レアスキン選択券
+Goods/Desc/3190005┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190006┃高級スキン選択券
+Goods/Desc/3190006┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190007┃実験体選択券
+Goods/Desc/3190007┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190008┃英雄スキン選択券
+Goods/Desc/3190008┃リストの中から一つを選択して獲得できます。
+Goods/Name/3190009┃スペシャル高級/レアスキン選択券
+Goods/Desc/3190009┃リストの中から一つを選択して獲得できます。
+Goods/Name/3202000┃データキー
+Goods/Desc/3202000┃すべてのボックスを開封するためにはデータキーが必要です。
+Goods/Name/3303000┃バカンストークン
+Goods/Desc/3303000┃シーズントークンはER PASS、シーズンパック購入または製作所から完全なアイテムを分解すると一定の確率で獲得できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
+Goods/Name/3303001┃武装メイドトークン
+Goods/Desc/3303001┃武装メイドトークンは＜ER PASS：武装メイド＞から獲得及び交換所で交換できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
+Goods/Name/3303002┃チェンジトークン
+Goods/Desc/3303002┃チェンジトークンはER PASSで獲得したり交換所から交換して獲得することができます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
+Goods/Name/3303003┃夕焼けトークン
+Goods/Desc/3303003┃夕焼けトークンはER PASS：夕焼けから獲得または交換所からトークンと交換できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
+Goods/Name/3303004┃ラッキー★トークン
+Goods/Desc/3303004┃ラッキー★トークンは＜ER PASS：ラッキー★＞から獲得または交換所でトークンと交換できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
+Goods/Name/3303005┃レギオントークン
+Goods/Desc/3303005┃レギオントークンは＜ER PASS：レギオン＞から獲得または交換所でトークンと交換できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
+Goods/Name/3303006┃アカデミートークン
+Goods/Desc/3303006┃アカデミートークンは＜ER PASS：アカデミー＞から獲得または交換所でトークンと交換できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
+Goods/Name/3303007┃スプラッシュトークン
+Goods/Desc/3303007┃スプラッシュトークンは＜ER PASS：スプラッシュ！＞やシーズンパックの購入、交換所でのトークン交換、\nまたは製作所で完全なアイテムを分解する際に、一定の確率で獲得できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
+Goods/Name/3303008┃祭りトークン
+Goods/Desc/3303008┃祭りトークンは＜ER PASS：祭り＞やシーズンパック購入、交換所でのトークン交換、\nまたは製作所で完全なアイテムを分解する際に、一定の確率で獲得できます。\nすべてのシーズントークンは、使用期間が満了すると消滅しますので、期間内にご使用ください。
+Goods/Name/3102996┃S9 スキンデータウィーク英雄スキンボックス
+Goods/Desc/3102996┃英雄等級のスキンを1つ確定して獲得できます。
+Goods/Name/3102997┃S9 スキンデータウィーク英雄スキンピースボックス
+Goods/Desc/3102997┃英雄等級のスキンピースを1つ確定して獲得できます。
+Goods/Name/3102998┃S9 スキンデータウィークレアスキンボックス
+Goods/Desc/3102998┃レア等級のスキンを1つ確定して獲得できます。
+Goods/Name/3102999┃S9 スキンデータウィークレアスキンピースボックス
+Goods/Desc/3102999┃レア等級のスキンピースを1つ確定して獲得できます。
+Goods/Name/3303301┃ホリデートークン
+Goods/Desc/3303301┃ホリデーデータボックスを使用して獲得できます。イベント終了後、ホリデートークンはなくなります。
+Goods/Name/3303302┃ハッピートークン
+Goods/Desc/3303302┃ハッピートークンは幸運玉及びハッピーパッケージを購入すると獲得できます。\nイベント終了後、使用していないハッピートークンはなくなります。
+Goods/Name/3303303┃ベーカリーカフェトークン
+Goods/Desc/3303303┃ベーカリーカフェトークンはエマのパンバスケットを使用すると獲得できます。イベント終了後、使用していないベーカリーカフェトークンはなくなります。
+Goods/Name/3303304┃ホワイトトークン
+Goods/Desc/3303304┃ホワイトトークンはトークン交換所で使用できます。\nレッドトークンやチャレンジボックスなどの商品と交換できます。\nトークンはイベント終了後、消滅します。
+Goods/Name/3303305┃レッドトークン
+Goods/Desc/3303305┃レッドトークンはトークン交換所で使用できます。\nラッキー★トークンやラッキー★ボール、またはラッキー★ボックスなどの商品と交換できます。\nトークンはイベント終了後、消滅します。
+Goods/Name/3303306┃2025 落ち葉トークン
+Goods/Desc/3303306┃2025 落ち葉トークンボックスまたはログインコレクションから獲得できます。\n「製作所」の交換所から2025 落ち葉トークンを使ってアイテムを交換できます。\nトークンはイベント終了後、消滅します。
+Goods/Name/3303990┃ERトークン
+Goods/Desc/3303990┃ERトークン交換所で使用できるトークンです。\nイベント終了後、トークンは消滅します。
+Goods/Name/3303999┃マイレージ
+Goods/Desc/3303999┃NP商品を購入するとマイレージを獲得します。
+BoxRewardInfoWindow/Contents/ContentsBg/Url/LinkToDropTable┃全体確率一覧
+Goods/Name/3102015┃夕焼けトークン X 10
+Goods/Desc/3102015┃夕焼けトークンはER PASSやシーズンパック購入または交換所からトークンを交換したり、\n製作所から完全なアイテムを分解すると一定の確率で獲得できます。\n全てのシーズントークンは使用期間が満了されるまでに使用でき、使用期間満了後には消滅します。
+Goods/Name/4000000┃[더미] 영웅 등급 스킨 선택권
+Goods/Desc/4000000┃여러가지 아이템들 중 1개를 선택하여 확정적으로 획득할 수 있습니다.\n랭크 보상 및 일부 특수하게 활용된 아이템은 포함되지 않습니다.
+Goods/Name/3102012┃旧正月データボックス
+Goods/Desc/3102012┃完全なスキンを1つ獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストから確認できます。
+Goods/Name/3102013┃シークレットデータボックス
+Goods/Desc/3102013┃様々なアイテムの中で1つをランダムに獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認でき、購入と同時に使用します。
+Goods/Name/3102014┃シーズントークンランダムボックス
+Goods/Desc/3102014┃現シーズンのシーズントークンを3個から10個まで獲得できるランダムボックスです。\n獲得するトークンの数は確率に応じて異なります。\n出現するアイテムはアイテムリストで確認でき、購入と同時に使用します。
+Goods/Name/3102081┃S4 ボーナススキンデータボックス
+Goods/Desc/3102081┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102082┃S5 ボーナススキンデータボックス
+Goods/Desc/3102082┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102083┃S6 ボーナススキンデータボックス
+Goods/Desc/3102083┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102084┃S7 ボーナススキンデータボックス
+Goods/Desc/3102084┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102085┃S8 ボーナススキンデータボックス
+Goods/Desc/3102085┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102086┃S9 ボーナススキンデータボックス
+Goods/Desc/3102086┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103004┃白い花箱
+Goods/Desc/3103004┃白い花箱、緑の花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜白い花＞を獲得できます。
+Goods/Name/3103005┃緑の花箱
+Goods/Desc/3103005┃緑の花箱、青い花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜緑の花＞を獲得できます。
+Goods/Name/3103006┃青い花箱
+Goods/Desc/3103006┃青い花箱、紫の花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜青い花＞を獲得できます。
+Goods/Name/3103007┃紫の花箱
+Goods/Desc/3103007┃紫の花箱、黄色い花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜紫の花＞を獲得できます。
+Goods/Name/3103008┃黄色い花箱
+Goods/Desc/3103008┃チェンジトークン、黄色い花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜黄色い花＞を獲得できます。
+Goods/Name/3103009┃幸運玉(第1段階)
+Goods/Desc/3103009┃※ 確率に応じてハッピートークンを1個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
+Goods/Name/3103010┃幸運玉(第2段階)
+Goods/Desc/3103010┃※ 確率に応じてハッピートークンを1個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
+Goods/Name/3103011┃幸運玉(第3段階)
+Goods/Desc/3103011┃※ 確率に応じてハッピートークンを2個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
+Goods/Name/3103012┃幸運玉(第4段階)
+Goods/Desc/3103012┃※ 確率に応じてハッピートークンを4個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
+Goods/Name/3103013┃幸運玉(第5段階)
+Goods/Desc/3103013┃※ 確率に応じてハッピートークンを8個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
+Goods/Name/3103014┃幸運玉(第6段階)
+Goods/Desc/3103014┃※ 確率に応じてハッピートークンを16個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
+Goods/Name/3103015┃幸運玉(第7段階)
+Goods/Desc/3103015┃※ 確率に応じてハッピートークンを32個獲得でき、トークンの獲得に失敗した場合には購入した価格が返されます。
+Goods/Name/3103016┃幸運玉(第8段階)
+Goods/Desc/3103016┃※ 確定的にハッピートークンを50個獲得します。
+Goods/Name/3103017┃彰一のドーナツボックス
+Goods/Desc/3103017┃様々なアイテムを4種獲得できる彰一のドーナツボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103018┃エマのパンバスケット
+Goods/Desc/3103018┃エマのパンバスケットからはメイドアデラのベーカリーカフェイベントのアイテムとトークンを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103019┃シセラのパン袋
+Goods/Desc/3103019┃シセラのパン袋からはメイドアデラのベーカリーカフェイベントのアイテムを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103020┃ドームカバー
+Goods/Desc/3103020┃ドームカバーからはレアスキンアイテムを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103021┃スキンデータボックス：サマー
+Goods/Desc/3103021┃スキンを必ず獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103022┃研究所データボックス：サマー
+Goods/Desc/3103022┃様々なアイテムの中で1つをランダムに獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103023┃デビー&マーリンカードボックス
+Goods/Desc/3103023┃デビー&マーリンのカードを獲得できるボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102016┃秋の感謝祭スキンボックス
+Goods/Desc/3102016┃完全なスキンを1つ獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103024┃ラッキー★ボックス
+Goods/Desc/3103024┃ラッキー★ボックスからはA-Coinを獲得できます。\n確率に応じて出現するアイテムの内1つを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103025┃ラッキー★ボール
+Goods/Desc/3103025┃ラッキー★ボールからはA-Coinを獲得できます。\n確率に応じて出現するアイテムの内1つを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103026┃チャレンジボックス
+Goods/Desc/3103026┃確率に応じてレッドトークン50個またはホワイトトークン50個を獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103028┃紅葉コレクションⅠ報酬
+Goods/Desc/3103028┃紅葉コレクションⅠ報酬を完成させると受け取れる報酬です。\n使用すると、＜100イベントNP(7日)＞とラッキー★トークン5個を獲得することができます。
+Goods/Name/3103029┃紅葉コレクションⅡ報酬
+Goods/Desc/3103029┃紅葉コレクションⅡ報酬を完成させると受け取れる報酬です。\n使用すると、＜200イベントNP(7日)＞とラッキー★トークン10個、スキンデータセット1個を獲得することができます。
+Goods/Name/3102017┃真祖の祝福データボックス
+Goods/Desc/3102017┃完全なスキンまたはスキンピース1つと真祖の祝福カード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3190010┃真祖の祝福スキン選択券
+Goods/Desc/3190010┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102018┃デイリースタンプボックス
+Goods/Desc/3102018┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103030┃2024 クリスマスデータボックス
+Goods/Desc/3103030┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103031┃2024 クリスマスコレクションⅥ 報酬
+Goods/Desc/3103031┃収集品「2024 クリスマスコレクションⅥ」の完成報酬です。\n使用すると、2024 クリスマス墓石とカメラ、ドローンのスキンを獲得できます。
+Goods/Name/3103032┃ホワイトスターボックス
+Goods/Desc/3103032┃ホワイトスターボックス、グリーンスターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を獲得できます。
+Goods/Name/3103033┃グレーンスターボックス
+Goods/Desc/3103033┃グリーンスターボックス、ブルースターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を3個獲得できます。
+Goods/Name/3103034┃ブルースターボックス
+Goods/Desc/3103034┃ブルースターボックス、パープルスターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を7個獲得できます。
+Goods/Name/3103035┃パープルスターボックス
+Goods/Desc/3103035┃パープルスターボックス、ゴールドスターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を15個獲得できます。
+Goods/Name/3103036┃ゴールドスターボックス
+Goods/Desc/3103036┃祭りトークン5個を獲得でき、確率に応じて祭りトークン、収集品アイテム＜ゴールドスター＞、A-Coinの内、1つを獲得できます。
+Goods/Name/3103037┃ERトークンランダムボックス
+Goods/Desc/3103037┃ERトークン 1個または100 A-Coinをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3103038┃200イベントNP(7日) + 祭りトークン 10個
+Goods/Desc/3103038┃200イベントNP(7日)と祭りトークン 10個を獲得できます。
+Goods/Name/3102019┃2025 金の福袋
+Goods/Desc/3102019┃4つのいろんなアイテムを獲得できる＜2025 金の福袋＞です。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102020┃悪魔の袋
+Goods/Desc/3102020┃3 ~ 100個のレギオントークンとレギオントークンカード1個を獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102021┃生徒会長のスキンデータボックス
+Goods/Desc/3102021┃完全なスキンまたはスキンピース1つと生徒会長のカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3190011┃生徒会長のスキン選択券
+Goods/Desc/3190011┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102022┃チェンジスキンデータボックス
+Goods/Desc/3102022┃完全なスキンまたはスキンピース1つとチェンジカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3190012┃チェンジスキン選択券
+Goods/Desc/3190012┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102023┃5月の確率UPスキンデータボックス
+Goods/Desc/3102023┃完全なスキンまたはスキンピース1つと5月の確率UPスキンカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3190013┃5月の確率UPスキン選択券
+Goods/Desc/3190013┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102024┃金のサイコロ
+Goods/Desc/3102024┃確率に応じて4つのアイテムリストの中からそれぞれ一つをランダムに獲得できます。(アイテム4つ獲得可能)\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102025┃サイコロ
+Goods/Desc/3102025┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3190014┃サイコロの目選択券
+Goods/Desc/3190014┃6つのサイコロの目から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102026┃2周年記念サマーボックス
+Goods/Desc/3102026┃完全なスキンまたはスキンピース1つと2周年サマーカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102027┃2025 落ち葉トークンボックス
+Goods/Desc/3102027┃2025 落ち葉トークン25個を獲得できます。\n確率に応じて2025 落ち葉トークンを20/30/40/50個を更に獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3190015┃2周年記念サマースキン選択券
+Goods/Desc/3190015┃リストの中から一つを選択して獲得できます。\n獲得できるアイテムはアイテムリストで確認できます。
+Goods/Name/3199001┃シーズンピースパック
+Goods/Desc/3199001┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199002┃シーズンピースパック(一般)
+Goods/Desc/3199002┃一般等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199003┃シーズンピースパック(高級)
+Goods/Desc/3199003┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199011┃シーズンピースパック
+Goods/Desc/3199011┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199012┃シーズンピースパック(一般)
+Goods/Desc/3199012┃一般等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199013┃シーズンピースパック(高級)
+Goods/Desc/3199013┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199014┃シーズンピースパック
+Goods/Desc/3199014┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199015┃シーズンピースパック
+Goods/Desc/3199015┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/1┃シークレットDrops
+Goods/Name/2┃Secret BOX (Mini)
+Goods/Name/3┃実験体ランダムボックス
+Goods/Name/6┃シークレットDrops Box
+Goods/Desc/1┃報酬として300イベントNPまたは1,500A-Coinを受領できます。
+Goods/Desc/2┃報酬として300イベントNPまたは1,500A-Coinを受領できます。
+Goods/Desc/3┃キャラクターを1人獲得できます。
+Goods/Desc/6┃報酬として300イベントNP(1日)または1,500A-Coinを受領できます。\nイベントや無償で配布される報酬・ボックスの確率は公開されません。
+Goods/Name/3143001┃eSports Box (EA S7)
+Goods/Name/3143002┃eSports Box (EA S8)
+Goods/Name/3143003┃eSports Box (EA S9)
+Goods/Name/3143004┃eSports Box (S1)
+Goods/Name/3143005┃eSports Box (S2)
+Goods/Name/3143006┃eSports Box (S3)
+Goods/Name/3143007┃eSports Box (S4)
+Goods/Name/3143008┃eSports Box (S5)
+Goods/Name/3143009┃eSports Box (2024 同好会大会)
+Goods/Name/3143010┃eSports Box (S6)
+Goods/Name/3143011┃eSports Box (2024 ナショナルリーグ)
+Goods/Desc/3143001┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143002┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143003┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143004┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143005┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143006┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143007┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143008┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143009┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143010┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143011┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/9999999┃未所持スキン補給チケット<#00ffee>No.01</color>
+Goods/Name/9999998┃未所持スキン補給チケット<#00ffee>No.02</color>
+Goods/Name/3119001┃未所持スキン補給チケット<#00ffee>No.01</color>
+Goods/Name/3119002┃未所持スキン補給チケット<#00ffee>No.02</color>
+Goods/Name/3119003┃未所持スキン補給チケット<#00ffee>No.03</color>
+Goods/Name/3119004┃エモート選別カード
+Goods/Desc/3119004┃アイテムリストの中から所持していないアイテムを1つランダムに獲得できます。\n選別カードで得られるアイテムリストは毎週木曜日午後12時(JST)に変更されます。
+Goods/Name/3119005┃プロフィール選別カード
+Goods/Desc/3119005┃アイテムリストの中から所持していないアイテムを1つランダムに獲得できます。\n選別カードで得られるアイテムリストは毎週木曜日午後12時(JST)に変更されます。
+Goods/Name/3199021┃シーズンピース(一般) 1個
+Goods/Name/3199022┃シーズンピース(一般) 2個
+Goods/Name/3199023┃シーズンピース(一般) 3個
+Goods/Name/3199024┃シーズンピース(一般) 5個
+Goods/Name/3180001┃シーズントークン 1個
+Goods/Name/3180002┃シーズントークン 2個
+Goods/Name/3180003┃シーズントークン 3個
+Goods/Name/3180004┃シーズントークン 4個
+오늘의 도전┃今日のクエスト
+오늘의 도전과제를 모두 완수하였습니다.┃今日のクエストを完了しました。
+도전과제 변경 가능┃クエスト内容は1日に1回変更できます。\n新しいクエスト内容に変更しますか？
+도전과제 변경 초과┃クエストを変更できません（1日1回まで）
+미션 갱신 에러┃ミッション更新エラー
+매칭중에는 변경할 수 없습니다.┃マッチング中は変更できません。
+이벤트 미션┃イベントミッション
+또는┃または
+그리고┃そして
+카카오 PC방 미션┃ネットカフェ特別イベントミッション
+미션 그룹 변경 불가┃遂行できるミッションがないため、移動できません。
+미션 보상 획득 완료┃すでに報酬を獲得しました。
+Mission/1/1┃一般/ランク対戦プレイ
+Mission/2/1┃一般/ランク対戦プレイ
+Mission/3/1┃一般/ランク対戦プレイ<color=#FFBB00>(イベント)</color>
+Mission/4/1┃一般/ランク対戦プレイ<color=#FFBB00>(イベント)</color>
+Mission/21/1┃ランク対戦プレイ
+Mission/11/1┃一般対戦プレイ
+Mission/31/1┃プレイヤーキル達成
+Mission/32/1┃プレイヤーキル達成
+Mission/33/1┃プレイヤーキル達成
+Mission/34/1┃プレイヤーキル達成
+Mission/35/1┃プレイヤーキル達成
+Mission/36/1┃プレイヤーキル達成
+Mission/41/1┃野生動物キル達成
+Mission/42/1┃野生動物キル達成
+Mission/43/1┃野生動物キル達成
+Mission/44/1┃野生動物キル達成
+Mission/45/1┃野生動物キル達成
+Mission/46/1┃野生動物キル達成
+Mission/47/1┃野生動物キル達成
+Mission/51/1┃7位以上を記録
+Mission/52/1┃5位以上を記録
+Mission/53/1┃3位以上を記録
+Mission/61/1┃<color=white>ジャガイモ</color>アイテム獲得
+Mission/62/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
+Mission/63/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
+Mission/64/1┃<color=white>ジャガイモ</color>アイテム獲得
+Mission/65/1┃<color=white>タラ</color>アイテム獲得
+Mission/66/1┃<color=#D05EFF>隕石</color>アイテム獲得
+Mission/67/1┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
+Mission/68/1┃<color=#D05EFF>フォースコアー</color>アイテム獲得
+Mission/69/1┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/71/1┃プレイヤーを攻撃してダメージを与える
+Mission/72/1┃プレイヤーを攻撃してダメージを与える
+Mission/73/1┃プレイヤーを攻撃してダメージを与える
+Mission/74/1┃プレイヤーを攻撃してダメージを与える
+Mission/75/1┃プレイヤーを攻撃してダメージを与える
+Mission/76/1┃プレイヤーを攻撃してダメージを与える
+Mission/77/1┃プレイヤーを攻撃してダメージを与える
+Mission/81/1┃野生動物を攻撃してダメージを与える
+Mission/82/1┃野生動物を攻撃してダメージを与える
+Mission/83/1┃野生動物を攻撃してダメージを与える
+Mission/84/1┃野生動物を攻撃してダメージを与える
+Mission/85/1┃野生動物を攻撃してダメージを与える
+Mission/86/1┃野生動物を攻撃してダメージを与える
+Mission/87/1┃野生動物を攻撃してダメージを与える
+Mission/88/1┃野生動物を攻撃してダメージを与える
+Mission/89/1┃野生動物を攻撃してダメージを与える
+Mission/91/1┃ニワトリ処置
+Mission/92/1┃ニワトリ処置
+Mission/93/1┃ニワトリ処置
+Mission/94/1┃ニワトリ処置
+Mission/95/1┃ニワトリ処置
+Mission/96/1┃ニワトリ処置
+Mission/97/1┃ニワトリ処置
+Mission/101/1┃コウモリ処置
+Mission/102/1┃コウモリ処置
+Mission/103/1┃コウモリ処置
+Mission/104/1┃コウモリ処置
+Mission/105/1┃コウモリ処置
+Mission/106/1┃コウモリ処置
+Mission/107/1┃コウモリ処置
+Mission/111/1┃イノシシ処置
+Mission/112/1┃イノシシ処置
+Mission/113/1┃イノシシ処置
+Mission/114/1┃イノシシ処置
+Mission/115/1┃イノシシ処置
+Mission/116/1┃イノシシ処置
+Mission/117/1┃イノシシ処置
+Mission/121/1┃ハウンド処置
+Mission/122/1┃ハウンド処置
+Mission/123/1┃ハウンド処置
+Mission/124/1┃ハウンド処置
+Mission/125/1┃ハウンド処置
+Mission/126/1┃ハウンド処置
+Mission/127/1┃ハウンド処置
+Mission/131/1┃オオカミ処置
+Mission/132/1┃オオカミ処置
+Mission/133/1┃オオカミ処置
+Mission/134/1┃オオカミ処置
+Mission/135/1┃オオカミ処置
+Mission/136/1┃オオカミ処置
+Mission/137/1┃オオカミ処置
+Mission/141/1┃クマ処置
+Mission/142/1┃クマ処置
+Mission/143/1┃クマ処置
+Mission/144/1┃クマ処置
+Mission/145/1┃クマ処置
+Mission/146/1┃クマ処置
+Mission/147/1┃クマ処置
+Mission/151/1┃ウィクライン処置
+Mission/1000101/1┃一般/ランク対戦プレイ
+Mission/1000102/1┃一般対戦プレイ
+Mission/1000103/1┃一般/ランク対戦プレイ
+Mission/1000201/2┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/1000201/3┃一般/ランク対戦デュオプレイ
+Mission/1000202/2┃コバルトモードプレイ
+Mission/1000202/3┃一般/ランク対戦プレイ
+Mission/1000301/2┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/1000301/3┃一般/ランク対戦デュオプレイ
+Mission/1000302/2┃コバルトモードプレイ
+Mission/1000302/3┃一般/ランク対戦プレイ
+Mission/1000303/2┃コバルトモードプレイ
+Mission/1000303/3┃一般/ランク対戦プレイ
+Mission/1000104/1┃コバルトモード勝利
+Mission/1000104/2┃一般/ランク対戦プレイ
+Mission/1000104/3┃コバルトモード勝利
+Mission/1000105/1┃コバルトモード勝利
+Mission/1000105/2┃一般/ランク対戦プレイ
+Mission/1000105/3┃コバルトモード勝利
+Mission/1010101/1┃実験体キル達成
+Mission/1010102/1┃実験体キル達成
+Mission/1010103/1┃実験体キル達成
+Mission/1010104/1┃実験体キル達成
+Mission/1010105/1┃実験体キル達成
+Mission/1010106/1┃実験体キル達成
+Mission/1010107/1┃実験体キル達成
+Mission/1010108/1┃実験体キル達成
+Mission/1010109/1┃実験体キル達成
+Mission/1020101/1┃野生動物キル達成
+Mission/1020102/1┃野生動物キル達成
+Mission/1020103/1┃野生動物キル達成
+Mission/1020104/1┃野生動物キル達成
+Mission/1020105/1┃野生動物キル達成
+Mission/1020106/1┃野生動物キル達成
+Mission/1020107/1┃野生動物キル達成
+Mission/1020108/1┃野生動物キル達成
+Mission/1020109/1┃野生動物キル達成
+Mission/1020110/1┃野生動物キル達成
+Mission/1020111/1┃野生動物キル達成
+Mission/1020112/1┃野生動物キル達成
+Mission/1020113/1┃野生動物キル達成
+Mission/1020114/1┃野生動物キル達成
+Mission/1020115/1┃野生動物キル達成
+Mission/1020116/1┃野生動物キル達成
+Mission/1020117/1┃野生動物キル達成
+Mission/1020118/1┃野生動物キル達成
+Mission/1030101/1┃10位以上を記録
+Mission/1030201/1┃7位以上を記録
+Mission/1030301/1┃5位以上を記録
+Mission/1030302/1┃5位以上を記録
+Mission/1030303/1┃5位以上を記録
+Mission/1030401/1┃3位以上を記録
+Mission/1030402/1┃3位以上を記録
+Mission/1030403/1┃3位以上を記録
+Mission/1040101/1┃<color=white>枝</color>アイテム獲得
+Mission/1040201/1┃<color=white>革</color>アイテム獲得
+Mission/1040301/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
+Mission/1040302/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
+Mission/1040401/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
+Mission/1040402/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
+Mission/1040501/1┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/1040502/1┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/1040503/1┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/1040504/1┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/1040601/1┃<color=#D05EFF>隕石</color>アイテム獲得
+Mission/1040602/1┃<color=#D05EFF>隕石</color>アイテム獲得
+Mission/1040603/1┃<color=#D05EFF>隕石</color>アイテム獲得
+Mission/1040701/1┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
+Mission/1040702/1┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
+Mission/1040801/1┃<color=#D05EFF>フォースコアー</color>アイテム獲得
+Mission/1040802/1┃<color=#D05EFF>フォースコアー</color>アイテム獲得
+Mission/1050101/1┃実験体を攻撃してダメージを与える
+Mission/1050201/1┃実験体を攻撃してダメージを与える
+Mission/1050301/1┃実験体を攻撃してダメージを与える
+Mission/1050401/1┃実験体を攻撃してダメージを与える
+Mission/1050402/1┃実験体を攻撃してダメージを与える
+Mission/1050403/1┃実験体を攻撃してダメージを与える
+Mission/1050404/1┃実験体を攻撃してダメージを与える
+Mission/1050405/1┃実験体を攻撃してダメージを与える
+Mission/1050406/1┃実験体を攻撃してダメージを与える
+Mission/1050407/1┃実験体を攻撃してダメージを与える
+Mission/1050408/1┃実験体を攻撃してダメージを与える
+Mission/1060101/1┃野生動物を攻撃してダメージを与える
+Mission/1060201/1┃野生動物を攻撃してダメージを与える
+Mission/1060301/1┃野生動物を攻撃してダメージを与える
+Mission/1060401/1┃野生動物を攻撃してダメージを与える
+Mission/1060402/1┃野生動物を攻撃してダメージを与える
+Mission/1060501/1┃野生動物を攻撃してダメージを与える
+Mission/1060502/1┃野生動物を攻撃してダメージを与える
+Mission/1060503/1┃野生動物を攻撃してダメージを与える
+Mission/1060504/1┃野生動物を攻撃してダメージを与える
+Mission/1060505/1┃野生動物を攻撃してダメージを与える
+Mission/1060506/1┃野生動物を攻撃してダメージを与える
+Mission/1060507/1┃野生動物を攻撃してダメージを与える
+Mission/1060508/1┃野生動物を攻撃してダメージを与える
+Mission/1060601/1┃野生動物を攻撃してダメージを与える
+Mission/1070101/1┃ニワトリ処置
+Mission/1070102/1┃ニワトリ処置
+Mission/1070103/1┃ニワトリ処置
+Mission/1070104/1┃ニワトリ処置
+Mission/1070105/1┃ニワトリ処置
+Mission/1070106/1┃ニワトリ処置
+Mission/1070107/1┃ニワトリ処置
+Mission/1070108/1┃ニワトリ処置
+Mission/1070109/1┃ニワトリ処置
+Mission/1070201/1┃コウモリ処置
+Mission/1070202/1┃コウモリ処置
+Mission/1070203/1┃コウモリ処置
+Mission/1070204/1┃コウモリ処置
+Mission/1070205/1┃コウモリ処置
+Mission/1070206/1┃コウモリ処置
+Mission/1070207/1┃コウモリ処置
+Mission/1070208/1┃コウモリ処置
+Mission/1070209/1┃コウモリ処置
+Mission/1070301/1┃イノシシ処置
+Mission/1070302/1┃イノシシ処置
+Mission/1070303/1┃イノシシ処置
+Mission/1070304/1┃イノシシ処置
+Mission/1070305/1┃イノシシ処置
+Mission/1070306/1┃イノシシ処置
+Mission/1070307/1┃イノシシ処置
+Mission/1070308/1┃イノシシ処置
+Mission/1070309/1┃イノシシ処置
+Mission/1070401/1┃ハウンド処置
+Mission/1070402/1┃ハウンド処置
+Mission/1070403/1┃ハウンド処置
+Mission/1070404/1┃ハウンド処置
+Mission/1070405/1┃ハウンド処置
+Mission/1070406/1┃ハウンド処置
+Mission/1070407/1┃ハウンド処置
+Mission/1070408/1┃ハウンド処置
+Mission/1070409/1┃ハウンド処置
+Mission/1070501/1┃オオカミ処置
+Mission/1070502/1┃オオカミ処置
+Mission/1070503/1┃オオカミ処置
+Mission/1070504/1┃オオカミ処置
+Mission/1070505/1┃オオカミ処置
+Mission/1070506/1┃オオカミ処置
+Mission/1070507/1┃オオカミ処置
+Mission/1070508/1┃オオカミ処置
+Mission/1070509/1┃オオカミ処置
+Mission/1070601/1┃クマ処置
+Mission/1070602/1┃クマ処置
+Mission/1070603/1┃クマ処置
+Mission/1070604/1┃クマ処置
+Mission/1070605/1┃クマ処置
+Mission/1070606/1┃クマ処置
+Mission/1070607/1┃クマ処置
+Mission/1070608/1┃クマ処置
+Mission/1070609/1┃クマ処置
+Mission/1070701/1┃ウィクライン処置
+Mission/1070702/1┃ウィクライン処置
+Mission/1070703/1┃ウィクライン処置
+Mission/1070704/1┃ウィクライン処置
+Mission/1110101/1┃狩り熟練度を達成
+Mission/1110102/1┃狩り熟練度を達成
+Mission/1110103/1┃狩り熟練度を達成
+Mission/1110201/1┃製作熟練度を達成
+Mission/1110202/1┃製作熟練度を達成
+Mission/1110203/1┃製作熟練度を達成
+Mission/1110301/1┃探索熟練度を達成
+Mission/1110302/1┃探索熟練度を達成
+Mission/1110303/1┃探索熟練度を達成
+Mission/1110401/1┃移動熟練度を達成
+Mission/1110402/1┃移動熟練度を達成
+Mission/1110501/1┃体力熟練度を達成
+Mission/1110502/1┃体力熟練度を達成
+Mission/1110601/1┃防御熟練度を達成
+Mission/1110602/1┃防御熟練度を達成
+Mission/1110603/1┃防御熟練度を達成
+Mission/1110701/1┃瞑想熟練度を達成
+Mission/1110702/1┃瞑想熟練度を達成
+Mission/1110801/1┃トラップ熟練度を達成
+Mission/1110802/1┃トラップ熟練度を達成
+Mission/1110901/1┃グローブ熟練度を達成
+Mission/1111001/1┃トンファー熟練度を達成
+Mission/1111101/1┃ハンマー熟練度を達成
+Mission/1111201/1┃斧熟練度を達成
+Mission/1111301/1┃バット熟練度を達成
+Mission/1111401/1┃鞭熟練度を達成
+Mission/1111501/1┃短剣熟練度を達成
+Mission/1111601/1┃両手剣熟練度を達成
+Mission/1111701/1┃双剣熟練度を達成
+Mission/1111801/1┃槍熟練度を達成
+Mission/1111901/1┃投擲熟練度を達成
+Mission/1112001/1┃暗器熟練度を達成
+Mission/1112101/1┃弓熟練度を達成
+Mission/1112201/1┃弩熟練度を達成
+Mission/1112301/1┃拳銃熟練度を達成
+Mission/1112401/1┃突撃小銃熟練度を達成
+Mission/1112501/1┃狙撃銃熟練度を達成
+Mission/1112601/1┃ヌンチャク熟練度を達成
+Mission/1112701/1┃レイピア熟練度を達成
+Mission/1112801/1┃ギター熟練度を達成
+Mission/1070801/1┃アルファ処置
+Mission/1070802/1┃アルファ処置
+Mission/1070803/1┃アルファ処置
+Mission/1070804/1┃アルファ処置
+Mission/1070901/1┃オメガ処置
+Mission/1070902/1┃オメガ処置
+Mission/1070903/1┃オメガ処置
+Mission/1070904/1┃オメガ処置
+Mission/1210101/1┃クレジット獲得
+Mission/1210102/1┃クレジット獲得
+Mission/1210103/1┃クレジット獲得
+Mission/1220101/1┃遠隔ドローン呼び出し
+Mission/1220102/1┃遠隔ドローン呼び出し
+Mission/1220103/1┃遠隔ドローン呼び出し
+Mission/1230101/1┃Kiosk利用
+Mission/1230102/1┃Kiosk利用
+Mission/1230103/1┃Kiosk利用
+Mission/8000101/1┃コバルトモード勝利
+Mission/8000101/2┃一般/ランク対戦プレイ
+Mission/8000101/3┃コバルトモード勝利
+Mission/8000201/1┃コバルトモード実験体処置
+Mission/8000301/1┃コバルトモード増幅装置占領
+Mission/8000401/1┃コバルトモード死なずに実験体2キル
+Mission/8000402/1┃コバルトモード死なずに実験体3キル
+Mission/8000501/1┃コバルトモード連続3キル以上の実験体処置
+Mission/8000601/1┃コバルトモード交戦で連続2キル達成
+Mission/8000602/1┃コバルトモード交戦で連続3キル達成
+Mission/8000701/1┃コバルトモードクレジット使用
+Mission/8000702/1┃コバルトモードクレジット使用
+Mission/8000703/1┃コバルトモードクレジット使用
+Mission/8000801/1┃コバルトモードクレジット獲得
+Mission/8000802/1┃コバルトモードクレジット獲得
+Mission/8000803/1┃コバルトモードクレジット獲得
+Mission/8000901/1┃コバルトモード絶対武力特性使用
+Mission/8000902/1┃コバルトモード絶対武力特性使用
+Mission/8000903/1┃コバルトモード吸血鬼特性使用
+Mission/8000904/1┃コバルトモード霹靂特性使用
+Mission/8000905/1┃コバルトモード金剛特性使用
+Mission/8000906/1┃コバルトモード不壊特性使用
+Mission/8000907/1┃コバルトモード絶対武力特性使用
+Mission/8000908/1┃コバルトモード超再生特性使用
+Mission/8000909/1┃コバルトモード増幅ドローン特性使用
+Mission/8000910/1┃コバルトモード治癒ドローン特性使用
+Mission/8001001/1┃コバルトモード事前チーム構成でプレイ
+Mission/8001101/1┃コバルトモードプレイ
+Mission/8001102/1┃コバルトモードプレイ
+Mission/8001201/1┃コバルトモード1レベルインフュージョン購入
+Mission/8001202/1┃コバルトモード2レベルインフュージョン購入
+Mission/8001203/1┃コバルトモード3レベルインフュージョン購入
+Mission/8001301/1┃コバルトモードすべての増幅装置を占領して維持
+Mission/8001401/1┃コバルトモードヒールパック獲得
+Mission/8001402/1┃コバルトモードヒールパック獲得
+Mission/8001403/1┃コバルトモードヒールパック獲得
+Mission/8001404/1┃コバルトモードヒールパック獲得
+Mission/8001501/2┃実験体キル達成
+Mission/8001501/3┃コバルトモード死なずに実験体2キル
+Mission/8001601/2┃実験体キル達成
+Mission/8001601/3┃コバルトモード交戦で連続2キル達成
+Mission/8001701/2┃クレジット獲得
+Mission/8001701/3┃コバルトモードクレジット使用
+Mission/8001801/2┃クレジット獲得
+Mission/8001801/3┃コバルトモードクレジット獲得
+Mission/8001901/2┃遠隔ドローン呼び出し
+Mission/8001901/3┃コバルトモード1レベルインフュージョン購入
+Mission/8002001/2┃実験体キル達成
+Mission/8002001/3┃コバルトモードヒールパック獲得
+Mission/8002101/2┃コバルトモード実験体処置
+Mission/8002101/3┃実験体キル達成
+Mission/8002201/2┃コバルトモード増幅装置占領
+Mission/8002201/3┃ウィクライン処置
+Mission/8002301/2┃コバルトモード死なずに実験体2キル
+Mission/8002301/3┃実験体を攻撃してダメージを与える
+Mission/8002401/2┃コバルトモード死なずに実験体3キル
+Mission/8002401/3┃<color=#D05EFF>フォースコアー</color>アイテム獲得
+Mission/8002501/2┃コバルトモード連続3キル以上の実験体処置
+Mission/8002501/3┃5位以上を記録
+Mission/8002601/2┃コバルトモード交戦で連続2キル達成
+Mission/8002601/3┃野生動物キル達成
+Mission/8002701/2┃コバルトモード交戦で連続3キル達成
+Mission/8002701/3┃<color=#D05EFF>生命の木</color>アイテム獲得
+Mission/8002801/2┃コバルトモードクレジット使用
+Mission/8002801/3┃オメガ処置
+Mission/8002901/2┃コバルトモードクレジット使用
+Mission/8002901/3┃5位以上を記録
+Mission/8003001/2┃コバルトモードクレジット使用
+Mission/8003001/3┃実験体キル達成
+Mission/8003101/2┃コバルトモードクレジット獲得
+Mission/8003101/3┃クマ処置
+Mission/8003201/2┃コバルトモードクレジット獲得
+Mission/8003201/3┃野生動物キル達成
+Mission/8003301/2┃コバルトモードクレジット獲得
+Mission/8003301/3┃イノシシ処置
+Mission/8003401/2┃コバルトモード絶対武力特性使用
+Mission/8003401/3┃オメガ処置
+Mission/8003501/2┃コバルトモード絶対武力特性使用
+Mission/8003501/3┃5位以上を記録
+Mission/8003601/2┃コバルトモード吸血鬼特性使用
+Mission/8003601/3┃実験体を攻撃してダメージを与える
+Mission/8003701/2┃コバルトモード霹靂特性使用
+Mission/8003701/3┃<color=#2AC0FF>ステーキ</color>アイテム獲得
+Mission/8003801/2┃コバルトモード金剛特性使用
+Mission/8003801/3┃クマ処置
+Mission/8003901/2┃コバルトモード不壊特性使用
+Mission/8003901/3┃ニワトリ処置
+Mission/8004001/2┃コバルトモード絶対武力特性使用
+Mission/8004001/3┃ハウンド処置
+Mission/8004101/2┃コバルトモード超再生特性使用
+Mission/8004101/3┃<color=#D05EFF>VF血液サンプル</color>アイテム獲得
+Mission/8004201/2┃コバルトモード増幅ドローン特性使用
+Mission/8004201/3┃実験体を攻撃してダメージを与える
+Mission/8004301/2┃コバルトモード治癒ドローン特性使用
+Mission/8004301/3┃野生動物を攻撃してダメージを与える
+Mission/8004401/2┃コバルトモード事前チーム構成でプレイ
+Mission/8004401/3┃オオカミ処置
+Mission/8004501/2┃コバルトモードプレイ
+Mission/8004501/3┃ハウンド処置
+Mission/8004601/2┃コバルトモードプレイ
+Mission/8004601/3┃イノシシ処置
+Mission/8004701/2┃コバルトモード1レベルインフュージョン購入
+Mission/8004701/3┃7位以上を記録
+Mission/8004801/2┃コバルトモード2レベルインフュージョン購入
+Mission/8004801/3┃野生動物を攻撃してダメージを与える
+Mission/8004901/2┃コバルトモード3レベルインフュージョン購入
+Mission/8004901/3┃防御熟練度を達成
+Mission/8005001/2┃コバルトモードすべての増幅装置を占領して維持
+Mission/8005001/3┃クレジット獲得
+Mission/8005101/2┃コバルトモードヒールパック獲得
+Mission/8005101/3┃野生動物キル達成
+Mission/8005201/2┃コバルトモードヒールパック獲得
+Mission/8005201/3┃オオカミ処置
+Mission/8005301/2┃コバルトモードヒールパック獲得
+Mission/8005301/3┃野生動物キル達成
+Mission/8005401/2┃コバルトモードヒールパック獲得
+Mission/8005401/3┃クレジット獲得
+Mission/81010101/1┃実験体キル達成
+Mission/91010101/1┃実験体キル達成
+Mission/81020108/1┃野生動物キル達成
+Mission/91020108/1┃野生動物キル達成
+Mission/81020111/1┃野生動物キル達成
+Mission/81020112/1┃野生動物キル達成
+Mission/81020113/1┃野生動物キル達成
+Mission/81020114/1┃野生動物キル達成
+Mission/91020111/1┃野生動物キル達成
+Mission/91020112/1┃野生動物キル達成
+Mission/91020113/1┃野生動物キル達成
+Mission/91020114/1┃野生動物キル達成
+Mission/81040101/1┃<color=white>枝</color>アイテム獲得
+Mission/81040201/1┃<color=white>革</color>アイテム獲得
+Mission/91040101/1┃<color=white>枝</color>アイテム獲得
+Mission/91040201/1┃<color=white>革</color>アイテム獲得
+Mission/81050401/1┃実験体を攻撃してダメージを与える
+Mission/81050402/1┃実験体を攻撃してダメージを与える
+Mission/81050403/1┃実験体を攻撃してダメージを与える
+Mission/81050404/1┃実験体を攻撃してダメージを与える
+Mission/91050401/1┃実験体を攻撃してダメージを与える
+Mission/91050402/1┃実験体を攻撃してダメージを与える
+Mission/91050403/1┃実験体を攻撃してダメージを与える
+Mission/91050404/1┃実験体を攻撃してダメージを与える
+Mission/81060501/1┃野生動物を攻撃してダメージを与える
+Mission/81060502/1┃野生動物を攻撃してダメージを与える
+Mission/81060503/1┃野生動物を攻撃してダメージを与える
+Mission/81060504/1┃野生動物を攻撃してダメージを与える
+Mission/91060501/1┃野生動物を攻撃してダメージを与える
+Mission/91060502/1┃野生動物を攻撃してダメージを与える
+Mission/91060503/1┃野生動物を攻撃してダメージを与える
+Mission/91060504/1┃野生動物を攻撃してダメージを与える
+Mission/81220101/1┃遠隔ドローン呼び出し
+Mission/91220101/1┃遠隔ドローン呼び出し
+Mission/1111/2┃狩り熟練度を獲得
+Mission/1121/2┃製作熟練度を獲得
+Mission/1131/2┃探索熟練度を獲得
+Mission/1141/2┃移動熟練度を獲得
+Mission/1151/2┃体力熟練度を獲得
+Mission/1161/2┃防御熟練度を獲得
+Mission/1171/2┃瞑想熟練度を獲得
+Mission/1181/2┃トラップ熟練度を獲得
+Mission/1201/2┃グローブ熟練度を獲得
+Mission/1211/2┃トンファー熟練度を獲得
+Mission/1221/2┃ハンマー熟練度を獲得
+Mission/1231/2┃斧熟練度を獲得
+Mission/1241/2┃バット熟練度を獲得
+Mission/1251/2┃鞭熟練度を獲得
+Mission/1261/2┃短剣熟練度を獲得
+Mission/1271/2┃両手剣熟練度を獲得
+Mission/1281/2┃双剣熟練度を獲得
+Mission/1291/2┃槍熟練度を獲得
+Mission/1301/2┃投擲熟練度を獲得
+Mission/1311/2┃暗器熟練度を獲得
+Mission/1321/2┃弓熟練度を獲得
+Mission/1331/2┃弩熟練度を獲得
+Mission/1341/2┃拳銃熟練度を獲得
+Mission/1351/2┃突撃小銃熟練度を獲得
+Mission/1361/2┃狙撃銃熟練度を獲得
+Mission/1371/2┃ヌンチャク熟練度を獲得
+Mission/1381/2┃レイピア熟練度を獲得
+Mission/1391/2┃ギター熟練度を獲得
+Mission/1401/2┃<color=white>枝</color>アイテム獲得
+Mission/1411/2┃<color=white>革</color>アイテム獲得
+일반랭크대전 플레이하기┃生存する準備はできましたか？
+플레이어 처치하기┃自分のレベルや装備、周りの敵の数を確認して\n\n相手より有利だと思った場合には迷わず戦いましょう！\n\n他の生存者を倒していくと、最終生存する確率が高くなります！
+야생동물 처치하기┃野生動物は決まった位置に登場します。\n\n倒された野生動物は同じ場所に再び現れます。\n\n野生動物狩りはクレジットと熟練度はもちろん、材料も得られます！
+x위 이상하기┃戦わずに生き残ることがいい選択になる場合もあります。\n\n生存者の数に注意しながら慎重に戦ってください！
+나뭇가지 아이템 획득┃<color=white>枝</color>は全地域に配置された木の枝から採取で獲得できます。\n\nマップの色んな場所にありますが、それだけ多く使われる材料です。\n枝一つだけちゃんと獲得しておくと、インベントリがきれいになることもあります。
+가죽 아이템 획득┃<color=white>皮</color>は野生動物狩りをすると獲得できます。\n\n皮は様々な武器と防具の材料になります。
+꿀 아이템 획득┃<color=white>はちみつ</color>はルミア島に位置している箱の中で見つけられます。\n\n製作ガイドでアイテムをクリックすると獲得できる位置を確認できます。
+꿀탄 우유 아이템 획득┃<color=white>牛乳</color>と<color=white>はちみつ</color>を合わせて<color=#35FF94>ハニーミルク</color>を作ることができます。\n\n\n\nルミア島の箱から<color=white>牛乳</color>と<color=white>はちみつ</color>を見つけて<color=#35FF94>ハニーミルク</color>を作ってみましょう！
+마늘빵 아이템 획득┃<color=white>にんにく</color>と <color=white>パン</color>を合わせて<color=#35FF94>ガーリックブレッド</color>を作ることができます。\n\nルミア島の箱の中から<color=white>にんにく</color>と <color=white>パン</color>を見つけて<color=#35FF94>ガーリックブレッド</color>を作ってみましょう！
+구운 마늘 아이템 획득┃<color=white>にんにく</color>を<color=#2AC0FF>にんにく焼き</color>に料理できます。\n\nルミア島の箱から<color=white>にんにく</color>を見つけたら<color=white>焚き火</color>のところに行って<color=#2AC0FF>にんにく焼き</color>を作ってみましょう。
+감자 아이템 획득┃ルミア島の北の方にある<color=white>ジャガイモ</color>を採取しましょう。\n\n採取した<color=white>ジャガイモ</color>を焚き火で料理するとより立派な食べ物を作ることができます！
+대구 아이템 획득┃水の近くに設置された釣り竿を使って釣りをすると<color=white>タラ</color>を釣り上げることができます。\n\n釣り上げた<color=white>タラ</color>を焚き火で料理するとより立派な食べ物を作ることができます！
+운석 아이템 획득┃隕石誘導技術によって毎日1回、隕石が落とされます。\n2日目以降4日目まで昼になるとランダムに落とされ、落ちる1分前に落下地点が予告されます。\n\n落ちてくる隕石に当たると大きなダメージを受けますが、\n落ちた後には<color=#D05EFF>隕石</color>を採取できるので事前に落下地点の近くへ移動しましょう。
+생명의 나무 아이템 획득┃少量のVF(ヴァイタルフォース)を長い間蓄積した木は特別な力を発揮します。\n世界樹とも呼ばれる<color=#D05EFF>生命の木</color>を採取してみてください。\n\n2日目の昼と3日目の昼に生成され、1分前に予告されます。
+VF혈액샘플 아이템 획득┃VFはヴァイタルフォースの略称で、物理的に説明できない現象を起こす自然界の第5の力として注目されています。\n\n特に、体内の受容体を形成してVFを覚醒すると、強力な異能の力と再生能力を獲得できますが、このような現象を究明することがルミア島の実験の目的の一つです。\n\nDr.ウィクラインを倒す時、VFを濃縮させた<color=#D05EFF>VF血液サンプル</color>を獲得できます。\nウィクラインは4日目の夜から研究所を出てルミア島を歩き回ります。
+포스코어 아이템 획득┃<color=#D05EFF>フォースコア</color>はVFを濃縮させて固定した鉱石です。これを使うと伝説や神話に出てきた道具を再現できます。\n\n<color=#D05EFF>隕石</color>と<color=#D05EFF>生命の木</color>を組み合わせたり、オメガを倒すと獲得できます。
+플레이어/야생동물 피해 주기┃敵により大きなダメージを与えるためには強くなる必要があります。\n\nまずは武器を作って敵を攻撃し、武器熟練度を稼ぎましょう。
+닭 처치하기┃ニワトリは一番弱い野生動物です。\nニワトリを倒すと<color=white>皮</color>を獲得できます。運が良ければ<color=white>肉</color>と<color=white>羽</color>も獲得できます。\n\nニワトリを倒して材料を獲得し、その材料で装備と食べ物を作ってみましょう。
+박쥐 처치하기┃コウモリは実験が開始されてから30秒後に登場します。\nコウモリを倒すと<color=white>望遠カメラ</color>と<color=white>皮</color>などを一つ獲得し、一定時間の間視界を確保します。\n\n倒したコウモリは160秒後、同じ位置でまた現れます。
+멧돼지 처치하기┃イノシシは実験が開始されてから60秒後に登場します。\nイノシシを倒すと<color=white>肉</color>2つと<color=white>皮</color>などを一つ獲得できます。 イノシシの突進攻撃をに気をつけてください。\n\n倒したイノシシは150秒後、同じ位置でまた現れます。
+들개 처치하기┃ハウンドは実験が開始されてから30秒後に登場します。\nハウンドを倒すと<color=white>皮</color>と<color=white>一般等級の材料アイテム</color>を一つ獲得できます。ハウンドの初攻撃は治癒効果を減少させるので気をつけてください。\n\n倒したハウンドは160秒後、同じ位置でまた現れます。
+늑대 처치하기┃オオカミは実験が開始されてから90秒後に登場します。\n\nオオカミを倒すと<color=white>肉</color>と<color=white>皮</color>、<color=#35FF94>高級等級の材料アイテム</color>を1つ獲得します。\n10レベル以上のオオカミからはたまに<color=#D05EFF>生命の木</color>や<color=#D05EFF>隕石</color>を獲得することができます。\nオオカミは普通2匹が一緒にいます。攻撃するともう近くのオオカミを呼んで一緒に攻撃するので注意してください。\n\n倒したオオカミは190秒後、同じ位置でまた現れます。
+곰 처치하기┃クマは実験が開始されてから150秒後に登場します。\n\nクマを倒すと<color=white>肉</color>と<color=white>皮</color>、<color=#35FF94>高級等級の材料アイテム</color>を一つ獲得できます。\n7レベル以上のクマからはたまに<color=#D05EFF>生命の木</color>、<color=#D05EFF>隕石</color>、<color=#D05EFF>ミスリル</color>、<color=#D05EFF>フォースコアー</color>を獲得することができます。\nクマの強打に当たると気絶してしまいます。ご注意ください！\n\n倒したクマは250秒後、同じ位置でまた現れます。
+위클라인 박사 처치하기┃Dr.ウィクラインはアグライアの研究員に推定されますが、詳しい正体は謎に包まれています。\n\nDr.ウィクラインは4日目の夜になると研究所から出てきて島を歩き回ります。\n\n実験体には手強い相手ですが、倒すと\n<color=#D05EFF>VF血液サンプル</color>と追加アイテムを1つ得られるため挑戦してみる価値があります。\n\nまた、Dr.ウィクラインを倒すと、3分間VF強化バフを獲得します。\nVF強化は実験体のVFを活性化させ、基本攻撃またはスキルで敵にダメージを与えると3秒間追加ダメージを与えるVF撹乱のデバフ効果を与えます。
+사냥 숙련도 달성하기┃野生動物を狩って狩り熟練度獲得しましょう。\n\n狩り熟練度は野生動物にダメージを与えたり、ダメージを受けると獲得できます。\n\n狩りの熟練度が上がると野生動物に与えるダメージが増加します。
+제작 숙련도 달성하기┃アイテムを製作して製作熟練度を獲得しましょう。\n\n武器・頭防具・服・腕/装具防具・脚防具・回復アイテムを製作すると熟練度を獲得できます。\n\n製作熟練度が上がると非戦闘時の体力再生が増加します。
+탐색 숙련도 달성하기┃ルミア島を探索しながら探索熟練度を獲得しましょう。\n\nアイテム箱や航空補給箱を開けたり、資源を採取したり、保安コンソールを作動させると熟練度を獲得できます。
+이동 숙련도 달성하기┃島を歩き回って、移動熟練度を獲得しましょう。\n\n移動熟練度は移動距離、新しい地域への移動、脚防具製作で獲得できます。\n\n移動熟練度が上がると移動速度が増加します。
+체력 숙련도 달성하기┃体力熟練度を獲得しましょう。\n\n体力熟練度は体力を消耗したりダメージを受ける時、そして回復アイテムを製作するときに獲得できます。
+방어 숙련도 달성하기┃死なない程度のダメージを受けると、防御熟練度を獲得できます。\n\n防御熟練度はトラップを踏んだり、生存者や野生動物からダメージを受けたり、そして頭防具を製作するときに獲得できます。\n\n防御熟練度が上がると受けるダメージが減少します。
+명상 숙련도 달성하기┃瞑想熟練度を獲得しましょう。\n\n瞑想熟練度はスタミナを消費したり飲み物を製作すると獲得できます。\n\n瞑想熟練度が上がると最大スタミナが増加します。
+함정 숙련도 달성하기┃トラップを積極的に使用してトラップ熟練度を獲得しましょう。\n\nトラップ熟練度はトラップでダメージを与えるか、ダメージを受けた時、そしてトラップの製作と設置で獲得できます。\n\nトラップ熟練度が上がるとトラップのダメージ量が増加します。
+무기 숙련도 달성하기┃敵を攻撃して武器熟練度を獲得しましょう。\n\n武器熟練度は生存者や野生動物にダメージを与えたり、武器を製作すると獲得できます。\n\n武器熟練度が上がると基本攻撃がスキルが強化されます。
+알파 처치하기┃VF(ヴァイタルフォース)を使うアンドロイドです。\n\n2日目の夜になると、すべての地域の内2か所からランダムに登場します。\n\nアルファを倒すと<color=#D05EFF>ミスリル</color>と<color=#35FF94>偵察ドローン</color>を獲得できます。
+오메가 처치하기┃VF(ヴァイタルフォース)を使うアンドロイドです。\n\n3日目の夜になると、アルファが登場しなかった地域でランダムに登場します。\n\nVFを使って特別な能力を発揮しますが、不安定な構造によって一定以上のダメージを受けると弱点を出して気絶します。\n\nオメガを倒すと<color=#D05EFF>フォースコア</color>と<color=#2AC0FF>EMPドローン</color>を獲得できます。
+루미아 크레딧 획득하기┃<color=#F4FF63>クレジット</color>はルミア島で行われる実験の一環として使用される資源です。\n\n一定量保有したままゲームを開始し、長く生存または野生動物や変異体、実験体を倒した時に獲得できます。\n\nまた、<color=#F4FF63>クレジット</color>を使って遠隔ドローンやKioskを利用することができます。
+루미아 전송드론 사용하기┃遠隔ドローンはルミア島で行われる実験中の実験体を観察するためのステルスドローンです。\n\n実験の質的向上を追求する研究員により、<color=#F4FF63>クレジット</color>を通じて一般材料を転送してもらえる機能が追加されました！\n\nアイテムの探索が円滑でなかったり、禁止区域によって希望する材料が手に入らない場合、遠隔ドローンを使用してください！
+루미아 전송콘솔 사용하기┃Kioskはルミア島で行われる生存実験をより劇的な結果を導き出すために追加された装置です。\n\n実験体は一定量の<color=#F4FF63>クレジット</color>を使って特殊材料を注文することができます。
+코발트 모드 승리하기┃エターナルリターンの2つ目のモード、コバルト・プロトコルをプレイしてみましょう！\n\n戦闘中心の軽いモード！アイテム探索やルートなどないこのモードでは戦闘能力を上げて脱落する恐れなどないゲームをプレイできます。\n相手チームのライフポイントをすべて消耗させて勝利しましょう！
+코발트 모드 실험체 처치하기┃脱落を恐れる必要のないコバルトプロトコルで敵を倒しに行く時間です！
+코발트 모드 증폭 장치 점령하기┃コバルトモードで増幅装置を占領し、相手チームのライフポイントを差し引くことができます。\n\n増幅装置は味方に良い効果も提供しますので、相手チームより先に占領しましょう！
+코발트 모드 죽지 않고 실험체 연속 처치하기┃死なずに連続キルを達成しましょう！\n\n死なずに記録した処置数が高くなるほど追加クレジットを得ることができます。
+코발트 모드 연속 킬 저지하기┃コバルトモードで相手の連続キルを阻止すると、自分とチーム員全員が追加クレジットを得ることができます。\n\n死を恐れなくてもいいコバルトモードには、永遠の勝者も敗者も存在しません。
+코발트 모드 교전에서 연속 킬 달성하기┃一度の交戦で連続キルを達成しましょう！\n\nコバルトモードでは一定時間内に複数人の敵を処置すると、専用アナウンスが聞けます。
+코발트 모드 크레딧 사용하기┃合成機でクレジットを使って、インフュージョンとアイテムを購入しましょう！\n\nコバルトモードにのみ存在するインフュージョンを購入し、気に入らない装備は交換して、特殊なスキルを使って戦ってみましょう！
+코발트 모드 크레딧 획득하기┃コバルトモードでは様々な方法でクレジットを得ることができます。\n\n野生動物を狩ったり、相手を倒したり、じっとしているだけでもクレジットがゲットできます！\nまた、チームがライフポイントが遅れている場合は、一定量のボーナスクレジットを追加で獲得することができます。
+코발트 모드 특정 메인 특성 사용하기┃コバルトプロトコルでは特性のページなしで、キャラクター選択画面でコア特性だけを選択してプレイすることができます!\nどんな能力があるのか気になるコア特性があればコバルトプロトコルをプレイしてみてください!
+코발트 모드 사전 팀 구성으로 플레이┃4人で一緒にエターナルリターンをプレイできる唯一の方法、コバルト・プロトコル！\n\n友達・知人または偶然に出会ってフレンドになった人と一緒にコバルトモードをプレイしてみましょう！
+코발트 모드 플레이하기┃エターナルリターンの2つ目のモード、コバルト・プロトコルをプレイしてみましょう！\n\n戦闘中心の軽いモード！アイテム探索やルートなどないこのモードでは戦闘能力を上げて脱落する恐れなどないゲームをプレイできます。
+코발트 모드 특정 레벨 인퓨전 구매하기┃コバルトプロトコルの合成機で購入できるインフュージョンの一部は2、3段階にアップグレードできます。\n\nより高い段階のインフュージョンはより強力な効果を持っています！
+코발트 모드 모든 증폭 장치를 점령하고 유지하기┃コバルト戦場中央の増幅装置は強力なバフを提供し、敵のライフポイントを一定時間ごとに奪います！\nすべての増幅装置を占領してコバルトプロトコル戦場の主人公になってみましょう！
+코발트 모드 힐팩 획득하기┃いろんな場所にあるヒールパックを獲得すれば、自分と味方の体力を回復できます！\n\n交戦を覆すことができる強力な変数。ヒールパックの効果をコバルトプロトコルで体験してみてください！
+발렌타인 이벤트 미션 보상┃<color=#10adff>報酬：バレンタインタジアスキン
+Mission/10000001/1┃[ルミア島] 一般/ランク対戦2回プレイ
+Mission/10000002/1┃[ルミア島] TK7回以上する
+Mission/10000003/1┃[ルミア島] 野生動物20回処置
+Mission/10000004/1┃[ルミア島] 3位以上を記録
+Mission/10000005/1┃[ルミア島] 「枝」2個以上獲得
+Mission/10000006/1┃[ルミア島] 「皮」2個以上獲得
+Mission/10000007/1┃[ルミア島] 「望遠カメラ」5個以上獲得
+Mission/10000008/1┃[ルミア島] 「隕石」1個以上獲得
+Mission/10000009/1┃[ルミア島] 「生命の木」1個以上獲得
+Mission/10000010/1┃[ルミア島] 実験体を攻撃してダメージを与える
+Mission/10000011/1┃[ルミア島] 野生動物を攻撃してダメージを与える
+Mission/10000012/1┃[ルミア島] ニワトリ20回処置
+Mission/10000013/1┃[ルミア島] コウモリ15回処置
+Mission/10000014/1┃[ルミア島] イノシシ8回処置
+Mission/10000015/1┃[ルミア島] ハウンド7回処置
+Mission/10000016/1┃[ルミア島] オオカミ7回処置
+Mission/10000017/1┃[ルミア島] クマ3回処置
+Mission/10000018/1┃[ルミア島] ウィクライン処置
+Mission/10000019/1┃[ルミア島] アルファ処置
+Mission/10000020/1┃[ルミア島] オメガ処置
+Mission/10000021/1┃[ルミア島] 狩り熟練度10レベル以上達成
+Mission/10000022/1┃[ルミア島] 製作熟練度10レベル以上達成
+Mission/10000023/1┃[ルミア島] 探索熟練度10レベル以上達成
+Mission/10000024/1┃[ルミア島] 移動熟練度10レベル以上達成
+Mission/10000025/1┃[ルミア島] 防御熟練度10レベル以上達成
+Mission/10000026/1┃[ルミア島] クレジット900以上獲得
+Mission/10000027/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
+Mission/10000028/1┃[ルミア島] Kiosk3回以上利用
+Mission/10000029/1┃[ルミア島] ハイパーループ7回使用
+Mission/10000030/1┃[ルミア島] 伝説等級アイテム製作3回
+Mission/10000031/1┃[ルミア島] 食べ物10回使用
+Mission/10000032/1┃[ルミア島] エモート3回使用
+Mission/10000033/1┃[ルミア島] 10分以上生存
+Mission/10000101/1┃[ルミア島] 一般/ランク対戦2回プレイ
+Mission/10000102/1┃[ルミア島] TK7回以上する
+Mission/10000103/1┃[ルミア島] 野生動物20回処置
+Mission/10000104/1┃[ルミア島] 3位以上を記録
+Mission/10000105/1┃[ルミア島] 「枝」2個以上獲得
+Mission/10000106/1┃[ルミア島] 「皮」2個以上獲得
+Mission/10000107/1┃[ルミア島] 「望遠カメラ」5個以上獲得
+Mission/10000108/1┃[ルミア島] 「隕石」1個以上獲得
+Mission/10000109/1┃[ルミア島] 「生命の木」1個以上獲得
+Mission/10000110/1┃[ルミア島] 実験体を攻撃してダメージを与える
+Mission/10000111/1┃[ルミア島] 野生動物を攻撃してダメージを与える
+Mission/10000112/1┃[ルミア島] ニワトリ20回処置
+Mission/10000113/1┃[ルミア島] コウモリ15回処置
+Mission/10000114/1┃[ルミア島] イノシシ8回処置
+Mission/10000115/1┃[ルミア島] ハウンド7回処置
+Mission/10000116/1┃[ルミア島] オオカミ7回処置
+Mission/10000117/1┃[ルミア島] クマ3回処置
+Mission/10000118/1┃[ルミア島] ウィクライン処置
+Mission/10000119/1┃[ルミア島] アルファ処置
+Mission/10000120/1┃[ルミア島] オメガ処置
+Mission/10000121/1┃[ルミア島] 狩り熟練度10レベル以上達成
+Mission/10000122/1┃[ルミア島] 製作熟練度10レベル以上達成
+Mission/10000123/1┃[ルミア島] 探索熟練度10レベル以上達成
+Mission/10000124/1┃[ルミア島] 移動熟練度10レベル以上達成
+Mission/10000125/1┃[ルミア島] 防御熟練度10レベル以上達成
+Mission/10000126/1┃[ルミア島] クレジット900以上獲得
+Mission/10000127/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
+Mission/10000128/1┃[ルミア島] Kiosk3回以上利用
+Mission/10000129/1┃[ルミア島] ハイパーループ7回使用
+Mission/10000130/1┃[ルミア島] 伝説等級アイテム製作3回
+Mission/10000131/1┃[ルミア島] 食べ物10回使用
+Mission/10000132/1┃[ルミア島] エモート3回使用
+Mission/10000133/1┃[ルミア島] 10分以上生存
+Mission/10000201/1┃[ルミア島] 一般/ランク対戦プレイ
+Mission/10000202/1┃[ルミア島] TK7回以上する
+Mission/10000203/1┃[ルミア島] 野生動物20回処置
+Mission/10000204/1┃[ルミア島] 「枝」2個以上獲得
+Mission/10000205/1┃[ルミア島] 「皮」2個以上獲得
+Mission/10000206/1┃[ルミア島] 「望遠カメラ」5個以上獲得
+Mission/10000207/1┃[ルミア島] 「隕石」1個以上獲得
+Mission/10000208/1┃[ルミア島] 「生命の木」1個以上獲得
+Mission/10000209/1┃[ルミア島] 実験体を攻撃してダメージを与える
+Mission/10000210/1┃[ルミア島] 野生動物を攻撃してダメージを与える
+Mission/10000211/1┃[ルミア島] ニワトリ20回処置
+Mission/10000212/1┃[ルミア島] コウモリ15回処置
+Mission/10000213/1┃[ルミア島] イノシシ8回処置
+Mission/10000214/1┃[ルミア島] ハウンド7回処置
+Mission/10000215/1┃[ルミア島] オオカミ7回処置
+Mission/10000216/1┃[ルミア島] クマ3回処置
+Mission/10000217/1┃[ルミア島] 狩り熟練度10レベル以上達成
+Mission/10000218/1┃[ルミア島] 製作熟練度10レベル以上達成
+Mission/10000219/1┃[ルミア島] 探索熟練度10レベル以上達成
+Mission/10000220/1┃[ルミア島] 移動熟練度10レベル以上達成
+Mission/10000221/1┃[ルミア島] 防御熟練度10レベル以上達成
+Mission/10000222/1┃[ルミア島] クレジット900以上獲得
+Mission/10000223/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
+Mission/10000224/1┃[ルミア島] Kiosk3回以上利用
+Mission/10000225/1┃[ルミア島] ハイパーループ7回使用
+Mission/10000226/1┃[ルミア島] 食べ物10回使用
+Mission/10000227/1┃[ルミア島] 10分以上生存
+Mission/10000228/1┃ゲームにログイン
+Mission/10000229/1┃[ルミア島] 味方に「MVP！」1回使用
+Mission/10001001/1┃[ルミア島] 一般/ランク対戦プレイ
+Mission/10011001/1┃ゲームにログイン
+Mission/10000301/1┃[ルミア島] 一般/ランク対戦プレイ
+Mission/10000302/1┃[ルミア島] TK7回以上する
+Mission/10000303/1┃[ルミア島] 野生動物20回処置
+Mission/10000304/1┃[ルミア島] 「枝」2個以上獲得
+Mission/10000305/1┃[ルミア島] 「皮」2個以上獲得
+Mission/10000306/1┃[ルミア島] 「望遠カメラ」5個以上獲得
+Mission/10000307/1┃[ルミア島] 「隕石」1個以上獲得
+Mission/10000308/1┃[ルミア島] 「生命の木」1個以上獲得
+Mission/10000309/1┃[ルミア島] 実験体を攻撃してダメージを与える
+Mission/10000310/1┃[ルミア島] 野生動物を攻撃してダメージを与える
+Mission/10000311/1┃[ルミア島] ニワトリ20回処置
+Mission/10000312/1┃[ルミア島] コウモリ15回処置
+Mission/10000313/1┃[ルミア島] イノシシ8回処置
+Mission/10000314/1┃[ルミア島] ハウンド7回処置
+Mission/10000315/1┃[ルミア島] オオカミ7回処置
+Mission/10000316/1┃[ルミア島] クマ3回処置
+Mission/10000317/1┃[ルミア島] 狩り熟練度10レベル以上達成
+Mission/10000318/1┃[ルミア島] 製作熟練度10レベル以上達成
+Mission/10000319/1┃[ルミア島] 探索熟練度10レベル以上達成
+Mission/10000320/1┃[ルミア島] 移動熟練度10レベル以上達成
+Mission/10000321/1┃[ルミア島] 防御熟練度10レベル以上達成
+Mission/10000322/1┃[ルミア島] クレジット900以上獲得
+Mission/10000323/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
+Mission/10000324/1┃[ルミア島] Kiosk3回以上利用
+Mission/10000325/1┃[ルミア島] ハイパーループ7回使用
+Mission/10000326/1┃[ルミア島] 食べ物10回使用
+Mission/10000327/1┃[ルミア島] 10分以上生存
+Mission/10000328/1┃ゲームにログイン
+Mission/10000329/1┃[ルミア島] 味方に「MVP！」1回使用
+Mission/10000401/1┃ゲームにログイン
+Mission/10000501/1┃[ルミア島] 一般/ランク対戦2回プレイ
+Mission/10000502/1┃[ルミア島] TK7回以上する
+Mission/10000503/1┃[ルミア島] 野生動物20回処置
+Mission/10000504/1┃[ルミア島] 3位以上を記録
+Mission/10000505/1┃[ルミア島] 「枝」2個以上獲得
+Mission/10000506/1┃[ルミア島] 「皮」2個以上獲得
+Mission/10000507/1┃[ルミア島] 「望遠カメラ」5個以上獲得
+Mission/10000508/1┃[ルミア島] 「隕石」1個以上獲得
+Mission/10000509/1┃[ルミア島] 「生命の木」1個以上獲得
+Mission/10000510/1┃[ルミア島] 実験体を攻撃してダメージを与える
+Mission/10000511/1┃[ルミア島] 野生動物を攻撃してダメージを与える
+Mission/10000512/1┃[ルミア島] ニワトリ20回処置
+Mission/10000513/1┃[ルミア島] コウモリ15回処置
+Mission/10000514/1┃[ルミア島] イノシシ8回処置
+Mission/10000515/1┃[ルミア島] ハウンド7回処置
+Mission/10000516/1┃[ルミア島] オオカミ7回処置
+Mission/10000517/1┃[ルミア島] クマ3回処置
+Mission/10000518/1┃[ルミア島] ウィクライン処置
+Mission/10000519/1┃[ルミア島] アルファ処置
+Mission/10000520/1┃[ルミア島] オメガ処置
+Mission/10000521/1┃[ルミア島] 狩り熟練度10レベル以上達成
+Mission/10000522/1┃[ルミア島] 製作熟練度10レベル以上達成
+Mission/10000523/1┃[ルミア島] 探索熟練度10レベル以上達成
+Mission/10000524/1┃[ルミア島] 移動熟練度10レベル以上達成
+Mission/10000525/1┃[ルミア島] 防御熟練度10レベル以上達成
+Mission/10000526/1┃[ルミア島] クレジット900以上獲得
+Mission/10000527/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
+Mission/10000528/1┃[ルミア島] Kiosk3回以上利用
+Mission/10000529/1┃[ルミア島] ハイパーループ7回使用
+Mission/10000530/1┃[ルミア島] 伝説等級アイテム製作3回
+Mission/10000531/1┃[ルミア島] 食べ物10回使用
+Mission/10000532/1┃[ルミア島] エモート3回使用
+Mission/10000533/1┃[ルミア島] 10分以上生存
+Mission/10000601/1┃[ルミア島] 一般/ランク対戦プレイ
+Mission/10000602/1┃[ルミア島] TK7回以上する
+Mission/10000603/1┃[ルミア島] 野生動物20回処置
+Mission/10000604/1┃[ルミア島] 「枝」2個以上獲得
+Mission/10000605/1┃[ルミア島] 「皮」2個以上獲得
+Mission/10000606/1┃[ルミア島] 「望遠カメラ」5個以上獲得
+Mission/10000607/1┃[ルミア島] 「隕石」1個以上獲得
+Mission/10000608/1┃[ルミア島] 「生命の木」1個以上獲得
+Mission/10000609/1┃[ルミア島] 実験体を攻撃してダメージを与える
+Mission/10000610/1┃[ルミア島] 野生動物を攻撃してダメージを与える
+Mission/10000611/1┃[ルミア島] ニワトリ20回処置
+Mission/10000612/1┃[ルミア島] コウモリ15回処置
+Mission/10000613/1┃[ルミア島] イノシシ8回処置
+Mission/10000614/1┃[ルミア島] ハウンド7回処置
+Mission/10000615/1┃[ルミア島] オオカミ7回処置
+Mission/10000616/1┃[ルミア島] クマ3回処置
+Mission/10000617/1┃[ルミア島] 狩り熟練度10レベル以上達成
+Mission/10000618/1┃[ルミア島] 製作熟練度10レベル以上達成
+Mission/10000619/1┃[ルミア島] 探索熟練度10レベル以上達成
+Mission/10000620/1┃[ルミア島] 移動熟練度10レベル以上達成
+Mission/10000621/1┃[ルミア島] 防御熟練度10レベル以上達成
+Mission/10000622/1┃[ルミア島] クレジット900以上獲得
+Mission/10000623/1┃[ルミア島] 遠隔ドローン3回以上呼び出し
+Mission/10000624/1┃[ルミア島] Kiosk3回以上利用
+Mission/10000625/1┃[ルミア島] ハイパーループ7回使用
+Mission/10000626/1┃[ルミア島] 食べ物10回使用
+Mission/10000627/1┃[ルミア島] 10分以上生存
+Mission/10000628/1┃ゲームにログイン
+Mission/10000629/1┃[ルミア島] 味方に「MVP！」1回使用
+서비스약관┃Terms of Service
+개인정보동의┃Privacy Policy
 Item/Name/101101┃はさみ
 Item/Name/101102┃万年筆
 Item/Name/101104┃包丁
@@ -15173,7 +15271,6 @@ Item/Effects/502305┃クリックで使用: <color=lightblue>ペンデュラム
 Item/Effects/502306┃クリックで使用: <color=lightblue>爆発トラップ</color>を設置します。\n<color=yellow>トラップ発動:</color> {1}秒後、広い範囲が爆発します。
 Item/Effects/502307┃クリックで使用: <color=lightblue>RDX</color>を設置します。\n<color=yellow>トラップ発動:</color> {1}秒後、広い範囲が爆発します。
 Item/Effects/502308┃クリックで使用:目標地点に<color=lightblue>EMPドローン</color>を発射します。\n周辺のトラップを一度無力化した後、{2}秒間目標地点周囲の視界を確保します。
-Item/Effects/502401┃クリックで使用: <color=lightblue>ミスリル糸</color>を設置します。
 Item/Effects/502402┃クリックで使用: <color=lightblue>爆雷針</color>を設置します。\n<color=yellow>トラップ発動:</color> 対象の移動速度が{0}秒間\n50%減少します。
 Item/Effects/502403┃クリックで使用: <color=lightblue>火炎トラップ</color>を設置します。\n<color=yellow>トラップ発動:</color> {1}秒後広い範囲で爆発します。
 Item/Effects/502404┃クリックで使用: <color=lightblue>C4</color>を設置します。\n<color=yellow>トラップ発動:</color> {1}秒後広い範囲で爆発します。
@@ -18159,12 +18256,12 @@ Skill/Group/Name/1062500┃エネルギーフィールド
 Skill/Group/Desc/1062100┃テオドールが茂みから離れると{0}秒間隠密状態になり、その間の移動速度が{1}増加します。また、{2}秒間最大体力の{3}のダメージを吸収するシールドを獲得します。移動以外の行動をすると隠密状態が解除されます。\n\nテオドールが基本攻撃を的中させると<color=white>エネルギー砲</color>のクールダウンが{4}減少し、<color=white>他の基本スキル</color>のクールダウンが{8}減少します。
 Skill/Group/Desc/1062200┃チャージ：テオドールが1.5秒にわたって自分のレールガンにエネルギーをチャージし、移動速度が{0}まで徐々に減少します。\n\n発射：再使用すると指定した方向にビームを発射し、敵には<color=white>{1}</color>のスキルダメージを与え、味方の場合、{2}秒間<color=white>{3}</color>の体力を回復させます。チャージ時間に比例して射程距離が増加します。\n\n<color=white>エネルギー砲</color>が<color=white>増幅スクリーン</color>に的中してからしばらくすると、スクリーンの正面からビームを発射し、敵には<color=white>{4}</color>のスキルダメージを与え、味方の場合、{2}秒間<color=white>{5}</color>の体力を回復させます。
 Skill/Group/Desc/1062300┃テオドールが指定した位置に{0}秒間維持される増幅スクリーンを生成します。\n\n増幅スクリーンを通過したテオドールの<color=white>基本攻撃</color>の弾丸と<color=white>スパーク弾</color>は的中した敵の周りに拡散されます。スクリーンを通過した基本攻撃は<color=white>{1}</color>の追加スキルダメージを与え、スパーク弾の場合、投射体の速度と射程距離が増加します。
-Skill/Group/Desc/1062400┃<color=green>持続効果：</color><color=white>エネルギー砲</color>または<color=white>スパーク弾</color>を的中させると次の基本攻撃の射程距離が{5}増加します。\n\nテオドールがスパーク弾を投げて的中させた敵の移動速度を{0}秒間{1}減少させ、{2}秒間的中された敵を<color=white>標的</color>に指定します。テオドールは標的になった対象から視界を提供され、基本攻撃やスキルで攻撃すると<color=white>{3}</color>のスキルダメージを与えて{4}秒間束縛させます。
+Skill/Group/Desc/1062400┃<color=green>持続効果：</color><color=white>エネルギー砲</color>または<color=white>スパーク弾</color>を的中させると次の基本攻撃の射程距離が{5}増加します。\n\nテオドールがスパーク弾を投げて的中させた敵の移動速度を{0}秒間{1}減少させ、{2}秒間的中された敵を<color=white>標的</color>に指定します。テオドールは標的になった対象から視界を提供され、基本攻撃やスキルで攻撃すると、<color=white>{3}</color>の追加スキルダメージを与えて{4}秒間束縛させます。
 Skill/Group/Desc/1062500┃テオドールがエネルギーを最大限まで引き上げ、指定した方向に{1}秒間維持される<color=white>エネルギーフィールド</color>を形成し、同じ方向に移動する味方の移動速度を{2}増加させ、強力なエネルギー波動を発射して敵に<color=white>{0}</color>のスキルダメージを与えます。\n\nエネルギー波動発射後、テオドールは<color=white>ハイパーチャージ状態</color>になり、攻撃速度が{3}秒間{4}増加し、<color=white>エネルギー砲</color>の最大チャージ時間が{5}秒に減少します。
 Skill/Group/Coef/1062100┃テオドールが茂みから離れると{0}秒間隠密状態になり、その間の移動速度が{1}増加します。また、{2}秒間最大体力の{3}のダメージを吸収するシールドを獲得します。移動以外の行動をすると隠密状態が解除されます。\n\nテオドールが基本攻撃を的中させると<color=white>エネルギー砲</color>のクールダウンが{4}減少し、<color=white>他の基本スキル</color>のクールダウンが{8}減少します。
 Skill/Group/Coef/1062200┃チャージ：テオドールが1.5秒にわたって自分のレールガンにエネルギーをチャージし、移動速度が{0}まで徐々に減少します。\n\n発射：再使用すると指定した方向にビームを発射し、敵には<color=white>{7}</color><color=#DDA0DD>(+スキル増幅の{9})</color>のスキルダメージを与え、味方の場合、{2}秒間<color=white>{10}</color><color=#DDA0DD>(+スキル増幅の{12})</color>の体力を回復させます。チャージ時間に比例して射程距離が増加します。\n\n<color=white>エネルギー砲</color>が<color=white>増幅スクリーン</color>に的中してからしばらくすると、スクリーンの正面からビームを発射し、敵には <color=white>{13}</color><color=#DDA0DD>(+スキル増幅の{15})</color>のスキルダメージを与え、味方の場合、{2}秒間<color=white>{16}</color><color=#DDA0DD>(+スキル増幅の{18})</color>の体力を回復させます。
 Skill/Group/Coef/1062300┃テオドールが指定した位置に{0}秒間維持される増幅スクリーンを生成します。\n\n増幅スクリーンを通過したテオドールの<color=white>基本攻撃</color>の弾丸と<color=white>スパーク弾</color>は的中した敵の周りに拡散されます。スクリーンを通過した基本攻撃は<color=white>{2}</color><color=#DDA0DD>(+スキル増幅の{3})</color>の追加スキルダメージを与え、スパーク弾の場合、投射体の速度と射程距離が増加します。
-Skill/Group/Coef/1062400┃<color=green>持続効果：</color><color=white>エネルギー砲</color>または<color=white>スパーク弾</color>を的中させると次の基本攻撃の射程距離が{5}増加します。\n\nテオドールがスパーク弾を投げ、的中させた敵の移動速度を{0}秒間{1}減少させ、的中された敵を{2}秒間<color=white>標的</color>に指定します。テオドールは標的になった対象から視界を提供され、基本攻撃やスキルで攻撃すると<color=white>{6}</color><color=#DDA0DD>(+スキル増幅の{8})</color>のスキルダメージを与えて{4}秒間束縛させます。
+Skill/Group/Coef/1062400┃<color=green>持続効果：</color><color=white>エネルギー砲</color>または<color=white>スパーク弾</color>を的中させると次の基本攻撃の射程距離が{5}増加します。\n\nテオドールがスパーク弾を投げ、的中させた敵の移動速度を{0}秒間{1}減少させ、的中された敵を{2}秒間<color=white>標的</color>に指定します。テオドールは標的になった対象から視界を提供され、基本攻撃やスキルで攻撃すると、<color=white>{6}</color><color=#DDA0DD>(+スキル増幅の{8})</color>の追加スキルダメージを与えて{4}秒間束縛させます。
 Skill/Group/Coef/1062500┃テオドールがエネルギーを最大限まで引き上げ、指定した方向に{1}秒間維持される<color=white>エネルギーフィールド</color>を形成し、同じ方向に移動する味方の移動速度を{2}増加させ、強力なエネルギー波動を発射して敵に<color=white>{6}</color><color=#DDA0DD>(+スキル増幅の{8})</color>のスキルダメージを与えます。\n\nエネルギー波動発射後、テオドールは<color=white>ハイパーチャージ状態</color>になり、攻撃速度が{3}秒間{4}増加し、<color=white>エネルギー砲</color>の最大チャージ時間が{5}秒に減少します。
 CharacterState/Group/Name/1062000┃エネルギー・プロトコル - シールド
 CharacterState/Group/Name/1062010┃エネルギー・プロトコル  - 隠密
@@ -19159,6 +19256,50 @@ CharacterState/Group/Desc/1084450┃ブレアがカウンタースラッシュ�
 CharacterState/Group/Desc/1084460┃ブレアがシフトラッシュでシールドを獲得し、一定のダメージを吸収します。
 CharacterState/Group/Desc/1084500┃一時的にVF能力を覚醒し、身体能力が向上します。
 CharacterState/Group/Desc/1084530┃ブレアに感知されました。
+Skill/Group/Name/1085100┃リパルスゲージ
+Skill/Group/Name/1085200┃クラッシュハンマー
+Skill/Group/Name/1085210┃クラッシュハンマー EX
+Skill/Group/Name/1085300┃リパルスバリア
+Skill/Group/Name/1085400┃バックステップラッシュ
+Skill/Group/Name/1085410┃パワーヒット
+Skill/Group/Name/1085420┃パワーヒット EX
+Skill/Group/Name/1085500┃ダウンバースト
+Skill/LobbyDesc/1085100┃ミルカの<color=white>リパルスゲージ</color>の最大値は最大体力に比例します。獲得したリパルスゲージは非戦闘状態になると、徐々に減少します。<color=white>リパルスゲージ</color>が最大値になった場合、次に行う<color=white>クラッシュハンマー</color>または<color=white>パワーヒット</color>スキルが<color=white>リパルスゲージ</color>をすべて消耗して強化されます。\n\nミルカが敵を移動不可状態にさせると、<color=white>リパルスゲージ</color>を獲得して基本スキルのクールダウンが減少し、一定時間の間ダメージを与えます。\n\n<i>複数の敵を移動不可状態にさせても、ゲージ獲得やクールダウン減少効果は1回のみ適用されます。</i>
+Skill/Group/Desc/1085100┃ミルカの<color=white>リパルスゲージ</color>の最大値は最大体力の{0}に設定されます。獲得したリパルスゲージは非戦闘状態になると、徐々に減少します。<color=white>リパルスゲージ</color>が最大値になった場合、次に行う<color=white>クラッシュハンマー</color>または<color=white>パワーヒット</color>スキルが<color=white>リパルスゲージ</color>をすべて消耗して強化されます。\n\nミルカが敵を移動不可状態にさせると、<color=white>リパルスゲージ</color>を{1}獲得して基本スキルのクールダウンが{2}減少し、{3}秒間1秒ごとに<color=white>{5}</color><color=#688A08>(+対象の最大体力の{4})</color>のスキルダメージを与えます。
+Skill/Group/Coef/1085100┃ミルカの<color=white>リパルスゲージ</color>の最大値は最大体力の{0}に設定されます。獲得したリパルスゲージは非戦闘状態になると、徐々に減少します。<color=white>リパルスゲージ</color>が最大値になった場合、次に行う<color=white>クラッシュハンマー</color>または<color=white>パワーヒット</color>スキルが<color=white>リパルスゲージ</color>をすべて消耗して強化されます。\n\nミルカが敵を移動不可状態にさせると、<color=white>リパルスゲージ</color>を{1}獲得して基本スキルのクールダウンが{2}減少し、{3}秒間1秒ごとに<color=white>{5}</color><color=#688A08>(+対象の最大体力の{4})</color>のスキルダメージを与えます。
+Skill/Group/ExpansionTip/1085100┃<i>複数の敵を移動不可状態にさせても、ゲージ獲得やクールダウン減少効果は1回のみ適用されます。</i>
+Skill/LobbyDesc/1085200┃ミルカがハンマーを思いっきり振り下ろして敵にスキルダメージを与え、移動速度を減少させます。\n\n<color=white>クラッシュハンマー EX</color>：リパルスゲージに比例する追加スキルダメージを与えて気絶させます。しばらくしてから、攻撃した地点に余震が2回発生し、ダメージを与えて移動速度を減少させます。
+Skill/Group/Desc/1085200┃ミルカがハンマーを思いっきり振り下ろして敵に<color=white>{0}</color>のスキルダメージを与え、{1}秒間移動速度を{2}減少させます。\n\n<color=white>クラッシュハンマー EX</color>：<color=white>リパルスゲージの{3}</color>の追加スキルダメージを与えて{4}秒間気絶させます。{5}秒後、攻撃した地点に余震が{6}秒ごとに2回発生し、<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>のダメージを与えて{9}秒間移動速度を{10}減少させます。
+Skill/Group/Coef/1085200┃ミルカがハンマーを思いっきり振り下ろして敵に<color=white>{0}</color><color=#dda0dd>(+スキル増幅の{20})</color><color=#688a08>(+最大体力の{21})</color>\nのスキルダメージを与え、{1}秒間移動速度を{2}減少させます。\n\n<color=white>クラッシュハンマー EX</color>：<color=white>リパルスゲージの{3}</color>の追加スキルダメージを与えて{4}秒間気絶させます。{5}秒後、攻撃した地点に余震が{6}秒ごとに2回発生し、<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>のダメージを与えて{9}秒間移動速度を{10}減少させます。
+Skill/LobbyDesc/1085300┃ミルカが前方に向かって短く突進し、ダメージを吸収するシールドを獲得します。ミルカはシールドで吸収したダメージに応じて<color=white>リパルスゲージ</color>を獲得します。
+Skill/Group/Desc/1085300┃ミルカが前方に向かって短く突進し、{0}秒間<color=white>{1}</color>のダメージを吸収するシールドを獲得します。ミルカはシールドで吸収したダメージに応じて<color=white>リパルスゲージ</color>を獲得します。\n\nミルカの防御力1につき、<color=white>リパルスゲージ</color>獲得量が{2}増加します。
+Skill/Group/Coef/1085300┃ミルカが前方に向かって短く突進し、{0}秒間<color=white>{1}</color><color=#dda0dd>(+スキル増幅の{20})</color><color=#688A08>(+最大体力の{21})</color>のダメージを吸収するシールドを獲得します。ミルカはシールドで吸収したダメージに応じて<color=white>リパルスゲージ</color>を獲得します。\n\nミルカの防御力1につき、<color=white>リパルスゲージ</color>獲得量が{2}増加します。
+Skill/LobbyDesc/1085400┃ミルカが後ろに下がった後、前方に突進し、衝突した敵にスキルダメージを与えて押し出します。一定時間の間<color=white>パワーヒット</color>を使用できます。\n\n<color=white>パワーヒット</color>：ミルカが前方にハンマーを大きく振り回してスキルダメージを与えます。\n\n<color=white>パワーヒット EX</color>：リパルスゲージに比例する追加ダメージを与え、的中した敵をノックバックさせます。\n\n<i>このスキルは壁を越えられません。</i>
+Skill/Group/Desc/1085400┃ミルカが後ろに下がった後、{0}秒間阻止不可状態になり、受けるダメージが<color=white>{1}</color>減少します。\n\nその後、前方へ突進し、ぶつかった敵に<color=white>{2}</color><color=#688A08>(+対象の最大体力の{3})</color>のスキルダメージを与えて押し出します。{4}秒間<color=white>パワーヒット</color>を使用できます。\n\n<color=white>パワーヒット</color>：ミルカが前方にハンマーを大きく振り回して<color=white>{5}</color>のスキルダメージを与えます。\n\n<color=white>パワーヒット EX</color>：<color=white>リパルスゲージの{6}</color>の追加ダメージを与え、的中した敵を{7}mノックバックさせます。
+Skill/Group/Coef/1085400┃ミルカが後ろに下がった後、{0}秒間阻止不可状態になり、受けるダメージが<color=white>{1}</color>減少します。\n\nその後、前方へ突進し、ぶつかった敵に<color=white>{2}</color><color=#dda0dd>(+スキル増幅の{20})</color><color=#688A08>(+対象の最大体力の{3})</color>のスキルダメージを与えて押し出します。{4}秒間<color=white>パワーヒット</color>を使用できます。\n\n<color=white>パワーヒット</color>：ミルカが前方にハンマーを大きく振り回して<color=white>{5}</color><color=#dda0dd>(+スキル増幅の{21})</color><color=#688A08>(+最大体力の{22})</color>のスキルダメージを与えます。\n\n<color=white>パワーヒット EX</color>：<color=white>リパルスゲージの{6}</color>の追加ダメージを与え、的中した敵を{7}mノックバックさせます。
+Skill/Group/ExpansionTip/1085400┃<i>このスキルは壁を越えられません。</i>
+Skill/LobbyDesc/1085500┃ミルカがキャストした後、空中に飛び上がり、対象指定不可状態になります。一定時間の間、着地地点を調整することができます。\n着地する時、範囲内の敵にスキルダメージを与え、空中に浮かせます。
+Skill/Group/Desc/1085500┃ミルカが{0}秒間キャストした後、空中に飛び上がり、対象指定不可状態になります。{1}秒間、移動命令で着地地点を調整することができます。\n着地する時、範囲内の敵に<color=white>{2}</color><color=#688A08>(+対象の最大体力の{3})</color>のスキルダメージを与え、{4}秒間空中に浮かせます。
+Skill/Group/Coef/1085500┃ミルカが{0}秒間キャストした後、空中に飛び上がり、対象指定不可状態になります。{1}秒間、移動命令で着地地点を調整することができます。\n着地する時、範囲内の敵に<color=white>{2}</color><color=#dda0dd>(+スキル増幅の{20})</color><color=#688A08>(+対象の最大体力の{3})</color>のスキルダメージを与え、{4}秒間空中に浮かせます。
+Skill/Group/ExpansionTip/1085500┃<i>空中にいる間、移動速度は{0}に固定されます。</i>
+CharacterState/Group/Name/1085100┃リパルスゲージ - 持続ダメージ
+CharacterState/Group/Name/1085220┃クラッシュハンマー - 移動速度減少
+CharacterState/Group/Name/1085210┃クラッシュハンマー EX - 気絶
+CharacterState/Group/Name/1085200┃クラッシュハンマー：余震 - 移動速度減少
+CharacterState/Group/Name/1085300┃リパルスバリア - シールド
+CharacterState/Group/Name/1085400┃バックステップラッシュ - 移動妨害効果免疫・受けるダメージ減少
+CharacterState/Group/Name/1085420┃バックステップラッシュ - ノックバック
+CharacterState/Group/Name/1085450┃パワーヒット EX - ノックバック
+CharacterState/Group/Name/1085540┃ダウンバースト - エアボーン
+CharacterState/Group/Desc/1085100┃ミルカのクラッシュハンマーによって持続ダメージを受けます。
+CharacterState/Group/Desc/1085220┃ミルカのクラッシュハンマーによって移動速度が減少します。
+CharacterState/Group/Desc/1085210┃ミルカのクラッシュハンマー EXによって気絶します。
+CharacterState/Group/Desc/1085200┃ミルカのクラッシュハンマーの余震によって移動速度が減少します。
+CharacterState/Group/Desc/1085300┃ミルカがシールドで受けたダメージの分、ゲージを獲得します。
+CharacterState/Group/Desc/1085400┃ミルカが阻止不可状態になり、受けるダメージが減少します。
+CharacterState/Group/Desc/1085420┃ミルカのバックステップラッシュによってノックバックされます。
+CharacterState/Group/Desc/1085450┃ミルカのパワーヒット EXによってノックバックされます。
+CharacterState/Group/Desc/1085540┃ミルカのダウンバーストによって空中に浮かされます。
 Skill/Group/Name/3015000┃マントと短剣
 Skill/Group/Name/3015100┃マントと短剣
 Skill/Group/Name/3016000┃受け流し
@@ -19637,7 +19778,7 @@ Skill/LobbyDesc/1061500┃<color=#ffd775>イレム:</color>\nイレムがネコ�
 Skill/LobbyDesc/1062100┃テオドールが茂みから離れると隠密状態になり、その間の移動速度が増加します。また、ダメージを吸収するシールドを獲得します。移動以外の行動をすると隠密状態が解除されます。\n\nテオドールが基本攻撃を的中させると<color=white>エネルギー砲</color>のクールダウンが減少し、<color=white>他の基本スキル</color>のクールダウンが少し減少します。
 Skill/LobbyDesc/1062200┃チャージ：テオドールが一定時間にわたって自分のレールガンにエネルギーをチャージし、移動速度が徐々に減少します。\n\n発射：再使用すると指定した方向にビームを発射し、敵にはスキルダメージを与え、味方の場合、体力を回復させます。チャージ時間に比例して射程距離が増加します。\n\n<color=white>エネルギー砲</color>が<color=white>増幅スクリーン</color>に的中してからしばらくすると、スクリーンの正面からビームを発射し、敵にはスキルダメージを与え、味方の場合、体力を回復させます。
 Skill/LobbyDesc/1062300┃テオドールが指定した位置に一定時間維持される増幅スクリーンを生成します。\n\n増幅スクリーンを通過したテオドールの<color=white>基本攻撃</color>の弾丸と<color=white>スパーク弾</color>は的中した敵の周りに拡散されます。スクリーンを通過した基本攻撃は追加スキルダメージを与え、スパーク弾の場合、投射体の速度と射程距離が増加します。
-Skill/LobbyDesc/1062400┃<color=green>持続効果：</color><color=white>エネルギー砲</color>または<color=white>スパーク弾</color>を的中させると次の基本攻撃の射程距離が増加します。\n\nテオドールがスパーク弾を投げて的中させた敵の移動速度を減少させ、的中された敵を<color=white>標的</color>に指定します。テオドールは標的になった対象から視界を提供され、基本攻撃やスキルで攻撃するとスキルダメージを与えて束縛させます。
+Skill/LobbyDesc/1062400┃<color=green>持続効果：</color><color=white>エネルギー砲</color>または<color=white>スパーク弾</color>を的中させると次の基本攻撃の射程距離が増加します。\n\nテオドールがスパーク弾を投げて的中させた敵の移動速度を減少させ、的中された敵を<color=white>標的</color>に指定します。テオドールは標的になった対象から視界を提供され、基本攻撃やスキルで攻撃すると、追加スキルダメージを与えて束縛させます。
 Skill/LobbyDesc/1062500┃テオドールがエネルギーを最大限まで引き上げ、指定した方向に<color=white>エネルギーフィールド</color>を形成し、同じ方向に移動する味方の移動速度を増加させ、強力なエネルギー波動を発射して敵にスキルダメージを与えます。\n\nエネルギー波動発射後、テオドールは<color=white>ハイパーチャージ状態</color>になり、攻撃速度が増加し、<color=white>エネルギー砲</color>の最大チャージ時間が減少します。
 Skill/LobbyDesc/1063100┃イアンは悪霊に体を乗っ取られないように抵抗し続けています。イアンは各状態によって基本攻撃のダメージ量が変わります。\n\nイアンは憑依状態になると、失った体力に比例して体力を回復し、自分の中に潜んでいる悪霊によって無意識で残虐性に目覚めます。憑依・悪霊状態ではスキルダメージに攻撃力に比例する追加固定ダメージを与え、体力を回復します。
 Skill/LobbyDesc/1063200┃<color=#ffffC2>人間状態：</color>悪霊がイアンを操ります。短剣で対象を突き刺してスキルダメージを与えます。\n\n<color=#ffffC2>憑依状態：</color>憑依されたイアンが指定した範囲内の対象にスキルダメージを与えて束縛させます。
@@ -20532,7 +20673,7 @@ CharacterState/Group/Desc/6027020┃敵の先鋒効果によって攻撃速度�
 Item/Skills/6022101┃宣告
 Item/Skills/6022101/Name┃<color=yellow>宣告</color>
 Item/Skills/6022101/Body┃敵実験体にダメージを与えて対象の体力を<color=#688A08>(近距離：7% I 遠距離：5%)</color>以下にさせた場合には対象がすぐに死亡します。(クールダウン：{1}秒)
-Item/Skills/6022101/Desc┃敵実験体にダメージを与えて対象の体力を<color=#688A08>(近距離：7% I 遠距離：5%)</color>以下にさせた場合には対象がすぐに死亡します。(クールダウン：{1}秒)
+Item/Skills/6022101/Desc┃敵実験体にダメージを与えて対象の体力を<color=white>(近距離：<color=#688A08>7%</color> I 遠距離：<color=#688A08>5%</color>)</color>以下にさせた場合には対象がすぐに死亡します。(クールダウン：{1}秒)
 Item/Skills/6030001┃腐敗
 Item/Skills/6030001/Name┃<color=yellow>腐敗</color>
 Item/Skills/6030001/Body┃スキルを使用してダメージを与えた場合、敵に毎秒<color=#DDA0DD>対象の最大体力の{4}%</color>のスキルダメージを与える腐敗状態を{2}秒間付与します。(最大{3}スタック)
@@ -20632,8 +20773,8 @@ CharacterState/Group/Name/6038010┃シャッターストライク - チャー�
 CharacterState/Group/Desc/6038010┃シャッターストライクをチャージしています。
 Item/Skills/6039001┃執行人
 Item/Skills/6039001/Name┃<color=yellow>執行人</color>
-Item/Skills/6039001/Body┃敵の現在体力が<color=#688A08>敵の最大体力の{0}%</color>以下の場合、自分が対象に与える<color=#ffd775>スキルのダメージ量が{1}%</color>増加します。
-Item/Skills/6039001/Desc┃敵の現在体力が<color=#688A08>敵の最大体力の{0}%</color>以下の場合、自分が対象に与える<color=#ffd775>スキルのダメージ量が{1}%</color>増加します。
+Item/Skills/6039001/Body┃敵の現在体力が<color=#688A08>敵の最大体力の{0}%</color>以下の場合、自分が対象に与える<color=#DDA0DD>スキルのダメージ量が{1}%</color>増加します。
+Item/Skills/6039001/Desc┃敵の現在体力が<color=#688A08>敵の最大体力の{0}%</color>以下の場合、自分が対象に与える<color=#DDA0DD>スキルのダメージ量が{1}%</color>増加します。
 Item/Skills/6040001┃テーザー銃
 Item/Skills/6040001/Name┃<color=yellow>テーザー銃</color>
 Item/Skills/6040001/Body┃3秒以上自分の周り8m以内にいた敵実験体には、基本攻撃が強化され、<color=#DDA0DD>{2}</color>の追加スキルダメージを与えます。強化された基本攻撃が敵に的中した場合、的中した対象に与える自分のスキルのダメージ量が{3}秒間{4}%増加します。(クールダウン：{5}秒)
@@ -20698,7 +20839,7 @@ CharacterState/Group/Desc/6048010┃覚醒状態になり、能力値が増加�
 Item/Skills/6049001┃猶予
 Item/Skills/6049001/Name┃<color=yellow>猶予</color>
 Item/Skills/6049001/Body┃敵実験体からダメージを受けた場合、受けたダメージの<color=white>{0}%</color>を{2}秒間分けて受けます。
-Item/Skills/6049001/Desc┃敵実験体からダメージを受けた場合、受けたダメージの<color=white>(近距離：{0}%)</color>｜<color=white>(遠距離：{1}%)</color>が{2}秒間分けて受けます。
+Item/Skills/6049001/Desc┃敵実験体からダメージを受けた場合、受けたダメージの<color=white>(近距離：{0}%)｜(遠距離：{1}%)</color>が{2}秒間分けて受けます。
 Item/Skills/6050001┃反抗
 Item/Skills/6050001/Name┃<color=yellow>反抗</color>
 Item/Skills/6050001/Body┃失った体力に比例して、攻撃力が<color=#FFD775>{0}%</color>まで増加します。体力が{1}%以下になると、最大値が適用されます。
@@ -20890,6 +21031,8 @@ Skill/Group/Name/8310100┃キット - 雷
 Skill/Group/Desc/8310100┃<color=lightblue>キット - 雷</color>を使用します。\n雷が落ちる範囲内にいる実験体は{0}のダメージを、野生動物は{3}のダメージを受け、{6}秒間移動速度が{7}増加します。雷による影響は{6}秒に1度のみ受けます。
 Skill/Group/Name/8310200┃キット - 強風地帯
 Skill/Group/Desc/8310200┃<color=lightblue>キット - 強風地帯</color>を使用します。\n強風地帯にいる実験体は強風地帯の方向に移動する時、{0}の移動速度を獲得します。強風地帯は{1}秒後に消滅します。
+Skill/Group/Name/8310500┃CNOTゲート
+Skill/Group/Desc/8310500┃{0}秒間活性化されていない<color=lightblue>ゲート</color>を設置します。ゲートは破壊できます。\nゲートをもう一つ追加で設置すると、二つのゲートが{1}秒間活性化された後、自動で消滅します。\n活性化されたゲートは破壊できません。\nすべての実験体は活性化されたゲートを自由に行き来できます。
 CharacterState/Group/Name/12000100┃セーフティエリア
 CharacterState/Group/Desc/12000100┃爆発タイマーが停止します。
 CharacterState/Group/Name/12010110┃キット - 雷 [感電中]
@@ -22965,7 +23108,7 @@ CharacterStoryAge/78┃18歳
 CharacterStoryHeight/78┃164cm
 CharacterStoryGender/78┃女性
 CharacterStoryTitle/78┃すべては、あの方のため。
-CharacterStoryDesc/78┃組織の裏切り者を排除するため、自らルミア島に向かった、\n日輪會の特殊部隊「刃」の一員。\n異常なほど剣に執着し、時に些細な面倒事を引き起こすこともあるが、\n組織でその実力を知らない者はいない。\n\n幼い頃、自分を引き取ってくれた組織に忠誠を誓うべきだと考え、\n今もなお組織のために全力を尽くしている。\n彼女は裏切りを決して許さず、ためらうことなく裏切り者を始末する。\nその冷酷さは組織でも広く知られている。\n\n自分は組織の剣にすぎない。裏切り者を斬ることは、果たすべき役目だと、\n彼女はそう信じていた。\nそして、その考えに、一度も疑問を抱いたことはなかった。\n\n普段と同じ、何の変哲もない一日。\n処刑名簿を受け取ったその日も、いつもと変わらない一日になるはずだった。\n\n<cspace=-0.2em>——</cspace>その名簿に、あの名前さえなければ。
+CharacterStoryDesc/78┃組織の裏切り者を排除するため、自らルミア島に向かった、\n日輪會の特殊部隊「刃」の一員。\n異常なほど剣に執着し、時に些細な面倒事を引き起こすこともあるが、\n組織でその実力を知らない者はいない。\n\n幼い頃、自分を引き取ってくれた組織に忠誠を誓うべきだと考え、\n今もなお組織のために全力を尽くしている。\n彼女は裏切りを決して許さず、ためらうことなく裏切り者を始末する。\nその冷酷さは組織でも広く知られている。\n\n自分は組織の剣にすぎない。裏切り者を斬ることは、果たすべき役目だと、\n彼女はそう信じていた。\nそして、その考えに、一度も疑問を抱いたことはなかった。\n\n普段と同じ、何の変哲もない一日。\n処刑名簿を受け取ったその日も、いつもと変わらない一日になるはずだった。\n\n——その名簿に、あの名前さえなければ。
 CharacterStoryName/79┃ユスティナ・イスクラ
 CharacterStoryAge/79┃18歳
 CharacterStoryHeight/79┃159cm
@@ -23002,6 +23145,12 @@ CharacterStoryHeight/84┃170cm
 CharacterStoryGender/84┃女性
 CharacterStoryTitle/84┃この島に、何も残されないその日まで。
 CharacterStoryDesc/84┃化け物を倒すために、自ら化け物になった復讐者。\n島に来る前も、今も、常にVF覚醒者を探すことに執着している。\nVF暴走事故によって、たった一人の家族である父親が重傷を負って以来、\n彼女はVFに関わるあらゆるものを調べ続けてきた。\n\n彼女の父親は厳しく、怖い存在だった。\nしかし、母親を失った彼女にとって、頼れる唯一の存在であり、\n彼女の世界のすべてでもあった。\n\nきつい訓練や使う機会のなさそうな生存知識などを教わりながらも、\n彼女は従順に父に従ってきた。\nそれが、一人取り残される娘のために\n自分が知っていることをすべて教えようとする\n父親の不器用な愛情の形であるということを知っていたからだった。\n\nしかし、いつまでも自分を守り、いろんなことを教えてくれるはずの父親は、\n病院で目を覚ますことなく、途切れそうな命をつなぎとめるような状態になった。\nそして事件は、何者かによって静かにかき消されていた。\n\n彼女は今も、その日のことを後悔している。 \n後悔するたびに憎悪が増していき、何かを恨まずには耐えられなかった彼女は、\n事故に関する情報を一人で調べはじめ、\n自分が見た正体不明の超能力者に関わる情報にまで手をつけた。\n\nしかし、彼女の精神と肉体は次第に疲弊し、\n普通の体では耐えられない状態に至った。\nさらに、医者からもらった「鎮痛剤」の効果も薄れ、\n彼女は自分の体が限界に近づいていることに気付いた。\n\nすべてを諦め、一握りの灰となってこの世から消し去りたいと願ったその時、\n誰かが彼女に手を差し伸べた。\n\n\n...彼女は今も、その手が自分を救った救済の手だと信じている。
+CharacterStoryName/85┃ミルカ
+CharacterStoryAge/85┃24歳
+CharacterStoryHeight/85┃149.6cm
+CharacterStoryGender/85┃女性
+CharacterStoryTitle/85┃あたしらを見くびったこと...後悔させてやる...！
+CharacterStoryDesc/85┃「路地裏の女王」と呼ばれるごろつきリーダー。\nやられたらやり返し、受けた恩はきちんと返す、男勝りな性格の持ち主である。\n\n彼女は、かつて「奪われる側」だった。\n劣悪なスラム街で何かを守るためには、強くならなければならなかった。\n\n彼女は幾度となく血を流し、傷跡を残しながら生きてきた。\n小さな少女から「狂犬」へ、そして「狂犬」から「路地裏の女王」と呼ばれるまで。\n\nやがて、その小さな背中を追う者たちが現れ始めた。\n彼女は誓った。この路地裏を脅かす者は、絶対に許さないと。\nどんなものであれ、必ずやり返してみせると。\n\nそんなある日、誰かが彼女の領域に足を踏み入れた。\n彼らは、彼女にとってもっとも大切なものを奪い、こう言った。\n\n——「実験」に参加しろ、と。
 CharacterPlayTip/1┃ジャッキーはターゲットにした敵をしつこく追いかけて虐殺し、そのたびにバースト能力が高まる連続殺人鬼です。
 CharacterPlayTip/2┃アヤは敵にスキルを的中させやすく、敵との距離を保つことのできるスキルを持つ、安定性の高い遠距離型実験体です。
 CharacterPlayTip/3┃フィオラはフェンシング選手らしく素早い動きで敵との距離を調節し、スキルを連続で的中させるたびに強力なダメージを与えます。
@@ -23086,6 +23235,7 @@ CharacterPlayTip/81┃ニアはゲームが大好きな少女です。ゲーム�
 CharacterPlayTip/82┃シュリンは飛剣を使う純粋な田舎少女です。飛剣を使って敵を攻撃したり、自分を防御し、敵陣に入り込んで戦闘の流れを覆せる実験体です。
 CharacterPlayTip/83┃ヘンリーは時間を操る能力で敵の移動を妨害し、味方に有利な戦闘環境を提供できる実験体です。
 CharacterPlayTip/84┃VF覚醒者に対して強い憎しみを持つブレアは、「XMS-5」を使って身体能力を向上させてVF覚醒者を感知し、スキルを連携させて戦う実験体です。
+CharacterPlayTip/85┃ミルカはCCスキルで戦闘を仕掛け、戦闘の中心でリパルスゲージを蓄積し、チャンスを作り出す実験体です。
 MasteryType/Glove/Desc┃グローブは有効距離は短いですが、\n攻撃速度は早く連続攻撃ができます。
 MasteryType/Tonfa/Desc┃トンファーは唯一防御力を確保できる攻防一体の武器です。
 MasteryType/Hammer/Desc┃ハンマーは攻撃速度は遅いけですが強力な攻撃で相手の動きを鈍らせます。
@@ -23188,7 +23338,7 @@ NotEnoughInventory┃インベントリが足りません。
 NotEnoughInventoryTeam┃<color=yellow>{0}({1})</color>のインベントリがいっぱいです。アイテムを転送できません。
 인벤토리 공간이 부족 합니다.┃インベントリが足りません。
 NotEnoughItem┃アイテムが不足しています。
-NotEnoughItemBox┃入力に誤りがあります。
+NotEnoughItemBox┃空いているスロットがありません。
 NotArea┃この地域では使用できません。
 NotAvailableArea┃使用できない位置です。
 CantCraft┃製作できないアイテムです。
@@ -23204,7 +23354,8 @@ MaxOfCredit┃これ以上クレジットを獲得できません。
 MaxOfGadget┃これ以上ガジェットを保有できません。
 MaxOfEscapeItem┃所持できる脱出用アイテムの上限に達しています。
 NotEnoughGVEnergy┃ガジェットエネルギーが足りません。
-CannotReconstructToDeadTeammate┃死亡したチーム員の位置で復活できません。
+CannotReconstructToDeadTeammate┃死亡した味方の位置では復活できません。
+CannotMoveToDeadTeammate┃死亡した味方の位置に移動できません。
 NoProgressItemsRegisteredInThisRoute┃現在ルートに登録された後半アイテムリストがありません。
 ToastMessage/DisableHyperloop┃今は使用できません。
 ToastMessage/CanNotUseHyperloopNotAdjacent┃移動できない地域です。
@@ -24266,9 +24417,9 @@ InGameGuide/Nadja/Group/Desc/10123000┃戦場で勝ったのね。\n戦利品�
 오퍼레이터 기존유저 보상 내용┃もうすでに全部知っている内容だけだったと思うけど、最後まで指示に従ってくれてありがとう。\n我慢してただけなのか、優しいのか...どちらかは分からないけど。\nとにかく、ここまで頑張ってくれてありがとう。感動したわ。\nこれは私からの感謝の気持ちよ。気に入ってくれると嬉しいわね。
 신규유저 오퍼레이터 비활성화 안내 내용┃ある程度実験に慣れたみたいね。\nこれからはちょっと少なめにアドバイスするわ。\n今後の活躍、期待しているわ。頑張ってね。
 기존유저 오퍼레이터 비활성화 안내 내용┃もう実験中ずっと見守ってあげなくてもよさそうね。\nこれからはちょっと少なめにアドバイスするわ。\n充分上手くやっているから、これからも頑張ってね。
-필수 튜토리얼 진행후 이용가능합니다.┃「ルミア島」訓練後に利用できます
-매칭 중에는 이용할 수 없습니다┃マッチング中は利用できません
-훈련 중에는 목표 아이템을 삭제할 수 없습니다.┃訓練中は目標アイテムを削除できません
+필수 튜토리얼 진행후 이용가능합니다.┃「ルミア島」訓練後に利用できます。
+매칭 중에는 이용할 수 없습니다┃マッチング中は利用できません。
+훈련 중에는 목표 아이템을 삭제할 수 없습니다.┃訓練中は目標アイテムを削除できません。
 훈련 중에는 목표 아이템을 추가할 수 없습니다.┃訓練中は目標アイテムを追加できません。
 튜토리얼 중에는 금지구역으로 하이퍼루프를 이용할 수 없습니다.┃チュートリアル中は禁止区域に移動できません
 로비로 이동합니다┃ロビーへ移動します。
@@ -25668,7 +25819,7 @@ Cobalt/부활남은시간┃<color=#47D5FF>Bキー</color>を押して合成機�
 분쇄 불가 알림┃このアイテムは粉砕できません。
 전설 장비 확정 포인트┃<color=#FC3537>神話</color>シュレッダーポイント
 전설 장비 확정 포인트 설명┃粉砕したアイテムの等級に従って神話シュレッダーポイントを獲得します。\n一定の数値に達すると<color=#FC3537>神話等級</color>のアイテムドラフトが活性化されます。
-유물 아이템 구입창 제목┃戦術スキル
+유물 아이템 구입┃戦術スキル
 유물 아이템 구입창 제목┃戦術スキルを選んでください。　
 전술스킬을 선택하세요┃戦術スキルを選んでください。　
 재고 소진┃在庫切れ

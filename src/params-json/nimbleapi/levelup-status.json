@@ -1432,7 +1432,7 @@
     {
         "code": 66,
         "name": "Arda",
-        "maxHp": 73,
+        "maxHp": 76,
         "maxSp": 0,
         "maxVp": 0,
         "attackPower": 4.6,
@@ -1784,7 +1784,7 @@
     {
         "code": 82,
         "name": "Xuelin",
-        "maxHp": 85,
+        "maxHp": 88,
         "maxSp": 0,
         "maxVp": 0,
         "attackPower": 4.3,
@@ -1846,7 +1846,7 @@
         "skillAmpRatio": 0,
         "preventBasicAttackDamagedRatio": 0,
         "preventSkillDamagedRatio": 0
-    },  
+    },
     {
         "code": 85,
         "name": "Mirka",

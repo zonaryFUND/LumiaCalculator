@@ -255,7 +255,7 @@
     },
     {
         "attackPower": 30,
-        "attackSpeedRatio": 0.35,
+        "attackSpeedRatio": 0.33,
         "criticalStrikeChance": 0.35,
         "code": 201525,
         "armorType": "Head",
@@ -280,7 +280,7 @@
     {
         "attackPower": 25,
         "maxHp": 150,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "cooldownReduction": 15,
         "code": 201527,
         "armorType": "Head",
@@ -627,7 +627,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 12,
+        "attackPower": 10,
         "attackPowerByLv": 3,
         "defense": 18,
         "criticalStrikeChance": 0.33,
@@ -914,7 +914,7 @@
     },
     {
         "attackPower": 10,
-        "attackSpeedRatio": 0.42,
+        "attackSpeedRatio": 0.38,
         "criticalStrikeChance": 0.35,
         "code": 203502,
         "armorType": "Arm",
@@ -1450,7 +1450,7 @@
     },
     {
         "attackPower": 25,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.22,
         "criticalStrikeChance": 0.35,
         "code": 201518,
         "armorType": "Head",
