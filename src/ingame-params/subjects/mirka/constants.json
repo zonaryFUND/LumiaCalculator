@@ -18,8 +18,8 @@
                 "tick": 0.5,
                 "count": 2,
                 "damage": {
-                    "base": [20,30,40,50,60],
-                    "targetMaxHP": 6
+                    "base": [10,20,30,40,50],
+                    "targetMaxHP": 4
                 },
                 "slow": {
                     "duration": 1,
@@ -45,7 +45,7 @@
         "impluse_gain_increase": {
             "defense": 35
         },
-        "cooldown": 9
+        "cooldown": 10
     },
     "E": {
         "cc_immune": 0.45,
@@ -59,7 +59,7 @@
         "second_damage": {
             "base": [70,95,120,145,170],
             "amp": 55,
-            "maxHP": 8
+            "maxHP": 7
         },
         "enhance": {
             "additional_damage": {
