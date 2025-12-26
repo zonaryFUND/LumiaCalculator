@@ -53,7 +53,7 @@
     "T": {
         "duration": 5,
         "damage": {
-            "base": [40,60,80],
+            "base": [50,75,100],
             "attack": [30,45,60]
         },
         "credit": 4

@@ -2,7 +2,7 @@
     "Q": {
         "damage": {
             "base": [50,75,100,125,150],
-            "amp": 35
+            "amp": 40
         },
         "reuse": 3,
         "reuse_damage": {

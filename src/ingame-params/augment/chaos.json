@@ -31,8 +31,8 @@
         "damage": {
             "base": 10,
             "level": 2,
-            "additionalAttack": 20,
-            "amp": 22
+            "additionalAttack": 40,
+            "amp": 25
         },
         "cooldown": 10,
         "damage_amp": {

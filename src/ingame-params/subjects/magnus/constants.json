@@ -50,7 +50,7 @@
             "base": [100,250,400],
             "additionalAttack": 150,
             "amp": 90,
-            "targetHP": 25
+            "targetHP": 30
         },
         "cooldown": [80,65,50]
     },

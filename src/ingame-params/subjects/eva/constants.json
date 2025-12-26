@@ -36,7 +36,7 @@
         "vision_duration": 3,
         "vflight_duration": 4,
         "damage": {
-            "base": [30,35,40,45,50],
+            "base": [20,25,30,35,40],
             "amp": 20
         },
         "cooldown": 9

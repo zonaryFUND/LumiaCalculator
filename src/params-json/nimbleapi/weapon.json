@@ -257,7 +257,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 50,
+        "attackPower": 52,
         "attackSpeedRatio": 0.25,
         "cooldownReduction": 10,
         "code": 103506,
@@ -701,7 +701,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 62,
+        "attackPower": 59,
         "criticalStrikeChance": 0.29,
         "criticalStrikeDamage": 0.05,
         "code": 110411,
@@ -1535,7 +1535,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 55,
+        "attackPower": 57,
         "maxHp": 100,
         "attackSpeedRatio": 0.25,
         "code": 120408,

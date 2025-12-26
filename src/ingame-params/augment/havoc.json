@@ -7,7 +7,7 @@
         "defense_reduction": {
             "duration": 6,
             "effect": {
-                "base": 7,
+                "base": 10,
                 "level": 0.5
             }
         },

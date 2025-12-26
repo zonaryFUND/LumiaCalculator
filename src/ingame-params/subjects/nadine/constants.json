@@ -48,7 +48,7 @@
         "count": 3,
         "damage": {
             "base": [100,150,200],
-            "additionalAttack": 90,
+            "additionalAttack": 75,
             "amp": 80,
             "stack": 1
         },

@@ -86,7 +86,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 25,
+        "attackPower": 27,
         "attackSpeedRatio": 0.35,
         "code": 201417,
         "armorType": "Head",
@@ -175,7 +175,7 @@
     },
     {
         "attackPower": 18,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.22,
         "criticalStrikeChance": 0.35,
         "criticalStrikeDamage": 0.04,
         "code": 201502,
@@ -191,7 +191,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 75,
+        "skillAmp": 77,
         "cooldownReduction": 20,
         "code": 201504,
         "armorType": "Head",
@@ -206,7 +206,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 33,
+        "attackPower": 35,
         "attackSpeedRatio": 0.46,
         "code": 201506,
         "armorType": "Head",
@@ -229,7 +229,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 40,
+        "attackPower": 38,
         "moveSpeedRatio": 0.03,
         "penetrationDefense": 10,
         "code": 201509,
@@ -682,6 +682,7 @@
     },
     {
         "defense": 25,
+        "skillAmp": 10,
         "skillAmpByLevel": 5,
         "code": 202516,
         "armorType": "Chest",
@@ -744,7 +745,7 @@
         "attackPower": 10,
         "attackPowerByLv": 3,
         "defense": 20,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "criticalStrikeChance": 0.33,
         "code": 202529,
         "armorType": "Chest",
@@ -891,7 +892,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 17,
+        "attackPower": 18,
         "attackSpeedRatio": 0.35,
         "criticalStrikeChance": 0.35,
         "code": 203408,
@@ -1067,7 +1068,7 @@
     },
     {
         "attackPower": 25,
-        "attackSpeedRatio": 0.33,
+        "attackSpeedRatio": 0.35,
         "criticalStrikeChance": 0.35,
         "criticalStrikeDamage": 0.08,
         "code": 205501,
@@ -1465,7 +1466,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 75,
+        "skillAmp": 78,
         "cooldownReduction": 15,
         "moveSpeedRatio": 0.02,
         "code": 201520,

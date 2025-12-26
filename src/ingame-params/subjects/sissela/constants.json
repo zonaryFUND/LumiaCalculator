@@ -45,7 +45,7 @@
         },
         "lost_hp_conversion": [2,2.5,3],
         "min_hp": 100,
-        "passive_enhance_duration": [4,6,8],
+        "passive_enhance_duration": [6,7,8],
         "passive_enhance": 100,
         "cooldown_return": 50,
         "cooldown": [90,80,70]
@@ -57,7 +57,7 @@
         },
         "amp": {
             "min": [4,7,10],
-            "max": [20,31,42]
+            "max": [28,39,50]
         },
         "damage": {
             "base": 30,

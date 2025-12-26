@@ -17,7 +17,7 @@
         "duration": 1.25,
         "basic_attack_damage": 1,
         "movement_speed": [8,11,14,17,20],
-        "damage_decline": [23,24,26,28,40],
+        "damage_decline": [31,32,33,34,35],
         "damage": {
             "base": [80,115,150,185,220],
             "amp": 45,
