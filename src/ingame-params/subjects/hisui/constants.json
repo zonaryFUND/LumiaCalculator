@@ -5,7 +5,7 @@
             "additionalAttack": [70,75,80,85,90]
         },
         "second_damage": {
-            "base": [50,65,80,95,110],
+            "base": [70,85,100,115,130],
             "additionalAttack": [90,95,100,105,110]
         },
         "slow": {

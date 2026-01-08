@@ -63,7 +63,7 @@
             "duration": 4,
             "effect": [4,8,12]
         },
-        "cooldown_reduction": 2,
+        "cooldown_reduction": 2.5,
         "cooldown": {
             "constant": [12,9,6]
         }

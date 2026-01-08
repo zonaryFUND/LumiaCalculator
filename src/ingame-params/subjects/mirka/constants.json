@@ -67,7 +67,7 @@
             },
             "knockback": 2.5
         },
-        "cooldown": [13,12.5,12,11.5,11]
+        "cooldown": [14,13.5,13,12.5,12]
     },
     "R": {
         "channel": 1,
@@ -89,7 +89,7 @@
             "tick": 1,
             "value": {
                 "base": [10,15,20],
-                "targetMaxHP": [1,2,3]
+                "targetMaxHP": [0.8,1.6,2.4]
             }
         }
     }

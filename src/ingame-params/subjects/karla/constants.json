@@ -15,7 +15,7 @@
     },
     "W": {
         "damage": {
-            "base": [70,90,110,130,150],
+            "base": [70,95,120,145,170],
             "attack": 30,
             "amp": 75,
             "criticalChance": 65
@@ -46,7 +46,7 @@
             "attack": 50,
             "amp": 70
         },
-        "slow": [35,40,45],
+        "slow": [40,45,50],
         "duration": 3,
         "second_damage": {
             "base": [80,170,260],

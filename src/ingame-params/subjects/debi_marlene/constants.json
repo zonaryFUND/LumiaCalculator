@@ -2,7 +2,7 @@
     "DebiQ": {
         "damage": {
             "base": [50,75,100,125,150],
-            "additionalAttack": 75
+            "additionalAttack": 85
         },
         "attack_speed": {
             "duration": 5,

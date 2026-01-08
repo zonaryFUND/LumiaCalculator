@@ -30,7 +30,7 @@
     "R": {
         "first_damage": {
             "base": [50,100,150],
-            "amp": 25
+            "amp": 30
         },
         "duration": 10,
         "card_damage": {

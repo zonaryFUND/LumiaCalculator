@@ -4,7 +4,7 @@
     },
     "Q": {
         "duration": 5,
-        "attack_speed": [70,80,90,100,110],
+        "attack_speed": [60,70,80,90,100],
         "damage": {
             "attack": [103,106,109,112,115],
             "basicAttackAmp": 100

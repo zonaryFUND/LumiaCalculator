@@ -58,7 +58,7 @@
         "shield": {
             "base": [50,100,150],
             "amp": 40,
-            "maxHP": 8
+            "maxHP": 10
         },
         "bullet_slow": 90,
         "slow": 40,

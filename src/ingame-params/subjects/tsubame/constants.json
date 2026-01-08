@@ -49,7 +49,7 @@
             "base": 30,
             "additionalAttack": 45,
             "targetMaxHP": {
-                "base": [3,6,9],
+                "base": [4,7,10],
                 "additionalAttack": 4
             }
         },

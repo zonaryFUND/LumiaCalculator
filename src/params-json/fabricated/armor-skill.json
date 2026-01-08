@@ -3,7 +3,7 @@
 		"skillCode": 6007001,
 		"name": "swift_strides",
 		"dmg": {
-			"base": 80
+			"base": 50
 		},
 		"values": {
 			"tick": 0.2,
@@ -467,7 +467,7 @@
 		"name": "photon_launcher",
 		"dmg": {
 			"base": 10,
-			"attack": 20,
+			"attack": 25,
 			"level": 2
 		}
 	},

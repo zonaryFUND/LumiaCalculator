@@ -732,7 +732,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 38,
+        "attackPower": 35,
         "adaptiveForce": 57,
         "attackSpeedRatio": 0.3,
         "cooldownReduction": 15,
@@ -2028,7 +2028,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 42,
+        "attackPower": 38,
         "adaptiveForce": 50,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,

@@ -33,7 +33,7 @@
     "E": {
         "damage": {
             "base": [110,140,170,200,230],
-            "amp": 60
+            "amp": 65
         },
         "slow": {
             "duration": 1,
@@ -84,7 +84,7 @@
     "RE": {
         "damage": {
             "base": [125,190,255],
-            "amp": 60
+            "amp": 65
         },
         "slow": {
             "duration": 1,
