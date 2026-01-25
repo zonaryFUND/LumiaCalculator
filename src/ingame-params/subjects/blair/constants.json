@@ -2,15 +2,15 @@
     "DualSwordsQ": {
         "first_damage": {
             "base": [20,40,60,80,100],
-            "additionalAttack": [100,110,120,130,140],
+            "additionalAttack": [90,100,110,120,130],
             "targetMaxHP": {
                 "base": [1,1.5,2,2.5,3],
-                "additionalAttack": 5
+                "additionalAttack": 4
             }
         },
         "second_damage": {
             "base": [20,50,80,110,140],
-            "additionalAttack": [100,110,120,130,140]
+            "additionalAttack": [90,100,110,120,130]
         },
         "cooldown": [10,9.5,9,8.5,8],
         "vp_cost": [60,55,50,45,40]

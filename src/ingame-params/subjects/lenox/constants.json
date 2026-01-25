@@ -50,7 +50,7 @@
         "cooldown": [80,70,60]
     },
     "T": {
-        "cooldown_reduction": 15,
+        "cooldown_reduction": 10,
         "shield": {
             "maxHP": [7,10,13]
         },
@@ -61,7 +61,7 @@
             "rare": 1
         },
         "cooldown": {
-            "constant": [16,14,12]
+            "constant": [14,12,10]
         }
     }
 }
