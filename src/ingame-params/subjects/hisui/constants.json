@@ -51,13 +51,13 @@
             },
             "count": 4,
             "max_count": 8,
-            "first_heal": 100,
+            "first_heal": 75,
             "second_damage": {
                 "base": [50,80,110,140,170],
                 "additionalAttack": 100
             },
-            "second_heal": 100,
-            "animal_heal": 30
+            "second_heal": 75,
+            "animal_heal": 35
         }
     },
     "E": {

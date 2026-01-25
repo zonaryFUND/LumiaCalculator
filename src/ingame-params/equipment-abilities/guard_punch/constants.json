@@ -1,0 +1,12 @@
+{
+    "damage": {
+        "base": 50,
+        "additionalMaxHP": 10,
+        "targetMaxHP": 7
+    },
+    "slow": {
+        "duration": 0.5,
+        "effect": 99
+    },
+    "cooldown": 10
+}

@@ -37,7 +37,7 @@
     "202505": {
         "name": "アオザイ",
         "attackPower": 4,
-        "lifeSteal": 0.04,
+        "lifeSteal": 0.02,
         "code": 202607
     },
     "202506": {
@@ -137,20 +137,20 @@
     },
     "202209": {
         "name": "ビキニ",
-        "skillAmp": 7,
-        "lifeSteal": 0.04,
+        "skillAmp": 6,
+        "lifeSteal": 0.02,
         "code": 202623
     },
     "202504": {
         "name": "バーガンディ47",
         "attackPower": 4,
-        "lifeSteal": 0.04,
+        "lifeSteal": 0.02,
         "code": 202624
     },
     "202502": {
         "name": "クイーンオブハート",
-        "defense": 4,
-        "skillAmp": 8,
+        "defense": 2,
+        "skillAmp": 6,
         "code": 202625
     },
     "202521": {
@@ -179,18 +179,18 @@
     },
     "202527": {
         "name": "黒炎竜の鎧",
-        "defense": 5,
+        "defense": 4,
         "maxHpByLv": 2,
         "code": 202630
     },
     "201534": {
         "name": "赤い星",
-        "attackPower": 3,
+        "attackPower": 2,
         "attackSpeedRatio": 5
     },
     "202529": {
         "name": "赤い星",
-        "attackPower": 3,
+        "attackPower": 2,
         "attackSpeedRatio": 5
     }
 }

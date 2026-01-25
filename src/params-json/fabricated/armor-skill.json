@@ -31,7 +31,7 @@
 	},
 	"201404": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201405": {
 		"skillCode": 6033003,
@@ -57,6 +57,14 @@
 			}
 		}
 	},
+	"201408": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
+	},
+	"201411": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
+	},
 	"201412": {
 		"skillCode": 6006001,
 		"name": "reflection",
@@ -77,21 +85,25 @@
 			}
 		}
 	},
+	"201414": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
+	},
 	"201417": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201420": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201422": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201423": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201501": {
 		"skillCode": 6002001,
@@ -107,11 +119,11 @@
 	},
 	"201502": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201504": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201505": {
 		"skillCode": 6033002,
@@ -121,12 +133,12 @@
 			"amp": 35
 		},
 		"values": {
-			"heal": 40
+			"heal": 30
 		}
 	},
 	"201506": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"201507": {
 		"skillCode": 6030001,
@@ -193,7 +205,10 @@
 	},
 	"201525": {
 		"skillCode": 6055001,
-		"name": "combat_instinct"
+		"name": "combat_instinct",
+		"values": {
+			"attack_speed": 25
+		}
 	},
 	"201526": {
 		"skillCode": 6053002,
@@ -212,8 +227,14 @@
 		}
 	},
 	"201528": {
-		"skillCode": 6038001,
-		"name": "crushing_blow",
+		"skillCode": [
+			6038001,
+			6008201
+		],
+		"name": [
+			"crushing_blow",
+			"healing_reduction"
+		],
 		"dmg": {
 			"base": 20,
 			"additionalMaxHP": 10,
@@ -221,14 +242,20 @@
 		},
 		"values": {
 			"heal": {
-				"base": 50,
-				"additionalMaxHP": 18
+				"base": 40,
+				"additionalMaxHP": 14
 			}
 		}
 	},
 	"201529": {
-		"skillCode": 6035001,
-		"name": "quickstep"
+		"skillCode": [
+			6035001,
+			6008201
+		],
+		"name": [
+			"quickstep",
+			"healing_reduction"
+		]
 	},
 	"201530": {
 		"skillCode": 6007001,
@@ -255,8 +282,8 @@
 		},
 		"values": {
 			"heal": {
-				"base": 50,
-				"additionalMaxHP": 18
+				"base": 40,
+				"additionalMaxHP": 14
 			}
 		}
 	},
@@ -265,20 +292,46 @@
 		"name": "blaze_of_glory"
 	},
 	"201534": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": [
+			6052002,
+			6008201
+		],
+		"name": [
+			"blaze_up",
+			"healing_reduction"
+		]
+	},
+	"201535": {
+		"skillCode": 6067001,
+		"name": "two_sides"
 	},
 	"201701": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": [
+			6055101,
+			6008201
+		],
+		"name": [
+			"combat_instinct",
+			"healing_reduction"
+		],
+		"values": {
+			"adaptive": 5,
+			"attack_speed": 15
+		}
 	},
 	"202209": {
-		"skillCode": 6020001,
-		"name": "tranquility"
+		"skillCode": [
+			6020001,
+			6008201
+		],
+		"name": [
+			"tranquility",
+			"healing_reduction"
+		]
 	},
 	"202307": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"202402": {
 		"skillCode": 6001002,
@@ -294,7 +347,7 @@
 	},
 	"202406": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"202407": {
 		"skillCode": 6054101,
@@ -324,19 +377,35 @@
 		}
 	},
 	"202421": {
-		"skillCode": 6015007,
-		"name": "streamlined",
+		"skillCode": 6069001,
+		"name": "guard_punch",
 		"values": {
 			"ms": 20
 		}
 	},
 	"202501": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
+	},
+	"202502": {
+		"skillCode": [
+			6066001,
+			6008201
+		],
+		"name": [
+			"convergence",
+			"healing_reduction"
+		]
 	},
 	"202504": {
-		"skillCode": 6016001,
-		"name": "bloodpact"
+		"skillCode": [
+			6016001,
+			6008201
+		],
+		"name": [
+			"bloodpact",
+			"healing_reduction"
+		]
 	},
 	"202505": {
 		"skillCode": 6049001,
@@ -350,13 +419,17 @@
 		"skillCode": 6027101,
 		"name": "vanguard"
 	},
+	"202508": {
+		"skillCode": 6066001,
+		"name": "convergence"
+	},
 	"202509": {
 		"skillCode": 6052001,
 		"name": "blaze_up_enhanced"
 	},
 	"202510": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"202511": {
 		"skillCode": 6030001,
@@ -374,13 +447,13 @@
 	},
 	"202513": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"202514": {
 		"skillCode": 6053001,
 		"name": "blaze_up_amplified",
 		"values": {
-			"lifeSteal": 12
+			"lifeSteal": 10
 		}
 	},
 	"202515": {
@@ -393,7 +466,7 @@
 	},
 	"202517": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"202518": {
 		"skillCode": 6036001,
@@ -428,12 +501,24 @@
 		"name": "brute_enforcer"
 	},
 	"202527": {
-		"skillCode": 6062001,
-		"name": "heart_of_fire"
+		"skillCode": [
+			6062001,
+			6008201
+		],
+		"name": [
+			"heart_of_fire",
+			"healing_reduction"
+		]
 	},
 	"202528": {
-		"skillCode": 6034001,
-		"name": "extended_fury",
+		"skillCode": [
+			6034001,
+			6008201
+		],
+		"name": [
+			"extended_fury",
+			"healing_reduction"
+		],
 		"dmg": {
 			"level": 3
 		},
@@ -441,9 +526,13 @@
 			"extend": 25
 		}
 	},
+	"202529": {
+		"skillCode": 6070001,
+		"name": "ultra_focus"
+	},
 	"203306": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"203402": {
 		"skillCode": 6006001,
@@ -473,7 +562,7 @@
 	},
 	"203406": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"203408": {
 		"skillCode": 6060001,
@@ -514,12 +603,26 @@
 			"level": 2
 		},
 		"values": {
-			"heal": 40
+			"heal": 30
 		}
 	},
 	"203504": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": [
+			6001002,
+			6008201
+		],
+		"name": [
+			"flame_barrier",
+			"healing_reduction"
+		],
+		"dmg": {
+			"melee": {
+				"maxHP": 4
+			},
+			"range": {
+				"maxHP": 3
+			}
+		}
 	},
 	"203505": {
 		"skillCode": 6006001,
@@ -550,19 +653,19 @@
 	},
 	"203508": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"203509": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"203511": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"203512": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"203513": {
 		"skillCode": 6028001,
@@ -584,12 +687,18 @@
 		}
 	},
 	"203515": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"203516": {
-		"skillCode": 6063001,
-		"name": "fáfnir's_scales "
+		"skillCode": [
+			6063001,
+			6008201
+		],
+		"name": [
+			"fáfnir's_scales",
+			"healing_reduction"
+		]
 	},
 	"204409": {
 		"skillCode": 6059001,
@@ -597,38 +706,58 @@
 	},
 	"204411": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
+	},
+	"204413": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"204415": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"204502": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": [
+			6065001,
+			6008201
+		],
+		"name": [
+			"vitality_strike",
+			"healing_reduction"
+		]
 	},
 	"204503": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"204505": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"204506": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
+	},
+	"204510": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"204511": {
-		"skillCode": 6048011,
-		"name": "awakening",
+		"skillCode": [
+			6048011,
+			6008201
+		],
+		"name": [
+			"awakening",
+			"healing_reduction"
+		],
 		"values": {
 			"penetration": 0.12
 		}
 	},
 	"204513": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"205201": {
 		"skillCode": 6014001,
@@ -644,7 +773,7 @@
 	},
 	"205404": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"205406": {
 		"skillCode": 6058101,
@@ -683,8 +812,8 @@
 		}
 	},
 	"205507": {
-		"skillCode": 6008202,
-		"name": "healing_reduction_strong"
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"205508": {
 		"skillCode": 6015007,
@@ -695,7 +824,7 @@
 	},
 	"205601": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"701451": {
 		"skillCode": 6024001,
@@ -739,14 +868,14 @@
 		},
 		"values": {
 			"heal": {
-				"base": 50,
-				"additionalMaxHP": 18
+				"base": 40,
+				"additionalMaxHP": 14
 			}
 		}
 	},
 	"705614": {
-		"skillCode": 6015007,
-		"name": "streamlined",
+		"skillCode": 6068001,
+		"name": "thunder_ruling",
 		"values": {
 			"ms": 25
 		}

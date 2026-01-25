@@ -35,8 +35,8 @@
         "immortal": 0.5,
         "heal": {
             "maxHP": {
-                "base": 40,
-                "amp": 1
+                "base": 30,
+                "amp": 0.75
             }
         },
         "movement_speed": {

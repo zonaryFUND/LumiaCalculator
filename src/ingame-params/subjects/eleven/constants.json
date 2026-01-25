@@ -1,18 +1,18 @@
 {
     "common": {
-        "charging_slow_penalty": 20,
+        "charging_slow_penalty": 15,
         "return_cooldown": 30
     },
     "Q": {
         "min_damage": {
             "base": [80, 110, 140, 170, 200],
-            "attack": 30,
-            "additionalMaxHP": 10
+            "attack": 40,
+            "targetMaxHP": 6
         },
         "max_damage": {
             "base": [160, 220, 280, 340, 400],
-            "attack": 60,
-            "additionalMaxHP": 20
+            "attack": 80,
+            "targetMaxHP": 12
         },
         "slow_duration": 1,
         "min_slow": 30,
@@ -52,7 +52,7 @@
     "R": {
         "duration": 7,
         "heal": {
-            "maxHP": [40,60,80]
+            "maxHP": [25,40,55]
         },
         "tick": 0.5,
         "damage": {
@@ -64,8 +64,8 @@
     },
     "T": {
         "heal": {
-            "targetMaxHP": [1, 3, 5]
+            "maxHP": [3,5,7]
         },
-        "amount": 2
+        "amount": 3
     }
 }

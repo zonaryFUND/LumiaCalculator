@@ -48,7 +48,7 @@
         },
         "movement_speed": [6,18,30],
         "duration": 2,
-        "heal": [100,150,200],
+        "heal": [100,125,150],
         "animal": 70
     }
 }

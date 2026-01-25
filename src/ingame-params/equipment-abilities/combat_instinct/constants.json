@@ -1,5 +1,5 @@
 {
-    "duration": 4,
-    "attack_speed": 25,
-    "cooldown": 12
+    "duration": 5,
+    "cooldown": 20,
+    "cooldown_reduction": 1
 }

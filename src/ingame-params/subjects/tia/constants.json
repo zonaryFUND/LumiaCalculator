@@ -71,9 +71,9 @@
             "count": 4
         },
         "rb": {
-            "heal": 100,
+            "heal": 170,
             "movement_speed": {
-                "duration": 1.5,
+                "duration": 2,
                 "effect": [15,20,25,30,35]
             },
             "damage": {

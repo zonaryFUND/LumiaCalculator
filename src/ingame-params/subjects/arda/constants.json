@@ -61,8 +61,8 @@
     "T": {
         "max_stack": [5,4,3],
         "heal": {
-            "base": [50,100,150],
-            "amp": 15
+            "base": [40,75,110],
+            "amp": 10
         },
         "cooldown": {
             "constant": 7

@@ -8,6 +8,6 @@
     "tenacity": 50,
     "adaptive_duration": 8,
     "adaptive": 15,
-    "heal": 12,
+    "heal": 10,
     "cooldown": 40
 }

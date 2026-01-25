@@ -5,7 +5,7 @@
             "attack": 55,
             "targetHP": 5
         },
-        "heal": 50,
+        "heal": 30,
         "max_stack_target_additional_damage": 30,
         "reuse": 3,
         "cooldown": [12,11,10,9,8]
@@ -41,7 +41,7 @@
         },
         "finish_multiplier_max": 2,
         "finish_multiplier_max_hp": 30,
-        "heal": 30,
+        "heal": 25,
         "cooldown": [70,65,60]
     },
     "T": {
@@ -57,8 +57,8 @@
             "attack": [14,16,18]
         },
         "heal": {
-            "base": [10,20,30],
-            "attack": 15
+            "base": [10,15,20],
+            "attack": 10
         },
         "max_heal_multiplier": 2,
         "max_heal_threshold": 40

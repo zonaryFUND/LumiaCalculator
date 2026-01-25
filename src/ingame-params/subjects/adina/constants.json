@@ -11,7 +11,7 @@
         "moon": 0.7,
         "star": {
             "duration": 4,
-            "movement_speed": 15
+            "movement_speed": 20
         },
         "conjunction": {
             "duration": 2,
@@ -39,7 +39,7 @@
             "duration": 2,
             "shield": {
                 "base": [60,90,120,150,180],
-                "amp": 30
+                "amp": 35
             }
         },
         "conjunction": {
@@ -65,7 +65,7 @@
             "amp": 10
         },
         "moon": 1,
-        "star": 40,
+        "star": 30,
         "conjunction": 4,
         "cooldown": [10,9.5,9,8.5,8]
     },
@@ -80,8 +80,8 @@
         },
         "star_conjunction": {
             "heal": {
-                "base": [20,40,60,80],
-                "amp": 5
+                "base": [20,30,40,50],
+                "amp": 4
             }
         },
         "cooldown": {

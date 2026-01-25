@@ -83,10 +83,10 @@
     "false_oath": {
         "heal_min": {
             "melee": {
-                "base": 50
+                "base": 40
             },
             "range": {
-                "base": 30
+                "base": 20
             }
         },
         "heal_max_multiplier": 1.5,
@@ -99,13 +99,13 @@
                 200
             ],
             "level": [
-                15,
-                20
+                8,
+                12
             ]
         },
         "defense": {
             "duration": 3,
-            "effect": 15
+            "effect": 20
         }
     }
 }

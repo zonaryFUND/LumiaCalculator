@@ -131,7 +131,7 @@
     {
         "attackPower": 65,
         "attackSpeedRatio": 0.2,
-        "lifeSteal": 0.07,
+        "lifeSteal": 0.05,
         "code": 102410,
         "weaponType": "TwoHandSword",
         "itemGrade": "Epic"
@@ -188,7 +188,7 @@
     {
         "attackPower": 45,
         "attackSpeedRatio": 0.25,
-        "normalLifeSteal": 0.1,
+        "normalLifeSteal": 0.08,
         "code": 103401,
         "weaponType": "DualSword",
         "itemGrade": "Epic"
@@ -204,7 +204,7 @@
         "attackPower": 31,
         "skillAmp": 70,
         "cooldownReduction": 10,
-        "lifeSteal": 0.06,
+        "lifeSteal": 0.05,
         "code": 103403,
         "weaponType": "DualSword",
         "itemGrade": "Epic"
@@ -507,7 +507,7 @@
     {
         "attackPower": 75,
         "attackSpeedRatio": 0.3,
-        "normalLifeSteal": 0.12,
+        "normalLifeSteal": 0.1,
         "code": 108403,
         "weaponType": "Bat",
         "itemGrade": "Epic"
@@ -531,7 +531,7 @@
         "attackPower": 30,
         "skillAmp": 86,
         "cooldownReduction": 15,
-        "lifeSteal": 0.1,
+        "lifeSteal": 0.08,
         "code": 104405,
         "weaponType": "Bat",
         "itemGrade": "Legend"
@@ -619,7 +619,7 @@
     },
     {
         "attackPower": 42,
-        "skillAmp": 88,
+        "skillAmp": 95,
         "attackSpeedRatio": 0.4,
         "code": 109406,
         "weaponType": "Whip",
@@ -646,8 +646,8 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 70,
-        "maxHp": 180,
+        "skillAmp": 65,
+        "maxHp": 150,
         "code": 109503,
         "weaponType": "Whip",
         "itemGrade": "Legend"
@@ -769,7 +769,7 @@
         "attackPower": 50,
         "defense": 6,
         "attackSpeedRatio": 0.2,
-        "lifeSteal": 0.1,
+        "lifeSteal": 0.08,
         "code": 111404,
         "weaponType": "Tonfa",
         "itemGrade": "Epic"
@@ -1017,7 +1017,7 @@
     {
         "attackPower": 61,
         "attackSpeedRatio": 0.4,
-        "normalLifeSteal": 0.1,
+        "normalLifeSteal": 0.08,
         "code": 114405,
         "weaponType": "Bow",
         "itemGrade": "Epic"
@@ -1075,7 +1075,7 @@
     {
         "attackPower": 80,
         "attackSpeedRatio": 0.4,
-        "normalLifeSteal": 0.12,
+        "normalLifeSteal": 0.1,
         "moveSpeedRatio": 0.02,
         "code": 114505,
         "weaponType": "Bow",
@@ -1176,7 +1176,7 @@
         "attackPower": 40,
         "skillAmp": 70,
         "attackSpeedRatio": 0.3,
-        "lifeSteal": 0.04,
+        "lifeSteal": 0.03,
         "code": 116406,
         "weaponType": "Pistol",
         "itemGrade": "Epic"
@@ -1233,7 +1233,7 @@
     {
         "attackPower": 73,
         "attackSpeedRatio": 0.2,
-        "normalLifeSteal": 0.1,
+        "normalLifeSteal": 0.08,
         "code": 117403,
         "weaponType": "AssaultRifle",
         "itemGrade": "Epic"
@@ -1371,7 +1371,7 @@
     {
         "attackPower": 84,
         "attackSpeedRatio": 0.5,
-        "normalLifeSteal": 0.11,
+        "normalLifeSteal": 0.08,
         "sightRange": 1,
         "code": 118503,
         "weaponType": "SniperRifle",
@@ -1479,7 +1479,7 @@
         "attackPower": 57,
         "criticalStrikeChance": 0.2,
         "criticalStrikeDamage": 0.03,
-        "normalLifeSteal": 0.07,
+        "normalLifeSteal": 0.06,
         "code": 120401,
         "weaponType": "Rapier",
         "itemGrade": "Epic"
@@ -1528,8 +1528,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 61,
-        "criticalStrikeChance": 0.24,
+        "attackPower": 25,
+        "skillAmp": 76,
         "code": 120407,
         "weaponType": "Rapier",
         "itemGrade": "Epic"
@@ -1595,7 +1595,7 @@
     {
         "attackPower": 62,
         "attackSpeedRatio": 0.3,
-        "normalLifeSteal": 0.15,
+        "normalLifeSteal": 0.12,
         "code": 121404,
         "weaponType": "Guitar",
         "itemGrade": "Epic"
@@ -1649,7 +1649,7 @@
     {
         "attackPower": 75,
         "attackSpeedRatio": 0.4,
-        "normalLifeSteal": 0.2,
+        "normalLifeSteal": 0.15,
         "code": 121504,
         "weaponType": "Guitar",
         "itemGrade": "Legend"
@@ -1754,9 +1754,9 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 58,
+        "skillAmp": 63,
         "cooldownReduction": 10,
-        "healerGiveHpHealRatio": 0.08,
+        "healerGiveHpHealRatio": 0.06,
         "code": 130403,
         "weaponType": "Arcana",
         "itemGrade": "Epic"
@@ -1789,7 +1789,7 @@
         "attackPower": 40,
         "skillAmp": 112,
         "cooldownReduction": 15,
-        "lifeSteal": 0.08,
+        "lifeSteal": 0.06,
         "penetrationDefenseRatio": 0.1,
         "code": 130502,
         "weaponType": "Arcana",
@@ -1816,7 +1816,7 @@
     {
         "attackPower": 49,
         "maxHpByLv": 4,
-        "lifeSteal": 0.12,
+        "lifeSteal": 0.1,
         "code": 131402,
         "weaponType": "VFArm",
         "itemGrade": "Epic"
@@ -1861,7 +1861,7 @@
     {
         "attackPower": 49,
         "maxHpByLv": 6,
-        "lifeSteal": 0.12,
+        "lifeSteal": 0.1,
         "code": 131504,
         "weaponType": "VFArm",
         "itemGrade": "Legend"
@@ -1869,7 +1869,7 @@
     {
         "attackPower": 62,
         "maxHpByLv": 8,
-        "lifeSteal": 0.12,
+        "lifeSteal": 0.1,
         "uniqueTenacity": 0.3,
         "code": 131505,
         "weaponType": "VFArm",
@@ -1878,7 +1878,7 @@
     {
         "attackPower": 66,
         "maxHpByLv": 10,
-        "lifeSteal": 0.2,
+        "lifeSteal": 0.15,
         "code": 131506,
         "weaponType": "VFArm",
         "itemGrade": "Mythic"

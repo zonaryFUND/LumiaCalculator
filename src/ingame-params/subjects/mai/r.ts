@@ -11,7 +11,7 @@ export const info: SkillTooltipProps = {
         6: Constants.R.supression,
         7: Constants.R.heal.base,
         12: RatioPercent(Constants.R.heal.amp),
-        13: RatioPercent(Constants.R.heal.defense),
+        13: RatioPercent(Constants.R.heal.targetLostHP),
         21: Constants.R.heal
     }),
     expansion: () => ({

@@ -51,8 +51,8 @@
             "targetMaxHP": 5
         },
         "heal": {
-            "min": 65,
-            "max": 130,
+            "min": 50,
+            "max": 100,
             "max_threshold_hp": 40
         },
         "cooldown_reduction": 40,

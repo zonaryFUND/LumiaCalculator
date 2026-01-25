@@ -16,10 +16,10 @@
             "duration": 1.5,
             "effect": [20,22.5,25,27.5,30]
         },
-        "target_duration": 3,
+        "target_duration": 4,
         "heal": {
-            "base": [30,40,50,60,70],
-            "amp": 12
+            "base": [10,20,30,40,50],
+            "amp": 8
         },
         "cooldown": [10,9.5,9,8.5,8]
     },

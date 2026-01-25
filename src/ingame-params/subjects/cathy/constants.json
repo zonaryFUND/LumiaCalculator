@@ -43,8 +43,8 @@
     "R": {
         "heal_duration": 4,
         "heal": {
-            "targetMaxHP": 5,
-            "amp": 4
+            "targetMaxHP": 4,
+            "amp": 3
         },
         "min_damage": {
             "base": [100,175,250],
@@ -64,7 +64,7 @@
             "targetMaxHP": 4,
             "amp": 25
         },
-        "healing_reduction": 60,
+        "healing_reduction": 30,
         "shield_duration": 2,
         "shield": {
             "base": [50,100,150],

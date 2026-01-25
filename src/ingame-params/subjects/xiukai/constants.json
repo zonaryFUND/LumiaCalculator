@@ -1,22 +1,22 @@
 {
     "Q": {
         "damage": {
-            "base": [80,120,160,200,240],
-            "amp": 75,
-            "maxHP": 8
+            "base": [60,100,140,180,220],
+            "amp": 70,
+            "targetHP": 25
         },
         "slow": [30,35,40,45,50],
         "cooldown": 6
     },
     "W": {
         "heal": {
-            "base": [40,70,100,130,160],
-            "maxHP": 6,
+            "base": [20,40,60,80,100],
+            "maxHP": 4,
             "stack": 1
         },
         "defense": {
             "duration": 2,
-            "effect": [15,17,19,21,23]
+            "effect": [16,19,22,25,28]
         },
         "charge": {
             "time": [16,15,14,13,12],
@@ -56,6 +56,11 @@
         "slow": {
             "duration": 0.4,
             "effect": [40,50,60]
+        },
+        "healing_reduction": {
+            "duration": 5,
+            "effect": 10,
+            "max_stack": 3
         },
         "cooldown": [80,70,60]
     },

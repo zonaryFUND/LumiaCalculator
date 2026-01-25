@@ -1,0 +1,8 @@
+{
+    "threshold": 50,
+    "duration": 6,
+    "defense": 8,
+    "attack": 8,
+    "omnisyphon": 8,
+    "cooldown": 20
+}

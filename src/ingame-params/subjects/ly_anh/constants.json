@@ -19,7 +19,7 @@
             "hit": 20,
             "miss": 10
         },
-        "hp_cost": [20,25,30,35,40],
+        "hp_cost": [10,15,20,25,30],
         "cooldown": [13,12,11,10,9]
     },
     "LyAnhW": {
@@ -76,7 +76,7 @@
             "hit": 20,
             "miss": 10
         },
-        "hp_cost": [20,25,30,35,40],
+        "hp_cost": [10,15,20,25,30],
         "cooldown": [11,10.5,10,9.5,9]
     },
     "LyAnhR": {
@@ -105,7 +105,7 @@
     "LyAnhR2": {},
     "LyAnhT": {
         "possessing_heal": {
-            "lostHP": 25
+            "lostHP": 20
         },
         "thrash_decline": 50,
         "human_basic_attack": {
@@ -120,8 +120,8 @@
         "additional_damage": {
             "attack": [8,16,24]
         },
-        "possesed_heal": 125,
-        "ghost_heal": 200,
+        "possesed_heal": 100,
+        "ghost_heal": 150,
         "human_thrash": 20,
         "possessed_thrash": 10
     }

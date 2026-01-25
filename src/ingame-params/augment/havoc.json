@@ -1,8 +1,8 @@
 {
     "frailty_infliction": {
         "damage": {
-           "base": 30,
-           "level": 3
+            "base": 30,
+            "level": 3
         },
         "defense_reduction": {
             "duration": 6,
@@ -17,8 +17,8 @@
         "stack": {
             "adaptive": 1,
             "omnisyphon": {
-                "melee": 2,
-                "range": 1.5
+                "melee": 1.5,
+                "range": 1
             }
         },
         "duration": 6,
@@ -61,11 +61,28 @@
         "attack_speed": 120,
         "duration": 3,
         "damage": {
-            "base": [20,20,20,20,25,
-            30,35,40,45,55,
-            63,72,81,90,100,
-            114,127,140,155,170
-        ],
+            "base": [
+                20,
+                20,
+                20,
+                20,
+                25,
+                30,
+                35,
+                40,
+                45,
+                55,
+                63,
+                72,
+                81,
+                90,
+                100,
+                114,
+                127,
+                140,
+                155,
+                170
+            ],
             "additionalAttack": 50,
             "amp": 40
         }
@@ -78,11 +95,11 @@
     "frenzy": {
         "min": {
             "hp": 70,
-            "value": 5
+            "value": 4
         },
         "max": {
-            "hp": 10,
-            "value": 40
+            "hp": 40,
+            "value": 8
         }
     },
     "contempt_for_the_weak": {
@@ -118,5 +135,28 @@
             "per": 10,
             "attackSpeed": 2.5
         }
+    },
+    "wild_dog_mask": {
+        "base": {
+            "omnisyphon": 1
+        },
+        "max_stack": 80,
+        "stack_buff": {
+            "omnisyphon": 0.5
+        }
+    },
+    "cicatrix": {
+        "healing_reduction": {
+            "duration": 5,
+            "effect": 10
+        },
+        "max_healing_reduction": 20,
+        "period": 1,
+        "max_stack_dmage": {
+            "base": 10,
+            "level": 2,
+            "targetMaxHP": 3
+        },
+        "cooldown": 5
     }
 }

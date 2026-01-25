@@ -1,6 +1,6 @@
 {
     "healing_factor": {
-        "enhance": 12,
+        "enhance": 10,
         "adaptive": {
             "base": 5,
             "level": 0.5
@@ -25,8 +25,8 @@
         "duration": 3,
         "heal": {
             "lostHP": {
-                "base": 4,
-                "level": 0.5
+                "base": 3,
+                "level": 0.3
             }
         },
         "cooldown": 30,
@@ -61,9 +61,10 @@
         "cooldown": 3
     },
     "thorn_shackles": {
-        "effect": 6,
-        "duration": 6,
-        "cooldown": 10
+        "effect": 5,
+        "duration": 5,
+        "cooldown": 2,
+        "healing_reduction": 20
     },
     "power_of_intimidation": {
         "range": 3,

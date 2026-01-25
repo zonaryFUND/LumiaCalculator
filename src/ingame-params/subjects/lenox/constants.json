@@ -28,8 +28,9 @@
     },
     "E": {
         "damage": {
-            "base": [60,115,170,225,280],
-            "amp": 50
+            "base": [60,100,140,180,220],
+            "amp": 50,
+            "targetMaxHP": 5
         },
         "slow": {
             "duration": 1.25,
@@ -49,8 +50,9 @@
         "cooldown": [80,70,60]
     },
     "T": {
+        "cooldown_reduction": 15,
         "shield": {
-            "maxHP": [7,11,15]
+            "maxHP": [7,10,13]
         },
         "duration": 3,
         "fishing": {
@@ -59,7 +61,7 @@
             "rare": 1
         },
         "cooldown": {
-            "constant": [13,10,7]
+            "constant": [16,14,12]
         }
     }
 }

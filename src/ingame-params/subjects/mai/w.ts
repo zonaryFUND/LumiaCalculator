@@ -16,7 +16,7 @@ export const info: SkillTooltipProps = {
         5: Constants.W.charge.max,
         7: Constants.W.charge_time_reduction,
         11: RatioPercent(Constants.W.damage.amp),
-        12: RatioPercent(Constants.W.damage.defense),
+        12: RatioPercent(Constants.W.damage.additionalMaxHP),
         20: Constants.W.damage
     }),
     expansion: () => ({

@@ -11,7 +11,7 @@ export const info: SkillTooltipProps = {
         0: Constants.Q.damage.base,
         3: RatioPercent(Constants.Q.slow),
         4: RatioPercent(Constants.Q.damage.amp),
-        5: RatioPercent(Constants.Q.damage.maxHP),
+        5: RatioPercent(Constants.Q.damage.targetHP),
         20: Constants.Q.damage
     }),
     expansion: () => ({

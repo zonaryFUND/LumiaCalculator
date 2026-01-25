@@ -33,7 +33,7 @@
         "duration": 4,
         "threshold": 10,
         "heal": {
-            "base": [250,375,500]
+            "base": [200,275,350]
         },
         "cooldown": [80,70,60]
     },

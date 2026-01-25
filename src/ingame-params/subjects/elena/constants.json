@@ -62,7 +62,7 @@
         "damage": {
             "base": [20,40,60],
             "amp": 20,
-            "additionalMaxHP": 10
+            "targetMaxHP": [4,6,8]
         },
         "immune": 2.5,
         "cooldown": {

@@ -11,7 +11,8 @@ export const info: SkillTooltipProps = {
     values: ({ showEquation }) => ({
         0: showEquation ? RatioPercent(Constants.T.shield.maxHP) : Constants.T.shield,
         1: Constants.T.duration,
-        5: Constants.T.cooldown.constant
+        5: Constants.T.cooldown.constant,
+        6: RatioPercent(Constants.T.cooldown_reduction)
     }),
     expansion: () => ({
         tipValues: {

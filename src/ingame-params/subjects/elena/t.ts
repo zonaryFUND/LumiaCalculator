@@ -19,7 +19,7 @@ export const info: SkillTooltipProps = {
             return {
                 ...base,
                 3: Constants.T.damage.base,
-                6: RatioPercent(Constants.T.damage.additionalMaxHP),
+                6: RatioPercent(Constants.T.damage.targetMaxHP),
                 7: RatioPercent(Constants.T.damage.amp),
                 8: Constants.T.chill
             } as Record<number, number | string | ValueRatio>
@@ -37,6 +37,7 @@ export const info: SkillTooltipProps = {
         },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
+            {labelIntlID: "ToolTipType/TargetMaxHpCoef", values: Constants.T.damage.targetMaxHP, percent: true},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant}
         ]  
     })

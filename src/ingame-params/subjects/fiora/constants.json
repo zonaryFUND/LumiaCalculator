@@ -52,8 +52,8 @@
             "amp": 45
         },
         "heal": {
-            "base": [20,45,70],
-            "amp": 35
+            "base": [20,40,60],
+            "amp": 25
         },
         "movement_speed": {
             "duration": 2,

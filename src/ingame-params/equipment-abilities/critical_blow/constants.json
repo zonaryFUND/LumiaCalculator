@@ -4,9 +4,9 @@
         "attack": 55
     },
     "heal": {
-        "base": 20,
-        "attack": 40,
-        "lostHP": 8
+        "base": 15,
+        "attack": 30,
+        "lostHP": 5
     },
     "overheal_duration": 5,
     "cooldown": 6

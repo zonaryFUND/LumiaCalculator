@@ -27,7 +27,7 @@
         },
         "heal_tick": 0.2,
         "heal": {
-            "lostHP": 5
+            "lostHP": 3
         },
         "min_damage": {
             "base": [80,110,140,170,200],
@@ -44,12 +44,12 @@
             "effect": 50
         },
         "max_stack": 5,
-        "max_charge_bind": 0.9,
+        "max_charge_bind": 0.8,
         "finish_heal": {
             "base": [20,40,60,80,100],
-            "amp": 40,
-            "maxHP": 8,
-            "stack": [18,21,24,27,30]
+            "amp": 30,
+            "maxHP": 6,
+            "stack": [8,11,14,17,20]
         },
         "cooldown": [15,14,13,12,11]
     },
@@ -59,9 +59,9 @@
             "amp": 55,
             "maxHP": 6
         },
-        "stun": 0.4,
+        "stun": 0.6,
         "hp_cost_percent": 2,
-        "cooldown": [9,8.5,8,7.5,7]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "R": {
         "bind": 0.8,
@@ -74,7 +74,7 @@
         "reuse_threshold": 25,
         "movement_speed": {
             "duration": 2,
-            "effect": 40
+            "effect": 50
         },
         "cooldown": [80,70,60]
     },

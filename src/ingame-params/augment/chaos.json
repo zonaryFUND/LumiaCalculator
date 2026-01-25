@@ -23,6 +23,7 @@
             "additionalAttack": 70,
             "amp": 20
         },
+        "healing_reduction": 30,
         "duration": 5,
         "cooldown_acceleration": 5,
         "cooldown": 30
@@ -63,10 +64,10 @@
             "amp": 40
         },
         "heal": {
-            "additionalAttack": 70,
-            "amp": 20,
-            "maxHP": 9,
-            "lostHP": 15
+            "additionalAttack": 50,
+            "amp": 15,
+            "maxHP": 7,
+            "lostHP": 10
         },
         "additional_heal_per_hit": 40,
         "additional_heal_max": 80,
@@ -75,9 +76,8 @@
     },
     "circular_system": {
         "heal": {
-            "base": 10,
             "level": 1,
-            "maxHP": 0.4
+            "maxHP": 0.3
         },
         "duration": 3
     },
@@ -90,6 +90,16 @@
         "duration": 2,
         "cooldown": 11
     },
+    "quick_draw": {
+        "time_bound": 3,
+        "duration": 4,
+        "adaptive": {
+            "base": 2,
+            "level": 0.5
+        },
+        "attack_speed": 10,
+        "cooldown": 11
+    },
     "stopping_power": {
         "armor_penetration": {
             "effect": 6,
@@ -98,7 +108,21 @@
         "cooldown": 12
     },
     "power_crescendo": {
-        "adaptive": [0,1,2,3,4,6,8,10,12,14,16,16,16]
+        "adaptive": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            16,
+            16
+        ]
     },
     "overwatch": {
         "cooldown": 5,

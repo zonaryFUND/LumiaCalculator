@@ -67,7 +67,7 @@
         },
         "dance": 1,
         "heal": {
-            "targetMaxHP": [4,7,10]
+            "targetMaxHP": [3,5,7]
         },
         "cooldown": [80,70,60]
     },

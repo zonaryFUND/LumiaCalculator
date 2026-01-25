@@ -22,8 +22,8 @@
             "base": [50,80,110,140,170],
             "attack": 85
         },
-        "heal": 15,
-        "max_heal": 35,
+        "heal": 11,
+        "max_heal": 28,
         "cooldown_reduction": 1,
         "cooldown": 10
     },
@@ -69,10 +69,10 @@
             "effect": [3,4,5],
             "max_stack": 8
         },
-        "subject_kill": [3,9,15],
-        "wickline_kill": [10,15,20],
+        "subject_kill": [4,7,10],
+        "wickline_kill": [5,10,15],
         "evolution_stack": [10,30,50],
-        "heal_amp_threshold": 75,
+        "heal_amp_threshold": 100,
         "heal_amp_per": 10,
         "chicken_bat": 3,
         "boar_hound_wolf": 4,

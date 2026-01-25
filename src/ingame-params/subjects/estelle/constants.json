@@ -11,7 +11,8 @@
     "W": {
         "damage": {
             "base": [20,50,80,110,140],
-            "amp": 60
+            "amp": 55,
+            "targetMaxHP": 2.5
         },
         "slow": {
             "duration": 1,
@@ -87,8 +88,8 @@
     "T": {
         "heal_period": 5,
         "heal": {
-            "maxHP": [2,3,4],
-            "amp": 25
+            "maxHP": [1,2,3],
+            "amp": 18
         },
         "revive": [0.5,0.75,1],
         "additional_heal": {
@@ -96,9 +97,6 @@
                 "base": [5,10,15],
                 "amp": 3
             }
-        },
-        "cooldown": {
-            "constant": [100,90,80]
         }
     }
 }

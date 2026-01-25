@@ -5,7 +5,7 @@
         "amp": 25,
         "targetMaxHP": 6
     },
-    "heal": 80,
+    "heal": 60,
     "cooldown": {
         "constant": [7,6,5]
     }

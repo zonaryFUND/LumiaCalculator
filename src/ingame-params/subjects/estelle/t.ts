@@ -8,7 +8,6 @@ export const code = 1055100;
 
 export const info: SkillTooltipProps = {
     skillKey: "T",
-    cooldown: Constants.T.cooldown,
     values: ({ showEquation }) => {
         if (showEquation) {
             return {
@@ -32,8 +31,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "StatType/MaxHpCoef", values: Constants.T.heal.maxHP, percent: true},
             {labelIntlID: "ToolTipType/DecreaseRevivalTime", values: Constants.T.revive},
-            {labelIntlID: "ToolTipType/AddHpRevival", values: Constants.T.additional_heal.targetMaxHP.base, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant},
+            {labelIntlID: "ToolTipType/AddHpRevival", values: Constants.T.additional_heal.targetMaxHP.base, percent: true}
         ]  
     })
 }

@@ -82,6 +82,24 @@
             "hp": 40
         }
     },
+    "caution": {
+        "threshold": 80,
+        "damage_reduction": {
+            "duration": 1.5,
+            "effect": {
+                "base": 5,
+                "level": 0.5
+            }
+        },
+        "cooldown": 25
+    },
+    "tempering": {
+        "first_defense_up": 2,
+        "second_defense_up": {
+            "period": 80,
+            "effect": 1
+        }
+    },
     "unwavering_mentality": {
         "shield": {
             "level": 15

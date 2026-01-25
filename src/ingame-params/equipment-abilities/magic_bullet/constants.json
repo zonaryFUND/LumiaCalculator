@@ -2,5 +2,5 @@
     "duration": 4,
     "max_stack": 2,
     "cooldown": 5,
-    "lifesteal_ratio": 66
+    "lifesteal_ratio": 50
 }

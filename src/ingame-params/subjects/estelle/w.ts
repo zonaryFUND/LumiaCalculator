@@ -20,7 +20,8 @@ export const info: SkillTooltipProps = {
                 7: RatioPercent(Constants.W2.damage.maxHP),
                 8: RatioPercent(Constants.W2.damage.amp),
                 9: RatioPercent(Constants.W2.slow_max),
-                10: Constants.W2.tick
+                10: Constants.W2.tick,
+                11: RatioPercent(Constants.W2.damage.maxHP)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {

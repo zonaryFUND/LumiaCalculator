@@ -18,7 +18,7 @@
     "W": {
         "duration": 2.5,
         "defense": {
-            "base": [12,21,30,39,48],
+            "base": [14,23,32,41,50],
             "defense": 10
         },
         "cc_immune": 1,
@@ -68,7 +68,7 @@
             "amp": 40
         },
         "heal": {
-            "maxHP": [7,11,15]
+            "maxHP": [5,8,11]
         },
         "w_cooldown_reduction": 2
     }

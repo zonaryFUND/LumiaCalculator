@@ -10,8 +10,8 @@
         },
         "heal_duration": 2.5,
         "heal": {
-            "base": [14,18,22,26,30],
-            "amp": 4
+            "base": [10,13,16,19,22],
+            "amp": 3
         },
         "cooldown": [8,7,6,5,4]
     },
@@ -46,15 +46,15 @@
     },
     "R": {
         "range": 1,
-        "maxHP": [100,175,250],
+        "maxHP": [150,225,300],
         "gauge_consumption": 20,
         "damage": {
             "base": [60,70,80],
             "amp": 25
         },
         "heal": {
-            "base": [10,15,20],
-            "amp": 5
+            "base": [7,11,15],
+            "amp": 4
         },
         "gauge_gain": 30,
         "finish_damage": {
@@ -71,7 +71,7 @@
         "cooldown": [60,55,50]
     },
     "T": {
-        "healing_reduction": [11,13,15],
+        "healing_reduction": [5.5,6.5,7.5],
         "duration": 6,
         "max_stack": 4,
         "movement_speed": [6,9,12]

@@ -5,8 +5,8 @@
             "attack": [160,165,170,175,180]
         },
         "max_stack_damage": 25,
-        "max_stack_heal": 14,
-        "max_stack_heal_max": 33,
+        "max_stack_heal": 10,
+        "max_stack_heal_max": 25,
         "cooldown": [10,9,8,7,6]
     },
     "W": {
@@ -63,11 +63,11 @@
             }
         },
         "heal": {
-            "base": 50,
-            "attack": 7
+            "base": 40,
+            "attack": 5
         },
         "max_heal": {
-            "base": [30,40,50],
+            "base": [20,30,40],
             "attack": 5
         },
         "animal_max": 100

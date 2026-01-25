@@ -61,7 +61,7 @@
         },
         "heal": {
             "base": 30,
-            "additionalAttack": [50,55,60,65,70]
+            "additionalAttack": [30,35,40,45,50]
         },
         "cooldown": [10,9.5,9,8.5,8],
         "vp_cost": [60,55,50,45,40]
@@ -133,8 +133,8 @@
         },
         "shift_duration": 2.5,
         "heal": {
-            "base": 12,
-            "additionalAttack": 0.05
+            "base": 8,
+            "additionalAttack": 4
         },
         "vp_heal": 30,
         "animal_heal": 30
@@ -144,8 +144,8 @@
             "attack": [70,90,110,130]
         },
         "heal": {
-            "base": 12,
-            "additionalAttack": 0.05
+            "base": 8,
+            "additionalAttack": 4
         },
         "reuse_threshold": 5,
         "vp_cost_increase": 100,

@@ -1,0 +1,21 @@
+{
+    "cooldown": 8,
+    "damage": {
+        "base": 20,
+        "additionalAttack": 50,
+        "amp": 20
+    },
+    "heal": {
+        "melee": {
+            "base": 20,
+            "additionalAttack": 80,
+            "amp": 20
+        },
+        "range": {
+            "base": 15,
+            "additionalAttack": 50,
+            "amp": 12
+        }
+    },
+    "cooldown_reduction": 1
+}

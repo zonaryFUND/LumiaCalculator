@@ -5,6 +5,6 @@
         "base": 20,
         "maxHP": 6
     },
-    "heal": 200,
+    "heal": 150,
     "max_heal": 600
 }

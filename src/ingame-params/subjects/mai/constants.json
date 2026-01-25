@@ -1,8 +1,7 @@
 {
     "Q": {
         "damage": {
-            "base": [40,75,110,145,180],
-            "defense": 40,
+            "base": [40,80,120,160,200],
             "amp": 40,
             "maxHP": 7
         },
@@ -19,9 +18,9 @@
         "movement_speed": [8,11,14,17,20],
         "damage_decline": [31,32,33,34,35],
         "damage": {
-            "base": [80,115,150,185,220],
+            "base": [60,90,120,150,180],
             "amp": 45,
-            "defense": 30
+            "additionalMaxHP": 10
         },
         "cooldown": {
             "constant": 4
@@ -35,14 +34,18 @@
     "E": {
         "shield_duration": 2.5,
         "shield": {
-            "base": [70,105,140,175,210],
-            "defense": 50,
-            "amp": 40
+            "base": [60,90,120,150,180],
+            "amp": 40,
+            "maxHP": 6
+        },
+        "attack_speed": {
+            "duration": 4,
+            "effect": [20,25,30,35,40]
         },
         "damage": {
-            "base": [60,95,130,165,200],
+            "base": [60,90,120,150,180],
             "amp": 50,
-            "defense": 45
+            "additionalMaxHP": 10
         },
         "taunt": [0.7,0.8,0.9,1,1.1],
         "reuse": 3,
@@ -52,14 +55,15 @@
         "supression": 0.5,
         "heal": {
             "base": [50,150,250],
-            "amp": 50,
-            "defense": 50
+            "amp": 35,
+            "targetLostHP": 10
         },
         "cooldown": [90,75,60]
     },
     "T": {
         "damage": {
-            "defense": [30,35,40]
+            "base": 30,
+            "additionalMaxHP": [4,7,10]
         },
         "level": [6,11,16,20]
     }

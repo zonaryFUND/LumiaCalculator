@@ -44,8 +44,8 @@
             "amp": 85
         },
         "heal": {
-            "base": [30,40,50,60,70],
-            "amp": 28
+            "base": [20,30,40,50,60],
+            "amp": 20
         },
         "heal_max_multiplier": 1.5,
         "heal_max_hp": 40,
@@ -95,8 +95,8 @@
             "amp": 85
         },
         "heal": {
-            "base": [60,100,140],
-            "amp": 28
+            "base": [50,80,110],
+            "amp": 20
         },
         "heal_max_multiplier": 1.5,
         "heal_max_hp": 40,
@@ -115,7 +115,7 @@
             "base": [50,80,110],
             "amp": 25
         },
-        "heal": 60,
+        "heal": 42,
         "max_stack": 3,
         "attack_speed": 100,
         "cooldown_reduction": 1.2

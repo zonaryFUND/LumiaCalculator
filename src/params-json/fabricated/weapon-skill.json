@@ -42,7 +42,7 @@
 	},
 	"101406": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"101407": {
 		"skillCode": 6015001,
@@ -151,11 +151,11 @@
 	},
 	"103401": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"103402": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"103404": {
 		"skillCode": 6014001,
@@ -198,11 +198,11 @@
 	},
 	"104401": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"104404": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"104406": {
 		"skillCode": 6013004,
@@ -255,7 +255,7 @@
 	},
 	"105404": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"105406": {
 		"skillCode": 6007002,
@@ -294,7 +294,7 @@
 	},
 	"105501": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"105503": {
 		"skillCode": 6013003,
@@ -345,7 +345,7 @@
 	},
 	"107404": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"107406": {
 		"skillCode": 6004003,
@@ -356,7 +356,7 @@
 	},
 	"107407": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"107502": {
 		"skillCode": 6015002,
@@ -383,7 +383,7 @@
 	},
 	"108404": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"108502": {
 		"skillCode": 6046001,
@@ -419,7 +419,7 @@
 	},
 	"109403": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"109405": {
 		"skillCode": 6015003,
@@ -444,7 +444,7 @@
 	},
 	"109502": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"109503": {
 		"skillCode": 6015002,
@@ -668,11 +668,11 @@
 	},
 	"112501": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"112502": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"112701": {
 		"skillCode": 6017002,
@@ -714,7 +714,7 @@
 	},
 	"113409": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"113410": {
 		"skillCode": 6017001,
@@ -808,11 +808,11 @@
 	},
 	"114405": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"114406": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"114407": {
 		"skillCode": 6014001,
@@ -824,7 +824,7 @@
 	},
 	"114503": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"114504": {
 		"skillCode": 6017002,
@@ -882,7 +882,7 @@
 	},
 	"115406": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"115501": {
 		"skillCode": 6034001,
@@ -920,7 +920,7 @@
 			"targetMaxHP": 8
 		},
 		"values": {
-			"heal": 66
+			"heal": 50
 		}
 	},
 	"116407": {
@@ -998,12 +998,12 @@
 			"targetMaxHP": 8
 		},
 		"values": {
-			"heal": 66
+			"heal": 50
 		}
 	},
 	"117403": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"117404": {
 		"skillCode": 6017001,
@@ -1109,7 +1109,7 @@
 	},
 	"119401": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"119402": {
 		"skillCode": 6017001,
@@ -1128,15 +1128,15 @@
 	},
 	"119403": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"119404": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"119502": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"119503": {
 		"skillCode": 6002005,
@@ -1172,7 +1172,7 @@
 	},
 	"120402": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"120404": {
 		"skillCode": 6013006,
@@ -1189,7 +1189,7 @@
 	},
 	"120406": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"120407": {
 		"skillCode": 6015007,
@@ -1230,7 +1230,7 @@
 	},
 	"121401": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"121405": {
 		"skillCode": 6017002,
@@ -1265,7 +1265,7 @@
 	},
 	"121501": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"121503": {
 		"skillCode": 6045001,
@@ -1312,7 +1312,7 @@
 	},
 	"122504": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"122701": {
 		"skillCode": 6042001,
@@ -1335,7 +1335,7 @@
 	},
 	"130402": {
 		"skillCode": 6008201,
-		"name": "healing_reduction_weak"
+		"name": "healing_reduction"
 	},
 	"130405": {
 		"skillCode": 6014001,

@@ -1,0 +1,10 @@
+{
+    "time_bound": 3,
+    "count": 2,
+    "after_effect": 2,
+    "slow": {
+        "duration": 1,
+        "effect": 60
+    },
+    "cooldown": 10
+}
