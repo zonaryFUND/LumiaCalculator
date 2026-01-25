@@ -7,7 +7,6 @@ import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/stan
 import Decimal from "decimal.js";
 
 type Props = DamageTableUnit & {
-    skillLevel?: number
     config: SubjectConfig
     status: Status
 }

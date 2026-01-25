@@ -42,6 +42,7 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
         const selectedValue: Decimal = (() => {
             if (Array.isArray(value)) {
                 if (skillLevel == undefined) {
+
                     throw new Error("level-dependent value ratio is calculated without its level")
                 }
                 return new Decimal(value[skillLevel]);

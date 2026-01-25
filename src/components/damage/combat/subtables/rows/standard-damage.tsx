@@ -1,7 +1,7 @@
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
-import { ValueRatio } from "app-types/value-ratio";
+import { extractSkillLevel, ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio";
 import { extractMultiplier } from "components/damage/damage-table-util";
 import * as React from "react";
@@ -20,7 +20,6 @@ import table from "components/common/table.module.styl";
 import useDynamicValueCalculation from "./use-dynamic-value-calculation";
 
 type Props = Omit<DamageTableUnit, "value"> & {
-    skillLevel?: number
     value: ValueRatio | Decimal
     critical?: Decimal
     config: SubjectConfig
@@ -37,8 +36,9 @@ const standardDamage: React.FC<Props> = props => {
             return calculateValue(props.value, props.status, props.config, props.origin);
         }
     })();
+    const skillLevel = extractSkillLevel(props.config, props.origin);
     const { hp, targetHP, targetMaxHP, ltr } = useCombatHPContext();
-    const multiplier = extractMultiplier(props.multiplier, props.skillLevel);
+    const multiplier = extractMultiplier(props.multiplier, skillLevel);
 
     const staticPotency = staticBasePotency.percent(props.critical ?? 100).percent(multiplier?.mergedMultiplier ?? 100);
 
@@ -77,10 +77,10 @@ const standardDamage: React.FC<Props> = props => {
                 }  else {
                     const multiplier = (() => {
                         if (Array.isArray(props.damageDependentHeal)) {
-                            if (props.skillLevel == undefined) {
+                            if (skillLevel == undefined) {
                                 throw new Error("damage dependent heal is array but skill level is not provided.");
                             }
-                            return props.damageDependentHeal[props.skillLevel];
+                            return props.damageDependentHeal[skillLevel];
                         } else {
                             return props.damageDependentHeal;
                         }
