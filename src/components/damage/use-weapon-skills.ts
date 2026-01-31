@@ -22,7 +22,7 @@ export default function useWeaponSkill(config: SubjectConfig, status: Status): R
             const table = SubjectDamageTableDictionary[config.subject]({config, status, intl});
             return {
                 regular: table.weaponSkill!.filter(u => u.triggeredOnBasicAttack != true),
-                basicAttackTriggered: table.weaponSkill!.filter(u => u.triggeredOnBasicAttack != true)
+                basicAttackTriggered: table.weaponSkill!.filter(u => u.triggeredOnBasicAttack)
             }
         }
 

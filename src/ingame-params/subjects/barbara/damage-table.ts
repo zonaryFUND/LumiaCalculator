@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const reMax = Constants.R.E.area_duration / Constants.R.E.dot_tick;
 

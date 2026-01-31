@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -16,8 +16,8 @@ export const info: SkillTooltipProps = {
         5: showEquation ? Constants.Q.railgun_charge : Constants.Q.w_cooldown_reduction,
         6: RatioPercent(Constants.Q.w_cooldown_reduction),
         7: Constants.Q.hp.level,
-        8: Constants.Q.remain,
-        9: Constants.Q.retrieve_range
+        8: Constants.Q.retrieve_range,
+        9: Constants.Q.remain
     }),
     expansion: ({ }) => ({
         tipValues: {

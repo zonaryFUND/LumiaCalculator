@@ -198,7 +198,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 72,
+        "skillAmp": 80,
         "attackSpeedRatio": 0.35,
         "cooldownReduction": 10,
         "code": 201505,
@@ -1014,7 +1014,7 @@
     },
     {
         "attackPower": 40,
-        "cooldownReduction": 10,
+        "cooldownReduction": 15,
         "penetrationDefense": 11,
         "code": 705614,
         "armorType": "Arm",
@@ -1395,7 +1395,7 @@
         "skillAmp": 55,
         "maxHp": 100,
         "cooldownReduction": 20,
-        "healerGiveHpHealRatio": 0.12,
+        "healerGiveHpHealRatio": 0.1,
         "code": 705604,
         "armorType": "Arm",
         "itemGrade": "Legend"

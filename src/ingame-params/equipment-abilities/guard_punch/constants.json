@@ -2,7 +2,7 @@
     "damage": {
         "base": 50,
         "additionalMaxHP": 10,
-        "targetMaxHP": 7
+        "targetMaxHP": 6
     },
     "slow": {
         "duration": 0.5,

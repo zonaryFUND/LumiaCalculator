@@ -154,7 +154,7 @@
         "period": 1,
         "max_stack_dmage": {
             "base": 10,
-            "level": 2,
+            "level": 1,
             "targetMaxHP": 3
         },
         "cooldown": 5

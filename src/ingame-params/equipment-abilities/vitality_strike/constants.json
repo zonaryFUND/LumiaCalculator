@@ -8,13 +8,13 @@
     "heal": {
         "melee": {
             "base": 20,
-            "additionalAttack": 80,
-            "amp": 20
+            "additionalAttack": 65,
+            "amp": 15
         },
         "range": {
             "base": 15,
-            "additionalAttack": 50,
-            "amp": 12
+            "additionalAttack": 40,
+            "amp": 10
         }
     },
     "cooldown_reduction": 1

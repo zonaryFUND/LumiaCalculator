@@ -43,7 +43,7 @@
             "maxHP": [9,10,11,12,13]
         },
         "impluse_gain_increase": {
-            "defense": 35
+            "defense": 30
         },
         "cooldown": 10
     },

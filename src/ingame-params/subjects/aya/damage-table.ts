@@ -1,5 +1,5 @@
 import { DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const table: DamageTableGenerator = props => {
     const wCount = (props.status.attackSpeed.multiplier.dividedBy(30).floor().clamp(0, Constants.W.max_bullets - Constants.W.bullets).toNumber() ?? 0) + Constants.W.bullets;

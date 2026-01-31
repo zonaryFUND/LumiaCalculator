@@ -1,5 +1,5 @@
 import { SummonedStatusFunc } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 import Decimal from "decimal.js";
 
 const f: SummonedStatusFunc = (barbaraStatus, config) => ({

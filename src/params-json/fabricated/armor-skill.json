@@ -130,7 +130,7 @@
 		"name": "photon_launcher",
 		"dmg": {
 			"base": 20,
-			"amp": 35
+			"amp": 30
 		},
 		"values": {
 			"heal": 30
