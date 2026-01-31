@@ -1,5 +1,5 @@
 import { DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { MarleneWStrategy, projectileAmount } from "./marlenew";
 
 const table: DamageTableGenerator = props => {
@@ -7,7 +7,7 @@ const table: DamageTableGenerator = props => {
 
     return {
         basicAttack: [
-            {label: props.intl.formatMessage({id: "app.basic-attack"}), origin: "T", value: {attack: 75, basicAttackAmp: 100}, type: {type: "basic", critical: "none"}}
+            {label: props.intl.formatMessage({id: "app.basic-attack"}), origin: "T", value: Constants.T.basic_attack_damage, type: {type: "basic", critical: "none"}}
         ],
         skill: [
             [{label: props.intl.formatMessage({id: "subject.debimarlene.debiq"}), origin: "Q", value: Constants.DebiQ.damage}],

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -11,6 +11,7 @@ export const info: SkillTooltipProps = {
         if (showEquation) {
             return {
                 0: RatioPercent(Constants.T.heal.maxHP),
+                2: Constants.T.amount,
                 3: Constants.T.amount
             }
         } else {

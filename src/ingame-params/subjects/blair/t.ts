@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { CriticalMultipier, RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -9,10 +9,10 @@ export const info: SkillTooltipProps = {
     values: ({ showEquation }): TooltipValues => {
         const base = {
             0: RatioPercent(Constants.T.dual_swords.attack_speed),
-            1: RatioPercent(Constants.T.dual_swords.attack),
-            2: RatioPercent(Constants.T.dual_swords.attack),
+            1: RatioPercent(Constants.T.dual_swords.damage.attack),
+            2: RatioPercent(Constants.T.dual_swords.damage.attack),
             3: Constants.T.double_bladed_sword.range,
-            4: RatioPercent(Constants.T.double_bladed_sword.attack),
+            4: RatioPercent(Constants.T.double_bladed_sword.damage.attack),
             5: Constants.T.shift_duration
         };
 

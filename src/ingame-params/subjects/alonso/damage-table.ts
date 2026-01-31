@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const wMax = Constants.W.waves;
 const rMax = Constants.R.duration / Constants.R.tick - 1; // last tick is final blast

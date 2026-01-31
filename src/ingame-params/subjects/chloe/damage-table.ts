@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import { DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { NinaRatioStrategy } from "./nina-ratio-strategy";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 

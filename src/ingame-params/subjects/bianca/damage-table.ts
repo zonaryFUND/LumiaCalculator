@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const wMax = Constants.W.max_duration / Constants.W.heal_tick;
 

@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const table: DamageTableGenerator = props => {
     const stacks = (base: SubjectDamageTableUnit) => {

@@ -1,5 +1,5 @@
 import { DamageTableGenerator, SubjectDamageTableUnit } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 import Decimal from "decimal.js";
 import { EchionWStrategy } from "./w";
 import { weaponType } from "./weapon-type";

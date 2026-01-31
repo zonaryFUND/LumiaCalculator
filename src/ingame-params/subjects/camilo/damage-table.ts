@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { CamiloRHealStrategy } from "./r";
 
 

@@ -1,5 +1,7 @@
 {
     "subject.blair.vp": "気力",
+    "subject.blair.passive-ds": "基本攻撃ダメージ（双剣2回分）",
+    "subject.blair.passive-dbs": "基本攻撃ダメージ（両剣）",
     "subject.blair.passive-additional": "T追加ダメージ(双剣2回分/両剣1回分)",
     "subject.blair.ds-q-first": "双剣Q初撃",
     "subject.blair.ds-q-second": "双剣Q追撃",

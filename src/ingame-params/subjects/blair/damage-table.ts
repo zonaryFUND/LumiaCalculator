@@ -1,10 +1,15 @@
 import { calculateValue } from "app-types/value-ratio";
 import { DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { comboShield } from "./dbs-e";
 import { weaponSkillLevel } from "./weapon-skill-level";
 
 const table: DamageTableGenerator = props => {
+    const dsAA = {
+        "attack": Constants.T.dual_swords.damage.attack * 2,
+        "basicAttackAmp": Constants.T.dual_swords.damage.basicAttackAmp
+    }
+
     const dbsWMaxHit = Constants.DoubleBladedSwordW.duration / Constants.DoubleBladedSwordW.tick;
     const dbsEComboShield = comboShield(weaponSkillLevel(props.config.weaponMastery));
     const rDamage = {
@@ -15,7 +20,8 @@ const table: DamageTableGenerator = props => {
 
     return {
         basicAttack: [
-            "standard",
+            {label: props.intl.formatMessage({id: "subject.blair.passive-ds"}), origin: "T", value: dsAA, type: {type: "basic", count: 2}},
+            {label: props.intl.formatMessage({id: "subject.blair.passive-dbs"}), origin: "T", value: Constants.T.double_bladed_sword.damage, type: {type: "basic"}},
             {label: props.intl.formatMessage({id: "subject.blair.passive-additional"}), origin: "T", value: Constants.T.double_bladed_sword.additional_damage}
         ],
         skill: [

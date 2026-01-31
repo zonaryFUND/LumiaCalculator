@@ -1,8 +1,8 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 
 export const code = 1052500;
-
+    
 export const info: SkillTooltipProps = {
     skillKey: "R",
     cooldown: Constants.R.cooldown,

@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const qMax = {
     base: Constants.Q.damage.base.map((v, i) => v + Constants.Q.additional_damage.base[i] * 4),

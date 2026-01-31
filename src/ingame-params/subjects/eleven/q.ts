@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -32,7 +32,9 @@ export const info: SkillTooltipProps = {
                 2: Constants.Q.max_damage,
                 3: Constants.Q.slow_duration,
                 4: RatioPercent(Constants.Q.min_slow),
-                5: RatioPercent(Constants.Q.max_slow)
+                5: RatioPercent(Constants.Q.max_slow),
+                6: RatioPercent(Constants.Q.min_damage.targetMaxHP),
+                7: RatioPercent(Constants.Q.max_damage.targetMaxHP)
             } as Record<number, number | string | ValueRatio>
         }
     },

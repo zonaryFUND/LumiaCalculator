@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Decimal from "decimal.js";
@@ -44,7 +44,7 @@ export const info: SkillTooltipProps = {
                 8: Constants.R.heal.base,
                 9: additionalHealMax,
                 10: RatioPercent(Constants.R.heal.perHit),
-                11: Constants.R.reuse,
+                11: Constants.R.duration,
                 12: RatioPercent(Constants.R.damage_reduction)
             }
         } else {
@@ -57,7 +57,7 @@ export const info: SkillTooltipProps = {
                 5: Constants.R.heal.base,
                 6: RatioPercent(Constants.R.heal.perHit),
                 7: additionalHealMax,
-                8: Constants.R.reuse
+                8: Constants.R.duration
             }
         }
     },

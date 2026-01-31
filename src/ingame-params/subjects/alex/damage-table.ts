@@ -1,6 +1,6 @@
 import { weaponTypeIDOf } from "app-types/subject-dynamic/config";
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const table: DamageTableGenerator = props => {
     const rMax = Constants.R.later_damage.amount;

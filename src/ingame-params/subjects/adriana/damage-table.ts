@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const maxQ = Constants.Q.duration / Constants.Q.tick + 1;
 

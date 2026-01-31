@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SubjectPerpetualStatus } from "../type";
 import { weaponRangeOf } from "app-types/subject-dynamic/config";
 
