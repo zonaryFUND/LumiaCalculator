@@ -45,7 +45,7 @@
         },
         "defense_down": {
             "duration": 4,
-            "effect": 20
+            "effect": 15
         },
         "cooldown_reduction": 3,
         "cooldown": [80,70,60]

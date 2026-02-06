@@ -1,6 +1,6 @@
 {
     "damage": {
-        "base": 50,
+        "base": 20,
         "attack": 30,
         "level": 2
     },

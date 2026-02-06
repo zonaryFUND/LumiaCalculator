@@ -89,7 +89,7 @@
             "targetMaxHP": 6
         },
         "execution_threshold": 10,
-        "cooldown": [70,60,50]
+        "cooldown": [65,55,45]
     },
     "T": {
         "base_as": 0.8,

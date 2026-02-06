@@ -328,7 +328,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 86,
+        "attackPower": 82,
         "defense": 10,
         "cooldownReduction": 15,
         "code": 104502,
@@ -702,7 +702,7 @@
     },
     {
         "attackPower": 59,
-        "criticalStrikeChance": 0.29,
+        "criticalStrikeChance": 0.2,
         "criticalStrikeDamage": 0.05,
         "code": 110411,
         "weaponType": "Glove",
@@ -1537,7 +1537,7 @@
     {
         "attackPower": 57,
         "maxHp": 100,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "code": 120408,
         "weaponType": "Rapier",
         "itemGrade": "Epic"
@@ -1564,7 +1564,7 @@
     {
         "attackPower": 60,
         "maxHp": 120,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "code": 120503,
         "weaponType": "Rapier",
         "itemGrade": "Legend"

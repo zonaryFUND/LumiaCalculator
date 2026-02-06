@@ -32,7 +32,7 @@
         "slow": 25,
         "cooldown_reduction": 5,
         "e_extend": 1,
-        "cooldown": 12
+        "cooldown": 11
     },
     "E": {
         "channeling": 0.7,

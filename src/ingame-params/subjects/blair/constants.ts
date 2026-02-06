@@ -19,7 +19,7 @@ export default {
     },
     "DualSwordsW": {
         "damage": {
-            "base": [60,90,120,150,180],
+            "base": [50,80,110,140,170],
             "additionalAttack": 100
         },
         // 最初に的中した対象へのダメージ増加量（％）
@@ -27,7 +27,7 @@ export default {
         // 最初に的中した対象への防御力減少
         "defense_down": {
             "duration": 4,
-            "effect": [12,13,14,15,16]
+            "effect": [8,10,12,14,16]
         },
         "cooldown": 10,
         "vp_cost": 30
@@ -35,7 +35,7 @@ export default {
     "DualSwordsE": {
         "damage": {
             "base": [40,70,100,130,160],
-            "additionalAttack": [70,80,90,100,110]
+            "additionalAttack": [60,70,80,90,100]
         },
         // 的中時移動速度減少
         "slow": {

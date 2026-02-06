@@ -58,7 +58,7 @@
     },
     "T": {
         "max_attack_speed": 1.1,
-        "amp_conversion": 1.2,
+        "amp_conversion": 1,
         "charge_time": [13,11,9],
         "damage": {
             "base": [5,10,15],
@@ -68,7 +68,7 @@
         "full_charge_damage": {
             "base": [10,25,40],
             "attack": 100,
-            "amp": 30,
+            "amp": 25,
             "targetMaxHP": [4,7,10]
         },
         "slow": {

@@ -465,8 +465,20 @@
 		"name": "encourage"
 	},
 	"202517": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": 6024001,
+		"name": "electric_shock",
+		"dmg": {
+			"melee": {
+				"base": 26,
+				"targetMaxHP": 4,
+				"level": 4
+			},
+			"range": {
+				"base": 26,
+				"targetMaxHP": 2.5,
+				"level": 4
+			}
+		}
 	},
 	"202518": {
 		"skillCode": 6036001,
@@ -780,7 +792,7 @@
 		"name": "master",
 		"dmg": {
 			"base": 40,
-			"amp": 35,
+			"amp": 25,
 			"level": 2
 		}
 	},

@@ -102,7 +102,7 @@ export default {
                 "amp": 40,
                 "maxHP": 10
             },
-            // エアボーン時間」
+            // エアボーン時間
             "airborne": 0.75
         },
         "cooldown": [80,70,60]

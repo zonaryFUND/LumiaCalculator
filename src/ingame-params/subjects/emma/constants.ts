@@ -7,7 +7,7 @@ export default {
         // 鳩持続時間
         "duration": 7,
         // エマのカード的中時クールダウン減少（％）
-        "cooldown_reduction": 15,
+        "cooldown_reduction": 25,
         // カード両的中時移動速度減少
         "slow": {
             "duration": 2,
@@ -25,8 +25,8 @@ export default {
         // 帽子持続時間
         "duration": 7,
         // 的中時クールダウン減少（％）
-        "cooldown_reduction": 30,
-        "cooldown": [11,10.5,10,9.5,9]
+        "cooldown_reduction": 25,
+        "cooldown": [10,9.5,9,8.5,8]
     },
     "E": {
         // 変身時間

@@ -31,7 +31,7 @@ export default {
         // 外側的中時移動速度減少
         "slow": {
             "duration": 2,
-            "effect": 30
+            "effect": 40
         },
         "cooldown": [12,11.5,11,10.5,10]
     },

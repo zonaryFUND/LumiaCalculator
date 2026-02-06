@@ -19,7 +19,7 @@
         "cooldown": [6,5.5,5,4.5,4]
     },
     "W": {
-        "qe_cooldown_reduction_per_stack": 0.6,
+        "qe_cooldown_reduction_per_stack": 0.8,
         "charge_duration_max": 0.8,
         "damage_reduction": {
             "duration": 1,
@@ -27,7 +27,7 @@
         },
         "heal_tick": 0.2,
         "heal": {
-            "lostHP": 3
+            "lostHP": 4
         },
         "min_damage": {
             "base": [80,110,140,170,200],

@@ -12,7 +12,7 @@ export default {
         // 磁力線対象基本攻撃時追加スキルダメージ
         "basic_attack_damage": {
             "level": 8,
-            "targetMaxHP": [5,6,7,8,9]
+            "targetMaxHP": [6,7,8,9,10]
         },
         // 磁力線対象基本攻撃時気絶時間
         "stun": 0.85,

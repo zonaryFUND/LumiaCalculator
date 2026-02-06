@@ -121,7 +121,7 @@
             "attack": [8,16,24]
         },
         "possesed_heal": 100,
-        "ghost_heal": 150,
+        "ghost_heal": 140,
         "human_thrash": 20,
         "possessed_thrash": 10
     }

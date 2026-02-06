@@ -24,7 +24,7 @@ export default {
         // 強化Q2回目ダメージ
         "Q2_second_damage": {
             "base": [30,60,90,120,150],
-            "attack": 90,
+            "attack": 80,
             "basicAttackAmp": 100
         },
         // 強化Q的中時自己回復

@@ -2,7 +2,7 @@
     "Q": {
         "damage": {
             "base": [60,100,140,180,220],
-            "amp": 65
+            "amp": 70
         },
         "w_cooldown_reduction": 0.75,
         "pull_damage": {

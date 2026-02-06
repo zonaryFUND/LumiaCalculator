@@ -88,17 +88,17 @@
             "targetHP": 8
         },
         "duration": 2,
-        "cooldown": 11
+        "cooldown": 10
     },
     "quick_draw": {
         "time_bound": 3,
-        "duration": 4,
+        "duration": 5,
         "adaptive": {
             "base": 2,
             "level": 0.5
         },
-        "attack_speed": 10,
-        "cooldown": 11
+        "attack_speed": 15,
+        "cooldown": 15
     },
     "stopping_power": {
         "armor_penetration": {

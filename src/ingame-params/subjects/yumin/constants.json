@@ -46,7 +46,7 @@
         },
         "slow": {
             "duration": 1,
-            "effect": 40
+            "effect": 45
         },
         "second_attack": 1,
         "second_damage": {

@@ -49,7 +49,10 @@
         },
         "movement_speed": {
             "effect": 50,
-            "duration": 1
+            "duration": {
+                "melee": 1,
+                "range": 0.5
+            }
         },
         "cooldown": 25,
         "animal_cooldown_reduction": 70

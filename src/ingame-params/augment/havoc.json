@@ -138,7 +138,7 @@
     },
     "wild_dog_mask": {
         "base": {
-            "omnisyphon": 1
+            "omnisyphon": 2
         },
         "max_stack": 80,
         "stack_buff": {
