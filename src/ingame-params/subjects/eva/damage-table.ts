@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const rSet = {
     base: Constants.R.damage.base.map((d, i) => d * Constants.R.max_stack + Constants.R.stack_damage.base[i]),

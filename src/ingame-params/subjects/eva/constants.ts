@@ -1,29 +1,39 @@
-{
+export default {
     "Q": {
+        // 経路ダメージ
         "first_damage": {
             "base": [40,60,80,100,120],
             "amp": 40
         },
+        // 爆発ダメージ
         "second_damage": {
             "base": [45,80,115,150,185],
             "amp": 40
         },
+        // 的中時クールダウン減少（秒）
         "cooldown_reduction": 1,
+        // バイタルフォース獲得量
         "vitalforce": 5,
         "cooldown": [9,8,7,6,5]
     },
     "W": {
+        // 位相の渦持続時間
         "duration": 1,
+        // 生成時ダメージ
         "first_damage": {
             "base": [40,70,100,130,160],
             "amp": 45
         },
+        // 移動速度減少（％）
         "slow": 40,
+        // 爆発時ダメージ
         "second_damage": {
             "base": [40,70,100,130,160],
             "amp": 40
         },
+        // エアボーン時間
         "airborne": 1,
+        // バイタルフォース獲得量
         "vitalforce": 5,
         "cooldown": [11,10.5,10,9.5,9]
     },

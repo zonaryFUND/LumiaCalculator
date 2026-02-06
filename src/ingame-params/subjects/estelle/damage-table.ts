@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const maxW2 = Constants.W2.duration / Constants.W2.tick;
 
