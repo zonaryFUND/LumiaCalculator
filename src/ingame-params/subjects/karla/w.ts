@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { CriticalMultipier, RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -37,9 +37,9 @@ export const info: SkillTooltipProps = {
             1: RatioPercent(Constants.W.damage.criticalChance)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
-            {labelIntlID: "ToolTipType/KarlaExtraPointModifyCoef", values: Constants.W.gauge},
-            {labelIntlID: "ToolTipType/KarlaSkill03CooldownReduce", values: Constants.W.e_cooldown_reduction}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base },
+            { labelIntlID: "ToolTipType/KarlaExtraPointModifyCoef", values: Constants.W.gauge },
+            { labelIntlID: "ToolTipType/KarlaSkill03CooldownReduce", values: Constants.W.e_cooldown_reduction }
+        ]
     })
 }

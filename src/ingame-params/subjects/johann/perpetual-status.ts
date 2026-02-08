@@ -1,5 +1,5 @@
 import { SubjectPerpetualStatus } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const f: SubjectPerpetualStatus = (config) => ({
     tenacity: [

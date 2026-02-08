@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -11,7 +11,8 @@ export const info: SkillTooltipProps = {
         const base = {
             0: Constants.T.max_attack_speed,
             1: 0.01,
-            2: Constants.T.amp_conversion
+            2: Constants.T.amp_conversion,
+            3: Constants.T.charge_time
         }
         if (showEquation) {
             return {
@@ -40,10 +41,10 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/KarlaNormalAttack", values: Constants.T.damage.base},
-            {labelIntlID: "ToolTipType/KarlaReinforceNormalAttack", values: Constants.T.full_charge_damage.base},
-            {labelIntlID: "ToolTipType/SkillAddDamageMaxHpRatio", values: Constants.T.full_charge_damage.targetMaxHP, percent: true},
-            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.T.charge_time},
-        ]  
+            { labelIntlID: "ToolTipType/KarlaNormalAttack", values: Constants.T.damage.base },
+            { labelIntlID: "ToolTipType/KarlaReinforceNormalAttack", values: Constants.T.full_charge_damage.base },
+            { labelIntlID: "ToolTipType/SkillAddDamageMaxHpRatio", values: Constants.T.full_charge_damage.targetMaxHP, percent: true },
+            { labelIntlID: "ToolTipType/ChargingTime", values: Constants.T.charge_time },
+        ]
     })
 }

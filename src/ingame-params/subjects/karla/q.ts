@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import Decimal from "decimal.js";
@@ -35,7 +35,7 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/SkillApCoef", values: Constants.Q.damage.attack, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/SkillApCoef", values: Constants.Q.damage.attack, percent: true }
+        ]
     })
 }

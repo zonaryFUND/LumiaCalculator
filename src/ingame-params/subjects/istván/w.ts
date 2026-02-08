@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import { ValueRatio } from "app-types/value-ratio";
@@ -39,12 +39,12 @@ export const info: SkillTooltipProps = {
             0: RatioPercent(Constants.W.animal_target_heal)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
-            {labelIntlID: "ToolTipType/IstvanCloneDamage", values: Constants.W.variable_damage.base},
-            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.effect.base},
-            {labelIntlID: "ToolTipType/MinHpHeal", values: Constants.W.heal.base},
-            {labelIntlID: "ToolTipType/MaxHpHeal", values: healMax.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base },
+            { labelIntlID: "ToolTipType/IstvanCloneDamage", values: Constants.W.variable_damage.base },
+            { labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.effect.base },
+            { labelIntlID: "ToolTipType/MinHpHeal", values: Constants.W.heal.base },
+            { labelIntlID: "ToolTipType/MaxHpHeal", values: healMax.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown }
+        ]
     })
 }

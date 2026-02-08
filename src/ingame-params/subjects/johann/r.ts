@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -35,12 +35,12 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/FirstDamage", values: Constants.R.damage.base},
-            {labelIntlID: "ToolTipType/FirstHeal", values: Constants.R.heal.base},
-            {labelIntlID: "ToolTipType/FirstHealLostHP", values: Constants.R.heal.targetLostHP, percent: true},
-            {labelIntlID: "ToolTipType/DotHeal", values: Constants.R.heal_per_sec.base},
-            {labelIntlID: "ToolTipType/IncreaseDefence", values: Constants.R.defense},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/FirstDamage", values: Constants.R.damage.base },
+            { labelIntlID: "ToolTipType/FirstHeal", values: Constants.R.heal.base },
+            { labelIntlID: "ToolTipType/FirstHealLostHP", values: Constants.R.heal.targetLostHP, percent: true },
+            { labelIntlID: "ToolTipType/DotHeal", values: Constants.R.heal_per_sec.base },
+            { labelIntlID: "ToolTipType/IncreaseDefence", values: Constants.R.defense },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown }
+        ]
     })
 }

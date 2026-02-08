@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -38,12 +38,12 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base},
-            {labelIntlID: "ToolTipType/FettedDamage", values: Constants.E.enhanced_damage.base},
-            {labelIntlID: "ToolTipType/Shield", values: Constants.E.shield.base},
-            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.E.movement_speed.effect.base, percent: true},
-            {labelIntlID: "ToolTipType/ChaseMoveSpeed", values: Constants.E.chase_movement_speed.base, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.E.damage.base },
+            { labelIntlID: "ToolTipType/FettedDamage", values: Constants.E.enhanced_damage.base },
+            { labelIntlID: "ToolTipType/Shield", values: Constants.E.shield.base },
+            { labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.E.movement_speed.effect.base, percent: true },
+            { labelIntlID: "ToolTipType/ChaseMoveSpeed", values: Constants.E.chase_movement_speed.base, percent: true },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown }
+        ]
     })
 }

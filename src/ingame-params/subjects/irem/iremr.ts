@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -32,8 +32,8 @@ export const info: SkillTooltipProps = {
             0: Constants.IremR.range_penalty
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/ApDamage", values: Constants.IremR.damage.amp},
-            {labelIntlID: "ToolTipType/Damage", values: Constants.IremR.damage.base},
-        ]  
+            { labelIntlID: "ToolTipType/ApDamage", values: Constants.IremR.damage.amp },
+            { labelIntlID: "ToolTipType/Damage", values: Constants.IremR.damage.base },
+        ]
     })
 }

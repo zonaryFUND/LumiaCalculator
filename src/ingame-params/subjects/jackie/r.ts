@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -43,11 +43,11 @@ export const info: SkillTooltipProps = {
             0: RatioPercent(Constants.R.finish_multiplier_max_hp)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Time", values: Constants.R.duration},
-            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.R.movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.R.movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/ChainSawDamage", values: Constants.R.damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Time", values: Constants.R.duration },
+            { labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.R.movement_speed, percent: true },
+            { labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.R.movement_speed, percent: true },
+            { labelIntlID: "ToolTipType/ChainSawDamage", values: Constants.R.damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown }
+        ]
     })
 }

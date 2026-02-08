@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import Decimal from "decimal.js";
 import { SubjectPerpetualStatus } from "../type";
 
@@ -26,14 +26,14 @@ const f: SubjectPerpetualStatus = (status, config) => {
                     type: "status-conversion",
                     func: status => {
                         if (status.attackSpeed.calculatedValue.lessThanOrEqualTo(threshold)) return 0;
-                        
+
                         const excess = status.attackSpeed.calculatedValue.sub(threshold).abs();
                         return excess.times(Constants.T.amp_conversion).times(100).round();
                     }
                 }
-            } 
+            }
         ]
     }
- }
+}
 
- export default f;
+export default f;

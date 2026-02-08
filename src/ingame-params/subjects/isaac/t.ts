@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -38,11 +38,11 @@ export const info: SkillTooltipProps = {
             0: Constants.T.threshold
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
-            {labelIntlID: "ToolTipType/MaxHpDamageRatio", values: Constants.T.damage.targetMaxHP, percent: true},
-            {labelIntlID: "ToolTipType/HpRegenRatio", values: Constants.T.heal, percent: true},
-            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base },
+            { labelIntlID: "ToolTipType/MaxHpDamageRatio", values: Constants.T.damage.targetMaxHP, percent: true },
+            { labelIntlID: "ToolTipType/HpRegenRatio", values: Constants.T.heal, percent: true },
+            { labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true }
+        ]
     }),
     calculatorMessage: "日本語翻訳ファイルでは詳細ツールチップに対象最大体力比例ダメージが記載されていません"
 }

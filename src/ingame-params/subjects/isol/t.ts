@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 
 export const code = 1009100;
@@ -12,8 +12,8 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "StatType/AttackPowerRatio", values: Constants.T.attack},
-            {labelIntlID: "StatType/InfluencePoint", values: Constants.T.amp}
-        ]  
+            { labelIntlID: "StatType/AttackPowerRatio", values: Constants.T.attack },
+            { labelIntlID: "StatType/InfluencePoint", values: Constants.T.amp }
+        ]
     })
 }

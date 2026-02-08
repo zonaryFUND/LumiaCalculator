@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -39,8 +39,8 @@ export const info: SkillTooltipProps = {
             0: RatioPercent(Constants.T.animal_energy_syphon_ratio)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.T.mark_damage.base},
-            {labelIntlID: "ToolTipType/JustynaEnergy", values: Constants.T.max_energy}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.T.mark_damage.base },
+            { labelIntlID: "ToolTipType/JustynaEnergy", values: Constants.T.max_energy }
+        ]
     })
 }
