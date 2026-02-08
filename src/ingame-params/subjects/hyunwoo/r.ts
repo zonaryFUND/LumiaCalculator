@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -27,10 +27,10 @@ export const info: SkillTooltipProps = {
             1: RatioPercent(Constants.R.cooldown_payback)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/MinDamage", values: Constants.R.min_damage.base},
-            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.R.max_damage.base},
-            {labelIntlID: "ToolTipType/DecreaseDefenseRatio", values: Constants.R.defense_down.effect},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown},
-        ]  
+            { labelIntlID: "ToolTipType/MinDamage", values: Constants.R.min_damage.base },
+            { labelIntlID: "ToolTipType/MaxDamage", values: Constants.R.max_damage.base },
+            { labelIntlID: "ToolTipType/DecreaseDefenseRatio", values: Constants.R.defense_down.effect },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown },
+        ]
     })
 }

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -22,7 +22,7 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/PreventBasicAttackDamaged", values: Constants.T.reduction.base}
-        ]  
+            { labelIntlID: "ToolTipType/PreventBasicAttackDamaged", values: Constants.T.reduction.base }
+        ]
     })
 }

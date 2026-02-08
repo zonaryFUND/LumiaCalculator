@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -29,9 +29,9 @@ export const info: SkillTooltipProps = {
             3: Constants.R.vision
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Haze_SwingDamage", values: Constants.R.switch_damage.base},
-            {labelIntlID: "ToolTipType/Haze_RocketDamage", values: Constants.R.area_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Haze_SwingDamage", values: Constants.R.switch_damage.base },
+            { labelIntlID: "ToolTipType/Haze_RocketDamage", values: Constants.R.area_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown }
+        ]
     })
 }

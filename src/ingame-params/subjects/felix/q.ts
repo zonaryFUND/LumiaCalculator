@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -7,7 +7,7 @@ export const code = 1049200;
 
 export const info: SkillTooltipProps = {
     skillKey: "Q",
-    cooldown: {constant: Constants.T.shared_cooldown},
+    cooldown: { constant: Constants.T.shared_cooldown },
     values: ({ showEquation }) => {
         if (showEquation) {
             return {
@@ -32,9 +32,9 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/FinalSequenceDamage", values: Constants.Q.enhanced_damage.base},
-            {labelIntlID: "ToolTipType/LinkedAttackDamage", values: Constants.Q.stack_damage_conversion.base}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base },
+            { labelIntlID: "ToolTipType/FinalSequenceDamage", values: Constants.Q.enhanced_damage.base },
+            { labelIntlID: "ToolTipType/LinkedAttackDamage", values: Constants.Q.stack_damage_conversion.base }
+        ]
     })
 }

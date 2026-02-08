@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import Decimal from "decimal.js";
@@ -52,20 +52,20 @@ export const info: SkillTooltipProps = {
                 11: Constants.W.W3.second_damage,
                 12: RatioPercent(Constants.W.W3.second_heal)
             }
-        }  
+        }
     },
     expansion: () => ({
         tipValues: {
             0: RatioPercent(Constants.W.W3.animal_heal)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/W1FirstDamage", values: Constants.W.W1.first_damage.base},
-            {labelIntlID: "ToolTipType/W1SecondDamage", values: Constants.W.W1.second_damage.base},
-            {labelIntlID: "ToolTipType/W1Shield", values: Constants.W.W1.shield.base},
-            {labelIntlID: "ToolTipType/W2BaseDamage", values: Constants.W.W2.damage.base},
-            {labelIntlID: "ToolTipType/W2FarthestTargetDamage", values: Constants.W.W2.final_target_damage.base},
-            {labelIntlID: "ToolTipType/W3TickAdditionalAttackPower", values: Constants.W.W3.first_damage.additionalAttack, percent: true},
-            {labelIntlID: "ToolTipType/W3FinalDamage", values: Constants.W.W3.second_damage.base},
-        ]  
+            { labelIntlID: "ToolTipType/W1FirstDamage", values: Constants.W.W1.first_damage.base },
+            { labelIntlID: "ToolTipType/W1SecondDamage", values: Constants.W.W1.second_damage.base },
+            { labelIntlID: "ToolTipType/W1Shield", values: Constants.W.W1.shield.base },
+            { labelIntlID: "ToolTipType/W2BaseDamage", values: Constants.W.W2.damage.base },
+            { labelIntlID: "ToolTipType/W2FarthestTargetDamage", values: Constants.W.W2.final_target_damage.base },
+            { labelIntlID: "ToolTipType/W3TickAdditionalAttackPower", values: Constants.W.W3.first_damage.additionalAttack, percent: true },
+            { labelIntlID: "ToolTipType/W3FinalDamage", values: Constants.W.W3.second_damage.base },
+        ]
     })
 }

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import * as Q from "./q";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";

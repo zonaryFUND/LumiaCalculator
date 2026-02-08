@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -9,7 +9,7 @@ export const info: SkillTooltipProps = {
     skillKey: "W",
     cooldown: Constants.W.cooldown,
     values: ({ showEquation }) => {
-        const {stack, ...healWithoutStack} = Constants.W.finish_heal;
+        const { stack, ...healWithoutStack } = Constants.W.finish_heal;
         const base = {
             0: Constants.W.qe_cooldown_reduction_per_stack,
             1: Constants.W.damage_reduction.duration,
@@ -51,11 +51,11 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/MinDamage", values: Constants.W.min_damage.base},
-            {labelIntlID: "ToolTipType/MaxDamage", values: Constants.W.max_damage.base},
-            {labelIntlID: "ToolTipType/Heal", values: Constants.W.finish_heal.base},
-            {labelIntlID: "ToolTipType/PainHeal", values: Constants.W.finish_heal.stack},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/MinDamage", values: Constants.W.min_damage.base },
+            { labelIntlID: "ToolTipType/MaxDamage", values: Constants.W.max_damage.base },
+            { labelIntlID: "ToolTipType/Heal", values: Constants.W.finish_heal.base },
+            { labelIntlID: "ToolTipType/PainHeal", values: Constants.W.finish_heal.stack },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown }
+        ]
     })
 }

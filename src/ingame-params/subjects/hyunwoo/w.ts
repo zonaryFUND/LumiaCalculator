@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 
@@ -15,7 +15,7 @@ export const hyunwooWDefenseStrategy: UniqueValueStrategy = ({ config, status })
                 expression: [
                     `${base} + `,
                     `floor(`,
-                    {ratioKey: "defense"},
+                    { ratioKey: "defense" },
                     `${status.defense.calculatedValue} / 10) = ${value.toString()}`
                 ]
             }
@@ -37,8 +37,8 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "StatType/Defense", values: Constants.W.defense.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
-        ]  
+            { labelIntlID: "StatType/Defense", values: Constants.W.defense.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown }
+        ]
     })
 }

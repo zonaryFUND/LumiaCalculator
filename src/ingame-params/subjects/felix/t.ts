@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -15,7 +15,7 @@ export const info: SkillTooltipProps = {
             4: Constants.T.shield.duration,
             7: Constants.T.duration
         };
-        
+
         if (showEquation) {
             return {
                 ...base,
@@ -31,15 +31,15 @@ export const info: SkillTooltipProps = {
             return {
                 ...base,
                 0: Constants.T.damage,
-                5: {...shieldMin},
-                6: {base: Constants.T.shield.effect.consumedStack * 10, ...shieldMin}
+                5: { ...shieldMin },
+                6: { base: Constants.T.shield.effect.consumedStack * 10, ...shieldMin }
             }
         }
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.T.damage.attack, percent: true},
-            {labelIntlID: "ToolTipType/ActiveSkillCooldown", values: Constants.T.shared_cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/SecondDamage", values: Constants.T.damage.attack, percent: true },
+            { labelIntlID: "ToolTipType/ActiveSkillCooldown", values: Constants.T.shared_cooldown }
+        ]
     })
 }

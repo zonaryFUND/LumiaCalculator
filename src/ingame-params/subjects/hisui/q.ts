@@ -1,5 +1,5 @@
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import Decimal from "decimal.js";
 
@@ -10,7 +10,7 @@ export const info: SkillTooltipProps = {
     cooldown: ({ config, status }) => {
         return new Decimal(Constants.Q.cooldown.constant[config.skillLevels.Q]).subPercent(status.attackSpeed.multiplier.clamp(0, 140).div(140).times(60)).floor2()
     },
-    values: ({ showEquation }): TooltipValues  => {
+    values: ({ showEquation }): TooltipValues => {
         if (showEquation) {
             return {
                 0: Constants.Q.first_damage.base,
@@ -31,11 +31,11 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/FirstDamage", values: Constants.Q.first_damage.base},
-            {labelIntlID: "ToolTipType/FirstAdditionalAttackPower", values: Constants.Q.first_damage.additionalAttack, percent: true},
-            {labelIntlID: "ToolTipType/SecondDamage", values: Constants.Q.second_damage.base},
-            {labelIntlID: "ToolTipType/SecondAdditionalAttackPower", values: Constants.Q.second_damage.additionalAttack, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown.constant}
-        ]  
+            { labelIntlID: "ToolTipType/FirstDamage", values: Constants.Q.first_damage.base },
+            { labelIntlID: "ToolTipType/FirstAdditionalAttackPower", values: Constants.Q.first_damage.additionalAttack, percent: true },
+            { labelIntlID: "ToolTipType/SecondDamage", values: Constants.Q.second_damage.base },
+            { labelIntlID: "ToolTipType/SecondAdditionalAttackPower", values: Constants.Q.second_damage.additionalAttack, percent: true },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown.constant }
+        ]
     })
 }

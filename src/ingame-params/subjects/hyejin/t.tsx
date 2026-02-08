@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -16,8 +16,8 @@ export const info: SkillTooltipProps = {
             0: Constants.T.fear_immune,
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/FearTime", values: Constants.T.fear},
-            {labelIntlID: "ToolTipType/SkillSkillAmpCoef", values: Constants.T.damage.amp, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/FearTime", values: Constants.T.fear },
+            { labelIntlID: "ToolTipType/SkillSkillAmpCoef", values: Constants.T.damage.amp, percent: true }
+        ]
     })
 }
