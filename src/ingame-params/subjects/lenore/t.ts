@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { accelerando } from "./perpetual-status";
@@ -41,8 +41,8 @@ export const info: SkillTooltipProps = {
             1: Constants.T.stack_conversion
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.T.additional_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant},
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.T.additional_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant },
+        ]
     })
 }

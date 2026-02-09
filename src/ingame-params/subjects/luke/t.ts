@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -32,9 +32,9 @@ export const info: SkillTooltipProps = {
             8: Constants.T.legendary_box
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.T.attack_speed.effect, percent: true},
-            {labelIntlID: "ToolTipType/HpRegenRatioPlayer", values: Constants.T.subject_kill, percent: true},
-            {labelIntlID: "ToolTipType/HpRegenRatioWickline", values: Constants.T.wickline_kill, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.T.attack_speed.effect, percent: true },
+            { labelIntlID: "ToolTipType/HpRegenRatioPlayer", values: Constants.T.subject_kill, percent: true },
+            { labelIntlID: "ToolTipType/HpRegenRatioWickline", values: Constants.T.wickline_kill, percent: true }
+        ]
     })
 }

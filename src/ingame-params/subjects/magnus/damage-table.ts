@@ -1,6 +1,6 @@
 import { SkillLevels } from "app-types/subject-dynamic/config";
 import { DamageTable, DamageTableGenerator } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const table: DamageTableGenerator = props => {
     const wCount = props.status.defense.additionalValue?.dividedBy(Constants.W.additional_hit_per__additional_defense).floor()
@@ -9,18 +9,18 @@ const table: DamageTableGenerator = props => {
     return {
         basicAttack: ["standard"],
         skill: [
-            [{label: "Q", origin: "Q", value: Constants.Q.damage}],
+            [{ label: "Q", origin: "Q", value: Constants.Q.damage }],
             [
-                {label: props.intl.formatMessage({id: "subject.magnus.w-1hit"}), origin: "W", value: Constants.W.damage},
-                {label: props.intl.formatMessage({id: "subject.magnus.w-max-hit"}, {value: wCount}), origin: "W", value: Constants.W.damage, multiplier: wCount * 100}
+                { label: props.intl.formatMessage({ id: "subject.magnus.w-1hit" }), origin: "W", value: Constants.W.damage },
+                { label: props.intl.formatMessage({ id: "subject.magnus.w-max-hit" }, { value: wCount }), origin: "W", value: Constants.W.damage, multiplier: wCount * 100 }
             ],
             [
-                {label: "E", origin: "E", value: Constants.E.damage},
-                {label: "E壁ドン", origin: "E", value: Constants.E.wall_damage}
+                { label: "E", origin: "E", value: Constants.E.damage },
+                { label: "E壁ドン", origin: "E", value: Constants.E.wall_damage }
             ],
-            [{label: "R", origin: "R", value: Constants.R.damage}],
-            [{label: props.intl.formatMessage({id: "subject.magnus.t-defense"}), origin: "T", value: {defense: Constants.T.defense.map(d => d * Constants.T.max_stack)}, type: {type: "misc"}}]
-        ]   
+            [{ label: "R", origin: "R", value: Constants.R.damage }],
+            [{ label: props.intl.formatMessage({ id: "subject.magnus.t-defense" }), origin: "T", value: { defense: Constants.T.defense.map(d => d * Constants.T.max_stack) }, type: { type: "misc" } }]
+        ]
     }
 }
 

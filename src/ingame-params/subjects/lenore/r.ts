@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -38,10 +38,10 @@ export const info: SkillTooltipProps = {
             0: RatioPercent(Constants.R.insane_attack_speed)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/DotDamage", values: Constants.R.damage.base},
-            {labelIntlID: "ToolTipType/ExplosionDamage", values: Constants.R.finish_damage.base},
-            {labelIntlID: "ToolTipType/InsanityDuration", values: Constants.R.insane},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/DotDamage", values: Constants.R.damage.base },
+            { labelIntlID: "ToolTipType/ExplosionDamage", values: Constants.R.finish_damage.base },
+            { labelIntlID: "ToolTipType/InsanityDuration", values: Constants.R.insane },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown }
+        ]
     })
 }

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -21,8 +21,8 @@ export const info: SkillTooltipProps = {
             2: RatioPercent(Constants.T.fishing.rare)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Shield", values: Constants.T.shield.maxHP, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant}
-        ]  
+            { labelIntlID: "ToolTipType/Shield", values: Constants.T.shield.maxHP, percent: true },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant }
+        ]
     })
 }

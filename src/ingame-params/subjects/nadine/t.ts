@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 
 export const code = 1006100;
@@ -15,11 +15,11 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/AnimalGrade01", values: Constants.T.chicken},
-            {labelIntlID: "ToolTipType/AnimalGrade02", values: Constants.T.bat_boar},
-            {labelIntlID: "ToolTipType/AnimalGrade03", values: Constants.T.hound_wolf},
-            {labelIntlID: "ToolTipType/AnimalGrade04", values: Constants.T.bear},
-            {labelIntlID: "ToolTipType/AnimalGrade05", values: Constants.T.subject}
-        ]  
+            { labelIntlID: "ToolTipType/AnimalGrade01", values: Constants.T.chicken },
+            { labelIntlID: "ToolTipType/AnimalGrade02", values: Constants.T.bat_boar },
+            { labelIntlID: "ToolTipType/AnimalGrade03", values: Constants.T.hound_wolf },
+            { labelIntlID: "ToolTipType/AnimalGrade04", values: Constants.T.bear },
+            { labelIntlID: "ToolTipType/AnimalGrade05", values: Constants.T.subject }
+        ]
     })
 }

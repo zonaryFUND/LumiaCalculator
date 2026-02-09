@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SubjectPerpetualStatus } from "../type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
@@ -20,7 +20,7 @@ const f: SubjectPerpetualStatus = (config) => {
                     type: "constant",
                     value: Math.min(acc * Constants.T.cdr_per_accelerando, Constants.T.max_cdr)
                 }
-            }   
+            }
         ],
         ultCooldownReduction: [
             {

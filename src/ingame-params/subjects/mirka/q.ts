@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -38,9 +38,9 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/MirkaActive1_2_Damage", values: Constants.Q.enhance.after_effect.damage.base},
-            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.Q.charge.time}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base },
+            { labelIntlID: "ToolTipType/MirkaActive1_2_Damage", values: Constants.Q.enhance.after_effect.damage.base },
+            { labelIntlID: "ToolTipType/ChargingTime", values: Constants.Q.charge.time }
+        ]
     })
 }

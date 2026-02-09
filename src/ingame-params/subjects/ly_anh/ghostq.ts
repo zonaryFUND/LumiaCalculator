@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import * as humanq from "./lyanhq";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 
@@ -17,10 +17,10 @@ export const info: SkillTooltipProps = {
             1: Constants.GhostQ.thrash.miss
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.LyAnhQ.damage.base},
-            {labelIntlID: "ToolTipType/LyanhPossession_Active1_Damage", values: Constants.GhostQ.damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.GhostQ.cooldown},
-            {labelIntlID: "ToolTipType/Cost", values: Constants.GhostQ.hp_cost},
+            { labelIntlID: "ToolTipType/Damage", values: Constants.LyAnhQ.damage.base },
+            { labelIntlID: "ToolTipType/LyanhPossession_Active1_Damage", values: Constants.GhostQ.damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.GhostQ.cooldown },
+            { labelIntlID: "ToolTipType/Cost", values: Constants.GhostQ.hp_cost },
         ]
     })
 };

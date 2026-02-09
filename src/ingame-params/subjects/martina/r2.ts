@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -25,11 +25,11 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Martina_Sector_Damage", values: Constants.R2.first_outer_damage.base},
-            {labelIntlID: "ToolTipType/Martina_InSector_Damage", values: Constants.R2.first_center_damage.base},
-            {labelIntlID: "ToolTipType/Martina_FinalSector_Damage", values: Constants.R2.second_outer_damage.base},
-            {labelIntlID: "ToolTipType/Martina_FinalInSector_Damage", values: Constants.R2.second_center_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R2.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Martina_Sector_Damage", values: Constants.R2.first_outer_damage.base },
+            { labelIntlID: "ToolTipType/Martina_InSector_Damage", values: Constants.R2.first_center_damage.base },
+            { labelIntlID: "ToolTipType/Martina_FinalSector_Damage", values: Constants.R2.second_outer_damage.base },
+            { labelIntlID: "ToolTipType/Martina_FinalInSector_Damage", values: Constants.R2.second_center_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R2.cooldown }
+        ]
     })
 }

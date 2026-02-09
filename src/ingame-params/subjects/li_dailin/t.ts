@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { calculateValue } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -12,16 +12,20 @@ export const info: SkillTooltipProps = {
         1: 100,
         2: Constants.T.drunk_duration,
         3: showEquation ? RatioPercent(Constants.T.damage.attack) : Constants.T.damage,
+        4: Constants.T.alcohol_drink.duration,
+        5: Constants.T.alcohol_drink.attack,
         6: RatioPercent(Constants.T.attack_speed)
     }),
     expansion: ({ config, status }) => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/MinDamage", values: [0,1,2].map(level => calculateValue(
-                Constants.T.damage, 
-                status,
-                config,
-                "T"
-            ).static.floor().toString())},
-        ]  
+            {
+                labelIntlID: "ToolTipType/MinDamage", values: [0, 1, 2].map(level => calculateValue(
+                    Constants.T.damage,
+                    status,
+                    config,
+                    "T"
+                ).static.floor().toString())
+            },
+        ]
     })
 }

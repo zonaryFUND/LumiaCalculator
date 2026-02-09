@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { ValueRatio } from "app-types/value-ratio";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
@@ -38,7 +38,7 @@ export const info: SkillTooltipProps = {
             1: Constants.LyAnhT.possessed_thrash
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/AddFixedDamage", values: Constants.LyAnhT.additional_damage.attack, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/AddFixedDamage", values: Constants.LyAnhT.additional_damage.attack, percent: true }
+        ]
     })
 }
