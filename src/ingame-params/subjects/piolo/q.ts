@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -37,11 +37,11 @@ export const info: SkillTooltipProps = {
             0: Constants.Q1.movement_speed_penalty
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Piolo_Q1_Damage", values: Constants.Q1.damage.base},
-            {labelIntlID: "ToolTipType/Piolo_Q1_ReinforceDamage", values: Constants.Q1.enhanced_damage.base},
-            {labelIntlID: "ToolTipType/Piolo_Q2_CenterDamage", values: Constants.Q2.center_damage.base},
-            {labelIntlID: "ToolTipType/Piolo_Q2_Damage", values: Constants.Q2.outer_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Piolo_Q1_Damage", values: Constants.Q1.damage.base },
+            { labelIntlID: "ToolTipType/Piolo_Q1_ReinforceDamage", values: Constants.Q1.enhanced_damage.base },
+            { labelIntlID: "ToolTipType/Piolo_Q2_CenterDamage", values: Constants.Q2.center_damage.base },
+            { labelIntlID: "ToolTipType/Piolo_Q2_Damage", values: Constants.Q2.outer_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown }
+        ]
     })
 }

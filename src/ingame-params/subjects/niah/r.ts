@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -37,12 +37,12 @@ export const info: SkillTooltipProps = {
             0: Constants.R.q_cooldown,
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Shield", values: Constants.R.shield.base},
-            {labelIntlID: "ToolTipType/ShieldSkillAmpCoef", values: Constants.R.shield.amp, percent: true},
-            {labelIntlID: "ToolTipType/StackShield", values: Constants.R.shield.stack},
-            {labelIntlID: "ToolTipType/Damage", values: Constants.R.inner_damage.base},
-            {labelIntlID: "ToolTipType/NiahAcive1Cooldown", values: Constants.R.q_cooldown},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Shield", values: Constants.R.shield.base },
+            { labelIntlID: "ToolTipType/ShieldSkillAmpCoef", values: Constants.R.shield.amp, percent: true },
+            { labelIntlID: "ToolTipType/StackShield", values: Constants.R.shield.stack },
+            { labelIntlID: "ToolTipType/Damage", values: Constants.R.inner_damage.base },
+            { labelIntlID: "ToolTipType/NiahAcive1Cooldown", values: Constants.R.q_cooldown },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown }
+        ]
     })
 }

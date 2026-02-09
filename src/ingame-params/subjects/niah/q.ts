@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -15,7 +15,7 @@ export const info: SkillTooltipProps = {
                 5: Constants.Q.pull_damage.base,
                 6: RatioPercent(Constants.Q.pull_damage.amp),
                 7: Constants.Q.slow.duration,
-                8: RatioPercent(Constants.Q.slow.effect),                
+                8: RatioPercent(Constants.Q.slow.effect),
                 9: RatioPercent(Constants.Q.pull_q_cooldown_reduction),
                 11: Constants.Q.w_cooldown_reduction,
                 12: Constants.Q.max_buttons,
@@ -39,9 +39,9 @@ export const info: SkillTooltipProps = {
             0: RatioPercent(Constants.Q.prural_hit)
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/BulletDamage", values: Constants.Q.pull_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base },
+            { labelIntlID: "ToolTipType/BulletDamage", values: Constants.Q.pull_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown }
+        ]
     })
 }

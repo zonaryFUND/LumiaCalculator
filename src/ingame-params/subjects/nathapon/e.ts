@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -23,23 +23,23 @@ export const info: SkillTooltipProps = {
                 10: RatioPercent(Constants.E.first_damage.amp),
                 11: RatioPercent(Constants.E.second_damage.amp)
             }
-        } else {   
+        } else {
             return {
                 ...base,
                 0: Constants.E.first_damage,
                 1: Constants.E.second_damage,
             }
         }
-        
+
     },
     expansion: () => ({
         tipValues: {
             0: Constants.E.mark_remain_range
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.E.first_damage.base},
-            {labelIntlID: "ToolTipType/ReactivateDamage", values: Constants.E.second_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.E.first_damage.base },
+            { labelIntlID: "ToolTipType/ReactivateDamage", values: Constants.E.second_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown }
+        ]
     })
 }

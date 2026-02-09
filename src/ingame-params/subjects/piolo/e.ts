@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -38,12 +38,12 @@ export const info: SkillTooltipProps = {
             0: Constants.E1.movement_speed_penalty
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Piolo_E1_NunchakuMinDamage", values: Constants.E1.first_min_damage.base},
-            {labelIntlID: "ToolTipType/Piolo_E1_NunchakuMaxDamage", values: Constants.E1.first_max_damage.base},
-            {labelIntlID: "ToolTipType/Piolo_E1_DashMinDamage", values: Constants.E1.second_min_damage.base},
-            {labelIntlID: "ToolTipType/Piolo_E1_DashMaxDamage", values: Constants.E1.second_max_damage.base},
-            {labelIntlID: "ToolTipType/E2_Damage", values: Constants.E2.damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Piolo_E1_NunchakuMinDamage", values: Constants.E1.first_min_damage.base },
+            { labelIntlID: "ToolTipType/Piolo_E1_NunchakuMaxDamage", values: Constants.E1.first_max_damage.base },
+            { labelIntlID: "ToolTipType/Piolo_E1_DashMinDamage", values: Constants.E1.second_min_damage.base },
+            { labelIntlID: "ToolTipType/Piolo_E1_DashMaxDamage", values: Constants.E1.second_max_damage.base },
+            { labelIntlID: "ToolTipType/E2_Damage", values: Constants.E2.damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown }
+        ]
     })
 }

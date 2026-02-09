@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import { UniqueValueStrategy } from "../unique-value-strategy";
@@ -18,7 +18,7 @@ export const NathaponeTStrategy: UniqueValueStrategy = ({ config, status }) => {
         value,
         equationExpression: [
             {
-                expression :[
+                expression: [
                     `${base} + `,
                     { ratioKey: "amp" },
                     `${status.skillAmp.calculatedValue.toString()} x ${amp}% + `,
@@ -41,7 +41,7 @@ export const info: SkillTooltipProps = {
                 3: Constants.T.max_stack,
                 4: RatioPercent(Constants.T.stack_damage_amp)
             }
-        } else {   
+        } else {
             return {
                 0: Constants.T.damage,
                 1: Constants.T.max_stack,
@@ -54,8 +54,8 @@ export const info: SkillTooltipProps = {
             0: Constants.E.mark_remain_range
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base},
-            {labelIntlID: "ToolTipType/IncreaseReceiveDamageRatio", values: Constants.T.stack_damage_amp, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.T.damage.base },
+            { labelIntlID: "ToolTipType/IncreaseReceiveDamageRatio", values: Constants.T.stack_damage_amp, percent: true }
+        ]
     })
 }
