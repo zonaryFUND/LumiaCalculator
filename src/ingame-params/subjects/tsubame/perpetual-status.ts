@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SubjectPerpetualStatus } from "../type";
 
 const f: SubjectPerpetualStatus = () => ({
@@ -9,7 +9,7 @@ const f: SubjectPerpetualStatus = () => ({
             intlID: "subject.tsubame.aa-range",
             value: {
                 type: "constant",
-                value: Constants.T.range
+                value: Constants.common.range
             }
         }
     ]

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import { AdditionalMaxHP } from "./perpetual-status";
@@ -21,7 +21,7 @@ export const info: SkillTooltipProps = {
             5: Constants.T.stack_gain.legendary
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/MaxHpUp", values: Constants.T.max_hp}
-        ]  
+            { labelIntlID: "ToolTipType/MaxHpUp", values: Constants.T.max_hp }
+        ]
     })
 }

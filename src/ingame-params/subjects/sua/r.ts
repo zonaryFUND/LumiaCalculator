@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -39,7 +39,7 @@ export const info: SkillTooltipProps = {
                 28: Constants.RQ.slow.duration,
                 29: RatioPercent(Constants.RQ.slow.effect)
             }
-        } else {   
+        } else {
             return {
                 0: Constants.RQ.damage,
                 1: Constants.RQ.bookmark_duration,
@@ -59,15 +59,15 @@ export const info: SkillTooltipProps = {
                 15: RatioPercent(Constants.RE.slow.effect)
             }
         }
-        
+
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/SuaSkill01Damage", values: Constants.RQ.damage.base},
-            {labelIntlID: "ToolTipType/SuaSkill02Damage", values: Constants.RW.damage.base},
-            {labelIntlID: "ToolTipType/SuaSkill03Damage", values: Constants.RE.damage.base},
-            {labelIntlID: "ToolTipType/SuaSkill03StunDamage", values: Constants.RE.bookmark_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/SuaSkill01Damage", values: Constants.RQ.damage.base },
+            { labelIntlID: "ToolTipType/SuaSkill02Damage", values: Constants.RW.damage.base },
+            { labelIntlID: "ToolTipType/SuaSkill03Damage", values: Constants.RE.damage.base },
+            { labelIntlID: "ToolTipType/SuaSkill03StunDamage", values: Constants.RE.bookmark_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown }
+        ]
     })
 }

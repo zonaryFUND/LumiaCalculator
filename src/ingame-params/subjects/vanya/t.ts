@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -26,11 +26,11 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/VanyaDaydreamDamage", values: Constants.T.basic_attack_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant},
-            {labelIntlID: "ToolTipType/VanyaButterflyDot", values: Constants.T.damage_over_time.base},
-            {labelIntlID: "ToolTipType/VanyaButterflyShieldGain", values: Constants.T.shield.base},
-            {labelIntlID: "ToolTipType/VanyaButterflyShieldMax", values: Constants.T.max_shield.base}
-        ]  
+            { labelIntlID: "ToolTipType/VanyaDaydreamDamage", values: Constants.T.basic_attack_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant },
+            { labelIntlID: "ToolTipType/VanyaButterflyDot", values: Constants.T.damage_over_time.base },
+            { labelIntlID: "ToolTipType/VanyaButterflyShieldGain", values: Constants.T.shield.base },
+            { labelIntlID: "ToolTipType/VanyaButterflyShieldMax", values: Constants.T.max_shield.base }
+        ]
     })
 }

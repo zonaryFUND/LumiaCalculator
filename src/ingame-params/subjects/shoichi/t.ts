@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -21,7 +21,7 @@ export const info: SkillTooltipProps = {
                 8: RatioPercent(Constants.T.basic_attack_damage.amp),
                 9: RatioPercent(Constants.T.basic_attack_damage.targetMaxHP)
             }
-        } else {   
+        } else {
             return {
                 ...base,
                 2: Constants.T.basic_attack_damage,
@@ -30,13 +30,13 @@ export const info: SkillTooltipProps = {
                 5: RatioPercent(Constants.T.basic_attack_damage.targetMaxHP)
             }
         }
-        
+
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.T.basic_attack_damage.base},
-            {labelIntlID: "StatType/MaxHpCoef", values: Constants.T.basic_attack_damage.targetMaxHP},
-            {labelIntlID: "ToolTipType/DaggerDamage", values: Constants.T.knife_damage.base}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.T.basic_attack_damage.base },
+            { labelIntlID: "StatType/MaxHpCoef", values: Constants.T.basic_attack_damage.targetMaxHP },
+            { labelIntlID: "ToolTipType/DaggerDamage", values: Constants.T.knife_damage.base }
+        ]
     })
 }

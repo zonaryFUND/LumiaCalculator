@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -24,7 +24,7 @@ export const info: SkillTooltipProps = {
                 16: Constants.Q.screen_heal.base,
                 18: RatioPercent(Constants.Q.screen_heal.amp)
             }
-        } else {   
+        } else {
             return {
                 ...base,
                 1: Constants.Q.damage,
@@ -33,15 +33,15 @@ export const info: SkillTooltipProps = {
                 5: Constants.Q.screen_heal
             }
         }
-        
+
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/Heal", values: Constants.Q.heal.base},
-            {labelIntlID: "ToolTipType/Theodore_ScreenFireDamage", values: Constants.Q.screen_damage.base},
-            {labelIntlID: "ToolTipType/Theodore_ScreenFireHeal", values: Constants.Q.screen_heal.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base },
+            { labelIntlID: "ToolTipType/Heal", values: Constants.Q.heal.base },
+            { labelIntlID: "ToolTipType/Theodore_ScreenFireDamage", values: Constants.Q.screen_damage.base },
+            { labelIntlID: "ToolTipType/Theodore_ScreenFireHeal", values: Constants.Q.screen_heal.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown }
+        ]
     })
 }

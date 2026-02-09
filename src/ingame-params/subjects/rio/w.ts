@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -21,7 +21,7 @@ export const info: SkillTooltipProps = {
                 8: Constants.W.cooldown_reduction,
                 9: RatioPercent(Constants.W.multiple_hit),
                 10: Constants.W.daikyu_slow.duration,
-                11: RatioPercent(Constants.W.daikyu_slow.effect)               
+                11: RatioPercent(Constants.W.daikyu_slow.effect)
             }
         } else {
             return {
@@ -40,10 +40,10 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/ShortBowDamage", values: Constants.W.hankyu_damage.base},
-            {labelIntlID: "ToolTipType/YumiFirstDamage", values: Constants.W.daikyu_damage.base},
-            {labelIntlID: "ToolTipType/YumiSecondDamage", values: Constants.W.daikyu_behind_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/ShortBowDamage", values: Constants.W.hankyu_damage.base },
+            { labelIntlID: "ToolTipType/YumiFirstDamage", values: Constants.W.daikyu_damage.base },
+            { labelIntlID: "ToolTipType/YumiSecondDamage", values: Constants.W.daikyu_behind_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown }
+        ]
     })
 }

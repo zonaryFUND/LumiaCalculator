@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -21,7 +21,7 @@ export const info: SkillTooltipProps = {
                 10: RatioPercent(Constants.Q.collect_charge),
 
             }
-        } else {   
+        } else {
             return {
                 0: Constants.Q.damage,
                 1: Constants.Q.spada_damage,
@@ -30,7 +30,7 @@ export const info: SkillTooltipProps = {
                 4: RatioPercent(Constants.Q.collect_charge),
             }
         }
-        
+
     },
     expansion: () => ({
         tipValues: {
@@ -38,10 +38,10 @@ export const info: SkillTooltipProps = {
             1: Constants.Q.knockback_immune
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/ReinforcedDamage", values: Constants.Q.spada_damage.base},
-            {labelIntlID: "ToolTipType/ReinforcedExplosionDamage", values: Constants.Q.spada_blast_damage.base},
-            {labelIntlID: "ToolTipType/ChargingTime", values: Constants.Q.charge.time}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base },
+            { labelIntlID: "ToolTipType/ReinforcedDamage", values: Constants.Q.spada_damage.base },
+            { labelIntlID: "ToolTipType/ReinforcedExplosionDamage", values: Constants.Q.spada_blast_damage.base },
+            { labelIntlID: "ToolTipType/ChargingTime", values: Constants.Q.charge.time }
+        ]
     })
 }

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import { AdditionalPenetration } from "./perpetual-status";
@@ -21,9 +21,9 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-3"): UniqueValue
     return ({ config, status }) => {
         const bowRatio = (() => {
             switch (bow) {
-                case "daikyu":      return Constants.Q.daikyu.attack;
-                case "hankyu":      return Constants.Q.hankyu.attack;
-                case "hankyu-3":    return Constants.Q.hankyu.attack * 3;
+                case "daikyu": return Constants.Q.daikyu.attack;
+                case "hankyu": return Constants.Q.hankyu.attack;
+                case "hankyu-3": return Constants.Q.hankyu.attack * 3;
             }
         })();
         const tRatio = rioBasicAttackMultiplier(status);
@@ -38,9 +38,9 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-3"): UniqueValue
                 {
                     labelIntlID: "app.standard-value",
                     expression: [
-                        {ratioKey: "attack"},
+                        { ratioKey: "attack" },
                         `${status.attackPower.calculatedValue.toString()} x ${bowRatio}% x (`,
-                        {ratioKey: "basicAttackAmp"},
+                        { ratioKey: "basicAttackAmp" },
                         `${status.increaseBasicAttackDamageRatio.calculatedValue.toString()}% + 1) = ${value.toString()}`
                     ]
                 },
@@ -48,16 +48,16 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-3"): UniqueValue
                     labelIntlID: "subject.rio.passive-penetration",
                     expression: [
                         `${Constants.T.basic_attack_damage.base}% + (`,
-                        {ratioKey: "criticalChance"},
+                        { ratioKey: "criticalChance" },
                         `${status.criticalStrikeChance.calculatedValue.toString()}% x (${BaseCriticalDamagePercent}% + `,
-                        {ratioKey: "criticalDamage"},
+                        { ratioKey: "criticalDamage" },
                         `${status.criticalStrikeDamage.calculatedValue.toString()}%)) = ${tRatio}%`
                     ]
                 }
             ]
         }
     }
-} 
+}
 
 export const info: SkillTooltipProps = {
     skillKey: "T",
@@ -84,8 +84,8 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/DecreaseDefenseRatio", values: Constants.T.defense_decline.base, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/DecreaseDefenseRatio", values: Constants.T.defense_decline.base, percent: true }
+        ]
     })
 }
 

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps, TooltipValues } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -22,7 +22,7 @@ export const info: SkillTooltipProps = {
                 9: RatioPercent(Constants.R.slow.effect),
                 10: Constants.R.e_chase_damage.base,
                 11: RatioPercent(Constants.R.e_chase_damage.base),
-                12: RatioPercent(Constants.R.second_chase_decline)                
+                12: RatioPercent(Constants.R.second_chase_decline)
             }
         } else {
             return {
@@ -40,13 +40,13 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base},
-            {labelIntlID: "ToolTipType/XuelinActive3Damage", values: Constants.R.additional_damage.base},
-            {labelIntlID: "ToolTipType/XuelinActive3DamageApCoef", values: Constants.R.additional_damage.attack, percent: true},
-            {labelIntlID: "ToolTipType/XuelinActive4ReinforceSwordDamage", values: Constants.R.enhance_damage.base},
-            {labelIntlID: "ToolTipType/XuelinActive4ReinforceSwordDamageApCoef", values: Constants.R.enhance_damage.attack, percent: true},
-            {labelIntlID: "ToolTipType/XuelinActive4ReturnDamage", values: Constants.R.e_chase_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.R.damage.base },
+            { labelIntlID: "ToolTipType/XuelinActive3Damage", values: Constants.R.additional_damage.base },
+            { labelIntlID: "ToolTipType/XuelinActive3DamageApCoef", values: Constants.R.additional_damage.attack, percent: true },
+            { labelIntlID: "ToolTipType/XuelinActive4ReinforceSwordDamage", values: Constants.R.enhance_damage.base },
+            { labelIntlID: "ToolTipType/XuelinActive4ReinforceSwordDamageApCoef", values: Constants.R.enhance_damage.attack, percent: true },
+            { labelIntlID: "ToolTipType/XuelinActive4ReturnDamage", values: Constants.R.e_chase_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.R.cooldown }
+        ]
     })
 }

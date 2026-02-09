@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -17,12 +17,12 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/MaxHpShieldRatio", values: Constants.T.shield.maxHP, percent: true},
-            {labelIntlID: "ToolTipType/Theodore_Active1CoolDown", values: Constants.T.q_cooldown_reduction, percent: true},
-            {labelIntlID: "ToolTipType/Theodore_Active2CoolDown", values: Constants.T.cooldown_reduction, percent: true},
-            {labelIntlID: "ToolTipType/Theodore_Active3CoolDown", values: Constants.T.cooldown_reduction, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant}
-        ]  
+            { labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true },
+            { labelIntlID: "ToolTipType/MaxHpShieldRatio", values: Constants.T.shield.maxHP, percent: true },
+            { labelIntlID: "ToolTipType/Theodore_Active1CoolDown", values: Constants.T.q_cooldown_reduction, percent: true },
+            { labelIntlID: "ToolTipType/Theodore_Active2CoolDown", values: Constants.T.cooldown_reduction, percent: true },
+            { labelIntlID: "ToolTipType/Theodore_Active3CoolDown", values: Constants.T.cooldown_reduction, percent: true },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.T.cooldown.constant }
+        ]
     })
 }

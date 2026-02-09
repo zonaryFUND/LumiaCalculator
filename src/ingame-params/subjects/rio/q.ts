@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import { SkillTooltipProps, TooltipValue } from "@app/ingame-params/skill-tooltip-props";
 
@@ -15,7 +15,7 @@ export const info: SkillTooltipProps = {
             3: RatioPercent(Constants.Q.attack_speed),
             4: "1%",
             5: RatioPercent(Constants.Q.daikyu_damage_enhance),
-            6: {value: Constants.Q.daikyu_range, expression: v => `${v}m`},
+            6: { value: Constants.Q.daikyu_range, expression: v => `${v}m` },
             10: 2
         } satisfies Record<number, TooltipValue>
         if (showEquation) {
@@ -37,9 +37,9 @@ export const info: SkillTooltipProps = {
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/KaichuMoveSpeedUpRatio", values: Constants.Q.movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/KaichuAttackSpeedUpRatio", values: Constants.Q.attack_speed, percent: true},
-            {labelIntlID: "ToolTipType/YumiAttackRange", values: Constants.Q.daikyu_range}
-        ]  
+            { labelIntlID: "ToolTipType/KaichuMoveSpeedUpRatio", values: Constants.Q.movement_speed, percent: true },
+            { labelIntlID: "ToolTipType/KaichuAttackSpeedUpRatio", values: Constants.Q.attack_speed, percent: true },
+            { labelIntlID: "ToolTipType/YumiAttackRange", values: Constants.Q.daikyu_range }
+        ]
     })
 }

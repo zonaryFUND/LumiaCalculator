@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -11,12 +11,12 @@ export const info: SkillTooltipProps = {
         0: Constants.Q.duration,
         1: RatioPercent(Constants.Q.attack_speed),
         2: showEquation ? RatioPercent(Constants.Q.damage.attack) : Constants.Q.damage,
-        3: Constants.Q.extend_duration        
+        3: Constants.Q.extend_duration
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/SkillApCoef", values: Constants.Q.damage.attack.map(v => v - 100), percent: true},
-            {labelIntlID: "ToolTipType/AddAttackSpeedRatio", values: Constants.Q.attack_speed, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/SkillApCoef", values: Constants.Q.damage.attack.map(v => v - 100), percent: true },
+            { labelIntlID: "ToolTipType/AddAttackSpeedRatio", values: Constants.Q.attack_speed, percent: true }
+        ]
     })
 }

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -22,9 +22,9 @@ export const info: SkillTooltipProps = {
             1: Constants.E.max_cast_time
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/InnerDamage", values: Constants.E.inner_damage.base},
-            {labelIntlID: "ToolTipType/OuterDamage", values: Constants.E.outer_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/InnerDamage", values: Constants.E.inner_damage.base },
+            { labelIntlID: "ToolTipType/OuterDamage", values: Constants.E.outer_damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown }
+        ]
     })
 }

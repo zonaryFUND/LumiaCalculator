@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import Decimal from "decimal.js";
 import { SubjectPerpetualStatus } from "../type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
@@ -13,20 +13,20 @@ function Additional(target: "amp" | "heal", currentHPRatio: Decimal, tSkillLevel
 }
 
 export const AdditionalAmpStrategy: UniqueValueStrategy = ({ config, status, hp }) => {
-    return {    
+    return {
         value: new Decimal(Additional("amp", new Decimal(1).sub(new Decimal(hp).div(status.maxHp.calculatedValue)).times(100), config.skillLevels.T)),
         equationExpression: [
             {
                 expression: [
-                    {intlID: "インゲームの増幅量はツールチップ表記上限値を上回る場合がありますが、本計算機ではツールチップ表記通りに線形に増加すると仮定して実装しています。"}
+                    { intlID: "インゲームの増幅量はツールチップ表記上限値を上回る場合がありますが、本計算機ではツールチップ表記通りに線形に増加すると仮定して実装しています。" }
                 ]
-            }            
+            }
         ]
     }
 }
 
 export const AdditionalHealStrategy: UniqueValueStrategy = ({ config, status, hp }) => {
-    return {    
+    return {
         value: new Decimal(Additional("heal", new Decimal(1).sub(new Decimal(hp).div(status.maxHp.calculatedValue)).times(100), config.skillLevels.T)),
         equationExpression: []
     }

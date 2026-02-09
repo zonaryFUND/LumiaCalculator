@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -23,7 +23,7 @@ export const info: SkillTooltipProps = {
                 9: Constants.Q.slow.duration,
                 10: RatioPercent(Constants.Q.slow.effect)
             }
-        } else {   
+        } else {
             return {
                 ...base,
                 0: Constants.Q.damage,
@@ -34,14 +34,14 @@ export const info: SkillTooltipProps = {
                 6: RatioPercent(Constants.Q.slow.effect)
             }
         }
-        
+
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/SuaSkill01BookMark", values: Constants.Q.bookmark_damage.base},
-            {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.Q.slow.effect, percent: true},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
-        ]  
+            { labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base },
+            { labelIntlID: "ToolTipType/SuaSkill01BookMark", values: Constants.Q.bookmark_damage.base },
+            { labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.Q.slow.effect, percent: true },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown }
+        ]
     })
 }

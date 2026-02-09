@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import Decimal from "decimal.js";
 import { SubjectPerpetualStatus } from "../type";
 

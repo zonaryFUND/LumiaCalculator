@@ -1,5 +1,5 @@
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const bikeEMax = {
     base: Constants.BikeE.damage.base.map((v, i) => v + Constants.BikeE.ms_max_damage[i]),
@@ -9,25 +9,25 @@ const bikeEMax = {
 const table: DamageTableGenerator = props => ({
     basicAttack: [
         "standard",
-        {label: props.intl.formatMessage({id: "subject.silvia.r-additional"}), origin: "R", value: Constants.BikeR.damage}
+        { label: props.intl.formatMessage({ id: "subject.silvia.r-additional" }), origin: "R", value: Constants.BikeR.damage }
     ],
     skill: [
         [
-            {label: props.intl.formatMessage({id: "subject.silvia.humanq-damage"}), origin: "Q", value: Constants.HumanQ.damage},
-            {label: props.intl.formatMessage({id: "subject.silvia.humanq-heal"}), origin: "Q", value: Constants.HumanQ.heal, type: {type: "heal", target: "ally"}},
+            { label: props.intl.formatMessage({ id: "subject.silvia.humanq-damage" }), origin: "Q", value: Constants.HumanQ.damage },
+            { label: props.intl.formatMessage({ id: "subject.silvia.humanq-heal" }), origin: "Q", value: Constants.HumanQ.heal, type: { type: "heal", target: "ally" } },
         ],
-        [{label: props.intl.formatMessage({id: "subject.silvia.humanw"}), origin: "W", value: Constants.HumanW.damage}],
+        [{ label: props.intl.formatMessage({ id: "subject.silvia.humanw" }), origin: "W", value: Constants.HumanW.damage }],
         [
-            {label: props.intl.formatMessage({id: "subject.silvia.humane-min"}), origin: "E", value: Constants.HumanE.min_damage},
-            {label: props.intl.formatMessage({id: "subject.silvia.humane-max"}), origin: "E", value: Constants.HumanE.max_damage},
+            { label: props.intl.formatMessage({ id: "subject.silvia.humane-min" }), origin: "E", value: Constants.HumanE.min_damage },
+            { label: props.intl.formatMessage({ id: "subject.silvia.humane-max" }), origin: "E", value: Constants.HumanE.max_damage },
         ],
-        [{label: props.intl.formatMessage({id: "subject.silvia.bikeq"}), origin: "Q", value: Constants.BikeQ.damage}],
-        [{label: props.intl.formatMessage({id: "subject.silvia.bikew"}), origin: "W", value: Constants.BikeW.damage}],
+        [{ label: props.intl.formatMessage({ id: "subject.silvia.bikeq" }), origin: "Q", value: Constants.BikeQ.damage }],
+        [{ label: props.intl.formatMessage({ id: "subject.silvia.bikew" }), origin: "W", value: Constants.BikeW.damage }],
         [
-            {label: props.intl.formatMessage({id: "subject.silvia.bikee-min"}), origin: "E", value: Constants.BikeE.damage},
-            {label: props.intl.formatMessage({id: "subject.silvia.bikee-max"}), origin: "E", value: bikeEMax}
+            { label: props.intl.formatMessage({ id: "subject.silvia.bikee-min" }), origin: "E", value: Constants.BikeE.damage },
+            { label: props.intl.formatMessage({ id: "subject.silvia.bikee-max" }), origin: "E", value: bikeEMax }
         ]
-    ]   
+    ]
 })
 
 export default table;

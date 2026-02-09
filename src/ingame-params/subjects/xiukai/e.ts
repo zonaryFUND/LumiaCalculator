@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -23,10 +23,10 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown},
-            {labelIntlID: "ToolTipType/Xiukai_Active3_1_Damage", values: Constants.E.first_damage.base},
-            {labelIntlID: "ToolTipType/Xiukai_Active3_2_Damage", values: Constants.E.second_damage.base},
-            {labelIntlID: "ToolTipType/Xiukai_Active3_2_Slow", values: Constants.E.slow.effect, percent: true}
-        ]  
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.E.cooldown },
+            { labelIntlID: "ToolTipType/Xiukai_Active3_1_Damage", values: Constants.E.first_damage.base },
+            { labelIntlID: "ToolTipType/Xiukai_Active3_2_Damage", values: Constants.E.second_damage.base },
+            { labelIntlID: "ToolTipType/Xiukai_Active3_2_Slow", values: Constants.E.slow.effect, percent: true }
+        ]
     })
 }

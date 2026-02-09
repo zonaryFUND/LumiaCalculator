@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import { AdditionalAmp } from "./perpetual-status";
@@ -30,10 +30,10 @@ export const info: SkillTooltipProps = {
             16: AdditionalAmp(status.cooldownReduction.rawHasteValue).toString()
         },
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Squirrel1_FixedDamage", values: Constants.T.yr.damage.base},
-            {labelIntlID: "ToolTipType/Squirrel2_FixedDamage", values: Constants.T.rb.damage.base},
-            {labelIntlID: "ToolTipType/Squirrel2_Movespeed", values: Constants.T.rb.movement_speed.effect, percent: true},
-            {labelIntlID: "ToolTipType/Squirrel3_FixedDamage", values: Constants.T.by.damage.base}
-        ]  
+            { labelIntlID: "ToolTipType/Squirrel1_FixedDamage", values: Constants.T.yr.damage.base },
+            { labelIntlID: "ToolTipType/Squirrel2_FixedDamage", values: Constants.T.rb.damage.base },
+            { labelIntlID: "ToolTipType/Squirrel2_Movespeed", values: Constants.T.rb.movement_speed.effect, percent: true },
+            { labelIntlID: "ToolTipType/Squirrel3_FixedDamage", values: Constants.T.by.damage.base }
+        ]
     })
 }

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
@@ -20,7 +20,7 @@ export const info: SkillTooltipProps = {
                 5: Constants.W.blind_duration,
                 6: RatioPercent(Constants.W.shield.amp)
             }
-        } else {   
+        } else {
             return {
                 ...base,
                 1: Constants.W.shield,
@@ -28,14 +28,14 @@ export const info: SkillTooltipProps = {
                 3: Constants.W.blind_duration
             }
         }
-        
+
     },
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.base},
-            {labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base},
-            {labelIntlID: "ToolTipType/BlindDuration", values: Constants.W.blind_duration},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown},
-        ]  
+            { labelIntlID: "ToolTipType/Shield", values: Constants.W.shield.base },
+            { labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base },
+            { labelIntlID: "ToolTipType/BlindDuration", values: Constants.W.blind_duration },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown },
+        ]
     })
 }

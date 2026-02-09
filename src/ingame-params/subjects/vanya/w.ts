@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 import Decimal from "decimal.js";
@@ -23,9 +23,9 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/VanyaWindDamage", values: Constants.W.first_damage.base},
-            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.W.movement_speed, percent: true},
-            {labelIntlID: "ToolTipType/VanyaCloudDamage", values: Constants.W.second_damage.base}
-        ]  
+            { labelIntlID: "ToolTipType/VanyaWindDamage", values: Constants.W.first_damage.base },
+            { labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.W.movement_speed, percent: true },
+            { labelIntlID: "ToolTipType/VanyaCloudDamage", values: Constants.W.second_damage.base }
+        ]
     })
 }
