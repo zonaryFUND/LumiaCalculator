@@ -9,13 +9,13 @@ import { StateProps } from "@app/util/state";
 
 type Props = SubjectConfigProps & {
     status: StatusType
-    hp: StateProps<number>
+    hpRatio: StateProps<number>
 }
 
 const subject: React.FC<Props> = props => {
     return (
         <TabUnit title="実験体" className={style.subject}>
-            <Config {...props} maxHP={props.status.maxHp.calculatedValue.toNumber()} currentHP={props.hp} />
+            <Config {...props} maxHP={props.status.maxHp.calculatedValue.toNumber()} currentHPRatio={props.hpRatio} />
             <Status 
                 {...props.value}
                 status={props.status}

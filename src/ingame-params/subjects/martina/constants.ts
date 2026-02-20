@@ -90,7 +90,7 @@ export default {
             "duration": 1,
             "effect": 15
         },
-        "cooldown": [18, 17, 16, 15, 14]
+        "cooldown": [17, 16, 15, 14, 13]
     },
     // 放送中E
     "E2": {

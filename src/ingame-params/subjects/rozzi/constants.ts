@@ -22,7 +22,7 @@ export default {
         // 治癒減少（％）
         "healing_reduction": 20,
         // 使用中移動速度増加（％）
-        "movement_speed": 150,
+        "movement_speed": 135,
         // 的中時クールダウン減少
         "cooldown_reduction": 40,
         "cooldown": 6

@@ -2,7 +2,7 @@ export default {
     "Q": {
         // 1段目ダメージ
         "Q1_damage": {
-            "base": [40, 60, 80, 100, 120],
+            "base": [40, 65, 90, 115, 140],
             "amp": 50,
             "maxHP": 5
         },
@@ -30,7 +30,7 @@ export default {
         // チャージ中被ダメージ減少
         "damage_reduction": {
             "duration": 1,
-            "effect": 50
+            "effect": 55
         },
         // チャージ中自己回復発生周期
         "heal_tick": 0.2,

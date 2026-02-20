@@ -1,6 +1,6 @@
 {
     "period": 3,
-    "range": 3,
+    "range": 4,
     "damage": {
         "base": 20,
         "maxHP": 6

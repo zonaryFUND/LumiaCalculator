@@ -72,18 +72,18 @@ export default {
         },
         // 暴走中範囲内の敵1人あたり体力回復
         "heal": {
-            "base": [7,11,15],
+            "base": [12,17,22],
             "amp": 4
         },
         // 暴走中範囲内の敵存在時ゲージ回復/秒
         "gauge_gain": 30,
         // 審判ダメージ
         "finish_damage": {
-            "base": [90,130,170],
-            "amp": 30
+            "base": [70,110,150],
+            "amp": 25
         },
         // 対象の烙印スタック1あたりダメージ増加（％）
-        "additional_damage_per_stack": 15,
+        "additional_damage_per_stack": 20,
         // 野生動物対象時の回復量倍率（％）
         "animal_heal": 10,
         // 野生動物対象時のゲージ回復量倍率（％）

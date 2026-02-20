@@ -7,7 +7,7 @@ export default {
         // 基礎ダメージ
         "damage": {
             "base": [50, 90, 130, 170, 210],
-            "amp": 70
+            "amp": 75
         },
         // 回復時間
         "heal_duration": 2.5,
@@ -19,7 +19,7 @@ export default {
         // スクリーンから発生するエネルギー砲ダメージ
         "screen_damage": {
             "base": [70, 110, 150, 190, 230],
-            "amp": 70
+            "amp": 75
         },
         // スクリーンから発生するエネルギー砲回復量
         "screen_heal": {

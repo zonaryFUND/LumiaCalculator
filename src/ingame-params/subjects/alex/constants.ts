@@ -89,7 +89,7 @@ export default {
         // 最初の落下的中時移動速度減少
         "first_slow": {
             "duration": 0.6,
-            "effect": 30
+            "effect": 40
         },
         // パルス放出ダメージ
         "later_damage": {

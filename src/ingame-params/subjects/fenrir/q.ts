@@ -37,9 +37,9 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/Damage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/ReinforceDamage", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/Heal", values: Constants.Q.damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.damage.base}
+            {labelIntlID: "ToolTipType/ReinforceDamage", values: Constants.Q.enhanced_damage.base},
+            {labelIntlID: "ToolTipType/Heal", values: Constants.Q.heal.base},
+            {labelIntlID: "ToolTipType/CoolTime", values: Constants.Q.cooldown}
         ]  
     })
 }

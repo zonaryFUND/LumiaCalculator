@@ -42,8 +42,8 @@ const index: React.FC = props => {
     }, [])
 
     const configProps = useSubjectConfig(SimpleCurrentConfigKey);
-    const hp = React.useState(100);
-    const status = statusOf(configProps.value, hp[0]);
+    const hpRatio = React.useState(100);
+    const status = statusOf(configProps.value, hpRatio[0]);
 
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
 
@@ -62,13 +62,13 @@ const index: React.FC = props => {
             <CollapseTab tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
                 <Subject 
                     {...configProps}
-                    hp={hp}
+                    hpRatio={hpRatio}
                     status={status}
                 />
                 <Damage
                     config={configProps.value}
                     status={status}
-                    hp={hp[0]}
+                    hp={status.maxHp.calculatedValue.percent(hpRatio[0]).toNumber()}
                     setSkillLevels={configProps.skillLevels[1]}
                 />
                 <BuffDebuffs />

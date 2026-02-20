@@ -53,7 +53,7 @@ export default {
         // 強力なパンチ的中時移動速度減少
         "slow": {
             "duration": 2,
-            "effect": 30
+            "effect": 35
         },
         // 怒りのパンチ！ダメージ
         "e2_damage": {
@@ -88,7 +88,7 @@ export default {
         "attack_speed": [30, 40, 50],
         // 短気状態基本攻撃追加ダメージ
         "damage": {
-            "base": [20, 60, 100],
+            "base": [30, 70, 110],
             "amp": 35
         }
     }

@@ -77,7 +77,7 @@ export default {
         // 1ティックあたりダメージ
         "damage": {
             "base": [10,20,30,40,50],
-            "attack": 40
+            "attack": 30
         },
         "cooldown": [20,19.5,19,18.5,18],
         "vp_cost": 30
@@ -137,7 +137,7 @@ export default {
             // 双剣使用時スキル使用後基本攻撃1回あたり追加スキルダメージ
             "additional_damage": {
                 "base": [5,15,25],
-                "additionalAttack": [15,20,25]
+                "additionalAttack": [10,15,20]
             },
             // 双剣使用時スキル使用後基本攻撃1回あたり基本スキルクールダウン減少
             "cooldown_reduction": [5,7.5,15],
@@ -155,7 +155,7 @@ export default {
             // 両剣使用時スキル使用後追加スキルダメージ
             "additional_damage": {
                 "base": [10,30,50],
-                "additionalAttack": [30,40,50]
+                "additionalAttack": [20,30,40]
             },
             // 両剣使用時スキル使用後基本攻撃時基本スキルクールダウン減少
             "cooldown_reduction": [10,15,20],

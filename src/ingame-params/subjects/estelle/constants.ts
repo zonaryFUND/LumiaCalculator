@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [50,80,110,140,170],
-            "amp": 35,
+            "amp": 40,
             "maxHP": 5
         },
         // 気絶時間

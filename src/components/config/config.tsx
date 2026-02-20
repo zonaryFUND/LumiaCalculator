@@ -26,7 +26,7 @@ import { calculateValue } from "app-types/value-ratio";
 import Decimal from "decimal.js";
 
 export type CurrentHPProps = {
-    currentHP?: StateProps<number>
+    currentHPRatio?: StateProps<number>
     maxHP?: number
 }
 
@@ -89,12 +89,13 @@ const config: React.FC<SubjectConfigProps & CurrentHPProps> = props => {
                     </div>
                 </div>
                 {
-                    props.currentHP ?
+                    props.currentHPRatio ?
                     <ThrottleSlider 
                         style="hp"
                         label="現在HP"
-                        value={props.currentHP}
-                        max={props.maxHP!}
+                        value={props.currentHPRatio}
+                        max={100}
+                        descrpitedMaxValue={props.maxHP}
                         changeColorOnMax={false}
                     /> :
                     null

@@ -4,7 +4,7 @@ export default {
         "duration": 3,
         // 爆発基礎ダメージ
         "damage": {
-            "base": [50, 70, 90, 110, 130],
+            "base": [60, 85, 110, 135, 160],
             "attack": 25,
             "amp": 70
         },

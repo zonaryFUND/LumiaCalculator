@@ -1,7 +1,7 @@
 export default {
     "Q": {
         "damage": {
-            "base": [40, 80, 120, 160, 200],
+            "base": [40, 75, 110, 145, 180],
             "amp": 40,
             "maxHP": 7
         },

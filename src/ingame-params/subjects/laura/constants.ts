@@ -22,7 +22,7 @@ export default {
         "target_duration": 4,
         // ターゲット対象攻撃時自己回復
         "heal": {
-            "base": [10, 20, 30, 40, 50],
+            "base": [18, 26, 34, 42, 50],
             "amp": 8
         },
         "cooldown": [10, 9.5, 9, 8.5, 8]
@@ -54,7 +54,7 @@ export default {
         // 爆発ダメージ
         "second_damage": {
             "base": [170, 250, 330],
-            "amp": 75
+            "amp": 80
         },
         // 引き寄せ追加的中1人あたりシールド増加量
         "additional_shield": {

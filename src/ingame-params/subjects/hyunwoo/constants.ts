@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [50, 100, 150, 200, 250],
-            "additionalAttack": 40,
+            "additionalAttack": 60,
             "amp": 80
         },
         // 移動速度減少

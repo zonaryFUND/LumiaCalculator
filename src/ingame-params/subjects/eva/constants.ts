@@ -54,7 +54,7 @@ export default {
     "R": {
         "tick": 0.1,
         "damage": {
-            "base": [5,10,15],
+            "base": [8,12,16],
             "amp": 5
         },
         "max_stack": 5,

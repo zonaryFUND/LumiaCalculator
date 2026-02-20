@@ -9,17 +9,18 @@ type Props = {
     label: string
     value: StateProps<number>
     max: number
+    descrpitedMaxValue?: number
     changeColorOnMax: boolean
 }
 
 const throttleSlider: React.FC<Props> = props => {
-    const [tempValue, setTempValue] = React.useState(100);
+    const [tempPercentage, setTempPercentage] = React.useState(100);
     const [,] = useDebounce(
         () => {
-            props.value[1](Math.round(props.max * tempValue / 100));
+            props.value[1](Math.round(props.max * tempPercentage / 100));
         },
         500,
-        [tempValue]
+        [tempPercentage]
     );
 
     const stopPropagation: React.TouchEventHandler<HTMLInputElement> = React.useCallback(e => {
@@ -27,34 +28,32 @@ const throttleSlider: React.FC<Props> = props => {
     }, [])
 
     const onChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(e => {
-        setTempValue(+e.currentTarget.value);
+        setTempPercentage(+e.currentTarget.value);
     }, []);
 
     const inputRef = React.useRef<HTMLInputElement>(null);
     const ulRef = React.useRef<HTMLUListElement>(null);
     React.useEffect(() => {
-        inputRef.current?.style.setProperty("--value", `${tempValue}%`);
+        inputRef.current?.style.setProperty("--value", `${tempPercentage}%`);
         if (props.style == "gauge") {
             inputRef.current?.style.setProperty(
                 "--color", 
-                props.changeColorOnMax && tempValue == props.max ? "red" : 
-                tempValue >= (props.threshold ?? 0) ? "yellow" : 
+                props.changeColorOnMax && tempPercentage == props.max ? "red" : 
+                tempPercentage >= (props.threshold ?? 0) ? "yellow" : 
                 "white"
             );
         } else if (props.style == "hp") {
-            const ulWidth = Math.floor(props.max / 100) * 10000 / props.max;
             inputRef.current?.style.setProperty("--color", "yellowgreen");
-            ulRef.current?.style.setProperty("width", `calc(${ulWidth}%`);
         }
-    }, [tempValue])
+    }, [tempPercentage])
 
     return (
         <div className={style.slider}>
-            <h4>{props.label} <span>{Math.round(props.max * tempValue / 100)}</span></h4>
+            <h4>{props.label} <span>{Math.round(props.max * tempPercentage / 100 * (props.descrpitedMaxValue ?? 100) / 100)}</span></h4>
             <label className={style[props.style]}>
                 <input 
                     type="range" 
-                    value={tempValue} 
+                    value={tempPercentage} 
                     step={1} 
                     max={100} 
                     onTouchMove={stopPropagation}
@@ -63,7 +62,7 @@ const throttleSlider: React.FC<Props> = props => {
                 />
                 <ul ref={ulRef}>
                     {
-                        props.style == "hp" ? [...Array(Math.floor(props.max / 100) + 1)].map((_, i) => <li key={i} />) :
+                        props.style == "hp" ? [...Array(Math.floor(props.descrpitedMaxValue! / 100) + 1)].map((_, i) => <li key={i} />) :
                         props.style == "stack" ? [...Array(11)].map((_, i) => <li key={i} />) :
                         [...Array(11)].map((_, i) => <li key={i} className={i == (props.threshold ?? 0) / 10 ? style.threshold : undefined} />)
                     }

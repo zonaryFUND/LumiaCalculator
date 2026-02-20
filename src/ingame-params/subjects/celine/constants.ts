@@ -3,10 +3,10 @@ export default {
         // 起爆時爆弾1つあたりダメージ
         "damage": {
             "base": [80,105,130,155,180],
-            "amp": 40
+            "amp": 42
         },
         // 複数個の爆弾ヒット時の2個目以降のダメージ減少（％）
-        "multiple_bomb_damage_multiplier": 60,
+        "multiple_bomb_damage_multiplier": 75,
         // 最大爆弾設置数
         "max_bomb": 4,
         "charge": {
@@ -41,7 +41,7 @@ export default {
         "cooldown_increase": 1.25,
         // 融合爆弾1レベルあたりダメージ
         "damage": {
-            "base": [50,70,90,110,130],
+            "base": [60,80,100,120,140],
             "amp": 36
         },
         // 4レベル融合爆弾爆発的中時移動速度減少

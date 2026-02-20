@@ -19,8 +19,8 @@ export default {
         },
         // 強化時自己回復
         "heal": {
-            "base": [40,60,80,100,120],
-            "attack": 50
+            "base": [40,65,90,115,140],
+            "attack": 60
         },
         // 最大スタック保持中の命中時Eクールダウン減少（％）
         "e_cooldown_reduction": 50,
@@ -52,7 +52,7 @@ export default {
             "effect": [4,5,6,7,8]
         },
         // 敵に向かって移動するときの移動速度増加
-        "additional_movement_speed": [4,5,6,7,8],
+        "additional_movement_speed": [2,3,4,5,6],
         "damage": {
             "base": [40,60,80,100,120],
             "additionalAttack": 55
@@ -91,12 +91,12 @@ export default {
             "movement_speed": 50,
             // 追加ダメージ
             "additional_damage": {
-                "targetMaxHP": 5
+                "targetMaxHP": 6
             },
             // 敵に攻撃された時の1スタックあたり移動速度減少
             "movement_speed_penalty": {
                 "duration": 4,
-                "effect": 10
+                "effect": 8
             },
             // 移動速度減少最大スタック数
             "penalty_max_stack": 10,
