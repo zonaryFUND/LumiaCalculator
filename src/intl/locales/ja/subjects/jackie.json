@@ -7,6 +7,7 @@
     "subject.jackie.r-min": "R最小値",
     "subject.jackie.r-min-heal": "R最小値自己回復",
     "subject.jackie.r-max": "R最大値",
+    "subject.jackie.r-max-heal": "R最大値自己回復",
     "subject.jackie.passive-dot-sum": "T出血1スタックダメージ合計",
     "subject.jackie.passive-dot-sum-max": "T出血最大スタック({value})ダメージ合計",
     "subject.jackie.passive-additional": "Tアドレナリン状態追加ダメージ",
