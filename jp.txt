@@ -1060,7 +1060,7 @@ Emotion_S7_EsportsPack_2530┃S7 Gyeongnam Sparkle エモート
 Emotion_S7_EsportsPack_2531┃S7 GJ Slasher エモート
 Emotion_S7_EsportsPack_2532┃S7 New Rise Gangwon エモート
 Emotion_S7_EsportsPack_2533┃S7 Busan BeSPA エモート
-Emotion_S7_EsportsPack_2534┃S7 CNJ esports エモート
+Emotion_S7_EsportsPack_2534┃S7 Chungnam CNJ エモート
 Emotion_S7_EsportsPack_2535┃S7 all ways INCHEON エモート
 Emotion_S7_EsportsPack_2536┃S7 Jecheon Phalanx エモート
 Emotion_S7_EsportsPack_2537┃S7 Daegu Suseong Guardians エモート
@@ -1122,7 +1122,7 @@ Emotion_S8_EsportsPack_2540┃S8 Jecheon Phalanx エモート
 Emotion_S8_EsportsPack_2541┃S8 New Rise Gangwon エモート
 Emotion_S8_EsportsPack_2542┃S8 all ways INCHEON エモート
 Emotion_S8_EsportsPack_2543┃S8 Busan BeSPA エモート
-Emotion_S8_EsportsPack_2544┃S8 CNJ esports エモート
+Emotion_S8_EsportsPack_2544┃S8 Chungnam CNJ エモート
 Emotion_S8_EsportsPack_2545┃S8 Gyeongnam Sparkle エモート
 Emotion_S8_EsportsPack_2546┃S8 Daegu Suseong Guardians エモート
 Emotion_S8_EsportsPack_2547┃S8 GJ Slasher エモート
@@ -1180,7 +1180,7 @@ Emotion_S9_EsportsPack_2552┃S9 Ascenders エモート
 Emotion_S9_EsportsPack_2553┃S9 New Rise Gangwon エモート
 Emotion_S9_EsportsPack_2554┃S9 all ways INCHEON エモート
 Emotion_S9_EsportsPack_2555┃S9 Busan BeSPA エモート
-Emotion_S9_EsportsPack_2556┃S9 CNJ esports エモート
+Emotion_S9_EsportsPack_2556┃S9 Chungnam CNJ エモート
 Emotion_S9_EsportsPack_2557┃S9 Gyeongnam Sparkle エモート
 Emotion_S9_EsportsPack_2558┃S9 Daegu Suseong Guardians エモート
 Emotion_S9_EsportsPack_2559┃S9 GJ Slasher エモート
@@ -1255,6 +1255,12 @@ Emotion_Nicky05_NP┃よっ！ ニッキー
 Emotion_Nicky06_NP┃やるじゃん！ ニッキー
 Emotion_Nicky07_NP┃待て待て...！ ニッキー
 Emotion_Nicky08_NP┃嘘だろ...！ ニッキー
+Emotion_S10_Esports_Collection_2079008┃ヒーローバニー ユスティナ パクパク
+Emotion_EsportsPack_Haze_2058009┃エースバニー ヘイズ かかったな
+Emotion_Nathapon05_NP┃よろしく ナタポン
+Emotion_Nathapon06_NP┃スマイル ナタポン
+Emotion_Nathapon07_NP┃いいね ナタポン
+Emotion_Nathapon08_NP┃微妙... ナタポン
 Event_LeeChunhyang_3160┃chunhyang OMG
 Event_Ambition_3161┃ambition
 Event_Iro_3162┃IROCLOUD
@@ -1269,6 +1275,18 @@ Event_Waldokun_3170┃dokun sleep
 Event_LeeChohong_3171┃love chuchu
 Event_LumiaSoftCookie_3172┃ルミアチョコもちクッキー
 Event_LumiaHardCookie_3173┃ルミアカチカチおこし
+Emotion_S10_EsportsPack_2562┃S10 Gyeonggi Innate エモート
+Emotion_S10_EsportsPack_2563┃S10 GJ Slasher エモート
+Emotion_S10_EsportsPack_2564┃S10 Chungnam CNJ エモート
+Emotion_S10_EsportsPack_2565┃S10 FN SEJONG エモート
+Emotion_S10_EsportsPack_2566┃S10 New Rise Gangwon エモート
+Emotion_S10_EsportsPack_2567┃S10 Seongnam ROX エモート
+Emotion_S10_EsportsPack_2568┃S10 DAEJEON AutoArms エモート
+Emotion_S10_EsportsPack_2569┃S10 all ways INCHEON エモート
+Emotion_S10_EsportsPack_2570┃S10 Busan BeSPA エモート
+Emotion_S10_EsportsPack_2571┃S10 Ascenders エモート
+Emotion_S10_EsportsPack_2572┃S10 Gyeongnam Sparkle エモート
+Emotion_S10_EsportsPack_2573┃S10 Daegu Suseong Guardians エモート
 Emotion_S10_P5R_8014┃アレックス（ジョーカー） TAKE YOUR TIME
 Emotion_S10_P5R_8015┃シルヴィア（真） チラッ
 Emotion_S10_P5R_8010┃ラウラ（杏） 美味しい♪
@@ -1415,7 +1433,7 @@ AI 대전 플레이 가능┃<color=#FFB62F>AI対戦</color>が解除されま�
 스쿼드 대전 플레이 가능┃<color=#FFB62F>スクワッドモード</color>が解禁されました。
 유니온 대전 팀 생성 가능┃<color=#FFB62F>ユニオン対戦</color>のチームを登録できます。
 이벤트 대전 플레이 가능┃<color=#FFB62F>イベント対戦</color>が解禁されました！
-유니온 코발트 대전 팀 생성 가능┃<color=#FFB62F>コバルトユニオン対戦</color>チームを作成できます。
+유니온 코발트 대전 팀 생성 가능┃<color=#FFB62F>コバルト・ユニオン対戦</color>チームを登録できます。
 PurchaseWithdrawalType/Text/Asset7Days┃ご購入日から7日が経過または購入の際に支給されたNPとマイレージを一部使用した場合には払い戻しできません。
 PurchaseWithdrawalType/TEXT/Asset7Days_KAKAO┃商品の払い戻しは購入した日から7日以内の場合、可能となります。ただし、商品の提供が始まったり、使用された場合には払い戻しできません。\n法定代理人の同意を得ずに、未成年者名義での決済手段で決済を行った場合には決済がキャンセルされることがあります。
 PurchaseWithdrawalType/Text/Asset7Days_KAKAO┃商品の払い戻しは購入した日から7日以内の場合、可能となります。ただし、商品の提供が始まったり、使用された場合には払い戻しできません。\n法定代理人の同意を得ずに、未成年者名義での決済手段で決済を行った場合には決済がキャンセルされることがあります。
@@ -1690,7 +1708,7 @@ AI 대전 어려움 설명 문구┃[ハード]モードでAIたちと戦って�
 팀원 조건 불만족┃条件を満たしていないチーム員がいるため、選択できません。
 팀원 수 조건 불만족┃現在モードの人数を超えているため、選択できません。
 현재 선택 모드 알림┃すでに選択したモードです。変更できません。
-현재 선택 모드┃現在選択可能モード
+현재 선택 모드┃現在選択したモード
 매칭 가능 시간┃マッチング可能時間
 오픈 예정 알림┃準備中
 랭크 제재 처리┃ランク対戦制裁措置
@@ -2601,7 +2619,6 @@ Vivox점검팝업┃ボイスチャットに問題があり、現在ご利用い
 전장규칙안내HUD 전장보상 수령 완료 팀원┃チーム員受領
 아이템 분해┃分解
 아이템 분해 팝업┃分解時獲得
-제한시간 내에 보상 아이템을 선택하세요.┃制限時間内に受け取る戦利品を選択してください。
 전장 키트┃戦場キット
 전장 키트 설명┃戦場キットを保有している実験体が戦場に進入すると、「戦場急速再生」効果と「戦場マーク」の効果が与えられます。\n戦場で勝利したチームの場合、戦場キットがなくなります。
 AreaAttributes/GroupName/1┃戦場 - 加速
@@ -3140,13 +3157,13 @@ WickelineUI_ReadyTooltip┃ウィクラインが活動中です。
 전장예정┃1分後、{0}に戦場が活性化されます。
 전장생성노티┃戦場開始
 전장생성┃{0}に戦場が活性化されます。
-자색안개예정노티┃霧のエリア生成 30秒前
+자색안개예정노티┃30秒後、霧のエリア生成
 자색안개예정┃30秒後、{0}に霧のエリアが生成されます。
 자색안개생성노티┃霧のエリア生成
 자색안개생성┃{0}を中心に、霧のエリアが生成されます。
-자색안개소멸예고노티┃10秒後、霧の領域消滅
-자색안개소멸예고┃10秒後、霧の領域が非活性になります。
-자색안개소멸┃霧の領域が非活性化します。
+자색안개소멸예고노티┃10秒後、霧のエリア消滅
+자색안개소멸예고┃10秒後、霧のエリアが消滅します。
+자색안개소멸┃霧のエリアが消滅します。
 크루즈가동노티┃脱出用潜水艦起動1分前
 플레어건사용노티┃フレアガン発射！
 플레어건R기능┃誰かが神話補給地点に設定されました。
@@ -3638,6 +3655,7 @@ CBT스케줄링크┃https://www.playeternalreturn.com/schedule/jp.html
 크레딧 소비 초월장비 구매┃神話装備購入
 크레딧 소비 인퓨전 리롤┃インフュージョンリロール
 기타 항목 표기┃その他
+viewAndReconnaissance┃視界と偵察
 감시카메라 설치 수┃監視カメラ設置数
 원격카메라 설치 수┃望遠カメラ設置数
 감시카메라 제거 수┃監視カメラ破壊数
@@ -3645,6 +3663,8 @@ CBT스케줄링크┃https://www.playeternalreturn.com/schedule/jp.html
 하이퍼루프 사용 횟수┃ハイパループ使用回数
 디플로잉루프 사용 횟수┃ディプロイングループ使用回数
 보안 콘솔 사용 횟수┃保安コンソール使用回数
+reconOrbUseCount┃ORB - 監視使用回数
+reconOrbDestroyCount┃ORB - 監視破壊回数
 추후 제공 예정입니다┃コバルトの統計は後日提供されます。
 WeaponMasteryStatistic┃武器
 생존자에게 받은 피해 총량┃生存者から受けたダメージ総量
@@ -3737,6 +3757,7 @@ Inventory/voice/sub/고급주택가┃高級住宅街
 LV20┃Level 20
 성장치┃成長値
 캐릭터 스킬┃スキル
+요약┃簡易表示
 무기타입 선택┃武器タイプ選択
 보유 캐릭터만 보기┃所持キャラクター
 난이도┃難易度
@@ -4261,7 +4282,6 @@ SkillCostPing/Vf┃バイタルフォース
 SkillCostPing/GadgetEnergy┃ガジェットエネルギー
 장착중┃装備中
 경로 확인┃ルート (P)
-상단에서 목표 아이템을 선택하세요.┃上段から目標アイテムを選択してください。
 현재 지역┃現在の地域
 제작 목표┃製作目標
 ※ 제작창에서 제작가이드를 추가 할 수 있습니다.┃アイテム製作ウィンドウから目標アイテムを追加できます。
@@ -5552,11 +5572,14 @@ RecommendImpossibleTeamLobbyFull┃チームが満員です。
 팀원 찾기 시간 초과로 실패┃マッチングできるチーム員がいません。しばらくしてからもう一度実行してください。
 TeamLobby/CharacterPool/Notice┃一部実験体は使用できないモードです。
 TeamLobby/CharacterPool/PopupBtn┃実験体確認
+TeamLobby/CharacterPool/AdvanceNotice┃まもなく一部実験体の使用が制限されます。
 모드 캐릭터 수 제한┃モードをプレイするために必要な実験体の数が足りません。
 CharacterPoolPopup/Title┃モード実験体設定
 CharacterPoolPopup/Category/PoolCharacter┃使用可能実験体
 CharacterPoolPopup/Category/MostPlayed┃よく使う実験体
 CharacterPoolPopup/NoMatch┃一致する実験体がいません。
+CharacterPoolPopup/RemainingStartAndProgressTime┃開始まで：残り{0}({1}間)
+CharacterPoolPopup/RemainingTime┃終了まで：残り{0}
 Friends/Category/NoInput┃グループ名は最小1文字でなければなりません。
 Friends/Category/Over20Letter┃グループ名は最大20文字でなければなりません。
 Friends/Category/DuplicateName┃同じ名のグループが既に存在します。
@@ -6307,7 +6330,7 @@ GPP 계정 연동 성공┃KRAFTON IDの連携に成功しました。
 크리에이터 코드 입력┃クリエイターコード入力
 크리에이터 코드를 입력하세요.┃クリエイターコードを入力してください。
 최근에 입력한 코드┃最近入力したコード :
-후원 코드┃ 
+후원 코드┃サポート中のクリエイターコード : {0}
 ShopPromotionPopup_BonusReward_desc┃「P5Rコラボ スキン購読パック」または「P5R コラボスキンパッケージ」3種を購入すると獲得できます。
 ShopPromotionPopup_Persona_Desc┃※ 「P5Rコラボ スキン購読パック」または「P5R コラボスキンパッケージ」3種を購入すると、P5Rコラボスペシャルアイテムを獲得できます。\n※ P5Rコラボ スキン購読パックの商品は、順次発売予定です。発売日程を必ずご確認ください。\n※ P5R コラボスキンパッケージを個別で購入した後にはP5Rコラボ スキン購読パックを購入できません。ご注意ください。\n※ パッケージに含まれる商品については告知をご確認ください。商品内容は都合によって変更される場合があります。
 ShopPromotionPopup_Dday_Over24┃D - {0}
@@ -6316,6 +6339,7 @@ ShopPromotion_LimitCategoryWarn┃スキン購読パックをご購入いただ�
 3118010_Title┃購読パック スペシャルアイテム
 3118010_Desc┃[トークン] P5R コラボトークン 50個\n[ドローン] P5R アリババ\n[墓石] P5R 運命の囚人\n[カメラ] P5R 喜怒哀楽\n[ロビー画面] P5R コラボスペシャルロビー画面\n[ENDGAME BGM] P5R Life Will Change\n[Boost] A-Coin Boost(7日)
 스킨 패키지┃スキンパッケージ
+아이템을 선택하세요┃アイテムを選択してください。
 ItemType/EMBLEM_MARK/Name┃プロフィールアイコン
 EMBLEM_MARK_FREE1┃Aglaiaアイコン
 EMBLEM_MARK_SHOP_102002┃ヒョヌアイコン
@@ -6398,7 +6422,7 @@ EMBLEM_MARK_SHOP_102530┃S7 Gyeongnam Sparkle アイコン
 EMBLEM_MARK_SHOP_102531┃S7 GJ Slasher アイコン
 EMBLEM_MARK_SHOP_102532┃S7 New Rise Gangwon アイコン
 EMBLEM_MARK_SHOP_102533┃S7 Busan BeSPA アイコン
-EMBLEM_MARK_SHOP_102534┃S7 CNJ esports アイコン
+EMBLEM_MARK_SHOP_102534┃S7 Chungnam CNJ アイコン
 EMBLEM_MARK_SHOP_102535┃S7 all ways INCHEON アイコン
 EMBLEM_MARK_SHOP_102536┃S7 Jecheon Phalanx アイコン
 EMBLEM_MARK_SHOP_102537┃S7 Daegu Suseong Guardians アイコン
@@ -6408,7 +6432,7 @@ EMBLEM_MARK_SHOP_102540┃S8 Jecheon Phalanx アイコン
 EMBLEM_MARK_SHOP_102541┃S8 New Rise Gangwon アイコン
 EMBLEM_MARK_SHOP_102542┃S8 all ways INCHEON アイコン
 EMBLEM_MARK_SHOP_102543┃S8 Busan BeSPA アイコン
-EMBLEM_MARK_SHOP_102544┃S8 CNJ esports アイコン
+EMBLEM_MARK_SHOP_102544┃S8 Chungnam CNJ アイコン
 EMBLEM_MARK_SHOP_102545┃S8 Gyeongnam Sparkle アイコン
 EMBLEM_MARK_SHOP_102546┃S8 Daegu Suseong Guardians アイコン
 EMBLEM_MARK_SHOP_102547┃S8 GJ Slasher アイコン
@@ -6420,12 +6444,24 @@ EMBLEM_MARK_SHOP_102552┃S9 Ascenders アイコン
 EMBLEM_MARK_SHOP_102553┃S9 New Rise Gangwon アイコン
 EMBLEM_MARK_SHOP_102554┃S9 all ways INCHEON アイコン
 EMBLEM_MARK_SHOP_102555┃S9 Busan BeSPA アイコン
-EMBLEM_MARK_SHOP_102556┃S9 CNJ esports アイコン
+EMBLEM_MARK_SHOP_102556┃S9 Chungnam CNJ アイコン
 EMBLEM_MARK_SHOP_102557┃S9 Gyeongnam Sparkle アイコン
 EMBLEM_MARK_SHOP_102558┃S9 Daegu Suseong Guardians アイコン
 EMBLEM_MARK_SHOP_102559┃S9 GJ Slasher アイコン
 EMBLEM_MARK_SHOP_102560┃S9 Gyeonggi Innate アイコン
 EMBLEM_MARK_SHOP_102561┃S9 DAEJEON AutoArms アイコン
+EMBLEM_MARK_SHOP_102562┃S10 Gyeonggi Innate アイコン
+EMBLEM_MARK_SHOP_102563┃S10 GJ Slasher アイコン
+EMBLEM_MARK_SHOP_102564┃S10 Chungnam CNJ アイコン
+EMBLEM_MARK_SHOP_102565┃S10 FN SEJONG アイコン
+EMBLEM_MARK_SHOP_102566┃S10 New Rise Gangwon アイコン
+EMBLEM_MARK_SHOP_102567┃S10 Seongnam ROX アイコン
+EMBLEM_MARK_SHOP_102568┃S10 DAEJEON AutoArms アイコン
+EMBLEM_MARK_SHOP_102569┃S10 all ways INCHEON アイコン
+EMBLEM_MARK_SHOP_102570┃S10 Busan BeSPA アイコン
+EMBLEM_MARK_SHOP_102571┃S10 Ascenders アイコン
+EMBLEM_MARK_SHOP_102572┃S10 Gyeongnam Sparkle アイコン
+EMBLEM_MARK_SHOP_102573┃S10 Daegu Suseong Guardians アイコン
 EMBLEM_MARK_S3_IRON_SOLO┃シーズン3アイアン(ソロ)アイコン
 EMBLEM_MARK_S3_IRON_DUO┃シーズン3アイアン(デュオ)アイコン
 EMBLEM_MARK_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)アイコン
@@ -6952,9 +6988,9 @@ EMBLEM_MARK_EVENT_103240┃エースバニー ヘイズ 1位 アイコン
 EMBLEM_MARK_EVENT_103241┃ヒーローバニー ユスティナ 1位！ アイコン
 EMBLEM_MARK_EVENT_103242┃2025 ESPORTS SUPPORTERS
 EMBLEM_MARK_EVENT_103243┃2025 LUMIA CAMPUS
-EMBLEM_MARK_EVENT_103244┃シーズン10 eスポーツコミュニティ
-EMBLEM_MARK_EVENT_103245┃シーズン10 eスポーツ参加者
-EMBLEM_MARK_EVENT_103246┃シーズン10 eスポーツ優勝者
+EMBLEM_MARK_EVENT_103244┃S10 eスポーツコミュニティ
+EMBLEM_MARK_EVENT_103245┃S10 eスポーツ参加者
+EMBLEM_MARK_EVENT_103246┃S10 eスポーツ優勝者
 EMBLEM_MARK_EVENT_103247┃@#!! フェンリル
 EMBLEM_MARK_EVENT_103248┃ルミアチョコもちクッキー
 EMBLEM_MARK_EVENT_103249┃ルミアカチカチおこし
@@ -7108,6 +7144,7 @@ EMBLEM_MARK_COLLECTION_119503┃S6 eスポーツサポーター
 EMBLEM_MARK_COLLECTION_119504┃S7 eスポーツサポーター
 EMBLEM_MARK_COLLECTION_119505┃S8 eスポーツサポーター
 EMBLEM_MARK_COLLECTION_119506┃S9 eスポーツサポーター
+EMBLEM_MARK_COLLECTION_119507┃S10 eスポーツサポーター
 ItemType/EMBLEM_BG/Name┃プロフィール背景
 EMBLEM_BG_FREE1┃基本背景
 EMBLEM_BG_SHOP_202001┃ヒョヌ背景
@@ -7191,7 +7228,7 @@ EMBLEM_BG_SHOP_202530┃S7 Gyeongnam Sparkle 背景
 EMBLEM_BG_SHOP_202531┃S7 GJ Slasher 背景
 EMBLEM_BG_SHOP_202532┃S7 New Rise Gangwon 背景
 EMBLEM_BG_SHOP_202533┃S7 Busan BeSPA 背景
-EMBLEM_BG_SHOP_202534┃S7 CNJ esports 背景
+EMBLEM_BG_SHOP_202534┃S7 Chungnam CNJ 背景
 EMBLEM_BG_SHOP_202535┃S7 all ways INCHEON 背景
 EMBLEM_BG_SHOP_202536┃S7 Jecheon Phalanx 背景
 EMBLEM_BG_SHOP_202537┃S7 Daegu Suseong Guardians 背景
@@ -7201,7 +7238,7 @@ EMBLEM_BG_SHOP_202540┃S8 Jecheon Phalanx 背景
 EMBLEM_BG_SHOP_202541┃S8 New Rise Gangwon 背景
 EMBLEM_BG_SHOP_202542┃S8 all ways INCHEON 背景
 EMBLEM_BG_SHOP_202543┃S8 Busan BeSPA 背景
-EMBLEM_BG_SHOP_202544┃S8 CNJ esports 背景
+EMBLEM_BG_SHOP_202544┃S8 Chungnam CNJ 背景
 EMBLEM_BG_SHOP_202545┃S8 Gyeongnam Sparkle 背景
 EMBLEM_BG_SHOP_202546┃S8 Daegu Suseong Guardians 背景
 EMBLEM_BG_SHOP_202547┃S8 GJ Slasher 背景
@@ -7213,13 +7250,25 @@ EMBLEM_BG_SHOP_202552┃S9 Ascenders 背景
 EMBLEM_BG_SHOP_202553┃S9 New Rise Gangwon 背景
 EMBLEM_BG_SHOP_202554┃S9 all ways INCHEON 背景
 EMBLEM_BG_SHOP_202555┃S9 Busan BeSPA 背景
-EMBLEM_BG_SHOP_202556┃S9 CNJ esports 背景
+EMBLEM_BG_SHOP_202556┃S9 Chungnam CNJ 背景
 EMBLEM_BG_SHOP_202557┃S9 Gyeongnam Sparkle 背景
 EMBLEM_BG_SHOP_202558┃S9 Daegu Suseong Guardians 背景
 EMBLEM_BG_SHOP_202559┃S9 GJ Slasher 背景
 EMBLEM_BG_SHOP_202560┃S9 Gyeonggi Innate 背景
 EMBLEM_BG_SHOP_202561┃S9 DAEJEON AutoArms 背景
 EMBLEM_BG_SHOP_202562┃冬のプレゼント 背景
+EMBLEM_BG_SHOP_202563┃S10 Gyeonggi Innate 背景
+EMBLEM_BG_SHOP_202564┃S10 GJ Slasher 背景
+EMBLEM_BG_SHOP_202565┃S10 Chungnam CNJ 背景
+EMBLEM_BG_SHOP_202566┃S10 FN SEJONG 背景
+EMBLEM_BG_SHOP_202567┃S10 New Rise Gangwon 背景
+EMBLEM_BG_SHOP_202568┃S10 Seongnam ROX 背景
+EMBLEM_BG_SHOP_202569┃S10 DAEJEON AutoArms 背景
+EMBLEM_BG_SHOP_202570┃S10 all ways INCHEON 背景
+EMBLEM_BG_SHOP_202571┃S10 Busan BeSPA 背景
+EMBLEM_BG_SHOP_202572┃S10 Ascenders 背景
+EMBLEM_BG_SHOP_202573┃S10 Gyeongnam Sparkle 背景
+EMBLEM_BG_SHOP_202574┃S10 Daegu Suseong Guardians 背景
 EMBLEM_BG_S3_IRON_SOLO┃シーズン3アイアン(ソロ)背景
 EMBLEM_BG_S3_IRON_DUO┃シーズン3アイアン(デュオ)背景
 EMBLEM_BG_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)背景
@@ -7670,7 +7719,7 @@ EMBLEM_OUTLINE_SHOP_302530┃S7 Gyeongnam Sparkle フレーム
 EMBLEM_OUTLINE_SHOP_302531┃S7 GJ Slasher フレーム
 EMBLEM_OUTLINE_SHOP_302532┃S7 New Rise Gangwon フレーム
 EMBLEM_OUTLINE_SHOP_302533┃S7 Busan BeSPA フレーム
-EMBLEM_OUTLINE_SHOP_302534┃S7 CNJ esports フレーム
+EMBLEM_OUTLINE_SHOP_302534┃S7 Chungnam CNJ フレーム
 EMBLEM_OUTLINE_SHOP_302535┃S7 all ways INCHEON フレーム
 EMBLEM_OUTLINE_SHOP_302536┃S7 Jecheon Phalanx フレーム
 EMBLEM_OUTLINE_SHOP_302537┃S7 Daegu Suseong Guardians フレーム
@@ -7680,7 +7729,7 @@ EMBLEM_OUTLINE_SHOP_302540┃S8 Jecheon Phalanx フレーム
 EMBLEM_OUTLINE_SHOP_302541┃S8 New Rise Gangwon フレーム
 EMBLEM_OUTLINE_SHOP_302542┃S8 all ways INCHEON フレーム
 EMBLEM_OUTLINE_SHOP_302543┃S8 Busan BeSPA フレーム
-EMBLEM_OUTLINE_SHOP_302544┃S8 CNJ esports フレーム
+EMBLEM_OUTLINE_SHOP_302544┃S8 Chungnam CNJ フレーム
 EMBLEM_OUTLINE_SHOP_302545┃S8 Gyeongnam Sparkle フレーム
 EMBLEM_OUTLINE_SHOP_302546┃S8 Daegu Suseong Guardians フレーム
 EMBLEM_OUTLINE_SHOP_302547┃S8 GJ Slasher フレーム
@@ -7692,13 +7741,25 @@ EMBLEM_OUTLINE_SHOP_302552┃S9 Ascenders フレーム
 EMBLEM_OUTLINE_SHOP_302553┃S9 New Rise Gangwon フレーム
 EMBLEM_OUTLINE_SHOP_302554┃S9 all ways INCHEON フレーム
 EMBLEM_OUTLINE_SHOP_302555┃S9 Busan BeSPA フレーム
-EMBLEM_OUTLINE_SHOP_302556┃S9 CNJ esports フレーム
+EMBLEM_OUTLINE_SHOP_302556┃S9 Chungnam CNJ フレーム
 EMBLEM_OUTLINE_SHOP_302557┃S9 Gyeongnam Sparkle フレーム
 EMBLEM_OUTLINE_SHOP_302558┃S9 Daegu Suseong Guardians フレーム
 EMBLEM_OUTLINE_SHOP_302559┃S9 GJ Slasher フレーム
 EMBLEM_OUTLINE_SHOP_302560┃S9 Gyeonggi Innate フレーム
 EMBLEM_OUTLINE_SHOP_302561┃S9 DAEJEON AutoArms フレーム
 EMBLEM_OUTLINE_SHOP_302562┃冬のプレゼント フレーム
+EMBLEM_OUTLINE_SHOP_302563┃S10 Gyeonggi Innate フレーム
+EMBLEM_OUTLINE_SHOP_302564┃S10 GJ Slasher フレーム
+EMBLEM_OUTLINE_SHOP_302565┃S10 Chungnam CNJ フレーム
+EMBLEM_OUTLINE_SHOP_302566┃S10 FN SEJONG フレーム
+EMBLEM_OUTLINE_SHOP_302567┃S10 New Rise Gangwon フレーム
+EMBLEM_OUTLINE_SHOP_302568┃S10 Seongnam ROX フレーム
+EMBLEM_OUTLINE_SHOP_302569┃S10 DAEJEON AutoArms フレーム
+EMBLEM_OUTLINE_SHOP_302570┃S10 all ways INCHEON フレーム
+EMBLEM_OUTLINE_SHOP_302571┃S10 Busan BeSPA フレーム
+EMBLEM_OUTLINE_SHOP_302572┃S10 Ascenders フレーム
+EMBLEM_OUTLINE_SHOP_302573┃S10 Gyeongnam Sparkle フレーム
+EMBLEM_OUTLINE_SHOP_302574┃S10 Daegu Suseong Guardians フレーム
 EMBLEM_OUTLINE_S3_IRON_SOLO┃シーズン3アイアン(ソロ)フレーム
 EMBLEM_OUTLINE_S3_IRON_DUO┃シーズン3アイアン(デュオ)フレーム
 EMBLEM_OUTLINE_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)フレーム
@@ -8118,7 +8179,7 @@ ItemType/BOOSTER_ACOIN_2X/Name┃A-Coin Boost
 ItemType/BOOSTER_XP_2X/Name┃XP Boost
 ItemType/BOOSTER_ERPoint_2X/Name┃ER Point Boost
 ItemType/ASSET/Name┃財貨
-ItemType/BATTLE_PASS_POINT/Name┃ERポイント
+ItemType/BATTLE_PASS_POINT/Name┃ポイント
 ItemType/EXP/Name┃アカウント経験値
 ItemType/RANDOM_KEY/Desc┃すべてのボックスを開けられる権限を1回提供します。一度使ったデータキーは廃棄されます。
 ItemType/RANDOM_BOX/Desc┃アイテムまたはアイテムピースをランダムに獲得します。
@@ -8490,7 +8551,7 @@ Product/Name/S07_GyeongnamSparkle_Pack_01┃S7 Gyeongnam Sparkle パッケージ
 Product/Name/S07_GJSlasher_Pack_01┃S7 GJ Slasher パッケージ
 Product/Name/S07_NewRiseGangwon_Pack_01┃S7 New Rise Gangwon パッケージ
 Product/Name/S07_BusanBeSPA_Pack_01┃S7 Busan BeSPA パッケージ
-Product/Name/S07_CNJesports_Pack_01┃S7 CNJ esports パッケージ
+Product/Name/S07_CNJesports_Pack_01┃S7 Chungnam CNJ パッケージ
 Product/Name/S07_allwaysINCHEON_Pack_01┃S7 all ways INCHEON パッケージ
 Product/Name/S07_JecheonPhalanx_Pack_01┃S7 Jecheon Phalanx パッケージ
 Product/Name/S07_DaeguGuardians_Pack_01┃S7 Daegu Suseong Guardians パッケージ
@@ -8503,7 +8564,7 @@ Product/Name/WEGAME_IAP_S07_GyeongnamSparkle_Pack_01┃S7 Gyeongnam Sparkle パ�
 Product/Name/WEGAME_IAP_S07_GJSlasher_Pack_01┃S7 GJ Slasher パッケージ
 Product/Name/WEGAME_IAP_S07_NewRiseGangwon_Pack_01┃S7 New Rise Gangwon パッケージ
 Product/Name/WEGAME_IAP_S07_BusanBeSPA_Pack_01┃S7 Busan BeSPA パッケージ
-Product/Name/WEGAME_IAP_S07_CNJesports_Pack_01┃S7 CNJ esports パッケージ
+Product/Name/WEGAME_IAP_S07_CNJesports_Pack_01┃S7 Chungnam CNJ パッケージ
 Product/Name/WEGAME_IAP_S07_allwaysINCHEON_Pack_01┃S7 all ways INCHEON パッケージ
 Product/Name/WEGAME_IAP_S07_JecheonPhalanx_Pack_01┃S7 Jecheon Phalanx パッケージ
 Product/Name/WEGAME_IAP_S07_DaeguGuardians_Pack_01┃S7 Daegu Suseong Guardians パッケージ
@@ -8562,7 +8623,7 @@ Product/Name/S08_JecheonPhalanx_Pack_01┃S8 Jecheon Phalanx パッケージ
 Product/Name/S08_NewRiseGangwon_Pack_01┃S8 New Rise Gangwon パッケージ
 Product/Name/S08_allwaysINCHEON_Pack_01┃S8 all ways INCHEON パッケージ
 Product/Name/S08_BusanBeSPA_Pack_01┃S8 Busan BeSPA パッケージ
-Product/Name/S08_CNJesports_Pack_01┃S8 CNJ esports パッケージ
+Product/Name/S08_CNJesports_Pack_01┃S8 Chungnam CNJ パッケージ
 Product/Name/S08_GyeongnamSparkle_Pack_01┃S8 Gyeongnam Sparkle パッケージ
 Product/Name/S08_DaeguGuardians_Pack_01┃S8 Daegu Suseong Guardians パッケージ
 Product/Name/S08_GJSlasher_Pack_01┃S8 GJ Slasher パッケージ
@@ -8575,7 +8636,7 @@ Product/Name/WEGAME_IAP_S08_JecheonPhalanx_Pack_01┃S8 Jecheon Phalanx パッ�
 Product/Name/WEGAME_IAP_S08_NewRiseGangwon_Pack_01┃S8 New Rise Gangwon パッケージ
 Product/Name/WEGAME_IAP_S08_allwaysINCHEON_Pack_01┃S8 all ways INCHEON パッケージ
 Product/Name/WEGAME_IAP_S08_BusanBeSPA_Pack_01┃S8 Busan BeSPA パッケージ
-Product/Name/WEGAME_IAP_S08_CNJesports_Pack_01┃S8 CNJ esports パッケージ
+Product/Name/WEGAME_IAP_S08_CNJesports_Pack_01┃S8 Chungnam CNJ パッケージ
 Product/Name/WEGAME_IAP_S08_GyeongnamSparkle_Pack_01┃S8 Gyeongnam Sparkle パッケージ
 Product/Name/WEGAME_IAP_S08_DaeguGuardians_Pack_01┃S8 Daegu Suseong Guardians パッケージ
 Product/Name/WEGAME_IAP_S08_GJSlasher_Pack_01┃S8 GJ Slasher パッケージ
@@ -8595,6 +8656,7 @@ Product/Name/DROPS_COIN_ESports_Box_S3┃eSports Box (S3)
 Product/Name/DROPS_COIN_ESports_Box_S4┃eSports Box (S4)
 Product/Name/DROPS_COIN_ESports_Box_S5┃eSports Box (S5)
 Product/Name/DROPS_COIN_ESports_Box_S6┃eSports Box (S6)
+Product/Name/DROPS_COIN_ESports_Box_S7┃eSports Box (S7)
 Product/Name/DROPS_COIN_ESports_Box_2024_ESportsClub┃eSports Box (2024 同好会大会)
 Product/Name/S8_Autumn_Regular_Pack_01┃2025 落ち葉トークンパッケージ
 Product/Name/S8_Autumn_Big_Pack_01┃2025 落ち葉トークンスペシャルパッケージ
@@ -8618,7 +8680,7 @@ Product/Name/S09_JecheonPhalanx_Pack_01┃S9 Ascenders パッケージ
 Product/Name/S09_NewRiseGangwon_Pack_01┃S9 New Rise Gangwon パッケージ
 Product/Name/S09_allwaysINCHEON_Pack_01┃S9 all ways INCHEON パッケージ
 Product/Name/S09_BusanBeSPA_Pack_01┃S9 Busan BeSPA パッケージ
-Product/Name/S09_CNJesports_Pack_01┃S9 CNJ esports パッケージ
+Product/Name/S09_CNJesports_Pack_01┃S9 Chungnam CNJ パッケージ
 Product/Name/S09_GyeongnamSparkle_Pack_01┃S9 Gyeongnam Sparkle パッケージ
 Product/Name/S09_DaeguGuardians_Pack_01┃S9 Daegu Suseong Guardians パッケージ
 Product/Name/S09_GJSlasher_Pack_01┃S9 GJ Slasher パッケージ
@@ -8631,7 +8693,7 @@ Product/Name/WEGAME_IAP_S09_JecheonPhalanx_Pack_01┃S9 Ascenders パッケー�
 Product/Name/WEGAME_IAP_S09_NewRiseGangwon_Pack_01┃S9 New Rise Gangwon パッケージ
 Product/Name/WEGAME_IAP_S09_allwaysINCHEON_Pack_01┃S9 all ways INCHEON パッケージ
 Product/Name/WEGAME_IAP_S09_BusanBeSPA_Pack_01┃S9 Busan BeSPA パッケージ
-Product/Name/WEGAME_IAP_S09_CNJesports_Pack_01┃S9 CNJ esports パッケージ
+Product/Name/WEGAME_IAP_S09_CNJesports_Pack_01┃S9 Chungnam CNJ パッケージ
 Product/Name/WEGAME_IAP_S09_GyeongnamSparkle_Pack_01┃S9 Gyeongnam Sparkle パッケージ
 Product/Name/WEGAME_IAP_S09_DaeguGuardians_Pack_01┃S9 Daegu Suseong Guardians パッケージ
 Product/Name/WEGAME_IAP_S09_GJSlasher_Pack_01┃S9 GJ Slasher パッケージ
@@ -8664,6 +8726,33 @@ Product/Name/S10_Token_Boost_Pack_06┃ロイヤルトークンパッケージ�
 Product/Name/S10_Token_Boost_Pack_07┃ロイヤルトークンパッケージⅦ
 Product/Name/S10_Token_Boost_Pack_08┃ロイヤルトークンパッケージⅧ
 Product/Name/S10_Token_Boost_Pack_09┃ロイヤルトークンパッケージⅨ
+Product/Name/2026_S10_Esports_Pack_01┃S10 eスポーツサポートパッケージ
+Product/Name/S10_GyeonggiInnate_Pack_01┃S10 Gyeonggi Innate パッケージ
+Product/Name/S10_GJSlasher_Pack_01┃S10 GJ Slasher パッケージ
+Product/Name/S10_CNJesports_Pack_01┃S10 Chungnam CNJ パッケージ
+Product/Name/S10_FNSEJONG_Pack_01┃S10 FN SEJONG パッケージ
+Product/Name/S10_NewRiseGangwon_Pack_01┃S10 New Rise Gangwon パッケージ
+Product/Name/S10_SeongnamROX_Pack_01┃S10 Seongnam ROX パッケージ
+Product/Name/S10_DAEJEONAutoArms_Pack_01┃S10 DAEJEON AutoArms パッケージ
+Product/Name/S10_allwaysINCHEON_Pack_01┃S10 all ways INCHEON パッケージ
+Product/Name/S10_BusanBeSPA_Pack_01┃S10 Busan BeSPA パッケージ
+Product/Name/S10_JecheonPhalanx_Pack_01┃S10 Ascenders パッケージ
+Product/Name/S10_GyeongnamSparkle_Pack_01┃S10 Gyeongnam Sparkle パッケージ
+Product/Name/S10_DaeguGuardians_Pack_01┃S10 Daegu Suseong Guardians パッケージ
+Product/Name/WEGAME_IAP_2026_S10_Esports_Pack_01┃S10 eスポーツサポートパッケージ
+Product/Name/WEGAME_IAP_S10_GyeonggiInnate_Pack_01┃S10 Gyeonggi Innate パッケージ
+Product/Name/WEGAME_IAP_S10_GJSlasher_Pack_01┃S10 GJ Slasher パッケージ
+Product/Name/WEGAME_IAP_S10_CNJesports_Pack_01┃S10 Chungnam CNJ パッケージ
+Product/Name/WEGAME_IAP_S10_FNSEJONG_Pack_01┃S10 FN SEJONG パッケージ
+Product/Name/WEGAME_IAP_S10_NewRiseGangwon_Pack_01┃S10 New Rise Gangwon パッケージ
+Product/Name/WEGAME_IAP_S10_SeongnamROX_Pack_01┃S10 Seongnam ROX パッケージ
+Product/Name/WEGAME_IAP_S10_DAEJEONAutoArms_Pack_01┃S10 DAEJEON AutoArms パッケージ
+Product/Name/WEGAME_IAP_S10_allwaysINCHEON_Pack_01┃S10 all ways INCHEON パッケージ
+Product/Name/WEGAME_IAP_S10_BusanBeSPA_Pack_01┃S10 Busan BeSPA パッケージ
+Product/Name/WEGAME_IAP_S10_JecheonPhalanx_Pack_01┃S10 Ascenders パッケージ
+Product/Name/WEGAME_IAP_S10_GyeongnamSparkle_Pack_01┃S10 Gyeongnam Sparkle パッケージ
+Product/Name/WEGAME_IAP_S10_DaeguGuardians_Pack_01┃S10 Daegu Suseong Guardians パッケージ
+Product/Name/LOOTBOX_SKINxKEY_SET_10_S10_BONUS┃スキンデータセット(11個入り)
 Product/Name/S10_2026_Spring_Pack_01┃春の訪れパッケージ
 Product/Name/S10_2026_Spring_Daily_Pack_01┃春のデイリーボックス
 Shop/Desc/Aya_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
@@ -8927,7 +9016,7 @@ Shop/Desc/S07_GyeongnamSparkle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\
 Shop/Desc/S07_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 GJ Slasher エモート\n- S7 GJ Slasher アイコン\n- S7 GJ Slasher 背景\n- S7 GJ Slasher フレーム\n- S7 GJ Slasher チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S07_NewRiseGangwon_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 New Rise Gangwon エモート\n- S7 New Rise Gangwon アイコン\n- S7 New Rise Gangwon 背景\n- S7 New Rise Gangwon フレーム\n- S7 New Rise Gangwon チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 New Rise Gangwon パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S07_BusanBeSPA_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 Busan BeSPA エモート\n- S7 Busan BeSPA アイコン\n- S7 Busan BeSPA 背景\n- S7 Busan BeSPA フレーム\n- S7 Busan BeSPA チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n- S6 eスポーツサポーターコイン\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 Busan BeSPA パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S07_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 CNJ esports エモート\n- S7 CNJ esports アイコン\n- S7 CNJ esports 背景\n- S7 CNJ esports フレーム\n- S7 CNJ esports チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 CNJ esports パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S07_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 Chungnam CNJ エモート\n- S7 Chungnam CNJ アイコン\n- S7 Chungnam CNJ 背景\n- S7 Chungnam CNJ フレーム\n- S7 Chungnam CNJ チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S07_allwaysINCHEON_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 all ways INCHEON エモート\n- S7 all ways INCHEON アイコン\n- S7 all ways INCHEON 背景\n- S7 all ways INCHEON フレーム\n- S7 all ways INCHEON チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 all ways INCHEON パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S07_JecheonPhalanx_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 Jecheon Phalanx エモート\n- S7 Jecheon Phalanx アイコン\n- S7 Jecheon Phalanx 背景\n- S7 Jecheon Phalanx フレーム\n- S7 Jecheon Phalanx チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 Jecheon Phalanx パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S07_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S7 Daegu Suseong Guardians エモート\n- S7 Daegu Suseong Guardians アイコン\n- S7 Daegu Suseong Guardians 背景\n- S7 Daegu Suseong Guardians フレーム\n- S7 Daegu Suseong Guardians チームスロット背景\n- S7 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S7 Daegu Suseong Guardians パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -8962,7 +9051,7 @@ Shop/Desc/S08_JecheonPhalanx_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\
 Shop/Desc/S08_NewRiseGangwon_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 New Rise Gangwon エモート\n- S8 New Rise Gangwon アイコン\n- S8 New Rise Gangwon 背景\n- S8 New Rise Gangwon フレーム\n- S8 New Rise Gangwon チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 New Rise Gangwon パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S08_allwaysINCHEON_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 all ways INCHEON エモート\n- S8 all ways INCHEON アイコン\n- S8 all ways INCHEON 背景\n- S8 all ways INCHEON フレーム\n- S8 all ways INCHEON チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 all ways INCHEON パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S08_BusanBeSPA_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 Busan BeSPA エモート\n- S8 Busan BeSPA アイコン\n- S8 Busan BeSPA 背景\n- S8 Busan BeSPA フレーム\n- S8 Busan BeSPA チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 Busan BeSPA パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S08_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 CNJ esports エモート\n- S8 CNJ esports アイコン\n- S8 CNJ esports 背景\n- S8 CNJ esports フレーム\n- S8 CNJ esports チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 CNJ esports パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S08_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 Chungnam CNJ エモート\n- S8 Chungnam CNJ アイコン\n- S8 Chungnam CNJ 背景\n- S8 Chungnam CNJ フレーム\n- S8 Chungnam CNJ チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S08_GyeongnamSparkle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 Gyeongnam Sparkle エモート\n- S8 Gyeongnam Sparkle アイコン\n- S8 Gyeongnam Sparkle 背景\n- S8 Gyeongnam Sparkle フレーム\n- S8 Gyeongnam Sparkle チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 Gyeongnam Sparkle パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S08_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 Daegu Suseong Guardians エモート\n- S8 Daegu Suseong Guardians アイコン\n- S8 Daegu Suseong Guardians 背景\n- S8 Daegu Suseong Guardians フレーム\n- S8 Daegu Suseong Guardians チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 Daegu Suseong Guardians パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S08_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S8 GJ Slasher エモート\n- S8 GJ Slasher アイコン\n- S8 GJ Slasher 背景\n- S8 GJ Slasher フレーム\n- S8 GJ Slasher チームスロット背景\n- S8 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S8 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -8979,6 +9068,7 @@ Shop/Desc/DROPS_COIN_ESports_Box_S4┃<b><color=#FFBB00>[内容]</color></b>\n\n
 Shop/Desc/DROPS_COIN_ESports_Box_S5┃<b><color=#FFBB00>[内容]</color></b>\n\n- eSports Box (S5)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入と同時に使用される商品です。\n※ リストの中から一つをランダムに獲得できます。\n※ 出現するアイテムはアイテムリストで確認できます。
 Shop/Desc/DROPS_COIN_ESports_Box_2024_ESportsClub┃<b><color=#FFBB00>[内容]</color></b>\n\n- eSports Box (2024 同好会大会)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入と同時に使用される商品です。\n※ リストの中から一つをランダムに獲得できます。\n※ 出現するアイテムはアイテムリストで確認できます。
 Shop/Desc/DROPS_COIN_ESports_Box_S6┃<b><color=#FFBB00>[内容]</color></b>\n\n- eSports Box (S6)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入と同時に使用される商品です。\n※ リストの中から一つをランダムに獲得できます。\n※ 出現するアイテムはアイテムリストで確認できます。
+Shop/Desc/DROPS_COIN_ESports_Box_S7┃<b><color=#FFBB00>[内容]</color></b>\n\n- eSports Box (S7)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入と同時に使用される商品です。\n※ リストの中から一つをランダムに獲得できます。\n※ 出現するアイテムはアイテムリストで確認できます。
 Shop/Desc/DROPS_COIN_ESports_Box_2024_National┃<b><color=#FFBB00>[内容]</color></b>\n\n- eSports Box (2024 ナショナルリーグ)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入と同時に使用される商品です。\n※ リストの中から一つをランダムに獲得できます。\n※ 出現するアイテムはアイテムリストで確認できます。
 Shop/Desc/EVENT_NPASS_S8_LeniBear_1020┃<color=#E5D85C>レニベアクエストブック</color>が登場！\n<color=#B2EBF4>かわいいレニベアアイテムを獲得しましょう！\n商品を購入すると、達成したレベルの報酬を獲得できます。\n\n<size=18>[レベルポイント]</size>\nレベルを上げるためには、1レベルごとに100ポイントが必要です。 ミッションを達成したり、レベルポイントを購入してレベルを上げることができます。(1ポイントあたり2NP)\nレベルポイントはクエストブック購入後に購入できます。
 Shop/Desc/S8_Autumn_Regular_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 2025 落ち葉トークンボックス 3個\n- データキー 3個\n- XP Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9000,7 +9090,7 @@ Shop/Desc/S09_JecheonPhalanx_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\
 Shop/Desc/S09_NewRiseGangwon_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 New Rise Gangwon エモート\n- S9 New Rise Gangwon アイコン\n- S9 New Rise Gangwon 背景\n- S9 New Rise Gangwon フレーム\n- S9 New Rise Gangwon チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 New Rise Gangwon パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_allwaysINCHEON_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 all ways INCHEON エモート\n- S9 all ways INCHEON アイコン\n- S9 all ways INCHEON 背景\n- S9 all ways INCHEON フレーム\n- S9 all ways INCHEON チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 all ways INCHEON パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_BusanBeSPA_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Busan BeSPA エモート\n- S9 Busan BeSPA アイコン\n- S9 Busan BeSPA 背景\n- S9 Busan BeSPA フレーム\n- S9 Busan BeSPA チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Busan BeSPA パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S09_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 CNJ esports エモート\n- S9 CNJ esports アイコン\n- S9 CNJ esports 背景\n- S9 CNJ esports フレーム\n- S9 CNJ esports チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 CNJ esports パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S09_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Chungnam CNJ エモート\n- S9 Chungnam CNJ アイコン\n- S9 Chungnam CNJ 背景\n- S9 Chungnam CNJ フレーム\n- S9 Chungnam CNJ チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_GyeongnamSparkle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Gyeongnam Sparkle エモート\n- S9 Gyeongnam Sparkle アイコン\n- S9 Gyeongnam Sparkle 背景\n- S9 Gyeongnam Sparkle フレーム\n- S9 Gyeongnam Sparkle チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Gyeongnam Sparkle パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Daegu Suseong Guardians エモート\n- S9 Daegu Suseong Guardians アイコン\n- S9 Daegu Suseong Guardians 背景\n- S9 Daegu Suseong Guardians フレーム\n- S9 Daegu Suseong Guardians チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Daegu Suseong Guardians パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 GJ Slasher エモート\n- S9 GJ Slasher アイコン\n- S9 GJ Slasher 背景\n- S9 GJ Slasher フレーム\n- S9 GJ Slasher チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9036,10 +9126,23 @@ Shop/Desc/WEGAME_IAP_P5R_TokenBox_Pack_01┃<color=#FFFFFF>P5R コラボトー�
 Shop/Desc/WEGAME_IAP_P5R_TokenBox_Pack_02┃<color=#FFFFFF>P5R コラボトークン</color>を獲得できる「P5R コラボトークンボックス」が含まれたパッケージです。\nP5R コラボトークンは「製作所」 - 「交換所」 - 「P5R コラボトークン」から様々なコラボアイテムと交換できます。\n\n<b><color=#FFBB00>[内容]</color></b>\n- P5R コラボトークンボックス 5個\n- A-Coin Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n ※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ Steamの決済ポリシーや為替レートの影響により、ゲーム内の表示金額と実際の決済額が異なる場合があります。
 Shop/Desc/WEGAME_IAP_P5R_TokenBox_Pack_03┃<color=#FFFFFF>P5R コラボトークン</color>を獲得できる「P5R コラボトークンボックス」が含まれたパッケージです。\nP5R コラボトークンは「製作所」 - 「交換所」 - 「P5R コラボトークン」から様々なコラボアイテムと交換できます。\n\n<b><color=#FFBB00>[内容]</color></b>\n- P5R コラボトークンボックス 10個\n- A-Coin Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n ※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ Steamの決済ポリシーや為替レートの影響により、ゲーム内の表示金額と実際の決済額が異なる場合があります。
 Shop/Desc/WEGAME_IAP_P5R_TokenBox_Pack_04┃<color=#FFFFFF>P5R コラボトークン</color>を獲得できる「P5R コラボトークンボックス」が含まれたパッケージです。\nP5R コラボトークンは「製作所」 - 「交換所」 - 「P5R コラボトークン」から様々なコラボアイテムと交換できます。\n\n<b><color=#FFBB00>[内容]</color></b>\n- P5R コラボトークンボックス 50個\n- A-Coin Boost(7日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n ※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ Steamの決済ポリシーや為替レートの影響により、ゲーム内の表示金額と実際の決済額が異なる場合があります。
-Shop/Desc/P5R_Bundle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エレナ（ヴァイオレット）スキンパッケージ\n- カミロ（クロウ）アイコンスキンパッケージ\n- ラウラ（パンサー）スキンパッケージ\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ P5R コラボスキンパッケージは、発売後にゲームにログインすると、商品がメールボックスに支給されます。\n※ P5R コラボスキン購読パックを購入する場合、P5R コラボスキンパッケージ 3種は個別で購入できません。\n※ コラボ終了時点である4月16日00時(JST)以降にログインする場合、P5R コラボスキン購読パックを購入した状態でもスキンパッケージが支給されません。期間内に必ずお受け取りください。\n※ メールボックスの有効期間内に受領できなかった商品は、再支給できません。\n※ P5R コラボスキン購読パック購入後、購読パックのスペシャルアイテムを受領した場合、払い戻しできません。
+Shop/Desc/P5R_Bundle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エレナ（ヴァイオレット）スキンパッケージ\n- カミロ（クロウ）アイコンスキンパッケージ\n- ラウラ（パンサー）スキンパッケージ\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ P5R コラボスキンパッケージは、発売後にゲームにログインすると、商品がメールボックスに支給されます。\n※ P5R コラボスキン購読パックを購入する場合、P5R コラボスキンパッケージ 3種は個別で購入できません。\n※ コラボ終了時点である4月16日00時(JST)以降にログインする場合、P5R コラボスキン購読パックを購入した状態でもスキンパッケージが支給されません。期間内に必ずお受け取りください。\n※ 商品の受取可能期間は、受信日を基準として90日間となります。有効期限内に受領できなかった商品は、再支給できません。\n※ P5R コラボスキン購読パック購入後、購読パックのスペシャルアイテムを受領した場合、払い戻しできません。
 Shop/Desc/P5R_Elena_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エレナ（ヴァイオレット）スキン\n- エレナ（かすみ） おどおど エモート\n- エレナ（ヴァイオレット） X サンドリヨン アイコン\n- エレナ（ヴァイオレット）背景\n- エレナ（ヴァイオレット）フレーム\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/P5R_Camilo_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- カミロ（クロウ）スキン\n- カミロ（吾郎） HEY エモート\n- カミロ（クロウ） X ロビンフッド アイコン\n- カミロ（クロウ）背景\n- カミロ（クロウ）フレーム\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/P5R_Laura_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ラウラ（パンサー）スキン\n- ラウラ（杏） 美味しい♪ エモート\n- ラウラ（パンサー） X カルメン アイコン\n- ラウラ（パンサー）背景\n- ラウラ（パンサー）フレーム\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/2026_S10_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n-エースバニー ヘイズ かかったな エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S10 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S10 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
+Shop/Desc/S10_GyeonggiInnate_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Gyeonggi Innate エモート\n- S10 Gyeonggi Innate アイコン\n- S10 Gyeonggi Innate 背景\n- S10 Gyeonggi Innate フレーム\n- S10 Gyeonggi Innate チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Gyeonggi Innate パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 GJ Slasher エモート\n- S10 GJ Slasher アイコン\n- S10 GJ Slasher 背景\n- S10 GJ Slasher フレーム\n- S10 GJ Slasher チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Chungnam CNJ エモート\n- S10 Chungnam CNJ アイコン\n- S10 Chungnam CNJ 背景\n- S10 Chungnam CNJ フレーム\n- S10 Chungnam CNJ チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_FNSEJONG_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 FN SEJONG エモート\n- S10 FN SEJONG アイコン\n- S10 FN SEJONG 背景\n- S10 FN SEJONG フレーム\n- S10 FN SEJONG チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 FN SEJONG パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_NewRiseGangwon_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 New Rise Gangwon エモート\n- S10 New Rise Gangwon アイコン\n- S10 New Rise Gangwon 背景\n- S10 New Rise Gangwon フレーム\n- S10 New Rise Gangwon チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 New Rise Gangwon パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_SeongnamROX_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Seongnam ROX エモート\n- S10 Seongnam ROX アイコン\n- S10 Seongnam ROX 背景\n- S10 Seongnam ROX フレーム\n- S10 Seongnam ROX チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Seongnam ROX パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_DAEJEONAutoArms_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 DAEJEON AutoArms エモート\n- S10 DAEJEON AutoArms アイコン\n- S10 DAEJEON AutoArms 背景\n- S10 DAEJEON AutoArms フレーム\n- S10 DAEJEON AutoArms チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 DAEJEON AutoArms パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_allwaysINCHEON_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 all ways INCHEON エモート\n- S10 all ways INCHEON アイコン\n- S10 all ways INCHEON 背景\n- S10 all ways INCHEON フレーム\n- S10 all ways INCHEON チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 all ways INCHEON パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_BusanBeSPA_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Busan BeSPA エモート\n- S10 Busan BeSPA アイコン\n- S10 Busan BeSPA 背景\n- S10 Busan BeSPA フレーム\n- S10 Busan BeSPA チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Busan BeSPA パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_JecheonPhalanx_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Ascenders エモート\n- S10 Ascenders アイコン\n- S10 Ascenders 背景\n- S10 Ascenders フレーム\n- S10 Ascenders チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Ascenders パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_GyeongnamSparkle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Gyeongnam Sparkle エモート\n- S10 Gyeongnam Sparkle アイコン\n- S10 Gyeongnam Sparkle 背景\n- S10 Gyeongnam Sparkle フレーム\n- S10 Gyeongnam Sparkle チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Gyeongnam Sparkle パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Daegu Suseong Guardians エモート\n- S10 Daegu Suseong Guardians アイコン\n- S10 Daegu Suseong Guardians 背景\n- S10 Daegu Suseong Guardians フレーム\n- S10 Daegu Suseong Guardians チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Daegu Suseong Guardians パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Product/Name/SEASON_PASS_S5┃シーズン5パック
 Shop/Desc/SEASON_PASS_S5┃シーズン5にリリースされる商品をお得な価格で事前購入してみてください!
 Product/Name/SEASON_PASS_S6┃シーズン6パック
@@ -9573,6 +9676,8 @@ PickupEvent/Name/SEASON8_SKIN_BOX_PICKUP┃追加されたスキンボーナス�
 PickupEvent/Desc/SEASON8_SKIN_BOX_PICKUP┃スキンデータボックスに追加されたスキンが登場するボーナス確率が適用されています。
 PickupEvent/Name/SEASON9_SKIN_BOX_PICKUP┃追加されたスキンボーナス獲得確率適用中
 PickupEvent/Desc/SEASON9_SKIN_BOX_PICKUP┃スキンデータボックスに追加されたスキンが登場するボーナス確率が適用されています。
+PickupEvent/Name/SEASON10_SKIN_BOX_PICKUP┃追加されたスキンボーナス獲得確率適用中
+PickupEvent/Desc/SEASON10_SKIN_BOX_PICKUP┃スキンデータボックスに追加されたスキンが登場するボーナス確率が適用されています。
 Product/Name/S6_LuckyMarble2025_Legion_Token_01┃レギオントークン X10
 Product/Name/S6_LuckyMarble2025_ACoin_100┃A-Coin X 100
 PickupEvent/Name/Pickup_Emote_Voucher_251016┃エモート選別カード
@@ -9941,7 +10046,7 @@ GroupItemAttribute/GGSTTheNameOfHeaven┃The Name of Heaven
 GroupItemAttribute/P5RLifeWillChange┃Life Will Change
 GroupItemAttribute/P5RBeneathTheMask┃Beneath The Mask
 ItemType/LOOT_EXCHANGE_TICKET/Name┃製作所スキン交換券
-ItemType/LOOT_EXCHANGE_TICKET/Desc┃トークンの代わりに「交換所」の英雄等級スキンと交換できるアイテムです。\n製作所スキン交換券は購入時点から300日後に消滅します。\n「交換所」でスキンを交換する際、製作所スキン交換券が優先的に使用されます。\n製作所スキン交換券は今後シーズン交換所に追加されるスキンと交換できます。\nER PASSの英雄等級スキン(販売価格：400トークン)は交換所に追加されたシーズンが終了した次のシーズンから製作所スキン交換券で交換できます。
+ItemType/LOOT_EXCHANGE_TICKET/Desc┃トークンの代わりに「交換所」の英雄等級スキンと交換できるアイテムです。\n製作所スキン交換券は購入時点から300日後に消滅します。\n製作所スキン交換券は今後シーズン交換所に追加されるスキンと交換できます。\nコラボスキンやその他特殊なスキンは製作所スキン交換券で交換できません。
 ItemType/ANNOUNCE/Name┃中継アナウンス
 ItemType/ANNOUNCE/Desc┃中継音声を選択できます。
 Goods/Name/1401000┃ランダム
@@ -10450,6 +10555,7 @@ Goods/Name/2703012┃変数
 Goods/Name/2703013┃狩人の夜
 Goods/Name/2703014┃宝ゴブリン
 Goods/Name/2703015┃ゾンビ
+Goods/Name/2703017┃祈り
 Goods/Name/2704005┃ハンター
 Goods/Name/2704006┃サマー
 Goods/Name/2704007┃ネオン
@@ -10566,7 +10672,7 @@ Goods/Name/3402530┃S7 Gyeongnam Sparkle チームスロット背景
 Goods/Name/3402531┃S7 GJ Slasher チームスロット背景
 Goods/Name/3402532┃S7 New Rise Gangwon チームスロット背景
 Goods/Name/3402533┃S7 Busan BeSPA チームスロット背景
-Goods/Name/3402534┃S7 CNJ esports チームスロット背景
+Goods/Name/3402534┃S7 Chungnam CNJ チームスロット背景
 Goods/Name/3402535┃S7 all ways INCHEON チームスロット背景
 Goods/Name/3402536┃S7 Jecheon Phalanx チームスロット背景
 Goods/Name/3402537┃S7 Daegu Suseong Guardians チームスロット背景
@@ -10576,7 +10682,7 @@ Goods/Name/3402540┃S8 Jecheon Phalanx チームスロット背景
 Goods/Name/3402541┃S8 New Rise Gangwon チームスロット背景
 Goods/Name/3402542┃S8 all ways INCHEON チームスロット背景
 Goods/Name/3402543┃S8 Busan BeSPA チームスロット背景
-Goods/Name/3402544┃S8 CNJ esports チームスロット背景
+Goods/Name/3402544┃S8 Chungnam CNJ チームスロット背景
 Goods/Name/3402545┃S8 Gyeongnam Sparkle チームスロット背景
 Goods/Name/3402546┃S8 Daegu Suseong Guardians チームスロット背景
 Goods/Name/3402547┃S8 GJ Slasher チームスロット背景
@@ -10588,12 +10694,24 @@ Goods/Name/3402552┃S9 Ascenders チームスロット背景
 Goods/Name/3402553┃S9 New Rise Gangwon チームスロット背景
 Goods/Name/3402554┃S9 all ways INCHEON チームスロット背景
 Goods/Name/3402555┃S9 Busan BeSPA チームスロット背景
-Goods/Name/3402556┃S9 CNJ esports チームスロット背景
+Goods/Name/3402556┃S9 Chungnam CNJ チームスロット背景
 Goods/Name/3402557┃S9 Gyeongnam Sparkle チームスロット背景
 Goods/Name/3402558┃S9 Daegu Suseong Guardians チームスロット背景
 Goods/Name/3402559┃S9 GJ Slasher チームスロット背景
 Goods/Name/3402560┃S9 Gyeonggi Innate チームスロット背景
 Goods/Name/3402561┃S9 DAEJEON AutoArms チームスロット背景
+Goods/Name/3402562┃S10 Gyeonggi Innate チームスロット背景
+Goods/Name/3402563┃S10 GJ Slasher チームスロット背景
+Goods/Name/3402564┃S10 Chungnam CNJ チームスロット背景
+Goods/Name/3402565┃S10 FN SEJONG チームスロット背景
+Goods/Name/3402566┃S10 New Rise Gangwon チームスロット背景
+Goods/Name/3402567┃S10 Seongnam ROX チームスロット背景
+Goods/Name/3402568┃S10 DAEJEON AutoArms チームスロット背景
+Goods/Name/3402569┃S10 all ways INCHEON チームスロット背景
+Goods/Name/3402570┃S10 Busan BeSPA チームスロット背景
+Goods/Name/3402571┃S10 Ascenders チームスロット背景
+Goods/Name/3402572┃S10 Gyeongnam Sparkle チームスロット背景
+Goods/Name/3402573┃S10 Daegu Suseong Guardians チームスロット背景
 Goods/Name/3403001┃機械回路
 Goods/Name/3403002┃星空の夜
 Goods/Name/3403003┃秋の紅葉
@@ -10671,6 +10789,7 @@ Goods/Name/3503042┃S8 eスポーツサポーターコイン
 Goods/Name/3503043┃落ち葉カード
 Goods/Desc/3503043┃2025 落ち葉コレクションを完成させてみましょう！\n2025 落ち葉コレクションの達成条件は収集品からご確認いただけます。
 Goods/Name/3503044┃S9 eスポーツサポーターコイン
+Goods/Name/3503045┃S10 eスポーツサポーターコイン
 Goods/Name/3508001┃GGSTカード
 Goods/Name/3508002┃P5R コラボカード
 ItemType/WILD_CARD_SKIN/Name┃ワイルドカード - スキン選択券
@@ -10867,6 +10986,8 @@ Goods/Name/3102085┃S8 ボーナススキンデータボックス
 Goods/Desc/3102085┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102086┃S9 ボーナススキンデータボックス
 Goods/Desc/3102086┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102087┃S10 ボーナススキンデータボックス
+Goods/Desc/3102087┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3103004┃白い花箱
 Goods/Desc/3103004┃白い花箱、緑の花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜白い花＞を獲得できます。
 Goods/Name/3103005┃緑の花箱
@@ -11010,6 +11131,7 @@ Goods/Name/3143008┃eSports Box (S5)
 Goods/Name/3143009┃eSports Box (2024 同好会大会)
 Goods/Name/3143010┃eSports Box (S6)
 Goods/Name/3143011┃eSports Box (2024 ナショナルリーグ)
+Goods/Name/3143012┃eSports Box (S7)
 Goods/Desc/3143001┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143002┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143003┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
@@ -11021,6 +11143,7 @@ Goods/Desc/3143008┃リストの中から一つをランダムに獲得でき�
 Goods/Desc/3143009┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143010┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143011┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143012┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/9999999┃未所持スキン補給チケット<#00ffee>No.01</color>
 Goods/Name/9999998┃未所持スキン補給チケット<#00ffee>No.02</color>
 Goods/Name/3119001┃未所持スキン補給チケット<#00ffee>No.01</color>
@@ -11786,11 +11909,11 @@ NoviceSupportMission/10010109/1┃遠隔ドローンを呼び出そう
 NoviceSupportMission/10010110/1┃ガジェット「狩人の大釜」を使おう
 NoviceSupportMission/10010111/1┃この欄のミッションを4つ以上クリア
 NoviceSupportMission/10010112/1┃ハイパーループで味方の位置に移動しよう
-NoviceSupportMission/10010113/1┃視界アイテム - 「望遠カメラ」を使用する
+NoviceSupportMission/10010113/1┃視界アイテム - 「望遠カメラ」を使おう
 NoviceSupportMission/10010114/1┃一般/ランク対戦で味方に「MVP！」をあげよう
 NoviceSupportMission/10010115/1┃ガジェット「Kiosk呼び出し機」を使おう
 NoviceSupportMission/10010116/1┃この欄のミッションを4つ以上クリア
-NoviceSupportMission/10010117/1┃Kioskでチーム員を蘇生する
+NoviceSupportMission/10010117/1┃Kioskでチーム員を蘇生してみよう
 NoviceSupportMission/10010118/1┃「製作所」に行こう
 NoviceSupportMission/10010119/1┃「アルファ」を倒そう
 NoviceSupportMission/10010120/1┃案内ロボットLUMIからアイテムを購入しよう
@@ -13032,6 +13155,7 @@ Item/Name/202526_D┃異端審判官 - David
 Item/Name/202527_D┃黒炎竜の鎧 - David
 Item/Name/201534_D┃赤い星 - David
 Item/Name/202529_D┃華将の衣 - David
+Item/Name/202530_D┃反逆の意志 - David
 Item/Help/101101┃いいはさみを見つけた。床屋でも開くか？
 Item/Help/101102┃文房具の一種。国文学科の生徒の象徴でもあるが、プレゼントされても\nほとんど使わない。
 Item/Help/101104┃21世紀にもっとも簡単に手に入る刀物。調理用途以外にも現代を背景\nとする映画や小説、ドラマで武器として登場する。
@@ -14822,8 +14946,8 @@ Skill/Group/Name/1022400┃無騒音掃除機
 Skill/Group/Evolution/Name/1022400┃無騒音掃除機進化
 Skill/Group/Name/1022500┃アフターサービス
 Skill/Group/Evolution/Name/1022500┃アフターサービス進化
-Skill/LobbyDesc/1022100┃ルクが基本攻撃またはスキル攻撃で敵にダメージを与えると、一定時間の間、攻撃速度が増加します。\n\n<color=white>満足感：</color>ルクが実験体またはウィクラインのキルに関与した場合、自分の失った体力の一部を回復します。\n\n<color=white>掃除完了：</color>ルクは実験体や野生動物キル、または補給箱を獲得するたびに<color=yellow>掃除完了</color>スタックを獲得します。<color=yellow>掃除完了</color>スタックを一定数獲得すると、ルクのスキルを進化させることができます。
-Skill/Group/Desc/1022100┃ルクが基本攻撃またはスキル攻撃で敵にダメージを与えると、{9}秒間攻撃速度が{10}増加します。(最大{11}スタック)\n\n<color=white>満足感：</color>ルクが実験体のキルに関与した場合、自分の失った体力の<color=white>{0}</color>を回復し、ウィクラインのキルに関与した場合には、自分の失った体力の<color=white>{2}</color>を回復します。\n\n<color=white>掃除完了：</color>ルクは実験体や野生動物キル、または補給箱を獲得するたびに<color=yellow>掃除完了</color>スタックを獲得します。\n{3}/{4}/{5}スタックになると進化ポイントを獲得し、{6}スタックからは{7}スタックごとに<color=white>満足感</color>の効果が{8}増加します。
+Skill/LobbyDesc/1022100┃ルクが基本攻撃またはスキルで敵にダメージを与えると、一定時間の間、攻撃速度が増加します。\n\n<color=white>満足感：</color>ルクが実験体またはウィクラインのキルに関与した場合、自分の失った体力の一部を回復します。\n\n<color=white>掃除完了：</color>ルクは実験体や野生動物キル、または補給箱を獲得するたびに<color=yellow>掃除完了</color>スタックを獲得します。<color=yellow>掃除完了</color>スタックを一定数獲得すると、ルクのスキルを進化させることができます。
+Skill/Group/Desc/1022100┃ルクが基本攻撃またはスキルで敵にダメージを与えると、{9}秒間攻撃速度が{10}増加します。(最大{11}スタック)\n\n<color=white>満足感：</color>ルクが実験体のキルに関与した場合、自分の失った体力の<color=white>{0}</color>を回復し、ウィクラインのキルに関与した場合には、自分の失った体力の<color=white>{2}</color>を回復します。\n\n<color=white>掃除完了：</color>ルクは実験体や野生動物キル、または補給箱を獲得するたびに<color=yellow>掃除完了</color>スタックを獲得します。\n{3}/{4}/{5}スタックになると進化ポイントを獲得し、{6}スタックからは{7}スタックごとに<color=white>満足感</color>の効果が{8}増加します。
 Skill/Group/Coef/1022100┃ルクが基本攻撃またはスキル攻撃で敵にダメージを与えると、{9}秒間攻撃速度が{10}増加します。(最大{11}スタック)\n\n<color=white>満足感：</color>ルクが実験体のキルに関与した場合、自分の失った体力の<color=white>{0}</color>を回復し、ウィクラインのキルに関与した場合には、自分の失った体力の<color=white>{2}</color>を回復します。\n\n<color=white>掃除完了：</color>ルクは実験体や野生動物キル、または補給箱を獲得するたびに<color=yellow>掃除完了</color>スタックを獲得します。\n{3}/{4}/{5}スタックになると進化ポイントを獲得し、{6}スタックからは{7}スタックごとに<color=white>満足感</color>の効果が{8}増加します。
 Skill/Group/ExpansionTip/1022100┃<i>ニワトリ、コウモリ、ドローン {0}\nイノシシ、ハウンド、オオカミ、カラス {1}\nクマ {2}\n実験体 {3}\nアルファ、オメガ {4}\nウィクライン、ガンマ {5}\n補給箱 食品 {6}/英雄 {7}/伝説以上 {8}</i>
 Skill/LobbyDesc/1022200┃ルクが洗剤容器を投げて最初に的中した敵にスキルダメージを与え、その敵の視界を獲得します。的中した場合、一定時間の間スキルを再使用できます。\n\n再使用：ルクが洗剤容器に当たった敵に突進し、対象が失った体力に比例するスキルダメージを与えます。\n\n<color=yellow>進化効果：</color>敵にスキルを再使用してダメージを与えた場合、一定時間の間対象の防御力を減少させます。
@@ -15013,8 +15137,8 @@ Skill/LobbyDesc/1026200┃バーバラが指定した位置にセントリーガ
 Skill/Group/Desc/1026200┃バーバラが指定した位置に体力<color=white>{0}</color>のセントリーガンを設置します。(最大{1}つ)\nセントリーガンは{2}秒間維持されます。バーバラが{6}m以上離れたり死亡すると、セントリーガンが{7}秒後になくなります。バーバラが範囲内に戻ると、猶予時間が初期化されます。\n\nバーバラの<color=white>イオンレーザー</color>や<color=white>磁力手榴弾</color>が敵に的中したり、セントリーガンが{3}回目の基本攻撃をするたびにレールガンを発射します。レールガンは最大{4}回までチャージできます。\n\nセントリーガンが敵にダメージを与えるたびに<color=white>イオンレーザー</color>のクールダウンが{5}減少します。
 Skill/Group/Coef/1026200┃バーバラが指定した位置に体力<color=white>{0}</color><color=green>(バーバラのレベル</color><color=white> * {7}</color><color=green>)</color>のセントリーガンを設置します。(最大{2}つ)\nセントリーガンは{3}秒間維持されます。バーバラが{8}m以上離れたり死亡すると、セントリーガンが{9}秒後になくなります。バーバラが範囲内に戻ると、猶予時間が初期化されます。\n\nバーバラの<color=white>イオンレーザー</color>や<color=white>磁力手榴弾</color>が敵に的中したり、セントリーガンが{4}回目の基本攻撃をするたびにレールガンを発射します。レールガンは最大{5}回までチャージできます。\n\nセントリーガンが敵にダメージを与えるたびに<color=white>イオンレーザー</color>のクールダウンが{6}減少します。
 Skill/Group/ExpansionTip/1026200┃<i>セントリーガンの基本攻撃とレールガンはスキルダメージの判定が適用され、レールガンの場合、1つのスキルとしての判定が適用されます。</i>\n<i>BT-Mk2 セントリーガンの能力値\n基本攻撃：<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{1})</color>\nレールガン：<color=white>{2}</color><color=#DDA0DD>(+スキル増幅の{3})</color>\n防御力<color=white>{4}</color></i>
-Skill/Group/Desc/1026210┃バーバラが指定した位置に体力<color=white>{0}</color>の強化されたセントリーガンを設置します。強化セントリーガンは{1}秒間維持され、最大設置数の制限を無視することができます。バーバラが{5}m以上離れたり死亡すると、セントリーガンが{6}秒後になくなります。バーバラが範囲内に戻ると、猶予時間が初期化されます。\n\n強化セントリーガンは設置されたセントリーガンに{2}秒間強化効果を付与し、強化効果が付与されたセントリーガンは攻撃速度が{3}増加し、{4}回目の基本攻撃をするたびにレールガンを発射します。
-Skill/Group/Coef/1026210┃バーバラが指定した位置に体力<color=white>{0}</color><color=green>(+バーバラのレベル</color><color=white> * {6}</color><color=green>)</color>の強化されたセントリーガンを設置します。強化セントリーガンは{2}秒間維持され、最大設置数の制限を無視することができます。バーバラが{7}m以上離れたり死亡すると、セントリーガンが{8}秒後になくなります。バーバラが範囲内に戻ると、猶予時間が初期化されます。\n\n強化セントリーガンは設置されたセントリーガンに{3}秒間強化効果を付与し、強化効果が付与されたセントリーガンは攻撃速度が{4}増加し、{5}回目の基本攻撃をするたびにレールガンを発射します。
+Skill/Group/Desc/1026210┃バーバラが指定した位置に体力<color=white>{0}</color>の強化されたセントリーガンを設置します。強化セントリーガンは{1}秒間維持され、最大設置数の制限を無視することができます。バーバラが{5}m以上離れたり死亡すると{6}秒後、セントリーガンがなくなります。バーバラが範囲内に戻ると、猶予時間が初期化されます。\n\n強化セントリーガンは設置されたセントリーガンに{2}秒間強化効果を付与し、強化効果が付与されたセントリーガンは攻撃速度が{3}増加し、{4}回目の基本攻撃をするたびにレールガンを発射します。
+Skill/Group/Coef/1026210┃バーバラが指定した位置に体力<color=white>{0}</color><color=green>(+バーバラのレベル</color><color=white> * {6}</color><color=green>)</color>の強化されたセントリーガンを設置します。強化セントリーガンは{2}秒間維持され、最大設置数の制限を無視することができます。バーバラが{7}m以上離れたり死亡すると{8}秒後、セントリーガンがなくなります。バーバラが範囲内に戻ると、猶予時間が初期化されます。\n\n強化セントリーガンは設置されたセントリーガンに{3}秒間強化効果を付与し、強化効果が付与されたセントリーガンは攻撃速度が{4}増加し、{5}回目の基本攻撃をするたびにレールガンを発射します。
 Skill/LobbyDesc/1026300┃バーバラが高出力砲でイオンレーザーを発射し、経路上の敵にスキルダメージを与えます。敵に的中すると、一定時間の間移動速度が増加します。
 Skill/Group/Desc/1026300┃バーバラが高出力砲でイオンレーザーを発射し、経路上の敵に<color=white>{0}</color>のスキルダメージを与えます。\n敵に的中すると、{1}秒間移動速度が{2}増加します。増加した移動速度は{3}秒にわたって徐々に元に戻ります。
 Skill/Group/Coef/1026300┃バーバラが高出力砲でイオンレーザーを発射し、経路上の敵に<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{1})</color>のスキルダメージを与えます。\n敵に的中すると、{2}秒間移動速度が{3}増加します。増加した移動速度は{4}秒にわたって徐々に元に戻ります。
@@ -16020,9 +16144,9 @@ Skill/Group/Coef/1045200┃マイが両手にあるショールを大きく広�
 Skill/LobbyDesc/1045300┃マイがショールで身を包むベールを作ってしばらくの間受けるダメージ量が減少し、移動速度が徐々に増加します。持続時間が終わる時、範囲内の敵にダメージを与えます。\n最大2回までチャージされ、基本攻撃をするたびにチャージ時間が減少します。
 Skill/Group/Desc/1045300┃マイがショールで身を包むベールを作って{2}秒間受けるダメージ量が{3}減少し、移動速度が最大{4}まで徐々に増加します。持続時間が終わる時、範囲内の敵に<color=white>{20}</color>のスキルダメージを与えます。\n最大{5}回までチャージされ、基本攻撃をするたびにチャージ時間が{7}秒減少します。
 Skill/Group/Coef/1045300┃マイがショールで身を包むベールを作って{2}秒間受けるダメージ量が{3}減少し、移動速度が最大{4}まで徐々に増加します。持続時間が終わる時、範囲内の敵に<color=white>{0}</color><color=#dda0dd>(+スキル増幅の{11})</color><color=#688A08>(+追加体力の{12})</color>のスキルダメージを与えます。\n最大{5}回までチャージされ、基本攻撃をするたびにチャージ時間が{7}秒減少します。
-Skill/LobbyDesc/1045400┃マイが指定した敵実験体、味方、野生動物、カメラに素早く移動して、自分にしばらくの間持続するシールドを生成します。対象が味方である場合、味方にも同じシールドを生成します。\n\n<color=white>スキル再使用：</color>方向を指定してスキルを使用するとマイが素早く移動し、経路上の敵にダメージを与えて挑発します。敵に的中した場合、マイの攻撃速度が増加します。\n\n<i>カメラに使用した場合には、シールドを獲得しません。</i>
-Skill/Group/Desc/1045400┃マイが指定した敵実験体、味方、野生動物、カメラに素早く移動して、自分に{2}秒間持続するシールドを生成します。対象が味方である場合、味方にも同じシールドを生成します。\n\n敵実験体に移動：<color=white>{22}</color>\n味方・野生動物・カメラに移動：<color=white>{20}</color>\n\n<color=white>スキル再使用：</color>方向を指定してスキルを使用するとマイが素早く移動し、経路上の敵に<color=white>{21}</color>のスキルダメージを与えて{8}秒間挑発します。敵に的中した場合、{24}秒間マイの攻撃速度が{23}増加します。スキル再使用は{9}秒以内に使用しなければなりません。
-Skill/Group/Coef/1045400┃マイが指定した敵実験体、味方、野生動物、カメラに素早く移動して、自分に{2}秒間持続するシールドを生成します。対象が味方である場合、味方にも同じシールドを生成します。\n\n敵実験体に移動：<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{12})</color><color=#688A08>(+最大体力の{1})</color>\n味方・野生動物・カメラに移動：<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{10})</color><color=#688A08>(+最大体力の{1})</color>\n\n<color=white>スキル再使用：</color>方向を指定してスキルを使用するとマイが素早く移動し、経路上の敵に<color=white>{6}</color><color=#dda0dd>(+スキル増幅の{11})</color><color=#688A08>(+追加体力の{13})</color>のスキルダメージを与えて{8}秒間挑発します。敵に的中した場合、{24}秒間マイの攻撃速度が{23}増加します。スキル再使用は{9}秒以内に使用しなければなりません。
+Skill/LobbyDesc/1045400┃マイが指定した敵実験体、味方、野生動物、カメラに素早く移動します。カメラ以外の対象に使用する場合、シールドを獲得します。対象が味方である場合、味方にも同じくシールドを付与します。\n一定時間の間、スキルを再使用できます。\n\nスキル再使用：指定した方向にマイが素早く移動し、経路上の敵にスキルダメージを与えて挑発します。敵に的中した場合、マイの攻撃速度が増加します。
+Skill/Group/Desc/1045400┃マイが指定した敵実験体、味方、野生動物、カメラに素早く移動します。カメラ以外の対象に使用する場合、{2}秒間<color=white>{22}</color>のシールドを獲得します。対象が味方である場合、味方にも同じくシールドを付与します。{9}秒間スキルを再使用できます。\n\nスキル再使用：指定した方向にマイが素早く移動し、経路上の敵に<color=white>{21}</color>のスキルダメージを与えて{8}秒間挑発します。敵に的中した場合、{24}秒間マイの攻撃速度が{23}増加します。
+Skill/Group/Coef/1045400┃マイが指定した敵実験体、味方、野生動物、カメラに素早く移動します。カメラ以外の対象に使用する場合、{2}秒間<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{12})</color><color=#688A08>(+最大体力の{1})</color>のシールドを獲得します。対象が味方である場合、味方にも同じくシールドを付与します。{9}秒間スキルを再使用できます。\n\nスキル再使用：指定した方向にマイが素早く移動し、経路上の敵に<color=white>{6}</color><color=#dda0dd>(+スキル増幅の{11})</color><color=#688A08>(+追加体力の{13})</color>のスキルダメージを与えて{8}秒間挑発します。敵に的中した場合、{24}秒間マイの攻撃速度が{23}増加します。
 Skill/Group/ExpansionTip/1045400┃<i>カメラに移動した場合には、シールドを獲得しません。</i>
 Skill/LobbyDesc/1045500┃指定した味方または自分をショールで身を包んでしばらくの間何のダメージも受けない制圧状態にさせます。解除される時、体力を回復させます。\n自分に使用した場合には<color=white>ショール·ベール</color>の効果を発動し、味方に使用した場合、自分の前に引き寄せます。
 Skill/Group/Desc/1045500┃指定した味方または自分をショールで身を包んで{6}秒間何のダメージも受けない制圧状態にさせます。解除される時、<color=white>{21}</color><color=#688A08>(+対象の失った体力の{22})</color>の体力を回復させます。\n自分に使用した場合には<color=white>ショール·ベール</color>の効果を発動し、味方に使用した場合、自分の前に引き寄せます。
@@ -16705,8 +16829,8 @@ Skill/Group/Desc/1057400┃<color=#ffffff>[取材中]</color> \nマルティナ�
 Skill/Group/Coef/1057400┃<color=#ffffff>[取材中]</color> \nマルティナが現在の位置にビデオテープを残して指定した方向に素早く移動します。以降、最大7秒間早戻し状態を維持します。早戻し状態ではマルティナの移動速度が{0}増加します。 \n\n早戻し状態が終了すると、妨害効果免疫状態になり、ビデオテープの位置に素早く戻ります。この際、マルティナに触れた敵は移動速度が{3}秒間{4}減少します。 \n\n再使用: ビデオテープの位置により速く戻ります。 \n\n<color=#ffd775>[放送中]</color> \nビデオテープの位置に戻ってくる時、マルティナに触れた敵は気絶し、早戻し状態の間に敵から受けたダメージ量の一部を回復します。
 Skill/Group/Desc/1057410┃マルティナがビデオテープの位置に戻ります。
 Skill/Group/Coef/1057410┃マルティナがビデオテープの位置に戻ります。
-Skill/Group/Desc/1057430┃マルティナが現在の位置にビデオテープを残して指定した方向に素早く移動します。以降、最大5秒間早戻し状態を維持します。早戻し状態ではマルティナの移動速度が{0}増加します。\n\n早戻し状態が終了すると、妨害効果免疫状態になり、ビデオテープの位置に素早く戻ります。この際、マルティナに触れた敵は<color=white>{6}</color>のスキルダメージを与えられ、{3}秒間気絶します。マルティナはビデオテープの位置に戻った後、早戻し状態の間に敵から受けたダメージの{4}の体力を回復します。\n\n再使用：ビデオテープの位置により速く戻ります。
-Skill/Group/Coef/1057430┃マルティナが現在の位置にビデオテープを残して指定した方向に素早く移動します。以降、最大5秒間早戻し状態を維持します。早戻し状態ではマルティナの移動速度が{0}増加します。\n\n早戻し状態が終了すると、妨害効果免疫状態になり、ビデオテープの位置に素早く戻ります。この際、マルティナに触れた敵は<color=white>{1}</color><color=#ffd775>(+攻撃力の{2})</color>のスキルダメージを与えられ、{3}秒間気絶します。マルティナはビデオテープの位置に戻った後、早戻し状態の間に敵から受けたダメージの{4}の体力を回復します。\n\n再使用: ビデオテープの位置により速く戻ります。
+Skill/Group/Desc/1057430┃マルティナが現在の位置にビデオテープを残して指定した方向に素早く移動します。以降、最大5秒間早戻し状態を維持します。早戻し状態ではマルティナの移動速度が{0}増加します。\n\n早戻し状態が終了すると、妨害効果免疫状態になり、ビデオテープの位置に素早く戻ります。この際、マルティナに触れた敵は<color=white>{6}</color>のスキルダメージを与えられ、{3}秒間気絶します。マルティナはビデオテープの位置に戻った後、早戻し状態の間に実験体から受けたダメージの{4}を体力として回復します。\n\n再使用：ビデオテープの位置により速く戻ります。
+Skill/Group/Coef/1057430┃マルティナが現在の位置にビデオテープを残して指定した方向に素早く移動します。以降、最大5秒間早戻し状態を維持します。早戻し状態ではマルティナの移動速度が{0}増加します。\n\n早戻し状態が終了すると、妨害効果免疫状態になり、ビデオテープの位置に素早く戻ります。この際、マルティナに触れた敵は<color=white>{1}</color><color=#ffd775>(+攻撃力の{2})</color>のスキルダメージを与えられ、{3}秒間気絶します。マルティナはビデオテープの位置に戻った後、早戻し状態の間に実験体から受けたダメージの{4}を体力として回復します。\n\n再使用: ビデオテープの位置により速く戻ります。
 Skill/Group/Desc/1057440┃マルティナがビデオテープの位置に戻ります。
 Skill/Group/Coef/1057440┃マルティナがビデオテープの位置に戻ります。
 Skill/LobbyDesc/1057500┃<color=#ffffff>[取材中]</color>\nマルティナが指定した方向を撮影し、撮影する間範囲内に撮影対象が入ってくると録画持続時間の間移動速度が増加します。撮影に成功すると対象によって<color=white>録画スタック</color>を獲得し、移動速度が増加します。\n\n<color=white>録画スタック</color>が一定条件以上になるとマルティナが取材を終わらせ、<color=#ffd775>放送</color>を始めてスキルの威力が強化されます。\n\n<color=#2ECCFA>撮影条件</color> : <color=#819FF7>撮影対象</color>の中で2つの対象を一定時間以上撮影すると、録画スタック2と武器熟練度獲得。\n<color=#2ECCFA>死体撮影条件1</color> : <color=#819FF7>撮影対象</color>の中で1体の死体を一定時間以上撮影すると、録画スタック1と武器熟練度獲得。(最大スタック獲得制限・同じ死体重複撮影不可)\n<color=#819FF7>撮影対象</color> : 敵実験体、生命の木、隕石、アルファ、オメガ、ウィクライン、ガンマ\n撮影対象の内、生命の木と隕石以外の対象は撮影した後、一定時間の間再撮影できません。\n\n\n<color=#ffd775>[放送中]</color>\nマルティナが指定した方向を撮影し、敵にダメージを与えます。スキルが終了する時、更に大きなダメージを与え、中央の敵を気絶させます。
@@ -17147,16 +17271,16 @@ Skill/Group/Desc/1065100┃<color=green>持続効果：</color>デビーの状�
 Skill/Group/Coef/1065100┃<color=green>持続効果：</color>デビーの状態では防御力が{1}増加し、マーリンの状態では基本攻撃の射程距離が{2}増加します。デビー＆マーリンの基本攻撃は<color=white>{3}  * (基本攻撃増幅)</color>に値するダメージを与えます。\n\nデビー＆マーリンの基本攻撃とスキルは対象にそれぞれ<color=white>Blue＆Red</color>を刻み込みます。この効果は最大{4}スタックまで貯めることができます。\n<color=white>Blue＆Red</color>はお互いに違う色が刻まれると元の色が消えて対象に<color=white>{5}</color><color=#ffd775>(+追加攻撃力の{6})</color><color=#FF6171>+{8} = (致命打確率の{9})</color>のスキルダメージを与え、{10}秒間デビー＆マーリンの移動速度が{11}増加します。(最大{12}スタック)\nまた、色が刻まれる時は<color=white>援護して、マーリン！</color>または<color=white>今よ、デビー！</color>のクールダウンが{13}秒減少し、<color=white>Blue＆Red</color>がダメージを与えた場合にはクールダウンが{14}秒追加で減少します。
 Skill/Group/ExpansionTip/1065100┃<i>デビー＆マーリンの基本攻撃は致命打が発生しない代わりに致命打ダメージ増加{1}あたり致命打確率が{2}増加します。致命打確率の{0}は<color=white>Blue＆Red</color>のダメージ量に増加されます。</i>
 Skill/LobbyDesc/1065200┃<color=white>デビー：</color>デビーが前方に剣を振り下ろしてスキルダメージを与えます。敵に的中した場合、攻撃速度が増加します。\n\n<color=white>マーリン：</color>マーリンがエネルギーを放出してスキルダメージを与えます。敵に的中した場合、攻撃速度が増加します。
-Skill/Group/Desc/1065200┃<color=white>デビー：</color>デビーが前方に剣を振り下ろして<color=white>{0}</color>のスキルダメージを与えます。敵に的中した場合、{2}秒間攻撃速度が{1}増加します。(最大{3}スタック)
-Skill/Group/Coef/1065200┃<color=white>デビー：</color>デビーが前方に剣を振り下ろして<color=white>{0}</color><color=#ffd775>(+追加攻撃力の{1})</color>のスキルダメージを与えます。敵に的中した場合、{4}秒間攻撃速度が{5}増加します。(最大{6}スタック)
-Skill/Group/Desc/1065210┃<color=white>マーリン：</color>マーリンがエネルギーを放出して<color=white>{0}</color>のスキルダメージを与えます。敵に的中した場合、{2}秒間攻撃速度が{1}増加します。(最大{3}スタック)
-Skill/Group/Coef/1065210┃<color=white>マーリン：</color>マーリンがエネルギーを放出して<color=white>{0}</color><color=#ffd775>(+追加攻撃力の{1})</color>のスキルダメージを与えます。敵に的中した場合、{4}秒間攻撃速度が{5}増加します。(最大{6}スタック)
+Skill/Group/Desc/1065200┃デビーが前方に剣を振り下ろして<color=white>{0}</color>のスキルダメージを与えます。敵に的中した場合、{2}秒間攻撃速度が{1}増加します。(最大{3}スタック)
+Skill/Group/Coef/1065200┃デビーが前方に剣を振り下ろして<color=white>{0}</color><color=#ffd775>(+追加攻撃力の{1})</color>のスキルダメージを与えます。敵に的中した場合、{4}秒間攻撃速度が{5}増加します。(最大{6}スタック)
+Skill/Group/Desc/1065210┃マーリンがエネルギーを放出して<color=white>{0}</color>のスキルダメージを与えます。敵に的中した場合、{2}秒間攻撃速度が{1}増加します。(最大{3}スタック)
+Skill/Group/Coef/1065210┃マーリンがエネルギーを放出して<color=white>{0}</color><color=#ffd775>(+追加攻撃力の{1})</color>のスキルダメージを与えます。敵に的中した場合、{4}秒間攻撃速度が{5}増加します。(最大{6}スタック)
 Skill/Group/ExpansionTip/1065200┃<i>このスキルは基本攻撃及びスキル攻撃判定と見なされ、最初に的中した敵に的中時効果が発動します。</i>\n<i>追加攻撃速度に比例してクールダウンとキャスト時間が減少します。</i>
 Skill/Group/ExpansionTip/1065210┃<i>このスキルは基本攻撃及びスキル攻撃判定と見なされ、最初に的中した敵に的中時効果が発動します。</i>\n<i>追加攻撃速度に比例してクールダウンとキャスト時間が減少します。</i>
 Skill/LobbyDesc/1065300┃<color=white>デビー：</color>デビーが剣を大きく振り回してスキルダメージを与え、範囲内の敵の投射体または基本攻撃を防ぎます。\n\n<color=white>マーリン：</color>マーリンが素早く回転して周りの敵にいくつかのエネルギーを放出します。的中した敵にはそれぞれスキルダメージを与え、一定の数を的中させるたびに<color=white>Blue＆Red</color>の<color=white>Red</color>を刻みます。すでにエネルギーに的中された敵には減少されたダメージを与えます。
-Skill/Group/Desc/1065300┃<color=white>デビー：</color>デビーが剣を大きく振り回して<color=white>{0}</color><color=#688A08>(+対象の最大体力の{1})</color>のスキルダメージを与え、範囲内の敵の投射体または基本攻撃を防ぎます。
-Skill/Group/Coef/1065300┃<color=white>デビー：</color>デビーが剣を大きく振り回して<color=white>{0}</color><color=#ffd775>(+追加攻撃力の{1})</color><color=#688A08>(+対象の最大体力の{3})</color>のスキルダメージを与え、範囲内の敵の投射体または基本攻撃を防ぎます。
-Skill/Group/Desc/1065310┃<color=white>マーリン：</color>マーリンが素早く回転して周りの敵に<color=white>{0}</color>個のエネルギーを放出します。的中した敵にはそれぞれ<color=white>{1}</color>のスキルダメージを与え、{2}回的中させるたびに<color=white>Blue＆Red</color>の<color=white>Red</color>を刻みます。すでにエネルギーに的中された敵には{3}のダメージを与えます。
+Skill/Group/Desc/1065300┃デビーが剣を大きく振り回して<color=white>{0}</color><color=#688A08>(+対象の最大体力の{1})</color>のスキルダメージを与え、範囲内の敵の投射体または基本攻撃を防ぎます。
+Skill/Group/Coef/1065300┃デビーが剣を大きく振り回して<color=white>{0}</color><color=#ffd775>(+追加攻撃力の{1})</color><color=#688A08>(+対象の最大体力の{3})</color>のスキルダメージを与え、範囲内の敵の投射体または基本攻撃を防ぎます。
+Skill/Group/Desc/1065310┃マーリンが素早く回転して周りの敵に<color=white>{0}</color>個のエネルギーを放出します。的中した敵にはそれぞれ<color=white>{1}</color>のスキルダメージを与え、{2}回的中させるたびに<color=white>Blue＆Red</color>の<color=white>Red</color>を刻みます。すでにエネルギーに的中された敵には{3}のダメージを与えます。
 Skill/Group/Coef/1065310┃<color=white>マーリン：</color>マーリンが素早く回転して周りの敵に<color=white>{0}</color><color=#ADA478>(+追加攻撃速度に比例して{1})</color>個のエネルギーを放出します。的中した敵にはそれぞれ<color=white>{2}</color><color=#ffd775>(+追加攻撃力の{3})</color>のスキルダメージを与え、{5}回的中させるたびに<color=white>Blue＆Red</color>の<color=white>Red</color>を刻みます。すでにエネルギーに的中された敵には{6}のダメージを与えます。
 Skill/Group/ExpansionTip/1065300┃<i>追加攻撃速度に比例してクールダウンとキャスト時間が減少します。</i>
 Skill/Group/ExpansionTip/1065310┃<i>追加攻撃速度に比例して放出するエネルギー数が最大{0}個まで増加し、クールダウンが減少します。</i>
@@ -18767,6 +18891,12 @@ Item/Skills/6015001/Desc┃{0}秒以内に{1}回の基本攻撃またはスキ�
 Item/Skills/6015002/Name┃<color=yellow>迅速 - そよ風</color>
 Item/Skills/6015002/Body┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=white>{11}%</color>増加して<color=white>{10}</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
 Item/Skills/6015002/Desc┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=white>{4}%</color>増加して<color=white>{10}</color><color=green>(+キャラクターレベル * {13})</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+Item/Skills/6015009/Name┃<color=yellow>迅速 - そよ風</color>
+Item/Skills/6015009/Body┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=white>{11}%</color>増加して<color=#FFD775>{10}</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+Item/Skills/6015009/Desc┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=white>{4}%</color>増加して<color=white>{10}</color><color=#FFD775>(+攻撃力の{14})</color><color=green>(+キャラクターレベル * {13})</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+Item/Skills/6015010/Name┃<color=yellow>迅速 - そよ風</color>
+Item/Skills/6015010/Body┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=white>{11}%</color>増加して<color=#DDA0DD>{10}</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+Item/Skills/6015010/Desc┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=white>{4}%</color>増加して<color=white>{10}</color><color=#DDA0DD>(+スキル増幅の{15})</color><color=green>(+キャラクターレベル * {13})</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
 Item/Skills/6015003/Name┃<color=yellow>迅速 - プラズマ</color>
 Item/Skills/6015003/Body┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=green>{5}%</color>増加して<color=white>{10}</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
 Item/Skills/6015003/Desc┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=green>キャラクターレベル* 1%</color>増加して<color=white>{10}</color>のシールドを獲得します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
@@ -18782,8 +18912,8 @@ Item/Skills/6015007/Body┃{0}秒以内に{1}回の基本攻撃またはスキ�
 Item/Skills/6015007/Desc┃{0}秒以内に{1}回の基本攻撃またはスキルでダメージを与えると、{3}秒間移動速度が<color=white>{4}%</color>増加します。\n(クールダウン：{2}秒)\n\n持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
 CharacterState/Group/Name/6015010┃迅速
 CharacterState/Group/Desc/6015010┃移動速度が増加し、追加能力値を獲得しました。
-CharacterState/Group/Name/6015020┃迅速 - シールド
-CharacterState/Group/Desc/6015020┃シールドが生成されました。
+CharacterState/Group/Name/6015030┃迅速 - シールド
+CharacterState/Group/Desc/6015030┃シールドが生成されました。
 Item/Skills/6016000┃セカンドウインド
 Item/Skills/6016001/Name┃<color=yellow>セカンドウインド - 血の契約</color>
 Item/Skills/6016001/Body┃着用者の体力が{0}%以下の時に敵実験体からダメージを受けると、{1}秒間<color=white>{11}</color>のシールドと<color=white>50%</color>の妨害耐性を獲得します。また、{5}秒間{15}が{16}増加して、受ける回復量が<color=white>{9}%</color>増加します。(クールダウン : {13}秒)
@@ -19560,8 +19690,8 @@ CharacterState/Group/Name/6069010┃ガードパンチ - 移動速度減少
 CharacterState/Group/Desc/6069010┃ガードパンチによって移動速度が減少します。
 Item/Skills/6070001┃超集中
 Item/Skills/6070001/Name┃<color=yellow>超集中</color>
-Item/Skills/6070001/Body┃同じ敵実験体に基本攻撃が的中すると、{0}秒間維持される[超集中]スタックを獲得します。(最大{1}スタック)\n[超集中]スタックは1スタックにつき敵実験体に与える基本攻撃ダメージが<color=white>{2}%</color>増加します。\n基本攻撃対象が変更されると、[超集中]スタックが{3}%減少します。
-Item/Skills/6070001/Desc┃同じ敵実験体に基本攻撃が的中すると、{0}秒間維持される[超集中]スタックを獲得します。(最大{1}スタック)\n[超集中]スタックは1スタックにつき敵実験体に与える基本攻撃ダメージが<color=white>{2}%</color>増加します。\n基本攻撃対象が変更されると、[超集中]スタックが{3}%減少します。
+Item/Skills/6070001/Body┃同じ敵実験体に基本攻撃が的中すると、{0}秒間維持される[超集中]スタックを獲得します。(最大{1}スタック)\n[超集中]スタックは1スタックにつき敵実験体に与える基本攻撃ダメージが<color=white>{2}%</color>増加します。\n基本攻撃対象が変更されると、[超集中]スタックが30%減少します。
+Item/Skills/6070001/Desc┃同じ敵実験体に基本攻撃が的中すると、{0}秒間維持される[超集中]スタックを獲得します。(最大{1}スタック)\n[超集中]スタックは1スタックにつき敵実験体に与える基本攻撃ダメージが<color=white>{2}%</color>増加します。\n基本攻撃対象が変更されると、[超集中]スタックが30%減少します。
 CharacterState/Group/Name/6070000┃超集中
 CharacterState/Group/Desc/6070000┃基本攻撃ダメージ量が増加します。
 CharacterState/Group/Name/2310100┃ペアユニット
@@ -19635,7 +19765,7 @@ Skill/Group/Desc/8310300┃<color=lightblue>携帯用セーフゾーン</color>�
 Skill/Group/Name/8310400┃集結地 - 亀裂
 Skill/Group/Desc/8310400┃<color=lightblue>集結地 - 亀裂</color>を生成します。\n集結地 - 亀裂は{0}秒間維持され、瀕死状態になった味方は<color=lightblue>瀕死スキル - 亀裂移動</color>を使用して、一定範囲内の集結地 - 亀裂に移動できる亀裂への片道を開くことができます。
 Skill/Group/Name/8310500┃CNOTゲート
-Skill/Group/Desc/8310500┃非活性化状態で{0}秒間維持される、破壊可能な<color=lightblue>ゲート</color>を設置します。\n非活性化されたゲートは最大2個まで設置可能で、追加設置時には先に設置したゲートから破壊されます。\n非活性化されたゲートは相互作用を通じて活性化でき、{1}秒後に自動的に破壊されます。\n活性化されたゲートは破壊不可です。\nすべての実験体は活性化されたゲートを自由に行き来できます。
+Skill/Group/Desc/8310500┃非活性化状態で{0}秒間維持される、破壊可能な<color=lightblue>ゲート</color>を設置します。\n非活性状態のゲートは最大2つまで設置でき、追加で設置する場合には先に設置したゲートから破壊されます。\n非活性化状態のゲートは相互作用を通じて活性化させることができ、{1}秒後に自動的に破壊されます。\n活性化されたゲートは破壊することができません。\nすべての実験体は活性化されたゲートを自由に行き来できます。
 CharacterState/Group/Name/12000100┃セーフティエリア
 CharacterState/Group/Desc/12000100┃爆発タイマーが停止します。
 CharacterState/Group/Name/12010110┃キット - 雷 [感電中]
@@ -21259,7 +21389,7 @@ Trait/StatTooltip/7300101┃異なるスキルを使用すると、{1}秒間維�
 CharacterState/Group/Name/7300110┃ステラチャージ
 CharacterState/Group/Desc/7300110┃ステラをチャージしました。
 CharacterState/Group/Name/7300120┃ステラチャージ
-CharacterState/Group/Desc/7300120┃基本攻撃が追加ダメージを与え、自分の一般スキルのクールダウンが減少します。
+CharacterState/Group/Desc/7300120┃基本攻撃が追加ダメージを与え、自分の基本スキルのクールダウンが減少します。
 CharacterState/Group/Name/7300130┃ステラチャージ
 CharacterState/Group/Desc/7300130┃再使用待機中です。
 Trait/Name/7000701┃アクセルレート
@@ -22232,7 +22362,7 @@ KRAFTON ID 로그인 완료┃KRAFTON ID ({0}) ログイン完了
 크래프톤 유효한코드변경설명┃入力されたコード({0})はまだ有効です。\nコードを変更、またはサポートを中断しますか？
 크래프톤 후원중단하기┃サポートを中断する
 크래프톤 코드변경하기┃コード変更
-크래프톤 유효기간설명┃入力されたコードは、送信後2160時間（90日）有効で、\n有効時間内ならいつでも変更可能です。
+크래프톤 유효기간설명┃入力されたコードは、送信後2160時間（90日）有効です。\n有効時間内ならいつでも変更可能です。
 MatchingError/2024┃チーム員の中でゲームを始められないプレイヤーがいます。チームを再度生成してください。(2024)
 FirstLoading1┃Loading Text
 FirstLoading2┃Verifying Account...
@@ -22262,6 +22392,136 @@ BanReasonType/SNIPER┃スナイピング行為
 BanReasonType/TEAMING┃チーミング
 BanReasonType/VERBAL_HARASSMENT┃言語暴力
 BanReasonType/SMURFING┃スマーフ行為
+Setting/그래픽┃グラフィック
+Setting/확장맵┃拡張マップ
+Setting/이모티콘┃エモート
+Setting/일반시전┃一般キャスト
+Setting/아이템┃アイテム
+Setting/오버레이┃情報オーバーレイ
+Setting/화면┃画面
+Setting/매칭┃マッチング
+Setting/숨기기┃非表示
+Setting/시전설정┃キャスト設定
+Setting/HUD┃HUD
+Setting/스마트키┃スマートキー
+Setting/카메라┃カメラ
+Setting/마우스┃マウス
+Setting/방송모드┃配信モード
+Setting/토글┃トグル
+Setting/감정표현┃感情表現
+Setting/UI┃UI
+Setting/빠른제작┃簡単製作
+Setting/즉시시전┃即時キャスト
+Setting/목표아이템┃目標アイテム
+Setting/아이콘┃アイコン
+Setting/타겟┃ターゲット
+Setting/스킬┃スキル
+Setting/전체맵┃全体マップ
+Setting/레벨업┃レベルアップ
+Setting/미니맵┃ミニマップ
+Setting/전술스킬┃戦術スキル
+Setting/음성표현┃音声表現
+Setting/맵┃マップ
+Setting/표시┃表示
+Setting/단축키┃ショートカットキー
+Setting/VLS┃VLS
+Setting/정보창┃情報ウィンドウ
+Setting/게임시작┃ゲーム開始
+Setting/게임현황┃実験状況
+Setting/더빙┃ボイス
+Setting/도발┃挑発
+Setting/동물┃動物
+Setting/야생동물┃野生動物
+Setting/캐릭터정보┃キャラクター情報
+Setting/궤적┃軌跡
+Setting/마크┃マーク
+Setting/맵이동┃マップ移動
+Setting/능력치┃能力値
+Setting/무기및전술스킬┃武器・戦術スキル
+Setting/드랍┃ドロップ
+Setting/보안콘솔┃保安コンソール
+Setting/생존자만조준┃生存者だけ照準
+Setting/농담┃冗談
+Setting/수신거부┃受信拒否
+Setting/시점고정┃カメラ固定
+Setting/시점이동┃カメラ移動
+Setting/제자리┃その場で待機
+Setting/아군선택┃味方選択
+Setting/오브젝트┃オブジェクト
+Setting/음성설정┃音声設定
+Setting/보이스┃ボイス
+Setting/인디케이터┃インジケーター
+Setting/홀드┃ホールド
+Setting/자동교체┃自動交替
+Setting/자동번역┃自動翻訳
+Setting/적공격┃敵攻撃
+Setting/리플레이┃リプレイ
+Setting/상세정보┃詳細情報
+Setting/닉네임가리기┃ニックネーム非表示
+Setting/제작목록┃製作リスト
+Setting/조준┃照準
+Setting/퇴각핑┃退却ピング
+Setting/체력기준┃体力基準
+Setting/이동공격┃移動攻撃
+Setting/스탯┃ステータス
+Setting/친구요청받지않기┃フレンド申請拒否
+Setting/우선순위┃優先順位
+Setting/이름가리기┃名前非表示
+Setting/화면표시┃画面表示
+Setting/확장미니맵┃拡張マップ
+Setting/캐릭터찾기┃キャラクター表示
+Setting/추가정보┃追加情報
+Setting/감도┃感度
+Setting/강제빠른제작┃強制簡単製作
+Setting/관전┃観戦
+Setting/제작┃製作
+Setting/오퍼레이터┃オペレーター
+Setting/키설정┃キー設定
+Setting/번역┃翻訳
+Setting/범위표시┃範囲表示
+Setting/사거리┃射程距離
+Setting/마이크┃マイク
+Setting/사용자지정┃カスタム
+Setting/모니터┃モニター
+Setting/차단┃ブロック
+Setting/캐릭터┃キャラクター
+Setting/퀵캐스트┃クイックキャスト
+Setting/키오스크┃Kiosk
+Setting/언어┃言語
+Setting/다국어┃多言語
+Setting/팀원선택┃味方選択
+Setting/화면이동┃画面移動
+Setting/공격┃攻撃
+Setting/드래그┃ドラッグ
+Setting/가젯┃ガジェット
+Setting/스크롤┃スクロール
+Setting/목표선택┃目標選択
+Setting/음식┃食べ物
+Setting/셀프시전┃セルフキャスト
+Setting/자동소비┃自動消費
+Setting/자신에게┃自分に
+Setting/전투중┃戦闘中
+Setting/정보┃情報
+Setting/채팅┃チャット
+Setting/스킬레벨┃スキルレベル
+Setting/타겟팅┃ターゲティング
+Setting/연출┃演出
+Setting/프레임┃フレーム
+Setting/핑┃Ping
+Setting/대기열┃待機列
+Setting/무기스킬┃武器スキル
+Setting/정보오버레이┃情報オーバーレイ
+Setting/클릭┃クリック
+Setting/CCTV┃保安カメラ
+Setting/FPS┃FPS
+Setting/VPad┃V-Pad
+Setting/사운드┃サウンド
+Setting/배경음┃BGM
+Setting/효과음┃効果音
+Setting/소리┃音
+검색결과┃検索結果
+검색결과없음┃検索結果がありません。
+ServerError/200┃(200)
 ServerError/1000┃原因不明のエラーが発生しました。ゲームを再起動します。
 ServerError/1001┃原因不明のエラーが発生しました。ゲームを再起動します。
 ServerError/1002┃原因不明のエラーが発生しました。ゲームを再起動します。
@@ -22270,36 +22530,74 @@ ServerError/1004┃再ログインが必要です。ゲームを再起動しま�
 ServerError/1005┃原因不明のエラーが発生しました。ゲームを再起動します。
 ServerError/1006┃サーバーメンテナンス中です。
 ServerError/1007┃クライアントバージョンがミスマッチしています。
+ServerError/1008┃重複アップデート
+ServerError/1009┃パラメータが不足しています
+ServerError/1010┃有効な情報ではありません。(1010)
 ServerError/1100┃原因不明のエラーが発生しました。ゲームを再起動します。
 ServerError/1101┃原因不明のエラーが発生しました。ゲームを再起動します。
 ServerError/1102┃再ログインが必要です。ゲームを再起動します。
 ServerError/1110┃サーバーにログインできません。アカウントの接続を確認してください。
 ServerError/1111┃使用できないニックネームです。
 ServerError/1112┃サーバーにログインできません。アカウントの接続を確認してください。
+ServerError/1113┃管理者権限がありません
+ServerError/1114┃管理者認証に失敗しました
 ServerError/1115┃Steamのログインに失敗しました。
 ServerError/1116┃ゲーム利用が制限されたアカウントです。
+ServerError/1117┃永久停止されたユーザー
 ServerError/1118┃存在するニックネームです。
-ServerError/이미 존재하는 닉네임입니다.┃存在するニックネームです。
+ServerError/1119┃ログインに失敗しました。(1119)
+ServerError/1120┃ユーザーの接続情報（状態）が存在しません
+ServerError/1121┃停止されたユーザー
+ServerError/1122┃認証失敗
+ServerError/1123┃認証失敗
 ServerError/1124┃新しいMSアカウントは作成できません。
+ServerError/1125┃Twitchに接続できません。(1125)
+ServerError/1126┃KGアカウントを作成できません。(1126)
+ServerError/1127┃ネクソンPC房エラー(1127)
+ServerError/1128┃ネクソンPC房エラー(1128)
+ServerError/1129┃不正な情報です。(1129)
+ServerError/1130┃重複したIPを使用中です。(1130)
+ServerError/1131┃接続量を超過したため利用できません。(1131)
+ServerError/1132┃NEXON_PC_SUBSCRIPTION_ACCESS(1132)
+ServerError/1133┃NEXON_PC_TRIAL_ACCESS(1133)
+ServerError/1134┃NEXON_PC_QUOTA_ACCESS(1134)
+ServerError/1135┃無効な情報です。(1135)
+ServerError/1136┃無効な情報です。(1136)
+ServerError/1137┃ネクソンPC房エラー(1137)
+ServerError/1138┃ネクソンPC房エラー(1138)
 ServerError/1139┃ネットカフェのポイントが確認できません。ご利用のネットカフェの担当者にお問い合わせください。
+ServerError/1140┃報酬の獲得に失敗しました(1140)
+ServerError/1141┃WeGame失敗(1141)
 ServerError/1200┃戦闘結果が見つかりません。
 ServerError/1201┃不明なゲーム情報です。（1201）
 ServerError/1202┃不明なリプレイ情報です。（1202）
 ServerError/1203┃ERパスをすでに保有しています。(1203)
 ServerError/1204┃制限されたリプレイです。(1204)
+ServerError/1205┃コバルト・プロトコルのリプレイを再生できません。(1205)
+ServerError/1206┃すでにゲームが開始されています(1206)
+ServerError/1207┃参加人数がいっぱいです(1207)
 ServerError/1300┃マッチングできません。\n 右上のマッチング地域が選択されているのか確認してください。
 ServerError/1301┃間違ったマッチング要請です。
 ServerError/1302┃チーム員の中にアカウントレベルや所持キャラクターが足りないプレイヤーがいます。
 ServerError/1303┃前のゲームがまだ終了していません。
+ServerError/1304┃NO_BATTLE_HOST
 ServerError/1305┃チーム員の中にレベル条件を満たしていないプレイヤーがいます。
 ServerError/1306┃現在マッチングできる環境ではありません。(1306)
+ServerError/1307┃マッチング人数がいっぱいです(1307)
+ServerError/1308┃最小実験体数が不足しています。(1308)
 ServerError/2000┃決済情報に誤りがあります。
 ServerError/2001┃Steamからの情報連携に失敗しました。
-ServerError/2002┃0
-ServerError/2003┃0
+ServerError/2004┃NOT_ALLOW_REPLAY_USER
+ServerError/2017┃分解券が不足しています(2017)
+ServerError/2018┃ドロップスコインが不足しています(2018)
+ServerError/2019┃データのかけらが不足しています(2019)
 ServerError/2100┃財貨が足りません。
 ServerError/2101┃NPが足りません。
 ServerError/2102┃A-COINが足りません。
+ServerError/2103┃EPが不足しています。(2103)
+ServerError/2104┃データのかけらが不足しています。(2104)
+ServerError/2105┃希少データのかけらが不足しています。(2105)
+ServerError/2106┃必要なアイテムが不足しています。(2106)
 ServerError/2120┃商品情報の呼び出しに失敗しました。
 ServerError/2121┃商品情報に誤りがあります。
 ServerError/2122┃アカウントの最大購入回数を超過しました。
@@ -22313,14 +22611,37 @@ ServerError/2129┃月間最大購入回数を超過しました。(2129)
 ServerError/2130┃最大購入回数を超過しました。(2130)
 ServerError/2131┃有効な価格情報ではありません。(2131)
 ServerError/2132┃現在の地域では購入できない商品です。(2132)
+ServerError/2133┃すでに所有しているアイテムです。(2133)
+ServerError/2134┃後日公開予定です。(2134)
 ServerError/2135┃すでに購入した商品です。(2135)
 ServerError/2136┃購入条件が満たされていないため、購入できません。
+ServerError/2137┃すでに購入した商品です。(2137)
 ServerError/3100┃ミッション情報に誤りがあります。
 ServerError/3101┃ミッション変更に失敗しました。
 ServerError/3102┃ミッションが完了されていないため、報酬を獲得できません。
+ServerError/3103┃イベントミッションの情報がありません。(3103)
+ServerError/3104┃不正なイベントミッションの情報です。(3104)
+ServerError/3105┃すでにミッション報酬を獲得しています。(3105)
+ServerError/3106┃無効な業績です。(3106)
+ServerError/3107┃無効な初心者ミッションです。(3107)
+ServerError/3108┃無効な情報です。(3108)
+ServerError/3109┃無効なミッションです。(3109)
+ServerError/3110┃初心者ミッションの進行状況にエラーがあります。(3110)
+ServerError/3111┃完了していないミッションです。(3111)
+ServerError/3112┃報酬を受け取ることができません。(3112)
+ServerError/3113┃利用できません。(3113)
+ServerError/3114┃報酬を受け取ることができません。(3114)
+ServerError/3115┃条件が満たされていません。(3115)
+ServerError/3116┃すでに獲得した報酬です。(3116)
+ServerError/3117┃ミッション情報が見つかりません。(3117)
+ServerError/3118┃不正なミッションです。(3118)
 ServerError/4100┃無効な情報です。
 ServerError/4101┃獲得期限が過ぎたため、獲得できません。
 ServerError/4102┃獲得可能な報酬がありません。
+ServerError/4103┃獲得可能なパッケージ商品がありません。(4103)
+ServerError/4104┃郵便に含まれているアイテムがありません。(4104)
+ServerError/4105┃不正なアイテムが含まれているため報酬を受け取ることができません。(4105)
+ServerError/4106┃無効なデータです。(4106)
 ServerError/5100┃持ってきたルートは再び共有できません。
 ServerError/5101┃共有していないルートはキャンセルできません。
 ServerError/5102┃修正するルートがありません。
@@ -22329,9 +22650,13 @@ ServerError/5104┃存在しないルートです。
 ServerError/5105┃自分のルートはロードできません。
 ServerError/5106┃選択したキャラクターが使用できないルートです。
 ServerError/5107┃これ以上購入できません。
+ServerError/5108┃存在しないルートスロットです。(5108)
+ServerError/5109┃無効なルート情報です。(5109)
+ServerError/5110┃無効なルート情報です。(5110)
 ServerError/5120┃間違ったアクセスです。
 ServerError/5121┃現在空いているページがありません。
 ServerError/5122┃これ以上購入できません。
+ServerError/5123┃無効な特性情報です。(5123)
 ServerError/5200┃ランク対戦ティアを読み込みできません。
 ServerError/5201┃獲得可能なランク対戦報酬がありません。
 ServerError/5202┃チーム員のティアが合わないため、マッチングできません。
@@ -22339,6 +22664,8 @@ ServerError/5203┃事前構成チームでマッチングできないティア�
 ServerError/5203/Desc┃{0}サーバーで{1}ティア以上は{2}人事前構成チーム不可
 ServerError/6100┃すでに支給されたDLC商品です。
 ServerError/6101┃商品情報が有効ではありません。
+ServerError/6102┃存在しない商品です。(6102)
+ServerError/6103┃存在しない商品です。(6103)
 ServerError/7100┃相手のフレンド数が制限に到達しています。
 ServerError/7101┃フレンドが最大200人まで登録できます。
 ServerError/7102┃相手のフレンド数が制限に到達しています。
@@ -22359,14 +22686,16 @@ ServerError/7206┃限定数量消尽されました。
 ServerError/7207┃使用できません。クーポン使用期間を確認してください。
 ServerError/7208┃現在のレベルでは使用できないクーポンです。
 ServerError/7209┃現在ゲームに接続した地域では使用できないクーポンです。
-ServerError/ALREADY_USED_USER_COUPON┃すでに同じクーポンを使用しているアカウントです。
-ServerError/OVER_LIMIT_COUNT┃クーポンの使用回数が上限を超えたため、これ以上使用できません。
-ServerError/ALREADY_USED_COUPON┃使用済みのクーポンです。
-ServerError/INVALID_COUPON_DTM┃有効期限が満了したクーポンです。
-ServerError/COUPON_ALREADY_USED_TODAY┃1日の利用上限に達しました。明日再度お試しください。
-ServerError/COUPON_USER_LIMIT_EXCEEDED┃クーポンの使用回数が上限を超えたため、これ以上使用できません。
+ServerError/7210┃NEXON_PC_COUPON(7210)
+ServerError/7211┃今日すでに使用されたクーポンです。(7211)
+ServerError/7212┃これ以上クーポンを使用できません。(7212)
+ServerError/7213┃これ以上クーポンを使用できません。(7213)
+ServerError/7300┃NO_RAF_SEASON_DATA(7300)
+ServerError/7301┃すでに招待コードを生成しました。(7301)
+ServerError/7302┃招待コードの生成に失敗しました。(7302)
 ServerError/7303┃コードが見つかりません。
 ServerError/7304┃マイコードは入力できません。
+ServerError/7305┃既存ユーザーは招待コードを入力できません。(7305)
 ServerError/7400┃ERパス情報が見つかりません。(7400)
 ServerError/7401┃ERパスシーズンレベル情報が見つかりません。(7401)
 ServerError/7402┃該当アカウントのERパス情報が見つかりません。(7402)
@@ -22378,19 +22707,63 @@ ServerError/7407┃ERパスシーズンレベルリワードが存在しませ�
 ServerError/7408┃最大シーズンレベルです。(7408)
 ServerError/7409┃ERパス購入情報が有効ではありません。(7409)
 ServerError/7410┃該当アカウントのシーズンレベル情報が存在しません。(7410)
+ServerError/7411┃(7411)
+ServerError/7412┃(7412)
 ServerError/7413┃既にERプラスを購入したシーズンです。(7413)
 ServerError/7414┃既にERパスアップグレードを購入したシーズンです。(7414)
 ServerError/7415┃既に活性化されたシーズンです。(7415)
 ServerError/7416┃ERパス活性化商品が存在しないシーズンです。(7416)
+ServerError/7417┃ERパスのミッション報酬が存在しません。(7417)
+ServerError/7418┃無効なERパスの報酬情報です。(7418)
+ServerError/7419┃シーズンパックを購入したため、ERパスを追加で購入することはできません。\n[メールボックス]内の[シーズンパック]からERパスを確認してください。
 ServerError/7500┃シーズンパックの情報が存在しません。(7500)
 ServerError/7501┃該当アカウントのシーズンパック情報が存在しません。(7501)
 ServerError/7502┃シーズンパックリワードが存在しません。(7502)
 ServerError/7503┃シーズンパック商品は1回のみご購入いただけます。(7503)
-ServerError/ALREADY_BUY_SEASON_PASS┃シーズンパック商品は1回のみご購入いただけます。(7503)
 ServerError/7504┃シーズンパックのシーズ情報が有効ではありません。(7504)
 ServerError/7601┃アイテムが存在しません。
 ServerError/7602┃商品情報に誤りがあります。
+ServerError/7603┃アイテムグループが存在しません。(7603)
+ServerError/7604┃無効な消費量です。(7604)
+ServerError/7605┃使用可能期間ではありません。(7605)
 ServerError/7606┃アイテムを獲得できなかったため、開封をキャンセルします。 (7606)
+ServerError/7701┃所持している図面が存在しません。(7701)
+ServerError/7702┃該当アイテムの図面が存在しません。(7702)
+ServerError/7703┃該当の図面がロックされている状態です。(7703)
+ServerError/7704┃トークン交換情報が存在しません。(7704)
+ServerError/7705┃分解制限回数を超過しました。(7705)
+ServerError/7801┃現在報酬を獲得できる期間ではありません。(7801)
+ServerError/7802┃コレクションが完成していないため、報酬を獲得できません。(7802)
+ServerError/7803┃シーズンのかけらポイントが不足しています。(7803)
+ServerError/7804┃コレクションデータが存在しません。(7804)
+ServerError/7805┃コレクションデータが存在しません。(7805)
+ServerError/7806┃シーズンコレクションデータが存在しません。(7806)
+ServerError/7807┃ユーザーデータが正しくありません。(7807)
+ServerError/7808┃登録対象のアイテムが存在しません。(7808)
+ServerError/7809┃すでに登録されたシーズンのかけらです。(7809)
+ServerError/7810┃交換用のかけらがありません。(7810)
+ServerError/7811┃シーズンコレクションの進行が可能な期間ではありません。(7811)
+ServerError/7812┃前の段階のシーズンコレクションが完了していません。(7812)
+ServerError/7813┃登録されていないシーズンのかけらが存在します。(7813)
+ServerError/7901┃出席情報が正しくありません。(7901)
+ServerError/7902┃出席日数が必要です。(7902)
+ServerError/7903┃情報が存在しません。(7903)
+ServerError/7904┃報酬情報が存在しません。(7904)
+ServerError/7905┃報酬期間が無効です。(7905)
+ServerError/8001┃最大回数を超過したため、これ以上実行できません。(8001)
+ServerError/8002┃更新回数の情報が無効です。(8002)
+ServerError/8003┃すでに個人商店の情報があります。(8003)
+ServerError/8004┃無効な情報です。(8004)
+ServerError/8005┃無効な情報です。(8005)
+ServerError/8006┃個人商店の情報が存在しません。(8006)
+ServerError/8007┃個人商店のデータが存在しません。(8007)
+ServerError/8008┃無効な価格情報です。(8008)
+ServerError/8100┃アーカイブ情報が存在しません。(8100)
+ServerError/8101┃進行中ではないコンテンツです。(8101)
+ServerError/8102┃すでに完了したエピソードです。(8102)
+ServerError/8103┃利用できません。(8103)
+ServerError/8104┃無効な期間です。(8104)
+ServerError/8105┃ARCHIVE_EPISODE_FREE_PERIOD(8105)
 ServerError/9080┃キャラクター情報の呼び出しに失敗しました。
 ServerError/9081┃スキン情報の呼び出しに失敗しました。
 ServerError/9082┃所持キャラクターです。
@@ -22399,14 +22772,18 @@ ServerError/9084┃使用できないキャラクターです。
 ServerError/9085┃購入できないスキンです。
 ServerError/9086┃存在しないエモートです。
 ServerError/9087┃購入できないエモートです。
+ServerError/9088┃無効な購入タイプです。(9088)
 ServerError/9089┃使用可能期間ではありません。
 ServerError/9090┃未所持アイテムが装着されています。
-ServerError/9091┃0
+ServerError/9091┃ブースターアイテムの情報が無効です。(9091)
 ServerError/9092┃アイテム情報が有効ではありません。(9092)
 ServerError/9093┃未所持アイテムは使用できません。(9093)
 ServerError/9094┃購入情報が正しくありません。(9094)
 ServerError/9095┃未所持アイテムです。
 ServerError/9096┃アイテムタイプ情報が有効ではありません。(9096)
+ServerError/9097┃スプレーのプリセット情報が無効です。(9097)
+ServerError/9098┃割引クーポンが存在しません。(9098)
+ServerError/9099┃商品が存在しません。(9099)
 ServerError/9100┃Steam決済要請限度を超えました。(CODE 9100)\nSteamの「ゲーム中にSteamオーバーレイを有効にする」の設定を確認してください。
 ServerError/9101┃決済を完了できません。(9101)
 ServerError/9102┃決済を完了できません。(9102)
@@ -22415,6 +22792,26 @@ ServerError/9104┃決済を完了できません。(9104)
 ServerError/9105┃決済を完了できません。(9105)
 ServerError/9106┃決済を完了できません。(9106)
 ServerError/9107┃決済を完了できません。(9107)
+ServerError/9108┃決済を完了できません。(9108)
+ServerError/9109┃決済失敗(9109)
+ServerError/9110┃API呼び出しに失敗しました。(9110)
+ServerError/9111┃決済失敗(9111)
+ServerError/9112┃不正な形式の決済リクエスト(9112)
+ServerError/9113┃PAYMENT_WEGAME_TXN_NOT_FOUND(9113)
+ServerError/9114┃決済がすでに完了しています(9114)
+ServerError/9115┃決済商品の支給に失敗しました(9115)
+ServerError/9116┃決済が進行中です(9116)
+ServerError/9117┃決済システムエラー(9117)
+ServerError/9118┃認証失敗(9118)
+ServerError/9119┃決済失敗(9119)
+ServerError/9120┃決済失敗(9120)
+ServerError/9121┃払い戻し対象の購入履歴が見つかりません。(9121)
+ServerError/9122┃払い戻し商品が見つかりません。(9122)
+ServerError/9123┃払い戻しが不可能な商品です。(9123)
+ServerError/9124┃シーズンパック商品をすでに受け取ったため、払い戻しは不可能です。(9124)
+ServerError/9125┃すでに使用された商品は払い戻しが不可能です。(9125)
+ServerError/9126┃所持していないアイテムがあるため、払い戻しは不可能です。(9126)
+ServerError/9127┃払い戻し価格情報にエラーがあります。(9127)
 ServerError/9200┃間違った要請です。（9200）
 ServerError/9201┃サーバーとの通信に失敗しました。(9201)
 ServerError/9203┃既にチームに含まれているユーザーです。
@@ -22446,10 +22843,16 @@ ServerError/9228┃対象がオフライン状態です。(9228)
 ServerError/9229┃招待できない対象です。(9229)
 ServerError/9230┃前のゲームが終了していないため、要請できません。(9230)
 ServerError/9231┃すでに参加している状態です。(9231)
+ServerError/9232┃(9232)
 ServerError/9233┃招待できない対象です。(9233)
 ServerError/9234┃マッチングを要請できません。(9234)
 ServerError/9235┃マッチングキャンセルを要請できません。(9235)
+ServerError/9236┃(9236)
+ServerError/9237┃(9237)
+ServerError/9238┃(9238)
 ServerError/9239┃イベント内容が変更されました。再度ご確認ください。
+ServerError/9300┃リプレイのバージョンが一致しません。(9300)
+ServerError/9423┃マッチングペナルティのため、マッチングが不可能です。(9423)
 ServerError/9424┃すでにチームが登録されています。(9424)
 ServerError/9425┃チームを登録できません。(9425)
 ServerError/9426┃すでに登録されているチームです。(9426)
@@ -22478,11 +22881,400 @@ ServerError/9448┃入場料が足りません。(9448)
 ServerError/9449┃参加しているチームメンバーがいるため、チームを解散できません。(9449)
 ServerError/9450┃チームが満員のため、参加できません。(9450)
 ServerError/9451┃ユニオン対戦はアカウントレベル30以上から参加できます。
-ServerError/9452┃現在のチームのティアではマッチングできません。\nティアごとのマッチングスケジュールを確認してください。
-ServerError/SQUAD_RUMBLE_TEAM_TIER_LIMIT┃チーム登録条件が満たされていないため、チームを生成できません。\nチーム生成条件：アカウントレベル30以上、ランク対戦でゴールドティア以上の場合可能
+ServerError/9452┃現在のチームのティアではマッチングできません。\n ティアごとのマッチングスケジュールを確認してください。
+ServerError/9453┃ユニオン対戦チケットが不足しています。(9453)
+ServerError/9500┃認証情報が見つかりません。(9500)
+ServerError/9501┃番号が一致しません。(9501)
+ServerError/9502┃不正な番号形式です。(9502)
+ServerError/9503┃無効なコードです。(9503)
+ServerError/9504┃期限切れのリクエストです。(9504)
+ServerError/9505┃認証番号エラー(9505)
+ServerError/9506┃認証リクエストが見つかりません。(9506)
+ServerError/9508┃すでに登録された情報です。(9508)
+ServerError/9509┃重複登録(9509)
+ServerError/9510┃まだ利用できません。(9510)
+ServerError/9511┃ユーザー情報が不明です。(9511)
+ServerError/9512┃認証できません。(9512)
+ServerError/9513┃入力回数超過(9513)
+ServerError/9514┃不正な認証情報です。(9514)
 ServerError/99999┃互換性のないバージョンで接続を試みました。
-ServerError/HttpException┃サーバーと接続できません。
-ServerError/TimeOut┃データ読み込みに失敗しました。
+ServerError/SUCCESS┃原因不明のエラーが発生しました。ゲームを再起動します。
+ServerError/UNKNOWN┃原因不明のエラーが発生しました。ゲームを再起動します。
+ServerError/PARAMETER_TYPE_MISMATCH┃原因不明のエラーが発生しました。ゲームを再起動します。
+ServerError/PARAMETER_MISSED┃原因不明のエラーが発生しました。ゲームを再起動します。
+ServerError/PARAMETER_VALIDATION_FAILED┃再ログインが必要です。ゲームを再起動します。
+ServerError/SESSION_HEADER_REQUIRED┃原因不明のエラーが発生しました。ゲームを再起動します。
+ServerError/UNAVAILABLE_REQUEST┃サーバーメンテナンス中です。
+ServerError/UNDER_MAINTENANCE┃クライアントバージョンがミスマッチしています。
+ServerError/INVALID_VERSION┃重複アップデート
+ServerError/ASSET_DUPLICATE_UPDATE┃パラメータが不足しています
+ServerError/PARAMETER_MISSED_BUT_IGNORED┃有効な情報ではありません。(1010)
+ServerError/INVALID_SETUP┃原因不明のエラーが発生しました。ゲームを再起動します。
+ServerError/MALFORMED_SESSION┃原因不明のエラーが発生しました。ゲームを再起動します。
+ServerError/ABNORMAL_ACCESS┃再ログインが必要です。ゲームを再起動します。
+ServerError/SESSION_EXPIRED┃サーバーにログインできません。アカウントの接続を確認してください。
+ServerError/USER_IDENTIFY_FAILED┃使用できないニックネームです。
+ServerError/UNAVAILABLE_NICKNAME┃サーバーにログインできません。アカウントの接続を確認してください。
+ServerError/INVALID_MACHINE_NUM┃管理者権限がありません
+ServerError/ADMIN_UNAUTHORIZED┃管理者認証に失敗しました
+ServerError/ADMIN_UNAUTHENTICATED┃Steamのログインに失敗しました。
+ServerError/STEAM_AUTH_FAILED┃ゲーム利用が制限されたアカウントです。
+ServerError/BAN_USER┃永久停止されたユーザー
+ServerError/PERMANENT_BAN_USER┃存在するニックネームです。
+ServerError/ALREADY_HAVE_NICKNAME┃ログインに失敗しました。(1119)
+ServerError/KAKAO_AUTH_FAILED┃ユーザーの接続情報（状態）が存在しません
+ServerError/NOT_EXIST_USER_PRESENCE┃停止されたユーザー
+ServerError/ALREADY_BAN_USER┃認証失敗
+ServerError/PLAYFAB_AUTH_FAILED┃認証失敗
+ServerError/CHAT_AUTH_FAILED┃新しいMSアカウントは作成できません。
+ServerError/CAN_NOT_CREATE_MS_ACCOUNT┃Twitchに接続できません。(1125)
+ServerError/TWITCH_SERVER_UNAVAILABLE┃KGアカウントを作成できません。(1126)
+ServerError/CAN_NOT_CREATE_KG_ACCOUNT┃ネクソンPC房エラー(1127)
+ServerError/NEXON_PC_CRITICAL_ERROR┃ネクソンPC房エラー(1128)
+ServerError/NEXON_PC_NORMAL_ERROR┃不正な情報です。(1129)
+ServerError/NEXON_PC_IS_NOT_NEXON_PCBANG┃重複したIPを使用中です。(1130)
+ServerError/NEXON_PC_DUPLICATE_CONNECTION_FROM_SAME_IP┃接続量を超過したため利用できません。(1131)
+ServerError/NEXON_PC_EXCEEDED_CONNECTION_LIMIT┃NEXON_PC_SUBSCRIPTION_ACCESS(1132)
+ServerError/NEXON_PC_SUBSCRIPTION_ACCESS┃NEXON_PC_TRIAL_ACCESS(1133)
+ServerError/NEXON_PC_TRIAL_ACCESS┃NEXON_PC_QUOTA_ACCESS(1134)
+ServerError/NEXON_PC_QUOTA_ACCESS┃無効な情報です。(1135)
+ServerError/NEXON_PC_QUOTA_INVAILD_VPN_ACCESS┃無効な情報です。(1136)
+ServerError/NEXON_PC_IMPERSONATOR_ACCESS┃ネクソンPC房エラー(1137)
+ServerError/NEXON_PC_PREMIUM_PLUS_ACCESS┃ネクソンPC房エラー(1138)
+ServerError/NEXON_PC_REQUEST_SURGE┃ネットカフェのポイントが確認できません。ご利用のネットカフェの担当者にお問い合わせください。
+ServerError/NEXON_PC_IS_NOT_PREMIUM_ACCESS┃報酬の獲得に失敗しました(1140)
+ServerError/CHZZK_REWARD_CLAIM_FAILED┃WeGame失敗(1141)
+ServerError/WEGAME_AUTH_FAILED┃戦闘結果が見つかりません。
+ServerError/NO_BATTLE_RESULT┃不明なゲーム情報です。（1201）
+ServerError/NOT_EXIST_GAME┃不明なリプレイ情報です。（1202）
+ServerError/NOT_EXIST_REPLAY┃ERパスをすでに保有しています。(1203)
+ServerError/ALREADY_BATTLE_PASS_PAID┃制限されたリプレイです。(1204)
+ServerError/NOT_ALLOW_REPLAY_USER┃コバルト・プロトコルのリプレイを再生できません。(1205)
+ServerError/CANNOT_PLAY_COBALT_REPLAY┃すでにゲームが開始されています(1206)
+ServerError/ALREADY_STARTED_GAME┃参加人数がいっぱいです(1207)
+ServerError/ALREADY_FULL_GAME┃マッチングできません。\n 右上のマッチング地域が選択されているのか確認してください。
+ServerError/OUT_OF_SERVICE_MATCHING_REGION┃間違ったマッチング要請です。
+ServerError/MISS_MATCHING_PASS┃チーム員の中にアカウントレベルや所持キャラクターが足りないプレイヤーがいます。
+ServerError/UNAVAILABLE_RANKING┃前のゲームがまだ終了していません。
+ServerError/UNAVAILABLE_MATCHING_PRE_GAME_NOT_FINISHED┃NO_BATTLE_HOST
+ServerError/NO_BATTLE_HOST┃チーム員の中にレベル条件を満たしていないプレイヤーがいます。
+ServerError/NOT_OPENED_CONTENT┃現在マッチングできる環境ではありません。(1306)
+ServerError/CANNOT_MATCHING_NOT_IN_LOBBY_STATUS┃マッチング人数がいっぱいです(1307)
+ServerError/MORE_THAN_MAX_USERS┃最小実験体数が不足しています。(1308)
+ServerError/NOT_ENOUGH_POOL_CHARACTERS┃決済情報に誤りがあります。
+ServerError/IAP_INVALID_ORDER┃Steamからの情報連携に失敗しました。
+ServerError/KAKAO_IAP_USE_CASH_API_FAIL┃NOT_ALLOW_REPLAY_USER
+ServerError/KAKO_IAP_ITEM_PROVIDE_FAIL┃分解券が不足しています(2017)
+ServerError/LACK_OF_DISASSEMBLY_TICKET┃ドロップスコインが不足しています(2018)
+ServerError/LACK_OF_DROPS_COIN┃データのかけらが不足しています(2019)
+ServerError/LACK_OF_SPECIAL_MATTER┃財貨が足りません。
+ServerError/LACK_OF_CURRENCY┃NPが足りません。
+ServerError/LACK_OF_NP┃A-COINが足りません。
+ServerError/LACK_OF_ACOIN┃EPが不足しています。(2103)
+ServerError/LACK_OF_EP┃データのかけらが不足しています。(2104)
+ServerError/LACK_OF_NORMAL_MATTER┃希少データのかけらが不足しています。(2105)
+ServerError/LACK_OF_RARE_MATTER┃必要なアイテムが不足しています。(2106)
+ServerError/LACK_OF_ITEM┃商品情報の呼び出しに失敗しました。
+ServerError/NO_PRODUCT_ID┃商品情報に誤りがあります。
+ServerError/INVALID_PROMOTION┃アカウントの最大購入回数を超過しました。
+ServerError/UNABLE_PURCHASE_BY_CONDITION_JUSTONCE┃一日最大購入回数を超過しました。
+ServerError/UNABLE_PURCHASE_BY_CONDITION_ONCE_A_DAY┃週間最大購入回数を超過しました。
+ServerError/UNABLE_PURCHASE_BY_CONDITION_ONCE_A_WEEK┃月間最大購入回数を超過しました。
+ServerError/UNABLE_PURCHASE_BY_CONDITION_ONCE_A_MONTH┃割引が終了され、購入することができません。
+ServerError/UNABLE_PURCHASE_BY_SALE┃一日最大購入回数を超過しました。(2127)
+ServerError/UNABLE_PURCHASE_BY_CONDITION_DAY┃週間最大購入回数を超過しました。(2128)
+ServerError/UNABLE_PURCHASE_BY_CONDITION_WEEK┃月間最大購入回数を超過しました。(2129)
+ServerError/UNABLE_PURCHASE_BY_CONDITION_MONTH┃最大購入回数を超過しました。(2130)
+ServerError/UNABLE_PURCHASE_BY_CONDITION_LIMIT_AMOUNT┃有効な価格情報ではありません。(2131)
+ServerError/INVALID_PRODUCT_PRICE┃現在の地域では購入できない商品です。(2132)
+ServerError/UNABLE_PURCHASE_BY_SPECIFIC_AREA┃すでに所有しているアイテムです。(2133)
+ServerError/ALREADY_OWN_ITEM┃後日公開予定です。(2134)
+ServerError/TO_BE_UPDATED┃すでに購入した商品です。(2135)
+ServerError/ALREADY_BUY_SEQ┃購入条件が満たされていないため、購入できません。
+ServerError/INVALID_PURCHASE_CONDITION┃すでに購入した商品です。(2137)
+ServerError/ALREADY_BUY_PROMOTION┃ミッション情報に誤りがあります。
+ServerError/INVALID_USER_MISSION┃ミッション変更に失敗しました。
+ServerError/INVALID_CHANGE_MISSION┃ミッションが完了されていないため、報酬を獲得できません。
+ServerError/INVALID_PROGRESS_COUNT┃イベントミッションの情報がありません。(3103)
+ServerError/INVALID_EVENT_MISSION┃不正なイベントミッションの情報です。(3104)
+ServerError/INVALID_USER_EVENT_MISSION┃すでにミッション報酬を獲得しています。(3105)
+ServerError/ALREADY_RECEIVED_REWARDS┃無効な業績です。(3106)
+ServerError/INVALID_ACHIEVEMENT_CODE┃無効な初心者ミッションです。(3107)
+ServerError/INVALID_USER_NOVICE_MISSION┃無効な情報です。(3108)
+ServerError/INVALID_NOVICE_SUPPORT┃無効なミッションです。(3109)
+ServerError/INVALID_NOVICE_MISSION┃初心者ミッションの進行状況にエラーがあります。(3110)
+ServerError/INVALID_NOVICE_MISSION_PROGRESS┃完了していないミッションです。(3111)
+ServerError/NOVICE_MISSION_NOT_COMPLETED┃報酬を受け取ることができません。(3112)
+ServerError/NOVICE_MISSION_REWARD_NOT_RECEIVED┃利用できません。(3113)
+ServerError/NOVICE_MISSION_TAB_LOCKED┃報酬を受け取ることができません。(3114)
+ServerError/NOVICE_MISSION_ALL_CLEAR_REWARD_NOT_CONFIGURED┃条件が満たされていません。(3115)
+ServerError/NOVICE_MISSION_INVALID_CONDITION_TYPE┃すでに獲得した報酬です。(3116)
+ServerError/ALREADY_RECEIVED_NOVICE_MISSION_REWARDS┃ミッション情報が見つかりません。(3117)
+ServerError/NOVICE_MISSION_NOT_FOUND┃不正なミッションです。(3118)
+ServerError/NOVICE_MISSION_EMPTY_CODES┃無効な情報です。
+ServerError/NOT_EXIST_GIFT_MAIL┃獲得期限が過ぎたため、獲得できません。
+ServerError/GIFT_MAIL_IS_EXPIRED┃獲得可能な報酬がありません。
+ServerError/NOT_EXIST_REWARD┃獲得可能なパッケージ商品がありません。(4103)
+ServerError/NOT_EXIST_PACKAGE_PRODUCT┃郵便に含まれているアイテムがありません。(4104)
+ServerError/NOT_EXIST_GIFT_MAIL_ITEM┃不正なアイテムが含まれているため報酬を受け取ることができません。(4105)
+ServerError/NOT_EXIST_REWARD_ITEM┃無効なデータです。(4106)
+ServerError/NOT_EXIST_EVENT_DATA┃持ってきたルートは再び共有できません。
+ServerError/ALREADY_RECOMMEND_WEAPON_ROUTE┃共有していないルートはキャンセルできません。
+ServerError/ALREADY_NOT_RECOMMEND_WEAPON_ROUTE┃修正するルートがありません。
+ServerError/NOT_EXIST_WEAPON_ROUTE┃存在しないルートです。
+ServerError/NOT_EXIST_RECOMMEND_WEAPON_ROUTE┃存在しないルートです。
+ServerError/NOT_EXIST_INIT_WEAPON_ROUTE┃自分のルートはロードできません。
+ServerError/MY_SHARE_WEAPON_ROUTE┃選択したキャラクターが使用できないルートです。
+ServerError/NOT_EXIST_CHARACTER_WEAPON_ROUTE┃これ以上購入できません。
+ServerError/ALREADY_MAX_PAID_COUNT┃存在しないルートスロットです。(5108)
+ServerError/NOT_EXIST_WEAPON_ROUTE_SLOT┃無効なルート情報です。(5109)
+ServerError/INVALID_WEAPON_ROUTE┃無効なルート情報です。(5110)
+ServerError/INVALID_WEAPON_ROUTE_PATH┃間違ったアクセスです。
+ServerError/TRAIT_NOT_EXIST_PAGE┃現在空いているページがありません。
+ServerError/TRAIT_NOT_EXIST_EMPTY_PAGE┃これ以上購入できません。
+ServerError/TRAIT_MAX_PAGE┃無効な特性情報です。(5123)
+ServerError/INVALID_TRAIT┃ランク対戦ティアを読み込みできません。
+ServerError/NOT_EXIST_RANKING_TIER┃獲得可能なランク対戦報酬がありません。
+ServerError/NOT_EXIST_RANKING_REWARD┃チーム員のティアが合わないため、マッチングできません。
+ServerError/PRE_MADE_TEAM_RANK_TIER_RESTRICT┃事前構成チームでマッチングできないティアのプレイヤーが含まれています。
+ServerError/PRE_MADE_TEAM_RANK_TIER_RESTRICT_GREATER_THAN_NOW┃{0}サーバーで{1}ティア以上は{2}人事前構成チーム不可
+ServerError/ALREADY_RECEIVED_DLC_PRODUCT┃すでに支給されたDLC商品です。
+ServerError/INVALID_PRODUCT_ID┃商品情報が有効ではありません。
+ServerError/NOT_EXIST_PRODUCT┃存在しない商品です。(6102)
+ServerError/NOT_EXIST_SHOP_PRODUCT_ID┃存在しない商品です。(6103)
+ServerError/ALREADY_MAX_FRIEND_RECEIVE_COUNT┃相手のフレンド数が制限に到達しています。
+ServerError/ALREADY_MAX_FRIEND_COUNT┃フレンドが最大200人まで登録できます。
+ServerError/ALREADY_MAX_FRIEND_COUNT_TARGET┃相手のフレンド数が制限に到達しています。
+ServerError/CANT_YOURSELF┃自分をフレンド追加できません。
+ServerError/ALREADY_FRIEND┃フレンドリストに追加されています。
+ServerError/ALREADY_FRIEND_REQUEST┃フレンドリクエストを送った状態です。
+ServerError/FRIEND_REQUEST_NOT_RECEIVED┃存在しないリクエストです。
+ServerError/NOT_FRIEND┃フレンドではありません。
+ServerError/NOT_FOUND_USER┃使用者情報確認に失敗しました。
+ServerError/ALREADY_MAX_FRIEND_REQUEST_COUNT┃本日の招待回数が上限に達しました。
+ServerError/ALREADY_USED_COUPON┃使用済みのクーポンです。
+ServerError/INVALID_COUPON_ID┃存在しないクーポンです。
+ServerError/INVALID_COUPON_DTM┃有効期限が満了したクーポンです。
+ServerError/KAKAO_PC_COUPON┃ネットカフェ専用クーポンです。
+ServerError/ALREADY_USED_USER_COUPON┃すでに使用済みのクーポンです。
+ServerError/INVALID_AUTH_PROVIDER_COUPON┃該当プラットフォームでは使用できないクーポンです。
+ServerError/OVER_LIMIT_COUNT┃限定数量消尽されました。
+ServerError/AFTER_NOW_COUPON_DTM┃使用できません。クーポン使用期間を確認してください。
+ServerError/INVALID_USER_LEVEL_COUPON┃現在のレベルでは使用できないクーポンです。
+ServerError/INVALID_USER_COUNTRY_CODE┃現在ゲームに接続した地域では使用できないクーポンです。
+ServerError/NEXON_PC_COUPON┃NEXON_PC_COUPON(7210)
+ServerError/COUPON_ALREADY_USED_TODAY┃今日すでに使用されたクーポンです。(7211)
+ServerError/COUPON_USER_LIMIT_EXCEEDED┃これ以上クーポンを使用できません。(7212)
+ServerError/COUPON_ISSUE_LIMIT_EXCEEDED┃これ以上クーポンを使用できません。(7213)
+ServerError/NO_RAF_SEASON_DATA┃NO_RAF_SEASON_DATA(7300)
+ServerError/ALREADY_CREATE_RAF_CODE┃すでに招待コードを生成しました。(7301)
+ServerError/FAIL_TO_CREATE_RAF_CODE┃招待コードの生成に失敗しました。(7302)
+ServerError/INVALID_RAF_CODE_NO_USER┃コードが見つかりません。
+ServerError/INVALID_RAF_CODE_MINE┃マイコードは入力できません。
+ServerError/RAF_OLD_USER_CANNOT_ENTER_CODE┃既存ユーザーは招待コードを入力できません。(7305)
+ServerError/NOT_EXIST_BATTLE_PASS┃ERパス情報が見つかりません。(7400)
+ServerError/NOT_EXIST_BATTLE_PASS_LEVEL┃ERパスシーズンレベル情報が見つかりません。(7401)
+ServerError/NOT_EXIST_USER_BATTLE_PASS┃該当アカウントのERパス情報が見つかりません。(7402)
+ServerError/INVALID_USER_BATTLE_PASS_LEVEL┃該当アカウントのERパスシーズンレベル情報が見つかりません。(7403)
+ServerError/NOT_PAID_BATTLE_PASS┃ERパスを保有していません。(7404)
+ServerError/INVALID_BATTLE_PASS_MISSION┃ERパスミッション情報が有効ではありません。(7405)
+ServerError/NOT_EXIST_BATTLE_PASS_REWARD┃ERパスリワードが存在しません。(7406)
+ServerError/NOT_EXIST_BATTLE_PASS_LEVEL_REWARD┃ERパスシーズンレベルリワードが存在しません。(7407)
+ServerError/USER_BATTLE_PASS_MAX_LEVEL┃最大シーズンレベルです。(7408)
+ServerError/INVALID_SHOP_PRODUCT_BATTLE_PASS_CODE┃ERパス購入情報が有効ではありません。(7409)
+ServerError/NOT_EXIST_USER_BATTLE_PASS_LEVEL┃該当アカウントのシーズンレベル情報が存在しません。(7410)
+ServerError///BATTLE_PASS_IS_ZERO┃(7411)
+ServerError///ALREADY_PAID_BATTLE_PASS_BUNDLE┃(7412)
+ServerError/ALREADY_BATTLE_PASS_BUNDLE_PAID┃既にERプラスを購入したシーズンです。(7413)
+ServerError/ALREADY_BATTLE_PASS_UPGRADE_PAID┃既にERパスアップグレードを購入したシーズンです。(7414)
+ServerError/ALREADY_USER_BATTLE_PASS_ACTIVE┃既に活性化されたシーズンです。(7415)
+ServerError/NOT_EXIST_BATTLE_PASS_ACTIVE_CHANGE_PRODUCT┃ERパス活性化商品が存在しないシーズンです。(7416)
+ServerError/NOT_EXIST_BATTLE_PASS_MISSION_REWARD┃ERパスのミッション報酬が存在しません。(7417)
+ServerError/INVALID_VERSION_BATTLE_PASS_LEVEL_REWARD┃無効なERパスの報酬情報です。(7418)
+ServerError/ALREADY_EXIST_BATTLE_PASS_IN_YOUR_GIFT_MAIL┃シーズンパックを購入したため、ERパスを追加で購入することはできません。\n[メールボックス]内の[シーズンパック]からERパスを確認してください。
+ServerError/NOT_EXIST_SEASON_PASS┃シーズンパックの情報が存在しません。(7500)
+ServerError/NOT_EXIST_USER_SEASON_PASS┃該当アカウントのシーズンパック情報が存在しません。(7501)
+ServerError/NOT_EXIST_SEASON_PASS_REWARD┃シーズンパックリワードが存在しません。(7502)
+ServerError/ALREADY_BUY_SEASON_PASS┃シーズンパック商品は1回のみご購入いただけます。(7503)
+ServerError/INVALID_SHOP_PRODUCT_SEASON_PASS_CODE┃シーズンパックのシーズ情報が有効ではありません。(7504)
+ServerError/NOT_EXIST_RANDOM_BOX┃アイテムが存在しません。
+ServerError/INVALID_RANDOM_BOX_ITEM_COUNT┃商品情報に誤りがあります。
+ServerError/NOT_EXIST_RANDOM_BOX_GROUP┃アイテムグループが存在しません。(7603)
+ServerError/INVALID_RANDOM_BOX_CONSUME_COUNT┃無効な消費量です。(7604)
+ServerError/INVALID_RANDOM_BOX_USE_DTM┃使用可能期間ではありません。(7605)
+ServerError/INVALID_RANDOM_BOX_RESULT┃アイテムを獲得できなかったため、開封をキャンセルします。 (7606)
+ServerError/NOT_EXIST_USER_BLUEPRINT┃所持している図面が存在しません。(7701)
+ServerError/NOT_EXIST_BLUEPRINT┃該当アイテムの図面が存在しません。(7702)
+ServerError/LOCKED_BLUEPRINT┃該当の図面がロックされている状態です。(7703)
+ServerError/NOT_EXIST_TOKEN_EXCHANGE_DATA┃トークン交換情報が存在しません。(7704)
+ServerError/OVER_LIMIT_DISINTEGRATE_COUNT┃分解制限回数を超過しました。(7705)
+ServerError/NOT_REWARD_DTM┃現在報酬を獲得できる期間ではありません。(7801)
+ServerError/COLLECTION_ERROR_NOT_REGISTERED_LIST_EXIST┃コレクションが完成していないため、報酬を獲得できません。(7802)
+ServerError/LACK_OF_SEASON_COLLECTION_POINT┃シーズンのかけらポイントが不足しています。(7803)
+ServerError/NOT_EXIST_COLLECTION_DATA┃コレクションデータが存在しません。(7804)
+ServerError/NOT_EXIST_USER_COLLECTION_DATA┃コレクションデータが存在しません。(7805)
+ServerError/NOT_EXIST_USER_SEASON_COLLECTION_DATA┃シーズンコレクションデータが存在しません。(7806)
+ServerError/NOT_EXIST_USER_EXTRA_INFO┃ユーザーデータが正しくありません。(7807)
+ServerError/NOT_EXIST_COLLECTION_ITEM┃登録対象のアイテムが存在しません。(7808)
+ServerError/ALREADY_HAVE_COLLECTION_ITEM┃すでに登録されたシーズンのかけらです。(7809)
+ServerError/NOT_EXIST_EXCHANGE_COLLECTION_ITEM┃交換用のかけらがありません。(7810)
+ServerError/SEASON_COLLECTION_NOT_ACTIVE┃シーズンコレクションの進行が可能な期間ではありません。(7811)
+ServerError/COLLECTION_PREV_SEQ_NOT_COMPLETED┃前の段階のシーズンコレクションが完了していません。(7812)
+ServerError/NOT_ENOUGH_COLLECTIBLE_ITEM┃登録されていないシーズンのかけらが存在します。(7813)
+ServerError/NOT_EXIST_USER_ATTENDANCE┃出席情報が正しくありません。(7901)
+ServerError/NEED_ATTENDANCE_DAYS┃出席日数が必要です。(7902)
+ServerError/NOT_EXIST_ATTENDANCE┃情報が存在しません。(7903)
+ServerError/NOT_EXIST_ATTENDANCE_REWARD_COUNT┃報酬情報が存在しません。(7904)
+ServerError/INVALID_RECEIVED_REWARDS_DTM┃報酬期間が無効です。(7905)
+ServerError/PERSONAL_SHOP_REFRESH_MAX_COUNT_OVER┃最大回数を超過したため、これ以上実行できません。(8001)
+ServerError/INVALID_PERSONAL_SHOP_REFRESH_COUNT┃更新回数の情報が無効です。(8002)
+ServerError/ALREADY_PERSONAL_SHOP_CREATE┃すでに個人商店の情報があります。(8003)
+ServerError/INVALID_PERSONAL_SHOP_COUNT┃無効な情報です。(8004)
+ServerError/INVALID_PERSONAL_SHOP_PRODUCT_TYPE┃無効な情報です。(8005)
+ServerError/NOT_EXIST_USER_PERSONAL_SHOP┃個人商店の情報が存在しません。(8006)
+ServerError/NOT_EXIST_PERSONAL_SHOP_DATA┃個人商店のデータが存在しません。(8007)
+ServerError/INVALID_PERSONAL_SHOP_PRODUCT_PRICE┃無効な価格情報です。(8008)
+ServerError/NOT_EXIST_ARCHIVE_EPISODE┃アーカイブ情報が存在しません。(8100)
+ServerError/ARCHIVE_EPISODE_NOT_STARTED┃進行中ではないコンテンツです。(8101)
+ServerError/ARCHIVE_EPISODE_ALREADY_COMPLETED┃すでに完了したエピソードです。(8102)
+ServerError/ARCHIVE_EPISODE_NOT_AVAILABLE┃利用できません。(8103)
+ServerError/ARCHIVE_EPISODE_INVALID_PERIOD┃無効な期間です。(8104)
+ServerError/ARCHIVE_EPISODE_FREE_PERIOD┃ARCHIVE_EPISODE_FREE_PERIOD(8105)
+ServerError/NO_CHARACTER_EXISTS┃キャラクター情報の呼び出しに失敗しました。
+ServerError/NO_CHARACTER_SKIN_EXISTS┃スキン情報の呼び出しに失敗しました。
+ServerError/ALREADY_OWN_CHARACTER┃所持キャラクターです。
+ServerError/ALREADY_OWN_SKIN┃所持スキンです。
+ServerError/CAN_NOT_USE_CHARACTER┃使用できないキャラクターです。
+ServerError/INVALID_SKIN_PURCHASE_TYPE┃購入できないスキンです。
+ServerError/NOT_EXIST_USER_EMOTION┃存在しないエモートです。
+ServerError/INVALID_EMOTION_PURCHASE_TYPE┃購入できないエモートです。
+ServerError/INVALID_EMBLEM_PURCHASE_TYPE┃無効な購入タイプです。(9088)
+ServerError/INVALID_EMBLEM_USE_DTM┃使用可能期間ではありません。
+ServerError/NOT_EXIST_USER_EMBLEM┃未所持アイテムが装着されています。
+ServerError/INVALID_BOOSTER_DATA┃ブースターアイテムの情報が無効です。(9091)
+ServerError/INVALID_GOODS_DATA┃アイテム情報が有効ではありません。(9092)
+ServerError/NOT_EXIST_USER_GOODS┃未所持アイテムは使用できません。(9093)
+ServerError/INVALID_GOODS_PURCHASE_TYPE┃購入情報が正しくありません。(9094)
+ServerError/INVALID_EMBLEM_USE_TYPE┃未所持アイテムです。
+ServerError/INVALID_GOODS_TYPE┃アイテムタイプ情報が有効ではありません。(9096)
+ServerError/INVALID_SPRAY_PRESET_NUM┃スプレーのプリセット情報が無効です。(9097)
+ServerError/NOT_EXIST_SPECIAL_OFFER┃割引クーポンが存在しません。(9098)
+ServerError/NOT_EXIST_GOODS┃商品が存在しません。(9099)
+ServerError/PAYMENT_STEAM_TXN_FAIL┃Steam決済要請限度を超えました。(CODE 9100)\nSteamの「ゲーム中にSteamオーバーレイを有効にする」の設定を確認してください。
+ServerError/PAYMENT_AUTH_PROVIDER_MISMATCH┃決済を完了できません。(9101)
+ServerError/PAYMENT_PURCHASE_CANCELED┃決済を完了できません。(9102)
+ServerError/PAYMENT_RECEIPT_HASH_DUPLICATED┃決済を完了できません。(9103)
+ServerError/PAYMENT_ALREADY_CHARGED┃決済を完了できません。(9104)
+ServerError/PAYMENT_INVALID_RECEIPT┃決済を完了できません。(9105)
+ServerError/PAYMENT_INVALID_TOKEN┃決済を完了できません。(9106)
+ServerError/PAYMENT_TOKEN_DUPLICATED┃決済を完了できません。(9107)
+ServerError/PAYMENT_PLAYFAB_API_FAIL┃決済を完了できません。(9108)
+ServerError/PAYMENT_WEGAME_TXN_FAIL┃決済失敗(9109)
+ServerError/PAYMENT_WEGAME_API_FAIL┃API呼び出しに失敗しました。(9110)
+ServerError/PAYMENT_WEGAME_EXPIRED_REQUEST┃決済失敗(9111)
+ServerError/PAYMENT_WEGAME_MALFORMED_REQUEST┃不正な形式の決済リクエスト(9112)
+ServerError/PAYMENT_WEGAME_TXN_NOT_FOUND┃PAYMENT_WEGAME_TXN_NOT_FOUND(9113)
+ServerError/PAYMENT_WEGAME_ALREADY_PAID┃決済がすでに完了しています(9114)
+ServerError/PAYMENT_WEGAME_IAP_PROVIDE_FAIL┃決済商品の支給に失敗しました(9115)
+ServerError/PAYMENT_WEGAME_IAP_IN_PROGRESS┃決済が進行中です(9116)
+ServerError/PAYMENT_WEGAME_SYSTEM_ERROR┃決済システムエラー(9117)
+ServerError/PAYMENT_WEGAME_UNAUTHORIZED┃認証失敗(9118)
+ServerError/PAYMENT_WEGAME_RAIL_ID_TRANSITION_FAILED┃決済失敗(9119)
+ServerError/PAYMENT_WEGAME_NOT_OWNED┃決済失敗(9120)
+ServerError/REFUND_PURCHASE_HISTORY_NOT_FOUND┃払い戻し対象の購入履歴が見つかりません。(9121)
+ServerError/REFUND_SHOP_PRODUCT_NOT_FOUND┃払い戻し商品が見つかりません。(9122)
+ServerError/REFUND_PRODUCT_NOT_REFUNDABLE┃払い戻しが不可能な商品です。(9123)
+ServerError/REFUND_SEASON_PASS_PRODUCT_RECEIVED┃シーズンパック商品をすでに受け取ったため、払い戻しは不可能です。(9124)
+ServerError/REFUND_PRODUCT_USED┃すでに使用された商品は払い戻しが不可能です。(9125)
+ServerError/REFUND_NOT_OWN_ITEM┃所持していないアイテムがあるため、払い戻しは不可能です。(9126)
+ServerError/REFUND_PURCHASE_HISTORY_REFUND_PRICE┃払い戻し価格情報にエラーがあります。(9127)
+ServerError/MALFORMED_MESSAGE┃間違った要請です。（9200）
+ServerError/CANNOT_SAVE┃サーバーとの通信に失敗しました。(9201)
+ServerError/ALREADY_JOINED┃既にチームに含まれているユーザーです。
+ServerError/CANNOT_CREATE┃チーム生成過程でエラーが発生しました。(9204)
+ServerError/CANNOT_JOIN┃チーム合流過程でエラーが発生しました。(9205)
+ServerError/CANNOT_LEAVE┃離脱できません。
+ServerError/CANNOT_INVITE┃招待できない対象です。
+ServerError/NEED_TO_BE_LEADER┃チームマスターだけできます。
+ServerError/IS_LOCKED┃新しいチーム員を受け入れられません。
+ServerError/TARGET_NOT_INCLUDED┃チームに属していません。(9210)
+ServerError/TARGET_NOT_EXISTS┃ユーザーを見つかりません。(9211)
+ServerError/CANNOT_REGISTER_RECOMMEND┃チーム員検索ができません。(9212)
+ServerError/TEAM_DOES_NOT_EXIST┃チームが見つかりません。
+ServerError/CANNOT_CHANGE┃マッチングモードが変更できません。
+ServerError/CANNOT_DELEGATE┃チームマスターを委任することはできません。
+ServerError/CANNOT_BAN┃チーム員を追放することはできません。(9216)
+ServerError/NO_BATTLE_USER┃ユーザーを見つかりません。(9217)
+ServerError/TEAM_HAS_MAX_USERS┃チームが満員です。
+ServerError/CANNOT_REGISTER_MATCH┃マッチングに参加できません。(9219)
+ServerError/CANNOT_CANCEL_MATCH┃マッチングキャンセルができません。(9220)
+ServerError/CANNOT_CANCEL_RECOMMEND┃キャンセルできません。(9221)
+ServerError/TOO_MANY_REQUESTS┃しばらくしてからもう一度お試しください。(9222)
+ServerError/FRIEND_IAP_GIFT_ERROR_USER_CREATE_DTM┃アカウント作成日の条件によって使用できません。(9223)
+ServerError/FRIEND_IAP_GIFT_ERROR_USER_LEVEL┃アカウントレベルの条件によって使用できません。(9224)
+ServerError/FRIEND_IAP_GIFT_ERROR_USER_BAN┃アカウントが制裁されているため、使用できません。(9225)
+ServerError/FRIEND_IAP_GIFT_ERROR_DAILY_COUNT┃1日あたりの使用上限を超過したため、使用できません。(9226)
+ServerError/DISABLE_IAP_GIFT┃ギフトを進行できません。(9227)
+ServerError/TARGET_IS_OFFLINE┃対象がオフライン状態です。(9228)
+ServerError/TARGET_IS_BUSY┃招待できない対象です。(9229)
+ServerError/UNAVAILABLE_REQUEST_PRE_GAME_NOT_FINISHED┃前のゲームが終了していないため、要請できません。(9230)
+ServerError/DOES_NOT_HAVE_SAME_GAME┃すでに参加している状態です。(9231)
+ServerError/CANNOT_REJECT_JOIN┃(9232)
+ServerError/TARGET_USER_IS_NOT_IN_LOBBY_STATUS┃招待できない対象です。(9233)
+ServerError/CANNOT_REQUEST_MATCH┃マッチングを要請できません。(9234)
+ServerError/CANNOT_CANCEL_REQUEST_MATCH┃マッチングキャンセルを要請できません。(9235)
+ServerError/TEAM_STATUS_MUST_BE_NORMAL┃(9236)
+ServerError/TEAM_STATUS_MUST_BE_MATCHING┃(9237)
+ServerError/NOT_SUPPORTED_MATCHING_MODE┃(9238)
+ServerError/INVALID_PICKUP_EVENT_ID┃イベント内容が変更されました。再度ご確認ください。
+ServerError/INVALID_REPLAY_VERSION┃リプレイのバージョンが一致しません。(9300)
+ServerError/CANNOT_REGISTER_MATCH_MATCHING_PENALTY┃マッチングペナルティのため、マッチングが不可能です。(9423)
+ServerError/SQUAD_RUMBLE_TEAM_ALREADY_EXIST┃すでにチームが登録されています。(9424)
+ServerError/SQUAD_RUMBLE_FAIL_TO_CREATE_TEAM┃チームを登録できません。(9425)
+ServerError/SQUAD_RUMBLE_TEAM_ALREADY_ACTIVATED┃すでに登録されているチームです。(9426)
+ServerError/SQUAD_RUMBLE_FAIL_TO_ACTIVATE_TEAM┃チームを登録できません。(9427)
+ServerError/SQUAD_RUMBLE_FAIL_TO_JOIN_TEAM┃チームに合流できません。(9428)
+ServerError/SQUAD_RUMBLE_UNAVAILABLE_SEASON┃シーズンが終了いたしました。(9429)
+ServerError/SQUAD_RUMBLE_NOT_BELONG_TO_TEAM┃チームに属していません。(9430)
+ServerError/SQUAD_RUMBLE_FAIL_TO_REMOVE_TEAM┃チームを解散できません。(9431)
+ServerError/SQUAD_RUMBLE_FAIL_TO_RELEASE_FROM_TEAM┃チームメンバーを退出させることができません。もう一度お試しください。(9432)
+ServerError/SQUAD_RUMBLE_FAIL_TO_LEAVE_TEAM┃チームから脱退できません。もう一度お試しください。(9433)
+ServerError/SQUAD_RUMBLE_TEAM_TIER_LIMIT┃チーム登録条件が満たされていないため、チームを生成できません。\nチーム生成条件：アカウントレベル30以上、ランク対戦でゴールドティア以上の場合可能
+ServerError/SQUAD_RUMBLE_FAIL_TO_CREATE_USER┃ユニオン対戦に参加できません。(9435)
+ServerError/SQUAD_RUMBLE_TEAM_USER_LIMIT┃チームは3人以上で構成してください。(9436)
+ServerError/SQUAD_RUMBLE_TEAM_RECREATE_LIMIT┃チームを登録できません。登録可能期間を確認してください。(9437)
+ServerError/SQUAD_RUMBLE_TEAM_ALREADY_HAVE_NICKNAME┃すでに使用しているチーム名です。(9438)
+ServerError/SQUAD_RUMBLE_TEAM_USER_OVERLAP┃チームに所属している3人が別チームにも所属しているため、チームを登録することができません。(9439)
+ServerError/SQUAD_RUMBLE_TEAM_USER_RELEASE_LIMIT┃追放できる期間ではありません。(9440)
+ServerError/SQUAD_RUMBLE_TEAM_USER_LEVEL_LIMIT┃チームメンバーの中に、アカウントレベルの低いプレイヤーが含まれています。(9441)
+ServerError/SQUAD_RUMBLE_FAIL_TO_CANCEL_TEAM┃チーム登録をキャンセルできません。もう一度お試しください。(9442)
+ServerError/SQUAD_RUMBLE_TEAM_USER_MUST_BE_MEMBER┃チームメンバーではないプレイヤーです。(9443)
+ServerError/SQUAD_RUMBLE_TEAM_CANNOT_BE_CHANGED┃チームを変更できません。(9444)
+ServerError/SQUAD_RUMBLE_TEAM_USER_SOMEONE_BANNED┃チームにアカウント利用停止となったメンバーがいます。(9445)
+ServerError/SQUAD_RUMBLE_TEAM_JOIN_LIMIT┃チームメンバーとしての参加は最大3チームまで可能です。(9446)
+ServerError/SQUAD_RUMBLE_TEAM_NOT_EXIST┃チームが存在しません。(9447)
+ServerError/SQUAD_RUMBLE_NOT_ENOUGH_ADMISSION┃入場料が足りません。(9448)
+ServerError/SQUAD_RUMBLE_TEAM_ALREADY_HAS_PREMADE_TEAM┃参加しているチームメンバーがいるため、チームを解散できません。(9449)
+ServerError/SQUAD_RUMBLE_TEAM_ALREADY_HAS_MAX_PREMADE_TEAM_USERS┃チームが満員のため、参加できません。(9450)
+ServerError/SQUAD_RUMBLE_TEAM_NOT_OPENED_CONTENT┃ユニオン対戦はアカウントレベル30以上から参加できます。
+ServerError/SQUAD_RUMBLE_UNAVAILABLE_MATCHING_TIER┃現在のチームのティアではマッチングできません。\n ティアごとのマッチングスケジュールを確認してください。
+ServerError/SQUAD_RUMBLE_TEAM_TICKET_NOT_EXIST┃ユニオン対戦チケットが不足しています。(9453)
+ServerError/NOT_FOUND_VERIFICATION┃認証情報が見つかりません。(9500)
+ServerError/NOT_SAME_PHONE_NUMBER┃番号が一致しません。(9501)
+ServerError/INVALID_PHONE_NUMBER_FORMAT┃不正な番号形式です。(9502)
+ServerError/INVALID_CODE┃無効なコードです。(9503)
+ServerError/EXPIRED_REQUEST┃期限切れのリクエストです。(9504)
+ServerError/SEND_VERIFICATION_ERROR┃認証番号エラー(9505)
+ServerError/NOT_FOUND_VERIFICATION_REQUEST┃認証リクエストが見つかりません。(9506)
+ServerError/ALREADY_REGISTERED_TO_SOMEONE┃すでに登録された情報です。(9508)
+ServerError/SAME_PHONE_NUMBER┃重複登録(9509)
+ServerError/NOT_AVAILABLE_YET┃まだ利用できません。(9510)
+ServerError/HAS_UNVERIFIED_USERS┃ユーザー情報が不明です。(9511)
+ServerError/VERIFICATION_UNAVAILABLE_SEASON┃認証できません。(9512)
+ServerError/TOO_MANY_INVALID_CODES┃入力回数超過(9513)
+ServerError/CONFLICT_VERIFICATION┃不正な認証情報です。(9514)
+ServerError/LIMIT_LOG_REPORT┃互換性のないバージョンで接続を試みました。
+ServerError/INVALID_MATCHING_VERSION┃互換性のないバージョンで接続を試みました。
 Character/Name/0┃ランダム
 Character/Name/1┃ジャッキー
 Character/Name/2┃アヤ
@@ -24164,6 +24956,7 @@ Skin/Name/1033005┃アングリーバニーニッキー
 Skin/Name/1034000┃ナタポン
 Skin/Name/1034001┃極地探検ナタポン
 Skin/Name/1034002┃探検家ナタポン
+Skin/Name/1034003┃鑑識官 ナタポン
 Skin/Name/1035000┃ヤン
 Skin/Name/1035001┃ムエタイチャンピオンヤン
 Skin/Name/1035002┃チャレンジャーハンターヤン
@@ -24695,6 +25488,8 @@ Skin/Desc/1045005┃流行に乗り遅れるわけにはいきません。バニ
 Skin/Desc/1014005┃そ、そんな目で見ないで...ゲームに集中して...
 Skin/Desc/1075002┃才能のない生徒の努力ほど、見苦しいものはないわ。\n見なさい？これがあなたの成績表よ。
 Skin/Desc/1084001┃あんたの最高速度、見せてみな。
+Skin/Desc/1034003┃たとえ痕跡が消えたとしても、この現場は残さなければならない。
+Skin/Desc/1050007┃聞こえますか？二人で合わせたデュエットが。
 Skin/Desc/1027003┃僕とあなたの関係は、これからどう結ばれていくのか…確かめてみましょうか。
 Collection/Name/11001┃すべては娘のため…
 Collection/Name/11002┃ピクセルアートは…好き…？
@@ -24743,6 +25538,8 @@ Collection/Name/22012/1┃S8 eスポーツサポーターⅠ
 Collection/Name/22012/2┃S8 eスポーツサポーターⅡ
 Collection/Name/22013/1┃S9 eスポーツサポーターⅠ
 Collection/Name/22013/2┃S9 eスポーツサポーターⅡ
+Collection/Name/22014/1┃S10 eスポーツサポーターⅠ
+Collection/Name/22014/2┃S10 eスポーツサポーターⅡ
 Collection/Name/24001┃2024年 金の福袋！
 Collection/Name/24002┃花咲かし大作戦Ⅰ
 Collection/Name/24003┃花咲かし大作戦Ⅱ
@@ -26405,7 +27202,7 @@ Tutorial/Quest/Ch13/MoveToChronoSphere/Desc┃クロノスフィア予定地に�
 Tutorial/Quest/Ch13/ChronoSphereBattle/Title┃最終戦闘
 Tutorial/Quest/Ch13/ChronoSphereBattle/Desc┃敵をキル
 Tutorial/Title/Ch1/BasicControls/Title┃操作方法
-Tutorial/Title/Ch1/BasicControls/Desc┃マウスとキーボードを使って実験体を操作しましょう！\n\n<color=#FFCE2B>マウスの右クリック</color>で<color=#8FDBF8>移動</color>したり、対象を<color=#8FDBF8>選択</color>または<color=#8FDBF8>攻撃</color>することができます。\nキーボードの<color=#FFCE2B>「Q」「W」「E」</color>キーを使用して実験体の<color=#8FDBF8>一般スキル</color>を使用できます。\n\n実験体の武器タイプによって異なる<color=#8FDBF8>武器スキル</color>を使用できます。武器スキルは<color=#FFCE2B>「D」</color>キーで使用できます。\n実験が始まる前に選択できる<color=#8FDBF8>戦術スキル</color>は <color=#FFCE2B>「F」</color>キーで使用できます。\n\n<color=#FFCE2B>「R」</color>キーでは実験体の必殺技、<color=#8FDBF8>究極技</color>を使用できます。究極技を使って敵に強力な一撃を与えてみましょう！
+Tutorial/Title/Ch1/BasicControls/Desc┃マウスとキーボードを使って実験体を操作しましょう！\n\n<color=#FFCE2B>マウスの右クリック</color>で<color=#8FDBF8>移動</color>したり、対象を<color=#8FDBF8>選択</color>または<color=#8FDBF8>攻撃</color>することができます。\nキーボードの<color=#FFCE2B>「Q」「W」「E」</color>キーを使用して実験体の<color=#8FDBF8>基本スキル</color>を使用できます。\n\n実験体の武器タイプによって異なる<color=#8FDBF8>武器スキル</color>を使用できます。武器スキルは<color=#FFCE2B>「D」</color>キーで使用できます。\n実験が始まる前に選択できる<color=#8FDBF8>戦術スキル</color>は <color=#FFCE2B>「F」</color>キーで使用できます。\n\n<color=#FFCE2B>「R」</color>キーでは実験体の必殺技、<color=#8FDBF8>究極技</color>を使用できます。究極技を使って敵に強力な一撃を与えてみましょう！
 Tutorial/Img/Ch2/ItemFarming/Title┃アイテム探索
 Tutorial/Img/Ch2/ItemFarming/Desc┃アイテムをどこで拾えばいいか分からない方は\n<color=#8FDBF8>箱の形</color>の<color=#8FDBF8>アイコン</color>を探しましょう！ \nまだ確認していない箱を見つけることができます。\n\n箱を開けても、どんなアイテムを拾えばいいか分からない時は、\n<color=#8FDBF8>黄色いマーク</color>がついているアイテムに注目してください。\n黄色いマークがついているアイテムは必ず獲得しなければならない\nアイテムです。\n \n今の地域でどんなアイテムを拾ったらいいか分からない時は、<color=#8FDBF8>右側の製作ガイド</color>を見ると、その地域で得られるアイテムを確認できます。\n\n材料を集めると、より強力な装備を製作することができます！
 Tutorial/Img/Ch3/Route_1/Title┃ルート
@@ -26640,9 +27437,9 @@ Trait/StatTooltip/7920802┃自分が死亡した場合、{0}秒間一定範囲�
 Trait/StatTooltip/7920803┃自分が死亡した場合、{0}秒間一定範囲内の敵実験体の移動速度を{1}%、防御力を{2}%減少させる沼を生成します。
 Trait/StatTooltip/7920903┃武器スキルを使用してから2秒後、{1}m範囲内のすべての敵実験体を{2}秒間沈黙状態にさせます。(クールダウン {0}秒)
 Trait/StatTooltip/7921003┃武器スキルを使用してから1秒後、{2}m範囲内のすべての敵に{4}秒間{0}の固定ダメージを与えます。(クールダウン {1}秒)
-Trait/StatTooltip/7921101┃究極技を使用すると、一般スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で一般スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
-Trait/StatTooltip/7921102┃究極技を使用すると、一般スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で一般スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
-Trait/StatTooltip/7921103┃究極技を使用すると、一般スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で一般スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
+Trait/StatTooltip/7921101┃究極技を使用すると、基本スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で基本スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
+Trait/StatTooltip/7921102┃究極技を使用すると、基本スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で基本スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
+Trait/StatTooltip/7921103┃究極技を使用すると、基本スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で基本スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
 Trait/StatTooltip/7921203┃究極技を使用すると、{0}秒間すべての妨害免疫状態になり、移動速度が{2}%増加します。\n(クールダウン {1}秒)
 Trait/StatTooltip/7921301┃自分や味方が占領した増幅装置1個あたり、増幅装置から得る効果が{0}% 追加増加します。\n\n攻撃力追加増加量 : {1}\n防御力 追加増加量 : {2}\n移動速度追加増加量 : {3}
 Trait/StatTooltip/7921302┃防御貫通が{4}、最大体力が{5}増加します。
@@ -26789,7 +27586,7 @@ CharacterState/Group/Desc/7921010┃範囲内のすべての敵に固定ダメ�
 CharacterState/Group/Name/7921020┃プラズマ·ノヴァ
 CharacterState/Group/Desc/7921020┃再使用待機中です。
 CharacterState/Group/Name/7921100┃シナジー
-CharacterState/Group/Desc/7921100┃究極技を使用すると、一般スキルのクールダウンが減少します。\nクールダウン状態で一般スキルを使用すると、シナジーインフュージョンのクールダウンが減少します。
+CharacterState/Group/Desc/7921100┃究極技を使用すると、基本スキルのクールダウンが減少します。\nクールダウン状態で基本スキルを使用すると、シナジーインフュージョンのクールダウンが減少します。
 CharacterState/Group/Name/7921110┃シナジー
 CharacterState/Group/Desc/7921110┃再使用待機中です。
 CharacterState/Group/Name/7921200┃圧倒的な力
@@ -27058,9 +27855,9 @@ Infusion/Trait/Desc/7920802┃死亡すると、{0}秒間一定範囲内の敵�
 Infusion/Trait/Desc/7920803┃死亡すると、{0}秒間一定範囲内の敵実験体の移動速度を{1}%、防御力を{2}%減少させる沼を生成します。\n\nチーム在庫：1
 Infusion/Trait/Desc/7920903┃武器スキルを使用すると、しばらくしてから範囲内のすべての敵実験体を一定時間の間沈黙状態にさせます。(クールダウン {0}秒)
 Infusion/Trait/Desc/7921003┃武器スキルを使用すると、しばらくしてから範囲内のすべての敵に{4}秒間{0}の固定ダメージを与えます。 (クールダウン {1}秒)
-Infusion/Trait/Desc/7921101┃究極技を使用すると、一般スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で一般スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
-Infusion/Trait/Desc/7921102┃究極技を使用すると、一般スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で一般スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
-Infusion/Trait/Desc/7921103┃究極技を使用すると、一般スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で一般スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
+Infusion/Trait/Desc/7921101┃究極技を使用すると、基本スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で基本スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
+Infusion/Trait/Desc/7921102┃究極技を使用すると、基本スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で基本スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
+Infusion/Trait/Desc/7921103┃究極技を使用すると、基本スキルのクールダウンが{0}%減少します。 (クールダウン {1}秒)\nクールダウン状態で基本スキルを使用すると、当インフュージョンのクールダウンが{2}秒減少します。
 Infusion/Trait/Desc/7921203┃究極技を使用すると、{0}秒間すべての妨害免疫状態になり、移動速度が{2}%増加します。(クールダウン{1}秒)
 Infusion/Trait/Desc/7921301┃自分や味方が占領した増幅装置 1個ごとに増幅装置から得る効果が{0}% 追加増加します。
 Infusion/Trait/Desc/7921302┃防御貫通が{4}、最大体力が{5}増加します。
@@ -27213,7 +28010,7 @@ Trait/Tooltip/7920603┃死亡すると一定時間後、体力を回復し、�
 Trait/Tooltip/7920802┃自分が死亡した場合、移動速度と防御力を減少させる沼を 生成します。
 Trait/Tooltip/7920903┃武器スキルを使用すると、しばらくしてから範囲内のすべての敵実験体をしばらくの間沈黙状態にさせます。
 Trait/Tooltip/7921003┃武器スキルを使用すると、しばらくしてから範囲内のすべての敵に固定ダメージを与えます。
-Trait/Tooltip/7921103┃究極技を使用すると、一般スキルのクールダウンが減少します。\n一般スキルを使用するたびに当インフュージョンのクールダウンが減少します。
+Trait/Tooltip/7921103┃究極技を使用すると、基本スキルのクールダウンが減少します。\n基本スキルを使用するたびに当インフュージョンのクールダウンが減少します。
 Trait/Tooltip/7921203┃究極技を使用すると、しばらくの間すべての妨害免疫状態になり、移動速度が増加します。
 Trait/Tooltip/7921302┃防御貫通と最大体力が増加します。
 Trait/Tooltip/7921402┃所持クレジット数に比例して敵実験体と敵実験体の召喚物に与えるダメージが増加します。

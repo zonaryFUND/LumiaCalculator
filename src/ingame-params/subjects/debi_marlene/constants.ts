@@ -76,7 +76,7 @@ export default {
         // 弾丸1つあたりダメージ
         "damage": {
             "base": [15,30,45,60,75],
-            "additionalAttack": 45
+            "additionalAttack": 50
         },
         // T1スタック追加に必要な弾丸数
         "t_stack_projectiles": 2,
@@ -129,7 +129,7 @@ export default {
     },
     "T": {
         // デビー時防御力増加
-        "debi_defense": [4,8,12],
+        "debi_defense": [5,10,15],
         // マーリン時基本攻撃射程増加
         "marlene_range": 4,
         // 基本攻撃ダメージ

@@ -40,12 +40,14 @@ const index: React.FC = props => {
     const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
 
     const left = useSubjectConfig(CombatCurrentLeftConfigKey);
-    const leftHP = React.useState(100);
-    const leftStatus = statusOf(left.value, leftHP[0]);
+    const leftHPRatio = React.useState(100);
+    const leftStatus = statusOf(left.value, leftHPRatio[0]);
+    const leftHP = leftStatus.maxHp.calculatedValue.percent(leftHPRatio[0]).floor().toNumber();
 
     const right = useSubjectConfig(CombatCurrentRightConfigKey);
-    const rightHP = React.useState(100);
-    const rightStatus = statusOf(right.value, rightHP[0]);
+    const rightHPRatio = React.useState(100);
+    const rightStatus = statusOf(right.value, rightHPRatio[0]);
+    const rightHP = rightStatus.maxHp.calculatedValue.percent(rightHPRatio[0]).floor().toNumber();
 
     React.useEffect(() => {
         if (!makeMasteryAlign) return;
@@ -80,7 +82,7 @@ const index: React.FC = props => {
                 <SubjectSideContext.Provider value="left">
                     <Subject
                         {...left}
-                        hp={leftHP}
+                        hp={leftHPRatio}
                         status={leftStatus}
                     />
                 </SubjectSideContext.Provider>
@@ -89,13 +91,13 @@ const index: React.FC = props => {
                     rightStatus={rightStatus} 
                     leftConfig={left.value} 
                     rightConfig={right.value} 
-                    leftHP={leftHP[0]} 
-                    rightHP={rightHP[0]} 
+                    leftHP={leftHP} 
+                    rightHP={rightHP} 
                 />
                 <SubjectSideContext.Provider value="right">
                     <Subject
                         {...right}
-                        hp={rightHP}
+                        hp={rightHPRatio}
                         status={rightStatus}
                     />
                 </SubjectSideContext.Provider>

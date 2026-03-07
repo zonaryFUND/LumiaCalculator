@@ -48,7 +48,7 @@ export default {
             "amp": 25
         },
         // 満開効果が複数発生したときの2個目以降のシールド減少量（％）
-        "shield_reduction": 40,
+        "shield_reduction": 45,
         "cooldown": [12, 11.5, 11, 10.5, 10]
     },
     "E": {
@@ -71,7 +71,7 @@ export default {
         // 阻止不可状態時間
         "unstoppable": 1,
         // 基本攻撃・スキル使用不可状態時間
-        "self_silence": 1,
+        "self_silence": 0.8,
         // 被ダメージ減少（％）
         "damage_reduction": 50,
         // 外側へ広がるダメージ
@@ -85,7 +85,7 @@ export default {
             "amp": 65
         },
         // 踊り状態時間
-        "dance": 1,
+        "dance": 0.8,
         // 果実拾得時回復量
         "heal": {
             "targetMaxHP": [3, 5, 7]

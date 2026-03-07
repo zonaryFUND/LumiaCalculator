@@ -5,12 +5,12 @@ export default {
         // 格闘アクション最小ダメージ
         "min_damage": {
             "base": [30, 50, 70, 90, 110],
-            "amp": 65
+            "amp": 70
         },
         // 格闘アクション最大ダメージ
         "max_damage": {
             "base": [60, 100, 140, 180, 220],
-            "amp": 130
+            "amp": 140
         },
         // 格闘アクション的中時クールダウン減少
         "cooldown_reduction": 55,

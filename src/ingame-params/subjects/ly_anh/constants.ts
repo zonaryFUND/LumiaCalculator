@@ -121,7 +121,7 @@ export default {
         },
         // 悪霊状態基本攻撃速度増加（％）
         "attack_speed": {
-            "base": [20, 30, 40],
+            "base": [20, 25, 30],
             "attack": 10
         },
         // 恐怖状態発動に必要な基本攻撃回数
@@ -134,7 +134,7 @@ export default {
         "fear_immune": 3,
         // 悪霊状態中死亡時体力回復
         "hp_on_death": [100, 200, 300],
-        "cooldown": [76, 60, 44]
+        "cooldown": [70, 60, 50]
     },
     "LyAnhR2": {},
     "LyAnhT": {

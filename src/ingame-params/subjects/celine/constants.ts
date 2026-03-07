@@ -59,7 +59,7 @@ export default {
         // 基本攻撃追加スキルダメージ
         "damage": {
             "base": 50,
-            "amp": [30,55]
+            "amp": [40,55]
         },
         // クールダウン減少からスキル増幅への変換率
         "cooldown_conversion": 1

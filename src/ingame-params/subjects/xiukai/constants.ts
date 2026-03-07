@@ -60,7 +60,7 @@ export default {
         // 炎1回あたりダメージ
         "damage": {
             "base": [60, 95, 130],
-            "amp": 55,
+            "amp": 50,
             "maxHP": 5
         },
         // 移動速度減少

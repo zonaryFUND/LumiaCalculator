@@ -34,7 +34,7 @@ export default {
             "duration": 1.5,
             "effect": {
                 "base": [16, 17, 18, 19, 20],
-                "level": 1.5
+                "level": 1
             }
         },
         "cooldown": [15, 14, 13, 12, 11]

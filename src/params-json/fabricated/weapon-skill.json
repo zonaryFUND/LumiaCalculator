@@ -196,10 +196,6 @@
 		"skillCode": 6045001,
 		"name": "cataclasm"
 	},
-	"104401": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
-	},
 	"104404": {
 		"skillCode": 6008201,
 		"name": "healing_reduction"
@@ -221,6 +217,10 @@
 			"base": 25,
 			"amp": 10
 		}
+	},
+	"104409": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"104502": {
 		"skillCode": 6046001,
@@ -253,9 +253,19 @@
 		"skillCode": 6045001,
 		"name": "cataclasm"
 	},
-	"105404": {
+	"105402": {
 		"skillCode": 6008201,
 		"name": "healing_reduction"
+	},
+	"105404": {
+		"skillCode": 6013004,
+		"name": "magnetic_midnight",
+		"values": {
+			"slow": {
+				"effect": 25,
+				"duration": 1
+			}
+		}
 	},
 	"105406": {
 		"skillCode": 6007002,
@@ -417,7 +427,7 @@
 		"skillCode": 6045001,
 		"name": "cataclasm"
 	},
-	"109403": {
+	"109404": {
 		"skillCode": 6008201,
 		"name": "healing_reduction"
 	},
@@ -599,6 +609,10 @@
 		"skillCode": 6045001,
 		"name": "cataclasm"
 	},
+	"112302": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
+	},
 	"112402": {
 		"skillCode": 6017001,
 		"name": "vigor",
@@ -665,10 +679,6 @@
 				"duration": 1
 			}
 		}
-	},
-	"112501": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
 	},
 	"112502": {
 		"skillCode": 6008201,
@@ -808,11 +818,15 @@
 	},
 	"114405": {
 		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"name": ""
 	},
 	"114406": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": 6014001,
+		"name": "primodal_hex",
+		"dmg": {
+			"base": 25,
+			"amp": 10
+		}
 	},
 	"114407": {
 		"skillCode": 6014001,
@@ -823,8 +837,18 @@
 		}
 	},
 	"114503": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": 6013003,
+		"name": "magnetic_midnight",
+		"dmg": {
+			"level": 8,
+			"amp": 15
+		},
+		"values": {
+			"slow": {
+				"effect": 20,
+				"duration": 1
+			}
+		}
 	},
 	"114504": {
 		"skillCode": 6017002,

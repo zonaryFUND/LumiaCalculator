@@ -4,7 +4,7 @@ export default {
         "Q1_damage": {
             "base": [40, 65, 90, 115, 140],
             "amp": 50,
-            "maxHP": 5
+            "maxHP": 6
         },
         // 1段目的中時移動速度減少
         "slow": {
@@ -17,7 +17,7 @@ export default {
         "Q2_damage": {
             "base": [50, 75, 100, 125, 150],
             "amp": 50,
-            "maxHP": 6
+            "maxHP": 7
         },
         "hp_cost_percent": 2,
         "cooldown": [6, 5.5, 5, 4.5, 4]

@@ -131,7 +131,7 @@ export default {
         // 死体録画成功時の獲得武器熟練度
         "dead_body_mastery": 650,
         // 死体録画のみによって得られる最大スタック数
-        "max_dead_body_stack": 3,
+        "max_dead_body_stack": 5,
         // 同一撮影対象の再撮影禁止時間
         "reshooting_prohibit": 30,
         "cooldown": [20, 15, 1]

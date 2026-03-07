@@ -145,7 +145,7 @@
 		"name": "debilitation",
 		"dmg": {
 			"targetMaxHP": {
-				"base": 0.7,
+				"base": 0.9,
 				"amp": 0.2
 			}
 		}
@@ -436,7 +436,7 @@
 		"name": "debilitation",
 		"dmg": {
 			"targetMaxHP": {
-				"base": 0.7,
+				"base": 0.9,
 				"amp": 0.2
 			}
 		}
@@ -798,7 +798,12 @@
 	},
 	"205407": {
 		"skillCode": 6015002,
-		"name": "zephyr"
+		"name": "zephyr",
+		"values": {
+			"base": 100,
+			"level": 7,
+			"attack": 60
+		}
 	},
 	"205408": {
 		"skillCode": 6017026,

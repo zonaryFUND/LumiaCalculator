@@ -97,7 +97,7 @@ export default {
         // 連携攻撃的中時対象1人あたりシールド
         "combo_shield": {
             "base": [30,50,70,90],
-            "additionalAttack": 50
+            "additionalAttack": 40
         },
         // 連携攻撃的中によるシールド獲得最大人数
         "max_combo_hit": 4,

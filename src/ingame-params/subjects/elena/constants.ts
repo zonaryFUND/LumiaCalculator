@@ -76,9 +76,9 @@ export default {
         "stun": 1,
         // 凍結解除時追加ダメージ
         "damage": {
-            "base": [20,40,60],
+            "base": [10,30,50],
             "amp": 20,
-            "targetMaxHP": [4,6,8]
+            "targetMaxHP": [6,8,10]
         },
         // 再凍結免疫時間
         "immune": 2.5,

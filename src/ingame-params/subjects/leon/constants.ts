@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [80, 115, 150, 185, 220],
-            "amp": 75
+            "amp": 80
         },
         "cooldown": [11, 10, 9, 8, 7]
     },
@@ -33,8 +33,8 @@ export default {
     "R": {
         // 波乗りダメージ
         "damage": {
-            "base": [70, 120, 170],
-            "amp": 70
+            "base": [100, 150, 200],
+            "amp": 75
         },
         // 壁ヒット時追加ダメージ
         "wall_damage": {

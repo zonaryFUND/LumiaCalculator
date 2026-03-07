@@ -40,11 +40,11 @@ export default {
         // 壁ヒット時追加ダメージ
         "wall_damage": {
             "base": [80, 115, 150, 185, 220],
-            "additionalAttack": 60,
+            "additionalAttack": 75,
             "amp": 90
         },
         // 壁ヒット時気絶時間
-        "stun": 1.2,
+        "stun": 1.3,
         "cooldown": [14, 13, 12, 11, 10]
     },
     "R": {
