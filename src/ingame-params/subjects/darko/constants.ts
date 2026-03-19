@@ -8,7 +8,7 @@ export default {
         "damage": {
             "base": [20,40,60,80,100],
             "attack": 40,
-            "targetMaxHP": [1,2,3,4,5]
+            "targetMaxHP": [2,3,4,5,6]
         },
         // 刻印持続時間
         "mark": 5,

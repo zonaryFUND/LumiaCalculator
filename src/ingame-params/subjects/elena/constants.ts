@@ -19,7 +19,7 @@ export default {
     "W": {
         "damage": {
             "base": [50,70,90,110,130],
-            "additionalMaxHP": 8,
+            "additionalMaxHP": 10,
             "amp": 50
         },
         // Qクールダウン減少
@@ -73,7 +73,7 @@ export default {
         // 凍結冷気量
         "frozen": 120,
         // 凍結時気絶時間
-        "stun": 1,
+        "stun": 1.1,
         // 凍結解除時追加ダメージ
         "damage": {
             "base": [10,30,50],

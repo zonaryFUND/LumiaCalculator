@@ -39,5 +39,5 @@
 - ダイリン: li_dailin
 - イアン: ly_anh
 - 莉央: rio
-- シウカイ: xuikai
+- シウカイ: xiukai
 - シュリン: xuelin

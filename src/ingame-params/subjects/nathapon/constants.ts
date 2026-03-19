@@ -66,7 +66,7 @@ export default {
     "T": {
         // 基本攻撃追加ダメージ
         "damage": {
-            "base": [40, 70, 100],
+            "base": [30, 60, 90],
             "attackSpeed": 20,
             "amp": 65
         },

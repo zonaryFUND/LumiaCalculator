@@ -21,7 +21,7 @@ export default {
         "Q2_damage": {
             "base": [65, 90, 115, 140, 165],
             "additionalAttack": 90,
-            "amp": 60,
+            "amp": 70,
             "targetMaxHP": 6
         },
         // リッピング・ニーストライクのエアボーン時間

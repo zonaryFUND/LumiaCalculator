@@ -19,7 +19,7 @@ export default {
         // 移動速度減少
         "slow": {
             "duration": 1,
-            "effect": 25
+            "effect": 30
         },
         "cooldown": [7,6.5,6,5.5,5]
     },

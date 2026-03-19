@@ -43,7 +43,7 @@ export default {
         "duration": 5,
         // 基本攻撃追加ダメージ
         "damage": {
-            "base": [40, 60, 80, 100, 120],
+            "base": [50, 75, 100, 125, 150],
             "amp": 30
         },
         "reuse_cost_increase": {

@@ -1,4 +1,5 @@
-{
+export default {
+    // 金剛
     "diamond_shard": {
         "defense": {
             "duration": 3,
@@ -17,6 +18,7 @@
         },
         "cooldown": 20
     },
+    // 不壊
     "ironclad": {
         "damage_reduction": {
             "melee": {
@@ -43,6 +45,7 @@
             "range": 2.5
         }
     },
+    // 光の守護
     "heavy_kneepads": {
         "shield": {
             "maxHP": 18
@@ -57,6 +60,7 @@
         "cooldown": 25,
         "animal_cooldown_reduction": 70
     },
+    // 応報
     "bitter_retribution": {
         "stack_per_lost_hp": 1,
         "max_stack": 30,
@@ -71,6 +75,7 @@
         "cooldown": 2,
         "recover_per_stack": 0.5
     },
+    // 大胆
     "embolden": {
         "defense": {
             "base": 5,
@@ -79,14 +84,24 @@
         "duration": 4,
         "cooldown": 8
     },
+    // 鎮痛剤
     "painkiller": {
         "defense_max": {
             "effect": 12,
             "hp": 40
         }
     },
+    // 不屈
+    "unwavering_mentality": {
+        "shield": {
+            "level": 15
+        },
+        "duration": 3,
+        "cooldown": 20
+    },
+    // 警戒心
     "caution": {
-        "threshold": 80,
+        "threshold": 75,
         "damage_reduction": {
             "duration": 1.5,
             "effect": {
@@ -96,33 +111,30 @@
         },
         "cooldown": 25
     },
-    "tempering": {
-        "first_defense_up": 2,
-        "second_defense_up": {
-            "period": 80,
-            "effect": 1
-        }
-    },
-    "unwavering_mentality": {
-        "shield": {
-            "level": 15
-        },
-        "duration": 3,
-        "cooldown": 20
-    },
+    // 堅固
     "steadfast": {
         "tenacity": {
             "base": 12,
             "level": 0.4
         }
     },
+    // 食いしん坊
     "dine_n_dash": {
         "food_consumption_reduction": 3,
         "hp_threshold": 75,
         "consume_threshold": 660
     },
+    // 特攻隊
     "cavalcade": {
         "effect": 4,
         "range": 3.5
-    }
+    },
+    // 熱処理
+    "tempering": {
+        "first_defense_up": 3,
+        "second_defense_up": {
+            "period": 80,
+            "effect": 1
+        }
+    },
 }

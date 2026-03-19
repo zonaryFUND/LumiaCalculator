@@ -22,7 +22,7 @@ export default {
         // 生成時ダメージ
         "first_damage": {
             "base": [40,70,100,130,160],
-            "amp": 45
+            "amp": 40
         },
         // 移動速度減少（％）
         "slow": 40,

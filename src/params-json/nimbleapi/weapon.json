@@ -870,7 +870,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 74,
+        "skillAmp": 76,
         "attackSpeedRatio": 0.2,
         "cooldownReduction": 10,
         "code": 112405,
@@ -886,7 +886,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 92,
+        "skillAmp": 94,
         "code": 112407,
         "weaponType": "HighAngleFire",
         "itemGrade": "Legend"
@@ -901,7 +901,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 88,
+        "skillAmp": 90,
         "attackSpeedRatio": 0.2,
         "cooldownReduction": 15,
         "code": 112502,
@@ -942,7 +942,7 @@
     },
     {
         "attackPower": 41,
-        "skillAmp": 83,
+        "skillAmp": 85,
         "cooldownReduction": 10,
         "code": 113408,
         "weaponType": "DirectFire",
@@ -1055,7 +1055,7 @@
     },
     {
         "attackPower": 45,
-        "skillAmp": 82,
+        "skillAmp": 85,
         "attackSpeedRatio": 0.4,
         "cooldownReduction": 10,
         "code": 114503,

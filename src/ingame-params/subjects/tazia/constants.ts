@@ -17,7 +17,7 @@ export default {
         // ガラス剣爆発ダメージ
         "spada_blast_damage": {
             "base": [40, 70, 100, 130, 160],
-            "amp": 50
+            "amp": 55
         },
         // ガラス片持続時間
         "glass_duration": 7,

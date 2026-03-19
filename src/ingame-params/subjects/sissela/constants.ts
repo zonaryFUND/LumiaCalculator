@@ -20,7 +20,7 @@ export default {
         "movement_speed": 15,
         "damage": {
             "base": [100, 135, 170, 205, 240],
-            "amp": 70
+            "amp": 80
         },
         "hp_cost": [50, 60, 70, 80, 90],
         "cooldown": [17, 16, 15, 14, 13]
@@ -60,7 +60,7 @@ export default {
         // 自身へのダメージに対する最低保証体力
         "min_hp": 100,
         // パッシブ効果強化持続時間
-        "passive_enhance_duration": [6, 7, 8],
+        "passive_enhance_duration": [7, 8, 9],
         // パッシブ効果威力増加（％）
         "passive_enhance": 100,
         // スキル非成立時のクールダウン返還（％）

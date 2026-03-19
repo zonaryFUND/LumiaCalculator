@@ -1,8 +1,8 @@
 import { IntlShape } from "react-intl";
 import Havoc from "./havoc.json";
 import Chaos from "./chaos.json";
-import Fortification from "./fortification.json";
-import Support from "./support.json";
+import Fortification from "./fortification";
+import Support from "./support";
 import { ValueRatio } from "app-types/value-ratio";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";

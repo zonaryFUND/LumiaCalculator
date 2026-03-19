@@ -38,7 +38,7 @@ export default {
     "E": {
         "damage": {
             "base": [50,60,70,80,90],
-            "amp": 40
+            "amp": 45
         },
         // 束縛時間
         "bind": 0.7,

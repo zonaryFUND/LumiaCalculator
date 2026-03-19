@@ -1406,6 +1406,13 @@
 			"level": 5
 		}
 	},
+	"131402": {
+		"skillCode": 6001011,
+		"name": "flame_barrier_vf",
+		"dmg": {
+			"maxHP": 2
+		}
+	},
 	"131403": {
 		"skillCode": 6007011,
 		"name": "swift_strides_vf",

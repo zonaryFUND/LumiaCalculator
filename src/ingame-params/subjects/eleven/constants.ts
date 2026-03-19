@@ -75,7 +75,7 @@ export default {
         "tick": 0.5,
         // 1ティックあたり周囲ダメージ
         "damage": {
-            "base": [6,9,12],
+            "base": [10,15,20],
             "attack": 3,
             "additionalMaxHP": 3
         },

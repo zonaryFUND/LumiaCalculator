@@ -1287,6 +1287,10 @@ Emotion_S10_EsportsPack_2570┃S10 Busan BeSPA エモート
 Emotion_S10_EsportsPack_2571┃S10 Ascenders エモート
 Emotion_S10_EsportsPack_2572┃S10 Gyeongnam Sparkle エモート
 Emotion_S10_EsportsPack_2573┃S10 Daegu Suseong Guardians エモート
+Event_S18Champion_ZeroJin_3174┃SEASON 9 CHAMPION ZeroJin
+Event_S18Champion_Ing9_3175┃SEASON 9 CHAMPION ing9
+Event_S18Champion_Dasoo_3176┃SEASON 9 CHAMPION Dasoo
+Event_S18Champion_Jinho_3177┃SEASON 9 CHAMPION Jinho
 Emotion_S10_P5R_8014┃アレックス（ジョーカー） TAKE YOUR TIME
 Emotion_S10_P5R_8015┃シルヴィア（真） チラッ
 Emotion_S10_P5R_8010┃ラウラ（杏） 美味しい♪
@@ -1294,6 +1298,12 @@ Emotion_S10_P5R_8012┃カミロ（吾郎） HEY
 Emotion_S10_P5R_8011┃エレナ（かすみ） おどおど
 Emotion_S10_P5R_8013┃ペルソナ５ ザ・ロイヤル
 Emotion_S10_P5R_8016┃P5R コラボ「TAKE YOUR HEART」
+Emotion_Coraline01_NP┃異議あり！ コラライン
+Emotion_Coraline02_NP┃えっ コラライン
+Emotion_Coraline03_NP┃嫌よ コラライン
+Emotion_Coraline04_NP┃いいわよ コラライン
+Emotion_SNS_Coraline_2087005┃噓の味！ コラライン
+Emotion_Coraline05_NP┃今回だけよ コラライン
 보유하지 않은 캐릭터입니다.┃未所持キャラクターです。\nショップで購入後使用できます。
 매칭 중 캐릭 변경 금지┃マッチング中にはキャラクターを変更できません。
 로딩 중┃ロード中\n< X キーを押すと座って休憩します。 >
@@ -1521,6 +1531,7 @@ NP_청약철회 필수 고지사항┃払い戻しポリシー必須事項
 게임 옵션┃ルーム設定
 커뮤니티 옵션┃コミュニティ設定
 기타 옵션┃その他設定
+부활 옵션┃復活設定
 대회 점수 산정 적용┃大会ポイントルール適用
 금지구역 가속 허용┃禁止区域加速
 이모티콘 사용 허용┃エモート使用許可
@@ -1528,7 +1539,7 @@ NP_청약철회 필수 고지사항┃払い戻しポリシー必須事項
 비석 사용 허용┃墓石使用許可
 스프레이 사용 허용┃スプレー使用許可
 탈출 기능 사용 허용┃脱出許可
-리플레이 지연┃リプレイディレー
+리플레이 지연┃リプレイディレイ
 리플레이 불가┃リプレイ不可
 팀 사망 시 관전 불가┃チーム死亡時、観戦不可
 금지 실험체 설정┃使用禁止実験体設定
@@ -1647,6 +1658,7 @@ CustomGame/Info/GameInfo┃ルーム情報
 CustomGame/Info/BanCharacterInfo┃使用禁止キャラクター
 CustomGame/Info/GameRule┃ルール
 CustomGame/Button/EnterGame┃ルーム入場
+CustomGame/Info/Resurrection┃復活情報
 게임 이름 조건 미충족 알림 팝업┃カスタム対戦のルーム名に使用できない単語が含まれています。
 게임 정보 변경 완료 팝업┃カスタム対戦の設定が変更されました。
 게임 이름 검색 안내┃ルーム名検索(3文字以上)
@@ -1668,7 +1680,7 @@ CustomGame/Options/Default/AllowVoiceAction┃音声表現使用許可
 CustomGame/Options/Default/AllowTombstone┃墓石使用許可
 CustomGame/Options/Default/AllowSpray┃スプレー使用許可
 CustomGame/Options/Default/ChangeTeamNumber┃チーム番号ランダム変更
-CustomGame/Options/Default/DelayReplay┃リプレイディレー
+CustomGame/Options/Default/DelayReplay┃リプレイディレイ
 CustomGame/Options/Default/DisableReplay┃リプレイ不可
 CustomGame/Options/Default/DisableEliminatedSpectator┃チーム死亡時、観戦不可
 CustomGame/Options/Default/VisibleTeamKillDetail┃キル数詳細情報表示
@@ -1676,6 +1688,17 @@ CustomGame/Options/Default/TournamentScoreMode┃大会ポイントルール適�
 CustomGame/Options/Default/AllowDimensionalRiftResurrection┃次元の裂け目(一般)生成許可
 CustomGame/Options/Default/SequentialCharacterPick┃キャラクター順次選択オプション適用
 CustomGame/Options/Default/EnemyPlayerDefaultSkin┃敵プレイヤー基本スキン適用
+CustomGame/Options/DayNight/0┃1日目昼まで
+CustomGame/Options/DayNight/1┃1日目夜まで
+CustomGame/Options/DayNight/2┃2日目昼まで
+CustomGame/Options/DayNight/3┃2日目夜まで
+CustomGame/Options/DayNight/4┃3日目昼まで
+CustomGame/Options/DayNight/5┃3日目夜まで
+CustomGame/Options/DayNight/6┃4日目昼まで
+CustomGame/Options/DayNight/7┃4日目夜まで
+CustomGame/Options/DayNight/8┃5日目昼まで
+CustomGame/Options/DayNight/9┃5日目夜まで
+CustomGame/Options/DayNight/Off┃許可しない
 일반 스쿼드 명칭┃一般対戦
 랭크 스쿼드 명칭┃ランク対戦
 랭크 솔로 명칭┃ソロモード
@@ -3323,7 +3346,7 @@ CreditResurrectionButtonTooltip_DescTypeB┃死亡した味方を復活させる
 핑특수지정┃{0}({1})が {2}の{3}を指定しました。
 핑특수지정_아이템┃{0}({1})が {2}の[{3}]を指定しました。
 핑특수지정_시체┃{0}({1})が{2}の{3}死体指定
-핑특수지정_흔적발견┃{0}({1})が{2}の{3}の近くで<color=#FFBB00>敵の痕跡を発見</color>しました。
+핑특수지정_흔적발견┃{0}({1})が{2}の{3}の近くで<color=#FFBB00>敵の痕跡</color>を発見しました。
 핑특수지정_위험┃{0}({1})が{2}の{3}の近くに<color=#FFBB00>危険信号</color>を送っています。
 핑특수지정_지원┃{0}({1})が{2}の{3}の近くに<color=#FFBB00>支援を要請</color>しています。
 핑특수지정_이동┃{0}({1})が{2}の{3}に<color=#FFBB00>向かっています</color>。
@@ -3655,7 +3678,7 @@ CBT스케줄링크┃https://www.playeternalreturn.com/schedule/jp.html
 크레딧 소비 초월장비 구매┃神話装備購入
 크레딧 소비 인퓨전 리롤┃インフュージョンリロール
 기타 항목 표기┃その他
-viewAndReconnaissance┃視界と偵察
+viewAndReconnaissance┃視界＆偵察
 감시카메라 설치 수┃監視カメラ設置数
 원격카메라 설치 수┃望遠カメラ設置数
 감시카메라 제거 수┃監視カメラ破壊数
@@ -3663,8 +3686,8 @@ viewAndReconnaissance┃視界と偵察
 하이퍼루프 사용 횟수┃ハイパループ使用回数
 디플로잉루프 사용 횟수┃ディプロイングループ使用回数
 보안 콘솔 사용 횟수┃保安コンソール使用回数
-reconOrbUseCount┃ORB - 監視使用回数
-reconOrbDestroyCount┃ORB - 監視破壊回数
+reconOrbUseCount┃ORB - 偵察使用回数
+reconOrbDestroyCount┃ORB - 偵察破壊回数
 추후 제공 예정입니다┃コバルトの統計は後日提供されます。
 WeaponMasteryStatistic┃武器
 생존자에게 받은 피해 총량┃生存者から受けたダメージ総量
@@ -4875,6 +4898,7 @@ SeasonPassPopup/Btn/BuyNP/Text┃保有中
 시즌팩 10 출시 캐릭터┃シーズン10 新キャラ 2種
 시즌팩 10 출시 스킨┃シーズン10 新スキン 5種
 시즌팩 10 특별 아이템┃シーズン10 スペシャルアイテム 4種
+시즌팩 주의사항┃シーズンパックより<ER PASS : {0}>を先に購入する場合、イベントNPや無償NPは払い戻しできません。有償NPのみ払い戻されます。\nER PASS以外の商品は重複して保有することができ、払い戻しできません。\nシーズンパックに含まれているキャラクター、スキンをショップで重複購入した\n場合、払い戻しポリシーに基づいて対応いたします。\nシーズンパックの内容は変更されることがあります。詳細は告知をご覧ください。\nシーズンパックの商品は発売後、メールボックスのシーズンパックに支給され、\n後日他の形で再販されることがあります。
 WebViewPopup_Title┃イベント情報
 GoodsMenu/InGame┃ゲーム内カスタマイズ
 GoodsMenu/Customize┃ゲームカスタマイズ
@@ -5676,6 +5700,7 @@ Season8000/Name┃P5R コラボスキン購読パック
 400005_Title┃GGSTコラボ記念ログインボーナス
 400006_Title┃旧正月記念ログインボーナス
 400007_Title┃ペルソナ５ ザ・ロイヤル コラボ記念ログインボーナス
+400008_Title┃ペルソナ５ ザ・ロイヤル コラボ記念ログインボーナス
 10000101_7_Title┃＜ウィドリアナチュワプ＞SET
 10000101_7_Desc┃- ＜ウィドリアナチュワプ＞アイコン\n- ＜ウィドリアナチュワプ＞エモート
 10000101_14_Title┃スキンデータセット
@@ -6332,7 +6357,7 @@ GPP 계정 연동 성공┃KRAFTON IDの連携に成功しました。
 최근에 입력한 코드┃最近入力したコード :
 후원 코드┃サポート中のクリエイターコード : {0}
 ShopPromotionPopup_BonusReward_desc┃「P5Rコラボ スキン購読パック」または「P5R コラボスキンパッケージ」3種を購入すると獲得できます。
-ShopPromotionPopup_Persona_Desc┃※ 「P5Rコラボ スキン購読パック」または「P5R コラボスキンパッケージ」3種を購入すると、P5Rコラボスペシャルアイテムを獲得できます。\n※ P5Rコラボ スキン購読パックの商品は、順次発売予定です。発売日程を必ずご確認ください。\n※ P5R コラボスキンパッケージを個別で購入した後にはP5Rコラボ スキン購読パックを購入できません。ご注意ください。\n※ パッケージに含まれる商品については告知をご確認ください。商品内容は都合によって変更される場合があります。
+ShopPromotionPopup_Persona_Desc┃※ 「P5Rコラボ スキン購読パック」または「P5R コラボスキンパッケージ」3種を購入すると、P5Rコラボスペシャルアイテムを獲得できます。\n※ P5Rコラボ スキン購読パックの商品は、順次発売予定です。発売日程を必ずご確認ください。\n※ 発売日程：「エレナ（ヴァイオレット）スキンパッケージ」- 3月5日、「カミロ（クロウ）スキンパッケージ」- 3月19日、「ラウラ（パンサー）スキンパッケージ」- 4月2日メンテナンス以降\n※ P5R コラボスキンパッケージを個別で購入した後にはP5Rコラボ スキン購読パックを購入できません。ご注意ください。\n※ パッケージに含まれる商品については別の告知をご確認ください。商品内容は都合によって変更される場合があります。
 ShopPromotionPopup_Dday_Over24┃D - {0}
 ShopPromotionPopup_Dday_Under24┃D - Day
 ShopPromotion_LimitCategoryWarn┃スキン購読パックをご購入いただいた場合、スキンパッケージは購入できません。\n\n同じく、スキンパッケージを購入した場合、スキン購読パックは購入できません。\nご購入の際にはご注意ください。
@@ -6994,6 +7019,11 @@ EMBLEM_MARK_EVENT_103246┃S10 eスポーツ優勝者
 EMBLEM_MARK_EVENT_103247┃@#!! フェンリル
 EMBLEM_MARK_EVENT_103248┃ルミアチョコもちクッキー
 EMBLEM_MARK_EVENT_103249┃ルミアカチカチおこし
+EMBLEM_MARK_EVENT_103250┃SEASON 9 CHAMPION ZeroJin
+EMBLEM_MARK_EVENT_103251┃SEASON 9 CHAMPION ing9
+EMBLEM_MARK_EVENT_103252┃SEASON 9 CHAMPION Dasoo
+EMBLEM_MARK_EVENT_103253┃SEASON 9 CHAMPION Jinho
+EMBLEM_MARK_EVENT_103254┃噓の味！ コラライン
 EMBLEM_MARK_ERPASS_104001┃氷の結晶アイコン
 EMBLEM_MARK_ERPASS_104002┃プレゼントする木アイコン
 EMBLEM_MARK_ERPASS_104003┃赤い鼻アイコン
@@ -7269,6 +7299,7 @@ EMBLEM_BG_SHOP_202571┃S10 Busan BeSPA 背景
 EMBLEM_BG_SHOP_202572┃S10 Ascenders 背景
 EMBLEM_BG_SHOP_202573┃S10 Gyeongnam Sparkle 背景
 EMBLEM_BG_SHOP_202574┃S10 Daegu Suseong Guardians 背景
+EMBLEM_BG_SHOP_202575┃コラライン 背景
 EMBLEM_BG_S3_IRON_SOLO┃シーズン3アイアン(ソロ)背景
 EMBLEM_BG_S3_IRON_DUO┃シーズン3アイアン(デュオ)背景
 EMBLEM_BG_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)背景
@@ -7760,6 +7791,7 @@ EMBLEM_OUTLINE_SHOP_302571┃S10 Busan BeSPA フレーム
 EMBLEM_OUTLINE_SHOP_302572┃S10 Ascenders フレーム
 EMBLEM_OUTLINE_SHOP_302573┃S10 Gyeongnam Sparkle フレーム
 EMBLEM_OUTLINE_SHOP_302574┃S10 Daegu Suseong Guardians フレーム
+EMBLEM_OUTLINE_SHOP_302575┃コラライン フレーム
 EMBLEM_OUTLINE_S3_IRON_SOLO┃シーズン3アイアン(ソロ)フレーム
 EMBLEM_OUTLINE_S3_IRON_DUO┃シーズン3アイアン(デュオ)フレーム
 EMBLEM_OUTLINE_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)フレーム
@@ -8704,6 +8736,9 @@ Product/Name/EVENT_NPASS_S9_Premium_Token_1025┃S9 プレミアムトークン�
 Product/Name/EVENT_NPASS_S9_Basic_Token_1026┃S9 ベーシックトークンブックⅡ
 Product/Name/EVENT_NPASS_S10_Premium_Token_1027┃S10 プレミアムトークンブック
 Product/Name/EVENT_NPASS_S10_Basic_Token_1028┃S10 ベーシックトークンブック
+Product/Name/EVENT_NPASS_S10_Premium_Token_1029┃S10 プレミアムトークンブックⅡ
+Product/Name/EVENT_NPASS_S10_Basic_Token_1030┃S10 ベーシックトークンブックⅡ
+Product/Name/EVENT_NPASS_S10_2026_Spring_1031┃春の訪れクエストブック
 Product/Name/EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
 Product/Name/WEGAME_IAP_EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
 Product/Name/S9_2025_Winter_Pack_01┃2025 ウィンタースペシャルパッケージ
@@ -8753,6 +8788,8 @@ Product/Name/WEGAME_IAP_S10_JecheonPhalanx_Pack_01┃S10 Ascenders パッケー�
 Product/Name/WEGAME_IAP_S10_GyeongnamSparkle_Pack_01┃S10 Gyeongnam Sparkle パッケージ
 Product/Name/WEGAME_IAP_S10_DaeguGuardians_Pack_01┃S10 Daegu Suseong Guardians パッケージ
 Product/Name/LOOTBOX_SKINxKEY_SET_10_S10_BONUS┃スキンデータセット(11個入り)
+Product/Name/S10_Coraline_Emote_Pack_01┃コララインエモートパッケージ
+Product/Name/S10_Coraline_Event_Pack_01┃コラライン登場記念パッケージ
 Product/Name/S10_2026_Spring_Pack_01┃春の訪れパッケージ
 Product/Name/S10_2026_Spring_Daily_Pack_01┃春のデイリーボックス
 Shop/Desc/Aya_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
@@ -9130,6 +9167,10 @@ Shop/Desc/P5R_Bundle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エ�
 Shop/Desc/P5R_Elena_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エレナ（ヴァイオレット）スキン\n- エレナ（かすみ） おどおど エモート\n- エレナ（ヴァイオレット） X サンドリヨン アイコン\n- エレナ（ヴァイオレット）背景\n- エレナ（ヴァイオレット）フレーム\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/P5R_Camilo_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- カミロ（クロウ）スキン\n- カミロ（吾郎） HEY エモート\n- カミロ（クロウ） X ロビンフッド アイコン\n- カミロ（クロウ）背景\n- カミロ（クロウ）フレーム\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/P5R_Laura_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ラウラ（パンサー）スキン\n- ラウラ（杏） 美味しい♪ エモート\n- ラウラ（パンサー） X カルメン アイコン\n- ラウラ（パンサー）背景\n- ラウラ（パンサー）フレーム\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b> \n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_Coraline_Emote_Pack_01┃新しく実装されたコララインのエモート4種を割引価格で手に入れましょう！\n\n<b><color=#FFBB00>[内容]</color></b>\n- コララインエモート 4種\n- XP Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_Coraline_Event_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- コラライン エモート\n- コラライン 背景\n- コラライン フレーム\n- コラライン チームスロット背景\n- ロイヤルトークン X 10\n- A-Coin Boost(3日)\n- ER Point boost(3日)\n\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_2026_Spring_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ワイルドカード(レア) - スキン選択券 1個\n- ワイルドカード(高級) - アイテム選択券 1個\n- スキンデータボックス 3個\n- データキー 3個\n- 研究所データボックス 3個\n- ラッキー★ボックス 3個\n- ラッキー★ボール 1個\n- 5,000 A-Coin\n- ロイヤルトークン 10個\n- A-Coin Boost(1日)\n- ER Point Boost(1日)\n\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入したアイテムは「製作所」で使用できます。\n※ ワイルドカードは「製作所 ‐ ワイルドカード」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S10_2026_Spring_Daily_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 研究所データボックス 1個\n- シーズンピースパック 5個\n- 「春の訪れクエストブック」ポイント 50p\n\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ シーズンピースパックは購入と同時に開封され、シーズンピースで支給されます。\n※ クエストブックポイントは当該クエストブックにのみ適用されます。他のクエストブックには使用できません。\n※ 購入と同時に使用・開封される商品は払い戻しできません。
 Shop/Desc/2026_S10_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n-エースバニー ヘイズ かかったな エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S10 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S10 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
 Shop/Desc/S10_GyeonggiInnate_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Gyeonggi Innate エモート\n- S10 Gyeonggi Innate アイコン\n- S10 Gyeonggi Innate 背景\n- S10 Gyeonggi Innate フレーム\n- S10 Gyeonggi Innate チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Gyeonggi Innate パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S10_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 GJ Slasher エモート\n- S10 GJ Slasher アイコン\n- S10 GJ Slasher 背景\n- S10 GJ Slasher フレーム\n- S10 GJ Slasher チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9589,6 +9630,7 @@ Product/Name/S12_RARE_MATTER┃データピース(レア) X 1
 Product/Name/S12_ACOIN_UNLIMITED┃A-Coin X 150
 Product/Name/LuckyMarble2024_ACoin_100┃A-Coin X 100
 Product/Name/Festival2024_ACoin_100┃A-Coin X 100
+Product/Name/S10_LuckyMarble2026_ACoin_100┃A-Coin X 100
 Product/Name/LuckyMarble2024_Change_Token_01┃チェンジトークン X10
 Product/Name/S13_S12TOKEN_EXCHANGE┃チェンジトークン X2
 Product/Name/S13_S14TOKEN_EXCHANGE┃ラッキー★トークン X2
@@ -10712,6 +10754,7 @@ Goods/Name/3402570┃S10 Busan BeSPA チームスロット背景
 Goods/Name/3402571┃S10 Ascenders チームスロット背景
 Goods/Name/3402572┃S10 Gyeongnam Sparkle チームスロット背景
 Goods/Name/3402573┃S10 Daegu Suseong Guardians チームスロット背景
+Goods/Name/3402574┃コラライン
 Goods/Name/3403001┃機械回路
 Goods/Name/3403002┃星空の夜
 Goods/Name/3403003┃秋の紅葉
@@ -10946,7 +10989,6 @@ Goods/Desc/3102999┃レア等級のスキンピースを1つ確定して獲得�
 Goods/Name/3303301┃ホリデートークン
 Goods/Desc/3303301┃ホリデーデータボックスを使用して獲得できます。イベント終了後、ホリデートークンはなくなります。
 Goods/Name/3303302┃ハッピートークン
-Goods/Desc/3303302┃ハッピートークンは幸運玉及びハッピーパッケージを購入すると獲得できます。\nイベント終了後、使用していないハッピートークンはなくなります。
 Goods/Name/3303303┃ベーカリーカフェトークン
 Goods/Desc/3303303┃ベーカリーカフェトークンはエマのパンバスケットを使用すると獲得できます。イベント終了後、使用していないベーカリーカフェトークンはなくなります。
 Goods/Name/3303304┃ホワイトトークン
@@ -11103,11 +11145,11 @@ Goods/Desc/3199002┃一般等級のシーズンピースを1つ獲得できま�
 Goods/Name/3199003┃シーズンピースパック(高級)
 Goods/Desc/3199003┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
 Goods/Name/3199011┃シーズンピースパック
-Goods/Desc/3199011┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Desc/3199011┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。\n\n※ 購入と同時に獲得する商品です。
 Goods/Name/3199012┃シーズンピースパック(一般)
-Goods/Desc/3199012┃一般等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Desc/3199012┃一般等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。\n\n※ 購入と同時に獲得する商品です。
 Goods/Name/3199013┃シーズンピースパック(高級)
-Goods/Desc/3199013┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Desc/3199013┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。\n\n※ 購入と同時に獲得する商品です。
 Goods/Name/3199014┃シーズンピースパック
 Goods/Desc/3199014┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
 Goods/Name/3199015┃シーズンピースパック
@@ -13123,6 +13165,7 @@ Item/Name/202528┃フェザーフォール
 Item/Name/202529┃華将の衣
 Item/Name/203516┃ファフニール
 Item/Name/204513┃ピクシーブーツ
+Item/Name/204514┃タクティカル·シューズ
 Item/Name/202415_D┃バトルスーツ - David
 Item/Name/202407_D┃ミスリル鎧 - David
 Item/Name/202416_D┃炎のドレス - David
@@ -16111,6 +16154,7 @@ Item/Skills/6007011/Desc┃<color=red>VF暴走</color>状態の時、{1}m移動�
 Item/Skills/6001010┃炎の結界[ブラックマンバキング-TL]
 Item/Skills/6001011/Name┃<color=yellow>炎の結界</color>
 Item/Skills/6001012/Name┃<color=yellow>炎の結界</color>
+Item/Skills/6001013/Name┃<color=yellow>炎の結界</color>
 Item/Skills/6001011/Body┃<color=red>VF暴走</color>状態の時、戦闘に突入すると周り{1}m以内の敵に毎秒<color=#688A08>{4}</color>のスキルダメージを与えます。\n\n<color=red>VF暴走</color>状態の場合はブラックマンバキング-TLの<color=yellow>炎の結界</color>のみ発動します。
 Item/Skills/6001011/Desc┃<color=red>VF暴走</color>状態の時、戦闘に突入すると周り{0}m以内の敵に毎秒スキルダメージを与えます。\n敵に<color=#688A08>最大体力の{3}</color>のスキルダメージを与えます。\n\n<color=red>VF暴走</color>状態の場合はブラックマンバキング-TLの<color=yellow>炎の結界</color>のみ発動します。
 Item/Skills/6021010┃VF制御強化[スーパーサイドワインダー-ML]
@@ -17362,9 +17406,9 @@ Skill/Group/Desc/1066420┃使用距離が{3}m増加し、指定した位置と�
 Skill/Group/Coef/1066420┃使用距離が{3}m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{4})</color>のスキルダメージを与えて敵を押し出します。 \n以降、二つの石碑は神秘的な力でつながり、味方が{2}回移動できる次元の通路が{1}秒間維持されます。
 Skill/Group/Desc/1066430┃使用距離が{3}m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<color=white>{0}</color>のスキルダメージを与えて敵を押し出します。 \n以降、二つの石碑は神秘的な力でつながり、味方が{2}回移動できる次元の通路が{1}秒間維持されます。
 Skill/Group/Coef/1066430┃使用距離が{3}m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{4})</color>のスキルダメージを与えて敵を押し出します。 \n以降、二つの石碑は神秘的な力でつながり、味方が{2}回移動できる次元の通路が{1}秒間維持されます。
-Skill/LobbyDesc/1066500┃アルダが遺物に秘められた起源を解読し、元の能力を復元します。一定時間の間次に使用する一般スキルを強化させます。
-Skill/Group/Desc/1066500┃アルダが遺物に秘められた起源を解読し、元の能力を復元します。{0}秒間次に使用する一般スキルを強化させます。\n\n<color=white>シャマシュの法典：</color>指定した方向にシャマシュの法典を開きます。シャマシュの法典は衝突した敵に<color=white>{2}</color>のスキルダメージを与えて法典の文字を残し、{3}秒後法典の上の敵に<color=white>{4}</color>のスキルダメージを与えます。\n\n<color=white>シャマシュの法典</color>を使用すると<color=white>秘められた力</color>のクールダウンの{1}が返されます。\n\n<color=white>バビロンのさいころ：</color>指定した地点にバビロンのさいころを召喚して境界線に障壁を作り、障壁に触れた敵を{10}秒間束縛させます。\n障壁は{15}秒間時計回りの順番で破壊されながら敵に<color=white>{8}</color>のスキルダメージを与え、さいころの領域内の敵には<color=white>{5}</color>のスキルダメージを与えて{6}秒間移動速度を{7}減少させます。\nすべての障壁が破壊されるとバビロンのさいころは消え、領域内の敵に<color=white>{9}</color>のスキルダメージを与えて{16}秒間気絶させます。\n\n<color=white>ニムルドの門：</color>使用距離が{14}m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<color=white>{11}</color>のスキルダメージを与えて敵を押し出します。 \n以降、二つの石碑は神秘的な力でつながり、味方が{13}回移動できる次元の通路が{12}秒間維持されます。
-Skill/Group/Coef/1066500┃アルダが遺物に秘められた起源を解読し、元の能力を復元します。{0}秒間次に使用する一般スキルを強化させます。\n\n<color=white>シャマシュの法典：</color>指定した方向にシャマシュの法典を開きます。シャマシュの法典は衝突した敵に<color=white>{2}</color><color=#DDA0DD>(+スキル増幅の{15})</color>のスキルダメージを与えて法典の文字を残し、{3}秒後法典の上の敵に<color=white>{4}</color><color=#DDA0DD>(+スキル増幅の{16})</color>のスキルダメージを与えます。\n\n<color=white>シャマシュの法典</color>を使用すると<color=white>秘められた力</color>のクールダウンの{1}が返されます。\n\n<color=white>バビロンのさいころ：</color>指定した地点にバビロンのさいころを召喚して境界線に障壁を作り、障壁に触れた敵を{10}秒間束縛させます。\n障壁は{21}秒間時計回りの順番で破壊されながら敵に<color=white>{8}</color><color=#DDA0DD>(+スキル増幅の{18})</color>のスキルダメージを与え、さいころの領域内の敵には<color=white>{5}</color><color=#DDA0DD>(+スキル増幅の{17})</color>のスキルダメージを与えて{6}秒間移動速度を{7}減少させます。\nすべての障壁が破壊されるとバビロンのさいころは消え、領域内の敵に<color=white>{9}</color><color=#DDA0DD>(+スキル増幅の{19})</color>のスキルダメージを与えて{22}秒間気絶させます。\n\n<color=white>ニムルドの門：</color>使用距離が{14}m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<color=white>{11}</color><color=#DDA0DD>(+スキル増幅の{20})</color>のスキルダメージを与えて敵を押し出します。 \n以降、二つの石碑は神秘的な力でつながり、味方が{13}回移動できる次元の通路が{12}秒間維持されます。
+Skill/LobbyDesc/1066500┃アルダが遺物に秘められた起源を解読し、元の能力を復元します。一定時間の間次に使用する基本スキルを強化させます。
+Skill/Group/Desc/1066500┃アルダが遺物に秘められた起源を解読し、元の能力を復元します。{0}秒間次に使用する基本スキルを強化させます。\n\n<color=white>シャマシュの法典：</color>指定した方向にシャマシュの法典を開きます。シャマシュの法典は衝突した敵に<color=white>{2}</color>のスキルダメージを与えて法典の文字を残し、{3}秒後法典の上の敵に<color=white>{4}</color>のスキルダメージを与えます。\n\n<color=white>シャマシュの法典</color>を使用すると<color=white>秘められた力</color>のクールダウンの{1}が返されます。\n\n<color=white>バビロンのさいころ：</color>指定した地点にバビロンのさいころを召喚して境界線に障壁を作り、障壁に触れた敵を{10}秒間束縛させます。\n障壁は{15}秒間時計回りの順番で破壊されながら敵に<color=white>{8}</color>のスキルダメージを与え、さいころの領域内の敵には<color=white>{5}</color>のスキルダメージを与えて{6}秒間移動速度を{7}減少させます。\nすべての障壁が破壊されるとバビロンのさいころは消え、領域内の敵に<color=white>{9}</color>のスキルダメージを与えて{16}秒間気絶させます。\n\n<color=white>ニムルドの門：</color>使用距離が{14}m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<color=white>{11}</color>のスキルダメージを与えて敵を押し出します。 \n以降、二つの石碑は神秘的な力でつながり、味方が{13}回移動できる次元の通路が{12}秒間維持されます。
+Skill/Group/Coef/1066500┃アルダが遺物に秘められた起源を解読し、元の能力を復元します。{0}秒間次に使用する基本スキルを強化させます。\n\n<color=white>シャマシュの法典：</color>指定した方向にシャマシュの法典を開きます。シャマシュの法典は衝突した敵に<color=white>{2}</color><color=#DDA0DD>(+スキル増幅の{15})</color>のスキルダメージを与えて法典の文字を残し、{3}秒後法典の上の敵に<color=white>{4}</color><color=#DDA0DD>(+スキル増幅の{16})</color>のスキルダメージを与えます。\n\n<color=white>シャマシュの法典</color>を使用すると<color=white>秘められた力</color>のクールダウンの{1}が返されます。\n\n<color=white>バビロンのさいころ：</color>指定した地点にバビロンのさいころを召喚して境界線に障壁を作り、障壁に触れた敵を{10}秒間束縛させます。\n障壁は{21}秒間時計回りの順番で破壊されながら敵に<color=white>{8}</color><color=#DDA0DD>(+スキル増幅の{18})</color>のスキルダメージを与え、さいころの領域内の敵には<color=white>{5}</color><color=#DDA0DD>(+スキル増幅の{17})</color>のスキルダメージを与えて{6}秒間移動速度を{7}減少させます。\nすべての障壁が破壊されるとバビロンのさいころは消え、領域内の敵に<color=white>{9}</color><color=#DDA0DD>(+スキル増幅の{19})</color>のスキルダメージを与えて{22}秒間気絶させます。\n\n<color=white>ニムルドの門：</color>使用距離が{14}m増加し、指定した位置と自分の位置にニムルドの石碑を落として敵に<color=white>{11}</color><color=#DDA0DD>(+スキル増幅の{20})</color>のスキルダメージを与えて敵を押し出します。 \n以降、二つの石碑は神秘的な力でつながり、味方が{13}回移動できる次元の通路が{12}秒間維持されます。
 CharacterState/Group/Name/1066100┃発掘統裁 - 沈黙
 CharacterState/Group/Name/1066110┃考古学的分析
 CharacterState/Group/Name/1066300┃バビロンの立方体 - 移動速度減少
@@ -17378,7 +17422,7 @@ CharacterState/Group/Desc/1066300┃バビロンの立方体によって移動�
 CharacterState/Group/Desc/1066310┃バビロンの立方体によって気絶しました。
 CharacterState/Group/Desc/1066320┃バビロンのさいころによって束縛されません。
 CharacterState/Group/Desc/1066330┃バビロンのさいころによって束縛されました。
-CharacterState/Group/Desc/1066500┃アルダが遺物に秘められた起源を解読しました。次に使用する一般スキルが強化されます。
+CharacterState/Group/Desc/1066500┃アルダが遺物に秘められた起源を解読しました。次に使用する基本スキルが強化されます。
 Skill/Group/Name/1067100┃ティアリングブレード
 Skill/Group/Name/1067200┃バイナリスピン
 Skill/Group/Name/1067300┃ホライゾンクリーブ
@@ -18216,6 +18260,52 @@ CharacterState/Group/Desc/1086400┃狩りの始まりによって移動速度�
 CharacterState/Group/Desc/1086500┃とどめ刺しのターゲットになりました。
 CharacterState/Group/Desc/1086510┃とどめ刺しでシールドを獲得しました。
 CharacterState/Group/Desc/1086520┃とどめ刺しによって移動速度が減少しました。
+Skill/Group/Name/1087100┃因果の裏面
+Skill/Group/Name/1087200┃断罪の光
+Skill/Group/Name/1087300┃真実の鏡 / 偽りの鏡
+Skill/Group/Name/1087310┃真実の鏡 / 偽りの鏡
+Skill/Group/Name/1087400┃罪の束縛
+Skill/Group/Name/1087500┃鏡の世界の残影
+Skill/LobbyDesc/1087100┃コララインのスキルが敵に的中した場合、鏡の断片が残されます。\n鏡の断片が残った敵にスキルが的中すると、断片が消え、固定ダメージを与えます。
+Skill/Group/Desc/1087100┃コララインのスキルが敵に的中した場合、{0}秒間鏡の断片が残されます。\n鏡の断片が残った敵にスキルが的中すると、断片が消え、<color=white>{2}</color>の固定ダメージを与えます。
+Skill/Group/Coef/1087100┃コララインのスキルが敵に的中した場合、{0}秒間鏡の断片が残されます。\n鏡の断片が残った敵にスキルが的中すると、断片が消え、<color=white>{20}</color><color=#DDA0DD>(+スキル増幅の{21})</color>の固定ダメージを与えます。
+Skill/LobbyDesc/1087200┃コララインが指定した方向に断罪の光を発射します。光は射程距離の端まで飛んで行ったり、敵に的中すると爆発し、範囲内の敵にスキルダメージを与えます。\n光が鏡に反射した場合、効果が強化されます。\n\n<color=white>白鏡：</color>鏡が映す方向に光を発射し、範囲内の敵に現在体力に比例するスキルダメージを与え、移動速度を減少させます。\n\n<color=white>黒鏡：</color>鏡が映す方向に光を発射し、範囲内の敵に失った体力に比例するスキルダメージを与え、移動速度を減少させます。
+Skill/Group/Desc/1087200┃コララインが指定した方向に断罪の光を発射します。光は射程距離の端まで飛んで行ったり、敵に的中すると爆発し、範囲内の敵に<color=white>{0}</color>のスキルダメージを与えます。\n光が鏡に反射した場合、効果が強化されます。\n\n<color=white>白鏡：</color>鏡が映す方向に光を発射し、範囲内の敵に<color=white>{3}</color><color=#688A08>(+対象の現在体力の{1})</color>のスキルダメージを与え、{5}秒間移動速度を{6}減少させます。\n\n<color=white>黒鏡：</color>鏡が映す方向に光を発射し、範囲内の敵に<color=white>{4}</color><color=#688A08>(+対象の失った体力の{2})</color>のスキルダメージを与え、{7}秒間移動速度を{8}減少させます。
+Skill/Group/Coef/1087200┃コララインが指定した方向に断罪の光を発射します。光は射程距離の端まで飛んで行ったり、敵に的中すると爆発し、範囲内の敵に<color=white>{20}</color><color=#DDA0DD>(+スキル増幅の{21})</color>のスキルダメージを与えます。\n光が鏡に反射した場合、効果が強化されます。\n\n<color=white>白鏡：</color>鏡が映す方向に光を発射し、範囲内の敵に<color=white>{22}</color><color=#DDA0DD>(+スキル増幅の{23})</color><color=#688A08>(+対象の現在体力の{1})</color>のスキルダメージを与え、{5}秒間移動速度を{6}減少させます。\n\n<color=white>黒鏡：</color>鏡が映す方向に光を発射し、範囲内の敵に<color=white>{24}</color><color=#DDA0DD>(+スキル増幅の{25})</color><color=#688A08>(+対象の失った体力の{2})</color>のスキルダメージを与え、{7}秒間移動速度を{8}減少させます。
+Skill/LobbyDesc/1087300┃<color=green>持続効果：</color>コララインの鏡に<color=white>断罪の光</color>または<color=white>罪の束縛</color>が当たると、スキル増幅が増加します。\n\nコララインが指定した位置に鏡を召喚します。この時、鏡は指定した方向を向きます。鏡は真実を明かす<color=white>白鏡</color>と嘘を見抜く<color=white>黒鏡</color>が交互に設置されます。\n\n鏡で強化された<color=white>断罪の光</color>が敵に的中すると、クールダウンが減少します。
+Skill/Group/Desc/1087300┃<color=green>持続効果：</color>コララインの鏡に<color=white>断罪の光</color>または<color=white>罪の束縛</color>が当たると、{0}秒間スキル増幅が{1}増加します。(最大{2}スタック)\n\nコララインが指定した位置に鏡を召喚します。この時、鏡は指定した方向を向きます。鏡は真実を明かす<color=white>白鏡</color>と嘘を見抜く<color=white>黒鏡</color>が交互に設置されます。\n\n鏡で強化された<color=white>断罪の光</color>が敵に的中すると、クールダウンが{4}減少します。
+Skill/Group/Coef/1087300┃<color=green>持続効果：</color>コララインの鏡に<color=white>断罪の光</color>または<color=white>罪の束縛</color>が当たると、{0}秒間スキル増幅が{1}増加します。(最大{2}スタック)\n\nコララインが指定した位置に鏡を召喚します。この時、鏡は指定した方向を向きます。鏡は真実を明かす<color=white>白鏡</color>と嘘を見抜く<color=white>黒鏡</color>が交互に設置されます。\n\n鏡で強化された<color=white>断罪の光</color>が敵に的中すると、クールダウンが{4}減少します。
+Skill/LobbyDesc/1087400┃コララインが光の球体を発射し、経路上の敵にスキルダメージを与えて束縛させます。\n球体が鏡に届いた場合、効果が強化されます。\n\n<color=white>白鏡：</color>鏡が映す方向に球体を発射し、経路上の敵にスキルダメージを与えて束縛させます。敵に的中した場合、コララインがシールドを獲得します。\n\n<color=white>黒鏡：</color>鏡が映す方向に球体を発射し、経路上の敵にスキルダメージを与えて束縛させます。的中した敵は、しばらくの間防御力が減少します。
+Skill/Group/Desc/1087400┃コララインが光の球体を発射し、経路上の敵に<color=white>{6}</color>のスキルダメージを与えて{0}秒間束縛させます。\n球体が鏡に届いた場合、効果が強化されます。\n\n<color=white>白鏡：</color>鏡が映す方向に球体を発射し、経路上の敵に<color=white>{7}</color>のスキルダメージを与えて{1}秒間束縛させます。敵に的中した場合、コララインが{3}秒間<color=white>{9}</color>のダメージを吸収するシールドを獲得します。\n\n<color=white>黒鏡：</color>鏡が映す方向に球体を発射し、経路上の敵に<color=white>{8}</color>のスキルダメージを与えて{2}秒間束縛させます。的中した敵は、{4}秒間防御力が{5}減少します。
+Skill/Group/Coef/1087400┃コララインが光の球体を発射し、経路上の敵に<color=white>{20}</color><color=#DDA0DD>(+スキル増幅の{21})</color>のスキルダメージを与えて{0}秒間束縛させます。\n球体が鏡に届いた場合、効果が強化されます。\n\n<color=white>白鏡：</color>鏡が映す方向に球体を発射し、経路上の敵に<color=white>{22}</color><color=#DDA0DD>(+スキル増幅の{23})</color>のスキルダメージを与えて{1}秒間束縛させます。敵に的中した場合、コララインが{3}秒間<color=white>{26}</color><color=#DDA0DD>(+スキル増幅の{27})</color>のダメージを吸収するシールドを獲得します。\n\n<color=white>黒鏡：</color>鏡が映す方向に球体を発射し、経路上の敵に<color=white>{24}</color><color=#DDA0DD>(+スキル増幅の{25})</color>のスキルダメージを与えて{2}秒間束縛させます。的中した敵は、{4}秒間防御力が{5}減少します。
+Skill/LobbyDesc/1087500┃コララインが指定した方向に移動し、しばらくの間鏡の世界の中へ入り、対象指定不可状態になります。\n\n鏡の中の世界を通り抜けた後、コララインは移動速度が増加し、次の基本攻撃が強化されます。強化された基本攻撃が敵に的中した場合、基本スキルのクールダウンが減少します。\n\nスキルが的中した場合、クールダウンが減少します。
+Skill/Group/Desc/1087500┃コララインが指定した方向に移動し、しばらくの間鏡の世界の中へ入り、{0}秒間対象指定不可状態になります。移動以外の行動をすると対象指定不可状態が解除されます。\n\n鏡の中の世界を通り抜けた後、コララインは{1}秒間移動速度が{2}増加し、{6}秒間次の基本攻撃が強化され、射程距離が{8}増加します。強化された基本攻撃が敵に的中した場合、<color=white>{7}</color>の追加スキルダメージを与え、<color=white>罪の束縛</color>のクールダウンが{3}、<color=white>他の基本スキル</color>のクールダウンが{4}減少します。\n\nスキルが的中した場合、クールダウンが{5}減少します。
+Skill/Group/Coef/1087500┃コララインが指定した方向に移動し、しばらくの間鏡の世界の中へ入り、{0}秒間対象指定不可状態になります。移動以外の行動をすると対象指定不可状態が解除されます。\n\n鏡の中の世界を通り抜けた後、コララインは{1}秒間移動速度が{2}増加し、{6}秒間次の基本攻撃が強化され、射程距離が{8}増加します。強化された基本攻撃が敵に的中した場合、<color=white>{20}</color><color=#DDA0DD>(+スキル増幅の{21})</color>の追加スキルダメージを与え、<color=white>罪の束縛</color>のクールダウンが{3}、<color=white>他の基本スキル</color>のクールダウンが{4}減少します。\n\nスキルが的中した場合、クールダウンが{5}減少します。
+Skill/Group/ExpansionTip/1087500┃<i>強化基本攻撃はスキル攻撃とも見なされます。</i>
+CharacterState/Group/Name/1087100┃因果の裏面
+CharacterState/Group/Desc/1087100┃コララインのスキルに的中し、鏡の断片が残されている状態です。
+CharacterState/Group/Name/1087200┃断罪の光 - 移動速度減少
+CharacterState/Group/Desc/1087200┃断罪の光によって移動速度が減少しました。
+CharacterState/Group/Name/1087210┃断罪の光 - 移動速度減少
+CharacterState/Group/Desc/1087210┃断罪の光によって移動速度が減少しました。
+CharacterState/Group/Name/1087300┃真実の鏡 / 偽りの鏡 - スキル増幅増加
+CharacterState/Group/Desc/1087300┃スキル増幅が増加しました。
+CharacterState/Group/Name/1087400┃罪の束縛 - 束縛
+CharacterState/Group/Desc/1087400┃罪の束縛によって束縛されました。
+CharacterState/Group/Name/1087410┃罪の束縛 - 束縛
+CharacterState/Group/Desc/1087410┃罪の束縛によって束縛されました。
+CharacterState/Group/Name/1087420┃罪の束縛 - シールド
+CharacterState/Group/Desc/1087420┃罪の束縛によってシールドを獲得しました。
+CharacterState/Group/Name/1087440┃罪の束縛 - 束縛
+CharacterState/Group/Desc/1087440┃罪の束縛によって束縛されました。
+CharacterState/Group/Name/1087450┃罪の束縛 - 防御力減少
+CharacterState/Group/Desc/1087450┃罪の束縛によって防御力が減少しました。
+CharacterState/Group/Name/1087500┃鏡の世界の残影 - 対象指定不可
+CharacterState/Group/Desc/1087500┃鏡の中の世界の影響によって対象指定できない状態です。
+CharacterState/Group/Name/1087510┃鏡の世界の残影 - 移動速度増加
+CharacterState/Group/Desc/1087510┃鏡の中の世界の影響によって移動速度が増加し、衝突を無視します。
+CharacterState/Group/Name/1087520┃鏡の世界の残影 - 基本攻撃強化
+CharacterState/Group/Desc/1087520┃鏡の世界の残影によって基本攻撃が強化されました。
 Skill/Group/Name/3015000┃マントと短剣
 Skill/Group/Name/3015100┃マントと短剣
 Skill/Group/Name/3016000┃受け流し
@@ -22012,6 +22102,12 @@ CharacterStoryHeight/86┃160cm
 CharacterStoryGender/86┃男性
 CharacterStoryTitle/86┃前、邪魔！
 CharacterStoryDesc/86┃アグライアによって人為的に創られた実験体。\nこの世に生まれた時から今に至るまで、彼の人生はアグライアに振り回されている。\n\n多くの研究員は、彼のことを偉大なる研究に貢献できる機会を手に入れた\n「幸運に恵まれた存在」だと思っているが、極一部の者は、歪んだ執着と\n知的好奇心によって生まれた「かわいそうな犠牲者」だと思っている。\n\n研究員という存在を呪う彼にとって、たった一人、例外といえる研究員がいた。\nもう二度と会えないと分かっていながらも、彼はまだ希望を手放せずにいる。\n\nフェンリルは実験室という小さな檻の中にずっと閉じ込められていた。\nそんな彼にとって誰かが聞かせてくれる外の世界の物語は、\n唯一の世界とのつながりだった。\n\nルミア島に来た今でも、彼の状況は何一つ変わっていない。\nただもう少し広い檻に閉じ込められたまま、彼らの思惑通りに動くだけだった。
+CharacterStoryName/87┃コラライン
+CharacterStoryAge/87┃19歳
+CharacterStoryHeight/87┃164cm
+CharacterStoryGender/87┃女性
+CharacterStoryTitle/87┃白と黒、あなたはどっちなのかしら？
+CharacterStoryDesc/87┃世界を「白」と「黒」、二色のみで判断している少女。\n彼女の判断基準はただ一つ、「嘘」の有無である。\n善意であろうと悪意であろうと、彼女にとって噓をついた者はすべて悪人であり、どれだけ残酷な虐殺者であれ、嘘をついていない者は悪人ではない。彼女の審判対象は、その基準による悪人のみである。\n\n灰色の世界の中で唯一の光であった友人――\nその友人がコララインを裏切った瞬間、彼女の世界は崩壊しはじめた。この世のすべての嘘が彼女を侵食し、その瞳から光を奪い去った。\n\n窓から差し込む一筋の光、そして小さな手鏡。\nそれだけが、数年間幽閉されていたコララインに許されたもの。\nけれど、その小さな光を見ている時だけは、彼女の心の中で静かな意志が燃え上がった。\n\nかつてコララインの唯一の光であった「何か」が彼女の目の前に現れたあの日、\nコララインは抑えきれない怒りを感じた。\nそして、その「何か」を目の前から消し去った途端、コララインは決意した。\n「純白」を黒く染める「漆黒」をこの世から排除しようと。\n\n業鏡は彼女の武器であり、絶対的な審判台でもある。\nいかなる罪もその鏡の前では隠し切れない。黒と断じられた者を待っているのは、逃れられない断罪のみ。\n\n嘘つきで満ちた世界。\n今日もコララインは業鏡を手にして、悪人を探し出し、裁き続ける。
 CharacterPlayTip/1┃ジャッキーはターゲットにした敵をしつこく追いかけて虐殺し、そのたびにバースト能力が高まる連続殺人鬼です。
 CharacterPlayTip/2┃アヤは敵にスキルを的中させやすく、敵との距離を保つことのできるスキルを持つ、安定性の高い遠距離型実験体です。
 CharacterPlayTip/3┃フィオラはフェンシング選手らしく素早い動きで敵との距離を調節し、スキルを連続で的中させるたびに強力なダメージを与えます。
@@ -22090,7 +22186,7 @@ CharacterPlayTip/75┃レノアは他人の苦痛と悲鳴でしか聞き取れ�
 CharacterPlayTip/76┃苦痛に執着するガーネットは前衛で積極的にダメージを受けたり、ダメージを与えることを喜ぶ実験体です。\n対象と自分をアイアンメイデンに閉じ込め、永遠の苦痛を与えます。
 CharacterPlayTip/77┃ユミンは風のように敵陣を自由に歩き回り、風雲地帯で強化される能力で戦闘の流れを有利に導ける実験体です。
 CharacterPlayTip/78┃ヒスイは日輪會の一員です。様々な剣を収集し、剣の記憶と能力を引き出していろんな剣術を使って戦闘を主導する実験体です。
-CharacterPlayTip/79┃ユスティナな正義のヒーローを夢見る元気いっぱいな少女です。エネルギーを使って攻撃したり、移動することができ、一帯を殲滅できるほどの強力な火力を持つ実験体です。
+CharacterPlayTip/79┃ユスティナは正義のヒーローを夢見る元気いっぱいな少女です。エネルギーを使って攻撃したり、移動することができ、一帯を殲滅できるほどの強力な火力を持つ実験体です。
 CharacterPlayTip/80┃イシュトヴァーンは強化時、自分の行動と、異なる結果を持つもう一人の自分の姿で攻撃します。イシュトヴァーンは各戦闘の状況に応じて様々な可能性を研究し、より良い結果を得るために実験を繰り返します。
 CharacterPlayTip/81┃ニアはゲームが大好きな少女です。ゲームのように現実世界を操作し、自分だけのゲームの世界で敵の動きを妨害し、有利な戦闘に導くことができます。
 CharacterPlayTip/82┃シュリンは飛剣を使う純粋な田舎少女です。飛剣を使って敵を攻撃したり、自分を防御し、敵陣に入り込んで戦闘の流れを覆せる実験体です。
@@ -22098,6 +22194,7 @@ CharacterPlayTip/83┃ヘンリーは時間を操る能力で敵の移動を妨�
 CharacterPlayTip/84┃VF覚醒者に対して強い憎しみを持つブレアは、「XMS-5」を使って身体能力を向上させてVF覚醒者を感知し、スキルを連携させて戦う実験体です。
 CharacterPlayTip/85┃ミルカはCCスキルで戦闘を仕掛け、戦闘の中心でリパルスゲージを蓄積し、チャンスを作り出す実験体です。
 CharacterPlayTip/86┃生まれながらの野性と鋭い感覚を持つフェンリルは、身体的特徴である尻尾と爪で戦う実験体です。\n生きることに執着するフェンリルは、死が訪れても、それに立ち向かって戦います。
+CharacterPlayTip/87┃コララインは鏡で自分の投射体を反射し、遠くから敵を攻撃できる実験体です。
 MasteryType/Glove/Desc┃グローブは有効距離は短いですが、\n攻撃速度は早く連続攻撃ができます。
 MasteryType/Tonfa/Desc┃トンファーは唯一防御力を確保できる攻防一体の武器です。
 MasteryType/Hammer/Desc┃ハンマーは攻撃速度は遅いけですが強力な攻撃で相手の動きを鈍らせます。
@@ -23275,6 +23372,7 @@ ServerError/TOO_MANY_INVALID_CODES┃入力回数超過(9513)
 ServerError/CONFLICT_VERIFICATION┃不正な認証情報です。(9514)
 ServerError/LIMIT_LOG_REPORT┃互換性のないバージョンで接続を試みました。
 ServerError/INVALID_MATCHING_VERSION┃互換性のないバージョンで接続を試みました。
+ServerError/이미 존재하는 닉네임입니다.┃存在するニックネームです。
 Character/Name/0┃ランダム
 Character/Name/1┃ジャッキー
 Character/Name/2┃アヤ
@@ -23362,6 +23460,7 @@ Character/Name/83┃ヘンリー
 Character/Name/84┃ブレア
 Character/Name/85┃ミルカ
 Character/Name/86┃フェンリル
+Character/Name/87┃コラライン
 Character/Name/9998┃Dr. ハナ
 Character/Name/9999┃Dr. ナジャ
 GameResult/Character/Name/1┃Jackie
@@ -23450,6 +23549,7 @@ GameResult/Character/Name/83┃Henry
 GameResult/Character/Name/84┃Blair
 GameResult/Character/Name/85┃Mirka
 GameResult/Character/Name/86┃Fenrir
+GameResult/Character/Name/87┃Coraline
 Monster/Name/1┃ニワトリ
 Monster/Name/2┃コウモリ
 Monster/Name/3┃イノシシ
@@ -24469,6 +24569,8 @@ ToolTipType/BlairActive4VpRecovery┃的中時の気力回復量
 ToolTipType/MirkaActive1_2_Damage┃余震ダメージ量
 ToolTipType/FenrirW1_Damage┃尻尾的中ダメージ量
 ToolTipType/FenrirW2_Damage┃本能的撤退ダメージ量
+ToolTipType/BlackMirror_Damage┃黒鏡ダメージ量
+ToolTipType/WhiteMirror_Damage┃白鏡ダメージ量
 ToolTipType/CoolDownReduceRatio┃クールダウン減少量(%)
 ToolTipCoef/RemainBullet┃<color=#dda0dd>(+余った弾1 * スキル増幅の{0}%)</color>
 DayNight/Day┃昼
@@ -25073,6 +25175,7 @@ Skin/Name/1058006┃エースバニー ヘイズ
 Skin/Name/1059000┃アイザック
 Skin/Name/1059001┃暗黒街アイザック
 Skin/Name/1059002┃ワイルドウェストアイザック
+Skin/Name/1059003┃傲慢の軍団長 アイザック
 Skin/Name/1060000┃タジア
 Skin/Name/1060001┃ブロークングラスタジア
 Skin/Name/1060002┃バレンタインタジア
@@ -25149,6 +25252,7 @@ Skin/Name/1084000┃ブレア
 Skin/Name/1084001┃ポディアムフィニッシュ ブレア
 Skin/Name/1085000┃ミルカ
 Skin/Name/1086000┃フェンリル
+Skin/Name/1087000┃コラライン
 Skin/OnSelectVO/1001003┃システムは壊す時がいつもしびれるよね、でしょ？
 Skin/OnSelectVO/1002002┃バンバーン！花火の始まりですよ！
 Skin/OnSelectVO/1007005┃んじゃ、やってみるか。
@@ -25488,8 +25592,10 @@ Skin/Desc/1045005┃流行に乗り遅れるわけにはいきません。バニ
 Skin/Desc/1014005┃そ、そんな目で見ないで...ゲームに集中して...
 Skin/Desc/1075002┃才能のない生徒の努力ほど、見苦しいものはないわ。\n見なさい？これがあなたの成績表よ。
 Skin/Desc/1084001┃あんたの最高速度、見せてみな。
+Skin/Desc/1059003┃まだ考えているのか？時間は充分与えてやったはずだが。
 Skin/Desc/1034003┃たとえ痕跡が消えたとしても、この現場は残さなければならない。
 Skin/Desc/1050007┃聞こえますか？二人で合わせたデュエットが。
+Skin/Desc/1039004┃私とあなた、二人だけのワルツを始めましょうか？
 Skin/Desc/1027003┃僕とあなたの関係は、これからどう結ばれていくのか…確かめてみましょうか。
 Collection/Name/11001┃すべては娘のため…
 Collection/Name/11002┃ピクセルアートは…好き…？
@@ -25595,6 +25701,7 @@ Collection/Name/24039/5┃スターコレクションⅤ
 Collection/Name/24040┃ゴールドスター交換
 Collection/Name/24041┃ゴールドスターボックス交換
 Collection/Name/24042┃@#!! フェンリル
+Collection/Name/24043┃噓の味！ コラライン
 Collection/Name/24801/1┃GGSTスキンコレクションⅠ
 Collection/Name/24801/2┃GGSTスキンコレクションⅡ
 Collection/Name/24801/3┃GGSTスキンコレクションⅢ
@@ -26832,10 +26939,13 @@ GuideBook/SubTheme/Title/LastSafeZone┃最終セーフゾーン段階
 GuideBook/Page/Content/LastSafeZone/1┃<color=yellow>最後の戦闘</color>で勝つと、最終生存者になりま\nす。臨時セーフゾーン段階が終了した後、\n二つの臨時セーフゾーン地域の間に<color=white>最後の\n禁止区域</color>が指定され、<color=yellow>クロノスフィア</color>が\n生成されます。\n準備が終わったら、急いでクロノスフィア周辺の\n<color=white>最終セーフゾーン</color>へ移動しましょう。
 GuideBook/Page/Content/LastSafeZone/2┃戦闘で勝利して最終生存者になりましょう。\n\n<color=white>絶望の果てまで到達したポーンに、\n全ての栄光を。</color>
 Tutorial/Btn/Ch1/Lumia┃ルミア島へ移動
+Tutorial/Btn/NextPart┃続けてプレイ
+Tutorial/Popup/NextPartConfirm┃選択したチュートリアルが完了しました。\n続けて次のチュートリアルを行いますか？
 Tutorial┃チュートリアル
 Tutorial/Notice/Clear┃クリア
 Tutorial/Error/NotYetSelectArea┃今は選択できない地域です。
 Tutorial/Error/NotYetUse┃今は使用できない機能です。
+Tutorial/Error/NotUseTutorial┃チュートリアルでは使用できない機能です。
 modeSelect/Tutorial/Error/NotYetOpen┃まだ解禁されていません。
 modeSelect/Tutorial/Title/Beginner┃チュートリアル
 modeSelect/Tutorial/Desc/Beginner┃基本的な流れ

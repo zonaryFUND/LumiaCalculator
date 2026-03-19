@@ -2,7 +2,7 @@
     "duration": 5,
     "damage": {
         "base": 10,
-        "level": 3
+        "level": 2
     },
     "heal": {
         "base": 15,

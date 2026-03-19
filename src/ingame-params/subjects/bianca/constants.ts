@@ -74,7 +74,7 @@ export default {
         // 魔法陣発生時ダメージ
         "first_damage": {
             "base": [50,100,150],
-            "amp": 50,
+            "amp": 40,
             "targetMaxHP": 11
         },
         // 魔法陣発生時移動速度減少
