@@ -9,7 +9,8 @@ const values: EquipmentAbilityTooltipValues = () => ({
     4: Constants.ms,
     10: Constants.shield.base,
     11: Constants.ms,
-    13: Constants.shield.level
+    13: Constants.shield.level,
+    20: Constants.dot_trigger_period
 })
 
 export default values;

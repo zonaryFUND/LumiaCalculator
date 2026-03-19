@@ -7,5 +7,6 @@
         "base": 100,
         "level": 10
     },
-    "cooldown": 12
+    "cooldown": 12,
+    "dot_trigger_period": 3
 }
