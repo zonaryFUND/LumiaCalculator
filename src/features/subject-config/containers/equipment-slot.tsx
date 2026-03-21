@@ -1,20 +1,14 @@
 import * as React from "react";
 import Modal from "react-modal";
 import { useToggle } from "react-use";
-
 import { ArmorTypeID } from "app-types/equipment/armor";
 import { Equipment } from "app-types/subject-dynamic/config/equipment";
-
 import Blank from "components/item/blank";
 import Item from "components/item/item";
-import EquipmentList, { style as listStyle } from "../../modal/equipment-list";
-
-import { StateProps } from "@app/util/state";
+import EquipmentList, { style as listStyle } from "../../../components/modal/equipment-list";
 import { styles } from "@app/util/style";
-
 import common from "@app/common.module.styl";
 import style from "./equipment-slot.module.styl";
-import { SubjectCode } from "app-types/subject-static";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 
 

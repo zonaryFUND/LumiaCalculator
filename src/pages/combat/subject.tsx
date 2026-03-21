@@ -1,5 +1,5 @@
 import * as React from "react";
-import Config from "components/config/config";
+import Config from "@app/features/subject-config/containers/config";
 import Status from "components/status/status-table";
 import { Status as StatusType } from "app-types/subject-dynamic/status/type";
 import SubjectSkills from "components/subject/skills";
