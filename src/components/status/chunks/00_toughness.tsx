@@ -11,7 +11,7 @@ import table from "components/common/table.module.styl";
 import useStorageBoolean from "@app/storage/boolean";
 import { ToughnessTableHiddenKey } from "@app/storage/status";
 
-type Props = SubjectConfig & {
+type Props = {
     status: Status
 }
 

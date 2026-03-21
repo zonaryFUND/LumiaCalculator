@@ -12,7 +12,7 @@ import { BasicAttackTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 import ExpandStatus from "./expand-status";
 
-type Props = SubjectConfig & {
+type Props = {
     status: Status
 }
 const basicAttack: React.FC<Props> = props => {

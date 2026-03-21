@@ -14,6 +14,7 @@ type Props = SubjectConfigProps & {
 }
 
 const subject: React.FC<Props> = props => {
+    /*
     return (
         <TabUnit title="左実験体" className={style.subject}>
             <Config {...props} maxHP={props.status.maxHp.calculatedValue.toNumber()} currentHPRatio={props.hp} />
@@ -24,6 +25,8 @@ const subject: React.FC<Props> = props => {
             <Status {...props.value} status={props.status} />
         </TabUnit>
     )
+        */
+       return <></>
 };
 
 export default subject;

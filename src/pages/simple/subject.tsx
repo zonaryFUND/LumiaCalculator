@@ -12,14 +12,11 @@ type Props = SubjectConfigProps & {
     hpRatio: StateProps<number>
 }
 
-const subject: React.FC<Props> = props => {
+const subject: React.FC = props => {
     return (
         <TabUnit title="実験体" className={style.subject}>
-            <Config {...props} maxHP={props.status.maxHp.calculatedValue.toNumber()} currentHPRatio={props.hpRatio} />
-            <Status 
-                {...props.value}
-                status={props.status}
-            />
+            <Config />
+            <Status />
         </TabUnit>
     )
 };

@@ -11,7 +11,7 @@ import { SkillTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 import ExpandStatus from "./expand-status";
 
-type Props = SubjectConfig & {
+type Props = {
     status: Status
 }
 const skill: React.FC<Props> = props => {

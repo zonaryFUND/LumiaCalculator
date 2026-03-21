@@ -9,7 +9,7 @@ import AttackSpeed from "./attack-speed";
 import useStorageBoolean from "@app/storage/boolean";
 import { BasicAttackTableHiddenKey, PenetrationTableHiddenKey, ToughnessTableHiddenKey } from "@app/storage/status";
 
-type Props = SubjectConfig & {
+type Props = {
     selected: string
     status: Status
 }

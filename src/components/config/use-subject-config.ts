@@ -10,7 +10,12 @@ export type SubjectConfigProps = {
     setConfig: (config: SubjectConfig) => void
 } & StateWrapped<SubjectConfig>
 
-export function useSubjectConfig(storageKey: string): SubjectConfigProps {
+/**
+ * 実験体の選択、熟練度、装備などを管理するStateを作成して返す
+ * @param storageKey: 初期値の読み込み、変更発生時のLocalStorage保存に用いるキー
+ * @returns 
+ */
+export function useSubjectConfigState(storageKey: string): SubjectConfigProps {
     const [storageConfig, saveStorageConfig] = useLocalStorageConfig(storageKey);
     const defaultConfig: SubjectConfig = (() => {
         if (storageConfig) {

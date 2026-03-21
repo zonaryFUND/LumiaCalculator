@@ -70,38 +70,38 @@
             background: gray
             transform: translateX(-1px)
 
-    .hp
-        input::after
-            background: var(--color)
+.hp
+    input::after
+        background: var(--color)
+    
+    li:first-child
+        visibility: hidden
+
+    li:not(:nth-of-type(10n+1))
+        height: 5px
+
+    li:nth-of-type(5n+1)
+        height: 7px
+
+    li:nth-of-type(10n+1)
+        height: 10px
+
+.gauge
+    input::after
+        background: var(--color)
+
+    .threshold
+        height: 10px
+
+    li
+        height: 5px
         
-        li:first-child
-            visibility: hidden
+    li:first-child,li:last-child
+        visibility: hidden
 
-        li:not(:nth-of-type(10n+1))
-            height: 5px
+.stack
+    input::after
+        background: linear-gradient(to right, var(--c3), var(--c2))
 
-        li:nth-of-type(5n+1)
-            height: 7px
-
-        li:nth-of-type(10n+1)
-            height: 10px
-
-    .gauge
-        input::after
-            background: var(--color)
-
-        .threshold
-            height: 10px
-
-        li
-            height: 5px
-            
-        li:first-child,li:last-child
-            visibility: hidden
-
-    .stack
-        input::after
-            background: linear-gradient(to right, var(--c3), var(--c2))
-
-        li:first-child,li:last-child
-            visibility: hidden
+    li:first-child,li:last-child
+        visibility: hidden

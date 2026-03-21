@@ -24,8 +24,9 @@ import { DetailedTooltipKey } from "@app/storage/common";
 import { NavigationButtonContext } from "components/pages/navigation";
 
 import Content from "components/pages/base/content";
-import { useSubjectConfig } from "components/config/use-subject-config";
+import { useSubjectConfigState } from "components/config/use-subject-config";
 import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import { SimpleModeSubjectConfigProvider } from "@app/features/subject-config/store";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -41,15 +42,18 @@ const index: React.FC = props => {
         })
     }, [])
 
-    const configProps = useSubjectConfig(SimpleCurrentConfigKey);
+    /*
+    const configProps = useSubjectConfigState(SimpleCurrentConfigKey);
     const hpRatio = React.useState(100);
     const status = statusOf(configProps.value, hpRatio[0]);
+    */
 
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
 
     return (
+        <SimpleModeSubjectConfigProvider>
         <Content
             pcHeader={
                 <header className={style.header}>
@@ -60,24 +64,17 @@ const index: React.FC = props => {
             }
         >
             <CollapseTab tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
-                <Subject 
-                    {...configProps}
-                    hpRatio={hpRatio}
-                    status={status}
-                />
-                <Damage
-                    config={configProps.value}
-                    status={status}
-                    hp={status.maxHp.calculatedValue.percent(hpRatio[0]).toNumber()}
-                    setSkillLevels={configProps.skillLevels[1]}
-                />
+                <Subject />
+                <Damage />
                 <BuffDebuffs />
             </CollapseTab>
+            {/*
             <TooltipPresenter 
                 showEquation={damageInFormula}
                 status={status} 
                 config={configProps.value} 
             />
+            */}
             <Modal
                 isOpen={showingPreference}
                 shouldCloseOnOverlayClick
@@ -88,6 +85,7 @@ const index: React.FC = props => {
                 <Preference damageInFormula={[damageInFormula, setDamageInFormula]} />
             </Modal>
         </Content>
+        </SimpleModeSubjectConfigProvider>
     )
 };
 

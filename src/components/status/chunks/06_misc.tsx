@@ -12,7 +12,7 @@ import useStorageBoolean from "@app/storage/boolean";
 import ExpandStatus from "./expand-status";
 import MoveSpeedSubRow from "./move-speed-sub-row";
 
-type Props = SubjectConfig & {
+type Props = {
     status: Status
 }
 const misc: React.FC<Props> = props => {
