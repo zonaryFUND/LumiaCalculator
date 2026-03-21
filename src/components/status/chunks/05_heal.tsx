@@ -9,7 +9,7 @@ import table from "components/common/table.module.styl";
 import { HealTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 
-type Props = SubjectConfig & {
+type Props = {
     status: Status
 }
 const heal: React.FC<Props> = props => {

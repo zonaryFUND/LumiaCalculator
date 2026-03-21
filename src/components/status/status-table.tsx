@@ -15,13 +15,18 @@ import Misc from "./chunks/06_misc";
 import Summoned from "./chunks/10_summoned";
 import { MaxColContext } from "components/common/table-row";
 import PullDown from "components/common/pull-down";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
 
-const status: React.FC<SubjectConfig & {status: Status}> = props => {
-    const subjectNameIntlID = `Character/Name/${props.subject}`;
+const status: React.FC = props => {
+    const config = useSubjectStateStore(s => s.config);
+    const status = useSubjectStateStore(s => s.status);
+
+    const subjectNameIntlID = `Character/Name/${config.subject}`;
     const shownStatus = React.useState<string | undefined>(undefined);
+    
     React.useEffect(() => {
-        if (props.status.summoned == undefined) shownStatus[1](undefined);
-    }, [props.status.summoned == undefined])
+        if (status.summoned == undefined) shownStatus[1](undefined);
+    }, [status.summoned == undefined])
 
     return (
         <IconContext.Provider value={{size: 18}}>
@@ -29,11 +34,11 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
             <header>    
                 <h3>ステータス</h3>
                 {
-                    props.status.summoned ?
+                    status.summoned ?
                     <PullDown
                         value={{
                             intlID: true,
-                            list: [subjectNameIntlID, ...props.status.summoned.map(e => e.nameIntlID)],
+                            list: [subjectNameIntlID, ...status.summoned.map(e => e.nameIntlID)],
                             current: shownStatus[0] ?? subjectNameIntlID,
                             set: (id: string) => {
                                 shownStatus[1](id == subjectNameIntlID ? undefined : id);
@@ -53,17 +58,17 @@ const status: React.FC<SubjectConfig & {status: Status}> = props => {
                     </colgroup>
                     <MaxColContext.Provider value={2}>
                         {
-                            shownStatus[0] == undefined || props.status.summoned == undefined ?
+                            shownStatus[0] == undefined || status.summoned == undefined ?
                             <>
-                                <Toughness {...props} />
-                                <BasicAttack {...props} />
-                                <Skill {...props} />
-                                <Penetration {...props} />
-                                <Heal {...props} />
-                                <Misc {...props} />
+                                <Toughness status={status} />
+                                <BasicAttack status={status} />
+                                <Skill status={status} />
+                                <Penetration status={status} />
+                                <Heal status={status} />
+                                <Misc status={status} />
                             </>
                             :
-                            <Summoned {...props} selected={shownStatus[0]!} />
+                            <Summoned status={status} selected={shownStatus[0]!} />
                         }
                     </MaxColContext.Provider>
                 </table>

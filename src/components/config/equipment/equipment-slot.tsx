@@ -7,7 +7,7 @@ import { Equipment } from "app-types/subject-dynamic/config/equipment";
 
 import Blank from "components/item/blank";
 import Item from "components/item/item";
-import EquipmentList, { style as listStyle } from "../modal/equipment-list";
+import EquipmentList, { style as listStyle } from "../../modal/equipment-list";
 
 import { StateProps } from "@app/util/state";
 import { styles } from "@app/util/style";
@@ -15,19 +15,27 @@ import { styles } from "@app/util/style";
 import common from "@app/common.module.styl";
 import style from "./equipment-slot.module.styl";
 import { SubjectCode } from "app-types/subject-static";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
 
 
 type Props = {
+    /**
+     * 対応する装備スロット
+     */
     slot: "Weapon" | ArmorTypeID 
-    subject: SubjectCode
-    equipment: StateProps<Equipment>
 }
 
+/**
+ * 実験体の状態編集において装備1か所を表示・変更するためのスロットコンポーネント
+ */
 const equipmentSlot: React.FC<Props> = props => {
     const [selecting, toggleSelecting] = useToggle(false);
+    const code = useSubjectStateStore(s => s.config.subject);
+    const equipment = useSubjectStateStore(s => s.config.equipment);
+    const setEquipment = useSubjectStateStore(s => s.setEquipment);
     
     const onSelect: React.Dispatch<React.SetStateAction<Equipment>> = React.useCallback(equipment => {
-        props.equipment[1](equipment);
+        setEquipment(equipment);
         toggleSelecting(false);
     }, []);
 
@@ -35,10 +43,10 @@ const equipmentSlot: React.FC<Props> = props => {
         <div className={style.slot}>
             <div className={styles(style.equipment, common["hover-bright"])}>
                 {
-                    props.equipment[0][props.slot] ?
+                    equipment[props.slot] ?
                     <Item 
-                        itemID={props.equipment[0][props.slot]!} 
-                        isDavid={props.equipment[0].isChestDavid == true}
+                        itemID={equipment[props.slot]!} 
+                        isDavid={equipment.isChestDavid == true}
                         slot={props.slot} 
                         inSlot={true} 
                         onSingleClick={toggleSelecting}
@@ -53,7 +61,7 @@ const equipmentSlot: React.FC<Props> = props => {
                 className={listStyle}
                 overlayClassName={common["modal-overlay"]}
             >
-                <EquipmentList {...props} equipment={[props.equipment[0], onSelect]} />
+                <EquipmentList code={code} slot={props.slot} equipment={[equipment, onSelect]} />
             </Modal>
         </div>
     );

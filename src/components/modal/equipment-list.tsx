@@ -15,9 +15,10 @@ import { ArmArmorCodes, ChestArmorCodes, DavidChestArmorUpgradeDictionary, Equip
 import { SubjectCode } from "app-types/subject-static";
 import { useLatest, useLocalStorage } from "react-use";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
 
 type Props = {
-    subject: SubjectCode
+    code: SubjectCode
     equipment: [Equipment, React.Dispatch<React.SetStateAction<Equipment>>]
     slot: "Weapon" | ArmorTypeID
 }
@@ -46,13 +47,14 @@ const priyaUnique: number[] = [201416, 201516];
 const subjectsList: React.FC<Props> = props => {
     const intl = useIntl();
     const uiType = useResponsiveUIType();
+    const config = useSubjectStateStore(s => s.config);
     const [david, setDavid] = useLocalStorage("equipment-list-david", "notDavid");
     const latestDavid = useLatest(david);
 
     const def: {title: string, sections: {title?: string, mastery?: React.ReactElement, ids: EquipmentID[]}[]} = React.useMemo(() => {
         switch (props.slot) {
             case "Head":    
-                const IDs = props.subject == 51 ? priyaUnique : HeadArmorCodes.filter(id => priyaUnique.includes(id) == false);
+                const IDs = config.subject == 51 ? priyaUnique : HeadArmorCodes.filter(id => priyaUnique.includes(id) == false);
                 return {title: "頭", sections: splitIdsWithRarity(IDs)};
             case "Chest":
                 return {title: "胴", sections: splitIdsWithRarity(ChestArmorCodes, david == "david")};
@@ -61,9 +63,9 @@ const subjectsList: React.FC<Props> = props => {
             case "Leg":
                 return {title: "脚", sections: splitIdsWithRarity(LegArmorCodes)};
             case "Weapon":
-                const availableTypes = Object.keys(WeaponMasteryStatus[props.subject]) as WeaponTypeID[];
+                const availableTypes = Object.keys(WeaponMasteryStatus[config.subject]) as WeaponTypeID[];
                 const names = availableTypes.map(id => intl.formatMessage({id: `MasteryType/${id}`}));
-                const masteryInfo = WeaponMasteryStatus[props.subject];
+                const masteryInfo = WeaponMasteryStatus[config.subject];
                 return {
                     title: "武器", 
                     sections: availableTypes.map((id, i) => {
@@ -89,7 +91,7 @@ const subjectsList: React.FC<Props> = props => {
                     })
                 }
         }
-    }, [props.slot, props.subject, david]);
+    }, [props.slot, config.subject, david]);
 
     const onClick = React.useCallback((id: EquipmentID | null) => () => {
         props.equipment[1](prev => {

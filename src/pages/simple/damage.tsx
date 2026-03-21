@@ -15,7 +15,7 @@ type Props = {
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
 }
 
-const damages: React.FC<Props> = props => {
+const damages: React.FC = props => {
     const uiType = useResponsiveUIType();
 
     return (
@@ -28,9 +28,9 @@ const damages: React.FC<Props> = props => {
                         }
                     </span>
                 </h3>
-                <SubjectSkills config={props.config} setSkillLevels={props.setSkillLevels} />
+                <SubjectSkills />
             </section>
-            <Table status={props.status} config={props.config} hp={props.hp} />
+            <Table />
         </TabUnit>
     )
 };

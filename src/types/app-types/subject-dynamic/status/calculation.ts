@@ -159,7 +159,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     })();
 
     const baseComponentStatus: ComponentStatus = {
-        // 耐久
+        // 最大体力（整数）
+        // 基礎ステータス+レベル比例ステータス+装備ステータス（定数値+レベル比例ステータス）
         maxHp: {
             digit: 0,
             components: [
@@ -170,6 +171,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 )
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 体力再生（小数点第2位まで）
+        // （基礎ステータス＋レベル比例ステータス）*装備ステータス
         hpRegen: {
             digit: 2,
             components: [
@@ -180,6 +183,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 )
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 防御力（整数）
+        // 基礎ステータス+レベル比例ステータス+装備ステータス
         defense: {
             digit: 0,
             components: [
@@ -190,13 +195,19 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 )
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 基本攻撃ダメージ減少
+        // ガーネットのパッシブスキルを除き、ステータスや装備によって獲得されない
         preventBasicAttackDamaged: { digit: 0, components: [] },
+        // 基本攻撃ダメージ減少（乗算）（小数点第1位まで）
+        // 防御熟練度によってのみ獲得される
         preventBasicAttackDamagedRatio: {
             digit: 1,
             components: [
                 masteryComponent("sum", config.defenseMastery, BasicAttackReductionPerMastery)
             ]
         },
+        // スキルダメージ減少（乗算）（小数点第1位まで）
+        // 防御熟練度によってのみ獲得される
         preventSkillDamagedRatio: {
             digit: 1,
             components: [
@@ -204,7 +215,10 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             ]
         },
 
-        // basic attack
+        // 攻撃力（整数）
+        // 基礎ステータス+レベル比例ステータス+装備ステータス（定数値+レベル比例ステータス）
+        // （イアンのみ）+武器熟練度比例ステータス
+        // （武器熟練度比例ステータスがスキル増幅でない場合のみ）+適合型能力の1倍
         attackPower: {
             digit: 0,
             components: [
@@ -217,6 +231,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 weaponMasteryStatus?.type == "attack_power" ? masteryComponent("sum", config.weaponMastery, weaponMasteryStatus.value) : undefined
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 基本攻撃増幅（小数点第1位まで）
+        // 装備ステータス（レベル比例ステータス、エキオンのデスアダーのみ）+武器熟練度比例ステータス
         increaseBasicAttackDamageRatio: {
             digit: 1,
             components: [
@@ -224,6 +240,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 weaponMasteryStatus?.type == "basic_attack_amp" ? masteryComponent("sum", config.weaponMastery, weaponMasteryStatus.value) : undefined
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 攻撃速度（小数点第2位まで、最大2.5）
+        // 武器の基礎攻撃速度（基礎値）x {装備ステータス（%表記）+ 武器熟練度比例ステータス（%表記）}
         attackSpeed: {
             digit: 2,
             max: 2.5,
@@ -233,6 +251,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 weaponMasteryStatus ? masteryComponent("mul", config.weaponMastery, weaponMasteryStatus.attackSpeed) : undefined
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 致命打確率（小数点第1位まで、最大100）
+        // 装備ステータス（%表記）
         criticalStrikeChance: {
             digit: 0,
             max: 100,
@@ -240,6 +260,9 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("criticalStrikeChance")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 致命打ダメージ（小数点第1位まで）
+        // 基礎値+75%に、さらに装備によって獲得された%表記のダメージが加算され、最終的な割合が乗算で追加される
+        // ここで計算されるのは75%に加算される割合のみ
         criticalStrikeDamage: {
             digit: 0,
             components: [
@@ -247,7 +270,15 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
 
-        // skill
+        // スキル増幅（整数）
+        // 定数値*(1+増幅率）によって算出される
+        //
+        // ## 基礎値
+        // パッシブスキルやバフなどによって獲得される定数値+レベル比例ステータス+装備ステータス
+        // （武器熟練度比例ステータスがスキル増幅の場合のみ）+適合型能力値の2倍
+        //
+        // ## 増幅率
+        // 武器熟練度比例ステータス（スキル増幅）+装備ステータス（%表記、「固有」がついているもの（例：ペルソナ）とついていないもの（例：キルヒール）がある）
         skillAmp: {
             digit: 0,
             components: [
@@ -258,17 +289,27 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 weaponMasteryStatus?.type == "skill_amp" ? masteryComponent("mul", config.weaponMastery, weaponMasteryStatus.value) : undefined
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // クールダウン減少（整数）
+        // 実際のスキルクールダウン減少量はこの値からさらに100/(100+クールダウン減少)によって算出される
+        // 装備ステータスで獲得
+        // （レノアのみ）+アッチェレランドによるクールダウン減少獲得あり
         cooldownReduction: {
             digit: 0,
             components: [
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("cooldownReduction")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
-        // 究極技クールダウン減少は、通常クールダウン減少と究極技クールダウン減少の合計値から算出される
+        // 究極技クールダウン減少（整数）
+        // 実際の究極技クールダウン減少量はこの値からさらに100/(100+クールダウン減少+究極技クールダウン減少)によって算出される
+        // 装備ステータスで獲得
         ultCooldownReduction: {
             digit: 0,
             components: ultCooldownReductionComponents
         },
+        // 戦術スキルクールダウン減少（整数）
+        // 実際の戦術スキルクールダウン減少量はこの値からさらに100/(100+戦術スキルクールダウン減少)によって算出される
+        // 通常のクールダウン減少は考慮されない
+        // 装備ステータスで獲得
         tacticalSkillCooldownReduction: {
             digit: 0,
             components: [
@@ -276,13 +317,16 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
 
-        // penetration
+        // 防御貫通（定数値）（整数）
+        // 装備ステータスで獲得
         penetrationDefense: {
             digit: 0,
             components: [
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("penetrationDefense")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 防御貫通（割合）（整数）
+        // 装備ステータスで獲得
         penetrationDefenseRatio: {
             digit: 0,
             components: [
@@ -290,19 +334,26 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
 
-        // heal
+        // 生命力吸収（整数）
+        // 基本攻撃によって与えたダメージに対してのみ割合での自己回復が発生する
+        // 装備ステータスで獲得
         lifeSteal: {
             digit: 0,
             components: [
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("lifeSteal")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // ダメージ吸血（整数）
+        // 与えたダメージに対して割合での自己回復が発生する（範囲攻撃に対しては33%適用）
+        // 装備ステータスで獲得
         normalLifeSteal: {
             digit: 0,
             components: [
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("normalLifeSteal")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 与える回復増加（整数）
+        // 装備ステータスで獲得
         healerGiveHpHealRatio: {
             digit: 0,
             components: [
@@ -310,13 +361,22 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
 
-        // misc
+        // 妨害耐性（整数）
+        // 装備ステータスおよび一部バフ効果で獲得
         tenacity: {
             digit: 0,
             components: [
                 equipmentComponent("sum", {base: maxOfEquipmentStatus("uniqueTenacity")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 移動速度（小数点以下第2位まで表示）
+        // 定数値*(1+倍率)によって補正前値を算出したあと、次工程の補正によって最終的な移動速度が算出される
+        //
+        // ## 定数値
+        // 実験体基礎移動速度+装備ステータス+移動熟練度比例値
+        //
+        // ## 倍率
+        // 装備ステータス（%表記）
         moveSpeed: {
             digit: 2,
             components: [
@@ -350,12 +410,16 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 })()
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 移動速度減少耐性（整数）
+        // 装備ステータスで獲得
         slowResist: {
             digit: 0,
             components: [
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("slowResistRatio")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 視界（小数点以下第1位まで表示）
+        // 実験体基礎視界+装備ステータス
         sightRange: {
             digit: 1,
             components: [
@@ -363,6 +427,8 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("sightRange")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 基本攻撃射程（小数点以下第1位まで表示）
+        // 実験体基礎射程+武器基礎射程+装備ステータス（固有のみ存在）
         attackRange: {
             digit: 1,
             components: [
@@ -372,6 +438,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         }
     }
 
+    // クールダウン減少->スキル増幅　などのステータス変換パッシブスキルを持つ実験体の場合、変換によるステータス獲得量がこの工程で加算される
     const subjectPerpetulStatus = SubjectPerpetualStatusDictionary[config.subject] ? SubjectPerpetualStatusDictionary[config.subject](config, currentHPRatio) : {};
     const {isChestDavid, ...equipment} = config.equipment;
     const equipmentPerpetualStatus = Object.entries(equipment)

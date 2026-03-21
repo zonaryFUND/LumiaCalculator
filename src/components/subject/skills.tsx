@@ -13,6 +13,7 @@ import { TooltipContext } from "components/tooltip/tooltip-context";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import { useLatest } from "react-use";
 import { SkillCodes } from "@app/ingame-params/subjects/type";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
 
 type SkillListProps = {
     config: SubjectConfig
@@ -83,26 +84,22 @@ const Skills: React.FC<{codes: SkillCodes | undefined}> = props => {
     }
 }
 
-type Props = {
-    config: SubjectConfig
-    setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
-}
-
-const subjectSkills: React.FC<Props> = props => {
-    const list = SubjectSkillListExpressionDictionary[props.config.subject](props.config);
+const subjectSkills: React.FC = props => {
+    const config = useSubjectStateStore(s => s.config);
+    const setSkillLevels = useSubjectStateStore(s => s.setSkillLevels);
+    const list = SubjectSkillListExpressionDictionary[config.subject](config);
     const weaponSkill = React.useMemo(() => {
-        console.log(list)
         if (list.D) {
             return <Skills codes={list.D} />
         } else {
-            const weaponType = weaponTypeIDOf(props.config);
+            const weaponType = weaponTypeIDOf(config);
             return <Skill code={weaponType ? WeaponSkillCodeDictionary[weaponType] : undefined} />
         }
-    }, [props.config.equipment.Weapon])
+    }, [config.equipment.Weapon])
 
     return (
         <div className={style.skills}>
-            <SkillListContext.Provider value={props}>
+            <SkillListContext.Provider value={{config, setSkillLevels}}>
             {
                 SubjectSkillKeys.map(skill => (
                     <div key={skill} className={style.vertical}>

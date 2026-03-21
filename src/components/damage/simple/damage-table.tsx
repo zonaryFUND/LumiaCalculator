@@ -12,6 +12,7 @@ import useWeaponSkill from "../use-weapon-skills";
 import useTacticalSkill from "../use-tactical-skill";
 import useAugment from "../use-augment";
 import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictionary";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
 
 type Props = {
     status: Status
@@ -19,20 +20,24 @@ type Props = {
     config: SubjectConfig
 }
 
-const damageTable: React.FC<Props> = props => {
+const damageTable: React.FC = props => {
     const intl = useIntl();
+    const config = useSubjectStateStore(s => s.config);
+    const status = useSubjectStateStore(s => s.status);
+    const hpRatio = useSubjectStateStore(s => s.hpRatio);
+
     const subject = React.useMemo(() => 
-        SubjectDamageTableDictionary[props.config.subject]({
-            config: props.config, 
-            status: props.status,
+        SubjectDamageTableDictionary[config.subject]({
+            config: config, 
+            status: status,
             intl
         })
-    , [props.config.subject, props.status, props.config.skillLevels]);
+    , [config.subject, status, config.skillLevels]);
 
-    const weaponSkill = useWeaponSkill(props.config, props.status);
-    const itemSkills = useItemSkills(props.config);
-    const augments = useAugment(props.config);
-    const tacticalSkills = useTacticalSkill(props.config);
+    const weaponSkill = useWeaponSkill(config, status);
+    const itemSkills = useItemSkills(config);
+    const augments = useAugment(config);
+    const tacticalSkills = useTacticalSkill(config);
 
     return (
         <section className={style.damage}>
@@ -47,43 +52,43 @@ const damageTable: React.FC<Props> = props => {
                                 itemSkills.basicAttackTriggered
                             ].filter(array => array.length > 0)
                         }
-                        status={props.status} 
-                        config={props.config}
-                        hp={props.hp}
+                        status={status} 
+                        config={config}
+                        hp={hpRatio}
                     />
                     <SubjectSkill 
                         tables={subject.skill}
-                        config={props.config}
-                        status={props.status}
-                        hp={props.hp}
+                        config={config}
+                        status={status}
+                        hp={hpRatio}
                     />
                     <SubTable
                         label="武器スキル"
                         elements={[weaponSkill.regular]}
-                        config={props.config}
-                        status={props.status}
-                        hp={props.hp}
+                        config={config}
+                        status={status}
+                        hp={hpRatio}
                     />
                     <SubTable 
                         label="アイテムスキル"
                         elements={[itemSkills.regular]}
-                        config={props.config}
-                        status={props.status}
-                        hp={props.hp}
+                        config={config}
+                        status={status}
+                        hp={hpRatio}
                     />
                     <SubTable 
                         label="特性"
                         elements={augments}
-                        config={props.config}
-                        status={props.status}
-                        hp={props.hp}
+                        config={config}
+                        status={status}
+                        hp={hpRatio} 
                     />
                     <SubTable 
                         label="戦術スキル"
                         elements={tacticalSkills}
-                        config={props.config}
-                        status={props.status}
-                        hp={props.hp}
+                        config={config}
+                        status={status}
+                        hp={hpRatio}
                     />
                 </table>
             </div>

@@ -11,7 +11,7 @@ import useStorageBoolean from "@app/storage/boolean";
 
 import ExpandStatus from "./expand-status";
 
-type Props = SubjectConfig & {
+type Props = {
     status: Status
 }
 const penetration: React.FC<Props> = props => {

@@ -17,7 +17,7 @@ import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
 import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey, CombatMasterySyncKey } from "@app/storage/combat";
 import { useToggle } from "react-use";
-import { useSubjectConfig } from "components/config/use-subject-config";
+import { useSubjectConfigState } from "components/config/use-subject-config";
 import Content from "components/pages/base/content";
 import { NavigationButtonContext } from "components/pages/navigation";
 import { statusOf } from "app-types/subject-dynamic/status/calculation";
@@ -39,12 +39,12 @@ const index: React.FC = props => {
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
 
-    const left = useSubjectConfig(CombatCurrentLeftConfigKey);
+    const left = useSubjectConfigState(CombatCurrentLeftConfigKey);
     const leftHPRatio = React.useState(100);
     const leftStatus = statusOf(left.value, leftHPRatio[0]);
     const leftHP = leftStatus.maxHp.calculatedValue.percent(leftHPRatio[0]).floor().toNumber();
 
-    const right = useSubjectConfig(CombatCurrentRightConfigKey);
+    const right = useSubjectConfigState(CombatCurrentRightConfigKey);
     const rightHPRatio = React.useState(100);
     const rightStatus = statusOf(right.value, rightHPRatio[0]);
     const rightHP = rightStatus.maxHp.calculatedValue.percent(rightHPRatio[0]).floor().toNumber();
