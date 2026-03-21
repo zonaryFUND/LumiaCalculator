@@ -30,6 +30,8 @@
     "app.label.potency": "威力",
     "app.label.multiplier": "倍率",
     "app.label.reference-damage": "基準ダメージ",
+    "app.load": "ロード",
+    "app.save": "セーブ",
     "status.maxhp": "最大体力",
     "status.additional-maxhp": "追加体力",
     "status.hpregen": "体力再生",

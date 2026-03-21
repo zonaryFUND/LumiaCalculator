@@ -1,5 +1,6 @@
 import * as React from "react";
-import style from "./slider-section.module.styl";
+import style from "./gauge-slider.module.styl";
+import { styles } from "@app/util/style";
 
 export type GaugeStyle = 
     { type: "stack" } |
@@ -57,7 +58,7 @@ const gaugeSlider: React.FC<Props> = props => {
     }, [props.percentage])
 
     return (
-        <label className={style[props.style.type == "hp-ratio" ? "hp" : props.style.type]}>
+        <label className={styles(style.slider, style[props.style.type == "hp-ratio" ? "hp" : props.style.type])}>
             <input 
                 type="range" 
                 value={props.percentage} 

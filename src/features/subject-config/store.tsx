@@ -141,9 +141,9 @@ export function createSubjectConfigStore(storageKey: string) {
 const SubjectConfigStoreContext = createContext<ReturnType<typeof createSubjectConfigStore> | null>(null);
 
 export function SimpleModeSubjectConfigProvider(props: {children: React.ReactNode}) {
-    const store = createSubjectConfigStore(SimpleCurrentConfigKey);
+    const storeRef = React.useRef(createSubjectConfigStore(SimpleCurrentConfigKey));
     return (
-        <SubjectConfigStoreContext.Provider value={store}>
+        <SubjectConfigStoreContext.Provider value={storeRef.current}>
             {props.children}
         </SubjectConfigStoreContext.Provider>
     )
