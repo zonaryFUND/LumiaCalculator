@@ -1,10 +1,11 @@
 import * as React from "react";
 import InnerTable from "components/common/inner-table";
 import { FormattedMessage } from "react-intl";
-import style from "./expand-status.module.styl";
+import style from "./expanded-status-description.module.styl";
 import table from "components/common/table.module.styl";
 import Decimal from "decimal.js";
 import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
+import WeaponBaseStatus from "./weapon-base-row";
 
 type Props = {
     components: (StatusValueComponent & { percent?: boolean })[]
@@ -12,30 +13,13 @@ type Props = {
     percent?: boolean
 }
 
-const expandStatus: React.FC<Props> = props => {
+const ExpandedStatusDescription: React.FC<Props> = props => {
     return (
         <InnerTable>
             {
                 props.components.map((component, i) => {
                     if (component.origin == "weapon-base" && component.value.type == "weapon-base") {
-                        return (
-                            <tr key={`${i}-weapon-base`}>
-                                <td><FormattedMessage id="app.standard-value" /></td>
-                                {
-                                    component.value.weapon ?
-                                    <td>
-                                        <span className={table.small}><FormattedMessage id="app.subject" /></span>{component.value.subject.toString()}
-                                        <> + </>
-                                        <span className={table.small}><FormattedMessage id="app.weapon" /></span>{component.value.weapon.toString()}
-                                        <> = {component.value.value.toString()}</>
-                                    </td>
-                                    :
-                                    <td>
-                                        <span className={table.small}><FormattedMessage id="app.subject" /></span>{component.value.value.toString()}
-                                    </td>
-                                }
-                            </tr>
-                        )
+                        return <WeaponBaseStatus {...component as any} key={`${i}-weapon-base`} />
                     }
 
                     const labelIntlID = (() => {
@@ -115,4 +99,4 @@ const expandStatus: React.FC<Props> = props => {
     );
 }
 
-export default expandStatus;
+export default ExpandedStatusDescription;

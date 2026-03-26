@@ -1,4 +1,3 @@
-import skill from "components/status/chunks/03_skill";
 import { DamageTableGenerator } from "../type";
 import Constants from "./constants";
 import { weaponTypeIDOf } from "app-types/subject-dynamic/config";

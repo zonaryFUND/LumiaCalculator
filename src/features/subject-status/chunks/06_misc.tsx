@@ -9,7 +9,7 @@ import table from "components/common/table.module.styl";
 import { MiscTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 
-import ExpandStatus from "./expand-status";
+import ExpandStatus from "../components/inner-table/expanded-status-description";
 import MoveSpeedSubRow from "./move-speed-sub-row";
 
 type Props = {
