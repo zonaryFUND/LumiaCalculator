@@ -143,6 +143,20 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         }
     });
 
+    const ultCooldownReductionComponents = (() => {
+        const standard: StatusValueComponent | undefined = (() => {
+            const component = equipmentComponent("sum", {base: sumOfEquipmentStatus("cooldownReduction")});
+            return component ? {...component, intlID: "装備（通常クールダウン減少）"} : undefined;
+        })();
+
+        const ult: StatusValueComponent | undefined = (() => {
+            const component = equipmentComponent("sum", {base: sumOfEquipmentStatus("ultCooldownReduction")});
+            return component ? {...component, intlID: "装備（究極技クールダウン減少）"} : undefined;
+        })();
+
+        return [standard, ult].filter((c): c is StatusValueComponent => c != undefined);
+    })();
+
     const baseComponentStatus: ComponentStatus = {
         // 耐久
         maxHp: {
@@ -249,11 +263,10 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("cooldownReduction")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 究極技クールダウン減少は、通常クールダウン減少と究極技クールダウン減少の合計値から算出される
         ultCooldownReduction: {
             digit: 0,
-            components: [
-                equipmentComponent("sum", {base: sumOfEquipmentStatus("ultCooldownReduction")})
-            ].filter((c): c is StatusValueComponent => c != undefined)
+            components: ultCooldownReductionComponents
         },
         tacticalSkillCooldownReduction: {
             digit: 0,

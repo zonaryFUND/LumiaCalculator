@@ -8,7 +8,7 @@ export default {
         // 白鏡反射ダメージ
         "white_mirror_damage": {
             "base": [60,105,150,195,240],
-            "amp": 85,
+            "amp": 80,
             "targetHP": [4,6,8,10,12]
         },
         // 白鏡反射的中時移動速度減少
@@ -19,7 +19,7 @@ export default {
         // 黒鏡ダメージ
         "black_mirror_damage": {
             "base": [60,105,150,195,240],
-            "amp": 85,
+            "amp": 80,
             "targetLostHP": [3,6,9,12,15]
         },
         // 黒鏡反射的中時移動速度減少

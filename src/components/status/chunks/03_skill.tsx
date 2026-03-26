@@ -38,7 +38,13 @@ const skill: React.FC<Props> = props => {
             />
             <Column 
                 name={<><Hourglass /><FormattedMessage id="StatType/UltCooldownReduction" /></>} 
-                value={<>{props.status.ultCooldownReduction.rawHasteValue.toString()}({props.status.ultCooldownReduction.calculatedValue.floor().toString()}%)</>} 
+                value={
+                    <>
+                        {props.status.ultCooldownReduction.rawHasteValue.sub(props.status.cooldownReduction.rawHasteValue).toString()}({props.status.ultCooldownReduction.calculatedValue.floor().toString()}%)</>
+                }
+                expand={
+                    <ExpandStatus {...props.status.ultCooldownReduction} />
+                }
                 isHidden={hidden}
             />
             <Column 
