@@ -9,7 +9,7 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import table from "components/common/table.module.styl";
 import { SkillTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
-import ExpandStatus from "./expand-status";
+import ExpandStatus from "../components/inner-table/expanded-status-description";
 
 type Props = {
     status: Status

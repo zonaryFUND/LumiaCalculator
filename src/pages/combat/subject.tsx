@@ -1,11 +1,6 @@
 import * as React from "react";
-import Config from "@app/features/subject-config/containers/config";
-import Status from "components/status/status-table";
 import { Status as StatusType } from "app-types/subject-dynamic/status/type";
-import SubjectSkills from "components/subject/skills";
-import style from "./subject.module.styl";
 import { SubjectConfigProps } from "components/config/use-subject-config";
-import TabUnit from "components/common/tab/tab-unit";
 import { StateProps } from "@app/util/state";
 
 type Props = SubjectConfigProps & {

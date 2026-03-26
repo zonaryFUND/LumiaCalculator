@@ -9,7 +9,7 @@ import table from "components/common/table.module.styl";
 import { PenetrationTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 
-import ExpandStatus from "./expand-status";
+import ExpandStatus from "../components/inner-table/expanded-status-description";
 
 type Props = {
     status: Status

@@ -1,6 +1,6 @@
 import * as React from "react";
-import Config from "@app/features/subject-config/containers/config";
-import Status from "components/status/status-table";
+import Config from "@app/features/subject-config";
+import Status from "@app/features/subject-status";
 import { Status as StatusType } from "app-types/subject-dynamic/status/type";
 import TabUnit from "components/common/tab/tab-unit";
 import style from "./subject.module.styl";

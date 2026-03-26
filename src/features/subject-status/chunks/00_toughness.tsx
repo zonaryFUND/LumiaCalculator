@@ -1,6 +1,6 @@
 import * as React from "react";
 import Column from "./column";
-import ExpandStatus from "./expand-status";
+import ExpandStatus from "../components/inner-table/expanded-status-description";
 import { FirstAid, Shield, Sword, ArrowFatLinesUp, CaretDown, CaretUp } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
 import { Status } from "app-types/subject-dynamic/status/type";

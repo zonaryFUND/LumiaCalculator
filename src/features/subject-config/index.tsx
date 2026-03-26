@@ -1,26 +1,17 @@
 import * as React from "react";
-import { StateProps } from "util/state";
-import style from "./config.module.styl";
-import { useSubjectStateStore } from "@app/features/subject-config/store";
+import style from "./index.module.styl";
 import GaugeSlider from "@app/features/subject-config/containers/gauge-slider";
 import HPRatioSlider from "@app/features/subject-config/containers/hp-ratio-slider";
 import StackSlider from "@app/features/subject-config/containers/stack-slider";
 import MasteryPulldowns from "@app/features/subject-config/containers/mastery-pulldowns";
-import SubjectCardLayout from "@app/features/subject-config/components/subject-card-layout.view";
+import SubjectCardLayout from "@app/features/subject-config/components/subject-card.layout";
 import Equipments from "@app/features/subject-config/containers/equipments";
 
-export type CurrentHPProps = {
-    currentHPRatio?: StateProps<number>
-    maxHP: number
-}
-
-const config: React.FC = props => {
-    const config = useSubjectStateStore(s => s.config);
-
+const config: React.FC = () => {
     return (
         <div className={style.config}>
             {/* 実験体選択セクション */}
-            <SubjectCardLayout subject={config.subject} />
+            <SubjectCardLayout />
             
             {/* 熟練度設定セクション */}
             <MasteryPulldowns />

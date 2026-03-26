@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useSubjectStateStore } from "../store";
 import PullDown from "@app/components/common/pull-down";
-import style from "@app/components/config/config.module.styl";
+import style from "./mastery-pulldowns.module.styl";
 
 const MasteryPulldowns: React.FC = () => {
     const weaponMastery = useSubjectStateStore(s => s.config.weaponMastery);
