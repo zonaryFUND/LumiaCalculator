@@ -25,7 +25,7 @@ const cooldownComsumption: React.FC<SkillTooltipProps & {skillLevel: number, con
     })();
     const consumptionValue = props.consumption ? extractArrayOrValue(props.consumption.value, props.skillLevel) : null;
 
-    const cooldownReduction = new Decimal(props.skillKey == "R" ? props.status.ultCooldownReduction.calculatedValue : 0).add(props.status.cooldownReduction.calculatedValue).toString();
+    const cooldownReduction = props.skillKey == "R" ? props.status.ultCooldownReduction.calculatedValue : props.status.cooldownReduction.calculatedValue;
 
     const cooldown = (() => {
         if (props.cooldown == undefined) return null;
