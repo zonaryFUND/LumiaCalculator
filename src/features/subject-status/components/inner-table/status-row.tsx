@@ -1,10 +1,14 @@
 import * as React from "react";
 import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
-import WeaponBaseStatus from "./weapon-base-row";
+import WeaponBaseStatus from "./subject-with-weapon-row";
 import ConstantValueRow from "./constant-value-row";
+import { FormattedMessage } from "react-intl";
+import * as table from "@components/status/status-table.module.styl";
+import * as style from "@components/status/chunks/misc.module.styl";
+import Decimal from "decimal.js";
 
 const StatusRow: React.FC<StatusValueComponent & { percent?: boolean }> = (component) => {
-    if (component.origin == "weapon-base" && component.value.type == "weapon-base") {
+    if (component.value.type == "weapon-base") {
         return (
             <WeaponBaseStatus  
                 subjectValue={component.value.subject}
@@ -21,7 +25,6 @@ const StatusRow: React.FC<StatusValueComponent & { percent?: boolean }> = (compo
                 return "app.subject";
             case "equipment":
                 return "app.equipment";
-            case "weapon-base":
             case "perpetual_status":
             case "temporary-status":
                 throw new Error("status component lacks label intlID");
@@ -34,7 +37,7 @@ const StatusRow: React.FC<StatusValueComponent & { percent?: boolean }> = (compo
                 <ConstantValueRow 
                     labelIntlID={labelIntlID} 
                     value={component.value.value} 
-                    percent={component.percent} 
+                    showPercent={component.percent} 
                 />
             )
         case "level-dependent": {
@@ -45,7 +48,7 @@ const StatusRow: React.FC<StatusValueComponent & { percent?: boolean }> = (compo
                 <>{label}{component.value.incrementalFactor.value.toString()}</>;
 
             return (
-                <tr key={`${i}-leveldependent`}>
+                <tr>
                     <td><FormattedMessage id={labelIntlID} /></td>
                     <td>
                         <>{component.value.multiplier.toString()}{percent} x {incrementalFactor}</>
@@ -63,7 +66,7 @@ const StatusRow: React.FC<StatusValueComponent & { percent?: boolean }> = (compo
             const multiplied = new Decimal(component.value.value).sub(component.value.constant)
 
             return (
-                <tr key={`${i}-combined`}>
+                <tr>
                     <td><FormattedMessage id={labelIntlID} /></td>
                     <td>
                         <>{component.value.constant.toString()} + </>
@@ -77,7 +80,7 @@ const StatusRow: React.FC<StatusValueComponent & { percent?: boolean }> = (compo
             const label = <span className={table.small}><FormattedMessage id={component.intlID} /></span>;
 
             return (
-                <tr key={`${i}-combined`}>
+                <tr>
                     <td><FormattedMessage id={labelIntlID} /></td>
                     <td>{component.value.value?.toString()}{percent}</td>
                 </tr>

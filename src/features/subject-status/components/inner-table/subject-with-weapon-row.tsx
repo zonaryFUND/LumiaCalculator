@@ -8,12 +8,13 @@ type Props = {
     weaponValue?: Decimal.Value
 }
 
-const WeaponBaseRow: React.FC<Props> = ({ subjectValue, weaponValue }) => {
+// 実験体基礎値 + 武器基礎値　で示される定数値部分の表示行
+const SubjectWithWeaponRow: React.FC<Props> = ({ subjectValue, weaponValue }) => {
     return (
         <tr>
             <td><FormattedMessage id="app.standard-value" /></td>
             <td>
-                <span className={table.small}><FormattedMessage id="app.subject" /></span>{subjectValue.toString()}
+                {<span className={table.small}><FormattedMessage id="app.subject" /></span>}{subjectValue.toString()}
                 {
                     weaponValue ?
                     <>
@@ -27,4 +28,4 @@ const WeaponBaseRow: React.FC<Props> = ({ subjectValue, weaponValue }) => {
     )
 }
 
-export default WeaponBaseRow;
+export default SubjectWithWeaponRow;

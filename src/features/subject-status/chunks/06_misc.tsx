@@ -61,7 +61,7 @@ const misc: React.FC<Props> = props => {
                 name={<><ArrowFatLineRight />基本攻撃射程</>} 
                 value={props.status.attackRange.calculatedValue} 
                 expand={
-                    props.status.attackRange.components.findIndex(c => c.origin != "weapon-base") > -1 ?
+                    props.status.attackRange.components.findIndex(c => c.value.type != "weapon-base") > -1 ?
                     <ExpandStatus {...props.status.attackRange} />
                     : null
                 }

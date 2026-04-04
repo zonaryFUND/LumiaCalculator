@@ -5,7 +5,8 @@ import style from "./expanded-status-description.module.styl";
 import table from "components/common/table.module.styl";
 import Decimal from "decimal.js";
 import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
-import WeaponBaseStatus from "./weapon-base-row";
+import WeaponBaseStatus from "./subject-with-weapon-row";
+import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
 type Props = {
     components: (StatusValueComponent & { percent?: boolean })[]
@@ -18,8 +19,9 @@ const ExpandedStatusDescription: React.FC<Props> = props => {
         <InnerTable>
             {
                 props.components.map((component, i) => {
-                    if (component.origin == "weapon-base" && component.value.type == "weapon-base") {
-                        return <WeaponBaseStatus {...component as any} key={`${i}-weapon-base`} />
+                    
+                    if (component.value.type == "weapon-base") {
+                        return <WeaponBaseStatus subjectValue={component.value.subject} weaponValue={component.value.weapon} />
                     }
 
                     const labelIntlID = (() => {
