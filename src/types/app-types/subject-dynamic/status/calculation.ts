@@ -129,11 +129,11 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         }
     };
 
-    const weaponComponent = (
+    const weaponDependentBaseComponent = (
         subject: Decimal.Value,
         weapon?: Decimal.Value
     ): StatusValueComponent => ({
-        origin: "weapon-base",
+        origin: "subject-status",
         calculationType: "sum",
         value: {
             type: "weapon-base",
@@ -245,7 +245,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
             digit: 2,
             max: 2.5,
             components: [
-                weaponComponent(level1Status.attackSpeed, weaponBaseStatus?.attackSpeed),
+                weaponDependentBaseComponent(level1Status.attackSpeed, weaponBaseStatus?.attackSpeed),
                 equipmentComponent("mul", {base: sumOfEquipmentStatus("attackSpeedRatio")}),
                 weaponMasteryStatus ? masteryComponent("mul", config.weaponMastery, weaponMasteryStatus.attackSpeed) : undefined
             ].filter((c): c is StatusValueComponent => c != undefined)
@@ -431,7 +431,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         attackRange: {
             digit: 1,
             components: [
-                weaponComponent(BaseBasicAttackRange, weaponBaseStatus?.range),
+                weaponDependentBaseComponent(BaseBasicAttackRange, weaponBaseStatus?.range),
                 equipmentComponent("sum", {base: maxOfEquipmentStatus("uniqueAttackRange")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         }

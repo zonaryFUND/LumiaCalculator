@@ -42,9 +42,6 @@ export function calculateStatusValue(componentValue: ComponentStatusValue, statu
         switch (current.origin) {
             case "subject-status":
                 return [baseSum.add(current.value.value), sumResult.add(current.value.value)];
-            case "weapon-base":
-                if (current.value.type != "weapon-base") throw new Error("weapon-base status component invalid");
-                return [baseSum.add(current.value.value), sumResult.add(current.value.value)];
             default:
                 return [baseSum, sumResult.add(current.value.value)]
         }

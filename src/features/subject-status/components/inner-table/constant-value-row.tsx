@@ -5,14 +5,14 @@ import Decimal from "decimal.js";
 type Props = {
     labelIntlID: string
     value: Decimal.Value
-    percent?: boolean
+    showPercent?: boolean
 }
 
-const ConstantValueRow: React.FC<Props> = ({ labelIntlID, percent, value }) => {
+const ConstantValueRow: React.FC<Props> = ({ labelIntlID, showPercent, value }) => {
     return (
         <tr>
             <td><FormattedMessage id={labelIntlID} /></td>
-            <td>{value.toString()}{percent}</td>
+            <td>{value.toString()}{showPercent ? "%" : ""}</td>
         </tr>
     )
 }
