@@ -22,7 +22,7 @@ export default {
         "duration": 2.5,
         // 防御力上昇量
         "defense": {
-            "base": [14, 23, 32, 41, 50],
+            "base": [14, 21, 28, 35, 42],
             "defense": 10
         },
         // 妨害効果免疫時間

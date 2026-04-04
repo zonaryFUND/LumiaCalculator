@@ -2,8 +2,8 @@
     "time_bound": 5,
     "count": 2,
     "duration": 8,
-    "penetration": 10,
-    "additional_credit": 20,
+    "penetration": 12,
+    "additional_credit": 25,
     "movement_speed_up": {
         "duration": 2,
         "effect": 20

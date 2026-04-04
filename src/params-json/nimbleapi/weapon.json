@@ -392,7 +392,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 72,
+        "attackPower": 75,
         "attackSpeedRatio": 0.25,
         "cooldownReduction": 10,
         "code": 105407,
@@ -1187,7 +1187,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 70,
+        "attackPower": 68,
         "attackSpeedRatio": 0.3,
         "code": 116407,
         "weaponType": "Pistol",
@@ -1201,7 +1201,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 82,
+        "attackPower": 80,
         "attackSpeedRatio": 0.35,
         "code": 116410,
         "weaponType": "Pistol",

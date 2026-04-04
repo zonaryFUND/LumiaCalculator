@@ -136,7 +136,7 @@ export default {
         "cooldown_reduction": 30
     },
     "R": {
-        "cooldown": [30, 24, 18]
+        "cooldown": [26, 22, 18]
     },
     "T": {
         // 強化基本攻撃ダメージ

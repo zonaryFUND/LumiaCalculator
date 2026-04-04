@@ -4,7 +4,7 @@
     "after_effect": 2,
     "slow": {
         "duration": 1,
-        "effect": 60
+        "effect": 50
     },
     "cooldown": 10
 }

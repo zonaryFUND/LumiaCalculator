@@ -3,7 +3,7 @@ export default {
         // 通常ダメージ
         "damage": {
             "base": [50,90,130,170,210],
-            "amp": 75
+            "amp": 80
         },
         // 白鏡反射ダメージ
         "white_mirror_damage": {
@@ -51,7 +51,7 @@ export default {
         // 白鏡通過後ダメージ
         "white_mirror_damage": {
             "base": [80,110,140,170,200],
-            "amp": 70
+            "amp": 65
         },
         // 白鏡通過後束縛時間
         "white_mirror_bind": 0.8,
@@ -66,14 +66,14 @@ export default {
         // 黒鏡通過後ダメージ
         "black_mirror_damage": {
             "base": [80,110,140,170,200],
-            "amp": 70
+            "amp": 65
         },
         // 黒鏡通過後束縛時間
         "black_mirror_bind": 0.8,
         // 黒鏡通過弾的中対象防御力減少
         "black_mirror_defense_reduction": {
             "duration": 3,
-            "effect": [12,13,14,15,16]
+            "effect": [10,11,12,13,14]
         },
         "cooldown": [14,13,12,11,10]
     },

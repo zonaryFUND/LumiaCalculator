@@ -16,7 +16,7 @@ export default {
         // セントリーガン通常弾丸ダメージ
         "damage": {
             "base": [30,40,50,60,70],
-            "amp": 20
+            "amp": 18
         },
         // セントリーガンレールガンダメージ
         "railgun_damage": {

@@ -1,4 +1,5 @@
-{
+export default {
+    // ステラチャージ
     "stellar_charge": {
         "time_bound": 5,
         "max_stack": 3,
@@ -12,6 +13,7 @@
         "animal_damage_multiplier": 2,
         "animal_cooldown_reduction": 15
     },
+    // 鬼火
     "ghost_light": {
         "threshold": {
             "hp": 30,
@@ -28,12 +30,13 @@
         "cooldown_acceleration": 5,
         "cooldown": 30
     },
+    // 霹靂
     "red_sprite": {
         "damage": {
-            "base": 10,
+            "base": 30,
             "level": 2,
-            "additionalAttack": 40,
-            "amp": 25
+            "additionalAttack": 45,
+            "amp": 26
         },
         "cooldown": 10,
         "damage_amp": {
@@ -50,6 +53,7 @@
             "dot": 2
         }
     },
+    // 渦流
     "syphon_maelstorm": {
         "time_bound": 3,
         "threshold": 2,
@@ -74,6 +78,7 @@
         "overheal_duration": 5,
         "cooldown": 20
     },
+    // サーキュラーシステム
     "circular_system": {
         "heal": {
             "level": 1,
@@ -81,6 +86,7 @@
         },
         "duration": 3
     },
+    // 傷の悪化
     "open_wounds": {
         "damage": {
             "base": 10,
@@ -90,6 +96,7 @@
         "duration": 2,
         "cooldown": 10
     },
+    // 速射
     "quick_draw": {
         "time_bound": 3,
         "duration": 5,
@@ -100,6 +107,7 @@
         "attack_speed": 15,
         "cooldown": 15
     },
+    // 徹甲弾
     "stopping_power": {
         "armor_penetration": {
             "effect": 6,
@@ -107,6 +115,7 @@
         },
         "cooldown": 12
     },
+    // 力の蓄積
     "power_crescendo": {
         "adaptive": [
             0,
@@ -124,11 +133,13 @@
             16
         ]
     },
+    // オーバーウォッチ
     "overwatch": {
         "cooldown": 5,
         "threshold": 40,
         "adaptive": 5
     },
+    // R_echarger
     "r_echarger": {
         "effect": 15,
         "r_buff": {

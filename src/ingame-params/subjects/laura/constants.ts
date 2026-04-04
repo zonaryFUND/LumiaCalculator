@@ -49,12 +49,12 @@ export default {
         // シールド量
         "shield": {
             "base": [90, 120, 150],
-            "amp": 15
+            "amp": 20
         },
         // 爆発ダメージ
         "second_damage": {
             "base": [180, 260, 340],
-            "amp": 85
+            "amp": 90
         },
         // 引き寄せ追加的中1人あたりシールド増加量
         "additional_shield": {

@@ -101,7 +101,7 @@ export default {
         "star_conjunction": {
             "heal": {
                 "base": [20,30,40,50],
-                "amp": 4
+                "amp": 6
             }
         },
         "cooldown": {

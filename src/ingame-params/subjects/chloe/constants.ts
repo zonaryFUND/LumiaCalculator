@@ -98,7 +98,7 @@ export default {
         // ニナ復活までの時間
         "nina_revive": [20,18,16],
         // ニナ復活時クロエ現在体力コスト（％）
-        "nina_revive_cost": 30,
+        "nina_revive_cost": 20,
         // ニナ復活時初期体力（％）
         "nina_revive_hp": 80,
         // クロエステータスのニナへの変換量基礎値（％）

@@ -3,12 +3,12 @@ export default {
         "damage": {
             "base": [40, 55, 70, 85, 100],
             "level": 18,
-            "amp": 30
+            "amp": 35
         },
         "heal": {
             "base": [10, 20, 30, 40, 50],
             "level": 2,
-            "amp": 18
+            "amp": 20
         },
         "cooldown": [11, 10, 9, 8, 7]
     },

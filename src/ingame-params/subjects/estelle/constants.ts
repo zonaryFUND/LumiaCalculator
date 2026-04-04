@@ -66,7 +66,7 @@ export default {
         "self": {
             "shield": {
                 "base": [100,150,200],
-                "amp": 50,
+                "amp": 55,
                 "lostHP": 20
             },
             // シールド持続時間
@@ -88,7 +88,7 @@ export default {
         "ally": {
             "shield": {
                 "base": [100,200,300],
-                "amp": 50,
+                "amp": 55,
                 "targetLostHP": 15
             },
             // シールド持続時間

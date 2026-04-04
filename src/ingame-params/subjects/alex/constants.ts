@@ -20,7 +20,7 @@ export default {
     },
     "MeleeW": {
         "damage": {
-            "base": [40,80,120,160,200],
+            "base": [40,75,110,145,180],
             "attack": 80
         },
         "cooldown": [11,10.5,10,9.5,9]

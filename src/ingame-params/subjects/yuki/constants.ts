@@ -18,7 +18,7 @@ export default {
         },
         // ボタン消費時気絶時間
         "stun": 0.5,
-        "cooldown": 6
+        "cooldown": 5
     },
     "W": {
         // 与ダメージ時クールダウン減少

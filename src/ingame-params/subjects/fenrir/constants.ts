@@ -36,7 +36,7 @@ export default {
         "reuse_time": 4,
         // 本能的撤退ダメージ
         "second_damage": {
-            "base": [20,40,60,80,100],
+            "base": [30,55,80,105,130],
             "attack": 60
         },
         // 対象指定不可時間

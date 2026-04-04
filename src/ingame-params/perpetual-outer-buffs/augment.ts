@@ -1,6 +1,6 @@
 import { PerpetualOuterBuffDefinition } from "./type";
 import Havoc from "@app/ingame-params/augment/havoc.json";
-import Chaos from "@app/ingame-params/augment/chaos.json";
+import Chaos from "@app/ingame-params/augment/chaos";
 import Fortification from "@app/ingame-params/augment/fortification";
 import Decimal from "decimal.js";
 import { SubjectConfig } from "app-types/subject-dynamic/config";

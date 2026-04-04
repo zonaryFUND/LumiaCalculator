@@ -68,7 +68,7 @@ export default {
         // 秘技-生死の刻印スタック消耗時ダメージ
         "damage": {
             "base": 30,
-            "additionalAttack": 45,
+            "additionalAttack": 25,
             "targetMaxHP": {
                 "base": [4, 7, 10],
                 "additionalAttack": 4

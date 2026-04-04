@@ -12,7 +12,7 @@ export default {
         // 自身へのシールド量
         "shield": {
             "base": [80, 110, 140, 170, 200],
-            "amp": 35
+            "amp": 40
         },
         // 味方へのシールド量
         "ally_shield": {

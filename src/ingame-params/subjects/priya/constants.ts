@@ -27,7 +27,7 @@ export default {
             // 自身が花の上にいるときの移動速度増加
             "effect": [12, 13, 14, 15, 16],
             // 味方が花の上にいるときの移動速度増加
-            "ally_effect": [10, 11, 12, 13, 14]
+            "ally_effect": [8, 9, 10, 11, 12]
         },
         "damage": {
             "base": [60, 100, 140, 180, 220],
@@ -73,7 +73,7 @@ export default {
         // 基本攻撃・スキル使用不可状態時間
         "self_silence": 0.8,
         // 被ダメージ減少（％）
-        "damage_reduction": 50,
+        "damage_reduction": 40,
         // 外側へ広がるダメージ
         "first_damage": {
             "base": [80, 150, 220],

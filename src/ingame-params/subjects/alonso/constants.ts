@@ -77,13 +77,13 @@ export default {
             "min": {
                 "base": [100,150,200],
                 "amp": 50,
-                "additionalMaxHP": 8
+                "additionalMaxHP": 12
             },
             // 最大ダメージ（持続時間完遂時）
             "max": {
                 "base": [200,300,400],
                 "amp": 100,
-                "additionalMaxHP": 16
+                "additionalMaxHP": 24
             }
         },
         "cooldown": [80,70,60]

@@ -1,6 +1,6 @@
 import { IntlShape } from "react-intl";
 import Havoc from "./havoc.json";
-import Chaos from "./chaos.json";
+import Chaos from "./chaos";
 import Fortification from "./fortification";
 import Support from "./support";
 import { ValueRatio } from "app-types/value-ratio";

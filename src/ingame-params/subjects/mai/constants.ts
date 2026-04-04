@@ -18,7 +18,7 @@ export default {
         // 持続時間
         "duration": 1.25,
         // 移動速度増加
-        "movement_speed": [8, 11, 14, 17, 20],
+        "movement_speed": [10, 14, 18, 22, 26],
         // 被ダメージ減少（％）
         "damage_decline": [31, 32, 33, 34, 35],
         // 爆発時ダメージ

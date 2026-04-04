@@ -109,7 +109,7 @@ export default {
                 "level": 0.5
             }
         },
-        "cooldown": 25
+        "cooldown": 20
     },
     // 堅固
     "steadfast": {

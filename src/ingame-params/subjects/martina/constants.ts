@@ -68,7 +68,7 @@ export default {
             "attack": 85
         },
         // 束縛時間
-        "bind": 1,
+        "bind": 1.2,
         // 小型カメラ最大設置数
         "max_set": 3,
         "cooldown": {

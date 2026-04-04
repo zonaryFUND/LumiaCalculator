@@ -9,7 +9,7 @@ export default {
         // 1段目的中時移動速度減少
         "slow": {
             "duration": 1,
-            "effect": 35
+            "effect": 40
         },
         // 再使用可能時間
         "reuse": 4,
@@ -66,7 +66,7 @@ export default {
             "maxHP": 6,
             "stack": [8, 11, 14, 17, 20]
         },
-        "cooldown": [15, 14, 13, 12, 11]
+        "cooldown": [14, 13, 12, 11, 10]
     },
     "E": {
         "damage": {
