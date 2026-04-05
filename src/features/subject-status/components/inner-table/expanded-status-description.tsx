@@ -1,12 +1,10 @@
 import * as React from "react";
 import InnerTable from "components/common/inner-table";
-import { FormattedMessage } from "react-intl";
-import style from "./expanded-status-description.module.styl";
-import table from "components/common/table.module.styl";
-import Decimal from "decimal.js";
 import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
 import WeaponBaseStatus from "./subject-with-weapon-row";
-import { scryRenderedComponentsWithType } from "react-dom/test-utils";
+import ConstantValueRow from "./constant-value-row";
+import MultipliedRow from "./multiplied-row";
+import SumAndMultipliedRow from "./sum-and-multiply-row";
 
 type Props = {
     components: (StatusValueComponent & { percent?: boolean })[]
@@ -19,12 +17,7 @@ const ExpandedStatusDescription: React.FC<Props> = props => {
         <InnerTable>
             {
                 props.components.map((component, i) => {
-                    
-                    if (component.value.type == "weapon-base") {
-                        return <WeaponBaseStatus subjectValue={component.value.subject} weaponValue={component.value.weapon} />
-                    }
-
-                    const labelIntlID = (() => {
+                    const labelIntlID: string = (() => {
                         if (component.intlID) return component.intlID;
 
                         switch (component.origin) {
@@ -38,61 +31,71 @@ const ExpandedStatusDescription: React.FC<Props> = props => {
                         }
                     })();
 
-                    const percent = component.percent != false && (props.percent || component.calculationType == "mul") ? <>%</> : null;
-
                     switch (component.value.type) {
                         case "constant":
                             return (
-                                <tr key={`${i}-constant`}>
-                                    <td><FormattedMessage id={labelIntlID} /></td>
-                                    <td>{component.value.value.toString()}{percent}</td>
-                                </tr>
+                                <ConstantValueRow
+                                    key={`${i}-constant`}
+                                    labelIntlID={labelIntlID} 
+                                    value={component.value.value} 
+                                    showPercent={component.percent} 
+                                />
                             )
                         case "level-dependent": {
-                            const labelID = component.value.incrementalFactor.type == "level" ? "app.level" : "app.mastery";
-                            const label = <span className={table.small}><FormattedMessage id={labelID} /></span>;
-                            const incrementalFactor = component.value.incrementalFactor.oneBased ? 
-                                <>{label}({component.value.incrementalFactor.value.toString()} - 1)</> : 
-                                <>{label}{component.value.incrementalFactor.value.toString()}</>;
+                            // Bのラベルはレベルまたは熟練度
+                            const bLabelID = component.value.incrementalFactor.type == "level" ? "app.level" : "app.mastery";
 
                             return (
-                                <tr key={`${i}-leveldependent`}>
-                                    <td><FormattedMessage id={labelIntlID} /></td>
-                                    <td>
-                                        <>{component.value.multiplier.toString()}{percent} x {incrementalFactor}</>
-                                        <> = {component.value.value.toString()}{percent}</>
-                                    </td>
-                                </tr>
+                                <MultipliedRow 
+                                    key={`${i}-multiplied`}
+                                    labelIntlID={labelIntlID} 
+                                    a={component.value.multiplier} 
+                                    b={{
+                                        labelIntlID: bLabelID,
+                                        value: component.value.incrementalFactor.value,
+                                        showMinusOne: component.value.incrementalFactor.oneBased
+                                    }} 
+                                    result={component.value.value} 
+                                    percent={component.percent} 
+                                />
                             )
                         }
                         case "combined": {
                             const labelID = component.value.incrementalFactor.type == "level" ? "app.level" : "app.mastery";
-                            const label = <span className={table.small}><FormattedMessage id={labelID} /></span>;
-                            const incrementalFactor = component.value.incrementalFactor.oneBased ? 
-                                <>{label}({component.value.incrementalFactor.value.toString()} - 1)</> : 
-                                <>{label}{component.value.incrementalFactor.value.toString()}</>;
-                            const multiplied = new Decimal(component.value.value).sub(component.value.constant)
 
                             return (
-                                <tr key={`${i}-combined`}>
-                                    <td><FormattedMessage id={labelIntlID} /></td>
-                                    <td>
-                                        <>{component.value.constant.toString()} + </>
-                                        {multiplied.toString()}<span className={style.multiply}>({component.value.multiplier.toString()} x {incrementalFactor})</span>
-                                        <> = {component.value.value.toString()}{percent}</>
-                                    </td>
-                                </tr>
-                            );
+                                <SumAndMultipliedRow
+                                    key={`${i}-combined`}
+                                    labelIntlID={labelIntlID} 
+                                    constant={component.value.constant} 
+                                    a={component.value.multiplier} 
+                                    b={{
+                                        labelIntlID: labelID,
+                                        value: component.value.incrementalFactor.value,
+                                        showMinusOne: component.value.incrementalFactor.oneBased
+                                    }} 
+                                    result={component.value.value} 
+                                    percent={component.percent} 
+                                />
+                            )
                         }
                         case "status-conversion":
-                            const label = <span className={table.small}><FormattedMessage id={component.intlID} /></span>;
-
                             return (
-                                <tr key={`${i}-combined`}>
-                                    <td><FormattedMessage id={labelIntlID} /></td>
-                                    <td>{component.value.value?.toString()}{percent}</td>
-                                </tr>
-                            );
+                                <ConstantValueRow 
+                                    key={`${i}-status-conversion`}
+                                    labelIntlID={labelIntlID} 
+                                    value={component.value.value ?? 0} 
+                                    showPercent={component.percent} 
+                                />
+                            )
+                        case "weapon-base":
+                            return (
+                                <WeaponBaseStatus 
+                                    key={`${i}-weapon-base`}
+                                    subjectValue={component.value.subject} 
+                                    weaponValue={component.value.weapon} 
+                                />
+                            )
                     }
                 })
             }

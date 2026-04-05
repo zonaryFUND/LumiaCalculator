@@ -1,11 +1,7 @@
 import * as React from "react";
 import { IconContext } from "@phosphor-icons/react"
-import style from "./status-table.module.styl";
-import SegmentedControl from "components/common/segmented-control";
+import style from "./index.module.styl";
 import table from "components/common/table.module.styl";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { useIntl } from "react-intl";
 import Toughness from "./chunks/00_toughness";
 import BasicAttack from "./chunks/02_basicattack";
 import Skill from "./chunks/03_skill";
@@ -17,11 +13,11 @@ import { MaxColContext } from "components/common/table-row";
 import PullDown from "components/common/pull-down";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 
-const status: React.FC = props => {
-    const config = useSubjectStateStore(s => s.config);
+const status: React.FC = () => {
+    const subject = useSubjectStateStore(s => s.config.subject);
     const status = useSubjectStateStore(s => s.status);
 
-    const subjectNameIntlID = `Character/Name/${config.subject}`;
+    const subjectNameIntlID = `Character/Name/${subject}`;
     const shownStatus = React.useState<string | undefined>(undefined);
     
     React.useEffect(() => {
@@ -60,15 +56,15 @@ const status: React.FC = props => {
                         {
                             shownStatus[0] == undefined || status.summoned == undefined ?
                             <>
-                                <Toughness status={status} />
-                                <BasicAttack status={status} />
-                                <Skill status={status} />
-                                <Penetration status={status} />
-                                <Heal status={status} />
-                                <Misc status={status} />
+                                <Toughness />
+                                <BasicAttack />
+                                <Skill />
+                                <Penetration />
+                                <Heal />
+                                <Misc />
                             </>
                             :
-                            <Summoned status={status} selected={shownStatus[0]!} />
+                            <Summoned selectedSummonedObject={shownStatus[0]!} />
                         }
                     </MaxColContext.Provider>
                 </table>

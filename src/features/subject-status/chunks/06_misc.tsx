@@ -1,68 +1,75 @@
 import * as React from "react";
-import Column from "./column";
-import { HandFist, SneakerMove, Boot, Eye, ArrowFatLineRight, CaretDown, CaretUp } from "@phosphor-icons/react"
+import Column from "../components/column";
+import { HandFist, SneakerMove, Boot, Eye, ArrowFatLineRight } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
 
-import table from "components/common/table.module.styl";
 import { MiscTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 
 import ExpandStatus from "../components/inner-table/expanded-status-description";
 import MoveSpeedSubRow from "./move-speed-sub-row";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
+import ChunkHeader from "./chunk-header";
 
-type Props = {
-    status: Status
-}
-const misc: React.FC<Props> = props => {
+const misc: React.FC = () => {
+    const tenacity = useSubjectStateStore(s => s.status.tenacity);
+    const moveSpeed = useSubjectStateStore(s => s.status.moveSpeed);
+    const slowResist = useSubjectStateStore(s => s.status.slowResist);
+    const sightRange = useSubjectStateStore(s => s.status.sightRange);
+    const attackRange = useSubjectStateStore(s => s.status.attackRange);
+
     const {value: hidden, toggleValue: toggleHidden} = useStorageBoolean(MiscTableHiddenKey);
 
     return (
         <tbody>
-            <tr className={table. separator} onClick={toggleHidden}><td colSpan={2}><div><p><FormattedMessage id="app.others" /></p>{hidden ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+            <ChunkHeader 
+                intlID="app.others" 
+                hidden={hidden}
+                toggleHidden={toggleHidden}
+            />
             <Column 
                 name={<><HandFist /><FormattedMessage id="status.tenacity" /></>} 
-                value={props.status.tenacity.calculatedValue}
+                value={tenacity.calculatedValue}
                 expand={
-                    props.status.tenacity.components.findIndex(c => c.origin != "equipment") > -1 ? 
-                    <ExpandStatus {...props.status.tenacity} /> : null
+                    tenacity.components.findIndex(c => c.origin != "equipment") > -1 ? 
+                    <ExpandStatus {...tenacity} /> : null
                 }
                 percent 
                 isHidden={hidden} 
             />
             <Column 
                 name={<><SneakerMove /><FormattedMessage id="status.movement-speed" /></>} 
-                value={props.status.moveSpeed.calculatedValue} 
+                value={moveSpeed.calculatedValue} 
                 expand={
                     <ExpandStatus 
-                        {...props.status.moveSpeed} 
-                        additionalSubRow={<MoveSpeedSubRow {...props.status.moveSpeed} />}
+                        {...moveSpeed} 
+                        additionalSubRow={<MoveSpeedSubRow {...moveSpeed} />}
                     />
                 }
                 isHidden={hidden}
             />
             <Column 
                 name={<><Boot />移動速度減少耐性</>} 
-                value={props.status.slowResist.calculatedValue} 
+                value={slowResist.calculatedValue} 
                 isHidden={hidden}
                 percent
             />
             <Column 
                 name={<><Eye /><FormattedMessage id="status.vision" /></>} 
-                value={props.status.sightRange.calculatedValue} 
+                value={sightRange.calculatedValue} 
                 expand={
-                    props.status.sightRange.components.findIndex(c => c.origin != "subject-status") > -1 ?
-                    <ExpandStatus {...props.status.sightRange} />
+                    sightRange.components.findIndex(c => c.origin != "subject-status") > -1 ?
+                    <ExpandStatus {...sightRange} />
                     : null
                 }
+                isHidden={hidden}
             />
             <Column 
                 name={<><ArrowFatLineRight />基本攻撃射程</>} 
-                value={props.status.attackRange.calculatedValue} 
+                value={attackRange.calculatedValue} 
                 expand={
-                    props.status.attackRange.components.findIndex(c => c.value.type != "weapon-base") > -1 ?
-                    <ExpandStatus {...props.status.attackRange} />
+                    attackRange.components.findIndex(c => c.value.type != "weapon-base") > -1 ?
+                    <ExpandStatus {...attackRange} />
                     : null
                 }
                 isHidden={hidden}
