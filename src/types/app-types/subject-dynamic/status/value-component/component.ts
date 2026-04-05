@@ -117,7 +117,7 @@ export function createComponentValue(
             constant: values.base!,
             incrementalFactor: {
                 type: "level",
-                oneBased: true,
+                oneBased,
                 value: level
             },
             multiplier: values.levelProportional!,

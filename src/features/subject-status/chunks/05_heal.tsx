@@ -1,38 +1,42 @@
 import * as React from "react";
-import Column from "./column";
-import { Drop, FirstAidKit, CaretDown, CaretUp } from "@phosphor-icons/react"
+import Column from "../components/column";
+import { Drop, FirstAidKit } from "@phosphor-icons/react"
 import { FormattedMessage } from "react-intl";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
 
-import table from "components/common/table.module.styl";
 import { HealTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
+import ChunkHeader from "./chunk-header";
 
-type Props = {
-    status: Status
-}
-const heal: React.FC<Props> = props => {
+const heal: React.FC = () => {
+    const normalLifeSteal = useSubjectStateStore(s => s.status.normalLifeSteal);
+    const lifeSteal = useSubjectStateStore(s => s.status.lifeSteal);
+    const healerGiveHpHealRatio = useSubjectStateStore(s => s.status.healerGiveHpHealRatio);
+
     const {value: hidden, toggleValue: toggleHidden} = useStorageBoolean(HealTableHiddenKey);
 
     return (
         <tbody>
-            <tr className={table.separator} onClick={toggleHidden}><td colSpan={2}><div><p><FormattedMessage id="app.heal" /></p>{hidden ? <CaretDown weight="bold" /> : <CaretUp weight="bold" />}</div></td></tr>
+            <ChunkHeader 
+                intlID="app.heal" 
+                hidden={hidden}
+                toggleHidden={toggleHidden}
+            />
             <Column 
                 name={<><Drop /><FormattedMessage id="status.lifesteal" /></>} 
-                value={props.status.normalLifeSteal.calculatedValue} 
+                value={normalLifeSteal.calculatedValue} 
                 percent 
                 isHidden={hidden} 
             />
             <Column 
                 name={<><Drop /><FormattedMessage id="status.omnisyphon" /></>} 
-                value={props.status.lifeSteal.calculatedValue} 
+                value={lifeSteal.calculatedValue} 
                 percent 
                 isHidden={hidden} 
             />
             <Column 
                 name={<><FirstAidKit /><FormattedMessage id="status.heal-power" /></>} 
-                value={props.status.healerGiveHpHealRatio.calculatedValue} 
+                value={healerGiveHpHealRatio.calculatedValue} 
                 percent 
                 isHidden={hidden} 
             />
