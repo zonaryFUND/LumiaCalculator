@@ -8,11 +8,13 @@ import { persist } from "zustand/middleware"
 import { Migrate } from "@app/storage/migration-v1/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey } from "@app/storage/combat";
 
 type SubjectStateStore = {
     config: SubjectConfig
     status: Status
     hpRatio: number
+    subjectSide?: "left" | "right"
 
     // 状態更新の反映　内部からしか呼ばない
     _updateConfig: (updater: (prev: SubjectConfig) => SubjectConfig) => void
@@ -31,7 +33,7 @@ type SubjectStateStore = {
     setHpRatio: (hpRatio: React.SetStateAction<number>) => void
 }
 
-export function createSubjectConfigStore(storageKey: string) {
+export function createSubjectConfigStore(storageKey: string, subjectSide?: "left" | "right") {
     return createStore<SubjectStateStore>()(
         persist(
             (set, get) => ({
@@ -142,6 +144,16 @@ const SubjectConfigStoreContext = createContext<ReturnType<typeof createSubjectC
 
 export function SimpleModeSubjectConfigProvider(props: {children: React.ReactNode}) {
     const storeRef = React.useRef(createSubjectConfigStore(SimpleCurrentConfigKey));
+    return (
+        <SubjectConfigStoreContext.Provider value={storeRef.current}>
+            {props.children}
+        </SubjectConfigStoreContext.Provider>
+    )
+}
+
+export function CombatModeSubjectConfigProvider(props: {side: "left" | "right", children: React.ReactNode}) {
+    const key = props.side === "left" ? CombatCurrentLeftConfigKey : CombatCurrentRightConfigKey;
+    const storeRef = React.useRef(createSubjectConfigStore(key, props.side));
     return (
         <SubjectConfigStoreContext.Provider value={storeRef.current}>
             {props.children}

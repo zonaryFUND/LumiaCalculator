@@ -21,6 +21,7 @@ import { useSubjectConfigState } from "components/config/use-subject-config";
 import Content from "components/pages/base/content";
 import { NavigationButtonContext } from "components/pages/navigation";
 import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import { CombatModeSubjectConfigProvider } from "@app/features/subject-config/store";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -79,13 +80,7 @@ const index: React.FC = props => {
             }
         >
             <CollapseTab tabs={["左実験体", "ダメージ", "右実験体"]}>
-                <SubjectSideContext.Provider value="left">
-                    <Subject
-                        {...left}
-                        hp={leftHPRatio}
-                        status={leftStatus}
-                    />
-                </SubjectSideContext.Provider>
+                {/*
                 <Damage 
                     leftStatus={leftStatus} 
                     rightStatus={rightStatus} 
@@ -94,13 +89,17 @@ const index: React.FC = props => {
                     leftHP={leftHP} 
                     rightHP={rightHP} 
                 />
-                <SubjectSideContext.Provider value="right">
+                */}
+                <CombatModeSubjectConfigProvider side="left">
                     <Subject
-                        {...right}
-                        hp={rightHPRatio}
-                        status={rightStatus}
+                        side="left"
                     />
-                </SubjectSideContext.Provider>
+                </CombatModeSubjectConfigProvider>
+                <CombatModeSubjectConfigProvider side="right">
+                    <Subject
+                        side="right"
+                    />
+                </CombatModeSubjectConfigProvider>
             </CollapseTab>
             <TooltipPresenter 
                 showEquation={damageInFormula}
