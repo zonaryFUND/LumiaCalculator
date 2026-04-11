@@ -1,7 +1,7 @@
 import * as React from "react";
 import Images from "@app/resources/image";
 import { Prohibit } from "@phosphor-icons/react";
-import style from "./skill.module.styl";
+import style from "./skill-icon.module.styl";
 import { SkillTooltipID } from "components/tooltip";
 
 type Props = {
