@@ -1,5 +1,5 @@
 import * as React from "react";
-import SubjectSkills from "@app/features/subject-skills/skills";
+import SubjectSkills from "@app/features/subject-skills";
 import Table from "components/damage/simple/damage-table";
 import style from "./damage.module.styl";
 import TabUnit from "components/common/tab/tab-unit";
