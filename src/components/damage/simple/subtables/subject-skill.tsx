@@ -1,9 +1,9 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import StandardDamage from "./rows/standard-damage";
-import CriticalAvailable from "./rows/critical-available";
-import UniqueExpression from "./rows/unique-expression";
+import StandardDamage from "../../../../features/damage/components/potency-rows/standard-damage";
+import CriticalAvailable from "../../../../features/damage/components/potency-rows/critical-available";
+import UniqueExpression from "../../../../features/damage/components/potency-rows/unique-expression";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 

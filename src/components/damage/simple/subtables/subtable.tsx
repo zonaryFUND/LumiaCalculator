@@ -1,12 +1,12 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import StandardDamage from "./rows/standard-damage";
+import StandardDamage from "../../../../features/damage/components/potency-rows/standard-damage";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import { ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
-import UniqueExpression from "./rows/unique-expression";
+import UniqueExpression from "../../../../features/damage/components/potency-rows/unique-expression";
 
 type Unit = Omit<DamageTableUnit, "value"> & 
     {

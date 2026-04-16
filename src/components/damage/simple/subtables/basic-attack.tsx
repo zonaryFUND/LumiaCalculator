@@ -1,11 +1,11 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
-import StandardDamage from "./rows/standard-damage";
-import UniqueExpression from "./rows/unique-expression";
+import StandardDamage from "../../../../features/damage/components/potency-rows/standard-damage";
+import UniqueExpression from "../../../../features/damage/components/potency-rows/unique-expression";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
-import CriticalAvailable from "./rows/critical-available";
+import CriticalAvailable from "../../../../features/damage/components/potency-rows/critical-available";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import useBasicAttackInfo from "components/damage/use-basic-attack-info";
 import { BasicAttackElement } from "@app/ingame-params/subjects/type";

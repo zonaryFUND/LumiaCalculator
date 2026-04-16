@@ -4,10 +4,10 @@ import { useToggle } from "react-use";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
-import HealPower from "../subrows/heal-power";
+import HealPower from "../potency-subrows/heal-power";
 
 import InnerTable from "components/common/inner-table";
-import RatioKey from "../subrows/ratio-key";
+import RatioKey from "../../../../components/damage/simple/subtables/subrows/ratio-key";
 
 import style from "../../../damage-table.module.styl";
 import table from "components/common/table.module.styl";
