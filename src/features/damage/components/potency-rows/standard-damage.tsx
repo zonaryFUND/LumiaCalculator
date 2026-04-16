@@ -8,10 +8,10 @@ import { extractSkillLevel, ValueOrigin, ValueRatio } from "app-types/value-rati
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage } from "react-intl";
 import { calculateValue } from "app-types/value-ratio";
-import { extractMultiplier } from "../../../damage-table-util";
-import StaticValueEquation from "../subrows/static-value-equation";
-import MultiplyEquation from "../subrows/mutiply-equation";
-import HealPower from "../subrows/heal-power";
+import { extractMultiplier } from "../../../../components/damage/damage-table-util";
+import StaticValueEquation from "../../../../components/damage/simple/subtables/subrows/static-value-equation";
+import MultiplyEquation from "../../../../components/damage/simple/subtables/subrows/mutiply-equation";
+import HealPower from "../potency-subrows/heal-power";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 
 type Props = Omit<DamageTableUnit, "value"> & {

@@ -48,6 +48,7 @@ type Props = {
  * 対象最大体力依存値などの動的値を除く値の計算式が表示される
  */
 const staticValueEquation: React.FC<Props> = props => {
+    // 対象の最大体力の（攻撃力のn％）％のような入れ子計算式は再帰呼び出しで構成される
     function equation(ratio: ValueRatio): React.ReactElement[] {
         return Object.entries(ratio).reduce((prev, [key, value]): React.ReactElement[] => {
             const sanitizedValue = (() => {
