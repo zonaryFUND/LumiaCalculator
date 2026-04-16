@@ -52,7 +52,7 @@ export default {
         // 移動速度増加
         "movement_speed": [0.2, 0.45, 0.7],
         // 防御力増加
-        "defense": [15, 20, 25],
+        "defense": [14, 18, 22],
         // バイク搭乗直後の移動速度減少ペナルティ
         "ms_penalty": {
             "duration": 2,

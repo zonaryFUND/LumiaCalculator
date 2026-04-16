@@ -33,7 +33,7 @@ export default {
         // 鏡にQEヒット時自己スキル増幅増加
         "amp_gain": {
             "duration": 4,
-            "effect": [4,6,8],
+            "effect": [3,5,7],
             "max_stack": 2
         },
         // 鏡で強化されたQ的中時クールダウン減少

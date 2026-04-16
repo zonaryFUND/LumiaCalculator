@@ -17,7 +17,7 @@ export default {
         },
         // 防御力増加
         "defense": {
-            "duration": 2,
+            "duration": 2.5,
             "effect": [16, 19, 22, 25, 28]
         },
         "charge": {

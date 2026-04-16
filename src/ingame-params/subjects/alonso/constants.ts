@@ -15,7 +15,7 @@ export default {
             "targetMaxHP": [6,7,8,9,10]
         },
         // 磁力線対象基本攻撃時気絶時間
-        "stun": 0.85,
+        "stun": 0.9,
         "cooldown": [7,6.5,6,5.5,5]
     },
     "W": {

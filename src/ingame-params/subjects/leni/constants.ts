@@ -74,7 +74,7 @@ export default {
             "duration": 1.5,
             "effect": 80
         },
-        "cooldown": [20, 16, 12]
+        "cooldown": [20, 17, 14]
     },
     "T": {
         // クマさん持続時間

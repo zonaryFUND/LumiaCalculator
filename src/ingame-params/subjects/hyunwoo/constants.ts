@@ -65,7 +65,7 @@ export default {
         // 防御力減少
         "defense_down": {
             "duration": 5,
-            "effect": [15, 20, 25]
+            "effect": [10, 15, 20]
         },
         // 最大チャージ時気絶時間
         "stun": 0.5,

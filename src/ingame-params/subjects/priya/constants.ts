@@ -10,7 +10,7 @@ export default {
         // 満開ダメージ
         "bloomed_damage": {
             "base": [60, 80, 100, 120, 140],
-            "amp": 55
+            "amp": 60
         },
         "cooldown": {
             "constant": 1
@@ -31,7 +31,7 @@ export default {
         },
         "damage": {
             "base": [60, 100, 140, 180, 220],
-            "amp": 60
+            "amp": 65
         },
         // 移動速度減少
         "slow": {

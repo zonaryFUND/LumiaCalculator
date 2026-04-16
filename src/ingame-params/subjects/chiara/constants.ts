@@ -14,8 +14,8 @@ export default {
         "heal_duration": 2.5,
         // 不浄な気的中時1つあたり自己回復
         "heal": {
-            "base": [10,13,16,19,22],
-            "amp": 3
+            "base": [13,16,19,22,25],
+            "amp": 4
         },
         "cooldown": [8,7,6,5,4]
     },

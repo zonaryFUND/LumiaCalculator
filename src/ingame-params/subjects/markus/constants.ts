@@ -30,7 +30,7 @@ export default {
         "airborne": 0.8,
         // R範囲内に使用したときの投げ飛ばし距離
         "r_combo_knockback": 3,
-        "cooldown": [12, 11, 10, 9, 8]
+        "cooldown": [13, 12, 11, 10, 9]
     },
     "E": {
         // 移動距離

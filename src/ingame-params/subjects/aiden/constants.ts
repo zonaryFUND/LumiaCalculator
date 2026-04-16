@@ -2,7 +2,7 @@ export default {
     "Q": {
         // 雷撃ダメージ
         "damage": {
-            "base": [80,110,140,170,200],
+            "base": [70,100,130,160,190],
             "attack": 75,
             "basicAttackAmp": 100
         },
@@ -10,7 +10,7 @@ export default {
         "cooldown_reduction": 1.5,
         // 電磁砲（ハイパーチャージ中）ダメージ
         "range_damage": {
-            "base": [60,90,120,150,180],
+            "base": [70,100,130,160,190],
             "attack": 75,
             "basicAttackAmp": 100
         },

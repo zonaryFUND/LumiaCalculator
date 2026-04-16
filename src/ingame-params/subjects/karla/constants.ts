@@ -88,7 +88,7 @@ export default {
             "base": [10, 25, 40],
             "attack": 100,
             "amp": 25,
-            "targetMaxHP": [4, 7, 10]
+            "targetMaxHP": [4, 8, 12]
         },
         // 装填ゲージ最大時基本攻撃的中時移動速度減少
         "slow": {

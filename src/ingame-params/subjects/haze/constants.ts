@@ -40,7 +40,7 @@ export default {
     "W": {
         "damage": {
             "base": [80, 120, 160, 200, 240],
-            "amp": 70
+            "amp": 75
         },
         // 気絶時間
         "stun": 0.65,

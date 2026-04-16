@@ -43,7 +43,7 @@ export default {
     },
     "E": {
         "damage": {
-            "base": [80,100,120,140,160],
+            "base": [70,85,100,115,130],
             "amp": 40
         },
         "cooldown": [13,12.5,12,11.5,11]
@@ -73,7 +73,7 @@ export default {
         // 対象防御力低下効果
         "defense_reduction": {
             "duration": 4,
-            "effect": [4,8,12]
+            "effect": [4,7,10]
         },
         // スキル的中時Tクールダウン減少
         "cooldown_reduction": 2.5,

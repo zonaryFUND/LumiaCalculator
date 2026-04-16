@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [50, 75, 100, 125, 150],
-            "amp": 60
+            "amp": 55
         },
         // 再使用可能時間
         "reuse": 3,

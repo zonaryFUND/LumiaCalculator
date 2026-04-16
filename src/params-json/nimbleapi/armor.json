@@ -9,7 +9,7 @@
     },
     {
         "attackPower": 17,
-        "attackSpeedRatio": 0.15,
+        "attackSpeedRatio": 0.2,
         "criticalStrikeChance": 0.28,
         "code": 201404,
         "armorType": "Head",
@@ -141,7 +141,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 16,
+        "defense": 15,
         "maxHpByLv": 20,
         "cooldownReduction": 15,
         "code": 201403,
@@ -175,7 +175,7 @@
     },
     {
         "attackPower": 20,
-        "attackSpeedRatio": 0.22,
+        "attackSpeedRatio": 0.25,
         "criticalStrikeChance": 0.35,
         "criticalStrikeDamage": 0.04,
         "code": 201502,
@@ -769,7 +769,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 15,
+        "attackPower": 18,
         "attackPowerByLv": 3,
         "defense": 20,
         "attackSpeedRatio": 0.15,

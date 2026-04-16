@@ -62,7 +62,7 @@ export default {
         "duration": 4,
         // エネルギーフィールド上移動速度増加
         "movement_speed": {
-            "base": [60, 80, 100],
+            "base": [50, 70, 90],
             "amp": 2
         },
         "damage": {

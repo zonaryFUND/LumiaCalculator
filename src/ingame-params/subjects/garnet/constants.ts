@@ -30,7 +30,7 @@ export default {
         // チャージ中被ダメージ減少
         "damage_reduction": {
             "duration": 1,
-            "effect": 55
+            "effect": 50
         },
         // チャージ中自己回復発生周期
         "heal_tick": 0.2,

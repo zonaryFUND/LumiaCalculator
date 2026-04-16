@@ -42,7 +42,7 @@ export default {
         "duration": 10,
         // 符的中時ダメージ
         "card_damage": {
-            "base": [80, 115, 150],
+            "base": [80, 105, 130],
             "amp": 50
         },
         // 召喚中の自己移動速度減少（％）

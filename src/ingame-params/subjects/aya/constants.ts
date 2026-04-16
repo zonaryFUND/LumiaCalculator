@@ -9,7 +9,7 @@ export default {
         "second_damage": {
             "base": [40,70,100,130,160],
             "attack": 30,
-            "amp": 70
+            "amp": 65
         },
         // 攻撃速度増加
         "attack_speed": {

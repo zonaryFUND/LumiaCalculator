@@ -20,7 +20,7 @@ export default {
         // 1ヒットあたりダメージ
         "damage": {
             "base": [16, 22, 28, 34, 40],
-            "additionalAttack": 50,
+            "additionalAttack": 45,
             "amp": 18,
             "targetMaxHP": 2.5
         },
