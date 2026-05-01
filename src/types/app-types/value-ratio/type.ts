@@ -94,7 +94,12 @@ export type ValueRatio = {
     targetHP?: ValueElement
 
     /**
-     * 対象の失った体力比例値
+     * 失った体力比例値
      */
     lostHP?: ValueElement
+
+    /**
+     * 対象の失った体力比例値
+     */
+    targetLostHP?: ValueElement
 }

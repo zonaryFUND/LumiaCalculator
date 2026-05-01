@@ -8,6 +8,12 @@ type EquationExpressionUnit = string | { intlID: string } | { ratioKey: keyof Va
 export type EquationExpression = {labelIntlID?: string, expression: EquationExpressionUnit[]};
 
 export type UniqueValueStrategy = (props: { config: SubjectConfig, status: Status, hp: number }) => {
-    value: Decimal | [Decimal, Decimal | undefined, Decimal | undefined]
+    value: {
+        type: "standard",
+        value: Decimal
+    } | {
+        type: "critical",
+        values: [Decimal, Decimal | undefined, Decimal | undefined]
+    }
     equationExpression: EquationExpression[]
 }

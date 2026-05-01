@@ -13,7 +13,10 @@ export function CamiloRHealStrategy(val: "min" | "max"): UniqueValueStrategy {
         const value = new Decimal(base).addPercent(multiplier);
 
         return {
-            value,
+            value: {
+                type: "standard",
+                value
+            },
             equationExpression: [
                 {
                     expression: [

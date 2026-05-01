@@ -19,7 +19,10 @@ export const MarleneWStrategy: UniqueValueStrategy = ({ config, status }) => {
     const add = projectileAmount(status);
     const value = new Decimal(base + add);
     return {
-        value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {
                 expression: [

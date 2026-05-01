@@ -34,7 +34,10 @@ export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-3" | "hankyu-add
             .percent(tRatio)
 
         return {
-            value,
+            value: {
+                type: "standard",
+                value
+            },
             equationExpression: bow == "hankyu-3" ? [] : [
                 {
                     labelIntlID: "app.standard-value",

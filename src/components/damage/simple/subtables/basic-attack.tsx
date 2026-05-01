@@ -1,11 +1,11 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
-import StandardDamage from "../../../../features/damage/components/potency-rows/standard-damage";
-import UniqueExpression from "../../../../features/damage/components/potency-rows/unique-expression";
+import StandardDamage from "../../../../features/damage/features/potency-rows/standard-damage";
+import UniqueExpression from "../../../../features/damage/features/potency-rows/unique-expression";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
-import CriticalAvailable from "../../../../features/damage/components/potency-rows/critical-available";
+import CriticalAvailable from "../../../../features/damage/features/potency-rows/critical-available";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import useBasicAttackInfo from "components/damage/use-basic-attack-info";
 import { BasicAttackElement } from "@app/ingame-params/subjects/type";
@@ -61,8 +61,6 @@ const basicAttack: React.FC<Props> = props => {
                                 label={intl.formatMessage({id: standardBasicAttackLabelIntlID})}
                                 value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
                                 origin="other"
-                                config={props.config}
-                                status={props.status}
                             />
                         }
     
@@ -85,9 +83,6 @@ const basicAttack: React.FC<Props> = props => {
                                     key={definition.label}
                                     {...definition}
                                     strategy={definition.value}
-                                    config={props.config}
-                                    status={props.status}
-                                    hp={props.hp}
                                 />
                             } else if (definition.type?.type == "basic" && definition.type.critical == undefined) {
                                 return <CriticalAvailable 
@@ -95,8 +90,6 @@ const basicAttack: React.FC<Props> = props => {
                                     label={definition.label}
                                     origin={definition.origin}
                                     value={definition.value}
-                                    config={props.config}
-                                    status={props.status}
                                     multiplier={definition.multiplier}
                                 />
                             } else {

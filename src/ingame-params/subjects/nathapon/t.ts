@@ -15,7 +15,10 @@ export const NathaponeTStrategy: UniqueValueStrategy = ({ config, status }) => {
         .add(status.attackSpeed.multiplier.percent(as) ?? 0)
 
     return {
-        value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {
                 expression: [
