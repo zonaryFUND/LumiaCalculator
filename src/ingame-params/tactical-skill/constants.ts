@@ -106,14 +106,14 @@ export default {
     },
     // ライトウィング
     "wings_of_light": {
-        "duration": 7,
+        "duration": 6,
         "movement_speed": {
             "base": [15,20],
             "level": 1
         },
         "attack_speed": 20,
         "slow": {
-            "duration": 0.8,
+            "duration": 0.6,
             "effect": 10
         },
         "extend": 0.5,
@@ -125,7 +125,7 @@ export default {
         "damage": {
             "base": 10,
             "level": 1,
-            "targetMaxHP": 0.8
+            "targetMaxHP": 0.7
         },
         "cooldown": [40,30]
     },
