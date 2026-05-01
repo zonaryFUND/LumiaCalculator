@@ -122,8 +122,8 @@
 		"name": "healing_reduction"
 	},
 	"201504": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": 6075001,
+		"name": "iteration"
 	},
 	"201505": {
 		"skillCode": 6033002,
@@ -304,6 +304,14 @@
 	"201535": {
 		"skillCode": 6067001,
 		"name": "two_sides"
+	},
+	"201536": {
+		"skillCode": 6071001,
+		"name": "prayer_for_the_dead"
+	},
+	"201537": {
+		"skillCode": 6074001,
+		"name": "predation"
 	},
 	"201701": {
 		"skillCode": [
@@ -509,8 +517,8 @@
 		}
 	},
 	"202526": {
-		"skillCode": 6039001,
-		"name": "brute_enforcer"
+		"skillCode": 6072001,
+		"name": "dimensional_rift"
 	},
 	"202527": {
 		"skillCode": [
@@ -664,8 +672,8 @@
 		}
 	},
 	"203508": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": 6077001,
+		"name": "heavyweight"
 	},
 	"203509": {
 		"skillCode": 6008201,
@@ -711,6 +719,10 @@
 			"fáfnir's_scales",
 			"healing_reduction"
 		]
+	},
+	"204407": {
+		"skillCode": 6076001,
+		"name": "resonance"
 	},
 	"204409": {
 		"skillCode": 6059001,
@@ -768,8 +780,18 @@
 		}
 	},
 	"204513": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": [
+			6078001,
+			6008201
+		],
+		"name": [
+			"tailwind",
+			"healing_reduction"
+		]
+	},
+	"204514": {
+		"skillCode": 6078001,
+		"name": "tailwind"
 	},
 	"205201": {
 		"skillCode": 6014001,
@@ -797,13 +819,8 @@
 		}
 	},
 	"205407": {
-		"skillCode": 6015002,
-		"name": "zephyr",
-		"values": {
-			"base": 100,
-			"level": 7,
-			"attack": 60
-		}
+		"skillCode": 6073101,
+		"name": "tracking"
 	},
 	"205408": {
 		"skillCode": 6017026,

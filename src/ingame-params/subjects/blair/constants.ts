@@ -167,7 +167,7 @@ export default {
         // シフト状態時基本スキル使用時与ダメージ比自己回復量
         "heal": {
             "base": 8,
-            "additionalAttack": 4
+            "additionalAttack": 5
         },
         // シフト状態時基本スキル使用時気力回復
         "vp_heal": 30,

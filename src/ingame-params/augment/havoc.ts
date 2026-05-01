@@ -1,18 +1,17 @@
-{
+export default {
+    // 絶対武力
     "frailty_infliction": {
         "damage": {
-            "base": 30,
-            "level": 3
+            "base": 20,
+            "level": 5
         },
         "defense_reduction": {
             "duration": 6,
-            "effect": {
-                "base": 10,
-                "level": 0.5
-            }
+            "effect": 15
         },
         "cooldown": 15
     },
+    // 吸血鬼
     "vampiric_bloodline": {
         "stack": {
             "adaptive": 1,
@@ -29,6 +28,7 @@
         },
         "period": 4
     },
+    // アドレナリン
     "adrenaline": {
         "duration": 5,
         "max_stack": 6,
@@ -56,6 +56,7 @@
         },
         "max_movement_speed": 7
     },
+    // アクセルレート
     "accelerator": {
         "count": 3,
         "attack_speed": 120,
@@ -87,11 +88,13 @@
             "amp": 40
         }
     },
+    // 劣勢克服
     "dismantle_goliath": {
         "min": 10,
         "max": 40,
         "multiplier": 0.25
     },
+    // 狂奔
     "frenzy": {
         "min": {
             "hp": 70,
@@ -102,10 +105,12 @@
             "value": 8
         }
     },
+    // 弱者蔑視
     "contempt_for_the_weak": {
         "threshold": 40,
         "effect": 8
     },
+    // 狩猟 - 熊
     "bear_mask": {
         "base": {
             "adaptiveForce": 2
@@ -116,6 +121,7 @@
             "adaptive": 1
         }
     },
+    // 狩猟 - イノシシ
     "boar_mask": {
         "base": {
             "maxHP": 25
@@ -126,6 +132,7 @@
             "maxHP": 20
         }
     },
+    // 狩猟 - オオカミ
     "wolf_mask": {
         "base": {
             "attackSpeed": 4
@@ -136,6 +143,7 @@
             "attackSpeed": 2.5
         }
     },
+    // 狩猟 - ハウンド
     "wild_dog_mask": {
         "base": {
             "omnisyphon": 3
@@ -145,6 +153,7 @@
             "omnisyphon": 0.5
         }
     },
+    // 傷跡
     "cicatrix": {
         "healing_reduction": {
             "duration": 5,

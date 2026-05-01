@@ -1,6 +1,6 @@
 {
     "duration": 6,
-    "defense_down": 15,
+    "defense_down": 12,
     "damage": {
         "base": 20,
         "additionalMaxHP": 12

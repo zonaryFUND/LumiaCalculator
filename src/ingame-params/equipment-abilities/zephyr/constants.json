@@ -5,7 +5,8 @@
     "ms": 15,
     "shield": {
         "base": 100,
-        "level": 10
+        "amp": 30,
+        "level": 5
     },
     "cooldown": 12,
     "dot_trigger_period": 3

@@ -1,5 +1,5 @@
 import { PerpetualOuterBuffDefinition } from "./type";
-import Havoc from "@app/ingame-params/augment/havoc.json";
+import Havoc from "@app/ingame-params/augment/havoc";
 import Chaos from "@app/ingame-params/augment/chaos";
 import Fortification from "@app/ingame-params/augment/fortification";
 import Decimal from "decimal.js";

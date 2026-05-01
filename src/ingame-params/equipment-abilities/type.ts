@@ -1,8 +1,9 @@
 import { SubjectConfig } from "app-types/subject-dynamic/config"
 import { RangeDependentValueRatio, TooltipValues } from "../skill-tooltip-props"
-import { Status } from "app-types/subject-dynamic/status/type"
+import { ComponentStatus, Status } from "app-types/subject-dynamic/status/type"
 import { ValueRatio } from "app-types/value-ratio"
 import { DamageTableUnit } from "app-types/damage-table/unit"
+import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component"
 
 type EquipmentAbilityImportedProps = {
     importedDamage?: ValueRatio | RangeDependentValueRatio
@@ -23,7 +24,10 @@ export type EquipmentAbilityTooltipValues = (props: { showEquation: boolean, con
 export type EquipmentAbilityModule = {
     code: number | number[]
     damageTable?: EquipmentAbilityDamageTableUnit[] | EquipmentAbilityDamageTableGenerator
+    perpetualStatus?: EquipmentAbilityPerpetualStatus
     tooltipValues: EquipmentAbilityTooltipValues
 }
 
 export const defineEquipmentAbility = (module: EquipmentAbilityModule) => { return module }
+
+export type EquipmentAbilityPerpetualStatus = (config: SubjectConfig, currentHPRatio: number) => Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>

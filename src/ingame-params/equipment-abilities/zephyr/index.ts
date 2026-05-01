@@ -3,7 +3,7 @@ import tooltipValues from "./tooltip";
 import damageTable from "./table-values";
 
 export default defineEquipmentAbility({
-    code: 6015002,
+    code: 6015010,
     damageTable,
     tooltipValues
 })

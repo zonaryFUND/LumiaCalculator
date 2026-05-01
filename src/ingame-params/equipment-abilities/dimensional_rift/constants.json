@@ -1,0 +1,9 @@
+{
+    "duration": 5,
+    "damage_increase": 6,
+    "damage": {
+        "base": 12,
+        "amp": 4
+    },
+    "cooldown": 20
+}

@@ -1,14 +1,15 @@
-import { EquipmentAbilityDamageTableGenerator, EquipmentAbilityModule, EquipmentAbilityTooltipValues } from "./type";
+import { EquipmentAbilityDamageTableGenerator, EquipmentAbilityModule, EquipmentAbilityPerpetualStatus, EquipmentAbilityTooltipValues } from "./type";
 
 export const modules = import.meta.glob<{ default: EquipmentAbilityModule }>("./**/index.ts", {eager: true})
 
 export const [
     EquipmentAbilityTooltipDictionary, 
-    EquipmentAbilityDamageTable
-] = Object.entries(modules).reduce(([tooltips, damageTables], [path, m]) => {
-    if (m.default == undefined || m.default.code == undefined) return [tooltips, damageTables];
+    EquipmentAbilityDamageTable,
+    EquipmentAbilityPerpetualStatusDictionary
+] = Object.entries(modules).reduce(([tooltips, damageTables, perpetuals], [path, m]) => {
+    if (m.default == undefined || m.default.code == undefined) return [tooltips, damageTables, perpetuals];
     const codes = Array.isArray(m.default.code) ? m.default.code : [m.default.code];
-    return codes.reduce(([tooltips, damageTables], code) => {
+    return codes.reduce(([tooltips, damageTables, perpetuals], code) => {
         const damageTable = m.default.damageTable;
         const generator: EquipmentAbilityDamageTableGenerator | undefined = 
             damageTable == undefined ? undefined :
@@ -25,10 +26,17 @@ export const [
                 ...(
                     generator ? { [code]: generator} : {}
                 )
+            },
+            {
+                ...perpetuals,
+                ...(
+                    m.default.perpetualStatus ? { [code]: m.default.perpetualStatus} : {}
+                )
             }
         ]
-    }, [tooltips, damageTables]);
+    }, [tooltips, damageTables, perpetuals]);
 }, [
     {} as Record<number, EquipmentAbilityTooltipValues>,
-    {} as Record<number, EquipmentAbilityDamageTableGenerator>
+    {} as Record<number, EquipmentAbilityDamageTableGenerator>,
+    {} as Record<number, EquipmentAbilityPerpetualStatus>
 ]) 

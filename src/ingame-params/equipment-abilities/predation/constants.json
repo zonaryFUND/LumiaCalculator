@@ -1,0 +1,18 @@
+{
+    "range": 6,
+    "threshold": 2,
+    "damage": {
+        "base": 20,
+        "additionalMaxHp": 10
+    },
+    "heal": {
+        "base": 30,
+        "additionalMaxHp": 10,
+        "lostHP": 4
+    },
+    "movement_speed": {
+        "duration": 1,
+        "effect": 15
+    },
+    "cooldown": 10
+}

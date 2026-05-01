@@ -1,0 +1,9 @@
+{
+    "duration": 5,
+    "damage": {
+        "base": 30,
+        "level": 5,
+        "targetMaxHp": 8
+    },
+    "cooldown": 4
+}

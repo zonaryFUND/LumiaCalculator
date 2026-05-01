@@ -1,5 +1,5 @@
 import { IntlShape } from "react-intl";
-import Havoc from "./havoc.json";
+import Havoc from "./havoc";
 import Chaos from "./chaos";
 import Fortification from "./fortification";
 import Support from "./support";
@@ -71,7 +71,6 @@ export function AugmentTableValues(intl: IntlShape, config: SubjectConfig): Augm
     return [
         [
             {label: intl.formatMessage({id: "絶対武力ダメージ"}), value: Havoc.frailty_infliction.damage, type: {type: "true"}},
-            {label: intl.formatMessage({id: "絶対武力防御減少"}), value: Havoc.frailty_infliction.defense_reduction.effect, type: {type: "misc", percentExpression: true}},
             {label: "アクセルレート3回目追加ダメージ", value: acceleratorStrategy},
         ],
         [

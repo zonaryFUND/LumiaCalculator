@@ -369,8 +369,18 @@
 		"name": "healing_reduction"
 	},
 	"107502": {
-		"skillCode": 6015002,
-		"name": "zephyr"
+		"skillCode": 6073002,
+		"name": "punishment",
+		"dmg": {
+			"base": 30,
+			"level": 2,
+			"amp": 20
+		},
+		"values": {
+			"base": 100,
+			"amp": 30,
+			"level": 5
+		}
 	},
 	"107701": {
 		"skillCode": 6007001,
@@ -388,8 +398,18 @@
 		}
 	},
 	"107702": {
-		"skillCode": 6015002,
-		"name": "zephyr"
+		"skillCode": 6073002,
+		"name": "punishment",
+		"dmg": {
+			"base": 30,
+			"level": 2,
+			"amp": 20
+		},
+		"values": {
+			"base": 100,
+			"amp": 30,
+			"level": 5
+		}
 	},
 	"108404": {
 		"skillCode": 6008201,
@@ -457,11 +477,11 @@
 		"name": "healing_reduction"
 	},
 	"109503": {
-		"skillCode": 6015002,
+		"skillCode": 6015010,
 		"name": "zephyr"
 	},
 	"109701": {
-		"skillCode": 6015002,
+		"skillCode": 6015010,
 		"name": "zephyr"
 	},
 	"109702": {
@@ -581,8 +601,18 @@
 		}
 	},
 	"111405": {
-		"skillCode": 6015002,
-		"name": "zephyr"
+		"skillCode": 6073002,
+		"name": "punishment",
+		"dmg": {
+			"base": 30,
+			"level": 2,
+			"amp": 20
+		},
+		"values": {
+			"base": 100,
+			"amp": 30,
+			"level": 5
+		}
 	},
 	"111501": {
 		"skillCode": 6045001,
@@ -598,12 +628,32 @@
 		}
 	},
 	"111504": {
-		"skillCode": 6015002,
-		"name": "zephyr"
+		"skillCode": 6073001,
+		"name": "punishment",
+		"dmg": {
+			"base": 40,
+			"level": 5,
+			"additionalAttack": 50
+		},
+		"values": {
+			"base": 100,
+			"attack": 55,
+			"level": 5
+		}
 	},
 	"111701": {
-		"skillCode": 6015002,
-		"name": "zephyr"
+		"skillCode": 6073001,
+		"name": "punishment",
+		"dmg": {
+			"base": 40,
+			"level": 5,
+			"additionalAttack": 50
+		},
+		"values": {
+			"base": 100,
+			"attack": 55,
+			"level": 5
+		}
 	},
 	"111702": {
 		"skillCode": 6045001,

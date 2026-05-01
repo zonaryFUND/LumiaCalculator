@@ -192,5 +192,10 @@
         "name": "赤い星",
         "attackPower": 2,
         "attackSpeedRatio": 5
+    },
+    "202530": {
+        "name": "反逆の意志",
+        "maxHp": 50,
+        "defense": 4
     }
 }

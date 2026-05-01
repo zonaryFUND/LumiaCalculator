@@ -2,7 +2,7 @@
     "duration": 3,
     "movement_speed": {
         "melee": 3,
-        "range": 2
+        "range": 1.5
     },
     "max_stack": 8,
     "dot_trigger_period": 1

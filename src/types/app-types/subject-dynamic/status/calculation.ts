@@ -9,6 +9,7 @@ import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, Movem
 import { calculateCooldownValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
 import * as es from "es-toolkit";
 import { SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { EquipmentAbilityPerpetualStatusDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
 
 /**
  * 実験体設定および現在のHPから現在ステータスを計算する
@@ -372,6 +373,34 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     }
 
     const subjectPerpetulStatus = SubjectPerpetualStatusDictionary[config.subject] ? SubjectPerpetualStatusDictionary[config.subject](config, currentHPRatio) : {};
+    const {isChestDavid, ...equipment} = config.equipment;
+    const equipmentPerpetualStatus = Object.entries(equipment)
+        .flatMap(([slot, equipment]) => {
+            if (equipment == null) return [];
+            return (EquipmentStatusDictionary[equipment].skill ?? [])
+                .flatMap(ability => {
+                    const entry = EquipmentAbilityPerpetualStatusDictionary[ability.skillCode];
+                    if (!entry) return [];
+                    return entry(config, currentHPRatio);
+                })
+        });
+
+    console.log({subjectPerpetulStatus, equipmentPerpetualStatus})
+
+    const componentStatus = [subjectPerpetulStatus, ...equipmentPerpetualStatus].reduce((prev, dict) => {
+        return Object.entries(dict).reduce((prev, [key, components]) => {
+            const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
+            return {
+                ...prev,
+                [key]: {
+                    ...prevComponent,
+                    components: [...prevComponent.components, ...(components ?? [])]
+                } satisfies ComponentStatusValue
+            }
+        }, prev);
+    }, baseComponentStatus);
+
+    /*
     const componentStatus = Object.entries(subjectPerpetulStatus).reduce((prev, [key, components]) => {
         const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
         return {
@@ -383,6 +412,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         }
         
     }, baseComponentStatus);
+    */
 
     // ステータス変換によって得られる値を計算するために、その部分要素なしのステータスをまず計算する
     const statusWithoutConversion: Status = {

@@ -3,7 +3,7 @@ export default {
     "healing_factor": {
         "enhance": 10,
         "adaptive": {
-            "base": 5,
+            "base": 1,
             "level": 0.5
         },
         "duration": 2

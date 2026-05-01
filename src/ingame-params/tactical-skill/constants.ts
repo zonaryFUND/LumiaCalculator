@@ -1,5 +1,7 @@
-{
+export default {
+    // ブリンク
     "blink": {},
+    // クエイク
     "quake": {
         "slow": [
             40,
@@ -21,23 +23,20 @@
         "duration": 6,
         "tick": 0.5
     },
+    // プロトコル違反
     "protocol_violation": {
         "hp_increase": {
-            "base": [
-                150,
-                250
-            ],
-            "level": [
-                15,
-                20
-            ]
+            "base": [150,200],
+            "level": [15,20]
         },
-        "damage_increase": [
-            12,
-            15
-        ]
+        "damage": {
+            "level": [5,10],
+            "targetMaxHP": [10,12]
+        }
     },
+    // 赤嵐
     "electric_shift": {},
+    // 超越
     "force_field": {
         "duration": 3,
         "shield": {
@@ -55,9 +54,13 @@
             "additionalMaxHP": 3
         }
     },
+    // 強い絆
     "totem": {},
+    // 無効化
     "nullification": {},
+    // 
     "soul_stealer": {},
+    // ストライダー - A13
     "the_strider": {
         "damage": {
             "base": [
@@ -70,6 +73,7 @@
             ]
         }
     },
+    // 真実の刃
     "blader_of_truth": {
         "damage": {
             "base": 140,
@@ -80,18 +84,7 @@
             "level": 10
         }
     },
-    "false_oath": {
-        "heal_min": {
-            "melee": {
-                "base": 40
-            },
-            "range": {
-                "base": 20
-            }
-        },
-        "heal_max_multiplier": 1.5,
-        "damage_increase": {}
-    },
+    // 治癒の風
     "healing_wind": {
         "heal": {
             "base": [
@@ -103,9 +96,53 @@
                 12
             ]
         },
-        "defense": {
+        "hot": {
             "duration": 3,
-            "effect": 20
+            "effect": {
+                "base": 150,
+                "level": 15
+            }
         }
+    },
+    // ライトウィング
+    "wings_of_light": {
+        "duration": 7,
+        "movement_speed": {
+            "base": [15,20],
+            "level": 1
+        },
+        "attack_speed": 20,
+        "slow": {
+            "duration": 0.8,
+            "effect": 10
+        },
+        "extend": 0.5,
+        "cooldown": [50,40]
+    },
+    // リパルサーミサイル
+    "repulsor_missile": {
+        "ammos": [5,8],
+        "damage": {
+            "base": 10,
+            "level": 1,
+            "targetMaxHP": 0.8
+        },
+        "cooldown": [40,30]
+    },
+    // プラズマダッシュ
+    "plasma_dash": {
+        "damage": {
+            "base": [120,150],
+            "level": [5,10]
+        },
+        "slow": {
+            "duration": 1.5,
+            "effect": 35
+        },
+        "defense_down": {
+            "duration": 5,
+            "effect": 10
+        },
+        "cooldown": [40,30]
     }
 }

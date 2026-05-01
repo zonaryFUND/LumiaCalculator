@@ -18,5 +18,6 @@
     "item-skill.spirit-harvest-add": "{item}刻印付与時追加ダメージ",
     "item-skill.spirit-harvest-remove": "{item}刻印消化時追加ダメージ",
     "item-skill.heart-of-fire-damage": "{item}ダメージ",
-    "item-skill.heart-of-fire-heal": "{item}回復"
+    "item-skill.heart-of-fire-heal": "{item}回復",
+    "item-skill.attack-power": "{item}攻撃力増加"
 }

@@ -502,7 +502,7 @@
     {
         "attackPower": 40,
         "defense": 8,
-        "skillAmp": 112,
+        "skillAmp": 108,
         "code": 107502,
         "weaponType": "Spear",
         "itemGrade": "Legend"
@@ -780,8 +780,7 @@
     {
         "attackPower": 42,
         "defense": 6,
-        "skillAmp": 86,
-        "cooldownReduction": 15,
+        "skillAmp": 92,
         "code": 111405,
         "weaponType": "Tonfa",
         "itemGrade": "Legend"
@@ -797,7 +796,8 @@
     {
         "attackPower": 47,
         "defense": 8,
-        "skillAmp": 94,
+        "skillAmp": 82,
+        "cooldownReduction": 15,
         "code": 111501,
         "weaponType": "Tonfa",
         "itemGrade": "Legend"
@@ -823,7 +823,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 66,
+        "attackPower": 63,
         "defense": 8,
         "attackSpeedRatio": 0.3,
         "code": 111504,
@@ -2005,7 +2005,7 @@
     {
         "attackPower": 33,
         "defense": 8,
-        "adaptiveForce": 60,
+        "adaptiveForce": 58,
         "penetrationDefenseRatio": 0.08,
         "code": 107702,
         "weaponType": "Spear",
@@ -2054,7 +2054,7 @@
     {
         "attackPower": 23,
         "defense": 8,
-        "adaptiveForce": 54,
+        "adaptiveForce": 51,
         "attackSpeedRatio": 0.35,
         "penetrationDefenseRatio": 0.07,
         "code": 111701,

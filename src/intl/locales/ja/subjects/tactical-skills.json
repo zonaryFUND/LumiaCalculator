@@ -2,8 +2,10 @@
     "tactical.quake.first": "クエイク発動時",
     "tactical.quake.dot-1tick": "クエイクLv2継続ダメージ1ティック",
     "tactical.quake.dot-all": "クエイクLv2継続ダメージ全ティック({value})",
-    "tactical.protocol-violation.level1": "プロトコル違反Lv1体力増加",
-    "tactical.protocol-violation.level2": "プロトコル違反Lv2体力増加",
+    "tactical.protocol-violation.damage1": "プロトコル違反Lv1ダメージ",
+    "tactical.protocol-violation.damage2": "プロトコル違反Lv2ダメージ",
+    "tactical.protocol-violation.hp-increase1": "プロトコル違反Lv1体力増加",
+    "tactical.protocol-violation.hp-increase2": "プロトコル違反Lv2体力増加",
     "tactical.force-field.level1": "超越Lv1シールド",
     "tactical.force-field.level2": "超越Lv2シールド",
     "tactical.strider.level1": "ストライダーLv1追加ダメージ",
@@ -13,5 +15,13 @@
     "tactical.false-oath.level1": "偽りの制約Lv1回復/秒",
     "tactical.false-oath.level2": "偽りの制約Lv2回復/秒",
     "tactical.healing-wind.level1": "癒しの風Lv1回復",
-    "tactical.healing-wind.level2": "癒しの風Lv2回復"
+    "tactical.healing-wind.level2": "癒しの風Lv2即時回復",
+    "tactical.healing-wind.hot2": "癒しの風Lv2持続回復総量",
+    "tactical.wings-of-light.movement-speed1": "ライトウィングLv1移動速度増加",
+    "tactical.wings-of-light.movement-speed2": "ライトウィングLv2移動速度増加",
+    "tactical.repulsor-missile.single-damage": "リパルサーミサイル1個あたりダメージ",
+    "tactical.repulsor-missile.all-hit1": "リパルサーミサイルLv1全命中時ダメージ",
+    "tactical.repulsor-missile.all-hit2": "リパルサーミサイルLv2全命中時ダメージ",
+    "tactical.plasma-dash.damage1": "プラズマダッシュLv1ダメージ",
+    "tactical.plasma-dash.damage2": "プラズマダッシュLv2ダメージ"
 }
