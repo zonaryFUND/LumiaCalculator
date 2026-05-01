@@ -14,7 +14,10 @@ const acceleratorStrategy: UniqueValueStrategy = ({ config, status }) => {
     const base = Havoc.accelerator.damage.base[config.level - 1];
     const value = calculateValue({ ...Havoc.accelerator.damage, base }, status, config, "other").static;
     return {
-        value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {expression: ["現在、アクセルレートのダメージ基礎値にはレベルに対して規則性が見出せません。"]},
             {
@@ -42,7 +45,10 @@ const redSpriteStrategy: UniqueValueStrategy = ({ config, status }) => {
     const value = Decimal.max(attackBasedDamage, ampBasedDamage);
 
     return {
-        value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {
                 expression: [

@@ -24,6 +24,13 @@ type Props = {
      * 最大値（デフォルト：100）
      */
     max?: number
+
+    /**
+     * 表示上の最大値
+     * 
+     * デフォルトではmaxと同じだが、HPのように内部値と表示値を分けたい場合に使用する
+     */
+    displayMax?: number
 }
 
 /**
@@ -42,12 +49,12 @@ const SliderSection: React.FC<Props> = props => {
 
     return (
         <div className={style.slider}>
-            <h4>{props.label} <span>{Math.round((props.max ?? 100) * tempPercentage / 100)}</span></h4>
+            <h4>{props.label} <span>{Math.round((props.displayMax ?? props.max ?? 100) * tempPercentage / 100)}</span></h4>
             <GaugeSlider
                 style={props.style}
                 percentage={tempPercentage}
                 setPercentage={setTempPercentage}
-                max={props.max}
+                max={props.displayMax ?? props.max}
             />
         </div>
     )

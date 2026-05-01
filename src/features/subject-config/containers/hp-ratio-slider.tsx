@@ -18,7 +18,8 @@ const HPRatioSlider: React.FC = () => {
             style={{type: "hp-ratio"}}
             label={intl.formatMessage({id: "status.hp"})}
             value={[hpRatio, setHpRatio]}
-            max={maxHP}
+            max={100}
+            displayMax={maxHP}
         />
     )
 }

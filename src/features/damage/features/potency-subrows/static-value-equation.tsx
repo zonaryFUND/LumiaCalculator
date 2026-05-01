@@ -1,9 +1,8 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { extractSkillLevel, ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import * as React from "react";
+import { extractSkillLevel, extractStaticValueRatio, ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio";
-import { RatioUnitExpressionStrategyDictionary } from "./ratio-equation-expression/strategy";
+import { RatioUnitExpressionStrategyDictionary } from "./strategy";
+import { useSubjectStateStore } from "@app/features/subject-config/store";
 
 type Props = {
     /**
@@ -15,16 +14,6 @@ type Props = {
      * 効果の発生源
      */
     origin: ValueOrigin
-
-    /**
-     * 実験体設定
-     */
-    config: SubjectConfig
-
-    /**
-     * 実験体ステータス
-     */
-    status: Status
 
     /**
      * 威力レシオ
@@ -48,31 +37,37 @@ type Props = {
  * 対象最大体力依存値などの動的値を除く値の計算式が表示される
  */
 const staticValueEquation: React.FC<Props> = props => {
-    // 対象の最大体力の（攻撃力のn％）％のような入れ子計算式は再帰呼び出しで構成される
+    const config = useSubjectStateStore(state => state.config);
+    const status = useSubjectStateStore(state => state.status);
+
+    // 「対象の最大体力の（攻撃力のn％）％」のような入れ子計算式は再帰呼び出しで構成される
     function equation(ratio: ValueRatio): React.ReactElement[] {
         return Object.entries(ratio).reduce((prev, [key, value]): React.ReactElement[] => {
             const sanitizedValue = (() => {
                 if (Array.isArray(value)) {
                     // スキルレベル依存レシオ
-                    const skillLevel = extractSkillLevel(props.config, props.origin);
+                    const skillLevel = extractSkillLevel(config, props.origin);
                     if (skillLevel == undefined) {
                         throw new Error(`level-dependent damage ratio is passed with non-level dependent origin. `)
                     }
                     return <>{value[skillLevel]}</>;
                 } else if (typeof value == "object") {
                     // 入れ子レシオ
-                    return <>{"{"}{equation(value)} = {calculateValue(value, props.status, props.config, props.origin).static.toString()}{"}"}</>;    
+                    return <>{"{"}{equation(value)} = {calculateValue(value, status, config, props.origin).static.toString()}{"}"}</>;    
                 } else {
                     // 固定レシオ
                     return <>{value}</>;
                 }
             })();
 
+            const ratioKey = key as keyof ValueRatio;
+            
+
             const expressionStrategy = RatioUnitExpressionStrategyDictionary[key as keyof ValueRatio];
             if (expressionStrategy == undefined) {
                 return prev;
             } else {
-                const expression = expressionStrategy(sanitizedValue, props.config, props.status);
+                const expression = expressionStrategy(sanitizedValue, config, status);
                 if (expression.previousElementsModifier) {
                     return [
                         <React.Fragment key={`${key}-before`}>{expression.previousElementsModifier(prev)}</React.Fragment>, 
@@ -93,7 +88,11 @@ const staticValueEquation: React.FC<Props> = props => {
     return (
         <tr>
             {props.label ? <td>{props.label}</td> : null}
-            <td colSpan={props.label ? undefined : 2}>{equation(props.ratio)} = {props.calculated}{props.percent ? "%" : null}</td>
+            {
+                Object.keys(extractStaticValueRatio(props.ratio)).length == 1 && props.ratio["base"] != undefined ?
+                    <td colSpan={props.label ? undefined : 2}>{props.calculated}{props.percent ? "%" : null}</td> :
+                    <td colSpan={props.label ? undefined : 2}>{equation(props.ratio)} = {props.calculated}{props.percent ? "%" : null}</td>
+            }
         </tr>
     );
 }

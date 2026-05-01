@@ -43,13 +43,13 @@ const subTable: React.FC<Props> = props => {
                     const elements = chunk.flatMap(unit => {
                         if (typeof unit.value == "function") {
                             const { value } = unit.value(props.attacker);
-                            if (Array.isArray(value)) {
-                                return value
+                            if (value.type == "critical") {
+                                return value.values
                                     .map((v, index) => {
                                         if (v == undefined) return null;
                                         const labelSuffix = [
                                             "(基礎値)", 
-                                            value[2] == undefined ? "(確定致命打)" : "(致命打)", 
+                                            value.values[2] == undefined ? "(確定致命打)" : "(致命打)", 
                                             "(期待値)"
                                         ];
                                         const label = `${unit.label}${labelSuffix[index]}`
@@ -68,7 +68,7 @@ const subTable: React.FC<Props> = props => {
                                     <StandardDamage 
                                         {...unit}
                                         key={unit.label}
-                                        value={value}
+                                        value={value.value}
                                         config={props.attacker.config}
                                         status={props.attacker.status}
                                     />

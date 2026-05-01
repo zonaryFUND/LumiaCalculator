@@ -1,9 +1,9 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
-import StandardDamage from "../../../../features/damage/components/potency-rows/standard-damage";
-import CriticalAvailable from "../../../../features/damage/components/potency-rows/critical-available";
-import UniqueExpression from "../../../../features/damage/components/potency-rows/unique-expression";
+import StandardDamage from "../../../../features/damage/features/potency-rows/standard-damage";
+import CriticalAvailable from "../../../../features/damage/features/potency-rows/critical-available";
+import UniqueExpression from "../../../../features/damage/features/potency-rows/unique-expression";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 
@@ -30,9 +30,6 @@ const subjectSkill: React.FC<Props> = props => {
                         if (typeof unit.value == "function") {
                             return <UniqueExpression 
                                 key={unit.label} 
-                                status={props.status} 
-                                config={props.config} 
-                                hp={props.hp}
                                 {...unit} 
                                 strategy={unit.value} 
                             />;  
@@ -40,8 +37,6 @@ const subjectSkill: React.FC<Props> = props => {
                             return <CriticalAvailable 
                                 key={unit.label}
                                 {...unit}
-                                status={props.status}
-                                config={props.config}
                                 value={unit.value}
                             />;
                         } else {

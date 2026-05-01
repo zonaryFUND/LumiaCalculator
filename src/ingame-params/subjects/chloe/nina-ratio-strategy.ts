@@ -14,7 +14,10 @@ export function NinaRatioStrategy(skill: "Q" | "W" | "E" | "R" | "T", ratio: Rat
         const value = new Decimal(base).add(status.summoned![0].status.attackPower.percent(ninaAttack)).floor();
 
         return {
-            value,
+            value: {
+                type: "standard",
+                value
+            },
             equationExpression: [
                 {
                     expression: [

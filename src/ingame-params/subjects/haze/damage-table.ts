@@ -21,7 +21,10 @@ const table: DamageTableGenerator = props => {
 
     const eStrategy: UniqueValueStrategy = ({ config, status }) => {
         return {
-            value: eValue,
+            value: {
+                type: "standard",
+                value: eValue
+            },
             equationExpression: [
                 {
                     expression: [

@@ -1,16 +1,16 @@
 import * as React from "react";
-import BasicAttack from "./subtables/basic-attack";
-import style from "../damage-table.module.styl";
-import SubjectSkill from "./subtables/subject-skill";
-import SubTable from "./subtables/subtable";
+import BasicAttack from "../../../components/damage/simple/subtables/basic-attack";
+import style from "./potency-rows/damage-table.module.styl";
+import SubjectSkill from "../../../components/damage/simple/subtables/subject-skill";
+import SubTable from "../../../components/damage/simple/subtables/subtable";
 import table from "components/common/table.module.styl";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { useIntl } from "react-intl";
-import useItemSkills from "../use-item-skills";
-import useWeaponSkill from "../use-weapon-skills";
-import useTacticalSkill from "../use-tactical-skill";
-import useAugment from "../use-augment";
+import useItemSkills from "../../../components/damage/use-item-skills";
+import useWeaponSkill from "../../../components/damage/use-weapon-skills";
+import useTacticalSkill from "../../../components/damage/use-tactical-skill";
+import useAugment from "../../../components/damage/use-augment";
 import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictionary";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 

@@ -14,7 +14,10 @@ export const AidenTStrategy: UniqueValueStrategy = ({ config, status }) => {
     const value = regularDamage.percent(multiplier);
 
     return {
-        value: value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {
                 expression: [
