@@ -26,12 +26,12 @@ export default {
     // プロトコル違反
     "protocol_violation": {
         "hp_increase": {
-            "base": [150,200],
-            "level": [15,20]
+            "base": [150, 200],
+            "level": [15, 20]
         },
         "damage": {
-            "level": [5,10],
-            "targetMaxHP": [10,12]
+            "level": [5, 10],
+            "targetMaxHP": [8, 10]
         }
     },
     // 赤嵐
@@ -100,7 +100,7 @@ export default {
             "duration": 3,
             "effect": {
                 "base": 150,
-                "level": 15
+                "level": 10
             }
         }
     },
@@ -108,7 +108,7 @@ export default {
     "wings_of_light": {
         "duration": 6,
         "movement_speed": {
-            "base": [15,20],
+            "base": [15, 20],
             "level": 1
         },
         "attack_speed": 20,
@@ -116,24 +116,24 @@ export default {
             "duration": 0.6,
             "effect": 10
         },
-        "extend": 0.5,
-        "cooldown": [50,40]
+        "extend": 0.4,
+        "cooldown": [50, 40]
     },
     // リパルサーミサイル
     "repulsor_missile": {
-        "ammos": [5,8],
+        "ammos": [5, 8],
         "damage": {
             "base": 10,
             "level": 1,
             "targetMaxHP": 0.7
         },
-        "cooldown": [40,30]
+        "cooldown": [50, 40]
     },
     // プラズマダッシュ
     "plasma_dash": {
         "damage": {
-            "base": [120,150],
-            "level": [5,10]
+            "base": [120, 150],
+            "level": [5, 10]
         },
         "slow": {
             "duration": 1.5,
@@ -143,6 +143,6 @@ export default {
             "duration": 5,
             "effect": 10
         },
-        "cooldown": [40,30]
+        "cooldown": [40, 30]
     }
 }
