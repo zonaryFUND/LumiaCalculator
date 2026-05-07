@@ -125,7 +125,7 @@ export default {
         "damage": {
             "base": 10,
             "level": 1,
-            "targetMaxHP": 0.7
+            "targetMaxHP": 0.6
         },
         "cooldown": [50, 40]
     },

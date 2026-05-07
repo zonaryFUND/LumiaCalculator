@@ -63,7 +63,7 @@ export default {
         // 阻止不可状態時間
         "cc_immune": 0.45,
         // 被ダメージ減少（％）
-        "damage_decline": 80,
+        "damage_decline": 60,
         // バックステップラッシュダメージ
         "first_damage": {
             "base": [40, 60, 80, 100, 120],

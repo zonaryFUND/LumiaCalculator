@@ -206,7 +206,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 35,
+        "attackPower": 37,
         "attackSpeedRatio": 0.46,
         "code": 201506,
         "armorType": "Head",
@@ -270,7 +270,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 10,
+        "defense": 8,
         "skillAmp": 75,
         "cooldownReduction": 10,
         "code": 201526,
@@ -340,7 +340,7 @@
     {
         "skillAmp": 80,
         "cooldownReduction": 15,
-        "moveSpeedRatio": 0.02,
+        "moveSpeedRatio": 0.025,
         "code": 201533,
         "armorType": "Head",
         "itemGrade": "Legend"
@@ -627,7 +627,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 40,
+        "defense": 38,
         "maxHpByLv": 20,
         "attackSpeedRatio": 0.15,
         "code": 202506,
@@ -636,7 +636,7 @@
     },
     {
         "defense": 45,
-        "maxHpByLv": 28,
+        "maxHpByLv": 26,
         "code": 202507,
         "armorType": "Chest",
         "itemGrade": "Legend"
@@ -722,7 +722,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 32,
+        "defense": 30,
         "maxHpByLv": 20,
         "attackSpeedRatio": 0.35,
         "cooldownReduction": 10,
@@ -1012,7 +1012,7 @@
     },
     {
         "attackPower": 22,
-        "maxHp": 220,
+        "maxHp": 200,
         "cooldownReduction": 20,
         "code": 203508,
         "armorType": "Arm",
@@ -1104,7 +1104,7 @@
     {
         "attackPower": 30,
         "attackSpeedRatio": 0.3,
-        "moveSpeedRatio": 0.02,
+        "moveSpeedRatio": 0.015,
         "code": 205407,
         "armorType": "Arm",
         "itemGrade": "Legend"
@@ -1292,7 +1292,7 @@
     },
     {
         "defense": 10,
-        "attackSpeedRatio": 0.42,
+        "attackSpeedRatio": 0.38,
         "moveSpeed": 0.25,
         "code": 204407,
         "armorType": "Leg",
@@ -1564,7 +1564,7 @@
     {
         "attackPowerByLv": 3,
         "defense": 25,
-        "maxHp": 180,
+        "maxHp": 150,
         "cooldownReduction": 15,
         "code": 202521,
         "armorType": "Chest",

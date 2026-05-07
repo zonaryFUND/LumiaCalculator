@@ -33,7 +33,7 @@ export default {
         "movement_speed": {
             "duration": 1.5,
             "effect": {
-                "base": [16, 17, 18, 19, 20],
+                "base": [11,12,13,14,15],
                 "level": 1
             }
         },

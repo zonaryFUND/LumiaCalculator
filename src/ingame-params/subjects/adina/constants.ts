@@ -20,7 +20,7 @@ export default {
         "conjunction": {
             "duration": 2,
             "damage": {
-                "targetMaxHP": 10
+                "targetMaxHP": 11
             }
         },
         "cooldown": [6,5.5,5,4.5,4]
