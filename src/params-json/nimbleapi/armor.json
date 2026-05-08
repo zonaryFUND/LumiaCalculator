@@ -1565,7 +1565,7 @@
         "attackPowerByLv": 3,
         "defense": 25,
         "maxHp": 150,
-        "cooldownReduction": 15,
+        "cooldownReduction": 10,
         "code": 202521,
         "armorType": "Chest",
         "itemGrade": "Legend"

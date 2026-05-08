@@ -81,8 +81,8 @@ export default {
         "duration": 5,
         // クマさん追加ダメージ
         "damage": {
-            "base": [20, 30, 40],
-            "level": 5
+            "base": [15,25,35],
+            "level": 4
         },
         // クマさん発動時基本スキルクールダウン減少
         "cooldown_reduction": [0.5, 0.75, 1]

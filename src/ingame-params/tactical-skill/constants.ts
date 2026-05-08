@@ -30,7 +30,7 @@ export default {
             "level": [15, 20]
         },
         "damage": {
-            "level": [5, 10],
+            "level": [5, 8],
             "targetMaxHP": [8, 10]
         }
     },
@@ -99,7 +99,7 @@ export default {
         "hot": {
             "duration": 3,
             "effect": {
-                "base": 150,
+                "base": 100,
                 "level": 10
             }
         }
