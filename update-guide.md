@@ -45,3 +45,4 @@
 - 莉央: rio
 - シウカイ: xiukai
 - シュリン: xuelin
+- ビヒョン: bihyung

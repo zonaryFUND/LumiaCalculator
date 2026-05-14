@@ -31,7 +31,7 @@ export default {
         },
         "damage": {
             "level": [5, 8],
-            "targetMaxHP": [8, 10]
+            "targetMaxHP": [7, 9]
         }
     },
     // 赤嵐
@@ -97,7 +97,7 @@ export default {
             ]
         },
         "hot": {
-            "duration": 3,
+            "duration": 4,
             "effect": {
                 "base": 100,
                 "level": 10

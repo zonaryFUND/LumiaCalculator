@@ -1,0 +1,12 @@
+{
+    "subject.bihyung.q-additional": "Q追加ダメージ",
+    "subject.bihyung.q-additional-area": "Q追加ダメージ(範囲)",
+    "subject.bihyung.q-reuse-chase-basic-attack": "Q再使用時追撃基本攻撃ダメージ",
+    "subject.bihyung.q-reuse-chase-basic-attack-2": "Q再使用時追撃基本攻撃ダメージ(2発分)",
+    "subject.bihyung.q-reuse-chase-skill": "Q再使用時追撃スキルダメージ",
+    "subject.bihyung.q-reuse-chase-skill-2": "Q再使用時追撃スキルダメージ(2発分)",
+    "subject.bihyung.q-reuse-chase-skill-area": "Q再使用時追撃スキルダメージ(範囲)",
+    "subject.bihyung.q-reuse-chase-skill-area-2": "Q再使用時追撃スキルダメージ(範囲)(2発分)",
+    "subject.bihyung.w-shield": "Wシールド",
+    "subject.bihyung.r-center": "R中央"
+}

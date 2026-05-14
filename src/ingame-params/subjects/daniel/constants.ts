@@ -58,7 +58,7 @@ export default {
         "basic_attack_range": 3.5,
         "damage": {
             "base": [20,40,60,80,100],
-            "additionalAttack": 55
+            "additionalAttack": 60
         },
         "cooldown": [10,9,8,7,6]
     },

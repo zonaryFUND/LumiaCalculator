@@ -80,7 +80,7 @@ export default {
         "damage": {
             "base": [100, 200, 300],
             "additionalAttack": 80,
-            "amp": 40
+            "amp": 45
         },
         // リングロープ衝突時移動速度減少
         "slow": {

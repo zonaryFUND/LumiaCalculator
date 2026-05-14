@@ -26,7 +26,7 @@ export default {
         // 移動速度減少
         "slow": {
             "duration": 1.5,
-            "effect": [20,22.5,25,27.5,30]
+            "effect": [25,27.5,30,32.5,35]
         },
         // 的中1人あたりシールド追加量
         "additional_shield": {
@@ -47,7 +47,7 @@ export default {
             "attack": 85
         },
         // エアボーン時間
-        "airborne": 0.6,
+        "airborne": 0.7,
         "cooldown": [14,13,12,11,10]
     },
     "R": {

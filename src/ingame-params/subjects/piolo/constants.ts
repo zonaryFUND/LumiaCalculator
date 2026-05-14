@@ -14,7 +14,7 @@ export default {
         "enhance": [1, 5, 10],
         // 強化ダメージ
         "enhanced_damage": {
-            "base": [30, 40, 50, 60, 70],
+            "base": [20, 30, 40, 50, 60],
             "amp": 25
         },
         // Q2が発動可能になる強化ダメージ的中回数閾値
@@ -31,7 +31,7 @@ export default {
         // 中央的中時移動速度減少
         "slow": {
             "duration": 1.2,
-            "effect": 60
+            "effect": 55
         },
         // 外側ダメージ
         "outer_damage": {

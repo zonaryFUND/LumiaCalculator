@@ -93,8 +93,8 @@ export default {
         },
         // K.O.スタック1あたり蓄積ダメージ追加量
         "stack": {
-            "base": [2, 6, 10],
-            "amp": 2.5
+            "base": [4, 8, 12],
+            "amp": 3
         },
         // K.O.スタック持続時間
         "duration": 5

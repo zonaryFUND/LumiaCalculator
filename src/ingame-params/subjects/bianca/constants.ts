@@ -108,9 +108,9 @@ export default {
     "T": {
         // 基本攻撃時追加スキルダメージ
         "damage": {
-            "base": [30,65,100],
+            "base": [30,70,110],
             "amp": 40,
-            "targetMaxHP": 4
+            "targetMaxHP": 5
         },
         // 血流減速による移動速度減少
         "slow": {

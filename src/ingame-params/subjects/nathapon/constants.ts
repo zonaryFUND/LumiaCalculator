@@ -6,7 +6,7 @@ export default {
     "Q": {
         "damage": {
             "base": [50, 90, 130, 170, 210],
-            "amp": 75
+            "amp": 80
         },
         "cooldown": [5, 4.5, 4, 3.5, 3]
     },
@@ -36,7 +36,7 @@ export default {
         // フレーム的中時移動速度減少
         "slow": {
             "duration": 1,
-            "effect": 50
+            "effect": 55
         },
         // フレーム的中後の対象に引き寄せ基本攻撃が可能になる時間
         "pull": {

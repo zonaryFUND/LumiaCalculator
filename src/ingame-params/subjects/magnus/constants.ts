@@ -21,7 +21,7 @@ export default {
         "damage": {
             "base": [16, 22, 28, 34, 40],
             "additionalAttack": 45,
-            "amp": 18,
+            "amp": 20,
             "targetMaxHP": 2.5
         },
         // 攻撃回数基礎値

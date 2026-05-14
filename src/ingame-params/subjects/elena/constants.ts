@@ -77,8 +77,8 @@ export default {
         // 凍結解除時追加ダメージ
         "damage": {
             "base": [10,30,50],
-            "amp": 20,
-            "targetMaxHP": [6,8,10]
+            "amp": 30,
+            "targetMaxHP": [7,9,11]
         },
         // 再凍結免疫時間
         "immune": 2.5,

@@ -43,7 +43,7 @@ export default {
             "duration": 1.25,
             "effect": [30, 35, 40, 45, 50]
         },
-        "cooldown": 8
+        "cooldown": 9
     },
     "R": {
         // 1回的中あたりダメージ

@@ -83,7 +83,7 @@ export default {
         // 移動速度増加
         "movement_speed": {
             "duration": 2,
-            "effect": 15
+            "effect": 10
         },
         // 次の基本攻撃強化
         "basic_attack_enhancement": {

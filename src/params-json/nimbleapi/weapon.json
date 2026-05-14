@@ -779,7 +779,7 @@
     },
     {
         "attackPower": 42,
-        "defense": 6,
+        "defense": 8,
         "skillAmp": 92,
         "code": 111405,
         "weaponType": "Tonfa",
@@ -795,7 +795,7 @@
     },
     {
         "attackPower": 47,
-        "defense": 8,
+        "defense": 6,
         "skillAmp": 82,
         "cooldownReduction": 15,
         "code": 111501,
@@ -1541,7 +1541,7 @@
     },
     {
         "attackPower": 57,
-        "maxHp": 100,
+        "maxHp": 120,
         "attackSpeedRatio": 0.3,
         "code": 120408,
         "weaponType": "Rapier",
@@ -1568,7 +1568,7 @@
     },
     {
         "attackPower": 60,
-        "maxHp": 120,
+        "maxHp": 150,
         "attackSpeedRatio": 0.3,
         "code": 120503,
         "weaponType": "Rapier",
@@ -1761,7 +1761,7 @@
         "attackPower": 30,
         "skillAmp": 63,
         "cooldownReduction": 10,
-        "healerGiveHpHealRatio": 0.06,
+        "healerGiveHpHealRatio": 0.05,
         "code": 130403,
         "weaponType": "Arcana",
         "itemGrade": "Epic"
@@ -1804,7 +1804,7 @@
         "attackPower": 35,
         "skillAmp": 82,
         "cooldownReduction": 15,
-        "healerGiveHpHealRatio": 0.12,
+        "healerGiveHpHealRatio": 0.1,
         "code": 130503,
         "weaponType": "Arcana",
         "itemGrade": "Legend"

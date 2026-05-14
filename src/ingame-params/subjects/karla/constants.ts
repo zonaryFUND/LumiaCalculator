@@ -43,7 +43,7 @@ export default {
         "damage": {
             "base": [60, 100, 140, 180, 220],
             "attack": 50,
-            "amp": 60
+            "amp": 80
         },
         "cooldown": [20, 19, 18, 17, 16]
     },

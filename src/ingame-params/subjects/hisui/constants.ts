@@ -8,7 +8,7 @@ export default {
         // 2撃目ダメージ
         "second_damage": {
             "base": [70, 85, 100, 115, 130],
-            "additionalAttack": [90, 95, 100, 105, 110]
+            "additionalAttack": [100, 105, 110, 115, 120]
         },
         // 2撃目的中時移動速度減少
         "slow": {

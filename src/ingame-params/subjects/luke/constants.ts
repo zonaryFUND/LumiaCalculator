@@ -56,7 +56,7 @@ export default {
         // マーク付与対象攻撃時1スタックあたり追加ダメージ
         "stack_damage": {
             "base": [20, 45, 70],
-            "attack": 10,
+            "attack": 13,
             "targetMaxHP": 2
         },
         // マーク付与対象攻撃時1スタックあたり移動速度減少
