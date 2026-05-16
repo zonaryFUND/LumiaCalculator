@@ -54,7 +54,7 @@ export default {
             "duration": 2.5,
             "effect": {
                 "base": [20,45,70,95,120],
-                "maxHP": 14
+                "maxHP": 12
             }
         },
         // 自身に命中したときの移動速度増加
@@ -106,8 +106,8 @@ export default {
         // トッケビ火秒間ダメージ
         "damage": {
             "base": [16,32,48],
-            "additionalAttack": 48,
-            "targetMaxHP": [2.4,3.2,4]
+            "additionalAttack": 40,
+            "targetMaxHP": [1,2,3]
         },
         // 移動速度減少耐性
         "slow_resistance": [5,10,15]
