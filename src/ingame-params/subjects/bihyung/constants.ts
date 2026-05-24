@@ -3,7 +3,7 @@ export default {
         // 初回使用時基本攻撃追加ダメージ
         "first_damage": {
             "base": [20,40,60,80,100],
-            "attack": [10,20,30,40,50]
+            "attack": [9,18,27,36,45]
         },
         // 初回使用後基本攻撃時体力回復量
         "first_heal": {
@@ -36,7 +36,7 @@ export default {
         "additional_area_damage": 70,
         // 追加ダメージ範囲
         "additional_damage_area": 2,
-        "cooldown": [8,7,6,5,4]
+        "cooldown": [9,8,7,6,5]
     },
     "W": {
         "damage": {
@@ -60,9 +60,9 @@ export default {
         // 自身に命中したときの移動速度増加
         "movement_speed": {
             "duration": 1.5,
-            "effect": 20
+            "effect": 15
         },
-        "cooldown": 11
+        "cooldown": 12
     },
     "E": {
         // 挑発時間
@@ -71,11 +71,11 @@ export default {
             "base": [80,110,140,170,200],
             "attack": 100
         },
-        "cooldown": [14,13,12,11,10]
+        "cooldown": [15,14,13,12,11]
     },
     "R": {
         // 飛び上がり中被ダメージ減少
-        "damage_reduction": 50,
+        "damage_reduction": 30,
         // 効果時間
         "duration": 15,
         // 追加体力
@@ -83,8 +83,8 @@ export default {
             "base": [150,300,450]
         },
         "damage": {
-            "base": [200,350,500],
-            "additionalAttack": 180,
+            "base": [150,300,450],
+            "additionalAttack": 170,
             "targetMaxHP": 10
         },
         // 移動速度減少
