@@ -14,7 +14,7 @@ export default {
         "damage": {
             "base": [20,50,80,110,140],
             "amp": 55,
-            "targetMaxHP": 2.5
+            "targetMaxHP": 3
         },
         // 移動速度減少
         "slow": {
@@ -56,7 +56,7 @@ export default {
     "E2": {
         "damage": {
             "base": [60,85,110,135,160],
-            "amp": 60,
+            "amp": 70,
             "maxHP": 10
         },
         "cooldown": 2

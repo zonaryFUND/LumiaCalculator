@@ -372,7 +372,7 @@
 		"skillCode": 6073002,
 		"name": "punishment",
 		"dmg": {
-			"base": 30,
+			"base": 50,
 			"level": 2,
 			"amp": 20
 		},
@@ -401,7 +401,7 @@
 		"skillCode": 6073002,
 		"name": "punishment",
 		"dmg": {
-			"base": 30,
+			"base": 50,
 			"level": 2,
 			"amp": 20
 		},
@@ -604,7 +604,7 @@
 		"skillCode": 6073002,
 		"name": "punishment",
 		"dmg": {
-			"base": 30,
+			"base": 50,
 			"level": 2,
 			"amp": 20
 		},
@@ -619,10 +619,11 @@
 		"name": "cataclasm"
 	},
 	"111502": {
-		"skillCode": 6019005,
+		"skillCode": 6019001,
 		"name": "lichs_grasp",
 		"values": {
-			"as": 30,
+			"slow": 25,
+			"as": 10,
 			"duration": 2,
 			"cooldown": 3
 		}
@@ -656,8 +657,13 @@
 		}
 	},
 	"111702": {
-		"skillCode": 6045001,
-		"name": "cataclasm"
+		"skillCode": 6073002,
+		"name": "punishment",
+		"dmg": {
+			"base": 50,
+			"level": 2,
+			"amp": 20
+		}
 	},
 	"112302": {
 		"skillCode": 6008201,

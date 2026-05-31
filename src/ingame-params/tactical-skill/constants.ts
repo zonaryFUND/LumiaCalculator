@@ -26,13 +26,15 @@ export default {
     // プロトコル違反
     "protocol_violation": {
         "hp_increase": {
-            "base": [150, 200],
+            "base": [100, 150],
             "level": [15, 20]
         },
         "damage": {
             "level": [5, 8],
             "targetMaxHP": [7, 9]
-        }
+        },
+        // 複数個のプロトコル違反が命中したときの2つ目以降のダメージ量割合
+        "multiple_hit_damage_reduction": 50
     },
     // 赤嵐
     "electric_shift": {},
@@ -116,7 +118,7 @@ export default {
             "duration": 0.6,
             "effect": 10
         },
-        "extend": 0.4,
+        "extend": 0.5,
         "cooldown": [50, 40]
     },
     // リパルサーミサイル
@@ -137,7 +139,7 @@ export default {
         },
         "slow": {
             "duration": 1.5,
-            "effect": 35
+            "effect": 30
         },
         "defense_down": {
             "duration": 5,

@@ -36,7 +36,7 @@ export default {
         "slow": 30,
         // 火炎地帯持続時間
         "duration": 5,
-        "cooldown": [19,18,17,16,15]
+        "cooldown": [18,17,16,15,14]
     },
     "R": {
         "damage": {

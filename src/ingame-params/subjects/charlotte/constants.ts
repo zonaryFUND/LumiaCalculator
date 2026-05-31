@@ -4,7 +4,7 @@ export default {
         "duration": 2,
         "damage": {
             "base": [120,150,180,210,240],
-            "amp": 95
+            "amp": 100
         },
         // 移動速度減少
         "slow": {

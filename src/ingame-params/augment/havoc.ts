@@ -146,11 +146,11 @@ export default {
     // 狩猟 - ハウンド
     "wild_dog_mask": {
         "base": {
-            "omnisyphon": 3
+            "omnisyphon": 1
         },
         "max_stack": 80,
         "stack_buff": {
-            "omnisyphon": 0.5
+            "omnisyphon": 1
         }
     },
     // 傷跡

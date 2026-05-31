@@ -71,7 +71,7 @@ export default {
             "additionalAttack": 25,
             "targetMaxHP": {
                 "base": [4, 7, 10],
-                "additionalAttack": 4
+                "additionalAttack": 5
             }
         }
     }

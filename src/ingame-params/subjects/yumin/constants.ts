@@ -13,7 +13,7 @@ export default {
         "vortex_duration": 2,
         // 竜巻1ティックあたりダメージ
         "vortex_damage": {
-            "base": [50, 70, 90, 110, 130],
+            "base": [40, 60, 80, 100, 120],
             "amp": 40
         },
         "cooldown": [7, 6.5, 6, 5.5, 5]

@@ -1368,6 +1368,12 @@ Emotion_Bihyung_2088006┃ぺろっ ビヒョン
 Emotion_Muchi_Pack_2021┃こぐまメイド レニ EMERGENCY!!
 Emotion_Muchi_Pack_2022┃こぐまメイド レニ イラッ
 Emotion_Muchi_Pack_2023┃こぐまメイド レニ うええ
+Emotion_Jenny05_NP┃分かったわ ジェニー
+Emotion_Jenny06_NP┃しーっ ジェニー
+Emotion_Jenny07_NP┃結構よ！ ジェニー
+Emotion_Jenny08_NP┃やったわ…！ ジェニー
+Emotion_FestiveNeko_Irem_2061009┃二人だけの猫祭り イレム ニャーッ！？
+Emotion_FestiveNeko_Irem_2061008┃二人だけの猫祭り イレム にゃんにゃん
 보유하지 않은 캐릭터입니다.┃未所持キャラクターです。\nショップで購入後使用できます。
 매칭 중 캐릭 변경 금지┃マッチング中にはキャラクターを変更できません。
 로딩 중┃ロード中\n< X キーを押すと座って休憩します。 >
@@ -1568,6 +1574,7 @@ MILEAGE 구매 최종 확인┃アイテムと交換しますか？\n交換し�
 상위 와일드 카드 사용 안내 텍스트┃高い等級のワイルドカードに交換できます。\n交換しますか？
 와일드 카드 부족 안내 팝업 텍스트┃選択したアイテムの等級に合うワイルドカードがありません。
 와일드 카드 전용 청약철회 문구┃ワイルドカードで購入した商品は払い戻しできません。
+와일드 카드 미선택 가이드 텍스트┃アイテムを選択してください。左側のリストから交換したい商品を選択するか、\n所持しているワイルドカードをクリックしてフィルターを適用してみてください。
 청약철회 필수 고지사항┃払い戻しポリシー必須事項
 NP_청약철회 필수 고지사항┃払い戻しポリシー必須事項
 상자의 보상품 및 확률 공시는 링크를 확인해 주세요┃データボックスの登場アイテム及び確率は変動されることがあり、確率はリンク先からご確認いただけます。
@@ -2551,6 +2558,8 @@ GameSetting/MinimapNotationSystem┃ゲーム内のミニマップの表示方�
 GameSetting/WidemapNotationSystem┃ゲーム内のミニマップの表示方式を『一般マップ』または『衛星マップ』の中から選択して表示できます。
 상대방 닉네임 가리기┃相手のニックネーム非表示(Beta)
 StreamingModeSetting/HideName┃ゲーム内で本人以外の他プレイヤーのニックネームを表示しません。
+ReplaceBGMResource┃著作権保護モード
+StreamingModeSetting/ReplaceBGMResource┃著作権の対象となる可能性がある音源を再生しません。
 #MapNotationDropDownSatellite┃衛星マップ
 #MapNotationDropDownNormal┃一般マップ
 옵션/제작 순서 세부 설정┃製作順の設定
@@ -3566,7 +3575,7 @@ AutoTranslate/Desc/On┃言語環境の設定が異なるプレイヤーから�
 AutoTranslate/Desc/Off┃言語環境の設定が異なるプレイヤーからのチャットを自動で翻訳します。\n※ ゲームの設定から機能をOFFにすることができます。
 AutoTranslate/Desc/InProgress┃翻訳中です。\n翻訳サーバーの状態によって時間がかかることがあります。
 AutoTranslate/Desc/Unavailable┃サーバーが混雑しているため、翻訳できません。\nもうしばらくお待ちください。サーバーが安定した後、翻訳を再開します。
-AutoTranslate/RouteTitle┃ルート内容を自動翻訳します。
+AutoTranslate/RouteTitle┃ルート内容を翻訳します。
 번역 아이콘 문구┃翻訳
 Chatting/Btn_DetailInfo/Tooltip┃図鑑で見る
 추가신호금지┃追加信号を出すためにはしばらく待ってください。
@@ -4011,7 +4020,7 @@ LUMI 동선 보기┃オブジェクト強調表示
 완료┃訓練終了
 Dr.나쟈┃Dr. ナジャ
 집중┃キャスト
-Airborne┃<sprite name=Airborne> エアーボーン
+Airborne┃<sprite name=Airborne> エアボーン
 Fear┃<sprite name=Fear> 恐怖
 Taunt┃<sprite name=Taunt> 挑発
 Charm┃<sprite name=Charm> 魅惑
@@ -4100,7 +4109,7 @@ ToastMessage/루트ID 클립보드 복사┃ルートIDをコピーしました�
 개편 루트 추천 특성 - 사용 불가┃使用不可特性があり、基本提供特性に自動交換されます。
 검색 필터┃検索フィルタ
 개편 미완성 아이템 제외 체크박스┃未完成アイテムを除く
-개편 최신 버전만 보기 체크박스┃最新バージョンだけ表示
+개편 최신 버전만 보기 체크박스┃最新バージョンのみ表示
 개편 루트 검색 옵션┃ルート検索オプション
 개편 루트 이름 검색┃ルートの名前で検索
 개편 루트 ID 검색┃ルートID検索
@@ -4422,9 +4431,6 @@ Shortcut/Emotion5┃音声表現5
 Shortcut/Emotion6┃音声表現6
 Shortcut/EmotionDance┃踊り
 Shortcut/EmotionPlate┃エモート
-Shortcut/EmotionPlate1┃エモートセット１
-Shortcut/EmotionPlate2┃エモートセット２
-Shortcut/EmotionPlate3┃エモートセット３
 Shortcut/PingTarget┃クイックPing
 Shortcut/MarkTarget┃クイックマーク
 Shortcut/PingTargetKeyboard┃Ping
@@ -4808,6 +4814,7 @@ ER 포인트 구매 경고 문구┃獲得可能リワードのER ポイント�
 ER 크레딧 상점 바로가기┃EPトークンショップ移動
 EP 토큰 상점 이동 안내 문구┃最大レベルを達成しました、おめでとうございます！\n活性化したER PASSが最大レベルを達成した場合、獲得するすべてのERポイントはEPトークンで提供されます。\nEPトークンは[EPトークンショップ]でアイテムを購入できます。
 ER 패스 구매 불가 알림_시즌팩 보유┃すでにシーズンパックを購入しているため、ER PASSを追加で購入することはできません。\n「メールボックス」の「シーズンパック」からER PASSを確認してください。
+Shop/Error/CheckGiftMail┃すでにシーズンパックを購入しているため、該当商品は購入できません。\n「メールボックス」の「シーズンパック」からメールをご確認ください。
 시즌 팩┃シーズンパック
 지급된 상품이 없습니다.┃支給された商品がありません。
 할인 종료까지 남은 시간 : {0}┃セール終了まで残り時間 : {0}
@@ -6271,7 +6278,7 @@ LootWindow/Disintegrate_Mode┃一括分解
 분해시 필요한 ACoin┃必要財貨
 분해시 필요한 분해권┃分解券
 잠금상태의 아이템이 있는 경우 1개를 제외한 나머지 아이템이 슬롯에 등록 됩니다.┃Lock状態のアイテムは分解できません。
-잠금┃保有状態
+잠금┃Lock
 AssemblePopUp┃アイテムを製作しますか？\n製作に使われたピースや財貨は返還されません。
 DisintegratePopUp┃アイテムを分解しますか？\n分解に使われたピースは返還されません。
 ExchangeTokenPopUp┃アイテムと交換しますか？\n交換した後には払い戻しできません。
@@ -6689,6 +6696,7 @@ EMBLEM_MARK_SHOP_102050┃プチ・ミニョン ヘジン アイコン
 EMBLEM_MARK_SHOP_102051┃プチ・ミニョン ティア アイコン
 EMBLEM_MARK_SHOP_102052┃プチ・ミニョン ヴァーニャ アイコン
 EMBLEM_MARK_SHOP_102053┃こぐまメイド レニ ようこそ！ アイコン
+EMBLEM_MARK_SHOP_102054┃二人だけの猫祭り イレム アイコン
 EMBLEM_MARK_SHOP_102501┃S4 All ways Incheon アイコン
 EMBLEM_MARK_SHOP_102502┃S4 Gyeonggi Innate アイコン
 EMBLEM_MARK_SHOP_102503┃S4 GJ Slasher アイコン
@@ -7329,6 +7337,9 @@ EMBLEM_MARK_EVENT_103254┃噓の味！ コラライン
 EMBLEM_MARK_EVENT_103255┃ねこメイド ヘジン にゃん…！
 EMBLEM_MARK_EVENT_103256┃こぐまメイド レニ ちゅ♥
 EMBLEM_MARK_EVENT_103257┃HEH～ ビヒョン
+EMBLEM_MARK_EVENT_103258┃S11 eスポーツコミュニティ
+EMBLEM_MARK_EVENT_103259┃S11 eスポーツ参加者
+EMBLEM_MARK_EVENT_103260┃S11 eスポーツ優勝者
 EMBLEM_MARK_ERPASS_104001┃氷の結晶アイコン
 EMBLEM_MARK_ERPASS_104002┃プレゼントする木アイコン
 EMBLEM_MARK_ERPASS_104003┃赤い鼻アイコン
@@ -7479,6 +7490,7 @@ EMBLEM_MARK_COLLECTION_119009┃放課後の自由時間
 EMBLEM_MARK_COLLECTION_119010┃アビゲイルのお花ポーズ
 EMBLEM_MARK_COLLECTION_119011┃Mk. VIII Destroyer M.A.G 降臨
 EMBLEM_MARK_COLLECTION_119012┃ゴーストハンター ヒスイ 出戦準備
+EMBLEM_MARK_COLLECTION_119013┃二人だけの猫祭り イレム 思い出
 EMBLEM_MARK_COLLECTION_119501┃S4 eスポーツサポーター
 EMBLEM_MARK_COLLECTION_119502┃S5 eスポーツサポーター
 EMBLEM_MARK_COLLECTION_119503┃S6 eスポーツサポーター
@@ -7540,6 +7552,7 @@ EMBLEM_BG_SHOP_202048┃ゴーストハンターヒスイ 背景
 EMBLEM_BG_SHOP_202049┃プチ・ミニョン 背景
 EMBLEM_BG_SHOP_202050┃デラックスRエディション プチ・ミニョン 背景
 EMBLEM_BG_SHOP_202051┃ビヒョン 背景
+EMBLEM_BG_SHOP_202052┃二人だけの猫祭り イレム 背景
 EMBLEM_BG_SHOP_202501┃S4 All ways Incheon 背景
 EMBLEM_BG_SHOP_202502┃S4 Gyeonggi Innate 背景
 EMBLEM_BG_SHOP_202503┃S4 GJ Slasher 背景
@@ -8049,6 +8062,7 @@ EMBLEM_OUTLINE_SHOP_302048┃ゴーストハンターヒスイ フレーム
 EMBLEM_OUTLINE_SHOP_302049┃プチ・ミニョン フレーム
 EMBLEM_OUTLINE_SHOP_302050┃デラックスRエディション プチ・ミニョン フレーム
 EMBLEM_OUTLINE_SHOP_302051┃ビヒョン フレーム
+EMBLEM_OUTLINE_SHOP_302052┃二人だけの猫祭り イレム フレーム
 EMBLEM_OUTLINE_SHOP_302501┃S4 All ways Incheon フレーム
 EMBLEM_OUTLINE_SHOP_302502┃S4 Gyeonggi Innate フレーム
 EMBLEM_OUTLINE_SHOP_302503┃S4 GJ Slasher フレーム
@@ -8759,6 +8773,7 @@ Product/Name/S10_LuckyBox2026_Seq_Pack_05┃幸運玉(第5段階)
 Product/Name/S10_LuckyBox2026_Seq_Pack_06┃幸運玉(第6段階)
 Product/Name/S10_LuckyBox2026_Seq_Pack_07┃幸運玉(第7段階)
 Product/Name/S10_LuckyBox2026_Seq_Pack_08┃幸運玉(第8段階)
+Product/Name/FestiveNekoIrem_CollectPack_01┃二人だけの猫祭りイレム コレクションパッケージ
 Product/Name/2024_Festival_Seq_Pack_01┃彰一のドーナツボックスパッケージ
 Product/Name/2024_Festival_Seq_Pack_02┃ドームカバーパッケージ
 Product/Name/2024_Festival_Seq_Pack_03┃英雄スキンピース選択券パッケージ
@@ -8915,6 +8930,9 @@ Product/Name/S8_Star_Box_Pack_03┃ホワイトスターボックスパッケー
 Product/Name/S9_Star_Box_Pack_01┃スターボックスパッケージ
 Product/Name/S9_Star_Box_Pack_02┃グリーンスターボックスパッケージ
 Product/Name/S9_Star_Box_Pack_03┃ホワイトスターボックスパッケージ
+Product/Name/S11_Star_Box_Pack_01┃スターボックスパッケージ
+Product/Name/S11_Star_Box_Pack_02┃グリーンスターボックスパッケージ
+Product/Name/S11_Star_Box_Pack_03┃ホワイトスターボックスパッケージ
 Product/Name/GildedReaperLuke_CollectPack_01┃死神ルクコレクションパッケージ
 Product/Name/Niah_Event_Pack_01┃ニア登場記念パッケージ
 Product/Name/EVENT_NPASS_S7_Premium_Token_1010┃S7 プレミアムトークンブックⅡ
@@ -9062,6 +9080,7 @@ Product/Name/S9_HisuiSkin_Token_Boost_Pack_02┃祭りトークンパッケー�
 Product/Name/S9_HisuiSkin_Token_Boost_Pack_03┃祭りトークンパッケージⅢ
 Product/Name/S9_HisuiSkin_Token_Boost_ACoinPack_01┃ERトークンランダムボックス
 Product/Name/BATTLE_PASS/2106┃ゴーストハンタークエストブック
+Product/Name/BATTLE_PASS/2107┃二人だけの猫祭りクエストブック
 Product/Name/2025_S09_Esports_Pack_01┃S9 eスポーツサポートパッケージ
 Product/Name/S09_SeongnamROX_Pack_01┃S9 Seongnam ROX パッケージ
 Product/Name/S09_FNSEJONG_Pack_01┃S9 FN SEJONG パッケージ
@@ -9098,8 +9117,8 @@ Product/Name/EVENT_NPASS_S10_Basic_Token_1030┃S10 ベーシックトークン�
 Product/Name/EVENT_NPASS_S10_2026_Spring_1031┃春の訪れクエストブック
 Product/Name/EVENT_NPASS_S11_Premium_Token_1033┃S11 プレミアムトークンブック
 Product/Name/EVENT_NPASS_S11_Basic_Token_1034┃S11 ベーシックトークンブック
+Product/Name/EVENT_NPASS_S11_2026_Summer_1035┃夏のワイルドカードクエストブック
 Product/Name/EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
-Product/Name/WEGAME_IAP_EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
 Product/Name/S9_2025_Winter_Pack_01┃2025 ウィンタースペシャルパッケージ
 Product/Name/S9_2025_Winter_Skin_Bundle_Pack_01┃冬スキンお買い得パッケージ発売
 Product/Name/LOOTBOX_SKINxKEY_SET_10_S9_BONUS┃スキンデータセット(11個入り)
@@ -9404,9 +9423,9 @@ Shop/Desc/S6_Select_Voucher_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n
 Shop/Desc/S6_Select_Voucher_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- スペシャル高級/レアスキン選択券 1個\n- 英雄スキンピース選択券 1個\n- レギオントークン 50個\n- シーズン6 A-Coinクエストブック\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S7_Change_SkinBox_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- チェンジスキンデータボックス 10個\n- データキー 10個\n- アカデミートークン 15個\n- A-Coin Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S7_Change_SkinBox_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- チェンジスキンデータボックス 1個\n- データキー 1個\n- アカデミートークン 1個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S7_Star_Box_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ブルースターボックス 2個\n- グリーンスターボックス 5個\n- ホワイトスターボックス 10個\n- 祭りトークン 10個\n- A-Coin Boost(1日)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n祭りトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S7_Star_Box_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- グリーンスターボックス 1個\n- A-Coin Boost(1時間)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n祭りトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S7_Star_Box_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- ホワイトスターボックス 4個\n- XP Boost(1時間)\n\n※ 購入した商品は製作所より開けることができます。\n※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n構成されています。\n※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n獲得します。\n※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n祭りトークンを獲得します。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S7_Star_Box_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - ブルースターボックス 2個\n - グリーンスターボックス 5個\n - ホワイトスターボックス 10個\n - プチ・ミニョントークン 10個\n - A-Coin Boost(1日)\n \n ※ 購入した商品は製作所より開けることができます。\n ※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n 構成されています。\n ※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n 獲得します。\n ※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n プチ・ミニョントークンを獲得します。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S7_Star_Box_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n \n - グリーンスターボックス 1個\n - A-Coin Boost(1時間)\n \n ※ 購入した商品は製作所より開けることができます。\n ※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n 構成されています。\n ※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n 獲得します。\n ※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n 祭りトークンを獲得します。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S7_Star_Box_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n \n - ホワイトスターボックス 4個\n - XP Boost(1時間)\n \n ※ 購入した商品は製作所より開けることができます。\n ※ スターボックスは「ホワイト・グリーン・ブルー・パープル・ゴールド」の順で\n 構成されています。\n ※ スターボックスからは＜次の色のスターボックス、同じ色のスターボックス、A-Coin＞の中から1つを獲得し、確率に応じて収集品アイテム「シルバースター」を追加で\n 獲得します。\n ※ ただし、ゴールドスターボックスの場合、スターボックスの代わりに\n 祭りトークンを獲得します。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/GildedReaperLuke_CollectPack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 死神ルクエモート2種\n- 死神ルクアイコン\n- 死神ルクフレーム\n- 死神ルク背景\n- A-Coin Boost(3日)\n- ER Point boost(3日)\n\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/Niah_Event_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ニアエモート\n- ニア背景\n- ニアフレーム\n- ニアチームスロット背景\n- A-Coin Boost(3日)\n- ER Point boost(3日)\n\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2025_May_SkinBox_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 5月の確率UPスキンデータボックス 10個\n- データキー 10個\n- アカデミートークン 15個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9497,9 +9516,7 @@ Shop/Desc/S9_HisuiSkin_Token_Boost_Pack_02┃<b><color=#FFBB00>[内容]</color><
 Shop/Desc/S9_HisuiSkin_Token_Boost_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- スキンデータボックス 10個\n- データキー 10個\n- 30,000 A-Coin\n- 祭りトークン 80個\n- ERトークン 30個\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ ERトークンは「製作所」内の交換所から使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2025_S09_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 運命の赤い約束 ガーネット 何して遊ぶ？エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S9 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S9 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
 Shop/Desc/S09_SeongnamROX_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Seongnam ROX エモート\n- S9 Seongnam ROX アイコン\n- S9 Seongnam ROX 背景\n- S9 Seongnam ROX フレーム\n- S9 Seongnam ROX チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Seongnam ROX パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S09_FNSEJONG_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 FN SEJONG エモート\n- S9 FN SEJONG アイコン\n- S9 FN SEJONG 背景\n- S9 FN SEJONG フレーム\n- S9 FN SEJONG チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 FN SEJONG パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_JecheonPhalanx_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Ascenders エモート\n- S9 Ascenders アイコン\n- S9 Ascenders 背景\n- S9 Ascenders フレーム\n- S9 Ascenders チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Ascenders パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S09_NewRiseGangwon_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 New Rise Gangwon エモート\n- S9 New Rise Gangwon アイコン\n- S9 New Rise Gangwon 背景\n- S9 New Rise Gangwon フレーム\n- S9 New Rise Gangwon チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 New Rise Gangwon パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_allwaysINCHEON_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 all ways INCHEON エモート\n- S9 all ways INCHEON アイコン\n- S9 all ways INCHEON 背景\n- S9 all ways INCHEON フレーム\n- S9 all ways INCHEON チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 all ways INCHEON パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_BusanBeSPA_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Busan BeSPA エモート\n- S9 Busan BeSPA アイコン\n- S9 Busan BeSPA 背景\n- S9 Busan BeSPA フレーム\n- S9 Busan BeSPA チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Busan BeSPA パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Chungnam CNJ エモート\n- S9 Chungnam CNJ アイコン\n- S9 Chungnam CNJ 背景\n- S9 Chungnam CNJ フレーム\n- S9 Chungnam CNJ チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9559,6 +9576,7 @@ Shop/Desc/S11_2026_SpecialSkin_Seq_Pack_02┃<b><color=#FFBB00>[内容]</color><
 Shop/Desc/S11_2026_SpecialSkin_Seq_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- ワイルドカード(英雄) - スキン選択券 1個\n- デュアルモジュール 1個\n- スキンデータボックス 5個\n- データキー 5個\n- 研究所データボックス 7個\n- シーズンピースパック(高級) 5個\n- 20,000 A-Coin\n- プチ・ミニョントークン 30個\n- ER Point Boost (1日)\n- A-Coin Boost (1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ ワイルドカードは「製作所 ‐ ワイルドカード」で使用できます。\n※ 商品リストの詳細は確率表示のリンクをご参照ください。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_2026_SeasonCollection_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- シーズンピースパック(一般) 10個\n- シーズンピースパック 5個\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ シーズンピースパックは購入と同時に開封され、シーズンピースで支給されます。\n※ 購入と同時に使用・開封される商品は払い戻しできません。
 Shop/Desc/S11_Bihyung_Event_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ビヒョン エモート\n- ビヒョン 背景\n- ビヒョン フレーム\n- ビヒョン チームスロット背景\n- プチ・ミニョントークン 10個\n- A-Coin Boost (3日)\n- ER Point Boost (3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/FestiveNekoIrem_CollectPack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 二人だけの猫祭り イレム エモート2種\n- 二人だけの猫祭り イレム アイコン\n- 二人だけの猫祭り イレム フレーム\n- 二人だけの猫祭り イレム 背景\n- プチ・ミニョントークン 10個\n- A-Coin Boost (3日)\n- ER Point Boost (3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2026_S10_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エースバニー ヘイズ かかったな エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S10 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S10 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
 Shop/Desc/S10_GyeonggiInnate_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Gyeonggi Innate エモート\n- S10 Gyeonggi Innate アイコン\n- S10 Gyeonggi Innate 背景\n- S10 Gyeonggi Innate フレーム\n- S10 Gyeonggi Innate チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Gyeonggi Innate パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S10_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 GJ Slasher エモート\n- S10 GJ Slasher アイコン\n- S10 GJ Slasher 背景\n- S10 GJ Slasher フレーム\n- S10 GJ Slasher チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9572,14 +9590,12 @@ Shop/Desc/S10_BusanBeSPA_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S
 Shop/Desc/S10_JecheonPhalanx_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Ascenders エモート\n- S10 Ascenders アイコン\n- S10 Ascenders 背景\n- S10 Ascenders フレーム\n- S10 Ascenders チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Ascenders パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S10_GyeongnamSparkle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Gyeongnam Sparkle エモート\n- S10 Gyeongnam Sparkle アイコン\n- S10 Gyeongnam Sparkle 背景\n- S10 Gyeongnam Sparkle フレーム\n- S10 Gyeongnam Sparkle チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Gyeongnam Sparkle パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S10_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Daegu Suseong Guardians エモート\n- S10 Daegu Suseong Guardians アイコン\n- S10 Daegu Suseong Guardians 背景\n- S10 Daegu Suseong Guardians フレーム\n- S10 Daegu Suseong Guardians チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Daegu Suseong Guardians パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/2026_S11_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エースバニー ヘイズ かかったな エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S11 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S11 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
+Shop/Desc/2026_S11_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- こぐまメイド レニ キュッキュッ エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S11 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S11 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
 Shop/Desc/S11_DAEJEONAutoArms_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 DAEJEON AutoArms エモート\n - S11 DAEJEON AutoArms アイコン\n - S11 DAEJEON AutoArms 背景\n - S11 DAEJEON AutoArms フレーム\n - S11 DAEJEON AutoArms チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 DAEJEON AutoArms パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_JejuShadow_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Jeju Shadow エモート\n - S11 Jeju Shadow アイコン\n - S11 Jeju Shadow 背景\n - S11 Jeju Shadow フレーム\n - S11 Jeju Shadow チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Jeju Shadow パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_GyeongBukAscenders_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 GyeongBuk Ascenders エモート\n - S11 GyeongBuk Ascenders アイコン\n - S11 GyeongBuk Ascenders 背景\n - S11 GyeongBuk Ascenders フレーム\n - S11 GyeongBuk Ascenders チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 GyeongBuk Ascenders パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_ChungnamCNJ_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Chungnam CNJ エモート\n - S11 Chungnam CNJ アイコン\n - S11 Chungnam CNJ 背景\n - S11 Chungnam CNJ フレーム\n - S11 Chungnam CNJ チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_YJWhales_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 YJ Whales エモート\n - S11 YJ Whales アイコン\n - S11 YJ Whales 背景\n - S11 YJ Whales フレーム\n - S11 YJ Whales チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 YJ Whales パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S11_SeongnamROX_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Seongnam ROX エモート\n - S11 Seongnam ROX アイコン\n - S11 Seongnam ROX 背景\n - S11 Seongnam ROX フレーム\n - S11 Seongnam ROX チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Seongnam ROX パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/S11_JenNamEsports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 JEONNAM ESPORTS エモート\n - S11 JEONNAM ESPORTS アイコン\n - S11 JEONNAM ESPORTS 背景\n - S11 JEONNAM ESPORTS フレーム\n - S11 JEONNAM ESPORTS チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 JEONNAM ESPORTS パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_FNSEJONG_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 FN SEJONG エモート\n - S11 FN SEJONG アイコン\n - S11 FN SEJONG 背景\n - S11 FN SEJONG フレーム\n - S11 FN SEJONG チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 FN SEJONG パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Daegu Guardians エモート\n - S11 Daegu Guardians アイコン\n - S11 Daegu Guardians 背景\n - S11 Daegu Guardians フレーム\n - S11 Daegu Guardians チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Daegu Guardians パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_GoyangMIR_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Goyang MIR エモート\n - S11 Goyang MIR アイコン\n - S11 Goyang MIR 背景\n - S11 Goyang MIR フレーム\n - S11 Goyang MIR チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Goyang MIR パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9910,6 +9926,7 @@ Season2103/Name┃シーズン7 A-Coinクエストブック
 Season2104/Name┃放課後クエストブック
 Season2105/Name┃トロピカルクエストブック
 Season2106/Name┃ゴーストハンタークエストブック
+Season2107/Name┃二人だけの猫祭りクエストブック
 HiddenPassPath/2001┃ショップ内のマイレージショップで購入できます。
 HiddenPassPath/2002┃ショップ内のマイレージショップで購入できます。
 HiddenPassPath/2003┃ショップ内のマイレージショップで購入できます。
@@ -9926,6 +9943,7 @@ HiddenPassPath/2103┃ショップで「選択券パッケージⅢ」を購入�
 HiddenPassPath/2104┃交換所でアカデミートークンを使用して購入できます。
 HiddenPassPath/2105┃交換所でスプラッシュトークンを使用して購入できます。
 HiddenPassPath/2106┃交換所で祭りトークンを使用して購入できます。
+HiddenPassPath/2107┃交換所でプチ・ミニョントークンを使用して購入できます。
 Emotion/Desc/Base┃ゲーム内でエモートを使ってコミュニケーションすることができます。
 Shop/Desc/NP┃NPとは、エターナルリターンの様々な商品を購入できるゲームマネーです。
 Shop/Desc/ACCOUNT_Add_Traitslot┃特性スロットを拡張します。
@@ -10108,6 +10126,7 @@ Product/Name/S20_RARE_MATTER┃データピース(レア) X 1
 Product/Name/S20_S19TOKEN_EXCHANGE┃ロイヤルトークン X 2
 Product/Name/S20_A-Coin_QUEST_BOOK┃プチ・ミニョン A-Coin クエストブック
 Product/Name/S20_PETITMIGNON_PACK┃プチ・ミニョン プレイキットパッケージ
+Product/Name/S20_IREM_QUSET_BOOK┃二人だけの猫祭り クエストブック
 Product/Name/P5R_ACOIN┃A-Coin X 150
 Shop/Desc/S10_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- バカンス A-Coinクエストブック\n  (最大105,000 A-Coin獲得可能)\n- 30,000 A-Coin\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入すると、「バカンス A-Coinクエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「バカンス A-Coinクエストブック」は「QUEST BOOK」からご確認いただけます。
 Shop/Desc/S11_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- 武装メイド A-Coinクエストブック\n  (最大105,000 A-Coin獲得可能)\n- 30,000 A-Coin\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入すると、「武装メイド A-Coinクエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「武装メイド A-Coinクエストブック」は「QUEST BOOK」からご確認いただけます。
@@ -10123,6 +10142,7 @@ Shop/Desc/S18_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- �
 Shop/Desc/S18_SPIRITHUNTERHISUI_QUSET_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- ゴーストハンターヒスイ クエストブック\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入すると、「ゴーストハンターヒスイ クエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「ゴーストハンターヒスイ クエストブック」は「QUEST BOOK」からご確認いただけます。\n※ 「ゴーストハンターヒスイ クエストブック」のミッションはルミア島のゲームをプレイすると達成できます。
 Shop/Desc/S19_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n \n - ロイヤル A-Coinクエストブック\n (最大105,000 A-Coin獲得可能)\n - 30,000 A-Coin\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 購入すると、「ロイヤル A-Coinクエストブック」がすぐに解除されます。\n ※ このクエストブックには使用期限がありません。いつでも達成することができます。\n ※ 「ロイヤル A-Coinクエストブック」は「QUEST BOOK」からご確認いただけます。
 Shop/Desc/S20_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n \n - プチ・ミニョン A-Coin クエストブック\n (最大105,000 A-Coin獲得可能)\n - 30,000 A-Coin\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 購入すると、「プチ・ミニョン A-Coin クエストブック」がすぐに解除されます。\n ※ このクエストブックには使用期限がありません。いつでも達成することができます。\n ※ 「プチ・ミニョン A-Coin クエストブック」は「QUEST BOOK」からご確認いただけます。
+Shop/Desc/S20_IREM_QUSET_BOOK┃<color=#FFBB00>[内容]\n\n二人だけの猫祭り クエストブック\n\n<color=#F15F5F>[ご購入前の注意事項]\n※ 購入すると、「二人だけの猫祭り クエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「二人だけの猫祭り クエストブック」は「QUEST BOOK」からご確認いただけます。\n※ 「二人だけの猫祭り クエストブック」のミッションはルミア島のゲームをプレイすると達成できます。
 Product/Name/S5_Lucky_White_LootToken_01┃レッドトークン X 3
 Product/Name/S5_Lucky_White_ACoin_15┃A-Coin X 15
 Product/Name/S5_Lucky_Red_Lucky_Token_01┃ラッキー★トークン X 80
@@ -10182,7 +10202,6 @@ PickupEvent/Name/Pickup_Emblem_Voucher_260122┃プロフィール選別カー�
 PickupEvent/Name/Pickup_Emblem_Voucher_260129┃プロフィール選別カード
 PickupEvent/Name/Pickup_Emblem_Voucher_260205┃プロフィール選別カード
 PickupEvent/Desc/Pickup_Emote_Voucher_251016┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
-PickupEvent/Desc/Pickup_Emote_Voucher_251023┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
 PickupEvent/Desc/Pickup_Emote_Voucher_251030┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
 PickupEvent/Desc/Pickup_Emote_Voucher_251106┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
 PickupEvent/Desc/Pickup_Emote_Voucher_251113┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
@@ -10254,22 +10273,22 @@ CharacterState/Group/Desc/4001000┃持続的に地震を起こして相手に�
 Skill/Group/Name/4101000┃プロトコル違反
 Skill/Group/LobbyDesc/4101000┃改造されたE.M.O.T.Eが爆発して味方には体力増加効果を、敵には固定ダメージを与えます。\n\n<color=#ff3399>強化：</color>より強い効果を与えます。
 Skill/Group/LobbyDesc/4514000┃改造されたE.M.O.T.Eが爆発して味方には体力増加効果を、敵には固定ダメージを与えます。\n\n<color=#ff3399>強化：</color>より強い効果を与えます。
-Skill/Code/Desc/4101001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚されたE.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#B4B73E>モジュール強化：</color><color=#9C9C9C>効果がより大きく増加します。
-Skill/Code/Coef/4101001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚されたE.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#B4B73E>モジュール強化：</color><color=#9C9C9C>効果がより大きく増加します。
+Skill/Code/Desc/4101001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚されたE.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#B4B73E>モジュール強化：</color><color=#9C9C9C>効果がより大きく増加します。
+Skill/Code/Coef/4101001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚されたE.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#B4B73E>モジュール強化：</color><color=#9C9C9C>効果がより大きく増加します。
 Skill/Code/ExpansionTip/4101001┃<i>2レベルにアップグレードするためには<color=#b245ff>戦術強化モジュール</color>が必要です。</i>\n<i>クールダウン固定: このスキルはクールダウン減少の影響を受けません。</i>
-Skill/Code/Desc/4101002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#FFFFC2>モジュール強化：</color>効果がより大きく増加します。
-Skill/Code/Coef/4101002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#FFFFC2>モジュール強化：</color>効果がより大きく増加します。
+Skill/Code/Desc/4101002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#FFFFC2>モジュール強化：</color>効果がより大きく増加します。
+Skill/Code/Coef/4101002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#FFFFC2>モジュール強化：</color>効果がより大きく増加します。
 Skill/Code/ExpansionTip/4101002┃<i>クールダウン固定: このスキルはクールダウン減少の影響を受けません。</i>
-Skill/Code/Desc/4514001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
-Skill/Code/Coef/4514001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
+Skill/Code/Desc/4514001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
+Skill/Code/Coef/4514001┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
 Skill/Code/ExpansionTip/4514001┃<i>クールダウン固定: このスキルはクールダウン減少の影響を受けません。</i>
-Skill/Code/Desc/4514002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
-Skill/Code/Coef/4514002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
+Skill/Code/Desc/4514002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eはしばらくしてから爆発し、{4}秒間周りの味方の体力を<color=white>{1}</color>増加させ、敵には<color=white>{7}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
+Skill/Code/Coef/4514002┃指定した位置に改造されたE.M.O.T.Eを召喚します。\n召喚された改造E.M.O.T.Eは{4}秒後に爆発し、{6}秒間周りの味方の体力を<color=white>{5}</color><color=green>(+キャラクターレベル*{1})</color>増加させ、敵には<color=green>キャラクターレベル*{10}</color><color=#688A08>(+対象の最大体力の{8})</color>の固定ダメージを与えます。\n\n一度ダメージを受けた対象は次に受けるダメージが{11}秒間{12}減少します。\n\n<color=#FFFFC2>強化完了済み：</color>効果がより大きく増加します。
 Skill/Code/ExpansionTip/4514002┃<i>クールダウン固定: このスキルはクールダウン減少の影響を受けません。</i>
 CharacterState/Group/Name/4101000┃有用物質
 CharacterState/Group/Desc/4101000┃最大体力が増加しました。
-CharacterState/Group/Name/4101010┃有害物質
-CharacterState/Group/Desc/4101010┃受けるダメージが増加しました。
+CharacterState/Group/Name/4101010┃プロトコル違反
+CharacterState/Group/Desc/4101010┃一定時間プロトコル違反によるダメージ量が減少します。
 Skill/Group/Name/4102000┃赤嵐
 Skill/Group/LobbyDesc/4102000┃使用すると短い距離を移動して一定時間の間基本攻撃の射程距離が増加します。\n\n<color=#ff3399>強化：</color>射程距離増加効果が増加します。
 Skill/Group/LobbyDesc/4515000┃使用すると短い距離を移動して一定時間の間基本攻撃の射程距離が増加します。\n\n<color=#ff3399>強化：</color>射程距離増加効果が増加します。
@@ -11184,6 +11203,7 @@ Goods/Name/2705004┃放課後デビー&マーリン
 Goods/Name/2705005┃2周年記念
 Goods/Name/2705006┃トロピカル·ディメンションアビゲイル
 Goods/Name/2705007┃ゴーストハンター ヒスイ
+Goods/Name/2705008┃二人だけの猫祭り イレム
 Goods/Name/2708001┃GUILTY GEAR -STRIVE-
 Goods/Name/2708002┃星と願い
 Goods/Name/2708003┃決戦
@@ -11252,6 +11272,7 @@ ItemType/TEAMSLOT_BG/Name┃チームスロット背景
 Goods/Name/3401001┃基本チームスロット背景
 Goods/Name/3402001┃ホリデーベア
 Goods/Name/3402002┃ビヒョン
+Goods/Name/3402003┃二人だけの猫祭り イレム
 Goods/Name/3402501┃S4 All ways Incheon チームスロット背景
 Goods/Name/3402502┃S4 Gyeonggi Innate チームスロット背景
 Goods/Name/3402503┃S4 GJ Slasher チームスロット背景
@@ -11405,6 +11426,8 @@ Goods/Name/3503043┃落ち葉カード
 Goods/Desc/3503043┃2025 落ち葉コレクションを完成させてみましょう！\n2025 落ち葉コレクションの達成条件は収集品からご確認いただけます。
 Goods/Name/3503044┃S9 eスポーツサポーターコイン
 Goods/Name/3503045┃S10 eスポーツサポーターコイン
+Goods/Name/3503046┃S11 eスポーツピース
+Goods/Name/3503047┃S12 eスポーツピース
 Goods/Name/3508001┃GGSTカード
 Goods/Name/3508002┃P5R コラボカード
 ItemType/WILD_CARD_SKIN/Name┃ワイルドカード - スキン選択券
@@ -11679,7 +11702,7 @@ Goods/Desc/3103034┃ブルースターボックス、パープルスターボ�
 Goods/Name/3103035┃パープルスターボックス
 Goods/Desc/3103035┃パープルスターボックス、ゴールドスターボックス、A-Coinの内、1つを獲得し、確率に応じて収集品アイテム＜シルバースター＞を15個獲得できます。
 Goods/Name/3103036┃ゴールドスターボックス
-Goods/Desc/3103036┃祭りトークン5個を獲得でき、確率に応じて祭りトークン、収集品アイテム＜ゴールドスター＞、A-Coinの内、1つを獲得できます。
+Goods/Desc/3103036┃プチ・ミニョントークン5個を獲得でき、確率に応じてプチ・ミニョントークン、収集品アイテム＜ゴールドスター＞、A-Coinの内、1つを獲得できます。
 Goods/Name/3103037┃ERトークンランダムボックス
 Goods/Desc/3103037┃ERトークン 1個または100 A-Coinをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3103038┃200イベントNP(7日) + 祭りトークン 10個
@@ -11941,8 +11964,8 @@ Mission/1040101/1┃<color=white>枝</color>アイテム獲得
 Mission/1040201/1┃<color=white>革</color>アイテム獲得
 Mission/1040301/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
 Mission/1040302/1┃<color=#2AC0FF>ステーキ</color>アイテム獲得
-Mission/1040401/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
-Mission/1040402/1┃<color=#2AC0FF>ポテトフライ</color>アイテム獲得
+Mission/1040401/1┃<color=#2AC0FF>万年スープ</color>アイテム獲得
+Mission/1040402/1┃<color=#2AC0FF>万年スープ</color>アイテム獲得
 Mission/1040501/1┃<color=#D05EFF>生命の木</color>アイテム獲得
 Mission/1040502/1┃<color=#D05EFF>生命の木</color>アイテム獲得
 Mission/1040503/1┃<color=#D05EFF>生命の木</color>アイテム獲得
@@ -12288,8 +12311,8 @@ x위 이상하기┃戦わずに生き残ることがいい選択になる場合
 감자 아이템 획득┃ルミア島の北の方にある<color=white>ジャガイモ</color>を採取しましょう。\n\n採取した<color=white>ジャガイモ</color>を焚き火で料理するとより立派な食べ物を作ることができます！
 대구 아이템 획득┃水の近くに設置された釣り竿を使って釣りをすると<color=white>タラ</color>を釣り上げることができます。\n\n釣り上げた<color=white>タラ</color>を焚き火で料理するとより立派な食べ物を作ることができます！
 운석 아이템 획득┃隕石誘導技術によって毎日1回、隕石が落とされます。\n2日目以降4日目まで昼になるとランダムに落とされ、落ちる1分前に落下地点が予告されます。\n\n落ちてくる隕石に当たると大きなダメージを受けますが、\n落ちた後には<color=#D05EFF>隕石</color>を採取できるので事前に落下地点の近くへ移動しましょう。
-생명의 나무 아이템 획득┃少量のVF(ヴァイタルフォース)を長い間蓄積した木は特別な力を発揮します。\n世界樹とも呼ばれる<color=#D05EFF>生命の木</color>を採取してみてください。\n\n2日目の昼と3日目の昼に生成され、1分前に予告されます。
-VF혈액샘플 아이템 획득┃VFはヴァイタルフォースの略称で、物理的に説明できない現象を起こす自然界の第5の力として注目されています。\n\n特に、体内の受容体を形成してVFを覚醒すると、強力な異能の力と再生能力を獲得できますが、このような現象を究明することがルミア島の実験の目的の一つです。\n\nDr.ウィクラインを倒す時、VFを濃縮させた<color=#D05EFF>VF血液サンプル</color>を獲得できます。\nウィクラインは4日目の夜から研究所を出てルミア島を歩き回ります。
+생명의 나무 아이템 획득┃少量のVF(バイタルフォース)を長い間蓄積した木は特別な力を発揮します。\n世界樹とも呼ばれる<color=#D05EFF>生命の木</color>を採取してみてください。\n\n2日目の昼と3日目の昼に生成され、1分前に予告されます。
+VF혈액샘플 아이템 획득┃VFはバイタルフォースの略称で、物理的に説明できない現象を起こす自然界の第5の力として注目されています。\n\n特に、体内の受容体を形成してVFを覚醒すると、強力な異能の力と再生能力を獲得できますが、このような現象を究明することがルミア島の実験の目的の一つです。\n\nDr.ウィクラインを倒す時、VFを濃縮させた<color=#D05EFF>VF血液サンプル</color>を獲得できます。\nウィクラインは4日目の夜から研究所を出てルミア島を歩き回ります。
 포스코어 아이템 획득┃<color=#D05EFF>フォースコア</color>はVFを濃縮させて固定した鉱石です。これを使うと伝説や神話に出てきた道具を再現できます。\n\n<color=#D05EFF>隕石</color>と<color=#D05EFF>生命の木</color>を組み合わせたり、オメガを倒すと獲得できます。
 플레이어/야생동물 피해 주기┃敵により大きなダメージを与えるためには強くなる必要があります。\n\nまずは武器を作って敵を攻撃し、武器熟練度を稼ぎましょう。
 닭 처치하기┃ニワトリは一番弱い野生動物です。\nニワトリを倒すと<color=white>皮</color>を獲得できます。運が良ければ<color=white>肉</color>と<color=white>羽</color>も獲得できます。\n\nニワトリを倒して材料を獲得し、その材料で装備と食べ物を作ってみましょう。
@@ -12308,8 +12331,8 @@ VF혈액샘플 아이템 획득┃VFはヴァイタルフォースの略称で�
 명상 숙련도 달성하기┃瞑想熟練度を獲得しましょう。\n\n瞑想熟練度はスタミナを消費したり飲み物を製作すると獲得できます。\n\n瞑想熟練度が上がると最大スタミナが増加します。
 함정 숙련도 달성하기┃トラップを積極的に使用してトラップ熟練度を獲得しましょう。\n\nトラップ熟練度はトラップでダメージを与えるか、ダメージを受けた時、そしてトラップの製作と設置で獲得できます。\n\nトラップ熟練度が上がるとトラップのダメージ量が増加します。
 무기 숙련도 달성하기┃敵を攻撃して武器熟練度を獲得しましょう。\n\n武器熟練度は生存者や野生動物にダメージを与えたり、武器を製作すると獲得できます。\n\n武器熟練度が上がると基本攻撃がスキルが強化されます。
-알파 처치하기┃VF(ヴァイタルフォース)を使うアンドロイドです。\n\n2日目の夜になると、すべての地域の内2か所からランダムに登場します。\n\nアルファを倒すと<color=#D05EFF>ミスリル</color>と<color=#35FF94>偵察ドローン</color>を獲得できます。
-오메가 처치하기┃VF(ヴァイタルフォース)を使うアンドロイドです。\n\n3日目の夜になると、アルファが登場しなかった地域でランダムに登場します。\n\nVFを使って特別な能力を発揮しますが、不安定な構造によって一定以上のダメージを受けると弱点を出して気絶します。\n\nオメガを倒すと<color=#D05EFF>フォースコア</color>と<color=#2AC0FF>EMPドローン</color>を獲得できます。
+알파 처치하기┃VF(バイタルフォース)を使うアンドロイドです。\n\n2日目の夜になると、すべての地域の内2か所からランダムに登場します。\n\nアルファを倒すと<color=#D05EFF>ミスリル</color>と<color=#35FF94>偵察ドローン</color>を獲得できます。
+오메가 처치하기┃VF(バイタルフォース)を使うアンドロイドです。\n\n3日目の夜になると、アルファが登場しなかった地域でランダムに登場します。\n\nVFを使って特別な能力を発揮しますが、不安定な構造によって一定以上のダメージを受けると弱点を出して気絶します。\n\nオメガを倒すと<color=#D05EFF>フォースコア</color>と<color=#2AC0FF>EMPドローン</color>を獲得できます。
 루미아 크레딧 획득하기┃<color=#F4FF63>クレジット</color>はルミア島で行われる実験の一環として使用される資源です。\n\n一定量保有したままゲームを開始し、長く生存または野生動物や変異体、実験体を倒した時に獲得できます。\n\nまた、<color=#F4FF63>クレジット</color>を使って遠隔ドローンやKioskを利用することができます。
 루미아 전송드론 사용하기┃遠隔ドローンはルミア島で行われる実験中の実験体を観察するためのステルスドローンです。\n\n実験の質的向上を追求する研究員により、<color=#F4FF63>クレジット</color>を通じて一般材料を転送してもらえる機能が追加されました！\n\nアイテムの探索が円滑でなかったり、禁止区域によって希望する材料が手に入らない場合、遠隔ドローンを使用してください！
 루미아 전송콘솔 사용하기┃Kioskはルミア島で行われる生存実験をより劇的な結果を導き出すために追加された装置です。\n\n実験体は一定量の<color=#F4FF63>クレジット</color>を使って特殊材料を注文することができます。
@@ -12552,6 +12575,7 @@ NoviceSupportMission/10010132/1┃相手チームを全滅させよう
 NoviceSupportMission/10010133/1┃ランク対戦プレイ
 NoviceSupportMission/10010134/1┃一般/ランク対戦でTop 3を達成しよう
 NoviceSupportMission/10010135/1┃「今日のクエスト」を達成して報酬をもらおう
+NSMTooltip/10010123┃不要な特殊素材を獲得した際、目標アイテムUIの下部に代替アイテムの動的推奨UIが表示されます。\nUIボタンをクリックすることで、代替アイテムリストまたは永続バフアイテムの推奨を受けることができます。
 Mission/10000034/1┃コバルトモード 実験体処置
 Mission/10000035/1┃コバルトモード 増幅装置占領
 Mission/10000036/1┃コバルトモード 死なずに実験体2キル
@@ -17198,9 +17222,9 @@ Skill/Group/Name/1052500┃水晶玉の予言
 Skill/LobbyDesc/1052100┃アディナはスキルを使用時に水晶玉のスロット(体力バーの下、2番目のスロット)にある天体を使用します。\n\n天体をすべて消耗すると、天体をチャージする<color=white>スターゲイザー</color>状態になり、移動速度が増加します。\n
 Skill/Group/Desc/1052100┃<color=white>スターゲイザー：</color>アディナはスキルを使用時に水晶玉のスロット(体力バーの下、2番目のスロット)にある天体を使用します。\nアディナが天体をすべて消耗すると、{0}秒間天体を満たす<color=white>スターゲイザー</color>状態になり、移動速度が<color=white>{20}%</color>増加します。
 Skill/Group/Coef/1052100┃<color=white>スターゲイザー：</color>アディナはスキルを使用時に水晶玉のスロット(体力バーの下、2番目のスロット)にある天体を使用します。\nアディナが天体をすべて消耗すると、{0}秒間天体を満たす<color=white>スターゲイザー</color>状態になり、移動速度が<color=white>{1}%</color><color=#dda0dd>(+スキル増幅の{2})</color>増加します。
-Skill/LobbyDesc/1052200┃指定した方向に天体を発射し、的中した敵にスキルダメージを与えます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が増加します。\n<color=#6B71FF>月：</color>1人だけに的中し、敵を気絶させます。\n<color=#A97EEF>星：</color>彗星が素早く飛んでいき、味方の移動速度を増加させる尾を経路上に残します。\n\n<color=#80B9FF>太陽コンジャンクション効果：</color>太陽が連続して並ぶと、より大きな太陽を発射して敵に大きなダメージを与え、燃やします。
-Skill/Group/Desc/1052200┃指定した方向に天体を発射し、的中した敵に<color=white>{20}</color>のスキルダメージを与えます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が<color=white>{22}</color>増加します。\n<color=#6B71FF>月：</color>1人のみ的中され、{2}秒間気絶させます。\n<color=#A97EEF>星：</color>彗星が素早く飛んでいき、経路上に{3}秒間尾を残して味方の移動速度を{4}増加させます。\n\n<color=#80B9FF>太陽コンジャンクション効果：</color>太陽が連続して並ぶと、より大きな太陽を発射して<color=white>{21}</color>のスキルダメージを与え、{9}秒間<color=#688A08>対象の最大体力の{10}</color>の持続ダメージで敵を燃やします。
-Skill/Group/Coef/1052200┃指定した方向に天体を発射し、的中した敵に<color=white>{0}</color><color=#dda0dd>(+スキル増幅の{7})</color>のスキルダメージを与えます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が<color=white>{11}</color><color=#dda0dd>(+スキル増幅の{12})</color>増加します。\n<color=#6B71FF>月：</color>1人だけに的中され、{2}秒間気絶させます。\n<color=#A97EEF>星</color>:彗星が素早く飛んでいき、経路上に{3}秒間尾を残して味方の移動速度を{4}増加させます。\n\n<color=#80B9FF>太陽コンジャンクション効果：</color>太陽が連続して並ぶと、より大きな太陽を発射して<color=white>{5}</color><color=#dda0dd>(+スキル増幅の{8})</color>のスキルダメージを与え、{9}秒間<color=#688A08>対象の最大体力の{10}</color>の持続ダメージで敵を燃やします。
+Skill/LobbyDesc/1052200┃指定した方向に天体を発射し、的中した敵にスキルダメージを与えます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が増加します。\n<color=#6B71FF>月：</color>1人だけに的中し、敵を気絶させます。\n<color=#A97EEF>星：</color>彗星が素早く飛んでいき、味方の移動速度を増加させる尾を経路上に残します。\n\n<color=#80B9FF>太陽コンジャンクション効果：</color>太陽が連続して並ぶと、より大きな太陽を発射して敵にスキルダメージを与え、一定時間最大体力に比例した固定ダメージを与えます。
+Skill/Group/Desc/1052200┃指定した方向に天体を発射し、的中した敵に<color=white>{20}</color>のスキルダメージを与えます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が<color=white>{22}</color>増加します。\n<color=#6B71FF>月：</color>1人のみ的中され、{2}秒間気絶させます。\n<color=#A97EEF>星：</color>彗星が素早く飛んでいき、経路上に{3}秒間尾を残して味方の移動速度を{4}増加させます。\n\n<color=#80B9FF>太陽コンジャンクション効果：</color>太陽が連続して並ぶと、より大きな太陽を発射して<color=white>{21}</color>のスキルダメージを与え、{9}秒間<color=#688A08>対象の最大体力の{10}</color>の固定ダメージを与えます。
+Skill/Group/Coef/1052200┃指定した方向に天体を発射し、的中した敵に<color=white>{0}</color><color=#dda0dd>(+スキル増幅の{7})</color>のスキルダメージを与えます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が<color=white>{11}</color><color=#dda0dd>(+スキル増幅の{12})</color>増加します。\n<color=#6B71FF>月：</color>1人だけに的中され、{2}秒間気絶させます。\n<color=#A97EEF>星</color>:彗星が素早く飛んでいき、経路上に{3}秒間尾を残して味方の移動速度を{4}増加させます。\n\n<color=#80B9FF>太陽コンジャンクション効果：</color>太陽が連続して並ぶと、より大きな太陽を発射して<color=white>{5}</color><color=#dda0dd>(+スキル増幅の{8})</color>のスキルダメージを与え、{9}秒間<color=#688A08>対象の最大体力の{10}</color>の固定ダメージを与えます。
 Skill/Group/ExpansionTip/1052500┃<i>クールダウン固定: このスキルはクールダウン減少の影響を受けません。</i>
 Skill/LobbyDesc/1052300┃指定した位置に天体をつなぐ三角形を描きます。的中した敵にスキルダメージを与え、移動速度を減少させます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が増加します。\n<color=#6B71FF>月：</color>的中した敵を気絶させます。\n<color=#A97EEF>星：</color>描く速度が速くなり、範囲内の味方にシールドを与えます。\n\n<color=#6B71FF>月コンジャンクション効果：</color>月が連続して並ぶと、三角形が2回描かれ、それぞれダメージを与えます。1回目の三角形は対象を気絶させ、2回目の三角形は対象の移動速度を減少させます。
 Skill/Group/Desc/1052300┃指定した位置に天体をつなぐ三角形を描きます。的中した敵に<color=white>{20}</color>のスキルダメージを与え、移動速度を{2}秒間{3}減少させます。\n\n<color=white>天体追加効果</color>\n<color=#80B9FF>太陽：</color>ダメージ量が<color=white>{22}</color>増加します。\n<color=#6B71FF>月：</color>的中した敵を{4}秒間気絶させます。\n<color=#A97EEF>星：</color>三角形を描く速度が速くなり、範囲内の味方に{5}秒間<color=white>{23}</color>のシールドを与えます。\n\n<color=#6B71FF>月コンジャンクション効果：</color>月が連続して並ぶと、三角形が2回描かれ、それぞれ<color=white>{21}</color>のスキルダメージを与えます。1回目の三角形は対象を{4}秒間気絶させ、2回目の三角形は対象の移動速度を{6}秒間{7}減少させます。
@@ -19183,7 +19207,7 @@ CharacterState/Group/Name/3023000┃Love&... - 移動速度減少
 CharacterState/Group/Desc/3023000┃Love&...によって移動速度が減少しました。
 CharacterState/Group/Name/3003010┃フルスイング - 気絶
 CharacterState/Group/Desc/3003010┃フルスイングによって気絶します。
-CharacterState/Group/Name/2000001┃エアーボーン
+CharacterState/Group/Name/2000001┃エアボーン
 CharacterState/Group/Desc/2000001┃空中に浮かびました。
 CharacterState/Group/Name/2000004┃挑発
 CharacterState/Group/Desc/2000004┃相手に挑発されました。挑発した対象を先に攻撃します。
@@ -26141,6 +26165,7 @@ Skin/Name/1086000┃フェンリル
 Skin/Name/1086001┃ミッドナイトビースト フェンリル
 Skin/Name/1087000┃コラライン
 Skin/Name/1087001┃トキメキいっぱい コラライン
+Skin/Name/1088000┃ビヒョン
 Skin/OnSelectVO/1001003┃システムは壊す時がいつもしびれるよね、でしょ？
 Skin/OnSelectVO/1002002┃バンバーン！花火の始まりですよ！
 Skin/OnSelectVO/1007005┃んじゃ、やってみるか。
@@ -26193,6 +26218,7 @@ Skin/OnSelectVO/1016005┃悪いやつらをやっつけに行くんだよね？
 Skin/OnSelectVO/1027003┃ショータイムですか。
 Skin/OnSelectVO/1069003┃今日のご主人様は～そこのあ・な・た！
 Skin/OnSelectVO/1012006┃ご主人様の思し召しなら、従います、にゃん…
+Skin/OnSelectVO/1061003┃待ってたよ！一緒に金魚すくいに行こう！
 Skin/Desc/1001001┃血のついた電気のこぎり、\n人を食い千切る鋏と刀。\n小さくて楽しそうな鼻歌が聞こえたら\n即逃げること。
 Skin/Desc/1001002┃美しく切り刻んであげるね。バラの名に代わって。
 Skin/Desc/1001003┃ルールを作る人がいるなら、それを壊す人もいないと。ね？
@@ -26498,6 +26524,8 @@ Skin/Desc/1064004┃ご注文のティーとヴァーニャのセットです～
 Skin/Desc/1015006┃勝ったとしても、何も変わらないんでしょう…でも、今日はなんだか…明日が楽しみですね。
 Skin/Desc/1038004┃マイちゃん、いずれ貴方と同じステージの上に立ってみせるわ！\n<color=#FFBB00>[一部台詞変更]</color>
 Skin/Desc/1066002┃最も大事な真実は、亡者の沈黙の中に潜んでいるものさ。
+Skin/Desc/1061003┃今夜の花火、一緒に見に行ってくれるよね？
+Skin/Desc/1043005┃気を付けて。このマフィン、爆発するかもしれないから。
 Collection/Name/11001┃すべては娘のため…
 Collection/Name/11002┃ピクセルアートは…好き…？
 Collection/Name/11003┃彷徨う魂に救済を
@@ -26548,6 +26576,7 @@ Collection/Name/22013/1┃S9 eスポーツサポーターⅠ
 Collection/Name/22013/2┃S9 eスポーツサポーターⅡ
 Collection/Name/22014/1┃S10 eスポーツサポーターⅠ
 Collection/Name/22014/2┃S10 eスポーツサポーターⅡ
+Collection/Name/22015/1┃シーズン11 eスポーツコミュニティ
 Collection/Name/24001┃2024年 金の福袋！
 Collection/Name/24002┃花咲かし大作戦Ⅰ
 Collection/Name/24003┃花咲かし大作戦Ⅱ
@@ -26605,6 +26634,13 @@ Collection/Name/24041┃ゴールドスターボックス交換
 Collection/Name/24042┃@#!! フェンリル
 Collection/Name/24043┃噓の味！ コラライン
 Collection/Name/24044┃HEH～ ビヒョン
+Collection/Name/24047/1┃スターコレクションⅠ
+Collection/Name/24047/2┃スターコレクションⅡ
+Collection/Name/24047/3┃スターコレクションⅢ
+Collection/Name/24047/4┃スターコレクションⅣ
+Collection/Name/24047/5┃スターコレクションⅤ
+Collection/Name/24048┃ゴールドスター交換
+Collection/Name/24049┃ゴールドスターボックス交換
 Collection/Name/24801/1┃GGSTスキンコレクションⅠ
 Collection/Name/24801/2┃GGSTスキンコレクションⅡ
 Collection/Name/24801/3┃GGSTスキンコレクションⅢ

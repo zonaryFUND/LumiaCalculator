@@ -47,7 +47,7 @@ export default {
     },
     "T": {
         // 水上移動速度増加（％）
-        "movement_speed": [12, 18, 24],
+        "movement_speed": [16, 22, 28],
         // 水上攻撃速度増加（％）
         "attack_speed": [30, 35, 40],
         // 水上基本攻撃追加ダメージ

@@ -46,7 +46,7 @@ export default {
             "amp": 35
         },
         // 気絶時間
-        "stun": 0.6,
+        "stun": 0.5,
         // シールド持続時間
         "duration": 2.5,
         "shield": {

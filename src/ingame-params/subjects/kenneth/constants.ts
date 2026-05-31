@@ -18,7 +18,7 @@ export default {
         // 被ダメージ減少（％）
         "damage_reduction": {
             "base": 2,
-            "attack": [3, 3.25, 3.5, 3.75, 4]
+            "attack": [4, 4.25, 4.5, 4.75, 5]
         },
         // シールド持続時間
         "shield_duration": 0.75,

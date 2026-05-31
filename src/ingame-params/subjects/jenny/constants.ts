@@ -81,7 +81,7 @@ export default {
         },
         // 死の演技クールダウン
         "cooldown": {
-            "constant": 90
+            "constant": 70
         }
     }
 }

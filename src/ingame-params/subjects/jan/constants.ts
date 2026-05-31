@@ -4,7 +4,7 @@ export default {
         "damage": {
             "base": [100, 120, 140, 160, 180],
             "additionalAttack": 65,
-            "amp": 50,
+            "amp": 55,
             "targetMaxHP": 6
         },
         // ニーストライク的中時移動速度減少

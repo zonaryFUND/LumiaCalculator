@@ -18,7 +18,7 @@ export default {
         // 追加デバフ効果時間
         "duration": 3,
         // 防御力減少
-        "defense_down": [11, 12, 13, 14, 15],
+        "defense_down": [8, 9, 10, 11, 12],
         // 治癒減少（％）
         "healing_reduction": 20,
         // 使用中移動速度増加（％）

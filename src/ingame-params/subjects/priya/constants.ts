@@ -54,7 +54,7 @@ export default {
     "E": {
         "damage": {
             "base": [60, 90, 120, 150, 180],
-            "amp": 60
+            "amp": 65
         },
         // 2ヒット時移動速度減少
         "slow": {

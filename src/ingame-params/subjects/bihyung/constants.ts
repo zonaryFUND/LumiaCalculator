@@ -7,7 +7,7 @@ export default {
         },
         // 初回使用後基本攻撃時体力回復量
         "first_heal": {
-            "maxHP": [4,4.5,5,5.5,6] 
+            "maxHP": [2,2.5,3,3.5,4] 
         },
         // 初回使用後再使用可能になるまでの時間
         "reuse_after": 1.5,
@@ -30,7 +30,7 @@ export default {
         },
         // 再使用後基本攻撃時体力回復量
         "reuse_heal": {
-            "maxHP": [6,6.75,7.5,8.25,9]
+            "maxHP": [3.9,4.8,5.7,6.6,7.5]
         },
         // 追加ダメージ範囲割合
         "additional_area_damage": 70,
@@ -105,7 +105,7 @@ export default {
         "duration": 4,
         // トッケビ火秒間ダメージ
         "damage": {
-            "base": [16,32,48],
+            "base": [16,24,32],
             "additionalAttack": 40,
             "targetMaxHP": [1,2,3]
         },

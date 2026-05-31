@@ -54,12 +54,12 @@ export default {
         // 1発目ダメージ
         "first_damage": {
             "base": [40,65,90,115,140],
-            "attack": 80
+            "attack": 75
         },
         // 2発目ダメージ
         "second_damage": {
             "base": [40,65,90,115,140],
-            "attack": 80
+            "attack": 75
         },
         // 的中あたり回復量
         "heal": {

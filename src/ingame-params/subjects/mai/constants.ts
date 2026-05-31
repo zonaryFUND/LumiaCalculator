@@ -69,7 +69,7 @@ export default {
         "heal": {
             "base": [50, 150, 250],
             "amp": 35,
-            "targetLostHP": 10
+            "targetLostHP": 15
         },
         "cooldown": [90, 75, 60]
     },

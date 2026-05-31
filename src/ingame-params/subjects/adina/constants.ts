@@ -113,7 +113,7 @@ export default {
         "duration": 3,
         // 移動速度増加
         "movement_speed": {
-            "base": [4,7,10],
+            "base": [7,10,13],
             "amp": 1
         }
     }

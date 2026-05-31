@@ -48,7 +48,7 @@ export default {
         // 強力なパンチダメージ
         "damage": {
             "base": [60, 95, 130, 165, 200],
-            "amp": 90
+            "amp": 95
         },
         // 強力なパンチ的中時移動速度減少
         "slow": {
@@ -85,10 +85,10 @@ export default {
         // 短気状態持続時間
         "enraged_duration": 5,
         // 短気状態攻撃速度増加（％）
-        "attack_speed": [30, 40, 50],
+        "attack_speed": [40, 45, 50],
         // 短気状態基本攻撃追加ダメージ
         "damage": {
-            "base": [30, 70, 110],
+            "base": [60, 85, 110],
             "amp": 35
         }
     }
