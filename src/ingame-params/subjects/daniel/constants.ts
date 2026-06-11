@@ -16,12 +16,12 @@ export default {
         // ハサミ中心部ダメージ
         "center_damage": {
             "base": [40,60,80,100,120],
-            "attack": 130
+            "attack": 140
         },
         // ハサミ中心部的中時移動速度減少
         "slow": {
             "duration": 1.5,
-            "effect": 30
+            "effect": 35
         },
         "cooldown": [10,9,8,7,6]
     },

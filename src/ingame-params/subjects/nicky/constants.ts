@@ -4,12 +4,12 @@ export default {
         "movement_speed_penalty": 15,
         // 格闘アクション最小ダメージ
         "min_damage": {
-            "base": [30, 50, 70, 90, 110],
+            "base": [40, 60, 80, 100, 120],
             "amp": 70
         },
         // 格闘アクション最大ダメージ
         "max_damage": {
-            "base": [60, 100, 140, 180, 220],
+            "base": [80, 120, 160, 200, 240],
             "amp": 140
         },
         // 格闘アクション的中時クールダウン減少
@@ -53,7 +53,7 @@ export default {
         // 強力なパンチ的中時移動速度減少
         "slow": {
             "duration": 2,
-            "effect": 35
+            "effect": 40
         },
         // 怒りのパンチ！ダメージ
         "e2_damage": {

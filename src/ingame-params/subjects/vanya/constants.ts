@@ -38,7 +38,7 @@ export default {
         // 外側ダメージ
         "outer_damage": {
             "base": [90, 125, 160, 195, 230],
-            "amp": 80
+            "amp": 90
         },
         // 外側的中時移動速度減少
         "slow": {

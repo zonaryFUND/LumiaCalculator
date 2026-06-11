@@ -42,7 +42,7 @@ export default {
         // 風雲地帯持続時間
         "duration": 5,
         "damage": {
-            "base": [60, 95, 130, 165, 200],
+            "base": [60, 90, 120, 150, 180],
             "amp": 50
         },
         "cooldown": {
@@ -80,7 +80,7 @@ export default {
         // 強化Q/E使用時シールド
         "shield": {
             "base": [40, 70, 100],
-            "amp": 30
+            "amp": 25
         }
     }
 }

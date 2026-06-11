@@ -52,8 +52,8 @@ export default {
         "attack_speed": [30, 35, 40],
         // 水上基本攻撃追加ダメージ
         "damage": {
-            "base": [30, 50, 70],
-            "amp": 30
+            "base": [30, 45, 60],
+            "amp": 35
         },
         "cooldown": {
             "constant": [8, 6, 4]

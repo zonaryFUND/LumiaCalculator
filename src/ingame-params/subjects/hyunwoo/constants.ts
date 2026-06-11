@@ -33,9 +33,9 @@ export default {
         // 的中時ダメージ
         "damage": {
             "base": 0,
-            "additionalAttack": 70,
+            "additionalAttack": 80,
             "amp": 55,
-            "targetHP": [5, 8, 11, 14, 17]
+            "targetHP": [6, 9, 12, 15, 18]
         },
         // 壁ヒット時追加ダメージ
         "wall_damage": {

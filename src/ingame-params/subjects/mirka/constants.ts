@@ -82,7 +82,7 @@ export default {
         "enhance": {
             // 追加ダメージ
             "additional_damage": {
-                "gauge": 33
+                "gauge": 40
             },
             // ノックバック距離
             "knockback": 2.5

@@ -3,7 +3,7 @@ export default {
         "damage": {
             "base": [30, 50, 70, 90, 110],
             "attack": 55,
-            "targetHP": 5
+            "targetHP": 7
         },
         // 与ダメージ比自己回復（％）
         "heal": 30,

@@ -11,7 +11,7 @@ export default {
         "near_movement_speed": [25,27.5,30,32.5,35],
         // 磁力線対象基本攻撃時追加スキルダメージ
         "basic_attack_damage": {
-            "level": 8,
+            "level": 6,
             "targetMaxHP": [6,7,8,9,10]
         },
         // 磁力線対象基本攻撃時気絶時間
@@ -46,7 +46,7 @@ export default {
             "maxHP": 7
         },
         // 束縛時間
-        "bind": [0.8,0.9,1,1.1,1.2],
+        "bind": [0.7,0.8,0.9,1,1.1],
         "cooldown": [14,13,12,11,10]
     },
     "R": {

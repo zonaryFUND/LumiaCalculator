@@ -31,7 +31,7 @@ export default {
         },
         "damage": {
             "base": [60, 100, 140, 180, 220],
-            "amp": 65
+            "amp": 70
         },
         // 移動速度減少
         "slow": {

@@ -43,7 +43,7 @@ export default {
         "distance": 2,
         // 攻撃速度減少
         "attack_speed_down": {
-            "duration": 1,
+            "duration": 1.5,
             "effect": 60
         },
         // 的中時クールダウン減少

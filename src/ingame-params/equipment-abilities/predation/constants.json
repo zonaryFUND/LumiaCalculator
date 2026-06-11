@@ -3,7 +3,7 @@
     "threshold": 2,
     "damage": {
         "base": 20,
-        "additionalMaxHp": 10
+        "additionalMaxHP": 10
     },
     "heal": {
         "base": 30,
@@ -14,5 +14,5 @@
         "duration": 1,
         "effect": 15
     },
-    "cooldown": 10
+    "cooldown": 8
 }

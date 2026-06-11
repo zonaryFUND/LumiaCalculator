@@ -46,7 +46,7 @@ export default {
         },
         "max_shield": 35,
         "shield": {
-            "base": 60,
+            "base": 40,
             "level": 5
         }
     },

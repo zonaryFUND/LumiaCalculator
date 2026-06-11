@@ -14,7 +14,7 @@ export default {
         // スポットライト自己バフ最大スタック数
         "max_stack": 3,
         // 赤ワイン時のスポットライト自己バフ攻撃速度増加（％）
-        "red_attack_speed": 3,
+        "red_attack_speed": 6,
         // ブラックティー時のスポットライト自己バフ移動速度増加（％）
         "black_movement_speed": 2,
         "cooldown": [9, 8.5, 8, 7.5, 7]

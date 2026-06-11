@@ -102,7 +102,7 @@ export default {
         "duration": 3,
         "shield": {
             "base": [50,100,150],
-            "attack": 80
+            "attack": 90
         },
         // 起動時攻撃速度増加量
         "attack_speed": [15,25,35],

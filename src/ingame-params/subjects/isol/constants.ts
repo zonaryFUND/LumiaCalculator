@@ -52,7 +52,7 @@ export default {
         "attack_duration": 5,
         // 次の基本攻撃追加ダメージ
         "damage": {
-            "base": [40, 65, 90, 115, 140],
+            "base": [60, 90, 120, 150, 180],
             "amp": 65
         },
         "cooldown": [14, 13, 12, 11, 10]

@@ -68,8 +68,8 @@ export default {
             "amp": 40
         },
         "heal": {
-            "additionalAttack": 50,
-            "amp": 15,
+            "additionalAttack": 70,
+            "amp": 20,
             "maxHP": 7,
             "lostHP": 10
         },
@@ -150,5 +150,36 @@ export default {
             }
         },
         "cooldown": 20
+    },
+    // 極上のコレクション
+    "celestial_collection": {
+        "all_heroic": {
+            "adaptiveForce": 2
+        },
+        "legendary": {
+            1: {
+                "adaptiveForce": 3
+            },
+            2: {
+                "defense": 2
+            },
+            3: {
+                "maxHP": 40
+            },
+            4: {
+                "movement_speed": 1
+            },
+            5: {
+                "armor_penetration_ratio": 1
+            }
+        },
+        "mythic": {
+            1: {
+                "omnisyphon": 3
+            },
+            "2_or_more": {
+                "tenacity": 5
+            }
+        }
     }
 }

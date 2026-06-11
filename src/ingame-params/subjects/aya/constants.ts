@@ -39,7 +39,7 @@ export default {
     },
     "E": {
         // Q、Wクールダウン減少量（）
-        "cooldown_reduction": [30,35,40,45,50],
+        "cooldown_reduction": [40,45,50,55,60],
         "cooldown": [15,14,13,12,11]
     },
     "R": {

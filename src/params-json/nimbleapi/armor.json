@@ -580,7 +580,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 25,
+        "defense": 28,
         "skillAmp": 40,
         "skillAmpByLevel": 5,
         "cooldownReduction": 10,
@@ -796,8 +796,8 @@
     {
         "attackPowerByLv": 3,
         "defense": 25,
-        "maxHp": 220,
-        "cooldownReduction": 20,
+        "maxHp": 200,
+        "cooldownReduction": 15,
         "code": 202530,
         "armorType": "Chest",
         "itemGrade": "Legend"
@@ -1050,7 +1050,7 @@
     },
     {
         "attackPower": 25,
-        "defense": 18,
+        "defense": 20,
         "cooldownReduction": 15,
         "code": 203513,
         "armorType": "Arm",

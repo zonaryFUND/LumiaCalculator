@@ -19,7 +19,7 @@ export default {
         "additional_hit_per__additional_defense": 35,
         // 1ヒットあたりダメージ
         "damage": {
-            "base": [16, 22, 28, 34, 40],
+            "base": [22, 28, 34, 40, 46],
             "additionalAttack": 45,
             "amp": 20,
             "targetMaxHP": 2.5

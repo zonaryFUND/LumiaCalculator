@@ -42,7 +42,7 @@ export default {
         "movement_speed": {
             "duration": 2,
             "effect": {
-                "base": [6, 9, 12, 15, 18],
+                "base": [6, 8, 10, 12, 14],
                 "amp": 1
             }
         },

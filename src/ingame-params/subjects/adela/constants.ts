@@ -25,7 +25,7 @@ export default {
     "W": {
         "damage": {
             "base": [20,60,100,140,180],
-            "amp": 80
+            "amp": 75
         },
         "pawn_queen": {
             // 押し出されたポーン・クイーンのダメージ

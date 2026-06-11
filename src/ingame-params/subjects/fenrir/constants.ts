@@ -112,7 +112,7 @@ export default {
                 "additionalAttack": 10
             },
             "heal": {
-                "base": [7,11,15],
+                "base": [10,15,20],
                 "additionalAttack": 12
             }
         }

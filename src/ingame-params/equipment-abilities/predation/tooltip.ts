@@ -11,7 +11,7 @@ const values: EquipmentAbilityTooltipValues = ({ showEquation }) => {
         return {
             ...base,
             2: Constants.damage.base,
-            3: Constants.damage.additionalMaxHp,
+            3: Constants.damage.additionalMaxHP,
             4: Constants.heal.base,
             5: Constants.heal.additionalMaxHp,
             6: Constants.heal.lostHP,

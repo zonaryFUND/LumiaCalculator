@@ -1306,6 +1306,22 @@ Emotion_S11_2026KEL_2586┃2026 Jeju Shadow
 Emotion_S11_2026KEL_2587┃2026 Goyang MIR
 Emotion_S11_2026KEL_2588┃2026 Seongnam ROX
 Emotion_S11_2026KEL_2589┃2026 YJ Whales
+Emotion_S11_EsportsPack_2590┃S11 DAEJEON AutoArms エモート
+Emotion_S11_EsportsPack_2591┃S11 Jeju Shadow エモート
+Emotion_S11_EsportsPack_2592┃S11 GyeongBuk Ascenders エモート
+Emotion_S11_EsportsPack_2593┃S11 Chungnam CNJ エモート
+Emotion_S11_EsportsPack_2594┃S11 YJ Whales エモート
+Emotion_S11_EsportsPack_2595┃S11 Seongnam ROX エモート
+Emotion_S11_EsportsPack_2596┃S11 JEONNAM ESPORTS エモート
+Emotion_S11_EsportsPack_2597┃S11 FN SEJONG エモート
+Emotion_S11_EsportsPack_2598┃S11 Daegu Guardians エモート
+Emotion_S11_EsportsPack_2599┃S11 Goyang MIR エモート
+Emotion_S11_EsportsPack_2600┃S11 INCHEON WAVE エモート
+Emotion_S11_EsportsPack_2601┃S11 Gyeonggi Innate エモート
+Emotion_S11_EsportsPack_2602┃S11 GC BUSAN エモート
+Emotion_S11_EsportsPack_2603┃S11 Gyeongnam Sparkle エモート
+Emotion_S11_EsportsPack_2604┃S11 New Rise Gangwon エモート
+Emotion_S11_EsportsPack_2605┃S11 GJ Slasher エモート
 Event_S18Champion_ZeroJin_3174┃SEASON 9 CHAMPION ZeroJin
 Event_S18Champion_Ing9_3175┃SEASON 9 CHAMPION ing9
 Event_S18Champion_Dasoo_3176┃SEASON 9 CHAMPION Dasoo
@@ -1374,6 +1390,14 @@ Emotion_Jenny07_NP┃結構よ！ ジェニー
 Emotion_Jenny08_NP┃やったわ…！ ジェニー
 Emotion_FestiveNeko_Irem_2061009┃二人だけの猫祭り イレム ニャーッ！？
 Emotion_FestiveNeko_Irem_2061008┃二人だけの猫祭り イレム にゃんにゃん
+Emotion_EsportsPack_Leni_2069012┃こぐまメイド レニ キュッキュッ
+Emotion_S11_Esports_Collection_2012015┃ねこメイド ヘジン 諦め
+Emotion_Camilo05_NP┃いただきます！ カミロ
+Emotion_Camilo06_NP┃いいでしょう！ カミロ
+Emotion_Camilo07_NP┃美しくありませんね カミロ
+Emotion_Camilo08_NP┃美しい！ カミロ
+Emotion_Magnus_2004018┃マグヌス 知らなかった
+Emotion_Magnus_2004019┃マグヌス 知ってるぞ
 보유하지 않은 캐릭터입니다.┃未所持キャラクターです。\nショップで購入後使用できます。
 매칭 중 캐릭 변경 금지┃マッチング中にはキャラクターを変更できません。
 로딩 중┃ロード中\n< X キーを押すと座って休憩します。 >
@@ -2308,6 +2332,9 @@ DeferPointDemotion/PopupContents┃猶予ポイントが消滅し、{0}ティア
 서브날씨_자색안개┃紫霧
 서브날씨_자색안개_개요┃変異
 서브날씨_자색안개_설명┃野生動物に与えるダメージが増加し、変異体の野生動物がより多く登場します。\n時折、一部地域には強力なモンスターが潜む霧のエリアが生成されます。
+다인입장연습모드┃マルチプレイ練習モード
+연습모드싱글┃シングル
+연습모드멀티┃マルチ
 연습 모드┃練習モード
 연습모드/아이템아이콘┃アイテム獲得
 연습모드/야생동물아이콘┃野生動物生成
@@ -2323,6 +2350,8 @@ DeferPointDemotion/PopupContents┃猶予ポイントが消滅し、{0}ティア
 연습모드/스태미너채우기┃スキルの資源回復
 연습모드/쿨타임초기화┃クールダウン初期化
 연습모드/캐릭터초기화┃実験体初期化
+연습모드/실험체스킨변경┃実験体＆スキン変更
+연습모드/특성전술스킬변경┃特性＆戦術スキル変更
 연습모드/아이템획득┃アイテム獲得
 연습모드/초기아이템그룹가이드┃箱グループ表示活性化
 연습모드/윌슨체력증가┃体力増加
@@ -2383,9 +2412,16 @@ ShortcutSetting/Emotion5┃音声表現使用5
 ShortcutSetting/Emotion6┃音声表現使用6
 ShortcutSetting/EmotionDance┃キャラクターを踊らせます。
 ShortcutSetting/EmotionPlate┃エモートを使用します。
-ShortcutSetting/EmotionPlate1┃エモートセット１を使用します。
-ShortcutSetting/EmotionPlate2┃エモートセット２を使用します。
-ShortcutSetting/EmotionPlate3┃エモートセット３を使用します。
+ShortcutSetting/EmotionPlate1┃エモートセット1を使用します。
+ShortcutSetting/EmotionPlate2┃エモートセット2を使用します。
+ShortcutSetting/EmotionPlate3┃エモートセット3を使用します。
+ShortcutSetting/EmotionPlate4┃エモートセット4を使用します。
+ShortcutSetting/EmotionPlate5┃エモートセット5を使用します。
+ShortcutSetting/EmotionPlate6┃エモートセット6を使用します。
+ShortcutSetting/EmotionPlate7┃エモートセット7を使用します。
+ShortcutSetting/EmotionPlate8┃エモートセット8を使用します。
+ShortcutSetting/EmotionPlate9┃エモートセット9を使用します。
+ShortcutSetting/EmotionPlate10┃エモートセット10を使用します。
 ShortcutSetting/PingTarget┃ピンをつけます。
 ShortcutSetting/MarkTarget┃マークをつけます。
 ShortcutSetting/PingTargetKeyboard┃ピンをつけます。
@@ -2505,6 +2541,9 @@ GameSetting/IgnoreRequestFriends┃フレンド申請を受けません。
 GameSetting/UseItemAutoLooting┃一定時間後、箱の中の目標アイテムを自動獲得します。
 채팅 사용안함┃ロビーチャットOFF
 GameSetting/DisableChattingService┃ロビーチャットサービスを利用しません。(チーム招待機能など一部機能利用不可)
+다인연습모드전체채팅사용┃マルチプレイ練習モードの全体チャット使用
+GameSetting/MultiPractedAllChatting┃オプションを有効にすると、Shift + Enterで全体チャットの送受信ができます。
+다인연습모드전체채팅꺼짐┃全体チャットオプションが無効になっています。
 아이템 자동 줍기 옵션┃自動獲得機能使用
 GameSetting/ToggleCameraZoom┃マウスホイールを利用してカメラのズーム状態を変更することができます。
 ToggleCameraZoom┃カメラズーム活性化
@@ -2973,6 +3012,7 @@ Kiosk/NotAvailable/Escape┃このモードでは脱出できません。
 Lumi/NotAvailable/CreditResurrection┃今は使用できません。(´△｀)
 Kiosk/NotAvailable/CreditResurrection┃クレジット復活機能を利用できません。
 Kiosk/BattleLab/CreditResurrection┃戦闘研究室内では利用できません。
+지원하지 않는 모드입니다.┃非対応のモードです。
 순위┃順位
 플레이어┃プレイヤー
 옵저버┃オブザーバー
@@ -4989,7 +5029,7 @@ SeasonPassPopup/Btn/BuyNP/Text┃保有中
 시즌팩 주의사항┃シーズンパックより<ER PASS : {0}>を先に購入する場合、イベントNPや無償NPは払い戻しできません。有償NPのみ払い戻されます。\nER PASS以外の商品は重複して保有することができ、払い戻しできません。\nシーズンパックに含まれているキャラクター、スキンをショップで重複購入した\n場合、払い戻しポリシーに基づいて対応いたします。\nシーズンパックの内容は変更されることがあります。詳細は告知をご覧ください。\nシーズンパックの商品は発売後、メールボックスのシーズンパックに支給され、\n後日他の形で再販されることがあります。
 시즌팩팝업 ER패스 지급 문구1┃シーズンパック購入直後
 시즌팩팝업 ER패스 지급 문구2┃PASS利用可能！
-시즌팩팝업 ER패스 지급 문구3┃シーズンパック購入時、{0}からER PASS利用可能
+시즌팩팝업 ER패스 지급 문구3┃シーズンパック未所持者のER PASSオープンまで：{0}
 시즌팩팝업 ER패스┃ER PASS
 시즌팩팝업 ER패스 Lv20┃Lv.20
 시즌팩팝업 ER패스 Lv40┃Lv.40
@@ -5452,6 +5492,7 @@ GameResult/OperatorText/MatchingMode/Tutorial1_Re/MatchingTeamMode/1/GameRank/1�
 GameResult/OperatorText/MatchingMode/Tutorial2_Re/MatchingTeamMode/1/GameRank/1┃そう。決まった運命なんかないのよ。
 GameResult/OperatorText/MatchingMode/Tutorial3_Re/MatchingTeamMode/1/GameRank/1┃準備はできたみたいね。お疲れ様。
 GameResult/OperatorText/MatchingMode/TutorialPart6/MatchingTeamMode/3/GameRank/1┃準備はできたみたいね。お疲れ様。
+GameResult/OperatorText/MatchingMode/TutorialDeepening1/MatchingTeamMode/3/GameRank/1┃準備はできたみたいね。お疲れ様。
 GameResult/OperatorText/MatchingMode/Test/MatchingTeamMode/3/GameRank/1┃勝利したんだ。すごいわね。
 GameResult/OperatorText/MatchingMode/Test/MatchingTeamMode/3/GameRank/2┃これだけでも十分な研究結果よ。
 GameResult/OperatorText/MatchingMode/Test/MatchingTeamMode/3/GameRank/3┃興味深い結果ね。
@@ -6201,7 +6242,7 @@ Forge/Category/CharacterSkin┃スキン
 선택권 아이템 타입 도안┃DESIGN
 Forge/Category/Character┃キャラクター
 Forge/Category/Emotion┃エモート
-Forge/Category/Emblem┃プロフィールアイテム
+Forge/Category/Emblem┃プロフィール
 Forge/Category/Goods┃その他
 Forge/Category/Token┃トークン
 Forge/Type/All┃全体
@@ -6216,7 +6257,7 @@ Forge/Type┃タイプ
 BoxRewardInfoWindow/Character┃キャラクター
 BoxRewardInfoWindow/Skin┃スキン
 BoxRewardInfoWindow/Emoticon┃エモート
-BoxRewardInfoWindow/Emblem┃プロフィールアイテム
+BoxRewardInfoWindow/Emblem┃プロフィール
 BoxRewardInfoWindow/Etc┃その他
 Forge/CannotOpenBox┃エラーが発生したため、一部の報酬を獲得できません。\n引き続き問題が発生する場合、カスタマーサービスまでお問い合わせください。
 BoxRewardInfoPopup/ShowUnowned┃未所持アイテムのみ表示
@@ -6268,7 +6309,7 @@ LootWindow/Disintegrate_Mode┃一括分解
 아이템상태┃状態
 온전한아이템┃アイテム
 도안┃ピース
-엠블럼┃プロフィールアイテム
+엠블럼┃プロフィール
 잠금 설명┃Lock状態のアイテムは分解できません。
 최신 획득 아이템┃最近獲得
 분해┃分解
@@ -6786,6 +6827,22 @@ EMBLEM_MARK_SHOP_102586┃2026 Jeju Shadow
 EMBLEM_MARK_SHOP_102587┃2026 Goyang MIR
 EMBLEM_MARK_SHOP_102588┃2026 Seongnam ROX
 EMBLEM_MARK_SHOP_102589┃2026 YJ Whales
+EMBLEM_MARK_SHOP_102590┃S11 DAEJEON AutoArms アイコン
+EMBLEM_MARK_SHOP_102591┃S11 Jeju Shadow アイコン
+EMBLEM_MARK_SHOP_102592┃S11 GyeongBuk Ascenders アイコン
+EMBLEM_MARK_SHOP_102593┃S11 Chungnam CNJ アイコン
+EMBLEM_MARK_SHOP_102594┃S11 YJ Whales アイコン
+EMBLEM_MARK_SHOP_102595┃S11 Seongnam ROX アイコン
+EMBLEM_MARK_SHOP_102596┃S11 JEONNAM ESPORTS アイコン
+EMBLEM_MARK_SHOP_102597┃S11 FN SEJONG アイコン
+EMBLEM_MARK_SHOP_102598┃S11 Daegu Guardians アイコン
+EMBLEM_MARK_SHOP_102599┃S11 Goyang MIR アイコン
+EMBLEM_MARK_SHOP_102600┃S11 INCHEON WAVE アイコン
+EMBLEM_MARK_SHOP_102601┃S11 Gyeonggi Innate アイコン
+EMBLEM_MARK_SHOP_102602┃S11 GC BUSAN アイコン
+EMBLEM_MARK_SHOP_102603┃S11 Gyeongnam Sparkle アイコン
+EMBLEM_MARK_SHOP_102604┃S11 New Rise Gangwon アイコン
+EMBLEM_MARK_SHOP_102605┃S11 GJ Slasher アイコン
 EMBLEM_MARK_S3_IRON_SOLO┃シーズン3アイアン(ソロ)アイコン
 EMBLEM_MARK_S3_IRON_DUO┃シーズン3アイアン(デュオ)アイコン
 EMBLEM_MARK_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)アイコン
@@ -7628,6 +7685,22 @@ EMBLEM_BG_SHOP_202572┃S10 Ascenders 背景
 EMBLEM_BG_SHOP_202573┃S10 Gyeongnam Sparkle 背景
 EMBLEM_BG_SHOP_202574┃S10 Daegu Suseong Guardians 背景
 EMBLEM_BG_SHOP_202575┃コラライン 背景
+EMBLEM_BG_SHOP_202576┃S11 DAEJEON AutoArms 背景
+EMBLEM_BG_SHOP_202577┃S11 Jeju Shadow 背景
+EMBLEM_BG_SHOP_202578┃S11 GyeongBuk Ascenders 背景
+EMBLEM_BG_SHOP_202579┃S11 Chungnam CNJ 背景
+EMBLEM_BG_SHOP_202580┃S11 YJ Whales 背景
+EMBLEM_BG_SHOP_202581┃S11 Seongnam ROX 背景
+EMBLEM_BG_SHOP_202582┃S11 JEONNAM ESPORTS 背景
+EMBLEM_BG_SHOP_202583┃S11 FN SEJONG 背景
+EMBLEM_BG_SHOP_202584┃S11 Daegu Guardians 背景
+EMBLEM_BG_SHOP_202585┃S11 Goyang MIR 背景
+EMBLEM_BG_SHOP_202586┃S11 INCHEON WAVE 背景
+EMBLEM_BG_SHOP_202587┃S11 Gyeonggi Innate 背景
+EMBLEM_BG_SHOP_202588┃S11 GC BUSAN 背景
+EMBLEM_BG_SHOP_202589┃S11 Gyeongnam Sparkle 背景
+EMBLEM_BG_SHOP_202590┃S11 New Rise Gangwon 背景
+EMBLEM_BG_SHOP_202591┃S11 GJ Slasher 背景
 EMBLEM_BG_S3_IRON_SOLO┃シーズン3アイアン(ソロ)背景
 EMBLEM_BG_S3_IRON_DUO┃シーズン3アイアン(デュオ)背景
 EMBLEM_BG_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)背景
@@ -8138,6 +8211,22 @@ EMBLEM_OUTLINE_SHOP_302572┃S10 Ascenders フレーム
 EMBLEM_OUTLINE_SHOP_302573┃S10 Gyeongnam Sparkle フレーム
 EMBLEM_OUTLINE_SHOP_302574┃S10 Daegu Suseong Guardians フレーム
 EMBLEM_OUTLINE_SHOP_302575┃コラライン フレーム
+EMBLEM_OUTLINE_SHOP_302576┃S11 DAEJEON AutoArms フレーム
+EMBLEM_OUTLINE_SHOP_302577┃S11 Jeju Shadow フレーム
+EMBLEM_OUTLINE_SHOP_302578┃S11 GyeongBuk Ascenders フレーム
+EMBLEM_OUTLINE_SHOP_302579┃S11 Chungnam CNJ フレーム
+EMBLEM_OUTLINE_SHOP_302580┃S11 YJ Whales フレーム
+EMBLEM_OUTLINE_SHOP_302581┃S11 Seongnam ROX フレーム
+EMBLEM_OUTLINE_SHOP_302582┃S11 JEONNAM ESPORTS フレーム
+EMBLEM_OUTLINE_SHOP_302583┃S11 FN SEJONG フレーム
+EMBLEM_OUTLINE_SHOP_302584┃S11 Daegu Guardians フレーム
+EMBLEM_OUTLINE_SHOP_302585┃S11 Goyang MIR フレーム
+EMBLEM_OUTLINE_SHOP_302586┃S11 INCHEON WAVE フレーム
+EMBLEM_OUTLINE_SHOP_302587┃S11 Gyeonggi Innate フレーム
+EMBLEM_OUTLINE_SHOP_302588┃S11 GC BUSAN フレーム
+EMBLEM_OUTLINE_SHOP_302589┃S11 Gyeongnam Sparkle フレーム
+EMBLEM_OUTLINE_SHOP_302590┃S11 New Rise Gangwon フレーム
+EMBLEM_OUTLINE_SHOP_302591┃S11 GJ Slasher フレーム
 EMBLEM_OUTLINE_S3_IRON_SOLO┃シーズン3アイアン(ソロ)フレーム
 EMBLEM_OUTLINE_S3_IRON_DUO┃シーズン3アイアン(デュオ)フレーム
 EMBLEM_OUTLINE_S3_IRON_SQUAD┃シーズン3アイアン(スクワッド)フレーム
@@ -9064,9 +9153,12 @@ Product/Name/DROPS_COIN_ESports_Box_S4┃eSports Box (S4)
 Product/Name/DROPS_COIN_ESports_Box_S5┃eSports Box (S5)
 Product/Name/DROPS_COIN_ESports_Box_S6┃eSports Box (S6)
 Product/Name/DROPS_COIN_ESports_Box_S7┃eSports Box (S7)
+Product/Name/DROPS_COIN_ESports_Box_S8┃eSports Box (S8)
 Product/Name/DROPS_COIN_ESports_Box_2024_ESportsClub┃eSports Box (2024 同好会大会)
 Product/Name/DROPS_COIN_ESports_Emote_Box_S8_01┃Drops エモートBox A
+Product/Name/DROPS_COIN_ESports_Emote_Box_S8_02┃Drops エモートBox B
 Product/Name/S8_Autumn_Regular_Pack_01┃2025 落ち葉トークンパッケージ
+Product/Name/S8_Autumn_Big_Pack_01┃2025 落ち葉トークンスペシャルパッケージ
 Product/Name/ThanksGiving_Special_2025_Pack_01┃ワイルドカード感謝祭パッケージⅠ
 Product/Name/ThanksGiving_Special_2025_Pack_02┃ワイルドカード感謝祭パッケージⅡ
 Product/Name/ThanksGiving_Special_2025_Pack_03┃ワイルドカード感謝祭パッケージⅢ
@@ -9117,8 +9209,11 @@ Product/Name/EVENT_NPASS_S10_Basic_Token_1030┃S10 ベーシックトークン�
 Product/Name/EVENT_NPASS_S10_2026_Spring_1031┃春の訪れクエストブック
 Product/Name/EVENT_NPASS_S11_Premium_Token_1033┃S11 プレミアムトークンブック
 Product/Name/EVENT_NPASS_S11_Basic_Token_1034┃S11 ベーシックトークンブック
-Product/Name/EVENT_NPASS_S11_2026_Summer_1035┃夏のワイルドカードクエストブック
+Product/Name/2026Perfect_Support_Pack_01┃パーフェクトパッケージ(パブリッシャーセール)
+Product/Name/EVENT_NPASS_S11_Premium_Token_1036┃S11 プレミアムトークンブックⅡ
+Product/Name/EVENT_NPASS_S11_Basic_Token_1037┃S11 ベーシックトークンブックⅡ
 Product/Name/EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
+Product/Name/WEGAME_IAP_EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
 Product/Name/S9_2025_Winter_Pack_01┃2025 ウィンタースペシャルパッケージ
 Product/Name/S9_2025_Winter_Skin_Bundle_Pack_01┃冬スキンお買い得パッケージ発売
 Product/Name/LOOTBOX_SKINxKEY_SET_10_S9_BONUS┃スキンデータセット(11個入り)
@@ -9166,6 +9261,7 @@ Product/Name/WEGAME_IAP_S10_JecheonPhalanx_Pack_01┃S10 Ascenders パッケー�
 Product/Name/WEGAME_IAP_S10_GyeongnamSparkle_Pack_01┃S10 Gyeongnam Sparkle パッケージ
 Product/Name/WEGAME_IAP_S10_DaeguGuardians_Pack_01┃S10 Daegu Suseong Guardians パッケージ
 Product/Name/LOOTBOX_SKINxKEY_SET_10_S10_BONUS┃スキンデータセット(11個入り)
+Product/Name/LOOTBOX_SKINxKEY_SET_10_S11_BONUS┃スキンデータセット(11個入り)
 Product/Name/S10_Coraline_Emote_Pack_01┃コララインエモートパッケージ
 Product/Name/S10_Coraline_Event_Pack_01┃コラライン登場記念パッケージ
 Product/Name/S10_2026_Spring_Pack_01┃春の訪れパッケージ
@@ -9183,21 +9279,37 @@ Product/Name/S11_2026_SpecialSkin_Seq_Pack_02┃スキン選択券スペシャ�
 Product/Name/S11_2026_SpecialSkin_Seq_Pack_03┃スキン選択券スペシャルパッケージ Ⅲ
 Product/Name/S11_2026_SeasonCollection_Pack_01┃プチ・ミニョンシーズンコレクションパック
 Product/Name/S11_Bihyung_Event_Pack_01┃ビヒョン登場記念パッケージ
+Product/Name/2026_S11_Esports_Pack_01┃S11 eスポーツサポートパッケージ
 Product/Name/S11_DAEJEONAutoArms_Pack_01┃S11 DAEJEON AutoArms パッケージ
+Product/Name/S11_JejuShadow_Pack_01┃S11 Jeju Shadow パッケージ
 Product/Name/S11_GyeongBukAscenders_Pack_01┃S11 GyeongBuk Ascenders パッケージ
+Product/Name/S11_ChungnamCNJ_Pack_01┃S11 Chungnam CNJ パッケージ
 Product/Name/S11_YJWhales_Pack_01┃S11 YJ Whales パッケージ
+Product/Name/S11_SeongnamROX_Pack_01┃S11 Seongnam ROX パッケージ
 Product/Name/S11_JenNamEsports_Pack_01┃S11 JEONNAM ESPORTS パッケージ
+Product/Name/S11_FNSEJONG_Pack_01┃S11 FN SEJONG パッケージ
 Product/Name/S11_DaeguGuardians_Pack_01┃S11 Daegu Guardians パッケージ
+Product/Name/S11_GoyangMIR_Pack_01┃S11 Goyang MIR パッケージ
 Product/Name/S11_INCHEONWAVE_Pack_01┃S11 INCHEON WAVE パッケージ
+Product/Name/S11_GyeonggiInnate_Pack_01┃S11 Gyeonggi Innate パッケージ
 Product/Name/S11_GCBUSAN_Pack_01┃S11 GC BUSAN パッケージ
+Product/Name/S11_GyeongnamSparkle_Pack_01┃S11 Gyeongnam Sparkle パッケージ
 Product/Name/S11_NewRiseGangwon_Pack_01┃S11 New Rise Gangwon パッケージ
+Product/Name/S11_GJSlasher_Pack_01┃S11 GJ Slasher パッケージ
 Shop/Desc/Aya_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
+Shop/Desc/Hyunwoo_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の56%が払い戻され、メールボックスに支給されます。
 Shop/Desc/Adriana_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
+Shop/Desc/Luke_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
 Shop/Desc/LIDailin_NewYear2022_ComboPack_01┃キャラ1種\nスキン1種\nエモート2種\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の65%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
+Shop/Desc/Sua_NewYear2022_ComboPack_01┃キャラ1種\nスキン1種\nエモート2種\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の65%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
 Shop/Desc/Shoichi_NewYear2022_ComboPack_01┃キャラ1種\nスキン1種\nエモート2種\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の65%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
+Shop/Desc/Adela_NewYear2022_ComboPack_01┃キャラ1種\nスキン1種\nエモート2種\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の65%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
 Shop/Desc/Character_Skin_Bundle_Pack_01┃パッケージ内容\n\n- キャラクター5種\n- スキン5種\n\n* この商品は重複払い戻しではなく割引が適用される商品です。\n* すでに所持している商品が含まれている場合、購入価格が調整されます。\n* 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。
+Shop/Desc/Character_Bundle_Pack_01┃パッケージ内容\n\n- キャラクター5種\n\n* この商品は重複払い戻しではなく割引が適用される商品です。\n* すでに所持している商品が含まれている場合、購入価格が調整されます。\n* 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。
 Shop/Desc/Skin_Bundle_Pack_01┃パッケージ内容\n\n- スキン5種\n\n* この商品は重複払い戻しではなく割引が適用される商品です。\n* すでに所持している商品が含まれている場合、購入価格が調整されます。\n* 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。
+Shop/Desc/Silvia_4Emote_Pack_01┃パッケージ内容\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。内容は以下の通りです。\n\n- シルヴィアエモート4種\n- シルヴィアキャラクター\n- ミッドナイト·ブリーズシルヴィアスキン\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の60%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
 Shop/Desc/Cathy_4Emote_Pack_01┃パッケージ内容\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。内容は以下の通りです。\n\n- キャッシーエモート4種\n- キャッシーキャラクター\n- 軍医キャッシースキン\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の60%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
+Shop/Desc/Nicky_4Emote_Pack_01┃パッケージ内容\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。内容は以下の通りです。\n\n- ニッキーエモート4種\n- ニッキーキャラクター\n- 路地裏ニッキースキン\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の60%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
 Shop/Desc/Eleven_4Emote_Pack_01┃パッケージ内容\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。内容は以下の通りです。\n\n- Elevenエモート4種\n- Elevenキャラクター\n- スウィートElevenスキン\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の60%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
 Shop/Desc/Rio_Magical_ComboPack_01┃パッケージ内容\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。内容は以下の通りです。\n\n- 魔法少女莉央エモート4種\n- 魔法少女莉央プロフィールアイコン1種\n- 魔法少女莉央スプレー1種\n- 莉央キャラクター\n- 正義の魔法少女莉央スキン\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の100%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)\n\n※ 本パッケージ商品である「魔法少女莉央」エモート4種、プロフィールアイコン、スプレーは本パッケージを購入した場合のみ獲得できる期間限定アイテムです。
 Shop/Desc/Adela_4Emote_Pack_01┃パッケージ内容\n\nご購入したパッケージ商品は<color=#ffb62f>メールボックス</color>に支給されます。内容は以下の通りです。\n\n- アデラエモート4種\n- アデラキャラクター\n- 白女王アデラスキン\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の60%が払い戻され、メールボックスに支給されます。\n(所持キャラクターに対する払い戻しはA-Coinで支給されます。)
@@ -9430,7 +9542,8 @@ Shop/Desc/GildedReaperLuke_CollectPack_01┃<b><color=#FFBB00>[内容]</color></
 Shop/Desc/Niah_Event_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ニアエモート\n- ニア背景\n- ニアフレーム\n- ニアチームスロット背景\n- A-Coin Boost(3日)\n- ER Point boost(3日)\n\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2025_May_SkinBox_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 5月の確率UPスキンデータボックス 10個\n- データキー 10個\n- アカデミートークン 15個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2025_May_SkinBox_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- 5月の確率UPスキンデータボックス 1個\n- データキー 1個\n- アカデミートークン 1個\n- A-Coin Boost(1時間)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ‐ ボックス」から開けることができます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
-Shop/Desc/Perfect_Support_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- [スキン専用] ワイルドカード (英雄) 1個\n- [スキン専用] ワイルドカード (レア) 1個\n- ワイルドカード (レア) 1個\n- 1,000 NP\n- ラッキー★ボール 1個\n- ラッキー★ボックス 10個\n- XP Boost(7日)\n- A-Coin Boost(7日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ パーフェクトパッケージはSteamウォレットのクレジットで購入できます。\n※ ワイルドカードは「製作所 ‐ ワイルドカード」から開けることができます。\n※ 商品リストの詳細についてはデータボックスの確率表示リンクをご参考ください。\n※ パーフェクトパッケージに含まれた1,000NP商品は無償NPで構成されています。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/Perfect_Support_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - ワイルドカード(英雄) - スキン選択券 1個\n - ワイルドカード(レア) - スキン選択券 1個\n - ワイルドカード(レア) - アイテム選択券 1個\n - 1,000 NP\n - ラッキー★ボール 1個\n - ラッキー★ボックス 10個\n - XP Boost(7日)\n - A-Coin Boost(7日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ パーフェクトパッケージは、Steamウォレットのクレジットで購入できます。\n※ ワイルドカードは「製作所 ＞ ワイルドカード」から使用できます。\n※ 商品リストの詳細につきましては、データボックスの確率表示リンクをご参照ください。\n※ パーフェクトパッケージに含まれた1,000NP商品は、無償NPとなります。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/2026Perfect_Support_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - ワイルドカード(英雄) - スキン選択券 1個\n - ワイルドカード(レア) - スキン選択券 1個\n - ワイルドカード(レア) - アイテム選択券 1個\n - 1,000 NP\n - ラッキー★ボール 1個\n - ラッキー★ボックス 10個\n - XP Boost(7日)\n - A-Coin Boost(7日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ パーフェクトパッケージ(パブリッシャーセール)はSteamウォレットのクレジットで購入できます。\n ※ ワイルドカードは「製作所 ‐ ワイルドカード」から開けることができます。\n ※ 商品リストの詳細についてはデータボックスの確率表示リンクをご参考ください。\n ※ 本パッケージに含まれた1,000NP商品は無償NPで構成されています。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2025ThanksGiving_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- [スキン専用] ワイルドカード (レア) 1個\n- スキンデータボックス 5個\n- データキー 5個\n- 1,500 NP\n- 15,000 A-Coin\n- ラッキー★ボール 2個\n- ER Point Boost(3日)\n- A-Coin Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ シルバーウィークスペシャルパッケージはSteamウォレットのクレジットで購入できます。\n※ ワイルドカードは「製作所 ‐ ワイルドカード」から開けることができます。\n※ 商品リストの詳細についてはデータボックスの確率表示リンクをご参考ください。\n※ シルバーウィークスペシャルパッケージに含まれた1,500NP商品は無償NPで構成されています。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/AfterSchoolDebiMarlene_CollectPack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 放課後デビー&マーリンエモート2種\n- 放課後デビー&マーリンアイコン\n- 放課後デビー&マーリンフレーム\n- 放課後デビー&マーリン背景\n- A-Coin Boost(3日)\n- ER Point boost(3日)\n\n※ 購入した商品は「コレクション」から確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2025_S07_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 訓練所所長カティア ピースエモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S7 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S7のeスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
@@ -9514,9 +9627,12 @@ Shop/Desc/S9_Blair_Emote_Pack_01┃新しく実装されたブレアのエモー
 Shop/Desc/S9_HisuiSkin_Token_Boost_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- スキンデータボックス 3個\n- データキー 3個\n- 10,000 A-Coin\n- 祭りトークン 10個\n- ERトークン 5個\n- A-Coin Boost(1日)\n- ER Point Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ ERトークンは「製作所」内の交換所から使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S9_HisuiSkin_Token_Boost_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- スキンデータボックス 5個\n- データキー 5個\n- 15,000 A-Coin\n- 祭りトークン 30個\n- ERトークン 10個\n- A-Coin Boost(1日)\n- ER Point Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ ERトークンは「製作所」内の交換所から使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S9_HisuiSkin_Token_Boost_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- スキンデータボックス 10個\n- データキー 10個\n- 30,000 A-Coin\n- 祭りトークン 80個\n- ERトークン 30個\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ ERトークンは「製作所」内の交換所から使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S9_HisuiSkin_Token_Boost_ACoinPack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ERトークン 1個または100 A-Coinをランダムに獲得できます。\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ この商品は獲得と同時に開封される商品です。\n※ ERトークンは「製作所」内の交換所から使用できます。
 Shop/Desc/2025_S09_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 運命の赤い約束 ガーネット 何して遊ぶ？エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S9 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S9 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
 Shop/Desc/S09_SeongnamROX_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Seongnam ROX エモート\n- S9 Seongnam ROX アイコン\n- S9 Seongnam ROX 背景\n- S9 Seongnam ROX フレーム\n- S9 Seongnam ROX チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Seongnam ROX パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S09_FNSEJONG_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 FN SEJONG エモート\n- S9 FN SEJONG アイコン\n- S9 FN SEJONG 背景\n- S9 FN SEJONG フレーム\n- S9 FN SEJONG チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 FN SEJONG パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_JecheonPhalanx_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Ascenders エモート\n- S9 Ascenders アイコン\n- S9 Ascenders 背景\n- S9 Ascenders フレーム\n- S9 Ascenders チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Ascenders パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S09_NewRiseGangwon_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 New Rise Gangwon エモート\n- S9 New Rise Gangwon アイコン\n- S9 New Rise Gangwon 背景\n- S9 New Rise Gangwon フレーム\n- S9 New Rise Gangwon チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 New Rise Gangwon パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_allwaysINCHEON_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 all ways INCHEON エモート\n- S9 all ways INCHEON アイコン\n- S9 all ways INCHEON 背景\n- S9 all ways INCHEON フレーム\n- S9 all ways INCHEON チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 all ways INCHEON パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_BusanBeSPA_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Busan BeSPA エモート\n- S9 Busan BeSPA アイコン\n- S9 Busan BeSPA 背景\n- S9 Busan BeSPA フレーム\n- S9 Busan BeSPA チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Busan BeSPA パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S09_CNJesports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S9 Chungnam CNJ エモート\n- S9 Chungnam CNJ アイコン\n- S9 Chungnam CNJ 背景\n- S9 Chungnam CNJ フレーム\n- S9 Chungnam CNJ チームスロット背景\n- S9 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S9 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9530,6 +9646,7 @@ Shop/Desc/S9_2025_Winter_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- �
 Shop/Desc/S9_2025_Winter_Skin_Bundle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 聖夜の巫女ヘジン\n- トナカイルク\n- 新年うさぎクロエ\n- 雪遊びイレム\n- スノーボーダーレオン\n- 冬のクローバーシセラ\n- 聖夜レノックス\n- 冬の街中エレナ\n- モクレンの花ヘジン\n- 極地探検ナタポン\n- 祭りトークン 10個\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ すべてのスキンを所持している場合、購入価格は100NPに調整されます。\n※ 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/LOOTBOX_SKINxKEY_SET_10_S9_BONUS┃スキンデータボックスとデータキーが11個ずつ含まれている商品です。\nスキンデータボックスからはスキンやスキンピースを獲得できます。\n\n<color=orange>ランクリワード及び特殊な形で活用されたアイテムは含まれません。</color>\n\n<color=#FFBB00>イベント期間中、＜S9 ボーナススキンデータボックス＞を1個獲得できます。</color>\n詳細は告知よりご確認ください。\n\n購入したデータボックスは製作所からデータキーを使用して開けることができます。
 Shop/Desc/LOOTBOX_SKINxKEY_SET_10_S10_BONUS┃スキンデータボックスとデータキーが11個ずつ含まれている商品です。\nスキンデータボックスからはスキンやスキンピースを獲得できます。\n\n<color=orange>ランクリワード及び特殊な形で活用されたアイテムは含まれません。</color>\n\n<color=#FFBB00>イベント期間中、＜S10 ボーナススキンデータボックス＞を1個獲得できます。</color>\n詳細は告知よりご確認ください。\n\n購入したデータボックスは製作所からデータキーを使用して開けることができます。
+Shop/Desc/LOOTBOX_SKINxKEY_SET_10_S11_BONUS┃スキンデータボックスとデータキーが11個ずつ含まれている商品です。\nスキンデータボックスからはスキンやスキンピースを獲得できます。\n\n<color=orange>ランクリワード及び特殊な形で活用されたアイテムは含まれません。</color>\n\n<color=#FFBB00>イベント期間中、＜S11 ボーナススキンデータボックス＞を1個獲得できます。</color>\n詳細は告知よりご確認ください。\n\n購入したデータボックスは製作所からデータキーを使用して開けることができます。
 Shop/Desc/S9_Hyper_Seq_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エモート選別カード 1個\n- プロフィール選別カード 1個\n- ワイルドカード (高級) 1個\n- ラッキー★ボックス 3個\n- 5,000 A-Coin\n- 祭りトークン 5個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S9_Hyper_Seq_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- ワイルドカード (高級) 1個\n- ワイルドカード (レア) 1個\n- 高級/レアスキン補給券 1個\n- ラッキー★ボックス 10個\n- シーズンピースパック(高級) 5個\n- 10,000 A-Coin\n- 祭りトークン 15個\n- XP Boost(1日)\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S9_Hyper_Seq_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- [スキン専用] ワイルドカード (英雄) 1個\n- ワイルドカード (英雄) 1個\n- ラッキー★ボックス 10個\n- シーズンピースパック 30個\n- シーズンピースパック(高級) 10個\n- 50,000 A-Coin\n- 祭りトークン 30個\n- ER Point Boost(1日)\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9596,6 +9713,8 @@ Shop/Desc/S11_JejuShadow_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n -
 Shop/Desc/S11_GyeongBukAscenders_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 GyeongBuk Ascenders エモート\n - S11 GyeongBuk Ascenders アイコン\n - S11 GyeongBuk Ascenders 背景\n - S11 GyeongBuk Ascenders フレーム\n - S11 GyeongBuk Ascenders チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 GyeongBuk Ascenders パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_ChungnamCNJ_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Chungnam CNJ エモート\n - S11 Chungnam CNJ アイコン\n - S11 Chungnam CNJ 背景\n - S11 Chungnam CNJ フレーム\n - S11 Chungnam CNJ チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Chungnam CNJ パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_YJWhales_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 YJ Whales エモート\n - S11 YJ Whales アイコン\n - S11 YJ Whales 背景\n - S11 YJ Whales フレーム\n - S11 YJ Whales チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 YJ Whales パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_SeongnamROX_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Seongnam ROX エモート\n - S11 Seongnam ROX アイコン\n - S11 Seongnam ROX 背景\n - S11 Seongnam ROX フレーム\n - S11 Seongnam ROX チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Seongnam ROX パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_JenNamEsports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 JEONNAM ESPORTS エモート\n - S11 JEONNAM ESPORTS アイコン\n - S11 JEONNAM ESPORTS 背景\n - S11 JEONNAM ESPORTS フレーム\n - S11 JEONNAM ESPORTS チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 JEONNAM ESPORTS パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_FNSEJONG_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 FN SEJONG エモート\n - S11 FN SEJONG アイコン\n - S11 FN SEJONG 背景\n - S11 FN SEJONG フレーム\n - S11 FN SEJONG チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 FN SEJONG パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_DaeguGuardians_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Daegu Guardians エモート\n - S11 Daegu Guardians アイコン\n - S11 Daegu Guardians 背景\n - S11 Daegu Guardians フレーム\n - S11 Daegu Guardians チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Daegu Guardians パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_GoyangMIR_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Goyang MIR エモート\n - S11 Goyang MIR アイコン\n - S11 Goyang MIR 背景\n - S11 Goyang MIR フレーム\n - S11 Goyang MIR チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Goyang MIR パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -9605,12 +9724,19 @@ Shop/Desc/S11_GCBUSAN_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S1
 Shop/Desc/S11_GyeongnamSparkle_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 Gyeongnam Sparkle エモート\n - S11 Gyeongnam Sparkle アイコン\n - S11 Gyeongnam Sparkle 背景\n - S11 Gyeongnam Sparkle フレーム\n - S11 Gyeongnam Sparkle チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 Gyeongnam Sparkle パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_NewRiseGangwon_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 New Rise Gangwon エモート\n - S11 New Rise Gangwon アイコン\n - S11 New Rise Gangwon 背景\n - S11 New Rise Gangwon フレーム\n - S11 New Rise Gangwon チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 New Rise Gangwon パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n \n - S11 GJ Slasher エモート\n - S11 GJ Slasher アイコン\n - S11 GJ Slasher 背景\n - S11 GJ Slasher フレーム\n - S11 GJ Slasher チームスロット背景\n - S11 eスポーツサポーターコイン\n - XP Boost(3日)\n - A-Coin Boost(3日)\n - ER Point Boost(3日)\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 「S11 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n ※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n ※ 購入した商品は「コレクション」から確認できます。\n ※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Product/Name/SEASON_PASS_S5┃シーズン5パック
 Shop/Desc/SEASON_PASS_S5┃シーズン5にリリースされる商品をお得な価格で事前購入してみてください!
+Product/Name/SEASON_PASS_S6┃シーズン6パック
 Shop/Desc/SEASON_PASS_S6┃シーズン6にリリースされる商品をお得な価格で事前購入してみてください!
+Product/Name/SEASON_PASS_S7┃シーズン7パック
 Shop/Desc/SEASON_PASS_S7┃シーズン7にリリースされる商品をお得な価格で事前購入してみてください!
+Product/Name/SEASON_PASS_S8┃シーズン8パック
 Shop/Desc/SEASON_PASS_S8┃シーズン8にリリースされる商品をお得な価格で事前購入してみてください!
+Product/Name/SEASON_PASS_S10┃1.0 PACK：バカンス
 Shop/Desc/SEASON_PASS_COMMON┃<color=#ffdf72><size=32>シーズンパック</size></color>\n<color=#B2EBF4>特別スキンとエモート、墓石、そしてシーズン中に発売される様々な商品</color>をお買い得価格で購入できます。\nシーズンパックでより楽しくゲームをプレイしてみましょう！\nシーズンパックに含まれる商品についてはお知らせをご参照ください。シーズンパックの内容は変更される場合があります。
+Product/Name/SEASON_PASS_S11┃シーズンパック：武装メイド
 Product/Name/SEASON_PASS_S12┃シーズンパック：チェンジ
+Product/Name/SEASON_PASS_S13┃シーズンパック：夕焼け
 Product/Name/SEASON_PASS_S14┃シーズンパック：ラッキー★
 Product/Name/SEASON_PASS_S15┃シーズンパック：レギオン
 Product/Name/SEASON_PASS_S16┃シーズンパック：アカデミー
@@ -10165,6 +10291,8 @@ PickupEvent/Name/SEASON9_SKIN_BOX_PICKUP┃追加されたスキンボーナス�
 PickupEvent/Desc/SEASON9_SKIN_BOX_PICKUP┃スキンデータボックスに追加されたスキンが登場するボーナス確率が適用されています。
 PickupEvent/Name/SEASON10_SKIN_BOX_PICKUP┃追加されたスキンボーナス獲得確率適用中
 PickupEvent/Desc/SEASON10_SKIN_BOX_PICKUP┃スキンデータボックスに追加されたスキンが登場するボーナス確率が適用されています。
+PickupEvent/Name/SEASON11_SKIN_BOX_PICKUP┃追加されたスキンボーナス獲得確率適用中
+PickupEvent/Desc/SEASON11_SKIN_BOX_PICKUP┃スキンデータボックスに追加されたスキンが登場するボーナス確率が適用されています。
 Product/Name/S6_LuckyMarble2025_Legion_Token_01┃レギオントークン X10
 Product/Name/S6_LuckyMarble2025_ACoin_100┃A-Coin X 100
 PickupEvent/Name/Pickup_Emote_Voucher_251016┃エモート選別カード
@@ -10202,6 +10330,7 @@ PickupEvent/Name/Pickup_Emblem_Voucher_260122┃プロフィール選別カー�
 PickupEvent/Name/Pickup_Emblem_Voucher_260129┃プロフィール選別カード
 PickupEvent/Name/Pickup_Emblem_Voucher_260205┃プロフィール選別カード
 PickupEvent/Desc/Pickup_Emote_Voucher_251016┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
+PickupEvent/Desc/Pickup_Emote_Voucher_251023┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
 PickupEvent/Desc/Pickup_Emote_Voucher_251030┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
 PickupEvent/Desc/Pickup_Emote_Voucher_251106┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
 PickupEvent/Desc/Pickup_Emote_Voucher_251113┃アイテムリストは毎週木曜日午後12時(JST)に変更されます。
@@ -11348,6 +11477,22 @@ Goods/Name/3402572┃S10 Gyeongnam Sparkle チームスロット背景
 Goods/Name/3402573┃S10 Daegu Suseong Guardians チームスロット背景
 Goods/Name/3402574┃コラライン
 Goods/Name/3402575┃デラックスRエディション プチ・ミニョン
+Goods/Name/3402576┃S11 DAEJEON AutoArms チームスロット背景
+Goods/Name/3402577┃S11 Jeju Shadow チームスロット背景
+Goods/Name/3402578┃S11 GyeongBuk Ascenders チームスロット背景
+Goods/Name/3402579┃S11 Chungnam CNJ チームスロット背景
+Goods/Name/3402580┃S11 YJ Whales チームスロット背景
+Goods/Name/3402581┃S11 Seongnam ROX チームスロット背景
+Goods/Name/3402582┃S11 JEONNAM ESPORTS チームスロット背景
+Goods/Name/3402583┃S11 FN SEJONG チームスロット背景
+Goods/Name/3402584┃S11 Daegu Guardians チームスロット背景
+Goods/Name/3402585┃S11 Goyang MIR チームスロット背景
+Goods/Name/3402586┃S11 INCHEON WAVE チームスロット背景
+Goods/Name/3402587┃S11 Gyeonggi Innate チームスロット背景
+Goods/Name/3402588┃S11 GC BUSAN チームスロット背景
+Goods/Name/3402589┃S11 Gyeongnam Sparkle チームスロット背景
+Goods/Name/3402590┃S11 New Rise Gangwon チームスロット背景
+Goods/Name/3402591┃S11 GJ Slasher チームスロット背景
 Goods/Name/3403001┃機械回路
 Goods/Name/3403002┃星空の夜
 Goods/Name/3403003┃秋の紅葉
@@ -11428,6 +11573,7 @@ Goods/Name/3503044┃S9 eスポーツサポーターコイン
 Goods/Name/3503045┃S10 eスポーツサポーターコイン
 Goods/Name/3503046┃S11 eスポーツピース
 Goods/Name/3503047┃S12 eスポーツピース
+Goods/Name/3503048┃S11 eスポーツサポーターコイン
 Goods/Name/3508001┃GGSTカード
 Goods/Name/3508002┃P5R コラボカード
 ItemType/WILD_CARD_SKIN/Name┃ワイルドカード - スキン選択券
@@ -11629,6 +11775,8 @@ Goods/Name/3102086┃S9 ボーナススキンデータボックス
 Goods/Desc/3102086┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102087┃S10 ボーナススキンデータボックス
 Goods/Desc/3102087┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102088┃S11 ボーナススキンデータボックス
+Goods/Desc/3102088┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3103004┃白い花箱
 Goods/Desc/3103004┃白い花箱、緑の花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜白い花＞を獲得できます。
 Goods/Name/3103005┃緑の花箱
@@ -11707,6 +11855,8 @@ Goods/Name/3103037┃ERトークンランダムボックス
 Goods/Desc/3103037┃ERトークン 1個または100 A-Coinをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3103038┃200イベントNP(7日) + 祭りトークン 10個
 Goods/Desc/3103038┃200イベントNP(7日)と祭りトークン 10個を獲得できます。
+Goods/Name/3103039┃100イベントNP(7日) + プチ・ミニョントークン 10個
+Goods/Desc/3103039┃100イベントNP(7日)とプチ・ミニョントークン 10個を獲得できます。
 Goods/Name/3102019┃2025 金の福袋
 Goods/Desc/3102019┃4つのいろんなアイテムを獲得できる＜2025 金の福袋＞です。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102020┃悪魔の袋
@@ -11775,6 +11925,9 @@ Goods/Name/3143009┃eSports Box (2024 同好会大会)
 Goods/Name/3143010┃eSports Box (S6)
 Goods/Name/3143011┃eSports Box (2024 ナショナルリーグ)
 Goods/Name/3143012┃eSports Box (S7)
+Goods/Name/3143013┃eSports Box (S8)
+Goods/Name/3143014┃Drops エモートBox A
+Goods/Name/3143015┃Drops エモートBox B
 Goods/Desc/3143001┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143002┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143003┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
@@ -11787,6 +11940,9 @@ Goods/Desc/3143009┃リストの中から一つをランダムに獲得でき�
 Goods/Desc/3143010┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143011┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Desc/3143012┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143013┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143014┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Desc/3143015┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/9999999┃未所持スキン補給チケット<#00ffee>No.01</color>
 Goods/Name/9999998┃未所持スキン補給チケット<#00ffee>No.02</color>
 Goods/Name/3119001┃未所持スキン補給チケット<#00ffee>No.01</color>
@@ -12126,7 +12282,7 @@ Mission/8000401/1┃コバルトモード死なずに実験体2キル
 Mission/8000402/1┃コバルトモード死なずに実験体3キル
 Mission/8000501/1┃コバルトモード連続3キル以上の実験体処置
 Mission/8000601/1┃コバルトモード交戦で連続2キル達成
-Mission/8000602/1┃コバルトモード交戦で連続3キル達成
+Mission/8000602/1┃コバルトモード交戦で連続2キル達成
 Mission/8000701/1┃コバルトモードクレジット使用
 Mission/8000702/1┃コバルトモードクレジット使用
 Mission/8000703/1┃コバルトモードクレジット使用
@@ -12146,8 +12302,8 @@ Mission/8000910/1┃コバルトモード治癒ドローン特性使用
 Mission/8001001/1┃コバルトモード事前チーム構成でプレイ
 Mission/8001101/1┃コバルトモードプレイ
 Mission/8001102/1┃コバルトモードプレイ
-Mission/8001201/1┃コバルトモード1レベルインフュージョン購入
-Mission/8001202/1┃コバルトモード2レベルインフュージョン購入
+Mission/8001201/1┃コバルトモードでレベル1以上のインフュージョンを購入する
+Mission/8001202/1┃コバルトモードでレベル2以上のインフュージョンを購入する
 Mission/8001203/1┃コバルトモード3レベルインフュージョン購入
 Mission/8001301/1┃コバルトモードすべての増幅装置を占領して維持
 Mission/8001401/1┃コバルトモードヒールパック獲得
@@ -14720,9 +14876,9 @@ Item/Effects/303508┃{0}クレジット獲得します。
 Item/Effects/303509┃{0}クレジット獲得します。
 Item/Effects/303510┃{0}クレジット獲得します。
 Item/Effects/306001┃ガジェットエネルギーを獲得します。
-Item/Effects/307001┃{0}秒間最大体力{1}、妨害耐性{2}%を獲得します。
-Item/Effects/307002┃{0}秒間攻撃力{1}、ダメージ吸血{2}%を獲得します。
-Item/Effects/307003┃{0}秒間適合能力値{1}、クールダウン減少{2}を獲得します。
+Item/Effects/307001┃{0}秒間最大体力を{1}、妨害耐性を{2}%獲得します。\n使用時、既存のカプセル効果は解除されます。
+Item/Effects/307002┃{0}秒間攻撃力を{1}、ダメージ吸血を{2}%獲得します。\n使用時、既存のカプセル効果は解除されます。
+Item/Effects/307003┃{0}秒間適合能力値を{1}、クールダウン減少を{2}獲得します。\n使用時、既存のカプセル効果は解除されます。
 Item/Effects/802601┃移動速度が永続的に{1}増加します。
 Item/BulletCapacity/Reload┃<color=yellow>装弾数:</color> {0}発
 Item/BulletCapacity/Charge┃<color=yellow>最大チャージ数:</color> {0}発(チャージ:{1}秒)
@@ -15142,9 +15298,9 @@ Skill/LobbyDesc/1010200┃ダイリンが前方に突進し、範囲内の敵に
 Skill/Group/Desc/1010200┃ダイリンが前方に突進し、範囲内の敵に<color=white>{20}</color>のスキルダメージを与えます。このスキルは3回使用できます。\n\n<color=yellow>酔拳：</color>酔いを40消耗して突進する距離を増やし、ダメージ量を<color=white>{21}</color>まで増加させます。
 Skill/Group/Coef/1010200┃ダイリンが前方に突進し、範囲内の敵に<color=white>{0}</color><color=#ffd775>(+攻撃力の{1})</color>のスキルダメージを与えます。このスキルは3回使用できます。\n\n<color=yellow>酔拳：</color>酔いを40消耗して突進する距離を増やし、ダメージ量を<color=white>{2}</color><color=#ffd775>(+攻撃力の{3})</color>まで増加させます。
 Skill/Group/ExpansionTip/1010200┃<i>このスキルは最後に使用する時のみ壁を超えることができます。</i>
-Skill/LobbyDesc/1010300┃ダイリンが酒を飲んで酔いを獲得し、すべての基本攻撃を回避し、受けるダメージが減少します。\n\n<color=white>大酒家 ：</color>酒飲みを完了した後、敵に与える基本攻撃ダメージ量が増加します。
-Skill/Group/Desc/1010300┃ダイリンが{0}秒間酒を飲んで酔いを45獲得し、すべての基本攻撃を回避し、受けるダメージが<color=white>{20}</color>減少します。ダイリンが基本攻撃をすると酒飲みのクールダウンが{3}秒減少します。\n\n<color=white>大酒家 ：</color>酒飲みを完了した後、敵に与える基本攻撃ダメージ量が酔いの量に比例して{1} ~ {2}まで増加します。
-Skill/Group/Coef/1010300┃ダイリンが{0}秒間酒を飲んで酔いを45獲得し、すべての基本攻撃を回避し、受けるダメージが<color=white>{20}</color>減少します。ダイリンが基本攻撃をすると酒飲みのクールダウンが{3}秒減少します。\n\n<color=white>大酒家 ：</color>酒飲みを完了した後、敵に与える基本攻撃ダメージ量が酔いの量に比例して{1} ~ {2}まで増加します。
+Skill/LobbyDesc/1010300┃ダイリンが酒を飲んで酔いを獲得し、すべての基本攻撃を回避し、受けるダメージが減少します。\n\n<color=white>大酒家：</color>酒飲みを完了した後、敵に与える基本攻撃ダメージ量が増加します。
+Skill/Group/Desc/1010300┃ダイリンが{0}秒間酒を飲んで酔いを45獲得し、すべての基本攻撃を回避し、受けるダメージが<color=white>{20}</color>減少します。ダイリンが基本攻撃をすると酒飲みのクールダウンが{3}秒減少します。\n\n<color=white>大酒家：</color>酒飲みを完了した後、敵に与える基本攻撃ダメージ量が酔いの量に比例して{1} ~ {2}まで増加します。
+Skill/Group/Coef/1010300┃ダイリンが{0}秒間酒を飲んで酔いを45獲得し、すべての基本攻撃を回避し、受けるダメージが<color=white>{20}</color>減少します。ダイリンが基本攻撃をすると酒飲みのクールダウンが{3}秒減少します。\n\n<color=white>大酒家：</color>酒飲みを完了した後、敵に与える基本攻撃ダメージ量が酔いの量に比例して{1} ~ {2}まで増加します。
 Skill/LobbyDesc/1010400┃ダイリンが酒を口に含んで、前方に向けて扇形に吹き出します。的中された敵はダメージを受け、移動速度が減少します。\n\n<color=yellow>酔拳：</color>酔いを消耗して的中された敵の移動速度をより大きく減少させます。
 Skill/Group/Desc/1010400┃ダイリンが酒を口に含んで、前方に向けて扇形に吹き出します。的中された敵は<color=white>{20}</color>のダメージを受け、{0}秒間移動速度が{4}減少します。\n\n<color=yellow>酔拳：</color>酔いを40消耗して的中された敵の移動速度を{6}減少させます。
 Skill/Group/Coef/1010400┃ダイリンが酒を口に含んで、前方に向けて扇形に吹き出します。的中された敵は<color=white>{1}</color><color=#ffd775>(+攻撃力の{2})</color>のスキルダメージを受け、{0}秒間移動速度が{4}減少します。\n\n<color=yellow>酔拳：</color>酔いを40消耗して的中された敵の移動速度を{6}減少させます。
@@ -15306,7 +15462,7 @@ Skill/LobbyDesc/1014400┃キアラが指定した方向へ執着の鎖を放ち
 Skill/Group/Desc/1014400┃キアラが指定した方向へ執着の鎖を放ち、的中した敵に<color=white>{0}</color>のスキルダメージを与えて鎖で繋ぎます。鎖の連結が{1}秒以上維持されると、<color=white>{2}</color>のスキルダメージを与えて対象を{3}秒間束縛します。
 Skill/Group/Coef/1014400┃キアラが指定した方向へ執着の鎖を放ち的中した敵に<color=white>{0}</color><color=#DDA0DD>(+スキル増幅の{7})</color>のスキルダメージを与え鎖で繋ぎます。鎖の連結が{2}秒以上維持されると<color=white>{4}</color><color=#DDA0DD>(+スキル増幅の{8})</color>のスキルダメージを対象を{6}秒間束縛させます。
 Skill/LobbyDesc/1014500┃キアラが暴走して羽を広げ、暴走ゲージが残っている間変身します。暴走している間、キアラの基本攻撃の射程距離が増加し、最大体力が増加します。この時、一定時間ごとに暴走ゲージを消耗します。暴走している間、範囲内の敵にスキルダメージを与え、対象の数に比例して体力を回復し、暴走ゲージを獲得します。暴走中のキアラは審判を下すことができます。\n\n<color=white>審判：</color>対象の位置に素早く落下し、烙印のスタック数に比例する固定ダメージを与えます。実験体を倒した場合には暴走状態が初期化されて審判を再び使用することができます。\n\n審判を使用して対象に落下する時、キアラは対象指定不可状態になります。
-Skill/Group/Desc/1014500┃キアラが暴走して羽を広げ、暴走ゲージが残っている間変身します。暴走している間、キアラの基本攻撃の射程距離が{6}増加し、最大体力が{1}増加します。この時、1秒ごとに{7}の暴走ゲージを消耗します。暴走している間、範囲内の敵に{0}秒あたり<color=white>{2}</color>のスキルダメージを与え、対象の1人あたり<color=white>{3}</color>の体力を回復し、暴走ゲージを{5}獲得します。暴走中のキアラは審判を下すことができます。\n\n審判：対象の位置に素早く落下し、<color=white>{4}</color>の固定ダメージを与えます。対象の烙印スタック1あたりダメージ量が{8}増加します。審判で実験体を倒した場合には暴走状態が初期化されて審判を再び使用することができます。
+Skill/Group/Desc/1014500┃キアラが暴走して羽を広げ、暴走ゲージが残っている間変身します。暴走している間、キアラの基本攻撃の射程距離が{6}増加し、最大体力が{1}増加します。この時、1秒ごとに{7}の暴走ゲージを消耗します。暴走している間、範囲内の敵に{0}秒あたり<color=white>{2}</color>のスキルダメージを与え、対象の1人あたり<color=white>{3}</color>の体力を回復し、暴走ゲージを{5}獲得します。暴走中のキアラは審判を下すことができます。\n\n<color=white>審判：</color>対象の位置に素早く落下し、<color=white>{4}</color>の固定ダメージを与えます。対象の烙印スタック1あたりダメージ量が{8}増加します。審判で実験体を倒した場合には暴走状態が初期化されて審判を再び使用することができます。
 Skill/Group/Coef/1014500┃キアラが暴走して羽を広げ、暴走ゲージが残っている間変身します。暴走している間、キアラの基本攻撃の射程距離が{4}増加し、最大体力が{1}増加します。この時、1秒ごとに{5}の暴走ゲージを消耗します。暴走している間、範囲内の敵に{0}秒あたり<color=white>{2}</color><color=#DDA0DD>(+スキル増幅の{3})</color>のスキルダメージを与え、対象の1人あたり<color=white>{8}</color><color=#DDA0DD>(+スキル増幅の{12})</color>の体力を回復し、暴走ゲージを{13}獲得します。暴走中のキアラは審判を下すことができます。\n\n<color=white>審判：</color>対象の位置に素早く落下し、<color=white>{6}</color><color=#DDA0DD>(+スキル増幅の{9})</color>の固定ダメージを与えます。対象の烙印スタック1あたりダメージ量が{14}増加します。審判で実験体を倒した場合には暴走状態が初期化されて審判を再び使用することができます。
 Skill/Group/ExpansionTip/1014500┃<i>審判使用後、対象に向かって落下する間、対象指定不可状態になります。</i>\n<i>対象が野生動物の場合には回復量が{0}、暴走ゲージの獲得量は{1}のみ適用されます。暴走ゲージは{2}秒後に1秒あたりの減少量が{3}増加します。</i>
 Skill/Group/ExpansionTip/1014510┃<i>審判使用後、対象に向かって落下する間、対象指定不可状態になります。</i>\n<i>対象が野生動物の場合には回復量が{0}、暴走ゲージの獲得量は{1}しか適用されません。暴走ゲージは{2}秒後に1秒あたりの減少量が{3}増加します。</i>
@@ -16162,7 +16318,7 @@ Skill/LobbyDesc/1033300┃<color=#ffffff>ガード：</color>ニッキーがガ�
 Skill/Group/Desc/1033300┃<color=#ffffff>ガード：</color>マウスカーソルの方へガードを構え、{0}秒間受けるすべてのダメージが{1}減少し、すべての妨害効果免疫状態になります。ダメージ効果または移動不可効果のガードに成功した場合、{2}秒間<color=white>怒りのパンチ！</color>を使用できるようになり、持続時間が終わると<color=white>カウンター</color>を発動します。\n\n<color=#ffffff>カウンター：</color>受けるダメージ減少状態を維持した状態で突進し、周りの敵に<color=white>{3}</color>のスキルダメージを与え、{4}秒間移動速度を{5}減少させます。移動速度は持続時間にわたって回復します。
 Skill/Group/Coef/1033300┃<color=#ffffff>ガード：</color>マウスカーソルの方へガードを構え、{0}秒間受けるすべてのダメージが{1}減少し、すべての妨害効果免疫状態になります。ダメージ効果または移動不可効果のガードに成功した場合、{2}秒間<color=white>怒りのパンチ！</color>を使用できるようになり、持続時間が終わると<color=#ffffff>カウンター</color>を発動します。\n\n<color=#ffffff>カウンター：</color>受けるダメージ減少状態を維持した状態で突進し、周りの敵に<color=white>{10}</color><color=#dda0dd>(+スキル増幅の{12})</color>のスキルダメージを与え、{4}秒間移動速度を{5}減少させます。移動速度は持続時間にわたって回復します。
 Skill/Group/ExpansionTip/1033300┃<i>移動不可状態ではカウンターが発動しません。</i>
-Skill/LobbyDesc/1033400┃<color=#ffffff>強力なパンチ</color>：ニッキーが強力なパンチで前方の敵にダメージを与え、移動速度を減少させます。\n\n<color=#ffffff>怒りのパンチ！</color>：ガードに成功すると、怒りを込めたパンチが使用できます。怒りのパンチ！は前方の敵により大きなダメージを与えて移動速度を減少させると同時に気絶させます。\n\n<color=#ffffff>怒りのパンチ！</color>は<color=#ffffff>強力なパンチ</color>とクールダウンを共有しないため、連続で使用できます。
+Skill/LobbyDesc/1033400┃<color=#ffffff>強力なパンチ：</color>ニッキーが強力なパンチで前方の敵にダメージを与え、移動速度を減少させます。\n\n<color=#ffffff>怒りのパンチ！：</color>ガードに成功すると、怒りを込めたパンチが使用できます。怒りのパンチ！は前方の敵により大きなダメージを与えて移動速度を減少させると同時に気絶させます。\n\n<color=#ffffff>怒りのパンチ！</color>は<color=#ffffff>強力なパンチ</color>とクールダウンを共有しないため、連続で使用できます。
 Skill/Group/Desc/1033400┃<color=#ffffff>強力なパンチ：</color>ニッキーが強力なパンチで前方の敵に<color=white>{20}</color>のスキルダメージを与え、{2}秒間移動速度を{3}減少させます。\n\n<color=#ffffff>怒りのパンチ！：</color>ガードに成功すると、怒りを込めたパンチが使用できます。怒りのパンチ！は前方の敵に<color=white>{21}</color>のスキルダメージを与えて{6}秒間移動速度を{7}減少させ、{8}秒間気絶させます。\n\n<color=white>強力なパンチ</color>と<color=white>怒りのパンチ！</color>はクールダウンを共有しません。
 Skill/Group/Coef/1033400┃<color=#ffffff>強力なパンチ：</color>ニッキーが強力なパンチで前方の敵に<color=white>{0}</color><color=#dda0dd>(+スキル増幅の{9})</color>のスキルダメージを与え、{2}秒間移動速度を{3}減少させます。\n\n<color=#ffffff>怒りのパンチ！：</color>ガードに成功すると、怒りを込めたパンチが使用できます。怒りのパンチ！は前方の敵に<color=white>{4}</color><color=#dda0dd>(+スキル増幅の{10})</color>のスキルダメージを与えて{6}秒間移動速度を{7}減少させ、{8}秒間気絶させます。\n\n<color=white>強力なパンチ</color>と<color=white>怒りのパンチ！</color>はクールダウンを共有しません。
 Skill/Group/Desc/1033410┃<color=#ffffff>強力なパンチ：</color>ニッキーが強力なパンチで前方の敵に<color=white>{20}</color>のスキルダメージを与え、{2}秒間移動速度を{3}減少させます。\n\n<color=#ffffff>怒りのパンチ！：</color>ガードに成功すると、怒りを込めたパンチが使用できます。怒りのパンチ！は前方の敵に<color=white>{21}</color>のスキルダメージを与えて{6}秒間移動速度を{7}減少させ、{8}秒間気絶させます。\n\n<color=white>強力なパンチ</color>と<color=white>怒りのパンチ！</color>はクールダウンを共有しません。
@@ -19261,7 +19417,7 @@ CharacterState/Group/Name/11000┃ソロ補正
 CharacterState/Group/Name/11001┃デュオ補正
 CharacterState/Group/Name/11002┃スクワッド補正
 CharacterState/ModeModifier/IncreaseModeDamageRatio┃既存ダメージ量の{1}{0}%</color>だけダメージを与えます。
-CharacterState/ModeModifier/PreventModeDamageRatio┃既存ダメージ量{1}{0}%</color>だけダメージを受けます。
+CharacterState/ModeModifier/PreventModeDamageRatio┃既存ダメージ量の{1}{0}%</color>だけダメージを受けます。
 CharacterState/ModeModifier/IncreaseModeHealRatio┃受ける回復効果が{1}{0}%</color>だけ適用されます。
 CharacterState/ModeModifier/IncreaseModeHealerGiveHealRatio┃与える回復効果が{1}{0}%</color>だけ適用されます。
 CharacterState/ModeModifier/IncreaseModeShieldRatio┃受けるシールド効果が{1}{0}%</color>だけ適用されます。
@@ -22450,6 +22606,12 @@ CharacterState/Group/Name/7310620┃速射
 CharacterState/Group/Desc/7310620┃適合能力値と攻撃速度が増加しました。
 CharacterState/Group/Name/7310640┃速射
 CharacterState/Group/Desc/7310640┃再使用待機中です。
+Trait/Name/7310701┃極上のコレクション
+Trait/Tooltip/7310701┃高い等級のアイテムを装備するほど、能力値が上昇します。
+Trait/DetailTooltip/7310701┃装備しているアイテムの等級に応じて、追加能力値を獲得します。\n\n<color=#B245FF>英雄</color>等級以上のアイテム5個：攻撃力 +{0}またはスキル増幅 +{1}\n<color=#FFC62E>伝説</color>等級以上のアイテム1個：攻撃力 +{2}またはスキル増幅 +{3}\n<color=#FFC62E>伝説</color>等級以上のアイテム2個：防御力 +{4}\n<color=#FFC62E>伝説</color>等級以上のアイテム3個：体力 +{5}\n<color=#FFC62E>伝説</color>等級以上のアイテム4個：移動速度 +{6}\n<color=#FFC62E>伝説</color>等級以上のアイテム5個：防御貫通 +{7}\n<color=#E32224>神話</color>等級以上のアイテム1個：ダメージ吸血 +{8}\n<color=#E32224>神話</color>等級以上のアイテム2個：妨害耐性 +{9}
+Trait/StatTooltip/7310701┃装備しているアイテムの等級に応じて、追加能力値を獲得します。\n\n<color=#B245FF>英雄</color>等級以上のアイテム5個：{0} +{1}\n<color=#FFC62E>伝説</color>等級以上のアイテム1個：{2} +{3}\n<color=#FFC62E>伝説</color>等級以上のアイテム2個：防御力 +{4}\n<color=#FFC62E>伝説</color>等級以上のアイテム3個：体力 +{5}\n<color=#FFC62E>伝説</color>等級以上のアイテム4個：移動速度 +{6}\n<color=#FFC62E>伝説</color>等級以上のアイテム5個：防御貫通 +{7}\n<color=#E32224>神話</color>等級以上のアイテム1個：ダメージ吸血 +{8}\n<color=#E32224>神話</color>等級以上のアイテム2個：妨害耐性 +{9}\n\n現在適用中のコレクション数：{10}
+CharacterState/Group/Name/7310700┃極上のコレクション
+CharacterState/Group/Desc/7310700┃コレクションを収集しています。
 CharacterStoryName┃名前
 CharacterStoryAge┃年齢
 CharacterStoryHeight┃身長
@@ -23197,6 +23359,8 @@ ToastMessage/CanNotUseHyperloopNotAdjacent┃移動できない地域です。
 2일차 이후는 인접한 지역으로만 이동할 수 있습니다┃2日目以降近くに地域にのみ移動できます。
 상품 정보 에러 팝업┃商品情報を確認できません。もう一度お試しください。
 랜덤박스 상품 구매 후 아이템 획득 에러 팝업┃アイテム獲得に失敗しました。\n製作所から購入したアイテムを使用してください。
+EvidenceBoxCannotOpen┃クールダウン中は使用できません。
+ToastMessage/NotEnoughPlayerForMultiPractice┃マルチプレイ練習モードは、最低2人のプレイヤーが参加する必要があります。
 DisableWithdrawal┃今は請約撤回(払い戻し)できません。
 CharacterIsNotSelected┃先に実験体を選択してください。
 CharacterNotAlive┃無効なアクション
@@ -24342,6 +24506,7 @@ Character/Name/85┃ミルカ
 Character/Name/86┃フェンリル
 Character/Name/87┃コラライン
 Character/Name/88┃ビヒョン
+Character/Name/89┃クレイヴァー
 Character/Name/9998┃Dr. ハナ
 Character/Name/9999┃Dr. ナジャ
 GameResult/Character/Name/1┃Jackie
@@ -25668,6 +25833,7 @@ GameResult/Tag/MatchingMode/Normal┃一般
 GameResult/Tag/MatchingMode/Cobalt┃コバルト
 GameResult/Tag/MatchingMode/Rank┃ランク
 GameResult/Tag/MatchingMode/Practice┃練習モード
+GameResult/Tag/MatchingMode/MultiPractice┃マルチプレイ練習モード
 GameResult/Tag/MatchingMode/Test┃AI対戦
 GameResult/Tag/MatchingMode/Custom┃カスタム
 GameResult/Tag/MatchingMode/CobaltCustom┃コバルト
@@ -25687,11 +25853,13 @@ GameResult/Tag/MatchingMode/TutorialPart3┃チュートリアル
 GameResult/Tag/MatchingMode/TutorialPart4┃チュートリアル
 GameResult/Tag/MatchingMode/TutorialPart5┃チュートリアル
 GameResult/Tag/MatchingMode/TutorialPart6┃チュートリアル
+GameResult/Tag/MatchingMode/TutorialDeepening1┃チュートリアル - 上級編
 Loading/MatchingMode/Normal┃NORMAL GAME
 Loading/MatchingMode/Cobalt┃COBALT
 Loading/MatchingMode/Rank┃RANK GAME
 Loading/MatchingMode/Test┃PRACTICE
 Loading/MatchingMode/Practice┃PRACTICE
+Loading/MatchingMode/MultiPractice┃MULTI PRACTICE
 Loading/MatchingMode/Custom┃CUSTOM GAME
 Loading/MatchingMode/CobaltCustom┃COBALT
 Loading/MatchingMode/SquadRumbleCobalt┃COBALT UNION GAME
@@ -25707,6 +25875,7 @@ Loading/MatchingMode/TutorialPart3┃チュートリアル 3
 Loading/MatchingMode/TutorialPart4┃チュートリアル 4
 Loading/MatchingMode/TutorialPart5┃チュートリアル 5
 Loading/MatchingMode/TutorialPart6┃チュートリアル 6
+Loading/MatchingMode/TutorialDeepening1┃チュートリアル - 上級編
 Loading/MatchingTeamMode/Solo┃ルミア島
 Loading/MatchingTeamMode/Squad┃ルミア島
 Loading/MatchingTeamMode/Cobalt┃コバルト・プロトコル
@@ -25714,6 +25883,7 @@ Loading/MatchingTeamMode/LoneWolf┃ルミア島
 Loading/MatchingTeamMode/LoneWolfCustom┃ルミア島
 Loading/MatchingTeamMode/SquadRumbleCobalt┃UNION GAME
 MatchingModeType/Name/Practice┃練習モード
+MatchingModeType/Name/MultiPractice┃マルチプレイ練習モード
 MatchingModeType/Name/Test┃AI対戦
 MatchingModeType/Name/Normal┃一般対戦
 MatchingModeType/Name/Rank┃ランク対戦
@@ -25729,6 +25899,7 @@ MatchingModeType/FullName/Test┃AI対戦
 MatchingModeType/FullName/Normal┃一般対戦(スクワッド)
 MatchingModeType/FullName/Rank┃ランク対戦(スクワッド)
 MatchingModeType/FullName/Custom┃カスタム対戦(スクワッド)
+MatchingModeType/FullName/MultiPractice┃マルチプレイ練習モード
 MatchingModeType/FullName/Cobalt┃コバルト・プロトコル
 MatchingModeType/FullName/CobaltCustom┃カスタム対戦(コバルト)
 MatchingModeType/FullName/SquadRumble┃ユニオン対戦(スクワッド)
@@ -25763,6 +25934,7 @@ GameModeSubType/Name/COBALT┃コバルト
 GameModeSubType/Name/LONEWOLF┃ローンウルフ
 GameModeSubType/Name/RANKING┃スクワッド
 GameModeSubType/Name/SQUADBATTLE┃スクワッド
+GameModeSubType/Name/MultiPractice┃マルチプレイ練習モード
 ItemType/SKIN/Name┃スキン
 Skin/Name/1001000┃ジャッキー
 Skin/Name/1001001┃処刑者ジャッキー
@@ -26166,6 +26338,7 @@ Skin/Name/1086001┃ミッドナイトビースト フェンリル
 Skin/Name/1087000┃コラライン
 Skin/Name/1087001┃トキメキいっぱい コラライン
 Skin/Name/1088000┃ビヒョン
+Skin/Name/1089000┃クレイヴァー
 Skin/OnSelectVO/1001003┃システムは壊す時がいつもしびれるよね、でしょ？
 Skin/OnSelectVO/1002002┃バンバーン！花火の始まりですよ！
 Skin/OnSelectVO/1007005┃んじゃ、やってみるか。
@@ -26526,6 +26699,7 @@ Skin/Desc/1038004┃マイちゃん、いずれ貴方と同じステージの上
 Skin/Desc/1066002┃最も大事な真実は、亡者の沈黙の中に潜んでいるものさ。
 Skin/Desc/1061003┃今夜の花火、一緒に見に行ってくれるよね？
 Skin/Desc/1043005┃気を付けて。このマフィン、爆発するかもしれないから。
+Skin/Desc/1086001┃ここ、フェルの領域。お前、迷子？
 Collection/Name/11001┃すべては娘のため…
 Collection/Name/11002┃ピクセルアートは…好き…？
 Collection/Name/11003┃彷徨う魂に救済を
@@ -26577,6 +26751,8 @@ Collection/Name/22013/2┃S9 eスポーツサポーターⅡ
 Collection/Name/22014/1┃S10 eスポーツサポーターⅠ
 Collection/Name/22014/2┃S10 eスポーツサポーターⅡ
 Collection/Name/22015/1┃シーズン11 eスポーツコミュニティ
+Collection/Name/22016/1┃S11 eスポーツサポーターⅠ
+Collection/Name/22016/2┃S11 eスポーツサポーターⅡ
 Collection/Name/24001┃2024年 金の福袋！
 Collection/Name/24002┃花咲かし大作戦Ⅰ
 Collection/Name/24003┃花咲かし大作戦Ⅱ
@@ -26722,6 +26898,7 @@ GameMainHud/Chapter/Desc/LumiResurrection┃案内ロボットLUMIを利用し�
 GameMainHud/Chapter/Desc/ResurrectionKit┃再生キットを使って全滅状況で復活します。
 GameMainHud/Chapter/Desc/NotRevive┃復活できません。ご注意ください。
 EvidenceSelectWindow/Name┃落とし物選択
+EvidenceSelectWindow/Desc┃必要なアイテムを1つ選択できます。
 CharacterState/Group/Name/2500000┃医療支援ネットワーク
 CharacterState/Group/Desc/2500000┃病院地域での復活費用が{0}クレジット減少します。 \n\n一定の確率で野生動物の死体から救急箱が登場することがあります。
 EvidenceBoxLockText┃ロック解除中
@@ -26925,6 +27102,7 @@ gameTip_Desc_10803_1┃一定時間の間、乱流の近くにいると、実験
 gameTip_Title_10300_1┃地域ギミック
 gameTip_Desc_10300_1┃ルミア島の地域ギミックは、各地域のコンセプトに合ったオブジェクトで構成され、地域の特色によって適用される効果が異なります。
 gameTip_Title_10301_1┃警察署 - 落とし物箱
+gameTip_Desc_10301_1┃「落とし物箱」からは、生存に役立つ消耗アイテムを獲得できます。
 gameTip_Title_10302_1┃学校 - 柱時計
 gameTip_Desc_10302_1┃学校内に設置されている「柱時計」は時間を戻す特別な力を持っています。\n使用時、すべてのスキル(基本・戦術・武器スキル)のクールダウンを短縮し、消耗された爆発タイマーの一部を回復できます。
 gameTip_Title_10303_1┃病院 - 医療支援ネットワーク
@@ -27912,6 +28090,8 @@ GuideBook/Page/Content/LastSafeZone/2┃戦闘で勝利して最終生存者に�
 Tutorial/Btn/Ch1/Lumia┃ルミア島へ移動
 Tutorial/Btn/NextPart┃続けてプレイ
 Tutorial/Popup/NextPartConfirm┃選択したチュートリアルが完了しました。\n続けて次のチュートリアルを行いますか？
+Tutorial/Popup/Advanced/TutorialReplay┃選択したチュートリアルが完了しました。\nこのチュートリアルもう一度行いますか？
+Tutorial/Btn/Advanced/TutorialReplay┃もう一度プレイ
 Tutorial┃チュートリアル
 Tutorial/Notice/Clear┃クリア
 Tutorial/Error/NotYetSelectArea┃今は選択できない地域です。
@@ -27923,7 +28103,8 @@ modeSelect/Tutorial/Desc/Beginner┃基本的な流れ
 modeSelect/Tutorial/Info/Beginner┃チュートリアルでゲームの基本的な流れを学んでみましょう。
 modeSelect/Tutorial/Title/Advanced┃チュートリアル - 上級編
 modeSelect/Tutorial/Desc/Advanced┃上級機能学習
-modeSelect/Tutorial/Info/Advanced┃後日アップデートされる予定です。ぜひご期待ください。
+modeSelect/Tutorial/Info/Advanced┃上級チュートリアルで最後まで生き残るための応用テクニックを学んでみましょう。
+modeSelect/Tutorial/Info/NotYetPlay┃現在プレイできるチュートリアルはありません。今後のアップデートをぜひご期待ください。
 Tutorial/Deco/Text┃PART
 Tutorial/Title/10001┃チュートリアル 1
 Tutorial/Title/10002┃チュートリアル 2
@@ -27931,12 +28112,18 @@ Tutorial/Title/10003┃チュートリアル 3
 Tutorial/Title/10004┃チュートリアル 4
 Tutorial/Title/10005┃チュートリアル 5
 Tutorial/Title/10006┃チュートリアル 6
+Tutorial/Title/20001┃復活
+Tutorial/Title/20002┃保安コンソール
+Tutorial/Title/20003┃ガジェットヴォルト
 Tutorial/Desc/10001┃基本操作
 Tutorial/Desc/10002┃アイテム探索・製作
 Tutorial/Desc/10003┃味方と合流
 Tutorial/Desc/10004┃特殊材料アイテム - オブジェクト
 Tutorial/Desc/10005┃禁止区域\nVLS(垂直発射装置)
 Tutorial/Desc/10006┃臨時セーフゾーン\nクロノスフィア
+Tutorial/Desc/20001┃復活のルールと方法について
+Tutorial/Desc/20002┃保安コンソール・CCTVについて
+Tutorial/Desc/20003┃ガジェットヴォルトの選択・使用方法について
 Tutorial/Dialogue/Ch1/Info/1┃よし…！実験体転送完了、っと…！では、実験のモニタリングを始め…
 Tutorial/Dialogue/Ch1/Info/2┃くっ…頭痛ぇ……ここは…どこだ？
 Tutorial/Dialogue/Ch1/Info/3┃さっきまで確か学校で……
@@ -28321,7 +28508,7 @@ Tutorial/Img/Ch12/TemporarySafeZone/Desc_2┃臨時セーフゾーンが<color=#
 Tutorial/Img/Ch12/TemporarySafeZoneInfo/Title┃臨時セーフゾーン
 Tutorial/Img/Ch12/TemporarySafeZoneInfo/Desc┃臨時セーフゾーンにいるにも関わらず、爆発タイマーが減っているあなた！\n\n爆発タイマーは、臨時セーフゾーンに<color=#8FDBF8>1チームだけ</color>が存在している場合にのみ削られません。一つの臨時セーフゾーンに<color=#8FDBF8>2チーム以上</color>存在したり、臨時セーフゾーンの<color=#8FDBF8>外に出る場合</color>には爆発タイマーのカウントダウンが始まります。\n\n難しく考える必要はありません。臨時セーフゾーンにいる敵を敵を追い出して、生き残りましょう！
 Tutorial/Img/Ch13/ChronoSphere/Title┃クロノスフィア
-Tutorial/Img/Ch13/ChronoSphere/Desc┃<color=#8FDBF8>最終セーフゾーン</color>は、ルミア島で生き残った最後の2チームの中で、最終生存者を決めるための最後の舞台です。\n\n最終セーフゾーンは、最後の禁止区域に生成された<color=#8FDBF8>クロノスフィア</color>の周りに円型で生成され、セーフゾーン以外の地域では<color=#8FDBF8>爆発タイマー</color>のカウントダウンが始まります。\n\nセーフゾーンは一定時間後、徐々に縮まり、最終的にはなくなって爆発タイマーが作動します。\n時間があまり残ってない場合には、敵を先に倒すしかありません！\n敵との戦闘で勝利し、最後まで生き残りましょう！
+Tutorial/Img/Ch13/ChronoSphere/Desc┃<color=#8FDBF8>最終セーフゾーン</color>は、ルミア島で生き残った最後の2チームの中で、最終生存者を決めるための最後の舞台です。\n\n最終セーフゾーンは、最後の禁止区域に生成された<color=#8FDBF8>クロノスフィア</color>の周りに円の形で生成され、セーフゾーン以外の地域では<color=#8FDBF8>爆発タイマー</color>のカウントダウンが始まります。\n\nセーフゾーンは一定時間後、徐々に縮まり、最終的にはなくなって爆発タイマーが作動します。\n残り時間が少ない場合には、敵を先に倒すしかありません！\n敵との戦闘で勝利し、最後まで生き残りましょう！
 Tutorial/Dialogue/Lobby/Nickname/1┃お疲れ様。実験を無事に終わらせたようね。
 Tutorial/Dialogue/Lobby/Nickname/2┃私はDr.ナジャ。今回の実験の総責任者の一人よ。
 Tutorial/Dialogue/Lobby/Nickname/3┃あなたの実験体コード……いいえ、あなたの名前は？
@@ -28333,6 +28520,44 @@ Tutorial/Dialogue/Lobby/NormalGame/1┃では…次の実験を始めましょ�
 Tutorial/Dialogue/Lobby/GoodLuck/1┃「今すぐ開始」ボタンを押すと、マッチングが始まるわ。人数が集まったら、実験を始めるわよ。
 Tutorial/Dialogue/Lobby/GoodLuck/2┃これからいろいろな試練が待ち構えているでしょうけど…武運を祈るわ。
 Tutorial/Dialogue/Lobby/GoodLuck/3┃絶望の果てまで到達したあなたに… すべての栄光を。
+Tutorial/Img/Advanced/Resurrection/Title┃復活のルール
+Tutorial/Img/Advanced/SecurityConsole/Title┃保安コンソール
+Tutorial/Img/Advanced/GadgetVault/Title┃ガジェットヴォルト
+Tutorial/Img/Advanced/GadgetVaultSetting/Title┃ガジェットヴォルトの選択方式変更
+Tutorial/Img/Advanced/Resurrection/Desc_1┃味方の復活方法が分からなくてお困りですか？\n\nまずは、<color=#8FDBF8>ゲームのチャプター</color>を確認しましょう！\nチャプターによって、味方を復活させる方法が異なります。\n\nゲームチャプターは、ゲームフェーズに応じて<color=#8FDBF8>オープニング</color>/<color=#8FDBF8>オープニング後半</color>/<color=#8FDBF8>ミドルゲーム</color>/<color=#8FDBF8>ミドルゲーム後半</color>/<color=#8FDBF8>エンドゲーム</color>の順に変更されます。\n\n味方が死亡したとしても慌てず、ゲームフェーズ情報に表示されているアイコンを確認して、今のチャプターを把握するのが大事です！
+Tutorial/Img/Advanced/Resurrection/Desc_2┃ゲームチャプターが確認できたら、次は<color=#8FDBF8>ゲームチャプター別復活方法</color>を見ていきましょう！\nオープニングチャプターでは、死亡したり全滅したりしても<color=#8FDBF8>自動復活</color>します。希望する地域を選んで復活することもできますよ。\nオープニング後半チャプターからは全滅すると復活できないので、<color=#8FDBF8>全滅は絶対に避けましょう！</color>\nミドルゲームでは、味方を復活させるために<color=#8FDBF8>クレジット</color>を使用する必要があります。\n<color=#8FDBF8>Kiosk</color>や<color=#8FDBF8>LUMI</color>、またはガジェットの<color=#8FDBF8>携帯用Kiosk</color>で復活させることができます。<color=#FFCE2B>[M]キー</color>を押して拡張マップから復活できる場所を確認しましょう。\nミドルゲーム後半では、<color=#8FDBF8>LUMI</color>でしか復活できなくなります。拡張マップ[M]で<color=#FFCE2B>[Shift]キー</color>を押し、LUMIの動線をよく把握しておく必要があります。\nそしてエンドゲームでは、もう味方を復活させることができなくなるので、さらに注意しましょう！
+Tutorial/Img/Advanced/Resurrection/Desc_3┃最後にゲームチャプターとは関係ない、特殊な状況での復活について説明します。\n\n<color=#FFCE2B>亀裂</color>から戦闘研究室へ<color=#8FDBF8>入場</color>した場合、死亡した味方が戦闘研究室で全員復活します。ただし、瀕死状態なら復活できないので、入場前に確認してください！\n戦闘研究室で<color=#8FDBF8>勝利</color>した時も、瀕死・死亡状態の味方が自動で復活します。\n\nまた、<color=#FFCE2B>臨時セーフゾーン</color>内の戦闘で<color=#8FDBF8>勝利</color>したら、\n該当地域内で瀕死・死亡状態になった味方が全員復活するので、安心して最終セーフゾーンでの戦いに備えましょう！\n\nゲームチャプター別の復活と特殊な状況での復活、この2つに注意して実験を進めれば、きっと最後の生存者になれるはずです！
+Tutorial/Img/Advanced/SecurityConsole/Desc_1┃<color=#8FDBF8>保安コンソール</color>を探していますか？\n\n<color=#FFCE2B>[M]キー</color>を押して拡張マップを開いてみましょう！そこで保安コンソールの位置が確認できます。\n\n保安コンソールのところまで来たら、コンソールの様子をよく見てください！\n光が消えていたり、<color=#8FDBF8>緑色(味方が制御中)</color>になっていたら、安心して近づいても大丈夫ですよ。\n\nしかし、<color=#8FDBF8>赤色(敵が制御中)</color>になっている場合は気をつけてください！誰かがあなたを見張っているのかもしれませんからね。
+Tutorial/Img/Advanced/SecurityConsole/Desc_2┃保安コンソールを制御できましたか？\n\n保安コンソールを起動すると、いろんなことが分かるようになりますよ。\n\nその地域の<color=#8FDBF8>保安カメラ周囲の視界</color>を<color=#8FDBF8>確保</color>して、周囲の敵が近づいてくるのを確認できるようになります。\nまた、<color=#8FDBF8>ミニマップ</color>を通して、現在の地域にまだ生き残っている<color=#8FDBF8>野生動物</color>も少しの間確認できるんです。\n\n広がった視界を活用して情報を手に入れ、次はどう動くか計画を立ててみましょう！
+Tutorial/Img/Advanced/SecurityConsole/Desc_3┃保安カメラの検知範囲が気になりますか？\n\n保安カメラの近くまで行くと、<color=#8FDBF8>円の範囲</color>が見えるようになります。\n\nその範囲内に入って円の枠線が<color=#8FDBF8>赤色に変わったら</color>、敵が起動した保安カメラによってあなたの位置がバレてしまったということなので、早くそこから離れましょう！\n\n常に保安カメラの範囲が表示されるのが不便でしたら、ゲーム設定を変更してみてください。\n設定画面を開き、「ゲーム＞詳細設定」へ移動して<color=#8FDBF8>保安カメラの視界範囲表示機能使用</color>のチェックをオフにすると、<color=#FFCE2B>[Alt]キー</color>を押している時だけ表示されるようになりますよ。
+Tutorial/Img/Advanced/GadgetVault/Desc_1┃いろんな機能で生存に役立つ<color=#8FDBF8>ガジェットヴォルト</color>！\nでも、ガジェットエネルギーが足りないとガジェットヴォルトは使えません。\n\nなので、十分な量の<color=#8FDBF8>ガジェットエネルギー</color>を獲得しておく必要があります。\n\n基本的に、ガジェットエネルギーは<color=#8FDBF8>ゲームフェーズ</color>が<color=#8FDBF8>切り替わる</color>たびに獲得できます。\nさらに、LUMIから購入したり、変異クマの群れを倒すことで獲得できる<color=#8FDBF8>ガジェットエネルギーパック</color>を<color=#8FDBF8>使用</color>しても手に入りますよ！
+Tutorial/Img/Advanced/GadgetVault/Desc_2┃ガジェットエネルギーを十分に獲得したら、いよいよ使ってみる番です！\n\nまずは、使用するガジェットヴォルトを<color=#8FDBF8>選択</color>してみましょうか？\n<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>長押し(ホールド)</color>すると、マウスカーソルの位置に<color=#8FDBF8>ガジェットヴォルトのホイールプレート</color>が現れます。\nそこから使用するガジェットヴォルトを選ぶことができます。\n\n選択できたら、次は<color=#8FDBF8>使用</color>してみましょう！\n<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>押し</color>、マウスで<color=#8FDBF8>使いたい位置をクリック</color>すれば完了！\nクリックした位置に、選択したガジェットヴォルトが使用されます。\n\nそれでは、実際に主なガジェットヴォルトを選択して、使ってみましょう！
+Tutorial/Img/Advanced/GadgetVaultSetting/Desc_1┃ホイールを使ったガジェット選択方式がお好みではないですか？\nご安心ください！ゲーム設定で、他の方式に変更することもできますから。\n\nゲーム設定の入力項目から、<color=#8FDBF8>ガジェットヴォルトUI設定</color>を選択できますよ。\n<color=#8FDBF8>ホイール方式</color>：<color=#FFCE2B>ガジェットヴォルトのショートカットキー</color>を長押しして使用するガジェットを変更\n<color=#8FDBF8>クイックスロット併合方式</color>：<color=#FFCE2B>クイックスロットのショートカットキー[V]</color>を押してクイックスロットを表示し、その下のガジェットをクリックして使用するガジェットを変更\n\nゲーム設定で好きな方式を選び、ガジェットヴォルトの選択と使用方法を練習してみましょう！
+Tutorial/Quest/Advanced/GadgetVaultSelect_1/Title┃携帯用Kiosk
+Tutorial/Quest/Advanced/GadgetVaultSelect_1/Desc┃「Kiosk呼び出し機」を選択
+Tutorial/Quest/Advanced/GadgetVaultUse_1/Title┃携帯用Kiosk
+Tutorial/Quest/Advanced/GadgetVaultUse_1/Desc_1┃「Kiosk呼び出し機」を使用
+Tutorial/Quest/Advanced/GadgetVaultUse_1/Desc_2┃「携帯用Kiosk」を使ってアイテム購入
+Tutorial/Quest/Advanced/GadgetVaultSelect_2/Title┃狩人の大釜
+Tutorial/Quest/Advanced/GadgetVaultSelect_2/Desc┃「狩人の大釜」を選択
+Tutorial/Quest/Advanced/GadgetVaultUse_2/Title┃狩人の大釜
+Tutorial/Quest/Advanced/GadgetVaultUse_2/Desc_1┃焚き火に「狩人の大釜」を設置
+Tutorial/Quest/Advanced/GadgetVaultUse_2/Desc_2┃「万年スープ」を獲得
+Tutorial/Quest/Advanced/GadgetVaultSelect_3/Title┃携帯用VLS
+Tutorial/Quest/Advanced/GadgetVaultSelect_3/Desc┃「携帯用VLS」を選択
+Tutorial/Quest/Advanced/GadgetVaultUse_3/Title┃携帯用VLS
+Tutorial/Quest/Advanced/GadgetVaultUse_3/Desc_1┃「携帯用VLS」を設置
+Tutorial/Quest/Advanced/GadgetVaultUse_3/Desc_2┃「携帯用VLS」を使用
+Tutorial/Quest/Advanced/GadgetEnergyUse/Title┃ガジェットヴォルトの使用練習
+Tutorial/Quest/Advanced/GadgetEnergyUse/Desc┃ガジェットエネルギー100以上使用
+Tutorial/Info/Advanced/GadgetVaultSelect_1┃<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>長押し</color>して、ホイールプレートから<color=#8FDBF8>Kiosk呼び出し機</color>を選択してください。
+Tutorial/Info/Advanced/GadgetVaultUse_1┃<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>押して</color><color=#8FDBF8>Kiosk呼び出し機</color>を使用し、<color=#8FDBF8>携帯用Kiosk</color>を呼び出してアイテムを購入してください。
+Tutorial/Info/Advanced/GadgetVaultSelect_2┃<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>長押し</color>して、ホイールプレートから<color=#8FDBF8>狩人の大釜</color>を選択してください。
+Tutorial/Info/Advanced/GadgetVaultUse_2┃<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>押して</color><color=#8FDBF8>焚き火</color>の上に<color=#8FDBF8>狩人の大釜</color>を設置・使用し、万年スープを獲得してください。
+Tutorial/Info/Advanced/GadgetVaultSelect_3┃<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>長押し</color>して、ホイールプレートから<color=#8FDBF8>携帯用VLS</color>を選択してください。
+Tutorial/Info/Advanced/GadgetVaultUse_3┃<color=#FFCE2B>[G]キー</color>を<color=#FFCE2B>押して</color><color=#8FDBF8>携帯用VLS</color>を設置し、マウス右クリックで使用してください。
+Tutorial/Info/Advanced/GadgetVaultUse┃すべてのミッションをクリアしました！\nガジェットヴォルトを自由に使ってみましょう。\nチュートリアルを終了したい場合は、下の「チュートリアル完了ボタン」をクリックしてください。
+Tutorial/Btn/Advanced/Complete┃チュートリアル完了
 Trait/Name/7900101┃攻撃力 I
 Trait/Name/7900102┃攻撃力 II
 Trait/Name/7900103┃攻撃力 III
@@ -29154,7 +29379,7 @@ VF Credit이 부족합니다.┃クレジットが足りません。
 CobaltRandomPickMouseOver┃ロテーションを含め、 \n現在保有している実験体にランダムに交替します。
 다른 사람이 점령 중입니다.┃他の実験体が占領を試みています。
 전체채팅 사용┃コバルトモード全体チャットON
-GameSetting/EnableAllChattingService┃コバルトモードで全体チャットを受けたり送信することができます。
+GameSetting/EnableAllChattingService┃オプションを有効にすると、Shift + Enterで全体チャットの送受信ができます。
 5초 후 선택되지 않은 실험체들이 상대팀과 교환됩니다.┃この後、未選択の実験体が相手チームと交換されます。
 실험체 교체하기┃実験体を交替
 캐릭터 교체 툴팁┃{0}実験体選択
@@ -29299,6 +29524,8 @@ Skill/LobbyDesc/4509011┃しばらくすると、指定した位置に隕石を
 Skill/Group/LobbyDesc/4509011┃しばらくすると、指定した位置に隕石を落として大きなダメージを与えます。\n隕石に当たった敵はしばらく気絶します。
 Epi_100001_Name┃Ep.0 Eternal Return
 Epi_100001_Desc┃永遠に繰り返される実験が、今始まる──。
+Epi_100002_Name┃Ep.1 Teardrops of Mermaids
+Epi_100002_Desc┃人魚が流した涙は、宝石となり残る。
 Epi_200001_Name┃ER X GGST
 Epi_200001_Desc┃見知らぬ者たちとの出会いが、彼らにもたらす変化とは何か――
 Epi_200002_Name┃Ep：赤字から始まるルミアカジノ復興記
@@ -29313,6 +29540,26 @@ Scen_10000103_Name┃胡蝶の夢
 Scen_10000103_Desc┃目の前の光景は、忘れたい夢か、それとも残酷な現実か。
 Scen_10000104_Name┃Amor Fati
 Scen_10000104_Desc┃たとえそれが、叶えられない夢だとしても······
+Scen_10000201_Name┃Researchers
+Scen_10000201_Desc┃アグライア研究員たちは、実験中発見された新たな現象に注目する。
+Scen_10000202_Name┃第一追撃
+Scen_10000202_Desc┃真夜中の森、そこで追撃されていたのは…
+Scen_10000203_Name┃Restore
+Scen_10000203_Desc┃イシュトヴァーンは、見知らぬ、それでいてどこか見覚えのある場所で目を覚ます。
+Scen_10000204_Name┃Retained
+Scen_10000204_Desc┃過去の実験を覚えているアビゲイル。彼女が出会ったのは…
+Scen_10000205_Name┃Memories of Sea
+Scen_10000205_Desc┃砂浜で休息をとる三人。しかし…
+Scen_10000206_Name┃第二追撃
+Scen_10000206_Desc┃真夜中の森で、二番目の追撃戦が始まる。
+Scen_10000207_Name┃Through the Monitor
+Scen_10000207_Desc┃モニター越しにアビゲイルを見つめていたDr. ナジャは…
+Scen_10000208_Name┃襲撃
+Scen_10000208_Desc┃ダニエルが、砂浜で休憩していたアビゲイルたちを襲撃する。
+Scen_10000209_Name┃怒り
+Scen_10000209_Desc┃戦闘が終わったあと、アビゲイルは二人の亡骸を見つめる。
+Scen_10000210_Name┃Teardrops of Mermaids
+Scen_10000210_Desc┃人魚が流した涙は、宝石となり胸の中に残る。
 Scen_20000101_Name┃近寄る影
 Scen_20000101_Desc┃お酒に酔ったダイリンは、仲間とはぐれてしまった。無防備な彼女に近寄る怪しい影、果たして彼女の運命は···？
 Scen_20000102_Name┃一触即発
@@ -29371,15 +29618,11 @@ D_CharLobby_Chiara_S005┃キアラ
 D_CharLobby_Rio_S000┃莉央
 D_CharLobby_Emma_S005┃エマ
 D_CharLobby_Sua_S000┃スア
-D_CharLobby_Extra_K┃K
-D_CharLobby_Extra_Q┃Q
 D_CharLobby_Hyunwoo_S000┃ヒョヌ
 D_CharLobby_Yuki_S000┃雪
 D_CharLobby_Hyejin_S000┃ヘジン
 D_CharLobby_Vanya_S000┃ヴァーニャ
 D_CharLobby_Jackie_S000┃ジャッキー
-D_CharLobby_Extra_Announce┃アナウンス
-D_CharLobby_Extra_ManInMemory┃記憶の中の男
 D_CharLobby_Leni_S000┃レニ
 D_CharLobby_Tia_S000┃ティア
 D_CharLobby_Leni_S003┃レニ
@@ -29387,12 +29630,27 @@ D_CharLobby_Hyejin_S006┃ヘジン
 D_CharLobby_Tia_S005┃ティア
 D_CharLobby_Vanya_S004┃ヴァーニャ
 D_CharLobby_Camilo_S000┃カミロ
+D_CharLobby_Abigail_S000┃アビゲイル
+D_CharLobby_Istvan_S000┃イシュトヴァーン
+D_CharLobby_Jenny_S000┃ジェニー
+D_CharLobby_Garnet_S000┃ガーネット
+D_CharLobby_Daniel_S000┃ダニエル
+D_CharLobby_Kenneth_S000┃ケネス
+D_CharLobby_NPC_Hana┃Dr. ハナ
+D_CharLobby_NPC_Nadja┃Dr. ナジャ
+D_CharLobby_NPC_Mage┃Mr. メイジ
+D_CharLobby_Extra_K┃K
+D_CharLobby_Extra_Q┃Q
+D_CharLobby_Extra_Announce┃アナウンス
+D_CharLobby_Extra_ManInMemory┃記憶の中の男
 D_CharLobby_Extra_Customer_A┃紳士的な客
 D_CharLobby_Extra_Customer_B┃キザな客
 D_CharLobby_Extra_Customer_C┃初々しい客
 D_CharLobby_Extra_Customer_D┃厄介な客
 D_CharLobby_Extra_Customer_E┃期待している客
 D_CharLobby_Extra_Customer_F┃お願いする客
+D_CharLobby_Extra_Reseacher_F1┃女性研究員
+D_CharLobby_Extra_Reseacher_M1┃男性研究員
 Prompt_20000101_01_0┃ルミア島の実験──
 Prompt_20000101_01_1┃それは、アグライアが長年追い求めてきた新人類プロジェクト、「VF能力者同士の争いを通じて、新人類への進化の可能性」を極めるための実験。
 Prompt_20000101_01_2┃この実験に参加するVF能力者──実験体たちは、アグライアの厳重な監視の下、殺し合いを\n強いられるサバイバルゲームへと投げ込まれる。
@@ -32468,6 +32726,1404 @@ Prompt_20000307_01_90┃個性溢れるメイドたちが、ご主人様の幸�
 Prompt_20000307_01_91┃毎日騒がしいけれど──
 Prompt_20000307_01_92┃とても楽しい、かけがえのない場所。
 Prompt_20000307_01_93┃お帰りなさいませ、ご主人様！プチ・ミニョンです！
+Prompt_10000201_01_0┃VF覚醒者は一般人に比べ、高い身体再生能力を持つ。
+Prompt_10000201_01_1┃これは安定したVFが持つ恒常性が、覚醒者に及ぼす影響の一つと推測される。
+Prompt_10000201_01_2┃しかし、この恒常性は覚醒者の精神にまでは影響を及ぼさない。
+Prompt_10000201_01_3┃精神が深刻に汚染された場合、覚醒者はVF暴走に非常に脆弱な状態となる。
+Prompt_10000201_01_4┃これは周囲の他の覚醒者にも連鎖的に影響を及ぼしかねない、危険な現象だ。
+Prompt_10000201_01_5┃そのために考案されたのが……。
+Prompt_10000201_01_6┃実験規則第3条11項「記憶消去プロトコル」
+Prompt_10000201_01_7┃VF覚醒者の記憶データをアグライアの中枢システムにバックアップし、記憶をその時点まで巻き戻す技術と手順である。
+Prompt_10000201_01_8┃実験体の精神状態が実験に支障をきたすと判断された場合、このプロトコルを実行する。
+Prompt_10000201_01_9┃しかし……。
+Prompt_10000201_01_10┃ですが、最近の実験で記憶消去プロトコルを実行したにもかかわらず、実験体の記憶が維持される現象が観測されました。
+Prompt_10000201_01_11┃ふむ……。
+Prompt_10000201_01_12┃巨大な会議場で、白衣をまとった集団がDr. ハナの発表に集中している。
+Prompt_10000201_01_13┃アグライアの中核を担う人材、研究員たちである。
+Prompt_10000201_01_14┃世界各地の碩学たちで構成されたこの集団は、一つの目的のためにここに集っていた。
+Prompt_10000201_01_15┃ハナの発表が続く。
+Prompt_10000201_01_16┃ただいまご覧いただいているのは、ヒョヌ…いえ、14M-RFT04の事例です。
+Prompt_10000201_01_17┃当該実験体は、ここ数回の実験投入前に必ず記憶消去プロトコルを実行していました。
+Prompt_10000201_01_18┃しかし、それにもかかわらず、以前の実験に関する内容を断片的に記憶しているかのような言動が見られました。
+Prompt_10000201_01_19┃会議場がどよめきに包まれる。
+Prompt_10000201_01_20┃なかなか興味深い事例ですね。実験当時のデータは……。
+Prompt_10000201_01_21┃プロトコルの手順に問題があったのでは？これは検証が必要だな。
+Prompt_10000201_01_22┃様々な反応が飛び交う中、彼らの目は一様に、新しいおもちゃを見つけた子どものように輝いていた。
+Prompt_10000201_01_23┃彼らにとって、研究倫理や実験体の人権はさして重要ではない。
+Prompt_10000201_01_24┃彼らを突き動かす最大の行動原理は、新たな知識への探求心である。
+Prompt_10000201_01_25┃あぅ…あ、あの……。
+Prompt_10000201_01_26┃ハナがどうすることもできず、ざわつく聴衆に目を向けた、その瞬間。
+Prompt_10000201_01_27┃静粛に。
+Prompt_10000201_01_28┃会議場は静寂に包まれた。
+Prompt_10000201_01_29┃しかし同時に、ハナもまた聴衆と共に凍りついてしまった。
+Prompt_10000201_01_30┃はぁ……。Dr. ハナ、まとめなさい。
+Prompt_10000201_01_31┃は、はいっ！
+Prompt_10000201_01_32┃ナジャの声に我を取り戻したハナが、発表を再開する。
+Prompt_10000201_01_33┃え……っと、その後の当該実験体との面談および追加検査では、特に異常は発見されませんでした。
+Prompt_10000201_01_34┃今後、この現象が継続的に発生するのか、また他の実験体にも起こる可能性があるかを追跡調査する必要があります。
+Prompt_10000201_01_35┃詳細なデータと今後の研究に関する内容は、本日アップロードされた論文をご参照ください。
+Prompt_10000201_01_36┃そ、それでは、以上で発表を終わります…！
+Prompt_10000201_01_37┃事務的な拍手を最後に、ハナの発表は幕を閉じた。
+Prompt_10000201_01_38┃しばらくして。
+Prompt_10000201_01_39┃ふぅ……。
+Prompt_10000201_01_40┃発表を終えたハナは、研究室に戻って一息ついた。
+Prompt_10000201_01_41┃初めての発表だったのに…めちゃくちゃだった……。うぅ……。
+Prompt_10000201_01_42┃ナジャ先輩にまた怒られちゃう……。
+Prompt_10000201_01_43┃私に？どうして？
+Prompt_10000201_01_44┃ひゃっ！ナジャ先輩……！
+Prompt_10000201_01_45┃い、い、いつからそこに……？
+Prompt_10000201_01_46┃背後から現れたナジャに、ハナは驚いて飛びはねた。
+Prompt_10000201_01_47┃「めちゃくちゃだった……」からだけど？
+Prompt_10000201_01_48┃あはははは……。
+Prompt_10000201_01_49┃ほら。
+Prompt_10000201_01_50┃ナジャはハナに、温かいコーヒーの入ったマグカップを差し出した。
+Prompt_10000201_01_51┃あっ！ありがとうございます。えへへ……。
+Prompt_10000201_01_52┃ハナはマグカップを受け取ると、恐る恐るコーヒーを一口飲んだ。
+Prompt_10000201_01_53┃うっ……ナジャ先輩、これ、甘すぎるんじゃ……。
+Prompt_10000201_01_54┃適度な糖分は、頭の回転を助けるからね。
+Prompt_10000201_01_55┃うーん……私はやっぱり、ブラックコーヒーの方が好きです……。
+Prompt_10000201_01_56┃ふふ……。ともかく、初めてのカンファレンスに発表、お疲れ様。
+Prompt_10000201_01_57┃感想はどう？
+Prompt_10000201_01_58┃ナジャの言葉に、ハナは真剣な顔で彼女を見つめた。
+Prompt_10000201_01_59┃正直、圧倒されました。
+Prompt_10000201_01_60┃他の方々の発表が、私のものとは比べ物にならないくらい素晴らしくて……
+Prompt_10000201_01_61┃私ももっと頑張って実験体を観察して、データを集めて、先輩方みたいな立派な研究ができるように努力します！
+Prompt_10000201_01_62┃そう、これからも励みなさい。
+Prompt_10000201_01_63┃あ！そういえば、発表の準備中に、先輩の初めての発表も調べたんですよ。
+Prompt_10000201_01_64┃「幼年期VF覚醒者の心理状態考察とケア理論」ですよね？
+Prompt_10000201_01_65┃細かい部分まで配慮されているのが伝わってきて、すごくよかったです！
+Prompt_10000201_01_66┃気恥ずかしいな……。ずいぶん前に書いたものだから、そこまで出来はよくなかったと思うけど。
+Prompt_10000201_01_67┃そんなことないですよー。あの論文から派生したVF覚醒者の心理理論で、責任研究員にまでなったじゃないですか。
+Prompt_10000201_01_68┃あ、そうだ。当時の研究対象だった覚醒者の一人って、今私たちの担当実験体ですよね？
+Prompt_10000201_01_69┃先輩も、感慨深いんじゃないですか？
+Prompt_10000201_01_70┃……ハナ。
+Prompt_10000201_01_71┃あなたは、実験体たちをどう思う？
+Prompt_10000201_01_72┃実験体、ですか？
+Prompt_10000201_01_73┃ええ。
+Prompt_10000201_01_74┃私たちは…実験体の命を利用して、この実験を行っている。
+Prompt_10000201_01_75┃彼らは、いつ終わるとも知れない実験のために、死を繰り返しているわ。
+Prompt_10000201_01_76┃あなたはそんな彼らを…どう思う？
+Prompt_10000201_01_77┃うーん…かわいそうだとは、思います。
+Prompt_10000201_01_78┃そう……。
+Prompt_10000201_01_79┃でも！仕方ないことですよね！
+Prompt_10000201_01_80┃新人類プロジェクトは、まだ始まったばかりなんですから。
+Prompt_10000201_01_81┃実験体たちの犠牲は、人類の発展のための礎になるんです。
+Prompt_10000201_01_82┃いつか、実験体たちと私たちの名前が教科書に載るかもしれませんよ！
+Prompt_10000201_01_83┃……そうだね。
+Prompt_10000201_01_84┃そう。彼らの犠牲は、まさしく人類の発展のための礎だとも。
+Prompt_10000201_01_85┃Mr. メイジ？どうしてここに……。
+Prompt_10000201_01_86┃Mr. メイジ。
+Prompt_10000201_01_87┃アグライアVF研究所の所長にして、ルミア島実験の総責任者。
+Prompt_10000201_01_88┃年齢から出身まで、その多くがベールに包まれた謎の人物だが……
+Prompt_10000201_01_89┃VF基礎理論の確立やルミア島実験の考案など、アグライアにおける彼の功績を前にすれば、その正体など些細なことである。
+Prompt_10000201_01_90┃Dr. ハナの発表が、なかなか興味深くてな。
+Prompt_10000201_01_91┃有望な人材を励ますのも、研究所長の務めだ。
+Prompt_10000201_01_92┃Dr. ハナ、入所してからこうして話すのは初めてだな。
+Prompt_10000201_01_93┃は、はひっ！こんにちは！ミ、ミシュター・メイジ！
+Prompt_10000201_01_94┃（うぅ…噛んじゃった…どうしよう……）
+Prompt_10000201_01_95┃ハナはひどく緊張した顔で、おろおろするばかりだった。
+Prompt_10000201_01_96┃ふっ……。そう緊張せずともよい。
+Prompt_10000201_01_97┃ともかく、初めての発表、ご苦労だった。これからも人類の発展のため、励むように。
+Prompt_10000201_01_98┃はいっ！ありがとうございます！
+Prompt_10000201_01_99┃次の実験の準備はどうなっている？
+Prompt_10000201_01_100┃あっ！次の実験の準備は……！えっと、その……
+Prompt_10000201_01_101┃ハナは冷や汗をかきながら、メイジとナジャから視線をそらし始めた。
+Prompt_10000201_01_102┃はぁ…… ハナ、私がこの間言ったこと覚えてる？
+Prompt_10000201_01_103┃「実験の準備は常に万全にしておくこと」、です……。
+Prompt_10000201_01_104┃そう。実験は常に準備万端でなければならない。
+Prompt_10000201_01_105┃はい…うぅ……。そ、それじゃあ、お先に失礼します……！早く次の実験の準備をしないと……。
+Prompt_10000201_01_106┃うむ、ご苦労。
+Prompt_10000201_01_107┃──ウィーン
+Prompt_10000201_01_108┃ハナが小走りで研究室を出ていくと、メイジが口火を切った。
+Prompt_10000201_01_109┃ふっ、君を初めて見た時のことを思い出すな。
+Prompt_10000201_01_110┃はぁ……。ハナよりは、私の方がしっかりしていたと思いますが。
+Prompt_10000201_01_111┃君から見て、Dr. ハナはどうだ？
+Prompt_10000201_01_112┃独創的で、型にはまらない発想…そして、時折見せる驚異的な集中力。
+Prompt_10000201_01_113┃ハナはよくやっています。これからもっと成長するでしょう。
+Prompt_10000201_01_114┃Dr. ハナの発表と論文…少し懸念があってな。
+Prompt_10000201_01_115┃瞬間、研究室の空気がわずかに冷え込んだ。
+Prompt_10000201_01_116┃14M-RFT04のオペレーティング過程で見せた、Dr. ハナの言動……
+Prompt_10000201_01_117┃彼女は、どうも実験体に情が移りやすい性質のようだが。
+Prompt_10000201_01_118┃どう思う？
+Prompt_10000201_01_119┃……問題ありません。
+Prompt_10000201_01_120┃私が観察した限りでは、そのような兆候は見られませんでした。
+Prompt_10000201_01_121┃……そうか。
+Prompt_10000201_01_122┃この実験は、人類の発展のためのものだ。
+Prompt_10000201_01_123┃個人の私情など不要。
+Prompt_10000201_01_124┃道を違えぬよう…善き指導を。
+Prompt_10000201_01_125┃……はい。
+Prompt_10000202_01_0┃あっちへ行きなさい！このストーカー！！
+Prompt_10000202_01_1┃私はストーカーではない。少し待ってくれないか？
+Prompt_10000202_01_2┃待てって言われて素直に止まる人間がどこにいるっていうのよぉぉ！
+Prompt_10000202_01_3┃深夜。ルミア島の森の中。
+Prompt_10000202_01_4┃2つの人影が茂みをかき分け、緊迫した追撃戦が繰り広げられていた。
+Prompt_10000202_01_5┃はぁっ…はぁっ…はぁっ……！
+Prompt_10000202_01_6┃ふぅ……
+Prompt_10000202_01_7┃追われる者──ジェニーは体力が尽きたのか、息を切らしながらその場に座り込んだ。
+Prompt_10000202_01_8┃はぁっ……はぁっ……！来るなって言ってるでしょ！
+Prompt_10000202_01_9┃そして、自分に迫る黒い影に向かって、無我夢中で引き金を引いた。
+Prompt_10000202_01_10┃しかし、ジェニーが撃った弾丸は影に当たらず、ただ虚しく空を切るだけだった。
+Prompt_10000202_01_11┃バン！バン！カチッ、カチッ、カチッ、カチッ──
+Prompt_10000202_01_12┃そんな……！
+Prompt_10000202_01_13┃やがてジェニーの弾が尽きると、影はその隙を逃さず彼女に襲いかかった。
+Prompt_10000202_01_14┃い、いや……来ないで……
+Prompt_10000202_01_15┃近寄らないでぇぇぇぇぇ！！！
+Prompt_10000202_01_16┃シュッ──
+Prompt_10000202_01_17┃黒い影から伸びた鋭いハサミが、ジェニーの頭へと向かった瞬間──
+Prompt_10000202_01_18┃……じゃーん。
+Prompt_10000202_01_19┃ガキンッ──
+Prompt_10000202_01_20┃虚空を切り裂いて現れた鎌が、ハサミとぶつかり合った。
+Prompt_10000202_01_21┃へ……？
+Prompt_10000202_01_22┃間に合ったようですね。
+Prompt_10000202_01_23┃ジェニーの前に立ったアビゲイルが、黒い影を阻んだ。
+Prompt_10000202_01_24┃黒い影はアビゲイルをじっと見つめながら、口を開いた。
+Prompt_10000202_01_25┃邪魔しないほうが身のためだと思うが。
+Prompt_10000202_01_26┃それはできません。この方は私のチームメイトですから。
+Prompt_10000202_01_27┃ならば……2人まとめて私の作品にしてやろう。
+Prompt_10000202_01_28┃影は一瞬でアビゲイルの目の前まで移動し、ハサミを振りかざした。
+Prompt_10000202_01_29┃残念だったな。
+Prompt_10000202_01_30┃カキンッ──
+Prompt_10000202_01_31┃その動きは、想定内だ。
+Prompt_10000202_01_32┃いつの間にかアビゲイルの隣に現れたイシュトヴァーンが、ハサミを受け止めつつ影に言い放った。
+Prompt_10000202_01_33┃まだ続けるか？
+Prompt_10000202_01_34┃……ふん。
+Prompt_10000202_01_35┃影は3人を順に見つめると、闇の中へと姿を消した。
+Prompt_10000202_01_36┃……追いかけますか？
+Prompt_10000202_01_37┃どんな伏兵がいるか分からない。今は態勢を整えるのが先決だろう。
+Prompt_10000202_01_38┃未来が見えるのではなかったのですか？
+Prompt_10000202_01_39┃ふむ…言いたいことは山ほどあるが、今は「違う」とだけ言っておこう。
+Prompt_10000202_01_40┃はぁ…はぁ…はぁ……。
+Prompt_10000202_01_41┃呑気に会話を続ける2人を見て、ジェニーは息を荒げた。
+Prompt_10000202_01_42┃何なの、貴方たち…？それにここはどこなのよ…？
+Prompt_10000202_01_43┃これって…映画の撮影じゃなかったの……！？
+Prompt_10000202_01_44┃うろたえるジェニーに、アビゲイルが歩み寄った。
+Prompt_10000202_01_45┃……落ち着いてください。私たちは悪者ではありません。
+Prompt_10000202_01_46┃ふむ。
+Prompt_10000202_01_47┃イシュトヴァーンがジェニーをじっと見つめた。
+Prompt_10000202_01_48┃14M-RFT07、いや、ジェニー・シンクレア。
+Prompt_10000202_01_49┃え……？
+Prompt_10000202_01_50┃残念だが、これは映画でも劇でもない。
+Prompt_10000202_01_51┃VF覚醒者たちの相互作用を通じて新人類を誕生させるための、大規模な実験だ。
+Prompt_10000202_01_52┃ブイ…何？新人類…？何言ってるのかさっぱり分からないわ……！
+Prompt_10000202_01_53┃私は女優よ…！将来スターになる女なの！こんなわけの分からない怪しい実験に参加した覚えはないわ！
+Prompt_10000202_01_54┃君の意思は関係ない。この島に入った時点で、出る術はないのだからな。
+Prompt_10000202_01_55┃最後まで全力で生き残るしかない。
+Prompt_10000202_01_56┃だから何のことかさっぱり分からないって言ってるでしょ……！
+Prompt_10000202_01_57┃ねぇ……貴方も何か言って頂戴……！
+Prompt_10000202_01_58┃ジェニーが半泣きでアビゲイルに訴えかけた。
+Prompt_10000202_01_59┃……まずは少し、休んだほうがよさそうですね。
+Prompt_10000202_01_60┃……
+Prompt_10000202_01_61┃アビゲイルとジェニー、イシュトヴァーンは焚き火を囲み、休息をとることにした。
+Prompt_10000202_01_62┃奇妙な静寂が流れる中、ジェニーがおずおずとイシュトヴァーンに話しかけた。
+Prompt_10000202_01_63┃貴方…さっき私のこと、変な番号で呼んでたけど、どういう意味なの？
+Prompt_10000202_01_64┃14M-RFT07、君に与えられた実験体コードだ。
+Prompt_10000202_01_65┃君にとってはさして重要な情報ではない。気にするな。
+Prompt_10000202_01_66┃じゃあ、さっき言ってた大規模な実験っていうのは何なの…？
+Prompt_10000202_01_67┃それに、この銃…これも小道具じゃなかったのね……。
+Prompt_10000202_01_68┃こんな物騒なものを持たせるなんて、どんな実験なのよ……。
+Prompt_10000202_01_69┃ジェニーは支給された拳銃を握りしめ、絞り出すように言った。
+Prompt_10000202_01_70┃だがイシュトヴァーンは、ただ黙って焚き火を見つめるだけだ。
+Prompt_10000202_01_71┃なんとか言いなさいよ……！
+Prompt_10000202_01_72┃ああ、すまない。一般人の知識レベルに合わせた答えを考えていたところだ。
+Prompt_10000202_01_73┃先ほども言ったが、この実験はVF覚醒者たちの相互作用によって人類を進化させるためのものだ。
+Prompt_10000202_01_74┃イシュトヴァーンは目を閉じ、淡々と語り始めた。
+Prompt_10000202_01_75┃VF（バイタル・フォース）──まだ民間には知られていない未知のエネルギー源。
+Prompt_10000202_01_76┃そして、このエネルギーを自ら生成・操作でき、特殊な能力に目覚めた人間を、我々は「VF覚醒者」と定義した。
+Prompt_10000202_01_77┃VF覚醒者はそれ自体ですでに進化した人類と言えるが……
+Prompt_10000202_01_78┃我々は理論上、そのさらに上の段階が存在する可能性を突き止めた。
+Prompt_10000202_01_79┃そして、その理論を検証し「新人類」を創り出すことが、この実験の目的なのだ。
+Prompt_10000202_01_80┃かなり省略したが、これである程度は理解できたか？
+Prompt_10000202_01_81┃そ、そんな実験に、どうして私が……？
+Prompt_10000202_01_82┃自覚がないのか？君はVF覚醒者だ。
+Prompt_10000202_01_83┃何言ってるのよ！私は普通の…ううん、世紀の大女優になる女よ。そんな変な能力なんてないわ！
+Prompt_10000202_01_84┃実験体個人の詳細には興味がないので、君の情報はよく知らんが……。
+Prompt_10000202_01_85┃覚醒者は、覚醒した時の記憶を失うことがしばしばあるらしい。
+Prompt_10000202_01_86┃おそらく君もその類だろう。
+Prompt_10000202_01_87┃淡々と語るイシュトヴァーンを見て、ジェニーはごくりと唾を飲んだ。
+Prompt_10000202_01_88┃彼の言葉が、どうしても嘘のようには聞こえなかった。
+Prompt_10000202_01_89┃ジェニーは続けてイシュトヴァーンに尋ねた。
+Prompt_10000202_01_90┃仮に貴方の言ったことが百歩譲って本当だとして…それで、この実験はどうやって進めるの？
+Prompt_10000202_01_91┃どうして私に本物の銃なんかを持たせて……。
+Prompt_10000202_01_92┃ハサミを持ったイカれた奴が私を殺そうとしてくるわけ……！？
+Prompt_10000202_01_93┃理論上、覚醒者のVFは肉体と精神が限界に追い込まれた時に増幅する性質がある。
+Prompt_10000202_01_94┃そのために考案されたのが、この「ルミア島実験」だ。
+Prompt_10000202_01_95┃限られた空間でVF覚醒者同士が協力や戦闘といった相互作用をすることで、VFを増幅させる。
+Prompt_10000202_01_96┃生き残れるのは、1チームのみ。
+Prompt_10000202_01_97┃我々は我々以外の、島にいる全てのVF覚醒者を殺さねばならない。
+Prompt_10000202_01_98┃こ、殺す……？殺さなかったら……？
+Prompt_10000202_01_99┃殺さなければ、他のVF覚醒者に殺されるだけだ。
+Prompt_10000202_01_100┃あるいは、君に埋め込まれた爆弾が作動して爆死するか、だな。
+Prompt_10000202_01_101┃イシュトヴァーンは自分の腕にはめられた小さなブレスレットを指さした。
+Prompt_10000202_01_102┃そして同じブレスレットが、ジェニーとアビゲイルの腕にもはめられていた。
+Prompt_10000202_01_103┃うそ……こんなの、うそよ……！
+Prompt_10000202_01_104┃私は…スターに…世紀の名女優にならなきゃいけないのに……。
+Prompt_10000202_01_105┃あ…ああ…あああ……！！！
+Prompt_10000202_01_106┃ジェニーはうなだれ、嗚咽を漏らし始めた。
+Prompt_10000202_01_107┃アビゲイルがジェニーの背中を優しくさする。
+Prompt_10000202_01_108┃疲れてるでしょうし、少し寝たほうがいいと思います。
+Prompt_10000202_01_109┃うっ…ぐすっ…うぅぅ……。
+Prompt_10000202_01_110┃アビゲイルに慰められて緊張の糸が切れたのか、ジェニーは泣き疲れてすぐに眠りに落ちた。
+Prompt_10000202_01_111┃アビゲイルは眠ったジェニーをそっと横たえて、イシュトヴァーンに話しかけた。
+Prompt_10000202_01_112┃詳しいですね。この実験について。
+Prompt_10000202_01_113┃それは俺がアグライアの研究員だからだ…まだ俺のIDカードが有効なら、の話だがな。
+Prompt_10000202_01_114┃研究員……？
+Prompt_10000202_01_115┃シモン・イシュトヴァーン。アグライアの研究員であり、実験体でもあるVF覚醒者。
+Prompt_10000202_01_116┃研究中の不慮の事故によりVFに覚醒して以来、自らルミア島実験への参加を志願した、変わり者の中の変わり者。
+Prompt_10000202_01_117┃ここに来た以上、研究員という肩書は何の役にも立たない。
+Prompt_10000202_01_118┃俺もただの実験体の1人にすぎん。気にする必要はない。
+Prompt_10000202_01_119┃アビゲイルはイシュトヴァーンの言葉を意に介さず、話を続けた。
+Prompt_10000202_01_120┃研究員さんなら、ナジャお姉さんのことをご存知ですか？
+Prompt_10000202_01_121┃私、お姉さんともう1週間も会えていないんです。
+Prompt_10000202_01_122┃お姉さんは、元気にしていますか？
+Prompt_10000202_01_123┃……1週間、か。
+Prompt_10000202_01_124┃イシュトヴァーンはアビゲイルをじっと見つめ、やがて静かに目を閉じた。
+Prompt_10000202_01_125┃……？どうかしましたか？
+Prompt_10000202_01_126┃いや、何でもない。
+Prompt_10000202_01_127┃ナジャお姉さんというのは、Dr. ナジャのことか。
+Prompt_10000202_01_128┃残念ながら、俺と彼女の間に大した接点はない。
+Prompt_10000202_01_129┃研究員になった時期は近かったが、専門分野が違うのでな。
+Prompt_10000202_01_130┃研究カンファレンスで数回話した程度だ。
+Prompt_10000202_01_131┃そう、ですか……。
+Prompt_10000202_01_132┃どうしてもDr. ナジャの近況が知りたいのなら、実験が終わった後に調べたらどうだ？
+Prompt_10000202_01_133┃はい…ここに来る前に会った他の研究員さんたちも、そう言っていました。
+Prompt_10000202_01_134┃ふむ、Dr. ナジャと君はどういう関係だ？
+Prompt_10000202_01_135┃ナジャお姉さんは……。
+Prompt_10000202_01_136┃ナジャお姉さんは、私の家族なんです。
+Prompt_10000202_01_137┃血は、繋がっていませんけど。
+Prompt_10000202_01_138┃私が家族と呼べる……唯一の人。
+Prompt_10000202_01_139┃……そうか。
+Prompt_10000202_01_140┃イシュトヴァーンはアビゲイルを見つめていた目を閉じ、静かに言った。
+Prompt_10000202_01_141┃無事、再会できることを願っているよ。
+Prompt_10000202_01_142┃……
+Prompt_10000202_01_143┃翌日。
+Prompt_10000202_01_144┃日の出とともに、3人はまず食料を確保するため森を探索することにした。
+Prompt_10000202_01_145┃ちょっと、本当にこんなとこに食べ物なんてあるわけ？
+Prompt_10000202_01_146┃ジェニーが不満げに、先を歩くイシュトヴァーンとアビゲイルに聞いた。
+Prompt_10000202_01_147┃まさか、この世紀の名女優に本気で狩りをさせるつもりじゃないでしょうね！？
+Prompt_10000202_01_148┃……ジェニーさん、元気になったみたいですね。
+Prompt_10000202_01_149┃大声を出すジェニーを見ながら、アビゲイルがイシュトヴァーンに言った。
+Prompt_10000202_01_150┃いや、元気になったとは言い難いな。
+Prompt_10000202_01_151┃……？どうしてですか？
+Prompt_10000202_01_152┃人間は受け入れがたい現実を前にすると、それを歪曲して自分に都合よく解釈する傾向がある。
+Prompt_10000202_01_153┃おそらく彼女も、その状態なのだろう。
+Prompt_10000202_01_154┃貴方たち、聞いてるの？いくらリアルバラエティだからって、やっていいことと悪いことがあるのよ！
+Prompt_10000202_01_155┃どういう意味か、理解できただろう？
+Prompt_10000202_01_156┃……危険な状態なのでは？
+Prompt_10000202_01_157┃自暴自棄になるよりはよほどマシだ。少なくとも、彼女を見捨てるような事態にはならないはず。
+Prompt_10000202_01_158┃今はしばらく、彼女の茶番に付き合ってやるとしよう。
+Prompt_10000202_01_159┃その時、茂みの中から何かがガサリと音を立てた。
+Prompt_10000202_01_160┃ひっ！な、何？今、何か聞こえなかった！？
+Prompt_10000202_01_161┃突然の物音に驚いたジェニーは、アビゲイルの後ろに隠れた。
+Prompt_10000202_01_162┃……野生動物でしょうか？
+Prompt_10000202_01_163┃そうかもしれんな。この辺りは他のエリアに比べて野生動物が多い。
+Prompt_10000202_01_164┃もう、びっくりしたじゃない。リスでも隠れてるのかしら？
+Prompt_10000202_01_165┃だが、万が一に備えておいて損はないだろう。
+Prompt_10000202_01_166┃瞬間、イシュトヴァーンが茂みに向かって長い槍を投げつけた。
+Prompt_10000202_01_167┃シュゥゥン──
+Prompt_10000202_01_168┃グサッ！
+Prompt_10000202_01_169┃あうっ……！
+Prompt_10000202_01_170┃ティアが茂みの中から、よろめきながら姿を現した。
+Prompt_10000202_01_171┃彼女の腹部はイシュトヴァーンの投げた槍に貫かれ、赤く染まっていた。
+Prompt_10000202_01_172┃え……？
+Prompt_10000202_01_173┃ふむ、当たりだったようだな。
+Prompt_10000202_01_174┃……
+Prompt_10000202_01_175┃う…あ……。
+Prompt_10000202_01_176┃助け…て、ください……。
+Prompt_10000202_01_177┃ちょっと、貴方！なんてことを！
+Prompt_10000202_01_178┃大丈夫！？今、助けるから！
+Prompt_10000202_01_179┃動くな。
+Prompt_10000202_01_180┃ティアに駆け寄ろうとするジェニーを、イシュトヴァーンが制止する。
+Prompt_10000202_01_181┃罠かもしれん。まずは様子を見るとしよう。
+Prompt_10000202_01_182┃はぁ？馬鹿なこと言わないで！自分が何をしたか分かってるの！？
+Prompt_10000202_01_183┃槍を投げ、敵に命中させた。そして今、そいつは死にかけている。
+Prompt_10000202_01_184┃言ったはずだ。我々以外は、全て殺さなければならないと。
+Prompt_10000202_01_185┃──バタッ
+Prompt_10000202_01_186┃イシュトヴァーンとジェニーが揉めている間に、ティアは力なくその場に崩れ落ちた。
+Prompt_10000202_01_187┃彼女の下には、腹部から流れ出た血が溜まり、血だまりを作っていた。
+Prompt_10000202_01_188┃もう…いや……
+Prompt_10000202_01_189┃助け…て……
+Prompt_10000202_01_190┃ティアは言葉を最後まで紡ぐことなく、そのまま冷たい骸となった。
+Prompt_10000202_01_191┃ふむ、罠ではなかったようだな。
+Prompt_10000202_01_192┃死体から使えそうな物がないか物色するとしよう。
+Prompt_10000202_01_193┃は、はは……。
+Prompt_10000202_01_194┃非現実的な光景とイシュトヴァーンの冷酷な反応に、ジェニーはその場にへたり込み、正気を失い始めた。
+Prompt_10000202_01_195┃夢だよね……？これ、夢なんでしょ……？
+Prompt_10000202_01_196┃お願い……。
+Prompt_10000202_01_197┃お願いだから、夢だって言ってよ……！！
+Prompt_10000202_01_198┃……
+Prompt_10000202_01_199┃アビゲイルは、錯乱するジェニーと冷たくなったティアを交互に見つめた。
+Prompt_10000202_01_200┃何も言えず、ただその光景を見つめることしかできなかった。
+Prompt_10000203_01_0┃……式は現在……数値は安定……。
+Prompt_10000203_01_1┃とある小部屋。
+Prompt_10000203_01_2┃無数のモニターの淡い光が部屋を照らす中、誰かが小声で何かを呟いていた。
+Prompt_10000203_01_3┃彼女の背後にある巨大なベッドには、おびただしい数のケーブルと機械装置が接続されており……
+Prompt_10000203_01_4┃その中央でイシュトヴァーンは、まるで死んだかのように息もせず、静かに意識を失っていた。
+Prompt_10000203_01_5┃きつい薬品の匂いと、かすかな物音に、イシュトヴァーンは目を覚ました。
+Prompt_10000203_01_6┃ふむ……。
+Prompt_10000203_01_7┃イシュトヴァーンは朦朧とする意識の中、考え込んだ。
+Prompt_10000203_01_8┃ここはおそらく、アグライアの実験体復元室の1つ。
+Prompt_10000203_01_9┃（実験は終了したか。）
+Prompt_10000203_01_10┃周囲を見渡し、彼は身体を起こした。
+Prompt_10000203_01_11┃……記憶が曖昧だな。
+Prompt_10000203_01_12┃うーん…脳波は異常なし…VFは……
+Prompt_10000203_01_13┃物音の主であるハナはイシュトヴァーンが目覚めたことに気づかず、タブレットに目を落とし、画面のチャートに集中していた。
+Prompt_10000203_01_14┃おい。
+Prompt_10000203_01_15┃ひゃっ！
+Prompt_10000203_01_16┃あ、イシュトヴァーンさん、お目覚めでしたか……あははは……。
+Prompt_10000203_01_17┃……実験体を名前で呼ぶのは改めるべきだな、ドクター……
+Prompt_10000203_01_18┃あ、Dr. ハナです。
+Prompt_10000203_01_19┃その…すみません……。えへへ……。
+Prompt_10000203_01_20┃（うぅ……イシュトヴァーンさん、久しぶりにお話しするのに、冷たすぎるよぉ……。）
+Prompt_10000203_01_21┃イシュトヴァーンの指摘に、ハナは気まずそうに笑った。
+Prompt_10000203_01_22┃Dr. ハナだったか？
+Prompt_10000203_01_23┃記憶が曖昧なのだが、記憶消去プロトコルを実行したのか？
+Prompt_10000203_01_24┃あ、いえ……。
+Prompt_10000203_01_25┃行っていませんよ。
+Prompt_10000203_01_26┃ハナの背後にいたナジャが口を開いた。
+Prompt_10000203_01_27┃ただ、実験終了時に脳の損傷が激しかったので、身体の復元過程で何か問題があったのかもしれません。
+Prompt_10000203_01_28┃よくある現象ですから、気にしなくていいかと。
+Prompt_10000203_01_29┃ふむ、そうか。
+Prompt_10000203_01_30┃イシュトヴァーンは、霞がかった記憶をたどった。
+Prompt_10000203_01_31┃ジェニーは脱落した。
+Prompt_10000203_01_32┃しばらくは持ちこたえていたが、ついに現実を受け入れられなくなったのか、自ら命を絶った。
+Prompt_10000203_01_33┃その後は残ったアビゲイルと共に最後まで戦ったが……
+Prompt_10000203_01_34┃巨大なバットで頭を砕かれた感覚を思い出し、イシュトヴァーンは目を閉じた。
+Prompt_10000203_01_35┃……
+Prompt_10000203_01_36┃（次は頭部を守りながら戦闘する方法を研究してみるか。）
+Prompt_10000203_01_37┃考え込むイシュトヴァーンに、ハナが話しかけた。
+Prompt_10000203_01_38┃身体の復元は正常に完了しましたが、どこか不調はありますか？
+Prompt_10000203_01_39┃今のところ、特にないな。
+Prompt_10000203_01_40┃チャートにも異常は見られませんし……
+Prompt_10000203_01_41┃では、後ほど面談を行いますね。
+Prompt_10000203_01_42┃少々お待ちください！
+Prompt_10000203_01_43┃ハナはナジャとイシュトヴァーンを残し、部屋を出ていった。
+Prompt_10000203_01_44┃ナジャとイシュトヴァーン。
+Prompt_10000203_01_45┃アグライアに来た時期は近かったが、2人の研究分野や性格はまるで異なっていた。
+Prompt_10000203_01_46┃イシュトヴァーンは物理学で頭角を現し、多くの成果を上げたが、その冷淡な態度と変わった性格のせいか、他の研究員とは馴染めなかった。
+Prompt_10000203_01_47┃一方、ナジャは脳科学全般と精神分析学の分野で才能を発揮した。
+Prompt_10000203_01_48┃そして、優れた才能と穏やかな人柄を併せ持つため、他の研究員たちとも良好な関係を築いていた。
+Prompt_10000203_01_49┃2人の間に気まずい沈黙が流れる中、先に口を開いたのはナジャだった。
+Prompt_10000203_01_50┃こうして言葉を交わすのは久しぶりですね。
+Prompt_10000203_01_51┃ご自身で実験に参加されてみて、どうですか？
+Prompt_10000203_01_52┃その質問は、新たな研究成果についてか？それとも、個人的な感想についてか？
+Prompt_10000203_01_53┃……どちらでも構いません。
+Prompt_10000203_01_54┃ただ、自ら志願してまでこの実験に参加する価値があるのか、ということです。
+Prompt_10000203_01_55┃何度も死と再生を繰り返してまで……
+Prompt_10000203_01_56┃あなたほどの頭脳があれば、きっと他の道もあったはずです。
+Prompt_10000203_01_57┃実験体になる以外の…道が。
+Prompt_10000203_01_58┃机にかじりついてモニターと文字だけを追い、ただ事が起きるのを待つだけでは限界がある。
+Prompt_10000203_01_59┃俺は最も効率的な研究方法を選んだにすぎん。
+Prompt_10000203_01_60┃（そして……）
+Prompt_10000203_01_61┃イシュトヴァーンはしばし目を閉じ、思考の海に沈んだ。
+Prompt_10000203_01_62┃（VF覚醒の時に見た未来……）
+Prompt_10000203_01_63┃（ルミア島から始まる、滅びの前兆）
+Prompt_10000203_01_64┃（それが何なのかを確かめるには……。）
+Prompt_10000203_01_65┃……そうですか。
+Prompt_10000203_01_66┃後悔がないのでしたら、私から話すことは何もありません。
+Prompt_10000203_01_67┃その時、ふと何かを思い出したように、イシュトヴァーンがナジャに言った。
+Prompt_10000203_01_68┃そういえば、実験で君のことをお姉さんと呼ぶ実験体に会ったな。
+Prompt_10000203_01_69┃……はい？
+Prompt_10000203_01_70┃23M-RFT70、アビゲイル・ロック。
+Prompt_10000203_01_71┃君の論文で見たことはあったが、実物に会ったのは初めてだった。
+Prompt_10000203_01_72┃……そうでしたか。
+Prompt_10000203_01_73┃ずいぶんとうまくしつけたようだな。
+Prompt_10000203_01_74┃……しつけた？
+Prompt_10000203_01_75┃今は実験体と深い信頼関係を築き、実験中に発生する複雑な心理パターンの研究でもしているのか？
+Prompt_10000203_01_76┃……
+Prompt_10000203_01_77┃研究が完成したら、ぜひ共有してくれたまえ。
+Prompt_10000203_01_78┃……黙りなさい。
+Prompt_10000203_01_79┃……？
+Prompt_10000203_01_80┃勝手に言うな。
+Prompt_10000203_01_81┃私は…今まで一度も、あの子をそんな風に思ったことはない。
+Prompt_10000203_01_82┃……そうか。
+Prompt_10000203_01_83┃どうやら、見当違いだったらしい。
+Prompt_10000203_01_84┃何年も共に過ごすうちに、本物の家族にでもなったつもりか？
+Prompt_10000203_01_85┃あなたに何が分かると……
+Prompt_10000203_01_86┃君たちの関係については知らんが、一つ確かなことがある。
+Prompt_10000203_01_87┃研究に私情を挟むことは、客観的な判断を鈍らせる。
+Prompt_10000203_01_88┃君は研究員で、我々は実験体だ。
+Prompt_10000203_01_89┃その事実を…忘れるなよ。
+Prompt_10000204_01_0┃つ、次はどこに行ったらいいかな…？
+Prompt_10000204_01_1┃……
+Prompt_10000204_01_2┃も、もう遅いし、ここにいたほうがいいかな…？
+Prompt_10000204_01_3┃……
+Prompt_10000204_01_4┃え…っと、とりあえずご飯でも食べる…？
+Prompt_10000204_01_5┃……はい。
+Prompt_10000204_01_6┃（き、気まずい……。）
+Prompt_10000204_01_7┃（うぅ……この子、どうしてこんなに無口なんだろう…？）
+Prompt_10000204_01_8┃深夜、ホテル。
+Prompt_10000204_01_9┃ティアはアビゲイルに話しかけ続け、重くなるばかりの空気をなんとかしようとしていた。
+Prompt_10000204_01_10┃しかしアビゲイルはずっと無言のままで、ティアの言葉と行動に合わせて動くだけだった。
+Prompt_10000204_01_11┃ティアも本来、自ら率先して動くような性格ではなかったが……
+Prompt_10000204_01_12┃アビゲイルが消極的な態度を見せている今、自分から行動せざるを得なかった。
+Prompt_10000204_01_13┃ティアは焚き火の前で、ホテルで見つけたレトルト食品を温め始める。
+Prompt_10000204_01_14┃こ、これ見て。思ったより、おいしくできたかも……。
+Prompt_10000204_01_15┃……そうですね。
+Prompt_10000204_01_16┃トマトスープが湯気を立てている。
+Prompt_10000204_01_17┃ティアは温かいスープを器によそい、アビゲイルに差し出した。
+Prompt_10000204_01_18┃はい、どうぞ……
+Prompt_10000204_01_19┃ま、真っ赤で、すごくおいしそう。だよね…？
+Prompt_10000204_01_20┃アビゲイルはトマトスープを見つめる。
+Prompt_10000204_01_21┃真っ赤な色。
+Prompt_10000204_01_22┃ふと、ある光景が脳裏をよぎる。
+Prompt_10000204_01_23┃う…あ……。
+Prompt_10000204_01_24┃助け…て、ください……。
+Prompt_10000204_01_25┃前回の実験の、生々しい記憶。
+Prompt_10000204_01_26┃ティアの死体にできた大きな傷は、真っ赤な血を噴き出して血だまりを作っていた。
+Prompt_10000204_01_27┃アビゲイルとイシュトヴァーンは、そのティアの死体を漁り、血に濡れた戦利品を手に入れた。
+Prompt_10000204_01_28┃目の前にいるティアを見るたびに、苦痛に歪んだあの顔が鮮明に浮かぶ。
+Prompt_10000204_01_29┃だからアビゲイルは、ティアをまともに見ることができなかった。
+Prompt_10000204_01_30┃あ…だ、大丈夫…？
+Prompt_10000204_01_31┃器を持ったまま固まっているアビゲイルに、ティアが心配そうに声をかけた。
+Prompt_10000204_01_32┃あんまり、お腹すいてない…？
+Prompt_10000204_01_33┃……いいえ。
+Prompt_10000204_01_34┃ごめんな、さい……。
+Prompt_10000204_01_35┃う、うん？あ、ううん…！無理して食べなくてもいいから…！
+Prompt_10000204_01_36┃最初は、何だってできると思っていた。
+Prompt_10000204_01_37┃ナジャのためなら、何でもすると息巻いていたのだ。
+Prompt_10000204_01_38┃けれど、このいつ終わるとも知れない実験は……
+Prompt_10000204_01_39┃少しずつ、着実にアビゲイルの心を蝕んでいた。
+Prompt_10000204_01_40┃誰かを殺すことも、誰かに殺されることも、ひどく苦しく、脳裏に焼き付いて離れない。
+Prompt_10000204_01_41┃私も料理は初めてだから……
+Prompt_10000204_01_42┃おいしくできたか、自信がないんだ……。
+Prompt_10000204_01_43┃食べたくなかったら、食べなくてもいいからね……。あはは……
+Prompt_10000204_01_44┃ティアは気まずそうに笑いながら、スープをひと口、自分の口に運んだ。
+Prompt_10000204_01_45┃うん、おいしい……。
+Prompt_10000204_01_46┃き、昨日から何も食べてないでしょ。ひと口だけでも、食べた方がいいんじゃないかな……？
+Prompt_10000204_01_47┃……はい。ありがとうございます……。
+Prompt_10000204_01_48┃アビゲイルはティアに勧められるまま、スープを口に運んだ。
+Prompt_10000204_01_49┃温かく、甘い味が口の中に広がる。
+Prompt_10000204_01_50┃うっ……。
+Prompt_10000204_01_51┃だが、すぐに喉の奥から込み上げてくる不快感に、アビゲイルは皿を置いた。
+Prompt_10000204_01_52┃……
+Prompt_10000204_01_53┃二人は焚き火の前で、休息を続けた。
+Prompt_10000204_01_54┃先ほどと同じ気まずい空気が流れる中、ティアは静かにスケッチブックに絵を描き始めた。
+Prompt_10000204_01_55┃特別な道具はないが、ティアはなけなしの絵の具と自身のVFを存分に使い、スケッチブックを鮮やかに彩っていく。
+Prompt_10000204_01_56┃人物画、静物画、風景画、抽象画……。ジャンルを問わず、猛スピードで完成していく絵を見て、アビゲイルがティアに話しかけた。
+Prompt_10000204_01_57┃絵、上手ですね。
+Prompt_10000204_01_58┃そ、そうかな？えへへ……。
+Prompt_10000204_01_59┃あ、ありがとう。君も1枚、描いてみる…？
+Prompt_10000204_01_60┃……いいえ。
+Prompt_10000204_01_61┃そ、そっか……。
+Prompt_10000204_01_62┃（うぅ……気まずい……。）
+Prompt_10000204_01_63┃（でも、絵を描く分には問題ないから……。）
+Prompt_10000204_01_64┃アビゲイルは、ティアと彼女の絵をじっと見つめていた。
+Prompt_10000204_01_65┃ティアの絵は、どれもこれも完成度が高い。
+Prompt_10000204_01_66┃だがそれ以上にアビゲイルは、ティアが絵を描く速さと量に驚いていた。
+Prompt_10000204_01_67┃1時間も経たないうちに5枚も描き上げられた絵を見て、アビゲイルが再び口を開いた。
+Prompt_10000204_01_68┃たくさん、描くんですね。
+Prompt_10000204_01_69┃どんな絵を描くか、全部考えてあるんですか？
+Prompt_10000204_01_70┃うーん……どうだろ……。
+Prompt_10000204_01_71┃私、ここに来るまで、自由に絵を描けなかったから……
+Prompt_10000204_01_72┃だから、いつかこんな絵を描きたいなーって、考えてたことがたくさんあって……。
+Prompt_10000204_01_73┃その時に思いついたアイデアを、1つずつ描き上げてるんだ……。
+Prompt_10000204_01_74┃そうなのですね……。
+Prompt_10000204_01_75┃は、早くこの島を出て、もっと素敵な絵が描きたいな。あはは……。
+Prompt_10000204_01_76┃ティアの言葉に、アビゲイルはうつむいた。
+Prompt_10000204_01_77┃彼女たちは、この島から出ることはできない。
+Prompt_10000204_01_78┃実験が終われば自由になれるという、研究員たちの言葉。
+Prompt_10000204_01_79┃その言葉に嘘がなかったとしても……
+Prompt_10000204_01_80┃この実験は、終わることなく繰り返される。
+Prompt_10000204_01_81┃彼らが満足する結果を得るまで。
+Prompt_10000204_01_82┃あとどれだけ、こんなことを続けなければならないのだろうか。
+Prompt_10000204_01_83┃（アビゲイルちゃん、急にしょんぼりしちゃった……。）
+Prompt_10000204_01_84┃（私、何か変なこと言っちゃったかな……。）
+Prompt_10000204_01_85┃（こういう時は……！）
+Prompt_10000204_01_86┃ティアはアビゲイルに小さな色鉛筆と、スケッチブックから破った1枚の紙を差し出した。
+Prompt_10000204_01_87┃こ、これ……
+Prompt_10000204_01_88┃絵を描いたら、少しは気分が晴れるかも……！
+Prompt_10000204_01_89┃……
+Prompt_10000204_01_90┃アビゲイルは、絵を描いた経験がほとんどなかった。
+Prompt_10000204_01_91┃幼い頃からアグライアの研究施設で育った彼女は、学校に通うことはおろか、一般的な教育すら受けてこなかったのだ。
+Prompt_10000204_01_92┃私は……
+Prompt_10000204_01_93┃え、えっと、難しかったら私が手伝うよ。
+Prompt_10000204_01_94┃子どもたちに絵を教えたこともあるんだ。えへへ……。
+Prompt_10000204_01_95┃あ、も、もちろん君が子どもって意味じゃなくて……！
+Prompt_10000204_01_96┃描いて、みます。
+Prompt_10000204_01_97┃アビゲイルはティアから受け取った鉛筆を手に、じっと紙を見つめた。
+Prompt_10000204_01_98┃えっと……どうしたの？
+Prompt_10000204_01_99┃何を描けばいいのか、分かりません。
+Prompt_10000204_01_100┃うーんとね、何でもいいと思うよ。
+Prompt_10000204_01_101┃そこにある缶詰とか……景色でもいいし……。
+Prompt_10000204_01_102┃それか、君にとって、大切なものとか…？
+Prompt_10000204_01_103┃大切なもの……。
+Prompt_10000204_01_104┃うん。大切な物とか、大切な人とか？
+Prompt_10000204_01_105┃気分が落ち込んでる時は、大切なものを思い浮かべると元気が出るから……。
+Prompt_10000204_01_106┃アビゲイルの心に浮かび上がる人物は、1人だけ。
+Prompt_10000204_01_107┃ティアの言葉を聞いたアビゲイルが、手を動かし始めた。
+Prompt_10000204_01_108┃しかし、絵を描き慣れていないアビゲイルの絵は、かろうじて人だと分かる程度のものだった。
+Prompt_10000204_01_109┃うーん……あ、もしかして、研究員の人を描いたの…？
+Prompt_10000204_01_110┃ティアがアビゲイルの絵を覗き込みながら言った。
+Prompt_10000204_01_111┃はい…でも、思うように描けなくて……
+Prompt_10000204_01_112┃そっか…人物画って難しいよね……私もちょっと苦手でね。えへへ……。
+Prompt_10000204_01_113┃うーん、写真とか、せめて私が見たことある人なら、手伝いやすいんだけど……
+Prompt_10000204_01_114┃ナジャお姉さん……。
+Prompt_10000204_01_115┃アビゲイルの小さな呟きに、ティアが反応した。
+Prompt_10000204_01_116┃ナジャって…Dr. ナジャさん？
+Prompt_10000204_01_117┃お姉さんを、知ってるんですか？
+Prompt_10000204_01_118┃う、うん。ここに来る前に、少しだけ面談したんだ。
+Prompt_10000204_01_119┃い、いい人だったな、ナジャさん……。
+Prompt_10000204_01_120┃お姉さんは、元気にしていますか……？
+Prompt_10000204_01_121┃少し疲れてるみたいだったけど…元気そうだったよ。
+Prompt_10000204_01_122┃ナジャお姉さん……。
+Prompt_10000204_01_123┃ナジャさんを描くんだったら、私が手伝うよ。
+Prompt_10000204_01_124┃……ありがとうございます。
+Prompt_10000204_01_125┃こうして、ホテルでの夜は更けていった。
+Prompt_10000204_01_126┃……
+Prompt_10000204_01_127┃翌朝。
+Prompt_10000204_01_128┃ドン！ドン！
+Prompt_10000204_01_129┃二人は近くから聞こえる大きな物音で目を覚ました。
+Prompt_10000204_01_130┃ひっ！な、何の音…！？
+Prompt_10000204_01_131┃……敵襲かもしれません。
+Prompt_10000204_01_132┃あ！こ、これ……。
+Prompt_10000204_01_133┃ティアが自分の手首にはめられた端末を指さした。
+Prompt_10000204_01_134┃小さな画面には、青い点が1つと、赤い点が2つ、素早く点滅していた。
+Prompt_10000204_01_135┃ひとまず、様子を見に行きましょう。
+Prompt_10000204_01_136┃2人は慎重に、音のする方へと移動した。
+Prompt_10000204_01_137┃そこにいたのは──
+Prompt_10000204_01_138┃あはっ…あったかい……。
+Prompt_10000204_01_139┃ゴシャッ！
+Prompt_10000204_01_140┃気持ちよくなってきちゃった……。
+Prompt_10000204_01_141┃大剣のような巨大なバットを手にした女。
+Prompt_10000204_01_142┃彼女の服とバットは真っ赤な血で染まっており……
+Prompt_10000204_01_143┃その周りには、もはや原形を留めない何かが蠢いていた。
+Prompt_10000204_01_144┃ゴシャッ！
+Prompt_10000204_01_145┃女は、かつて人だった何かが動かなくなるまで、何度もバットを振り下ろした。
+Prompt_10000204_01_146┃あの人は……。
+Prompt_10000204_01_147┃アビゲイルの脳裏に、前回の実験の最後の記憶が蘇る。
+Prompt_10000204_01_148┃自分を無惨に叩き潰した、あの巨大なバット。
+Prompt_10000204_01_149┃ゴシャッ！ゴシャッ！ゴシャッ！
+Prompt_10000204_01_150┃う…おぇっ……
+Prompt_10000204_01_151┃あら、おはよう。
+Prompt_10000204_01_152┃あんたたちも、一緒に遊ぶ？
+Prompt_10000204_01_153┃アビゲイルは端末を確認した。
+Prompt_10000204_01_154┃画面の赤い点はいつの間にか消え、青い点だけが光っていた。
+Prompt_10000205_01_0┃……
+Prompt_10000205_01_1┃……
+Prompt_10000205_01_2┃……
+Prompt_10000205_01_3┃（き、気まずい……。）
+Prompt_10000205_01_4┃少し前。
+Prompt_10000205_01_5┃無惨な殺戮の現場を目の当たりにしたティアの顔は、青ざめていた。
+Prompt_10000205_01_6┃おえっ……。
+Prompt_10000205_01_7┃大丈夫ですか？
+Prompt_10000205_01_8┃ガーネットは血まみれのまま、屈託のない笑みを浮かべて2人を迎えた。
+Prompt_10000205_01_9┃ふーん、もしかしてグロテスクなのは苦手？
+Prompt_10000205_01_10┃これくらいで吐いちゃうなんて…ふふっ。
+Prompt_10000205_01_11┃そういえば、人を探してるんだけど……。
+Prompt_10000205_01_12┃私と同じ髪と目の色の男の子…見なかった？
+Prompt_10000205_01_13┃……いいえ。分かりません。
+Prompt_10000205_01_14┃そう……？
+Prompt_10000205_01_15┃残念だわ…ふふっ……。
+Prompt_10000205_01_16┃別の場所に移動しましょう。
+Prompt_10000205_01_17┃ティアさんの具合も良くないですし、ここは……。
+Prompt_10000205_01_18┃アビゲイルは周囲を見渡した。
+Prompt_10000205_01_19┃血の海と化したホテルの入り口。
+Prompt_10000205_01_20┃これだけ騒ぎを起こした以上、いつ他の実験体が現れてもおかしくない。
+Prompt_10000205_01_21┃危険です。
+Prompt_10000205_01_22┃アビゲイルの提案に、ガーネットはつまらなそうな顔をした。
+Prompt_10000205_01_23┃ふーん…私はむしろ大歓迎だけど？
+Prompt_10000205_01_24┃……移動すべきです。
+Prompt_10000205_01_25┃嫌だと言ったら？
+Prompt_10000205_01_26┃2人は、互いを静かに睨みつけた。
+Prompt_10000205_01_27┃はぁ…はいはい、分かったわよ。行けばいいんでしょ。
+Prompt_10000205_01_28┃……
+Prompt_10000205_01_29┃彼女たちはホテルを離れ、砂浜の片隅に腰を下ろして休息を取り始めた。
+Prompt_10000205_01_30┃そうして、3人が無言のまま半日が過ぎた。
+Prompt_10000205_01_31┃2人の間に挟まれたティアは、とにかく居心地が悪かった。
+Prompt_10000205_01_32┃（な、何か言わないと……。）
+Prompt_10000205_01_33┃ティアは、じっとガーネットを見つめた。
+Prompt_10000205_01_34┃（ガーネットさん…だっけ？）
+Prompt_10000205_01_35┃（初めて見た…あんな……。）
+Prompt_10000205_01_36┃飛び散った内臓、ミンチになった肉塊……
+Prompt_10000205_01_37┃そして、今まで見たどんなものよりも鮮やかな──
+Prompt_10000205_01_38┃赤色……。
+Prompt_10000205_01_39┃ティアさん？大丈夫ですか？
+Prompt_10000205_01_40┃あ、うん？う、うん…もう大丈夫だよ。
+Prompt_10000205_01_41┃よかった〜。じゃあ、次の相手を探しに行く？
+Prompt_10000205_01_42┃ガーネットがのんきな顔で2人に言った。
+Prompt_10000205_01_43┃もうすぐ日が暮れます。
+Prompt_10000205_01_44┃だから？
+Prompt_10000205_01_45┃……
+Prompt_10000205_01_46┃ふふっ……。
+Prompt_10000205_01_47┃ガーネットとアビゲイルは、再び互いを睨みつけた。
+Prompt_10000205_01_48┃ふ、2人とも、ケンカしないで……。
+Prompt_10000205_01_49┃が、ガーネットさん、だっけ？さっき、結構ケガしてたみたいだけど……。
+Prompt_10000205_01_50┃もう少し休んだほうがいいんじゃないかな…？
+Prompt_10000205_01_51┃実際、3人のうち最も体調が悪いのはガーネットだった。
+Prompt_10000205_01_52┃今の彼女は、先ほどの戦闘で負った傷、そして……
+Prompt_10000205_01_53┃自分のか、相手のかも分からない血が、全身を彩っている。
+Prompt_10000205_01_54┃心配してくれてるの？ありがとう。
+Prompt_10000205_01_55┃でも平気。何ともないから。
+Prompt_10000205_01_56┃……血くらいは、洗い流したほうがいいと思いますよ。
+Prompt_10000205_01_57┃血？
+Prompt_10000205_01_58┃あなたの服についている血です。
+Prompt_10000205_01_59┃あ〜、これ？
+Prompt_10000205_01_60┃言われてみれば、ちょっと気持ち悪いかも。
+Prompt_10000205_01_61┃言うが早いか、ガーネットは海へと飛び込んだ。
+Prompt_10000205_01_62┃あっ！傷があるのに、そんなことしたら……！
+Prompt_10000205_01_63┃くううっ……！
+Prompt_10000205_01_64┃はぁぁぁ……。
+Prompt_10000205_01_65┃平気だって。何ともないから。
+Prompt_10000205_01_66┃傷口に染みる激痛にも構わず、ガーネットは海水で血を洗い流し続ける。
+Prompt_10000205_01_67┃むしろその痛みを愉しむかのように、恍惚とした表情で小さく呻いた。
+Prompt_10000205_01_68┃彼女にとって痛みとは、この世界に自分が生きていることを実感させてくれる証なのだ。
+Prompt_10000205_01_69┃……変わった人ですね。
+Prompt_10000205_01_70┃だ、だよね……あはは……。
+Prompt_10000205_01_71┃ふふ……あんたたちも入ったら？
+Prompt_10000205_01_72┃あ、えっと……私はいいや。あはは……。
+Prompt_10000205_01_73┃……
+Prompt_10000205_01_74┃アビゲイルは海を見つめる。
+Prompt_10000205_01_75┃寄せては返す波の音が、彼女の耳に届く。
+Prompt_10000205_01_76┃私も、結構です。
+Prompt_10000205_01_77┃アビゲイルは静かに目を閉じ、肩を震わせた。
+Prompt_10000205_01_78┃<size=40>……</size>
+Prompt_10000205_01_79┃<size=40>あなた、アビゲイル！早くこっちへ！</size>
+Prompt_10000205_01_80┃<size=40>ああ…水がもう船室まで……！</size>
+Prompt_10000205_01_81┃<size=40>……</size>
+Prompt_10000205_01_82┃しばらくして。
+Prompt_10000205_01_83┃ふぅ……。で、これからどうするの？
+Prompt_10000205_01_84┃海から上がったガーネットが、水気を拭いながら言った。
+Prompt_10000205_01_85┃い、いまは、ここで様子を見るのがいいんじゃないかな？
+Prompt_10000205_01_86┃ふーん……
+Prompt_10000205_01_87┃ガーネットはアビゲイルに視線を向けた。
+Prompt_10000205_01_88┃あんたはどう思う？
+Prompt_10000205_01_89┃私は……
+Prompt_10000205_01_90┃分かりません……。
+Prompt_10000205_01_91┃アビゲイルはうなだれた。
+Prompt_10000205_01_92┃（あとどれだけ、殺さなければならないの……。）
+Prompt_10000205_01_93┃（あとどれだけ、殺されなければならないの……。）
+Prompt_10000205_01_94┃（あとどれだけ繰り返せば、お姉さんに会えるの。）
+Prompt_10000205_01_95┃（どうして……。）
+Prompt_10000205_01_96┃どうして、会いに来てくれないのだろうか。
+Prompt_10000205_01_97┃何も分からない。
+Prompt_10000205_01_98┃これから、どうすればいいのかも。
+Prompt_10000205_01_99┃自分をこの残酷な実験に参加させた、ナジャの真意も。
+Prompt_10000205_01_100┃ふん…つまんない。
+Prompt_10000205_01_101┃少しは見込みがあると思ったのに。
+Prompt_10000205_01_102┃はぁ、しらけちゃった～。
+Prompt_10000205_01_103┃ガーネットは全身の力を抜き、どさりと倒れ込んで空を仰いだ。
+Prompt_10000205_01_104┃（うーん…大丈夫…だよね？）
+Prompt_10000205_01_105┃……
+Prompt_10000205_01_106┃やがて日は暮れ、3人は焚き火を囲み、燃え尽きていく薪を眺めていた。
+Prompt_10000205_01_107┃あ、あの…ガーネットさん？
+Prompt_10000205_01_108┃んー？
+Prompt_10000205_01_109┃その…さっき、男の子を探してるって言ってたけど……。
+Prompt_10000205_01_110┃その子も、この島にいるの？
+Prompt_10000205_01_111┃そうね……。
+Prompt_10000205_01_112┃そうだって聞いたわ。
+Prompt_10000205_01_113┃あんなに探し回ったのに…まさか、こんな小さな島に隠れてたなんて。
+Prompt_10000205_01_114┃会えるのが本当に楽しみだわ。
+Prompt_10000205_01_115┃そ、そっか……。
+Prompt_10000205_01_116┃大切な人なんだね。
+Prompt_10000205_01_117┃ティアは小さく微笑んで、ガーネットを見た。
+Prompt_10000205_01_118┃ガーネットもまた、焚き火を見つめて微笑んだ。
+Prompt_10000205_01_119┃ええ…とっても大切な人よ。
+Prompt_10000205_01_120┃また会えたら……
+Prompt_10000205_01_121┃殺しちゃいたいくらいにね。
+Prompt_10000205_01_122┃ふふ……。
+Prompt_10000205_01_123┃え……？
+Prompt_10000205_01_124┃続くガーネットの言葉に、ティアの瞳が揺れた。
+Prompt_10000205_01_125┃……
+Prompt_10000205_01_126┃大切な人なのに殺したいというのは、どういう意味ですか。
+Prompt_10000205_01_127┃大切だからこそ、憎いのよ……。
+Prompt_10000205_01_128┃私が与える痛みで、今度こそ私を一生忘れられなくしたい……。
+Prompt_10000205_01_129┃だから、殺したいのよ。
+Prompt_10000205_01_130┃ううん、殺したいっていうより…死ぬほど痛めつけてあげたい、と言ったほうが正しいかな？
+Prompt_10000205_01_131┃ふふ……。
+Prompt_10000205_01_132┃……理解できません。
+Prompt_10000205_01_133┃理解する必要、ある？
+Prompt_10000205_01_134┃あんたはあんた、私は私。
+Prompt_10000205_01_135┃あんたが私を理解できないように、私もあんたを理解できない。
+Prompt_10000205_01_136┃適当に流すだけでいい。
+Prompt_10000205_01_137┃友達でも、家族でも、それ以上でも…理解なんてできない。
+Prompt_10000205_01_138┃この感情は…私だけのものだから。
+Prompt_10000205_01_139┃自分だけの、感情……。
+Prompt_10000205_01_140┃私も、少しだけ分かる気がする。
+Prompt_10000205_01_141┃私の家族、私の絵をあんまり好きじゃなかったから。
+Prompt_10000205_01_142┃私はただ、自由に絵が描きたかっただけなのに……。
+Prompt_10000205_01_143┃ガーネットとティアの話を聞いたアビゲイルは、考え込んだ。
+Prompt_10000205_01_144┃アビゲイルがこの実験に参加したのは、ナジャのため。
+Prompt_10000205_01_145┃だが、ナジャが自分をどう思っているのか、アビゲイルは一度も考えたことがなかった。
+Prompt_10000205_01_146┃家族？友達？それとも、ただの研究員と実験体？
+Prompt_10000205_01_147┃あるいは、もしかしたら……
+Prompt_10000205_01_148┃自分のことを、ただの厄介者だと思っているのではないだろうか。
+Prompt_10000205_01_149┃アビゲイルは肩を震わせ、再びうつむいた。
+Prompt_10000205_01_150┃うーん…なんだか、難しい話になっちゃったね……。
+Prompt_10000205_01_151┃も、もう遅いし、そろそろ寝よっか…？
+Prompt_10000205_01_152┃……
+Prompt_10000205_01_153┃そうね…こんなに早く寝るの、いつぶりかしら……。
+Prompt_10000205_01_154┃ざあ…ざあ……
+Prompt_10000205_01_155┃遠くから聞こえる静かな波の音に耳を澄ませながら、アビゲイルは目を閉じた。
+Prompt_10000205_01_156┃……
+Prompt_10000205_01_157┃ざあ…ざあ……
+Prompt_10000205_01_158┃いつか見た光景が、脳裏に蘇る。
+Prompt_10000205_01_159┃今日の天気は悪くないわね。
+Prompt_10000205_01_160┃いいとも言えないけど…。
+Prompt_10000205_01_161┃……
+Prompt_10000205_01_162┃ここの海は、そんなに綺麗ではないけど…悪くもない。
+Prompt_10000205_01_163┃……
+Prompt_10000205_01_164┃いつか一緒に、私の故郷へ行けるといいね。
+Prompt_10000205_01_165┃そこは、とても美しい海があるから。
+Prompt_10000205_01_166┃……
+Prompt_10000205_01_167┃……アビゲイル。
+Prompt_10000205_01_168┃まだ、海が怖い？
+Prompt_10000205_01_169┃……はい……。
+Prompt_10000205_01_170┃怖いです……。
+Prompt_10000205_01_171┃黒い波に、全て飲み込まれてしまいそうで……。
+Prompt_10000205_01_172┃……
+Prompt_10000205_01_173┃波のような静寂が、長く続いた。
+Prompt_10000205_01_174┃やがて、ナジャがアビゲイルの手を強く握った。
+Prompt_10000205_01_175┃そして、もう片方の手で彼女の頭を優しく撫でながら、言葉を続けた。
+Prompt_10000205_01_176┃大丈夫……
+Prompt_10000205_01_177┃全部、よくなるから……。
+Prompt_10000205_01_178┃いつか、きっと……
+Prompt_10000205_01_179┃<size=40>不安な感情が、水面の下へと沈んでいく。</size>
+Prompt_10000205_01_180┃<size=40>優しく響く懐かしい声を思い出しながら、アビゲイルは深い眠りに落ちた。</size>
+Prompt_10000206_01_0┃はぁっ…はぁっ…はぁっ……！
+Prompt_10000206_01_1┃少し待ってくれないか？
+Prompt_10000206_01_2┃深夜、森では再び緊迫した追撃戦が繰り広げられていた。
+Prompt_10000206_01_3┃待てって言われて止まる人間がどこにいるっていうのよ……！
+Prompt_10000206_01_4┃ジェニーは迫りくる黒い影を振り払い、ただひたすら全力で走っていた。
+Prompt_10000206_01_5┃だ、誰か助けて…！！
+Prompt_10000206_01_6┃必死に走るジェニーの前に、もう1つの人影──イシュトヴァーンが現れた。
+Prompt_10000206_01_7┃ひ、人……！
+Prompt_10000206_01_8┃ジェニーは立ち尽くすイシュトヴァーンの前で足を止め、彼にすがりついて必死に懇願した。
+Prompt_10000206_01_9┃ちょ、ちょっと…！助けて頂戴…！ストーカーに追われてるの…！
+Prompt_10000206_01_10┃……何事だ？
+Prompt_10000206_01_11┃い、言ったでしょ！イカれたストーカーが追ってくるのよ！
+Prompt_10000206_01_12┃ひぃっ！あ、あそこ！
+Prompt_10000206_01_13┃黒い影──ダニエルが、ジェニーとイシュトヴァーンの前に姿を現した。
+Prompt_10000206_01_14┃こ、来ないでよ、このストーカー！こっちは2人なのよ！
+Prompt_10000206_01_15┃ふむ……。
+Prompt_10000206_01_16┃それ以上近づいたら撃つわよ……！私、撃てるんだから……！
+Prompt_10000206_01_17┃ジェニーは震える両手で拳銃を握りしめ、自分たちに近づくダニエルに狙いを定めた。
+Prompt_10000206_01_18┃少し落ち着いたらどうだ？
+Prompt_10000206_01_19┃今、落ち着いていられる状況に見えるわけ！？
+Prompt_10000206_01_20┃あなたも突っ立ってないで、何とかしなさいよ！
+Prompt_10000206_01_21┃何か勘違いをしているようだが……。
+Prompt_10000206_01_22┃……え？
+Prompt_10000206_01_23┃冷たい夜気が漂う中、ジェニーはイシュトヴァーンを見上げた。
+Prompt_10000206_01_24┃イシュトヴァーンは、険しい顔でジェニーを見つめている。
+Prompt_10000206_01_25┃ま、まさか……。
+Prompt_10000206_01_26┃あなたも……？
+Prompt_10000206_01_27┃……ようやく理解したか？
+Prompt_10000206_01_28┃我々3人は味方同士だ。
+Prompt_10000206_01_29┃へ？
+Prompt_10000206_01_30┃……
+Prompt_10000206_01_31┃ジェニーとイシュトヴァーン、ダニエルは森の片隅に場所を確保し、野営を始めた。
+Prompt_10000206_01_32┃わ、悪かったって言ってるでしょ！
+Prompt_10000206_01_33┃だいたい、貴方が紛らわしいことするから！
+Prompt_10000206_01_34┃最初から味方だって言えば済んだ話じゃない！
+Prompt_10000206_01_35┃話す前に逃げたのはそっちだが……。
+Prompt_10000206_01_36┃ご、ごめんなさいってば……。
+Prompt_10000206_01_37┃他の人間と遭遇した際は、まず手首の端末を確認することだ。
+Prompt_10000206_01_38┃青なら味方、赤なら敵という意味だ。
+Prompt_10000206_01_39┃こ、こんな便利なものがあるなら、先に教えなさいよ！
+Prompt_10000206_01_40┃事前に説明があったはずだ。君が聞いていなかっただけではないのか？
+Prompt_10000206_01_41┃オーホホホ……。
+Prompt_10000206_01_42┃イシュトヴァーンは、気まずそうにするジェニーを見つめた。
+Prompt_10000206_01_43┃……ジェニー・シンクレア。
+Prompt_10000206_01_44┃なに？
+Prompt_10000206_01_45┃ていうか、貴方誰なの？どうして私の名前を知ってるわけ？
+Prompt_10000206_01_46┃あ！まさか、私がそれほど有名になったってこと！？
+Prompt_10000206_01_47┃どうして君を知っているかはさておき……
+Prompt_10000206_01_48┃俺を覚えているか？
+Prompt_10000206_01_49┃ううん？
+Prompt_10000206_01_50┃あ、もしかしてこの前サインをあげた人かしら？
+Prompt_10000206_01_51┃ごめんなさい…サインの相手はいちいち覚えていないのよ…！うふふ……。
+Prompt_10000206_01_52┃ならいい。
+Prompt_10000206_01_53┃（過去の実験の記憶はないか。）
+Prompt_10000206_01_54┃（メンタルにまだ問題はないようだが、前回のように脱落させるわけにはいかん……。）
+Prompt_10000206_01_55┃少し気にかけておくか。
+Prompt_10000206_01_56┃ん？何か言った？
+Prompt_10000206_01_57┃いや、何でもない。
+Prompt_10000206_01_58┃……もう遅い。今は休息をとるべきだろう。
+Prompt_10000206_01_59┃イシュトヴァーンの言葉にジェニーとダニエルも頷き、3人はそれぞれ休息に入った。
+Prompt_10000206_01_60┃……
+Prompt_10000206_01_61┃……
+Prompt_10000206_01_62┃……
+Prompt_10000206_01_63┃ふむ……。
+Prompt_10000206_01_64┃うぅぅぅ……！
+Prompt_10000206_01_65┃ちょっと貴方、何でそんなにジロジロ見てるのよ？
+Prompt_10000206_01_66┃言いたいことがあるなら、はっきり言ったら？
+Prompt_10000206_01_67┃その髪。
+Prompt_10000206_01_68┃え？
+Prompt_10000206_01_69┃少し見てもいいか？
+Prompt_10000206_01_70┃私の髪？髪が…何？
+Prompt_10000206_01_71┃職業病だ。
+Prompt_10000206_01_72┃ダニエルが懐から櫛とカットバサミを取り出した。
+Prompt_10000206_01_73┃乱れている箇所がある。
+Prompt_10000206_01_74┃私が整えてやろう。
+Prompt_10000206_01_75┃はぁ？貴方を信用できるわけないし……
+Prompt_10000206_01_76┃スターの髪に気安く触れられると思わないで頂戴！
+Prompt_10000206_01_77┃つれないな。
+Prompt_10000206_01_78┃ダメなものはダメなのよ！
+Prompt_10000206_01_79┃……残念だ。
+Prompt_10000206_01_80┃ダニエルは櫛とハサミを懐にしまい、眉をひそめた。
+Prompt_10000206_01_81┃私なら、もっと美しくできるのだが。
+Prompt_10000206_01_82┃う、美しく？
+Prompt_10000206_01_83┃こ……こほん。
+Prompt_10000206_01_84┃こ、今回だけなんだからね。
+Prompt_10000206_01_85┃特別に、この私の髪をセットすることを許可してあげるわ！
+Prompt_10000206_01_86┃ジェニーは背を向けて、素直に座った。
+Prompt_10000206_01_87┃では…失礼する。
+Prompt_10000206_01_88┃ダニエルは、そっとジェニーの髪に手を触れた。
+Prompt_10000206_01_89┃ふむ……。
+Prompt_10000206_01_90┃日頃から手入れは行き届いているようだな。
+Prompt_10000206_01_91┃だが……。
+Prompt_10000206_01_92┃だが？
+Prompt_10000206_01_93┃毛先が少し傷んでいる。
+Prompt_10000206_01_94┃最近、強いストレスを感じているようだな。
+Prompt_10000206_01_95┃食事はきちんと摂っているか？昨日の睡眠時間は？
+Prompt_10000206_01_96┃ダニエルがジェニーの生活習慣について、根掘り葉掘り聞き始めた。
+Prompt_10000206_01_97┃ちょ、ちょっと！プライバシーの侵害よ！
+Prompt_10000206_01_98┃私は髪を整えろと言ったのであって、そんなことまで聞けとは言ってないわ！
+Prompt_10000206_01_99┃ストレス、食事、睡眠、すべてが毛髪に影響を及ぼす重要な要素だ。
+Prompt_10000206_01_100┃せっかく良い素材を持っているのに手入れが万全じゃないとは、もったいないな。
+Prompt_10000206_01_101┃そ、そう？見る目だけはあるじゃない……！おーほほほ……。
+Prompt_10000206_01_102┃（……思ったより、相性がいいようだな。）
+Prompt_10000206_01_103┃希望のスタイルはあるか？
+Prompt_10000206_01_104┃そ、そうねぇ？今のスタイルも悪くないとは思うけど……。
+Prompt_10000206_01_105┃では、少し整えるだけにしておこう。
+Prompt_10000206_01_106┃ダニエルは小さなカットバサミで、ジェニーの髪を整え始めた。
+Prompt_10000206_01_107┃……貴方、なかなか上手じゃない。
+Prompt_10000206_01_108┃施術中は黙っていたほうがいいぞ。
+Prompt_10000206_01_109┃失敗しても責任は取らんからな。
+Prompt_10000206_01_110┃うぐっ……！
+Prompt_10000206_01_111┃チョキチョキ──
+Prompt_10000206_01_112┃ダニエルの大胆かつ繊細な手つきに、ジェニーは心地よささえ感じていた。
+Prompt_10000206_01_113┃……ふむ、よし。
+Prompt_10000206_01_114┃出来上がりだ、確認してくれ。
+Prompt_10000206_01_115┃小さな手鏡で髪を確認したジェニーは、満足そうに軽く微笑んだ。
+Prompt_10000206_01_116┃うん！いいわね！貴方、やるじゃない！
+Prompt_10000206_01_117┃特別に、私の専属ヘアスタイリストにしてあげるわ！
+Prompt_10000206_01_118┃い、今じゃなくて、あとでね……！
+Prompt_10000206_01_119┃……断る。
+Prompt_10000206_01_120┃えぇ？どうして！？
+Prompt_10000206_01_121┃……
+Prompt_10000206_01_122┃もう、黙ってないでなんとか言いなさいよ！
+Prompt_10000206_01_123┃そうして、夜は更けていった。
+Prompt_10000206_01_124┃……
+Prompt_10000206_01_125┃うーん…見る価値もない…脚本ね……。
+Prompt_10000206_01_126┃私は…こんな役…むにゃ……。
+Prompt_10000206_01_127┃ジェニーは寝言を言いながらすやすやと眠り、イシュトヴァーンとダニエルは静かに目を閉じていた。
+Prompt_10000206_01_128┃……
+Prompt_10000206_01_129┃しばらくして、ダニエルが目を開ける。
+Prompt_10000206_01_130┃ダニエルは2人が眠っているのを確認すると、静かに立ち上がり、どこかへ歩き始めた。
+Prompt_10000206_01_131┃ざっ、ざっ。
+Prompt_10000206_01_132┃ダニエルは当てもなく、静かに辺りを見回しながら歩く。
+Prompt_10000206_01_133┃まるで獲物を探す獣のように。
+Prompt_10000206_01_134┃やがてダニエルが闇に紛れようとした、その時──
+Prompt_10000206_01_135┃「作品活動」か？
+Prompt_10000206_01_136┃1人では危険だと思うが。
+Prompt_10000206_01_137┃いつの間にかダニエルの背後に現れたイシュトヴァーンが、静かに言った。
+Prompt_10000206_01_138┃ダニエルは素早くイシュトヴァーンの目前に迫り、目の前にハサミを突きつけた。
+Prompt_10000206_01_139┃……
+Prompt_10000206_01_140┃放っておいてもらおうか。
+Prompt_10000206_01_141┃ふむ、君の「作品」に口を出すつもりはないが、単独行動で味方が死ぬ様は見たくないな。
+Prompt_10000206_01_142┃……
+Prompt_10000206_01_143┃ダニエルはハサミを収め、背を向けて言った。
+Prompt_10000206_01_144┃もう一度言う。放っておいてくれ。
+Prompt_10000206_01_145┃ふむ……。
+Prompt_10000206_01_146┃イシュトヴァーンは目を閉じ、眉を寄せながら言葉を続けた。
+Prompt_10000206_01_147┃2時間後には戻れ。それと……
+Prompt_10000206_01_148┃背後には気をつけた方がいい。
+Prompt_10000207_01_0┃怖いです……飲み込まれてしまいそうで……。
+Prompt_10000207_01_1┃……
+Prompt_10000207_01_2┃何も言えなかった。
+Prompt_10000207_01_3┃アビゲイルが海を恐れる理由を知っているから。
+Prompt_10000207_01_4┃それが彼女にとって、どれほど痛ましい傷なのか知っているから。
+Prompt_10000207_01_5┃何も言うことができなかった。
+Prompt_10000207_01_6┃ただ静かに、アビゲイルの頭を優しく撫でた。
+Prompt_10000207_01_7┃やがて、ナジャが口を開いた。
+Prompt_10000207_01_8┃大丈夫……
+Prompt_10000207_01_9┃全部、よくなるから……。
+Prompt_10000207_01_10┃約束するわ。
+Prompt_10000207_01_11┃いつか、きっと……
+Prompt_10000207_01_12┃全てが終わったら……。
+Prompt_10000207_01_13┃先輩？寝てるんですか？
+Prompt_10000207_01_14┃あ、ん……？ここは……。
+Prompt_10000207_01_15┃ナジャは辺りを見回す。
+Prompt_10000207_01_16┃アグライア研究所のモニタリングルーム。
+Prompt_10000207_01_17┃進行中の実験状況を確認するため、大勢の研究員が集まり、巨大なスクリーンを見つめている。
+Prompt_10000207_01_18┃あはは、ごめん。少しうたた寝していたみたいね……。
+Prompt_10000207_01_19┃もう、何日も徹夜でモニタリングしてますからね、無理もないですよ。
+Prompt_10000207_01_20┃実験ももうすぐ終わりですし…残っている実験体も2チームだけですから、少し休んでください。
+Prompt_10000207_01_21┃私がしっかり見ておきますから！
+Prompt_10000207_01_22┃そう……。じゃあ、お願いね。
+Prompt_10000207_01_23┃私は個人研究室にいるから、何かあったら呼んで。
+Prompt_10000207_01_24┃はい！ゆっくり休んでください！
+Prompt_10000207_01_25┃……
+Prompt_10000207_01_26┃──ドサッ
+Prompt_10000207_01_27┃ナジャは崩れるように椅子に身を預けた。
+Prompt_10000207_01_28┃私は……
+Prompt_10000207_01_29┃分かりません……。
+Prompt_10000207_01_30┃……もう、慣れたと思っていたのに……。
+Prompt_10000207_01_31┃過去の記憶が、ナジャの脳裏をよぎる。
+Prompt_10000207_01_32┃理由を教えてください。なぜ私が、あの子の担当から外されたのですか？
+Prompt_10000207_01_33┃上層部の決定だ。私にどうこうできる問題じゃない。
+Prompt_10000207_01_34┃私も君が適任だと言ってみたけど……
+Prompt_10000207_01_35┃あの子の精神がまだ不安定なのは、ご存知でしょう。
+Prompt_10000207_01_36┃せめて面談だけでも……。
+Prompt_10000207_01_37┃何事だ？
+Prompt_10000207_01_38┃あ、Mr. メイジ……。
+Prompt_10000207_01_39┃実は、今回実験体に指定された23M-RFT70の担当研究員の配属について話していたところでして……。
+Prompt_10000207_01_40┃Mr. メイジ、あの子の担当から外された理由を教えてください。
+Prompt_10000207_01_41┃……私が説明しよう。君は席を外したまえ。
+Prompt_10000207_01_42┃は、はい。
+Prompt_10000207_01_43┃──カチャ
+Prompt_10000207_01_44┃あの子…アビゲイルのことを一番よく知っているのは、私です。
+Prompt_10000207_01_45┃あの子も、私をとても頼りにしています。
+Prompt_10000207_01_46┃なのに、どうして私が担当から外されなければならないのですか？
+Prompt_10000207_01_47┃それこそが理由だと言ったら？
+Prompt_10000207_01_48┃え……？
+Prompt_10000207_01_49┃君が、23M-RFT70…アビゲイル・ロックと最も近しい人物だからだ。
+Prompt_10000207_01_50┃メイジは、厳粛な態度で語った。
+Prompt_10000207_01_51┃少し、昔話をしようか。
+Prompt_10000207_01_52┃ルミア島での実験が確立する前…いかなる資料にも記録されていない実験が行われた。
+Prompt_10000207_01_53┃当時は今のような装備も技術も、実験に関する詳細な規則すらなかった。
+Prompt_10000207_01_54┃その頃、君のように実験体と極めて近しい関係を築いた研究員がいた。
+Prompt_10000207_01_55┃その研究員は己の本分を忘れ…あろうことか、実験体を解放してしまったのだ。
+Prompt_10000207_01_56┃その研究員と実験体はどうなったと思うか？
+Prompt_10000207_01_57┃……
+Prompt_10000207_01_58┃実験体は研究員を殺害し、VF暴走を引き起こした。
+Prompt_10000207_01_59┃その甚大な被害によって、我々は多くを失った。
+Prompt_10000207_01_60┃これで答えになったか？
+Prompt_10000207_01_61┃……いいえ、私とアビゲイルは、そんな……！
+Prompt_10000207_01_62┃静粛に。
+Prompt_10000207_01_63┃くっ……！
+Prompt_10000207_01_64┃瞬間、ナジャの身体が凍りついた。
+Prompt_10000207_01_65┃異議は認めんぞ、Dr. ナジャ。
+Prompt_10000207_01_66┃君がこれまで成し遂げた研究成果…私は君に期待している。
+Prompt_10000207_01_67┃くれぐれも…私を失望させるな。
+Prompt_10000207_01_68┃それと、もう1つ……。
+Prompt_10000207_01_69┃VF覚醒者を、実験体を…人間だと思わないことだ。
+Prompt_10000207_01_70┃彼らはもはや、君とは違う生き物なのだからな。
+Prompt_10000207_01_71┃……
+Prompt_10000207_01_72┃ふぅ……。
+Prompt_10000207_01_73┃ナジャが体を起こす。
+Prompt_10000207_01_74┃何日も徹夜したせいか、体も意識も軋むようだ。
+Prompt_10000207_01_75┃小さなモニターをつけ、実験を見守る。
+Prompt_10000207_01_76┃そこには、疲れ切ったアビゲイルの顔が映っていた。
+Prompt_10000207_01_77┃研究に私情を挟むことは、客観的な判断を鈍らせる。
+Prompt_10000207_01_78┃君は研究員で、我々は実験体だ。
+Prompt_10000207_01_79┃ナジャは引き出しから黒いタブレットを取り出し、静かに画面に触れ始めた。
+Prompt_10000207_01_80┃はは……。
+Prompt_10000207_01_81┃私…何をしているんだろう……。
+Prompt_10000208_01_0┃……ル。
+Prompt_10000208_01_1┃……ビゲイル。
+Prompt_10000208_01_2┃お姉…さん？
+Prompt_10000208_01_3┃アビゲイルちゃん、早く起きて……！
+Prompt_10000208_01_4┃ティアの慌てた声に、アビゲイルは身を起こした。
+Prompt_10000208_01_5┃ティアさん……？
+Prompt_10000208_01_6┃敵だよ……！今、ガーネットさんが戦ってる！
+Prompt_10000208_01_7┃ティアの背後に、ガーネットと黒い影が見える。
+Prompt_10000208_01_8┃キン！キン！キン！キン！
+Prompt_10000208_01_9┃黒い影は鋭いハサミで素早くガーネットを攻め立て、その動きに追いつけないガーネットは防戦一方だった。
+Prompt_10000208_01_10┃しかし、すべての攻撃を防ぎきることはできず、ガーネットの身体に生傷が増えていく。
+Prompt_10000208_01_11┃はぁっ！
+Prompt_10000208_01_12┃ガーネットがバットを大きく振り回すと、黒い影──ダニエルが、わずかに後退した。
+Prompt_10000208_01_13┃はぁ……むかつくわね……。
+Prompt_10000208_01_14┃なかなか、しぶといな。
+Prompt_10000208_01_15┃そんな羽虫みたいにちょこまかしてないで、こっちに来てもっと激しく遊びましょ？
+Prompt_10000208_01_16┃傑作とは、丹精込めて作るものだ。
+Prompt_10000208_01_17┃ははっ……口だけは達者なのね……！
+Prompt_10000208_01_18┃あ、早くガーネットさんを助けなきゃ！
+Prompt_10000208_01_19┃ティアが、おろおろしながらアビゲイルに言った。
+Prompt_10000208_01_20┃……はい。
+Prompt_10000208_01_21┃アビゲイルは鎌を手に、立ち上がって構える。
+Prompt_10000208_01_22┃アビゲイルのVF能力は、テレポート。
+Prompt_10000208_01_23┃双方向の次元の亀裂を利用した瞬間移動で、素早く敵に接近することができる。
+Prompt_10000208_01_24┃アビゲイルは精神を集中させ、ダニエルの背後へと跳んだ。
+Prompt_10000208_01_25┃そして、アビゲイルの鎌がダニエルの背中を捉え、切り裂かんとした瞬間──
+Prompt_10000208_01_26┃キン！
+Prompt_10000208_01_27┃どこからか飛んできた槍が、アビゲイルの鎌を弾いた。
+Prompt_10000208_01_28┃くっ……！
+Prompt_10000208_01_29┃背後に気をつけろと言ったはずだが？
+Prompt_10000208_01_30┃なるほどな。
+Prompt_10000208_01_31┃ダニエルは素早く体勢を立て直し、イシュトヴァーンの隣へと移動した。
+Prompt_10000208_01_32┃……羽虫が1匹増えたわね〜。
+Prompt_10000208_01_33┃ん？おじさんは……。
+Prompt_10000208_01_34┃前回、私に頭を割られたおじさんじゃない？
+Prompt_10000208_01_35┃また頭を割られたくて来たの？ふふ……。
+Prompt_10000208_01_36┃……無駄口が多いな。24M-RFT79。
+Prompt_10000208_01_37┃褒めてくれてありがと〜。じゃあ、どっちから潰してあげようか？
+Prompt_10000208_01_38┃……
+Prompt_10000208_01_39┃イシュトヴァーンとダニエル。
+Prompt_10000208_01_40┃アビゲイルとガーネット、ティア。
+Prompt_10000208_01_41┃互いに牽制し合い、張り詰めた静寂が続く。
+Prompt_10000208_01_42┃いつ戦闘が再開してもおかしくない、一触即発の状況に──
+Prompt_10000208_01_43┃はぁっ…はぁっ…もう、どうして寝てた人を起こしてこんな所まで……！
+Prompt_10000208_01_44┃ジェニーが割って入った。
+Prompt_10000208_01_45┃あら？貴方、いたの？
+Prompt_10000208_01_46┃ん？あの子たちは誰？他の出演者かしら？
+Prompt_10000208_01_47┃ジェニーさん……。
+Prompt_10000208_01_48┃あら、貴方も私のこと知ってるの？さすが私！
+Prompt_10000208_01_49┃あとでサインしてあげるわ。もしかして、もうしてあげた？
+Prompt_10000208_01_50┃ごめんなさいね〜、サインした相手はいちいち覚えてないのよ！
+Prompt_10000208_01_51┃は、はは……。
+Prompt_10000208_01_52┃夢よね……？これ、夢なんでしょ……？
+Prompt_10000208_01_53┃お願い……。
+Prompt_10000208_01_54┃お願いだから、夢だって言ってよ……！！
+Prompt_10000208_01_55┃くっ……。
+Prompt_10000208_01_56┃雑談は終わりだ。
+Prompt_10000208_01_57┃イシュトヴァーンが構え、ガーネットに接近する。
+Prompt_10000208_01_58┃同時に、ダニエルが素早くティアに迫り、ハサミを振るった。
+Prompt_10000208_01_59┃きゃあ……！
+Prompt_10000208_01_60┃キン！
+Prompt_10000208_01_61┃あなたの相手は、私です。
+Prompt_10000208_01_62┃……今回は、そう簡単には引かん。
+Prompt_10000208_01_63┃目で追うのも困難な攻防が繰り広げられる中……
+Prompt_10000208_01_64┃くっ……。
+Prompt_10000208_01_65┃ダニエルは素早い動きでアビゲイルのVF能力を封じ、攻撃を続けた。
+Prompt_10000208_01_66┃危ない……！
+Prompt_10000208_01_67┃ティアがダニエルに巨大な筆を振り下ろすと──
+Prompt_10000208_01_68┃邪魔だ。
+Prompt_10000208_01_69┃シュッ──
+Prompt_10000208_01_70┃え……？
+Prompt_10000208_01_71┃ティアさん……！
+Prompt_10000208_01_72┃ティアの首に、細い線が走った。
+Prompt_10000208_01_73┃あ…くっ……。
+Prompt_10000208_01_74┃その線から、赤い血が噴き出す。
+Prompt_10000208_01_75┃う…あ……。
+Prompt_10000208_01_76┃ティアは、力なくその場に崩れ落ちた。
+Prompt_10000208_01_77┃ティアさん、しっかりしてください……！
+Prompt_10000208_01_78┃よそ見をしている場合か？
+Prompt_10000208_01_79┃ダニエルのハサミが、再びアビゲイルを狙う。
+Prompt_10000208_01_80┃くっ！
+Prompt_10000208_01_81┃え？え？な…何がどうなってるの？
+Prompt_10000208_01_82┃あれ、偽物の血よね？
+Prompt_10000208_01_83┃ふぅ…毎度いちいち説明するのも面倒だな。
+Prompt_10000208_01_84┃ふーん…よそ見なんて、ずいぶん余裕じゃない？
+Prompt_10000208_01_85┃ガーネットは満面の笑みを浮かべ、イシュトヴァーンめがけてバットを振り回した。
+Prompt_10000208_01_86┃ガァン！
+Prompt_10000208_01_87┃イシュトヴァーンが後退する。
+Prompt_10000208_01_88┃（やはり、正面から受け止めるのは厳しいか。）
+Prompt_10000208_01_89┃（攻撃を回避しつつ、隙を突くには……。）
+Prompt_10000208_01_90┃よし、ここは私が出た方が、いいシーンになるわよね……？
+Prompt_10000208_01_91┃ふぅん、お姉さんも私とやるの？
+Prompt_10000208_01_92┃ガーネットがジェニーにバットを突きつけながら言い放つ。
+Prompt_10000208_01_93┃あ…！いや、私はただ…こうすればもっと面白いシーンになるかと思って……！おーほほほ……。
+Prompt_10000208_01_94┃私は構わないわ。2人まとめてかかってきてなさい。
+Prompt_10000208_01_95┃私を、もっと楽しませてちょうだい……！！
+Prompt_10000208_01_96┃ガーネットがジェニーに襲いかかる。
+Prompt_10000208_01_97┃え…え？
+Prompt_10000208_01_98┃くっ……。
+Prompt_10000208_01_99┃イシュトヴァーンが2人の間に割って入り、ガーネットのバットを受け止めた。
+Prompt_10000208_01_100┃しかしその衝撃で、イシュトヴァーンは遠くへ吹き飛ばされてしまった。
+Prompt_10000208_01_101┃ふふ…次はお姉さんの番よ。
+Prompt_10000208_01_102┃な、何の番？
+Prompt_10000208_01_103┃ガーネットはジェニーを押し倒し、馬乗りになった。
+Prompt_10000208_01_104┃もちろん……
+Prompt_10000208_01_105┃生きてるって、実感する番よ。
+Prompt_10000208_01_106┃ガーネットがジェニーの顔を、容赦なく殴りつけ始めた。
+Prompt_10000208_01_107┃ゴッ！バキッ！ゴッ！バキッ！ゴッ！バキッ！ゴッ！バキッ！ゴッ！バキッ！
+Prompt_10000208_01_108┃や、やめ……！あああっ！！
+Prompt_10000208_01_109┃ジェニーの悲痛な叫びにも、ガーネットの拳が止まることはなかった。
+Prompt_10000208_01_110┃気分はどう？
+Prompt_10000208_01_111┃や…やめて…助けて……！！
+Prompt_10000208_01_112┃い、痛い……。
+Prompt_10000208_01_113┃そう？
+Prompt_10000208_01_114┃それはよかったね。
+Prompt_10000208_01_115┃<size=40>それこそが、私たちが生きてる証だもの。</size>
+Prompt_10000208_01_116┃ガーネットの拳は、ジェニーの息の根が止まるまで振り下ろされ続けた。
+Prompt_10000208_01_117┃いつしかガーネットの両手は、自分とジェニーの血で赤く染まっていた。
+Prompt_10000208_01_118┃あら、もうおしまい？
+Prompt_10000208_01_119┃じゃあ、あっちは……。
+Prompt_10000208_01_120┃ガーネットは、アビゲイルとダニエルのほうに視線を移す。
+Prompt_10000208_01_121┃熾烈な攻防が続く中、戦況は着実に傾いていた。
+Prompt_10000208_01_122┃ふむ……。
+Prompt_10000208_01_123┃はぁっ……はぁっ……。
+Prompt_10000208_01_124┃アビゲイルはダニエルの攻撃を防ぐので精一杯で、まともな反撃ができていなかった。
+Prompt_10000208_01_125┃ふふ…あの子はどうかしら？
+Prompt_10000208_01_126┃私を…もっと楽しませて！
+Prompt_10000208_01_127┃ガーネットがダニエル目掛けて突進し、バットを振り抜いた。
+Prompt_10000208_01_128┃はぁっ！
+Prompt_10000208_01_129┃ダニエルは、ガーネットの攻撃を軽々とかわした。
+Prompt_10000208_01_130┃だが、その一瞬の隙を逃さず、アビゲイルがダニエルの首筋を狙う。
+Prompt_10000208_01_131┃はっ……！
+Prompt_10000208_01_132┃キン！
+Prompt_10000208_01_133┃いつの間にか意識を取り戻したイシュトヴァーンが、アビゲイルの鎌を受け止めた。
+Prompt_10000208_01_134┃ふぅ…まずいな。
+Prompt_10000208_01_135┃4人が睨み合う中、イシュトヴァーンが口を開いた。
+Prompt_10000208_01_136┃威勢がよかった割には、ずいぶん無様を晒しているじゃないか。
+Prompt_10000208_01_137┃……不可抗力と言っておこう。
+Prompt_10000208_01_138┃ここは、一旦引くべきだろうな。
+Prompt_10000208_01_139┃ジェニーとティアは戦闘不能。重傷を負っているのはイシュトヴァーンのみ。
+Prompt_10000208_01_140┃ダニエルはハサミを収め、身を引いた。
+Prompt_10000208_01_141┃ふん……。
+Prompt_10000208_01_142┃次は、完成させてやる。
+Prompt_10000208_01_143┃ダニエルとイシュトヴァーンは、素早く砂浜から離脱した。
+Prompt_10000208_01_144┃逃がしてやるとでも？
+Prompt_10000208_01_145┃ガーネットが2人を追おうとした、その瞬間。
+Prompt_10000208_01_146┃ティアさん……！
+Prompt_10000208_01_147┃アビゲイルは、倒れているティアに駆け寄った。
+Prompt_10000208_01_148┃……ふん。
+Prompt_10000208_01_149┃ガーネットもアビゲイルに続き、ティアのもとへ歩み寄った。
+Prompt_10000208_01_150┃ティアさん、大丈夫ですか？
+Prompt_10000208_01_151┃あ、う、うん…大丈夫、みたい……。
+Prompt_10000208_01_152┃ふぅ……。
+Prompt_10000208_01_153┃アビゲイルは安堵のため息を漏らした。
+Prompt_10000208_01_154┃確かに、先ほどティアが負った傷は、人間であれば致命傷だった。
+Prompt_10000208_01_155┃だが、VF覚醒者の驚異的な生命力が、ティアの傷を瞬く間に回復させたのだろう。
+Prompt_10000208_01_156┃軽い貧血によるめまいを感じながら、ティアは立ち上がった。
+Prompt_10000208_01_157┃心配してくれて、ありがとう……。
+Prompt_10000208_01_158┃無事でよかったです。
+Prompt_10000208_01_159┃そうね、本当によかったわ〜。じゃあ、さっそく追いかけて、とどめを刺しに行こう？
+Prompt_10000208_01_160┃バン！
+Prompt_10000208_01_161┃え？
+Prompt_10000208_01_162┃その瞬間、放たれた弾丸がティアの頭を撃ち抜いた。
+Prompt_10000208_01_163┃ティアは悲鳴を上げる間もなく、その場に崩れ落ちた。
+Prompt_10000208_01_164┃ティアさん……！
+Prompt_10000208_01_165┃アビゲイルとガーネットが銃声のした方へ視線を向けると、そこには──
+Prompt_10000208_01_166┃私は……！世紀の大女優になるのよ……！
+Prompt_10000208_01_167┃こんな所で死んでたまるもんか……！
+Prompt_10000208_01_168┃ジェニーが満身創痍の身体を引きずり、アビゲイルとガーネットに銃口を向けていた。
+Prompt_10000208_01_169┃バン！バン！バン！
+Prompt_10000208_01_170┃私は！絶対に！生き残ってやるんだから……！！
+Prompt_10000208_01_171┃はぁ、しぶといお姉さんね……。
+Prompt_10000208_01_172┃ガーネットが、ジェニーに向かって一直線に駆け寄り……
+Prompt_10000208_01_173┃そのまま、バットを振り下ろした。
+Prompt_10000209_01_0┃暗闇に染まった海が、昇る朝日の色に染まっていく。
+Prompt_10000209_01_1┃アビゲイルはティアとジェニーの亡骸の前に座り、安らかに目を閉じた2人の顔を見つめていた。
+Prompt_10000209_01_2┃は、早くこの島を出て、もっと素敵な絵が描きたいな。あはは……。
+Prompt_10000209_01_3┃<size=40>もう…いや……</size>
+Prompt_10000209_01_4┃あら、貴方も私のこと知ってるの？さすが私！
+Prompt_10000209_01_5┃<size=40>お願いだから、夢だって言ってよ……！！</size>
+Prompt_10000209_01_6┃……
+Prompt_10000209_01_7┃ちっ……。
+Prompt_10000209_01_8┃いつまでそうしてるつもり？
+Prompt_10000209_01_9┃あののっぽのおじさんが回復する前に、追いかけてとどめを刺したほうがいいと思うけど。
+Prompt_10000209_01_10┃……
+Prompt_10000209_01_11┃あんたも分かってるでしょ？
+Prompt_10000209_01_12┃私たちは、死んでもまた生き返るって。
+Prompt_10000209_01_13┃生き返るなら、死んでもいいということですか？
+Prompt_10000209_01_14┃はぁ……。
+Prompt_10000209_01_15┃ガーネットは、アビゲイルの顔面に力一杯拳を叩き込んだ。
+Prompt_10000209_01_16┃うぐっ……！
+Prompt_10000209_01_17┃それで？泣いてたら、何か解決するわけ？
+Prompt_10000209_01_18┃文句があるなら、研究員とかいうクソッタレ共に言えば？
+Prompt_10000209_01_19┃（お姉さん……。）
+Prompt_10000209_01_20┃アビゲイルは、鎌を強く握りしめた。
+Prompt_10000209_01_21┃……
+Prompt_10000209_01_22┃森へ移動したダニエルとイシュトヴァーンは、小さな小屋に身を潜め、静かに休息をとっていた。
+Prompt_10000209_01_23┃……ほぼ回復したな。
+Prompt_10000209_01_24┃これからどうするつもりだ？
+Prompt_10000209_01_25┃残る相手は2人。1人ずつ、挟み撃ちで仕留めるのが得策だろう。
+Prompt_10000209_01_26┃私は、作品を作る際に他人の手を借りる趣味はない。
+Prompt_10000209_01_27┃ふぅ……。
+Prompt_10000209_01_28┃イシュトヴァーンは、しばし考え込んだ。
+Prompt_10000209_01_29┃では、俺が鎌の女を受け持とう。
+Prompt_10000209_01_30┃俺の能力は彼女の能力に対して相性優位だ。
+Prompt_10000209_01_31┃そのほうが勝率は高いだろう。
+Prompt_10000209_01_32┃勝てるのか？
+Prompt_10000209_01_33┃……断言はできんな。
+Prompt_10000209_01_34┃この世に確実なものなどない。
+Prompt_10000209_01_35┃どれほど検証された理論であろうと、いつ覆るか分からん。
+Prompt_10000209_01_36┃ただ、少しでもイレギュラーを減らし、確率の高いほうを選ぶだけだ。
+Prompt_10000209_01_37┃……そうか。
+Prompt_10000209_01_38┃すぐ準備する。
+Prompt_10000209_01_39┃そろそろ……
+Prompt_10000209_01_40┃シュッ！
+Prompt_10000209_01_41┃キン！
+Prompt_10000209_01_42┃イシュトヴァーンが言い終わる前にアビゲイルが現れ、奇襲をかける。
+Prompt_10000209_01_43┃だが、イシュトヴァーンは軽々とアビゲイルの攻撃を防いだ。
+Prompt_10000209_01_44┃……3時の方向だ。
+Prompt_10000209_01_45┃ドン！
+Prompt_10000209_01_46┃こんな所に隠れてたのね？
+Prompt_10000209_01_47┃ガーネットが小屋を破壊しながら姿を現した。
+Prompt_10000209_01_48┃……場所が悪いな。
+Prompt_10000209_01_49┃ダニエルは影に身を潜め、小屋から離れ始めた。
+Prompt_10000209_01_50┃逃げるの？つまんない〜。
+Prompt_10000209_01_51┃ガーネットがダニエルの後を追おうとした、その刹那──
+Prompt_10000209_01_52┃……ガーネットさん。
+Prompt_10000209_01_53┃ん？
+Prompt_10000209_01_54┃私、あなたのことが嫌いです。
+Prompt_10000209_01_55┃知ってる。
+Prompt_10000209_01_56┃でも、生きていてほしいです。
+Prompt_10000209_01_57┃は？
+Prompt_10000209_01_58┃……あはは！案外可愛いところもあるじゃない？
+Prompt_10000209_01_59┃あんたこそ、死なないように頑張って〜。
+Prompt_10000209_01_60┃ガーネットはアビゲイルに軽く微笑むと、ダニエルを追って姿を消した。
+Prompt_10000209_01_61┃いいのか？2対1で戦うほうが、君たちには有利だったはずだが。
+Prompt_10000209_01_62┃……自分の心配でもしててください。
+Prompt_10000209_01_63┃私、今、すごく怒っていますから。
+Prompt_10000209_01_64┃どうなっても、責任は取りませんよ。
+Prompt_10000209_01_65┃……激しい感情の揺らぎは、覚醒者のVFに大きな影響を及ぼす。
+Prompt_10000209_01_66┃さて…怒りが君にどんな影響を与えたか、検証してみるとしよう。
+Prompt_10000209_01_67┃シュッ！
+Prompt_10000209_01_68┃イシュトヴァーンの槍がアビゲイルを襲う。
+Prompt_10000209_01_69┃穂先がアビゲイルを捉えた瞬間、彼女はイシュトヴァーンの背後へ跳び、攻撃を──
+Prompt_10000209_01_70┃甘い。
+Prompt_10000209_01_71┃うっ……！
+Prompt_10000209_01_72┃イシュトヴァーンは素早く槍を引き戻し、背後に転移したアビゲイルに攻撃を仕掛けた。
+Prompt_10000209_01_73┃（フェイント……？）
+Prompt_10000209_01_74┃（いいえ、これは……。）
+Prompt_10000209_01_75┃イシュトヴァーンのVF能力──彼は、自身の周囲で起こりうる事象の「可能性」を知覚できる。
+Prompt_10000209_01_76┃そして、その中から自分に有利な可能性を引き寄せることこそ、VF覚醒者シモン・イシュトヴァーンの能力の真骨頂。
+Prompt_10000209_01_77┃しかし、能力の使用と同時に脳へ多大な負荷がかかるため、能力を行使できる時間は極めて限定的である。
+Prompt_10000209_01_78┃（次に能力を使うのは、決定的な瞬間だな。）
+Prompt_10000209_01_79┃（今、有効な手段は……。）
+Prompt_10000209_01_80┃イシュトヴァーンは頭の中で計算を終えると、アビゲイルに話しかけた。
+Prompt_10000209_01_81┃前回の実験では同じチームだったが、こうして対峙するとは、実に数奇な巡り合わせだな。
+Prompt_10000209_01_82┃……それが、あなたたちが望んだことではないのですか？
+Prompt_10000209_01_83┃否定はせん。あらゆる可能性の検証という名目の下、様々なことを試しているからな。
+Prompt_10000209_01_84┃覚えているか？
+Prompt_10000209_01_85┃前回の実験で君はこう言った。Dr. ナジャに会えなくなって、1週間が経ったと。
+Prompt_10000209_01_86┃それが、何だというのですか？
+Prompt_10000209_01_87┃君はDr. ナジャには会えん。
+Prompt_10000209_01_88┃君にとっては、これが2度目の実験かもしれんが……
+Prompt_10000209_01_89┃君がこの実験に参加してから、すでにかなりの時が流れている。
+Prompt_10000209_01_90┃それは、どういう……。
+Prompt_10000209_01_91┃実験体の精神に多大な負荷がかかると、研究員は記憶を初期化する。
+Prompt_10000209_01_92┃君はすでに、何度もこの実験に参加しているはずだ。
+Prompt_10000209_01_93┃その記憶が消されているため、気づいていないだけでな。
+Prompt_10000209_01_94┃そして、俺が確認した大量の記録の中に、君がDr. ナジャと再会したという記録はなかった。
+Prompt_10000209_01_95┃そんなはず…お姉さんは……。
+Prompt_10000209_01_96┃前回の実験の後、Dr. ナジャに会った。
+Prompt_10000209_01_97┃彼女が俺に何と言ったか、分かるか？
+Prompt_10000209_01_98┃分からない……。
+Prompt_10000209_01_99┃笑いながら俺にこう言った。
+Prompt_10000209_01_100┃聞きたくない……。
+Prompt_10000209_01_101┃次は、アビゲイルの断末魔を聞かせてくれ、と。
+Prompt_10000209_01_102┃嘘だ……！！！
+Prompt_10000209_01_103┃アビゲイルは、イシュトヴァーンに向かって無我夢中で鎌を振るう。
+Prompt_10000209_01_104┃（今だ！）
+Prompt_10000209_01_105┃イシュトヴァーンはその隙を逃さず、アビゲイルの懐へ槍を突き刺した、その瞬間──
+Prompt_10000209_01_106┃バン！
+Prompt_10000209_01_107┃……！
+Prompt_10000209_01_108┃どこからともなく現れた戦闘ドローンが、イシュトヴァーンを攻撃した。
+Prompt_10000209_01_109┃これは……。
+Prompt_10000209_01_110┃予期せぬイレギュラーに、イシュトヴァーンは体勢を崩した。
+Prompt_10000209_01_111┃そしてアビゲイルの鎌は、その隙を逃さずイシュトヴァーンを切り裂いた。
+Prompt_10000209_01_112┃はぁっ……はぁっ……。
+Prompt_10000209_01_113┃アビゲイルは座り込み、息を切らしながら戦闘ドローンを見つめた。
+Prompt_10000209_01_114┃お姉、さん……？
+Prompt_10000209_01_115┃お姉さん……なの……？
+Prompt_10000209_01_116┃ジー……ジー……ジー……。
+Prompt_10000209_01_117┃アビゲイルの疲れ切った声に応えるように、ドローンが光を点滅させる。
+Prompt_10000209_01_118┃お姉さん…私……。
+Prompt_10000209_01_119┃頑張ったよ……。
+Prompt_10000209_01_120┃お姉さんと、約束したから……。
+Prompt_10000209_01_121┃ドローンはアビゲイルの言葉に応えるように、光を点滅させ続ける。
+Prompt_10000209_01_122┃そして、ドローンのカメラ、その向こうで──
+Prompt_10000209_01_123┃ええ…本当に、よく頑張ったわ……。
+Prompt_10000209_01_124┃もう、大丈夫……。
+Prompt_10000209_01_125┃ぜんぶ、終わったから……。
+Prompt_10000209_01_126┃ナジャの言葉は、アビゲイルには届かない。
+Prompt_10000209_01_127┃だが、遠く離れたナジャの言葉を理解したかのように、アビゲイルは語りかけた。
+Prompt_10000209_01_128┃お姉、さん……？
+Prompt_10000209_01_129┃お姉さんも……。
+Prompt_10000209_01_130┃約束…守って、くれるよね……？
+Prompt_10000209_01_131┃一緒に…海へ……。
+Prompt_10000209_01_132┃ええ…一緒に……。
+Prompt_10000209_01_133┃アビゲイルの言葉に、ナジャが応えた、その瞬間。
+Prompt_10000209_01_134┃バン！
+Prompt_10000209_01_135┃ああ……
+Prompt_10000209_01_136┃ドローンから放たれた弾丸が、アビゲイルの心臓を撃ち抜いた。
+Prompt_10000210_01_0┃アビゲイル……！！
+Prompt_10000210_01_1┃モニターの画面に、絶命したアビゲイルの顔が生々しく映し出される。
+Prompt_10000210_01_2┃焦点の合わないアビゲイルの両目を見つめ、ナジャは涙を流した。
+Prompt_10000210_01_3┃ああ…アビゲイル……。
+Prompt_10000210_01_4┃言ったはずだ。
+Prompt_10000210_01_5┃私を、失望させるなと。
+Prompt_10000210_01_6┃Mr. メイジ……？
+Prompt_10000210_01_7┃いつの間にかナジャの背後に現れたメイジが、彼女を睨みつけていた。
+Prompt_10000210_01_8┃Dr. ナジャ、君は有能だ。
+Prompt_10000210_01_9┃だからこそ、君を責任研究員という地位にまで就かせた。
+Prompt_10000210_01_10┃このような事態が起こりうるという可能性がありながらも、だ。
+Prompt_10000210_01_11┃どうだ？
+Prompt_10000210_01_12┃今回の実験を台無しにした感想は？
+Prompt_10000210_01_13┃ナジャの脳裏を、ある一文がよぎった。
+Prompt_10000210_01_14┃実験規則第2条1項──実験開始から終了まで、すべての研究員は実験に介入してはならない。
+Prompt_10000210_01_15┃……後悔は、ありません。
+Prompt_10000210_01_16┃ほう、ではこの場で死んでも文句はないな。
+Prompt_10000210_01_17┃肌を刺すような空気が、ナジャの全身を貫いた。
+Prompt_10000210_01_18┃こ、この感じは……。
+Prompt_10000210_01_19┃Mr. メイジ。そのすべてがベールに包まれた、アグライアの総責任者。
+Prompt_10000210_01_20┃そして彼もまた、実験体たちと同じ──
+Prompt_10000210_01_21┃かはっ……！
+Prompt_10000210_01_22┃メイジがナジャの首を掴み、持ち上げる。
+Prompt_10000210_01_23┃力が次第に強まり、ナジャは苦痛にもがいた。
+Prompt_10000210_01_24┃ナジャが意識を失いかけた、その刹那──
+Prompt_10000210_01_25┃……運がいいな、Dr. ナジャ。
+Prompt_10000210_01_26┃メイジは手の力を抜き、ナジャを床に下ろした。
+Prompt_10000210_01_27┃（咳き込む）……それは…どういう……。
+Prompt_10000210_01_28┃先ほども言っただろ？君は有能だと。
+Prompt_10000210_01_29┃君も承知だろうが…この実験に関わっている研究員はごく少数だ。
+Prompt_10000210_01_30┃ゆえに、君のような人材をこんなふうに殺すのは惜しいのだよ。
+Prompt_10000210_01_31┃ここで君の首をへし折ることは、私にとって容易いことだが……。
+Prompt_10000210_01_32┃特別に、チャンスを与えよう。
+Prompt_10000210_01_33┃メイジは懐から、1本のアンプルを取り出した。
+Prompt_10000210_01_34┃このアンプルには、とあるVF覚醒者の能力で精製された試薬が入っている。
+Prompt_10000210_01_35┃特定人物のDNA塩基配列と固有のVF波長を基に作られたこの試薬は、服用すればその人物に関する記憶を完全に消し去るのだ。
+Prompt_10000210_01_36┃まだ臨床段階ではあるが…君にはうってつけだろう。
+Prompt_10000210_01_37┃Mr. メイジは、アンプルをナジャの眼前に突きつけた。
+Prompt_10000210_01_38┃アンプルの表面には、小さく「23M-RFT70」と記載されている。
+Prompt_10000210_01_39┃私から…あの子の記憶を、奪うと……？
+Prompt_10000210_01_40┃そう、これまで我々がしてきたようにな。
+Prompt_10000210_01_41┃どうだ？記憶を消す側から、消される側になった気分は？
+Prompt_10000210_01_42┃はっ……。
+Prompt_10000210_01_43┃最悪の…気分です……。
+Prompt_10000210_01_44┃それは結構。
+Prompt_10000210_01_45┃メイジはアンプルを折り、中身をナジャの口に無理やり流し込んだ。
+Prompt_10000210_01_46┃うぐっ……！
+Prompt_10000210_01_47┃試薬を飲み込んだナジャが、苦痛に身をよじる。
+Prompt_10000210_01_48┃目覚めた時には、生まれ変わった気分だろう。
+Prompt_10000210_01_49┃もう一度言う……
+Prompt_10000210_01_50┃<size=40>私を、失望させるな。</size>
+Prompt_10000210_01_51┃<size=40>薄れゆく意識の中、ナジャの精神は必死にもがいていた。</size>
+Prompt_10000210_01_52┃<size=40>……</size>
+Prompt_10000210_01_53┃大丈夫だよ、アビゲイル……。
+Prompt_10000210_01_54┃少し、遠い未来の話になるけれど……
+Prompt_10000210_01_55┃約束は、必ず守るから……
+Prompt_10000210_01_56┃だから、もう少しだけ待っていてくれる……？
+Prompt_10000210_01_57┃私が、私でいる限り……。
+Prompt_10000210_01_58┃<size=40>いつか必ず、あなたにまた会いに行くから───</size>
+Prompt_10000210_01_59┃<size=40>……</size>
+Prompt_10000210_01_60┃最終生存者が決定しました。実験を終了します。
+Prompt_10000210_01_61┃<size=40>実験結果───</size>
+Prompt_10000210_01_62┃<size=40>最終生存者：1名（24M-RFT79）</size>
+Prompt_10000210_01_63┃<size=40>記憶消去対象者：23M-RFT70ほか8名</size>
+Prompt_10000210_01_64┃<size=40>48時間後、次の実験を開始します。</size>
+Prompt_10000210_01_65┃<size=40>……</size>
+Prompt_10000210_01_66┃アビゲイルは1人、広大な海を見つめている。
+Prompt_10000210_01_67┃静かに物思いに耽るアビゲイルに、ガーネットが近づき話しかけた。
+Prompt_10000210_01_68┃結局、負けちゃったのね？
+Prompt_10000210_01_69┃ううん、引き分け、ってところかな？
+Prompt_10000210_01_70┃……？
+Prompt_10000210_01_71┃何を言っているのか、よく分かりません。
+Prompt_10000210_01_72┃気にしないで〜、何でもないわ。
+Prompt_10000210_01_73┃……
+Prompt_10000210_01_74┃おじさん、今度は味方だね？ふふ……。
+Prompt_10000210_01_75┃ふむ、よろしく頼む。
+Prompt_10000210_01_76┃アビゲイル・ロック、前回俺がした話を覚えているか？
+Prompt_10000210_01_77┃……すみません。よく覚えていません。
+Prompt_10000210_01_78┃……そうか。
+Prompt_10000210_01_79┃でも……
+Prompt_10000210_01_80┃アビゲイルは、静かに目を閉じる。
+Prompt_10000210_01_81┃<size=40>いつか必ず、あなたにまた会いに行くから───</size>
+Prompt_10000210_01_82┃お姉さんの声が、聞こえました。
+Prompt_10000210_01_83┃お姉さん……。
+Prompt_10000210_01_84┃私、もう、海は怖くないです。
+Prompt_10000210_01_85┃だから、必ず一緒に海を見に行きましょう。
+Prompt_10000210_01_86┃待っているから……
+Prompt_10000210_01_87┃どれだけ時間がかかっても……
+Prompt_10000210_01_88┃いつまでも、待っているから──
+Prompt_10000210_01_89┃<size=40>……</size>
+Prompt_10000210_01_90┃ご報告します。過労で倒れていたDr. ナジャの意識が回復しました。
+Prompt_10000210_01_91┃そうか。容態は？
+Prompt_10000210_01_92┃はい、若干の頭痛を訴えていますが、他に異常は見られません。
+Prompt_10000210_01_93┃念のため、精密検査を実施しろ。カルテも私に報告するように。
+Prompt_10000210_01_94┃承知いたしました。では、失礼します。
+Prompt_10000210_01_95┃──カチャ
+Prompt_10000210_01_96┃ナジャの実験介入はMr. メイジによって隠蔽され、ドローンによるイシュトヴァーンとアビゲイルへの攻撃は、誤作動として処理された。
+Prompt_10000210_01_97┃そして一部の上級研究員を除き、ナジャはただの過労で倒れたのだと伝えられた。
+Prompt_10000210_01_98┃ふぅ……。
+Prompt_10000210_01_99┃メイジはため息をつき、目を閉じた。
+Prompt_10000210_01_100┃そして、誰にも聞こえないほど小さく、呟いた。
+Prompt_10000210_01_101┃これも、すべて決まっていたことだというのですか？
+Prompt_10000210_01_102┃どうか、答えてください……。
 
 
 --xxxxxxxxxx--

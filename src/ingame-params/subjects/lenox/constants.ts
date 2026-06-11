@@ -56,9 +56,9 @@ export default {
         // 青い蛇ダメージ発生周期
         "tick": 0.23,
         // 移動距離比例固定ダメージ
-        "move_damage": [5, 15, 25],
+        "move_damage": [15, 20, 25],
         // 2回的中時移動距離比例固定ダメージ
-        "enhanced_move_damage": [25, 35, 45],
+        "enhanced_move_damage": [30, 40, 50],
         "cooldown": [80, 70, 60]
     },
     "T": {

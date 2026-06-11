@@ -1187,7 +1187,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 68,
+        "attackPower": 66,
         "attackSpeedRatio": 0.3,
         "code": 116407,
         "weaponType": "Pistol",
@@ -1201,7 +1201,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 80,
+        "attackPower": 77,
         "attackSpeedRatio": 0.35,
         "code": 116410,
         "weaponType": "Pistol",

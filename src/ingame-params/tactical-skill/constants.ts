@@ -108,7 +108,7 @@ export default {
     },
     // ライトウィング
     "wings_of_light": {
-        "duration": 6,
+        "duration": 7,
         "movement_speed": {
             "base": [15, 20],
             "level": 1

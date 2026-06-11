@@ -478,7 +478,7 @@
 		"dmg": {
 			"melee": {
 				"base": 26,
-				"targetMaxHP": 4,
+				"targetMaxHP": 5,
 				"level": 4
 			},
 			"range": {
@@ -549,6 +549,10 @@
 	"202529": {
 		"skillCode": 6070001,
 		"name": "ultra_focus"
+	},
+	"202530": {
+		"skillCode": 6075001,
+		"name": "iteration"
 	},
 	"203306": {
 		"skillCode": 6008201,
@@ -866,7 +870,7 @@
 		"dmg": {
 			"melee": {
 				"base": 26,
-				"targetMaxHP": 4,
+				"targetMaxHP": 5,
 				"level": 4
 			},
 			"range": {
