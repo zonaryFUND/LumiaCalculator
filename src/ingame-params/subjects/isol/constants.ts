@@ -17,8 +17,8 @@ export default {
         // 爆弾が付いた敵に攻撃ごとの爆発時追加ダメージ
         "additional_damage": {
             "base": [10, 15, 20, 25, 30],
-            "attack": 7,
-            "amp": 4
+            "attack": 9,
+            "amp": 5
         },
         // 爆弾が付いた敵に攻撃ごとの爆発時束縛時間増加
         "additional_bind": 0.1,

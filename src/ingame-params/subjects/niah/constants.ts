@@ -29,7 +29,7 @@ export default {
     "W": {
         "damage": {
             "base": [60, 100, 140, 180, 220],
-            "amp": 65
+            "amp": 70
         },
         // Q引き寄せ発生時範囲内固定ダメージ
         "pull_damage": {

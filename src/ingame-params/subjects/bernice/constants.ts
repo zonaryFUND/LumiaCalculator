@@ -38,8 +38,8 @@ export default {
         },
         // 束縛時間
         "bind": 0.75,
-        // 狩り罠同時設置可能数
-        "setup": [1,2,2,3,3],
+        // 狩り罠最大設置数
+        "setup": [2,2,2,3,3],
         "cooldown": {
             "constant": 1
         },

@@ -17,7 +17,7 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             { labelIntlID: "ToolTipType/AttackSpeedUpRatio", values: Constants.W.attack_speed, percent: true },
-            { labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown }
+            { labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.W.slow }
         ]
     })
 }

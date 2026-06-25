@@ -58,7 +58,7 @@ export default {
     "CatW": {
         "damage": {
             "base": [40, 80, 120, 160, 200],
-            "amp": 75
+            "amp": 80
         },
         // エアボーン時間
         "airborne": 0.8,

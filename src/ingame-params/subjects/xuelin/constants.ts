@@ -114,8 +114,8 @@ export default {
         "qe_cooldown_reduction": 1.5,
         // 龍雲残影剣スタック消費基本攻撃時自己回復量
         "heal": {
-            "base": [10, 25, 40],
-            "attack": 35
+            "base": [20, 35, 50],
+            "attack": 40
         },
         // 動物対象に龍雲残影剣スタック消費基本攻撃時の回復量倍率（元回復量比％）
         "animal_heal": 60

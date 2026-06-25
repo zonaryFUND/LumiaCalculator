@@ -36,7 +36,7 @@ export default {
         "damage": {
             "base": [60, 100, 140, 180, 220],
             "amp": 50,
-            "targetMaxHP": 5
+            "targetMaxHP": 7
         },
         // 移動速度減少
         "slow": {

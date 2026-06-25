@@ -46,7 +46,7 @@ export const BaseStatus = baseStatus;
  * 実験体IDの最大値（リスト列挙用）
  */
 //export const SubjectCodeMax = subjectCodeMax;
-export const SubjectCodeMax = 88;
+export const SubjectCodeMax = 89;
 
 /**
  * 実験体ID（数字）

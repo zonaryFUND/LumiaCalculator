@@ -22,7 +22,7 @@ export default {
         // 地場シールド持続時間
         "duration": 2.5,
         // 前方からの被ダメージ減少量（％）
-        "damage_reduction": 70,
+        "damage_reduction": 60,
         // 波動発射回数
         "waves": 5,
         // 波動1回あたりのダメージ

@@ -106,7 +106,7 @@ export default {
         "damage": {
             "base": [50,120,175,220],
             "attack": 80,
-            "additionalMaxHP": 12
+            "additionalMaxHP": 14
         },
         // 2発目発生までの時間
         "second": 0.85,

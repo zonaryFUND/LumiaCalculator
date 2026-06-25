@@ -96,7 +96,7 @@ export default {
         // 効果時間中追加ダメージ
         "additional_damage": {
             "base": 20,
-            "additionalAttack": [20, 35, 50]
+            "additionalAttack": [15, 30, 45]
         },
         // 再使用時1撃目ダメージ
         "first_damage": {

@@ -20,7 +20,7 @@ export default {
         // 移動速度増加
         "movement_speed": [10, 14, 18, 22, 26],
         // 被ダメージ減少（％）
-        "damage_decline": [31, 32, 33, 34, 35],
+        "damage_decline": [25, 27, 29, 31, 33],
         // 爆発時ダメージ
         "damage": {
             "base": [60, 90, 120, 150, 180],
@@ -69,7 +69,7 @@ export default {
         "heal": {
             "base": [50, 150, 250],
             "amp": 35,
-            "targetLostHP": 15
+            "targetLostHP": 12
         },
         "cooldown": [90, 75, 60]
     },

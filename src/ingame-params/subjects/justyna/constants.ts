@@ -67,7 +67,7 @@ export default {
         // 1ティックあたりダメージ
         "damage": {
             "base": [30, 50, 70],
-            "amp": 20
+            "amp": 22
         },
         // 飛翔中の移動速度減少ペナルティ（％）
         "movement_speed_penalty": 60,

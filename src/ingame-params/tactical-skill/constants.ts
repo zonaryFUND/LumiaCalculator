@@ -138,13 +138,13 @@ export default {
             "level": [5, 10]
         },
         "slow": {
-            "duration": 1.5,
+            "duration": 1,
             "effect": 30
         },
         "defense_down": {
             "duration": 5,
             "effect": 10
         },
-        "cooldown": [40, 30]
+        "cooldown": [50,40]
     }
 }

@@ -69,14 +69,14 @@ export default {
         "duration": 7,
         // 自己回復総量
         "heal": {
-            "maxHP": [25,40,55]
+            "maxHP": [30,45,60]
         },
         // 周囲ダメージ発生周期
         "tick": 0.5,
         // 1ティックあたり周囲ダメージ
         "damage": {
             "base": [10,15,20],
-            "attack": 3,
+            "attack": 8,
             "additionalMaxHP": 3
         },
         "cooldown": [80,70,60]

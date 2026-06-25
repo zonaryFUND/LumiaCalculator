@@ -19,8 +19,8 @@ export default {
     "W": {
         "damage": {
             "base": [50,70,90,110,130],
-            "additionalMaxHP": 10,
-            "amp": 50
+            "additionalMaxHP": 12,
+            "amp": 55
         },
         // Qクールダウン減少
         "q_cooldown_reduction": 40,

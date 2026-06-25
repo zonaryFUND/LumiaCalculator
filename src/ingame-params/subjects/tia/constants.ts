@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [60, 90, 120, 150, 180],
-            "amp": 50
+            "amp": 55
         },
         // 黄色
         "y": {

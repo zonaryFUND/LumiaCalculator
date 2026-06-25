@@ -623,7 +623,7 @@
     {
         "attackPower": 42,
         "skillAmp": 95,
-        "attackSpeedRatio": 0.4,
+        "attackSpeedRatio": 0.3,
         "code": 109406,
         "weaponType": "Whip",
         "itemGrade": "Legend"
@@ -1761,7 +1761,7 @@
         "attackPower": 30,
         "skillAmp": 63,
         "cooldownReduction": 10,
-        "healerGiveHpHealRatio": 0.05,
+        "healerGiveHpHealRatio": 0.04,
         "code": 130403,
         "weaponType": "Arcana",
         "itemGrade": "Epic"
@@ -1804,7 +1804,7 @@
         "attackPower": 35,
         "skillAmp": 82,
         "cooldownReduction": 15,
-        "healerGiveHpHealRatio": 0.1,
+        "healerGiveHpHealRatio": 0.08,
         "code": 130503,
         "weaponType": "Arcana",
         "itemGrade": "Legend"

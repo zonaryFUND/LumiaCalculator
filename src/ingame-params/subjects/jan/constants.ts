@@ -55,9 +55,9 @@ export default {
     "E": {
         // 次の基本攻撃追加ダメージ
         "damage": {
-            "base": [15, 25, 35, 45, 55],
+            "base": [20, 30, 40, 50, 60],
             "additionalAttack": 100,
-            "amp": 45,
+            "amp": 50,
             "targetMaxHP": 5
         },
         // 強化基本攻撃的中時回復量

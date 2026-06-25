@@ -127,6 +127,6 @@ export default {
             "effect": [2,5,8]
         },
         // 近接武器装備時防御力増加
-        "defense": [5,10,15]
+        "defense": [4,8,12]
     }
 }

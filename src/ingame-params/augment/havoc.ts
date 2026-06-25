@@ -97,12 +97,12 @@ export default {
     // 狂奔
     "frenzy": {
         "min": {
-            "hp": 70,
-            "value": 4
+            "hp": 80,
+            "value": 5
         },
         "max": {
             "hp": 40,
-            "value": 8
+            "value": 10
         }
     },
     // 弱者蔑視

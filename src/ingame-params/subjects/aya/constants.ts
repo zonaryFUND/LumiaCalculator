@@ -57,7 +57,7 @@ export default {
         "duration": 1.5,
         // 被攻撃時シールド
         "shield": {
-            "base": [50,75,100],
+            "base": [50,85,120],
             "attack": 50,
             "amp": 35
         },
