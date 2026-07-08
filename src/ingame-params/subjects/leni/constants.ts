@@ -10,7 +10,7 @@ export default {
             "level": 2,
             "amp": 20
         },
-        "cooldown": [11, 10, 9, 8, 7]
+        "cooldown": [12,11, 10, 9, 8]
     },
     "W": {
         "damage": {
@@ -74,7 +74,7 @@ export default {
             "duration": 1.5,
             "effect": 80
         },
-        "cooldown": [20, 17, 14]
+        "cooldown": [22,20,18]
     },
     "T": {
         // クマさん持続時間

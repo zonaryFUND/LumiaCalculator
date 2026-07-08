@@ -1,7 +1,7 @@
 export default {
     // 超再生
     "healing_factor": {
-        "enhance": 10,
+        "enhance": 8,
         "adaptive": {
             "base": 1,
             "level": 0.5

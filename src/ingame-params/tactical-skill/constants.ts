@@ -27,7 +27,7 @@ export default {
     "protocol_violation": {
         "hp_increase": {
             "base": [100, 150],
-            "level": [15, 20]
+            "level": [10,15]
         },
         "damage": {
             "level": [5, 8],
@@ -89,10 +89,7 @@ export default {
     // 治癒の風
     "healing_wind": {
         "heal": {
-            "base": [
-                150,
-                200
-            ],
+            "base": 100,
             "level": [
                 8,
                 12

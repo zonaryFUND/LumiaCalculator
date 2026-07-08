@@ -19,7 +19,7 @@ export default {
         },
         // 長弓基本攻撃威力
         "daikyu": {
-            "attack": 103,
+            "attack": 102,
             "basicAttackAmp": 100
         },
         // 長弓基本攻撃攻撃速度減少
