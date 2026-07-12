@@ -6,7 +6,7 @@ export default {
         "tick": 0.25,
         "damage": {
             "base": [35,45,55,65,75],
-            "amp": [25,27,29,31,33]
+            "amp": [27,29,31,33,35]
         },
         "cooldown": 4
     },

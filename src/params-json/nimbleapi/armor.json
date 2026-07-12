@@ -862,8 +862,8 @@
     {
         "skillAmp": 40,
         "maxHp": 50,
-        "cooldownReduction": 10,
-        "healerGiveHpHealRatio": 0.05,
+        "cooldownReduction": 15,
+        "healerGiveHpHealRatio": 0.04,
         "code": 203411,
         "armorType": "Arm",
         "itemGrade": "Epic"
@@ -1547,7 +1547,7 @@
     {
         "defense": 30,
         "skillAmpByLevel": 5,
-        "maxHp": 200,
+        "maxHp": 250,
         "code": 202518,
         "armorType": "Chest",
         "itemGrade": "Legend"

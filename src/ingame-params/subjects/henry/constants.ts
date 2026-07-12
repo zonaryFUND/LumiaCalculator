@@ -103,7 +103,7 @@ export default {
         "damage": {
             "base": [40, 70, 100],
             "amp": 30,
-            "targetLostHP": [8, 12, 16]
+            "targetLostHP": [8, 10, 12]
         },
         // タイマーが付着したが起動せず敵が死亡した場合のクールダウン返還（％）
         "unexploded_cooldown_reduction": 80,

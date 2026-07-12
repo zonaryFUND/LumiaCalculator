@@ -3,7 +3,7 @@ export default {
         // 通常ダメージ
         "damage": {
             "base": [60, 90, 120, 150, 180],
-            "amp": 70
+            "amp": 75
         },
         // 満開的中時チャージ時間減少
         "charge_reduction": 50,

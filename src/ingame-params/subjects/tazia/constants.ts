@@ -111,7 +111,7 @@ export default {
             "amp": 35
         },
         "cooldown": {
-            "constant": [13, 10, 7]
+            "constant": [10, 8, 6]
         }
     }
 }

@@ -48,7 +48,7 @@ export default {
         // 被ダメージ減少量（％）
         "damage_reduction": {
             "base": [20,24,28,32,36],
-            "amp": 3
+            "amp": 4
         },
         "cooldown": [16,15,14,13,12]
     },

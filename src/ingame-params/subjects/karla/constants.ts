@@ -19,7 +19,7 @@ export default {
     },
     "W": {
         "damage": {
-            "base": [70, 95, 120, 145, 170],
+            "base": [80, 105, 130, 155, 180],
             "attack": 30,
             "amp": 75,
             "criticalChance": 65

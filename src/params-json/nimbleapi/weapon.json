@@ -1606,14 +1606,14 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 68,
+        "attackPower": 66,
         "attackSpeedRatio": 0.3,
         "code": 121405,
         "weaponType": "Guitar",
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 60,
+        "attackPower": 58,
         "attackSpeedRatio": 0.23,
         "code": 121406,
         "weaponType": "Guitar",
@@ -1810,7 +1810,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 57,
+        "attackPower": 60,
         "attackSpeedRatio": 0.15,
         "increaseBasicAttackDamageRatioByLv": 0.008,
         "uniqueAttackRange": 0.2,
@@ -1819,7 +1819,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 49,
+        "attackPower": 52,
         "maxHpByLv": 4,
         "lifeSteal": 0.1,
         "code": 131402,
@@ -1835,7 +1835,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 63,
+        "attackPower": 66,
         "attackSpeedRatio": 0.2,
         "increaseBasicAttackDamageRatioByLv": 0.01,
         "uniqueAttackRange": 0.2,
@@ -1844,7 +1844,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 70,
+        "attackPower": 72,
         "attackSpeedRatio": 0.3,
         "increaseBasicAttackDamageRatioByLv": 0.01,
         "uniqueAttackRange": 0.2,
@@ -1854,7 +1854,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 75,
+        "attackPower": 78,
         "attackSpeedRatio": 0.35,
         "increaseBasicAttackDamageRatioByLv": 0.01,
         "penetrationDefenseRatio": 0.12,
@@ -1864,7 +1864,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 49,
+        "attackPower": 52,
         "maxHpByLv": 6,
         "lifeSteal": 0.1,
         "code": 131504,
@@ -1872,7 +1872,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 62,
+        "attackPower": 65,
         "maxHpByLv": 8,
         "lifeSteal": 0.1,
         "uniqueTenacity": 0.3,
@@ -1881,7 +1881,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 66,
+        "attackPower": 69,
         "maxHpByLv": 10,
         "lifeSteal": 0.15,
         "code": 131506,

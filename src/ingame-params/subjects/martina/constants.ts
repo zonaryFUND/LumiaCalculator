@@ -147,22 +147,22 @@ export default {
         // 連続撮影の1ティックあたり外郭ダメージ
         "first_outer_damage": {
             "base": [10, 15, 20],
-            "attack": 10
+            "attack": 15
         },
         // 連続撮影の1ティックあたり中心ダメージ
         "first_center_damage": {
             "base": [20, 25, 30],
-            "attack": 15
+            "attack": 20
         },
         // 撮影終了時の外郭ダメージ
         "second_outer_damage": {
             "base": [100, 200, 300],
-            "attack": 80
+            "attack": 90
         },
         // 撮影終了時の中心ダメージ
         "second_center_damage": {
             "base": [200, 325, 450],
-            "attack": 120
+            "attack": 130
         },
         // 撮影終了時の中心の対象への気絶時間
         "stun": 0.7,

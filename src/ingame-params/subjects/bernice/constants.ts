@@ -72,7 +72,7 @@ export default {
             "attack": 85
         },
         // 束縛時間
-        "bind": 1.25,
+        "bind": 1.4,
         // 転移時ダメージ
         "second_damage": {
             "base": [80,120,160],

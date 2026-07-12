@@ -75,13 +75,13 @@ export default {
         "wound_duration": 4,
         // 外傷状態1スタックあたりダメージ総量
         "wound": {
-            "amp": 20
+            "amp": 25
         },
         // 外傷が致命的外傷に変化するスタック数
         "max_stack": 3,
         // 致命的外傷状態ダメージ総量
         "critical_wound": {
-            "targetMaxHP": 4,
+            "targetMaxHP": 6,
             "amp": 25
         },
         // 致命的外傷状態の治癒効果減少（％）
@@ -90,7 +90,7 @@ export default {
         "shield_duration": 2,
         // 致命的外傷状態付与時自己シールド
         "shield": {
-            "base": [50,100,150],
+            "base": [70,120,170],
             "amp": 45
         },
         // 外傷/致命的外傷状態の敵へ向かって移動するときの移動速度増加（％）

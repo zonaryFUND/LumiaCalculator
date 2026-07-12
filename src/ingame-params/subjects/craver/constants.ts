@@ -83,7 +83,7 @@ export default {
         "attack_speed": [0.9,1.1,1.3],
         // 基本攻撃追加スキルダメージ
         "damage": {
-            "base": [10,30,50],
+            "base": [20,40,60],
             "amp": 25,
             "attackSpeed": 50
         },

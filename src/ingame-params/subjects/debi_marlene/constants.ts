@@ -142,7 +142,7 @@ export default {
         // Blue＆Red色替え1スタックあたりダメージ
         "damage": {
             "base": [15,20,25],
-            "additionalAttack": 70,
+            "additionalAttack": 75,
             "criticalChance": 50
         },
         // Blue＆Red色替え1スタックあたり移動速度増加

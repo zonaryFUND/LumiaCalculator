@@ -1,7 +1,7 @@
 export default {
     "HumanQ": {
         "damage": {
-            "base": [60, 90, 120, 150, 180],
+            "base": [60, 95, 130, 165, 200],
             "amp": 60
         },
         "heal": {

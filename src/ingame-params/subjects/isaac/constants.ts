@@ -53,7 +53,7 @@ export default {
         "damage": {
             "base": [20, 30, 40],
             "attack": 60,
-            "targetMaxHP": [3, 4, 5]
+            "targetMaxHP": [4, 5, 6]
         },
         // 搾取効果発動時移動速度増加（％）
         "movement_speed": [6, 18, 30],

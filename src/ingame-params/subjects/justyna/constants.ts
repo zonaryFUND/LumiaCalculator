@@ -44,7 +44,7 @@ export default {
         // 基本攻撃追加ダメージ
         "damage": {
             "base": [50, 75, 100, 125, 150],
-            "amp": 30
+            "amp": 35
         },
         "reuse_cost_increase": {
             // 再使用時にコストが重くなる効果の時間

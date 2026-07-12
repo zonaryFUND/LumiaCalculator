@@ -50,7 +50,7 @@ export default {
             "duration": 1.5,
             "effect": [30, 32.5, 35, 37.5, 40]
         },
-        "cooldown": [18, 16, 14, 12, 10]
+        "cooldown": [14, 13, 12, 11, 10]
     },
     "R": {
         // 炎まき散らし時間
@@ -61,7 +61,7 @@ export default {
         "damage": {
             "base": [60, 95, 130],
             "amp": 50,
-            "maxHP": 5
+            "maxHP": 6
         },
         // 移動速度減少
         "slow": {
@@ -72,9 +72,9 @@ export default {
             // 治癒減少時間
             "duration": 5,
             // 1スタックあたり治癒減少効果
-            "effect": 10,
+            "effect": 15,
             // 最大治癒減少スタック数
-            "max_stack": 3
+            "max_stack": 2
         },
         "cooldown": [80, 70, 60]
     },
