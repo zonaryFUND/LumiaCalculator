@@ -25,8 +25,9 @@ export function extractMultiplier(multiplier?: ValueTableUnitMultiplier, skillLe
         }
 
         const value = multiplier[skillLevel] as number;
+
         return {
-            mergedMultiplier: multiplier[0],
+            mergedMultiplier: value,
             individualExpressions: [{value}]
         }
     }
