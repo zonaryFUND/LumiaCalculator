@@ -80,7 +80,7 @@ export default {
             // 強化セントリーガンレールガンダメージ
             "railgun_damage": {
                 "base": [100,125,150],
-                "amp": 50
+                "amp": 45
             },
             // 強化セントリーガン防御力
             "sentry_defence": 130,

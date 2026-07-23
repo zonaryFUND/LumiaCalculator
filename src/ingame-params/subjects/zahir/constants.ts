@@ -44,7 +44,7 @@ export default {
         // 最初の1撃目ダメージ
         "first_damage": {
             "base": [60, 120, 180],
-            "amp": 45
+            "amp": 40
         },
         // 連続攻撃発生周期
         "tick": 0.45,

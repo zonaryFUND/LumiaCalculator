@@ -17,13 +17,14 @@ function rioBasicAttackMultiplier(status: Status): Decimal {
         .add(status.criticalStrikeChance.calculatedValue.mul(multiplied).div(100))
 }
 
-export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-3"): UniqueValueStrategy {
+export function RioTStrategy(bow: "daikyu" | "hankyu" | "hankyu-3" | "hankyu-additional"): UniqueValueStrategy {
     return ({ config, status }) => {
         const bowRatio = (() => {
             switch (bow) {
                 case "daikyu": return Constants.Q.daikyu.attack;
                 case "hankyu": return Constants.Q.hankyu.attack;
-                case "hankyu-3": return Constants.Q.hankyu.attack * 3;
+                case "hankyu-additional": return Constants.Q.hankyu_additional.attack;
+                case "hankyu-3": return Constants.Q.hankyu.attack + Constants.Q.hankyu_additional.attack * 2;
             }
         })();
         const tRatio = rioBasicAttackMultiplier(status);

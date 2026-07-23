@@ -36,7 +36,7 @@ export default {
         "heal_tick": 0.2,
         // チャージ中1ティックあたり自己回復量
         "heal": {
-            "lostHP": 4
+            "lostHP": 3
         },
         // 最小チャージ時ダメージ
         "min_damage": {

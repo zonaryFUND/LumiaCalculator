@@ -69,7 +69,7 @@ export default {
         },
         "damage": {
             "base": [150,225,300],
-            "attack": 120
+            "attack": 110
         },
         // 移動速度減少
         "slow": {

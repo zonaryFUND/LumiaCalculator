@@ -75,7 +75,7 @@ export default {
     "R": {
         "damage": {
             "base": [80, 160, 240],
-            "attack": 90
+            "attack": 85
         },
         // 1撃目移動速度減少
         "slow": {

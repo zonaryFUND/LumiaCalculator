@@ -71,11 +71,11 @@ export default {
         "attack_speed": 40,
         // 基本攻撃追加スキルダメージ
         "damage": {
-            "base": [80,100,120],
+            "base": [60,80,100],
             "amp": [25,35,45]
         },
         "shield": {
-            "base": [140,180,220],
+            "base": [120,160,200],
             "amp": [25,30,35]
         },
         "cooldown": {

@@ -1414,6 +1414,36 @@ Emotion_Craver02_NP┃NO！ クレイヴァー
 Emotion_Craver03_NP┃…… クレイヴァー
 Emotion_Craver04_NP┃よく見とけよ クレイヴァー
 Emotion_SNS_Craver_2089005┃爆笑 クレイヴァー
+Emotion_Chloe05_NP┃ニナ、謝りなさい クロエ
+Emotion_Chloe06_NP┃ニナ！！ クロエ
+Emotion_Chloe07_NP┃いいわよ クロエ
+Emotion_Chloe08_NP┃キャッホー！ クロエ
+Emotion_Dr.Hana_2000019┃3周年記念 Dr. ハナ
+Emotion_3rd_Anniv_Hart_2008010┃3周年記念 ハート
+Emotion_3rd_Anniv_Rio_2031016┃3周年記念 莉央
+Emotion_Nadja_2000020┃3周年記念ナジャ よくやったわ
+Emotion_3rd_Anniv_Hart_2008011┃3周年記念ハート ありがとう
+Emotion_3rd_Anniv_Rio_2031017┃3周年記念莉央 おはよう
+Emotion_Bianca_2042009┃永劫の蒼き亡霊 ビアンカ お兄ちゃん！！
+Emotion_Bianca_2042010┃永劫の蒼き亡霊 ビアンカ ガオー！
+Emotion_3rd_Anniv_Adina_2052009┃3周年記念アディナ 指ハート
+Emotion_3rd_Anniv_Lenore_2075005┃3周年記念レノア Hi
+Emotion_3rd_Anniv_Henry_2083006┃3周年記念ヘンリー GOOD
+Emotion_Johann05_NP┃ヨハン 御心のままに
+Emotion_Johann06_NP┃ヨハン この者に赦しを…
+Emotion_Johann07_NP┃ヨハン なんて愚かな！
+Emotion_Johann08_NP┃ヨハン 神の恩寵です
+Emotion_KakaoTalkIrem_01_2061010┃まんまるイレム 大変にゃ！
+Emotion_KakaoTalkIrem_02_2061011┃まんまるイレム いいにゃ
+Emotion_KakaoTalkIrem_03_2061012┃まんまるイレム 怒ったにゃ！
+Emotion_KakaoTalkIrem_04_2061013┃まんまるイレム 仲直りしよ
+Emotion_KakaoTalkIrem_05_2061014┃まんまるイレム にゃあに？
+Emotion_KakaoTalkIrem_06_2061015┃まんまるイレム やらかしたにゃ…
+Emotion_KakaoTalkIrem_07_2061016┃まんまるイレム 許さにゃい
+Emotion_KakaoTalkIrem_08_2061017┃まんまるイレム 勝つにゃ
+Emotion_KakaoTalkIrem_09_2061018┃まんまるイレム ダメエ！
+Emotion_KakaoTalkIrem_10_2061019┃まんまるイレム 自画像
+Emotion_Daniel_2037010┃ダニエル サムズアップ
 보유하지 않은 캐릭터입니다.┃未所持キャラクターです。\nショップで購入後使用できます。
 매칭 중 캐릭 변경 금지┃マッチング中にはキャラクターを変更できません。
 로딩 중┃ロード中\n< X キーを押すと座って休憩します。 >
@@ -1468,6 +1498,8 @@ EP 토큰 재화 툴팁 설명┃EPトークンショップで使用できる財
 우편함 오버레이 툴팁 설명┃シーズンパックやイベントなどで支給された報酬を確認できます。
 설정 팝업 툴팁 타이틀┃設定
 설정 팝업 툴팁 설명┃ゲームの設定を変更できます。
+이스포츠스케쥴러 툴팁 타이틀┃eスポーツスケジュール
+이스포츠스케쥴러 툴팁 설명┃eスポーツ大会のルールと日程を確認できます。
 청약철회┃請約撤回(払い戻し)
 청약철회 구매 내역 없음┃{0}日以内の購入履歴はありません。
 청약철회 조건 상세보기┃請約撤回(払い戻し)条件確認
@@ -1699,6 +1731,7 @@ AFKWarningPopupDesc┃警告：長時間行動をしない場合、ゲーム内�
 금칙어 팀이름 사용┃チーム名に使用できない単語が含まれています。
 팀 이름 길이 에러┃チーム名は2文字から16文字まで入力できます。
 봇 일괄 추가┃Bot一括追加
+봇 일괄 제거┃Bot一括削除
 열기┃開ける
 닫혀 있음┃使用不可
 InvalidSlot┃スロット情報が正しくありません。
@@ -1801,7 +1834,7 @@ CustomGame/Options/Default/TournamentScoreMode┃大会ポイントルール適�
 CustomGame/Options/Default/AllowDimensionalRiftResurrection┃次元の裂け目(一般)生成許可
 CustomGame/Options/Default/SequentialCharacterPick┃キャラクター順次選択オプション適用
 CustomGame/Options/Default/EnemyPlayerDefaultSkin┃敵プレイヤーを基本カスタムで表示
-CustomGame/Options/Default/AutoPingEmote┃オートピンエモート許可
+CustomGame/Options/Default/AutoPingEmote┃オートピンエモートをすべて許可
 CustomGame/Options/Description/AllowAcceleration┃禁止区域加速：フェーズに対してプレイヤー数が少ない場合、禁止区域がより多く発生します。
 CustomGame/Options/Description/AllowCanNotEliminate┃全滅防止：チームが全滅しても、ゲームを続行できます。
 CustomGame/Options/Description/AllowAutoResurrection┃急速再生：チームが全滅しない限り、復活できます。
@@ -1949,6 +1982,7 @@ subMenu/Loot/Exchange┃交換所
 subMenu/Collection/Normal┃一般
 subMenu/Collection/Special┃スペシャル
 subMenu/Collection/Season┃シーズン
+subMenu/Collection/Event┃イベント
 subMenu/Guide/GameTips┃ゲームガイド
 subMenu/Infomation/Summary┃概要
 subMenu/Infomation/MatchHistory┃対戦記録
@@ -2616,6 +2650,7 @@ GameSetting/WidemapNotationSystem┃ゲーム内のミニマップの表示方�
 StreamingModeSetting/HideName┃ゲーム内で本人以外の他プレイヤーのニックネームを表示しません。
 ReplaceBGMResource┃著作権保護モード
 StreamingModeSetting/ReplaceBGMResource┃著作権の対象となる可能性がある音源を再生しません。
+ReplaceBGMResource/Desc┃著作権保護のため、代替音源が再生されます。
 #MapNotationDropDownSatellite┃衛星マップ
 #MapNotationDropDownNormal┃一般マップ
 옵션/제작 순서 세부 설정┃製作順の設定
@@ -3003,7 +3038,7 @@ VLS_Wait_Host_Wait┃起動準備中
 VLS_Ready_Host_Launch┃起動
 VLS_Ing_Host_Height┃高度
 VLS_Ing_Host_Steering┃方向調整
-VLS_Ing_Guest_Breakaway┃右クリックを長押しして離脱
+VLS_Ing_Guest_Breakaway┃右クリック長押しで離脱
 {0}팀┃{0}チーム
 스킬툴팁레벨┃レベル {0}
 소모값 없음┃コストなし
@@ -3645,6 +3680,7 @@ AutoTranslate/Desc/Unavailable┃サーバーが混雑しているため、翻�
 AutoTranslate/RouteTitle┃ルート内容を翻訳します。
 번역 아이콘 문구┃翻訳
 Chatting/Btn_DetailInfo/Tooltip┃図鑑で見る
+ChattingPin┃クリックするとチャット欄を元の位置に戻します。
 추가신호금지┃追加信号を出すためにはしばらく待ってください。
 마크지정불가┃選択位置にはマーク指定できません
 아군플레이어부활지역안내┃{0}({1})が{2}で復活しています。
@@ -3655,7 +3691,6 @@ DyingCondition┃瀕死状態です。
 ToastMessage/IsRevivaling┃チーム員が蘇生させています。
 ToastMessage/CanNotRevivaling┃味方が蘇生できない状態です。
 ToastMessage/IsImpossibleSummonPosition┃設置できない位置です。
-ToastMessage/IsRetrieving┃チーム員が再生腕輪を回収中です。
 ToastMessage/CanNotResurrectionSurrender┃実験を放棄した味方は再生できません。
 ToastMessage/CanNotResurrectionAlreadyAlive┃再生が完了したチーム員です。
 ToastMessage/LivingTestSubject┃生存している実験体は復活対象ではありません。
@@ -3944,6 +3979,7 @@ LV20┃Level 20
 시즌8이 종료되었습니다.┃シーズン8が終了されました。
 시즌9가 종료되었습니다.┃シーズン9が終了されました。
 시즌10이 종료되었습니다.┃シーズン10が終了されました。
+시즌11이 종료되었습니다.┃シーズン11が終了されました。
 특별 스킨┃特別スキン
 시즌 보상┃シーズンリワード
 BEST┃BEST
@@ -3971,6 +4007,7 @@ Collection/Filter/Complete┃完了
 컬렉션 보상 횟수 알림_무제한┃報酬獲得制限なし
 컬렉션 리스트 아이템 소모 알림┃収集品完成報酬を獲得すると、次のアイテムが消耗されます。\n収集品完成報酬を獲得しますか？
 컬렉션 아이템 소모 체크박스┃アイテムの消耗について確認しました。
+컬렉션 보상 획득 불가 보유량 부족┃必要アイテムが不足しているため、報酬を獲得できません。\n指定した報酬獲得回数を確認してください。
 SeasonCollection/Info/Title┃シーズンコレクション
 SeasonCollection/Info/Desc┃シーズンピースはシーズンピースパックから獲得できます。シーズンピースパックは今日のクエスト、ショップなどで獲得でき、シーズンコレクションを完成させると、報酬を獲得できます。
 SeasonCollection/Tooltip/Unregistered┃交換ピースを使用してシーズンピースを登録できます。
@@ -4001,6 +4038,24 @@ SeasonCollection/Completed/Title┃シーズンコレクション 第{0}段階�
 Game/Result/SeasonCollection/Title┃{0} / シーズンピース
 Game/Result/Reward/NotExist┃獲得したゲームリザルト報酬がありません。
 Game/Result/Reward/Title┃ゲームリザルト
+EventCollection/Tooltip/Unregistered┃イベント交換ピースを使用してイベントピースを登録できます。
+EventCollection/Reward/Title┃イベントコレクション報酬
+EventCollection/Reward/Grade┃第{0}段階完成報酬
+EventCollection/Point/Title┃イベントピースポイント
+EventCollection/Point/Info/1┃※イベント交換ピースは、まだ登録されていないイベントピースに交換できます。
+EventCollection/Point/Info/2┃※登録済みのイベントピースを獲得すると、等級に応じてイベントピースポイントに変換されます。(一般：1Pt)
+EventCollection/Point/Info/3┃※イベントが終了すると、所持していたイベント交換ピースとイベントピースポイントはリセットされます。
+EventCollection/Popup/Confirm/Title┃イベントピース登録
+EventCollection/Popup/Confirm┃イベント交換ピース1個を使用して、選択したイベントピースを登録しますか？
+EventCollection/Popup/Reject┃イベントピースを登録できません。\nイベント交換ピースの数を確認してください。
+EventCollection/Popup/NotYetProgress┃この段階は現在進行できません。進行中のイベントコレクション段階を確認してください。
+EventCollection/Reward/Tooltip/Title/1┃イベントコレクション
+EventCollection/Reward/Tooltip/Info/1/1┃※ イベントピースを集めてイベントコレクションを完成させると、報酬を獲得できます。
+EventCollection/Reward/Tooltip/Info/1/2┃※ 報酬を獲得した後、次の段階のイベントコレクションに挑戦することができます。\n(次の段階がない場合、それ以上進行できません。)
+EventCollection/Reward/Tooltip/Info/1/3┃※ 重複して獲得したイベントピースは累積されず、イベントピースポイントに変換されます。
+EventCollection/Reward/Tooltip/Title/2┃イベントピース獲得
+EventCollection/Reward/Tooltip/Info/2┃※ イベントピースはゲーム内イベントから獲得できます。
+EventCollection/Completed/Title┃イベントコレクション 第{0}段階完成
 DualModule/Tooltip/Title┃デュアルモジュール
 DualModule/Tooltip/Info┃<color=#FFFFFF>スキンデータボックス</color>を開けて<color=#D05EFF>完全な英雄等級スキン</color>を獲得する場合、<color=#FFFFFF>自動で使用</color>され、登場した英雄等級スキンにデュアルモジュール効果を適用します。\nただし、研究効果やイベント効果で獲得した完全なスキンには適用されません。\n(デュアルモジュールは登場した英雄等級スキンごとに使用されます。所持量が足りない場合には、登場順でデュアルモジュール効果が適用されます。)\n\n<color=#FFFFFF>[デュアルモジュール効果]</color>\n完全な英雄等級スキンが<color=#FFFFFF>もう一つ登場</color>し、2つの英雄等級スキンの内、1つを<color=#FFFFFF>選択して獲得</color>できます。
 DualModule/SkinSelect/Info┃獲得するスキンを選んでください。
@@ -4075,8 +4130,8 @@ AutoResurrectionHUD/CannotReviveText┃これ以上復活できません。
 팀 루트┃チームルート
 목표 경로 지정┃目標移動経路指定
 목표 경로 삭제┃目標移動経路削除
-LUMI 동선 보기┃オブジェクト強調表示
-오브젝트 강조 표시┃オブジェクト強調表示
+LUMI 동선 보기┃オブジェクト強調
+오브젝트 강조 표시┃オブジェクト強調
 야생동물 위치 정보┃野生動物の位置情報
 실험 종료┃実験終了
 금지구역 사망┃禁止区域で死亡しました。
@@ -4498,6 +4553,16 @@ Shortcut/Emotion5┃音声表現5
 Shortcut/Emotion6┃音声表現6
 Shortcut/EmotionDance┃踊り
 Shortcut/EmotionPlate┃エモート
+Shortcut/EmotionPlate1┃エモートセット1
+Shortcut/EmotionPlate2┃エモートセット2
+Shortcut/EmotionPlate3┃エモートセット3
+Shortcut/EmotionPlate4┃エモートセット4
+Shortcut/EmotionPlate5┃エモートセット5
+Shortcut/EmotionPlate6┃エモートセット6
+Shortcut/EmotionPlate7┃エモートセット7
+Shortcut/EmotionPlate8┃エモートセット8
+Shortcut/EmotionPlate9┃エモートセット9
+Shortcut/EmotionPlate10┃エモートセット10
 Shortcut/PingTarget┃クイックPing
 Shortcut/MarkTarget┃クイックマーク
 Shortcut/PingTargetKeyboard┃Ping
@@ -4799,7 +4864,7 @@ PurchaseCompletedPassNotice┃UNLOCKED!
 비활성화된최대레벨시즌활성화불가팝업┃最大レベルを達成した非活性化シーズンは\n活性化できません。\n<color=#ff3e3e>活性化の可否に関わらずリワードを受け取れます。</color>
 신규 시즌 추가 안내┃新シーズン追加のお知らせ
 신규 시즌 추가 설명1┃ER PASSスキン·ロビー画面·プロフィール背景·新しいアイテムなど様々な報酬をもらいましょう！
-신규 시즌 추가 설명2┃<color=#FFFFFF>新しいシーズンが始まりました！\nゲームをプレイしてERパスのレベルを上げていろんな報酬を獲得しましょう！\n活性化されていたERパスは停止し、</color>{0}<color=#FFFFFF>されます。\n前シーズンのER PASSは再び活性化させることができ、受領できなかった報酬は該当するERパスを活性化した時に受領できます。</color>
+신규 시즌 추가 설명2┃<color=#FFFFFF>新しいシーズンが始まりました！\nゲームをプレイしてERパスのレベルを上げていろんな報酬を獲得しましょう！\n活性化されていたERパスは停止し、</color><color=#FFBAFB>{0}</color><color=#FFFFFF>されます。\n前シーズンのER PASSは再び活性化させることができ、受領できなかった報酬は該当するERパスを活性化した時に受領できます。</color>
 신규 시즌 추가 설명2_preAccess┃<color=#FFFFFF>新しいシーズンが始まりました！\n<color=#FFFE8C>プチ・ミニョン</color>のシーズンパックと共に新シーズンを楽しんでください。\nもう一つの特別な特典！\nシーズンパックを購入すると、新しいER PASSがプレシーズンから利用可能となります。</color>
 신규 시즌 추가 설명3┃新シーズンのER PASSが自動で有効化
 배틀패스┃ER PASS
@@ -4865,6 +4930,11 @@ ERPassPurchaseWindow/Camera┃カメラ
 ERPassPurchaseWindow/Drone┃ドローン
 ERPassPurchaseWindow/Tombstones┃墓石
 ERPassPurchaseWindow/NewSkin┃New Skins
+ERPassMaxLevelWindow/MainText┃レベルMAX達成
+ERPassMaxLevelWindow/MoreReward┃ゲームをプレイして追加報酬を獲得できます！
+ERPassMaxLevelWindow/End┃すべてのPASS報酬を獲得しました。
+ERPassMaxLevelWindow/CanObtain┃獲得可能
+ERPassMaxLevelWindow/BtnGoERPass┃ER PASSを確認する
 비쥬얼┃ビジュアル
 오디오┃オーディオ
 획득 가능 보상┃獲得可能リスト
@@ -5870,6 +5940,7 @@ Season8000/Name┃P5R コラボスキン購読パック
 100007_Title┃S9 ログインボーナス
 100008_Title┃S10 ログインボーナス
 100009_Title┃S11 ログインボーナス
+100010_Title┃S12 ログインボーナス
 400001_Title┃年末年始 生存者への特別補給
 400002_Title┃2周年記念特別ログインボーナス
 400003_Title┃秋の感謝祭記念ログインイベント
@@ -5878,6 +5949,7 @@ Season8000/Name┃P5R コラボスキン購読パック
 400006_Title┃旧正月記念ログインボーナス
 400007_Title┃ペルソナ５ ザ・ロイヤル コラボ記念ログインボーナス
 400008_Title┃ペルソナ５ ザ・ロイヤル コラボ記念ログインボーナス
+400009_Title┃3周年記念特別ログインボーナス
 10000101_7_Title┃＜ウィドリアナチュワプ＞SET
 10000101_7_Desc┃- ＜ウィドリアナチュワプ＞アイコン\n- ＜ウィドリアナチュワプ＞エモート
 10000101_14_Title┃スキンデータセット
@@ -5976,6 +6048,8 @@ Season8000/Name┃P5R コラボスキン購読パック
 40000501_5_Desc┃シーズンピースパック(高級) 1個 + シーズンピースパック 10個
 40000701_5_Title┃ペルソナ５ ザ・ロイヤル コラボ記念ログインボーナス 5日目
 40000701_5_Desc┃シーズンピースパック(高級) 1個 + シーズンピースパック 10個
+40000901_5_Title┃選別カードセット
+40000901_5_Desc┃エモート選別カード 1個\nプロフィール選別カード 1個
 ExtraSlot_Name┃ボーナスボックス
 ExtraSlot_Warning┃シーズンログインボーナスを全て受け取った後、ボーナスボックスが活性化されます。ボーナスボックスは毎日更新され、更新時間ごとに受領できます。
 100001_PolicyToolTip┃シーズンごとに行われるログインボーナスはシーズン開始後からシーズンが終了されるまで行われます。\nエターナルリターンイベントポリシーを遵守してください。
@@ -6337,7 +6411,7 @@ LootWindow/Disintegrate_Mode┃一括分解
 온전한아이템┃アイテム
 도안┃ピース
 엠블럼┃プロフィール
-잠금 설명┃Lock状態のアイテムは分解できません。
+잠금 설명┃アイテムが少なくとも1個残るように保護します。
 최신 획득 아이템┃最近獲得
 분해┃分解
 분해 비용┃分解費用
@@ -6406,7 +6480,7 @@ LootExchangeWindow/tokenInfo/TokenTimeRemainder/Hours┃{0}時間{1}分
 LootExchangeWindow/tokenInfo/TokenTimeRemainder/Minutes┃{0}分{1}秒
 LootExchangeWindow/tokenInfo/TokenTimeRemainder/Seconds┃{0}秒
 LootExchangeWindow/tokenInfo/TokenRemainder┃トークン使用期間満了後、該当するトークンの交換所は利用できません。
-선택권 만료기간 안내┃トークン使用期間満了後には使用できません。
+선택권 만료기간 안내┃使用期間満了後には使用できません。
 교환 남은 기간: ┃トークン満了残り時間：
 제작소 아이템 남은 기간┃残り期間
 선택권 선택 확인┃選択したアイテムにしますか？
@@ -6462,12 +6536,12 @@ Research/Name/OPEN_DEFAULT┃デフォルトプロトコル
 Research/Name/RARE_MATTER┃複製アルゴリズム
 Research/Name/SPECIAL_MATTER┃抽出アルゴリズム
 Research/Name/AUTO_ASSEMBLE┃自動製作メカニズム
-Research/Desc/OPTIMIZE┃研究所データボックスを開ける時、<color=yellow>{0}%</color>の確率で\nデータピースを<color=yellow>{1}個</color>獲得します。
-Research/Desc/UNIQUE_KEY┃データキーを使用する時、<color=yellow>{0}%</color>の確率で\n<color=yellow>{1}</color>を獲得します。
-Research/Desc/OPEN_DEFAULT┃研究所データボックスやスキンデータボックスを\n開ける時、<color=yellow>{0}%</color>の確率で<color=yellow>{1}</color>を\n獲得します。
+Research/Desc/OPTIMIZE┃研究所データボックスを開ける時、<color=yellow>{0}%</color>の確率でデータピースを<color=yellow>{1}個</color>獲得します。
+Research/Desc/UNIQUE_KEY┃データキーを使用する時、<color=yellow>{0}%</color>の確率で<color=yellow>{1}</color>を獲得します。
+Research/Desc/OPEN_DEFAULT┃研究所データボックスやスキンデータボックスを開ける時、<color=yellow>{0}%</color>の確率で<color=yellow>{1}</color>を獲得します。
 Research/Desc/RARE_MATTER┃アイテムを分解してデータピース(レア)を獲得する時、<color=yellow>{0}%</color>の確率でデータピース(レア)を<color=yellow>{1}個</color>\n獲得します。
 Research/Desc/SPECIAL_MATTER┃完全なスキンアイテムを分解する時、<color=yellow>{0}%</color>の確率でデータパターンを<color=yellow>{1}個</color>獲得します。
-Research/Desc/AUTO_ASSEMBLE┃スキンデータボックスからアイテムピースを\n獲得する時、<color=yellow>{0}%</color>の確率でアイテムピースを\n完全なアイテムに製作します。 
+Research/Desc/AUTO_ASSEMBLE┃スキンデータボックスからアイテムピースを獲得する時、<color=yellow>{0}%</color>の確率でアイテムピースを完全なアイテムに製作します。
 Research/ActivateBtn┃研究開始
 Research/LevelUp┃研究強化
 Research/MaxLevel┃研究完了
@@ -6708,8 +6782,11 @@ BasicSetting/NormalMatchingSquad┃マッチング状態を表示せずに一般
 BasicSetting/RankMatchingSquad┃マッチング状態を表示せずにランク対戦のマッチングを開始します。\n* この機能は設定 ＞ 配信モードから「マッチングショートカットキー使用」オプションをチェックする必要があります。
 BasicSetting/AutoTranslate┃言語環境の異なるプレイヤーからのチャットを自動で翻訳します。\n翻訳するテキストは自分と相手の言語設定が異なる場合、各言語設定に応じて翻訳します。\n設定された言語環境以外の言語でチャットする場合、翻訳されません。\n\n- 日本語 / 韓国語 / 英語 / 中国語簡体 / 中国語繁体に対応します。\n- BETAサービスであるため、翻訳機能サービスは早期終了となる場合があります。
 BasicSetting/PushToTalk┃ショートカットキーを押している間、ボイスチャットを許容します。
-BasicSetting/InstantCastGadgetSkill┃ガジェットヴォルトに装備されたガジェットスキルを即時キャストします。
+BasicSetting/InstantCastGadgetSkill┃ガジェットヴォルトに装備されたガジェットスキルを即時使用します。
 BasicSetting/TranslateToggle┃チャット自動翻訳機能オプションをチェックした状態で、翻訳機能を一時的にオン・オフすることができます。
+teamEliminationLog┃全滅
+GraphicSetting/Off┃オフ
+GraphicSetting/Full┃最大
 ItemType/EMBLEM_MARK/Name┃プロフィールアイコン
 EMBLEM_MARK_FREE1┃Aglaiaアイコン
 EMBLEM_MARK_SHOP_102002┃ヒョヌアイコン
@@ -6765,6 +6842,9 @@ EMBLEM_MARK_SHOP_102051┃プチ・ミニョン ティア アイコン
 EMBLEM_MARK_SHOP_102052┃プチ・ミニョン ヴァーニャ アイコン
 EMBLEM_MARK_SHOP_102053┃こぐまメイド レニ ようこそ！ アイコン
 EMBLEM_MARK_SHOP_102054┃二人だけの猫祭り イレム アイコン
+EMBLEM_MARK_SHOP_102055┃永劫の蒼き亡霊 ビアンカ アイコン
+EMBLEM_MARK_SHOP_102056┃まんまるイレム 日記 アイコン
+EMBLEM_MARK_SHOP_102057┃まんまるイレム 自画像 アイコン
 EMBLEM_MARK_SHOP_102501┃S4 All ways Incheon アイコン
 EMBLEM_MARK_SHOP_102502┃S4 Gyeonggi Innate アイコン
 EMBLEM_MARK_SHOP_102503┃S4 GJ Slasher アイコン
@@ -7165,6 +7245,17 @@ EMBLEM_MARK_S19_MITHRIL_SQUAD┃シーズン10ミスリルアイコン
 EMBLEM_MARK_S19_TITAN_SQUAD┃シーズン10デミゴッドアイコン
 EMBLEM_MARK_S19_IMMORTAL_SQUAD┃シーズン10エターニティアイコン
 EMBLEM_MARK_S19_IMMORTAL_SQUAD_105303┃シーズン10エターニティ栄誉アイコン
+EMBLEM_MARK_S20_IRON_SQUAD┃シーズン11アイアンアイコン
+EMBLEM_MARK_S20_BRONZE_SQUAD┃シーズン11ブロンズアイコン
+EMBLEM_MARK_S20_SILVER_SQUAD┃シーズン11シルバーアイコン
+EMBLEM_MARK_S20_GOLD_SQUAD┃シーズン11ゴールドアイコン
+EMBLEM_MARK_S20_PLATINUM_SQUAD┃シーズン11プラチナムアイコン
+EMBLEM_MARK_S20_DIAMOND_SQUAD┃シーズン11ダイヤモンドアイコン
+EMBLEM_MARK_S20_METEORITE_SQUAD┃シーズン11メテオライトアイコン
+EMBLEM_MARK_S20_MITHRIL_SQUAD┃シーズン11ミスリルアイコン
+EMBLEM_MARK_S20_TITAN_SQUAD┃シーズン11デミゴッドアイコン
+EMBLEM_MARK_S20_IMMORTAL_SQUAD┃シーズン11エターニティアイコン
+EMBLEM_MARK_S20_IMMORTAL_SQUAD_105314┃シーズン11エターニティ栄誉アイコン
 EMBLEM_MARK_EVENT_102001┃魔法少女莉央 アイコン
 EMBLEM_MARK_EVENT1┃べー アイコン
 EMBLEM_MARK_EVENT2┃サムズアップ アイコン
@@ -7429,6 +7520,15 @@ EMBLEM_MARK_EVENT_103262┃SEASON 10 CHAMPION Cnema
 EMBLEM_MARK_EVENT_103263┃SEASON 10 CHAMPION Taegyung
 EMBLEM_MARK_EVENT_103264┃SEASON 10 CHAMPION Fable
 EMBLEM_MARK_EVENT_103265┃SEASON 10 CHAMPION OneCircle
+EMBLEM_MARK_EVENT_103266┃3周年記念 ハナ アイコン
+EMBLEM_MARK_EVENT_103267┃3周年記念 ハート アイコン
+EMBLEM_MARK_EVENT_103268┃3周年記念 莉央 アイコン
+EMBLEM_MARK_EVENT_103269┃3周年記念ヘンリー GOOD アイコン
+EMBLEM_MARK_EVENT_103270┃3周年記念レノア Hi アイコン
+EMBLEM_MARK_EVENT_103271┃3周年記念アディナ 指ハート アイコン
+EMBLEM_MARK_EVENT_103272┃3周年記念ハート ありがとう アイコン
+EMBLEM_MARK_EVENT_103273┃3周年記念莉央 おはよう アイコン
+EMBLEM_MARK_EVENT_103274┃3周年記念ナジャ よくやったわ アイコン
 EMBLEM_MARK_ERPASS_104001┃氷の結晶アイコン
 EMBLEM_MARK_ERPASS_104002┃プレゼントする木アイコン
 EMBLEM_MARK_ERPASS_104003┃赤い鼻アイコン
@@ -7580,6 +7680,8 @@ EMBLEM_MARK_COLLECTION_119010┃アビゲイルのお花ポーズ
 EMBLEM_MARK_COLLECTION_119011┃Mk. VIII Destroyer M.A.G 降臨
 EMBLEM_MARK_COLLECTION_119012┃ゴーストハンター ヒスイ 出戦準備
 EMBLEM_MARK_COLLECTION_119013┃二人だけの猫祭り イレム 思い出
+EMBLEM_MARK_COLLECTION_119014┃ビアンカピース
+EMBLEM_MARK_COLLECTION_119015┃永劫の蒼き亡霊 ビアンカ 覚醒
 EMBLEM_MARK_COLLECTION_119501┃S4 eスポーツサポーター
 EMBLEM_MARK_COLLECTION_119502┃S5 eスポーツサポーター
 EMBLEM_MARK_COLLECTION_119503┃S6 eスポーツサポーター
@@ -7642,6 +7744,8 @@ EMBLEM_BG_SHOP_202049┃プチ・ミニョン 背景
 EMBLEM_BG_SHOP_202050┃デラックスRエディション プチ・ミニョン 背景
 EMBLEM_BG_SHOP_202051┃ビヒョン 背景
 EMBLEM_BG_SHOP_202052┃二人だけの猫祭り イレム 背景
+EMBLEM_BG_SHOP_202053┃3周年記念 背景
+EMBLEM_BG_SHOP_202054┃永劫の蒼き亡霊 ビアンカ 背景
 EMBLEM_BG_SHOP_202501┃S4 All ways Incheon 背景
 EMBLEM_BG_SHOP_202502┃S4 Gyeonggi Innate 背景
 EMBLEM_BG_SHOP_202503┃S4 GJ Slasher 背景
@@ -8028,6 +8132,17 @@ EMBLEM_BG_S19_MITHRIL_SQUAD┃シーズン10ミスリル背景
 EMBLEM_BG_S19_TITAN_SQUAD┃シーズン10デミゴッド背景
 EMBLEM_BG_S19_IMMORTAL_SQUAD┃シーズン10エターニティ背景
 EMBLEM_BG_S19_IMMORTAL_SQUAD_205303┃シーズン10エターニティ栄誉背景
+EMBLEM_BG_S20_IRON_SQUAD┃シーズン11アイアン背景
+EMBLEM_BG_S20_BRONZE_SQUAD┃シーズン11ブロンズ背景
+EMBLEM_BG_S20_SILVER_SQUAD┃シーズン11シルバー背景
+EMBLEM_BG_S20_GOLD_SQUAD┃シーズン11ゴールド背景
+EMBLEM_BG_S20_PLATINUM_SQUAD┃シーズン11プラチナム背景
+EMBLEM_BG_S20_DIAMOND_SQUAD┃シーズン11ダイヤモンド背景
+EMBLEM_BG_S20_METEORITE_SQUAD┃シーズン11メテオライト背景
+EMBLEM_BG_S20_MITHRIL_SQUAD┃シーズン11ミスリル背景
+EMBLEM_BG_S20_TITAN_SQUAD┃シーズン11デミゴッド背景
+EMBLEM_BG_S20_IMMORTAL_SQUAD┃シーズン11エターニティ背景
+EMBLEM_BG_S20_IMMORTAL_SQUAD_205314┃シーズン11エターニティ栄誉背景
 EMBLEM_BG_ERPASS_204001┃Aglaia模様背景
 EMBLEM_BG_EVENT_203001┃2022ホワイトデー記念背景
 EMBLEM_BG_EVENT_203002┃冷た～いカクテル背景
@@ -8114,6 +8229,7 @@ EMBLEM_BG_S10_P5R_208007┃ラウラ（パンサー） 背景
 EMBLEM_BG_S10_P5R_208009┃カミロ（クロウ） 背景
 EMBLEM_BG_S10_P5R_208008┃エレナ（ヴァイオレット） 背景
 EMBLEM_BG_COLLECTION_219001┃ハイパーカプセル背景
+EMBLEM_BG_COLLECTION_219002┃真祖の称賛 背景
 ItemType/EMBLEM_OUTLINE/Name┃プロフィールフレーム
 EMBLEM_OUTLINE_FREE1┃基本フレーム
 EMBLEM_OUTLINE_SHOP_302001┃ヒョヌフレーム
@@ -8168,6 +8284,8 @@ EMBLEM_OUTLINE_SHOP_302049┃プチ・ミニョン フレーム
 EMBLEM_OUTLINE_SHOP_302050┃デラックスRエディション プチ・ミニョン フレーム
 EMBLEM_OUTLINE_SHOP_302051┃ビヒョン フレーム
 EMBLEM_OUTLINE_SHOP_302052┃二人だけの猫祭り イレム フレーム
+EMBLEM_OUTLINE_SHOP_302053┃3周年記念 フレーム
+EMBLEM_OUTLINE_SHOP_302054┃永劫の蒼き亡霊 ビアンカ フレーム
 EMBLEM_OUTLINE_SHOP_302501┃S4 All ways Incheon フレーム
 EMBLEM_OUTLINE_SHOP_302502┃S4 Gyeonggi Innate フレーム
 EMBLEM_OUTLINE_SHOP_302503┃S4 GJ Slasher フレーム
@@ -8554,6 +8672,17 @@ EMBLEM_OUTLINE_S19_MITHRIL_SQUAD┃シーズン10ミスリルフレーム
 EMBLEM_OUTLINE_S19_TITAN_SQUAD┃シーズン10デミゴッドフレーム
 EMBLEM_OUTLINE_S19_IMMORTAL_SQUAD┃シーズン10エターニティフレーム
 EMBLEM_OUTLINE_S19_IMMORTAL_SQUAD_305303┃シーズン10 - エターニティ栄誉フレーム
+EMBLEM_OUTLINE_S20_IRON_SQUAD┃シーズン11アイアンフレーム
+EMBLEM_OUTLINE_S20_BRONZE_SQUAD┃シーズン11ブロンズフレーム
+EMBLEM_OUTLINE_S20_SILVER_SQUAD┃シーズン11シルバーフレーム
+EMBLEM_OUTLINE_S20_GOLD_SQUAD┃シーズン11ゴールドフレーム
+EMBLEM_OUTLINE_S20_PLATINUM_SQUAD┃シーズン11プラチナムフレーム
+EMBLEM_OUTLINE_S20_DIAMOND_SQUAD┃シーズン11ダイヤモンドフレーム
+EMBLEM_OUTLINE_S20_METEORITE_SQUAD┃シーズン11メテオライトフレーム
+EMBLEM_OUTLINE_S20_MITHRIL_SQUAD┃シーズン11ミスリルフレーム
+EMBLEM_OUTLINE_S20_TITAN_SQUAD┃シーズン11デミゴッドフレーム
+EMBLEM_OUTLINE_S20_IMMORTAL_SQUAD┃シーズン11エターニティフレーム
+EMBLEM_OUTLINE_S20_IMMORTAL_SQUAD_305314┃シーズン11 - エターニティ栄誉フレーム
 EMBLEM_OUTLINE_EVENT_303001┃2022ホワイトデー記念フレーム
 EMBLEM_OUTLINE_EVENT_303002┃冷た～いカクテルフレーム
 EMBLEM_OUTLINE_EVENT_303003┃サクラ飾り
@@ -8638,6 +8767,7 @@ EMBLEM_OUTLINE_S10_P5R_308007┃ラウラ（パンサー） フレーム
 EMBLEM_OUTLINE_S10_P5R_308009┃カミロ（クロウ） フレーム
 EMBLEM_OUTLINE_S10_P5R_308008┃エレナ（ヴァイオレット） フレーム
 EMBLEM_OUTLINE_COLLECTION_319001┃ハイパーカプセルフレーム
+EMBLEM_OUTLINE_COLLECTION_319002┃真祖の称賛 フレーム
 Shop/NPPromotion1┃{0} NP
 Shop/NPPromotion2┃ + {0}ボーナスNP
 Product/Name/NP800┃NP 800
@@ -8897,6 +9027,7 @@ Product/Name/S10_LuckyBox2026_Seq_Pack_08┃幸運玉(第8段階)
 Product/Name/FestiveNekoIrem_CollectPack_01┃二人だけの猫祭りイレム コレクションパッケージ
 Product/Name/S11_Summer_Special_Pack_01┃夏のたっぷりパッケージ
 Product/Name/S11_Summer_Daily_ACoin_Pack_01┃夏のデイリーボックス
+Product/Name/EternalWraithBianca_CollectPack_01┃永劫の蒼き亡霊ビアンカ コレクションパッケージ
 Product/Name/2024_Festival_Seq_Pack_01┃彰一のドーナツボックスパッケージ
 Product/Name/2024_Festival_Seq_Pack_02┃ドームカバーパッケージ
 Product/Name/2024_Festival_Seq_Pack_03┃英雄スキンピース選択券パッケージ
@@ -9247,6 +9378,7 @@ Product/Name/EVENT_NPASS_S11_2026_Summer_1035┃夏のワイルドカードク�
 Product/Name/2026Perfect_Support_Pack_01┃パーフェクトパッケージ(パブリッシャーセール)
 Product/Name/EVENT_NPASS_S11_Premium_Token_1036┃S11 プレミアムトークンブックⅡ
 Product/Name/EVENT_NPASS_S11_Basic_Token_1037┃S11 ベーシックトークンブックⅡ
+Product/Name/BATTLE_PASS/2108┃永劫の蒼き亡霊クエストブック
 Product/Name/EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
 Product/Name/WEGAME_IAP_EVENT_NPASS_GGST_1801┃GGSTコラボ記念クエストブック
 Product/Name/S9_2025_Winter_Pack_01┃2025 ウィンタースペシャルパッケージ
@@ -9315,6 +9447,18 @@ Product/Name/S11_2026_SpecialSkin_Seq_Pack_03┃スキン選択券スペシャ�
 Product/Name/S11_2026_SeasonCollection_Pack_01┃プチ・ミニョンシーズンコレクションパック
 Product/Name/S11_Bihyung_Event_Pack_01┃ビヒョン登場記念パッケージ
 Product/Name/S11_Craver_Emote_Pack_01┃クレイヴァーエモートパッケージ
+Product/Name/S11_3rd_Anniversary_ACoin_Pack_01┃3周年記念 ギフトセット
+Product/Name/S11_3rd_Anniversary_WildCard_Pack_01┃3周年記念 ワイルドカードSPパッケージ
+Product/Name/S11_2026_3rd_Anniv_Summer_Pack_01┃2026 サマーパッケージ
+Product/Name/S11_2026_3rd_Anniv_Summer_Pack_02┃2026 サマースペシャルパッケージ
+Product/Name/S11_Token_Boost_Pack_01┃プチ・ミニョン亡霊パッケージ
+Product/Name/S11_Token_Boost_Pack_02┃もっとプチ・ミニョントークンパッケージ
+Product/Name/S11_Token_Boost_Pack_03┃たっぷりプチ・ミニョントークンパッケージ
+Product/Name/S11_Token_Boost_Pack_04┃スペシャルプチ・ミニョントークンパッケージ
+Product/Name/S11_Bianca_Blessing_Pack_01┃真祖の祝福データボックススペシャルパッケージ
+Product/Name/S11_Bianca_Blessing_Pack_02┃真祖の祝福データボックスパッケージ
+Product/Name/S11_KakaoTalk_Irem_Emote_Pack_01┃まんまるイレムエモートパッケージ
+Product/Name/S11_Season_Fragments_Last_Pack_01┃シーズンピースラストスパートパッケージ
 Product/Name/2026_S11_Esports_Pack_01┃S11 eスポーツサポートパッケージ
 Product/Name/S11_DAEJEONAutoArms_Pack_01┃S11 DAEJEON AutoArms パッケージ
 Product/Name/S11_JejuShadow_Pack_01┃S11 Jeju Shadow パッケージ
@@ -9332,6 +9476,7 @@ Product/Name/S11_GCBUSAN_Pack_01┃S11 GC BUSAN パッケージ
 Product/Name/S11_GyeongnamSparkle_Pack_01┃S11 Gyeongnam Sparkle パッケージ
 Product/Name/S11_NewRiseGangwon_Pack_01┃S11 New Rise Gangwon パッケージ
 Product/Name/S11_GJSlasher_Pack_01┃S11 GJ Slasher パッケージ
+S11_Token_Boost_Pack_Name┃プチ・ミニョンパッケージ
 Shop/Desc/Aya_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
 Shop/Desc/Hyunwoo_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の56%が払い戻され、メールボックスに支給されます。
 Shop/Desc/Adriana_ComboPack_01┃スキン1種\nエモート4種\n\nすでに所持しているアイテムが含まれた場合には販売価格(単品)の58%が払い戻され、メールボックスに支給されます。
@@ -9733,6 +9878,19 @@ Shop/Desc/FestiveNekoIrem_CollectPack_01┃<b><color=#FFBB00>[内容]</color></b
 Shop/Desc/S11_Craver_Emote_Pack_01┃新しく実装されたクレイヴァーのエモート4種を割引価格で手に入れましょう！\n\n<b><color=#FFBB00>[内容]</color></b>\n- クレイヴァーエモート 4種\n- XP Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入した商品はメールボックスではなく、「コレクション」にすぐに適用されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S11_Summer_Special_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ワイルドカード(レア) - スキン選択券\n- ワイルドカード(高級) - アイテム選択券\n- スキンデータボックス 3個\n- ラッキー★ボール 1個\n- ラッキー★キューブ 3個\n- ラッキー★ボックス 10個\n- データキー 3個\n- 研究所データボックス 3個\n- プチ・ミニョントークン 30個\n- A-Coin Boost (3日)\n- ER Point Boost (3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ ワイルドカードは「製作所 ‐ ワイルドカード」で使用できます。
 Shop/Desc/S11_Summer_Daily_ACoin_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 研究所データボックス 1個\n- シーズンピースパック 5個\n- 「夏のワイルドカードクエストブック」ポイント 50p\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ シーズンピースパックは購入と同時に開封され、シーズンピースとして支給されます。\n※ クエストブックポイントは該当クエストブックにのみ適用されます。他のクエストブックには使用できません。\n※ 購入と同時に開封されるシーズンピースパックが含まれている商品は払い戻しできません。
+Shop/Desc/S11_3rd_Anniversary_ACoin_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 英雄スキンピースボックス 1個\n- データキー 1個\n- A-Coin Boost(12時間)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ＞ ボックス」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_3rd_Anniversary_WildCard_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- ワイルドカード(レア) - スキン選択券\n- ワイルドカード(高級) - スキン選択券\n- ワイルドカード(レア) - アイテム選択券\n- ワイルドカード(高級) - アイテム選択券\n- 1,205 NP\n- 10,000 A-Coin\n- A-Coin Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ ワイルドカードは「製作所 ＞ ワイルドカード」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_2026_3rd_Anniv_Summer_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 2026 サマーボックス 1個\n- データキー 1個\n- プチ・ミニョントークン 1個\n- A-Coin Boost(1時間)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ＞ ボックス」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_2026_3rd_Anniv_Summer_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- 2026 サマーボックス 10個\n- データキー 10個\n- プチ・ミニョントークン 15個\n- A-Coin Boost(1日)\n- 2026 サマースペシャルカード 1個\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ＞ ボックス」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_Token_Boost_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- プチ蒼き亡霊ボックス 1個\n- A-Coin Boost (1時間)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ 商品リストの詳細は確率表示のリンクをご参照ください。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_Token_Boost_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- プチ蒼き亡霊ボックス 5個\n- プチ・ミニョントークン 10個\n- A-Coin Boost (1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ 商品リストの詳細は確率表示のリンクをご参照ください。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_Token_Boost_Pack_03┃<b><color=#FFBB00>[内容]</color></b>\n\n- プチ蒼き亡霊ボックス 10個\n- スキンデータボックス 3個\n- ラッキー★ボール 1個\n- プチ・ミニョントークン 40個\n- A-Coin Boost (1日)\n-  ER Point Boost (1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ 商品リストの詳細は確率表示のリンクをご参照ください。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_Token_Boost_Pack_04┃<b><color=#FFBB00>[内容]</color></b>\n\n- プチ蒼き亡霊ボックス 30個\n- スキンデータボックス 9個\n- ラッキー★ボール 3個\n- プチ・ミニョントークン 120個\n- A-Coin Boost (7日)\n-  ER Point Boost (7日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所」で使用できます。\n※ 商品リストの詳細は確率表示のリンクをご参照ください。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_Bianca_Blessing_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 真祖の祝福データボックス 10個\n- データキー 10個\n- プチ・ミニョントークン 15個\n- A-Coin Boost(1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ＞ ボックス」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_Bianca_Blessing_Pack_02┃<b><color=#FFBB00>[内容]</color></b>\n\n- 真祖の祝福データボックス 1個\n- データキー 1個\n- プチ・ミニョントークン 1個\n- A-Coin Boost(1時間)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「製作所 ＞ ボックス」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_KakaoTalk_Irem_Emote_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- まんまるイレムエモート 10種\n- まんまるイレムアイコン 2種\n- A-Coin Boost (1日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」で確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/S11_Season_Fragments_Last_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 未所持シーズンピース補給券 10個\n- 交換ピース 2個\n- シーズンピースパック 30個\n- シーズンピースパック(一般) 30個\n- シーズンピースパック(高級) 10個\n- ER Point Boost (7日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ <color=#35FF94>「未所持シーズンピース補給券」</color>を使用して未所持のシーズンピース1個を獲得できます。\n※ 購入した補給券とピースパックは「製作所 ＞ ボックス」で使用できます。\n※ 交換ピースは「収集品 ＞ シーズン」で使用できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
+Shop/Desc/EternalWraithBianca_CollectPack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- 永劫の蒼き亡霊 ビアンカ エモート 2種\n- 永劫の蒼き亡霊 ビアンカ アイコン\n- 永劫の蒼き亡霊 ビアンカ フレーム\n- 永劫の蒼き亡霊 ビアンカ 背景\n- プチ・ミニョントークン 10個\n- A-Coin Boost (3日)\n- ER Point Boost (3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入した商品は「コレクション」で確認できます。\n※ すでに所持している商品が含まれている場合、購入価格が調整されます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/2026_S10_Esports_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- エースバニー ヘイズ かかったな エモート\n- スキンデータボックス 1個\n- データキー 1個\n- 研究所データボックス 1個\n- 400 NP\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ S10 eスポーツサポートパッケージはSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツの賞金に活用されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。\n※ S10 eスポーツサポートパッケージに含まれた400NP商品は無償NPで構成されています。
 Shop/Desc/S10_GyeonggiInnate_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 Gyeonggi Innate エモート\n- S10 Gyeonggi Innate アイコン\n- S10 Gyeonggi Innate 背景\n- S10 Gyeonggi Innate フレーム\n- S10 Gyeonggi Innate チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 Gyeonggi Innate パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
 Shop/Desc/S10_GJSlasher_Pack_01┃<b><color=#FFBB00>[内容]</color></b>\n\n- S10 GJ Slasher エモート\n- S10 GJ Slasher アイコン\n- S10 GJ Slasher 背景\n- S10 GJ Slasher フレーム\n- S10 GJ Slasher チームスロット背景\n- S10 eスポーツサポーターコイン\n- XP Boost(3日)\n- A-Coin Boost(3日)\n- ER Point Boost(3日)\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 「S10 GJ Slasher パッケージ」はSteamウォレットのクレジットで購入できます。\n※ 各種の手数料を除いたパッケージの販売収益はeスポーツチームに支援されます。\n※ 購入した商品は「コレクション」から確認できます。\n※ 購入と同時に適用されるBoostアイテムが含まれている場合、払い戻しできません。
@@ -10069,6 +10227,7 @@ Season1028/Name┃S10 ベーシックトークンブック
 Season1029/Name┃S10 プレミアムトークンブックⅡ
 Season1030/Name┃S10 ベーシックトークンブックⅡ
 Season1031/Name┃春の訪れクエストブック
+Season1032/Name┃3周年記念パス
 Season1033/Name┃S11 プレミアムトークンブック
 Season1034/Name┃S11 ベーシックトークンブック
 Season1035/Name┃夏のワイルドカードクエストブック
@@ -10095,6 +10254,7 @@ Season2104/Name┃放課後クエストブック
 Season2105/Name┃トロピカルクエストブック
 Season2106/Name┃ゴーストハンタークエストブック
 Season2107/Name┃二人だけの猫祭りクエストブック
+Season2108/Name┃永劫の蒼き亡霊クエストブック
 HiddenPassPath/2001┃ショップ内のマイレージショップで購入できます。
 HiddenPassPath/2002┃ショップ内のマイレージショップで購入できます。
 HiddenPassPath/2003┃ショップ内のマイレージショップで購入できます。
@@ -10112,6 +10272,7 @@ HiddenPassPath/2104┃交換所でアカデミートークンを使用して購�
 HiddenPassPath/2105┃交換所でスプラッシュトークンを使用して購入できます。
 HiddenPassPath/2106┃交換所で祭りトークンを使用して購入できます。
 HiddenPassPath/2107┃交換所でプチ・ミニョントークンを使用して購入できます。
+HiddenPassPath/2108┃交換所でプチ・ミニョントークンを使用して購入できます。
 Emotion/Desc/Base┃ゲーム内でエモートを使ってコミュニケーションすることができます。
 Shop/Desc/NP┃NPとは、エターナルリターンの様々な商品を購入できるゲームマネーです。
 Shop/Desc/ACCOUNT_Add_Traitslot┃特性スロットを拡張します。
@@ -10294,7 +10455,8 @@ Product/Name/S20_RARE_MATTER┃データピース(レア) X 1
 Product/Name/S20_S19TOKEN_EXCHANGE┃ロイヤルトークン X 2
 Product/Name/S20_A-Coin_QUEST_BOOK┃プチ・ミニョン A-Coin クエストブック
 Product/Name/S20_PETITMIGNON_PACK┃プチ・ミニョン プレイキットパッケージ
-Product/Name/S20_IREM_QUSET_BOOK┃二人だけの猫祭り クエストブック
+Product/Name/S20_IREM_QUSET_BOOK┃二人だけの猫祭りクエストブック
+Product/Name/S20_BIANCA_QUSET_BOOK┃永劫の蒼き亡霊クエストブック
 Product/Name/P5R_ACOIN┃A-Coin X 150
 Shop/Desc/S10_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- バカンス A-Coinクエストブック\n  (最大105,000 A-Coin獲得可能)\n- 30,000 A-Coin\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入すると、「バカンス A-Coinクエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「バカンス A-Coinクエストブック」は「QUEST BOOK」からご確認いただけます。
 Shop/Desc/S11_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- 武装メイド A-Coinクエストブック\n  (最大105,000 A-Coin獲得可能)\n- 30,000 A-Coin\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入すると、「武装メイド A-Coinクエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「武装メイド A-Coinクエストブック」は「QUEST BOOK」からご確認いただけます。
@@ -10311,6 +10473,7 @@ Shop/Desc/S18_SPIRITHUNTERHISUI_QUSET_BOOK┃<b><color=#FFBB00>[内容]</color><
 Shop/Desc/S19_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n \n - ロイヤル A-Coinクエストブック\n (最大105,000 A-Coin獲得可能)\n - 30,000 A-Coin\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 購入すると、「ロイヤル A-Coinクエストブック」がすぐに解除されます。\n ※ このクエストブックには使用期限がありません。いつでも達成することができます。\n ※ 「ロイヤル A-Coinクエストブック」は「QUEST BOOK」からご確認いただけます。
 Shop/Desc/S20_A-Coin_QUEST_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n \n - プチ・ミニョン A-Coin クエストブック\n (最大105,000 A-Coin獲得可能)\n - 30,000 A-Coin\n \n <b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n ※ 購入すると、「プチ・ミニョン A-Coin クエストブック」がすぐに解除されます。\n ※ このクエストブックには使用期限がありません。いつでも達成することができます。\n ※ 「プチ・ミニョン A-Coin クエストブック」は「QUEST BOOK」からご確認いただけます。
 Shop/Desc/S20_IREM_QUSET_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- 二人だけの猫祭り クエストブック\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入すると、「二人だけの猫祭り クエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「二人だけの猫祭り クエストブック」は「QUEST BOOK」からご確認いただけます。\n※ 「二人だけの猫祭り クエストブック」のミッションはルミア島のゲームをプレイすると達成できます。
+Shop/Desc/S20_BIANCA_QUSET_BOOK┃<b><color=#FFBB00>[内容]</color></b>\n\n- 永劫の蒼き亡霊 クエストブック\n\n<b><color=#F15F5F>[ご購入前の注意事項]</color></b>\n※ 購入すると、「永劫の蒼き亡霊 クエストブック」がすぐに解除されます。\n※ このクエストブックには使用期限がありません。いつでも達成することができます。\n※ 「永劫の蒼き亡霊 クエストブック」は「QUEST BOOK」からご確認いただけます。\n※ 「永劫の蒼き亡霊 クエストブック」のミッションはルミア島のゲームをプレイすると達成できます。
 Product/Name/S5_Lucky_White_LootToken_01┃レッドトークン X 3
 Product/Name/S5_Lucky_White_ACoin_15┃A-Coin X 15
 Product/Name/S5_Lucky_Red_Lucky_Token_01┃ラッキー★トークン X 80
@@ -10567,6 +10730,8 @@ GoodsGroup/Name/1404281┃ジャッキー
 GoodsGroup/Name/1404291┃イシュトヴァーン
 GoodsGroup/Name/1404301┃エステル
 GoodsGroup/Name/1404311┃テオドール
+GoodsGroup/Name/1404321┃アレックス
+GoodsGroup/Name/1404331┃セリーヌ
 GoodsGroup/Name/1406001┃キャスターSia
 GoodsGroup/Name/1406011┃キャスターShin Il
 GoodsGroup/Name/1406021┃キャスターEvis&Gold Blin
@@ -10791,8 +10956,6 @@ Goods/Name/1604071┃タワーオブフォーチュン
 Goods/Name/1604072┃カフェメニュー
 Goods/Name/1604074┃営業開始！
 Goods/Name/1604073┃ラテアート
-Goods/Name/1612015┃ゴルトベアプリン
-Goods/Name/1612014┃バニーの等身大パネル
 Goods/Name/1608001┃信念と矜持
 Goods/Name/1608002┃P5R カレーとコーヒー
 Goods/Name/1608003┃P5R 運命の囚人
@@ -10809,6 +10972,8 @@ Goods/Name/1612010┃堕天使のヘイロー
 Goods/Name/1612011┃責任の重さ
 Goods/Name/1612012┃極楽じゃ...墓石
 Goods/Name/1612013┃ガラポン抽選機
+Goods/Name/1612014┃バニーの等身大パネル
+Goods/Name/1612015┃ゴルトベアプリン
 GroupItemAttribute/Inst┃Inst.
 GroupItemAttribute/Piano┃Piano
 GroupItemAttribute/Vocal┃Vocal.
@@ -10839,6 +11004,7 @@ Goods/Name/1703015┃Red Heart (Haesoo)
 Goods/Name/1703016┃Red Heart (Inst.)
 Goods/Name/1703017┃Sweet & Salty (Kim A Reum)
 Goods/Name/1703018┃Sweet & Salty (Inst.)
+Goods/Name/1703019┃Lumia Overture (with Oblige Ensemble)
 Goods/Name/1704001┃Emma Character Song(Kor ver.)
 Goods/Name/1704002┃Emma Character Song(Inst ver.)
 Goods/Name/1708001┃Perfection Can’t Please Me
@@ -10863,6 +11029,7 @@ GoodsGroup/Name/1703012┃ニシキカムロ (Byeol Eun)
 GoodsGroup/Name/1703014┃ニシキカムロ (眉村ちあき)
 GoodsGroup/Name/1703015┃Red Heart
 GoodsGroup/Name/1703017┃Sweet & Salty
+GoodsGroup/Name/1703019┃Lumia Overture (with Oblige Ensemble)
 GoodsGroup/Name/1704001┃Emma Character Song
 GoodsGroup/Name/1708000┃GUILTY GEAR -STRIVE-
 GoodsGroup/Name/1708006┃ペルソナ５ ザ・ロイヤル
@@ -10992,6 +11159,9 @@ Goods/Name/2705005┃2周年記念
 Goods/Name/2705006┃トロピカル·ディメンションアビゲイル
 Goods/Name/2705007┃ゴーストハンター ヒスイ
 Goods/Name/2705008┃二人だけの猫祭り イレム
+Goods/Name/2705009┃3周年記念
+Goods/Name/2705010┃3周年お祝い
+Goods/Name/2705011┃永劫の蒼き亡霊 ビアンカ
 Goods/Name/2708001┃GUILTY GEAR -STRIVE-
 Goods/Name/2708002┃星と願い
 Goods/Name/2708003┃決戦
@@ -11061,6 +11231,7 @@ Goods/Name/3401001┃基本チームスロット背景
 Goods/Name/3402001┃ホリデーベア
 Goods/Name/3402002┃ビヒョン
 Goods/Name/3402003┃二人だけの猫祭り イレム
+Goods/Name/3402004┃永劫の蒼き亡霊 ビアンカ
 Goods/Name/3402501┃S4 All ways Incheon チームスロット背景
 Goods/Name/3402502┃S4 Gyeonggi Innate チームスロット背景
 Goods/Name/3402503┃S4 GJ Slasher チームスロット背景
@@ -11180,6 +11351,9 @@ Goods/Name/3403025┃ヘンリー
 Goods/Name/3403026┃ゴーストハンター ヒスイ 集結
 Goods/Name/3403027┃ゴーストハンター ヒスイ 狩り
 Goods/Name/3403028┃Dr. ナジャ＆Dr. ハナ
+Goods/Name/3403029┃3周年記念 Dr. ナジャ＆Dr. ハナ
+Goods/Name/3403030┃3周年記念
+Goods/Name/3403031┃3周年記念 CNクリエイター共同制作
 Goods/Name/3408001┃GGST - LET'S ROCK
 Goods/Name/3408002┃P5R D-DAY
 Goods/Name/3419001┃冬の雪花
@@ -11233,6 +11407,9 @@ Goods/Name/3503045┃S10 eスポーツサポーターコイン
 Goods/Name/3503046┃S11 eスポーツピース
 Goods/Name/3503047┃S12 eスポーツピース
 Goods/Name/3503048┃S11 eスポーツサポーターコイン
+Goods/Name/3503049┃2026 サマーカード
+Goods/Name/3503050┃2026 サマースペシャルカード
+Goods/Name/3503051┃真祖の祝福カード
 Goods/Name/3508001┃GGSTカード
 Goods/Name/3508002┃P5R コラボカード
 ItemType/WILD_CARD_SKIN/Name┃ワイルドカード - スキン選択券
@@ -11300,6 +11477,24 @@ Goods/Name/4018051┃プチ・ミニョンピース 51
 Goods/Name/4018052┃プチ・ミニョンピース 52
 Goods/Name/4018053┃プチ・ミニョンピース 53
 Goods/Name/4018054┃プチ・ミニョンピース 54
+ItemType/EVENT_EXCHANGE_COLLECTIBLE/Name┃イベント交換ピース
+ItemType/EVENT_COLLECTIBLE/Name┃イベントピース
+Goods/Name/4019000┃イベント交換ピース
+Goods/Name/4019001┃3周年イベントピース 1
+Goods/Name/4019002┃3周年イベントピース 2
+Goods/Name/4019003┃3周年イベントピース 3
+Goods/Name/4019004┃3周年イベントピース 4
+Goods/Name/4019005┃3周年イベントピース 5
+Goods/Name/4019006┃3周年イベントピース 6
+Goods/Name/4019007┃3周年イベントピース 7
+Goods/Name/4019008┃3周年イベントピース 8
+Goods/Name/4019009┃3周年イベントピース 9
+Goods/Name/4019010┃3周年イベントピース 10
+Goods/Name/4019011┃3周年イベントピース 11
+Goods/Name/4019012┃3周年イベントピース 12
+Goods/Name/4019013┃3周年イベントピース 13
+Goods/Name/4019014┃3周年イベントピース 14
+Goods/Name/4019015┃3周年イベントピース 15
 ItemType/REROLL_TICKET/Name┃モジュール
 Goods/Name/4402001┃デュアルモジュール
 ItemType/ENDGAME_BGM/Name┃ENDGAME BGM
@@ -11332,6 +11527,8 @@ Goods/Name/3102009┃ホリデーデータボックス
 Goods/Desc/3102009┃ホリデー記念アイテムを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102011┃レアスキンデータボックス
 Goods/Desc/3102011┃レアスキンを獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102995┃真祖の称賛プロフィールセット
+Goods/Desc/3102995┃真祖の称賛プロフィールアイコン、背景、フレームを獲得できます。
 Goods/Name/3103002┃金の福袋
 Goods/Desc/3103002┃4つのいろんなアイテムを獲得できる金の福袋です。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3103003┃福袋
@@ -11436,6 +11633,8 @@ Goods/Name/3102087┃S10 ボーナススキンデータボックス
 Goods/Desc/3102087┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102088┃S11 ボーナススキンデータボックス
 Goods/Desc/3102088┃スキンデータボックスに追加された新スキンを獲得できるデータボックスです。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102089┃2026 サマーボックス
+Goods/Desc/3102089┃様々なアイテムおよびアイテムピースを獲得できるボックスです。また、2026 サマーカード1個を確定で獲得できます。\nすでに所持しているアイテムも重複して獲得することがあります。\n出現するアイテムはアイテムリストから確認できます。
 Goods/Name/3103004┃白い花箱
 Goods/Desc/3103004┃白い花箱、緑の花箱、A-Coinの中から1つを獲得し、確率に応じて収集品アイテム＜白い花＞を獲得できます。
 Goods/Name/3103005┃緑の花箱
@@ -11516,6 +11715,8 @@ Goods/Name/3103038┃200イベントNP(7日) + 祭りトークン 10個
 Goods/Desc/3103038┃200イベントNP(7日)と祭りトークン 10個を獲得できます。
 Goods/Name/3103039┃100イベントNP(7日) + プチ・ミニョントークン 10個
 Goods/Desc/3103039┃100イベントNP(7日)とプチ・ミニョントークン 10個を獲得できます。
+Goods/Name/3103040┃プチ蒼き亡霊ボックス
+Goods/Desc/3103040┃リストの中から一つをランダムに獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102019┃2025 金の福袋
 Goods/Desc/3102019┃4つのいろんなアイテムを獲得できる＜2025 金の福袋＞です。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102020┃悪魔の袋
@@ -11546,14 +11747,24 @@ Goods/Name/3102026┃2周年記念サマーボックス
 Goods/Desc/3102026┃完全なスキンまたはスキンピース1つと2周年サマーカード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3102027┃2025 落ち葉トークンボックス
 Goods/Desc/3102027┃2025 落ち葉トークン25個を獲得できます。\n確率に応じて2025 落ち葉トークンを20/30/40/50個を更に獲得できます。\n出現するアイテムはアイテムリストで確認できます。
+Goods/Name/3102029┃真祖の祝福データボックス
+Goods/Desc/3102029┃完全なスキンまたはスキンピース1つと真祖の祝福カード1つを獲得できるデータボックスです。\nすでに所持しているスキンも重複して獲得することがあります。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3190015┃2周年記念サマースキン選択券
 Goods/Desc/3190015┃リストの中から一つを選択して獲得できます。\n獲得できるアイテムはアイテムリストで確認できます。
+Goods/Name/3190016┃2026 サマースキン選択券(レア)
+Goods/Desc/3190016┃2026 サマーボックスに含まれているレアスキンの中から1種を選択して獲得できます。
+Goods/Name/3190017┃2026 サマースキン選択券(英雄)
+Goods/Desc/3190017┃2026 サマーボックスに含まれている英雄スキンの中から1種を選択して獲得できます。
+Goods/Name/3190018┃真祖の祝福スキン選択券
+Goods/Desc/3190018┃リストの中から一つを選択して獲得できます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3199001┃シーズンピースパック
 Goods/Desc/3199001┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
 Goods/Name/3199002┃シーズンピースパック(一般)
 Goods/Desc/3199002┃一般等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
 Goods/Name/3199003┃シーズンピースパック(高級)
 Goods/Desc/3199003┃高級等級のシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199004┃未所持シーズンピース補給券
+Goods/Desc/3199004┃所持していない一般～高級等級のシーズンピースを1個獲得できます。\nすべてのシーズンピースを所持している場合、全シーズンピースの中から1個が支給されます。\n出現するアイテムはアイテムリストで確認できます。
 Goods/Name/3199011┃シーズンピースパック
 Goods/Desc/3199011┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。\n\n※ 購入と同時に獲得する商品です。
 Goods/Name/3199012┃シーズンピースパック(一般)
@@ -11564,6 +11775,7 @@ Goods/Name/3199014┃シーズンピースパック
 Goods/Desc/3199014┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
 Goods/Name/3199015┃シーズンピースパック
 Goods/Desc/3199015┃一般等級から高級等級までのシーズンピースを1つ獲得できます。\n獲得したシーズンピースはシーズンコレクションに自動で登録されます。\n登録済みのシーズンピースはピースポイントに変換されます。
+Goods/Name/3199031┃イベントピースパック
 Goods/Name/1┃シークレットDrops
 Goods/Name/2┃Secret BOX (Mini)
 Goods/Name/3┃実験体ランダムボックス
@@ -11619,6 +11831,7 @@ Goods/Name/3180001┃シーズントークン 1個
 Goods/Name/3180002┃シーズントークン 2個
 Goods/Name/3180003┃シーズントークン 3個
 Goods/Name/3180004┃シーズントークン 4個
+Goods/Name/5202001┃基本キルアナウンススキン
 오늘의 도전┃今日のクエスト
 오늘의 도전과제를 모두 완수하였습니다.┃今日のクエストを完了しました。
 도전과제 변경 가능┃クエスト内容は1日に1回変更できます。\n新しいクエスト内容に変更しますか？
@@ -12397,7 +12610,7 @@ Mission/10000036/1┃コバルトモード 死なずに実験体2キル
 Mission/10000037/1┃コバルトモード 死なずに実験体3キル
 Mission/10000038/1┃コバルトモード 連続3キル以上の実験体処置
 Mission/10000039/1┃コバルトモード 交戦で連続2キル達成
-Mission/10000040/1┃コバルトモード 交戦で連続3キル達成
+Mission/10000040/1┃コバルトモード 交戦で連続2キル達成
 Mission/10000041/1┃コバルトモード クレジット使用
 Mission/10000042/1┃コバルトモード クレジット使用
 Mission/10000043/1┃コバルトモード クレジット使用
@@ -12419,7 +12632,7 @@ Mission/10000136/1┃コバルトモード 死なずに実験体2キル
 Mission/10000137/1┃コバルトモード 死なずに実験体3キル
 Mission/10000138/1┃コバルトモード 連続3キル以上の実験体処置
 Mission/10000139/1┃コバルトモード 交戦で連続2キル達成
-Mission/10000140/1┃コバルトモード 交戦で連続3キル達成
+Mission/10000140/1┃コバルトモード 交戦で連続2キル達成
 Mission/10000141/1┃コバルトモード クレジット使用
 Mission/10000142/1┃コバルトモード クレジット使用
 Mission/10000143/1┃コバルトモード クレジット使用
@@ -12441,7 +12654,7 @@ Mission/10000232/1┃コバルトモード 死なずに実験体2キル
 Mission/10000233/1┃コバルトモード 死なずに実験体3キル
 Mission/10000234/1┃コバルトモード 連続3キル以上の実験体処置
 Mission/10000235/1┃コバルトモード 交戦で連続2キル達成
-Mission/10000236/1┃コバルトモード 交戦で連続3キル達成
+Mission/10000236/1┃コバルトモード 交戦で連続2キル達成
 Mission/10000237/1┃コバルトモード クレジット使用
 Mission/10000238/1┃コバルトモード クレジット使用
 Mission/10000239/1┃コバルトモード クレジット使用
@@ -12507,7 +12720,7 @@ Mission/10000632/1┃コバルトモード 死なずに実験体2キル
 Mission/10000633/1┃コバルトモード 死なずに実験体3キル
 Mission/10000634/1┃コバルトモード 連続3キル以上の実験体処置
 Mission/10000635/1┃コバルトモード 交戦で連続2キル達成
-Mission/10000636/1┃コバルトモード 交戦で連続3キル達成
+Mission/10000636/1┃コバルトモード 交戦で連続2キル達成
 Mission/10000637/1┃コバルトモード クレジット使用
 Mission/10000638/1┃コバルトモード クレジット使用
 Mission/10000639/1┃コバルトモード クレジット使用
@@ -12548,7 +12761,7 @@ Mission/10000722/1┃コバルトモード 死なずに実験体2キル
 Mission/10000723/1┃コバルトモード 死なずに実験体3キル
 Mission/10000724/1┃コバルトモード 連続3キル以上の実験体処置
 Mission/10000725/1┃コバルトモード 交戦で連続2キル達成
-Mission/10000726/1┃コバルトモード 交戦で連続3キル達成
+Mission/10000726/1┃コバルトモード 交戦で連続2キル達成
 Mission/10000727/1┃コバルトモード クレジット使用
 Mission/10000728/1┃コバルトモード クレジット使用
 Mission/10000729/1┃コバルトモード クレジット使用
@@ -13975,6 +14188,10 @@ Item/Name/202529┃華将の衣
 Item/Name/203516┃ファフニール
 Item/Name/204513┃ピクシーブーツ
 Item/Name/204514┃タクティカル·シューズ
+Item/Name/701451┃タクティカル·バイザー
+Item/Name/705604┃クラダリング
+Item/Name/705603┃ハートオンファイヤー
+Item/Name/705614┃プシュケーの刃
 Item/Name/202415_D┃バトルスーツ - David
 Item/Name/202407_D┃ミスリル鎧 - David
 Item/Name/202416_D┃炎のドレス - David
@@ -14855,6 +15072,7 @@ Item/Effects/301247┃15秒間体力を回復します。
 Item/Effects/301248┃15秒間体力を回復します。
 Item/Effects/301249┃15秒間体力を回復します。
 Item/Effects/301250┃15秒間体力を回復します。
+Item/Effects/301251┃15秒間体力を回復します。
 Item/Effects/301301┃15秒間体力を回復します。
 Item/Effects/301302┃15秒間体力を回復します。
 Item/Effects/301303┃15秒間体力を回復します。
@@ -19285,6 +19503,7 @@ Skill/Group/Name/3006000┃鉄菱投擲
 Skill/Group/Name/3022000┃Love&...
 Skill/Group/Name/3020000┃猛龍過江
 Skill/Group/Name/3004000┃風裂き
+Skill/Group/Name/3004100┃風裂き
 Skill/Group/Name/3023000┃フラッシュ
 Skill/Group/Name/3024000┃VF媒介
 Skill/Group/Name/3025000┃VF安定化
@@ -22622,14 +22841,14 @@ CharacterState/Group/Name/7011110┃狩猟 - クマ
 CharacterState/Group/Desc/7011110┃クマを狩ると、強力になります。クマや敵実験体、ボスモンスターを倒すと、攻撃力またはスキル増幅が増加します。
 Trait/Name/7011201┃狩猟 - イノシシ
 Trait/Tooltip/7011201┃最大体力が増加します。\n自分または近くにいる味方がイノシシや\n敵実験体、ボスモンスターを倒すとスタックを\n獲得します。\nスタックに比例して最大体力が更に増加します。
-Trait/DetailTooltip/7011201┃<color=#688A08>最大体力が{9}</color>が増加します。\n自分または近くにいる味方がイノシシや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{10}スタックまで獲得でき、{24}スタックごとに<color=#688A08>最大体力が{11}</color>増加します。\n\nスタック獲得量：イノシシ {19} / 敵実験体＆ボスモンスター {20}
-Trait/StatTooltip/7011201┃<color=#688A08>最大体力が{9}</color>が増加します。\n自分または近くにいる味方がイノシシや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{10}スタックまで獲得でき、{24}スタックごとに<color=#688A08>最大体力が{11}</color>増加します。\n\nスタック獲得量：イノシシ {19} / 敵実験体＆ボスモンスター {20}\n\n増加した最大体力：{8}
+Trait/DetailTooltip/7011201┃<color=#688A08>最大体力が{9}</color>増加します。\n自分または近くにいる味方がイノシシや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{10}スタックまで獲得でき、{24}スタックごとに<color=#688A08>最大体力が{11}</color>増加します。\n\nスタック獲得量：イノシシ {19} / 敵実験体＆ボスモンスター {20}
+Trait/StatTooltip/7011201┃<color=#688A08>最大体力が{9}</color>増加します。\n自分または近くにいる味方がイノシシや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{10}スタックまで獲得でき、{24}スタックごとに<color=#688A08>最大体力が{11}</color>増加します。\n\nスタック獲得量：イノシシ {19} / 敵実験体＆ボスモンスター {20}\n\n増加した最大体力：{8}
 CharacterState/Group/Name/7011210┃狩猟 - イノシシ
 CharacterState/Group/Desc/7011210┃イノシシを狩ると、耐久力が増加します。イノシシや敵実験体、ボスモンスターを倒すと、最大体力が増加します。
 Trait/Name/7011301┃狩猟 - オオカミ
 Trait/Tooltip/7011301┃攻撃速度が増加します。\n自分または近くにいる味方がオオカミや\n敵実験体、ボスモンスターを倒すとスタックを\n獲得します。\nスタックに比例して攻撃速度が更に増加します。
-Trait/DetailTooltip/7011301┃攻撃速度が<color=white>{13}%</color>が増加します。\n自分または近くにいる味方がオオカミや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{14}スタックまで獲得でき、{25}スタックごとに<color=white>攻撃速度が{15}%</color>増加します。\n\nスタック獲得量：オオカミ {21} / 敵実験体＆ボスモンスター {22}
-Trait/StatTooltip/7011301┃攻撃速度が<color=white>{13}%</color>が増加します。\n自分または近くにいる味方がオオカミや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{14}スタックまで獲得でき、{25}スタックごとに<color=white>攻撃速度が{15}%</color>増加します。\n\nスタック獲得量：オオカミ {21} / 敵実験体＆ボスモンスター {22}\n\n増加した攻撃速度：{16}
+Trait/DetailTooltip/7011301┃攻撃速度が<color=white>{13}%</color>増加します。\n自分または近くにいる味方がオオカミや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{14}スタックまで獲得でき、{25}スタックごとに<color=white>攻撃速度が{15}%</color>増加します。\n\nスタック獲得量：オオカミ {21} / 敵実験体＆ボスモンスター {22}
+Trait/StatTooltip/7011301┃攻撃速度が<color=white>{13}%</color>増加します。\n自分または近くにいる味方がオオカミや敵実験体、ボスモンスターを倒すとスタックを獲得します。最大{14}スタックまで獲得でき、{25}スタックごとに<color=white>攻撃速度が{15}%</color>増加します。\n\nスタック獲得量：オオカミ {21} / 敵実験体＆ボスモンスター {22}\n\n増加した攻撃速度：{16}
 CharacterState/Group/Name/7011310┃狩猟 - オオカミ
 CharacterState/Group/Desc/7011310┃オオカミを狩ると、動きが速くなります。オオカミや敵実験体、ボスモンスターを倒すと、攻撃速度が増加します。
 Trait/Name/7211301┃サボテン爆弾
@@ -23449,7 +23668,7 @@ ToastMessage/CanNotUseHyperloopNotAdjacent┃移動できない地域です。
 상품 정보 에러 팝업┃商品情報を確認できません。もう一度お試しください。
 랜덤박스 상품 구매 후 아이템 획득 에러 팝업┃アイテム獲得に失敗しました。\n製作所から購入したアイテムを使用してください。
 EvidenceBoxCannotOpen┃クールダウン中は使用できません。
-EvidenceBoxCannotPhase┃現在のフェーズでは使用できません。
+EvidenceBoxCannotPhase┃{0}日目{1}から使用できます。
 ToastMessage/NotEnoughPlayerForMultiPractice┃マルチプレイ練習モードは、最低2人のプレイヤーが参加する必要があります。
 DisableWithdrawal┃今は請約撤回(払い戻し)できません。
 CharacterIsNotSelected┃先に実験体を選択してください。
@@ -24029,7 +24248,6 @@ ServerError/9112┃不正な形式の決済リクエスト(9112)
 ServerError/9113┃PAYMENT_WEGAME_TXN_NOT_FOUND(9113)
 ServerError/9114┃決済がすでに完了しています(9114)
 ServerError/9115┃決済商品の支給に失敗しました(9115)
-ServerError/9116┃決済が進行中です(9116)
 ServerError/9117┃決済システムエラー(9117)
 ServerError/9118┃認証失敗(9118)
 ServerError/9119┃決済失敗(9119)
@@ -24407,7 +24625,6 @@ ServerError/PAYMENT_WEGAME_MALFORMED_REQUEST┃不正な形式の決済リクエ
 ServerError/PAYMENT_WEGAME_TXN_NOT_FOUND┃PAYMENT_WEGAME_TXN_NOT_FOUND(9113)
 ServerError/PAYMENT_WEGAME_ALREADY_PAID┃決済がすでに完了しています(9114)
 ServerError/PAYMENT_WEGAME_IAP_PROVIDE_FAIL┃決済商品の支給に失敗しました(9115)
-ServerError/PAYMENT_WEGAME_IAP_IN_PROGRESS┃決済が進行中です(9116)
 ServerError/PAYMENT_WEGAME_SYSTEM_ERROR┃決済システムエラー(9117)
 ServerError/PAYMENT_WEGAME_UNAUTHORIZED┃認証失敗(9118)
 ServerError/PAYMENT_WEGAME_RAIL_ID_TRANSITION_FAILED┃決済失敗(9119)
@@ -26271,6 +26488,7 @@ Skin/Name/1042001┃パジャマビアンカ
 Skin/Name/1042002┃転校生ビアンカ
 Skin/Name/1042003┃士官候補生ビアンカ
 Skin/Name/1042004┃刑務官ビアンカ
+Skin/Name/1042005┃永劫の蒼き亡霊 ビアンカ
 Skin/Name/1043000┃セリーヌ
 Skin/Name/1043001┃爆弾処理班セリーヌ
 Skin/Name/1043002┃ハロウィンカボチャセリーヌ
@@ -26493,6 +26711,7 @@ Skin/OnSelectVO/1027003┃ショータイムですか。
 Skin/OnSelectVO/1069003┃今日のご主人様は～そこのあ・な・た！
 Skin/OnSelectVO/1012006┃ご主人様の思し召しなら、従います、にゃん…
 Skin/OnSelectVO/1061003┃待ってたよ！一緒に金魚すくいに行こう！
+Skin/OnSelectVO/1042005┃永劫の時を経て……わらわがここに降臨したのじゃ！
 Skin/Desc/1001001┃血のついた電気のこぎり、\n人を食い千切る鋏と刀。\n小さくて楽しそうな鼻歌が聞こえたら\n即逃げること。
 Skin/Desc/1001002┃美しく切り刻んであげるね。バラの名に代わって。
 Skin/Desc/1001003┃ルールを作る人がいるなら、それを壊す人もいないと。ね？
@@ -26802,6 +27021,12 @@ Skin/Desc/1061003┃今夜の花火、一緒に見に行ってくれるよね？
 Skin/Desc/1043005┃気を付けて。このマフィン、爆発するかもしれないから。
 Skin/Desc/1086001┃ここ、フェルの領域。お前、迷子？
 Skin/Desc/1087001┃今日一日は、私だけを見ていてくれるかしら？
+Skin/Desc/1031007┃一緒に重ねてきた時間が、美しい旋律となったね。
+Skin/Desc/1031008┃次の楽章も…一緒に奏でてくれるよね？
+Skin/Desc/1008006┃みんなと一緒だったから、ここまで来られたんだ！
+Skin/Desc/1008007┃私たちの舞台はまだ終わってないから、カンパイ…！
+Skin/Desc/1042005┃この世を彷徨う哀れな魂たちよ、わらわの手の中で永遠の安息を迎えるがよい。
+Skin/Desc/1021005┃あんたと弾丸、どっちの方が速いかな。
 Collection/Name/11001┃すべては娘のため…
 Collection/Name/11002┃ピクセルアートは…好き…？
 Collection/Name/11003┃彷徨う魂に救済を
@@ -26815,6 +27040,7 @@ Collection/Name/11010┃一緒に夜の海を散歩しませんか？
 Collection/Name/11011┃見ろ！誰にも止められないこの力を！
 Collection/Name/11012┃斬り落とすべき悪は、この剣で裁く！
 Collection/Name/11013┃今夜の花火、一緒に見に行ってくれるよね？
+Collection/Name/11014┃永劫の時を経て……わらわがここに降臨したのじゃ！
 Collection/Name/13001┃なぜ、それを...？
 Collection/Name/13002┃アイスコーヒーを一つ！
 Collection/Name/13003┃チュートリアルをクリアしよう！
@@ -26921,6 +27147,14 @@ Collection/Name/24047/4┃スターコレクションⅣ
 Collection/Name/24047/5┃スターコレクションⅤ
 Collection/Name/24048┃ゴールドスター交換
 Collection/Name/24049┃ゴールドスターボックス交換
+Collection/Name/24050/1┃2026 サマーコレクションⅠ
+Collection/Name/24050/2┃2026 サマーコレクションⅡ
+Collection/Name/24051/1┃2026 サマースペシャルコレクションⅠ
+Collection/Name/24051/2┃2026 サマースペシャルコレクションⅡ
+Collection/Name/24052/1┃真祖の祝福コレクションⅠ
+Collection/Name/24052/2┃真祖の祝福コレクションⅡ
+Collection/Name/24052/3┃真祖の祝福コレクションⅢ
+Collection/Name/24053┃真祖の称賛コレクション
 Collection/Name/24801/1┃GGSTスキンコレクションⅠ
 Collection/Name/24801/2┃GGSTスキンコレクションⅡ
 Collection/Name/24801/3┃GGSTスキンコレクションⅢ
@@ -26954,6 +27188,7 @@ SeasonCollection/Name/30004/3┃プチ・ミニョン - 第3段階
 SeasonCollection/Name/30004/4┃プチ・ミニョン - 第4段階
 SeasonCollection/Name/30004/5┃プチ・ミニョン - 第5段階
 SeasonCollection/Name/30004/6┃プチ・ミニョン - 第6段階
+EventCollection/Name/40001/1┃3周年イベントコレクション
 ItemTag/Main_Attack┃<color=#ffb62f>基本攻撃</color>
 ItemTag/Main_Skill┃<color=#ffb62f>スキル攻撃</color>
 ItemTag/Main_Tank┃<color=#ffb62f>タンク</color>
@@ -28192,7 +28427,7 @@ GuideBook/Page/Content/TemporarySafeZone/1┃<color=yellow>臨時セーフゾー
 GuideBook/Page/Content/TemporarySafeZone/2┃各臨時セーフゾーン地域では<color=yellow>１チーム</color>のみが\n生き残ることができます。\n二つの臨時セーフゾーンの中で、チームに\nもっと<color=white>有利な場所</color>を選びましょう。
 GuideBook/Page/Content/TemporarySafeZone/3┃臨時セーフゾーンの勝者になると、\n臨時セーフゾーン段階が始まる前に\n<color=yellow>死亡・または瀕死状態になった味方</color>が\n全員復活します。
 GuideBook/SubTheme/Title/LastSafeZone┃最終セーフゾーン段階
-GuideBook/Page/Content/LastSafeZone/1┃<color=yellow>最後の戦闘</color>で勝つと、最終生存者になりま\nす。臨時セーフゾーン段階が終了した後、\n二つの臨時セーフゾーン地域の間に<color=white>最後の\n禁止区域</color>が指定され、<color=yellow>クロノスフィア</color>が\n生成されます。\n準備が終わったら、急いでクロノスフィア周辺の\n<color=white>最終セーフゾーン</color>へ移動しましょう。
+GuideBook/Page/Content/LastSafeZone/1┃勝者を決めるための<color=yellow>最後の戦闘</color>が始まります。\n臨時セーフゾーンと同様に<color=white>最終セーフゾーン</color>内に<color=yellow>クロノスフィア</color>が生成されます。
 GuideBook/Page/Content/LastSafeZone/2┃戦闘で勝利して最終生存者になりましょう。\n\n<color=white>絶望の果てまで到達したポーンに、\n全ての栄光を。</color>
 Tutorial/Btn/Ch1/Lumia┃ルミア島へ移動
 Tutorial/Btn/NextPart┃続けてプレイ
@@ -29324,12 +29559,9 @@ ToastMessage/DeployingLoopFullLoaded┃全ての実験体が配置された到�
 Item/Name/602409┃レーヴァテイン Mk2
 Item/Name/607406┃火尖槍 Mk2
 Item/Name/610501┃朱雀刺紋 Mk2
-Item/Name/701451┃タクティカル·バイザー
 Item/Name/702503┃聖法衣 Mk2
 Item/Name/705504┃アーティファクト Mk2
 Item/Name/705502┃芭蕉扇 Mk2
-Item/Name/705604┃クラダリング
-Item/Name/705603┃ハートオンファイヤー
 Item/Name/705605┃マーキュリー
 Item/Name/705606┃アークリアクター
 Item/Name/705609┃プシュケーの刃
@@ -29337,7 +29569,6 @@ Item/Name/705610┃英雄の記録
 Item/Name/705611┃E.M.O.T.E
 Item/Name/705612┃クラダリング Mk2
 Item/Name/705613┃アークリアクター Mk2
-Item/Name/705614┃プシュケーの刃
 Item/Name/705615┃英雄の記録 Mk2
 Item/Name/705616┃E.M.O.T.E Mk2
 Infusion/Item/705504┃アーティファクト Mk2
@@ -29639,6 +29870,7 @@ Epi_200002_Name┃Ep：赤字から始まるルミアカジノ復興記
 Epi_200002_Desc┃ここは『ルミアカジノ』。あなたの夢と希望を叶える場所。
 Epi_200003_Name┃Ep: Maid in Lumia!
 Epi_200003_Desc┃個性いっぱいのメイドカフェ、『プチ・ミニョン』！
+Scen_Lock_Name┃閲覧不可
 Scen_10000101_Name┃悪夢
 Scen_10000101_Desc┃夢で見たのは、忘れたい過去であり、向き合うべき未来であった。
 Scen_10000102_Name┃絶望の螺旋

@@ -1,5 +1,6 @@
 {
-    "subject.rio.hankyu-aa": "短弓基本攻撃",
+    "subject.rio.hankyu-aa": "短弓基本攻撃(1発目)",
+    "subject.rio.hankyu-aa-additional": "短弓基本攻撃(追撃矢)",
     "subject.rio.hankyu-aa-3hit": "短弓基本攻撃(3発分)",
     "subject.rio.daikyu-aa": "和弓基本攻撃",
     "subject.rio.passive-multiplier": "T倍率",

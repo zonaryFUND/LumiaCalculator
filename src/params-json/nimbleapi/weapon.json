@@ -1515,7 +1515,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 61,
+        "attackPower": 58,
         "attackSpeedRatio": 0.33,
         "criticalStrikeChance": 0.25,
         "criticalStrikeDamage": 0.07,

@@ -1,7 +1,7 @@
 {
     "duration": 5,
     "damage": {
-        "base": 30,
+        "base": 40,
         "level": 5,
         "targetMaxHp": 7
     },

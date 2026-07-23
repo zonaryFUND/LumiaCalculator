@@ -14,7 +14,12 @@ export default {
         "daikyu_damage_enhance": 0.3,
         // 短弓基本攻撃威力（1発あたり）
         "hankyu": {
-            "attack": 36,
+            "attack": 37,
+            "basicAttackAmp": 100
+        },
+        // 短弓基本攻撃の追撃威力（1発あたり）
+        "hankyu_additional": {
+            "attack": 33,
             "basicAttackAmp": 100
         },
         // 長弓基本攻撃威力

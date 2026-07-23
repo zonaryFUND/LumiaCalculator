@@ -22,14 +22,14 @@ export const info: SkillTooltipProps = {
             return {
                 ...base,
                 7: RatioPercent(Constants.Q.hankyu.attack),
-                8: RatioPercent(Constants.Q.hankyu.attack),
+                8: RatioPercent(Constants.Q.hankyu_additional.attack),
                 9: RatioPercent(Constants.Q.daikyu.attack)
             }
         } else {
             return {
                 ...base,
                 7: Constants.Q.hankyu,
-                8: Constants.Q.hankyu,
+                8: Constants.Q.hankyu_additional,
                 9: Constants.Q.daikyu
             }
         }

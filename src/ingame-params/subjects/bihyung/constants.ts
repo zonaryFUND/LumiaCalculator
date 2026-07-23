@@ -53,7 +53,7 @@ export default {
         "shield": {
             "duration": 2.5,
             "effect": {
-                "base": [20,45,70,95,120],
+                "base": [30,60,90,120,150],
                 "maxHP": 12
             }
         },

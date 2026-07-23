@@ -31,7 +31,7 @@ export default {
         // フレーム的中うダメージ
         "first_damage": {
             "base": [30, 50, 70, 90, 110],
-            "amp": 35
+            "amp": 40
         },
         // フレーム的中時移動速度減少
         "slow": {

@@ -44,8 +44,8 @@ export default {
         "wall_damage": {
             "base": [20, 40, 60, 80, 100],
             "additionalAttack": 30,
-            "amp": 20,
-            "targetMaxHP": 6
+            "amp": 30,
+            "targetMaxHP": 7
         },
         // 突き飛ばし距離
         "knockback": 3,

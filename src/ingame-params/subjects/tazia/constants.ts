@@ -58,7 +58,7 @@ export default {
         // 移動速度減少
         "slow": {
             "duration": 1,
-            "effect": 35
+            "effect": 40
         },
         // 再使用可能時間
         "reuse": 4,

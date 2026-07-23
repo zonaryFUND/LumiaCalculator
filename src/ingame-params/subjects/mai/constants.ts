@@ -43,7 +43,7 @@ export default {
         "shield": {
             "base": [60, 90, 120, 150, 180],
             "amp": 40,
-            "maxHP": 7
+            "maxHP": 8
         },
         // 再使用後攻撃速度増加
         "attack_speed": {

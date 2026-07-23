@@ -62,7 +62,7 @@ export default {
             "amp": 40
         },
         // 火傷状態時防御力低下
-        "defense_reduction": [6,9,12],
+        "defense_reduction": [6,8,10],
         // 火傷状態免疫時間
         "immune": 8
     }

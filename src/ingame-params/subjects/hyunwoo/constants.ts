@@ -13,7 +13,7 @@ export default {
         // 自身の移動速度増加
         "movement_speed": {
             "duration": 2,
-            "effect": [11, 12, 13, 14, 15]
+            "effect": [12, 14, 16, 18, 20]
         },
         "cooldown": [9, 8, 7, 6, 5]
     },

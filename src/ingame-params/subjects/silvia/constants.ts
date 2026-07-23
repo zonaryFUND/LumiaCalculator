@@ -72,7 +72,7 @@ export default {
     "BikeW": {
         "damage": {
             "base": [60, 100, 140, 180, 220],
-            "amp": 60
+            "amp": 55
         },
         // エアボーン時間
         "airborne": 0.65,
