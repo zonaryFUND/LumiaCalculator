@@ -1,6 +1,6 @@
 {
     "max_target": 2,
     "damage": {
-        "attack": 60
+        "attack": 65
     }
 }

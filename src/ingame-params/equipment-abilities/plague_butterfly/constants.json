@@ -1,6 +1,6 @@
 {
     "damage": {
-        "base": 40,
+        "base": 20,
         "amp": 30,
         "level": 3
     },

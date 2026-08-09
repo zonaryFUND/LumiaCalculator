@@ -13,7 +13,7 @@ export default {
         // 的中時1スタックあたり攻撃力増加
         "attack_up": {
             "duration": 20,
-            "effect": 6,
+            "effect": 7,
             "max_stack": 2
         },
         "cooldown": [7,6.5,6,5.5,5]
