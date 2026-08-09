@@ -1,6 +1,12 @@
 {
     "duration": 0.75,
-    "reflected_ratio": [15,25,35],
+    "damage_decline": 80,
+    "damage": {
+        "base": [100,150,200],
+        "additionalAttack": [110,130,150],
+        "amp": 50
+    },
+    "multiple_hit_decline": 90,
     "cooldown": {
         "constant": [30,25,20]
     }

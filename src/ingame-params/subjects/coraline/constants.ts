@@ -99,8 +99,8 @@ export default {
         // 強化基本攻撃的中時E以外の基本スキルクールダウン減少
         "qw_cooldown_reduction": 60,
         // 的中時クールダウン減少
-        "cooldown_reduction": 10,
-        "cooldown": [32,29,26]
+        "cooldown_reduction": 8,
+        "cooldown": [28,25,22]
     },
     "T": {
         // 鏡の断片持続時間

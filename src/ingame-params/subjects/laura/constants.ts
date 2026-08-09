@@ -70,7 +70,7 @@ export default {
         "attack_speed": 100,
         // 基本攻撃追加ダメージ
         "damage": {
-            "base": [20, 50, 80],
+            "base": [20,45,70],
             "amp": 30
         }
     }

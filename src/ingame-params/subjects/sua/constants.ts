@@ -13,7 +13,7 @@ export default {
             "amp": 40
         },
         // 栞対象への気絶時間
-        "stun": 0.75,
+        "stun": 0.6,
         // 中央的中時移動速度減少
         "slow": {
             "duration": 1,
@@ -25,10 +25,10 @@ export default {
     },
     "W": {
         // 青い鳥持続時間
-        "shield_duration": 2,
+        "shield_duration": 2.5,
         "shield": {
-            "base": [80, 100, 120, 140, 160],
-            "amp": 30
+            "base": [80, 110, 140, 170, 200],
+            "amp": 40
         },
         // 失明時間
         "blind_duration": [1.1, 1.15, 1.2, 1.25, 1.3],
@@ -49,6 +49,8 @@ export default {
             "duration": 1,
             "effect": 50
         },
+        // 栞持続時間
+        "bookmark_duration": 5,
         // 栞対象へのダメージ
         "bookmark_damage": {
             "base": [150, 190, 230, 270, 310],
@@ -64,7 +66,9 @@ export default {
         // 的中時の自己回復量が最大になる自身の体力％
         "heal_max_hp": 40,
         // 的中時クールダウン減少
-        "cooldown_reduction": 30,
+        "cooldown_reduction": 20,
+        // 栞対象へのエアボーン時間
+        "airborne": 0.6,
         "cooldown": [16, 15, 14, 13, 12]
     },
     // RQ：記憶力ーオデッセイ
@@ -82,7 +86,7 @@ export default {
             "amp": 50
         },
         // 栞対象への気絶時間
-        "stun": 0.75,
+        "stun": 0.6,
         // 中央的中時移動速度減少
         "slow": {
             "duration": 1,
@@ -94,10 +98,10 @@ export default {
     // RW：記憶力－青い鳥
     "RW": {
         // 青い鳥持続時間
-        "shield_duration": 2,
+        "shield_duration": 2.5,
         "shield": {
             "base": [100, 180, 260],
-            "amp": 30
+            "amp": 40
         },
         // 失明時間
         "blind_duration": [1.1, 1.2, 1.3],
@@ -118,6 +122,8 @@ export default {
             "duration": 1,
             "effect": 50
         },
+        // 栞持続時間
+        "bookmark_duration": 5,
         // 栞対象へのダメージ
         "bookmark_damage": {
             "base": [170, 260, 350],
@@ -133,10 +139,12 @@ export default {
         // 的中時自己回復量が最大になる自身の体力％
         "heal_max_hp": 40,
         // 的中時クールダウン減少
-        "cooldown_reduction": 30
+        "cooldown_reduction": 20,
+        // 栞対象へのエアボーン時間
+        "airborne": 0.6
     },
     "R": {
-        "cooldown": [26, 22, 18]
+        "cooldown": [26, 23, 20]
     },
     "T": {
         // 強化基本攻撃ダメージ
@@ -152,7 +160,7 @@ export default {
             "amp": 25
         },
         // 強化基本攻撃回復量（与ダメージ比％）
-        "heal": 42,
+        "heal": 35,
         // 心の糧最大数
         "max_stack": 3,
         // 心の糧保持時基本攻撃速度増加（％）

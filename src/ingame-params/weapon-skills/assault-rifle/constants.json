@@ -9,6 +9,6 @@
     },
     "attack_speed": [20,30,40],
     "cooldown": {
-        "constant": 17
+        "constant": 15
     }
 }

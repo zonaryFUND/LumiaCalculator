@@ -3,7 +3,7 @@
     "damage": {
         "base": 40,
         "level": 5,
-        "targetMaxHp": 7
+        "targetMaxHp": 5
     },
     "cooldown": 4
 }

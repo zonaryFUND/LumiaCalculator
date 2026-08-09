@@ -63,11 +63,6 @@ type AugmentDamageTableUnit = Omit<DamageTableUnit, "value" | "origin"> & {
 }
 
 export function AugmentTableValues(intl: IntlShape, config: SubjectConfig): AugmentDamageTableUnit[][] {
-    const blastingCactus = {
-        base: Support.blast_cactus.damage.base[config.level - 1],
-        targetMaxHP: Support.blast_cactus.damage.targetMaxHP
-    }
-
     return [
         [
             {label: intl.formatMessage({id: "絶対武力ダメージ"}), value: Havoc.frailty_infliction.damage, type: {type: "true"}},
@@ -95,15 +90,14 @@ export function AugmentTableValues(intl: IntlShape, config: SubjectConfig): Augm
             {label: "不屈シールド", value: Fortification.unwavering_mentality.shield, type: {type: "shield", target: "self"}}
         ],
         [
-            {label: "超再生適合型能力値上昇", value: Support.healing_factor.adaptive, type: {type: "misc"}},
             {label: "増幅ドローン移動速度上昇", value: Support.amplification_drone.movement_speed, type: {type: "misc", percentExpression: true}},
             {label: "増幅ドローン威力上昇", value: Support.amplification_drone.skill_damage_amp, type: {type: "misc", percentExpression: true}},
             {label: "治癒ドローン", value: Support.healing_drone.heal, type: {type: "heal", target: "any"}},
             {label: "献身シールド1回分", value: Support.sentinel.shield, type: {type: "shield", target: "any"}},
             {label: "狩りの戦慄回復最小値", value: Support.thrill_of_the_hant.heal_min, type: {type: "heal", target: "self"}},
             {label: "狩りの戦慄回復最大値", value: Support.thrill_of_the_hant.heal_min, type: {type: "heal", target: "self"}, multiplier: 100 * Support.thrill_of_the_hant.heal_max_multiplier},
-            {label: "サボテン爆弾", value: blastingCactus},
-            {label: "サボテン爆弾不発", value: blastingCactus, multiplier: 100 - Support.blast_cactus.unexploded_decline},
+            {label: "サボテン爆弾", value: Support.blast_cactus.damage},
+            {label: "サボテン爆弾不発", value: Support.blast_cactus.damage, multiplier: 100 - Support.blast_cactus.unexploded_decline},
         ]
     ];
 }

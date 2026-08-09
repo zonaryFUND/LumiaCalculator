@@ -1,14 +1,22 @@
 {
-    "damage": {
+    "first_damage": {
         "base": [40,70,100],
         "additionalAttack": 40,
-        "amp": 30
+        "amp": 20,
+        "targetHP": 12
     },
     "slow": {
-        "duration": 1,
-        "effect": [30,40,50]
+        "duration": 1.5,
+        "effect": [20,25,30]
+    },
+    "reuse": 4,
+    "second_damage": {
+        "base": [110,140,170],
+        "additionalAttack": 40,
+        "amp": 30,
+        "targetLostHP": 8
     },
     "cooldown": {
-        "constant": [25,20,15]
+        "constant": 25
     }
 }

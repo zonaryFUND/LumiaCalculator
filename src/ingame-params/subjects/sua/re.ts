@@ -25,7 +25,8 @@ export const info: SkillTooltipProps = {
                 11: RatioPercent(healMax.amp),
                 12: RatioPercent(Constants.RE.cooldown_reduction),
                 13: Constants.RE.slow.duration,
-                14: RatioPercent(Constants.RE.slow.effect)
+                14: RatioPercent(Constants.RE.slow.effect),
+                15: Constants.RE.bookmark_duration
             }
         } else {
             return {
@@ -35,7 +36,8 @@ export const info: SkillTooltipProps = {
                 3: healMax,
                 4: RatioPercent(Constants.RE.cooldown_reduction),
                 5: Constants.RE.slow.duration,
-                6: RatioPercent(Constants.RE.slow.effect)
+                6: RatioPercent(Constants.RE.slow.effect),
+                7: Constants.RE.bookmark_duration
             }
         }
 

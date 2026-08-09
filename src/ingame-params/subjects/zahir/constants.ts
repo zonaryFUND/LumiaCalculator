@@ -25,7 +25,7 @@ export default {
             "constant": 0.55
         },
         "charge": {
-            "time": 7,
+            "time": 8,
             "max": 4
         }
     },

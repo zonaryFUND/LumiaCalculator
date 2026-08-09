@@ -27,7 +27,7 @@ export default {
         // 移動速度減少
         "slow": {
             "duration": 1,
-            "effect": 30
+            "effect": 35
         },
         // 的中時装填ゲージ獲得量
         "gauge": [30, 35, 40, 45, 50],
@@ -92,7 +92,7 @@ export default {
         },
         // 装填ゲージ最大時基本攻撃的中時移動速度減少
         "slow": {
-            "duration": 0.5,
+            "duration": 0.75,
             "effect": 99
         }
     }

@@ -52,15 +52,17 @@ export default {
         "cooldown": 7
     },
     "E": {
+        // 使用時隠密状態持続時間
+        "stealth": [1,1.2,1.4,1.6,1.8],
         // シャドーグライド状態持続時間
         "duration": 3,
         // シャドーグライド状態時基本攻撃射程固定値
         "basic_attack_range": 3.5,
         "damage": {
             "base": [20,40,60,80,100],
-            "additionalAttack": 60
+            "additionalAttack": 50
         },
-        "cooldown": [10,9,8,7,6]
+        "cooldown": [11,10,9,8,7]
     },
     "R": {
         // 沈黙時間

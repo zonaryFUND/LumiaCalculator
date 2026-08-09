@@ -75,7 +75,9 @@ if (argv._[2] == "update-values") {
     await FetchAPIResponse("v2/data/ItemArmor", `${jsonDir}/armor.json`, data => {
         return data
             .filter((entry: any) => entry.itemGrade == "Epic" || entry.itemGrade == "Legend" || entry.itemGrade == "Mythic")
-            .filter((entry: any) => entry.modeType == 0)
+            // 201517は天上の響き、ただし201516にもある
+            // 201516をjsonデータに採用、プリヤ以外が装備できないようにする処理は201516を基準に行う
+            .filter((entry: any) => entry.code != 201517)
             .map((entry: any) => {
                 const zeroRemoved = es.pickBy(entry, (value) => value != 0);
                 return {

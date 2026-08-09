@@ -137,8 +137,14 @@
 		}
 	},
 	"201506": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": [
+			6081001,
+			6008201
+		],
+		"name": [
+			"chasing_needle",
+			"healing_reduction"
+		]
 	},
 	"201507": {
 		"skillCode": 6030001,
@@ -554,6 +560,10 @@
 		"skillCode": 6075001,
 		"name": "iteration"
 	},
+	"202531": {
+		"skillCode": 6079001,
+		"name": "gust_of_wind"
+	},
 	"203306": {
 		"skillCode": 6008201,
 		"name": "healing_reduction"
@@ -804,6 +814,10 @@
 			"base": 25,
 			"amp": 10
 		}
+	},
+	"205306": {
+		"skillCode": 6082001,
+		"name": "gold_pouch"
 	},
 	"205401": {
 		"skillCode": 6035001,

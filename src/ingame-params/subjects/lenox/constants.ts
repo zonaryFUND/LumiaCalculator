@@ -79,7 +79,7 @@ export default {
             "rare": 1
         },
         "cooldown": {
-            "constant": [15, 13, 11]
+            "constant": [16,14,12]
         }
     }
 }

@@ -13,7 +13,8 @@ export const info: SkillTooltipProps = {
         2: Constants.dash,
         3: RatioPercent(Constants.damage.amp),
         4: Constants.damage.base,
-        20: Constants.damage
+        20: Constants.damage,
+        21: RatioPercent(Constants.damage_decline)
     }),
     expansion: () => ({
         enumeratedValues: [

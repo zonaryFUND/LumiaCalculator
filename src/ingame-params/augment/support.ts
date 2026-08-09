@@ -1,11 +1,7 @@
 export default {
     // 超再生
     "healing_factor": {
-        "enhance": 8,
-        "adaptive": {
-            "base": 1,
-            "level": 0.5
-        },
+        "enhance": 5,
         "duration": 2
     },
     // 増幅ドローン
@@ -81,35 +77,18 @@ export default {
     },
     // サボテン爆弾
     "blast_cactus": {
-        "duration": 5,
+        "duration": 4,
         "cooldown": 8,
         "damage": {
-            "base": [
-                10,
-                20,
-                30,
-                40,
-                50,
-                60,
-                60,
-                70,
-                70,
-                80,
-                80,
-                90,
-                90,
-                100,
-                100,
-                110,
-                120,
-                130,
-                140,
-                150
-            ],
-            "targetMaxHP": 5
+            "level": 8,
+            "targetMaxHP": 4
         },
         "unexploded_decline": 70,
-        "animal_damage": 150
+        "animal_damage": 150,
+        "ally_movement_speed": {
+            "duration": 2,
+            "effect": 15
+        }
     },
     //　コイントス
     "coin_toss": {

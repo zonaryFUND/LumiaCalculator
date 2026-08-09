@@ -9,6 +9,6 @@
         "effect": 99
     },
     "cooldown": {
-        "constant": 25
+        "constant": [30,25,20]
     }
 }

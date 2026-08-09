@@ -7,6 +7,6 @@
     "additional_damage": [100,150,200],
     "vision": 2,
     "cooldown": {
-        "constant": 30
+        "constant": 25
     }
 }

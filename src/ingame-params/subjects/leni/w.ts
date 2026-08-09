@@ -21,7 +21,7 @@ export const info: SkillTooltipProps = {
                 10: RatioPercent(Constants.W.ally_slow.effect),
                 11: Constants.W.movement_speed.duration,
                 12: RatioPercent(Constants.W.movement_speed.effect.base),
-                13: Constants.W.movement_speed.effect.level
+                13: RatioPercent(Constants.W.movement_speed.effect.amp)
             } as Record<number, number | string | ValueRatio>
         } else {
             return {

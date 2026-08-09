@@ -84,7 +84,7 @@ export default {
         // 夢幻の蝶発動時シールド量
         "shield": {
             "base": [30, 65, 100],
-            "amp": 35
+            "amp": 30
         },
         // 夢幻の蝶シールド1秒あたり減少量
         "shield_decline": {

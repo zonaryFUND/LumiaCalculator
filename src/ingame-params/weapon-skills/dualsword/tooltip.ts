@@ -34,7 +34,6 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/FirstDamage", values: Constants.first_damage.base},
             {labelIntlID: "ToolTipType/SecondDamage", values: Constants.second_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.cooldown.constant},
             {labelIntlID: "ToolTipType/DualswordApCoef", values: Constants.first_damage.additionalAttack, percent: true},
             {labelIntlID: "ToolTipType/DualswordSkillAmpCoef", values: Constants.first_damage.amp, percent: true},
             {labelIntlID: "ToolTipType/ReactivateApCoef", values: Constants.second_damage.additionalAttack, percent: true},

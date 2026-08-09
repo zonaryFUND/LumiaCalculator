@@ -1,0 +1,10 @@
+{
+    "tick": 0.5,
+    "damage": {
+        "base": 20,
+        "additionalHP": 6
+    },
+    "duration": 5,
+    "slow": 25,
+    "cooldown": 10
+}

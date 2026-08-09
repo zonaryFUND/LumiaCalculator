@@ -32,7 +32,7 @@ export default {
         // マウンド持続時間
         "mound_duration": 5,
         // マウンド上での防御力増加
-        "defense": [10, 13, 16, 19, 22],
+        "defense": [12,15,18,21,24],
         "cooldown": 14
     },
     "E": {

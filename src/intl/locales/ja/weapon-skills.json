@@ -18,5 +18,10 @@
     "weapon-skill.sniper-rifle.d2-min": "D2最小値",
     "weapon-skill.sniper-rifle.d2-max": "D2最大値",
     "weapon-skill.spear.near": "D近距離",
-    "weapon-skill.whip.2hit": "D2ヒット"
+    "weapon-skill.whip.2hit": "D2ヒット",
+    "weapon-skill.crossbow.blast": "D刻印爆発",
+    "weapon-skill.crossbow.additional": "D刻印追加ダメージ",
+    "weapon-skill.tonfa.multiple-hit": "D複数回発動時",
+    "weapon-skill.high-angle-fire.center": "D内側",
+    "weapon-skill.high-angle-fire.outer": "D外側"
 }

@@ -25,7 +25,7 @@ export default {
             // 1撃目ダメージ
             "first_damage": {
                 "base": [15, 30, 45, 60, 75],
-                "additionalAttack": 50
+                "additionalAttack": 40
             },
             // 2撃目ダメージ
             "second_damage": {
@@ -36,7 +36,7 @@ export default {
             // 的中時シールド
             "shield": {
                 "base": [10, 15, 20, 25, 30],
-                "additionalAttack": 40
+                "additionalAttack": 30
             },
             // 複数対象的中時シールド増幅最大値（％）
             "shield_enhance": 50

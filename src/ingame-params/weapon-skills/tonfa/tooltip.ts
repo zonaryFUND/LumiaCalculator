@@ -9,11 +9,17 @@ export const info: SkillTooltipProps = {
     cooldown: Constants.cooldown,
     values: ({ }): TooltipValues => ({
         0: Constants.duration,
-        1: RatioPercent(Constants.reflected_ratio)
+        1: Constants.damage.base,
+        2: RatioPercent(Constants.damage.additionalAttack),
+        3: RatioPercent(Constants.damage.amp),
+        10: Constants.damage,
+        11: RatioPercent(Constants.multiple_hit_decline),
+        21: RatioPercent(Constants.damage_decline)
     }),
     expansion: () => ({
         enumeratedValues: [
-            {labelIntlID: "ToolTipType/ReturnDamageCoef", values: Constants.reflected_ratio, percent: true},
+            {labelIntlID: "ToolTipType/Damage", values: Constants.damage.base},
+            {labelIntlID: "ToolTipType/AddtionalApCoef", values: Constants.damage.additionalAttack, percent: true},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.cooldown.constant}
         ]  
     })

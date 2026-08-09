@@ -33,7 +33,7 @@ export const info: SkillTooltipProps = {
     expansion: () => ({
         enumeratedValues: [
             {labelIntlID: "ToolTipType/MinDamage", values: Constants.dagger.damage.base},
-            {labelIntlID: "ToolTipType/Time", values: Constants.cloak.duration},
+            {labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.cloak.movement_speed, percent: true},
             {labelIntlID: "ToolTipType/DecreaseMoveRatio", values: Constants.dagger.slow.effect, percent: true},
             {labelIntlID: "ToolTipType/CoolTime", values: Constants.cooldown.constant}
         ]  

@@ -1,12 +1,12 @@
 {
-    "after": 2.5,
+    "after": 1.5,
     "damage": {
         "base": [100,200,300],
         "additionalAttack": 100,
         "amp": 40
     },
     "slow": {
-        "duration": 3,
+        "duration": 2,
         "effect": 25
     },
     "center_damage": {
@@ -15,6 +15,6 @@
         "amp": 60
     },
     "cooldown": {
-        "constant": [30,27,24]
+        "constant": [35,30,25]
     }
 }

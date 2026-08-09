@@ -85,11 +85,11 @@ export default {
         // リチャージ状態になるエネルギー閾値
         "recharge_threshold": 50,
         // リチャージ状態持続時間
-        "recharge_duration": 4,
+        "recharge_duration": 3.5,
         // ターゲットマーク対象にダメージを与えたときの追加ダメージ
         "mark_damage": {
-            "base": [40, 60, 80],
-            "amp": 20
+            "base": [30,50,70],
+            "amp": 15
         },
         // ターゲットマークが付いている対象への転移ダメージ（元追加ダメージ比％）
         "target_damage": 100,

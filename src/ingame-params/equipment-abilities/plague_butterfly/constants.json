@@ -1,0 +1,11 @@
+{
+    "damage": {
+        "base": 40,
+        "amp": 30,
+        "level": 3
+    },
+    "range": 4,
+    "max_bounce": 5,
+    "damage_decline_per_bounce": 10,
+    "cooldown": 10
+}

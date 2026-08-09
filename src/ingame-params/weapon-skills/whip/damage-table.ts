@@ -2,8 +2,8 @@ import { WeaponSkillDamageTableGenerator } from "@app/ingame-params/weapon-skill
 import Constants from "./constants.json";
 
 const table: WeaponSkillDamageTableGenerator = props => [
-    {label: "D", value: Constants.damage},
-    {label: props.intl.formatMessage({id: "weapon-skill.whip.2hit"}), value: Constants.damage, multiplier: 200}
+    {label: "D1", value: Constants.first_damage},
+    {label: "D2", value: Constants.second_damage}
 ]
 
 export default table;

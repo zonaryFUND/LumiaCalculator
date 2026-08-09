@@ -1,9 +1,9 @@
 export default {
     "Q": {
         "damage": {
-            "base": [40, 55, 70, 85, 100],
-            "level": 18,
-            "amp": 35
+            "base": [50,70,90,110,130],
+            "level": 8,
+            "amp": 60
         },
         "heal": {
             "base": [10, 20, 30, 40, 50],
@@ -33,8 +33,8 @@ export default {
         "movement_speed": {
             "duration": 1.5,
             "effect": {
-                "base": [8,9,10,11,12],
-                "level": 1
+                "base": [12,14,16,18,20],
+                "amp": 2
             }
         },
         "cooldown": [16, 15, 14, 13, 12]
@@ -42,8 +42,8 @@ export default {
     "E": {
         "damage": {
             "base": [20, 40, 60, 80, 100],
-            "level": 9,
-            "amp": 35
+            "level": 5,
+            "amp": 45
         },
         // 気絶時間
         "stun": 0.5,
@@ -60,8 +60,8 @@ export default {
         // 的中時ダメージ
         "damage": {
             "base": [100, 150, 200],
-            "level": 12,
-            "amp": 40
+            "level": 8,
+            "amp": 55
         },
         // 壁ヒット時追加ダメージ
         "wall_damage": {
@@ -74,7 +74,7 @@ export default {
             "duration": 1.5,
             "effect": 80
         },
-        "cooldown": [22,20,18]
+        "cooldown": [20,18,16]
     },
     "T": {
         // クマさん持続時間
@@ -82,7 +82,8 @@ export default {
         // クマさん追加ダメージ
         "damage": {
             "base": [15,25,35],
-            "level": 4
+            "level": 2,
+            "amp": 10
         },
         // クマさん発動時基本スキルクールダウン減少
         "cooldown_reduction": [0.5, 0.75, 1]

@@ -10,8 +10,8 @@
         "additionalAttack": 120,
         "amp": 65
     },
-    "stun": 1,
+    "stun": [0.8,0.9,1],
     "cooldown": {
-        "constant": [28,24,20]
+        "constant": 25
     }
 }

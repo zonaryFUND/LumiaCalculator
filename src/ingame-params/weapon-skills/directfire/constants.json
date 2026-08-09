@@ -12,6 +12,6 @@
     },
     "multiple_reduction": 45,
     "cooldown": {
-        "constant": 30
+        "constant": 25
     }
 }

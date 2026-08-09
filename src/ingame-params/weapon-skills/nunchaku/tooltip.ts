@@ -23,7 +23,7 @@ export const info: SkillTooltipProps = {
         enumeratedValues: [
             {labelIntlID: "ToolTipType/MinDamage", values: Constants.min_damage.base},
             {labelIntlID: "ToolTipType/MaxDamage", values: Constants.max_damage.base},
-            {labelIntlID: "ToolTipType/CoolTime", values: Constants.cooldown.constant}
+            {labelIntlID: "ToolTipType/StunTime", values: Constants.stun}
         ]  
     })
 }

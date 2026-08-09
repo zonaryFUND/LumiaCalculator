@@ -49,7 +49,7 @@ export default {
     },
     "E": {
         // ワイヤー持続時間
-        "duration": 6,
+        "duration": 7,
         // ワイヤー維持範囲
         "wire_length": 11,
         // 攻撃速度上昇
@@ -59,7 +59,7 @@ export default {
         },
         // 再使用後攻撃速度上昇持続時間
         "remain": 3,
-        "cooldown": [17, 16, 15, 14, 13]
+        "cooldown": [16, 15, 14, 13, 12]
     },
     "R": {
         // 持続時間
@@ -68,7 +68,7 @@ export default {
         "count": 3,
         "damage": {
             "base": [100, 150, 200],
-            "additionalAttack": 75,
+            "additionalAttack": 80,
             "amp": 80,
             "stack": 1
         },

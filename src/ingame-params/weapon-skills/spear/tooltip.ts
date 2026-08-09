@@ -9,7 +9,6 @@ export const info: SkillTooltipProps = {
     cooldown: Constants.cooldown,
     values: ({ showEquation }): TooltipValues => {
         const base = {
-            0: Constants.double_range,
             2: Constants.range,
             3: Constants.slow.duration,
             4: RatioPercent(Constants.slow.effect)

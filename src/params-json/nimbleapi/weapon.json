@@ -187,6 +187,14 @@
         "itemGrade": "Legend"
     },
     {
+        "attackPower": 67,
+        "maxHp": 150,
+        "attackSpeedRatio": 0.3,
+        "code": 102504,
+        "weaponType": "TwoHandSword",
+        "itemGrade": "Legend"
+    },
+    {
         "attackPower": 48,
         "attackSpeedRatio": 0.25,
         "normalLifeSteal": 0.08,
@@ -585,6 +593,14 @@
         "attackSpeedRatio": 0.25,
         "cooldownReduction": 10,
         "code": 108505,
+        "weaponType": "Bat",
+        "itemGrade": "Legend"
+    },
+    {
+        "attackPower": 30,
+        "skillAmp": 86,
+        "maxHp": 150,
+        "code": 108506,
         "weaponType": "Bat",
         "itemGrade": "Legend"
     },
@@ -1575,6 +1591,14 @@
         "itemGrade": "Legend"
     },
     {
+        "attackPower": 32,
+        "skillAmp": 86,
+        "maxHp": 120,
+        "code": 120504,
+        "weaponType": "Rapier",
+        "itemGrade": "Legend"
+    },
+    {
         "attackPower": 42,
         "skillAmp": 70,
         "cooldownReduction": 10,
@@ -1742,8 +1766,7 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 70,
-        "cooldownReduction": 10,
+        "skillAmp": 81,
         "code": 130401,
         "weaponType": "Arcana",
         "itemGrade": "Epic"
@@ -1776,8 +1799,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 88,
-        "cooldownReduction": 10,
+        "skillAmp": 95,
         "code": 130405,
         "weaponType": "Arcana",
         "itemGrade": "Legend"
@@ -1806,6 +1828,14 @@
         "cooldownReduction": 15,
         "healerGiveHpHealRatio": 0.08,
         "code": 130503,
+        "weaponType": "Arcana",
+        "itemGrade": "Legend"
+    },
+    {
+        "attackPower": 40,
+        "skillAmp": 92,
+        "cooldownReduction": 10,
+        "code": 130504,
         "weaponType": "Arcana",
         "itemGrade": "Legend"
     },
@@ -1914,8 +1944,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 27,
-        "adaptiveForce": 52,
+        "attackPower": 79,
         "attackSpeedRatio": 0.4,
         "moveSpeedRatio": 0.02,
         "penetrationDefenseRatio": 0.07,
@@ -1926,7 +1955,7 @@
     },
     {
         "attackPower": 13,
-        "adaptiveForce": 57,
+        "skillAmp": 114,
         "moveSpeedRatio": 0.03,
         "penetrationDefenseRatio": 0.08,
         "code": 101702,
@@ -1935,8 +1964,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 20,
-        "adaptiveForce": 50,
+        "attackPower": 82,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
         "code": 102701,
@@ -1946,7 +1974,7 @@
     },
     {
         "attackPower": 22,
-        "adaptiveForce": 62,
+        "skillAmp": 124,
         "penetrationDefenseRatio": 0.08,
         "code": 102702,
         "weaponType": "TwoHandSword",
@@ -1954,8 +1982,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 50,
-        "adaptiveForce": 52,
+        "attackPower": 102,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 104701,
@@ -1965,7 +1992,7 @@
     },
     {
         "attackPower": 48,
-        "adaptiveForce": 58,
+        "skillAmp": 116,
         "penetrationDefenseRatio": 0.08,
         "code": 104702,
         "weaponType": "Hammer",
@@ -1973,8 +2000,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 47,
-        "adaptiveForce": 52,
+        "attackPower": 99,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 105701,
@@ -1984,7 +2010,7 @@
     },
     {
         "attackPower": 50,
-        "adaptiveForce": 57,
+        "skillAmp": 114,
         "penetrationDefenseRatio": 0.08,
         "code": 105702,
         "weaponType": "Axe",
@@ -1992,9 +2018,8 @@
         "shard": "blue"
     },
     {
-        "attackPower": 37,
+        "attackPower": 92,
         "defense": 8,
-        "adaptiveForce": 55,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
         "code": 107701,
@@ -2005,7 +2030,7 @@
     {
         "attackPower": 33,
         "defense": 8,
-        "adaptiveForce": 58,
+        "skillAmp": 116,
         "penetrationDefenseRatio": 0.08,
         "code": 107702,
         "weaponType": "Spear",
@@ -2014,7 +2039,7 @@
     },
     {
         "attackPower": 25,
-        "adaptiveForce": 52,
+        "skillAmp": 104,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 109701,
@@ -2024,7 +2049,7 @@
     },
     {
         "attackPower": 25,
-        "adaptiveForce": 58,
+        "skillAmp": 116,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.08,
         "code": 109702,
@@ -2033,8 +2058,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 38,
-        "adaptiveForce": 50,
+        "attackPower": 88,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 110701,
@@ -2044,7 +2068,7 @@
     },
     {
         "attackPower": 30,
-        "adaptiveForce": 56,
+        "skillAmp": 112,
         "penetrationDefenseRatio": 0.08,
         "code": 110702,
         "weaponType": "Glove",
@@ -2052,9 +2076,8 @@
         "shard": "blue"
     },
     {
-        "attackPower": 23,
+        "attackPower": 74,
         "defense": 8,
-        "adaptiveForce": 51,
         "attackSpeedRatio": 0.35,
         "penetrationDefenseRatio": 0.07,
         "code": 111701,
@@ -2065,7 +2088,7 @@
     {
         "attackPower": 20,
         "defense": 8,
-        "adaptiveForce": 57,
+        "skillAmp": 114,
         "penetrationDefenseRatio": 0.08,
         "code": 111702,
         "weaponType": "Tonfa",
@@ -2073,8 +2096,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 41,
-        "adaptiveForce": 50,
+        "attackPower": 91,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 112701,
@@ -2084,7 +2106,7 @@
     },
     {
         "attackPower": 40,
-        "adaptiveForce": 54,
+        "skillAmp": 108,
         "penetrationDefenseRatio": 0.08,
         "code": 112702,
         "weaponType": "HighAngleFire",
@@ -2092,8 +2114,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 28,
-        "adaptiveForce": 49,
+        "attackPower": 77,
         "attackSpeedRatio": 0.25,
         "penetrationDefenseRatio": 0.07,
         "code": 113701,
@@ -2103,7 +2124,7 @@
     },
     {
         "attackPower": 30,
-        "adaptiveForce": 57,
+        "skillAmp": 114,
         "penetrationDefenseRatio": 0.08,
         "code": 113702,
         "weaponType": "DirectFire",
@@ -2111,8 +2132,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 26,
-        "adaptiveForce": 50,
+        "attackPower": 76,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 114701,
@@ -2122,7 +2142,7 @@
     },
     {
         "attackPower": 29,
-        "adaptiveForce": 56,
+        "skillAmp": 112,
         "penetrationDefenseRatio": 0.08,
         "code": 114702,
         "weaponType": "Bow",
@@ -2130,8 +2150,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 41,
-        "adaptiveForce": 51,
+        "attackPower": 92,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
         "code": 115701,
@@ -2141,7 +2160,7 @@
     },
     {
         "attackPower": 40,
-        "adaptiveForce": 56,
+        "skillAmp": 112,
         "penetrationDefenseRatio": 0.08,
         "code": 115702,
         "weaponType": "CrossBow",
@@ -2149,8 +2168,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 40,
-        "adaptiveForce": 53,
+        "attackPower": 93,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
         "code": 117701,
@@ -2160,7 +2178,7 @@
     },
     {
         "attackPower": 25,
-        "adaptiveForce": 53,
+        "skillAmp": 106,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.08,
         "code": 117702,
@@ -2169,8 +2187,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 33,
-        "adaptiveForce": 51,
+        "attackPower": 84,
         "attackSpeedRatio": 0.3,
         "sightRange": 1.5,
         "penetrationDefenseRatio": 0.07,
@@ -2181,7 +2198,7 @@
     },
     {
         "attackPower": 22,
-        "adaptiveForce": 56,
+        "skillAmp": 112,
         "attackSpeedRatio": 0.4,
         "sightRange": 1.5,
         "penetrationDefenseRatio": 0.08,
@@ -2191,8 +2208,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 33,
-        "adaptiveForce": 56,
+        "attackPower": 89,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 119701,
@@ -2202,7 +2218,7 @@
     },
     {
         "attackPower": 30,
-        "adaptiveForce": 56,
+        "skillAmp": 112,
         "penetrationDefenseRatio": 0.08,
         "code": 119702,
         "weaponType": "Nunchaku",
@@ -2210,8 +2226,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 12,
-        "adaptiveForce": 52,
+        "attackPower": 64,
         "attackSpeedRatio": 0.3,
         "criticalStrikeChance": 0.2,
         "criticalStrikeDamage": 0.1,
@@ -2223,7 +2238,7 @@
     },
     {
         "attackPower": 5,
-        "adaptiveForce": 58,
+        "skillAmp": 116,
         "penetrationDefenseRatio": 0.08,
         "code": 120702,
         "weaponType": "Rapier",
@@ -2231,8 +2246,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 28,
-        "adaptiveForce": 47,
+        "attackPower": 75,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 121701,
@@ -2242,7 +2256,7 @@
     },
     {
         "attackPower": 25,
-        "adaptiveForce": 55,
+        "skillAmp": 110,
         "penetrationDefenseRatio": 0.08,
         "code": 121702,
         "weaponType": "Guitar",
@@ -2251,8 +2265,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 100,
-        "cooldownReduction": 15,
+        "skillAmp": 114,
         "penetrationDefenseRatio": 0.07,
         "code": 130701,
         "weaponType": "Arcana",
@@ -2270,8 +2283,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 36,
-        "adaptiveForce": 50,
+        "attackPower": 86,
         "attackSpeedRatio": 0.35,
         "penetrationDefenseRatio": 0.07,
         "code": 116701,
@@ -2281,7 +2293,7 @@
     },
     {
         "attackPower": 28,
-        "adaptiveForce": 58,
+        "skillAmp": 116,
         "penetrationDefenseRatio": 0.08,
         "code": 116702,
         "weaponType": "Pistol",
@@ -2289,8 +2301,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 49,
-        "adaptiveForce": 53,
+        "attackPower": 102,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
         "code": 108701,
@@ -2300,7 +2311,7 @@
     },
     {
         "attackPower": 55,
-        "adaptiveForce": 57,
+        "skillAmp": 114,
         "penetrationDefenseRatio": 0.08,
         "code": 108702,
         "weaponType": "Bat",
@@ -2308,8 +2319,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 22,
-        "adaptiveForce": 50,
+        "attackPower": 72,
         "attackSpeedRatio": 0.3,
         "penetrationDefenseRatio": 0.07,
         "code": 103701,
@@ -2319,7 +2329,7 @@
     },
     {
         "attackPower": 16,
-        "adaptiveForce": 56,
+        "skillAmp": 112,
         "penetrationDefenseRatio": 0.08,
         "code": 103702,
         "weaponType": "DualSword",
@@ -2327,8 +2337,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 25,
-        "adaptiveForce": 52,
+        "attackPower": 77,
         "attackSpeedRatio": 0.4,
         "cooldownReduction": 10,
         "sightRange": 1,
@@ -2340,7 +2349,7 @@
     },
     {
         "attackPower": 25,
-        "adaptiveForce": 55,
+        "skillAmp": 110,
         "sightRange": 1,
         "penetrationDefenseRatio": 0.08,
         "code": 122702,

@@ -1,6 +1,7 @@
 {
     "duration": 0.75,
     "dash": 3,
+    "damage_decline": 80,
     "damage": {
         "base": [100,150,200],
         "additionalAttack": [150,175,200],

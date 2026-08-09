@@ -29,7 +29,7 @@ export default {
         // ホログラム持続時間
         "duration": 5,
         // 挑発時間
-        "taunt": 0.7,
+        "taunt": 0.8,
         // 武器交換可能状態最大持続時間
         "weapon_swap": 4,
         "cooldown": 13
@@ -127,6 +127,6 @@ export default {
             "effect": [2,5,8]
         },
         // 近接武器装備時防御力増加
-        "defense": [4,8,12]
+        "defense": [6,12,18]
     }
 }

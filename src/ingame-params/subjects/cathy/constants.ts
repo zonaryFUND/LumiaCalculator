@@ -2,7 +2,7 @@ export default {
     "Q": {
         // スキル使用後基本攻撃追加ダメージ
         "additional_damage": {
-            "amp": 55
+            "amp": 50
         },
         // Ｑ突進ダメージ
         "damage": {
