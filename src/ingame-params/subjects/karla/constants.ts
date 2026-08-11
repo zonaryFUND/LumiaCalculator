@@ -92,7 +92,7 @@ export default {
         },
         // 装填ゲージ最大時基本攻撃的中時移動速度減少
         "slow": {
-            "duration": 0.75,
+            "duration": 1,
             "effect": 99
         }
     }

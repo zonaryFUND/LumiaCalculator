@@ -10,7 +10,7 @@ export default {
         // 栞対象へのダメージ
         "bookmark_damage": {
             "base": [20, 40, 60, 80, 100],
-            "amp": 40
+            "amp": 35
         },
         // 栞対象への気絶時間
         "stun": 0.6,
@@ -54,7 +54,7 @@ export default {
         // 栞対象へのダメージ
         "bookmark_damage": {
             "base": [150, 190, 230, 270, 310],
-            "amp": 85
+            "amp": 80
         },
         // 的中時自己回復最小値
         "heal": {
@@ -83,7 +83,7 @@ export default {
         // 栞対象へのダメージ
         "bookmark_damage": {
             "base": [50, 100, 150],
-            "amp": 50
+            "amp": 45
         },
         // 栞対象への気絶時間
         "stun": 0.6,
@@ -127,7 +127,7 @@ export default {
         // 栞対象へのダメージ
         "bookmark_damage": {
             "base": [170, 260, 350],
-            "amp": 85
+            "amp": 80
         },
         // 的中時自己回復最小値
         "heal": {

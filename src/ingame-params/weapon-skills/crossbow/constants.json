@@ -17,8 +17,8 @@
     "duration_decline_per_attack": 0.5,
     "additional_damage": {
         "base": [20,25,30],
-        "additionalAttack": [15,20,25],
-        "amp": 6
+        "additionalAttack": [20,25,30],
+        "amp": 5
     },
     "cooldown": {
         "constant": 25
