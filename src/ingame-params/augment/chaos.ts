@@ -81,6 +81,7 @@ export default {
     // サーキュラーシステム
     "circular_system": {
         "heal": {
+            "base": 10,
             "level": 1,
             "maxHP": 0.3
         },

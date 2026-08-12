@@ -8,7 +8,7 @@ const values: EquipmentAbilityTooltipValues = ({ showEquation }): TooltipValues 
         return {
             0: Constants.tick,
             1: Constants.damage.base,
-            2: Constants.damage.additionalHP,
+            2: Constants.damage.additionalMaxHP,
             3: Constants.duration,
             4: Constants.slow,
             7: Constants.cooldown
