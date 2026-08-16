@@ -16,7 +16,7 @@ export default {
         // スキル的中時チャクラム獲得数
         "chakram_gain": 2,
         "damage": {
-            "base": [70,95,120,145,170],
+            "base": [60,85,110,135,160],
             "amp": 50
         },
         // 死神の目強化攻撃的中時QEクールダウン減少
@@ -24,6 +24,8 @@ export default {
         "cooldown": {
             "constant": 0.55
         },
+        // 持続ダメージを与えるスキルの判定クールダウン
+        "tick_cooldown": 3,
         "charge": {
             "time": 8,
             "max": 4

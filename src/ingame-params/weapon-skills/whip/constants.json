@@ -7,7 +7,7 @@
     },
     "slow": {
         "duration": 1.5,
-        "effect": [20,25,30]
+        "effect": [25,30,35]
     },
     "reuse": 4,
     "second_damage": {

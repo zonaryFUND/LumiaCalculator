@@ -111,10 +111,6 @@ export default {
             "level": 1
         },
         "attack_speed": 15,
-        "slow": {
-            "duration": 0.6,
-            "effect": 10
-        },
         "extend": 0.5,
         "cooldown": [50, 40]
     },

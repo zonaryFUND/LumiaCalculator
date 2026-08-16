@@ -70,7 +70,7 @@ export default {
         "attack_speed": 40,
         // 猛虎清拳発動時の追加基本攻撃ダメージ
         "damage": {
-            "attack": [30, 40, 50],
+            "attack": [35, 45, 55],
             "basicAttackAmp": 1
         },
         // 猛虎清拳を発動するのに必要なスキル使用前酔いゲージ最小値

@@ -187,7 +187,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 67,
+        "attackPower": 64,
         "maxHp": 150,
         "attackSpeedRatio": 0.3,
         "code": 102504,
@@ -599,7 +599,7 @@
     {
         "attackPower": 30,
         "skillAmp": 86,
-        "maxHp": 150,
+        "maxHp": 120,
         "code": 108506,
         "weaponType": "Bat",
         "itemGrade": "Legend"
@@ -1592,7 +1592,7 @@
     },
     {
         "attackPower": 32,
-        "skillAmp": 86,
+        "skillAmp": 82,
         "maxHp": 120,
         "code": 120504,
         "weaponType": "Rapier",
@@ -1799,7 +1799,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 95,
+        "skillAmp": 97,
         "code": 130405,
         "weaponType": "Arcana",
         "itemGrade": "Legend"
@@ -1833,7 +1833,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 92,
+        "skillAmp": 88,
         "cooldownReduction": 10,
         "code": 130504,
         "weaponType": "Arcana",
@@ -2265,7 +2265,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 114,
+        "skillAmp": 117,
         "penetrationDefenseRatio": 0.07,
         "code": 130701,
         "weaponType": "Arcana",

@@ -87,7 +87,7 @@ export default {
             "base": [20, 40, 60, 80, 100],
             "attack": 35
         },
-        "cooldown": [15, 14, 13, 12, 11]
+        "cooldown": [16, 15, 14, 13, 12]
     },
     "R": {
         // 短弓時1発目ダメージ
@@ -110,7 +110,7 @@ export default {
         // 短弓時ノックバック距離
         "hankyu_knockback": 4,
         // 短弓時壁衝突気絶時間
-        "hankyu_stun": 1.5,
+        "hankyu_stun": 1.2,
         // 長弓時ダメージ
         "daikyu_damage": {
             "base": [200, 340, 480],

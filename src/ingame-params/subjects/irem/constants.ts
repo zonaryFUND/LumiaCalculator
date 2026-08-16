@@ -93,7 +93,7 @@ export default {
         // お魚拾得時シールド
         "shield": {
             "base": [20, 45, 70, 95],
-            "amp": 30
+            "amp": 35
         },
         // お魚拾得時シールド持続時間
         "shield_duration": 2.5,

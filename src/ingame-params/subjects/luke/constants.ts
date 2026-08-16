@@ -26,7 +26,7 @@ export default {
     "W": {
         "damage": {
             "base": [50, 80, 110, 140, 170],
-            "attack": 85
+            "attack": 90
         },
         // 的中対象1体あたりの自己回復量（失った体力％）
         "heal": 11,

@@ -63,7 +63,7 @@ export default {
         // 不当利得スタック最大時基本攻撃追加ダメージ
         "basic_attack_damage": {
             "base": [10, 20, 30],
-            "amp": 45,
+            "amp": 35,
             "targetMaxHP": [2, 3, 4]
         },
         // 短剣拾得時に投げられる射程範囲

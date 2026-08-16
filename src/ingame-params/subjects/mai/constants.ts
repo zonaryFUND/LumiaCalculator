@@ -77,7 +77,7 @@ export default {
         // 基本攻撃追加ダメージ
         "damage": {
             "base": 30,
-            "additionalMaxHP": [5, 8, 11]
+            "additionalMaxHP": [6, 9, 12]
         },
         // 味方の服アップグレード可能レベル
         "level": [6, 11, 16, 20]

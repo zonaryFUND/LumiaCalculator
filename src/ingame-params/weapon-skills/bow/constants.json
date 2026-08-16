@@ -1,7 +1,7 @@
 {
     "after": 1.5,
     "damage": {
-        "base": [100,200,300],
+        "base": [90,170,250],
         "additionalAttack": 100,
         "amp": 40
     },
@@ -10,7 +10,7 @@
         "effect": 25
     },
     "center_damage": {
-        "base": [200,400,600],
+        "base": [180,340,500],
         "additionalAttack": 190,
         "amp": 60
     },

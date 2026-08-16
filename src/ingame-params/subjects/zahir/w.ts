@@ -17,6 +17,9 @@ export const info: SkillTooltipProps = {
         9: Constants.W.damage
     }),
     expansion: () => ({
+        tipValues: {
+            0: Constants.W.tick_cooldown
+        },
         enumeratedValues: [
             { labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base }
         ]

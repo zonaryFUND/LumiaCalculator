@@ -13,7 +13,7 @@ export default {
             "additionalMaxHP": 10
         },
         // 2撃目命中時Qクールダウン減少
-        "cooldown_reduction": 60,
+        "cooldown_reduction": 50,
         "cooldown": [8,7,6,5,4]
     },
     "W": {
@@ -83,7 +83,7 @@ export default {
         // 再凍結免疫時間
         "immune": 2.5,
         "cooldown": {
-            "constant": [8,6,4]
+            "constant": [6,4,2]
         }
     }
 }
