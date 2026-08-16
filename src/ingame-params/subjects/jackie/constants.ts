@@ -2,8 +2,8 @@ export default {
     "Q": {
         "damage": {
             "base": [30, 50, 70, 90, 110],
-            "attack": 50,
-            "targetHP": 7
+            "attack": 40,
+            "targetHP": 6
         },
         // 与ダメージ比自己回復（％）
         "heal": 30,

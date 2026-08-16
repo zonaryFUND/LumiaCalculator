@@ -6,7 +6,7 @@
     "dagger": {
         "damage": {
             "base": [10,30,50],
-            "additionalAttack": 50,
+            "additionalAttack": 40,
             "amp": 15
         },
         "true_damage": {
