@@ -45,7 +45,7 @@ export default {
         // 強化基本攻撃追加ダメージ
         "damage": {
             "base": [60, 95, 130, 165, 200],
-            "amp": 58
+            "amp": 60
         },
         "cooldown": {
             "constant": [13, 12, 11, 10, 9]

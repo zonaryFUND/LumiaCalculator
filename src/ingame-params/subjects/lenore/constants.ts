@@ -7,7 +7,7 @@ export default {
         // 強化時ダメージ増加（元ダメージ比）
         "additional_damage": 35,
         // 同一対象に連続ヒット時の与ダメージ減少（％）
-        "same_target_reduction": 55,
+        "same_target_reduction": 50,
         "cooldown": [7, 6.5, 6, 5.5, 5]
     },
     "W": {

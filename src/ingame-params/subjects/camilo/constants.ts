@@ -42,7 +42,7 @@ export default {
         // 1回あたりダメージ
         "damage": {
             "base": [5,15,25,35,45],
-            "attack": 20,
+            "attack": 18,
             "basicAttackAmp": 100
         },
         // ダメージ発生回数

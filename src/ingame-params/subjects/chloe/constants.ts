@@ -10,7 +10,7 @@ export default {
     "Q": {
         "damage": {
             "base": [70,90,110,130,150],
-            "ninaAttack": 75
+            "ninaAttack": 80
         },
         // 移動速度減少
         "slow": {
@@ -108,7 +108,7 @@ export default {
         // ニナ追加攻撃力
         "nina_attack": [4,7,10],
         // ニナ追加防御力
-        "nina_defense": [15,30,45],
+        "nina_defense": [20,35,50],
         // ニナ追加最大体力
         "nina_maxhp": [200,250,300]
     }

@@ -66,7 +66,7 @@ export default {
         "cooldown_reduction": 10,
         // 発動時シールド量
         "shield": {
-            "maxHP": [7, 10, 13]
+            "maxHP": [8, 11, 14]
         },
         // シールド持続時間
         "duration": 3,

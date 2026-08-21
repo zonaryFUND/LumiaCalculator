@@ -34,7 +34,7 @@ export default {
             "duration": 1.5,
             "effect": {
                 "base": [12,14,16,18,20],
-                "amp": 2
+                "amp": 2.5
             }
         },
         "cooldown": [16, 15, 14, 13, 12]

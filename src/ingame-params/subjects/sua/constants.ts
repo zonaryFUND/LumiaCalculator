@@ -17,7 +17,7 @@ export default {
         // 中央的中時移動速度減少
         "slow": {
             "duration": 1,
-            "effect": [50, 55, 60, 65, 70]
+            "effect": [40, 45, 50, 55, 60]
         },
         // 中央的中時ダメージ増加（元ダメージ比％）
         "center_multiplier": 30,
@@ -47,7 +47,7 @@ export default {
         // 移動速度減少
         "slow": {
             "duration": 1,
-            "effect": 50
+            "effect": 30
         },
         // 栞持続時間
         "bookmark_duration": 5,
@@ -149,7 +149,7 @@ export default {
     "T": {
         // 強化基本攻撃ダメージ
         "damage": {
-            "base": [100, 160, 220],
+            "base": [70, 120, 170],
             "amp": 50
         },
         // 強化基本攻撃拡散範囲

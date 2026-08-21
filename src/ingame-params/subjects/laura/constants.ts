@@ -48,8 +48,8 @@ export default {
         "shield_duration": 1,
         // シールド量
         "shield": {
-            "base": [90, 120, 150],
-            "amp": 20
+            "base": [80, 110, 140],
+            "amp": 15
         },
         // 爆発ダメージ
         "second_damage": {

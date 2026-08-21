@@ -14,7 +14,7 @@
         "base": [110,140,170],
         "additionalAttack": 40,
         "amp": 30,
-        "targetLostHP": 8
+        "targetLostHP": 12
     },
     "cooldown": {
         "constant": 25

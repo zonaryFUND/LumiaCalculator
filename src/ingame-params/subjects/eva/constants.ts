@@ -54,12 +54,12 @@ export default {
     "R": {
         "tick": 0.1,
         "damage": {
-            "base": [8,12,16],
+            "base": [6,10,14],
             "amp": 5
         },
         "max_stack": 5,
         "stack_damage": {
-            "base": [30,50,70],
+            "base": [30,45,60],
             "amp": 30
         },
         "min_vf": 20,

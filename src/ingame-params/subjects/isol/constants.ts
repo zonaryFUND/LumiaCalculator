@@ -5,7 +5,7 @@ export default {
         // 爆発基礎ダメージ
         "damage": {
             "base": [60, 85, 110, 135, 160],
-            "attack": 25,
+            "attack": 35,
             "amp": 70
         },
         // 束縛時間基礎値

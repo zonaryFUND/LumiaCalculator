@@ -81,7 +81,7 @@ export default {
         "cooldown": 8,
         "damage": {
             "level": 8,
-            "targetMaxHP": 4
+            "targetMaxHP": 5
         },
         "unexploded_decline": 70,
         "animal_damage": 150,

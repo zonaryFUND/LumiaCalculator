@@ -59,7 +59,7 @@ export default {
         "W3": {
             // 最初の連続ダメージ
             "first_damage": {
-                "base": 10,
+                "base": 20,
                 "additionalAttack": [15, 20, 25, 30, 35]
             },
             // 最初のダメージ発動回数基礎値

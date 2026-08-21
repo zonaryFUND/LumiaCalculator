@@ -10,7 +10,7 @@ export default {
             "additionalMaxHP": 18
         },
         // 追加与ダメージ比自己回復（％）
-        "heal": 130,
+        "heal": 120,
         // 持続時間
         "duration": 5,
         // 敵に向かって移動するときの移動速度増加

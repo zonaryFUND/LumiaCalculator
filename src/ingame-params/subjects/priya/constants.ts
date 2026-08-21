@@ -77,7 +77,7 @@ export default {
         // 外側へ広がるダメージ
         "first_damage": {
             "base": [80, 150, 220],
-            "amp": 60
+            "amp": 65
         },
         // 内側へ戻るダメージ
         "echo_damage": {

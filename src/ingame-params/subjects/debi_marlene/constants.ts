@@ -16,7 +16,7 @@ export default {
     "DebiW": {
         "damage": {
             "base": [40,70,100,130,160],
-            "additionalAttack": 60,
+            "additionalAttack": 75,
             "targetMaxHP": [5,5.5,6,6.5,7]
         },
         "cooldown": 12

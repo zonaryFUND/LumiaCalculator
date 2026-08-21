@@ -111,7 +111,7 @@ export default {
         // ハイパーチャージ状態終了時移動速度増加
         "movement_speed": {
             "duration": 2,
-            "effect": [7,10,13]
+            "effect": [10,13,16]
         }
     }
 }

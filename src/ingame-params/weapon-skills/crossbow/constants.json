@@ -6,7 +6,7 @@
     },
     "slow": {
         "duration": 1.5,
-        "effect": 50
+        "effect": 40
     },
     "blast_damage": {
         "base": [50,100,150],

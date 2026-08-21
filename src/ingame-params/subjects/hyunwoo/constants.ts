@@ -86,7 +86,7 @@ export default {
         },
         // ドッグファイト活性化後次の攻撃時回復量
         "heal": {
-            "maxHP": [5, 8, 11]
+            "maxHP": [6, 9, 12]
         },
         // ドッグファイト活性化後Wクールダウン減少
         "w_cooldown_reduction": 2

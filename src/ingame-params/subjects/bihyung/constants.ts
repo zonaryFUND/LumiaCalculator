@@ -75,7 +75,7 @@ export default {
     },
     "R": {
         // 飛び上がり中被ダメージ減少
-        "damage_reduction": 30,
+        "damage_reduction": 40,
         // 効果時間
         "duration": 15,
         // 追加体力

@@ -20,7 +20,7 @@ export default {
         // 移動速度増加
         "movement_speed": [10, 14, 18, 22, 26],
         // 被ダメージ減少（％）
-        "damage_decline": [25, 27, 29, 31, 33],
+        "damage_decline": [25, 28, 31, 34, 37],
         // 爆発時ダメージ
         "damage": {
             "base": [60, 90, 120, 150, 180],

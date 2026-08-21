@@ -18,7 +18,7 @@ export default {
         // 追加デバフ効果時間
         "duration": 3,
         // 防御力減少
-        "defense_down": [8, 9, 10, 11, 12],
+        "defense_down": [10, 11, 12, 13, 14],
         // 治癒減少（％）
         "healing_reduction": 20,
         // 使用中移動速度増加（％）
@@ -48,7 +48,7 @@ export default {
         // 爆弾即起爆に必要な基本攻撃回数
         "basic_attack_launch": 5,
         // 爆弾即起爆時の追加固定ダメージ（対象最大体力比％）
-        "additional_damage": [6, 9, 12],
+        "additional_damage": [7, 10, 13],
         // 即起爆時移動速度減少（％）
         "detonate_slow": {
             "duration": 1,

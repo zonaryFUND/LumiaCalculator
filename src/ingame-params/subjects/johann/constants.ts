@@ -43,7 +43,7 @@ export default {
             "duration": 2,
             "effect": {
                 "base": [6, 8, 10, 12, 14],
-                "amp": 1
+                "amp": 2
             }
         },
         // 効果終了時の爆発ダメージ
