@@ -3,7 +3,7 @@ import { DamageTableUnit } from "app-types/damage-table/unit";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import SubTable from "./subtable";
-import useBasicAttackInfo from "components/damage/use-basic-attack-info";
+import useBasicAttackRatio from "@app/features/damage/use-basic-attack-ratio";
 import { useIntl } from "react-intl";
 import { BasicAttackElement } from "@app/ingame-params/subjects/type";
 
@@ -22,7 +22,7 @@ const basicAttack: React.FC<Props> = props => {
         attackRatio: standardBasicAttackRatio, 
         labelIntlID: standardBasicAttackLabelIntlID,
         hitCount
-    } = useBasicAttackInfo(props.attacker.config);
+    } = useBasicAttackRatio(props.attacker.config);
 
     const sanitizedElements = props.elements.map(chunk => {
         return chunk.flatMap(element => {

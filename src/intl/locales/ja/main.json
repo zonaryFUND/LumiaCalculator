@@ -13,6 +13,7 @@
     "app.constant-value": "定数値",
     "app.critical-hit": "致命打",
     "app.expected-value": "期待値",
+    "app.critical-damage-increase": "致命打ダメージ増加",
     "app.weapon": "武器",
     "app.skill": "スキル",
     "app.heal": "回復",

@@ -44,7 +44,7 @@ const criticalAvailable: React.FC<DamageTableUnit> = props => {
         // 通常の基本攻撃効果量
         return (
             <Critical
-                label={props.label}
+                labelIntlID={props.label}
                 regularDamage={regularDamage}
                 criticalDamage={criticalChance.greaterThan(0) ? criticalDamage : undefined}
                 expectedValue={expectedValue}
@@ -72,7 +72,7 @@ const criticalAvailable: React.FC<DamageTableUnit> = props => {
 
         return (
             <Critical
-                label={props.label}
+                labelIntlID={props.label}
                 regularDamage={regularDamage}
                 criticalDamage={criticalChance.greaterThan(0) ? criticalDamage : undefined}
                 expectedValue={expectedValue}

@@ -7,7 +7,7 @@ import { Status } from "app-types/subject-dynamic/status/type";
 import { FormattedMessage, useIntl } from "react-intl";
 import CriticalAvailable from "../../../../features/damage/features/potency-rows/critical-available";
 import { DamageTableUnit } from "app-types/damage-table/unit";
-import useBasicAttackInfo from "components/damage/use-basic-attack-info";
+import useBasicAttackRatio from "@app/features/damage/use-basic-attack-ratio";
 import { BasicAttackElement } from "@app/ingame-params/subjects/type";
 
 type Props = {
@@ -28,7 +28,7 @@ const basicAttack: React.FC<Props> = props => {
     const { 
         attackRatio: standardBasicAttackRatio, 
         labelIntlID: standardBasicAttackLabelIntlID
-    } = useBasicAttackInfo(props.config);
+    } = useBasicAttackRatio(props.config);
 
     return (
         <tbody>
@@ -71,9 +71,6 @@ const basicAttack: React.FC<Props> = props => {
                                 type={{type: "basic", critical: "none"}}
                                 value={{attack: standardBasicAttackRatio, basicAttackAmp: 100}}
                                 origin="other"
-                                config={props.config}
-                                status={props.status}
-                                hp={props.hp}
                             />
                         }
     
@@ -97,9 +94,6 @@ const basicAttack: React.FC<Props> = props => {
                                     key={definition.label}
                                     {...definition}
                                     value={definition.value}
-                                    config={props.config}
-                                    status={props.status}
-                                    hp={props.hp}
                                 />
                             }
                         }

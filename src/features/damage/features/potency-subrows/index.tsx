@@ -20,20 +20,29 @@ type Props = {
 
 }
 
+/**
+ * スキル威力値をクリックしたときに表示される、詳細な威力計算式や倍率計算式などのサブセル群を生成する。
+ */
 const SubRowsTable: React.FC<Props> = (props) => {
     const staticSubRows: React.ReactElement[] = (() => {
+        // 静的威力に対するサブセル
         if (props.staticBaseValue.isZero() || !props.staticFinalValue) return [];
 
         if (props.multiplier) {
+            // 乗算値表示セルに対しては乗算式サブセルのみを表示する
             const baseValue = props.staticBaseValue.percent(props.healMultiplier || 100);
             return [<MultiplyEquation key="multiply" baseValue={baseValue} multipliers={props.multiplier.individualExpressions} finalValue={props.staticFinalValue} percent={props.percent} />];
         } else {
+            // スキル威力の詳細な計算式を表記するサブセルは常に表示される
             const equation = Object.keys(props.unit.value).length == 1 && "base" in props.unit.value ? undefined :
                 <StaticValueEquation
                     origin={props.unit.origin}
                     ratio={props.unit.value}
                     calculated={<>{props.staticBaseValue.floor().toString()}{props.percent}</>}
                 />;
+
+            // props.healMultiplierが非undefinedの場合、この威力表記は回復値に対するものであり、
+            // さらに何らかの効果で回復力が増加しているため、その計算式サブセルが表示される
             const heal = !props.healMultiplier ? undefined : 
                 <HealPower key="healpower" baseValue={props.staticBaseValue} healPower={props.healMultiplier} />;
 
@@ -45,10 +54,12 @@ const SubRowsTable: React.FC<Props> = (props) => {
     })();
 
     const dynamicSubRows: React.ReactElement[] = (() => {
+        // 動的威力に対するサブセル
         if (props.dynamicBaseValue == undefined) return [];
 
         return Object.entries(props.dynamicBaseValue).flatMap(([key, value]): React.ReactElement[] => {
             if (props.multiplier) {
+                // 乗算値表示セルに対しては乗算式サブセルのみを表示する 
                 const baseValue = value.percent(props.healMultiplier || 100);
                 const finalValue = baseValue.percent(props.multiplier.mergedMultiplier);
 
@@ -62,13 +73,13 @@ const SubRowsTable: React.FC<Props> = (props) => {
                     />
                 ]
             } else {
-                // 対象の動的レシオ自体が静的レシオから計算される（例：つばめRの対象最大体力レシオ）場合、
-                // その静的レシオの計算式を表示する
                 const targetRatio = props.unit.value[key as keyof ValueRatio];
                 const hasCalculatedDynamicRatio = typeof targetRatio == "object" && !Array.isArray(targetRatio);
                 const ratioCalculation = (() => {
                     if (!hasCalculatedDynamicRatio) return undefined;
                     
+                    // 対象の動的レシオ自体が静的レシオから計算される（例：つばめRの対象最大体力レシオ）場合、
+                    // その静的レシオの計算式を表示するサブセルを表示する
                     const intlID = (() => {
                         switch (key) {
                             case "targetHP":        return "app.label.target-hp";
@@ -91,6 +102,8 @@ const SubRowsTable: React.FC<Props> = (props) => {
                     );
                 })();
 
+                // props.healMultiplierが非undefinedの場合、この威力表記は回復値に対するものであり、
+                // さらに何らかの効果で回復力が増加しているため、動的威力に対する計算式サブセルが表示される
                 const heal = !props.healMultiplier ? undefined : 
                     <HealPower key="healpower" baseValue={value} healPower={props.healMultiplier} />;
 

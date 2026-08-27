@@ -14,7 +14,7 @@ const EquationUnit: React.FC<Props> = ({labelIntlID, ratio, currentValue, percen
     return (
         <>
             <span className={table.small}><FormattedMessage id={labelIntlID} /></span>
-            {ratio} x {currentValue.toString()}{percent ? "%" : ""}
+            {currentValue.toString()} x {ratio}{percent ? "%" : ""}
         </>
     )
 }

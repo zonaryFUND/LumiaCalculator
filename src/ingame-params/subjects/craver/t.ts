@@ -15,7 +15,10 @@ export const CraverTStrategy: UniqueValueStrategy = ({ config, status }) => {
         .add(status.attackSpeed.multiplier.percent(as) ?? 0)
 
     return {
-        value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {
                 expression: [
@@ -23,7 +26,7 @@ export const CraverTStrategy: UniqueValueStrategy = ({ config, status }) => {
                     { ratioKey: "amp" },
                     `${status.skillAmp.calculatedValue.toString()} x ${amp}% + `,
                     { ratioKey: "additionalAttackSpeed" },
-                    `${status.attackSpeed.multiplier.toString() ?? 0} x ${as}% = ${value}`
+                    `${status.attackSpeed.multiplier.toString() ?? 0} x ${as}% = ${value.toString()}`
                 ]
             }
         ]

@@ -3,9 +3,10 @@ import * as React from "react";
 import { useToggle } from "react-use";
 import style from "./row.module.styl";
 import table from "components/common/table.module.styl";
+import { FormattedMessage } from "react-intl";
 
 type Props = {
-    label: React.ReactNode;
+    labelIntlID: string;
     regularDamage: Decimal;
     criticalDamage?: Decimal;
     expectedValue: Decimal;
@@ -18,7 +19,7 @@ const Critical: React.FC<Props> = props => {
     return (
         <>
             <tr onClick={toggleExpand}>
-                <td>{props.label}</td>
+                <td><FormattedMessage id={props.labelIntlID} /></td>
                 <td className={style.basic}>{props.regularDamage.floor().toString()}</td>
                 <td className={style.basic}>{props.criticalDamage?.floor().toString() ?? "-"}</td> 
                 <td className={style.basic}>{props.expectedValue.floor().toString()}</td>

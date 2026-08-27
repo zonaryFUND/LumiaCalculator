@@ -9,6 +9,10 @@ type Props = {
     equationExpression: EquationExpression[]
 }
 
+/**
+ * 固有の計算ロジックを有する効果量の詳細な計算式サブセルを生成する。
+ * l10nの変換、ステータスレシオの該当ステータスに対する表記変換を行い、配列をそのまま並べて構成する。
+ */
 const UniqueValueEquation: React.FC<Props> = props => {
     return props.equationExpression.map((items, parentIndex) => {
         const equation = items.expression.map((item, index) => {
@@ -30,31 +34,31 @@ const UniqueValueEquation: React.FC<Props> = props => {
                                 case "base":
                                     return null;
                                 case "attack":
-                                    return <FormattedMessage id="status.attack-power" />;
+                                    return <FormattedMessage id="StatType/AttackPower" />;
                                 case "additionalAttack":
-                                    return "追加攻撃力";
+                                    return <FormattedMessage id="ToolTipType/AddAttackPower" />;
                                 case "additionalMaxHP":
-                                    return <FormattedMessage id="status.additional-maxhp" />;
+                                    return <FormattedMessage id="StatType/AddedHpAmount" />;
                                 case "maxHP":
-                                    return <FormattedMessage id="status.maxhp" />;
+                                    return <FormattedMessage id="StatType/MaxHp" />;
                                 case "defense":
-                                    return <FormattedMessage id="status.defense" />;
+                                    return <FormattedMessage id="StatType/Defense" />;
                                 case "amp":
-                                    return <FormattedMessage id="status.skill-amp" />;
+                                    return <FormattedMessage id="StatType/SkillAmp" />;
                                 case "level":
-                                    return "レベル";
+                                    return <FormattedMessage id="레벨" />;
                                 case "basicAttackAmp":
-                                    return "基本攻撃増幅";
+                                    return <FormattedMessage id="StatType/IncreaseBasicAttackDamageRatio" />;
                                 case "criticalChance":
-                                    return "致命打確率";
+                                    return <FormattedMessage id="StatType/CriticalStrikeChance" />;
                                 case "criticalDamage":
-                                    return "致命打ダメージ増加量"
+                                    return <FormattedMessage id="app.critical-damage-increase" />;
                                 case "stack":
-                                    return "スタック";
+                                    return <FormattedMessage id="app.stack" />;
                                 case "additionalAttackSpeed":
-                                    return "追加攻撃速度(%)"
+                                    return <FormattedMessage id="StatType/AttackSpeedRatioValue" />;
                                 case "gauge":
-                                    return "ゲージ";
+                                    return <FormattedMessage id="app.gauge" />;
                             }
                         })()}
                     </span>

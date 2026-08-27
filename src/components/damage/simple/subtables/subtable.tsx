@@ -45,11 +45,8 @@ const subTable: React.FC<Props> = props => {
                         } else {
                             return <StandardDamage 
                                 key={unit.label}
-                                status={props.status} 
-                                config={props.config} 
                                 {...unit} 
                                 value={unit.value}
-                                hp={props.hp}
                             />;
                         }
                     })
