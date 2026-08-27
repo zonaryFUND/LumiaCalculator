@@ -38,15 +38,15 @@ export default {
             "amp": 80
         },
         // 水晶付与対象的中時気絶時間
-        "stun": 0.6,
+        "stun": 0.7,
         "cooldown": [70,60,50]
     },
     "T": {
         // 水晶持続時間
         "crystal_duration": 4,
         "damage": {
-            "base": [20,60,100],
-            "amp": 55     
+            "base": [30,70,110],
+            "amp": 50     
         },
         // 水晶消費時移動速度増加
         "movement_speed": {
