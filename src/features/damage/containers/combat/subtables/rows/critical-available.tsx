@@ -3,8 +3,7 @@ import { Status } from "core/subject-dynamic/status/type";
 import StandardDamage from "./standard-damage";
 import { DamageTableUnit } from "core/damage-table/unit";
 import { SubjectConfig } from "core/subject-dynamic/config";
-import { BaseCriticalDamagePercent } from "core/subject-dynamic/status/standard-values";
-import Decimal from "decimal.js";
+import { criticalMultiplier, expectedMultiplier } from "core/damage-table/critical";
 
 type Props = DamageTableUnit & {
     config: SubjectConfig
@@ -16,8 +15,8 @@ const criticalAvailable: React.FC<Props> = props => {
     const showCritical = criticalChance.greaterThan(0);
     const showExpected = showCritical && criticalChance.lessThan(100);
 
-    const criticalDamage = BaseCriticalDamagePercent.add(100).add(props.status.criticalStrikeDamage.calculatedValue);
-    const expected = new Decimal(100).sub(criticalChance).add(criticalDamage.percent(criticalChance));
+    const criticalDamage = criticalMultiplier(props.status.criticalStrikeDamage.calculatedValue);
+    const expected = expectedMultiplier(criticalChance, criticalDamage);
 
     return (
         <>

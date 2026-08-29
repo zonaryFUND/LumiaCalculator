@@ -9,8 +9,7 @@ import { DamageTableUnit } from "core/damage-table/unit";
 import Critical from "../../components/potency-rows/critical";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { calculateValue, extractSkillLevel } from "core/value-ratio";
-import { BaseCriticalDamagePercent } from "core/subject-dynamic/status/standard-values";
-import Decimal from "decimal.js";
+import { criticalMultiplier, expectedMultiplier } from "core/damage-table/critical";
 import { extractMultiplier } from "../../damage-table-util";
 
 /**
@@ -28,14 +27,15 @@ const criticalAvailable: React.FC<DamageTableUnit> = props => {
     const regularDamage = calculateValue(props.value, status, config, props.origin).static;
     
     const criticalChance = status.criticalStrikeChance.calculatedValue;
-    const criticalDamageRatio = status.criticalStrikeDamage.calculatedValue.add(BaseCriticalDamagePercent);
+    const damageMultiplier = criticalMultiplier(status.criticalStrikeDamage.calculatedValue);
+    // 致命打の計算式行（<CriticalHit>）が表示する「175% + 追加分」の内訳のうち、追加分のみの割合
+    const criticalDamageRatio = damageMultiplier.sub(100);
 
     // クリティカルヒットダメージ
-    const criticalDamage = regularDamage.addPercent(criticalDamageRatio);
+    const criticalDamage = regularDamage.percent(damageMultiplier);
 
     // ダメージ期待値
-    const expectedValue = regularDamage.percent(new Decimal(100).sub(criticalChance)
-        .add(criticalDamage.percent(criticalChance)));
+    const expectedValue = regularDamage.percent(expectedMultiplier(criticalChance, damageMultiplier));
 
     const skillLevel = extractSkillLevel(config, props.origin);
     const multiplier = extractMultiplier(props.multiplier, skillLevel);
