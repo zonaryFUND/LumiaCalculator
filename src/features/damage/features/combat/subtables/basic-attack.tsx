@@ -9,7 +9,7 @@ import { BasicAttackElement } from "@app/ingame-params/subjects/type";
 
 type Props = {
     elements: (BasicAttackElement | DamageTableUnit & { skillLevel?: number})[][]
-    attacker: {
+    from: {
         config: SubjectConfig
         status: Status
         hp: number
@@ -19,10 +19,10 @@ type Props = {
 const basicAttack: React.FC<Props> = props => {
     const intl = useIntl();
     const {
-        attackRatio: standardBasicAttackRatio, 
+        attackRatio: standardBasicAttackRatio,
         labelIntlID: standardBasicAttackLabelIntlID,
         hitCount
-    } = useBasicAttackRatio(props.attacker.config);
+    } = useBasicAttackRatio(props.from.config);
 
     const sanitizedElements = props.elements.map(chunk => {
         return chunk.flatMap(element => {
@@ -50,10 +50,10 @@ const basicAttack: React.FC<Props> = props => {
     .filter(chunk => chunk.length > 0);
 
 
-    return <SubTable 
+    return <SubTable
         label="基本攻撃"
         elements={sanitizedElements}
-        attacker={props.attacker}
+        from={props.from}
     />
 };
 

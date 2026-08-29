@@ -8,7 +8,6 @@ import CollapseTab from "components/common/collapse-tab";
 import Subject from "./subject";
 import Damage from "./damage";
 import style from "./index.module.styl";
-import { SubjectSideContext } from "@app/ingame-params/subjects/subject-side";
 
 import TooltipPresenter from "components/tooltip";
 import Preference from "./preference";
@@ -17,11 +16,10 @@ import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
 import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey, CombatMasterySyncKey } from "@app/storage/combat";
 import { useToggle } from "react-use";
-import { useSubjectConfigState } from "components/config/use-subject-config";
+import { useStore } from "zustand";
 import Content from "components/pages/base/content";
 import { NavigationButtonContext } from "components/pages/navigation";
-import { statusOf } from "app-types/subject-dynamic/status/calculation";
-import { CombatModeSubjectConfigProvider } from "@app/features/subject-config/store";
+import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -40,31 +38,37 @@ const index: React.FC = props => {
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
 
-    const left = useSubjectConfigState(CombatCurrentLeftConfigKey);
-    const leftHPRatio = React.useState(100);
-    const leftStatus = statusOf(left.value, leftHPRatio[0]);
-    const leftHP = leftStatus.maxHp.calculatedValue.percent(leftHPRatio[0]).floor().toNumber();
+    // 中央のダメージ計算結果カラムが左右両方のconfig/statusを同時に参照できるよう、
+    // storeはこのページ側で生成する。<Subject>にはSubjectConfigStoreProvider経由で
+    // 同じインスタンスを渡し、このページ自身もuseStoreで直接値を読む
+    const leftStore = React.useRef(createSubjectConfigStore(CombatCurrentLeftConfigKey)).current;
+    const rightStore = React.useRef(createSubjectConfigStore(CombatCurrentRightConfigKey)).current;
 
-    const right = useSubjectConfigState(CombatCurrentRightConfigKey);
-    const rightHPRatio = React.useState(100);
-    const rightStatus = statusOf(right.value, rightHPRatio[0]);
-    const rightHP = rightStatus.maxHp.calculatedValue.percent(rightHPRatio[0]).floor().toNumber();
+    const leftConfig = useStore(leftStore, s => s.config);
+    const leftStatus = useStore(leftStore, s => s.status);
+    const leftHpRatio = useStore(leftStore, s => s.hpRatio);
+    const leftHP = leftStatus.maxHp.calculatedValue.percent(leftHpRatio).floor().toNumber();
+
+    const rightConfig = useStore(rightStore, s => s.config);
+    const rightStatus = useStore(rightStore, s => s.status);
+    const rightHpRatio = useStore(rightStore, s => s.hpRatio);
+    const rightHP = rightStatus.maxHp.calculatedValue.percent(rightHpRatio).floor().toNumber();
 
     React.useEffect(() => {
         if (!makeMasteryAlign) return;
-        right.setConfig({
-            ...right.value,
-            level: left.level[0],
-            weaponMastery: left.weaponMastery[0],
-            defenseMastery: left.defenseMastery[0],
-            movementMastery: left.movementMastery[0]
+        rightStore.getState().setConfig({
+            ...rightStore.getState().config,
+            level: leftConfig.level,
+            weaponMastery: leftConfig.weaponMastery,
+            defenseMastery: leftConfig.defenseMastery,
+            movementMastery: leftConfig.movementMastery
         });
     }, [
         makeMasteryAlign,
-        left.level[0], 
-        left.weaponMastery[0], 
-        left.defenseMastery[0], 
-        left.movementMastery[0]
+        leftConfig.level,
+        leftConfig.weaponMastery,
+        leftConfig.defenseMastery,
+        leftConfig.movementMastery
     ]);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
@@ -80,31 +84,25 @@ const index: React.FC = props => {
             }
         >
             <CollapseTab tabs={["左実験体", "ダメージ", "右実験体"]}>
-                {/*
-                <Damage 
-                    leftStatus={leftStatus} 
-                    rightStatus={rightStatus} 
-                    leftConfig={left.value} 
-                    rightConfig={right.value} 
-                    leftHP={leftHP} 
-                    rightHP={rightHP} 
-                />
-                */}
-                <CombatModeSubjectConfigProvider side="left">
+                <SubjectConfigStoreProvider store={leftStore}>
                     <Subject
                         side="left"
                     />
-                </CombatModeSubjectConfigProvider>
-                <CombatModeSubjectConfigProvider side="right">
+                </SubjectConfigStoreProvider>
+                <Damage
+                    left={{config: leftConfig, status: leftStatus, hp: leftHP}}
+                    right={{config: rightConfig, status: rightStatus, hp: rightHP}}
+                />
+                <SubjectConfigStoreProvider store={rightStore}>
                     <Subject
                         side="right"
                     />
-                </CombatModeSubjectConfigProvider>
+                </SubjectConfigStoreProvider>
             </CollapseTab>
-            <TooltipPresenter 
+            <TooltipPresenter
                 showEquation={damageInFormula}
-                status={[leftStatus, rightStatus]} 
-                config={[left.value, right.value]} 
+                status={[leftStatus, rightStatus]}
+                config={[leftConfig, rightConfig]}
             />
             <Modal
                 isOpen={showingPreference}
@@ -113,9 +111,9 @@ const index: React.FC = props => {
                 className={preferenceStyle.preference}
                 overlayClassName={common["modal-overlay"]}
             >
-                <Preference 
-                    damageInFormula={[damageInFormula, setDamageInFormula]} 
-                    makeMasteryAlign={[makeMasteryAlign, setMakeMasteryAlign]} 
+                <Preference
+                    damageInFormula={[damageInFormula, setDamageInFormula]}
+                    makeMasteryAlign={[makeMasteryAlign, setMakeMasteryAlign]}
                 />
             </Modal>
         </Content>

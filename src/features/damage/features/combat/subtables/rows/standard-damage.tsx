@@ -15,7 +15,7 @@ import Potency from "../subrows/potency";
 import HealPower from "../subrows/heal-power";
 import Mitigation from "../subrows/mitigation";
 import DamageDependentHeal from "../subrows/damage-dependent-heal";
-import style from "../../../damage-table.module.styl";
+import style from "../../../../components/potency-rows/damage-table.module.styl";
 import table from "components/common/table.module.styl";
 import useDynamicValueCalculation from "./use-dynamic-value-calculation";
 

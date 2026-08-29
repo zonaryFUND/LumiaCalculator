@@ -132,31 +132,85 @@
       Simple mode専用の`features/simple/`配下ではなく`features/damage`直下に置いている
       （Phase 3着手時にそのまま再利用できるように）。
 
-### Phase 2 — Combat mode有効化のための土台設計（複雑度: 高。着手前に別途設計方針をすり合わせること）
+### Phase 2 — Combat mode有効化のための土台設計（2026-08-29 方針確定・store側の対応は完了）
 
-左右2つのconfig/statusに1つのコンポーネントから同時アクセスするための設計変更が必要。案（優劣は要検討）:
+対戦モードのUIは次の構造を持つ（ユーザーによる整理）。
 
-- (a) `CombatModeSubjectConfigProvider`が生成するstoreインスタンスを`pages/combat/index.tsx`側で保持し、
-      `<Damage leftStore={...} rightStore={...} />`のようにprops経由で両方渡す。
-- (b) 左右のstoreをまとめて保持する上位Contextを新設し、`useSubjectStateStore`に
-      「どちらのstoreを見るか（left/right）」を指定できる引数を追加する。
-- (c) 対戦モードの左右を1つのstoreにまとめ、`config: {left, right}`のような構造に変更する
-      （既存コードへの影響範囲が大きいため非推奨）。
+- 左右2カラムはそれぞれ実験体のConfig/Statusで、互いに影響を受けない。シンプルモードと本質的に同じ実装で
+  よく、`useSubjectStateStore`をそのまま使える。
+- 中央カラムは仮想敵を想定した効果量テーブルで、「左→右」「右→左」をトグルで切り替えるだけの**読み取り専用**
+  カラム。セッターは不要で、`{from: {config, status, hp}, to: {config, status, hp}}`という素の値オブジェクトを
+  渡せば十分（「発生源」「仮想敵」を`from`/`to`という向きの概念で表す。旧実装の`attacker`/`defender`に相当）。
 
-いずれかの方針を決定した上で、`pages/combat/index.tsx`に残る旧`useSubjectConfigState`ベースの二重状態
-（`left`/`right`）を廃止し、Zustand storeへ一本化する。
+このため、中央カラム（`features/damage`配下のCombat用コンポーネント群）はZustandを一切知る必要がなく、
+propsだけで完結する。純粋にpropsだけで完結する設計にすることで、以前検討していた「storeを直接受け取る
+フック」（`useSubjectStateStoreOf`案）は不要になった。
 
-### Phase 3 — Combat modeダメージ本体の移植（複雑度: 高。Phase 2完了後に着手）
+**必要な変更は「両方のstoreに同時アクセスできる場所を1箇所作ること」だけ**であり、これはページ
+（`pages/combat/index.tsx`）がstoreを自分で生成して保持し、`<Subject>`用のProviderにも中央カラム用の
+`{from,to}`組み立てにも同じstoreインスタンスを使う、という形で解決する。
 
-- [ ] `components/damage/combat/**`を`features/damage`配下へ移植する。
-- [ ] `mitigation-context.ts`・`combat-hp-context.ts`は引き続きReact Contextでよいが、配置場所を
-      `features/damage`配下に移し、Phase 2で決めたStore構成に合わせてProviderの設置位置を見直す。
-- [ ] Combat mode用の行コンポーネント（`rows/standard-damage.tsx`・`rows/critical-available.tsx`）と、
-      Simple mode側で既にZustand化済みの行コンポーネント（`features/damage/features/potency-rows/*`）を
-      統合できないか検討する。両者の差分は基本的に「軽減計算をはさむかどうか」のみであり、共通化できれば
-      Simple/Combatで二重管理されている行コンポーネントを1つに集約できる。
-- [ ] Phase 0で修正したバグを踏まえて移植する。
-- [ ] `pages/combat/damage.tsx`・`pages/combat/index.tsx`のコメントアウトを解除する。
+この過程で`CombatModeSubjectConfigProvider`（`features/subject-config/store.tsx`）は不要と判明し削除した。
+理由:
+- `pages/combat/subject.tsx`の`side`propは列見出し（「左実験体」/「右実験体」）表示にしか使われておらず、
+  子孫コンポーネントは自身がどちら側かを知る必要がない。
+- `CombatModeSubjectConfigProvider`が担っていた`subjectSide`のstore格納は、実は`createSubjectConfigStore`の
+  実装上どこにも代入されておらず**完全にデッドパラメータだった**（`SubjectStateStore`型にはフィールドが
+  あるのに、生成時に設定するコードがなかった）。
+- 唯一の読み取り箇所（`features/subject-skills/containers/skill.tsx`、ツールチップの左右判別用）も、
+  `TooltipPresenter`自体が現在無効化されているため機能していなかった。加えて同じ目的のための別の仕組み
+  （`ingame-params/subjects/subject-side.ts`の`SubjectSideContext`、`components/item/item.tsx`が参照）も
+  `.Provider`がどこにも設置されておらず同様に機能していなかった。
+
+対応（完了）:
+- [x] `store.tsx`: `CombatModeSubjectConfigProvider`を削除し、汎用の`SubjectConfigStoreProvider({store, children})`
+      を追加（呼び出し元が生成済みのstoreをContext経由で公開するだけ）。`SubjectStateStore`型・
+      `createSubjectConfigStore`から`subjectSide`を完全に削除した（デッドコードのため復旧せず削除する方針で確定）。
+- [x] `features/subject-skills/containers/skill.tsx`: `store.subjectSide`の参照を削除し、
+      ツールチップへの`subjectSide`は常に`undefined`を渡す形にした（`TooltipPresenter`復旧時に別途設計）。
+- [x] `pages/combat/index.tsx`: `leftStore`/`rightStore`をページ側で生成し、`SubjectConfigStoreProvider`
+      経由で`<Subject>`に渡す形に変更（`CombatModeSubjectConfigProvider`の呼び出し箇所を置き換え）。
+
+残作業（Phase 3で対応）:
+- [ ] `pages/combat/index.tsx`に残る旧`useSubjectConfigState`ベースの二重状態（`left`/`right`、
+      `TooltipPresenter`向けに残っている）を、上記`leftStore`/`rightStore`から`useStore`で直接読む形へ一本化する。
+- [ ] `ltr`（方向）トグルと`{from,to}`の組み立てを`pages/combat/index.tsx`（または中央カラムのすぐ外側）に実装する。
+- [ ] 中央カラムのダメージ計算コンポーネント群を`{from,to}`のみを受け取る形で`features/damage`配下に実装する。
+
+### Phase 3 — Combat modeダメージ本体の移植（2026-08-29完了）
+
+- [x] `pages/combat/index.tsx`に残っていた旧`useSubjectConfigState`ベースの二重状態を廃止し、
+      `leftStore`/`rightStore`から`zustand`の`useStore`で直接読む形へ一本化した
+      （`TooltipPresenter`向けのconfig/statusも同じ読み出しに統一）。マスタリー同期エフェクトも
+      `rightStore.getState().setConfig(...)`を直接呼ぶ形に書き換えた。
+- [x] `ltr`（方向）トグルと`from`/`to`（`{config,status,hp}`）の組み立てを実装した。トグル切替ボタン
+      （`SegmentedControl`）自体が対戦モードの中央カラム（`features/damage/features/combat/damage-table.tsx`）
+      の見た目の一部として描画されるため、トグル状態もその内部で保持する形にした（旧実装からの踏襲）。
+      ページ側からは`left`/`right`という素の`{config,status,hp}`だけを渡し、「どちらを`from`にするか」の
+      決定はダメージカラム自身の責務とした。
+- [x] `components/damage/combat/**`を`features/damage/features/combat/**`へ、ディレクトリ構造を保ったまま
+      移植した（内部の相対importはほぼ無変更で済んだ。外部参照だった`damage-table.module.styl`のパスのみ
+      修正——後述）。`attacker`という呼称は`from`に統一した（`defender`は元々変数名としてのみ使われており、
+      呼び出し側からは`to`として渡している）。
+- [x] `mitigation-context.ts`・`combat-hp-context.ts`を`features/damage/features/combat/`直下へ移した
+      （Reactの素のContextのままで変更なし）。
+- [x] **移植中に発見した既存バグを修正した:** 旧`components/damage/combat/damage-table.tsx`の
+      `import style from "../damage-table.module.styl"`は、実際には存在しないパス
+      （`components/damage/damage-table.module.styl`）を指す壊れたimportだった。実際の実体は
+      `features/damage/components/potency-rows/damage-table.module.styl`（Simple mode側と共有、
+      `.switch`など対戦モード専用クラスも含めて最初から用意されていた）。TypeScriptの`*.module.styl`
+      ワイルドカード型宣言はファイルの実在を検証しないため`tsc`では検出されず、かつ`<Damage>`自体が
+      `pages/combat/index.tsx`でコメントアウトされ未使用インポートとしてRollupにツリーシェイクされていた
+      ため、`yarn build`でも顕在化していなかった。今回`<Damage>`を有効化する過程で発見し、
+      正しいパスに修正した。
+- [x] `pages/combat/damage.tsx`・`pages/combat/index.tsx`のコメントアウトを解除した。
+- [x] `yarn build`・`vitest run`で確認済み（既存872件のスナップショット失敗以外に regressionなし）。
+
+**保留（今回は着手しなかった）:** Combat mode用の行コンポーネント（`rows/standard-damage.tsx`・
+`rows/critical-available.tsx`）と、Simple mode側で既にZustand化済みの行コンポーネント
+（`features/damage/features/potency-rows/*`）の統合。Combat側は相手側ステータス（軽減計算用）も必要かつ
+propsベース、Simple側はZustand直結という前提の違いがあるため、無理に完全統合はせず、計算ロジック
+（`calculateValue`・`extractMultiplier`等）の共有に留める可能性が高い。着手する場合は改めて検討する。
 
 ### Phase 4 — 命名規則の統一（複雑度: 低。他Phase完了後にまとめて実施）
 
@@ -169,9 +223,9 @@
 
 Phase 0 → Phase 1 → （Phase 2の設計方針をユーザーとすり合わせ）→ Phase 2 → Phase 3 → Phase 4
 
-（Phase 0・Phase 1は2026-08-29完了。次はPhase 2の設計方針のすり合わせ）
+（Phase 0・Phase 1・Phase 2は2026-08-29完了〔Phase 2はstore側の土台のみ。実際の配線・`{from,to}`組み立ては
+Phase 3に含めた〕。次はPhase 3）
 
 ## 実装前に確認が必要な事項
 
-- Phase 2の設計方針（案a/b/c、またはそれ以外）
 - Simple/Combatの行コンポーネントをどこまで統合するか（Phase 3、完全共通化 or 独立のまま）

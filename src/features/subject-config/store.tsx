@@ -8,13 +8,11 @@ import { persist } from "zustand/middleware"
 import { Migrate } from "@app/storage/migration-v1/config";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { statusOf } from "app-types/subject-dynamic/status/calculation";
-import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey } from "@app/storage/combat";
 
 type SubjectStateStore = {
     config: SubjectConfig
     status: Status
     hpRatio: number
-    subjectSide?: "left" | "right"
 
     // 状態更新の反映　内部からしか呼ばない
     _updateConfig: (updater: (prev: SubjectConfig) => SubjectConfig) => void
@@ -33,7 +31,7 @@ type SubjectStateStore = {
     setHpRatio: (hpRatio: React.SetStateAction<number>) => void
 }
 
-export function createSubjectConfigStore(storageKey: string, subjectSide?: "left" | "right") {
+export function createSubjectConfigStore(storageKey: string) {
     return createStore<SubjectStateStore>()(
         persist(
             (set, get) => ({
@@ -151,11 +149,19 @@ export function SimpleModeSubjectConfigProvider(props: {children: React.ReactNod
     )
 }
 
-export function CombatModeSubjectConfigProvider(props: {side: "left" | "right", children: React.ReactNode}) {
-    const key = props.side === "left" ? CombatCurrentLeftConfigKey : CombatCurrentRightConfigKey;
-    const storeRef = React.useRef(createSubjectConfigStore(key, props.side));
+/**
+ * 呼び出し元が既に生成済みのstoreをContext経由で子孫に公開するだけの汎用Provider。
+ *
+ * 対戦モードのように、Provider配下（実験体設定・スキル・ステータス）とは別の場所
+ * （中央のダメージ計算結果カラムなど）でも同じstoreの値を読みたい場合、呼び出し元が
+ * `createSubjectConfigStore`で自分でstoreを生成して保持し、このProviderにも渡す。
+ */
+export function SubjectConfigStoreProvider(props: {
+    store: ReturnType<typeof createSubjectConfigStore>,
+    children: React.ReactNode
+}) {
     return (
-        <SubjectConfigStoreContext.Provider value={storeRef.current}>
+        <SubjectConfigStoreContext.Provider value={props.store}>
             {props.children}
         </SubjectConfigStoreContext.Provider>
     )

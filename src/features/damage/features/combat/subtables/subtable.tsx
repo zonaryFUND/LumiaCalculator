@@ -13,7 +13,7 @@ import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 type Props = {
     label: string
     elements: (SubjectDamageTableUnit | Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy})[][]
-    attacker: {
+    from: {
         config: SubjectConfig
         status: Status,
         hp: number
@@ -42,7 +42,7 @@ const subTable: React.FC<Props> = props => {
 
                     const elements = chunk.flatMap(unit => {
                         if (typeof unit.value == "function") {
-                            const { value } = unit.value(props.attacker);
+                            const { value } = unit.value(props.from);
                             if (value.type == "critical") {
                                 return value.values
                                     .map((v, index) => {
@@ -58,8 +58,8 @@ const subTable: React.FC<Props> = props => {
                                             {...unit}
                                             label={label}
                                             value={v}
-                                            config={props.attacker.config}
-                                            status={props.attacker.status}
+                                            config={props.from.config}
+                                            status={props.from.status}
                                         />
                                     })
                                     .filter((e): e is React.ReactElement => e != null)
@@ -69,8 +69,8 @@ const subTable: React.FC<Props> = props => {
                                         {...unit}
                                         key={unit.label}
                                         value={value.value}
-                                        config={props.attacker.config}
-                                        status={props.attacker.status}
+                                        config={props.from.config}
+                                        status={props.from.status}
                                     />
                                 ];
                             }
@@ -81,8 +81,8 @@ const subTable: React.FC<Props> = props => {
                                         {...unit}
                                         key={unit.label}
                                         value={unit.value}
-                                        config={props.attacker.config}
-                                        status={props.attacker.status}
+                                        config={props.from.config}
+                                        status={props.from.status}
                                     />
                                 ];
                             } else if (
@@ -99,8 +99,8 @@ const subTable: React.FC<Props> = props => {
                                             key={`${unit.label}(自分へ)`}
                                             label={`${unit.label}(自分へ)`}
                                             value={unit.value}
-                                            config={props.attacker.config}
-                                            status={props.attacker.status}
+                                            config={props.from.config}
+                                            status={props.from.status}
                                             targetSide="anyToSelf"
                                         />,
                                         <StandardDamage 
@@ -108,8 +108,8 @@ const subTable: React.FC<Props> = props => {
                                             key={`${unit.label}(相手へ)`}
                                             label={`${unit.label}(相手へ)`}
                                             value={unit.value}
-                                            config={props.attacker.config}
-                                            status={props.attacker.status}
+                                            config={props.from.config}
+                                            status={props.from.status}
                                             targetSide="anyToOpponent"
                                         />
                                     ];
@@ -119,8 +119,8 @@ const subTable: React.FC<Props> = props => {
                                             {...unit}
                                             key={unit.label}
                                             value={unit.value}
-                                            config={props.attacker.config}
-                                            status={props.attacker.status}
+                                            config={props.from.config}
+                                            status={props.from.status}
                                             targetSide="both"
                                         />
                                     ];
@@ -131,8 +131,8 @@ const subTable: React.FC<Props> = props => {
                                         {...unit}
                                         key={unit.label}
                                         value={unit.value}
-                                        config={props.attacker.config}
-                                        status={props.attacker.status}
+                                        config={props.from.config}
+                                        status={props.from.status}
                                     />
                                 ];
                             }
