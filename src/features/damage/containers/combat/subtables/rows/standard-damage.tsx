@@ -11,6 +11,7 @@ import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
 import { useMitigation } from "../../mitigation-context";
 import { mitigatedDamage } from "core/damage-table/mitigation";
+import { healPowerOf, applyHealPower } from "core/damage-table/heal-power";
 import Potency from "../subrows/potency";
 import HealPower from "../subrows/heal-power";
 import Mitigation from "../subrows/mitigation";
@@ -57,8 +58,8 @@ const standardDamage: React.FC<Props> = props => {
     )
 
     const totalPotency = staticPotency.add(dynamicPotency)
-    const healPower = props.type?.type == "heal" && props.status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ? props.status.healerGiveHpHealRatio.calculatedValue : null;
-    const finalPotency = totalPotency.addPercent(healPower ?? 0);
+    const healPower = healPowerOf(props.status, props.type);
+    const finalPotency = applyHealPower(totalPotency, healPower);
     const mitigationContext = useMitigation();
 
     const [mitigatedValue, damageDependentHealValue, mitigationInfo] = (() => {

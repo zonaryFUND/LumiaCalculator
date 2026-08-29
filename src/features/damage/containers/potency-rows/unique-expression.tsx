@@ -11,6 +11,7 @@ import Standard from "../../components/potency-rows/standard";
 import Critical from "../../components/potency-rows/critical";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import UniqueValueEquation from "../potency-subrows/unique-value-equation";
+import { healPowerOf, applyHealPower } from "core/damage-table/heal-power";
 
 type Props = Omit<SubjectDamageTableUnit, "value"> & {
     strategy: UniqueValueStrategy
@@ -31,12 +32,12 @@ const uniqueExpression: React.FC<Props> = props => {
         hp
     });
     const valueClass = props.type ? style[props.type.type] : style.skill;
-    const healPower = props.type?.type == "heal" && status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ? status.healerGiveHpHealRatio.calculatedValue : undefined;
+    const healPower = healPowerOf(status, props.type);
 
     if (value.type == "critical") {
         // 致命打の可能性がある基本攻撃属性ダメージ。基礎値・致命打・期待値の3列を独立したセルとして
         // 表示する必要があるため、単一の値セルしか持たないStandardではなくCriticalを使う
-        const [regularDamage, criticalDamage, expectedValue] = value.values.map(v => v?.addPercent(healPower || 0));
+        const [regularDamage, criticalDamage, expectedValue] = value.values.map(v => v == undefined ? v : applyHealPower(v, healPower));
 
         return (
             <Critical
@@ -55,7 +56,7 @@ const uniqueExpression: React.FC<Props> = props => {
         )
     }
 
-    const sanitizedValue = value.value.addPercent(healPower || 0);
+    const sanitizedValue = applyHealPower(value.value, healPower);
 
     return (
         <Standard

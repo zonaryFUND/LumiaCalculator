@@ -6,6 +6,7 @@ import { Status } from "core/subject-dynamic/status/type";
 import { calculateValue } from "core/value-ratio";
 import { extractMultiplier } from "../../damage-table-util";
 import { DamageTableUnit } from "core/damage-table/unit";
+import { healPowerOf } from "core/damage-table/heal-power";
 import Standard from "../../components/potency-rows/standard";
 import DynamicRatioExpression from "./dynamic-ratio-expression";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
@@ -32,13 +33,12 @@ const standardDamage: React.FC<Props> = props => {
 
     const skillLevel = extractSkillLevel(config, props.origin)
     const multiplier = extractMultiplier(props.multiplier, skillLevel);    
-    const healPower = (props.type?.type == "heal") && status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ?
-        status.healerGiveHpHealRatio.calculatedValue : undefined;
+    const healPower = healPowerOf(status, props.type);
     const percent = React.useMemo(() => props.type && ("percentExpression" in props.type) && props.type.percentExpression, [props.type]);
 
 
     const multipliers = [
-        props.type?.type == "heal" ? status.healerGiveHpHealRatio.calculatedValue.add(100) : undefined,
+        healPower ? healPower.add(100) : undefined,
         multiplier?.mergedMultiplier
     ].filter((item): item is Decimal => item != undefined);
 
