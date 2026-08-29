@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Equipment, SkillLevels, SubjectConfig, SubjectConfigDefault } from "core/subject-dynamic/config";
+import { BuffDebuffState, Equipment, SkillLevels, SubjectConfig, SubjectConfigDefault } from "core/subject-dynamic/config";
 import { SubjectCode } from "core/subject-static";
 import { createContext, useContext } from "react";
 import { createStore, useStore } from "zustand";
@@ -7,6 +7,7 @@ import { persist } from "zustand/middleware"
 import { Migrate } from "@app/storage/migration-v1/config";
 import { Status } from "core/subject-dynamic/status/type";
 import { statusOf } from "core/subject-dynamic/status/calculation";
+import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
 
 type SubjectStateStore = {
     config: SubjectConfig
@@ -25,6 +26,7 @@ type SubjectStateStore = {
     setDefenseMastery: (defenseMastery: number) => void
     setMovementMastery: (movementMastery: number) => void
     setSkillLevels: (skillLevels: React.SetStateAction<SkillLevels>) => void
+    setSelfBuffs: (selfBuffs: React.SetStateAction<BuffDebuffState[]>) => void
     setGauge: (gauge: React.SetStateAction<number>) => void
     setStack: (stack: React.SetStateAction<number>) => void
     setHpRatio: (hpRatio: React.SetStateAction<number>) => void
@@ -59,6 +61,11 @@ export function createSubjectConfigStore(storageKey: string) {
                     skillLevels: {Q: 0, W: 0, E: 0, R: 0, T: 0},
                     gauge: 0,
                     stack: 0,
+                    // 実験体固有の自己バフを、スタック0の状態であらためて投入する
+                    // （selfBuffsは実験体ごとに保存されるものではないため、切り替え時に一旦空にしたうえで再構築する）
+                    selfBuffs: Object.entries(SubjectBuffDebuffDictionary[subject] ?? {})
+                        .map(([id]) => ({ id, stack: 0 } satisfies BuffDebuffState)),
+                    incomingBuffs: []
                 })),
                 setEquipment: (equipment: React.SetStateAction<Equipment>) => get()._updateConfig(prev => ({
                     ...prev,
@@ -83,6 +90,10 @@ export function createSubjectConfigStore(storageKey: string) {
                 setSkillLevels: (skillLevels: React.SetStateAction<SkillLevels>) => get()._updateConfig(prev => ({
                     ...prev,
                     skillLevels: typeof skillLevels === "function" ? skillLevels(prev.skillLevels) : skillLevels
+                })),
+                setSelfBuffs: (selfBuffs: React.SetStateAction<BuffDebuffState[]>) => get()._updateConfig(prev => ({
+                    ...prev,
+                    selfBuffs: typeof selfBuffs === "function" ? selfBuffs(prev.selfBuffs) : selfBuffs
                 })),
                 setGauge: (gauge: React.SetStateAction<number>) => get()._updateConfig(prev => ({
                     ...prev,

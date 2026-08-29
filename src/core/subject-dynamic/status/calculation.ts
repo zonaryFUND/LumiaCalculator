@@ -8,7 +8,7 @@ import { createComponentValue, StatusValueComponent } from "./value-component/co
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { calculateCooldownValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
 import * as es from "es-toolkit";
-import { SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { SubjectBuffDebuffDictionary, SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
 import { EquipmentAbilityPerpetualStatusDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
 
 /**
@@ -452,9 +452,14 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 })
         });
 
-    console.log({subjectPerpetulStatus, equipmentPerpetualStatus})
+    // 実験体固有スキルによる自己バフ。origin: "temporary-status"（ユーザーがスタックを切り替えられる）で
+    // StatusValueComponentを注入する（origin: "perpetual_status"の恒久パッシブとは区別する）
+    const selfBuffStatus = config.selfBuffs.flatMap(state => {
+        const def = SubjectBuffDebuffDictionary[config.subject]?.[state.id];
+        return def ? [def.buff(state.stack)] : [];
+    });
 
-    const componentStatus = [subjectPerpetulStatus, ...equipmentPerpetualStatus].reduce((prev, dict) => {
+    const componentStatus = [subjectPerpetulStatus, ...equipmentPerpetualStatus, ...selfBuffStatus].reduce((prev, dict) => {
         return Object.entries(dict).reduce((prev, [key, components]) => {
             const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
             return {

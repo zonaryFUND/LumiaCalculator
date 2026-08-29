@@ -7,5 +7,5 @@
  */
 export type BuffDebuffState = {
     id: string
-    stack: number | string
+    stack: number
 }

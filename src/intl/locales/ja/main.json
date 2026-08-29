@@ -109,5 +109,7 @@
     "app.value.target-lost-hp": "対象の失った体力の{ratio}%",
 
     "app.mitigation.defense": "防御力軽減",
-    "app.mitigation.defense-mastery": "熟練度軽減"
+    "app.mitigation.defense-mastery": "熟練度軽減",
+
+    "app.buff-debuff.no-self-buff": "この実験体は固有の自己バフを持っていません"
 }

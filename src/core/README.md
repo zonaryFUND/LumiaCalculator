@@ -51,7 +51,8 @@
 切り捨て）に手を入れる変更を行う際は、この`fix`の畳み込み位置（乗算適用後・クランプ前）を崩さないこと。特に
 `perpetual_status`経由の既存の`fix`利用（上記6実験体）を壊さないよう注意する。
 
-> 4・5・6は、バフ・デバフ計算機能の実装に着手するタイミングで併せて見直す方針（6の`console.log`削除も含む）。
+> バフ・デバフ計算機能の実装に着手した（`buff-debuff-spec.md`参照）。以下4・5・6は着手に伴い対応済み。
+> 進行中のタスクはStep 2の末尾に記載。
 
 ### 4. ~~`config.perpetualOuterBuffs`は宣言のみで未接続~~（対応済み、バフ・デバフ実装Step 1）
 
@@ -59,29 +60,41 @@
 `perpetualOuterBuffs: PerpetualOuterBuff[]`を`selfBuffs` / `incomingBuffs: BuffDebuffState[]`
 （`subject-dynamic/config/buff-debuff-state.ts`）に置き換えた。
 
-- `BuffDebuffState = {id: string, stack: number | string}`。`id`単独では発生源
+- `BuffDebuffState = {id: string, stack: number}`。`id`単独では発生源
   （実験体スキル/装備アビリティ/特性）を判別できないが、`selfBuffs`/`incomingBuffs`のどちらの配列に
   含まれるかで自己／他者は区別済みなので問題ない。同一`id`を持つ要素が配列内に複数存在しうる
   （例: 複数の発生源から同時にスロウを受ける）ため、dedupを前提にした実装をしないこと。
-- `stack`が`number | string`なのは、`ingame-params/perpetual-outer-buffs/augment.ts`の`力の蓄積`が
-  `"day.1.noon"`のような文字列キーの段階選択を既に行っているため（項目5参照）。
-- **今回はデータ構造と永続化のみ**（`storage/migration-v1/config.ts`の`Migrate()`・
+  当初`stack: number | string`としていたが（旧`力の蓄積`の文字列キー`"day.1.noon"`を参照した判断）、
+  仕様書の「切り替え式バフ」は内部的には0/1の数値IDで表現しラベル表示のみIntl側で解決する設計と判明し、
+  Step 2で`number`のみに絞り込んだ。
+- **Step 1の時点ではデータ構造と永続化のみ**（`storage/migration-v1/config.ts`の`Migrate()`・
   `features/subject-config/store.tsx`のZustand `persist`の`merge`・`storage/preset.ts`の移行分岐、
-  いずれも`SubjectConfigDefault`で既存データの欠落フィールドを補うようにした）。`id`から実際の効果定義を
-  引く「カタログ定義」の型（発生源タグを持つ判別Union、`statusOf()`への注入ロジック）は未着手で、
-  Step 2以降（自己バフ列挙UI・サンプル定義・他者バフUI・augmentカタログUI）で順次設計する。
+  いずれも`SubjectConfigDefault`で既存データの欠落フィールドを補うようにした）。「カタログ定義」の型・
+  `statusOf()`への注入ロジックは項目5参照。
 
-### 5. 現行`buff-debuff/type.ts`は型として未成熟
+### 5. ~~現行`buff-debuff/type.ts`は型として未成熟~~（対応済み、バフ・デバフ実装Step 2）
 
-- `StatusBuffDebuff.value: Record<keyof Status, number | ValueRatio>`が`Partial`になっておらず、型上は
-  「全ステータスキーへの値指定」を要求してしまっている（実質バグ。1つのステータスだけに影響するバフを
-  正しく表現できない）。
-- `BuffDebuff`に発動元（どの装備アビリティ/スキル/特性由来か）を表す`origin`フィールドがない。
-- ステータスへの加算以外の効果（例: ダメージテーブルの特定行への直接倍率適用）を表す型がない。
-- `SubjectConfig`側にこの型の値を保持するフィールドがなく、`pages/simple/buff-debuffs.tsx`もUIスタブ
-  （「作成中」の表示のみ）で、実データと接続されていない。
+未接続・未成熟だった旧`core/buff-debuff/type.ts`（どこからも参照されていなかったことをgrepで確認済み）を
+削除し、`ingame-params/buff-debuff/type.ts`に`BuffDebuffOrigin`（`"skill" | "equipment-ability" |
+"augment"`の判別タグ）と`SelfBuffDefinition`（`nameIntlID`・`availableStacks: number[]`・
+`buff: (stack) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent>>`）を
+新設した。自己バフの削除可否は`origin === "augment"`から導出する設計のため、独立した`removable`フィールドは
+持たない。
 
-### 6. （既出・再掲）`statusOf()`内の`console.log`残存
+配線: `ingame-params/subjects/type.ts`の`SubjectModules`に`buffDebuff?: Record<string,
+SelfBuffDefinition>`を追加し、`dictionary.ts`の`SubjectBuffDebuffDictionary`（`SubjectCode`キー）で集約。
+`statusOf()`（`subject-dynamic/status/calculation.ts`）内で`config.selfBuffs`を解決して
+`componentStatus`へ畳み込む（`origin: "temporary-status"`で注入。実験体固有の恒久パッシブ
+（`origin: "perpetual_status"`）とは区別する）。`features/subject-config/store.tsx`の`setSubject`が、
+実験体選択時に実験体固有の自己バフをスタック0で自動投入する。
+
+現時点では実データを持つ`buff-debuff.ts`は1つも存在せず（サンプル定義の作成は次のステップ）、装備アビリティ
+・特性（augment）由来の自己バフ、他者バフ（`incomingBuffs`）の追加・削除UIも未着手。
+
+### 6. ~~（既出・再掲）`statusOf()`内の`console.log`残存~~（対応済み）
+
+バフ・デバフ実装Step 2で`statusOf()`に手を入れた際に削除した（`known-issues.md`記載のデバッグ用
+`console.log`計4箇所のうちの1つ）。
 
 `subject-dynamic/status/calculation.ts:455` — [known-issues.md](../../docs/known-issues.md)の「既知の軽微な
 バグ」に既出（デバッグ用`console.log`計4箇所のうちの1つ）。このエリアに手を入れる際は併せて削除する。

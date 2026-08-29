@@ -6,6 +6,7 @@ import { UniqueValueStrategy } from "./unique-value-strategy";
 import { ValueRatio } from "core/value-ratio";
 import { IntlShape } from "react-intl";
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component";
+import { SelfBuffDefinition } from "@app/ingame-params/buff-debuff/type";
 
 export type SubjectDamageTableUnit = Omit<DamageTableUnit, "triggeredOnBasicAttack"> & {
     value: ValueRatio | UniqueValueStrategy
@@ -64,6 +65,11 @@ export type SubjectModules = {
     summoned?: SummonInfo[]
     stackInfo?: SubjectStackInfo
     gaugeInfo?: SubjectGaugeInfo
+
+    /**
+     * 実験体固有のスキルによって得られる自己バフの定義。Key: バフ・デバフのID
+     */
+    buffDebuff?: Record<string, SelfBuffDefinition>
 
     weaponSkillLevelOverride?: (mastery: number) => number
 }
