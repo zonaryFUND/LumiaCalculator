@@ -13,7 +13,10 @@ export const EchionWStrategy: UniqueValueStrategy = ({ config, status }) => {
         .add(Math.min(config.gauge, Constants.W.gauge_max_consumption) * Constants.W.multiplier / 100);
 
     return {
-        value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {
                 expression: [

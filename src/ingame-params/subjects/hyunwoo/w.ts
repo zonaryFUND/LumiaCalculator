@@ -9,7 +9,10 @@ export const hyunwooWDefenseStrategy: UniqueValueStrategy = ({ config, status })
     const defRatio = Constants.W.defense.defense;
     const value = status.defense.calculatedValue.div(defRatio).floor().add(base);
     return {
-        value,
+        value: {
+            type: "standard",
+            value
+        },
         equationExpression: [
             {
                 expression: [

@@ -2,6 +2,7 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { ValueOrigin } from "./calculation";
 import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
 import { SubjectWeaponSkillOverrideDictionary } from "@app/ingame-params/subjects/dictionary";
+import { ValueRatio } from "./type";
 
 /**
  * 実験体設定およびダメージ等効果発生源の設定からスキルレベルを抽出する
@@ -21,4 +22,20 @@ export function extractSkillLevel(config: SubjectConfig, origin: ValueOrigin): n
     }
 
     return config.skillLevels[origin];
+}
+
+/**
+ * ValueRatioから「対象の最大体力」「失った体力」などの動的なレシオを除いた部分を抽出する
+ * @param ratio ValueRatio構造体
+ * @returns 静的な値のみを含むValueRatio構造体
+ */
+export function extractStaticValueRatio(ratio: ValueRatio): ValueRatio {
+    const removedKeys = [
+        "targetMaxHP",
+        "targetHP",
+        "lostHP",
+        "targetLostHP"
+    ];
+
+    return Object.fromEntries(Object.entries(ratio).filter(([key]) => !removedKeys.includes(key))) as ValueRatio;
 }

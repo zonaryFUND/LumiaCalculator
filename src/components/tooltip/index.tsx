@@ -11,19 +11,33 @@ import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import common from "@app/common.module.styl";
 import { styles } from "@app/util/style";
 
+export type TooltipSubject = {
+    config: SubjectConfig
+    status: Status
+}
+
 type Props = {
     showEquation: boolean
-    config: SubjectConfig | [SubjectConfig, SubjectConfig]
-    status: Status | [Status, Status]
+    /**
+     * ツールチップの表示に使う実験体のconfig/status。対戦モードでは左右2体ぶんの組として渡す
+     * （config/statusを別々のpropsにせず1組にまとめることで、「片方だけ配列」という不整合を型で防ぐ）
+     */
+    subject: TooltipSubject | [TooltipSubject, TooltipSubject]
 }
 
 export const SkillTooltipID = "skill";
 
-function sidedParams(props: Props, side: OpenModalSkillProps["subjectSide"]): { config: SubjectConfig, status: Status } {
-    const config = Array.isArray(props.config) ? props.config[side == "left" ? 0 : 1] : props.config;
-    const status = Array.isArray(props.status) ? props.status[side == "left" ? 0 : 1] : props.status;
+function sidedParams(props: Props, side: OpenModalSkillProps["subjectSide"]): TooltipSubject {
+    return Array.isArray(props.subject) ? props.subject[side == "left" ? 0 : 1] : props.subject;
+}
 
-    return { config, status }
+/**
+ * hover中のDOM要素（react-tooltipの`activeAnchor`）が持つ`data-tooltip-subject-side`属性から、
+ * 型付けされた`subjectSide`を取り出す（属性値は生の文字列のため、想定外の値はundefinedとして扱う）
+ */
+function subjectSideOfAnchor(activeAnchor: Element | null): OpenModalSkillProps["subjectSide"] {
+    const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
+    return side == "left" || side == "right" ? side : undefined;
 }
 
 const tooltipPresenter: React.FC<Props> = props => {
@@ -46,13 +60,11 @@ const tooltipPresenter: React.FC<Props> = props => {
                 openEvents={uiType == "mobile" ? {click: false} : undefined}
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
-                    const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
-                    const config = Array.isArray(props.config) ? props.config[side == "left" ? 0 : 1] : props.config;
-                    const status = Array.isArray(props.status) ? props.status[side == "left" ? 0 : 1] : props.status;
+                    const { config, status } = sidedParams(props, subjectSideOfAnchor(activeAnchor));
 
                     return (
                         <SkillTooltip
-                            code={+content} 
+                            code={+content}
                             showEquation={props.showEquation}
                             config={config}
                             status={status}
@@ -67,9 +79,7 @@ const tooltipPresenter: React.FC<Props> = props => {
                 openEvents={uiType == "mobile" ? {click: false} : undefined}
                 render={({ content, activeAnchor }) => {
                     if (!content) return null;
-                    const side = activeAnchor?.getAttribute('data-tooltip-subject-side');
-                    const config = Array.isArray(props.config) ? props.config[side == "left" ? 0 : 1] : props.config;
-                    const status = Array.isArray(props.status) ? props.status[side == "left" ? 0 : 1] : props.status;
+                    const { config, status } = sidedParams(props, subjectSideOfAnchor(activeAnchor));
 
                     const [item, onSlot] = content.split("%");
                     const [itemID, isDavid] = item.split("_");

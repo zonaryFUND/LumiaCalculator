@@ -10,7 +10,10 @@ const rStrategy: UniqueValueStrategy = ({ config, status, hp }) => {
     const baseValue = calculateValue(Constants.R.damage, status, config, "R").static;
     const additionalValue = lostHPRatio.times(Constants.R.lost_hp_conversion[skillLevel]).floor();
     return {
-        value: baseValue.add(additionalValue),
+        value: {
+            type: "standard",
+            value: baseValue.add(additionalValue)
+        },
         equationExpression: [
             {
                 expression: [

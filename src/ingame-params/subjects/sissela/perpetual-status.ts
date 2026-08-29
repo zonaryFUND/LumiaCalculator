@@ -14,7 +14,10 @@ function Additional(target: "amp" | "heal", currentHPRatio: Decimal, tSkillLevel
 
 export const AdditionalAmpStrategy: UniqueValueStrategy = ({ config, status, hp }) => {
     return {
-        value: new Decimal(Additional("amp", new Decimal(1).sub(new Decimal(hp).div(status.maxHp.calculatedValue)).times(100), config.skillLevels.T)),
+        value: {
+            type: "standard",
+            value: new Decimal(Additional("amp", new Decimal(1).sub(new Decimal(hp).div(status.maxHp.calculatedValue)).times(100), config.skillLevels.T))
+        },
         equationExpression: [
             {
                 expression: [
@@ -27,7 +30,10 @@ export const AdditionalAmpStrategy: UniqueValueStrategy = ({ config, status, hp 
 
 export const AdditionalHealStrategy: UniqueValueStrategy = ({ config, status, hp }) => {
     return {
-        value: new Decimal(Additional("heal", new Decimal(1).sub(new Decimal(hp).div(status.maxHp.calculatedValue)).times(100), config.skillLevels.T)),
+        value: {
+            type: "standard",
+            value: new Decimal(Additional("heal", new Decimal(1).sub(new Decimal(hp).div(status.maxHp.calculatedValue)).times(100), config.skillLevels.T))
+        },
         equationExpression: []
     }
 }

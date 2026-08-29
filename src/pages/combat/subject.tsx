@@ -1,28 +1,24 @@
 import * as React from "react";
-import Config from "components/config/config";
-import Status from "components/status/status-table";
-import { Status as StatusType } from "app-types/subject-dynamic/status/type";
-import SubjectSkills from "components/subject/skills";
+import Config from "@app/features/subject-config";
+import Status from "@app/features/subject-status";
+import SubjectSkills from "@app/features/subject-skills";
+import Pane from "components/layout/pane/pane";
 import style from "./subject.module.styl";
-import { SubjectConfigProps } from "components/config/use-subject-config";
-import TabUnit from "components/common/tab/tab-unit";
-import { StateProps } from "@app/util/state";
 
-type Props = SubjectConfigProps & {
-    status: StatusType
-    hp: StateProps<number>
+type Props = {
+    side: "left" | "right"
 }
 
 const subject: React.FC<Props> = props => {
     return (
-        <TabUnit title="左実験体" className={style.subject}>
-            <Config {...props} maxHP={props.status.maxHp.calculatedValue.toNumber()} currentHPRatio={props.hp} />
+        <Pane title={props.side === "left" ? "左実験体" : "右実験体"} className={style.subject}>
+            <Config />
             <section className={style.skill}>
                 <h3>スキル</h3>
-                <SubjectSkills config={props.value} setSkillLevels={props.skillLevels[1]} />
+                <SubjectSkills />
             </section>
-            <Status {...props.value} status={props.status} />
-        </TabUnit>
+            <Status />
+        </Pane>
     )
 };
 

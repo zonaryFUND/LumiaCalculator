@@ -43,7 +43,7 @@ const value: React.FC<Props> = props => {
             />;
         });
     } else {
-        const { static: staticBaseValue, dynamic: dynamicBaseValue　} = calculateValue(props.ratio, status, config, props.origin);
+        const { static: staticBaseValue, dynamic: dynamicBaseValue } = calculateValue(props.ratio, status, config, props.origin);
         const { staticValue, dynamicValue } = (() => {
             const dynamicValue = dynamicBaseValue == undefined ? undefined :
                 Object.entries(dynamicBaseValue).reduce((prev, [key, value]) => {

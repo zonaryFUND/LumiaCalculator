@@ -1,8 +1,8 @@
 import * as React from "react";
-import SubjectSkills from "components/subject/skills";
-import Table from "components/damage/simple/damage-table";
+import SubjectSkills from "@app/features/subject-skills";
+import Table from "@app/features/damage/containers/simple/damage-table";
 import style from "./damage.module.styl";
-import TabUnit from "components/common/tab/tab-unit";
+import Pane from "components/layout/pane/pane";
 
 import { Status } from "app-types/subject-dynamic/status/type";
 import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
@@ -15,11 +15,11 @@ type Props = {
     setSkillLevels: React.Dispatch<React.SetStateAction<SkillLevels>>
 }
 
-const damages: React.FC<Props> = props => {
+const damages: React.FC = props => {
     const uiType = useResponsiveUIType();
 
     return (
-        <TabUnit title="ダメージ" className={style.damage}>
+        <Pane title="ダメージ" className={style.damage}>
             <section className={style.skill}>
                 <h3>
                     スキル<span>
@@ -28,10 +28,10 @@ const damages: React.FC<Props> = props => {
                         }
                     </span>
                 </h3>
-                <SubjectSkills config={props.config} setSkillLevels={props.setSkillLevels} />
+                <SubjectSkills />
             </section>
-            <Table status={props.status} config={props.config} hp={props.hp} />
-        </TabUnit>
+            <Table />
+        </Pane>
     )
 };
 

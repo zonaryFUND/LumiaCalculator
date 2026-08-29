@@ -14,18 +14,18 @@ import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 
 import { useToggle } from "react-use";
-import CollapseTab from "components/common/collapse-tab";
+import { useStore } from "zustand";
+import CollapsiblePanes from "components/layout/pane/collapsible-panes";
 import { SimpleCurrentConfigKey } from "@app/storage/simple";
 import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
-import { NavigationButtonContext } from "components/pages/navigation";
+import { NavigationButtonContext } from "components/layout/navigation";
 
-import Content from "components/pages/base/content";
-import { useSubjectConfig } from "components/config/use-subject-config";
-import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import Content from "components/layout/base/content";
+import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -41,15 +41,18 @@ const index: React.FC = props => {
         })
     }, [])
 
-    const configProps = useSubjectConfig(SimpleCurrentConfigKey);
-    const hpRatio = React.useState(100);
-    const status = statusOf(configProps.value, hpRatio[0]);
+    // TooltipPresenterが実際のconfig/statusを参照できるよう、storeはこのページ側で生成する
+    // （対戦モードのpages/combat/index.tsxと同じパターン）
+    const store = React.useRef(createSubjectConfigStore(SimpleCurrentConfigKey)).current;
+    const config = useStore(store, s => s.config);
+    const status = useStore(store, s => s.status);
 
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
 
     return (
+        <SubjectConfigStoreProvider store={store}>
         <Content
             pcHeader={
                 <header className={style.header}>
@@ -59,24 +62,14 @@ const index: React.FC = props => {
                 </header>
             }
         >
-            <CollapseTab tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
-                <Subject 
-                    {...configProps}
-                    hpRatio={hpRatio}
-                    status={status}
-                />
-                <Damage
-                    config={configProps.value}
-                    status={status}
-                    hp={status.maxHp.calculatedValue.percent(hpRatio[0]).toNumber()}
-                    setSkillLevels={configProps.skillLevels[1]}
-                />
+            <CollapsiblePanes tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
+                <Subject />
+                <Damage />
                 <BuffDebuffs />
-            </CollapseTab>
-            <TooltipPresenter 
+            </CollapsiblePanes>
+            <TooltipPresenter
                 showEquation={damageInFormula}
-                status={status} 
-                config={configProps.value} 
+                subject={{config, status}}
             />
             <Modal
                 isOpen={showingPreference}
@@ -88,6 +81,7 @@ const index: React.FC = props => {
                 <Preference damageInFormula={[damageInFormula, setDamageInFormula]} />
             </Modal>
         </Content>
+        </SubjectConfigStoreProvider>
     )
 };
 

@@ -4,11 +4,10 @@ import common from "@app/common.module.styl";
 
 import { Gear } from "@phosphor-icons/react";
 
-import CollapseTab from "components/common/collapse-tab";
+import CollapsiblePanes from "components/layout/pane/collapsible-panes";
 import Subject from "./subject";
 import Damage from "./damage";
 import style from "./index.module.styl";
-import { SubjectSideContext } from "@app/ingame-params/subjects/subject-side";
 
 import TooltipPresenter from "components/tooltip";
 import Preference from "./preference";
@@ -17,10 +16,11 @@ import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
 import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey, CombatMasterySyncKey } from "@app/storage/combat";
 import { useToggle } from "react-use";
-import { useSubjectConfig } from "components/config/use-subject-config";
-import Content from "components/pages/base/content";
-import { NavigationButtonContext } from "components/pages/navigation";
-import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import { useStore } from "zustand";
+import Content from "components/layout/base/content";
+import { NavigationButtonContext } from "components/layout/navigation";
+import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
+import { TooltipSubjectSideContext } from "components/tooltip/subject-side-context";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -39,31 +39,37 @@ const index: React.FC = props => {
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
 
-    const left = useSubjectConfig(CombatCurrentLeftConfigKey);
-    const leftHPRatio = React.useState(100);
-    const leftStatus = statusOf(left.value, leftHPRatio[0]);
-    const leftHP = leftStatus.maxHp.calculatedValue.percent(leftHPRatio[0]).floor().toNumber();
+    // 中央のダメージ計算結果カラムが左右両方のconfig/statusを同時に参照できるよう、
+    // storeはこのページ側で生成する。<Subject>にはSubjectConfigStoreProvider経由で
+    // 同じインスタンスを渡し、このページ自身もuseStoreで直接値を読む
+    const leftStore = React.useRef(createSubjectConfigStore(CombatCurrentLeftConfigKey)).current;
+    const rightStore = React.useRef(createSubjectConfigStore(CombatCurrentRightConfigKey)).current;
 
-    const right = useSubjectConfig(CombatCurrentRightConfigKey);
-    const rightHPRatio = React.useState(100);
-    const rightStatus = statusOf(right.value, rightHPRatio[0]);
-    const rightHP = rightStatus.maxHp.calculatedValue.percent(rightHPRatio[0]).floor().toNumber();
+    const leftConfig = useStore(leftStore, s => s.config);
+    const leftStatus = useStore(leftStore, s => s.status);
+    const leftHpRatio = useStore(leftStore, s => s.hpRatio);
+    const leftHP = leftStatus.maxHp.calculatedValue.percent(leftHpRatio).floor().toNumber();
+
+    const rightConfig = useStore(rightStore, s => s.config);
+    const rightStatus = useStore(rightStore, s => s.status);
+    const rightHpRatio = useStore(rightStore, s => s.hpRatio);
+    const rightHP = rightStatus.maxHp.calculatedValue.percent(rightHpRatio).floor().toNumber();
 
     React.useEffect(() => {
         if (!makeMasteryAlign) return;
-        right.setConfig({
-            ...right.value,
-            level: left.level[0],
-            weaponMastery: left.weaponMastery[0],
-            defenseMastery: left.defenseMastery[0],
-            movementMastery: left.movementMastery[0]
+        rightStore.getState().setConfig({
+            ...rightStore.getState().config,
+            level: leftConfig.level,
+            weaponMastery: leftConfig.weaponMastery,
+            defenseMastery: leftConfig.defenseMastery,
+            movementMastery: leftConfig.movementMastery
         });
     }, [
         makeMasteryAlign,
-        left.level[0], 
-        left.weaponMastery[0], 
-        left.defenseMastery[0], 
-        left.movementMastery[0]
+        leftConfig.level,
+        leftConfig.weaponMastery,
+        leftConfig.defenseMastery,
+        leftConfig.movementMastery
     ]);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
@@ -78,34 +84,32 @@ const index: React.FC = props => {
                 </header>
             }
         >
-            <CollapseTab tabs={["左実験体", "ダメージ", "右実験体"]}>
-                <SubjectSideContext.Provider value="left">
-                    <Subject
-                        {...left}
-                        hp={leftHPRatio}
-                        status={leftStatus}
-                    />
-                </SubjectSideContext.Provider>
-                <Damage 
-                    leftStatus={leftStatus} 
-                    rightStatus={rightStatus} 
-                    leftConfig={left.value} 
-                    rightConfig={right.value} 
-                    leftHP={leftHP} 
-                    rightHP={rightHP} 
+            <CollapsiblePanes tabs={["左実験体", "ダメージ", "右実験体"]}>
+                <TooltipSubjectSideContext.Provider value="left">
+                    <SubjectConfigStoreProvider store={leftStore}>
+                        <Subject
+                            side="left"
+                        />
+                    </SubjectConfigStoreProvider>
+                </TooltipSubjectSideContext.Provider>
+                <Damage
+                    left={{config: leftConfig, status: leftStatus, hp: leftHP}}
+                    right={{config: rightConfig, status: rightStatus, hp: rightHP}}
                 />
-                <SubjectSideContext.Provider value="right">
-                    <Subject
-                        {...right}
-                        hp={rightHPRatio}
-                        status={rightStatus}
-                    />
-                </SubjectSideContext.Provider>
-            </CollapseTab>
-            <TooltipPresenter 
+                <TooltipSubjectSideContext.Provider value="right">
+                    <SubjectConfigStoreProvider store={rightStore}>
+                        <Subject
+                            side="right"
+                        />
+                    </SubjectConfigStoreProvider>
+                </TooltipSubjectSideContext.Provider>
+            </CollapsiblePanes>
+            <TooltipPresenter
                 showEquation={damageInFormula}
-                status={[leftStatus, rightStatus]} 
-                config={[left.value, right.value]} 
+                subject={[
+                    {config: leftConfig, status: leftStatus},
+                    {config: rightConfig, status: rightStatus}
+                ]}
             />
             <Modal
                 isOpen={showingPreference}
@@ -114,9 +118,9 @@ const index: React.FC = props => {
                 className={preferenceStyle.preference}
                 overlayClassName={common["modal-overlay"]}
             >
-                <Preference 
-                    damageInFormula={[damageInFormula, setDamageInFormula]} 
-                    makeMasteryAlign={[makeMasteryAlign, setMakeMasteryAlign]} 
+                <Preference
+                    damageInFormula={[damageInFormula, setDamageInFormula]}
+                    makeMasteryAlign={[makeMasteryAlign, setMakeMasteryAlign]}
                 />
             </Modal>
         </Content>
