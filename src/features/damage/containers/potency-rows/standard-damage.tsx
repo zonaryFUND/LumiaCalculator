@@ -4,7 +4,7 @@ import { SubjectConfig } from "core/subject-dynamic/config";
 import { extractSkillLevel, ValueOrigin, ValueRatio } from "core/value-ratio";
 import { Status } from "core/subject-dynamic/status/type";
 import { calculateValue } from "core/value-ratio";
-import { extractMultiplier } from "../../damage-table-util";
+import { extractMultiplier } from "core/damage-table/multiplier";
 import { DamageTableUnit } from "core/damage-table/unit";
 import { healPowerOf } from "core/damage-table/heal-power";
 import Standard from "../../components/potency-rows/standard";

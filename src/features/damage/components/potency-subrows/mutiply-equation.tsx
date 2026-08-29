@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import * as React from "react";
 import table from "components/common/table.module.styl";
-import { MultiplierExpression } from "../../damage-table-util";
+import { MultiplierExpression } from "core/damage-table/multiplier";
 
 type Props = {
     /**

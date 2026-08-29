@@ -3,7 +3,7 @@ import { SubjectConfig } from "core/subject-dynamic/config";
 import { Status } from "core/subject-dynamic/status/type";
 import { extractSkillLevel, ValueRatio } from "core/value-ratio";
 import { calculateValue } from "core/value-ratio";
-import { extractMultiplier } from "@app/features/damage/damage-table-util";
+import { extractMultiplier } from "core/damage-table/multiplier";
 import * as React from "react";
 import { useToggle } from "react-use";
 import { useCombatHPContext } from "../../combat-hp-context";

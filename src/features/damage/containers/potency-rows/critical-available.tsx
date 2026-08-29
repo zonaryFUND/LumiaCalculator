@@ -10,7 +10,7 @@ import Critical from "../../components/potency-rows/critical";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { calculateValue, extractSkillLevel } from "core/value-ratio";
 import { criticalMultiplier, expectedMultiplier } from "core/damage-table/critical";
-import { extractMultiplier } from "../../damage-table-util";
+import { extractMultiplier } from "core/damage-table/multiplier";
 
 /**
  * 致命打の可能性があるダメージ（致命打無効になっていない基本攻撃ダメージ属性）について、

@@ -1,4 +1,4 @@
-import { ValueTableUnitMultiplier } from "core/damage-table/unit"
+import { ValueTableUnitMultiplier } from "./unit"
 
 export type MultiplierExpression = {
     label?: string
@@ -13,7 +13,7 @@ export type ExtractedMultiplier = {
 export function extractMultiplier(multiplier?: ValueTableUnitMultiplier, skillLevel?: number): ExtractedMultiplier | undefined {
     if (multiplier == undefined) return undefined;
 
-    if (typeof multiplier == "number") 
+    if (typeof multiplier == "number")
         return {
             mergedMultiplier: multiplier,
             individualExpressions: [{value: multiplier}]
@@ -33,13 +33,13 @@ export function extractMultiplier(multiplier?: ValueTableUnitMultiplier, skillLe
     }
 
     return multiplier.reduce((prev, current) => {
-        if (typeof current == "number") 
+        if (typeof current == "number")
             return {
                 mergedMultiplier: prev.mergedMultiplier * current / 100,
                 individualExpressions: prev.individualExpressions.concat({value: current})
             };
 
-        if (typeof current.value == "number") 
+        if (typeof current.value == "number")
             return {
                 mergedMultiplier: prev.mergedMultiplier * current.value / 100,
                 individualExpressions: prev.individualExpressions.concat({label: current.label, value: current.value})
