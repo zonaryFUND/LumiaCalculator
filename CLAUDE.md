@@ -11,14 +11,17 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
 
 ## リポジトリ構成
 
-この `CLAUDE.md` が置かれているディレクトリ（以下このファイル内で `src/` と呼ぶ）自体が、
-Gitの管理単位としては独立した**ソースリポジトリ**であり、GitHub上に公開されている。
+この `CLAUDE.md` が置かれているディレクトリ（以下このファイル内で `src/` と呼ぶ）は、一段上のディレクトリと
+**同じ単一のGitリポジトリ**に属する（`src/`自体が独立したGit管理単位ではない）。ただし`src`という名前の
+リモート（`zonaryFUND/LumiaCalculator.git`）が別途設定されており、`src/`配下の内容だけがGitHub上に
+公開ソースリポジトリとして公開されている。
 
-これを内包する一段上のリポジトリルートには、`src/` に加えて `resources/`（NimbleNeuron社がファン活動用に
-配布している画像素材を加工したゲーム画像アセット）が存在するが、こちらは**再配布防止のため非公開の
-プライベートリポジトリ**として管理されている。この事情により、ゲームロジック・実装に関するドキュメント
-（この `CLAUDE.md` や `docs/` 配下）は `resources/` を含む非公開ルート側ではなく、公開される `src/` 側に
-置く。逆に、画像アセットや配布リソースの権利関係に触れる内容は `src/` 側のドキュメントに含めない。
+一段上のリポジトリルートには、`src/` に加えて `resources/`（NimbleNeuron社がファン活動用に
+配布している画像素材を加工したゲーム画像アセット）が存在するが、こちらは**再配布防止のため非公開**で
+管理されている（`origin`リモートが指す、本リポジトリ全体）。この事情により、ゲームロジック・実装に関する
+ドキュメント（この `CLAUDE.md` や `docs/` 配下）は `resources/` を含む非公開ルート側ではなく、公開される
+`src/` 側に置く。逆に、画像アセットや配布リソースの権利関係に触れる内容は `src/` 側のドキュメントに
+含めない。
 
 `src/` 内でのディレクトリ構成、および以下のコマンドの実行場所は、この `CLAUDE.md` があるディレクトリを
 基準とする。
@@ -117,11 +120,14 @@ Gitの管理単位としては独立した**ソースリポジトリ**であり�
   `calculation.ts`の`calculateValue()`が実際の計算エントリポイント（[ダメージモデル](docs/damage-model.md)参照）、
   `extraction.ts`の`extractSkillLevel()`はスキルレベル抽出（武器スキル(`origin == "D"`)は
   `config.weaponMastery`経由の特別ルートを通る点に注意）。
-- `src/src/features/damage/` に、実験体の `damage-table.ts` や戦闘ページから利用される共通のダメージ計算・
-  軽減ロジックが置かれている。会心（クリティカル）計算は`src/components/damage/basic-attack-damage.ts`の
-  `calculateBasicAttackTypeDamage()`、防御力軽減・被ダメージ軽減は`src/components/damage/combat/`配下
+- `src/src/features/damage/` に、実験体の `damage-table.ts` や戦闘ページから利用されるダメージ計算・
+  軽減ロジックが置かれている。Simple mode向けは`containers/simple/`、Combat mode向けは`containers/combat/`
+  （エントリポイントはそれぞれ`containers/{simple,combat}/damage-table.tsx`）。会心（クリティカル）計算は
+  `containers/potency-rows/critical-available.tsx`（Simple）・`containers/combat/subtables/rows/
+  critical-available.tsx`（Combat）、防御力軽減・被ダメージ軽減は`containers/combat/`配下
   （`mitigation-context.ts`の`createMitigation()`、`mitigated-damage.tsx`の`mitigatedDamage()`）にある。
-  ただし現状これらはViewコンポーネント側にロジックが混在している状態（[既知の課題](docs/known-issues.md)参照）。
+  Simple/Combatで行コンポーネントは別実装だが、計算ロジック（`calculateValue`・`extractMultiplier`等）は
+  共有している。featureの構成全体は[features/README.md](src/features/README.md)を参照。
 - ステータス計算のエントリポイントは
   `src/src/types/app-types/subject-dynamic/status/calculation.ts`の`statusOf()`。構成要素配列から
   最終値を合成する`calculateStatusValue`等は同ディレクトリの`combine-components.ts`にあり、
@@ -130,12 +136,17 @@ Gitの管理単位としては独立した**ソースリポジトリ**であり�
 
 ### アプリ構造 / UI
 
+- `src/src/features/` — Zustand storeを使う状態を持つUI機能（`subject-config`・`subject-skills`・
+  `subject-status`・`damage`）はここに置く。Storeアクセスを担う`containers/`とStoreに依存しない
+  `components/`（View/Layout）を分離する方針・命名規則は[component-guidelines.md](src/features/component-guidelines.md)、
+  各featureの現状は[features/README.md](src/features/README.md)を参照。
 - `src/src/App.tsx` — ルートコンポーネント。`import.meta.glob` で `intl/locales/**/*.json` をすべて読み込み、
   `IntlProvider`（ロケールは `"ja"` に固定）でアプリ全体をラップし、`/` と `/simple` をSimpleページ、
   `/combat` をCombatページにルーティングする。
 - `src/src/pages/simple/` と `src/src/pages/combat/` — アプリの2つのモード。前者は単一実験体の簡易ステータス
-  計算、後者はより詳細な戦闘/ダメージ比較用。共通のページ枠組み（ナビゲーション、ベースレイアウト）は
-  `src/src/components/pages/` にある。
+  計算、後者はより詳細な戦闘/ダメージ比較用。共通のページ枠組み（ナビゲーション、ベースレイアウト、
+  レスポンシブなタブ/カラム切り替え）は `src/src/components/layout/` にある。`src/src/components/` 配下の
+  構成方針（featureとの境界、各サブディレクトリの役割）は[components/README.md](src/components/README.md)を参照。
 - `src/src/storage/` — `react-use` の `useLocalStorage` を用いた、保存済みビルド/プリセット/設定の永続化層。
   `storage/migration-v1/` は旧（`v2` 以前の）localStorageスキーマを新形式へ移行する処理。パターンは
   `storage/config.ts` の `useLocalStorageConfig` を参照。新規コードは現行（`v2`）形式のみを読み書きし、

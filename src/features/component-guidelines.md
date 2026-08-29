@@ -61,8 +61,9 @@ Storeに一切アクセスしない。必要なデータはすべてpropsで受�
 1. **ドメイン非依存** — `SubjectConfig`・`Status`・`EquipmentID`のようなゲーム固有の型を一切知らない、
    汎用的なUI部品（ドロップダウン、スイッチ、タブ、テーブル行など）。現時点で1つのfeatureからしか
    使われていなくても、他のfeatureが将来使う可能性が普通にある部品はここに含まれる
-   （例: `components/slider/`は現状`subject-config`からのみ使われているが、ドメインを一切知らない
-   汎用スライダーなので`components/`のままでよい）。
+   （例: `components/common/gauge-slider.tsx`は現状`subject-config`からのみ使われているが、
+   ドメインを一切知らない汎用スライダーなので`components/`のままでよい。旧`components/slider/`から
+   2026-08-29に`common/`へ合流）。
 2. **ドメインには依存するが、実際に複数featureから使われている** — 例: `components/tooltip/`は
    `subject-skills`（スキルアイコン）と`subject-config`（装備アイコン）の両方から呼ばれ、かつ対戦モードの
    「左右どちらの実験体か」という横断的な関心事も持つ。
@@ -72,3 +73,6 @@ Storeに一切アクセスしない。必要なデータはすべてpropsで受�
 （装備アイコン。`subject-config`専用と判明）・`src/components/modal/`（装備選択/ビルド保存読込/実験体選択の
 疑似モーダル。4ファイル全て`subject-config`専用と判明）を`features/subject-config/`へ移動し、
 `src/components/config/`（デッドコード）を削除した。詳細は[README.md](./README.md)のsubject-config節を参照。
+
+`src/components/`配下の現在の構成（`common/`・`layout/`・`tooltip/`の役割分担、それぞれの中身）は
+[../components/README.md](../components/README.md)を参照。

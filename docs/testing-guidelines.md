@@ -33,7 +33,7 @@
 数値でテストする。「このアルゴリズムが、想定した入力に対して想定した計算をするか」だけを検証すればよく、
 パッチの影響を一切受けない。
 
-例: `src/test/extract-multiplier.test.ts`（`components/damage/damage-table-util.ts`の`extractMultiplier`）。
+例: `src/test/extract-multiplier.test.ts`（`features/damage/damage-table-util.ts`の`extractMultiplier`）。
 固定倍率・スキルレベル依存配列・ラベル付き複数要素の合成規則を、自作の数値だけで検証している。
 
 このアプリの計算コアの全体像は[CLAUDE.md](../CLAUDE.md)の「計算コア」節、合成順序の詳細は

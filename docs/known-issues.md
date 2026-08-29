@@ -19,20 +19,22 @@
   （[ステータスモデル](./status-model.md)の「要素の合成順序」参照）。
 - ブランチ状況: `buff`ブランチ（`status-refactor`から派生）でステータス計算エンジンの再設計を伴うバフ実装が
   進行中（`translate-buff.ts`追加、`value-component/`→`value/`への再構成など、対象ファイルが広範囲かつ
-  wip状態）。着手前に必ずこのブランチの状態を確認すること。
+  wip状態）。着手前に必ずこのブランチの状態を確認すること。2026-08-29時点で`main`側は`workaround/zustand`
+  ブランチの作業により、ダメージ計算まわりが`src/components/damage/**`から`src/features/damage/**`へ
+  丸ごと移動・再構成済みのため、`buff`ブランチとの差分は非常に大きくなっている。参考にする場合は
+  ファイル単位のマージではなく、設計の考え方だけを参照する前提で臨むこと。
 
-## 計算ロジックがViewコンポーネント側に実装されている
+## Simple/Combatダメージ表示の行コンポーネントが未統合
 
-ダメージ計算の一部が、`src/components/damage/**` 配下のReactコンポーネントやそれに準ずるモジュール
-（`mitigated-damage.tsx`, `mitigation-context.ts`, `basic-attack-damage.ts`, `standard-damage.tsx`,
-`damage-table-util.ts`）に直接実装されている。
+`features/damage/containers/potency-rows/*`（Simple mode、Zustand直結）と
+`features/damage/containers/combat/subtables/rows/*`（Combat mode、propsのみで完結）は、
+見た目・計算内容が類似しているにも関わらず別実装のまま。
 
-本来はロジック層（`src/types/app-types/**` 等）に分離されるべき計算が、View側に混在している状態。
-テスト容易性・再利用性の観点で望ましくない。
-
-- 対応: 計算ロジックをコンポーネントから分離し、`app-types` 配下などへ純粋関数として再配置する。
-- ブランチ状況: この分離作業は`workaround/zustand`ブランチで着手されている可能性がある（stateの持ち方を
-  zustand化するwipコミットが多数積まれている）。着手前に状態を確認すること。
+- 理由: Combat側は仮想敵側のステータス（軽減計算用）も必要かつpropsベースで完結させる設計、
+  Simple側はZustandの単一storeに直結という前提が異なるため。
+- 対応: 無理に完全統合はせず、計算ロジック（`calculateValue`・`extractMultiplier`等）の共有に留める
+  方針で一旦決着している。統合するとしても行コンポーネント自体ではなく、計算ロジック層の共有範囲を
+  広げる形が現実的と見られる。
 
 ## 既知の軽微なバグ（現時点で実害なし・未対応）
 
@@ -48,6 +50,8 @@
 - **`EquipmentBaseStatus`型に定義されているが未使用のキー**: `maxSp`, `spRegenRatio`,
   `weaponCooldownReduction`はAPIレスポンス由来で型定義はあるが、`ComponentStatus`側に対応フィールドがなく
   計算に一切使われていない（スタミナ・武器スキル固有CDRはこの計算機の対象外）。
-- **デバッグ用`console.log`の残存**: `calculation.ts`の`statusOf()`内、および`sissela/perpetual-status.ts`,
-  `components/subject/skills.tsx`, `components/modal/equipment-list.tsx`, `hisui/t.ts`の計5箇所。
+- **デバッグ用`console.log`の残存**（2026-08-29再確認、計4箇所）: `types/app-types/subject-dynamic/status/
+  calculation.ts`の`statusOf()`内、`ingame-params/subjects/sissela/perpetual-status.ts`、
+  `ingame-params/subjects/hisui/t.ts`、`features/subject-config/containers/equipment-list-modal.tsx`
+  （旧`components/modal/equipment-list.tsx`。2026-08-29の再編で`features/subject-config/`へ移動済み）。
   動作に影響はないが削除候補。

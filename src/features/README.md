@@ -29,9 +29,9 @@ subject-status / damage）は自前のstoreを持たず、すべて `@app/featur
   storeの値を直接読む必要がある場面（`TooltipPresenter`や対戦モードの中央カラム）」に対応できず、
   最終的に汎用Providerへ統合・削除した。
 - 永続化は `zustand/middleware` の `persist` が担う。旧 `useLocalStorage` ベースの
-  `useSubjectConfigState`（`components/config/use-subject-config.tsx`）を置き換えるものだが、
-  `storage/migration-v1/` （v2以前の形式）からのマイグレーションも `store.tsx` 内の `migrate()` が
-  そのまま引き継いでいるため、マイグレーション処理は2世代分が積み重なっている。
+  `useSubjectConfigState`（旧`components/config/use-subject-config.tsx`。2026-08-29にデッドコードとして
+  削除済み）を置き換えるものだが、`storage/migration-v1/` （v2以前の形式）からのマイグレーションも
+  `store.tsx` 内の `migrate()` がそのまま引き継いでいるため、マイグレーション処理は2世代分が積み重なっている。
 
 ## containers / components の役割分担
 
@@ -69,7 +69,7 @@ container/components/layout/viewの分離が最も整理されている状態。
 
 containers/components分離済み。スキルアイコン（`components/skill-icon.view.tsx`）は
 `data-tooltip-id`属性を出力するのみで、実際のツールチップ描画は本featureの外、
-`components/tooltip/index.tsx`（`TooltipPresenter`）が担当する。
+`src/components/tooltip/index.tsx`（`TooltipPresenter`）が担当する。
 
 `TooltipPresenter`は`config`/`status`をpropsで受け取る設計（Zustand化はしていない）。
 これは意図的な設計で、対戦モードでは`config`/`status`が`[左,右]`のペアになりうるため、`TooltipPresenter`
@@ -78,10 +78,11 @@ containers/components分離済み。スキルアイコン（`components/skill-ic
 
 対戦モードでは「hoverしたアイコンがどちら側の実験体のものか」をreact-tooltipのhover描画
 （DOM要素の`data-tooltip-*`属性しか参照できない）に伝える必要がある。この橋渡し役として
-`components/tooltip/subject-side-context.ts`の`TooltipSubjectSideContext`（Reactの素のContext）を
+`src/components/tooltip/subject-side-context.ts`の`TooltipSubjectSideContext`（Reactの素のContext）を
 `pages/combat/index.tsx`が左右それぞれの`<Subject>`をラップする形で提供し、`Skill`
-（`features/subject-skills/containers/skill.tsx`）・`Item`（`components/item/item.tsx`）が
-これを読んで自身のDOM要素に`data-tooltip-subject-side`属性として書き出す。シンプルモードでは
+（`features/subject-skills/containers/skill.tsx`）・`EquipmentIcon`
+（`features/subject-config/components/equipment-icon.view.tsx`。2026-08-29に`components/item/item.tsx`
+から移動）がこれを読んで自身のDOM要素に`data-tooltip-subject-side`属性として書き出す。シンプルモードでは
 Providerを設置しないため既定値の`undefined`のままでよい（`config`/`status`が単一値のときは
 `TooltipPresenter`側でsideを無視する）。
 
@@ -95,8 +96,6 @@ component-guidelines.mdでいう「コンテナ」に相当する処理を、ビ
 
 ### damage/ — Simple mode・Combat modeともに完成（2026-08-29更新）
 
-詳細なタスク一覧・発見した問題点は[refactoring-plan.md](./damage/refactoring-plan.md)を参照。以下はその要約。
-
 - **Simple mode（完了）** — すべて`features/damage`配下に移行済み。エントリポイントは
   `features/damage/containers/simple/damage-table.tsx`。カテゴリ別コンテナ
   （`containers/simple/{basic-attack,subject-skill,generic-subtable}.tsx`）が生データを行コンポーネント
@@ -108,19 +107,10 @@ component-guidelines.mdでいう「コンテナ」に相当する処理を、ビ
   「どちらを発生源(`from`)にするか」を決める`ltr`方向トグルは中央カラム自身（`combat/damage-table.tsx`）が
   保持する。この層はZustandを一切知らず、propsのみで完結する。行コンポーネント（`combat/subtables/rows/*`）は
   相手側ステータス（軽減計算用）も必要なため、Simple mode側の行コンポーネント（Zustand直結）とは別実装のまま
-  （計算ロジックの共有には留めている）。移植の過程で、旧実装が長らく参照していた壊れたスタイルシートimport
-  （実在しないパスを指しており、`<Damage>`が無効化されていたためRollupのツリーシェイクで顕在化していなかった）
-  を発見・修正した。詳細は[damage/refactoring-plan.md](./damage/refactoring-plan.md)のPhase 2・3を参照。
+  （未統合であることについては[既知の課題](../../docs/known-issues.md)参照）。
 - **共通計算層** — `features/damage/damage-table-util.ts`・`use-{augment,item-skills,tactical-skill,
   weapon-skills,basic-attack-ratio}.ts`。Storeに依存しない純粋なフックのため、Simple/Combat両方から
   共通利用されている（`features/damage`直下に配置）。
 - **命名規則の不整合は解消済み（Phase 4、2026-08-29）。** `features/damage`のStoreアクセス層は
   `features/`ではなく`containers/`に統一された（`features/damage/containers/{potency-rows,potency-subrows,
   simple,combat}`）。他のfeature（subject-config / subject-skills）の命名規則と一致している。
-
-## このブランチ内の未回収作業（TODOメモ）
-
-- （参考）`pages/simple/subject.tsx`が`components/config/use-subject-config.ts`から`SubjectConfigProps`型を
-  importしているが、コンポーネント本体では実質使われていない（propsを受け取らない実装になっている）。
-  `pages/simple/index.tsx`・`pages/combat/index.tsx`とも実際のconfig取得はstoreベースに統一済みのため、
-  この型・importは削除できる可能性が高い。削除するかどうかは未検討。
