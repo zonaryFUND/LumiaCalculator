@@ -123,15 +123,24 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
   （例:「20 + 攻撃力の70%」）を定義しており、スキル定義とその評価/抽出ロジック全体で使われている。
   `calculation.ts`の`calculateValue()`が実際の計算エントリポイント（[ダメージモデル](docs/damage-model.md)参照）、
   `extraction.ts`の`extractSkillLevel()`はスキルレベル抽出（武器スキル(`origin == "D"`)は
-  `config.weaponMastery`経由の特別ルートを通る点に注意）。
-- `src/src/features/damage/` に、実験体の `damage-table.ts` や戦闘ページから利用されるダメージ計算・
-  軽減ロジックが置かれている。Simple mode向けは`containers/simple/`、Combat mode向けは`containers/combat/`
-  （エントリポイントはそれぞれ`containers/{simple,combat}/damage-table.tsx`）。会心（クリティカル）計算は
-  `containers/potency-rows/critical-available.tsx`（Simple）・`containers/combat/subtables/rows/
-  critical-available.tsx`（Combat）、防御力軽減・被ダメージ軽減は`containers/combat/`配下
-  （`mitigation-context.ts`の`createMitigation()`、`mitigated-damage.tsx`の`mitigatedDamage()`）にある。
-  Simple/Combatで行コンポーネントは別実装だが、計算ロジック（`calculateValue`・`extractMultiplier`等）は
-  共有している。featureの構成全体は[features/README.md](src/features/README.md)を参照。
+  `config.weaponMastery`経由の特別ルートを通る点に注意）。`calculateValue()`は対象HPなどに依存する動的な
+  レシオ（`targetHP`等）を未解決のまま`dynamic`として返す設計で、その続き（実際の対象HP/自身HPから最終的な
+  数値へ解決する処理）は同ファイルの`resolveDynamicValue()`が担う。
+- `src/src/core/damage-table/` に、会心（クリティカル）・回復量増加・ダメージ軽減・複数ヒット等の倍率合成
+  といった、ダメージ計算のうちValue Ratio以外のドメインロジックが置かれている。
+  `critical.ts`の`criticalMultiplier()` / `expectedMultiplier()`（[ダメージモデル](docs/damage-model.md)
+  「致命打（クリティカル）」）、`heal-power.ts`の`healPowerOf()` / `applyHealPower()`、`mitigation.ts`の
+  `createMitigation()` / `mitigatedDamage()`（防御力軽減・被ダメージ軽減）、`multiplier.ts`の
+  `extractMultiplier()`（複数ヒット等の倍率合成）。武器種ごとの基本攻撃威力倍率は
+  `core/subject-dynamic/status/basic-attack-ratio.ts`の`basicAttackRatioOf()`。
+- `src/src/features/damage/` に、実験体の `damage-table.ts` や戦闘ページから上記の計算関数を呼び出して
+  実際の表示行を組み立てるコンテナ・Viewが置かれている。Simple mode向けは`containers/simple/`、Combat mode
+  向けは`containers/combat/`（エントリポイントはそれぞれ`containers/{simple,combat}/damage-table.tsx`）。
+  会心表示は`containers/potency-rows/critical-available.tsx`（Simple）・`containers/combat/subtables/rows/
+  critical-available.tsx`（Combat）。Simple/Combatで行コンポーネント自体は別実装だが、
+  `core/damage-table/`・`core/value-ratio/`側の計算ロジックはすべて共有しており、行コンポーネントは
+  「値を取得して表示する」薄い層になっている。featureの構成全体は[features/README.md](src/features/README.md)
+  を参照。
 - ステータス計算のエントリポイントは
   `src/src/core/subject-dynamic/status/calculation.ts`の`statusOf()`。構成要素配列から
   最終値を合成する`calculateStatusValue`等は同ディレクトリの`combine-components.ts`にあり、
