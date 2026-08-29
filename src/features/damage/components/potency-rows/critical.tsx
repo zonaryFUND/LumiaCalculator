@@ -9,20 +9,25 @@ type Props = {
     labelIntlID: string;
     regularDamage: Decimal;
     criticalDamage?: Decimal;
-    expectedValue: Decimal;
+    expectedValue?: Decimal;
+    /**
+     * 値セルに適用するクラス（省略時は基本攻撃属性を表す`style.basic`）
+     */
+    valueClass?: string;
     subtable: React.ReactNode;
 }
 
 const Critical: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
+    const valueClass = props.valueClass ?? style.basic;
 
     return (
         <>
             <tr onClick={toggleExpand}>
                 <td><FormattedMessage id={props.labelIntlID} /></td>
-                <td className={style.basic}>{props.regularDamage.floor().toString()}</td>
-                <td className={style.basic}>{props.criticalDamage?.floor().toString() ?? "-"}</td> 
-                <td className={style.basic}>{props.expectedValue.floor().toString()}</td>
+                <td className={valueClass}>{props.regularDamage.floor().toString()}</td>
+                <td className={valueClass}>{props.criticalDamage?.floor().toString() ?? "-"}</td>
+                <td className={valueClass}>{props.expectedValue?.floor().toString() ?? "-"}</td>
             </tr>
             <tr className={table.expand} style={expand ? undefined : {display: "none"}}>
                 <td colSpan={4}>

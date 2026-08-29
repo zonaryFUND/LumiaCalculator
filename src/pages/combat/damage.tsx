@@ -1,5 +1,5 @@
 import * as React from "react";
-import Table, { SubjectSnapshot } from "@app/features/damage/features/combat/damage-table";
+import Table, { SubjectSnapshot } from "@app/features/damage/containers/combat/damage-table";
 
 import TabUnit from "components/common/tab/tab-unit";
 import style from "./damage.module.styl";

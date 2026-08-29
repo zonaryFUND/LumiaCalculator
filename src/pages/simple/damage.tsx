@@ -1,6 +1,6 @@
 import * as React from "react";
 import SubjectSkills from "@app/features/subject-skills";
-import Table from "@app/features/damage/features/simple/damage-table";
+import Table from "@app/features/damage/containers/simple/damage-table";
 import style from "./damage.module.styl";
 import TabUnit from "components/common/tab/tab-unit";
 

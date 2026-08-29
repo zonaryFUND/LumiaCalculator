@@ -20,41 +20,42 @@
 
 ## 現状の実装配置
 
-**2026-08-29時点でSimple modeの移行は完了した（Phase 0・Phase 1）。** 以下は現状の配置。
+**2026-08-29時点でSimple mode（Phase 0・Phase 1）・Combat mode（Phase 2・Phase 3）ともに移行完了。**
+残るのはPhase 4（命名規則の統一）のみ。以下は現状の配置。
 
 - **Simple mode（完了）** — すべて`features/damage`配下。エントリポイントは
   `features/damage/features/simple/damage-table.tsx`。カテゴリごとのコンテナ
   （`features/simple/{basic-attack,subject-skill,generic-subtable}.tsx`）が生データを行コンポーネント
   （`features/potency-rows/*`）へ変換し、共通View（`components/simple/subtable.tsx`）へ渡す構成。
-- **Combat mode（未着手）** — `components/damage/combat/**`一式が旧実装のまま残っている。props経由
-  （config/status/hpのバケツリレー）で、Zustand・新しい行コンポーネントへの移行が一切行われていない。
-  詳細は下記「A. Combat mode有効化に関する問題」を参照。
+- **Combat mode（完了）** — すべて`features/damage/features/combat`配下。エントリポイントは
+  `features/damage/features/combat/damage-table.tsx`。`pages/combat/index.tsx`が左右のZustand storeを生成し、
+  `{config,status,hp}`という素のスナップショットを`left`/`right`としてpropsで渡す。中央カラム自身が
+  `ltr`方向トグルを保持して`from`/`to`を選び出す。詳細は下記「A. Combat mode有効化に関する問題
+  （解決済み）」・Phase 2・Phase 3を参照。旧`components/damage/`は完全に削除済み。
 - **共通計算層** — `features/damage/damage-table-util.ts`・`use-{augment,item-skills,tactical-skill,
   weapon-skills,basic-attack-ratio}.ts`。config/statusを引数に取る純粋な計算hookで、Simple/Combat両方から
-  共通で呼ばれる想定のため、Storeに依存しないこの形のまま`features/damage`直下に集約した
-  （Simple mode専用の`features/simple/`配下には置いていない。Combat mode移植時にそのまま再利用するため）。
+  共通で呼ばれる（Storeに依存しないこの形のまま`features/damage`直下に集約）。
 
 ## 発見した問題点
 
-### A. Combat mode有効化に関する問題（最も複雑度が高い）
+### A. Combat mode有効化に関する問題（解決済み。Phase 2・Phase 3参照）
 
-1. **Combat modeのダメージ表示は`pages/combat/index.tsx`で丸ごとコメントアウトされ、無効化されている。**
-2. **Combat modeのconfig取得ソースが二重化している。** `pages/combat/index.tsx`は
-   - `<Subject>`（実験体設定・スキル・ステータス表示）には`CombatModeSubjectConfigProvider`
-     （Zustand、`features/subject-config/store`）を使う
-   - 一方で無効化中の`<Damage>`向けには、同じ`index.tsx`内で今も`useSubjectConfigState(CombatCurrentLeftConfigKey)`
-     という**旧`useLocalStorage`ベースのフック**を呼び、`left`/`right`を別途保持している
+以下はPhase 2・Phase 3着手前の状態の記録。
 
-   両者は同じlocalStorageキーを別々の購読機構で読み書きしており、統合されていない。Combat modeのダメージ移植を
-   進めると、この二重状態をどちらかに一本化する必要が生じる。
-3. **構造上の制約:** `pages/combat/index.tsx`で`<Damage>`は、左右2つの`<CombatModeSubjectConfigProvider>`の
-   **外側（兄弟要素）**に配置されている。既存の`useSubjectStateStore`は単一のReact Context
-   （`SubjectConfigStoreContext`）から1つのstoreを取得する設計であるため、そのままでは`<Damage>`から
-   左右両方のstoreに同時アクセスできない。Combat modeのダメージ移植に着手する前に、「1つのコンポーネントが
-   左右両方のconfig/statusを同時に参照する」ための設計変更が必要（下記タスク一覧のPhase 2参照）。
-4. `MitigationContext`・`CombatHPContext`（`components/damage/combat/{mitigation-context,combat-hp-context}.ts`）
-   はReact Context経由でprops的に配布されており、Zustand storeとは無関係。Combat modeの軽減計算・体力比計算は
-   引き続きこの2つのContextの責務でよいが、配置場所の移動と、Store統合後のProvider設置位置の見直しが必要。
+1. Combat modeのダメージ表示は`pages/combat/index.tsx`で丸ごとコメントアウトされ、無効化されていた。
+   → `<Damage>`のコメントアウトを解除した（Phase 3）。
+2. Combat modeのconfig取得ソースが二重化していた（`<Subject>`はZustand、`<Damage>`向けは旧
+   `useSubjectConfigState`という別のフック）。両者は同じlocalStorageキーを別々の購読機構で読み書きしており、
+   統合されていなかった。
+   → `pages/combat/index.tsx`が生成する`leftStore`/`rightStore`から`useStore`で直接読む形に一本化した（Phase 3）。
+3. `<Damage>`は左右2つの`<CombatModeSubjectConfigProvider>`の外側（兄弟要素）に配置されており、単一の
+   React Context（`SubjectConfigStoreContext`）から1つのstoreしか取得できない既存の`useSubjectStateStore`では
+   左右両方に同時アクセスできない、という構造上の制約があった。
+   → 中央カラムはZustandを一切知らずpropsのみで完結する設計（`{config,status,hp}`の素のオブジェクトを
+   `left`/`right`として渡す）とすることで、この制約自体を回避した（Phase 2・Phase 3）。副産物として
+   `CombatModeSubjectConfigProvider`は不要と判明し削除した（Phase 2）。
+4. `MitigationContext`・`CombatHPContext`は引き続きReact Contextのままでよいと判断し、変更せず
+   `features/damage/features/combat/`直下へ配置場所だけ移した（Phase 3）。
 
 ### B. Simple modeの移植未完了・後片付け不足（2026-08-29 対応済み）
 
@@ -79,11 +80,12 @@
    → `features/damage/features/simple/damage-table.tsx`へ移動し、不要な受け渡しを削除した
    （`hpRatio`はどこからも使われていなかったため完全に削除）。
 
-### C. 命名規則の不統一
+### C. 命名規則の不統一（2026-08-29 対応済み・Phase 4）
 
 `features/damage`だけ、他feature（subject-config・subject-skills）の`containers/`に相当する層が
-`features/`と命名されている（`features/damage/features/potency-rows`等）。
-`component-guidelines.md`が定める命名規則（`containers/`+`components/`）と一致しない。
+`features/`と命名されていた（`features/damage/features/potency-rows`等）。
+`component-guidelines.md`が定める命名規則（`containers/`+`components/`）と一致していなかった。
+→ `features/damage/containers/*`へリネームし、他featureと統一した。
 
 ### D. Combat mode側の実装バグ（無効化されているため未発覚。修正自体は低リスク）（2026-08-29 対応済み）
 
@@ -171,11 +173,8 @@ propsだけで完結する。純粋にpropsだけで完結する設計にする�
 - [x] `pages/combat/index.tsx`: `leftStore`/`rightStore`をページ側で生成し、`SubjectConfigStoreProvider`
       経由で`<Subject>`に渡す形に変更（`CombatModeSubjectConfigProvider`の呼び出し箇所を置き換え）。
 
-残作業（Phase 3で対応）:
-- [ ] `pages/combat/index.tsx`に残る旧`useSubjectConfigState`ベースの二重状態（`left`/`right`、
-      `TooltipPresenter`向けに残っている）を、上記`leftStore`/`rightStore`から`useStore`で直接読む形へ一本化する。
-- [ ] `ltr`（方向）トグルと`{from,to}`の組み立てを`pages/combat/index.tsx`（または中央カラムのすぐ外側）に実装する。
-- [ ] 中央カラムのダメージ計算コンポーネント群を`{from,to}`のみを受け取る形で`features/damage`配下に実装する。
+残作業として挙げていた3項目（旧`useSubjectConfigState`の一本化、`ltr`トグルと`{from,to}`の組み立て、
+中央カラムのコンポーネント実装）はすべてPhase 3で対応済み。詳細は下記Phase 3を参照。
 
 ### Phase 3 — Combat modeダメージ本体の移植（2026-08-29完了）
 
@@ -212,20 +211,28 @@ propsだけで完結する。純粋にpropsだけで完結する設計にする�
 propsベース、Simple側はZustand直結という前提の違いがあるため、無理に完全統合はせず、計算ロジック
 （`calculateValue`・`extractMultiplier`等）の共有に留める可能性が高い。着手する場合は改めて検討する。
 
-### Phase 4 — 命名規則の統一（複雑度: 低。他Phase完了後にまとめて実施）
+### Phase 4 — 命名規則の統一（2026-08-29完了）
 
-- [ ] `features/damage/features/*`（`potency-rows`・`potency-subrows`・Phase 1で追加した`simple`を含む）
-      → `features/damage/containers/*`へリネームする（Phase 3の移植先をこの命名に合わせて決めておくと
-      二度手間にならない）。
-- [ ] `features/README.md`のdamageセクションを更新する（Simple mode完了・Combat mode未着手の現状を反映）。
+- [x] `features/damage/features/*`（`potency-rows`・`potency-subrows`・`simple`・`combat`）を
+      `features/damage/containers/*`へリネームした。ディレクトリ構造は完全に保ったまま移動したため、
+      配下ファイル同士の相対importはすべて無変更で済んだ（`../../damage-table-util`のような相対パスは
+      親ディレクトリ名が`features`→`containers`に変わっても深さが同じなら影響を受けないため）。
+      外部から絶対パス（`@app/features/damage/features/...`）で参照していた3箇所
+      （`pages/simple/damage.tsx`・`pages/combat/damage.tsx`・`test/equation-expression.test.tsx`）のみ
+      `@app/features/damage/containers/...`へ更新した。
+      作業中、Windows環境でVite開発サーバー（`yarn dev`）がディレクトリを監視していたため
+      `git mv`によるディレクトリ単位の一括リネームが`Permission denied`で失敗した。ファイル単位の
+      `git mv`は問題なく通ったため、全24ファイルを個別に移動する方式で対応した。
+- [x] `features/README.md`のdamageセクションを更新した（Simple/Combatともに完了、新しいディレクトリ名を反映）。
+- [x] `yarn build`・`vitest run`で確認済み（既存872件のスナップショット失敗以外にregressionなし）。
 
 ## 推奨する着手順序
 
 Phase 0 → Phase 1 → （Phase 2の設計方針をユーザーとすり合わせ）→ Phase 2 → Phase 3 → Phase 4
 
-（Phase 0・Phase 1・Phase 2は2026-08-29完了〔Phase 2はstore側の土台のみ。実際の配線・`{from,to}`組み立ては
-Phase 3に含めた〕。次はPhase 3）
+**Phase 0〜4すべて2026-08-29完了。このプランに記載したタスクは完了した。**
 
 ## 実装前に確認が必要な事項
 
-- Simple/Combatの行コンポーネントをどこまで統合するか（Phase 3、完全共通化 or 独立のまま）
+なし。唯一の未決事項だった「Simple/Combatの行コンポーネントをどこまで統合するか」はPhase 3で
+「無理に完全統合はしない」方針として決着済み（Phase 3の「保留」欄を参照）。

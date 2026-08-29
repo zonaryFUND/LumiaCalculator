@@ -5,7 +5,7 @@ import { IntlProvider } from "react-intl";
 import { Locales } from "@app/App";
 import { SubjectConfigDefault } from "app-types/subject-dynamic/config";
 import { statusOf } from "app-types/subject-dynamic/status/calculation";
-import equationExpressionOf from "@app/features/damage/features/potency-subrows/equation-expression";
+import equationExpressionOf from "@app/features/damage/containers/potency-subrows/equation-expression";
 
 // 回帰テスト: 武器未装備の実験体が持つ「2回目の弱い基本攻撃」のようなbasicAttackAmpレシオ付きの
 // 威力について、計算式表示が「27 x 35% x = 9」のように孤立した演算子を出さないことを保証する。

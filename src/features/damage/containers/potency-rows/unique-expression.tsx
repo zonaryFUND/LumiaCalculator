@@ -6,9 +6,9 @@ import HealPower from "../../components/potency-subrows/heal-power";
 import InnerTable from "components/common/inner-table";
 
 import style from "../../components/potency-rows/damage-table.module.styl";
-import Decimal from "decimal.js";
 import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 import Standard from "../../components/potency-rows/standard";
+import Critical from "../../components/potency-rows/critical";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import UniqueValueEquation from "../potency-subrows/unique-value-equation";
 
@@ -25,40 +25,47 @@ const uniqueExpression: React.FC<Props> = props => {
     const hpRatio = useSubjectStateStore(state => state.hpRatio);
     const hp = status.maxHp.calculatedValue.percent(hpRatio).floor().toNumber();
 
-    const { value, equationExpression } = props.strategy({ 
-        config, 
+    const { value, equationExpression } = props.strategy({
+        config,
         status,
         hp
     });
-    const sanitizedValue = (() => {
-        if (value.type == "critical") {
-            // 致命打の可能性がある基本攻撃属性ダメージ
-            return [value.values[0], value.values[1], value.values[2] || value.values[1]];
-        } else {
-            // その他
-            return value.value;
-        }
-    })();
-    const valueClass = (() => {
-        return props.type ? style[props.type.type] : style.skill;
-    })();
-
+    const valueClass = props.type ? style[props.type.type] : style.skill;
     const healPower = props.type?.type == "heal" && status.healerGiveHpHealRatio.calculatedValue.greaterThan(0) ? status.healerGiveHpHealRatio.calculatedValue : undefined;
-    const healPowerConcerned = Array.isArray(sanitizedValue) ? sanitizedValue.map(v => v?.addPercent(healPower || 0)) : sanitizedValue.addPercent(healPower || 0);
+
+    if (value.type == "critical") {
+        // 致命打の可能性がある基本攻撃属性ダメージ。基礎値・致命打・期待値の3列を独立したセルとして
+        // 表示する必要があるため、単一の値セルしか持たないStandardではなくCriticalを使う
+        const [regularDamage, criticalDamage, expectedValue] = value.values.map(v => v?.addPercent(healPower || 0));
+
+        return (
+            <Critical
+                labelIntlID={props.label}
+                regularDamage={regularDamage!}
+                criticalDamage={criticalDamage}
+                expectedValue={expectedValue}
+                valueClass={valueClass}
+                subtable={
+                    <InnerTable>
+                        <UniqueValueEquation equationExpression={equationExpression} />
+                        {healPower ? <HealPower baseValue={value.values[0]} healPower={healPower} /> : null}
+                    </InnerTable>
+                }
+            />
+        )
+    }
+
+    const sanitizedValue = value.value.addPercent(healPower || 0);
 
     return (
         <Standard
             label={props.label}
-            value={
-                Array.isArray(healPowerConcerned) ?
-                healPowerConcerned.map(v => <td className={valueClass}>{v?.floor().toString() ?? "-"}</td>) :
-                <td colSpan={3} className={valueClass}>{healPowerConcerned.floor().toString()}</td>
-            }
+            value={sanitizedValue.floor().toString()}
             valueClass={valueClass}
             subtable={
                 <InnerTable>
                     <UniqueValueEquation equationExpression={equationExpression} />
-                    {healPower ? <HealPower baseValue={sanitizedValue as Decimal} healPower={healPower} /> : null}
+                    {healPower ? <HealPower baseValue={value.value} healPower={healPower} /> : null}
                 </InnerTable>
             }
         />

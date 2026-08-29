@@ -75,11 +75,11 @@ component-guidelines.mdでいう「コンテナ」に相当する処理を、ビ
 詳細なタスク一覧・発見した問題点は[refactoring-plan.md](./damage/refactoring-plan.md)を参照。以下はその要約。
 
 - **Simple mode（完了）** — すべて`features/damage`配下に移行済み。エントリポイントは
-  `features/damage/features/simple/damage-table.tsx`。カテゴリ別コンテナ
-  （`features/simple/{basic-attack,subject-skill,generic-subtable}.tsx`）が生データを行コンポーネント
-  （`features/potency-rows/*`）に変換し、共通View（`components/simple/subtable.tsx`）へ渡す。
+  `features/damage/containers/simple/damage-table.tsx`。カテゴリ別コンテナ
+  （`containers/simple/{basic-attack,subject-skill,generic-subtable}.tsx`）が生データを行コンポーネント
+  （`containers/potency-rows/*`）に変換し、共通View（`components/simple/subtable.tsx`）へ渡す。
   `components/damage/simple/`（旧実装）は削除済み。
-- **Combat mode（完了）** — `features/damage/features/combat/**`に移行済み（旧`components/damage/combat/**`は
+- **Combat mode（完了）** — `features/damage/containers/combat/**`に移行済み（旧`components/damage/combat/**`は
   削除）。中央カラム（ダメージ計算結果）は読み取り専用のため、`pages/combat/index.tsx`が左右のZustand
   storeから`{config,status,hp}`を読み出し、`left`/`right`という素のオブジェクトとしてpropsで渡す設計にした。
   「どちらを発生源(`from`)にするか」を決める`ltr`方向トグルは中央カラム自身（`combat/damage-table.tsx`）が
@@ -91,15 +91,13 @@ component-guidelines.mdでいう「コンテナ」に相当する処理を、ビ
 - **共通計算層** — `features/damage/damage-table-util.ts`・`use-{augment,item-skills,tactical-skill,
   weapon-skills,basic-attack-ratio}.ts`。Storeに依存しない純粋なフックのため、Simple/Combat両方から
   共通利用されている（`features/damage`直下に配置）。
-- **命名規則の不整合は未解消。** `features/damage`のみ、Storeアクセスを担う層の名前が`containers/`ではなく
-  `features/`になっている（`features/damage/features/{potency-rows,potency-subrows,simple,combat}`）。
-  他のfeature（subject-config / subject-skills）の命名規則と一致しない（Phase 4で対応予定）。
+- **命名規則の不整合は解消済み（Phase 4、2026-08-29）。** `features/damage`のStoreアクセス層は
+  `features/`ではなく`containers/`に統一された（`features/damage/containers/{potency-rows,potency-subrows,
+  simple,combat}`）。他のfeature（subject-config / subject-skills）の命名規則と一致している。
 
 ## このブランチ内の未回収作業（TODOメモ）
 
 - `TooltipPresenter`（スキル/装備アイテムのツールチップ）をZustand対応させ、呼び出しを復活させる。
-- `features/damage`のみ`containers/`ではなく`features/`という命名になっている不整合を解消する
-  （[damage/refactoring-plan.md](./damage/refactoring-plan.md)のPhase 4）。
 - （参考）`pages/simple/index.tsx`に、コメントアウトされたまま残っている旧`useSubjectConfigState`
   呼び出しがある。これにより`components/config/use-subject-config.ts`は現在コード上どこからも
   アクティブに参照されなくなっている（対戦モード側は今回のPhase 3対応で参照をやめた）。

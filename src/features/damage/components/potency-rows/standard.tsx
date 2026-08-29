@@ -1,12 +1,16 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
 import { useToggle } from "react-use";
-import InnerTable from "components/common/inner-table";
 
 type Props = {
     label: React.ReactNode;
     value: React.ReactNode;
     valueClass?: string;
+    /**
+     * 展開時に表示する詳細計算式。呼び出し側で既に<InnerTable>によってラップされた
+     * 完全なコンテンツを渡すこと（`Critical`コンポーネントと同じ規約）。
+     * ここで再度<InnerTable>を被せると<table>が<tbody>直下に置かれる不正なマークアップになる。
+     */
     subtable?: React.ReactNode;
 }
 
@@ -22,9 +26,7 @@ const Standard: React.FC<Props> = props => {
             {
                 props.subtable ?
                 <tr className={table.expand} style={!expand ? {display: "none"} : undefined}><td colSpan={4}>
-                    <InnerTable>
-                        {props.subtable}
-                    </InnerTable>
+                    {props.subtable}
                 </td></tr> :
                 null
             }
