@@ -5,7 +5,8 @@ import PullDown from "components/common/pull-down";
 import style from "./self-buff-row.module.styl";
 
 export type Effect = {
-    labelIntlID: string
+    // 仮でStatusのkeyをそのまま表示する（intlID経由の翻訳表示は別途対応予定）
+    label: string
     value: Decimal.Value
     percent: boolean
 }
@@ -59,8 +60,8 @@ const SelfBuffRow: React.FC<Props> = props => {
                         props.effects.map((effect, i) => {
                             const value = new Decimal(effect.value);
                             return (
-                                <li key={`${effect.labelIntlID}-${i}`}>
-                                    <FormattedMessage id={effect.labelIntlID} />:
+                                <li key={`${effect.label}-${i}`}>
+                                    {effect.label}:
                                     {value.greaterThanOrEqualTo(0) ? "+" : ""}
                                     {value.toString()}
                                     {effect.percent ? "%" : ""}

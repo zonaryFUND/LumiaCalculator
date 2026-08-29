@@ -6,12 +6,13 @@ import SelfBuffRow, { Effect } from "../components/self-buff-row.view";
 import { FormattedMessage } from "react-intl";
 
 // stackが0のバフは非表示にするため、その場合は効果を計算しない
+// ラベルは仮にStatusのkeyをそのまま表示する（intlID経由の翻訳表示は別途対応予定）
 function effectsOf(definition: SelfBuffDefinition, stack: number): Effect[] {
     if (stack == 0) return [];
 
-    return Object.values(definition.buff(stack))
-        .flatMap(components => (components ?? []).map(component => ({
-            labelIntlID: component.intlID ?? definition.nameIntlID,
+    return Object.entries(definition.buff(stack))
+        .flatMap(([key, components]) => (components ?? []).map(component => ({
+            label: key,
             value: component.value.value ?? 0,
             percent: component.calculationType == "mul"
         })));
