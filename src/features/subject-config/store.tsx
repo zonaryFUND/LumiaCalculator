@@ -125,7 +125,11 @@ export function createSubjectConfigStore(storageKey: string) {
                 },
                 partialize: state => ({ config: state.config }),
                 merge: (persistedState: any, currentState) => {
-                    const restoredConfig = persistedState.config ?? currentState.config;
+                    // 保存済みデータに存在しないフィールドはSubjectConfigDefault側の値で補う
+                    // （SubjectConfigへの新規フィールド追加時、古いデータを読み込んでも欠落しないようにする防御）
+                    const restoredConfig = persistedState.config
+                        ? { ...SubjectConfigDefault, ...persistedState.config }
+                        : currentState.config;
                     return {
                         ...currentState,
                         config: restoredConfig,

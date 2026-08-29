@@ -1,7 +1,7 @@
 import { SubjectCode } from "core/subject-static"
 import { Equipment } from "./equipment"
 import { SkillLevels } from "./skill-levels"
-import { PerpetualOuterBuff } from "./perpetual-outer-buff"
+import { BuffDebuffState } from "./buff-debuff-state"
 
 /**
  * ユーザが任意に編集できる対象実験体の現在設定
@@ -53,9 +53,14 @@ export type SubjectConfig = {
     stack: number
 
     /**
-     * 実験体のパッシブスキル以外の効果で得られる永続バフ（一部特性やアルファ、オメガ討伐など）
+     * 自身のスキル・装備・特性などによって得られる、自身に対するバフ・デバフ
      */
-    perpetualOuterBuffs: PerpetualOuterBuff[]
+    selfBuffs: BuffDebuffState[]
+
+    /**
+     * 他者（味方・敵）のスキル・装備・特性などによって得られる、自身に対するバフ・デバフ
+     */
+    incomingBuffs: BuffDebuffState[]
 }
 
 export const SubjectConfigDefault: SubjectConfig = {
@@ -75,5 +80,6 @@ export const SubjectConfigDefault: SubjectConfig = {
     skillLevels: { Q: 0, W: 0, E: 0, R: 0, T: 0 },
     gauge: 0,
     stack: 0,
-    perpetualOuterBuffs: []
+    selfBuffs: [],
+    incomingBuffs: []
 }

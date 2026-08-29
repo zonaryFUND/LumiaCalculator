@@ -1,4 +1,4 @@
-import { Equipment, SubjectConfig } from "core/subject-dynamic/config";
+import { Equipment, SubjectConfig, SubjectConfigDefault } from "core/subject-dynamic/config";
 import { DefaultSamplePresets } from "@app/features/subject-config/components/load-build-modal-default-sample";
 import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "react-use";
@@ -33,7 +33,12 @@ export function usePresetStorage(): BuildStorage {
                     config: Migrate(preset.config)
                 }
             } else {
-                return preset;
+                // 保存済みデータに存在しないフィールドはSubjectConfigDefault側の値で補う
+                // （v2形式でも、フィールド追加より前に保存されたプリセットには存在しない場合がある）
+                return {
+                    ...preset,
+                    config: { ...SubjectConfigDefault, ...preset.config }
+                };
             }
         })
     }, [presets]);

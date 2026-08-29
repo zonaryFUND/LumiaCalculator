@@ -15,6 +15,10 @@ export function Migrate(v1Config: SubjectConfigV1): SubjectConfig {
     return {
         ...v1Config,
         subject: subjectIndex + 1,
-        equipment: { Weapon: null, Head: null, Chest: null, Arm: null, Leg: null }
+        equipment: { Weapon: null, Head: null, Chest: null, Arm: null, Leg: null },
+        // v1形式のデータは新規フィールドを持たないため、明示的にデフォルト値を補う
+        // （SubjectConfigV1がOmit<SubjectConfig, ...>のため、型上は存在することになってしまう）
+        selfBuffs: v1Config.selfBuffs ?? [],
+        incomingBuffs: v1Config.incomingBuffs ?? []
     }
 }

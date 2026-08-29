@@ -53,13 +53,23 @@
 
 > 4・5・6は、バフ・デバフ計算機能の実装に着手するタイミングで併せて見直す方針（6の`console.log`削除も含む）。
 
-### 4. `config.perpetualOuterBuffs`は宣言のみで未接続（死んでいるフィールド）
+### 4. ~~`config.perpetualOuterBuffs`は宣言のみで未接続~~（対応済み、バフ・デバフ実装Step 1）
 
-`subject-dynamic/config/type.ts`の`SubjectConfig.perpetualOuterBuffs: PerpetualOuterBuff[]`は「実験体のパッシブ
-スキル以外の効果で得られる永続バフ（特性・アルファ/オメガ討伐など）」の入力口としてコメント付きで定義されて
-いるが、`statusOf()`（`subject-dynamic/status/calculation.ts`）はこのフィールドを一切参照していない。
-`features/subject-config/components/load-build-modal-default-sample.ts`で空配列が置かれているのみで、値を設定
-するUIも存在しない。バフ・デバフの本格実装時に、この型をそのまま使うか設計し直すかの判断が必要。
+`buff-debuff-spec.md`（ユーザー作成の要件定義）のレビュー・質疑応答を経て、バフ・デバフ実装Step 1として
+`perpetualOuterBuffs: PerpetualOuterBuff[]`を`selfBuffs` / `incomingBuffs: BuffDebuffState[]`
+（`subject-dynamic/config/buff-debuff-state.ts`）に置き換えた。
+
+- `BuffDebuffState = {id: string, stack: number | string}`。`id`単独では発生源
+  （実験体スキル/装備アビリティ/特性）を判別できないが、`selfBuffs`/`incomingBuffs`のどちらの配列に
+  含まれるかで自己／他者は区別済みなので問題ない。同一`id`を持つ要素が配列内に複数存在しうる
+  （例: 複数の発生源から同時にスロウを受ける）ため、dedupを前提にした実装をしないこと。
+- `stack`が`number | string`なのは、`ingame-params/perpetual-outer-buffs/augment.ts`の`力の蓄積`が
+  `"day.1.noon"`のような文字列キーの段階選択を既に行っているため（項目5参照）。
+- **今回はデータ構造と永続化のみ**（`storage/migration-v1/config.ts`の`Migrate()`・
+  `features/subject-config/store.tsx`のZustand `persist`の`merge`・`storage/preset.ts`の移行分岐、
+  いずれも`SubjectConfigDefault`で既存データの欠落フィールドを補うようにした）。`id`から実際の効果定義を
+  引く「カタログ定義」の型（発生源タグを持つ判別Union、`statusOf()`への注入ロジック）は未着手で、
+  Step 2以降（自己バフ列挙UI・サンプル定義・他者バフUI・augmentカタログUI）で順次設計する。
 
 ### 5. 現行`buff-debuff/type.ts`は型として未成熟
 

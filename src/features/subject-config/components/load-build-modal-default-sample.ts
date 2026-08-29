@@ -24,7 +24,8 @@ export const DefaultSamplePresets: PresetWithKey[] = [
             },
             gauge: 0,
             stack: 0,
-            perpetualOuterBuffs: []
+            selfBuffs: [],
+            incomingBuffs: []
         }
     }
 ]

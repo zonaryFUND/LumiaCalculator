@@ -3,26 +3,28 @@
 この計算機の実装における、解決すべき既知の課題・技術的負債をまとめる。
 ゲームロジックそのものの仕様は `status-model.md` / `damage-model.md` を参照。
 
-## バフ・デバフ効果全般が未実装
+## バフ・デバフ効果全般が実装途中
 
 この計算機は、スキルやアイテム効果による一時的なステータス増減、特性による恒久的な補正などの
-「バフ・デバフ効果」を計算に反映する汎用的な仕組みを持たない。
+「バフ・デバフ効果」を計算に反映する汎用的な仕組みを持たなかったが、実装に着手した（進行中の詳細な
+タスクログは[core/README.md](../src/core/README.md)を参照）。
 
 - 具体例: サポート特性「超再生」によるシールド・回復量の増幅（`damage-model.md`にゲーム仕様としては記載しているが、
   この計算機では未実装）。
-- 対応: 汎用的なバフ・デバフ効果の適用システムの設計・実装が必要。
-- 設計の手がかり: `calculation.ts`の`statusOf()`が扱う「永続ステータス」の仕組み
-  （実験体固有パッシブ・装備固有アビリティによる`StatusValueComponent`追加、`config.perpetualOuterBuffs`という
-  ユーザ選択の恒久バフ入力口）が、恒久効果に関しては既に前例として存在する。また`origin`区分には
-  `perpetual_status`/`temporary-status`が、`calculationType`には`fix`（値の上書き）が型として予約されているが
-  現状未使用であり、これらを一時バフ・デバフ実装にそのまま転用できるか検討の余地がある
-  （[ステータスモデル](./status-model.md)の「要素の合成順序」参照）。
-- ブランチ状況: `buff`ブランチ（`status-refactor`から派生）でステータス計算エンジンの再設計を伴うバフ実装が
-  進行中（`translate-buff.ts`追加、`value-component/`→`value/`への再構成など、対象ファイルが広範囲かつ
-  wip状態）。着手前に必ずこのブランチの状態を確認すること。2026-08-29時点で`main`側は`workaround/zustand`
-  ブランチの作業により、ダメージ計算まわりが`src/components/damage/**`から`src/features/damage/**`へ
-  丸ごと移動・再構成済みのため、`buff`ブランチとの差分は非常に大きくなっている。参考にする場合は
-  ファイル単位のマージではなく、設計の考え方だけを参照する前提で臨むこと。
+- 設計方針: `SubjectConfig`に`selfBuffs` / `incomingBuffs: BuffDebuffState[]`
+  （`core/subject-dynamic/config/buff-debuff-state.ts`。旧`perpetualOuterBuffs`から改称・再設計）を追加し、
+  自己バフ・他者バフを分離して管理する。`calculation.ts`の`statusOf()`が扱う「永続ステータス」の仕組み
+  （実験体固有パッシブ・装備固有アビリティによる`StatusValueComponent`追加）が、恒久効果に関しては既に
+  前例として存在する。`origin`区分の`perpetual_status`/`temporary-status`という命名は「ゲーム内で効果が
+  消えるか」ではなく「計算機上でON/OFFを切り替えられる必要があるか」で区別すべきと判明しており
+  （例: アルファ/オメガ討伐バフはゲーム内では恒久的だが計算機上はtemporary、ヒスイのステータス変換パッシブは
+  ゲーム内でも計算機上でも恒久的なのでperpetual）、`calculationType`の`fix`（値の上書き）は
+  `perpetual_status`経由では既に実戦投入されている（詳細は[core/README.md](../src/core/README.md)項目2・3
+  参照）。
+- ブランチ状況: `buff`ブランチ（`status-refactor`から派生）でのステータス計算エンジン再設計を伴う旧バフ実装は
+  独立化前の`ercalc_resources`ルート側にのみ現存し（`src/`側の新リポジトリには存在しない）、既に
+  低優先度・参考程度と判断済み。現在の実装は`buff`ブランチの移植ではなく、現行アーキテクチャをベースに
+  新規設計している。
 
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 
