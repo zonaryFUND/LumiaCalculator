@@ -11,7 +11,7 @@ import { FormattedMessage } from "react-intl";
 const SelfBuffs: React.FC = () => {
     const config = useSubjectStateStore(s => s.config);
     const setSelfBuffs = useSubjectStateStore(s => s.setSelfBuffs);
-    const definitions = SubjectBuffDebuffDictionary[config.subject] ?? {};
+    const definitions = SubjectBuffDebuffDictionary[config.subject]?.(config) ?? {};
 
     if (config.selfBuffs.length == 0) {
         return <p><FormattedMessage id="app.buff-debuff.no-self-buff" /></p>;

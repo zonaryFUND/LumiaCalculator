@@ -47,26 +47,35 @@ export function createSubjectConfigStore(storageKey: string) {
                     }
                 }),
                 setConfig: (config: SubjectConfig) => get()._updateConfig(() => config),
-                setSubject: (subject: SubjectCode) => get()._updateConfig(prev => ({
-                    ...prev,
-                    subject,
-                    equipment: {
-                        Weapon: null,
-                        Head: null,
-                        Chest: null,
-                        isChestDavid: false,
-                        Arm: null,
-                        Leg: null
-                    },
-                    skillLevels: {Q: 0, W: 0, E: 0, R: 0, T: 0},
-                    gauge: 0,
-                    stack: 0,
+                setSubject: (subject: SubjectCode) => get()._updateConfig(prev => {
+                    const next: SubjectConfig = {
+                        ...prev,
+                        subject,
+                        equipment: {
+                            Weapon: null,
+                            Head: null,
+                            Chest: null,
+                            isChestDavid: false,
+                            Arm: null,
+                            Leg: null
+                        },
+                        skillLevels: {Q: 0, W: 0, E: 0, R: 0, T: 0},
+                        gauge: 0,
+                        stack: 0
+                    };
+
                     // 実験体固有の自己バフを、スタック0の状態であらためて投入する
-                    // （selfBuffsは実験体ごとに保存されるものではないため、切り替え時に一旦空にしたうえで再構築する）
-                    selfBuffs: Object.entries(SubjectBuffDebuffDictionary[subject] ?? {})
-                        .map(([id]) => ({ id, stack: 0 } satisfies BuffDebuffState)),
-                    incomingBuffs: []
-                })),
+                    // （selfBuffsは実験体ごとに保存されるものではないため、切り替え時に一旦空にしたうえで再構築する。
+                    // 効果内容がスキルレベル等に依存しうるため、リセット後のnextを渡して定義を算出する）
+                    const selfBuffDefinitions = SubjectBuffDebuffDictionary[subject]?.(next) ?? {};
+
+                    return {
+                        ...next,
+                        selfBuffs: Object.entries(selfBuffDefinitions)
+                            .map(([id]) => ({ id, stack: 0 } satisfies BuffDebuffState)),
+                        incomingBuffs: []
+                    };
+                }),
                 setEquipment: (equipment: React.SetStateAction<Equipment>) => get()._updateConfig(prev => ({
                     ...prev,
                     equipment: typeof equipment === "function" ? equipment(prev.equipment) : equipment

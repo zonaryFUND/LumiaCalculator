@@ -1,7 +1,6 @@
 import { SubjectCode } from "core/subject-static";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { SelfBuffDefinition } from "@app/ingame-params/buff-debuff/type";
-import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectStackInfo, SummonInfo } from "./type";
+import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectSelfBuffDebuff, SubjectStackInfo, SummonInfo } from "./type";
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});
 export const [
@@ -46,5 +45,5 @@ export const [
     {} as Record<SubjectCode, SubjectStackInfo>,
     {} as Record<SubjectCode, SubjectGaugeInfo>,
     {} as Record<SubjectCode, (mastery: number) => number>,
-    {} as Record<SubjectCode, Record<string, SelfBuffDefinition>>,
+    {} as Record<SubjectCode, SubjectSelfBuffDebuff>,
 ])

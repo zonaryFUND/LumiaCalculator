@@ -52,6 +52,16 @@ export type SubjectStackInfo = {
     max: number
 }
 
+export type SelfBuffDebuffs = Record<string, SelfBuffDefinition>
+
+/**
+ * 実験体固有のスキルによる自己バフの定義を、実験体設定から算出する
+ *
+ * スキルレベル等によって効果内容（`nameIntlID`・`availableStacks`・`buff`の効果量）が変化しうるため、
+ * `SubjectPerpetualStatus`と同様に`SubjectConfig`を受け取る関数として定義する
+ */
+export type SubjectSelfBuffDebuff = (config: SubjectConfig) => SelfBuffDebuffs
+
 export type SubjectModules = {
     code: number
     damageTable: DamageTableGenerator
@@ -67,9 +77,9 @@ export type SubjectModules = {
     gaugeInfo?: SubjectGaugeInfo
 
     /**
-     * 実験体固有のスキルによって得られる自己バフの定義。Key: バフ・デバフのID
+     * 実験体固有のスキルによって得られる自己バフの定義
      */
-    buffDebuff?: Record<string, SelfBuffDefinition>
+    buffDebuff?: SubjectSelfBuffDebuff
 
     weaponSkillLevelOverride?: (mastery: number) => number
 }

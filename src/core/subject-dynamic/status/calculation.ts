@@ -454,8 +454,9 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
 
     // 実験体固有スキルによる自己バフ。origin: "temporary-status"（ユーザーがスタックを切り替えられる）で
     // StatusValueComponentを注入する（origin: "perpetual_status"の恒久パッシブとは区別する）
+    const selfBuffDefinitions = SubjectBuffDebuffDictionary[config.subject]?.(config) ?? {};
     const selfBuffStatus = config.selfBuffs.flatMap(state => {
-        const def = SubjectBuffDebuffDictionary[config.subject]?.[state.id];
+        const def = selfBuffDefinitions[state.id];
         return def ? [def.buff(state.stack)] : [];
     });
 

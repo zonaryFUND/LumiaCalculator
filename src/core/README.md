@@ -81,8 +81,13 @@
 新設した。自己バフの削除可否は`origin === "augment"`から導出する設計のため、独立した`removable`フィールドは
 持たない。
 
-配線: `ingame-params/subjects/type.ts`の`SubjectModules`に`buffDebuff?: Record<string,
-SelfBuffDefinition>`を追加し、`dictionary.ts`の`SubjectBuffDebuffDictionary`（`SubjectCode`キー）で集約。
+配線: `ingame-params/subjects/type.ts`の`SubjectModules`に`buffDebuff?: SubjectSelfBuffDebuff`を追加し、
+`dictionary.ts`の`SubjectBuffDebuffDictionary`（`SubjectCode`キー）で集約。実験体スキルによるバフ効果は
+スキルレベル等によって内容が変化しうるため、`buffDebuff`は`Record<string, SelfBuffDefinition>`を直接では
+なく`SubjectPerpetualStatus`と同様に`(config: SubjectConfig) => SelfBuffDebuffs`という関数として持たせる
+（`SubjectSelfBuffDebuff`型）。呼び出し側（`statusOf()`・`store.tsx`の`setSubject`・
+`features/buff-debuff/containers/self-buffs.tsx`）は`SubjectBuffDebuffDictionary[config.subject]?.(config)`
+のように都度`config`を渡して呼び出す。
 `statusOf()`（`subject-dynamic/status/calculation.ts`）内で`config.selfBuffs`を解決して
 `componentStatus`へ畳み込む（`origin: "temporary-status"`で注入。実験体固有の恒久パッシブ
 （`origin: "perpetual_status"`）とは区別する）。`features/subject-config/store.tsx`の`setSubject`が、
