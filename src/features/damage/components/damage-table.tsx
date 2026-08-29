@@ -1,5 +1,5 @@
 import * as React from "react";
-import BasicAttack from "../../../components/damage/simple/subtables/basic-attack";
+import BasicAttack from "../features/simple/basic-attack";
 import style from "./potency-rows/damage-table.module.styl";
 import SubjectSkill from "../../../components/damage/simple/subtables/subject-skill";
 import SubTable from "../../../components/damage/simple/subtables/subtable";
@@ -44,17 +44,14 @@ const damageTable: React.FC = props => {
             <h3>ダメージ</h3>
             <div className={table["table-base"]}>
                 <table>
-                    <BasicAttack 
-                        elements={
+                    <BasicAttack
+                        unitsChunks={
                             [
                                 subject.basicAttack,
                                 weaponSkill.basicAttackTriggered,
                                 itemSkills.basicAttackTriggered
                             ].filter(array => array.length > 0)
                         }
-                        status={status} 
-                        config={config}
-                        hp={hpRatio}
                     />
                     <SubjectSkill 
                         tables={subject.skill}

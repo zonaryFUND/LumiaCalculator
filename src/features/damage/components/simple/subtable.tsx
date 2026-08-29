@@ -1,35 +1,34 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
-import { FormattedMessage } from "react-intl";
 
 type Props = {
-    labelIntlID: string
-    displayCriticalHead: boolean
+    /**
+     * サブテーブルのラベル（呼び出し側で<FormattedMessage>等を組み立てて渡す）
+     */
+    label: React.ReactNode
+
+    /**
+     * 値側のヘッダーセル。要素数に応じてラベル列のcolSpanが決まる（全体4列固定）。
+     * 例：基本攻撃のように「標準値/致命打/期待値」の3列を要求するカテゴリは3要素、
+     * それ以外の通常のカテゴリは1要素（標準値のみ）を渡す
+     */
+    valueHeaders: React.ReactNode[]
     unitsChunks: React.ReactElement[][]
 }
 
 /**
  * ダメージ・効果量表示テーブルについて、1まとまりの単位のtbodyを構成するコンポーネント
  * 例：基本攻撃系統の効果量をまとめたtbody
+ *
+ * カテゴリ（基本攻撃・実験体スキル・武器スキル等）に依存しない共通View。
+ * カテゴリ固有のヘッダー列数・raw unitからのReactElement変換は呼び出し側が担う。
  */
 const SubTable: React.FC<Props> = props => {
-    const head = (() => {
-        if (props.displayCriticalHead) {
-            // 通常威力・クリティカル威力・期待値の3値のヘッダを表示
-            return <>
-                <td><FormattedMessage id={props.labelIntlID} /></td>
-                <td><FormattedMessage id="app.standard-value" /></td>
-                <td><FormattedMessage id="app.critical-hit" /></td>
-                <td><FormattedMessage id="app.expected-value" /></td>
-            </>
-        } else {
-            // 単一威力のみのヘッダを表示
-            return <>
-                <td colSpan={3}><FormattedMessage id={props.labelIntlID} /></td>
-                <td><FormattedMessage id="app.standard-value" /></td>
-            </>
-        }
-    })();
+    const labelColSpan = 4 - props.valueHeaders.length;
+    const head = <>
+        <td colSpan={labelColSpan > 1 ? labelColSpan : undefined}>{props.label}</td>
+        {props.valueHeaders.map((header, index) => <td key={index}>{header}</td>)}
+    </>;
 
     return (
         <tbody>

@@ -626,6 +626,196 @@ exports[`'Cpt. Pepper''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'David ヘッドホン''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          David ヘッドホン
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201530"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          25
+        </li>
+        <li>
+          防御力
+           +
+          10
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            軽い足取り
+          </span>
+        </h3>
+        <p>
+          0.2m移動するたびに[軽い足取り]を最大100スタックまで獲得できます。
+          <br />
+          スタック数に応じて移動速度を最大
+          <span
+            style="color: white;"
+          >
+            0.1
+          </span>
+          まで獲得します。基本攻撃ダメージを与える場合、スタックをすべて消費して最大
+          <span
+            style="color: white;"
+          >
+            100
+          </span>
+          のスキルダメージを与えます。
+          <br />
+          (近距離)最大スタック状態ではダメージを受けた対象の移動速度を2秒間
+          <span
+            style="color: white;"
+          >
+            20%
+          </span>
+          減少させます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'David ヘッドホン''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          David ヘッドホン
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201530"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          25
+        </li>
+        <li>
+          防御力
+           +
+          10
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            軽い足取り
+          </span>
+        </h3>
+        <p>
+          0.2m移動するたびに[軽い足取り]を最大100スタックまで獲得できます。
+          <br />
+          スタック数に応じて移動速度を最大
+          <span
+            style="color: white;"
+          >
+            0.1
+          </span>
+          まで獲得します。基本攻撃ダメージを与える場合、スタックをすべて消費して最大
+          <span
+            style="color: white;"
+          >
+            100
+          </span>
+          のスキルダメージを与えます。
+          <br />
+          (近距離)最大スタック状態ではダメージを受けた対象の移動速度を2秒間
+          <span
+            style="color: white;"
+          >
+            20%
+          </span>
+          減少させます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'EODシューズ''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -1986,6 +2176,234 @@ exports[`'アイギス''s > tooltip match snapshot 1`] = `
           300
         </li>
       </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'アイシールド''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          アイシールド
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201529"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          攻撃力
+           +
+          35
+           
+          または
+           
+          スキル増幅
+           +
+          70
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          ダメージ吸血
+           +
+          8
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            乱舞
+          </span>
+        </h3>
+        <p>
+          敵実験体に基本攻撃またはスキルを的中させるたびに3秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            (近距離：3% I 遠距離：1.5%)
+          </span>
+          増加するスタックを獲得します。(最大8スタック) 
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、1秒ごとに判定が適用されます。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'アイシールド''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          アイシールド
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201529"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          攻撃力
+           +
+          35
+           
+          または
+           
+          スキル増幅
+           +
+          70
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          ダメージ吸血
+           +
+          8
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            乱舞
+          </span>
+        </h3>
+        <p>
+          敵実験体に基本攻撃またはスキルを的中させるたびに3秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            3%
+          </span>
+          増加するスタックを獲得します。(最大8スタック) 
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、1秒ごとに判定が適用されます。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -6428,6 +6846,192 @@ exports[`'ウーラノス''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'エクイリブリウム''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          エクイリブリウム
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          両手剣
+        </p>
+      </div>
+      <img
+        src="102504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          64
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            懲罰
+          </span>
+        </h3>
+        <p>
+          同じ敵に対して4秒以内に基本攻撃またはスキルが3回的中すると、その敵に
+          <span
+            style="color: white;"
+          >
+            40
+          </span>
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            (+追加攻撃力の50%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル*5)
+          </span>
+          のスキルダメージを与え、2.5秒間
+          <span
+            style="color: white;"
+          >
+            100
+          </span>
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            (+攻撃力の55%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル*5)
+          </span>
+          のシールドを獲得します。(クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'エクイリブリウム''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          エクイリブリウム
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          両手剣
+        </p>
+      </div>
+      <img
+        src="102504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          64
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            懲罰
+          </span>
+        </h3>
+        <p>
+          同じ敵に対して4秒以内に基本攻撃またはスキルが3回的中すると、その敵に
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            45
+          </span>
+          のスキルダメージを与え、2.5秒間
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            124
+          </span>
+          のシールドを獲得します。(クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'エクスカリバー''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -6827,6 +7431,166 @@ exports[`'エメラルドタブレット''s > tooltip match snapshot 1`] = `
           増加します。
           <br />
           (クールダウン：12秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'エルディアンブーツ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          エルディアンブーツ
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204510"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          17
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+        <li>
+          移動速度
+           +
+          0.27
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'エルディアンブーツ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          エルディアンブーツ
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204510"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          17
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+        <li>
+          移動速度
+           +
+          0.27
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
         </p>
       </div>
     </div>
@@ -8019,6 +8783,157 @@ exports[`'オルゴール''s > tooltip match snapshot 1`] = `
           %
         </li>
       </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'オルビス''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          オルビス
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          84
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            魔力の種
+          </span>
+        </h3>
+        <p>
+          [魔力]のスタック数に応じてスキル増幅が
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            1
+          </span>
+          ずつ増加します。15秒ごとに敵実験体にスキルでダメージを与えると、[魔力]スタックを3スタック獲得でき、昼夜が切り替わる時には5スタックを獲得します。(最大20スタック)
+          <br />
+          最大スタック数になると、魔力が開花し、クールダウン減少が
+          <span
+            style="color: white;"
+          >
+            20
+          </span>
+          増加します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'オルビス''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          オルビス
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          84
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            魔力の種
+          </span>
+        </h3>
+        <p>
+          [魔力]のスタック数に応じてスキル増幅が
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            1
+          </span>
+          ずつ増加します。15秒ごとに敵実験体にスキルでダメージを与えると、[魔力]スタックを3スタック獲得でき、昼夜が切り替わる時には5スタックを獲得します。(最大20スタック)
+          <br />
+          最大スタック数になると、魔力が開花し、クールダウン減少が
+          <span
+            style="color: white;"
+          >
+            20
+          </span>
+          増加します。
+          <br />
+          <br />
+          獲得したスキル増幅量：
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            0
+          </span>
+          /20
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -9741,6 +10656,274 @@ exports[`'キューブウォッチ''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'キルヒール''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          キルヒール
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204405"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          60
+        </li>
+        <li>
+          スキル増幅
+           +
+          5
+          %
+        </li>
+        <li>
+          移動速度
+           +
+          0.25
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'キルヒール''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          キルヒール
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204405"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          60
+        </li>
+        <li>
+          スキル増幅
+           +
+          5
+          %
+        </li>
+        <li>
+          移動速度
+           +
+          0.25
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ギアヘリックス''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ギアヘリックス
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          レイピア
+        </p>
+      </div>
+      <img
+        src="120503"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          60
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            達人
+          </span>
+        </h3>
+        <p>
+          武器スキルを使用すると、0.5秒後、衝撃波を放ちます。衝撃波に当たった敵には
+          <span
+            style="color: white;"
+          >
+            60
+          </span>
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            (+攻撃力の50%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル * 2)
+          </span>
+          の追加スキルダメージを与えて1秒間移動速度を
+          <span
+            style="color: white;"
+          >
+            35%
+          </span>
+          減少させます。 (クールダウン：10秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ギアヘリックス''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ギアヘリックス
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          レイピア
+        </p>
+      </div>
+      <img
+        src="120503"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          60
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            達人
+          </span>
+        </h3>
+        <p>
+          武器スキルを使用すると、0.5秒後、衝撃波を放ちます。衝撃波に当たった敵には
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            80
+          </span>
+          の追加スキルダメージを与えて1秒間移動速度を
+          <span
+            style="color: white;"
+          >
+            35%
+          </span>
+          減少させます。 (クールダウン：{4}秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ギャラクシーステップ''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -11232,6 +12415,104 @@ exports[`'クワッドアイ''s > tooltip match snapshot 1`] = `
           基本攻撃するたびにバレル延長スキルのクールダウンが1秒ずつ減少します。
         </p>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'クンダーラ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          クンダーラ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="205503"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          80
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+        <li>
+          移動速度
+           +
+          3
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'クンダーラ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          クンダーラ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="205503"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          80
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+        <li>
+          移動速度
+           +
+          3
+          %
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -14036,6 +15317,162 @@ exports[`'ザ・デス''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'ザ・ハングドマン''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ザ・ハングドマン
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          アルカナ
+        </p>
+      </div>
+      <img
+        src="130504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          40
+        </li>
+        <li>
+          スキル増幅
+           +
+          88
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            疫病の蝶
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルでダメージを与えると、疫病を媒介する蝶が対象に飛んでいき、
+          <span
+            style="color: white;"
+          >
+            20
+          </span>
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            (+スキル増幅の30%%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル * 3)
+          </span>
+          のダメージを与えます。疫病の蝶は周囲4m以内の敵実験体に最大5回まで跳ね返り、跳ね返るたびにダメージ量が10%ずつ減少します。（クールダウン：10秒）
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ザ・ハングドマン''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ザ・ハングドマン
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          アルカナ
+        </p>
+      </div>
+      <img
+        src="130504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          40
+        </li>
+        <li>
+          スキル増幅
+           +
+          88
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            疫病の蝶
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルでダメージを与えると、疫病を媒介する蝶が対象に飛んでいき、
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            23
+          </span>
+          のダメージを与えます。疫病の蝶は周囲4m以内の敵実験体に最大5回まで跳ね返り、跳ね返るたびにダメージ量が10%ずつ減少します。（クールダウン：10秒）
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ザ・ムーン''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -16704,6 +18141,112 @@ exports[`'スペクター''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'スペースブーツ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          スペースブーツ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204512"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+        <li>
+          移動速度
+           +
+          0.25
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'スペースブーツ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          スペースブーツ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204512"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+        <li>
+          移動速度
+           +
+          0.25
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'スポーツウォッチ''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -16869,6 +18412,164 @@ exports[`'スポーツウォッチ''s > tooltip match snapshot 1`] = `
             10%
           </span>
           の攻撃速度を獲得します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'スポーツサングラス''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          スポーツサングラス
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201422"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          53
+        </li>
+        <li>
+          最大体力
+           +
+          100
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'スポーツサングラス''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          スポーツサングラス
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201422"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          53
+        </li>
+        <li>
+          最大体力
+           +
+          100
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
         </p>
       </div>
     </div>
@@ -19248,6 +20949,168 @@ exports[`'タクティカル·アーマー''s > tooltip match snapshot 1`] = `
             8%
           </span>
           以下にさせた場合には対象がすぐに死亡します。(クールダウン：1秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'タクティカル·シューズ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          タクティカル·シューズ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204514"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          20
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+        <li>
+          移動速度
+           +
+          0.25
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            追い風
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルが的中すると、3秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            5%
+          </span>
+          増加します。
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'タクティカル·シューズ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          タクティカル·シューズ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204514"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          20
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+        <li>
+          移動速度
+           +
+          0.25
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            追い風
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルが的中すると、3秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            5%
+          </span>
+          増加します。
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
         </p>
       </div>
     </div>
@@ -25425,6 +27288,164 @@ exports[`'ノスフェラトゥ''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'ノヴァシールド''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ノヴァシールド
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="203515"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          攻撃力
+           +
+          43
+           
+          または
+           
+          スキル増幅
+           +
+          86
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ノヴァシールド''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ノヴァシールド
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="203515"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          攻撃力
+           +
+          43
+           
+          または
+           
+          スキル増幅
+           +
+          86
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ハイヌーン - 宵色''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -30462,6 +32483,208 @@ exports[`'ビームアックス''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'ピクシーブーツ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ピクシーブーツ
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204513"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          50
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+        <li>
+          移動速度
+           +
+          0.27
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            追い風
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルが的中すると、3秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            5%
+          </span>
+          増加します。
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ピクシーブーツ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ピクシーブーツ
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204513"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          50
+        </li>
+        <li>
+          クールダウン減少
+           +
+          20
+        </li>
+        <li>
+          移動速度
+           +
+          0.27
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            追い風
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルが的中すると、3秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            5%
+          </span>
+          増加します。
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ピコピコハンマー''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -31293,6 +33516,219 @@ exports[`'ファイヤーボール''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'ファフニール''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ファフニール
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="203516"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            ファフニールの鱗
+          </span>
+        </h3>
+        <p>
+          敵実験体から累積350のダメージを受けるたびに[鱗]スタックを1獲得します。[鱗]スタックは12秒間継続し、最大8スタックまで貯めることができます。移動不可状態になると、[鱗]を追加で1スタック獲得します。
+          <br />
+          [鱗]1スタックにつき防御力が
+          <span
+            style="color: white;"
+          >
+            3
+          </span>
+          増加し、最大スタックになると、4秒間徐々に減少する
+          <span
+            style="color: white;"
+          >
+            100
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の100%)
+          </span>
+          のシールドを獲得し、移動速度が
+          <span
+            style="color: white;"
+          >
+            10%
+          </span>
+          増加します。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ファフニール''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ファフニール
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="203516"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            ファフニールの鱗
+          </span>
+        </h3>
+        <p>
+          敵実験体から累積350のダメージを受けるたびに[鱗]スタックを1獲得します。[鱗]スタックは12秒間継続し、最大8スタックまで貯めることができます。移動不可状態になると、[鱗]を追加で1スタック獲得します。
+          <br />
+          [鱗]1スタックにつき防御力が
+          <span
+            style="color: white;"
+          >
+            3
+          </span>
+          増加し、最大スタックになると、4秒間徐々に減少する
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            100
+          </span>
+          のシールドを獲得し、移動速度が
+          <span
+            style="color: white;"
+          >
+            10%
+          </span>
+          増加します。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ファントムジャケット - David''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -31787,6 +34223,406 @@ exports[`'ファントムボルト''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'フィールドソーン''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          フィールドソーン
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          レイピア
+        </p>
+      </div>
+      <img
+        src="120504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          32
+        </li>
+        <li>
+          スキル増幅
+           +
+          79
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            懲罰
+          </span>
+        </h3>
+        <p>
+          同じ敵に対して4秒以内に基本攻撃またはスキルが3回的中すると、その敵に
+          <span
+            style="color: white;"
+          >
+            50
+          </span>
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            (+スキル増幅の20%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル*2)
+          </span>
+          のスキルダメージを与え、2.5秒間
+          <span
+            style="color: white;"
+          >
+            100
+          </span>
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            (+スキル増幅の30%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル*5)
+          </span>
+          のシールドを獲得します。(クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'フィールドソーン''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          フィールドソーン
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          レイピア
+        </p>
+      </div>
+      <img
+        src="120504"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          32
+        </li>
+        <li>
+          スキル増幅
+           +
+          79
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            懲罰
+          </span>
+        </h3>
+        <p>
+          同じ敵に対して4秒以内に基本攻撃またはスキルが3回的中すると、その敵に
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            52
+          </span>
+          のスキルダメージを与え、2.5秒間
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            105
+          </span>
+          のシールドを獲得します。(クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'フェザーフォール''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          フェザーフォール
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="202528"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          33
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            バレル延長
+          </span>
+        </h3>
+        <p>
+          7秒ごとに次の基本攻撃が強化されて射程距離が
+          <span
+            style="color: white;"
+          >
+            25%
+          </span>
+          増加し、
+          <span
+            style="color: green;"
+          >
+            (キャラクターレベル * 3)
+          </span>
+          の追加スキルダメージを与えます。(最大7.5ｍまで)
+          <br />
+          基本攻撃するたびにバレル延長スキルのクールダウンが1秒ずつ減少します。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'フェザーフォール''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          フェザーフォール
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="202528"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          33
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            バレル延長
+          </span>
+        </h3>
+        <p>
+          7秒ごとに次の基本攻撃が強化されて射程距離が
+          <span
+            style="color: white;"
+          >
+            25%
+          </span>
+          増加し、
+          <span
+            style="color: green;"
+          >
+            3
+          </span>
+          の追加スキルダメージを与えます。(最大7.5ｍまで)
+          <br />
+          基本攻撃するたびにバレル延長スキルのクールダウンが1秒ずつ減少します。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'フラガラック''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -31964,6 +34800,104 @@ exports[`'フラガラック''s > tooltip match snapshot 1`] = `
           減少させます。
         </p>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'フランベルジュ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          フランベルジュ
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          レイピア
+        </p>
+      </div>
+      <img
+        src="120408"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          57
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'フランベルジュ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          フランベルジュ
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          レイピア
+        </p>
+      </div>
+      <img
+        src="120408"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          57
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -37860,6 +40794,104 @@ exports[`'マベリックランナー''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'マリンハット''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          マリンハット
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201531"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          最大体力
+           +
+          200
+        </li>
+        <li>
+          体力再生
+           +
+          60
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'マリンハット''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          マリンハット
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201531"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          最大体力
+           +
+          200
+        </li>
+        <li>
+          体力再生
+           +
+          60
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ミスティルテイン''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -43202,6 +46234,184 @@ exports[`'ロビンハット''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'ロリポップ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ロリポップ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          バット
+        </p>
+      </div>
+      <img
+        src="108506"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          30
+        </li>
+        <li>
+          スキル増幅
+           +
+          86
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            迅速 - そよ風
+          </span>
+        </h3>
+        <p>
+          4秒以内に3回の基本攻撃またはスキルでダメージを与えると、2.5秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            15%
+          </span>
+          増加して
+          <span
+            style="color: white;"
+          >
+            100
+          </span>
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            (+スキル増幅の30%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル * 5)
+          </span>
+          のシールドを獲得します。
+          <br />
+          (クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、3秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ロリポップ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ロリポップ
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          バット
+        </p>
+      </div>
+      <img
+        src="108506"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          30
+        </li>
+        <li>
+          スキル増幅
+           +
+          86
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            迅速 - そよ風
+          </span>
+        </h3>
+        <p>
+          4秒以内に3回の基本攻撃またはスキルでダメージを与えると、2.5秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            15%
+          </span>
+          増加して
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            105
+          </span>
+          のシールドを獲得します。
+          <br />
+          (クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、3秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'ロンギヌスの槍 - 宵色''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -43730,6 +46940,202 @@ exports[`'ロンギヌスの槍''s > tooltip match snapshot 1`] = `
           %
         </li>
       </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ローズステップ''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ローズステップ
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204511"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          45
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+        <li>
+          移動速度
+           +
+          0.27
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            覚醒
+          </span>
+        </h3>
+        <p>
+          究極技を使用すると、8秒間防御貫通が
+          <span
+            style="color: white;"
+          >
+            10%
+          </span>
+          増加します。(クールダウン：20秒)
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ローズステップ''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ローズステップ
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204511"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          45
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+        <li>
+          移動速度
+           +
+          0.27
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            覚醒
+          </span>
+        </h3>
+        <p>
+          究極技を使用すると、8秒間防御貫通が
+          <span
+            style="color: white;"
+          >
+            10%
+          </span>
+          増加します。(クールダウン：20秒)
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -44394,6 +47800,233 @@ exports[`'ヴァルチャーの眼''s > tooltip match snapshot 1`] = `
             0.1
           </span>
           の移動速度を追加で獲得します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヴァルハラヘルム''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ヴァルハラヘルム
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201528"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          18
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            シャッターストライク
+          </span>
+        </h3>
+        <p>
+          戦闘状態になった後、4秒ごとに強化基本攻撃をチャージします。強化基本攻撃は
+          <span
+            style="color: white;"
+          >
+            20
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の10%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル*3)
+          </span>
+          の追加スキルダメージを与えて
+          <span
+            style="color: white;"
+          >
+            40
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の14%)
+          </span>
+          の体力を回復します。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'ヴァルハラヘルム''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          ヴァルハラヘルム
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201528"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          18
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            シャッターストライク
+          </span>
+        </h3>
+        <p>
+          戦闘状態になった後、4秒ごとに強化基本攻撃をチャージします。強化基本攻撃は
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            23
+          </span>
+          の追加スキルダメージを与えて
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            40
+          </span>
+          の体力を回復します。
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
         </p>
       </div>
     </div>
@@ -45961,6 +49594,173 @@ exports[`'八卦掌''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'凍て風の胸甲''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          凍て風の胸甲
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202531"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          40
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          24.0
+          ~
+          480.0
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            突風 - 寒気
+          </span>
+        </h3>
+        <p>
+          敵実験体に移動不可効果を付与すると、0.5秒ごとに
+          <span
+            style="color: white;"
+          >
+            10
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の5%)
+          </span>
+          のスキルダメージを与える竜巻を5秒間発生させます。竜巻内にいる敵は移動速度が
+          <span
+            style="color: white;"
+          >
+            25%
+          </span>
+          減少します。（クールダウン：10秒）
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'凍て風の胸甲''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          凍て風の胸甲
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202531"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          40
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          24.0
+          ~
+          480.0
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            突風 - 寒気
+          </span>
+        </h3>
+        <p>
+          敵実験体に移動不可効果を付与すると、0.5秒ごとに
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            10
+          </span>
+          のスキルダメージを与える竜巻を5秒間発生させます。竜巻内にいる敵は移動速度が
+          <span
+            style="color: white;"
+          >
+            25%
+          </span>
+          減少します。（クールダウン：10秒）
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'刃の脚''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -46092,6 +49892,116 @@ exports[`'刃の脚''s > tooltip match snapshot 1`] = `
           減少します。
         </p>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'制服''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          制服
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202423"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          20
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'制服''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          制服
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202423"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          20
+        </li>
+        <li>
+          最大体力
+           +
+          120
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -46328,6 +50238,172 @@ exports[`'単零寸千闘''s > tooltip match snapshot 1`] = `
           %
         </li>
       </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'反逆の意志''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          反逆の意志
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202530"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          25
+        </li>
+        <li>
+          最大体力
+           +
+          200
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            リピートアクション
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルが的中すると、6秒間[リピートアクション]を獲得します。1スタックあたり、クールダウン減少が
+          <span
+            style="color: white;"
+          >
+            5
+          </span>
+          増加し、最大3スタックまで獲得できます。
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'反逆の意志''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          反逆の意志
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202530"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          25
+        </li>
+        <li>
+          最大体力
+           +
+          200
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            リピートアクション
+          </span>
+        </h3>
+        <p>
+          敵実験体にスキルが的中すると、6秒間[リピートアクション]を獲得します。1スタックあたり、クールダウン減少が
+          <span
+            style="color: white;"
+          >
+            5
+          </span>
+          増加し、最大3スタックまで獲得できます。
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、{20}秒ごとに判定が適用されます。
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -51652,6 +55728,104 @@ exports[`'正義の剣''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'死の足音''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          死の足音
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          双剣
+        </p>
+      </div>
+      <img
+        src="103507"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          60
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'死の足音''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          死の足音
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          双剣
+        </p>
+      </div>
+      <img
+        src="103507"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          60
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'比翼連理''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -52447,6 +56621,487 @@ exports[`'流星剣''s > tooltip match snapshot 1`] = `
             11
           </span>
           の追加スキルダメージを与え、 1.5秒間移動速度を20%減少させます。（クールダウン：5秒）
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'海賊の旗''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          海賊の旗
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205308"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          25
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'海賊の旗''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          海賊の旗
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205308"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          25
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'海賊の証票''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          海賊の証票
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205306"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          26
+        </li>
+        <li>
+          最大体力
+           +
+          220
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            金貨袋
+          </span>
+        </h3>
+        <p>
+          自分を中心とした周囲18m以内で自分または味方が野生動物を倒すと、[金貨]スタックを獲得します。敵実験体キルに関与すると、保有している[金貨]スタックに応じてクレジットを獲得し、すべてのスタックを消費します。[金貨]で獲得したクレジット15につき、攻撃力が
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            1
+          </span>
+          増加します。
+          <br />
+          クマ：
+          <span
+            style="color: white;"
+          >
+            5
+          </span>
+          <br />
+          オオカミ：
+          <span
+            style="color: white;"
+          >
+            3
+          </span>
+          <br />
+          ハウンド、イノシシ、カラス：
+          <span
+            style="color: white;"
+          >
+            2
+          </span>
+          <br />
+          ニワトリ、コウモリ：
+          <span
+            style="color: white;"
+          >
+            1
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'海賊の証票''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          海賊の証票
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205306"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          26
+        </li>
+        <li>
+          最大体力
+           +
+          220
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            金貨袋
+          </span>
+        </h3>
+        <p>
+          自分を中心とした周囲18m以内で自分または味方が野生動物を倒すと、[金貨]スタックを獲得します。敵実験体キルに関与すると、保有している[金貨]スタックに応じてクレジットを獲得し、すべてのスタックを消費します。[金貨]で獲得したクレジット15につき、攻撃力が
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            1
+          </span>
+          増加します。
+          <br />
+          クマ：
+          <span
+            style="color: white;"
+          >
+            5
+          </span>
+          <br />
+          オオカミ：
+          <span
+            style="color: white;"
+          >
+            3
+          </span>
+          <br />
+          ハウンド、イノシシ、カラス：
+          <span
+            style="color: white;"
+          >
+            2
+          </span>
+          <br />
+          ニワトリ、コウモリ：
+          <span
+            style="color: white;"
+          >
+            1
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'海賊帽''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          海賊帽
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201532"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          17.0
+          ~
+          340.0
+        </li>
+        <li>
+          体力再生
+           +
+          100
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            シャッターストライク
+          </span>
+        </h3>
+        <p>
+          戦闘状態になった後、4秒ごとに強化基本攻撃をチャージします。強化基本攻撃は
+          <span
+            style="color: white;"
+          >
+            20
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の10%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル*3)
+          </span>
+          の追加スキルダメージを与えて
+          <span
+            style="color: white;"
+          >
+            40
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の14%)
+          </span>
+          の体力を回復します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'海賊帽''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          海賊帽
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201532"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          15
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          17.0
+          ~
+          340.0
+        </li>
+        <li>
+          体力再生
+           +
+          100
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            シャッターストライク
+          </span>
+        </h3>
+        <p>
+          戦闘状態になった後、4秒ごとに強化基本攻撃をチャージします。強化基本攻撃は
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            23
+          </span>
+          の追加スキルダメージを与えて
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            40
+          </span>
+          の体力を回復します。
         </p>
       </div>
     </div>
@@ -54786,6 +59441,106 @@ exports[`'狂気王のカード''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'狐面''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          狐面
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201421"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          10
+        </li>
+        <li>
+          攻撃速度
+           +
+          32
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          28
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'狐面''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          狐面
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201421"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          10
+        </li>
+        <li>
+          攻撃速度
+           +
+          32
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          28
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'狙撃クロスボウ''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -55617,6 +60372,305 @@ exports[`'登山靴''s > tooltip match snapshot 1`] = `
           0.22
         </li>
       </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'白夜の冠''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          白夜の冠
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201536"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          70
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+        <li>
+          与える回復増加
+           +
+          6
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            死者のための祈り
+          </span>
+        </h3>
+        <p>
+          味方の実験体に回復またはシールドスキルを適用した場合、その味方に[亡霊の力]を5秒間付与します。[亡霊の力]を保有している味方が敵実験体に基本攻撃またはスキルを的中させた場合、亡霊がその敵を追撃して
+          <span
+            style="color: white;"
+          >
+            40
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル*5)
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+対象の最大体力の5%)
+          </span>
+          のスキルダメージを与えます。 (クールダウン：4秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'白夜の冠''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          白夜の冠
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201536"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          70
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+        <li>
+          与える回復増加
+           +
+          6
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            死者のための祈り
+          </span>
+        </h3>
+        <p>
+          味方の実験体に回復またはシールドスキルを適用した場合、その味方に[亡霊の力]を5秒間付与します。[亡霊の力]を保有している味方が敵実験体に基本攻撃またはスキルを的中させた場合、亡霊がその敵を追撃して
+          <span
+            style="color: green;"
+          >
+            40
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+対象の最大体力の5%)
+          </span>
+          のスキルダメージを与えます。 (クールダウン：4秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'白羽扇''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          白羽扇
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205201"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          52
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            呪い
+          </span>
+        </h3>
+        <p>
+          スキル攻撃を加えると敵が4秒間呪いの状態になります。呪い状態の敵は呪いの状態から解除される時、25+
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            スキル増幅の10%
+          </span>
+          に値する固定ダメージを受けます。一度呪い状態になると8秒間(基本攻撃を受けると1秒減少)再び呪い状態になりません。(クールダウン：2秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'白羽扇''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          白羽扇
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205201"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          52
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            呪い
+          </span>
+        </h3>
+        <p>
+          スキル攻撃を加えると敵が4秒間呪い状態になります。呪い状態の敵は呪いの状態から解除される時、
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            25
+          </span>
+          の固定ダメージを受けます。一度呪い状態になると8秒間(基本攻撃を受けると1秒減少)再び呪い状態になりません。(クールダウン：2秒)
+        </p>
+      </div>
     </div>
   </div>
 </div>
@@ -57491,6 +62545,184 @@ exports[`'素手''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'結びの運命''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          結びの運命
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          鞭
+        </p>
+      </div>
+      <img
+        src="109503"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          30
+        </li>
+        <li>
+          スキル増幅
+           +
+          65
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            迅速 - そよ風
+          </span>
+        </h3>
+        <p>
+          4秒以内に3回の基本攻撃またはスキルでダメージを与えると、2.5秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            15%
+          </span>
+          増加して
+          <span
+            style="color: white;"
+          >
+            100
+          </span>
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            (+スキル増幅の30%)
+          </span>
+          <span
+            style="color: green;"
+          >
+            (+キャラクターレベル * 5)
+          </span>
+          のシールドを獲得します。
+          <br />
+          (クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、3秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'結びの運命''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          結びの運命
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          鞭
+        </p>
+      </div>
+      <img
+        src="109503"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          30
+        </li>
+        <li>
+          スキル増幅
+           +
+          65
+        </li>
+        <li>
+          最大体力
+           +
+          150
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            迅速 - そよ風
+          </span>
+        </h3>
+        <p>
+          4秒以内に3回の基本攻撃またはスキルでダメージを与えると、2.5秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            15%
+          </span>
+          増加して
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            105
+          </span>
+          のシールドを獲得します。
+          <br />
+          (クールダウン：12秒)
+          <br />
+          <br />
+          持続的にダメージを与えるスキルの場合、3秒ごとに判定が適用されます。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'緋色の短剣 - 宵色''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -58623,6 +63855,142 @@ exports[`'臉譜''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'芭蕉扇''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          芭蕉扇
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205502"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          82
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            呪い
+          </span>
+        </h3>
+        <p>
+          スキル攻撃を加えると敵が4秒間呪いの状態になります。呪い状態の敵は呪いの状態から解除される時、50+
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            スキル増幅の15%
+          </span>
+          に値する固定ダメージを受けます。一度呪い状態になると8秒間(基本攻撃を受けると1秒減少)再び呪い状態になりません。(クールダウン：2秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'芭蕉扇''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          芭蕉扇
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          腕/装具
+        </p>
+      </div>
+      <img
+        src="205502"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          82
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            呪い
+          </span>
+        </h3>
+        <p>
+          スキル攻撃を加えると敵が4秒間呪い状態になります。呪い状態の敵は呪いの状態から解除される時、
+          <span
+            style="color: rgb(221, 160, 221);"
+          >
+            50
+          </span>
+          の固定ダメージを受けます。一度呪い状態になると8秒間(基本攻撃を受けると1秒減少)再び呪い状態になりません。(クールダウン：2秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'荒野の星''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -58754,6 +64122,178 @@ exports[`'荒野の星''s > tooltip match snapshot 1`] = `
             40%
           </span>
           減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'華将の衣''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          華将の衣
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202529"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          20
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            超集中
+          </span>
+        </h3>
+        <p>
+          同じ敵実験体に基本攻撃が的中すると、4秒間維持される[超集中]スタックを獲得します。(最大10スタック)
+          <br />
+          [超集中]スタックは1スタックにつき敵実験体に与える基本攻撃ダメージが
+          <span
+            style="color: white;"
+          >
+            1%
+          </span>
+          増加します。
+          <br />
+          基本攻撃対象が変更されると、[超集中]スタックが30%減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'華将の衣''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          華将の衣
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202529"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          20
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            超集中
+          </span>
+        </h3>
+        <p>
+          同じ敵実験体に基本攻撃が的中すると、4秒間維持される[超集中]スタックを獲得します。(最大10スタック)
+          <br />
+          [超集中]スタックは1スタックにつき敵実験体に与える基本攻撃ダメージが
+          <span
+            style="color: white;"
+          >
+            1%
+          </span>
+          増加します。
+          <br />
+          基本攻撃対象が変更されると、[超集中]スタックが30%減少します。
         </p>
       </div>
     </div>
@@ -60336,6 +65876,104 @@ exports[`'血花九節鞭''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'護手双鈎''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          護手双鈎
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          双剣
+        </p>
+      </div>
+      <img
+        src="103506"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          52
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'護手双鈎''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          護手双鈎
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          双剣
+        </p>
+      </div>
+      <img
+        src="103506"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          52
+        </li>
+        <li>
+          攻撃速度
+           +
+          25
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'賢者のローブ - David''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -61302,6 +66940,230 @@ exports[`'赤い半月''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'赤い星''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          赤い星
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="201534"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          18
+        </li>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          20
+        </li>
+        <li>
+          攻撃速度
+           +
+          15
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            予熱
+          </span>
+        </h3>
+        <p>
+          敵実験体に基本攻撃が的中するたびに、5秒間攻撃速度が
+          <span
+            style="color: white;"
+          >
+            4%
+          </span>
+          増加するスタックを獲得します。(最大5スタック)
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'赤い星''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          赤い星
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="201534"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          18
+        </li>
+        <li>
+          レベル比例攻撃力
+           +
+          3.0
+          ~
+          60.0
+        </li>
+        <li>
+          防御力
+           +
+          20
+        </li>
+        <li>
+          攻撃速度
+           +
+          15
+          %
+        </li>
+        <li>
+          致命打確率
+           +
+          35
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            予熱
+          </span>
+        </h3>
+        <p>
+          敵実験体に基本攻撃が的中するたびに、5秒間攻撃速度が
+          <span
+            style="color: white;"
+          >
+            4%
+          </span>
+          増加するスタックを獲得します。(最大5スタック)
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'赤い靴''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -61972,6 +67834,164 @@ exports[`'超振動ヌンチャク''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'軍用ゴーグル''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          軍用ゴーグル
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201423"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          65
+        </li>
+        <li>
+          最大体力
+           +
+          200
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'軍用ゴーグル''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          軍用ゴーグル
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201423"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          65
+        </li>
+        <li>
+          最大体力
+           +
+          200
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'軽量化ブーツ''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -62438,6 +68458,190 @@ exports[`'邀明月''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'野生の飢え''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          野生の飢え
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201537"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          12
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            捕食
+          </span>
+        </h3>
+        <p>
+          6m以内に2秒以上接近しているすべての敵実験体に対して基本攻撃が強化されます。強化された基本攻撃は
+          <span
+            style="color: white;"
+          >
+            20
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の10%)
+          </span>
+          の追加スキルダメージを与え、自分の体力を
+          <span
+            style="color: white;"
+          >
+            30
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+追加体力の12%)
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+自分の失った体力の4%)
+          </span>
+          回復し、1秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            15%
+          </span>
+          増加します。(対象ごとのクールダウン：8秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'野生の飢え''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          野生の飢え
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201537"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          12
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            捕食
+          </span>
+        </h3>
+        <p>
+          6m以内に2秒以上接近しているすべての敵実験体に対して基本攻撃が強化されます。強化された基本攻撃は
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            20
+          </span>
+          の追加スキルダメージを与え、自分の体力を
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            30
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+自分の失った体力の4%)
+          </span>
+          回復し、1秒間移動速度が
+          <span
+            style="color: white;"
+          >
+            15%
+          </span>
+          増加します。(対象ごとのクールダウン：8秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'金剛杵''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -62530,6 +68734,114 @@ exports[`'金剛杵''s > tooltip match snapshot 1`] = `
           致命打ダメージ量
            +
           7
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'鋼鉄ひざプロテクター''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          鋼鉄ひざプロテクター
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204401"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          8
+        </li>
+        <li>
+          移動速度
+           +
+          0.22
+        </li>
+        <li>
+          <span
+            style="color: rgb(255, 255, 0);"
+          >
+            (固有)
+          </span>
+          妨害耐性
+           +
+          20
+          %
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'鋼鉄ひざプロテクター''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          鋼鉄ひざプロテクター
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          脚
+        </p>
+      </div>
+      <img
+        src="204401"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          8
+        </li>
+        <li>
+          移動速度
+           +
+          0.22
+        </li>
+        <li>
+          <span
+            style="color: rgb(255, 255, 0);"
+          >
+            (固有)
+          </span>
+          妨害耐性
+           +
+          20
           %
         </li>
       </ul>
@@ -64411,6 +70723,322 @@ exports[`'高位司祭服''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'鬼マスク''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          鬼マスク
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201535"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          30
+        </li>
+        <li>
+          最大体力
+           +
+          250
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            二つの仮面
+          </span>
+        </h3>
+        <p>
+          [安定]状態が維持されます。体力が50%以下の時に敵実験体からダメージを受けると、8秒間[安定]が[内面の怒り]に変わります。(クールダウン：20秒)
+          <br />
+          [安定]：防御力
+          <span
+            style="color: white;"
+          >
+            8
+          </span>
+          増加
+          <br />
+          [内面の怒り]：攻撃力
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            10%
+          </span>
+          ＆ダメージ吸血
+          <span
+            style="color: white;"
+          >
+            8%
+          </span>
+          増加
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'鬼マスク''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          鬼マスク
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201535"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          攻撃力
+           +
+          30
+        </li>
+        <li>
+          最大体力
+           +
+          250
+        </li>
+        <li>
+          攻撃速度
+           +
+          30
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            二つの仮面
+          </span>
+        </h3>
+        <p>
+          [安定]状態が維持されます。体力が50%以下の時に敵実験体からダメージを受けると、8秒間[安定]が[内面の怒り]に変わります。(クールダウン：20秒)
+          <br />
+          [安定]：防御力
+          <span
+            style="color: white;"
+          >
+            8
+          </span>
+          増加
+          <br />
+          [内面の怒り]：攻撃力
+          <span
+            style="color: rgb(255, 215, 117);"
+          >
+            10%
+          </span>
+          ＆ダメージ吸血
+          <span
+            style="color: white;"
+          >
+            8%
+          </span>
+          増加
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'魔女の帽子''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          魔女の帽子
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201420"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          68
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'魔女の帽子''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _epic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          魔女の帽子
+        </h1>
+        <p>
+          英雄
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201420"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          68
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'魔弾の射手''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -65091,6 +71719,154 @@ exports[`'黄金比率の弓''s > tooltip match snapshot 1`] = `
 </div>
 `;
 
+exports[`'黒いベール''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          黒いベール
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201533"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          80
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+        <li>
+          移動速度
+           +
+          2.5
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            光輝
+          </span>
+        </h3>
+        <p>
+          体力が{0}%以上の時、[光輝]状態になります。[光輝]状態ではスキルのダメージが
+          <span
+            style="color: white;"
+          >
+            12%
+          </span>
+          増加します。体力が{0}%未満になると、[光輝]状態が解除されます。(クールダウン：1秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'黒いベール''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _legend_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          黒いベール
+        </h1>
+        <p>
+          伝説
+        </p>
+        <p>
+          頭
+        </p>
+      </div>
+      <img
+        src="201533"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          スキル増幅
+           +
+          80
+        </li>
+        <li>
+          クールダウン減少
+           +
+          15
+        </li>
+        <li>
+          移動速度
+           +
+          2.5
+          %
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            光輝
+          </span>
+        </h3>
+        <p>
+          体力が{0}%以上の時、[光輝]状態になります。[光輝]状態ではスキルのダメージ量が
+          <span
+            style="color: white;"
+          >
+            12%
+          </span>
+          増加します。体力が{0}%未満になると、[光輝]状態が解除されます。(クールダウン：1秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`'黒曜石十手''s > detailed tooltip match snapshot 1`] = `
 <div>
   <div
@@ -65240,6 +72016,223 @@ exports[`'黒曜石十手''s > tooltip match snapshot 1`] = `
             63
           </span>
           のスキルダメージを与える爆発を起こします。(クールダウン：8秒)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'黒炎竜の鎧''s > detailed tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          黒炎竜の鎧
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202527"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          41
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            劫火の心臓
+          </span>
+        </h3>
+        <p>
+          戦闘状態になると、3秒ごとに周り4m以内の敵に
+          <span
+            style="color: white;"
+          >
+            20
+          </span>
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            (+最大体力の6%)
+          </span>
+          のダメージを与え、実験体に与えたダメージ量の
+          <span
+            style="color: white;"
+          >
+            150%
+          </span>
+          を回復します。(最大回復量：600)
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`'黒炎竜の鎧''s > tooltip match snapshot 1`] = `
+<div>
+  <div
+    class="_base_a77d11 _tooltip_188227 _mythic_188227"
+  >
+    <header
+      class="_header_188227"
+    >
+      <div>
+        <h1>
+          黒炎竜の鎧
+        </h1>
+        <p>
+          神話
+        </p>
+        <p>
+          服
+        </p>
+      </div>
+      <img
+        src="202527"
+      />
+    </header>
+    <div
+      class="_content_188227"
+    >
+      <ul>
+        <li>
+          防御力
+           +
+          41
+        </li>
+        <li>
+          レベル比例最大体力
+           +
+          25.0
+          ~
+          500.0
+        </li>
+        <li>
+          クールダウン減少
+           +
+          10
+        </li>
+      </ul>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            劫火の心臓
+          </span>
+        </h3>
+        <p>
+          戦闘状態になると、3秒ごとに周り4m以内の敵に
+          <span
+            style="color: rgb(104, 138, 8);"
+          >
+            76
+          </span>
+          のダメージを与え、実験体に与えたダメージ量の
+          <span
+            style="color: white;"
+          >
+            150%
+          </span>
+          を回復します。(最大回復量：600)
+        </p>
+      </div>
+      <div
+        class="_skill_3a630a"
+      >
+        <header>
+          <h2>
+            固有装備効果
+          </h2>
+        </header>
+        <h3>
+          <span
+            style="color: yellow;"
+          >
+            治癒減少
+          </span>
+        </h3>
+        <p>
+          相手にダメージを与えるとダメージを受けた対象の治癒効果が4秒間
+          <span
+            style="color: white;"
+          >
+            30%
+          </span>
+          減少します。
         </p>
       </div>
     </div>

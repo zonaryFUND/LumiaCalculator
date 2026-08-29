@@ -40,8 +40,10 @@ Gitの管理単位としては独立した**ソースリポジトリ**であり�
 
 - `yarn dev` — Vite開発サーバーを起動
 - `yarn build` — 型チェック（vite-plugin-checker）とビルドを実行し、`src/dist` に出力
-- `yarn test` — vitestを実行（jsdom環境）。テストファイルは `src/src/test/**/*.test.tsx` にある。
-  特定ファイルのみ実行する場合は `yarn test <path>`、テスト名指定は `yarn test -t "<name>"`
+- `yarn test` — vitestを実行（jsdom環境）。**引数なしだとwatchモードで起動し、プロセスが終了しない**ので、
+  一度だけ実行して終了させたい場合は `yarn test --run` を使うこと。テストファイルは `src/test/**/*.test.{ts,tsx}`
+  にある。特定ファイルのみ実行する場合は `yarn test --run <path>`、テスト名指定は `yarn test --run -t "<name>"`。
+  テストをどの粒度で書くべきかは[テスト方針](docs/testing-guidelines.md)を参照。
 - `yarn update-values` — `nn-api/index.ts update-values` を実行。NimbleNeuron APIからバージョン依存の
   ゲームデータ（実験体の基本ステータス、レベルアップ時ステータス、武器熟練度、武器/防具ステータス）を取得し
   `src/src/params-json/nimbleapi/*.json` に反映する
