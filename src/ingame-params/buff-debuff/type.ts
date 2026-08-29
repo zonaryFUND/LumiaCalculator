@@ -26,5 +26,5 @@ export type SelfBuffDefinition = {
     origin: BuffDebuffOrigin
     nameIntlID: string
     availableStacks: number[]
-    buff: (stack: number) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent>>
+    buff: (stack: number) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>
 }
