@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Sword, TShirt, BaseballCap, Hand, Sneaker } from "@phosphor-icons/react";
-import style from "./blank.module.styl";
-import base from "./item.module.styl";
+import style from "./equipment-icon-blank.module.styl";
+import base from "./equipment-icon.module.styl";
 import { styles } from "@app/util/style";
 import { ArmorTypeID } from "app-types/equipment/armor";
 
@@ -10,7 +10,7 @@ type Props = {
     onClick: () => void
 }
 
-const blank: React.FC<Props> = props => {
+const equipmentIconBlank: React.FC<Props> = props => {
     const icon = React.useMemo(() => {
         switch (props.slot) {
             case "Weapon":
@@ -34,4 +34,4 @@ const blank: React.FC<Props> = props => {
     );
 };
 
-export default blank
+export default equipmentIconBlank;

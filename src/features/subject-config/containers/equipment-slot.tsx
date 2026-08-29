@@ -3,9 +3,9 @@ import Modal from "react-modal";
 import { useToggle } from "react-use";
 import { ArmorTypeID } from "app-types/equipment/armor";
 import { Equipment } from "app-types/subject-dynamic/config/equipment";
-import Blank from "components/item/blank";
-import Item from "components/item/item";
-import EquipmentList, { style as listStyle } from "../../../components/modal/equipment-list";
+import EquipmentIconBlank from "../components/equipment-icon-blank.view";
+import EquipmentIcon from "../components/equipment-icon.view";
+import EquipmentListModal, { style as listStyle } from "./equipment-list-modal";
 import { styles } from "@app/util/style";
 import common from "@app/common.module.styl";
 import style from "./equipment-slot.module.styl";
@@ -38,14 +38,14 @@ const equipmentSlot: React.FC<Props> = props => {
             <div className={styles(style.equipment, common["hover-bright"])}>
                 {
                     equipment[props.slot] ?
-                    <Item 
-                        itemID={equipment[props.slot]!} 
+                    <EquipmentIcon
+                        itemID={equipment[props.slot]!}
                         isDavid={equipment.isChestDavid == true}
-                        slot={props.slot} 
-                        inSlot={true} 
+                        slot={props.slot}
+                        inSlot={true}
                         onSingleClick={toggleSelecting}
                     /> :
-                    <Blank slot={props.slot} onClick={toggleSelecting} />
+                    <EquipmentIconBlank slot={props.slot} onClick={toggleSelecting} />
                 }
             </div>
             <Modal
@@ -55,7 +55,7 @@ const equipmentSlot: React.FC<Props> = props => {
                 className={listStyle}
                 overlayClassName={common["modal-overlay"]}
             >
-                <EquipmentList code={code} slot={props.slot} equipment={[equipment, onSelect]} />
+                <EquipmentListModal code={code} slot={props.slot} equipment={[equipment, onSelect]} />
             </Modal>
         </div>
     );

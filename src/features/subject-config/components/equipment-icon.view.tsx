@@ -1,13 +1,13 @@
 import * as React from "react";
 import { EquipmentID } from "app-types/equipment/id";
 import Images from "@app/resources/image";
-import style from "./item.module.styl";
+import style from "./equipment-icon.module.styl";
 import { styles } from "@app/util/style";
 import { ArmorTypeID } from "app-types/equipment/armor";
 import { ArmorStatusDictionary, EquipmentStatusDictionary } from "app-types/equipment";
 import { TooltipContext } from "components/tooltip/tooltip-context";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
-import { SubjectSideContext } from "@app/ingame-params/subjects/subject-side";
+import { TooltipSubjectSideContext } from "components/tooltip/subject-side-context";
 
 type Props = {
     slot: "Weapon" | ArmorTypeID
@@ -17,7 +17,7 @@ type Props = {
     onSingleClick: () => void
 }
 
-const item: React.FC<Props> = props => {
+const equipmentIcon: React.FC<Props> = props => {
     const Items = (() => {
         switch (props.slot) {
             case "Weapon":  return Images.weapon;
@@ -54,7 +54,7 @@ const item: React.FC<Props> = props => {
     const uiType = useResponsiveUIType();
     const clickCountRef = React.useRef(0);
     const tooltipContext = React.useContext(TooltipContext);
-    const side = React.useContext(SubjectSideContext);
+    const side = React.useContext(TooltipSubjectSideContext);
 
     const onClick: React.MouseEventHandler<HTMLElement> = React.useCallback(event => {
         if (uiType != "mobile") {
@@ -82,9 +82,10 @@ const item: React.FC<Props> = props => {
 
     return (
         <div
-            className={styles(className, shardClass, style.base)} 
+            className={styles(className, shardClass, style.base)}
             data-tooltip-id="weapon"
             data-tooltip-content={`${props.itemID}${props.isDavid ? "_D" : ""}${props.inSlot ? "%slot" : ""}`}
+            data-tooltip-subject-side={side}
             onClick={onClick}
         >
             <img 
@@ -94,4 +95,4 @@ const item: React.FC<Props> = props => {
     )
 }
 
-export default item;
+export default equipmentIcon;

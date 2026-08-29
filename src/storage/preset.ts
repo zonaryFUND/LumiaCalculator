@@ -1,5 +1,5 @@
 import { Equipment, SubjectConfig } from "app-types/subject-dynamic/config";
-import { DefaultSamplePresets } from "components/modal/load-build/default-sample";
+import { DefaultSamplePresets } from "@app/features/subject-config/components/load-build-modal-default-sample";
 import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "react-use";
 import { PresetWithKeyV1 } from "./migration-v1/preset";

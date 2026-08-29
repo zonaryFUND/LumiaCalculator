@@ -37,6 +37,8 @@ const itemTooltip: React.FC<Props> = props => {
         }
     }, [props.isDavid, props.itemID]);
 
+    // 依存配列にstatus（上のuseMemoの結果）を含めていないが、David化は胸防具のみに存在する仕様であり
+    // 武器のstatus.type（下記default節でのみ参照）がisDavidによって変化することはないため問題ない
     const [src, typeExpression] = React.useMemo(() => {
         const itemType = EquipmentStatusDictionary[props.itemID].type;
         const [Items, typeExpression] = (() => {
@@ -65,7 +67,8 @@ const itemTooltip: React.FC<Props> = props => {
             <div className={style.content}>
                 <Options {...status} />
                 <ValueContext.Provider value={props}>
-                    {status.skill ? status.skill.map(op => <Skill key={op.skillCode} {...props} {...op} />) : null}
+                    {/* config/status/showEquationはpropsではなくValueContext経由でSkillへ渡している */}
+                    {status.skill ? status.skill.map(op => <Skill key={op.skillCode} {...op} />) : null}
                 </ValueContext.Provider>
             </div>
         </div>

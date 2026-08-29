@@ -20,6 +20,7 @@ import { useStore } from "zustand";
 import Content from "components/pages/base/content";
 import { NavigationButtonContext } from "components/pages/navigation";
 import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
+import { TooltipSubjectSideContext } from "components/tooltip/subject-side-context";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -84,25 +85,31 @@ const index: React.FC = props => {
             }
         >
             <CollapseTab tabs={["左実験体", "ダメージ", "右実験体"]}>
-                <SubjectConfigStoreProvider store={leftStore}>
-                    <Subject
-                        side="left"
-                    />
-                </SubjectConfigStoreProvider>
+                <TooltipSubjectSideContext.Provider value="left">
+                    <SubjectConfigStoreProvider store={leftStore}>
+                        <Subject
+                            side="left"
+                        />
+                    </SubjectConfigStoreProvider>
+                </TooltipSubjectSideContext.Provider>
                 <Damage
                     left={{config: leftConfig, status: leftStatus, hp: leftHP}}
                     right={{config: rightConfig, status: rightStatus, hp: rightHP}}
                 />
-                <SubjectConfigStoreProvider store={rightStore}>
-                    <Subject
-                        side="right"
-                    />
-                </SubjectConfigStoreProvider>
+                <TooltipSubjectSideContext.Provider value="right">
+                    <SubjectConfigStoreProvider store={rightStore}>
+                        <Subject
+                            side="right"
+                        />
+                    </SubjectConfigStoreProvider>
+                </TooltipSubjectSideContext.Provider>
             </CollapseTab>
             <TooltipPresenter
                 showEquation={damageInFormula}
-                status={[leftStatus, rightStatus]}
-                config={[leftConfig, rightConfig]}
+                subject={[
+                    {config: leftConfig, status: leftStatus},
+                    {config: rightConfig, status: rightStatus}
+                ]}
             />
             <Modal
                 isOpen={showingPreference}

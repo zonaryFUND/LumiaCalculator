@@ -52,3 +52,23 @@ Storeに一切アクセスしない。必要なデータはすべてpropsで受�
 複数のコンテナが同一のビューを共有することを推奨する。
 
 - 例: `hp-ratio-slider` / `gauge-slider` / `stack-slider` → すべて `slider-section.view` を共有
+
+## `src/components/`との境界
+
+`features/<feature>/`（このfeature固有）と`src/components/`（feature横断の共通部品）のどちらに置くかは、
+次の**いずれか**を満たすかで判断する。
+
+1. **ドメイン非依存** — `SubjectConfig`・`Status`・`EquipmentID`のようなゲーム固有の型を一切知らない、
+   汎用的なUI部品（ドロップダウン、スイッチ、タブ、テーブル行など）。現時点で1つのfeatureからしか
+   使われていなくても、他のfeatureが将来使う可能性が普通にある部品はここに含まれる
+   （例: `components/slider/`は現状`subject-config`からのみ使われているが、ドメインを一切知らない
+   汎用スライダーなので`components/`のままでよい）。
+2. **ドメインには依存するが、実際に複数featureから使われている** — 例: `components/tooltip/`は
+   `subject-skills`（スキルアイコン）と`subject-config`（装備アイコン）の両方から呼ばれ、かつ対戦モードの
+   「左右どちらの実験体か」という横断的な関心事も持つ。
+
+どちらも満たさない場合（特定のfeatureでしか使われておらず、かつそのfeatureのドメイン型に強く依存している）は、
+`components/`ではなく該当`features/<feature>/`側に置く。2026-08-29、この基準に基づいて`src/components/item/`
+（装備アイコン。`subject-config`専用と判明）・`src/components/modal/`（装備選択/ビルド保存読込/実験体選択の
+疑似モーダル。4ファイル全て`subject-config`専用と判明）を`features/subject-config/`へ移動し、
+`src/components/config/`（デッドコード）を削除した。詳細は[README.md](./README.md)のsubject-config節を参照。

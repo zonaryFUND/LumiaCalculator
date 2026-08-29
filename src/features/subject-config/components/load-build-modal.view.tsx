@@ -3,9 +3,9 @@
 import { PresetWithKey, SavedPresetsKey, usePresetStorage } from "@app/storage/preset";
 import * as React from "react";
 import { useLatest, useLocalStorage } from "react-use";
-import { DefaultSamplePresets } from "./default-sample";
+import { DefaultSamplePresets } from "./load-build-modal-default-sample";
 import { Trash } from "@phosphor-icons/react";
-import style from "./index.module.styl";
+import style from "./load-build-modal.module.styl";
 import { styles } from "@app/util/style";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
@@ -14,7 +14,7 @@ type Props = {
 }
 
 
-const loadBuild: React.FC<Props> = props => {
+const loadBuildModal: React.FC<Props> = props => {
     const {presets: savedBuilds, delete: deleteBuild } = usePresetStorage();
     const [selected, setSelected] = React.useState<number | null>(null);
     const latestSelected = useLatest(selected);
@@ -55,4 +55,4 @@ const loadBuild: React.FC<Props> = props => {
     );
 }
 
-export default loadBuild;
+export default loadBuildModal;

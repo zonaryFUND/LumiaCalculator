@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SubjectCode, SubjectCodeMax } from "app-types/subject-static";
-import style from "./subject-list.module.styl";
+import style from "./subject-list-modal.module.styl";
 import Images from "@app/resources/image";
 import SegmentedControl from "components/common/segmented-control";
 import { useLocalStorage } from "react-use";
@@ -30,7 +30,7 @@ const Subject: React.FC<SubjectProps> = props => (
     </li>
 )
 
-const subjectsList: React.FC<Props> = props => {
+const subjectListModal: React.FC<Props> = props => {
     const [sort, setSort] = useLocalStorage("subject-list-sort", "in-game");
     const intl = useIntl();
     const jpNameWithCode = React.useMemo(() => {
@@ -125,7 +125,7 @@ const subjectsList: React.FC<Props> = props => {
     );
 }
 
-export default subjectsList;
+export default subjectListModal;
 
 const s: string = style.subjects
 export { s as style };

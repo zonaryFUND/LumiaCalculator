@@ -14,6 +14,7 @@ import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 
 import { useToggle } from "react-use";
+import { useStore } from "zustand";
 import CollapseTab from "components/common/collapse-tab";
 import { SimpleCurrentConfigKey } from "@app/storage/simple";
 import { styles } from "@app/util/style";
@@ -24,9 +25,7 @@ import { DetailedTooltipKey } from "@app/storage/common";
 import { NavigationButtonContext } from "components/pages/navigation";
 
 import Content from "components/pages/base/content";
-import { useSubjectConfigState } from "components/config/use-subject-config";
-import { statusOf } from "app-types/subject-dynamic/status/calculation";
-import { SimpleModeSubjectConfigProvider } from "@app/features/subject-config/store";
+import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -42,18 +41,18 @@ const index: React.FC = props => {
         })
     }, [])
 
-    /*
-    const configProps = useSubjectConfigState(SimpleCurrentConfigKey);
-    const hpRatio = React.useState(100);
-    const status = statusOf(configProps.value, hpRatio[0]);
-    */
+    // TooltipPresenterが実際のconfig/statusを参照できるよう、storeはこのページ側で生成する
+    // （対戦モードのpages/combat/index.tsxと同じパターン）
+    const store = React.useRef(createSubjectConfigStore(SimpleCurrentConfigKey)).current;
+    const config = useStore(store, s => s.config);
+    const status = useStore(store, s => s.status);
 
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
 
     return (
-        <SimpleModeSubjectConfigProvider>
+        <SubjectConfigStoreProvider store={store}>
         <Content
             pcHeader={
                 <header className={style.header}>
@@ -68,13 +67,10 @@ const index: React.FC = props => {
                 <Damage />
                 <BuffDebuffs />
             </CollapseTab>
-            {/*
-            <TooltipPresenter 
+            <TooltipPresenter
                 showEquation={damageInFormula}
-                status={status} 
-                config={configProps.value} 
+                subject={{config, status}}
             />
-            */}
             <Modal
                 isOpen={showingPreference}
                 shouldCloseOnOverlayClick
@@ -85,7 +81,7 @@ const index: React.FC = props => {
                 <Preference damageInFormula={[damageInFormula, setDamageInFormula]} />
             </Modal>
         </Content>
-        </SimpleModeSubjectConfigProvider>
+        </SubjectConfigStoreProvider>
     )
 };
 

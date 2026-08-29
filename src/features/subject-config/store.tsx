@@ -1,5 +1,4 @@
 import * as React from "react";
-import { SimpleCurrentConfigKey } from "@app/storage/simple";
 import { Equipment, SkillLevels, SubjectConfig, SubjectConfigDefault } from "app-types/subject-dynamic/config";
 import { SubjectCode } from "app-types/subject-static";
 import { createContext, useContext } from "react";
@@ -139,15 +138,6 @@ export function createSubjectConfigStore(storageKey: string) {
 }
 
 const SubjectConfigStoreContext = createContext<ReturnType<typeof createSubjectConfigStore> | null>(null);
-
-export function SimpleModeSubjectConfigProvider(props: {children: React.ReactNode}) {
-    const storeRef = React.useRef(createSubjectConfigStore(SimpleCurrentConfigKey));
-    return (
-        <SubjectConfigStoreContext.Provider value={storeRef.current}>
-            {props.children}
-        </SubjectConfigStoreContext.Provider>
-    )
-}
 
 /**
  * 呼び出し元が既に生成済みのstoreをContext経由で子孫に公開するだけの汎用Provider。

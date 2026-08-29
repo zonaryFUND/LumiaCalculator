@@ -17,7 +17,6 @@ import { ExtractAndCalculateValue } from "../extract-tooltip-value";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import { extractArrayOrValue } from "@app/util/array";
 import { extractSkillLevel } from "app-types/value-ratio";
-import { config } from "process";
 
 type Props = {
     code: number

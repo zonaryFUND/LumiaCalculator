@@ -5,7 +5,7 @@ import common from "@app/common.module.styl";
 import Modal from "react-modal";
 import { useToggle } from "react-use";
 import style from "./subject-avator.module.styl";
-import SubjectList, { style as subjectsStyle } from "components/modal/subject-list";
+import SubjectListModal, { style as subjectsStyle } from "../components/subject-list-modal.view";
 import { styles } from "@app/util/style";
 
 const SubjectAvator: React.FC = () => {
@@ -23,7 +23,7 @@ const SubjectAvator: React.FC = () => {
                 className={subjectsStyle}
                 overlayClassName={common["modal-overlay"]}
             >
-                <SubjectList current={subject} onSelect={setSubject} />
+                <SubjectListModal current={subject} onSelect={setSubject} />
             </Modal>
         </>
     )

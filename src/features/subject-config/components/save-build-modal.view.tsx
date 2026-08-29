@@ -9,7 +9,7 @@ type Props = {
     onDone: () => void
 }
 
-const saveBuild: React.FC<Props> = props => {
+const saveBuildModal: React.FC<Props> = props => {
     const intl = useIntl();
     const [name, setName] = useGetSet(intl.formatMessage({id: `Character/Name/${props.currentConfig.subject}`}));
     const onChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(event => {
@@ -39,4 +39,4 @@ const saveBuild: React.FC<Props> = props => {
     );
 }
 
-export default saveBuild;
+export default saveBuildModal;

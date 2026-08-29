@@ -1,12 +1,12 @@
 import * as React from "react";
-import Item from "components/item/item";
-import style from "./equipment-list.module.styl";
+import EquipmentIcon from "../components/equipment-icon.view";
+import style from "./equipment-list-modal.module.styl";
 import { EquipmentID } from "app-types/equipment/id";
 import { WeaponMasteryStatus } from "app-types/subject-static/mastery";
 import SegmentedControl from "components/common/segmented-control";
 import { styles } from "@app/util/style";
 import common from "@app/common.module.styl";
-import Blank from "components/item/blank";
+import EquipmentIconBlank from "../components/equipment-icon-blank.view";
 import { Equipment } from "app-types/subject-dynamic/config";
 import { ArmorTypeID } from "app-types/equipment/armor";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -44,7 +44,7 @@ function splitIdsWithRarity(ids: EquipmentID[], david: boolean = false): {title:
 
 const priyaUnique: number[] = [201416, 201516];
 
-const subjectsList: React.FC<Props> = props => {
+const equipmentListModal: React.FC<Props> = props => {
     const intl = useIntl();
     const uiType = useResponsiveUIType();
     const config = useSubjectStateStore(s => s.config);
@@ -132,7 +132,7 @@ const subjectsList: React.FC<Props> = props => {
             <div className={style.content}>
                 <section key="remove">
                     <div className={styles(style.blank, common["hover-bright"], props.equipment[0][props.slot] == null ? style.selected : undefined)}>
-                        <Blank slot={props.slot} onClick={onClick(null)} />
+                        <EquipmentIconBlank slot={props.slot} onClick={onClick(null)} />
                         <p>外す</p>
                     </div>
                 </section>
@@ -147,9 +147,9 @@ const subjectsList: React.FC<Props> = props => {
                             {
                                 section.ids.map(id => (
                                 <li key={id} className={styles(common["hover-bright"], id == props.equipment[0][props.slot] ? style.selected : undefined)}>
-                                    <Item 
-                                        slot={props.slot} 
-                                        itemID={id} 
+                                    <EquipmentIcon
+                                        slot={props.slot}
+                                        itemID={id}
                                         isDavid={david == "david"}
                                         inSlot={false}
                                         onSingleClick={onClick(id)}
@@ -168,7 +168,7 @@ const subjectsList: React.FC<Props> = props => {
 }
 
 
-export default subjectsList;
+export default equipmentListModal;
 
 const s: string = style.list
 export { s as style };

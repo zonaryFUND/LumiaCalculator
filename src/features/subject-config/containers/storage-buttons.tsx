@@ -4,10 +4,10 @@ import StorageButton from "../components/storage-buttons.view";
 import { useToggle } from "react-use";
 import Modal from "react-modal";
 import common from "@app/common.module.styl";
-import LoadBuild from "components/modal/load-build";
-import loadStyle from "components/modal/load-build/index.module.styl";
-import SaveBuild from "components/modal/save-build";
-import saveStyle from "components/modal/save-build/index.module.styl";
+import LoadBuildModal from "../components/load-build-modal.view";
+import loadStyle from "../components/load-build-modal.module.styl";
+import SaveBuildModal from "../components/save-build-modal.view";
+import saveStyle from "../components/save-build-modal.module.styl";
 import { SubjectConfig } from "app-types/subject-dynamic/config";
 
 const StorageButtons: React.FC = () => {
@@ -31,8 +31,8 @@ const StorageButtons: React.FC = () => {
                 className={loadStyle.load}
                 overlayClassName={common["modal-overlay"]}
             >
-                <LoadBuild 
-                    onSelect={onLoad} 
+                <LoadBuildModal
+                    onSelect={onLoad}
                 />
             </Modal>
             <Modal
@@ -42,7 +42,7 @@ const StorageButtons: React.FC = () => {
                 className={saveStyle.save}
                 overlayClassName={common["modal-overlay"]}
             >
-                <SaveBuild 
+                <SaveBuildModal
                     currentConfig={config}
                     onDone={toggleShowingSave}
                 />
