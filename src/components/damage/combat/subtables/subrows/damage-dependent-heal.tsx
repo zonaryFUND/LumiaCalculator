@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import React, * as Raect from "react";
+import * as React from "react";
 import table from "components/common/table.module.styl";
 
 type Props = {
@@ -9,10 +9,12 @@ type Props = {
 }
 
 const damageDependentHeal: React.FC<Props> = props => (
-    <td>
-        <span className={table.small}>最終ダメージ</span>
-        {props.baseDamage.toString()} x {props.ratio.toString()}% = {props.calculated.floor().toString()}
-    </td>
+    <tr>
+        <td colSpan={2}>
+            <span className={table.small}>最終ダメージ</span>
+            {props.baseDamage.toString()} x {props.ratio.toString()}% = {props.calculated.floor().toString()}
+        </td>
+    </tr>
 );
 
 export default damageDependentHeal;

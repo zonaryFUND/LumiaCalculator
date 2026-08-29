@@ -31,7 +31,7 @@ const standardDamage: React.FC<Props> = props => {
     const [expand, toggleExpand] = useToggle(false);
     const {static: staticBasePotency, dynamic: dynamicBasePotency} = (() => {
         if (Decimal.isDecimal(props.value)) {
-            return { static: props.value, dynamic: undefined　};
+            return { static: props.value, dynamic: undefined };
         } else {
             return calculateValue(props.value, props.status, props.config, props.origin);
         }

@@ -85,18 +85,20 @@
 `features/`と命名されている（`features/damage/features/potency-rows`等）。
 `component-guidelines.md`が定める命名規則（`containers/`+`components/`）と一致しない。
 
-### D. Combat mode側の実装バグ（無効化されているため未発覚。修正自体は低リスク）
+### D. Combat mode側の実装バグ（無効化されているため未発覚。修正自体は低リスク）（2026-08-29 対応済み）
 
 1. `components/damage/combat/subtables/subrows/damage-dependent-heal.tsx`が、兄弟コンポーネント
    （`potency.tsx`・`heal-power.tsx`・`mitigation.tsx`）と異なり、`<tr>`でラップされない裸の`<td>`を返す。
    呼び出し先の`InnerTable`は子をそのまま`<tbody>`直下に配置する実装のため、これは不正なマークアップになる
    （現状Combat modeが無効なため実害なし。有効化すれば確実に表示崩れとして顕在化する）。
+   → `<tr>`でラップした（1セルで2列ぶんを占める体裁は維持するため`colSpan={2}`を付与）。
 2. 同ファイル: `import React, * as Raect from "react";` — importのタイポ（`React`本体は正しく別途importされて
-   おり実害はないが、`Raect`という未使用の名前空間importが残っている）。
+   おり実害はないが、`Raect`という未使用の名前空間importが残っている）。→ 修正した。
 3. `rows/standard-damage.tsx`: `{ static: props.value, dynamic: undefined　}`の末尾に全角スペースが混入
-   （実害なし、コードスタイルの些細な問題）。
+   （実害なし、コードスタイルの些細な問題）。→ 修正した。
 4. `rows/misc.tsx`が空ファイル。`type.type == "misc"`の特別扱いは`standard-damage.tsx`内に直接ハードコード
-   されており、対応する専用コンポーネントは未実装のまま放置されている。
+   されており、対応する専用コンポーネントは未実装のまま放置されている。→ ファイル自体を削除した
+   （`misc`タイプの特別扱いは引き続き`standard-damage.tsx`内のハードコードのまま）。
 
 ## タスク一覧
 
@@ -105,10 +107,11 @@
 - [x] `features/damage/features/simple/basic-attack.tsx`（孤立ファイル）を完成させ、実際に呼ばれる状態にした
       （2026-08-29）。到達不能コード・`export default`漏れ・`props.unitsChunks`未使用のバグを修正し、
       `"standard"`/`"disable-critical"`マーカー処理・`damageDependentHeal`フィルタなど旧実装の挙動を移植した。
-- [ ] Combat mode側の軽微なバグを修正する（`damage-dependent-heal.tsx`の`<tr>`欠落・importタイポ、
-      `standard-damage.tsx`の全角スペース）。現状無効化されているため今直しても表示への影響はなく、
-      Phase 3着手時の障害を減らせる。
-- [ ] `rows/misc.tsx`（空ファイル）を削除するか、`misc`タイプ専用コンポーネントとして実装するかを決める。
+- [x] Combat mode側の軽微なバグを修正した（2026-08-29）。`damage-dependent-heal.tsx`は`<tr>`で
+      ラップし（`colSpan={2}`で2列ぶんを1セルにまとめる形は維持）、importタイポ
+      （`React, * as Raect`）も修正。`standard-damage.tsx`の全角スペース混入も修正。
+- [x] `rows/misc.tsx`（空ファイル）を削除した（2026-08-29）。`misc`タイプの特別扱いは引き続き
+      `standard-damage.tsx`内のハードコードのまま（専用コンポーネント化はしていない）。
 
 ### Phase 1 — Simple mode完全移行（複雑度: 低〜中）（2026-08-29 完了）
 
@@ -172,4 +175,3 @@ Phase 0 → Phase 1 → （Phase 2の設計方針をユーザーとすり合わ�
 
 - Phase 2の設計方針（案a/b/c、またはそれ以外）
 - Simple/Combatの行コンポーネントをどこまで統合するか（Phase 3、完全共通化 or 独立のまま）
-- `rows/misc.tsx`を専用実装するか削除するか
