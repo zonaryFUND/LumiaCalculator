@@ -2,7 +2,7 @@ import { BasicAttackElement } from "@app/ingame-params/subjects/type";
 import { DamageTableUnit } from "core/damage-table/unit";
 import * as React from "react";
 import SubTable from "../../components/simple/subtable";
-import useBasicAttackRatio from "../../use-basic-attack-ratio";
+import { basicAttackRatioOf } from "core/subject-dynamic/status/basic-attack-ratio";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import CriticalAvailable from "../potency-rows/critical-available";
 import StandardDamage from "../potency-rows/standard-damage";
@@ -25,7 +25,7 @@ const BasicAttack: React.FC<Props> = (props) => {
     });
 
     const config = useSubjectStateStore(state => state.config);
-    const { attackRatio: standardAttackRatio, labelIntlID: standardAttackLabelIntlID } = useBasicAttackRatio(config);
+    const { attackRatio: standardAttackRatio, labelIntlID: standardAttackLabelIntlID } = basicAttackRatioOf(config);
 
     const renderedUnitsChunks = props.unitsChunks.map(chunk => {
         return chunk.flatMap((unit): React.ReactElement[] => {
