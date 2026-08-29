@@ -11,26 +11,29 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
 
 ## リポジトリ構成
 
-この `CLAUDE.md` が置かれているディレクトリ（以下このファイル内で `src/` と呼ぶ）は、一段上のディレクトリと
-**同じ単一のGitリポジトリ**に属する（`src/`自体が独立したGit管理単位ではない）。ただし`src`という名前の
-リモート（`zonaryFUND/LumiaCalculator.git`）が別途設定されており、`src/`配下の内容だけがGitHub上に
-公開ソースリポジトリとして公開されている。
+この `CLAUDE.md` が置かれているディレクトリ（以下このファイル内で `src/` と呼ぶ）自体が、
+**独立したGitリポジトリ**（`origin`は`zonaryFUND/LumiaCalculator.git`）であり、GitHub上に公開されている
+（2026-08-30、`git subtree`による一段上のプライベートリポジトリからの分離が完了した）。
 
-一段上のリポジトリルートには、`src/` に加えて `resources/`（NimbleNeuron社がファン活動用に
-配布している画像素材を加工したゲーム画像アセット）が存在するが、こちらは**再配布防止のため非公開**で
-管理されている（`origin`リモートが指す、本リポジトリ全体）。この事情により、ゲームロジック・実装に関する
-ドキュメント（この `CLAUDE.md` や `docs/` 配下）は `resources/` を含む非公開ルート側ではなく、公開される
-`src/` 側に置く。逆に、画像アセットや配布リソースの権利関係に触れる内容は `src/` 側のドキュメントに
-含めない。
+一段上のディレクトリ（`ercalc_resources`、非公開）は、`src/`をこの`.gitignore`で無視しつつ、
+`resources/`（NimbleNeuron社がファン活動用に配布している画像素材を加工したゲーム画像アセット。
+再配布防止のため非公開）を管理する。ローカルでは`src/`とこの一段上のディレクトリ配下の`resources/`を
+兄弟ディレクトリとして配置する（`vite.config.ts`の`resources/*`エイリアスが`../resources`を解決するため）。
+この事情により、ゲームロジック・実装に関するドキュメント（この `CLAUDE.md` や `docs/` 配下）は
+`resources/` を含む非公開ディレクトリ側ではなく、公開される `src/` 側に置く。逆に、画像アセットや
+配布リソースの権利関係に触れる内容は `src/` 側のドキュメントに含めない。
+
+`yarn deploy`実行時、`predeploy`スクリプト（`check-resources.ts`）が自動的に`resources/`側の
+未commit・未pushを警告する（新規実験体・装備の追加時に画像素材の更新を忘れないためのサポート）。
 
 `src/` 内でのディレクトリ構成、および以下のコマンドの実行場所は、この `CLAUDE.md` があるディレクトリを
 基準とする。
 
 ```
-（1段上のプライベートリポジトリルート）
+（1段上のディレクトリ。非公開の別リポジトリ`ercalc_resources`のルート。src/はここから見てgitignoreされている）
   resources/                # webpアイコン群: armors/{arm,chest,head,leg}, skills/<subject>, subjects, weapons, weapon-skills
                              # "resources/*" エイリアス経由で読み込まれる（vite.config.ts参照）。ここ（src/）から見て ../resources に解決される
-  src/                       # ← このCLAUDE.mdがあるディレクトリ（公開ソースリポジトリのルート）
+  src/                       # ← このCLAUDE.mdがあるディレクトリ（公開・独立リポジトリ`LumiaCalculator`のルート）
     package.json, vite.config.ts, tsconfig.json
     docs/                    # ゲームロジックのドメイン知識ドキュメント（status-model.md, damage-model.md 等）
     nn-api/                  # NimbleNeuronの公開APIからゲームデータを取得する、tsxで実行するスタンドアロンスクリプト群
@@ -51,7 +54,8 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
   ゲームデータ（実験体の基本ステータス、レベルアップ時ステータス、武器熟練度、武器/防具ステータス）を取得し
   `src/src/params-json/nimbleapi/*.json` に反映する
 - `yarn deploy` — ビルド成果物は含まれない。`deploy.ts` を実行し `src/dist` を GitHub Pages（`gh-pages`、
-  cname: `lumia-calculator.app`）に公開する
+  cname: `lumia-calculator.app`）に公開する。実行前に`predeploy`スクリプト（`check-resources.ts`）が
+  自動的に走り、一段上の非公開ディレクトリにある`resources/`の未commit・未pushを警告する
 
 `package.json` には含まれないが `tsx` で実行するその他のスクリプト:
 - `nn-api/index.ts jp` / `nn-api/index.ts kr` — ローカライズ文字列の生データを取得し `jp.txt` / `kr.txt` に出力
