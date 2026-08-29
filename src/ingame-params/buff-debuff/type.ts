@@ -17,14 +17,14 @@ export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment"
 /**
  * 自己バフ（`SubjectConfig.selfBuffs`）1件の定義
  *
- * @property availableStacks 選択可能なスタック値の一覧（`BuffDebuffState.stack`が取りうる値）。
- * 「1スタックのみ可能なバフ」は`[0, 1]`、「切り替え式バフ」も内部的には`[0, 1]`（またはそれ以上）の
- * 固有IDとして表現し、UI上の表示名はIntlメッセージキーの命名規則側で解決する。
+ * @property maxStack `BuffDebuffState.stack`が取りうる最大値。スタックは常に0以上の連続した整数値を取る
+ * （`0..maxStack`）。「1スタックのみ可能なバフ」は`maxStack: 1`、「切り替え式バフ」も内部的には
+ * `0..maxStack`の連続した固有IDとして表現し、UI上の表示名はIntlメッセージキーの命名規則側で解決する。
  * @property buff 選択されたスタック値から、そのスタックにおけるステータス変換量を算出する
  */
 export type SelfBuffDefinition = {
     origin: BuffDebuffOrigin
     nameIntlID: string
-    availableStacks: number[]
+    maxStack: number
     buff: (stack: number) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>
 }

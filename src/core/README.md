@@ -76,10 +76,13 @@
 
 未接続・未成熟だった旧`core/buff-debuff/type.ts`（どこからも参照されていなかったことをgrepで確認済み）を
 削除し、`ingame-params/buff-debuff/type.ts`に`BuffDebuffOrigin`（`"skill" | "equipment-ability" |
-"augment"`の判別タグ）と`SelfBuffDefinition`（`nameIntlID`・`availableStacks: number[]`・
-`buff: (stack) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent>>`）を
-新設した。自己バフの削除可否は`origin === "augment"`から導出する設計のため、独立した`removable`フィールドは
-持たない。
+"augment"`の判別タグ）と`SelfBuffDefinition`（`nameIntlID`・`maxStack: number`（スタックは常に0以上の
+連続した整数値を取るため、選択可能な値の配列ではなく最大値のみ持たせる）・
+`buff: (stack) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>`
+（`StatusValueComponent`は配列。`subjectPerpetulStatus`等と合成する`calculation.ts`の畳み込みが配列を
+期待しており、単体オブジェクトを返す設計にした結果`(components ?? []) is not iterable`の実行時エラーで
+発覚・修正した）を新設した。自己バフの削除可否は`origin === "augment"`から導出する設計のため、独立した
+`removable`フィールドは持たない。
 
 配線: `ingame-params/subjects/type.ts`の`SubjectModules`に`buffDebuff?: SubjectSelfBuffDebuff`を追加し、
 `dictionary.ts`の`SubjectBuffDebuffDictionary`（`SubjectCode`キー）で集約。実験体スキルによるバフ効果は
