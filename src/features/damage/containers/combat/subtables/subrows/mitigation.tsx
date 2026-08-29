@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
-import { MitigationInfo } from "../../mitigated-damage";
+import { MitigationInfo } from "core/damage-table/mitigation";
 
 const mitigation: React.FC<MitigationInfo> = props => {
     const equation = (() => {

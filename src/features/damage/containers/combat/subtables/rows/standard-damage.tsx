@@ -10,7 +10,7 @@ import { useCombatHPContext } from "../../combat-hp-context";
 import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
 import { useMitigation } from "../../mitigation-context";
-import mitigatedDamage from "../../mitigated-damage";
+import { mitigatedDamage } from "core/damage-table/mitigation";
 import Potency from "../subrows/potency";
 import HealPower from "../subrows/heal-power";
 import Mitigation from "../subrows/mitigation";
