@@ -1,6 +1,6 @@
 import * as React from "react";
-import style from "./collapse-tab.module.styl";
-import TabSelector from "components/pages/simple/tab-selector";
+import style from "./collapsible-panes.module.styl";
+import TabSelector from "./tab-selector";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css"
@@ -10,7 +10,7 @@ type Props = {
     tabs: string[]
 }
 
-const collapseTab: React.FC<Props> = props => {
+const collapsiblePanes: React.FC<Props> = props => {
     const uiType = useResponsiveUIType();
     const [tab, setTab] = React.useState(0);
     const swiperRef = React.useRef<SwiperClass>();
@@ -46,4 +46,4 @@ const collapseTab: React.FC<Props> = props => {
     );
 };
 
-export default collapseTab;
+export default collapsiblePanes;

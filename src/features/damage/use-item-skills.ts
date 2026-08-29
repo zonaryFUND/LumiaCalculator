@@ -4,7 +4,7 @@ import { EquipmentAbilityDamageTable } from "@app/ingame-params/equipment-abilit
 import * as React from "react";
 import { useIntl } from "react-intl";
 import { EquipmentStatusDictionary } from "app-types/equipment";
-import { ignorePseudoTag } from "components/common/ignore-pseudo-tag";
+import { ignorePseudoTag } from "@app/util/ignore-pseudo-tag";
 
 type Response = {
     basicAttackTriggered: DamageTableUnit[]

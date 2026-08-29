@@ -2,7 +2,7 @@ import { StateProps } from "@app/util/state";
 import * as React from "react";
 import { useDebounce } from "react-use";
 import style from "./slider-section.module.styl";
-import GaugeSlider, { GaugeStyle } from "../../../components/slider/gauge-slider";
+import GaugeSlider, { GaugeStyle } from "components/common/gauge-slider";
 
 type Props = {
     /**

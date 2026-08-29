@@ -4,7 +4,7 @@ import common from "@app/common.module.styl";
 
 import { Gear } from "@phosphor-icons/react";
 
-import CollapseTab from "components/common/collapse-tab";
+import CollapsiblePanes from "components/layout/pane/collapsible-panes";
 import Subject from "./subject";
 import Damage from "./damage";
 import style from "./index.module.styl";
@@ -17,8 +17,8 @@ import { DetailedTooltipKey } from "@app/storage/common";
 import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey, CombatMasterySyncKey } from "@app/storage/combat";
 import { useToggle } from "react-use";
 import { useStore } from "zustand";
-import Content from "components/pages/base/content";
-import { NavigationButtonContext } from "components/pages/navigation";
+import Content from "components/layout/base/content";
+import { NavigationButtonContext } from "components/layout/navigation";
 import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
 import { TooltipSubjectSideContext } from "components/tooltip/subject-side-context";
 
@@ -84,7 +84,7 @@ const index: React.FC = props => {
                 </header>
             }
         >
-            <CollapseTab tabs={["左実験体", "ダメージ", "右実験体"]}>
+            <CollapsiblePanes tabs={["左実験体", "ダメージ", "右実験体"]}>
                 <TooltipSubjectSideContext.Provider value="left">
                     <SubjectConfigStoreProvider store={leftStore}>
                         <Subject
@@ -103,7 +103,7 @@ const index: React.FC = props => {
                         />
                     </SubjectConfigStoreProvider>
                 </TooltipSubjectSideContext.Provider>
-            </CollapseTab>
+            </CollapsiblePanes>
             <TooltipPresenter
                 showEquation={damageInFormula}
                 subject={[

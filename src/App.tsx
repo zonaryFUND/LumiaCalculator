@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Base from "components/pages/base";
+import Base from "components/layout/base";
 import Modal from "react-modal"
 import Simple from "./pages/simple";
 import Combat from "./pages/combat";
-import Navigation, { NavigationButtonContext, useNavigationButtonState } from 'components/pages/navigation';
+import Navigation, { NavigationButtonContext, useNavigationButtonState } from 'components/layout/navigation';
 import { Route, Routes } from 'react-router';
 import { IntlProvider } from 'react-intl';
 import { TooltipContext, useOpenModalItemRef, useOpenModalSkillRef } from 'components/tooltip/tooltip-context';

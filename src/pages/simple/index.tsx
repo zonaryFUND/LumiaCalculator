@@ -15,16 +15,16 @@ import preferenceStyle from "./preference.module.styl";
 
 import { useToggle } from "react-use";
 import { useStore } from "zustand";
-import CollapseTab from "components/common/collapse-tab";
+import CollapsiblePanes from "components/layout/pane/collapsible-panes";
 import { SimpleCurrentConfigKey } from "@app/storage/simple";
 import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
 import { WeaponTypeID } from "app-types/equipment/weapon";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
-import { NavigationButtonContext } from "components/pages/navigation";
+import { NavigationButtonContext } from "components/layout/navigation";
 
-import Content from "components/pages/base/content";
+import Content from "components/layout/base/content";
 import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
 
 const index: React.FC = props => {
@@ -62,11 +62,11 @@ const index: React.FC = props => {
                 </header>
             }
         >
-            <CollapseTab tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
+            <CollapsiblePanes tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
                 <Subject />
                 <Damage />
                 <BuffDebuffs />
-            </CollapseTab>
+            </CollapsiblePanes>
             <TooltipPresenter
                 showEquation={damageInFormula}
                 subject={{config, status}}

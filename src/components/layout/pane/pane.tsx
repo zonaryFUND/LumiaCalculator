@@ -1,6 +1,6 @@
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import * as React from "react";
-import style from "./tab-unit.module.styl";
+import style from "./pane.module.styl";
 import { styles } from "@app/util/style";
 
 type Props = {
@@ -9,11 +9,11 @@ type Props = {
     children: React.ReactElement | React.ReactElement[]
 }
 
-const tabUnit: React.FC<Props> = props => {
+const pane: React.FC<Props> = props => {
     const uiType = useResponsiveUIType();
 
     return (
-        <div 
+        <div
             className={styles(uiType == "mobile" ? style.mobiletab : style.pctab, style.tab, props.className)}
         >
             {
@@ -29,4 +29,4 @@ const tabUnit: React.FC<Props> = props => {
     )
 }
 
-export default tabUnit;
+export default pane;

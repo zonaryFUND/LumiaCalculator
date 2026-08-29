@@ -1,7 +1,7 @@
 import * as React from "react";
 import Table, { SubjectSnapshot } from "@app/features/damage/containers/combat/damage-table";
 
-import TabUnit from "components/common/tab/tab-unit";
+import Pane from "components/layout/pane/pane";
 import style from "./damage.module.styl";
 
 type Props = {
@@ -11,12 +11,12 @@ type Props = {
 
 const damages: React.FC<Props> = props => {
     return (
-        <TabUnit title="ダメージ" className={style.damage}>
+        <Pane title="ダメージ" className={style.damage}>
             <Table
                 left={props.left}
                 right={props.right}
             />
-        </TabUnit>
+        </Pane>
     )
 };
 
