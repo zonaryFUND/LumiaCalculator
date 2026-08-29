@@ -2,7 +2,7 @@ import { DamageTableUnit } from "core/damage-table/unit";
 import { SubjectConfig } from "core/subject-dynamic/config";
 import { Status } from "core/subject-dynamic/status/type";
 import { extractSkillLevel, ValueRatio } from "core/value-ratio";
-import { calculateValue } from "core/value-ratio";
+import { calculateValue, resolveDynamicValue } from "core/value-ratio";
 import { extractMultiplier } from "core/damage-table/multiplier";
 import * as React from "react";
 import { useToggle } from "react-use";
@@ -18,7 +18,6 @@ import Mitigation from "../subrows/mitigation";
 import DamageDependentHeal from "../subrows/damage-dependent-heal";
 import style from "../../../../components/potency-rows/damage-table.module.styl";
 import table from "components/common/table.module.styl";
-import useDynamicValueCalculation from "./use-dynamic-value-calculation";
 
 type Props = Omit<DamageTableUnit, "value"> & {
     value: ValueRatio | Decimal
@@ -43,10 +42,10 @@ const standardDamage: React.FC<Props> = props => {
 
     const staticPotency = staticBasePotency.percent(props.critical ?? 100).percent(multiplier?.mergedMultiplier ?? 100);
 
-    const { 
+    const {
         potencyDictionary: dynamicPotencyDictionary,
         potency: dynamicPotency
-    } = useDynamicValueCalculation(
+    } = resolveDynamicValue(
         dynamicBasePotency,
         multiplier?.mergedMultiplier,
         {hp, maxHP: props.status.maxHp.calculatedValue}, // sender

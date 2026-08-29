@@ -97,10 +97,81 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
         })();        
 
         return { 
-            static: staticValue ?? prev.static, 
+            static: staticValue ?? prev.static,
             dynamic: dynamicValue
         };
     }, {static: new Decimal(0), dynamic: undefined});
 
     return values
+}
+
+type PotencyDictionaryElement = {
+    ratio: number
+    value: Decimal
+    calculated: Decimal
+}
+
+export type ResolvedDynamicValue = {
+    potencyDictionary?: {[K in keyof ValueRatio]: PotencyDictionaryElement}
+    potency: Decimal
+}
+
+/**
+ * `calculateValue()`が解決せずに返した動的レシオ（`dynamic`。対象HPや自身の現在HPなど、実験体単体の
+ * ステータスだけでは決まらない値のレシオ）を、実際の対象HP/自身HPから最終的な数値へ解決する
+ *
+ * @param basePotency `calculateValue()`が返した`dynamic`
+ * @param multiplier 複数ヒットなどの倍率（`extractMultiplier()`の`mergedMultiplier`）
+ * @param sender 発生源（自身）の現在HP・最大HP
+ * @param receptor 対象（相手）の現在HP・最大HP
+ */
+export function resolveDynamicValue(
+    basePotency: Partial<{[K in keyof ValueRatio]: Decimal}> | undefined,
+    multiplier: number | undefined,
+    sender: {
+        hp: Decimal.Value
+        maxHP: Decimal.Value
+    },
+    receptor: {
+        hp: Decimal.Value
+        maxHP: Decimal.Value
+    }
+): ResolvedDynamicValue {
+    if (basePotency == undefined) {
+        return {
+            potency: new Decimal(0)
+        }
+    }
+
+    return Object.entries(basePotency ?? {})
+        .reduce((prev, [ratioKey, ratioValue]) => {
+            const targetValue = (() => {
+                switch (ratioKey) {
+                    case "targetHP":
+                        return new Decimal(receptor.hp)
+                    case "targetLostHP":
+                        return new Decimal(receptor.maxHP).sub(receptor.hp);
+                    case "targetMaxHP":
+                        return new Decimal(receptor.maxHP);
+                    case "lostHP":
+                        return new Decimal(sender.maxHP).sub(sender.hp);
+                    default:
+                        throw new Error(`unexpected dynamic potency key is detected: ${ratioKey}`);
+                }
+            })();
+
+            const calculatedValue = targetValue.percent(ratioValue).percent(multiplier ?? 100);
+
+            return {
+                potencyDictionary: {
+                    ...prev.potencyDictionary,
+                    [ratioKey]: {
+                        ratio: ratioValue,
+                        value: targetValue,
+                        calculated: calculatedValue
+                    }
+                },
+                potency: prev.potency.add(calculatedValue)
+            };
+        }, { potencyDictionary: {} as {[K in keyof ValueRatio]: PotencyDictionaryElement}, potency: new Decimal(0) });
 }
