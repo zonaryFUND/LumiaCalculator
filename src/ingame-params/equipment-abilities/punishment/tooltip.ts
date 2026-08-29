@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { TooltipValues } from "@app/ingame-params/skill-tooltip-props";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, importedDamage, importedValues }) => {

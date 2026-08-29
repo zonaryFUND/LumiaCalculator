@@ -3,7 +3,7 @@ import { EquipmentBaseStatus, EquipmentSkill, EquipmentStatus, IsPercentExpresse
 import { NimbleAPIJSON, FabricatedJSON } from "@params-json";
 import { WeaponTypeID } from "./weapon"
 import * as es from "es-toolkit/object"
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { EquipmentID } from "./id";
 
 function correctPercentExpressedValueAndMapToDecimal(status: Partial<Record<keyof EquipmentBaseStatus, number>>): Partial<EquipmentBaseStatus> {

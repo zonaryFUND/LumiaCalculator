@@ -2,7 +2,7 @@ import Constants from "./constants.json";
 import { useValueContext, useValueContextOptional } from "components/tooltip/value-context";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
-import { weaponRangeOf } from "app-types/subject-dynamic/config";
+import { weaponRangeOf } from "core/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ importedDamage }) => {
     const { config } = useValueContext();

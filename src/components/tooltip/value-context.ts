@@ -1,5 +1,5 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 import * as React from "react";
 
 type Props = {

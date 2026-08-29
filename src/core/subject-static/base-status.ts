@@ -1,6 +1,6 @@
 import Decimal from "decimal.js";
 import { NimbleAPIJSON } from "@params-json";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { Status } from "core/subject-dynamic/status/type";
 
 /**
  * 実験体のステータスJSONのうち、共通してゼロであるものを除いた、基礎ステータス数値の部分オブジェクト

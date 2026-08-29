@@ -3,8 +3,8 @@ import { render } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { IntlProvider } from "react-intl";
 import { Locales } from "@app/App";
-import { SubjectConfigDefault } from "app-types/subject-dynamic/config";
-import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import { SubjectConfigDefault } from "core/subject-dynamic/config";
+import { statusOf } from "core/subject-dynamic/status/calculation";
 import equationExpressionOf from "@app/features/damage/containers/potency-subrows/equation-expression";
 
 // 回帰テスト: 武器未装備の実験体が持つ「2回目の弱い基本攻撃」のようなbasicAttackAmpレシオ付きの

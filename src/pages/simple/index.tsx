@@ -19,7 +19,7 @@ import CollapsiblePanes from "components/layout/pane/collapsible-panes";
 import { SimpleCurrentConfigKey } from "@app/storage/simple";
 import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
-import { WeaponTypeID } from "app-types/equipment/weapon";
+import { WeaponTypeID } from "core/equipment/weapon";
 import useStorageBoolean from "@app/storage/boolean";
 import { DetailedTooltipKey } from "@app/storage/common";
 import { NavigationButtonContext } from "components/layout/navigation";

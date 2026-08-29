@@ -1,5 +1,5 @@
 import { BasicAttackElement } from "@app/ingame-params/subjects/type";
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { DamageTableUnit } from "core/damage-table/unit";
 import * as React from "react";
 import SubTable from "../../components/simple/subtable";
 import useBasicAttackRatio from "../../use-basic-attack-ratio";

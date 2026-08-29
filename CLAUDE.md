@@ -119,7 +119,7 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
 - `src/src/decimal.extension.ts` は `decimal.js` の `Decimal` にゲーム固有のヘルパー（`cut`、`floor2`、
   `round2`、`percent`、`addPercent`、`subPercent`）を拡張しており、ダメージ・ステータス計算全体で使用される。
   ゲーム側の丸め処理に合わせるため、非自明な数値計算はネイティブの浮動小数点数ではなく必ず `Decimal` を使うこと。
-- `src/src/types/app-types/value-ratio/` は「あるステータスの固定値＋比率」という抽象化
+- `src/src/core/value-ratio/` は「あるステータスの固定値＋比率」という抽象化
   （例:「20 + 攻撃力の70%」）を定義しており、スキル定義とその評価/抽出ロジック全体で使われている。
   `calculation.ts`の`calculateValue()`が実際の計算エントリポイント（[ダメージモデル](docs/damage-model.md)参照）、
   `extraction.ts`の`extractSkillLevel()`はスキルレベル抽出（武器スキル(`origin == "D"`)は
@@ -133,7 +133,7 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
   Simple/Combatで行コンポーネントは別実装だが、計算ロジック（`calculateValue`・`extractMultiplier`等）は
   共有している。featureの構成全体は[features/README.md](src/features/README.md)を参照。
 - ステータス計算のエントリポイントは
-  `src/src/types/app-types/subject-dynamic/status/calculation.ts`の`statusOf()`。構成要素配列から
+  `src/src/core/subject-dynamic/status/calculation.ts`の`statusOf()`。構成要素配列から
   最終値を合成する`calculateStatusValue`等は同ディレクトリの`combine-components.ts`にあり、
   合成順序（加算→乗算→上書き→クランプ→切り捨て）の詳細は
   [ステータスモデル](docs/status-model.md)の「要素の合成順序」を参照。
@@ -159,7 +159,7 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
   実験体/武器/防具部位/スキルIDをキーとして公開する。vitestではこのモジュールが（`vitest-setup.ts` 参照）
   リクエストされたキーをそのまま返すプロキシでモックされているため、テストは実際の画像アセットに依存しない。
 - パスエイリアス（`tsconfig.json` と `vite.config.ts` の両方で定義されている。変更時は両者を同期させること）:
-  `@app/*` → `src/`、`components/*` → `src/components/`、`app-types/*` → `src/types/app-types/`、
+  `@app/*` → `src/`、`components/*` → `src/components/`、`core/*` → `src/core/`、
   `util/*` → `src/util/`、`resources/*` → リポジトリルートの `resources/`、`@params-json` → `src/params-json`。
 
 ### ローカライズ

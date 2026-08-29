@@ -1,4 +1,4 @@
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { TooltipValue, TooltipValues, TooltipValueToString } from "./skill-tooltip-props";
 
 export function FilterUndefined(values: Partial<TooltipValues>): TooltipValues {

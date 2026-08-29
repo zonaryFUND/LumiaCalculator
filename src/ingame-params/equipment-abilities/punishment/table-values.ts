@@ -1,5 +1,5 @@
 import { EquipmentAbilityDamageTableGenerator } from "../type";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 
 const tableValues: EquipmentAbilityDamageTableGenerator = ({ importedDamage, importedValues }) => [
     {labelIntlID: "item-skill.heart-of-fire-damage", value: importedDamage as ValueRatio},

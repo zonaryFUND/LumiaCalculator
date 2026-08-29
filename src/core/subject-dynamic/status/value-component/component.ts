@@ -9,9 +9,8 @@ export type StatusValueComponent = {
      * この部分要素が何に起因するか
      * 
      * - `subject-status`: 実験体の現在のレベルにおける基礎ステータス
-     * - `base-with-weapon`: 実験体の基礎値と装備中の武器種基礎値の合計（武器は外れている場合もある）
      * - `equipment`: すべての装備のステータス合計値
-     * - `perpetual-status`: 永続的なバフまたはパッシブなどによるステータス変換
+     * - `perpetual_status`: 永続的なバフまたはパッシブなどによるステータス変換
      * - `temporary-status`: 一時的なバフによる増加ステータス
      */
     origin: "subject-status" | "equipment" | "perpetual_status" | "temporary-status"

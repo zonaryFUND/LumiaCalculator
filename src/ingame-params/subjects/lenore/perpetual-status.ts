@@ -1,6 +1,6 @@
 import Constants from "./constants";
 import { SubjectPerpetualStatus } from "../type";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 
 export const accelerando = (config: SubjectConfig) => {
     return config.stack * Constants.T.stack_conversion;

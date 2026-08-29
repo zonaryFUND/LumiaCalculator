@@ -1,5 +1,5 @@
-import { FasterBaseMoveSpeed, MoveSpeedCalculationConstants } from "app-types/subject-dynamic/status/value-component/move-speed";
-import { MovementSpeedValue } from "app-types/subject-dynamic/status/value-component/type";
+import { FasterBaseMoveSpeed, MoveSpeedCalculationConstants } from "core/subject-dynamic/status/value-component/move-speed";
+import { MovementSpeedValue } from "core/subject-dynamic/status/value-component/type";
 import * as React from "react";
 
 const moveSpeedSubRow: React.FC<MovementSpeedValue> = props => {

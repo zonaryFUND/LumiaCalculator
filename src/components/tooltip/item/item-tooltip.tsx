@@ -1,5 +1,5 @@
 import * as React from "react";
-import { EquipmentID } from "app-types/equipment/id";
+import { EquipmentID } from "core/equipment/id";
 import Images from "@app/resources/image";
 import Options from "./options";
 import Skill from "./skill";
@@ -7,9 +7,9 @@ import baseStyle from "../tooltip.module.styl";
 import style from "./item-tooltip.module.styl";
 import { ValueContext } from "../value-context";
 import { FormattedMessage } from "react-intl";
-import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "app-types/equipment";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "core/equipment";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 import Decimal from "decimal.js";
 
 type Props = {

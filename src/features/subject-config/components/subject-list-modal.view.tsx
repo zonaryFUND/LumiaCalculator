@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SubjectCode, SubjectCodeMax } from "app-types/subject-static";
+import { SubjectCode, SubjectCodeMax } from "core/subject-static";
 import style from "./subject-list-modal.module.styl";
 import Images from "@app/resources/image";
 import SegmentedControl from "components/common/segmented-control";

@@ -3,7 +3,7 @@ import { DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Constants from "./constants";
 import { NinaRatioStrategy } from "./nina-ratio-strategy";
-import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
+import { BaseCriticalDamagePercent } from "core/subject-dynamic/status/standard-values";
 
 const ninaBasicAttackStrategy: UniqueValueStrategy = ({ config, status }) => {
     const ninaStatus = status.summoned![0].status;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import style from "./tooltip.module.styl";
 import { FormattedMessage } from "react-intl";
-import { ValueElement, ValueRatio } from "app-types/value-ratio";
+import { ValueElement, ValueRatio } from "core/value-ratio";
 import Decimal from "decimal.js";
 import { useValueContextOptional } from "./value-context";
 

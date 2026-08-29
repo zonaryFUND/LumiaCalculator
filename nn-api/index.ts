@@ -3,7 +3,7 @@ import fs from "fs";
 import yargs from "yargs/yargs";
 import { APIKey } from "./credentials";
 import * as es from "es-toolkit";
-import { EquipmentBaseStatus } from "../src/types/app-types/equipment";
+import { EquipmentBaseStatus } from "../src/core/equipment";
 import { BaseURL, FetchAPIResponse } from "./fetch";
 
 const argv = yargs(process.argv)

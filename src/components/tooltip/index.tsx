@@ -3,8 +3,8 @@ import Modal from "react-modal";
 import { Tooltip } from "react-tooltip";
 import SkillTooltip from "./skill/tooltip";
 import ItemTooltip from "./item/item-tooltip";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 import style from "./tooltip.module.styl"
 import { OpenModalItemProps, OpenModalSkillProps, TooltipContext } from "./tooltip-context";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";

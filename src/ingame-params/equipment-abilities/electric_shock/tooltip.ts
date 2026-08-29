@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { FilterUndefined, RatioPercentOptional } from "@app/ingame-params/valueratio-to-string";
-import { weaponRangeOf } from "app-types/subject-dynamic/config";
+import { weaponRangeOf } from "core/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, config, importedDamage }) => {
     if (importedDamage == undefined) throw new Error("electric shock needs imported damage");

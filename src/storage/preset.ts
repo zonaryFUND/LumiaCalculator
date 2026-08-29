@@ -1,4 +1,4 @@
-import { Equipment, SubjectConfig } from "app-types/subject-dynamic/config";
+import { Equipment, SubjectConfig } from "core/subject-dynamic/config";
 import { DefaultSamplePresets } from "@app/features/subject-config/components/load-build-modal-default-sample";
 import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "react-use";

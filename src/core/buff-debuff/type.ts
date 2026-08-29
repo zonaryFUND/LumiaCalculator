@@ -1,6 +1,6 @@
-import { SkillKey } from "app-types/skill"
-import { Status } from "app-types/subject-dynamic/status/type"
-import { ValueRatio } from "app-types/value-ratio"
+import { SkillKey } from "core/skill"
+import { Status } from "core/subject-dynamic/status/type"
+import { ValueRatio } from "core/value-ratio"
 
 type StatusBuffDebuff = {
     type: "status"

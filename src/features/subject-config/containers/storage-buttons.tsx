@@ -8,7 +8,7 @@ import LoadBuildModal from "../components/load-build-modal.view";
 import loadStyle from "../components/load-build-modal.module.styl";
 import SaveBuildModal from "../components/save-build-modal.view";
 import saveStyle from "../components/save-build-modal.module.styl";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 
 const StorageButtons: React.FC = () => {
     const config = useSubjectStateStore(s => s.config);

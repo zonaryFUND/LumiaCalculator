@@ -1,6 +1,6 @@
 import { DamageTableGenerator } from "../type";
 import Constants from "./constants";
-import { weaponTypeIDOf } from "app-types/subject-dynamic/config";
+import { weaponTypeIDOf } from "core/subject-dynamic/config";
 
 const table: DamageTableGenerator = props => {
     const weaponType = weaponTypeIDOf(props.config);

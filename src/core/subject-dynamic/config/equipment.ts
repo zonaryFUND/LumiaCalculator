@@ -1,4 +1,4 @@
-import { EquipmentID } from "app-types/equipment"
+import { EquipmentID } from "core/equipment"
 
 /**
  * 実験体の現在の装備

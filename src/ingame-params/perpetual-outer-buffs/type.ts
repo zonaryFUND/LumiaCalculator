@@ -1,5 +1,5 @@
-import { ComponentStatus } from "app-types/subject-dynamic/status/type"
-import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component"
+import { ComponentStatus } from "core/subject-dynamic/status/type"
+import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component"
 
 export type PerpetualOuterBuffDefinition = {
     availableStacks?: number[] | string[]

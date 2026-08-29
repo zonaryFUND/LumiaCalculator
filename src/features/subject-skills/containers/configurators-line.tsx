@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SubjectSkillKeys } from "app-types/skill";
+import { SubjectSkillKeys } from "core/skill";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { SubjectSkillListExpressionDictionary } from "@app/ingame-params/subjects/dictionary";
 import SkillLevelConfigurator from "./skill-level-configurator";

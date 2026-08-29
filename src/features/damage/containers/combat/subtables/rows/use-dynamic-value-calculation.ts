@@ -1,4 +1,4 @@
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import Decimal from "decimal.js";
 
 type PotencyDictionaryElement = {

@@ -1,6 +1,6 @@
 import * as React from "react";
 import InnerTable from "components/common/inner-table";
-import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
+import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component";
 import WeaponBaseStatus from "./subject-with-weapon-row";
 import ConstantValueRow from "./constant-value-row";
 import MultipliedRow from "./multiplied-row";

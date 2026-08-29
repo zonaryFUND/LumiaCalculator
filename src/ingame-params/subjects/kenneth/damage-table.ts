@@ -2,10 +2,10 @@ import Decimal from "decimal.js";
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Constants from "./constants";
-import { calculateValue } from "app-types/value-ratio";
-import { DamageDependentHealStrategy } from "app-types/damage-table/unit";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { calculateValue } from "core/value-ratio";
+import { DamageDependentHealStrategy } from "core/damage-table/unit";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 
 
 function kennethTStrategy(

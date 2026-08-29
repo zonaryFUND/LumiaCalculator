@@ -1,6 +1,6 @@
 import Constants from "./constants.json";
 import { EquipmentAbilityTooltipValues } from "../type";
-import { adaptiveForceTargetOf } from "app-types/subject-dynamic/config";
+import { adaptiveForceTargetOf } from "core/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, config }) => {
     const attack = config ? adaptiveForceTargetOf(config) == "attackPower" : true;

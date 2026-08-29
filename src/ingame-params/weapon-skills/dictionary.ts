@@ -1,4 +1,4 @@
-import { WeaponTypeID } from "app-types/equipment/weapon";
+import { WeaponTypeID } from "core/equipment/weapon";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { WeaponSkillDamageTableGenerator, WeaponSkillModule } from "./type";
 

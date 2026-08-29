@@ -1,4 +1,4 @@
-import { weaponTypeIDOf } from "app-types/subject-dynamic/config";
+import { weaponTypeIDOf } from "core/subject-dynamic/config";
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import Constants from "./constants";
 

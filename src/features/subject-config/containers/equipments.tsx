@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useSubjectStateStore } from "../store";
-import { DavidChestArmorUpgradeDictionary } from "app-types/equipment";
+import { DavidChestArmorUpgradeDictionary } from "core/equipment";
 import EquipmentsLayout from "../components/equipments.layout";
 
 const Equipments: React.FC = () => {

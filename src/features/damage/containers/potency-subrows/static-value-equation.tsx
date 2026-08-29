@@ -1,6 +1,6 @@
 import * as React from "react";
-import { extractSkillLevel, extractStaticValueRatio, ValueOrigin, ValueRatio } from "app-types/value-ratio";
-import { calculateValue } from "app-types/value-ratio";
+import { extractSkillLevel, extractStaticValueRatio, ValueOrigin, ValueRatio } from "core/value-ratio";
+import { calculateValue } from "core/value-ratio";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import equationExpressionOf, { joinEquationStrategy } from "./equation-expression";
 

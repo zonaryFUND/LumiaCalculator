@@ -3,9 +3,9 @@ import { ExtractedMultiplier } from "../../damage-table-util";
 import Decimal from "decimal.js";
 import StaticValueEquation from "./static-value-equation";
 import MultiplyEquation from "../../components/potency-subrows/mutiply-equation";
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { DamageTableUnit } from "core/damage-table/unit";
 import HealPower from "../../components/potency-subrows/heal-power";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { FormattedMessage } from "react-intl";
 import InnerTable from "components/common/inner-table";
 

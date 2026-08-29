@@ -1,4 +1,4 @@
-import { EquipmentBaseStatus, EquipmentStatus, IsPercentExpressedEquipmentStatusKey } from "app-types/equipment";
+import { EquipmentBaseStatus, EquipmentStatus, IsPercentExpressedEquipmentStatusKey } from "core/equipment";
 import Decimal from "decimal.js";
 import * as React from "react";
 import { FormattedMessage, useIntl } from "react-intl";

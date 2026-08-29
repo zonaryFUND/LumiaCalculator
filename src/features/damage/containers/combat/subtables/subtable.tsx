@@ -1,12 +1,12 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 import StandardDamage from "./rows/standard-damage";
 import CriticalAvailable from "./rows/critical-available";
 import { useCombatHPContext } from "../combat-hp-context";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 

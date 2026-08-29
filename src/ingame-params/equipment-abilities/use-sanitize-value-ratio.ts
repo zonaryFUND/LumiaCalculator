@@ -1,4 +1,4 @@
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 
 export default function SanitizeValueRatio(valueRatio: ValueRatio | {melee: ValueRatio, range:  ValueRatio} | undefined): ValueRatio {
     if (valueRatio == undefined) throw new Error("item skill's value is undefined in expected situation");

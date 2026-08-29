@@ -1,5 +1,5 @@
 import { useSubjectStateStore } from "@app/features/subject-config/store";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import Decimal from "decimal.js";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";

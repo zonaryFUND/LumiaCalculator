@@ -1,6 +1,6 @@
 import Constants from "./constants";
 import { SubjectPerpetualStatus } from "../type";
-import { weaponRangeOf } from "app-types/subject-dynamic/config";
+import { weaponRangeOf } from "core/subject-dynamic/config";
 
 const f: SubjectPerpetualStatus = (config) => {
     const range = weaponRangeOf(config);

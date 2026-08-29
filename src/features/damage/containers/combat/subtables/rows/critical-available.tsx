@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { Status } from "core/subject-dynamic/status/type";
 import StandardDamage from "./standard-damage";
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { BaseCriticalDamagePercent } from "core/subject-dynamic/status/standard-values";
 import Decimal from "decimal.js";
 
 type Props = DamageTableUnit & {

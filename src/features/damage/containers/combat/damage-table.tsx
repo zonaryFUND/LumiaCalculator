@@ -1,8 +1,8 @@
 import * as React from "react";
 import style from "../../components/potency-rows/damage-table.module.styl";
 import table from "components/common/table.module.styl";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
+import { SubjectConfig } from "core/subject-dynamic/config";
 import { useIntl } from "react-intl";
 import { MitigationContext, createMitigation } from "./mitigation-context";
 import SegmentedControl from "components/common/segmented-control";

@@ -1,9 +1,9 @@
-import { BaseStatus, BaseStatusType, LevelUpStatus, LevelUpStatusType, WeaponMasteryStatus } from "app-types/subject-static";
+import { BaseStatus, BaseStatusType, LevelUpStatus, LevelUpStatusType, WeaponMasteryStatus } from "core/subject-static";
 import { adaptiveForceTargetOf, SubjectConfig, weaponTypeIDOf } from "../config";
 import { ComponentStatus, ComponentStatusValue, Status } from "./type";
-import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "app-types/equipment";
+import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "core/equipment";
 import Decimal from "decimal.js";
-import { WeaponTypeStatus } from "app-types/equipment/weapon";
+import { WeaponTypeStatus } from "core/equipment/weapon";
 import { createComponentValue, StatusValueComponent } from "./value-component/component";
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { calculateCooldownValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";

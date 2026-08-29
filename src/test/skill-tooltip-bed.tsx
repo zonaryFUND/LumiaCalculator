@@ -1,9 +1,9 @@
 import { Locales } from "@app/App";
-import { SubjectConfigDefault } from "app-types/subject-dynamic/config";
+import { SubjectConfigDefault } from "core/subject-dynamic/config";
 import * as React from "react";
 import { IntlProvider } from "react-intl";
 import Tooltip from "@app/components/tooltip/skill/tooltip"
-import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import { statusOf } from "core/subject-dynamic/status/calculation";
 
 const config = SubjectConfigDefault;
 

@@ -1,7 +1,7 @@
 import { TooltipValue } from "@app/ingame-params/skill-tooltip-props";
-import { SubjectConfig, weaponRangeOf } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { calculateValue, extractSkillLevel, ValueOrigin } from "app-types/value-ratio";
+import { SubjectConfig, weaponRangeOf } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
+import { calculateValue, extractSkillLevel, ValueOrigin } from "core/value-ratio";
 import { IntlShape } from "react-intl";
 
 export function ExtractAndCalculateValue(

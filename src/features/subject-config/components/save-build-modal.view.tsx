@@ -1,5 +1,5 @@
 import { usePresetStorage } from "@app/storage/preset";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import { useGetSet } from "react-use";

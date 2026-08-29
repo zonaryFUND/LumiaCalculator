@@ -5,11 +5,11 @@ import StaticValueEquation from "../potency-subrows/static-value-equation";
 import MultiplyEquation from "../../components/potency-subrows/mutiply-equation";
 import CriticalHit from "../../components/potency-subrows/critical-hit";
 import { FormattedMessage } from "react-intl";
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { DamageTableUnit } from "core/damage-table/unit";
 import Critical from "../../components/potency-rows/critical";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
-import { calculateValue, extractSkillLevel } from "app-types/value-ratio";
-import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
+import { calculateValue, extractSkillLevel } from "core/value-ratio";
+import { BaseCriticalDamagePercent } from "core/subject-dynamic/status/standard-values";
 import Decimal from "decimal.js";
 import { extractMultiplier } from "../../damage-table-util";
 

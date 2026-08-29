@@ -1,6 +1,6 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config"
-import { Status } from "app-types/subject-dynamic/status/type"
-import { ValueRatio } from "app-types/value-ratio";
+import { SubjectConfig } from "core/subject-dynamic/config"
+import { Status } from "core/subject-dynamic/status/type"
+import { ValueRatio } from "core/value-ratio";
 import Decimal from "decimal.js"
 
 export type RangeDependentValueRatio = { melee: ValueRatio, range: ValueRatio }

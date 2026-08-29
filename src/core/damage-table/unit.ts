@@ -1,4 +1,4 @@
-import { ValueOrigin, ValueRatio } from "app-types/value-ratio"
+import { ValueOrigin, ValueRatio } from "core/value-ratio"
 import { BasicAttackType, MiscValueType, SkillDamageType, SupportType, TrueDamageType } from "./value-type"
 import Decimal from "decimal.js";
 

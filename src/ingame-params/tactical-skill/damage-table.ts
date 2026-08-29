@@ -1,7 +1,7 @@
 import Constants from "./constants";
 import { IntlShape } from "react-intl";
-import { ValueRatio } from "app-types/value-ratio";
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { ValueRatio } from "core/value-ratio";
+import { DamageTableUnit } from "core/damage-table/unit";
 
 type Unit = Omit<DamageTableUnit, "value"> & {
     value: ValueRatio | {

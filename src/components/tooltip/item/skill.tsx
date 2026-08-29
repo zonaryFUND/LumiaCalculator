@@ -1,7 +1,7 @@
 import * as React from "react";
 import style from "./skill.module.styl";
 import { EquipmentAbilityTooltipDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
-import { EquipmentSkill } from "app-types/equipment";
+import { EquipmentSkill } from "core/equipment";
 import FormattedText from "components/common/formatted-text";
 import { useIntl } from "react-intl";
 import { useValueContext, useValueContextOptional } from "../value-context";

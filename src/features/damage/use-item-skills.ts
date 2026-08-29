@@ -1,9 +1,9 @@
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectConfig, weaponRangeOf } from "app-types/subject-dynamic/config";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { SubjectConfig, weaponRangeOf } from "core/subject-dynamic/config";
 import { EquipmentAbilityDamageTable } from "@app/ingame-params/equipment-abilities/dictionary";
 import * as React from "react";
 import { useIntl } from "react-intl";
-import { EquipmentStatusDictionary } from "app-types/equipment";
+import { EquipmentStatusDictionary } from "core/equipment";
 import { ignorePseudoTag } from "@app/util/ignore-pseudo-tag";
 
 type Response = {

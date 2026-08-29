@@ -1,10 +1,10 @@
 import * as React from "react";
-import { EquipmentID } from "app-types/equipment/id";
+import { EquipmentID } from "core/equipment/id";
 import Images from "@app/resources/image";
 import style from "./equipment-icon.module.styl";
 import { styles } from "@app/util/style";
-import { ArmorTypeID } from "app-types/equipment/armor";
-import { ArmorStatusDictionary, EquipmentStatusDictionary } from "app-types/equipment";
+import { ArmorTypeID } from "core/equipment/armor";
+import { ArmorStatusDictionary, EquipmentStatusDictionary } from "core/equipment";
 import { TooltipContext } from "components/tooltip/tooltip-context";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import { TooltipSubjectSideContext } from "components/tooltip/subject-side-context";

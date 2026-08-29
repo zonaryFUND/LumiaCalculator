@@ -34,7 +34,7 @@ export default mergeConfig(
                 "@app": path.resolve(__dirname, "./src"),
                 "@params-json": path.resolve(__dirname, "./src/params-json"),
                 "dictionary": path.resolve(__dirname, "./src/dictionary-jsons"),
-                "app-types": path.resolve(__dirname, "./src/types/app-types"),
+                "core": path.resolve(__dirname, "./src/core"),
                 "components": path.resolve(__dirname, "./src/components"),
                 "resources": path.resolve(__dirname, "../resources"),
                 "util": path.resolve(__dirname, "./src/util")

@@ -1,4 +1,4 @@
-import { WeaponTypeID } from "app-types/equipment/weapon";
+import { WeaponTypeID } from "core/equipment/weapon";
 import { DamageTable, DamageTableGenerator } from "../type";
 import Constants from "./constants";
 

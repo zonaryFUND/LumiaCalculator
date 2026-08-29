@@ -1,4 +1,4 @@
-import { SubjectCode } from "app-types/subject-static"
+import { SubjectCode } from "core/subject-static"
 import { Equipment } from "./equipment"
 import { SkillLevels } from "./skill-levels"
 import { PerpetualOuterBuff } from "./perpetual-outer-buff"

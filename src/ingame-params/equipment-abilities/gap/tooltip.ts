@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { TooltipValues } from "@app/ingame-params/skill-tooltip-props";
-import { weaponRangeOf } from "app-types/subject-dynamic/config";
+import { weaponRangeOf } from "core/subject-dynamic/config";
 
 const values: EquipmentAbilityTooltipValues = ({ showEquation, config }): TooltipValues => {
     if (showEquation) {

@@ -1,7 +1,7 @@
-import { meleeOrRange, WeaponTypeID } from "app-types/equipment/weapon";
+import { meleeOrRange, WeaponTypeID } from "core/equipment/weapon";
 import { SubjectConfig } from "./type";
-import { EquipmentStatusDictionary } from "app-types/equipment";
-import { WeaponMasteryStatus } from "app-types/subject-static";
+import { EquipmentStatusDictionary } from "core/equipment";
+import { WeaponMasteryStatus } from "core/subject-static";
 
 /**
  * 実験体設定から現在装備中の武器種IDを抽出する

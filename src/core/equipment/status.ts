@@ -1,7 +1,7 @@
 import Decimal from "decimal.js";
 import { WeaponTypeID } from "./weapon";
 import { ArmorTypeID } from "./armor";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { EquipmentID } from "./id";
 
 /**

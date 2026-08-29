@@ -1,8 +1,8 @@
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectConfig, weaponRangeOf } from "app-types/subject-dynamic/config";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { SubjectConfig, weaponRangeOf } from "core/subject-dynamic/config";
 import { useIntl } from "react-intl";
 import { AugmentTableValues } from "@app/ingame-params/augment/table-value";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 
 type Unit = Omit<DamageTableUnit, "value"> & {

@@ -1,4 +1,4 @@
-import { EquipmentID } from "app-types/equipment";
+import { EquipmentID } from "core/equipment";
 
 export function weaponType(weapon: EquipmentID | null): "blackmamba" | "sidewinder" | "deathadder" | null {
     if (weapon == null) return null;

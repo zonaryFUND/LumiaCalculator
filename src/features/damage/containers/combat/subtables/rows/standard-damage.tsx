@@ -1,8 +1,8 @@
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { extractSkillLevel, ValueRatio } from "app-types/value-ratio";
-import { calculateValue } from "app-types/value-ratio";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
+import { extractSkillLevel, ValueRatio } from "core/value-ratio";
+import { calculateValue } from "core/value-ratio";
 import { extractMultiplier } from "@app/features/damage/damage-table-util";
 import * as React from "react";
 import { useToggle } from "react-use";

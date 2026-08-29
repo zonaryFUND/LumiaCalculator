@@ -1,7 +1,7 @@
 import Constants from "./constants.json";
 import SanitizeValueRatio from "../use-sanitize-value-ratio";
-import { ValueRatio } from "app-types/value-ratio";
-import { calculateValue } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
+import { calculateValue } from "core/value-ratio";
 import { EquipmentAbilityTooltipValues } from "../type";
 import { FilterUndefined } from "@app/ingame-params/valueratio-to-string";
 

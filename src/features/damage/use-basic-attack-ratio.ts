@@ -1,7 +1,7 @@
-import { EquipmentStatusDictionary } from "app-types/equipment";
-import { WeaponTypeID } from "app-types/equipment/weapon";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "app-types/subject-dynamic/status/standard-values";
+import { EquipmentStatusDictionary } from "core/equipment";
+import { WeaponTypeID } from "core/equipment/weapon";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { AssaultRifleAttackRatio, DualSwordsAttackRatio } from "core/subject-dynamic/status/standard-values";
 import * as React from "react";
 
 /**

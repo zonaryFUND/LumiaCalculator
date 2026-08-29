@@ -1,12 +1,12 @@
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { EquipmentStatusDictionary } from "app-types/equipment";
-import { WeaponTypeID } from "app-types/equipment/weapon";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { EquipmentStatusDictionary } from "core/equipment";
+import { WeaponTypeID } from "core/equipment/weapon";
+import { SubjectConfig } from "core/subject-dynamic/config";
 import { WeaponSkillDamageTableDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import * as React from "react";
 import { useIntl } from "react-intl";
 import { SubjectDamageTableDictionary, SubjectSkillListExpressionDictionary } from "@app/ingame-params/subjects/dictionary";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { Status } from "core/subject-dynamic/status/type";
 
 type Response = {
     regular: DamageTableUnit[]

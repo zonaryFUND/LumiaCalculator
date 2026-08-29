@@ -3,12 +3,12 @@ import Havoc from "./havoc";
 import Chaos from "./chaos";
 import Fortification from "./fortification";
 import Support from "./support";
-import { ValueRatio } from "app-types/value-ratio";
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { ValueRatio } from "core/value-ratio";
+import { DamageTableUnit } from "core/damage-table/unit";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
-import { calculateValue } from "app-types/value-ratio";
+import { calculateValue } from "core/value-ratio";
 import Decimal from "decimal.js";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 
 const acceleratorStrategy: UniqueValueStrategy = ({ config, status }) => {
     const base = Havoc.accelerator.damage.base[config.level - 1];

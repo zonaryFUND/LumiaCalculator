@@ -1,5 +1,5 @@
 import * as React from "react";
-import { SubjectDependentSkillKey } from "app-types/skill";
+import { SubjectDependentSkillKey } from "core/skill";
 import PullDown from "components/common/pull-down";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import style from "./skill-level-configurator.module.styl";

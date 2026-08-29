@@ -1,6 +1,6 @@
 import * as React from "react";
 import SkillsVariation from "./skills-variation";
-import { weaponTypeIDOf } from "app-types/subject-dynamic/config";
+import { weaponTypeIDOf } from "core/subject-dynamic/config";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { SubjectSkillListExpressionDictionary } from "@app/ingame-params/subjects/dictionary";
 import Skill from "./skill";

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 import SubTable from "./subtable";
 import useBasicAttackRatio from "@app/features/damage/use-basic-attack-ratio";
 import { useIntl } from "react-intl";

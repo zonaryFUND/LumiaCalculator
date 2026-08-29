@@ -9,7 +9,7 @@ import * as MeleeE from "./meleee";
 import * as RangeE from "./rangee";
 import * as R from "./r";
 import * as T from "./t";
-import { weaponRangeOf } from "app-types/subject-dynamic/config";
+import { weaponRangeOf } from "core/subject-dynamic/config";
 
 
 export default defineSubject({

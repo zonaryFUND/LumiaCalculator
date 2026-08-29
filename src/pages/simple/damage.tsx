@@ -4,8 +4,8 @@ import Table from "@app/features/damage/containers/simple/damage-table";
 import style from "./damage.module.styl";
 import Pane from "components/layout/pane/pane";
 
-import { Status } from "app-types/subject-dynamic/status/type";
-import { SkillLevels, SubjectConfig } from "app-types/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
+import { SkillLevels, SubjectConfig } from "core/subject-dynamic/config";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 
 type Props = {

@@ -1,11 +1,11 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { ComponentStatus, Status, SummonedStatus } from "app-types/subject-dynamic/status/type";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { ComponentStatus, Status, SummonedStatus } from "core/subject-dynamic/status/type";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { DamageTableUnit } from "core/damage-table/unit";
 import { UniqueValueStrategy } from "./unique-value-strategy";
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import { IntlShape } from "react-intl";
-import { StatusValueComponent } from "app-types/subject-dynamic/status/value-component/component";
+import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component";
 
 export type SubjectDamageTableUnit = Omit<DamageTableUnit, "triggeredOnBasicAttack"> & {
     value: ValueRatio | UniqueValueStrategy

@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as es from "es-toolkit";
 
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 import { SubjectTooltipDictionary } from "@app/ingame-params/subjects/dictionary";
 import { WeaponSkillTooltipDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -16,7 +16,7 @@ import style from "./tooltip.module.styl";
 import { ExtractAndCalculateValue } from "../extract-tooltip-value";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import { extractArrayOrValue } from "@app/util/array";
-import { extractSkillLevel } from "app-types/value-ratio";
+import { extractSkillLevel } from "core/value-ratio";
 
 type Props = {
     code: number

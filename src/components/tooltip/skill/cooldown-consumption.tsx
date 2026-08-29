@@ -1,8 +1,8 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { Status } from "core/subject-dynamic/status/type";
 import { extractArrayOrValue } from "@app/util/array";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 import { SkillTooltipProps } from "../../../ingame-params/skill-tooltip-props";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 import style from "./tooltip.module.styl";

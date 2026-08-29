@@ -1,8 +1,8 @@
 import * as React from "react";
 import Modal from "react-modal";
 import { useToggle } from "react-use";
-import { ArmorTypeID } from "app-types/equipment/armor";
-import { Equipment } from "app-types/subject-dynamic/config/equipment";
+import { ArmorTypeID } from "core/equipment/armor";
+import { Equipment } from "core/subject-dynamic/config/equipment";
 import EquipmentIconBlank from "../components/equipment-icon-blank.view";
 import EquipmentIcon from "../components/equipment-icon.view";
 import EquipmentListModal, { style as listStyle } from "./equipment-list-modal";

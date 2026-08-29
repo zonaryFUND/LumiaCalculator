@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Equipment, SkillLevels, SubjectConfig, SubjectConfigDefault } from "app-types/subject-dynamic/config";
-import { SubjectCode } from "app-types/subject-static";
+import { Equipment, SkillLevels, SubjectConfig, SubjectConfigDefault } from "core/subject-dynamic/config";
+import { SubjectCode } from "core/subject-static";
 import { createContext, useContext } from "react";
 import { createStore, useStore } from "zustand";
 import { persist } from "zustand/middleware"
 import { Migrate } from "@app/storage/migration-v1/config";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { statusOf } from "app-types/subject-dynamic/status/calculation";
+import { Status } from "core/subject-dynamic/status/type";
+import { statusOf } from "core/subject-dynamic/status/calculation";
 
 type SubjectStateStore = {
     config: SubjectConfig

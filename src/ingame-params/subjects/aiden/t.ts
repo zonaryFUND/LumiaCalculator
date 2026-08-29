@@ -1,7 +1,7 @@
 import Constants from "./constants";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { UniqueValueStrategy } from "../unique-value-strategy";
-import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
+import { BaseCriticalDamagePercent } from "core/subject-dynamic/status/standard-values";
 import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
 
 export const AidenTStrategy: UniqueValueStrategy = ({ config, status }) => {

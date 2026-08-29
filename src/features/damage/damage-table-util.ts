@@ -1,4 +1,4 @@
-import { ValueTableUnitMultiplier } from "app-types/damage-table/unit"
+import { ValueTableUnitMultiplier } from "core/damage-table/unit"
 
 export type MultiplierExpression = {
     label?: string

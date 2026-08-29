@@ -3,7 +3,7 @@ import Havoc from "@app/ingame-params/augment/havoc";
 import Chaos from "@app/ingame-params/augment/chaos";
 import Fortification from "@app/ingame-params/augment/fortification";
 import Decimal from "decimal.js";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 
 export const AugmentPerpetualBuffDefinitions: (config: SubjectConfig, hp: number) => Record<string, PerpetualOuterBuffDefinition> = (config, hp) => ({
     /**

@@ -1,10 +1,10 @@
-import { ValueRatio } from "app-types/value-ratio";
+import { ValueRatio } from "core/value-ratio";
 import * as React from "react";
 import EquationUnit from "../../components/potency-subrows/equation-unit";
 import { FormattedMessage } from "react-intl";
 import table from "components/common/table.module.styl";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { Status } from "app-types/subject-dynamic/status/type";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 
 /**
  * スキル威力計算式の各要素を結合するとき、「単に前項と+で結合する」か「前項までを()で括ってからxで結合する」のかを返す。

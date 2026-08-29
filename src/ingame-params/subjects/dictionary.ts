@@ -1,4 +1,4 @@
-import { SubjectCode } from "app-types/subject-static";
+import { SubjectCode } from "core/subject-static";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectStackInfo, SummonInfo } from "./type";
 

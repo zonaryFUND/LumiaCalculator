@@ -3,7 +3,7 @@ import { Sword, TShirt, BaseballCap, Hand, Sneaker } from "@phosphor-icons/react
 import style from "./equipment-icon-blank.module.styl";
 import base from "./equipment-icon.module.styl";
 import { styles } from "@app/util/style";
-import { ArmorTypeID } from "app-types/equipment/armor";
+import { ArmorTypeID } from "core/equipment/armor";
 
 type Props = {
     slot: "Weapon" | ArmorTypeID

@@ -1,4 +1,4 @@
-import { SkillLevels } from "app-types/subject-dynamic/config";
+import { SkillLevels } from "core/subject-dynamic/config";
 import { DamageTable, DamageTableGenerator } from "../type";
 import Constants from "./constants";
 

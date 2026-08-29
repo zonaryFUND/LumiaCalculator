@@ -1,6 +1,6 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 import { ValueOrigin } from "./calculation";
-import { weaponSkillLevel } from "app-types/subject-dynamic/status/weapon-skill-level";
+import { weaponSkillLevel } from "core/subject-dynamic/status/weapon-skill-level";
 import { SubjectWeaponSkillOverrideDictionary } from "@app/ingame-params/subjects/dictionary";
 import { ValueRatio } from "./type";
 

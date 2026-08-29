@@ -2,7 +2,7 @@ import Decimal from "decimal.js";
 import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import table from "components/common/table.module.styl";
-import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
+import { BaseCriticalDamagePercent } from "core/subject-dynamic/status/standard-values";
 
 type Props = {
     /**

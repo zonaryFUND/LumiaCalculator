@@ -1,4 +1,4 @@
-import { Equipment, SubjectConfig, SubjectConfigDefault } from "app-types/subject-dynamic/config";
+import { Equipment, SubjectConfig, SubjectConfigDefault } from "core/subject-dynamic/config";
 import { OldSubjectID, OldSubjectIDs } from "./subject-id";
 
 export type SubjectConfigV1 = Omit<SubjectConfig, "subject" | "equipment"> & {

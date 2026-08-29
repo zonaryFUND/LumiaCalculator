@@ -1,11 +1,11 @@
 import * as React from "react";
 import style from "../../components/potency-rows/damage-table.module.styl";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { extractSkillLevel, ValueOrigin, ValueRatio } from "app-types/value-ratio";
-import { Status } from "app-types/subject-dynamic/status/type";
-import { calculateValue } from "app-types/value-ratio";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { extractSkillLevel, ValueOrigin, ValueRatio } from "core/value-ratio";
+import { Status } from "core/subject-dynamic/status/type";
+import { calculateValue } from "core/value-ratio";
 import { extractMultiplier } from "../../damage-table-util";
-import { DamageTableUnit } from "app-types/damage-table/unit";
+import { DamageTableUnit } from "core/damage-table/unit";
 import Standard from "../../components/potency-rows/standard";
 import DynamicRatioExpression from "./dynamic-ratio-expression";
 import { useSubjectStateStore } from "@app/features/subject-config/store";

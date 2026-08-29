@@ -7,7 +7,7 @@ import { DefaultSamplePresets } from "./load-build-modal-default-sample";
 import { Trash } from "@phosphor-icons/react";
 import style from "./load-build-modal.module.styl";
 import { styles } from "@app/util/style";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 
 type Props = {
     onSelect: (config: SubjectConfig) => void

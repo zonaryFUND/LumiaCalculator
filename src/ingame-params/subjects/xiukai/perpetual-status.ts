@@ -1,7 +1,7 @@
 import Constants from "./constants";
 import { SubjectPerpetualStatus } from "../type";
 import Decimal from "decimal.js";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 
 export function AdditionalMaxHP(config: SubjectConfig): Decimal {
     return new Decimal(config.stack * Constants.T.max_hp[config.skillLevels.T])

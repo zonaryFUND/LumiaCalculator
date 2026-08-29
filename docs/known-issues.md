@@ -41,7 +41,7 @@
 - **`tacticalSkillCooldownReduction`**（戦術スキルクールダウン減少）: `ultCooldownReduction`（究極技クールダウン減少）は
   通常のクールダウン減少（`cooldownReduction`）と合算した上で減少率を計算しているのに対し、
   `tacticalSkillCooldownReduction`は`tacticalCooldownReduction`単体でしか計算されておらず、通常CDRとの合算が
-  行われていない（`src/types/app-types/subject-dynamic/status/calculation.ts`）。
+  行われていない（`src/core/subject-dynamic/status/calculation.ts`）。
   現状、戦術スキルのクールダウンを表示するUIが存在しないため実害なし。
 - **`slowResist`**（移動速度減少耐性）: ステータスとしてはゲーム側で廃止されているが、計算ロジック自体は
   `calculation.ts`に残っている（デッドコード）。
@@ -50,7 +50,7 @@
 - **`EquipmentBaseStatus`型に定義されているが未使用のキー**: `maxSp`, `spRegenRatio`,
   `weaponCooldownReduction`はAPIレスポンス由来で型定義はあるが、`ComponentStatus`側に対応フィールドがなく
   計算に一切使われていない（スタミナ・武器スキル固有CDRはこの計算機の対象外）。
-- **デバッグ用`console.log`の残存**（2026-08-29再確認、計4箇所）: `types/app-types/subject-dynamic/status/
+- **デバッグ用`console.log`の残存**（2026-08-29再確認、計4箇所）: `core/subject-dynamic/status/
   calculation.ts`の`statusOf()`内、`ingame-params/subjects/sissela/perpetual-status.ts`、
   `ingame-params/subjects/hisui/t.ts`、`features/subject-config/containers/equipment-list-modal.tsx`
   （旧`components/modal/equipment-list.tsx`。2026-08-29の再編で`features/subject-config/`へ移動済み）。

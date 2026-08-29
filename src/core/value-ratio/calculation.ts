@@ -1,8 +1,8 @@
-import { Status } from "app-types/subject-dynamic/status/type";
+import { Status } from "core/subject-dynamic/status/type";
 import Decimal from "decimal.js";
 import { ValueRatio } from "./type";
-import { SubjectConfig } from "app-types/subject-dynamic/config";
-import { SkillKey } from "app-types/skill";
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { SkillKey } from "core/skill";
 import { extractSkillLevel } from "./extraction";
 
 type Response = { 

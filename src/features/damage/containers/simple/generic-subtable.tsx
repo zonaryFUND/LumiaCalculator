@@ -2,8 +2,8 @@ import * as React from "react";
 import SubTable from "../../components/simple/subtable";
 import StandardDamage from "../potency-rows/standard-damage";
 import UniqueExpression from "../potency-rows/unique-expression";
-import { DamageTableUnit } from "app-types/damage-table/unit";
-import { ValueRatio } from "app-types/value-ratio";
+import { DamageTableUnit } from "core/damage-table/unit";
+import { ValueRatio } from "core/value-ratio";
 import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
 
 type Unit = Omit<DamageTableUnit, "value"> & {

@@ -1,4 +1,4 @@
-import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { SubjectConfig } from "core/subject-dynamic/config";
 import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "react-use";
 import { Migrate, SubjectConfigV1 } from "./migration-v1/config";

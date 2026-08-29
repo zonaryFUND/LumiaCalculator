@@ -1,4 +1,4 @@
-import { calculateValue } from "app-types/value-ratio";
+import { calculateValue } from "core/value-ratio";
 import { DamageTable, DamageTableGenerator, SubjectDamageTableUnit } from "../type";
 import { UniqueValueStrategy } from "../unique-value-strategy";
 import Constants from "./constants";
