@@ -93,16 +93,54 @@
   "heal"`のとき`status.healerGiveHpHealRatio`を乗算する、という「回復効果には回復量増加ステータスを適用する」
   というドメインルールをコンポーネント内に直接実装している。同じルールが`containers/combat/subtables/rows/
   standard-damage.tsx:60-61`（Combat mode）にも**独立して重複実装**されている（`finalPotency =
-  totalPotency.addPercent(healPower ?? 0)`）。Simple/Combatの行コンポーネントが別実装であること自体は
-  [known-issues.md](../../docs/known-issues.md)に既出だが、ここで重複しているのは行の見た目ではなくドメイン
-  ルールそのものであり、計算ロジックが`core/`に集約されていれば本来重複しないはずのもの。
+  totalPotency.addPercent(healPower ?? 0)`）。さらに`containers/potency-rows/unique-expression.tsx:34,39,58`
+  （固有計算ロジックを持つ効果量用）にも**3箇所目の独立実装**が存在する。Simple/Combatの行コンポーネントが
+  別実装であること自体は[known-issues.md](../../docs/known-issues.md)に既出だが、ここで重複しているのは行の
+  見た目ではなくドメインルールそのものであり、計算ロジックが`core/`に集約されていれば本来重複しないはずのもの。
 
 - 対応候補: これらの計算本体（`createMitigation()` / `mitigatedDamage()` / 回復量増加適用ロジック）を`core/`側
   （例: `subject-dynamic/`配下に新設する軽減・ダメージ計算専用ディレクトリ、または既存の`damage-table/`付近）
   へ移動し、`features/damage/`側はReact Context/hookやpropsの橋渡しに徹する薄い層として整理する。
-- 同種のパターンが他にもないか（`features/damage/`配下の`damage-table-util.ts`・
-  `use-{augment,item-skills,tactical-skill,weapon-skills,basic-attack-ratio}.ts`等、および他のpotency-rows/
-  potency-subrowsコンポーネント）は未調査。本項目は見つかった代表例（軽減計算・回復量増加）のみを記録する。
+
+### 8. 効果量計算の共通処理（致命打期待値・動的レシオ解決・倍率合成）も同様に`core/`外に散在
+
+項目7の調査を`features/damage/`配下全体（`damage-table-util.ts`・`use-*.ts`・`containers/**`・
+`components/**`）に広げたところ、さらに以下が見つかった。
+
+- **致命打期待値の計算式が2箇所に独立実装**: `containers/potency-rows/critical-available.tsx:28-38`
+  （Simple mode）は`regularDamage` → `criticalDamage = regularDamage.addPercent(criticalDamageRatio)` →
+  `expectedValue = regularDamage.percent(100 - criticalChance + criticalDamage.percent(criticalChance))`という
+  「致命打確率・致命打ダメージ量から期待値を算出する」計算式を持つ。`containers/combat/subtables/rows/
+  critical-available.tsx:15-20`（Combat mode）にも、変数の組み立て方は違うが数式としては同一のロジックが
+  独立して存在する。ダメージ計算モデル（`docs/damage-model.md`）の中核をなす計算式であるにもかかわらず、
+  `core/`側にこの式の実装が存在しない。
+- **動的レシオ値（対象HP依存など）の解決ロジックが`calculateValue()`の続きとして`core/`外にある**:
+  `core/value-ratio/calculation.ts`の`calculateValue()`は、JSDocで明言している通り、`targetHP` /
+  `targetMaxHP` / `lostHP` / `targetLostHP`のような動的な値のレシオを実際の数値に解決せず、レシオのままの
+  `dynamic`として返す設計になっている。この続き（レシオ×実際の対象HP/自身HPから最終的な数値を算出する処理）
+  を実装しているのが`containers/combat/subtables/rows/use-dynamic-value-calculation.ts`の
+  `useDynamicValueCalculation()`だが、この関数は内部で`React.useState` / `useMemo` / `useContext`などの
+  Reactの機能を一切使っておらず、`use`接頭辞のhook命名にもかかわらず実体は純粋関数である。`calculateValue()`
+  が果たせなかった「動的レシオの最終解決」という役割の後半部分が、`core/value-ratio/`ではなく
+  `features/damage/`側にhookのふりをして存在している状態。Simple mode側は対象HPを扱わない設計のため、
+  `containers/potency-rows/dynamic-ratio-expression.tsx`内で類似のレシオ解決を表示専用に簡易実装しており
+  （`lostHP`のみ）、こちらも本来は同じ関数を参照できるはずの箇所。
+- **`extractMultiplier()`（`damage-table-util.ts`）はReact非依存の純粋関数で、Simple/Combat両モードから
+  正しく共有されている**（重複はしていない）。ただし配置場所が`features/damage/`直下であり、
+  `core/value-ratio/`の`calculateValue()` / `extractSkillLevel()`と役割上は同じ層に属するべきもの。
+- **`use-basic-attack-ratio.ts`の`useBasicAttackRatio()`**: 武器種ごとの基本攻撃威力倍率・弾数を返す
+  ディスパッチ処理（突撃小銃・双剣の特殊ケース判定含む）。参照先の`AssaultRifleAttackRatio` /
+  `DualSwordsAttackRatio`定数は既に`core/subject-dynamic/status/standard-values.ts`にあるが、それを使う
+  判定ロジック自体は`features/damage/`側にある。`React.useMemo`の依存配列は`config.equipment.Weapon`のみで、
+  memo化の恩恵は薄い。
+
+- 対応候補: 致命打期待値の計算式・動的レシオ解決処理を`core/`側の関数として1箇所に実装し直し
+  （`use-dynamic-value-calculation.ts`は`calculateValue()`と対になる関数として`core/value-ratio/`に置くのが
+  自然）、`extractMultiplier()` / `useBasicAttackRatio()`本体もそこへ合流させる。Simple/Combat双方の行
+  コンポーネントはこれらを呼び出すだけの薄い層にする。
+- 上記はいずれも`features/damage/`配下を一通り確認した上での代表例。`potency-subrows/` /
+  `combat/subtables/subrows/`配下の各表示コンポーネント（`heal-power.tsx`・`damage-dependent-heal.tsx`等）は
+  確認した範囲では計算済みの値をpropsで受け取って表示するだけの純粋なViewであり、この課題には該当しない。
 
 ## 関連ドキュメント
 
