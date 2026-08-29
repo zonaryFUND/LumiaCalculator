@@ -98,13 +98,14 @@ const BasicAttack: React.FC<Props> = (props) => {
     return (
         <SubTable
             label={<FormattedMessage id="app.basic-attack" />}
+            labelColSpan={displayCriticalHead ? undefined : 3}
             valueHeaders={
                 displayCriticalHead ? [
-                    <FormattedMessage key="standard" id="app.standard-value" />,
-                    <FormattedMessage key="critical" id="app.critical-hit" />,
-                    <FormattedMessage key="expected" id="app.expected-value" />
+                    {content: <FormattedMessage id="app.standard-value" />},
+                    {content: <FormattedMessage id="app.critical-hit" />},
+                    {content: <FormattedMessage id="app.expected-value" />}
                 ] : [
-                    <FormattedMessage key="standard" id="app.standard-value" />
+                    {content: <FormattedMessage id="app.standard-value" />}
                 ]
             }
             unitsChunks={renderedUnitsChunks}

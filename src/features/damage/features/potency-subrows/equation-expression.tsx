@@ -1,9 +1,10 @@
-import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { ValueRatio } from "app-types/value-ratio";
 import * as React from "react";
 import EquationUnit from "../../components/potency-subrows/equation-unit";
 import { FormattedMessage } from "react-intl";
 import table from "components/common/table.module.styl";
+import { SubjectConfig } from "app-types/subject-dynamic/config";
+import { Status } from "app-types/subject-dynamic/status/type";
 
 /**
  * スキル威力計算式の各要素を結合するとき、「単に前項と+で結合する」か「前項までを()で括ってからxで結合する」のかを返す。
@@ -39,20 +40,22 @@ export function joinEquationStrategy(key: keyof ValueRatio): "add" | "multiply" 
     }
 }
 
-type Props = {
-    ratioKey: keyof ValueRatio
-    ratioElement: React.ReactElement
-}
-
 /**
  * スキル威力値の詳細計算式を表示する行において、各レシオ値に応じた計算式断片を構成する
- * 
+ *
  * たとえば、レベルレシオは単にレベルとの掛け算だが、攻撃力レシオは百分率で表記される
+ *
+ * Reactコンポーネントではなくプレーンな関数として提供している。呼び出し元
+ * （`static-value-equation.tsx`）は、この関数がnullを返すキー（例：武器未装備時のbasicAttackAmp）を
+ * 結合式から除外する必要があるが、`<EquationExpression .../>`とJSXで包んでしまうと要素自体は常に非nullに
+ * なってしまい、実際にnullを返すかどうかを呼び出し元がレンダリング前に判定できなくなるため
  */
-const EquationExpression: React.FC<Props> = ({ratioKey: key, ratioElement}) => {
-    const config = useSubjectStateStore(state => state.config);
-    const status = useSubjectStateStore(state => state.status);
-
+export default function equationExpressionOf(
+    config: SubjectConfig,
+    status: Status,
+    key: keyof ValueRatio,
+    ratioElement: React.ReactElement
+): React.ReactElement | null {
     switch (key) {
         // 基礎値はそのまま表示
         case "base":
@@ -96,5 +99,3 @@ const EquationExpression: React.FC<Props> = ({ratioKey: key, ratioElement}) => {
 
     return null;
 }
-
-export default EquationExpression;

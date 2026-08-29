@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { extractMultiplier } from "components/damage/damage-table-util";
+import { extractMultiplier } from "@app/features/damage/damage-table-util";
 
 // extractMultiplierは「倍率指定の複数の書き方（固定値・スキルレベル依存配列・ラベル付き複数要素）を
 // どう1つの合成倍率にまとめるか」という、ゲームバランスパッチでは変化しないアルゴリズムを担う純粋関数。

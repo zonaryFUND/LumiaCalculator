@@ -9,10 +9,10 @@ import SegmentedControl from "components/common/segmented-control";
 import { CombatHPContext } from "./combat-hp-context";
 import BasicAttack from "./subtables/basic-attack";
 import SubTable from "./subtables/subtable";
-import useItemSkills from "../use-item-skills";
-import useWeaponSkill from "../use-weapon-skills";
-import useTacticalSkill from "../use-tactical-skill";
-import useAugment from "../use-augment";
+import useItemSkills from "@app/features/damage/use-item-skills";
+import useWeaponSkill from "@app/features/damage/use-weapon-skills";
+import useTacticalSkill from "@app/features/damage/use-tactical-skill";
+import useAugment from "@app/features/damage/use-augment";
 import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictionary";
 
 type Props = {

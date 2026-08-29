@@ -11,7 +11,7 @@ import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { calculateValue, extractSkillLevel } from "app-types/value-ratio";
 import { BaseCriticalDamagePercent } from "app-types/subject-dynamic/status/standard-values";
 import Decimal from "decimal.js";
-import { extractMultiplier } from "components/damage/damage-table-util";
+import { extractMultiplier } from "../../damage-table-util";
 
 /**
  * 致命打の可能性があるダメージ（致命打無効になっていない基本攻撃ダメージ属性）について、

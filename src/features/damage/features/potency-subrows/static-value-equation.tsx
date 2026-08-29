@@ -2,7 +2,7 @@ import * as React from "react";
 import { extractSkillLevel, extractStaticValueRatio, ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import { calculateValue } from "app-types/value-ratio";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
-import EquationExpression, { joinEquationStrategy } from "./equation-expression";
+import equationExpressionOf, { joinEquationStrategy } from "./equation-expression";
 
 type Props = {
     /**
@@ -64,16 +64,18 @@ const staticValueEquation: React.FC<Props> = props => {
 
                 return {
                     key,
-                    equationUnit: <EquationExpression key={key} ratioKey={key as keyof ValueRatio} ratioElement={sanitizedValue} />
+                    // レシオキーによっては（例：武器未装備時のbasicAttackAmp）表示すべき内容がなくnullが
+                    // 返ることがある。プレーンな関数呼び出しにすることで、その場合を後段のfilterで
+                    // 結合式そのものから除外できる（結合演算子だけが浮いてしまうのを防ぐ）
+                    equationUnit: equationExpressionOf(config, status, key as keyof ValueRatio, sanitizedValue)
                 }
             })
+            .filter((entry): entry is { key: string, equationUnit: React.ReactElement } => entry.equationUnit != null)
             .reduce((prev, {key, equationUnit}) => {
-                if (equationUnit == null) {
-                    return prev;
-                }
+                const keyedUnit = <React.Fragment key={key}>{equationUnit}</React.Fragment>;
 
                 if (prev.length == 0) {
-                    return [equationUnit];
+                    return [keyedUnit];
                 }
 
                 const strategy = joinEquationStrategy(key as keyof ValueRatio);
@@ -81,18 +83,18 @@ const staticValueEquation: React.FC<Props> = props => {
                     case "add":
                         return prev.concat(
                             <React.Fragment key={`before-${key}`}> + </React.Fragment>,
-                            equationUnit
+                            keyedUnit
                         );
                     case "multiply":
                         if (prev.length < 2) {
                             return prev.concat(
                                 <React.Fragment key={`before-${key}`}> x </React.Fragment>,
-                                equationUnit
+                                keyedUnit
                             );
                         } else {
                             return [
-                                <React.Fragment key={`before-${key}`}>({prev}) x </React.Fragment>, 
-                                equationUnit
+                                <React.Fragment key={`before-${key}`}>({prev}) x </React.Fragment>,
+                                keyedUnit
                             ]
                         }
                 }

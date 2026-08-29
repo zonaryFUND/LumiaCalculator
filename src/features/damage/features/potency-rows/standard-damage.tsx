@@ -4,7 +4,7 @@ import { SubjectConfig } from "app-types/subject-dynamic/config";
 import { extractSkillLevel, ValueOrigin, ValueRatio } from "app-types/value-ratio";
 import { Status } from "app-types/subject-dynamic/status/type";
 import { calculateValue } from "app-types/value-ratio";
-import { extractMultiplier } from "../../../../components/damage/damage-table-util";
+import { extractMultiplier } from "../../damage-table-util";
 import { DamageTableUnit } from "app-types/damage-table/unit";
 import Standard from "../../components/potency-rows/standard";
 import DynamicRatioExpression from "./dynamic-ratio-expression";

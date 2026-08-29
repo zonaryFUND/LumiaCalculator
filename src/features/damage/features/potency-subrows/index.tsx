@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ExtractedMultiplier } from "components/damage/damage-table-util";
+import { ExtractedMultiplier } from "../../damage-table-util";
 import Decimal from "decimal.js";
 import StaticValueEquation from "./static-value-equation";
 import MultiplyEquation from "../../components/potency-subrows/mutiply-equation";

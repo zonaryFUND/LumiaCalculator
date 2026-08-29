@@ -67,34 +67,31 @@ component-guidelines.mdでいう「コンテナ」に相当する処理を、ビ
 表示項目数が多い一覧画面という性質上、chunk単位で厳密に「薄いコンテナ + 専用View」へ割るコストが見合わなかった
 ための意図的な簡略化と見られるが、断定はできない（要確認）。
 
-### damage/ — 作業途上、複数の移行段階が併存
+### damage/ — Simple modeは完成、Combat modeは未着手（2026-08-29更新）
 
-**最も未完成のfeature。** 移行の実態として次の3層が同時に存在している。
+詳細なタスク一覧・発見した問題点は[refactoring-plan.md](./damage/refactoring-plan.md)を参照。以下はその要約。
 
-1. **旧実装（`components/damage/**`）** — 完全にprops経由（`config`/`status`/`hp`のバケツリレー）。
-   Combat mode専用の`components/damage/combat/**`一式は現状これしかなく、`features/damage`側への
-   置き換えがまだ存在しない。
-2. **中間実装（`features/damage/components/damage-table.tsx`）** — Simple mode用のエントリポイント。
-   ここ自体はZustandから`config`/`status`/`hpRatio`を取得するが、配下では依然として旧
-   `components/damage/simple/subtables/*`（`basic-attack.tsx`・`subject-skill.tsx`・`subtable.tsx`）に
-   props経由で受け渡している。つまりトップレベルだけがZustand化され、内側は旧方式のまま。
-3. **新実装（`features/damage/features/*` + `features/damage/components/*`）** — `critical-available.tsx`
-   など、一部の行・サブ行コンポーネントはここまで移行済みで、`useSubjectStateStore`を直接呼んでいる。
-   ただし**このfeatureだけ、Storeアクセスを担う層の名前が`containers/`ではなく`features/`になっており**、
-   他のfeature（subject-config / subject-skills）の命名規則と一致しない。今後統一するなら
-   `features/damage/features/*` → `features/damage/containers/*` へのリネームが候補。
-
-**Combat modeのダメージ表示は現在完全に無効化されている。** `pages/combat/index.tsx`内の
-`<Damage leftStatus={...} ... />`（実体は`pages/combat/damage.tsx`、内部で旧
-`components/damage/combat/damage-table`を使用）がまるごとコメントアウトされている。
-復旧にはCombat mode用のダメージ計算・表示をfeatures/damage側へ移植する作業が必要
-（Simple mode側の移行が完了してから着手する想定と見られる）。
+- **Simple mode（完了）** — すべて`features/damage`配下に移行済み。エントリポイントは
+  `features/damage/features/simple/damage-table.tsx`。カテゴリ別コンテナ
+  （`features/simple/{basic-attack,subject-skill,generic-subtable}.tsx`）が生データを行コンポーネント
+  （`features/potency-rows/*`）に変換し、共通View（`components/simple/subtable.tsx`）へ渡す。
+  `components/damage/simple/`（旧実装）は削除済み。
+- **Combat mode（未着手）** — `components/damage/combat/**`一式が旧実装のまま残っている。完全にprops経由
+  （`config`/`status`/`hp`のバケツリレー）で、Zustand化も新しい行コンポーネントへの統合も行われていない。
+  **ダメージ表示自体が`pages/combat/index.tsx`で丸ごとコメントアウトされ、無効化されている。**
+  移植には「左右2つのStoreインスタンスに1つのコンポーネントから同時アクセスする」ための設計変更が必要
+  （`<Damage>`が左右2つの`CombatModeSubjectConfigProvider`の外側に配置されているため）。
+- **共通計算層** — `features/damage/damage-table-util.ts`・`use-{augment,item-skills,tactical-skill,
+  weapon-skills,basic-attack-ratio}.ts`。Storeに依存しない純粋なフックのため、Simple/Combat両方から
+  共通利用する前提で`features/damage`直下に集約されている（Simple mode専用ディレクトリには置いていない）。
+- **命名規則の不整合は未解消。** `features/damage`のみ、Storeアクセスを担う層の名前が`containers/`ではなく
+  `features/`になっている（`features/damage/features/{potency-rows,potency-subrows,simple}`）。
+  他のfeature（subject-config / subject-skills）の命名規則と一致しない。
 
 ## このブランチ内の未回収作業（TODOメモ）
 
 - `TooltipPresenter`（スキル/装備アイテムのツールチップ）をZustand対応させ、呼び出しを復活させる。
 - Combat modeのダメージテーブルを`features/damage`へ移植し、`pages/combat/index.tsx`の
-  コメントアウトを解除する。
-- `features/damage`のみ`containers/`ではなく`features/`という命名になっている不整合を解消する。
-- `features/damage/components/damage-table.tsx`配下に残る旧`components/damage/simple/subtables/*`の
-  Zustand移行を進める。
+  コメントアウトを解除する（詳細は[damage/refactoring-plan.md](./damage/refactoring-plan.md)のPhase 2・3）。
+- `features/damage`のみ`containers/`ではなく`features/`という命名になっている不整合を解消する
+  （同ドキュメントのPhase 4）。

@@ -18,23 +18,21 @@
 
 上記はコードを実際に読んで確認した内容であり、ユーザーの説明と一致している。
 
-## 現状の実装配置（3層構造）
+## 現状の実装配置
 
-`features/README.md`に記載した通り、damageは移行の実態として3層が併存している。
+**2026-08-29時点でSimple modeの移行は完了した（Phase 0・Phase 1）。** 以下は現状の配置。
 
-1. **旧実装（`components/damage/**`）** — props経由（config/status/hpのバケツリレー）。
-   - `simple/subtables/{basic-attack,subject-skill,subtable}.tsx` — Simple modeで**現在実際に使われている**
-     tbody単位のコンポーネント。ただし内部では新しい行コンポーネント（後述の3.）をimportして使っている。
-   - `combat/**` 一式 — Combat modeの実装はすべてここにあり、新しい行コンポーネントへの移行が一切行われていない。
-   - `damage-table-util.ts`・`use-{augment,item-skills,tactical-skill,weapon-skills}.ts` — config/statusを引数に
-     取る純粋な計算hookで、Simple/Combat両方から共通で呼ばれている。この層はStore有無に依存しないため
-     移行対象外でよい。
-2. **中間実装（`features/damage/components/damage-table.tsx`）** — Simple mode用のエントリポイント。
-   これ自体は`useSubjectStateStore`からconfig/status/hpRatioを取得するが、配下の実描画は1.の旧配置コンポーネントに
-   丸ごと委譲している。
-3. **新実装（`features/damage/features/*` + `features/damage/components/*`）** — `critical-available.tsx`・
-   `standard-damage.tsx`・`unique-expression.tsx`など、行・サブ行コンポーネントは`useSubjectStateStore`を直接
-   呼ぶ形に移行済み。1.の旧配置コンポーネントから呼び出されている。
+- **Simple mode（完了）** — すべて`features/damage`配下。エントリポイントは
+  `features/damage/features/simple/damage-table.tsx`。カテゴリごとのコンテナ
+  （`features/simple/{basic-attack,subject-skill,generic-subtable}.tsx`）が生データを行コンポーネント
+  （`features/potency-rows/*`）へ変換し、共通View（`components/simple/subtable.tsx`）へ渡す構成。
+- **Combat mode（未着手）** — `components/damage/combat/**`一式が旧実装のまま残っている。props経由
+  （config/status/hpのバケツリレー）で、Zustand・新しい行コンポーネントへの移行が一切行われていない。
+  詳細は下記「A. Combat mode有効化に関する問題」を参照。
+- **共通計算層** — `features/damage/damage-table-util.ts`・`use-{augment,item-skills,tactical-skill,
+  weapon-skills,basic-attack-ratio}.ts`。config/statusを引数に取る純粋な計算hookで、Simple/Combat両方から
+  共通で呼ばれる想定のため、Storeに依存しないこの形のまま`features/damage`直下に集約した
+  （Simple mode専用の`features/simple/`配下には置いていない。Combat mode移植時にそのまま再利用するため）。
 
 ## 発見した問題点
 
@@ -58,7 +56,9 @@
    はReact Context経由でprops的に配布されており、Zustand storeとは無関係。Combat modeの軽減計算・体力比計算は
    引き続きこの2つのContextの責務でよいが、配置場所の移動と、Store統合後のProvider設置位置の見直しが必要。
 
-### B. Simple modeの移植未完了・後片付け不足
+### B. Simple modeの移植未完了・後片付け不足（2026-08-29 対応済み）
+
+以下はPhase 0・Phase 1着手前の状態の記録。対応内容はPhase 0・Phase 1のタスク一覧のチェック済み項目を参照。
 
 1. **`features/damage/features/simple/basic-attack.tsx`は孤立した未完成ファイル。**
    どこからもimportされていない（リポジトリ全体をgrepして確認済み）。`export default`が存在せず、
@@ -67,12 +67,17 @@
    （`SubTable`の型は`React.ReactElement[][]`を要求するため型としても不整合）。
    `components/damage/simple/subtables/basic-attack.tsx`（旧配置・実際に使われている方）を
    `features/damage`配下へ移す作業を先に試みて、途中で放棄されたものと推測される。
+   → このファイルを完成させ、`damage-table.tsx`から実際に呼ばれる状態にした。
 2. 実際にSimple modeで使われている`components/damage/simple/subtables/{basic-attack,subject-skill,subtable}.tsx`
    は、新しい行コンポーネントをimportして使っているにも関わらず、自身は旧ディレクトリ`components/damage/`に
    置かれたまま。`config`/`status`/`hp`をpropsで受け取っているが、実際に使っているのは`config`
    （`useBasicAttackRatio`用）のみで、`status`・`hp`は未使用（子コンポーネントが自分でStoreから取得するため）。
+   → `features/damage/features/simple/{basic-attack,subject-skill,generic-subtable}.tsx`へ移植し、
+   未使用propsを廃止した。
 3. `features/damage/components/damage-table.tsx`（Simple modeのエントリ）はStoreから取得した`config`/`status`/
    `hpRatio`を、上記2.の関数にpropsとして再度渡しており、実質的に不要な受け渡しが残っている。
+   → `features/damage/features/simple/damage-table.tsx`へ移動し、不要な受け渡しを削除した
+   （`hpRatio`はどこからも使われていなかったため完全に削除）。
 
 ### C. 命名規則の不統一
 
@@ -97,21 +102,32 @@
 
 ### Phase 0 — 後片付け（複雑度: 低）
 
-- [ ] `features/damage/features/simple/basic-attack.tsx`（孤立ファイル）を削除するか、意図を確認した上で
-      Phase 1の一部として完成させるかを決める。
+- [x] `features/damage/features/simple/basic-attack.tsx`（孤立ファイル）を完成させ、実際に呼ばれる状態にした
+      （2026-08-29）。到達不能コード・`export default`漏れ・`props.unitsChunks`未使用のバグを修正し、
+      `"standard"`/`"disable-critical"`マーカー処理・`damageDependentHeal`フィルタなど旧実装の挙動を移植した。
 - [ ] Combat mode側の軽微なバグを修正する（`damage-dependent-heal.tsx`の`<tr>`欠落・importタイポ、
       `standard-damage.tsx`の全角スペース）。現状無効化されているため今直しても表示への影響はなく、
       Phase 3着手時の障害を減らせる。
 - [ ] `rows/misc.tsx`（空ファイル）を削除するか、`misc`タイプ専用コンポーネントとして実装するかを決める。
 
-### Phase 1 — Simple mode完全移行（複雑度: 低〜中）
+### Phase 1 — Simple mode完全移行（複雑度: 低〜中）（2026-08-29 完了）
 
-- [ ] `components/damage/simple/subtables/{basic-attack,subject-skill,subtable}.tsx`を
-      `features/damage`配下（Phase 4の命名規則と整合する場所）へ移動する。
-- [ ] 上記コンポーネントの`status`・`hp`props（未使用）を削除する。`config`のみで足りるか、
-      あるいは`config`もStoreから直接取得する形にできるか確認する。
-- [ ] `features/damage/components/damage-table.tsx`から、不要になったprops受け渡しを整理する。
-- [ ] 移行完了後、`components/damage/simple/`ディレクトリを空にする。
+- [x] `components/damage/simple/subtables/{basic-attack,subject-skill,subtable}.tsx`を
+      `features/damage/features/simple/{basic-attack,subject-skill,generic-subtable}.tsx`へ移動した。
+      `subtable.tsx`（武器スキル/アイテムスキル/特性/戦術スキルの4箇所で共通利用）は`generic-subtable.tsx`という
+      名前にした（`subject-skill`用の分岐は持たない、より単純な共通コンテナのため）。
+      共通View（`components/simple/subtable.tsx`）は`label`/`labelColSpan`/`valueHeaders`（各セルに
+      `colSpan`指定可）を受け取る形に一般化し、基本攻撃の「標準値/致命打/期待値」3列ヘッダーと、
+      実験体スキル等の「ダメージ / 効果量」統合ヘッダーの両方を、カテゴリ固有の分岐なしで表現できるようにした。
+- [x] 上記コンポーネントの`status`・`hp`props（未使用）を削除した。`config`が必要な箇所（`basic-attack.tsx`の
+      `useBasicAttackRatio`用）のみStoreから直接取得する形にし、他はpropsを一切取らないコンテナにした。
+- [x] `features/damage/components/damage-table.tsx`を`features/damage/features/simple/damage-table.tsx`へ
+      移動し、不要なprops受け渡しを整理した（`hpRatio`はどこからも参照されていなかったため完全に削除）。
+- [x] 移行完了後、`components/damage/simple/`ディレクトリを削除した（空になったため）。
+- [x] （追加対応）`damage-table-util.ts`・`use-{augment,item-skills,tactical-skill,weapon-skills}.ts`を
+      `components/damage/`から`features/damage/`直下へ移動した。Combat modeでも共通利用する想定のため、
+      Simple mode専用の`features/simple/`配下ではなく`features/damage`直下に置いている
+      （Phase 3着手時にそのまま再利用できるように）。
 
 ### Phase 2 — Combat mode有効化のための土台設計（複雑度: 高。着手前に別途設計方針をすり合わせること）
 
@@ -141,17 +157,19 @@
 
 ### Phase 4 — 命名規則の統一（複雑度: 低。他Phase完了後にまとめて実施）
 
-- [ ] `features/damage/features/*` → `features/damage/containers/*`へリネームする
-      （Phase 1・3の移植先をこの命名に合わせて決めておくと二度手間にならない）。
-- [ ] `features/README.md`のdamageセクションを更新する。
+- [ ] `features/damage/features/*`（`potency-rows`・`potency-subrows`・Phase 1で追加した`simple`を含む）
+      → `features/damage/containers/*`へリネームする（Phase 3の移植先をこの命名に合わせて決めておくと
+      二度手間にならない）。
+- [ ] `features/README.md`のdamageセクションを更新する（Simple mode完了・Combat mode未着手の現状を反映）。
 
 ## 推奨する着手順序
 
 Phase 0 → Phase 1 → （Phase 2の設計方針をユーザーとすり合わせ）→ Phase 2 → Phase 3 → Phase 4
 
+（Phase 0・Phase 1は2026-08-29完了。次はPhase 2の設計方針のすり合わせ）
+
 ## 実装前に確認が必要な事項
 
 - Phase 2の設計方針（案a/b/c、またはそれ以外）
-- `features/damage/features/simple/basic-attack.tsx`（孤立ファイル）を存続させる意図の有無
 - Simple/Combatの行コンポーネントをどこまで統合するか（Phase 3、完全共通化 or 独立のまま）
 - `rows/misc.tsx`を専用実装するか削除するか
