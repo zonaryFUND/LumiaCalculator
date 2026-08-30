@@ -2,6 +2,7 @@ import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
 import table from "components/common/table.module.styl";
+import style from "./row-highlight.module.styl";
 
 type Props = {
     labelIntlID: string
@@ -13,21 +14,22 @@ type Props = {
     }
     result: Decimal.Value
     percent?: boolean
+    highlight?: boolean
 }
 
 // 単純な掛け算（レベル比例値など）で算出されるステータス構成値の表示行
 // a x b = result
 // %表記を行う場合、aにのみ%を付与する
-const MultipliedRow: React.FC<Props> = ({ labelIntlID, a, b, result, percent }) => {
+const MultipliedRow: React.FC<Props> = ({ labelIntlID, a, b, result, percent, highlight }) => {
     const bLabel = <span className={table.small}><FormattedMessage id={b.labelIntlID} /></span>;
     const bValue = b.showMinusOne ? <>({b.value.toString()} - 1)</> : <>{b.value.toString()}</>;
 
     return (
-        <tr>
+        <tr className={highlight ? style.temporary : undefined}>
             <td><FormattedMessage id={labelIntlID} /></td>
             <td>
-                <>{a.toString()}{percent} x {bLabel}{bValue}</>
-                <> = {result.toString()}{percent}</>
+                <>{a.toString()}{percent ? "%" : ""} x {bLabel}{bValue}</>
+                <> = {result.toString()}{percent ? "%" : ""}</>
             </td>
         </tr>
     )

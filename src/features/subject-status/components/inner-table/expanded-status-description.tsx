@@ -31,14 +31,21 @@ const ExpandedStatusDescription: React.FC<Props> = props => {
                         }
                     })();
 
+                    // 明示的な指定（component.percent）があればそれを優先し、なければ呼び出し側の一括指定
+                    // （props.percent）、それもなければcalculationTypeから自動判定する（mul = 割合値）
+                    const percent = component.percent ?? props.percent ?? component.calculationType == "mul";
+                    // バフ・デバフ由来（origin: "temporary-status"）の行は背景色で区別する
+                    const highlight = component.origin == "temporary-status";
+
                     switch (component.value.type) {
                         case "constant":
                             return (
                                 <ConstantValueRow
                                     key={`${i}-constant`}
-                                    labelIntlID={labelIntlID} 
-                                    value={component.value.value} 
-                                    showPercent={component.percent} 
+                                    labelIntlID={labelIntlID}
+                                    value={component.value.value}
+                                    showPercent={percent}
+                                    highlight={highlight}
                                 />
                             )
                         case "level-dependent": {
@@ -46,17 +53,18 @@ const ExpandedStatusDescription: React.FC<Props> = props => {
                             const bLabelID = component.value.incrementalFactor.type == "level" ? "app.level" : "app.mastery";
 
                             return (
-                                <MultipliedRow 
+                                <MultipliedRow
                                     key={`${i}-multiplied`}
-                                    labelIntlID={labelIntlID} 
-                                    a={component.value.multiplier} 
+                                    labelIntlID={labelIntlID}
+                                    a={component.value.multiplier}
                                     b={{
                                         labelIntlID: bLabelID,
                                         value: component.value.incrementalFactor.value,
                                         showMinusOne: component.value.incrementalFactor.oneBased
-                                    }} 
-                                    result={component.value.value} 
-                                    percent={component.percent} 
+                                    }}
+                                    result={component.value.value}
+                                    percent={percent}
+                                    highlight={highlight}
                                 />
                             )
                         }
@@ -66,34 +74,36 @@ const ExpandedStatusDescription: React.FC<Props> = props => {
                             return (
                                 <SumAndMultipliedRow
                                     key={`${i}-combined`}
-                                    labelIntlID={labelIntlID} 
-                                    constant={component.value.constant} 
-                                    a={component.value.multiplier} 
+                                    labelIntlID={labelIntlID}
+                                    constant={component.value.constant}
+                                    a={component.value.multiplier}
                                     b={{
                                         labelIntlID: labelID,
                                         value: component.value.incrementalFactor.value,
                                         showMinusOne: component.value.incrementalFactor.oneBased
-                                    }} 
-                                    result={component.value.value} 
-                                    percent={component.percent} 
+                                    }}
+                                    result={component.value.value}
+                                    percent={percent}
+                                    highlight={highlight}
                                 />
                             )
                         }
                         case "status-conversion":
                             return (
-                                <ConstantValueRow 
+                                <ConstantValueRow
                                     key={`${i}-status-conversion`}
-                                    labelIntlID={labelIntlID} 
-                                    value={component.value.value ?? 0} 
-                                    showPercent={component.percent} 
+                                    labelIntlID={labelIntlID}
+                                    value={component.value.value ?? 0}
+                                    showPercent={percent}
+                                    highlight={highlight}
                                 />
                             )
                         case "weapon-base":
                             return (
-                                <WeaponBaseStatus 
+                                <WeaponBaseStatus
                                     key={`${i}-weapon-base`}
-                                    subjectValue={component.value.subject} 
-                                    weaponValue={component.value.weapon} 
+                                    subjectValue={component.value.subject}
+                                    weaponValue={component.value.weapon}
                                 />
                             )
                     }
