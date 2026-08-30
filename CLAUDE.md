@@ -106,6 +106,9 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
 `src/src/ingame-params/augment/`、`cube/`、`tactical-skill/`、`perpetual-outer-buffs/` にも、
 それぞれの対象に対する同様の定義が置かれている。
 
+各発生源に共通する`buff-debuff.ts`（バフ・デバフ定義）の書き方の注意点は
+[ingame-params/README.md](src/ingame-params/README.md)を参照。
+
 ### バランス調整パッチの反映手順
 
 `src/update-guide.md` は、公式のバランス調整パッチノートを反映する定型作業についての指示書（日本語）である。
