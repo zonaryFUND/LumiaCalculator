@@ -8,12 +8,11 @@ export const [
     EquipmentAbilityDamageTable,
     EquipmentAbilityPerpetualStatusDictionary,
     EquipmentAbilityBuffDebuffDictionary,
-    EquipmentAbilityIncomingBuffDebuffCatalog,
-    EquipmentAbilityIncomingBuffDebuffSkillCode
-] = Object.entries(modules).reduce(([tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog, incomingSkillCode], [path, m]) => {
-    if (m.default == undefined || m.default.code == undefined) return [tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog, incomingSkillCode];
+    EquipmentAbilityIncomingBuffDebuffCatalog
+] = Object.entries(modules).reduce(([tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog], [path, m]) => {
+    if (m.default == undefined || m.default.code == undefined) return [tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog];
     const codes = Array.isArray(m.default.code) ? m.default.code : [m.default.code];
-    return codes.reduce(([tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog, incomingSkillCode], code) => {
+    return codes.reduce(([tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog], code) => {
         const damageTable = m.default.damageTable;
         const generator: EquipmentAbilityDamageTableGenerator | undefined =
             damageTable == undefined ? undefined :
@@ -46,18 +45,13 @@ export const [
             {
                 ...incomingCatalog,
                 ...(m.default.givenBuffDebuff ?? {})
-            },
-            {
-                ...incomingSkillCode,
-                ...Object.fromEntries(Object.keys(m.default.givenBuffDebuff ?? {}).map(id => [id, code]))
             }
         ]
-    }, [tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog, incomingSkillCode]);
+    }, [tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog]);
 }, [
     {} as Record<number, EquipmentAbilityTooltipValues>,
     {} as Record<number, EquipmentAbilityDamageTableGenerator>,
     {} as Record<number, EquipmentAbilityPerpetualStatus>,
     {} as Record<number, EquipmentAbilitySelfBuffDebuff>,
-    {} as Record<string, BuffDebuffDefinition>,
-    {} as Record<string, number>
+    {} as Record<string, BuffDebuffDefinition>
 ])

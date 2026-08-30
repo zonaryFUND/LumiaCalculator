@@ -1,22 +1,13 @@
 import { EquipmentID, EquipmentStatusDictionary } from "core/equipment";
 import { SubjectConfig } from "core/subject-dynamic/config";
-import { EquipmentAbilityBuffDebuffDictionary, EquipmentAbilityIncomingBuffDebuffSkillCode } from "@app/ingame-params/equipment-abilities/dictionary";
+import { EquipmentAbilityBuffDebuffDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
 import { SubjectIncomingBuffDebuffSubjectCode } from "@app/ingame-params/subjects/dictionary";
-
-// 全アイテムを対象に、装備アビリティのskillCodeからそれを持つアイテムIDを逆引きする。同一skillCodeを
-// 複数アイテムが持つ場合もありうる（例: 同名スキルを持つ複数装備）ため配列で持つが、表示上は先頭の1件のみ
-// 採用する（他者バフ・デバフ一覧の表示名解決という用途上、致命的な精度は求められないため）
-const itemsBySkillCode: Record<number, EquipmentID[]> = Object.entries(EquipmentStatusDictionary)
-    .reduce((prev, [id, status]) => {
-        return (status.skill ?? []).reduce((prev, ability) => ({
-            ...prev,
-            [ability.skillCode]: [...(prev[ability.skillCode] ?? []), Number(id)]
-        }), prev);
-    }, {} as Record<number, EquipmentID[]>);
+import { IncomingBuffDebuffCatalog } from "./incoming-catalog";
 
 /**
  * 他者バフ・デバフ（`IncomingBuffDebuffCatalog`のid）の発生源表示名を解決するためのIntlメッセージID。
- * 実験体スキル由来なら`Character/Name/{subjectCode}`、装備アビリティ由来なら`Item/Name/{itemID}`。
+ * 実験体スキル由来なら`Character/Name/{subjectCode}`、装備アビリティ由来なら定義の`sourceItems`
+ * （著者が直接指定した発生源アイテムID一覧。複数あれば連結表示する）から`Item/Name/{itemID}`を組み立てる。
  * どちらにも該当しなければ`undefined`（発生源不明。基本的に起こらない想定）
  *
  * 自己バフと異なり、他者バフは発生源が実験体選択に紐付かない（任意の敵から受けうる）ため、
@@ -26,15 +17,20 @@ export function incomingBuffSourceIntlID(id: string): string | undefined {
     const subject = SubjectIncomingBuffDebuffSubjectCode[id];
     if (subject != undefined) return `Character/Name/${subject}`;
 
-    const skillCode = EquipmentAbilityIncomingBuffDebuffSkillCode[id];
-    const itemID = skillCode != undefined ? itemsBySkillCode[skillCode]?.[0] : undefined;
-    return itemID != undefined ? `Item/Name/${itemID}` : undefined;
+    const sourceItems = IncomingBuffDebuffCatalog[id]?.sourceItems;
+    if (!sourceItems || sourceItems.length == 0) return undefined;
+
+    return sourceItems.map(itemID => `Item/Name/${itemID}`).join(" / ");
 }
 
 /**
  * 現在装備しているアイテムのうち、自己バフidを供給しているアイテムのIDを引く。
  * 実験体固有スキル由来（`origin: "skill"`）の自己バフは発生源が選択中の実験体自身であり自明なため、
- * 表示名解決の対象外（呼び出し側でorigin判定して使い分ける）
+ * 表示名解決の対象外（呼び出し側でorigin判定して使い分ける）。
+ *
+ * 他者バフと異なり、実際に装備しているアイテムを直接辿るため`sourceItems`（著者の申告）には依存しない
+ * （1つのskillCodeを複数アイテムが共有していても、または装備ごとに効果量が異なっていても、実際に
+ * 装備しているアイテムはconfig.equipmentから一意に決まる）
  */
 export function equipmentSelfBuffSourceOf(config: SubjectConfig): Record<string, EquipmentID> {
     const { isChestDavid, ...equipment } = config.equipment;
