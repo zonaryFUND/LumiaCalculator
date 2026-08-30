@@ -6,7 +6,7 @@ import Decimal from "decimal.js";
 import { WeaponTypeStatus } from "core/equipment/weapon";
 import { createComponentValue, StatusValueComponent } from "./value-component/component";
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
-import { calculateCooldownValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
+import { calculateCooldownValue, calculateDefenseValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
 import * as es from "es-toolkit";
 import { SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
 import { EquipmentAbilityPerpetualStatusDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
@@ -498,20 +498,22 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
 
     // ステータス変換によって得られる値を計算するために、その部分要素なしのステータスをまず計算する
     const statusWithoutConversion: Status = {
-        ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed"]), v => calculateStatusValue(v)),
+        ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed", "defense"]), v => calculateStatusValue(v)),
         cooldownReduction: calculateCooldownValue(componentStatus.cooldownReduction),
         ultCooldownReduction: calculateCooldownValue(componentStatus.ultCooldownReduction),
         tacticalSkillCooldownReduction: calculateCooldownValue(componentStatus.tacticalSkillCooldownReduction),
-        moveSpeed: calculateMovementSpeedValue(componentStatus.moveSpeed)
+        moveSpeed: calculateMovementSpeedValue(componentStatus.moveSpeed),
+        defense: calculateDefenseValue(componentStatus.defense)
     };
 
 
     const finalStatus: Status = {
-        ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed"]), v => calculateStatusValue(v, statusWithoutConversion)),
+        ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed", "defense"]), v => calculateStatusValue(v, statusWithoutConversion)),
         cooldownReduction: calculateCooldownValue(componentStatus.cooldownReduction, statusWithoutConversion),
         ultCooldownReduction: calculateCooldownValue(componentStatus.ultCooldownReduction, statusWithoutConversion),
         tacticalSkillCooldownReduction: calculateCooldownValue(componentStatus.tacticalSkillCooldownReduction, statusWithoutConversion),
-        moveSpeed: calculateMovementSpeedValue(componentStatus.moveSpeed, statusWithoutConversion)
+        moveSpeed: calculateMovementSpeedValue(componentStatus.moveSpeed, statusWithoutConversion),
+        defense: calculateDefenseValue(componentStatus.defense, statusWithoutConversion)
     };
 
     const summonedInfo = SubjectSummonInfoDictionary[config.subject];

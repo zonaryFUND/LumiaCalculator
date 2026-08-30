@@ -64,6 +64,67 @@ export function calculateStatusValue(componentValue: ComponentStatusValue, statu
 }
 
 /**
+ * ステータス構成単位の配列から最終防御力計算値を求める
+ *
+ * パッチ1.22（2024/05/23、https://playeternalreturn.com/posts/news/1920）以降の防御力算出順序に対応する
+ * 専用ロジック。他のステータス（`calculateStatusValue`）と異なり、単純加算成分を発生源によって2グループに
+ * 分けて扱う。
+ *
+ * 1. 実験体自身・装備由来の単純加算（origin: "subject-status" | "equipment"）をまず合算する（＝「素の防御力」）。
+ * 2. 乗算成分（バフ・デバフによる割合増加・割合減少）を、1.に対して**個別に**乗算する（合算してから1回だけ
+ *    乗算するのではなく、それぞれの倍率を掛け合わせる。例: +10%・-10%・-20%を同時に受けている場合、
+ *    110% x 90% x 80% = 79.2%。合算してから1回だけ適用する一般規則の`calculateStatusValue`とはここが異なる）。
+ * 3. バフ・デバフ由来の単純加算（origin: "perpetual_status" | "temporary-status"、固定値増減）を、
+ *    2.の結果に対して加算する（1.には含めない。＝「結果A」）。
+ *
+ * 詳細は[status-model.md](../../../../docs/status-model.md)の`defense`項目を参照。
+ *
+ * @param componentValue ステータス構成単位と制限を合わせた構造体
+ * @param statusWithoutConversion 変換系ステータスを加算していないステータス値　非undefinedのとき変換系ステータスの算出に用いて、最終ステータス値が得られる
+ * @returns
+ */
+export function calculateDefenseValue(componentValue: ComponentStatusValue, statusWithoutConversion?: Status): StatusValue {
+    const {sum, mul, fix} = groupComponentsAndAddXConvertedValue(componentValue.components, statusWithoutConversion);
+
+    const [baseComponents, buffFlatComponents] = sum.reduce(([base, buffFlat], current) => {
+        return current.origin == "subject-status" || current.origin == "equipment"
+            ? [[...base, current], buffFlat]
+            : [base, [...buffFlat, current]];
+    }, [[] as StatusValueComponent[], [] as StatusValueComponent[]]);
+
+    const [baseSum, sumResult] = baseComponents.reduce(([baseSum, sumResult], current) => {
+        if (current.value.value == undefined) return [baseSum, sumResult];
+
+        switch (current.origin) {
+            case "subject-status":
+                return [baseSum.add(current.value.value), sumResult.add(current.value.value)];
+            default:
+                return [baseSum, sumResult.add(current.value.value)]
+        }
+    }, [new Decimal(0), new Decimal(0)]);
+
+    // 100を起点に各バフ・デバフの倍率を順に掛け合わせた、合成後の割合（例: 79.2）を求める
+    const combinedMultiplierPercent = mul.reduce((prev, current) => prev.addPercent(current.value.value ?? 0), new Decimal(100));
+    const afterMultiplier = sumResult.percent(combinedMultiplierPercent);
+
+    const buffFlatSum = Decimal.sum(...buffFlatComponents.map(c => c.value.value ?? 0), 0);
+
+    const fixed = fix.reduce((prev, current) => {
+        return current.value.value ? new Decimal(current.value.value) : prev;
+    }, afterMultiplier.add(buffFlatSum));
+
+    return {
+        components: [...sum, ...mul, ...fix],
+        additionalValue: fixed.minus(baseSum),
+        sum: sumResult,
+        multiplier: combinedMultiplierPercent.minus(100),
+        calculatedValue: Decimal.min(fixed, componentValue.max ?? Decimal.maxE).cut(componentValue.digit, "floor"),
+        digit: componentValue.digit,
+        max: componentValue.max
+    }
+}
+
+/**
  * ステータス構成単位の配列から最終クールダウン計算値とその他必要な負荷情報をすべて求める
  * 
  * クールダウン減少は100/100+CDRが最終的な割合となる
