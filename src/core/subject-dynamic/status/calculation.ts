@@ -8,9 +8,10 @@ import { createComponentValue, StatusValueComponent } from "./value-component/co
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { calculateCooldownValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
 import * as es from "es-toolkit";
-import { SubjectBuffDebuffDictionary, SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
-import { EquipmentAbilityBuffDebuffDictionary, EquipmentAbilityPerpetualStatusDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
+import { SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { EquipmentAbilityPerpetualStatusDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
 import { IncomingBuffDebuffCatalog } from "@app/ingame-params/buff-debuff/incoming-catalog";
+import { selfBuffDefinitionsOf } from "@app/ingame-params/buff-debuff/self-buff-definitions";
 
 /**
  * 実験体設定および現在のHPから現在ステータスを計算する
@@ -455,17 +456,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
 
     // 実験体固有スキル・装備アビリティによる自己バフ。origin: "temporary-status"（ユーザーがスタックを
     // 切り替えられる）でStatusValueComponentを注入する（origin: "perpetual_status"の恒久パッシブとは区別する）
-    const equipmentBuffDefinitions = Object.entries(equipment)
-        .flatMap(([slot, equipment]) => {
-            if (equipment == null) return [];
-            return (EquipmentStatusDictionary[equipment].skill ?? [])
-                .flatMap(ability => {
-                    const entry = EquipmentAbilityBuffDebuffDictionary[ability.skillCode];
-                    return entry ? [entry(config)] : [];
-                })
-        })
-        .reduce((prev, dict) => ({ ...prev, ...dict }), {});
-    const selfBuffDefinitions = { ...(SubjectBuffDebuffDictionary[config.subject]?.(config) ?? {}), ...equipmentBuffDefinitions };
+    const selfBuffDefinitions = selfBuffDefinitionsOf(config);
     const selfBuffStatus = config.selfBuffs.flatMap(state => {
         const def = selfBuffDefinitions[state.id];
         return def ? [def.buff(state.stack)] : [];

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
-import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
+import { selfBuffDefinitionsOf } from "@app/ingame-params/buff-debuff/self-buff-definitions";
 import BuffRow from "../components/buff-row.view";
 import { effectsOf } from "./effects";
 import { FormattedMessage } from "react-intl";
@@ -12,7 +12,7 @@ import { FormattedMessage } from "react-intl";
 const SelfBuffs: React.FC = () => {
     const config = useSubjectStateStore(s => s.config);
     const setSelfBuffs = useSubjectStateStore(s => s.setSelfBuffs);
-    const definitions = SubjectBuffDebuffDictionary[config.subject]?.(config) ?? {};
+    const definitions = selfBuffDefinitionsOf(config);
 
     if (config.selfBuffs.length == 0) {
         return <p><FormattedMessage id="app.buff-debuff.no-self-buff" /></p>;
