@@ -30,6 +30,7 @@ const SelfBuffs: React.FC = () => {
                             key={state.id}
                             nameIntlID={definition.nameIntlID}
                             maxStack={definition.maxStack}
+                            stackLabels={definition.stackLabels}
                             currentStack={state.stack}
                             effects={effectsOf(definition, state.stack)}
                             onChange={stack => setSelfBuffs(prev => prev.map(

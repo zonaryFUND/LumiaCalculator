@@ -25,11 +25,16 @@ export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment"
  * @property maxStack `BuffDebuffState.stack`が取りうる最大値。スタックは常に0以上の連続した整数値を取る
  * （`0..maxStack`）。「1スタックのみ可能なバフ」は`maxStack: 1`、「切り替え式バフ」も内部的には
  * `0..maxStack`の連続した固有IDとして表現し、UI上の表示名はIntlメッセージキーの命名規則側で解決する。
+ * @property stackLabels プルダウンの各選択肢（0..maxStack、`maxStack + 1`個）に表示するIntlメッセージIDの
+ * 配列。省略時はスタック数をそのまま数字で表示する（ラベルのない数字はスタック数だと自明なため）。
+ * 切り替え式バフ（例: イレムの「形態」）や、本来スタックしない効果の効果量が発生源スキルレベル等
+ * 別の軸で変化する場合（例: 敵のスキルレベルをそのままstackとして代用するデバフ）に指定する
  * @property buff 選択されたスタック値から、そのスタックにおけるステータス変換量を算出する
  */
 export type BuffDebuffDefinition = {
     origin: BuffDebuffOrigin
     nameIntlID: string
     maxStack: number
+    stackLabels?: string[]
     buff: (stack: number) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>
 }

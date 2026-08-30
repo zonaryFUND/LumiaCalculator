@@ -41,6 +41,7 @@ const IncomingBuffs: React.FC = () => {
                                     key={index}
                                     nameIntlID={definition.nameIntlID}
                                     maxStack={definition.maxStack}
+                                    stackLabels={definition.stackLabels}
                                     currentStack={state.stack}
                                     effects={effectsOf(definition, state.stack)}
                                     onChange={stack => setIncomingBuffs(prev => prev.map(
