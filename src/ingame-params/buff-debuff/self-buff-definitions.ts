@@ -1,4 +1,5 @@
 import { BuffDebuffState, SubjectConfig, weaponTypeIDOf } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
 import { EquipmentStatusDictionary } from "core/equipment";
 import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
 import { EquipmentAbilityBuffDebuffDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
@@ -11,14 +12,18 @@ import { BuffDebuffDefinition } from "./type";
  * （`EquipmentAbilityBuffDebuffDictionary`）をすべてマージして返す。`statusOf()`・`self-buffs.tsx`の
  * 両方から共通で参照する（発生源が増えるたびに個別に書くと、一方だけ更新し忘れて自己バフが計算には
  * 反映されるのにUIに出ない、といった食い違いが起きるため）
+ *
+ * @param status 効果量が実験体の現在のステータス（例: スキル増幅の値）にも依存する自己バフのために渡す。
+ * `statusOf()`から呼ぶ場合は自己バフを含まない中間状態のStatus（循環を避けるため）、UI表示目的で呼ぶ場合は
+ * Storeの最終Statusで構わない（`self-buffs.tsx`参照）
  */
-export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, BuffDebuffDefinition> {
-    const subjectDefinitions = SubjectBuffDebuffDictionary[config.subject]?.(config) ?? {};
+export function selfBuffDefinitionsOf(config: SubjectConfig, status: Status): Record<string, BuffDebuffDefinition> {
+    const subjectDefinitions = SubjectBuffDebuffDictionary[config.subject]?.(config, status) ?? {};
 
     // 武器スキルは1武器種につき1モジュールで一意（装備アビリティのように複数アイテムが1skillCodeを
     // 共有することがない）ため、装備中の武器種を引いて定義を取得するだけでよく、名前空間の付与は不要
     const weaponType = weaponTypeIDOf(config);
-    const weaponDefinitions = weaponType ? (WeaponSkillBuffDebuffDictionary[weaponType]?.(config) ?? {}) : {};
+    const weaponDefinitions = weaponType ? (WeaponSkillBuffDebuffDictionary[weaponType]?.(config, status) ?? {}) : {};
 
     // 装備アビリティが返すidは、そのアビリティ内でのみ一意な「ローカルid」（EquipmentAbilityImportedProps
     // 参照）。同一skillCodeを複数アイテムが共有し、かつアイテムごとに内容が異なることがあるため、
@@ -31,7 +36,7 @@ export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, Buf
                 .flatMap(ability => {
                     const entry = EquipmentAbilityBuffDebuffDictionary[ability.skillCode];
                     if (!entry) return [];
-                    const definitions = entry(config, { importedDamage: ability.dmg, importedValues: ability.values });
+                    const definitions = entry({ config, status, importedDamage: ability.dmg, importedValues: ability.values });
                     return Object.entries(definitions).map(([localId, def]) => [`${itemID}:${localId}`, def] as const);
                 });
         })
@@ -48,9 +53,14 @@ export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, Buf
  * （persistの`merge`）にも呼び出す。復元直後に呼ばないと、「保存済みビルドの実験体に、保存後のアップデートで
  * 新しい自己バフ定義が追加された」場合に、次回起動時もselfBuffsが古いまま（空、または一部欠けたまま）に
  * なってしまう（実験体・装備を選び直すまで一切投入されない）
+ *
+ * @param status 呼び出し側（`store.tsx`）が`statusOf(config, 100)`で計算したものを渡す
+ * （このファイルは`calculation.ts`をimportできない。`calculation.ts`が既に`selfBuffDefinitionsOf`を
+ * importしており循環importになるため）。ここでは「どんなidが存在しうるか」というキー集合の算出にしか
+ * 使わないため、多少古いStatusでも実害はない
  */
-export function reconcileSelfBuffs(config: SubjectConfig): BuffDebuffState[] {
-    const definitions = selfBuffDefinitionsOf(config);
+export function reconcileSelfBuffs(config: SubjectConfig, status: Status): BuffDebuffState[] {
+    const definitions = selfBuffDefinitionsOf(config, status);
     return Object.keys(definitions).map(id =>
         config.selfBuffs.find(s => s.id == id) ?? { id, stack: 0 }
     );

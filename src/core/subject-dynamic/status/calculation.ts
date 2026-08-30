@@ -14,10 +14,29 @@ import { IncomingBuffDebuffCatalog } from "@app/ingame-params/buff-debuff/incomi
 import { selfBuffDefinitionsOf } from "@app/ingame-params/buff-debuff/self-buff-definitions";
 
 /**
+ * 各発生源から返された`Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>`を、
+ * ベースとなる`ComponentStatus`へ順に畳み込む
+ */
+function foldComponentStatus(base: ComponentStatus, sources: Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>[]): ComponentStatus {
+    return sources.reduce((prev, dict) => {
+        return Object.entries(dict).reduce((prev, [key, components]) => {
+            const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
+            return {
+                ...prev,
+                [key]: {
+                    ...prevComponent,
+                    components: [...prevComponent.components, ...(components ?? [])]
+                } satisfies ComponentStatusValue
+            }
+        }, prev);
+    }, base);
+}
+
+/**
  * 実験体設定および現在のHPから現在ステータスを計算する
  * @param config 実験体設定
  * @param currentHPRatio 最大HPに対する現在のHPの割合（％）
- * @returns 
+ * @returns
  */
 export function statusOf(config: SubjectConfig, currentHPRatio: number): Status {
     const level1Status = BaseStatus[config.subject];
@@ -454,47 +473,36 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 })
         });
 
-    // 実験体固有スキル・装備アビリティによる自己バフ。origin: "temporary-status"（ユーザーがスタックを
-    // 切り替えられる）でStatusValueComponentを注入する（origin: "perpetual_status"の恒久パッシブとは区別する）
-    const selfBuffDefinitions = selfBuffDefinitionsOf(config);
-    const selfBuffStatus = config.selfBuffs.flatMap(state => {
-        const def = selfBuffDefinitions[state.id];
-        return def ? [def.buff(state.stack)] : [];
-    });
-
     // 他者から受けるバフ・デバフ。発生源実験体のconfigに依存しない定数カタログ（IncomingBuffDebuffCatalog）
-    // から解決するため、selfBuffStatusと異なり実験体・スキルレベルによる解決は不要
+    // から解決するため、自己バフと異なり実験体・スキルレベルによる解決は不要
     const incomingBuffStatus = config.incomingBuffs.flatMap(state => {
         const def = IncomingBuffDebuffCatalog[state.id];
         return def ? [def.buff(state.stack)] : [];
     });
 
-    const componentStatus = [subjectPerpetulStatus, ...equipmentPerpetualStatus, ...selfBuffStatus, ...incomingBuffStatus].reduce((prev, dict) => {
-        return Object.entries(dict).reduce((prev, [key, components]) => {
-            const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
-            return {
-                ...prev,
-                [key]: {
-                    ...prevComponent,
-                    components: [...prevComponent.components, ...(components ?? [])]
-                } satisfies ComponentStatusValue
-            }
-        }, prev);
-    }, baseComponentStatus);
+    // 自己バフを含まない状態のComponentStatus。自己バフの効果量は実験体の現在のStatus（例: スキル増幅の値）
+    // にも依存しうるため、自己バフ定義の解決に先立って（循環を避けるため自己バフ自身を含まない状態で）
+    // 一度Statusを計算しておく必要がある
+    const componentStatusWithoutSelfBuffs = foldComponentStatus(baseComponentStatus, [subjectPerpetulStatus, ...equipmentPerpetualStatus, ...incomingBuffStatus]);
+    const statusForSelfBuffs: Status = {
+        ...es.mapValues(es.omit(componentStatusWithoutSelfBuffs, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed", "defense"]), v => calculateStatusValue(v)),
+        cooldownReduction: calculateCooldownValue(componentStatusWithoutSelfBuffs.cooldownReduction),
+        ultCooldownReduction: calculateCooldownValue(componentStatusWithoutSelfBuffs.ultCooldownReduction),
+        tacticalSkillCooldownReduction: calculateCooldownValue(componentStatusWithoutSelfBuffs.tacticalSkillCooldownReduction),
+        moveSpeed: calculateMovementSpeedValue(componentStatusWithoutSelfBuffs.moveSpeed),
+        defense: calculateDefenseValue(componentStatusWithoutSelfBuffs.defense)
+    };
 
-    /*
-    const componentStatus = Object.entries(subjectPerpetulStatus).reduce((prev, [key, components]) => {
-        const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
-        return {
-            ...prev,
-            [key]: {
-                ...prevComponent,
-                components: [...prevComponent.components, ...(components ?? [])]
-            } satisfies ComponentStatusValue
-        }
-        
-    }, baseComponentStatus);
-    */
+    // 実験体固有スキル・武器スキル・装備アビリティによる自己バフ。origin: "temporary-status"（ユーザーが
+    // スタックを切り替えられる）でStatusValueComponentを注入する（origin: "perpetual_status"の恒久パッシブ
+    // とは区別する）
+    const selfBuffDefinitions = selfBuffDefinitionsOf(config, statusForSelfBuffs);
+    const selfBuffStatus = config.selfBuffs.flatMap(state => {
+        const def = selfBuffDefinitions[state.id];
+        return def ? [def.buff(state.stack)] : [];
+    });
+
+    const componentStatus = foldComponentStatus(componentStatusWithoutSelfBuffs, selfBuffStatus);
 
     // ステータス変換によって得られる値を計算するために、その部分要素なしのステータスをまず計算する
     const statusWithoutConversion: Status = {

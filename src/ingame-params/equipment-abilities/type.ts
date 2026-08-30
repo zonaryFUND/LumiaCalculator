@@ -29,11 +29,13 @@ export type EquipmentAbilityModule = {
 
     /**
      * 装備アビリティによって得られる自己バフの定義。実験体固有スキルの`SubjectModules.buffDebuff`と同様、
-     * 装備の効果内容が実験体のconfig（レベル等）に依存しうるため、configを引数に取る関数として定義する。
-     * `EquipmentAbilityImportedProps`（`damageTable`/`tooltipValues`と同じ、装備アイテム側から注入される
-     * `dmg`/`values`）も受け取れる。同一skillCodeを複数アイテムが共有していても、アイテムごとに異なる
-     * 効果量を持つ場合（例: 装備ごとに固有の移動速度上昇量を持つ「疾風の足取り」）はこれで表現する。
-     * この関数自体はどのアイテムから呼ばれたか一切知らない（呼び出し側が注入する）
+     * 装備の効果内容が実験体のconfig（レベル等）・計算済みのStatus（例: スキル増幅の値に応じて変化する
+     * 効果量）に依存しうるため、`config`/`status`を受け取る。`EquipmentAbilityImportedProps`
+     * （`damageTable`/`tooltipValues`と同じ、装備アイテム側から注入される`dmg`/`values`）も受け取れる。
+     * 同一skillCodeを複数アイテムが共有していても、アイテムごとに異なる効果量を持つ場合（例: 装備ごとに
+     * 固有の移動速度上昇量を持つ「疾風の足取り」）はこれで表現する。この関数自体はどのアイテムから
+     * 呼ばれたか一切知らない（呼び出し側が注入する）。`EquipmentAbilityTooltipValues`と同じ
+     * オブジェクト引数スタイル
      */
     buffDebuff?: EquipmentAbilitySelfBuffDebuff
 
@@ -53,6 +55,6 @@ export const defineEquipmentAbility = (module: EquipmentAbilityModule) => { retu
 
 export type EquipmentAbilityPerpetualStatus = (config: SubjectConfig, currentHPRatio: number) => Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>
 
-export type EquipmentAbilitySelfBuffDebuff = (config: SubjectConfig, props: EquipmentAbilityImportedProps) => Record<string, BuffDebuffDefinition>
+export type EquipmentAbilitySelfBuffDebuff = (props: { config: SubjectConfig, status: Status } & EquipmentAbilityImportedProps) => Record<string, BuffDebuffDefinition>
 
 export type EquipmentAbilityGivenBuffDebuff = (props: EquipmentAbilityImportedProps) => Record<string, BuffDebuffDefinition>

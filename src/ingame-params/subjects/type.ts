@@ -58,9 +58,12 @@ export type SelfBuffDebuffs = Record<string, BuffDebuffDefinition>
  * 実験体固有のスキルによる自己バフの定義を、実験体設定から算出する
  *
  * スキルレベル等によって効果内容（`nameIntlID`・`availableStacks`・`buff`の効果量）が変化しうるため、
- * `SubjectPerpetualStatus`と同様に`SubjectConfig`を受け取る関数として定義する
+ * `SubjectPerpetualStatus`と同様に`SubjectConfig`を受け取る関数として定義する。効果量が実験体の
+ * 現在のステータス（例: スキル増幅の値）にも依存する場合があるため、計算済みの`Status`も受け取れる
+ * （`statusOf()`内で自己バフを含まない中間状態のStatusとして渡される。呼び出し側で毎回`SubjectConfig`
+ * から計算し直すコストを避けるための設計）
  */
-export type SubjectSelfBuffDebuff = (config: SubjectConfig) => SelfBuffDebuffs
+export type SubjectSelfBuffDebuff = (config: SubjectConfig, status: Status) => SelfBuffDebuffs
 
 export type SubjectModules = {
     code: number

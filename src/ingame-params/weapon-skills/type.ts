@@ -3,6 +3,7 @@ import { WeaponTypeID } from "core/equipment/weapon"
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props"
 import { IntlShape } from "react-intl"
 import { SubjectConfig } from "core/subject-dynamic/config"
+import { Status } from "core/subject-dynamic/status/type"
 import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type"
 
 export type WeaponSkillDamageTableUnit = Omit<DamageTableUnit, "origin">;
@@ -15,7 +16,8 @@ export type WeaponSkillModule = {
 
     /**
      * この武器種の武器スキルによって得られる自己バフの定義。実験体固有スキルの`SubjectModules.buffDebuff`と
-     * 同様、`SubjectConfig`（武器熟練度等に応じて内容が変化しうるため）を引数に取る関数として定義する。
+     * 同様、`SubjectConfig`（武器熟練度等に応じて内容が変化しうるため）・計算済みの`Status`
+     * （例: スキル増幅の値に応じて変化する効果量）を引数に取る関数として定義する。
      * `WeaponTypeID`は1武器種につき1モジュールで一意なため（装備アビリティのように複数アイテムが
      * 1skillCodeを共有することがない）、装備アビリティのような値の注入は不要
      */
@@ -29,5 +31,5 @@ export type WeaponSkillModule = {
     givenBuffDebuff?: Record<string, BuffDebuffDefinition>
 }
 export type WeaponSkillDamageTableGenerator = (props: {intl: IntlShape}) => WeaponSkillDamageTableUnit[];
-export type WeaponSkillSelfBuffDebuff = (config: SubjectConfig) => Record<string, BuffDebuffDefinition>
+export type WeaponSkillSelfBuffDebuff = (config: SubjectConfig, status: Status) => Record<string, BuffDebuffDefinition>
 export const defineWeaponSkill = (props: WeaponSkillModule): WeaponSkillModule => props;
