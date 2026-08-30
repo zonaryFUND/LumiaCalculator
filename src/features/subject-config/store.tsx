@@ -7,9 +7,7 @@ import { persist } from "zustand/middleware"
 import { Migrate } from "@app/storage/migration-v1/config";
 import { Status } from "core/subject-dynamic/status/type";
 import { statusOf } from "core/subject-dynamic/status/calculation";
-import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
-import { EquipmentAbilityBuffDebuffDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
-import { EquipmentStatusDictionary } from "core/equipment";
+import { reconcileSelfBuffs } from "@app/ingame-params/buff-debuff/self-buff-definitions";
 
 type SubjectStateStore = {
     config: SubjectConfig
@@ -64,48 +62,21 @@ export function createSubjectConfigStore(storageKey: string) {
                         },
                         skillLevels: {Q: 0, W: 0, E: 0, R: 0, T: 0},
                         gauge: 0,
-                        stack: 0
+                        stack: 0,
+                        selfBuffs: [], // 実験体ごとに保存されるものではないため、切り替え時に一旦空にしたうえで再構築する
+                        incomingBuffs: []
                     };
 
                     // 実験体固有の自己バフを、スタック0の状態であらためて投入する
-                    // （selfBuffsは実験体ごとに保存されるものではないため、切り替え時に一旦空にしたうえで再構築する。
-                    // 効果内容がスキルレベル等に依存しうるため、リセット後のnextを渡して定義を算出する）
-                    const selfBuffDefinitions = SubjectBuffDebuffDictionary[subject]?.(next) ?? {};
-
-                    return {
-                        ...next,
-                        selfBuffs: Object.entries(selfBuffDefinitions)
-                            .map(([id]) => ({ id, stack: 0 } satisfies BuffDebuffState)),
-                        incomingBuffs: []
-                    };
+                    return { ...next, selfBuffs: reconcileSelfBuffs(next) };
                 }),
                 setEquipment: (equipment: React.SetStateAction<Equipment>) => get()._updateConfig(prev => {
                     const nextEquipment = typeof equipment === "function" ? equipment(prev.equipment) : equipment;
                     const next: SubjectConfig = { ...prev, equipment: nextEquipment };
 
-                    // 装備由来の自己バフを、変更前後の装備構成の差分に応じてselfBuffsへ追加・削除する
-                    // （実験体切り替え時のような一括リセットではなく、変わったスロットぶんだけ差分更新する）
-                    const selfBuffIdsOf = (eq: Equipment) => {
-                        const { isChestDavid, ...slots } = eq;
-                        return Object.values(slots).flatMap(itemID => {
-                            if (itemID == null) return [];
-                            return (EquipmentStatusDictionary[itemID].skill ?? []).flatMap(ability => {
-                                const definitions = EquipmentAbilityBuffDebuffDictionary[ability.skillCode]?.(next) ?? {};
-                                return Object.keys(definitions);
-                            });
-                        });
-                    };
-                    const prevIds = selfBuffIdsOf(prev.equipment);
-                    const nextIds = selfBuffIdsOf(nextEquipment);
-                    const addedIds = nextIds.filter(id => !prevIds.includes(id));
-                    const removedIds = prevIds.filter(id => !nextIds.includes(id));
-
-                    return {
-                        ...next,
-                        selfBuffs: prev.selfBuffs
-                            .filter(s => !removedIds.includes(s.id))
-                            .concat(addedIds.map(id => ({ id, stack: 0 } satisfies BuffDebuffState)))
-                    };
+                    // 装備由来の自己バフを、新しい装備構成に応じてselfBuffsへ追加・削除する
+                    // （外れた装備の自己バフはselfBuffDefinitionsOf(next)に含まれなくなるため自動的に取り除かれる）
+                    return { ...next, selfBuffs: reconcileSelfBuffs(next) };
                 }),
                 setLevel: (level: number) => get()._updateConfig(prev => ({
                     ...prev,
@@ -181,10 +152,17 @@ export function createSubjectConfigStore(storageKey: string) {
                     const restoredConfig = persistedState.config
                         ? { ...SubjectConfigDefault, ...persistedState.config }
                         : currentState.config;
+
+                    // 保存済みのselfBuffsを、現在のコード上の自己バフ定義と突き合わせて再構築する。
+                    // 保存後に対象実験体・装着中の装備へ新しい自己バフ定義が追加された場合でも、
+                    // 実験体・装備を選び直すまで反映されないままになるのを防ぐ（selfBuffsは
+                    // setSubject/setEquipment経由でしか更新されないため、復元時にも同じ導出をかけ直す必要がある）
+                    const config = { ...restoredConfig, selfBuffs: reconcileSelfBuffs(restoredConfig) };
+
                     return {
                         ...currentState,
-                        config: restoredConfig,
-                        status: statusOf(restoredConfig, 100)
+                        config,
+                        status: statusOf(config, 100)
                     }
                 }
             }

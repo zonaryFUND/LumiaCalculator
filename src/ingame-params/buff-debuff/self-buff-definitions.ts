@@ -1,4 +1,4 @@
-import { SubjectConfig } from "core/subject-dynamic/config";
+import { BuffDebuffState, SubjectConfig } from "core/subject-dynamic/config";
 import { EquipmentStatusDictionary } from "core/equipment";
 import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
 import { EquipmentAbilityBuffDebuffDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
@@ -26,4 +26,20 @@ export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, Buf
         .reduce((prev, dict) => ({ ...prev, ...dict }), {});
 
     return { ...subjectDefinitions, ...equipmentDefinitions };
+}
+
+/**
+ * 現在のconfig（実験体・装備）から導出される「あるべきselfBuffs」を計算する。既存の`config.selfBuffs`に
+ * 一致するidがあればそのstackを保持し、新たに存在するidはstack 0で追加、もう存在しないidは取り除く。
+ *
+ * 実験体・装備の変更時（`setSubject`/`setEquipment`）だけでなく、localStorageから復元した直後
+ * （persistの`merge`）にも呼び出す。復元直後に呼ばないと、「保存済みビルドの実験体に、保存後のアップデートで
+ * 新しい自己バフ定義が追加された」場合に、次回起動時もselfBuffsが古いまま（空、または一部欠けたまま）に
+ * なってしまう（実験体・装備を選び直すまで一切投入されない）
+ */
+export function reconcileSelfBuffs(config: SubjectConfig): BuffDebuffState[] {
+    const definitions = selfBuffDefinitionsOf(config);
+    return Object.keys(definitions).map(id =>
+        config.selfBuffs.find(s => s.id == id) ?? { id, stack: 0 }
+    );
 }
