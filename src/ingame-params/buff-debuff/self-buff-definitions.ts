@@ -13,6 +13,9 @@ import { BuffDebuffDefinition } from "./type";
 export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, BuffDebuffDefinition> {
     const subjectDefinitions = SubjectBuffDebuffDictionary[config.subject]?.(config) ?? {};
 
+    // 装備アビリティが返すidは、そのアビリティ内でのみ一意な「ローカルid」（EquipmentAbilityImportedProps
+    // 参照）。同一skillCodeを複数アイテムが共有し、かつアイテムごとに内容が異なることがあるため、
+    // ここ（アイテムを実際に列挙している側）でitemIDを名前空間として付与し、グローバルな一意性を担保する
     const { isChestDavid, ...equipment } = config.equipment;
     const equipmentDefinitions = Object.values(equipment)
         .flatMap(itemID => {
@@ -20,10 +23,12 @@ export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, Buf
             return (EquipmentStatusDictionary[itemID].skill ?? [])
                 .flatMap(ability => {
                     const entry = EquipmentAbilityBuffDebuffDictionary[ability.skillCode];
-                    return entry ? [entry(config)] : [];
+                    if (!entry) return [];
+                    const definitions = entry(config, { importedDamage: ability.dmg, importedValues: ability.values });
+                    return Object.entries(definitions).map(([localId, def]) => [`${itemID}:${localId}`, def] as const);
                 });
         })
-        .reduce((prev, dict) => ({ ...prev, ...dict }), {});
+        .reduce((prev, [id, def]) => ({ ...prev, [id]: def }), {} as Record<string, BuffDebuffDefinition>);
 
     return { ...subjectDefinitions, ...equipmentDefinitions };
 }

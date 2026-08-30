@@ -1,5 +1,6 @@
-import { EquipmentAbilityDamageTableGenerator, EquipmentAbilityModule, EquipmentAbilityPerpetualStatus, EquipmentAbilitySelfBuffDebuff, EquipmentAbilityTooltipValues } from "./type";
+import { EquipmentAbilityDamageTableGenerator, EquipmentAbilityGivenBuffDebuff, EquipmentAbilityModule, EquipmentAbilityPerpetualStatus, EquipmentAbilitySelfBuffDebuff, EquipmentAbilityTooltipValues } from "./type";
 import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { EquipmentStatusDictionary } from "core/equipment";
 
 export const modules = import.meta.glob<{ default: EquipmentAbilityModule }>("./**/index.ts", {eager: true})
 
@@ -8,11 +9,11 @@ export const [
     EquipmentAbilityDamageTable,
     EquipmentAbilityPerpetualStatusDictionary,
     EquipmentAbilityBuffDebuffDictionary,
-    EquipmentAbilityIncomingBuffDebuffCatalog
-] = Object.entries(modules).reduce(([tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog], [path, m]) => {
-    if (m.default == undefined || m.default.code == undefined) return [tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog];
+    EquipmentAbilityGivenBuffDebuffDictionary
+] = Object.entries(modules).reduce(([tooltips, damageTables, perpetuals, buffDebuff, givenBuffDebuff], [path, m]) => {
+    if (m.default == undefined || m.default.code == undefined) return [tooltips, damageTables, perpetuals, buffDebuff, givenBuffDebuff];
     const codes = Array.isArray(m.default.code) ? m.default.code : [m.default.code];
-    return codes.reduce(([tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog], code) => {
+    return codes.reduce(([tooltips, damageTables, perpetuals, buffDebuff, givenBuffDebuff], code) => {
         const damageTable = m.default.damageTable;
         const generator: EquipmentAbilityDamageTableGenerator | undefined =
             damageTable == undefined ? undefined :
@@ -43,15 +44,44 @@ export const [
                 )
             },
             {
-                ...incomingCatalog,
-                ...(m.default.givenBuffDebuff ?? {})
+                ...givenBuffDebuff,
+                ...(
+                    m.default.givenBuffDebuff ? { [code]: m.default.givenBuffDebuff} : {}
+                )
             }
         ]
-    }, [tooltips, damageTables, perpetuals, buffDebuff, incomingCatalog]);
+    }, [tooltips, damageTables, perpetuals, buffDebuff, givenBuffDebuff]);
 }, [
     {} as Record<number, EquipmentAbilityTooltipValues>,
     {} as Record<number, EquipmentAbilityDamageTableGenerator>,
     {} as Record<number, EquipmentAbilityPerpetualStatus>,
     {} as Record<number, EquipmentAbilitySelfBuffDebuff>,
-    {} as Record<string, BuffDebuffDefinition>
+    {} as Record<number, EquipmentAbilityGivenBuffDebuff>
 ])
+
+/**
+ * 他者（敵）から受けるバフ・デバフの、装備アビリティ由来の全カタログ。`EquipmentAbilityGivenBuffDebuffDictionary`
+ * （skillCode単位・未展開の関数）とは別に、全装備アイテムプールを列挙して構築する
+ * （`use-item-skills.ts`が「装備中のアイテム」を列挙するのと同じパターンを「全アイテム」に対して行う。
+ * 他者バフは自分の装備とは無関係な、任意の敵の装備から受けうるため）。
+ *
+ * `EquipmentAbilityImportedProps`（アイテムごとの`dmg`/`values`）をここで注入することで、
+ * 同一skillCodeを複数アイテムが共有し、かつ内容がアイテムごとに異なる場合でも
+ * （例: 装備ごとに固有の攻撃速度減少量を持つ「リッチの掌握」）、アビリティ側は自分がどのアイテムから
+ * 呼ばれたか一切知らずに済む。返ってきたローカルidは、このアイテム列挙側で`${itemID}:${localId}`という
+ * グローバルに一意なキーへ変換する（`source.ts`の`itemIDFromNamespacedId`がこの形式を前提に発生源を解決する）
+ */
+export const EquipmentAbilityIncomingBuffDebuffCatalog: Record<string, BuffDebuffDefinition> = Object.entries(EquipmentStatusDictionary)
+    .reduce((catalog, [itemIDString, status]) => {
+        const itemID = Number(itemIDString);
+        return (status.skill ?? []).reduce((catalog, ability) => {
+            const givenBuffDebuff = EquipmentAbilityGivenBuffDebuffDictionary[ability.skillCode];
+            if (!givenBuffDebuff) return catalog;
+
+            const definitions = givenBuffDebuff({ importedDamage: ability.dmg, importedValues: ability.values });
+            return Object.entries(definitions).reduce((catalog, [localId, definition]) => ({
+                ...catalog,
+                [`${itemID}:${localId}`]: definition
+            }), catalog);
+        }, catalog);
+    }, {} as Record<string, BuffDebuffDefinition>);

@@ -1,6 +1,5 @@
 import { ComponentStatus } from "core/subject-dynamic/status/type";
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component";
-import { EquipmentID } from "core/equipment";
 
 /**
  * バフ・デバフの発生源
@@ -30,18 +29,18 @@ export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment"
  * 配列。省略時はスタック数をそのまま数字で表示する（ラベルのない数字はスタック数だと自明なため）。
  * 切り替え式バフ（例: イレムの「形態」）や、本来スタックしない効果の効果量が発生源スキルレベル等
  * 別の軸で変化する場合（例: 敵のスキルレベルをそのままstackとして代用するデバフ）に指定する
- * @property sourceItems 装備アビリティ由来（`origin: "equipment-ability"`）の場合、この定義を実際に
- * 持つ装備アイテムIDの一覧。1つのskillCodeを複数アイテムが共有することも、逆に1つのアビリティ内で
- * アイテムごとに効果量やこのプロパティ自体が異なる定義を複数用意することもあるため、
- * skillCodeからの自動逆引きではなく著者が直接指定する（他者バフ一覧の発生源表示名解決にのみ使う。
- * 複数指定された場合は表示上すべて連結する）。実験体スキル由来（`origin: "skill"`）では使わない
  * @property buff 選択されたスタック値から、そのスタックにおけるステータス変換量を算出する
+ *
+ * このRecordのキー（id）は、装備アビリティ由来の場合、そのアビリティ内でのみ一意であればよい
+ * 「ローカルid」（例: `"move-speed"`）として扱われる。グローバルな一意性・発生源アイテムの特定は、
+ * アイテムを列挙する呼び出し側（`equipment-abilities/dictionary.ts`・`self-buff-definitions.ts`）が
+ * `${itemID}:${localId}`の形で名前空間を付与することで担保する。定義自体はどのアイテムから
+ * 呼ばれたか一切知らない（`EquipmentAbilityImportedProps`参照）
  */
 export type BuffDebuffDefinition = {
     origin: BuffDebuffOrigin
     nameIntlID: string
     maxStack: number
     stackLabels?: string[]
-    sourceItems?: EquipmentID[]
     buff: (stack: number) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>
 }
