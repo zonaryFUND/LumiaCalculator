@@ -7,10 +7,12 @@ import { SkillTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 import ExpandStatus from "../components/inner-table/expanded-status-description";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
+import useStatusWithoutBuffs from "../use-status-without-buffs";
 import ChunkHeader from "./chunk-header";
 
 const skill: React.FC = () => {
     const skillAmp = useSubjectStateStore(s => s.status.skillAmp);
+    const withoutBuffs = useStatusWithoutBuffs();
     const cooldownReduction = useSubjectStateStore(s => s.status.cooldownReduction);
     const ultCooldownReduction = useSubjectStateStore(s => s.status.ultCooldownReduction);
     const tacticalSkillCooldownReduction = useSubjectStateStore(s => s.status.tacticalSkillCooldownReduction);
@@ -24,9 +26,10 @@ const skill: React.FC = () => {
                 hidden={hidden}
                 toggleHidden={toggleHidden}
             />
-            <Column 
-                name={<><ArrowFatLinesUp weight="fill" /><FormattedMessage id="status.skill-amp" /></>} 
+            <Column
+                name={<><ArrowFatLinesUp weight="fill" /><FormattedMessage id="status.skill-amp" /></>}
                 value={skillAmp.calculatedValue}
+                baseline={withoutBuffs.skillAmp.calculatedValue}
                 expand={
                     skillAmp.calculatedValue.isZero() ? null :
                     <ExpandStatus {...skillAmp} />

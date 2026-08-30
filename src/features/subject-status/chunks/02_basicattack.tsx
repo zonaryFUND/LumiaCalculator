@@ -9,6 +9,7 @@ import { BasicAttackTableHiddenKey } from "@app/storage/status";
 import useStorageBoolean from "@app/storage/boolean";
 import ExpandStatus from "../components/inner-table/expanded-status-description";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
+import useStatusWithoutBuffs from "../use-status-without-buffs";
 import ChunkHeader from "./chunk-header";
 
 const basicAttack: React.FC = () => {
@@ -17,6 +18,7 @@ const basicAttack: React.FC = () => {
     const attackSpeed = useSubjectStateStore(s => s.status.attackSpeed);
     const criticalStrikeChance = useSubjectStateStore(s => s.status.criticalStrikeChance);
     const criticalStrikeDamage = useSubjectStateStore(s => s.status.criticalStrikeDamage);
+    const withoutBuffs = useStatusWithoutBuffs();
 
     const {value: hidden, toggleValue: toggleHidden} = useStorageBoolean(BasicAttackTableHiddenKey);
 
@@ -27,15 +29,17 @@ const basicAttack: React.FC = () => {
                 hidden={hidden}
                 toggleHidden={toggleHidden}
             />
-            <Column 
-                name={<><Sword /><FormattedMessage id="status.attack-power" /></>} 
-                value={attackPower.calculatedValue} 
+            <Column
+                name={<><Sword /><FormattedMessage id="status.attack-power" /></>}
+                value={attackPower.calculatedValue}
+                baseline={withoutBuffs.attackPower.calculatedValue}
                 expand={<ExpandStatus {...attackPower} />}
                 isHidden={hidden}
             />
-            <Column 
-                name={<><span className={style.basic_attack_amp}><Sword /><Plus weight="bold" /></span><FormattedMessage id="status.basic-attack-amp" /></>} 
+            <Column
+                name={<><span className={style.basic_attack_amp}><Sword /><Plus weight="bold" /></span><FormattedMessage id="status.basic-attack-amp" /></>}
                 value={increaseBasicAttackDamageRatio.calculatedValue}
+                baseline={withoutBuffs.increaseBasicAttackDamageRatio.calculatedValue}
                 expand={
                     increaseBasicAttackDamageRatio.calculatedValue.isZero() ? null :
                     <ExpandStatus {...increaseBasicAttackDamageRatio} percent />
@@ -43,27 +47,30 @@ const basicAttack: React.FC = () => {
                 percent
                 isHidden={hidden}
             />
-            <Column 
-                name={<><AttackSpeed /><FormattedMessage id="status.attack-speed" /></>} 
-                value={attackSpeed.calculatedValue} 
+            <Column
+                name={<><AttackSpeed /><FormattedMessage id="status.attack-speed" /></>}
+                value={attackSpeed.calculatedValue}
+                baseline={withoutBuffs.attackSpeed.calculatedValue}
                 expand={<ExpandStatus {...attackSpeed} />}
                 isHidden={hidden}
             />
-            <Column 
-                name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>} 
-                value={criticalStrikeChance.calculatedValue} 
+            <Column
+                name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>}
+                value={criticalStrikeChance.calculatedValue}
+                baseline={withoutBuffs.criticalStrikeChance.calculatedValue}
                 expand={
-                    criticalStrikeChance.components.findIndex(c => c.origin != "equipment") > -1 ? 
+                    criticalStrikeChance.components.findIndex(c => c.origin != "equipment") > -1 ?
                     <ExpandStatus {...criticalStrikeChance} percent /> : null
                 }
-                percent 
+                percent
                 isHidden={hidden}
             />
-            <Column 
-                name={<><span className={style.critical_damage}><Crosshair /><Plus weight="bold" /></span><FormattedMessage id="status.critical-damage" /></>} 
-                value={criticalStrikeDamage.calculatedValue} 
-                percent 
-                isHidden={hidden} 
+            <Column
+                name={<><span className={style.critical_damage}><Crosshair /><Plus weight="bold" /></span><FormattedMessage id="status.critical-damage" /></>}
+                value={criticalStrikeDamage.calculatedValue}
+                baseline={withoutBuffs.criticalStrikeDamage.calculatedValue}
+                percent
+                isHidden={hidden}
             />
         </tbody>
     );

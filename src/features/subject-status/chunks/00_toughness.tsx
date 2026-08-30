@@ -8,12 +8,14 @@ import style from "./00_toughness.module.styl"
 import useStorageBoolean from "@app/storage/boolean";
 import { ToughnessTableHiddenKey } from "@app/storage/status";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
+import useStatusWithoutBuffs from "../use-status-without-buffs";
 import ChunkHeader from "./chunk-header";
 
 const toughness: React.FC = () => {
     const maxHp = useSubjectStateStore(s => s.status.maxHp);
     const defense = useSubjectStateStore(s => s.status.defense);
     const hpRegen = useSubjectStateStore(s => s.status.hpRegen);
+    const withoutBuffs = useStatusWithoutBuffs();
     const preventBasicAttackDamaged = useSubjectStateStore(s => s.status.preventBasicAttackDamaged);
     const preventBasicAttackDamagedRatio = useSubjectStateStore(s => s.status.preventBasicAttackDamagedRatio);
     const preventSkillDamagedRatio = useSubjectStateStore(s => s.status.preventSkillDamagedRatio);
@@ -31,21 +33,24 @@ const toughness: React.FC = () => {
                 hidden={hidden}
                 toggleHidden={toggleHidden}
             />
-                <Column 
-                    name={<><FirstAid weight="fill" /><FormattedMessage id="status.maxhp"/></>} 
-                    value={maxHp.calculatedValue} 
+                <Column
+                    name={<><FirstAid weight="fill" /><FormattedMessage id="status.maxhp"/></>}
+                    value={maxHp.calculatedValue}
+                    baseline={withoutBuffs.maxHp.calculatedValue}
                     expand={<ExpandStatus {...maxHp} />}
                     isHidden={hidden}
                 />
-                <Column 
-                    name={<><FirstAid /><FormattedMessage id="status.hpregen"/></>} 
-                    value={hpRegen.calculatedValue} 
+                <Column
+                    name={<><FirstAid /><FormattedMessage id="status.hpregen"/></>}
+                    value={hpRegen.calculatedValue}
+                    baseline={withoutBuffs.hpRegen.calculatedValue}
                     expand={<ExpandStatus {...hpRegen} />}
                     isHidden={hidden}
                 />
-                <Column 
-                    name={<><Shield /><FormattedMessage id="status.defense"/></>} 
-                    value={defense.calculatedValue} 
+                <Column
+                    name={<><Shield /><FormattedMessage id="status.defense"/></>}
+                    value={defense.calculatedValue}
+                    baseline={withoutBuffs.defense.calculatedValue}
                     isHidden={hidden}
                     expand={<ExpandStatus {...defense} />}
                 />

@@ -9,6 +9,7 @@ import useStorageBoolean from "@app/storage/boolean";
 import ExpandStatus from "../components/inner-table/expanded-status-description";
 import MoveSpeedSubRow from "./move-speed-sub-row";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
+import useStatusWithoutBuffs from "../use-status-without-buffs";
 import ChunkHeader from "./chunk-header";
 
 const misc: React.FC = () => {
@@ -17,6 +18,7 @@ const misc: React.FC = () => {
     const slowResist = useSubjectStateStore(s => s.status.slowResist);
     const sightRange = useSubjectStateStore(s => s.status.sightRange);
     const attackRange = useSubjectStateStore(s => s.status.attackRange);
+    const withoutBuffs = useStatusWithoutBuffs();
 
     const {value: hidden, toggleValue: toggleHidden} = useStorageBoolean(MiscTableHiddenKey);
 
@@ -27,36 +29,40 @@ const misc: React.FC = () => {
                 hidden={hidden}
                 toggleHidden={toggleHidden}
             />
-            <Column 
-                name={<><HandFist /><FormattedMessage id="status.tenacity" /></>} 
+            <Column
+                name={<><HandFist /><FormattedMessage id="status.tenacity" /></>}
                 value={tenacity.calculatedValue}
+                baseline={withoutBuffs.tenacity.calculatedValue}
                 expand={
-                    tenacity.components.findIndex(c => c.origin != "equipment") > -1 ? 
+                    tenacity.components.findIndex(c => c.origin != "equipment") > -1 ?
                     <ExpandStatus {...tenacity} /> : null
                 }
-                percent 
-                isHidden={hidden} 
+                percent
+                isHidden={hidden}
             />
-            <Column 
-                name={<><SneakerMove /><FormattedMessage id="status.movement-speed" /></>} 
-                value={moveSpeed.calculatedValue} 
+            <Column
+                name={<><SneakerMove /><FormattedMessage id="status.movement-speed" /></>}
+                value={moveSpeed.calculatedValue}
+                baseline={withoutBuffs.moveSpeed.calculatedValue}
                 expand={
-                    <ExpandStatus 
-                        {...moveSpeed} 
+                    <ExpandStatus
+                        {...moveSpeed}
                         additionalSubRow={<MoveSpeedSubRow {...moveSpeed} />}
                     />
                 }
                 isHidden={hidden}
             />
-            <Column 
-                name={<><Boot />移動速度減少耐性</>} 
-                value={slowResist.calculatedValue} 
+            <Column
+                name={<><Boot />移動速度減少耐性</>}
+                value={slowResist.calculatedValue}
+                baseline={withoutBuffs.slowResist.calculatedValue}
                 isHidden={hidden}
                 percent
             />
-            <Column 
-                name={<><Eye /><FormattedMessage id="status.vision" /></>} 
-                value={sightRange.calculatedValue} 
+            <Column
+                name={<><Eye /><FormattedMessage id="status.vision" /></>}
+                value={sightRange.calculatedValue}
+                baseline={withoutBuffs.sightRange.calculatedValue}
                 expand={
                     sightRange.components.findIndex(c => c.origin != "subject-status") > -1 ?
                     <ExpandStatus {...sightRange} />
@@ -64,9 +70,10 @@ const misc: React.FC = () => {
                 }
                 isHidden={hidden}
             />
-            <Column 
-                name={<><ArrowFatLineRight />基本攻撃射程</>} 
-                value={attackRange.calculatedValue} 
+            <Column
+                name={<><ArrowFatLineRight />基本攻撃射程</>}
+                value={attackRange.calculatedValue}
+                baseline={withoutBuffs.attackRange.calculatedValue}
                 expand={
                     attackRange.components.findIndex(c => c.value.type != "weapon-base") > -1 ?
                     <ExpandStatus {...attackRange} />

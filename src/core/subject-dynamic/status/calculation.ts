@@ -1,6 +1,7 @@
 import { BaseStatus, BaseStatusType, LevelUpStatus, LevelUpStatusType, WeaponMasteryStatus } from "core/subject-static";
 import { adaptiveForceTargetOf, SubjectConfig, weaponTypeIDOf } from "../config";
 import { ComponentStatus, ComponentStatusValue, Status } from "./type";
+import { StatusValue } from "./value-component/type";
 import { DavidChestArmorUpgradeDictionary, EquipmentBaseStatus, EquipmentStatusDictionary } from "core/equipment";
 import Decimal from "decimal.js";
 import { WeaponTypeStatus } from "core/equipment/weapon";
@@ -528,11 +529,43 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
 
     return {
         ...finalStatus,
-        summoned: (summonedInfo?.length ?? 0) > 0 ? 
+        summoned: (summonedInfo?.length ?? 0) > 0 ?
             summonedInfo.map(info => ({
                 nameIntlID: info.nameIntlID,
                 status: info.status(finalStatus, config)
             }))
             : undefined
     }
+}
+
+/**
+ * 既に計算済みの`Status`から、バフ・デバフ（`origin: "temporary-status"`）の寄与をすべて取り除いた版を導出する。
+ *
+ * 個々のバフ・デバフの「実際の寄与量」は、防御力の割合合成（複数の%が掛け算で合成される）や移動速度の
+ * 区分関数補正のように合成順序に依存するステータスでは一意に定義できない。かわりに「全バフ・デバフあり」
+ * と「全バフ・デバフなし」を比較する、より粗い粒度の反実仮想（`core/README.md`項目10参照）だけを提供する。
+ *
+ * `Status`の各フィールドは既に最終的な（値が解決済みの）`components`配列を保持しているため、`config`から
+ * 再計算する必要はなく、`origin == "temporary-status"`の要素を除いた配列を対応する`calculateXValue`に
+ * もう一度通すだけでよい。`status-conversion`型の値は既に`.value.value`へ解決済みであり、
+ * `calculateXValue`を`statusWithoutConversion`引数なしで呼んでも（`groupComponentsAndAddXConvertedValue`の
+ * ガードにより）再解決されずそのまま使われるため、これだけで安全に計算できる
+ */
+export function withoutTemporaryStatus(status: Status): Status {
+    const strip = (components: StatusValueComponent[]) => components.filter(c => c.origin != "temporary-status");
+
+    return {
+        ...es.mapValues(
+            es.omit(status, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed", "defense", "summoned"]),
+            (v: StatusValue) => calculateStatusValue({ digit: v.digit, max: v.max, components: strip(v.components) })
+        ),
+        cooldownReduction: calculateCooldownValue({ digit: 0, components: strip(status.cooldownReduction.components) }),
+        ultCooldownReduction: calculateCooldownValue({ digit: 0, components: strip(status.ultCooldownReduction.components) }),
+        tacticalSkillCooldownReduction: calculateCooldownValue({ digit: 0, components: strip(status.tacticalSkillCooldownReduction.components) }),
+        // MovementSpeedValueはdigitを持たない（calculateMovementSpeedValue内部でも使われない。
+        // moveSpeedの表示桁数は常に2で固定されている）ため、ここでは定数を渡すだけでよい
+        moveSpeed: calculateMovementSpeedValue({ digit: 2, components: strip(status.moveSpeed.components) }),
+        defense: calculateDefenseValue({ digit: status.defense.digit, max: status.defense.max, components: strip(status.defense.components) }),
+        summoned: status.summoned
+    };
 }
