@@ -8,6 +8,8 @@ import { Migrate } from "@app/storage/migration-v1/config";
 import { Status } from "core/subject-dynamic/status/type";
 import { statusOf } from "core/subject-dynamic/status/calculation";
 import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
+import { EquipmentAbilityBuffDebuffDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
+import { EquipmentStatusDictionary } from "core/equipment";
 
 type SubjectStateStore = {
     config: SubjectConfig
@@ -77,10 +79,34 @@ export function createSubjectConfigStore(storageKey: string) {
                         incomingBuffs: []
                     };
                 }),
-                setEquipment: (equipment: React.SetStateAction<Equipment>) => get()._updateConfig(prev => ({
-                    ...prev,
-                    equipment: typeof equipment === "function" ? equipment(prev.equipment) : equipment
-                })),
+                setEquipment: (equipment: React.SetStateAction<Equipment>) => get()._updateConfig(prev => {
+                    const nextEquipment = typeof equipment === "function" ? equipment(prev.equipment) : equipment;
+                    const next: SubjectConfig = { ...prev, equipment: nextEquipment };
+
+                    // 装備由来の自己バフを、変更前後の装備構成の差分に応じてselfBuffsへ追加・削除する
+                    // （実験体切り替え時のような一括リセットではなく、変わったスロットぶんだけ差分更新する）
+                    const selfBuffIdsOf = (eq: Equipment) => {
+                        const { isChestDavid, ...slots } = eq;
+                        return Object.values(slots).flatMap(itemID => {
+                            if (itemID == null) return [];
+                            return (EquipmentStatusDictionary[itemID].skill ?? []).flatMap(ability => {
+                                const definitions = EquipmentAbilityBuffDebuffDictionary[ability.skillCode]?.(next) ?? {};
+                                return Object.keys(definitions);
+                            });
+                        });
+                    };
+                    const prevIds = selfBuffIdsOf(prev.equipment);
+                    const nextIds = selfBuffIdsOf(nextEquipment);
+                    const addedIds = nextIds.filter(id => !prevIds.includes(id));
+                    const removedIds = prevIds.filter(id => !nextIds.includes(id));
+
+                    return {
+                        ...next,
+                        selfBuffs: prev.selfBuffs
+                            .filter(s => !removedIds.includes(s.id))
+                            .concat(addedIds.map(id => ({ id, stack: 0 } satisfies BuffDebuffState)))
+                    };
+                }),
                 setLevel: (level: number) => get()._updateConfig(prev => ({
                     ...prev,
                     level

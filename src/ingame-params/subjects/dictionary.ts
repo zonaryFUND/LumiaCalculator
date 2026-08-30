@@ -14,7 +14,7 @@ export const [
     SubjectGaugeInfoDictionary,
     SubjectWeaponSkillOverrideDictionary,
     SubjectBuffDebuffDictionary,
-    IncomingBuffDebuffCatalog
+    SubjectIncomingBuffDebuffCatalog
 ] = Object.entries(modules).reduce(([
         skillLists,
         tooltips,

@@ -3,7 +3,7 @@ import { useToggle } from "react-use";
 import Modal from "react-modal";
 import { FormattedMessage } from "react-intl";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
-import { IncomingBuffDebuffCatalog } from "@app/ingame-params/subjects/dictionary";
+import { IncomingBuffDebuffCatalog } from "@app/ingame-params/buff-debuff/incoming-catalog";
 import BuffRow from "../components/buff-row.view";
 import { effectsOf } from "./effects";
 import common from "@app/common.module.styl";
