@@ -2,7 +2,7 @@ import * as React from "react";
 import { FormattedMessage } from "react-intl";
 import Decimal from "decimal.js";
 import PullDown from "components/common/pull-down";
-import style from "./self-buff-row.module.styl";
+import style from "./buff-row.module.styl";
 
 export type Effect = {
     // 仮でStatusのkeyをそのまま表示する（intlID経由の翻訳表示は別途対応予定）
@@ -17,15 +17,18 @@ type Props = {
     currentStack: number
     effects: Effect[]
     onChange: (stack: number) => void
+    onRemove?: () => void
 }
 
 /**
- * 自己バフ1件ぶんの、名称・スタック変更UI・現在のスタックにおける効果を表示する行
+ * バフ・デバフ1件ぶんの、名称・スタック変更UI・現在のスタックにおける効果を表示する行。
+ * 自己バフ（`self-buffs.tsx`）・他者バフ（`incoming-buffs.tsx`）の両コンテナで共有する
  *
  * スタックの最大値が1（1スタックのみ可能なバフ）の場合はチェックボックス、それ以外
- * （複数スタック可能・切り替え式）の場合はプルダウンで表示する。スタックが0の間は効果を表示しない
+ * （複数スタック可能・切り替え式）の場合はプルダウンで表示する。スタックが0の間は効果を表示しない。
+ * `onRemove`が指定された場合のみ削除ボタンを表示する（他者バフのみ削除可能で、自己バフは削除不可のため）
  */
-const SelfBuffRow: React.FC<Props> = props => {
+const BuffRow: React.FC<Props> = props => {
     const isCheckbox = props.maxStack == 1;
     const stackOptions = React.useMemo(
         () => Array.from({ length: props.maxStack + 1 }, (_, i) => String(i)),
@@ -52,6 +55,11 @@ const SelfBuffRow: React.FC<Props> = props => {
                         }}
                     />
                 }
+                {
+                    props.onRemove ?
+                    <button type="button" className={style.remove} onClick={props.onRemove}>×</button> :
+                    null
+                }
             </div>
             {
                 props.effects.length > 0 ?
@@ -75,4 +83,4 @@ const SelfBuffRow: React.FC<Props> = props => {
     );
 };
 
-export default SelfBuffRow;
+export default BuffRow;

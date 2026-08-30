@@ -8,7 +8,7 @@ import { createComponentValue, StatusValueComponent } from "./value-component/co
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { calculateCooldownValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
 import * as es from "es-toolkit";
-import { SubjectBuffDebuffDictionary, SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { IncomingBuffDebuffCatalog, SubjectBuffDebuffDictionary, SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
 import { EquipmentAbilityPerpetualStatusDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
 
 /**
@@ -460,7 +460,14 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         return def ? [def.buff(state.stack)] : [];
     });
 
-    const componentStatus = [subjectPerpetulStatus, ...equipmentPerpetualStatus, ...selfBuffStatus].reduce((prev, dict) => {
+    // 他者から受けるバフ・デバフ。発生源実験体のconfigに依存しない定数カタログ（IncomingBuffDebuffCatalog）
+    // から解決するため、selfBuffStatusと異なり実験体・スキルレベルによる解決は不要
+    const incomingBuffStatus = config.incomingBuffs.flatMap(state => {
+        const def = IncomingBuffDebuffCatalog[state.id];
+        return def ? [def.buff(state.stack)] : [];
+    });
+
+    const componentStatus = [subjectPerpetulStatus, ...equipmentPerpetualStatus, ...selfBuffStatus, ...incomingBuffStatus].reduce((prev, dict) => {
         return Object.entries(dict).reduce((prev, [key, components]) => {
             const prevComponent = (prev[key as keyof ComponentStatus] as ComponentStatusValue ?? []);
             return {

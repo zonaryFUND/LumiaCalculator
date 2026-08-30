@@ -15,14 +15,19 @@ import { StatusValueComponent } from "core/subject-dynamic/status/value-componen
 export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment"
 
 /**
- * 自己バフ（`SubjectConfig.selfBuffs`）1件の定義
+ * バフ・デバフ（`SubjectConfig.selfBuffs`/`incomingBuffs`）1件の定義
+ *
+ * 自己バフ・他者バフの両カタログで共有する形状。自己バフ側は`SubjectSelfBuffDebuff`
+ * （`SubjectConfig`を引数に取る関数）が算出したものを使うのに対し、他者バフ側
+ * （`SubjectModules.givenBuffDebuff`）は発生源実験体のconfigを受信側の計算機が保持していないため、
+ * この型自体はconfigに依存しない定数として定義される。
  *
  * @property maxStack `BuffDebuffState.stack`が取りうる最大値。スタックは常に0以上の連続した整数値を取る
  * （`0..maxStack`）。「1スタックのみ可能なバフ」は`maxStack: 1`、「切り替え式バフ」も内部的には
  * `0..maxStack`の連続した固有IDとして表現し、UI上の表示名はIntlメッセージキーの命名規則側で解決する。
  * @property buff 選択されたスタック値から、そのスタックにおけるステータス変換量を算出する
  */
-export type SelfBuffDefinition = {
+export type BuffDebuffDefinition = {
     origin: BuffDebuffOrigin
     nameIntlID: string
     maxStack: number

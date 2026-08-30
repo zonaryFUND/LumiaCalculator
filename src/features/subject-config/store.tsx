@@ -27,6 +27,7 @@ type SubjectStateStore = {
     setMovementMastery: (movementMastery: number) => void
     setSkillLevels: (skillLevels: React.SetStateAction<SkillLevels>) => void
     setSelfBuffs: (selfBuffs: React.SetStateAction<BuffDebuffState[]>) => void
+    setIncomingBuffs: (incomingBuffs: React.SetStateAction<BuffDebuffState[]>) => void
     setGauge: (gauge: React.SetStateAction<number>) => void
     setStack: (stack: React.SetStateAction<number>) => void
     setHpRatio: (hpRatio: React.SetStateAction<number>) => void
@@ -103,6 +104,10 @@ export function createSubjectConfigStore(storageKey: string) {
                 setSelfBuffs: (selfBuffs: React.SetStateAction<BuffDebuffState[]>) => get()._updateConfig(prev => ({
                     ...prev,
                     selfBuffs: typeof selfBuffs === "function" ? selfBuffs(prev.selfBuffs) : selfBuffs
+                })),
+                setIncomingBuffs: (incomingBuffs: React.SetStateAction<BuffDebuffState[]>) => get()._updateConfig(prev => ({
+                    ...prev,
+                    incomingBuffs: typeof incomingBuffs === "function" ? incomingBuffs(prev.incomingBuffs) : incomingBuffs
                 })),
                 setGauge: (gauge: React.SetStateAction<number>) => get()._updateConfig(prev => ({
                     ...prev,

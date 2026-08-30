@@ -1,5 +1,6 @@
 import { SubjectCode } from "core/subject-static";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
+import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
 import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectSelfBuffDebuff, SubjectStackInfo, SummonInfo } from "./type";
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});
@@ -12,7 +13,8 @@ export const [
     SubjectStackInfoDictionary,
     SubjectGaugeInfoDictionary,
     SubjectWeaponSkillOverrideDictionary,
-    SubjectBuffDebuffDictionary
+    SubjectBuffDebuffDictionary,
+    IncomingBuffDebuffCatalog
 ] = Object.entries(modules).reduce(([
         skillLists,
         tooltips,
@@ -22,7 +24,8 @@ export const [
         stackInfo,
         gaugeInfo,
         weaponSkillOverride,
-        buffDebuff
+        buffDebuff,
+        incomingCatalog
     ], [key, m]) => {
     const subjectCode = m.default.code;
     return [
@@ -34,7 +37,8 @@ export const [
         {...stackInfo, ...(m.default.stackInfo ? { [subjectCode]: m.default.stackInfo } : {})},
         {...gaugeInfo, ...(m.default.gaugeInfo ? { [subjectCode]: m.default.gaugeInfo } : {})},
         {...weaponSkillOverride, ...(m.default.weaponSkillLevelOverride ? { [subjectCode]: m.default.weaponSkillLevelOverride } : {}) },
-        {...buffDebuff, ...(m.default.buffDebuff ? { [subjectCode]: m.default.buffDebuff } : {})}
+        {...buffDebuff, ...(m.default.buffDebuff ? { [subjectCode]: m.default.buffDebuff } : {})},
+        {...incomingCatalog, ...(m.default.givenBuffDebuff ?? {})}
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
@@ -46,4 +50,5 @@ export const [
     {} as Record<SubjectCode, SubjectGaugeInfo>,
     {} as Record<SubjectCode, (mastery: number) => number>,
     {} as Record<SubjectCode, SubjectSelfBuffDebuff>,
+    {} as Record<string, BuffDebuffDefinition>,
 ])

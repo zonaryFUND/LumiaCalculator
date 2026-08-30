@@ -1,22 +1,9 @@
 import * as React from "react";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
-import { SelfBuffDefinition } from "@app/ingame-params/buff-debuff/type";
-import SelfBuffRow, { Effect } from "../components/self-buff-row.view";
+import BuffRow from "../components/buff-row.view";
+import { effectsOf } from "./effects";
 import { FormattedMessage } from "react-intl";
-
-// stackが0のバフは非表示にするため、その場合は効果を計算しない
-// ラベルは仮にStatusのkeyをそのまま表示する（intlID経由の翻訳表示は別途対応予定）
-function effectsOf(definition: SelfBuffDefinition, stack: number): Effect[] {
-    if (stack == 0) return [];
-
-    return Object.entries(definition.buff(stack))
-        .flatMap(([key, components]) => (components ?? []).map(component => ({
-            label: key,
-            value: component.value.value ?? 0,
-            percent: component.calculationType == "mul"
-        })));
-}
 
 /**
  * 選択中の実験体固有の自己バフ一覧。実験体選択時に自動投入されたもの（`config.selfBuffs`）のみを表示し、
@@ -39,7 +26,7 @@ const SelfBuffs: React.FC = () => {
                     if (!definition) return null;
 
                     return (
-                        <SelfBuffRow
+                        <BuffRow
                             key={state.id}
                             nameIntlID={definition.nameIntlID}
                             maxStack={definition.maxStack}
