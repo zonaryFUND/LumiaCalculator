@@ -1,17 +1,24 @@
-import { BuffDebuffState, SubjectConfig } from "core/subject-dynamic/config";
+import { BuffDebuffState, SubjectConfig, weaponTypeIDOf } from "core/subject-dynamic/config";
 import { EquipmentStatusDictionary } from "core/equipment";
 import { SubjectBuffDebuffDictionary } from "@app/ingame-params/subjects/dictionary";
 import { EquipmentAbilityBuffDebuffDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
+import { WeaponSkillBuffDebuffDictionary } from "@app/ingame-params/weapon-skills/dictionary";
 import { BuffDebuffDefinition } from "./type";
 
 /**
- * `config.selfBuffs`のid解決に使う定義一覧。実験体固有スキル由来（`SubjectBuffDebuffDictionary`）と、
- * 現在の装備アビリティ由来（`EquipmentAbilityBuffDebuffDictionary`）の両方をマージして返す。
- * `statusOf()`・`self-buffs.tsx`の両方から共通で参照する（発生源が増えるたびに個別に書くと、
- * 一方だけ更新し忘れて自己バフが計算には反映されるのにUIに出ない、といった食い違いが起きるため）
+ * `config.selfBuffs`のid解決に使う定義一覧。実験体固有スキル由来（`SubjectBuffDebuffDictionary`）、
+ * 装備中の武器種由来（`WeaponSkillBuffDebuffDictionary`）、現在の装備アビリティ由来
+ * （`EquipmentAbilityBuffDebuffDictionary`）をすべてマージして返す。`statusOf()`・`self-buffs.tsx`の
+ * 両方から共通で参照する（発生源が増えるたびに個別に書くと、一方だけ更新し忘れて自己バフが計算には
+ * 反映されるのにUIに出ない、といった食い違いが起きるため）
  */
 export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, BuffDebuffDefinition> {
     const subjectDefinitions = SubjectBuffDebuffDictionary[config.subject]?.(config) ?? {};
+
+    // 武器スキルは1武器種につき1モジュールで一意（装備アビリティのように複数アイテムが1skillCodeを
+    // 共有することがない）ため、装備中の武器種を引いて定義を取得するだけでよく、名前空間の付与は不要
+    const weaponType = weaponTypeIDOf(config);
+    const weaponDefinitions = weaponType ? (WeaponSkillBuffDebuffDictionary[weaponType]?.(config) ?? {}) : {};
 
     // 装備アビリティが返すidは、そのアビリティ内でのみ一意な「ローカルid」（EquipmentAbilityImportedProps
     // 参照）。同一skillCodeを複数アイテムが共有し、かつアイテムごとに内容が異なることがあるため、
@@ -30,7 +37,7 @@ export function selfBuffDefinitionsOf(config: SubjectConfig): Record<string, Buf
         })
         .reduce((prev, [id, def]) => ({ ...prev, [id]: def }), {} as Record<string, BuffDebuffDefinition>);
 
-    return { ...subjectDefinitions, ...equipmentDefinitions };
+    return { ...subjectDefinitions, ...weaponDefinitions, ...equipmentDefinitions };
 }
 
 /**

@@ -1,5 +1,6 @@
 import { EquipmentID, EquipmentStatusDictionary } from "core/equipment";
 import { SubjectIncomingBuffDebuffSubjectCode } from "@app/ingame-params/subjects/dictionary";
+import { WeaponSkillIncomingBuffDebuffWeaponType } from "@app/ingame-params/weapon-skills/dictionary";
 
 /**
  * 装備アビリティ由来のバフ・デバフidから、名前空間として付与された発生源アイテムIDを取り出す
@@ -13,8 +14,9 @@ export function itemIDFromNamespacedId(id: string): EquipmentID | undefined {
 
 /**
  * 他者バフ・デバフ（`IncomingBuffDebuffCatalog`のid）の発生源表示名を解決するためのIntlメッセージID。
- * 実験体スキル由来なら`Character/Name/{subjectCode}`、装備アビリティ由来ならid自体に含まれる
- * 名前空間（`itemIDFromNamespacedId`）から`Item/Name/{itemID}`を組み立てる。どちらにも該当しなければ
+ * 実験体スキル由来なら`Character/Name/{subjectCode}`、武器スキル由来なら`MasteryType/{武器種}`
+ * （装備選択モーダルで武器種名の表示に使っているのと同じキー）、装備アビリティ由来ならid自体に含まれる
+ * 名前空間（`itemIDFromNamespacedId`）から`Item/Name/{itemID}`を組み立てる。いずれにも該当しなければ
  * `undefined`（発生源不明。基本的に起こらない想定）
  *
  * 自己バフと異なり、他者バフは発生源が実験体選択に紐付かない（任意の敵から受けうる）ため、
@@ -23,6 +25,9 @@ export function itemIDFromNamespacedId(id: string): EquipmentID | undefined {
 export function incomingBuffSourceIntlID(id: string): string | undefined {
     const subject = SubjectIncomingBuffDebuffSubjectCode[id];
     if (subject != undefined) return `Character/Name/${subject}`;
+
+    const weaponType = WeaponSkillIncomingBuffDebuffWeaponType[id];
+    if (weaponType != undefined) return `MasteryType/${weaponType}`;
 
     const itemID = itemIDFromNamespacedId(id);
     return itemID != undefined ? `Item/Name/${itemID}` : undefined;
