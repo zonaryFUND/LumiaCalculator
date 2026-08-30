@@ -13,6 +13,7 @@ export type Effect = {
 
 type Props = {
     nameIntlID: string
+    sourceIntlID?: string
     maxStack: number
     currentStack: number
     stackLabels?: string[]
@@ -29,7 +30,12 @@ type Props = {
  * （複数スタック可能・切り替え式・`stackLabels`指定あり）の場合はプルダウンで表示する。`stackLabels`が
  * 指定されている場合、各選択肢はIntlメッセージとして解決したラベルで表示する（`BuffDebuffDefinition`の
  * 該当コメント参照）。スタックが0の間は効果を表示しない。`onRemove`が指定された場合のみ削除ボタンを
- * 表示する（他者バフのみ削除可能で、自己バフは削除不可のため）
+ * 表示する（他者バフのみ削除可能で、自己バフは削除不可のため）。
+ *
+ * `sourceIntlID`が指定された場合、`nameIntlID`の前に発生源名（実験体名または装備名）を表示する
+ * （発生源→固有名称の順）。自身の実験体スキルによる自己バフは発生源が選択中の実験体自身で自明なため
+ * 指定しない。同名スキルを持つ複数装備が存在するため、装備由来のバフ・デバフはこの表示がないと
+ * どの装備によるものか判別しづらい
  */
 const BuffRow: React.FC<Props> = props => {
     const isCheckbox = props.maxStack == 1 && !props.stackLabels;
@@ -41,7 +47,10 @@ const BuffRow: React.FC<Props> = props => {
     return (
         <li className={style.row}>
             <div className={style.header}>
-                <span className={style.name}><FormattedMessage id={props.nameIntlID} /></span>
+                <span className={style.name}>
+                    {props.sourceIntlID ? <><FormattedMessage id={props.sourceIntlID} />{" "}</> : null}
+                    <FormattedMessage id={props.nameIntlID} />
+                </span>
                 {
                     isCheckbox ?
                     <input

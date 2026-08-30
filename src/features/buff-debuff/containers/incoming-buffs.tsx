@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { FormattedMessage } from "react-intl";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { IncomingBuffDebuffCatalog } from "@app/ingame-params/buff-debuff/incoming-catalog";
+import { incomingBuffSourceIntlID } from "@app/ingame-params/buff-debuff/source";
 import BuffRow from "../components/buff-row.view";
 import { effectsOf } from "./effects";
 import common from "@app/common.module.styl";
@@ -40,6 +41,7 @@ const IncomingBuffs: React.FC = () => {
                                 <BuffRow
                                     key={index}
                                     nameIntlID={definition.nameIntlID}
+                                    sourceIntlID={incomingBuffSourceIntlID(state.id)}
                                     maxStack={definition.maxStack}
                                     stackLabels={definition.stackLabels}
                                     currentStack={state.stack}
@@ -67,11 +69,15 @@ const IncomingBuffs: React.FC = () => {
                 <h1><FormattedMessage id="app.buff-debuff.add-incoming-buff" /></h1>
                 <ul>
                     {
-                        Object.entries(IncomingBuffDebuffCatalog).map(([id, definition]) => (
-                            <li key={id} className={common["hover-bright"]} onClick={() => onAdd(id)}>
-                                <FormattedMessage id={definition.nameIntlID} />
-                            </li>
-                        ))
+                        Object.entries(IncomingBuffDebuffCatalog).map(([id, definition]) => {
+                            const sourceIntlID = incomingBuffSourceIntlID(id);
+                            return (
+                                <li key={id} className={common["hover-bright"]} onClick={() => onAdd(id)}>
+                                    {sourceIntlID ? <><FormattedMessage id={sourceIntlID} />{" "}</> : null}
+                                    <FormattedMessage id={definition.nameIntlID} />
+                                </li>
+                            );
+                        })
                     }
                 </ul>
             </Modal>

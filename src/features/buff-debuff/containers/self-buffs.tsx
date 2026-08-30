@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { selfBuffDefinitionsOf } from "@app/ingame-params/buff-debuff/self-buff-definitions";
+import { equipmentSelfBuffSourceOf } from "@app/ingame-params/buff-debuff/source";
 import BuffRow from "../components/buff-row.view";
 import { effectsOf } from "./effects";
 import { FormattedMessage } from "react-intl";
@@ -13,6 +14,7 @@ const SelfBuffs: React.FC = () => {
     const config = useSubjectStateStore(s => s.config);
     const setSelfBuffs = useSubjectStateStore(s => s.setSelfBuffs);
     const definitions = selfBuffDefinitionsOf(config);
+    const equipmentSources = equipmentSelfBuffSourceOf(config);
 
     if (config.selfBuffs.length == 0) {
         return <p><FormattedMessage id="app.buff-debuff.no-self-buff" /></p>;
@@ -25,10 +27,15 @@ const SelfBuffs: React.FC = () => {
                     const definition = definitions[state.id];
                     if (!definition) return null;
 
+                    // 実験体固有スキル由来（origin: "skill"）は発生源が選択中の実験体自身で自明なため、
+                    // 発生源名は装備アビリティ由来のときだけ表示する
+                    const itemID = definition.origin == "equipment-ability" ? equipmentSources[state.id] : undefined;
+
                     return (
                         <BuffRow
                             key={state.id}
                             nameIntlID={definition.nameIntlID}
+                            sourceIntlID={itemID != undefined ? `Item/Name/${itemID}` : undefined}
                             maxStack={definition.maxStack}
                             stackLabels={definition.stackLabels}
                             currentStack={state.stack}

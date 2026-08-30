@@ -14,7 +14,8 @@ export const [
     SubjectGaugeInfoDictionary,
     SubjectWeaponSkillOverrideDictionary,
     SubjectBuffDebuffDictionary,
-    SubjectIncomingBuffDebuffCatalog
+    SubjectIncomingBuffDebuffCatalog,
+    SubjectIncomingBuffDebuffSubjectCode
 ] = Object.entries(modules).reduce(([
         skillLists,
         tooltips,
@@ -25,7 +26,8 @@ export const [
         gaugeInfo,
         weaponSkillOverride,
         buffDebuff,
-        incomingCatalog
+        incomingCatalog,
+        incomingSubjectCode
     ], [key, m]) => {
     const subjectCode = m.default.code;
     return [
@@ -38,7 +40,8 @@ export const [
         {...gaugeInfo, ...(m.default.gaugeInfo ? { [subjectCode]: m.default.gaugeInfo } : {})},
         {...weaponSkillOverride, ...(m.default.weaponSkillLevelOverride ? { [subjectCode]: m.default.weaponSkillLevelOverride } : {}) },
         {...buffDebuff, ...(m.default.buffDebuff ? { [subjectCode]: m.default.buffDebuff } : {})},
-        {...incomingCatalog, ...(m.default.givenBuffDebuff ?? {})}
+        {...incomingCatalog, ...(m.default.givenBuffDebuff ?? {})},
+        {...incomingSubjectCode, ...Object.fromEntries(Object.keys(m.default.givenBuffDebuff ?? {}).map(id => [id, subjectCode]))}
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
@@ -51,4 +54,5 @@ export const [
     {} as Record<SubjectCode, (mastery: number) => number>,
     {} as Record<SubjectCode, SubjectSelfBuffDebuff>,
     {} as Record<string, BuffDebuffDefinition>,
+    {} as Record<string, SubjectCode>,
 ])
