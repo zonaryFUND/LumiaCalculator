@@ -1,5 +1,5 @@
 import { EquipmentAbilityDamageTableUnit } from "../type";
-import Constants from "./constants.json";
+import Constants from "./constants";
 
 const tableValues: EquipmentAbilityDamageTableUnit[] = [
     {labelIntlID: "item-skill.dot", value: Constants.damage},

@@ -1,4 +1,4 @@
-import Constants from "./constants.json";
+import Constants from "./constants";
 import { EquipmentAbilityTooltipValues } from "../type";
 
 const values: EquipmentAbilityTooltipValues = () => ({

@@ -1,10 +1,10 @@
 import Constants from "./constants";
 import { SubjectSelfBuffDebuff } from "../type";
 
-export const buffDebuff: SubjectSelfBuffDebuff = config => ({
-    "subject.magnus.passive-defense": {
+export const selfBuffDebuff: SubjectSelfBuffDebuff = (config, status) => ({
+    "subject.magnus.passive": {
         origin: "skill",
-        nameIntlID: "CharacterState/Group/Name/1004100",
+        nameIntlID: "subject.magnus.passive",
         maxStack: Constants.T.max_stack,
         buff: stack => ({
             defense: [{

@@ -4,5 +4,6 @@
     "subject.darko.w-shield-base": "Wシールド基礎値",
     "subject.darko.w-shield-additional": "Wシールド敵1人あたり追加量",
     "subject.darko.w-shield-additional-3hit": "Wシールド追加量3人ヒット時",
-    "subject.darko.w-shield-additional-max": "Wシールド追加量最大値"
+    "subject.darko.w-shield-additional-max": "Wシールド追加量最大値",
+    "subject.darko.w-attack-steal": "徴収(W) 攻撃力窃取"
 }

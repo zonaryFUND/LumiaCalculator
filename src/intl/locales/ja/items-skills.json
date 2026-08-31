@@ -19,5 +19,7 @@
     "item-skill.spirit-harvest-remove": "{item}刻印消化時追加ダメージ",
     "item-skill.heart-of-fire-damage": "{item}ダメージ",
     "item-skill.heart-of-fire-heal": "{item}回復",
-    "item-skill.attack-power": "{item}攻撃力増加"
+    "item-skill.attack-power": "{item}攻撃力増加",
+    "item-skill.blaze-up-endurance": "予熱 - 忍耐",
+    "item-skill.debilitation-fog": "衰弱の霧"
 }

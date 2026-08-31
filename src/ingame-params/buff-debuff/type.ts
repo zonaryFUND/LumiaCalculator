@@ -6,13 +6,21 @@ import { StatusValueComponent } from "core/subject-dynamic/status/value-componen
  *
  * - `skill`: 実験体固有のスキル（`ingame-params/subjects/{name}/buff-debuff.ts`）
  * - `equipment-ability`: 装備固有のアビリティ（`ingame-params/equipment-abilities/{name}/buff-debuff.ts`）
- * - `augment`: 特性（`ingame-params/perpetual-outer-buffs/`）
+ * - `augment`: 特性（`ingame-params/augment/buff-debuff.ts`）
+ * - `tactical-skill`: 戦術スキル（`ingame-params/tactical-skill/buff-debuff.ts`）
+ * - `misc`: 上記のいずれにも当てはまらない、その他の恒久バフ（オブジェクト討伐・アイテム使用時の恒久効果等。
+ *   例: アルファ処置・聖水）（`ingame-params/perpetual-outer-buffs/`）。`skill`/`equipment-ability`由来と
+ *   異なり、装備アビリティのような「発生源アイテム名」を持たない・持つ必要がないカテゴリなしの寄せ集めのため、
+ *   UI上も発生源表記を一切行わない（`nameIntlID`単体で何のバフか判別できるものだけをここに置く）
  *
- * 自己バフの削除可否（`SubjectConfig.selfBuffs`から追加・削除できるかどうか）は`origin === "augment"`から
- * 導出する。`skill`/`equipment-ability`由来の自己バフは、実験体・装備の選択に応じて自動的に投入・削除される
- * だけで、ユーザーが直接追加・削除することはない。
+ * 自己バフの削除可否（`SubjectConfig.selfBuffs`から追加・削除できるかどうか）は`origin`が`skill`/
+ * `equipment-ability`かどうかから導出する（`self-buff-definitions.ts`の`autoSelfBuffDefinitionsOf`参照）。
+ * これら2つは実験体・装備の選択に応じて自動的に投入・削除されるだけでユーザーが直接追加・削除することはない
+ * のに対し、`augment`/`tactical-skill`/`misc`はユーザーが`incomingBuffs`と同様に自らカタログ
+ * （`selectable-self-buff-catalog.ts`）から選んで追加・削除する「選択式自己バフ」であり、実験体・装備の
+ * 選択が変わっても自動的には投入・削除されない（`reconcileSelfBuffs`参照）
  */
-export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment"
+export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment" | "tactical-skill" | "misc"
 
 /**
  * バフ・デバフ（`SubjectConfig.selfBuffs`/`incomingBuffs`）1件の定義

@@ -18,8 +18,7 @@ const table: DamageTableGenerator = props => {
                 { label: "E", origin: "E", value: Constants.E.damage },
                 { label: "E壁ドン", origin: "E", value: Constants.E.wall_damage }
             ],
-            [{ label: "R", origin: "R", value: Constants.R.damage }],
-            [{ label: props.intl.formatMessage({ id: "subject.magnus.passive-defense" }), origin: "T", value: { defense: Constants.T.defense.map(d => d * Constants.T.max_stack) }, type: { type: "misc" } }]
+            [{ label: "R", origin: "R", value: Constants.R.damage }]
         ]
     }
 }

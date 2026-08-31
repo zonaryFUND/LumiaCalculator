@@ -1,6 +1,5 @@
 {
     "subject.magnus.w-1hit": "W単発",
     "subject.magnus.w-max-hit": "W全ヒット({value})",
-    "subject.magnus.passive-defense": "T防御力増加",
-    "subject.magnus.passive-regen": "T体力再生増加"
+    "subject.magnus.passive": "根性(T)"
 }

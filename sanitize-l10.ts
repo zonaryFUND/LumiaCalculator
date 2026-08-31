@@ -26,6 +26,7 @@ const availableRegexs = [
     /Group\/Evolution\/Desc\/\d+/,
     /Group\/EvolutionCoef\/Desc\/\d+/,
     /CharacterState\/Group\/Name\/\d+/,
+    /Trait\/Name\/\d+/,
     /레벨/
 ]
 

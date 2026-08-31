@@ -1,0 +1,25 @@
+import { SubjectConfig } from "core/subject-dynamic/config";
+import { Status } from "core/subject-dynamic/status/type";
+import { AugmentBuffDebuff } from "@app/ingame-params/augment/buff-debuff";
+import { TacticalSkillBuffDebuff } from "@app/ingame-params/tactical-skill/buff-debuff";
+import { MiscBuffDebuff } from "@app/ingame-params/perpetual-outer-buffs";
+import { BuffDebuffDefinition } from "./type";
+
+/**
+ * ユーザーが`incomingBuffs`と同様にカタログから選んで自ら追加・削除する自己バフ（特性・戦術スキル・
+ * その他恒久バフ）の全カタログ。`autoSelfBuffDefinitionsOf`（`self-buff-definitions.ts`）と異なり、
+ * 発生源が「選択中の実験体固有スキル」や「装備中のアイテム」に紐付かない（どの実験体・装備の組み合わせでも
+ * 特性・戦術スキル・その他恒久バフを持ちうる）ため、実験体・装備の変更に連動して自動投入・削除されることは
+ * ない（`self-buff-definitions.ts`の`reconcileSelfBuffs`参照）。
+ *
+ * 3つの発生源のうち`augment`のみ効果量がレベルに依存する（例: 「堅固」の妨害耐性）ため`config`を受け取る。
+ * `status`は将来的に実験体自身のステータス（例: 最大体力）に依存する効果を持つ発生源のために引数として
+ * 用意してあるが、現時点ではどの発生源も参照していない
+ */
+export function selectableSelfBuffCatalogOf(config: SubjectConfig, status: Status): Record<string, BuffDebuffDefinition> {
+    return {
+        ...AugmentBuffDebuff(config),
+        ...TacticalSkillBuffDebuff(config, status),
+        ...MiscBuffDebuff
+    };
+}

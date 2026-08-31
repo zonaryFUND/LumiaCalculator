@@ -64,6 +64,10 @@ export default {
     "soul_stealer": {},
     // ストライダー - A13
     "the_strider": {
+        "movement_speed": {
+            "duration": 5,
+            "effect": 30
+        },
         "damage": {
             "base": [
                 100,
@@ -73,6 +77,20 @@ export default {
                 5,
                 10
             ]
+        },
+        "movement_speed_after_attack": {
+            "duration": 5,
+            "effect": {
+                "melee": [30,40],
+                "range": [20,30]
+            }
+        },
+        "slow": {
+            "duration": 2,
+            "effect": {
+                "melee": 50,
+                "range": 30
+            }
         }
     },
     // 真実の刃

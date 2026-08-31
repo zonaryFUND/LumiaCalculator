@@ -152,6 +152,37 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         }
     };
 
+    // バフ・デバフ定義（`BuffDebuffDefinition.buff`）は、実際のステータスキー（`keyof ComponentStatus`）に
+    // 加えて疑似キー`"adaptiveForce"`を返せる（`ingame-params/buff-debuff/type.ts`参照）。適合型能力値は
+    // 実験体の武器熟練度に応じて`attackPower`（等倍）または`skillAmp`（2倍）のどちらに変換されるかが決まる
+    // （`adaptiveComponent`が装備ステータス側で行っているのと同じ変換）ため、`foldComponentStatus`へ渡す前に
+    // ここで実キーへ変換しておく必要がある。バフ・デバフの`adaptiveForce`は現状すべて`type: "constant"`の
+    // 定数値として書かれる想定（既存の`buff(stack)`の書き方の慣習上）で、それ以外の型は未対応
+    const resolveAdaptiveForceBuff = (
+        buff: Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>
+    ): Partial<Record<keyof ComponentStatus, StatusValueComponent[]>> => {
+        const { adaptiveForce, ...rest } = buff;
+        if (!adaptiveForce) return rest;
+
+        const converted = adaptiveForce.map((component): StatusValueComponent => {
+            if (component.value.type != "constant") {
+                throw new Error("adaptiveForce由来のStatusValueComponentはtype: \"constant\"のみサポートしています");
+            }
+            return {
+                ...component,
+                value: {
+                    type: "constant",
+                    value: new Decimal(component.value.value).mul(adaptiveForceTarget == "skillAmp" ? 2 : 1)
+                }
+            };
+        });
+
+        return {
+            ...rest,
+            [adaptiveForceTarget]: [...(rest[adaptiveForceTarget] ?? []), ...converted]
+        };
+    };
+
     const weaponDependentBaseComponent = (
         subject: Decimal.Value,
         weapon?: Decimal.Value
@@ -478,7 +509,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     // から解決するため、自己バフと異なり実験体・スキルレベルによる解決は不要
     const incomingBuffStatus = config.incomingBuffs.flatMap(state => {
         const def = IncomingBuffDebuffCatalog[state.id];
-        return def ? [def.buff(state.stack)] : [];
+        return def ? [resolveAdaptiveForceBuff(def.buff(state.stack))] : [];
     });
 
     // 自己バフを含まない状態のComponentStatus。自己バフの効果量は実験体の現在のStatus（例: スキル増幅の値）
@@ -500,7 +531,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     const selfBuffDefinitions = selfBuffDefinitionsOf(config, statusForSelfBuffs);
     const selfBuffStatus = config.selfBuffs.flatMap(state => {
         const def = selfBuffDefinitions[state.id];
-        return def ? [def.buff(state.stack)] : [];
+        return def ? [resolveAdaptiveForceBuff(def.buff(state.stack))] : [];
     });
 
     const componentStatus = foldComponentStatus(componentStatusWithoutSelfBuffs, selfBuffStatus);

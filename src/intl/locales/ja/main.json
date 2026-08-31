@@ -16,6 +16,7 @@
     "app.critical-damage-increase": "致命打ダメージ増加",
     "app.weapon": "武器",
     "app.skill": "スキル",
+    "app.tactical-skill": "戦術スキル",
     "app.heal": "回復",
     "app.others": "その他",
     "app.stack": "スタック",
@@ -112,6 +113,37 @@
     "app.mitigation.defense-mastery": "熟練度軽減",
 
     "app.buff-debuff.no-self-buff": "この実験体は固有の自己バフを持っていません",
+    "app.buff-debuff.add-self-buff": "追加",
+    "app.buff-debuff.no-addable-self-buff": "追加できる自己バフはありません",
     "app.buff-debuff.no-incoming-buff": "他者からのバフ・デバフはありません",
-    "app.buff-debuff.add-incoming-buff": "追加"
+    "app.buff-debuff.add-incoming-buff": "追加",
+
+    "buff-debuff.common.none": "なし",
+
+    "buff-debuff.common.skill-level.1": "Lv1",
+    "buff-debuff.common.skill-level.2": "Lv2",
+    "buff-debuff.common.skill-level.3": "Lv3",
+    "buff-debuff.common.skill-level.4": "Lv4",
+    "buff-debuff.common.skill-level.5": "Lv5",
+
+    "buff-debuff.common.level.1": "Lv1",
+    "buff-debuff.common.level.2": "Lv2",
+    "buff-debuff.common.level.3": "Lv3",
+    "buff-debuff.common.level.4": "Lv4",
+    "buff-debuff.common.level.5": "Lv5",
+    "buff-debuff.common.level.6": "Lv6",
+    "buff-debuff.common.level.7": "Lv7",
+    "buff-debuff.common.level.8": "Lv8",
+    "buff-debuff.common.level.9": "Lv9",
+    "buff-debuff.common.level.10": "Lv10",
+    "buff-debuff.common.level.11": "Lv11",
+    "buff-debuff.common.level.12": "Lv12",
+    "buff-debuff.common.level.13": "Lv13",
+    "buff-debuff.common.level.14": "Lv14",
+    "buff-debuff.common.level.15": "Lv15",
+    "buff-debuff.common.level.16": "Lv16",
+    "buff-debuff.common.level.17": "Lv17",
+    "buff-debuff.common.level.18": "Lv18",
+    "buff-debuff.common.level.19": "Lv19",
+    "buff-debuff.common.level.20": "Lv20"
 }

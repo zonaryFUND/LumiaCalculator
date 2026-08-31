@@ -23,5 +23,9 @@
     "weapon-skill.crossbow.additional": "D刻印追加ダメージ",
     "weapon-skill.tonfa.multiple-hit": "D複数回発動時",
     "weapon-skill.high-angle-fire.center": "D内側",
-    "weapon-skill.high-angle-fire.outer": "D外側"
+    "weapon-skill.high-angle-fire.outer": "D外側",
+
+    "weapon-skill.hammer.defense-down": "防御力減少",
+    "weapon-skill.pistol.movement-speed-up": "移動速度増加",
+    "weapon-skill.pistol.attack-speed-up": "攻撃速度増加"
 }
