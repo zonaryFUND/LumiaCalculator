@@ -12,15 +12,20 @@ import { StatusValueComponent } from "core/subject-dynamic/status/value-componen
  *   例: アルファ処置・聖水）（`ingame-params/perpetual-outer-buffs/`）。`skill`/`equipment-ability`由来と
  *   異なり、装備アビリティのような「発生源アイテム名」を持たない・持つ必要がないカテゴリなしの寄せ集めのため、
  *   UI上も発生源表記を一切行わない（`nameIntlID`単体で何のバフか判別できるものだけをここに置く）
+ * - `generic`: 発生源を問わず1つの汎用エントリに束ねるバフ・デバフ（`ingame-params/buff-debuff/
+ *   generic-slow.ts`）。`misc`と異なり「個々の効果は発生源ごとに実在するが、発生源の数が多すぎて
+ *   個別列挙する意味が薄い」もの（例: 移動速度減少）を指す。実際にどの発生源がどの効果量を持つかは、
+ *   計算には一切関与しない参照専用の「辞書」（`SlowSourceInfo`・`slow-dictionary.ts`）側で別途保持する
  *
  * 自己バフの削除可否（`SubjectConfig.selfBuffs`から追加・削除できるかどうか）は`origin`が`skill`/
  * `equipment-ability`かどうかから導出する（`self-buff-definitions.ts`の`autoSelfBuffDefinitionsOf`参照）。
  * これら2つは実験体・装備の選択に応じて自動的に投入・削除されるだけでユーザーが直接追加・削除することはない
  * のに対し、`augment`/`tactical-skill`/`misc`はユーザーが`incomingBuffs`と同様に自らカタログ
  * （`selectable-self-buff-catalog.ts`）から選んで追加・削除する「選択式自己バフ」であり、実験体・装備の
- * 選択が変わっても自動的には投入・削除されない（`reconcileSelfBuffs`参照）
+ * 選択が変わっても自動的には投入・削除されない（`reconcileSelfBuffs`参照）。`generic`は自己バフとしては
+ * 使わず、常に他者からの`incomingBuffs`側でのみ使う想定
  */
-export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment" | "tactical-skill" | "misc"
+export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment" | "tactical-skill" | "misc" | "generic"
 
 /**
  * バフ・デバフ（`SubjectConfig.selfBuffs`/`incomingBuffs`）1件の定義
@@ -51,4 +56,22 @@ export type BuffDebuffDefinition = {
     maxStack: number
     stackLabels?: string[]
     buff: (stack: number) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>
+}
+
+/**
+ * 移動速度減少（スロウ）を持つ実験体固有スキル・武器スキル・装備アビリティ・戦術スキルが、「その発生源が
+ * 何%のスロウを持つか」を宣言するための、参照専用（`slow-dictionary.ts`が集約し辞書UIで表示するだけ）の
+ * データ。計算（`statusOf()`・`GenericSlowDebuff`）には一切関与しない。実際のスロウ効果自体は
+ * `origin: "generic"`の単一エントリ（`generic-slow.ts`）で表現するため、ここで宣言してもその実験体・武器・
+ * 装備・戦術スキル自身の`givenBuffDebuff`にスロウを個別登録する必要はない（する場合、汎用エントリと二重に
+ * 計算されてしまうため、むしろしてはいけない）
+ *
+ * @property nameIntlID このスキル・アビリティの表示名（例: 実験体スキルなら"Q"のようなキー表記）
+ * @property values %。スキルレベル等の軸で変化する場合は複数要素の配列（1つしかない場合も要素数1の配列）
+ * @property valueLabels `values`と対応するラベル（省略時はインデックスをそのまま数値表示）
+ */
+export type SlowSourceInfo = {
+    nameIntlID: string
+    values: number[]
+    valueLabels?: string[]
 }

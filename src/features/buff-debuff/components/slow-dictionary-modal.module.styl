@@ -1,0 +1,44 @@
+.open
+    flex-shrink: 0
+    font-size: 0.85em
+    padding: 2px 8px
+
+.list
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    position: absolute
+    background: var(--base)
+    width: 95vw
+    max-width: 480px
+    max-height: 80vh
+    margin: auto
+    inset: 0
+    border-radius: 16px
+    overflow-y: auto
+    box-shadow: 0 0 25px rgba(0,0,0,0.5)
+    padding: 16px
+
+    h1
+        font-size: 1.4rem
+        margin-bottom: 12px
+
+    table
+        width: 100%
+        border-collapse: collapse
+
+    td
+        padding: 6px 8px
+        vertical-align: top
+        border-bottom: 1px solid rgba(128, 128, 128, 0.2)
+
+    ul
+        margin: 0
+        padding-left: 16px
+
+.list:focus
+    outline: 0
+
+.value
+    font-weight: bold
+    white-space: nowrap

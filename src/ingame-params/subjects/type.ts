@@ -6,7 +6,7 @@ import { UniqueValueStrategy } from "./unique-value-strategy";
 import { ValueRatio } from "core/value-ratio";
 import { IntlShape } from "react-intl";
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component";
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 
 export type SubjectDamageTableUnit = Omit<DamageTableUnit, "triggeredOnBasicAttack"> & {
     value: ValueRatio | UniqueValueStrategy
@@ -90,6 +90,14 @@ export type SubjectModules = {
      * configを引数に取らない定数カタログとして定義する。
      */
     givenBuffDebuff?: Record<string, BuffDebuffDefinition>
+
+    /**
+     * 実験体固有のスキルが持つ移動速度減少（スロウ）効果の宣言。計算には一切関与しない参照専用データで、
+     * 「辞書」UI（`slow-dictionary.ts`）が集約して表示するためだけに使う（`generic-slow.ts`参照）。
+     * スロウを持つスキルがあっても、これとは別に`givenBuffDebuff`へ個別登録してはいけない
+     * （汎用エントリと二重計算になるため）
+     */
+    slowSources?: SlowSourceInfo[]
 
     weaponSkillLevelOverride?: (mastery: number) => number
 }

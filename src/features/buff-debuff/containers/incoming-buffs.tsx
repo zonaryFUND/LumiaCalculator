@@ -6,6 +6,7 @@ import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { IncomingBuffDebuffCatalog } from "@app/ingame-params/buff-debuff/incoming-catalog";
 import { incomingBuffSourceIntlID } from "@app/ingame-params/buff-debuff/source";
 import BuffRow from "../components/buff-row.view";
+import SlowDictionaryModal from "../components/slow-dictionary-modal";
 import { effectsOf } from "./effects";
 import common from "@app/common.module.styl";
 import style from "./incoming-buffs.module.styl";
@@ -15,6 +16,9 @@ import style from "./incoming-buffs.module.styl";
  * `IncomingBuffDebuffCatalog`（実験体スキル由来の「他者へのバフデバフ」定義を全実験体分集約したもの）
  * を選んで追加し、各行の削除ボタンで個別に取り除く。同一idの要素が複数存在しうるため、`id`ではなく
  * 配列インデックスで行を識別する
+ *
+ * 汎用スロウ（`origin: "generic"`）の行だけは`BuffRow`の`extra`に`SlowDictionaryModal`（%ごとの発生源を
+ * 一覧表示する参照専用モーダル）を差し込む。`BuffRow`自体はこの中身を一切解釈しない
  */
 const IncomingBuffs: React.FC = () => {
     const config = useSubjectStateStore(s => s.config);
@@ -50,6 +54,7 @@ const IncomingBuffs: React.FC = () => {
                                         (s, i) => i == index ? { ...s, stack } : s
                                     ))}
                                     onRemove={() => setIncomingBuffs(prev => prev.filter((_, i) => i != index))}
+                                    extra={definition.origin == "generic" ? <SlowDictionaryModal /> : undefined}
                                 />
                             );
                         })

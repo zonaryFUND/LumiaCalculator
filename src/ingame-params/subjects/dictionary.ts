@@ -1,6 +1,6 @@
 import { SubjectCode } from "core/subject-static";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectSelfBuffDebuff, SubjectStackInfo, SummonInfo } from "./type";
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});
@@ -15,7 +15,8 @@ export const [
     SubjectWeaponSkillOverrideDictionary,
     SubjectBuffDebuffDictionary,
     SubjectIncomingBuffDebuffCatalog,
-    SubjectIncomingBuffDebuffSubjectCode
+    SubjectIncomingBuffDebuffSubjectCode,
+    SubjectSlowSourcesDictionary
 ] = Object.entries(modules).reduce(([
         skillLists,
         tooltips,
@@ -27,7 +28,8 @@ export const [
         weaponSkillOverride,
         buffDebuff,
         incomingCatalog,
-        incomingSubjectCode
+        incomingSubjectCode,
+        slowSources
     ], [key, m]) => {
     const subjectCode = m.default.code;
     return [
@@ -41,7 +43,8 @@ export const [
         {...weaponSkillOverride, ...(m.default.weaponSkillLevelOverride ? { [subjectCode]: m.default.weaponSkillLevelOverride } : {}) },
         {...buffDebuff, ...(m.default.buffDebuff ? { [subjectCode]: m.default.buffDebuff } : {})},
         {...incomingCatalog, ...(m.default.givenBuffDebuff ?? {})},
-        {...incomingSubjectCode, ...Object.fromEntries(Object.keys(m.default.givenBuffDebuff ?? {}).map(id => [id, subjectCode]))}
+        {...incomingSubjectCode, ...Object.fromEntries(Object.keys(m.default.givenBuffDebuff ?? {}).map(id => [id, subjectCode]))},
+        {...slowSources, ...(m.default.slowSources ? { [subjectCode]: m.default.slowSources } : {})}
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
@@ -55,4 +58,5 @@ export const [
     {} as Record<SubjectCode, SubjectSelfBuffDebuff>,
     {} as Record<string, BuffDebuffDefinition>,
     {} as Record<string, SubjectCode>,
+    {} as Record<SubjectCode, SlowSourceInfo[]>,
 ])

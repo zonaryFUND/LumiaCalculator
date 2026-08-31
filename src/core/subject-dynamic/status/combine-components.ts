@@ -173,7 +173,10 @@ export function calculateMovementSpeedValue(componentValue: ComponentStatusValue
     }, [new Decimal(0), new Decimal(0)]);
     
     const sumResult = Decimal.sum(...sum.map(c => c.value.value ?? 0));
-    const rawResult = sumResult.addPercent(mulPlus).subPercent(mulMinus).round2();
+    // mulMinusは既に負値（複数のスロウがあっても最も強い1件のみ採用、Decimal.minで求める）なので、
+    // 「%を引く」subPercentではなく「負のvalueを足す」addPercentが正しい（subPercentだと負値同士が
+    // 打ち消し合って増速になってしまう）
+    const rawResult = sumResult.addPercent(mulPlus).addPercent(mulMinus).round2();
 
     const calculatedValue = (() => {
         if (rawResult.lessThan(0)) 

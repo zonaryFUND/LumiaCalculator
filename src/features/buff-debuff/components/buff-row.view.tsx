@@ -20,6 +20,7 @@ type Props = {
     effects: Effect[]
     onChange: (stack: number) => void
     onRemove?: () => void
+    extra?: React.ReactNode
 }
 
 /**
@@ -36,6 +37,9 @@ type Props = {
  * （発生源→固有名称の順）。自身の実験体スキルによる自己バフは発生源が選択中の実験体自身で自明なため
  * 指定しない。同名スキルを持つ複数装備が存在するため、装備由来のバフ・デバフはこの表示がないと
  * どの装備によるものか判別しづらい
+ *
+ * `extra`が指定された場合、削除ボタンの手前に任意のReactNodeを追加で表示する（例: 汎用スロウ行の
+ * 「辞書」ボタン。`incoming-buffs.tsx`参照）。このコンポーネント自身は中身を一切解釈しない
  */
 const BuffRow: React.FC<Props> = props => {
     const isCheckbox = props.maxStack == 1 && !props.stackLabels;
@@ -76,6 +80,7 @@ const BuffRow: React.FC<Props> = props => {
                         }
                     />
                 }
+                {props.extra}
                 {
                     props.onRemove ?
                     <button type="button" className={style.remove} onClick={props.onRemove}>×</button> :
