@@ -1,4 +1,6 @@
 {
     "subject.abigail.w-shield": "Wシールド",
-    "subject.abigail.passive-damage": "T追加ダメージ"
+    "subject.abigail.passive-damage": "T追加ダメージ",
+    "subject.abigail.q-movement-speed": "バイナリスピン(Q) 移動速度増加",
+    "subject.abigail.t-defense-reduction": "ティアリングブレード(T) 防御力減少"
 }

@@ -16,7 +16,7 @@ export const info: SkillTooltipProps = {
         5: RatioPercent(Constants.Q.range_damage.attack),
         6: Constants.Q.slow.duration,
         7: RatioPercent(Constants.Q.slow.effect),
-        9: Constants.Q.range_cooldown_reduction,
+        9: RatioPercent(Constants.Q.range_cooldown_reduction),
         20: Constants.Q.damage,
         21: Constants.Q.range_damage
     }),

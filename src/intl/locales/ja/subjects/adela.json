@@ -7,5 +7,7 @@
     "subject.adela.w-reactivation": "W再発動",
     "subject.adela.e-reactivation": "E再発動",
     "subject.adela.r-damage-per-piece": "R追加ダメージ(駒1つあたり)",
-    "subject.adela.passive-range": "T追加値"
+    "subject.adela.passive-range": "T追加値",
+    "subject.adela.q-movement-speed": "クイーンズ・ギャンビット・ディクラインド(Q) 移動速度増加",
+    "subject.adela.e-knight-slow": "ナイトフォーク(E) 移動速度減少"
 }

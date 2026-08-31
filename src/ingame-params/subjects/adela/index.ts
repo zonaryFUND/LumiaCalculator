@@ -6,12 +6,15 @@ import * as E from "./e";
 import * as R from "./r";
 import * as T from "./t";
 import perpetualStatus from "./perpetual-status";
+import { selfBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 24,
     damageTable,
     perpetualStatus,
+    buffDebuff: selfBuffDebuff,
+    slowSources,
 
     skills: {
         listExpression: () => ({

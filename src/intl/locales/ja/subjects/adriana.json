@@ -1,5 +1,8 @@
 {
     "subject.adriana.q-max-hit": "Q最大ヒット({value})",
     "subject.adriana.e-fire-damage": "E火炎地帯ダメージ/{value}秒",
-    "subject.adriana.t-dot-sum": "T持続ダメージ総量"
+    "subject.adriana.t-dot-sum": "T持続ダメージ総量",
+    "subject.adriana.t-defense-reduction": "メラメラ(T) 防御力低下",
+    "subject.adriana.w-oil-slow": "オイル地帯(W) 移動速度減少",
+    "subject.adriana.e-flame-slow": "火炎地帯(E) 移動速度減少"
 }

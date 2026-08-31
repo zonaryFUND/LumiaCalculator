@@ -16,7 +16,7 @@ export const info: SkillTooltipProps = {
 
         const base = {
             2: Constants.W.slow.duration,
-            3: `${Constants.W.slow.effect}`,
+            3: RatioPercent(Constants.W.slow.effect),
             4: Constants.W.moon,
             5: Constants.W.star.duration,
             6: Constants.W.conjunction.slow.duration,

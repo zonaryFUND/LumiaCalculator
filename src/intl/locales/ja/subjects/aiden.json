@@ -10,5 +10,12 @@
     "subject.aiden.w-initial-max": "W発動(最大)",
     "subject.aiden.w-field": "W電場",
     "subject.aiden.r1-outer": "R1外周",
-    "subject.aiden.r1-center": "R1中心"    
+    "subject.aiden.r1-center": "R1中心",
+    "subject.aiden.e-backstep-movement-speed": "バックステップ(E) 移動速度増加",
+    "subject.aiden.t-hypercharge-end-movement-speed": "ハイパーチャージ終了(T) 移動速度増加",
+    "subject.aiden.q-hypercharge-slow": "電磁砲(Q) 移動速度減少",
+    "subject.aiden.w-slow": "ディシペーション(W) 移動速度減少",
+    "subject.aiden.r1-slow": "落雷1回目(R) 移動速度減少",
+    "subject.aiden.r2-slow": "落雷2回目(R) 移動速度減少",
+    "subject.aiden.t-hypercharge-attack-speed": "ハイパーチャージ(T) 攻撃速度減少"
 }

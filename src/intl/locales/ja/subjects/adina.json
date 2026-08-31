@@ -13,5 +13,9 @@
     "subject.adina.star-conjunction-heal-sum": "星コンジャンクション体力回復総量",
     "subject.adina.star-conjunction-sp-heal": "星コンジャンクションスタミナ回復/秒",
     "subject.adina.star-conjunction-sp-heal-sum": "星コンジャンクションスタミナ回復総量",
-    "subject.adina.passive-movement-speed": "T移動速度増加量"    
+    "subject.adina.passive-movement-speed": "T移動速度増加量",
+    "subject.adina.passive-movement-speed-buff": "スターゲイザー(T) 移動速度増加",
+    "subject.adina.q-star-movement-speed": "ルミナリー星(Q) 移動速度増加",
+    "subject.adina.w-slow": "トライン·アスペクト(W) 移動速度減少",
+    "subject.adina.w-moon-conjunction-slow": "トライン·アスペクト(W) 移動速度減少(強化月)"
 }
