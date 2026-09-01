@@ -11,7 +11,7 @@ import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
 import { useMitigation } from "../../mitigation-context";
 import { mitigatedDamage } from "core/damage-table/mitigation";
-import { healPowerOf, applyHealPower } from "core/damage-table/heal-power";
+import { healPowerRatiosOf, applyHealPower } from "core/damage-table/heal-power";
 import Potency from "../subrows/potency";
 import HealPower from "../subrows/heal-power";
 import Mitigation from "../subrows/mitigation";
@@ -57,8 +57,19 @@ const standardDamage: React.FC<Props> = props => {
     )
 
     const totalPotency = staticPotency.add(dynamicPotency)
-    const healPower = healPowerOf(props.status, props.type);
-    const finalPotency = applyHealPower(totalPotency, healPower);
+    const healPowerRatios = healPowerRatiosOf(props.status, props.type);
+    const finalPotency = applyHealPower(totalPotency, healPowerRatios);
+    // healPowerRatiosは複数の増加効果を独立に乗算しうるため、比率ごとに1行ずつ、直前の結果を基準値として
+    // 積み上げて表示する
+    const healPowerRows = (() => {
+        let running = totalPotency;
+        return healPowerRatios.map((ratio, i) => {
+            const next = running.addPercent(ratio);
+            const row = <HealPower key={`healpower-${i}`} baseValue={running} healPower={ratio} calculated={next} />;
+            running = next;
+            return row;
+        });
+    })();
     const mitigationContext = useMitigation();
 
     const [mitigatedValue, damageDependentHealValue, mitigationInfo] = (() => {
@@ -142,7 +153,7 @@ const standardDamage: React.FC<Props> = props => {
                 dynamicPotencyDictionary={dynamicPotencyDictionary}
                 sum={totalPotency}
             />,
-            healPower ? <HealPower key="healpower" baseValue={totalPotency} healPower={healPower} calculated={finalPotency} /> : [],
+            healPowerRows,
             mitigationInfo.map(info => <Mitigation key={info.labelIntlID} {...info} />)
         ].flat()
     })();

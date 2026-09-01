@@ -14,7 +14,7 @@ type Props = {
     staticBaseValue: Decimal
     staticFinalValue?: Decimal
     dynamicBaseValue?: {[K in keyof ValueRatio]: Decimal}
-    healMultiplier?: Decimal
+    healPowerRatios?: Decimal[]
     multiplier?: ExtractedMultiplier
     percent?: boolean
 
@@ -30,7 +30,7 @@ const SubRowsTable: React.FC<Props> = (props) => {
 
         if (props.multiplier) {
             // 乗算値表示セルに対しては乗算式サブセルのみを表示する
-            const baseValue = props.staticBaseValue.percent(props.healMultiplier || 100);
+            const baseValue = (props.healPowerRatios ?? []).reduce((prev, ratio) => prev.addPercent(ratio), props.staticBaseValue);
             return [<MultiplyEquation key="multiply" baseValue={baseValue} multipliers={props.multiplier.individualExpressions} finalValue={props.staticFinalValue} percent={props.percent} />];
         } else {
             // スキル威力の詳細な計算式を表記するサブセルは常に表示される
@@ -41,14 +41,16 @@ const SubRowsTable: React.FC<Props> = (props) => {
                     calculated={<>{props.staticBaseValue.floor().toString()}{props.percent}</>}
                 />;
 
-            // props.healMultiplierが非undefinedの場合、この威力表記は回復値に対するものであり、
-            // さらに何らかの効果で回復力が増加しているため、その計算式サブセルが表示される
-            const heal = !props.healMultiplier ? undefined : 
-                <HealPower key="healpower" baseValue={props.staticBaseValue} healPower={props.healMultiplier} />;
+            // props.healPowerRatiosが非空の場合、この威力表記は回復値・シールド値に対するものであり、
+            // さらに何らかの効果で回復・シールド量が増加しているため、その計算式サブセルが表示される
+            // （複数の増加効果が同時に乗算されうるため、比率ごとに1行ずつ表示する）
+            const heal = (props.healPowerRatios ?? []).map((ratio, i) =>
+                <HealPower key={`healpower-${i}`} baseValue={props.staticBaseValue} healPower={ratio} />
+            );
 
             return [
                 equation,
-                heal
+                ...heal
             ].filter((item): item is React.ReactElement => item != undefined);
         }
     })();
@@ -59,8 +61,8 @@ const SubRowsTable: React.FC<Props> = (props) => {
 
         return Object.entries(props.dynamicBaseValue).flatMap(([key, value]): React.ReactElement[] => {
             if (props.multiplier) {
-                // 乗算値表示セルに対しては乗算式サブセルのみを表示する 
-                const baseValue = value.percent(props.healMultiplier || 100);
+                // 乗算値表示セルに対しては乗算式サブセルのみを表示する
+                const baseValue = (props.healPowerRatios ?? []).reduce((prev, ratio) => prev.addPercent(ratio), value);
                 const finalValue = baseValue.percent(props.multiplier.mergedMultiplier);
 
                 return [
@@ -102,14 +104,16 @@ const SubRowsTable: React.FC<Props> = (props) => {
                     );
                 })();
 
-                // props.healMultiplierが非undefinedの場合、この威力表記は回復値に対するものであり、
-                // さらに何らかの効果で回復力が増加しているため、動的威力に対する計算式サブセルが表示される
-                const heal = !props.healMultiplier ? undefined : 
-                    <HealPower key="healpower" baseValue={value} healPower={props.healMultiplier} />;
+                // props.healPowerRatiosが非空の場合、この威力表記は回復値・シールド値に対するものであり、
+                // さらに何らかの効果で回復・シールド量が増加しているため、動的威力に対する計算式サブセルが
+                // 表示される（複数の増加効果が同時に乗算されうるため、比率ごとに1行ずつ表示する）
+                const heal = (props.healPowerRatios ?? []).map((ratio, i) =>
+                    <HealPower key={`healpower-${i}`} baseValue={value} healPower={ratio} />
+                );
 
                 return [
                     ratioCalculation,
-                    heal
+                    ...heal
                 ].filter((item): item is React.ReactElement => item != undefined);
             }
         });

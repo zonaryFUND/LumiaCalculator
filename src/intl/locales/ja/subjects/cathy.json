@@ -10,5 +10,9 @@
     "subject.cathy.r-max": "R最大ダメージ",
     "subject.cathy.passive-wound": "T外傷合計固定ダメージ",
     "subject.cathy.passive-critical-wound": "T致命的外傷合計固定ダメージ",
-    "subject.cathy.passive-shield": "Tシールド"
+    "subject.cathy.passive-shield": "Tシールド",
+
+    "subject.cathy.t-movement-speed": "外傷/致命的外傷(T) 移動速度増加",
+    "subject.cathy.t-healing-reduction": "致命的外傷(T) 治癒効果減少",
+    "subject.cathy.w-slow": "切断(W) 移動速度減少"
 }

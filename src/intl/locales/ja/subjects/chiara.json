@@ -11,5 +11,9 @@
     "subject.chiara.e-launch": "E発動",
     "subject.chiara.r-dot": "R周囲維持ダメージ/秒",
     "subject.chiara.r-hot": "R周囲人数当たり体力回復/秒",
-    "subject.chiara.r-execute": "R審判固定ダメージ(烙印スタック{value})"
+    "subject.chiara.r-execute": "R審判固定ダメージ(烙印スタック{value})",
+
+    "subject.chiara.r-buff": "暴走(R) 最大体力・基本攻撃射程増加",
+    "subject.chiara.t-movement-speed": "烙印(T) 移動速度増加",
+    "subject.chiara.t-healing-reduction": "烙印(T) 治癒効果減少(最大スタック時)"
 }

@@ -416,6 +416,12 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 equipmentComponent("sum", {base: sumOfEquipmentStatus("healerGiveHpHealRatio")})
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 自身が受ける治癒効果減少（乗算）。バフ・デバフによってのみ獲得される（例: キャシーTの致命的外傷）。
+        // 対戦モードの回復量計算への反映は未実装
+        hpHealedDecreaseRatio: { digit: 1, components: [] },
+        // 自身が与える回復・シールド効果増加（乗算）。バフ・デバフによってのみ獲得される
+        // （例: シャーロットT、特性「超再生」）。healerGiveHpHealRatioと異なりシールドにも適用される
+        healerGiveHealShieldRatio: { digit: 0, components: [] },
 
         // 妨害耐性（整数）
         // 装備ステータスおよび一部バフ効果で獲得

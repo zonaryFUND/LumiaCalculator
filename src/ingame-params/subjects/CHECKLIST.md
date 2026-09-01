@@ -28,11 +28,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] bihyung（ビヒョン）
 - [x] blair（ブレア）
 - [x] camilo（カミロ）
-- [ ] cathy（キャッシー）
-- [ ] celine（セリーヌ）
-- [ ] charlotte（シャーロット）
-- [ ] chiara（キアラ）
-- [ ] chloe（クロエ）
+- [x] cathy（キャッシー）
+- [x] celine（セリーヌ）
+- [x] charlotte（シャーロット）
+- [x] chiara（キアラ）
+- [x] chloe（クロエ）
 - [ ] coraline（コラライン）
 - [ ] craver（クレイヴァー）
 - [ ] daniel（ダニエル）

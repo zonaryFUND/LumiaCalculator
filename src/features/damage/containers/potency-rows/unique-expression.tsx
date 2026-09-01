@@ -11,7 +11,7 @@ import Standard from "../../components/potency-rows/standard";
 import Critical from "../../components/potency-rows/critical";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import UniqueValueEquation from "../potency-subrows/unique-value-equation";
-import { healPowerOf, applyHealPower } from "core/damage-table/heal-power";
+import { healPowerRatiosOf, applyHealPower } from "core/damage-table/heal-power";
 
 type Props = Omit<SubjectDamageTableUnit, "value"> & {
     strategy: UniqueValueStrategy
@@ -32,12 +32,12 @@ const uniqueExpression: React.FC<Props> = props => {
         hp
     });
     const valueClass = props.type ? style[props.type.type] : style.skill;
-    const healPower = healPowerOf(status, props.type);
+    const healPowerRatios = healPowerRatiosOf(status, props.type);
 
     if (value.type == "critical") {
         // 致命打の可能性がある基本攻撃属性ダメージ。基礎値・致命打・期待値の3列を独立したセルとして
         // 表示する必要があるため、単一の値セルしか持たないStandardではなくCriticalを使う
-        const [regularDamage, criticalDamage, expectedValue] = value.values.map(v => v == undefined ? v : applyHealPower(v, healPower));
+        const [regularDamage, criticalDamage, expectedValue] = value.values.map(v => v == undefined ? v : applyHealPower(v, healPowerRatios));
 
         return (
             <Critical
@@ -49,14 +49,14 @@ const uniqueExpression: React.FC<Props> = props => {
                 subtable={
                     <InnerTable>
                         <UniqueValueEquation equationExpression={equationExpression} />
-                        {healPower ? <HealPower baseValue={value.values[0]} healPower={healPower} /> : null}
+                        {healPowerRatios.map((ratio, i) => <HealPower key={`healpower-${i}`} baseValue={value.values[0]} healPower={ratio} />)}
                     </InnerTable>
                 }
             />
         )
     }
 
-    const sanitizedValue = applyHealPower(value.value, healPower);
+    const sanitizedValue = applyHealPower(value.value, healPowerRatios);
 
     return (
         <Standard
@@ -66,7 +66,7 @@ const uniqueExpression: React.FC<Props> = props => {
             subtable={
                 <InnerTable>
                     <UniqueValueEquation equationExpression={equationExpression} />
-                    {healPower ? <HealPower baseValue={value.value} healPower={healPower} /> : null}
+                    {healPowerRatios.map((ratio, i) => <HealPower key={`healpower-${i}`} baseValue={value.value} healPower={ratio} />)}
                 </InnerTable>
             }
         />

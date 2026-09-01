@@ -54,6 +54,19 @@ export type ComponentStatus = {
     lifeSteal: ComponentStatusValue
     normalLifeSteal: ComponentStatusValue
     healerGiveHpHealRatio: ComponentStatusValue
+    /**
+     * 自身が受ける治癒効果減少（％）。`healerGiveHpHealRatio`（自身が与える回復量の増加）とは逆に、
+     * 自身に対して行われる回復量を減少させる。バフ・デバフ由来の効果のみで得られる独立した枠
+     * （例: キャシーTの致命的外傷、ゲーム内表記`StatType/HpHealedDecreaseRatio`「治癒効果減少」）
+     */
+    hpHealedDecreaseRatio: ComponentStatusValue
+    /**
+     * 自身が与える回復・シールド効果増加（％）。`healerGiveHpHealRatio`（回復のみ対象）と異なり、シールド
+     * 効果にも適用される。バフ・デバフ由来の効果のみで得られる独立した枠（例: シャーロットT、特性「超再生」）。
+     * `healerGiveHpHealRatio`とこのフィールドは、実機検証の結果それぞれ独立に乗算されることを確認済み
+     * （合算してから1回だけ乗算するのではない。`core/damage-table/heal-power.ts`の`healPowerRatiosOf`参照）
+     */
+    healerGiveHealShieldRatio: ComponentStatusValue
     tenacity: ComponentStatusValue
     moveSpeed: ComponentStatusValue
     slowResist: ComponentStatusValue

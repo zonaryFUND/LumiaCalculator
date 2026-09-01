@@ -1,5 +1,7 @@
 {
     "subject.celine.passive-additional": "T追加ダメージ",
     "subject.celine.q": "Q爆弾{value}個分",
-    "subject.celine.r": "Rレベル{value}"
+    "subject.celine.r": "Rレベル{value}",
+
+    "subject.celine.r-slow": "磁力融合爆弾(R) 4レベル爆弾 移動速度減少"
 }

@@ -7,5 +7,10 @@
     "subject.chloe.r-min": "Rライン最小固定ダメージ/秒",
     "subject.chloe.r-max": "Rライン最大固定ダメージ/秒",
     "subject.chloe.passive-nina": "Tニナ突き追加ダメージ",
-    "subject.chloe.nina-attack": "ニナ攻撃力"
+    "subject.chloe.nina-attack": "ニナ攻撃力",
+
+    "subject.chloe.w-movement-speed": "人形劇(W) 刃の刺繍拾得時移動速度増加",
+    "subject.chloe.q-slow": "攻撃命令(Q) 移動速度減少",
+    "subject.chloe.w1-slow": "人形劇(W1縫糸) 移動速度減少",
+    "subject.chloe.w2-slow": "人形劇(W2刃の刺繍) 移動速度減少"
 }
