@@ -11,5 +11,12 @@
     "subject.echion.r": "R",
     "subject.echion.r-2hit": "R2ヒット",
     "subject.echion.r-heal": "R回復",
-    "subject.echion.gauge-consumption": "VFゲージ"
+    "subject.echion.gauge-consumption": "VFゲージ",
+
+    "subject.echion.r-mode": "VF暴走/オーバーロード(R)",
+    "subject.echion.r-mode.overflow": "VF暴走",
+    "subject.echion.r-mode.overload": "オーバーロード",
+    "subject.echion.t3-attack-speed": "戦闘狂(デスアダーT) 攻撃速度増加",
+    "subject.echion.q-slow": "毒蛇の刃(Q) 移動速度減少",
+    "subject.echion.r1-slow": "エンベノミゼーション(サイドワインダーR) 移動速度減少"
 }

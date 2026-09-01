@@ -121,6 +121,8 @@
     "app.buff-debuff.slow-dictionary-empty": "登録されている発生源がありません",
 
     "buff-debuff.common.none": "なし",
+    "buff-debuff.common.min": "最小",
+    "buff-debuff.common.max": "最大",
 
     "buff-debuff.common.skill-level.1": "Lv1",
     "buff-debuff.common.skill-level.2": "Lv2",

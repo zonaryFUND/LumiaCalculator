@@ -9,10 +9,13 @@ import * as T1 from "./t1";
 import * as T2 from "./t2";
 import * as T3 from "./t3";
 import { weaponType } from "./weapon-type";
+import { selfBuffDebuff, slowSources } from "./buff-debuff";
 
 export default defineSubject({
     code: 44,
     damageTable,
+    buffDebuff: selfBuffDebuff,
+    slowSources,
     gaugeInfo: {
         nameIntlID: "subject.echion.gauge-consumption",
         threshold: 50,

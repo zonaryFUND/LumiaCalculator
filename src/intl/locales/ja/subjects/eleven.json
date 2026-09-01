@@ -7,5 +7,9 @@
     "subject.eleven.table.emax": "E最大",
     "subject.eleven.table.rheal": "R回復",
     "subject.eleven.table.rmax": "R最大ヒット({value})",
-    "subject.eleven.table.theal": "T回復"
+    "subject.eleven.table.theal": "T回復",
+
+    "subject.eleven.charging-slow": "チャージ中(Q/W) 移動速度減少",
+    "subject.eleven.w-damage-reduction": "みんな集中！(W) 被ダメージ減少",
+    "subject.eleven.q-slow": "召し上がれ！(Q) 移動速度減少"
 }

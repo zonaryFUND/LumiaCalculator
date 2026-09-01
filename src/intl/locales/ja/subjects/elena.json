@@ -3,5 +3,8 @@
     "subject.elena.q-second": "Q追撃",
     "subject.elena.r-outer": "R外周",
     "subject.elena.r-center": "R中央",
-    "subject.elena.t-additional": "T解除時追加ダメージ"
+    "subject.elena.t-additional": "T解除時追加ダメージ",
+
+    "subject.elena.e-defense": "スパイラル(E) 防御力増加",
+    "subject.elena.t-slow": "冷気(T) 移動速度減少"
 }

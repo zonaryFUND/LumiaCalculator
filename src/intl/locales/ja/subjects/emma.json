@@ -4,5 +4,8 @@
     "subject.emma.r-pigeon": "鳩R",
     "subject.emma.r-hat": "帽子R",
     "subject.emma.r-rabbit": "兎R",
-    "subject.emma.passive-shield": "Tシールド"
+    "subject.emma.passive-shield": "Tシールド",
+
+    "subject.emma.t-attack-speed": "CheerUP♥(T) 攻撃速度増加",
+    "subject.emma.q-slow": "助手の鳩さん(Q) 移動速度減少"
 }

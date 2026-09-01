@@ -8,5 +8,10 @@
     "subject.estelle.r-ally-shield": "R味方シールド",
     "subject.estelle.r-ally-damage": "R味方使用時周囲ダメージ",
     "subject.estelle.t-heal": "T自己回復",
-    "subject.estelle.t-ally-heal": "T味方蘇生時追加回復"
+    "subject.estelle.t-ally-heal": "T味方蘇生時追加回復",
+
+    "subject.estelle.e-buff": "盾防御(E) 被ダメージ減少・移動速度減少",
+    "subject.estelle.w-slow": "先制対応(W) 移動速度減少",
+    "subject.estelle.w2-slow": "緊急鎮火(EW) 移動速度減少",
+    "subject.estelle.r-slow": "ヘリ支援要請(R自己使用) 移動速度減少"
 }

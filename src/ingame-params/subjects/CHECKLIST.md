@@ -38,11 +38,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] daniel（ダニエル）
 - [x] darko（ダルコ）
 - [x] debi_marlene（デビー&マーリン）
-- [ ] echion（エキオン）
-- [ ] elena（エレナ）
-- [ ] eleven（Eleven）
-- [ ] emma（エマ）
-- [ ] estelle（エステル）
+- [x] echion（エキオン）
+- [x] elena（エレナ）
+- [x] eleven（Eleven）
+- [x] emma（エマ）
+- [x] estelle（エステル）
 - [ ] eva（エヴァ）
 - [ ] felix（フェリックス）
 - [ ] fenrir（フェンリル）

@@ -31,6 +31,9 @@ export const info: SkillTooltipProps = {
         }
     },
     expansion: () => ({
+        tipValues: {
+            0: RatioPercent(Constants.E["self-slow"])
+        },
         enumeratedValues: [
             {labelIntlID: "ToolTipType/EstelleDamageReduction", values: Constants.E.damage_reduction.base, percent: true},
             {labelIntlID: "ToolTipType/EstelleSkillDamage2_2", values: Constants.E2.damage.base},

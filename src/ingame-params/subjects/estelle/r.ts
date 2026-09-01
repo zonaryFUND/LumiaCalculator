@@ -20,7 +20,7 @@ export const info: SkillTooltipProps = {
                 6: RatioPercent(Constants.R.self.damage.amp),
                 7: RatioPercent(Constants.R.self.damage.maxHP),
                 8: Constants.R.self.slow.duration,
-                9: `${Constants.R.self.slow.effect}`,
+                9: RatioPercent(Constants.R.self.slow.effect),
                 10: Constants.R.ally.shield.base,
                 11: RatioPercent(Constants.R.ally.shield.amp),
                 12: RatioPercent(Constants.R.ally.shield.targetLostHP),
