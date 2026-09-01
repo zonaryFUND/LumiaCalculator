@@ -21,7 +21,7 @@ export const info: SkillTooltipProps = {
         10: Constants.R.first_slow.duration,
         11: RatioPercent(Constants.R.first_slow.effect),
         12: Constants.R.later_slow.duration,
-        13: `${Constants.R.later_slow.effect}`,
+        13: RatioPercent(Constants.R.later_slow.effect),
         20: Constants.R.first_damage.outer,
         21: Constants.R.first_damage.center,
         22: Constants.R.later_damage.outer,

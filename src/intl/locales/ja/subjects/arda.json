@@ -5,5 +5,7 @@
     "subject.arda.rw-wall": "RW障壁",
     "subject.arda.rw-wall-max-hit": "RW障壁全ヒット({value})",
     "subject.arda.rw-inner-max-hit": "RW内部全ヒット({value})",
-    "subject.arda.passive-heal": "T回復"
+    "subject.arda.passive-heal": "T回復",
+
+    "subject.arda.w-slow": "バビロンの立方体(W) 移動速度減少"
 }

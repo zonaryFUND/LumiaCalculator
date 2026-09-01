@@ -8,5 +8,10 @@
     "subject.barbara.re-hit": "REヒット",
     "subject.barbara.re-dot-1tick": "RE持続ダメージ1ティック",
     "subject.barbara.re-dot-all": "RE持続ダメージ全ヒット({value})",
-    "subject.barbara.t-additional": "T追加ダメージ"
+    "subject.barbara.t-additional": "T追加ダメージ",
+
+    "subject.barbara.w-movement-speed": "イオンレーザー(W) 移動速度増加",
+    "subject.barbara.rw-movement-speed": "超高出力イオンレーザー(RW) 移動速度増加",
+    "subject.barbara.t-attack-speed": "改造(T) 攻撃速度増加",
+    "subject.barbara.re-slow": "超磁力手榴弾(RE) 移動速度減少"
 }

@@ -32,6 +32,14 @@ export type ComponentStatus = {
     preventBasicAttackDamagedRatio: ComponentStatusValue
     preventBasicAttackDamaged: ComponentStatusValue // hidden status for calculation(garnet T)
     preventSkillDamagedRatio: ComponentStatusValue
+    /**
+     * ダメージタイプ（基本攻撃・スキル）を問わない被ダメージ減少（％）。防御熟練度由来の
+     * `preventBasicAttackDamagedRatio`/`preventSkillDamagedRatio`とは異なり、バフ・デバフ
+     * （`origin: "temporary-status"`）由来の効果のみで得られる独立した枠（例: アロンソW）。
+     * 現時点ではインタフェース（Status算出）のみで、対戦モードのダメージ軽減計算（`core/damage-table/
+     * mitigation.ts`）への反映は未実装
+     */
+    preventDamageRatio: ComponentStatusValue
     attackPower: ComponentStatusValue
     increaseBasicAttackDamageRatio: ComponentStatusValue
     attackSpeed: ComponentStatusValue

@@ -10,5 +10,9 @@
     "subject.alonso.r-heal-max": "R回復最大ティック({value})",
     "subject.alonso.r-finish-damage-min": "R最終(最小)",
     "subject.alonso.r-finish-damage-max": "R最終(最大)",
-    "subject.alonso.passive-heal": "T回復"
+    "subject.alonso.passive-heal": "T回復",
+
+    "subject.alonso.q-movement-speed": "マグネチックハンド(Q) 移動速度増加",
+    "subject.alonso.w-damage-reduction": "バウンシングシールド(W) 被ダメージ減少",
+    "subject.alonso.r-slow": "マグネチックフィールド(R) 移動速度減少"
 }

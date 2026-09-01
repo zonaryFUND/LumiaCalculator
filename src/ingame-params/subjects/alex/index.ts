@@ -10,12 +10,15 @@ import * as RangeE from "./rangee";
 import * as R from "./r";
 import * as T from "./t";
 import { weaponRangeOf } from "core/subject-dynamic/config";
+import { selfBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 27,
     damageTable,
     perpetualStatus,
+    buffDebuff: selfBuffDebuff,
+    slowSources,
 
     skills: {
         listExpression: (config) => {

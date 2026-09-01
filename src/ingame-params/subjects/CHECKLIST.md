@@ -18,11 +18,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] adina（アディナ）
 - [x] adriana（アドリアナ）
 - [x] aiden（エイデン）
-- [ ] alex（アレックス）
-- [ ] alonso（アロンソ）
-- [ ] arda（アルダ）
-- [ ] aya（アヤ）
-- [ ] barbara（バーバラ）
+- [x] alex（アレックス）
+- [x] alonso（アロンソ）
+- [x] arda（アルダ）
+- [x] aya（アヤ）
+- [x] barbara（バーバラ）
 - [ ] bernice（バニス）
 - [ ] bianca（ビアンカ）
 - [ ] bihyung（ビヒョン）

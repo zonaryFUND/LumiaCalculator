@@ -10,6 +10,8 @@ export function effectsOf(definition: BuffDebuffDefinition, stack: number): Effe
         .flatMap(([key, components]) => (components ?? []).map(component => ({
             label: key,
             value: component.value.value ?? 0,
-            percent: component.calculationType == "mul"
+            // calculationTypeが"mul"の場合に加え、"sum"で加算される場合でも単位自体が％のステータス
+            // （`preventDamageRatio`等、"Ratio"サフィックスの命名規則に従うキー）は％表示する
+            percent: component.calculationType == "mul" || key.endsWith("Ratio")
         })));
 }

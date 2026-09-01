@@ -17,7 +17,12 @@ export const info: SkillTooltipProps = {
         6: RatioPercent(Constants.Q.w_cooldown_reduction),
         7: Constants.Q.hp.level,
         8: Constants.Q.retrieve_range,
-        9: Constants.Q.remain
+        9: Constants.Q.remain,
+        20: Constants.Q.damage.base,
+        21: RatioPercent(Constants.Q.damage.amp),
+        22: Constants.Q.railgun_damage.base,
+        23: RatioPercent(Constants.Q.railgun_damage.amp),
+        24: Constants.Q.sentry_defence
     }),
     expansion: ({ }) => ({
         tipValues: {

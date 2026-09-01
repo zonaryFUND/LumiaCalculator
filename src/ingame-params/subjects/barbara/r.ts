@@ -31,7 +31,12 @@ export const info: SkillTooltipProps = {
         20: Constants.R.W.movement_speed.duration,
         21: RatioPercent(Constants.R.W.movement_speed.effect),
         22: Constants.R.W.movement_speed.duration,
-        23: RatioPercent(Constants.R.W.damage.targetMaxHP)
+        23: RatioPercent(Constants.R.W.damage.targetMaxHP),
+        24: Constants.R.Q.damage.base,
+        25: RatioPercent(Constants.R.Q.damage.amp),
+        26: Constants.R.Q.railgun_damage.base,
+        27: RatioPercent(Constants.R.Q.railgun_damage.amp),
+        28: Constants.R.Q.sentry_defence
     }),
     expansion: ({ }) => ({
         tipValues: {

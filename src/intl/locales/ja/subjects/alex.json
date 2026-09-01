@@ -9,5 +9,14 @@
     "subject.alex.r-pulse-outer": "Rパルス1発分(外周)",
     "subject.alex.r-pulse-center": "Rパルス1発分(中央)",
     "subject.alex.r-pulse-outer-max-hit": "Rパルス最大ヒット({value}回、外周)",
-    "subject.alex.r-pulse-center-max-hit": "Rパルス最大ヒット({value}回、中央)"
+    "subject.alex.r-pulse-center-max-hit": "Rパルス最大ヒット({value}回、中央)",
+
+    "subject.alex.melee-q-attack-power": "奇襲(近接Q) 攻撃力増加",
+    "subject.alex.range-q-attack-power": "コイルガン(遠隔Q) 攻撃力増加",
+    "subject.alex.range-w-attack-range": "ターゲットマーカー(遠隔W) 射程増加",
+    "subject.alex.q-max-stack-attack-speed": "コイルガンと奇襲(両Qフルスタック) 攻撃速度増加",
+    "subject.alex.t-hide-movement-speed": "潜入(T) 移動速度増加",
+    "subject.alex.rangee-slow": "パルススティング(遠隔E) 移動速度減少",
+    "subject.alex.r-first-slow": "精密爆撃(R) 移動速度減少(初弾)",
+    "subject.alex.r-later-slow": "精密爆撃(R) 移動速度減少(継続)"
 }
