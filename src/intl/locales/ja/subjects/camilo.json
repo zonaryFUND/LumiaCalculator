@@ -9,5 +9,9 @@
     "subject.camilo.r-2hit": "R2ヒット",
     "subject.camilo.r-heal-min": "R最小回復量(1ヒット)",
     "subject.camilo.r-heal-max": "R最大回復量({value}ヒット)",
-    "subject.camilo.passive-shield": "Tシールド"
+    "subject.camilo.passive-shield": "Tシールド",
+
+    "subject.camilo.q-movement-speed": "ブエルタ(Q) 移動速度増加",
+    "subject.camilo.r-damage-reduction": "ドゥエンデ(R) 被ダメージ減少",
+    "subject.camilo.t-attack-speed": "オーレ(T) 攻撃速度増加"
 }

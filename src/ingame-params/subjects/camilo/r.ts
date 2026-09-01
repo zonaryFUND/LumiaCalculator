@@ -44,6 +44,7 @@ export const info: SkillTooltipProps = {
                 2: RatioPercent(Constants.R.one_hit_damage.attack),
                 3: Constants.R.two_hit_damage.base,
                 4: RatioPercent(Constants.R.two_hit_damage.attack),
+                7: Constants.R.stun,
                 8: Constants.R.heal.base,
                 9: additionalHealMax,
                 10: RatioPercent(Constants.R.heal.perHit),

@@ -43,6 +43,10 @@ export type BuffDebuffOrigin = "skill" | "equipment-ability" | "augment" | "tact
  * 切り替え式バフ（例: イレムの「形態」）や、本来スタックしない効果の効果量が発生源スキルレベル等
  * 別の軸で変化する場合（例: 敵のスキルレベルをそのままstackとして代用するデバフ）に指定する
  * @property buff 選択されたスタック値から、そのスタックにおけるステータス変換量を算出する
+ * @property excludeNoneOption 切り替え式バフ（`stackLabels`指定）のうち、実験体が常にいずれかの状態にあり
+ * 「どちらでもない」状態が存在しないもの（例: ブレアの双剣/両剣モード）向け。trueの場合、スタック0
+ * （`stackLabels[0]`、通常「なし」）をプルダウンの選択肢から除外する。`reconcileSelfBuffs`が新規投入する
+ * 際の初期スタックも0ではなく1になる（`self-buff-definitions.ts`参照）
  *
  * このRecordのキー（id）は、装備アビリティ由来の場合、そのアビリティ内でのみ一意であればよい
  * 「ローカルid」（例: `"move-speed"`）として扱われる。グローバルな一意性・発生源アイテムの特定は、
@@ -55,6 +59,7 @@ export type BuffDebuffDefinition = {
     nameIntlID: string
     maxStack: number
     stackLabels?: string[]
+    excludeNoneOption?: boolean
     buff: (stack: number) => Partial<Record<keyof ComponentStatus | "adaptiveForce", StatusValueComponent[]>>
 }
 

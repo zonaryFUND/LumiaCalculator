@@ -23,11 +23,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] arda（アルダ）
 - [x] aya（アヤ）
 - [x] barbara（バーバラ）
-- [ ] bernice（バニス）
-- [ ] bianca（ビアンカ）
-- [ ] bihyung（ビヒョン）
-- [ ] blair（ブレア）
-- [ ] camilo（カミロ）
+- [x] bernice（バニス）
+- [x] bianca（ビアンカ）
+- [x] bihyung（ビヒョン）
+- [x] blair（ブレア）
+- [x] camilo（カミロ）
 - [ ] cathy（キャッシー）
 - [ ] celine（セリーヌ）
 - [ ] charlotte（シャーロット）

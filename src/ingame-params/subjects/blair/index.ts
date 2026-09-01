@@ -10,11 +10,15 @@ import * as R from "./r";
 import * as T from "./t";
 import * as D from "./d";
 import { weaponSkillLevel } from "./weapon-skill-level";
+import { selfBuffDebuff, givenBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 84,
     damageTable,
+    buffDebuff: selfBuffDebuff,
+    givenBuffDebuff,
+    slowSources,
     gaugeInfo: {
         nameIntlID: "subject.blair.vp",
         max: 200,

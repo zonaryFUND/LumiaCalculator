@@ -12,5 +12,10 @@
     "subject.bianca.r-first": "R発生",
     "subject.bianca.r-finish-min": "R終了最小値",
     "subject.bianca.r-finish-max": "R終了最大値",
-    "subject.bianca.r-heal-base": "R回復基礎値"
+    "subject.bianca.r-heal-base": "R回復基礎値",
+
+    "subject.bianca.w-damage-reduction": "短い安息(W) 被ダメージ減少",
+    "subject.bianca.r-omnisyphon": "真祖の君臨(R) ダメージ吸血増加",
+    "subject.bianca.r-slow": "真祖の君臨(R) 移動速度減少",
+    "subject.bianca.t-slow": "ヴァンパイア(T) 移動速度減少"
 }

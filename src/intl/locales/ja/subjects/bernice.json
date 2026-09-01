@@ -5,5 +5,10 @@
     "subject.bernice.critical-max": "通常攻撃T致命打追加射撃最大",   
     "subject.bernice.q-enhanced": "強化Q",   
     "subject.bernice.w-bleeding": "W出血固定ダメージ",   
-    "subject.bernice.r-displacement": "R転移"
+    "subject.bernice.r-displacement": "R転移",
+
+    "subject.bernice.e-movement-speed": "鷹の目(E) 移動速度増加",
+    "subject.bernice.e-vision": "鷹の目(E) 視界増加",
+    "subject.bernice.q-slow": "レグショット(Q) 移動速度減少",
+    "subject.bernice.q-enhanced-slow": "レグショット(Q) 移動速度減少(束縛対象強化)"
 }

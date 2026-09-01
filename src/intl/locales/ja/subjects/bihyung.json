@@ -8,5 +8,13 @@
     "subject.bihyung.q-reuse-chase-skill-area": "Q再使用時追撃スキルダメージ(範囲)",
     "subject.bihyung.q-reuse-chase-skill-area-2": "Q再使用時追撃スキルダメージ(範囲)(2発分)",
     "subject.bihyung.w-shield": "Wシールド",
-    "subject.bihyung.r-center": "R中央"
+    "subject.bihyung.r-center": "R中央",
+
+    "subject.bihyung.w-movement-speed": "天罰！(W) 移動速度増加",
+    "subject.bihyung.r-damage-reduction": "宴の始まりだ！(R) 被ダメージ減少",
+    "subject.bihyung.r-max-hp": "宴の始まりだ！(R) 最大体力増加",
+    "subject.bihyung.t-slow-resistance": "トッケビ火(T) 移動速度減少耐性増加",
+    "subject.bihyung.w-slow": "天罰！(W) 移動速度減少",
+    "subject.bihyung.r-slow-outer": "宴の始まりだ！(R) 移動速度減少(外側)",
+    "subject.bihyung.r-slow-center": "宴の始まりだ！(R) 移動速度減少(中央)"
 }

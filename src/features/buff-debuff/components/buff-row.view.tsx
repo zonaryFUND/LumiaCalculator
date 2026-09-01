@@ -17,6 +17,7 @@ type Props = {
     maxStack: number
     currentStack: number
     stackLabels?: string[]
+    excludeNoneOption?: boolean
     effects: Effect[]
     onChange: (stack: number) => void
     onRemove?: () => void
@@ -40,6 +41,10 @@ type Props = {
  *
  * `extra`が指定された場合、削除ボタンの手前に任意のReactNodeを追加で表示する（例: 汎用スロウ行の
  * 「辞書」ボタン。`incoming-buffs.tsx`参照）。このコンポーネント自身は中身を一切解釈しない
+ *
+ * `excludeNoneOption`が指定された場合、プルダウンの選択肢から`stackLabels[0]`（スタック0、通常「なし」）
+ * を除外する。実験体が常にいずれかの状態にあり「どちらでもない」状態が存在しない切り替え式バフ向け
+ * （例: ブレアの双剣/両剣モード。`BuffDebuffDefinition.excludeNoneOption`参照）
  */
 const BuffRow: React.FC<Props> = props => {
     const isCheckbox = props.maxStack == 1 && !props.stackLabels;
@@ -68,7 +73,7 @@ const BuffRow: React.FC<Props> = props => {
                             props.stackLabels ?
                             {
                                 intlID: true,
-                                list: props.stackLabels,
+                                list: props.excludeNoneOption ? props.stackLabels.slice(1) : props.stackLabels,
                                 current: props.stackLabels[props.currentStack],
                                 set: (value: string) => props.onChange(props.stackLabels!.indexOf(value))
                             } :

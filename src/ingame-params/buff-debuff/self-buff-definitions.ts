@@ -75,7 +75,7 @@ export function selfBuffDefinitionsOf(config: SubjectConfig, status: Status): Re
 export function reconcileSelfBuffs(config: SubjectConfig, status: Status): BuffDebuffState[] {
     const autoDefinitions = autoSelfBuffDefinitionsOf(config, status);
     const reconciledAuto = Object.keys(autoDefinitions).map(id =>
-        config.selfBuffs.find(s => s.id == id) ?? { id, stack: 0 }
+        config.selfBuffs.find(s => s.id == id) ?? { id, stack: autoDefinitions[id].excludeNoneOption ? 1 : 0 }
     );
 
     // 特性・戦術スキル・オブジェクト討伐由来（`autoDefinitions`に含まれない = origin: "skill" |

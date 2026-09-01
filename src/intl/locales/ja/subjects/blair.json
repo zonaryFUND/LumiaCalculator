@@ -21,5 +21,13 @@
     "subject.blair.t-heal": "Tシフト状態スキルダメージ比回復",
     "subject.blair.d-damage": "Dダメージ",
     "subject.blair.d-heal": "D与ダメージ比回復",
-    "subject.blair.d-heal-amount": "D回復量"
+    "subject.blair.d-heal-amount": "D回復量",
+
+    "subject.blair.r-attack-speed": "XMS-5活性化(R) 攻撃速度増加",
+    "subject.blair.t-mode": "ブレードシフト(T)",
+    "subject.blair.t-mode.dual-swords": "双剣",
+    "subject.blair.t-mode.double-bladed-sword": "両剣",
+    "subject.blair.ds-w-defense-down": "抹殺(双剣W) 防御力減少",
+    "subject.blair.ds-e-slow": "スピンスラッシュ(双剣E) 移動速度減少",
+    "subject.blair.ds-e-combo-slow": "シフトラッシュ(双剣E連携) 移動速度減少"
 }

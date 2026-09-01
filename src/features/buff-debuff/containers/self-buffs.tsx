@@ -59,6 +59,7 @@ const SelfBuffs: React.FC = () => {
                                     sourceIntlID={itemID != undefined ? `Item/Name/${itemID}` : undefined}
                                     maxStack={definition.maxStack}
                                     stackLabels={definition.stackLabels}
+                                    excludeNoneOption={definition.excludeNoneOption}
                                     currentStack={state.stack}
                                     effects={effectsOf(definition, state.stack)}
                                     onChange={stack => setSelfBuffs(prev => prev.map(
