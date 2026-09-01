@@ -9,12 +9,15 @@ import * as MarleneW from "./marlenew";
 import * as MarleneE from "./marlenee";
 import * as R from "./r";
 import * as T from "./t";
+import { selfBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 65,
     damageTable,
     perpetualStatus,
+    buffDebuff: selfBuffDebuff,
+    slowSources,
 
     skills: {
         listExpression: () => ({

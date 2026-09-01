@@ -57,7 +57,7 @@ export default {
         // シャドーグライド状態持続時間
         "duration": 3,
         // シャドーグライド状態時基本攻撃射程固定値
-        "basic_attack_range": 3.5,
+        "basic_attack_range": 3,
         "damage": {
             "base": [20,40,60,80,100],
             "additionalAttack": 50

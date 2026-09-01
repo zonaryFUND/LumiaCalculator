@@ -4,5 +4,12 @@
     "subject.coraline.e-white-mirror-damage": "E白鏡ダメージ",
     "subject.coraline.e-white-mirror-shield": "E白鏡シールド",
     "subject.coraline.e-black-mirror": "E黒鏡ダメージ",
-    "subject.coraline.r-additional": "R追加ダメージ"
+    "subject.coraline.r-additional": "R追加ダメージ",
+
+    "subject.coraline.w-skill-amp": "真実の鏡/偽りの鏡(W) スキル増幅増加",
+    "subject.coraline.r-movement-speed": "鏡の世界の残影(R) 移動速度増加",
+    "subject.coraline.r-attack-range": "鏡の世界の残影(R) 基本攻撃射程増加",
+    "subject.coraline.e-defense-reduction": "罪の束縛(黒鏡E) 防御力減少",
+    "subject.coraline.q-white-mirror-slow": "断罪の光(白鏡Q) 移動速度減少",
+    "subject.coraline.q-black-mirror-slow": "断罪の光(黒鏡Q) 移動速度減少"
 }

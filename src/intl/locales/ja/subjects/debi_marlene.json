@@ -13,5 +13,13 @@
     "subject.debimarlene.r-true-damage": "R追加固定ダメージ",
     "subject.debimarlene.r-true-damage-max-hit": "R追加固定ダメージ全ヒット({value})",
     "subject.debimarlene.passive-color-change": "T色変え",
-    "subject.debimarlene.passive-color-change-set": "T色変え1セット({value})"
+    "subject.debimarlene.passive-color-change-set": "T色変え1セット({value})",
+
+    "subject.debimarlene.debi-q-attack-speed": "デビーQ 攻撃速度増加",
+    "subject.debimarlene.marlene-q-attack-speed": "マーリンQ 攻撃速度増加",
+    "subject.debimarlene.e-movement-speed": "E使用後 移動速度増加",
+    "subject.debimarlene.t-mode": "Blue＆Red(T)",
+    "subject.debimarlene.t-mode.debi": "デビー",
+    "subject.debimarlene.t-mode.marlene": "マーリン",
+    "subject.debimarlene.marlene-e-slow": "マーリンE 移動速度減少"
 }

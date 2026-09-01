@@ -5,5 +5,12 @@
     "subject.daniel.w-store": "Wダメージ保存割合",
     "subject.daniel.r-1hit": "R潜入中1ヒット",
     "subject.daniel.r-max-hit": "R潜入中全ヒット({value})",
-    "subject.daniel.r-finish": "R最終"
+    "subject.daniel.r-finish": "R最終",
+
+    "subject.daniel.q-attack-speed": "シャドーシザース(Q) 攻撃速度増加",
+    "subject.daniel.e-attack-range": "シャドーグライド(E) 基本攻撃射程固定",
+    "subject.daniel.t-buff": "孤独な芸術家(T) 夜間視界・移動速度増加",
+    "subject.daniel.w-vision-decrease": "インスピレーション(W) 視界減少",
+    "subject.daniel.q-slow": "シャドーシザース(Q) 移動速度減少",
+    "subject.daniel.w-slow": "インスピレーション(W) 移動速度減少"
 }

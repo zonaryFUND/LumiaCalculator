@@ -33,11 +33,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] charlotte（シャーロット）
 - [x] chiara（キアラ）
 - [x] chloe（クロエ）
-- [ ] coraline（コラライン）
-- [ ] craver（クレイヴァー）
-- [ ] daniel（ダニエル）
-- [ ] darko（ダルコ）
-- [ ] debi_marlene（デビー&マーリン）
+- [x] coraline（コラライン）
+- [x] craver（クレイヴァー）
+- [x] daniel（ダニエル）
+- [x] darko（ダルコ）
+- [x] debi_marlene（デビー&マーリン）
 - [ ] echion（エキオン）
 - [ ] elena（エレナ）
 - [ ] eleven（Eleven）

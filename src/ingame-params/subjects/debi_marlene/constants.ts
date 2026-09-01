@@ -106,7 +106,7 @@ export default {
         // マーリンエネルギー爆発時移動速度減少
         "slow": {
             "duration": 0.75,
-            "effect": 20
+            "effect": 40
         },
         "cooldown": {
             "constant": [17,15.5,14,12.5,11]

@@ -8,7 +8,9 @@
     "subject.craver.w1-2hit": "W1(スイープキック)2ヒット",
     "subject.craver.w2-finish": "W2(バックフリップ)",
     "subject.craver.e1": "E1(コンバットロール)",
-    "subject.craver.e2": "E2(クイックステップ)"
+    "subject.craver.e2": "E2(クイックステップ)",
 
-    
+    "subject.craver.w-buff": "スイープキック(W) 移動速度増加・被ダメージ減少",
+    "subject.craver.q-slow": "フォーカスショット(Q) 移動速度減少",
+    "subject.craver.w-slow": "スイープキック(W) 移動速度減少"
 }
