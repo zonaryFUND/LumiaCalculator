@@ -8,5 +8,11 @@
     "subject.silvia.bikeq": "バイクQ",
     "subject.silvia.bikew": "バイクW",
     "subject.silvia.bikee-min": "バイクE最小値",
-    "subject.silvia.bikee-max": "バイクE最大値"
+    "subject.silvia.bikee-max": "バイクE最大値",
+
+    "subject.silvia.r-mode": "機動戦(R) 状態",
+    "subject.silvia.r-mode.human": "人間",
+    "subject.silvia.r-mode.bike": "バイク",
+    "subject.silvia.r-mount-slow": "機動戦(R) 搭乗直後移動速度減少",
+    "subject.silvia.humanw-slow": "フィニッシュライン(人間W) 移動速度減少"
 }

@@ -14,5 +14,11 @@
     "subject.sua.rw-damage": "RWダメージ",
     "subject.sua.re-bookmark": "RE(栞あり)",
     "subject.sua.re-heal-min": "RE回復最小値",
-    "subject.sua.re-heal-max": "RE回復最大値"
+    "subject.sua.re-heal-max": "RE回復最大値",
+
+    "subject.sua.t-attack-speed": "心の糧(T) 攻撃速度増加",
+    "subject.sua.q-center-slow": "オデッセイ(Q中央) 移動速度減少",
+    "subject.sua.rq-center-slow": "オデッセイ(RQ中央) 移動速度減少",
+    "subject.sua.e-slow": "ドン・キホーテ(E) 移動速度減少",
+    "subject.sua.re-slow": "ドン・キホーテ(RE) 移動速度減少"
 }

@@ -44,7 +44,7 @@ export function createSubjectConfigStore(storageKey: string) {
                     const config = updater(prev.config);
                     return {
                         config,
-                        status: statusOf(config, 100)
+                        status: statusOf(config, prev.hpRatio)
                     }
                 }),
                 setConfig: (config: SubjectConfig) => get()._updateConfig(() => config),
@@ -116,10 +116,14 @@ export function createSubjectConfigStore(storageKey: string) {
                     ...prev,
                     stack: typeof stack === "function" ? stack(prev.stack) : stack
                 })),
-                setHpRatio: (hpRatio: React.SetStateAction<number>) => set(prev => ({
-                    ...prev,
-                    hpRatio: typeof hpRatio === "function" ? hpRatio(prev.hpRatio) : hpRatio
-                }))
+                setHpRatio: (hpRatio: React.SetStateAction<number>) => set(prev => {
+                    const nextHpRatio = typeof hpRatio === "function" ? hpRatio(prev.hpRatio) : hpRatio;
+                    return {
+                        ...prev,
+                        hpRatio: nextHpRatio,
+                        status: statusOf(prev.config, nextHpRatio)
+                    };
+                })
             }),
             {
                 name: storageKey,

@@ -11,12 +11,15 @@ import * as BikeE from "./bikee";
 import * as HumanR from "./humanr";
 import * as BikeR from "./biker";
 import * as T from "./t";
+import { selfBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 16,
     damageTable,
     perpetualStatus,
+    buffDebuff: selfBuffDebuff,
+    slowSources,
     stackInfo: {
         nameIntlID: stack.StackNameIntlID,
         max: stack.MaxStack

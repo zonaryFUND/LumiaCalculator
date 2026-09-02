@@ -14,7 +14,10 @@ const table: DamageTableGenerator = props => ({
             { label: props.intl.formatMessage({ id: "subject.shoichi.r-bag" }), origin: "R", value: Constants.R.damage },
             { label: props.intl.formatMessage({ id: "subject.shoichi.r-dagger" }), origin: "R", value: Constants.R.knife_damage }
         ],
-        [{ label: props.intl.formatMessage({ id: "subject.shoichi.passive-dagger-throw" }), origin: "T", value: Constants.T.knife_damage }]
+        [
+            { label: props.intl.formatMessage({ id: "subject.shoichi.passive-dagger-throw" }), origin: "T", value: Constants.T.knife_damage },
+            { label: props.intl.formatMessage({ id: "subject.shoichi.passive-dagger-throw-marked" }), origin: "T", value: Constants.T.knife_damage, multiplier: Constants.E.damage_increase + 100 }
+        ]
     ]
 })
 

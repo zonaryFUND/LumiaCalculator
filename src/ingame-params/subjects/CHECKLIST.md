@@ -100,11 +100,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] priya（プリヤ）
 - [ ] rio（莉央）
 - [x] rozzi（ロッジ）
-- [ ] shoichi（彰一）
-- [ ] silvia（シルヴィア）
-- [ ] sissela（シセラ）
-- [ ] sua（スア）
-- [ ] tazia（タジア）
+- [x] shoichi（彰一）
+- [x] silvia（シルヴィア）
+- [x] sissela（シセラ）
+- [x] sua（スア）
+- [x] tazia（タジア）
 - [ ] theodore（テオドール）
 - [ ] tia（ティア）
 - [ ] tsubame（つばめ）

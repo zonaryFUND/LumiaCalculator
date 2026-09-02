@@ -6,5 +6,9 @@
     "subject.sissela.e-damage": "Eダメージ",
     "subject.sissela.r-losthp": "消耗体力比(%)",
     "subject.sissela.t-amp": "T増幅",
-    "subject.sissela.t-heal": "T回復/秒"
+    "subject.sissela.t-heal": "T回復/秒",
+
+    "subject.sissela.w-movement-speed": "ウィルソン、どこ？(W) 移動速度増加",
+    "subject.sissela.r-amp-enhance": "解放(R) 苦痛の記憶スキル増幅効果増加",
+    "subject.sissela.t-slow": "苦痛の記憶(T) 移動速度減少"
 }

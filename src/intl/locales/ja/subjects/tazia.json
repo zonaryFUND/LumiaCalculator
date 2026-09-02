@@ -9,5 +9,9 @@
     "subject.tazia.e-damage-max": "Eガラス片最大破壊時({value})ダメージ",
     "subject.tazia.r-appear": "R出現",
     "subject.tazia.r-blast": "R爆発",
-    "subject.tazia.r-blast-max": "R爆発ガラス片最大破壊時({value})"
+    "subject.tazia.r-blast-max": "R爆発ガラス片最大破壊時({value})",
+
+    "subject.tazia.e-slow": "プリジア(E) 移動速度減少",
+    "subject.tazia.r-range-slow": "パラディーソ(R・範囲内) 移動速度減少",
+    "subject.tazia.r-hit-slow": "パラディーソ(R・大剣着地的中) 移動速度減少"
 }

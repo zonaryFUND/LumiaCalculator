@@ -2,5 +2,9 @@
     "subject.shoichi.passive-additional": "T追加ダメージ",
     "subject.shoichi.r-bag": "R鞄振り回し",
     "subject.shoichi.r-dagger": "R短剣",
-    "subject.shoichi.passive-dagger-throw": "T短剣投げ"
+    "subject.shoichi.passive-dagger-throw": "T短剣投げ",
+    "subject.shoichi.passive-dagger-throw-marked": "T短剣投げ(刻印対象)",
+
+    "subject.shoichi.e-slow": "協商(E) 移動速度減少",
+    "subject.shoichi.r-slow": "無慈悲(R) 移動速度減少"
 }
