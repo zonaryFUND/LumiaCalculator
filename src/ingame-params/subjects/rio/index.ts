@@ -6,12 +6,14 @@ import * as W from "./w";
 import * as E from "./e";
 import * as R from "./r";
 import * as T from "./t";
+import { slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 31,
     damageTable,
     perpetualStatus,
+    slowSources,
 
     skills: {
         listExpression: () => ({

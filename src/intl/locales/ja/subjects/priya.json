@@ -5,5 +5,12 @@
     "subject.priya.e-multiple-hits": "E{value}ヒット",
     "subject.priya.r-outward": "R往路(中→外)",
     "subject.priya.r-return": "R復路(外→中)",
-    "subject.priya.r-heal": "R実回復"
+    "subject.priya.r-heal": "R実回復",
+
+    "subject.priya.w-movement-speed": "ポルタメント(W) 自身の移動速度増加",
+    "subject.priya.e-movement-speed": "プリビティの歌(E) 使用中移動速度増加",
+    "subject.priya.r-damage-reduction": "大地の響き(R) 被ダメージ減少",
+    "subject.priya.w-ally-movement-speed": "ポルタメント(W) 味方の移動速度増加",
+    "subject.priya.w-slow": "ポルタメント(W) 移動速度減少",
+    "subject.priya.e-slow": "プリビティの歌(E) 移動速度減少"
 }

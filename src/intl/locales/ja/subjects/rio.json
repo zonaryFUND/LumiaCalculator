@@ -18,5 +18,9 @@
     "subject.rio.hankyu-r2-wall": "短弓R2壁ドン",
     "subject.rio.daikyu-r": "和弓R",
     "subject.rio.daikyu-r-enhanced": "和弓R強化",
-    "subject.rio.passive-penetration": "T致命打率変換"
+    "subject.rio.passive-penetration": "T致命打率変換",
+
+    "subject.rio.hankyu-w-slow": "離れ(短弓W) 移動速度減少",
+    "subject.rio.daikyu-w-slow": "離れ(和弓W) 移動速度減少",
+    "subject.rio.daikyu-r-slow": "正射必中(和弓R) 移動速度減少"
 }

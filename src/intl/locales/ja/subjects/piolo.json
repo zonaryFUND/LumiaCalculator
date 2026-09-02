@@ -10,5 +10,12 @@
     "subject.piolo.e1-rush-min": "E1突進最小",
     "subject.piolo.e1-rush-max": "E1突進最大",
     "subject.piolo.r-damage": "Rダメージ",
-    "subject.piolo.r-shield": "Rシールド"
+    "subject.piolo.r-shield": "Rシールド",
+
+    "subject.piolo.q1-self-slow": "双節乱舞(Q1) チャージ中自己移動速度減少",
+    "subject.piolo.w1-self-slow": "弾き(W1) チャージ中自己移動速度減少",
+    "subject.piolo.e1-self-slow": "絡め捕り(E1) チャージ中自己移動速度減少",
+    "subject.piolo.w2-movement-speed": "振り回し(W2) 移動速度増加",
+    "subject.piolo.r-attack-speed": "パニッシャー(R) 攻撃速度増加",
+    "subject.piolo.q2-center-slow": "打ち下ろし(Q2中央) 移動速度減少"
 }

@@ -3,5 +3,12 @@
     "subject.nicky.q1-min": "Q1最小",
     "subject.nicky.q1-max": "Q1最大",
     "subject.nicky.e-enhanced": "強化E",
-    "subject.nicky.r-enhanced": "強化R"
+    "subject.nicky.r-enhanced": "強化R",
+
+    "subject.nicky.q-self-slow": "獲得アクション(Q) チャージ中自己移動速度減少",
+    "subject.nicky.w-damage-reduction": "ガード＆カウンター(W) 被ダメージ減少",
+    "subject.nicky.t-attack-speed": "短気(T) 攻撃速度増加",
+    "subject.nicky.w-counter-slow": "カウンター(W) 移動速度減少",
+    "subject.nicky.e-slow": "強力なパンチ(E) 移動速度減少",
+    "subject.nicky.e2-slow": "怒りのパンチ！(強化E) 移動速度減少"
 }

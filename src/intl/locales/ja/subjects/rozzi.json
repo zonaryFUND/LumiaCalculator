@@ -1,5 +1,12 @@
 {
     "subject.rozzi.passive-first": "T連続攻撃1発目",
     "subject.rozzi.passive-second": "T連続攻撃2発目",
-    "subject.rozzi.r-blast": "R即時爆発追加ダメージ"
+    "subject.rozzi.r-blast": "R即時爆発追加ダメージ",
+
+    "subject.rozzi.w-movement-speed": "スピンショット(W) 使用中移動速度増加",
+    "subject.rozzi.r-detonate-movement-speed": "セムテックス弾Mk-II(R) 強制起爆時移動速度増加",
+    "subject.rozzi.t-attack": "甘いチョコレート(T) 攻撃力増加",
+    "subject.rozzi.w-debuff": "スピンショット(W) 防御力減少・治癒効果減少",
+    "subject.rozzi.r-attach-slow": "セムテックス弾Mk-II(R・付着時) 移動速度減少",
+    "subject.rozzi.r-detonate-slow": "セムテックス弾Mk-II(R・爆発時) 移動速度減少"
 }
