@@ -4,5 +4,8 @@
     "subject.lenox.w-pull": "W引き寄せ",
     "subject.lenox.r-1hit": "R1ヒット",
     "subject.lenox.r-2hit": "R2ヒット",
-    "subject.lenox.passive-shield": "Tシールド"
+    "subject.lenox.passive-shield": "Tシールド",
+
+    "subject.lenox.w-slow": "鋭い毒牙(W) 移動速度減少",
+    "subject.lenox.e-slow": "蛇の動き(E) 移動速度減少"
 }

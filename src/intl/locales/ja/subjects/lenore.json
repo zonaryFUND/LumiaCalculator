@@ -9,5 +9,10 @@
     "subject.lenore.w-enhanced-shield": "強化Wシールド",
     "subject.lenore.r-dot-1tick": "R持続ダメージ1ティック",
     "subject.lenore.r-dot-fulltick": "R持続ダメージ全ティック",
-    "subject.lenore.r-finish": "R最終"
+    "subject.lenore.r-finish": "R最終",
+
+    "subject.lenore.w-enhanced-movement-speed": "フィーネ(強化W) 移動速度増加",
+    "subject.lenore.r-insane-attack-speed": "激痛の狂詩曲(R) 精神異常時攻撃速度増加",
+    "subject.lenore.e-enhanced-slow": "ダル・セーニョ(強化E) 移動速度減少",
+    "subject.lenore.r-slow-max": "激痛の狂詩曲(R・最大スタック時) 移動速度減少"
 }

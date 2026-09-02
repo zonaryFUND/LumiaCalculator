@@ -5,11 +5,13 @@ import * as E from "./e";
 import * as R from "./r";
 import * as T from "./t";
 import { defineSubject } from "../type";
+import { selfBuffDebuff } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 29,
     damageTable,
+    buffDebuff: selfBuffDebuff,
 
     skills: {
         listExpression: () => ({

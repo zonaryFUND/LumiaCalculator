@@ -3,5 +3,9 @@
     "subject.lucia.q-enhanced": "強化Q(輝くロマン)",
     "subject.lucia.w-multiple-hit": "W2発目以降ダメージ",
     "subject.lucia.e-cooldown-reduction": "E使用時クールダウン減少量",
-    "subject.lucia.passive-additional": "T追加ダメージ"
+    "subject.lucia.passive-additional": "T追加ダメージ",
+
+    "subject.lucia.t-movement-speed": "令嬢の嗜み(T) 移動速度増加",
+    "subject.lucia.t-attack-speed": "令嬢の嗜み(T) 攻撃速度増加",
+    "subject.lucia.q-enhanced-slow": "輝くロマン(強化Q) 移動速度減少"
 }

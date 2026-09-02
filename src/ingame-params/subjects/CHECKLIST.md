@@ -74,11 +74,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] kenneth（ケネス）
 - [x] laura（ラウラ）
 - [x] leni（レニ）
-- [ ] lenore（レノア）
-- [ ] lenox（レノックス）
-- [ ] leon（レオン）
-- [ ] li_dailin（ダイリン）
-- [ ] lucia（ルチア）
+- [x] lenore（レノア）
+- [x] lenox（レノックス）
+- [x] leon（レオン）
+- [x] li_dailin（ダイリン）
+- [x] lucia（ルチア）
 - [ ] luke（ルク）
 - [ ] ly_anh（イアン）
 - [ ] magnus（マグヌス）

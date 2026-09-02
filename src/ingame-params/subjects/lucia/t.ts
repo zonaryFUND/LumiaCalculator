@@ -11,7 +11,8 @@ export const info: SkillTooltipProps = {
         const common: TooltipValues = {
             0: Constants.T.crystal_duration,
             2: RatioPercent(Constants.T.movement_speed.effect),
-            3: Constants.T.movement_speed.duration
+            3: Constants.T.movement_speed.duration,
+            4: RatioPercent(Constants.T.attack_speed)
         }
         if (showEquation) {
             return {

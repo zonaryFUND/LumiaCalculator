@@ -3,5 +3,7 @@
     "subject.leon.w-shield": "Wシールド(自分)",
     "subject.leon.w-shield-ally": "Wシールド(味方)",
     "subject.leon.r-wave": "R波",
-    "subject.leon.r-wall": "R壁ドン"
+    "subject.leon.r-wall": "R壁ドン",
+
+    "subject.leon.t-buff": "人間魚雷(T) 移動速度・攻撃速度増加"
 }

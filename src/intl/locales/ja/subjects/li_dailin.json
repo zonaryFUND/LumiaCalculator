@@ -8,6 +8,11 @@
     "subject.lidailin.r-min-max-hit": "R最小全ヒット({value})",
     "subject.lidailin.r-1hit-max": "R1ヒット最大",
     "subject.lidailin.r-max-max-hit": "R最大全ヒット({value})",
-    "subject.lidailin.bac": "酔いゲージ"
+    "subject.lidailin.bac": "酔いゲージ",
 
+    "subject.lidailin.w-damage-reduction": "酒飲み(W) 被ダメージ減少",
+    "subject.lidailin.t-attack-speed": "猛虎清拳(T) 攻撃速度増加",
+    "subject.lidailin.t-alcohol-attack": "百日酔(T) 攻撃力増加",
+    "subject.lidailin.e-slow": "虎連脚(E) 移動速度減少",
+    "subject.lidailin.e-enhanced-slow": "虎連脚(酔拳E) 移動速度減少"
 }
