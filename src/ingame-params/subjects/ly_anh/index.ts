@@ -9,11 +9,14 @@ import * as GhostE from "./ghoste";
 import * as R from "./lyanhr";
 import * as R2 from "./lyanhr2";
 import * as T from "./lyanht";
+import { selfBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 63,
     damageTable,
+    buffDebuff: selfBuffDebuff,
+    slowSources,
 
     skills: {
         listExpression: () => ({

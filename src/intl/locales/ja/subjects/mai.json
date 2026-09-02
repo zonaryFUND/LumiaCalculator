@@ -2,5 +2,9 @@
     "subject.mai.passive-additional": "T追加ダメージ",
     "subject.mai.w-defense": "W防御力増加",
     "subject.mai.e-shield": "Eシールド",
-    "subject.mai.r-heal": "R回復"
+    "subject.mai.r-heal": "R回復",
+
+    "subject.mai.w-buff": "ショール·ベール(W) 被ダメージ減少・移動速度増加",
+    "subject.mai.e-attack-speed": "フィナーレ(E再使用) 攻撃速度増加",
+    "subject.mai.q-slow": "ドレープ(Q) 移動速度減少"
 }

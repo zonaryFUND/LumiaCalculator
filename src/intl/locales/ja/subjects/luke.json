@@ -7,5 +7,12 @@
     "subject.luke.r-min": "R最小",
     "subject.luke.r-max": "R最大",
     "subject.luke.r-additional-1stack": "Rパッシブ追加ダメージ(1スタック)",
-    "subject.luke.r-additional-max-stack": "Rパッシブ追加ダメージ最大({value}スタック)"
+    "subject.luke.r-additional-max-stack": "Rパッシブ追加ダメージ最大({value}スタック)",
+
+    "subject.luke.t-attack-speed": "掃除完了(T) 攻撃速度増加",
+    "subject.luke.q-evolved-defense-down": "クリーニングサービス(進化Q) 防御力減少",
+    "subject.luke.e-slow": "無騒音掃除機(E) 移動速度減少",
+    "subject.luke.r-stack-slow-max": "アフターサービス(Rパッシブ・最大スタック時) 移動速度減少",
+    "subject.luke.r-slow": "アフターサービス(R使用時) 移動速度減少",
+    "subject.luke.r-evolved-slow": "アフターサービス(進化R使用時) 移動速度減少"
 }

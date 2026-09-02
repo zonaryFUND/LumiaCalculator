@@ -12,5 +12,9 @@
     "subject.lyanh.ghostw": "憑依W",
     "subject.lyanh.ghoste-swing": "憑依E振り下ろし",
     "subject.lyanh.ghoste-pull": "憑依E引き寄せ",
-    "subject.lyanh.r-jump-out": "R飛び出し"
+    "subject.lyanh.r-jump-out": "R飛び出し",
+
+    "subject.lyanh.ghostw-movement-speed": "血まみれの爪(憑依W) 移動速度増加",
+    "subject.lyanh.r-buff": "悪霊状態(R) 最大体力・移動速度・攻撃速度増加",
+    "subject.lyanh.humanw-slow": "ごめんなさい…(人間W) 移動速度減少"
 }

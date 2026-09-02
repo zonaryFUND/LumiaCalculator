@@ -4,5 +4,11 @@
     "subject.markus.q-additional-max-hit": "Q中追加ダメージ全ヒット({value})",
     "subject.markus.q-additional-heal-max-hit": "Q中追加ダメージによる回復全ヒット({value})",
     "subject.markus.passive-additional": "T突進追加ダメージ",
-    "subject.markus.passive-shock": "T衝突追加ダメージ"
+    "subject.markus.passive-shock": "T衝突追加ダメージ",
+
+    "subject.markus.q-attack-speed": "戦闘教範(Q) 攻撃速度増加",
+    "subject.markus.q-movement-speed": "戦闘教範(Q) 移動速度増加",
+    "subject.markus.r-defense-down": "破壞(R) 防御力減少",
+    "subject.markus.r-slow": "地殻変動(R) 移動速度減少",
+    "subject.markus.t-slow": "ショック(T) 移動速度減少"
 }

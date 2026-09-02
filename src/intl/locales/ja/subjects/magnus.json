@@ -1,5 +1,7 @@
 {
     "subject.magnus.w-1hit": "W単発",
     "subject.magnus.w-max-hit": "W全ヒット({value})",
-    "subject.magnus.passive": "根性(T)"
+    "subject.magnus.t-buff": "根性(T) 防御力増加・体力再生",
+    "subject.magnus.w-tenacity": "17対1(W) 妨害耐性増加",
+    "subject.magnus.q-slow": "破砕弾(Q) 移動速度減少"
 }
