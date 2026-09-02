@@ -8,5 +8,9 @@
     "subject.henry.w-e": "W範囲内E",
     "subject.henry.r1": "R発動",
     "subject.henry.r1-shield": "Rシールド",
-    "subject.henry.r2": "R爆発"
+    "subject.henry.r2": "R爆発",
+
+    "subject.henry.e-movement-speed": "タイムリープ(E) 移動速度増加",
+    "subject.henry.w-slow": "時の歯車(W) 移動速度減少",
+    "subject.henry.r-slow": "時間再構築(R) 移動速度減少"
 }

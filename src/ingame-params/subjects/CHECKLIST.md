@@ -48,11 +48,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] fenrir（フェンリル）
 - [x] fiora（フィオラ）
 - [x] garnet（ガーネット）
-- [ ] hart（ハート）
-- [ ] haze（ヘイズ）
-- [ ] henry（ヘンリー）
-- [ ] hisui（ヒスイ）
-- [ ] hyejin（ヘジン）
+- [x] hart（ハート）
+- [x] haze（ヘイズ）
+- [x] henry（ヘンリー）
+- [x] hisui（ヒスイ）
+- [x] hyejin（ヘジン）
 - [ ] hyunwoo（ヒョヌ）
 - [ ] irem（イレム）
 - [ ] isaac（アイザック）

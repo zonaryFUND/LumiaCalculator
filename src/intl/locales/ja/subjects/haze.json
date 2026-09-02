@@ -9,5 +9,10 @@
     "subject.haze.eq-max-ammo": "E中Q最大(余り弾数{value})",
     "subject.haze.r-swap": "R切り替え",
     "subject.haze.rq": "R中Q",
-    "subject.haze.rq-enhanced": "R中Q強化"
+    "subject.haze.rq-enhanced": "R中Q強化",
+
+    "subject.haze.r-buff": "ロケットランチャー状態(R) 射程・攻撃速度固定/移動速度減少/視界増加",
+    "subject.haze.t-movement-speed": "ウェポンケース(T) 移動速度増加",
+    "subject.haze.q3-slow": "加速ロケット(R中Q) 移動速度減少",
+    "subject.haze.r-slow": "ロケットランチャー振り回し(R) 移動速度減少"
 }

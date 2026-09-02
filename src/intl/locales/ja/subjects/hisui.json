@@ -17,5 +17,10 @@
     "subject.hisui.r-reuse-second": "R再使用追撃",
     "subject.hisui.r-additional": "R追加ダメージ",
     "subject.hisui.passive-attack": "T攻撃速度変換",
-    "subject.hisui.passive-as": "T攻撃速度レベル比例固定値"
+    "subject.hisui.passive-as": "T攻撃速度レベル比例固定値",
+
+    "subject.hisui.r-attack-range": "燕返し(R) 基本攻撃射程増加",
+    "subject.hisui.t-movement-speed": "剣の記憶(T) 移動速度増加",
+    "subject.hisui.q-slow": "連撃斬(Q) 移動速度減少",
+    "subject.hisui.r2-slow": "燕返し(R再使用初撃) 移動速度減少"
 }
