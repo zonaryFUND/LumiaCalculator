@@ -4,5 +4,10 @@
     "subject.garnet.w-damage-min": "W最小ダメージ",
     "subject.garnet.w-damage-max": "W最大ダメージ",
     "subject.garnet.w-finish-heal-min": "W終了時ヒール(スタック0)",
-    "subject.garnet.w-finish-heal-max": "W終了時ヒール(スタック{value})"
+    "subject.garnet.w-finish-heal-max": "W終了時ヒール(スタック{value})",
+
+    "subject.garnet.w-damage-reduction": "我慢(W) 被ダメージ減少",
+    "subject.garnet.r-movement-speed": "処刑式(R2) 移動速度増加",
+    "subject.garnet.q-slow": "押しつぶし(Q) 移動速度減少",
+    "subject.garnet.w-slow": "我慢(W) 移動速度減少"
 }

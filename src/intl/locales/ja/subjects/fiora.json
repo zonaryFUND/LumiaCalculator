@@ -4,5 +4,9 @@
     "subject.fiora.w-max-hit": "W({value}ヒット)",
     "subject.fiora.r-finish": "R最終",
     "subject.fiora.t-damage": "Tダメージ",
-    "subject.fiora.t-heal": "T回復"
+    "subject.fiora.t-heal": "T回復",
+
+    "subject.fiora.t-movement-speed": "トゥシェ(T) 移動速度増加",
+    "subject.fiora.q-slow": "ファント(Q先端) 移動速度減少",
+    "subject.fiora.r-slow": "フレッシュ(R) 移動速度減少"
 }

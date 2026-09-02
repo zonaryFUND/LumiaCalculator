@@ -7,5 +7,12 @@
     "subject.fenrir.w-second-damage": "W本能的撤退",
     "subject.fenrir.e": "E追加ダメージ",
     "subject.fenrir.r-damage": "Rダメージ",
-    "subject.fenrir.r-shield": "Rシールド"
+    "subject.fenrir.r-shield": "Rシールド",
+
+    "subject.fenrir.e-movement-speed": "狩りの始まり(E) 移動速度増加",
+    "subject.fenrir.e-additional-movement-speed": "狩りの始まり(E) 敵実験体対象追加移動速度増加",
+    "subject.fenrir.t-buff": "最後の足掻き(T) 攻撃速度・移動速度増加",
+    "subject.fenrir.t-slow": "最後の足掻き(T) 被攻撃時移動速度減少",
+    "subject.fenrir.q-slow": "鋭い爪(強化Q) 移動速度減少",
+    "subject.fenrir.r-slow": "とどめ刺し(R) 移動速度減少"
 }

@@ -7,5 +7,9 @@
     "subject.eva.e-additional": "E効果中追加ダメージ",
     "subject.eva.r-base": "R基本/1ティック",
     "subject.eva.r-additional": "R{value}スタック時追加ダメージ",
-    "subject.eva.r-set": "R1セット{value}ティック/{set}秒"
+    "subject.eva.r-set": "R1セット{value}ティック/{set}秒",
+
+    "subject.eva.e-movement-speed": "紫水晶の波(E) 移動速度増加",
+    "subject.eva.t-attack-range": "テレキネシス(T) 基本攻撃射程増加",
+    "subject.eva.w-slow": "位相の渦(W) 移動速度減少"
 }

@@ -11,8 +11,8 @@ export const info: SkillTooltipProps = {
     values: ({ showEquation }): TooltipValues => {
         const base: TooltipValues = {
             1: Constants.E.movement_speed.duration,
-            2: RatioPercent(Constants.E.additional_movement_speed),
-            3: RatioPercent(Constants.E.movement_speed.effect)
+            2: RatioPercent(Constants.E.movement_speed.effect),
+            3: RatioPercent(Constants.E.additional_movement_speed),
         }
 
         if (showEquation) {

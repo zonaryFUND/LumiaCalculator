@@ -43,11 +43,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] eleven（Eleven）
 - [x] emma（エマ）
 - [x] estelle（エステル）
-- [ ] eva（エヴァ）
-- [ ] felix（フェリックス）
-- [ ] fenrir（フェンリル）
-- [ ] fiora（フィオラ）
-- [ ] garnet（ガーネット）
+- [x] eva（エヴァ）
+- [x] felix（フェリックス）
+- [x] fenrir（フェンリル）
+- [x] fiora（フィオラ）
+- [x] garnet（ガーネット）
 - [ ] hart（ハート）
 - [ ] haze（ヘイズ）
 - [ ] henry（ヘンリー）
