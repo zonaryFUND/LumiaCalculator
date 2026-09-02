@@ -5,5 +5,12 @@
     "subject.theodore.q-screen-damage": "Qスクリーンダメージ",
     "subject.theodore.q-screen-heal": "Qスクリーン回復",
     "subject.theodore.e-additional": "E対象追加ダメージ",
-    "subject.theodore.passive-shield": "Tシールド"
+    "subject.theodore.passive-shield": "Tシールド",
+
+    "subject.theodore.q-self-slow": "チャージ中自己移動速度減少",
+    "subject.theodore.e-range": "Q/E的中後基本攻撃射程増加",
+    "subject.theodore.r-attack-speed": "エネルギーフィールド(R) ハイパーチャージ攻撃速度増加",
+    "subject.theodore.t-movement-speed": "エネルギー・プロトコル(T) 隠密時移動速度増加",
+    "subject.theodore.r-ally-movement-speed": "エネルギーフィールド(R) 味方移動速度増加",
+    "subject.theodore.e-slow": "スパーク弾(E) 移動速度減少"
 }

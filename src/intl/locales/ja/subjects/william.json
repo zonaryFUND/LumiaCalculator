@@ -2,5 +2,13 @@
     "subject.william.aa-during-q": "Q発動中基本攻撃",
     "subject.william.aa-after-t": "Tボールキャッチ後基本攻撃",
     "subject.william.aa-after-t-during-q": "Q発動中Tボールキャッチ後基本攻撃",
-    "subject.william.w-2hit": "W2ヒット"
+    "subject.william.w-2hit": "W2ヒット",
+
+    "subject.william.q-attack-speed": "シャドウボール(Q) 攻撃速度増加",
+    "subject.william.w-defense": "ワインドアップ(W) 防御力増加",
+    "subject.william.e-movement-speed": "スライディングキャッチ(E) 移動速度増加",
+    "subject.william.t-range": "キャッチボール(T) 基本攻撃射程増加",
+    "subject.william.w-slow": "ワインドアップ(W) 移動速度減少",
+    "subject.william.r-center-slow": "ウイニングショット(R・中心部) 移動速度減少",
+    "subject.william.r-outer-slow": "ウイニングショット(R・周囲部) 移動速度減少"
 }

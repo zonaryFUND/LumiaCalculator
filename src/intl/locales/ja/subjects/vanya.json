@@ -9,5 +9,8 @@
     "subject.vanya.passive-dot": "T持続ダメージ",
     "subject.vanya.passive-shield": "Tシールド1回分",
     "subject.vanya.passive-shield-decline": "Tシールド減少量/秒",
-    "subject.vanya.passive-shield-max": "Tシールド最大値"
+    "subject.vanya.passive-shield-max": "Tシールド最大値",
+
+    "subject.vanya.w1-movement-speed": "空色の風(W1) 移動速度増加",
+    "subject.vanya.e-slow": "追飛(E) 移動速度減少"
 }

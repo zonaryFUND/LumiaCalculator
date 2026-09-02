@@ -3,5 +3,9 @@
     "subject.tsubame.passive-damage": "T追加ダメージ",
     "subject.tsubame.r-min": "R最小",
     "subject.tsubame.r-max": "R最大",
-    "subject.tsubame.aa-range": "T固定値"
+    "subject.tsubame.aa-range": "T固定値",
+
+    "subject.tsubame.w-movement-speed": "忍び足(W) 移動速度増加",
+    "subject.tsubame.w-attack-speed": "忍び足(W) 攻撃速度増加",
+    "subject.tsubame.q-slow": "手裏剣投擲(Q) 移動速度減少"
 }

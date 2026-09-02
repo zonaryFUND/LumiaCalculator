@@ -105,11 +105,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] sissela（シセラ）
 - [x] sua（スア）
 - [x] tazia（タジア）
-- [ ] theodore（テオドール）
-- [ ] tia（ティア）
-- [ ] tsubame（つばめ）
-- [ ] vanya（ヴァーニャ）
-- [ ] william（ウィリアム）
+- [x] theodore（テオドール）
+- [x] tia（ティア）
+- [x] tsubame（つばめ）
+- [x] vanya（ヴァーニャ）
+- [x] william（ウィリアム）
 - [ ] xiukai（シウカイ）
 - [ ] xuelin（シュリン）
 - [ ] yuki（雪）

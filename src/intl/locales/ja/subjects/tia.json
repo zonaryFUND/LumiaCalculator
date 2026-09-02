@@ -4,5 +4,11 @@
     "subject.tia.passive-yr": "T怒りのリス(黄赤)",
     "subject.tia.passive-rb": "T祝福のリス(赤青)",
     "subject.tia.passive-rb-heal": "T祝福のリス(赤青)回復",
-    "subject.tia.passive-by": "T魔法のリス(青黄)"
+    "subject.tia.passive-by": "T魔法のリス(青黄)",
+
+    "subject.tia.t-rb-movement-speed": "祝福のリス(T・赤青) 移動速度増加",
+    "subject.tia.q-yellow-slow": "ブラシストローク(Q・黄) 移動速度減少",
+    "subject.tia.q-red-slow": "ブラシストローク(Q・赤) 移動速度減少",
+    "subject.tia.q-blue-slow": "ブラシストローク(Q・青) 移動速度減少",
+    "subject.tia.q-blue-center-slow": "ブラシストローク(Q・青中央) 移動速度減少"
 }
