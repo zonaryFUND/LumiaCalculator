@@ -2,5 +2,9 @@
     "subject.katja.passive-additional": "T追加ダメージ",
     "subject.katja.q-min": "Q(最小)",
     "subject.katja.q-max": "Q(最大)",
-    "subject.katja.r": "R({value}発目)"
+    "subject.katja.r": "R({value}発目)",
+
+    "subject.katja.q-attack-speed": "照準射撃(Q) 攻撃速度増加",
+    "subject.katja.e-movement-speed": "接近禁止(E) 移動速度増加",
+    "subject.katja.e-slow": "接近禁止(E) 移動速度減少"
 }

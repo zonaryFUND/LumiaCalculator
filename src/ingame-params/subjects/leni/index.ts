@@ -5,11 +5,14 @@ import * as W from "./w";
 import * as E from "./e";
 import * as R from "./r";
 import * as T from "./t";
+import { givenBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 69,
     damageTable,
+    givenBuffDebuff,
+    slowSources,
 
     skills: {
         listExpression: () => ({

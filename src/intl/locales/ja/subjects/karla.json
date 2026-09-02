@@ -4,5 +4,9 @@
     "subject.karla.r-set": "R設置",
     "subject.karla.r-pull": "R引っ張り",
     "subject.karla.passive-non-charge": "T非チャージ時基本攻撃",
-    "subject.karla.passive-charge": "Tチャージ時基本攻撃"
+    "subject.karla.passive-charge": "Tチャージ時基本攻撃",
+
+    "subject.karla.w-slow": "回収(W) 移動速度減少",
+    "subject.karla.r-slow": "拘束の鎖(R) 移動速度減少",
+    "subject.karla.t-slow": "スピア装填(T) 移動速度減少"
 }

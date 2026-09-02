@@ -6,5 +6,8 @@
     "subject.laura.r-second": "R2打目",
     "subject.laura.r-shield": "Rシールド基礎値",
     "subject.laura.r-additional-shield-1": "Rシールド追加値（追加ヒット1人）",
-    "subject.laura.r-additional-shield-2": "Rシールド追加値（追加ヒット2人）"
+    "subject.laura.r-additional-shield-2": "Rシールド追加値（追加ヒット2人）",
+
+    "subject.laura.t-attack-speed": "ネレアの教え(T) 攻撃速度増加",
+    "subject.laura.w-slow": "予告状(W) 移動速度減少"
 }

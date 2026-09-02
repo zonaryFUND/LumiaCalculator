@@ -4,5 +4,11 @@
     "subject.leni.w-movement-speed": "W移動速度増加",
     "subject.leni.e-damage": "Eダメージ",
     "subject.leni.e-shield": "Eシールド",
-    "subject.leni.passive-additional": "T追加ダメージ"
+    "subject.leni.passive-additional": "T追加ダメージ",
+
+    "subject.leni.w-ally-slow": "ピコピコハンマー！(W) 味方への移動速度減少",
+    "subject.leni.w-ally-movement-speed": "ピコピコハンマー！(W) 味方への移動速度増加",
+    "subject.leni.w-slow-center": "ピコピコハンマー！(W・内側) 移動速度減少",
+    "subject.leni.w-slow-outer": "ピコピコハンマー！(W・外側) 移動速度減少",
+    "subject.leni.r-slow": "スプリングトラップ！(R) 移動速度減少"
 }

@@ -69,11 +69,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] jenny（ジェニー）
 - [x] johann（ヨハン）
 - [x] justyna（ユスティナ）
-- [ ] karla（カーラ）
-- [ ] katja（カティア）
-- [ ] kenneth（ケネス）
-- [ ] laura（ラウラ）
-- [ ] leni（レニ）
+- [x] karla（カーラ）
+- [x] katja（カティア）
+- [x] kenneth（ケネス）
+- [x] laura（ラウラ）
+- [x] leni（レニ）
 - [ ] lenore（レノア）
 - [ ] lenox（レノックス）
 - [ ] leon（レオン）
