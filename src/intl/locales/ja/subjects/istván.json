@@ -8,5 +8,10 @@
     "subject.istván.w-heal-max": "強化W回復(最大値)",
     "subject.istván.e-enhanced": "強化E追撃",
     "subject.istván.r-first": "R初撃",
-    "subject.istván.r-second": "R追撃"
+    "subject.istván.r-second": "R追撃",
+
+    "subject.istván.t-movement-speed": "演算(T) 移動速度増加",
+    "subject.istván.e-defense-down": "経路積分(E) 防御力減少",
+    "subject.istván.q-slow": "観測(強化Q) 移動速度減少",
+    "subject.istván.r-slow": "波動関数の収縮(R) 移動速度減少"
 }

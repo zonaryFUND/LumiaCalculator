@@ -10,6 +10,12 @@ import style from "./slow-dictionary-modal.module.styl";
  * 汎用スロウ（`generic.slow`）行に添える「辞書」ボタン＋モーダル。移動速度減少率ごとに、その効果量を
  * 与えうる発生源（実験体固有スキル等。`SlowDictionary`参照）を一覧表示する参照専用UI。クリックしても
  * 選択・反映は行わない（行のスタック選択自体には一切関与しない）
+ *
+ * TODO: 各行が`{sourceIntlID}{nameIntlID}`の形で表示されるが、`nameIntlID`側（各実験体の
+ * `buff-debuff.ts`の`slowSources`エントリ）が慣習的に「スキル名(ホットキー) 移動速度減少」という文言で
+ * 統一されているため、この一覧内では「移動速度減少」の反復が冗長になっている（例:「アイザック 強奪(R)
+ * 移動速度減少」）。将来的に対処予定（`nameIntlID`側の文言規約を「スキル名(ホットキー)」のみに揃えるか、
+ * この一覧側で末尾の共通文言を省略表示するか等）
  */
 const SlowDictionaryModal: React.FC = () => {
     const [open, toggleOpen] = useToggle(false);

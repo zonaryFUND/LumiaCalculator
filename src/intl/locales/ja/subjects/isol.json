@@ -1,5 +1,10 @@
 {
     "subject.isol.q-additional-damage-1": "Q追加ダメージ1回分",
     "subject.isol.w-max": "W最大ヒット({value})",
-    "subject.isol.aa-after-e": "E後追加ダメージ"
+    "subject.isol.aa-after-e": "E後追加ダメージ",
+
+    "subject.isol.t-adaptive-force": "遊撃戦(T) 適合型能力値増加",
+    "subject.isol.w-defense-down-lv12": "火網(W Lv1,2) 防御力減少",
+    "subject.isol.w-defense-down-lv34": "火網(W Lv3,4) 防御力減少",
+    "subject.isol.w-defense-down-lv5": "火網(W Lv5) 防御力減少"
 }

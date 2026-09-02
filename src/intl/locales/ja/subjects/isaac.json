@@ -2,5 +2,9 @@
     "subject.isaac.r-nostack": "R(スタックなし)",
     "subject.isaac.r-1stack": "R(1スタック)",
     "subject.isaac.r-2stack": "R(2スタック)",
-    "subject.isaac.passive-heal": "T回復"
+    "subject.isaac.passive-heal": "T回復",
+
+    "subject.isaac.t-movement-speed": "搾取(T) 移動速度増加",
+    "subject.isaac.e-defense-down": "追撃 / 検挙(E) 防御力減少",
+    "subject.isaac.r-slow": "強奪(R) 移動速度減少"
 }

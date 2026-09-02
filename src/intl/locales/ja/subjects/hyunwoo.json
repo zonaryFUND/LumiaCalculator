@@ -4,5 +4,10 @@
     "subject.hyunwoo.r-min": "R最小",
     "subject.hyunwoo.r-max": "R最大",
     "subject.hyunwoo.passive-additional": "T追加ダメージ",
-    "subject.hyunwoo.passive-heal": "T回復"
+    "subject.hyunwoo.passive-heal": "T回復",
+
+    "subject.hyunwoo.q-movement-speed": "足踏み(Q) 移動速度増加",
+    "subject.hyunwoo.w-defense-buff": "虚勢(W) 防御力増加",
+    "subject.hyunwoo.r-defense-down": "アトミックパンチ(R) 防御力減少",
+    "subject.hyunwoo.q-slow": "足踏み(Q) 移動速度減少"
 }

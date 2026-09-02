@@ -10,12 +10,15 @@ import * as CatE from "./cate";
 import * as IremR from "./iremr";
 import * as CatR from "./catr";
 import * as T from "./t";
+import { selfBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 61,
     damageTable,
     perpetualStatus,
+    buffDebuff: selfBuffDebuff,
+    slowSources,
 
     skills: {
         listExpression: () => ({
