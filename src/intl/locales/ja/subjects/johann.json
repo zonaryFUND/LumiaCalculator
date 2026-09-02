@@ -12,5 +12,11 @@
     "subject.johann.r-damage": "R発動ダメージ",
     "subject.johann.r-first-heal": "R発動時回復",
     "subject.johann.r-heal-on-time": "R継続回復/秒",
-    "subject.johann.r-heal-on-time-max-hit": "R継続回復全ヒット({value})"
+    "subject.johann.r-heal-on-time-max-hit": "R継続回復全ヒット({value})",
+
+    "subject.johann.w-attack-speed": "神性の香炉(W) 攻撃速度増加",
+    "subject.johann.e-movement-speed": "導きの光(E) 移動速度増加",
+    "subject.johann.r-defense": "救援の聖域(R) 防御力増加",
+    "subject.johann.t-tenacity": "光の加護(T) 妨害耐性増加",
+    "subject.johann.w-slow": "神性の香炉(W) 移動速度減少"
 }

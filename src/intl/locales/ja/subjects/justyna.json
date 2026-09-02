@@ -6,5 +6,9 @@
     "subject.justyna.r-maxhit": "R最大ヒット({value})",
     "subject.justyna.t-additional-marked": "T追加ダメージ(マークあり)",
     "subject.justyna.t-additional-notmarked": "T追加ダメージ(マークなし)",
-    "subject.justyna.t-movement-speed": "T移動速度増加"
+    "subject.justyna.t-movement-speed": "T移動速度増加",
+
+    "subject.justyna.r-slow": "アストラバースト(R) 使用中移動速度減少",
+    "subject.justyna.q2-slow": "殲滅砲撃(Q2) 移動速度減少",
+    "subject.justyna.w-slow": "集中砲撃(W) 移動速度減少"
 }

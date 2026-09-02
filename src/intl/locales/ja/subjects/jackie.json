@@ -12,5 +12,8 @@
     "subject.jackie.passive-dot-sum-max": "T出血最大スタック({value})ダメージ合計",
     "subject.jackie.passive-additional": "Tアドレナリン状態追加ダメージ",
     "subject.jackie.passive-heal-min": "Tアドレナリン状態回復量(最小)",
-    "subject.jackie.passive-heal-max": "Tアドレナリン状態回復量(最大)"
+    "subject.jackie.passive-heal-max": "Tアドレナリン状態回復量(最大)",
+
+    "subject.jackie.r-buff": "電気ノコギリ殺人鬼(R) 攻撃速度・移動速度増加",
+    "subject.jackie.w-slow": "四肢絶断(W) 移動速度減少"
 }

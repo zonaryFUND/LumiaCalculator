@@ -64,11 +64,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] isaac（アイザック）
 - [x] isol（アイソル）
 - [x] istván（イシュトヴァーン）
-- [ ] jackie（ジャッキー）
-- [ ] jan（ヤン）
-- [ ] jenny（ジェニー）
-- [ ] johann（ヨハン）
-- [ ] justyna（ユスティナ）
+- [x] jackie（ジャッキー）
+- [x] jan（ヤン）
+- [x] jenny（ジェニー）
+- [x] johann（ヨハン）
+- [x] justyna（ユスティナ）
 - [ ] karla（カーラ）
 - [ ] katja（カティア）
 - [ ] kenneth（ケネス）

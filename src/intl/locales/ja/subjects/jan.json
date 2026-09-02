@@ -3,5 +3,10 @@
     "subject.jan.w-enhanced": "強化W",
     "subject.jan.e-heal-min": "E回復最小値",
     "subject.jan.e-heal-max": "E回復最大値",
-    "subject.jan.r-rope": "Rロープ衝突"
+    "subject.jan.r-rope": "Rロープ衝突",
+
+    "subject.jan.r-movement-speed": "クワドラゴン(R) キル関与時移動速度増加",
+    "subject.jan.q1-enhanced-defense-down": "強化ニーストライク(強化Q1) 防御力減少",
+    "subject.jan.q1-slow": "ニーストライク(Q1) 移動速度減少",
+    "subject.jan.r-slow": "クワドラゴン(R) 移動速度減少"
 }

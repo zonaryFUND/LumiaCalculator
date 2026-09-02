@@ -2,5 +2,12 @@
     "subject.jenny.e-additional": "E追加ダメージ",
     "subject.jenny.q-1hit": "Q1ヒット",
     "subject.jenny.q-max-hit": "Q全ヒット({value})",
-    "subject.jenny.passive-heal": "T復活後回復"
+    "subject.jenny.passive-heal": "T復活後回復",
+
+    "subject.jenny.q-red-attack-speed": "スポットライト(Q・赤ワイン) 攻撃速度増加",
+    "subject.jenny.q-black-movement-speed": "スポットライト(Q・ブラックティー) 移動速度増加",
+    "subject.jenny.t-red-attack-speed": "死の演技(T・赤ワイン) 攻撃速度増加",
+    "subject.jenny.t-black-movement-speed": "死の演技(T・ブラックティー) 移動速度増加",
+    "subject.jenny.w-slow": "レッドカーペット(W) 移動速度減少",
+    "subject.jenny.r-slow": "アカデミー女王(R) 移動速度減少"
 }
