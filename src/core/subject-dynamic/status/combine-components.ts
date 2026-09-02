@@ -161,7 +161,7 @@ export function calculateCooldownValue(componentValue: ComponentStatusValue, sta
  * @returns 
  */
 export function calculateMovementSpeedValue(componentValue: ComponentStatusValue, statusWithoutConversion?: Status): MovementSpeedValue {
-    const { sum, mul } = groupComponentsAndAddXConvertedValue(componentValue.components, statusWithoutConversion);
+    const { sum, mul, fix } = groupComponentsAndAddXConvertedValue(componentValue.components, statusWithoutConversion);
     const [mulPlus, mulMinus] = mul.reduce(([plus, minus], current) => {
         if (current.value.value == undefined) return [plus, minus];
 
@@ -197,9 +197,17 @@ export function calculateMovementSpeedValue(componentValue: ComponentStatusValue
         }
     })().round2();
 
+    // calculationType: "fix"は他のステータス（calculateStatusValue等）と同様、算出済みの最終値を
+    // 無条件に上書きする（ミルカRの「使用中、自身の移動速度を固定」等）。区分関数補正は%ベースの
+    // スロウ・増速を前提にした値であり、絶対値で指定される固定移動速度には適用対象外のため、
+    // 区分関数補正後のcalculatedValueをそのまま上書きする
+    const fixed = fix.reduce((prev, current) => {
+        return current.value.value ? new Decimal(current.value.value) : prev;
+    }, calculatedValue).round2();
+
     return {
         components: componentValue.components,
         rawResult,
-        calculatedValue
+        calculatedValue: fixed
     }
 }

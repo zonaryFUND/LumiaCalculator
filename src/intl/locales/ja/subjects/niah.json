@@ -10,5 +10,8 @@
     "subject.niah.r-shield-nostack": "Rシールド最小(0スタック)",
     "subject.niah.r-shield-stack": "Rシールド バッテリー1あたり追加量",
     "subject.niah.passive-base": "T基礎蓄積量",
-    "subject.niah.passive-stack": "T1スタックあたり蓄積量"
+    "subject.niah.passive-stack": "T1スタックあたり蓄積量",
+
+    "subject.niah.e-movement-speed": "1UP(E) 移動速度増加",
+    "subject.niah.q-pull-slow": "アーケードドロップ(W引き寄せQ) 移動速度減少"
 }

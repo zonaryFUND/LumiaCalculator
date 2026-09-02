@@ -94,6 +94,8 @@ export default {
         "channel": 1,
         // 着地地点変更可能時間
         "movable_duration": 2,
+        // 空中にいる間の固定移動速度
+        "movement_speed": 5.5,
         "damage": {
             "base": [150, 250, 350],
             "amp": 90,

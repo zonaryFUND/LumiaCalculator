@@ -15,5 +15,14 @@
     "subject.martina.broadcast.r-inner-max-hit": "放送中R中央全ヒット({value})",
     "subject.martina.broadcast.r-outer-finish": "放送中R外周最終",
     "subject.martina.broadcast.r-inner-finish": "放送中R中央最終",
-    "subject.martina.broadcast.passive-additional": "放送中T追加ダメージ"
+    "subject.martina.broadcast.passive-additional": "放送中T追加ダメージ",
+
+    "subject.martina.q-movement-speed": "早送り(Q) 刻印消耗時移動速度増加",
+    "subject.martina.q2-attack-speed": "早送り(放送中Q) 刻印消耗時攻撃速度増加",
+    "subject.martina.e-movement-speed": "早戻し(E) 移動速度増加",
+    "subject.martina.r-recording-movement-speed": "録画(取材中R) 撮影中移動速度増加",
+    "subject.martina.r-recorded-movement-speed": "録画(取材中R) 撮影成功時移動速度増加",
+    "subject.martina.r2-defense-down": "録画(放送中R) 防御力減少",
+    "subject.martina.w-slow": "一時停止(取材中W) 移動速度減少",
+    "subject.martina.e-slow": "早戻し(取材中E) 移動速度減少"
 }

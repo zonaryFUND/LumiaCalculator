@@ -10,12 +10,16 @@ import * as E2 from "./e2";
 import * as R from "./r";
 import * as R2 from "./r2";
 import * as T from "./t";
+import { selfBuffDebuff, givenBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 57,
     damageTable,
     perpetualStatus,
+    buffDebuff: selfBuffDebuff,
+    givenBuffDebuff,
+    slowSources,
 
     skills: {
         listExpression: () => ({

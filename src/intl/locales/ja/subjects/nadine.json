@@ -3,5 +3,12 @@
     "subject.nadine.r-additional": "R中追加ダメージ/{value}回",
     "subject.nadine.q-min": "Q最小",
     "subject.nadine.q-max": "Q最大",   
-    "subject.nadine.e": "E攻撃速度上昇"   
+    "subject.nadine.e": "E攻撃速度上昇",
+
+    "subject.nadine.q-self-slow": "ブルズアイ(Q) チャージ中自己移動速度減少",
+    "subject.nadine.e-attack-speed": "猿ワイヤー(E) 攻撃速度増加",
+    "subject.nadine.w-attack-speed-down": "リス罠(W) 攻撃速度減少",
+    "subject.nadine.r-attack-speed-down": "狼猛襲(R) 攻撃速度減少",
+    "subject.nadine.w-slow": "リス罠(W) 移動速度減少",
+    "subject.nadine.r-slow": "狼猛襲(R) 移動速度減少"
 }

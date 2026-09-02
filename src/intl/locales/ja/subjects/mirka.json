@@ -6,6 +6,10 @@
     "subject.mirka.q-enhanced-aftereffect-1hit": "強化Q余震1ヒット",
     "subject.mirka.q-enhanced-aftereffect-max-hit": "強化Q余震全ヒット({value})",
     "subject.mirka.w-impulse-gain-increase": "Wシールド吸収時リパルスゲージ獲得量増加",
-    "subject.mirka.e2-enhanced": "強化E2"
+    "subject.mirka.e2-enhanced": "強化E2",
 
+    "subject.mirka.e-damage-reduction": "バックステップラッシュ(E) 被ダメージ減少",
+    "subject.mirka.r-movement-speed-fix": "ダウンバースト(R) 移動速度固定",
+    "subject.mirka.q-slow": "クラッシュハンマー(Q) 移動速度減少",
+    "subject.mirka.q-enhanced-slow": "クラッシュハンマー：余震(強化Q) 移動速度減少"
 }

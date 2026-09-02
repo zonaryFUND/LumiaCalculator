@@ -4,5 +4,8 @@
     "subject.nathapon.w-1tick": "W1ティック",
     "subject.nathapon.w-finish": "W最終ティック追加ダメージ",
     "subject.nathapon.e-hit": "Eヒット",
-    "subject.nathapon.max-stack-suffix": "(T{value}スタック)"
+    "subject.nathapon.max-stack-suffix": "(T{value}スタック)",
+
+    "subject.nathapon.w-slow": "タイムラプス(W) 移動速度減少",
+    "subject.nathapon.e-slow": "インスタントフォト(E) 移動速度減少"
 }

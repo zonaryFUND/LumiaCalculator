@@ -84,11 +84,11 @@ buff-debuff/generic-slow.ts`）1本にまとめ、発生源側は参照専用の
 - [x] magnus（マグヌス）
 - [x] mai（マイ）
 - [x] markus（マーカス）
-- [ ] martina（マルティナ）
-- [ ] mirka（ミルカ）
-- [ ] nadine（ナディン）
-- [ ] nathapon（ナタポン）
-- [ ] niah（ニア）
+- [x] martina（マルティナ）
+- [x] mirka（ミルカ）
+- [x] nadine（ナディン）
+- [x] nathapon（ナタポン）
+- [x] niah（ニア）
 - [ ] nicky（ニッキー）
 - [ ] piolo（ピオロ）
 - [ ] priya（プリヤ）
