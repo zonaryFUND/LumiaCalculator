@@ -48,8 +48,8 @@
 		"skillCode": 6015001,
 		"name": "rudra_embodied",
 		"values": {
-			"ms": 24,
-			"ad": 12
+			"ms": 20,
+			"ad": 10
 		}
 	},
 	"101501": {
@@ -63,8 +63,8 @@
 		"skillCode": 6015001,
 		"name": "rudra_embodied",
 		"values": {
-			"ms": 24,
-			"ad": 14
+			"ms": 20,
+			"ad": 12
 		}
 	},
 	"101504": {
@@ -1316,18 +1316,8 @@
 		}
 	},
 	"120504": {
-		"skillCode": 6073002,
-		"name": "punishment",
-		"dmg": {
-			"base": 50,
-			"level": 2,
-			"amp": 20
-		},
-		"values": {
-			"base": 100,
-			"amp": 30,
-			"level": 5
-		}
+		"skillCode": 6015010,
+		"name": "zephyr"
 	},
 	"120701": {
 		"skillCode": 6013006,

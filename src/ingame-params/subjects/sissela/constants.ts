@@ -3,7 +3,7 @@ export default {
         // 通貨ダメージ
         "first_damage": {
             "base": [40, 50, 60, 70, 80],
-            "amp": 30
+            "amp": 35
         },
         // 着弾ダメージ
         "second_damage": {

@@ -33,7 +33,7 @@ export default {
     "E": {
         "damage": {
             "base": [70, 90, 110, 130, 150],
-            "attack": 60
+            "attack": 65
         },
         "cooldown": [14, 13.5, 13, 12.5, 12]
     },

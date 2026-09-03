@@ -48,7 +48,7 @@ export default {
         },
         // 的中時クールダウン減少
         "cooldown_reduction": 3,
-        "cooldown": [15, 14, 13, 12, 11]
+        "cooldown": [16, 15, 14, 13, 12]
     },
     "R": {
         // 切り裂きダメージ

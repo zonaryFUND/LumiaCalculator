@@ -30,7 +30,7 @@ export default {
         "cooldown_reduction": 15,
         // 輝くロマン使用可能時間
         "q_enhance_duration": 4,
-        "cooldown": [14, 13, 12, 11, 10]
+        "cooldown": [13, 12, 11, 10, 9]
     },
     "R": {
         "damage": {

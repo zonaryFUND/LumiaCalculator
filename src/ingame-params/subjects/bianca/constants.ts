@@ -110,7 +110,7 @@ export default {
         "damage": {
             "base": [30,70,110],
             "amp": 40,
-            "targetMaxHP": 5
+            "targetMaxHP": 8
         },
         // 血流減速による移動速度減少
         "slow": {

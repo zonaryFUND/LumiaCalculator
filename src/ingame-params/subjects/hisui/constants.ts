@@ -36,7 +36,7 @@ export default {
             // 的中時シールド
             "shield": {
                 "base": [10, 15, 20, 25, 30],
-                "additionalAttack": 30
+                "additionalAttack": 35
             },
             // 複数対象的中時シールド増幅最大値（％）
             "shield_enhance": 50

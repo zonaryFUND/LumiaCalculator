@@ -8,6 +8,7 @@ const buffDebuffs: React.FC = props => {
     return (
         <Pane title="バフ・デバフ" className={style.buffdebuff}>
             <section>
+                <p>バフ・デバフ機能は現在仮実装です。<br />実験体のバフ・デバフのみ実装済み。<br />UIは未調整です。</p>
                 <h3>自己バフ</h3>
                 <SelfBuffs />
             </section>

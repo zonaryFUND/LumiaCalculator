@@ -18,8 +18,8 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 58,
-        "attackSpeedRatio": 0.3,
+        "attackPower": 54,
+        "attackSpeedRatio": 0.25,
         "code": 101404,
         "weaponType": "OneHandSword",
         "itemGrade": "Epic"
@@ -49,7 +49,7 @@
     },
     {
         "attackPower": 73,
-        "attackSpeedRatio": 0.5,
+        "attackSpeedRatio": 0.4,
         "moveSpeedRatio": 0.02,
         "code": 101405,
         "weaponType": "OneHandSword",
@@ -1253,14 +1253,14 @@
     },
     {
         "attackPower": 75,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "normalLifeSteal": 0.08,
         "code": 117403,
         "weaponType": "AssaultRifle",
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 69,
+        "attackPower": 71,
         "attackSpeedRatio": 0.35,
         "code": 117501,
         "weaponType": "AssaultRifle",
@@ -1268,7 +1268,7 @@
     },
     {
         "attackPower": 63,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "code": 117404,
         "weaponType": "AssaultRifle",
         "itemGrade": "Epic"
@@ -1282,7 +1282,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 88,
+        "attackPower": 90,
         "attackSpeedRatio": 0.4,
         "code": 117406,
         "weaponType": "AssaultRifle",
@@ -1315,7 +1315,7 @@
         "itemGrade": "Mythic"
     },
     {
-        "attackPower": 78,
+        "attackPower": 80,
         "attackSpeedRatio": 0.3,
         "code": 117504,
         "weaponType": "AssaultRifle",
@@ -1535,7 +1535,7 @@
         "attackSpeedRatio": 0.33,
         "criticalStrikeChance": 0.25,
         "criticalStrikeDamage": 0.07,
-        "moveSpeedRatio": 0.03,
+        "moveSpeedRatio": 0.02,
         "code": 120405,
         "weaponType": "Rapier",
         "itemGrade": "Legend"
@@ -1849,7 +1849,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 52,
+        "attackPower": 50,
         "maxHpByLv": 4,
         "lifeSteal": 0.1,
         "code": 131402,
@@ -2168,7 +2168,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 93,
+        "attackPower": 95,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
         "code": 117701,

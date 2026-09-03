@@ -73,7 +73,7 @@ export default {
         // 基本攻撃・スキル使用不可状態時間
         "self_silence": 0.8,
         // 被ダメージ減少（％）
-        "damage_reduction": 40,
+        "damage_reduction": 50,
         // 外側へ広がるダメージ
         "first_damage": {
             "base": [80, 150, 220],

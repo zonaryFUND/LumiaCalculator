@@ -58,7 +58,7 @@ export default {
             "base": [20, 30, 40, 50, 60],
             "additionalAttack": 100,
             "amp": 60,
-            "targetMaxHP": 5
+            "targetMaxHP": 6
         },
         // 強化基本攻撃的中時回復量
         "heal": {

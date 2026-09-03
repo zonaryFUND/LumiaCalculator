@@ -206,7 +206,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 33,
+        "attackPower": 35,
         "attackSpeedRatio": 0.4,
         "code": 201506,
         "armorType": "Head",
@@ -478,7 +478,7 @@
     {
         "attackPower": 10,
         "attackPowerByLv": 3,
-        "defense": 10,
+        "defense": 12,
         "attackSpeedRatio": 0.15,
         "cooldownReduction": 10,
         "code": 202413,
@@ -689,7 +689,7 @@
         "attackPower": 12,
         "attackPowerByLv": 3,
         "defense": 20,
-        "cooldownReduction": 10,
+        "cooldownReduction": 15,
         "penetrationDefense": 12,
         "code": 202513,
         "armorType": "Chest",
@@ -916,7 +916,7 @@
         "itemGrade": "Epic"
     },
     {
-        "defense": 10,
+        "defense": 8,
         "skillAmp": 50,
         "maxHp": 100,
         "cooldownReduction": 5,
@@ -1141,7 +1141,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 10,
+        "defense": 8,
         "skillAmp": 55,
         "maxHp": 200,
         "cooldownReduction": 10,

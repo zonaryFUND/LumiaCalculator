@@ -1,7 +1,7 @@
 export default {
     // 超再生
     "healing_factor": {
-        "enhance": 5,
+        "enhance": 6,
         "duration": 2
     },
     // 増幅ドローン
@@ -83,7 +83,7 @@ export default {
             "level": 8,
             "targetMaxHP": 5
         },
-        "unexploded_decline": 70,
+        "unexploded_decline": 50,
         "animal_damage": 150,
         "ally_movement_speed": {
             "duration": 2,

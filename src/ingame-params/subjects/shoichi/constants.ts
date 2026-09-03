@@ -70,7 +70,7 @@ export default {
         "knife_range": 5,
         // 短剣拾得時投げナイフダメージ
         "knife_damage": {
-            "base": [50,80,110],
+            "base": [60,90,120],
             "amp": 30
         }
     }

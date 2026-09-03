@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [40, 65, 90, 115, 140],
-            "amp": 60
+            "amp": 65
         },
         // 移動妨害効果中の対象に的中したときの追加固定ダメージ
         "additional_damage": {

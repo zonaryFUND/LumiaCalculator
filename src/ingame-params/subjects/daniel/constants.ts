@@ -79,7 +79,7 @@ export default {
         // 離脱時ダメージ
         "finish_damage": {
             "base": [40,105,170],
-            "attack": 90
+            "attack": 95
         },
         // ダメージを与えてから潜伏が可能な時間
         "window_after_attack": 4,

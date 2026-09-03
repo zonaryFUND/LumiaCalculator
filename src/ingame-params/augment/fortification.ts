@@ -22,7 +22,7 @@ export default {
     "ironclad": {
         "damage_reduction": {
             "melee": {
-                "base": 12,
+                "base": 10,
                 "level": 1
             },
             "range": {
@@ -32,11 +32,11 @@ export default {
         },
         "tenacity": {
             "melee": {
-                "base": 25,
+                "base": 20,
                 "defense": 15
             },
             "range": {
-                "base": 18,
+                "base": 12,
                 "defense": 15
             }
         },

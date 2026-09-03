@@ -3,7 +3,7 @@ export default {
         // 不浄な気的中1つあたりダメージ
         "damage": {
             "base": [60,90,120,150,180],
-            "amp": 65
+            "amp": 60
         },
         // 不浄な気2つ目以降の的中1つあたりダメージ
         "additional_damage": {

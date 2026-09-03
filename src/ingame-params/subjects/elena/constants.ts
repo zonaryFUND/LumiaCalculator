@@ -19,7 +19,7 @@ export default {
     "W": {
         "damage": {
             "base": [50,70,90,110,130],
-            "additionalMaxHP": 12,
+            "additionalMaxHP": 10,
             "amp": 55
         },
         // Qクールダウン減少
@@ -83,7 +83,7 @@ export default {
         // 再凍結免疫時間
         "immune": 2.5,
         "cooldown": {
-            "constant": [6,4,2]
+            "constant": [7,5,3]
         }
     }
 }

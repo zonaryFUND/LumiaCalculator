@@ -32,7 +32,7 @@ export default {
         // 強化ダメージ
         "enhanced_damage": {
             "base": [100, 135, 170, 205, 240],
-            "amp": 75
+            "amp": 85
         },
         "cooldown": [9, 8.5, 8, 7.5, 7]
     },

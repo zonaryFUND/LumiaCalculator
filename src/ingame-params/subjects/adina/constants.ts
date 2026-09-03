@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [60,85,110,135,160],
-            "amp": 60
+            "amp": 65
         },
         // 太陽追加効果（追加ダメージ）
         "sun": {
@@ -27,8 +27,8 @@ export default {
     },
     "W": {
         "damage": {
-            "base": [70,90,110,130,150],
-            "amp": 60
+            "base": [80,105,130,155,180],
+            "amp": 65
         },
         // 移動速度減少
         "slow": {
@@ -66,7 +66,7 @@ export default {
         // 天体付与時ダメージ
         "damage": {
             "base": [40,60,80,100,120],
-            "amp": 40
+            "amp": 45
         },
         // 天体落下時ダメージ
         "drop_damage": {
@@ -90,12 +90,12 @@ export default {
         // Q太陽コンジャンクション効果（追加ダメージ）
         "sun_conjunction": {
             "base": [90,150,210,270],
-            "amp": 100
+            "amp": 90
         },
         // W月コンジャンクション効果（1発あたりダメージ）
         "moon_conjunction": {
-            "base": [50,90,130,170],
-            "amp": 45
+            "base": [50,100,150,200],
+            "amp": 50
         },
         // E星コンジャンクション効果（秒間回復量）
         "star_conjunction": {

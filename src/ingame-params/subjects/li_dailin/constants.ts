@@ -54,13 +54,13 @@ export default {
         // 飛びつき後攻撃1回あたり最小ダメージ
         "min_damage": {
             "base": [20, 70, 120],
-            "attack": 60,
+            "attack": 70,
             "gauge": 50
         },
         // 飛びつき後攻撃1回あたり最大ダメージ
         "max_damage": {
             "base": [30, 105, 180],
-            "attack": 90,
+            "attack": 105,
             "gauge": 75
         },
         "cooldown": [80, 70, 60]

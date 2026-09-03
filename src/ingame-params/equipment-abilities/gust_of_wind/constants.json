@@ -5,6 +5,6 @@
         "additionalMaxHP": 5
     },
     "duration": 5,
-    "slow": 25,
+    "slow": 20,
     "cooldown": 10
 }

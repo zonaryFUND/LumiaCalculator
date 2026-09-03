@@ -68,7 +68,7 @@ export default {
         "count": 3,
         "damage": {
             "base": [100, 150, 200],
-            "additionalAttack": 80,
+            "additionalAttack": 75,
             "amp": 80,
             "stack": 1
         },

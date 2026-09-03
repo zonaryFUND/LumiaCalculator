@@ -128,7 +128,7 @@ export default {
             "base": [15, 20],
             "level": 1
         },
-        "attack_speed": 15,
+        "attack_speed": 20,
         "extend": 0.5,
         "cooldown": [50, 40]
     },

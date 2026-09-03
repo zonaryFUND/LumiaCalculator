@@ -42,7 +42,7 @@ export default {
         // 効果中移動速度増加
         "movement_speed": [8, 10, 12],
         // 効果中攻撃速度増加
-        "attack_speed": [20, 30, 40],
+        "attack_speed": [20, 25, 30],
         // キル関与時持続時間延長
         "extend": 5,
         // 再使用時ダメージ基礎値
@@ -64,7 +64,7 @@ export default {
         // 出血効果1スタックあたり総ダメージ
         "bleeding_damage": {
             "base": [10, 20, 30],
-            "attack": 25
+            "attack": 20
         },
         // 出血効果スタック最大値
         "max_bleeding": 5,

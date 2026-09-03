@@ -43,7 +43,7 @@ export default {
         "damage": {
             "base": [20, 40, 60, 80, 100],
             "level": 5,
-            "amp": 45
+            "amp": 55
         },
         // 気絶時間
         "stun": 0.5,
@@ -52,7 +52,7 @@ export default {
         "shield": {
             "base": [50, 65, 80, 95, 110],
             "level": 3,
-            "amp": 20
+            "amp": 25
         },
         "cooldown": 9
     },

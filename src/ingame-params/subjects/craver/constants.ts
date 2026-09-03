@@ -8,7 +8,7 @@ export default {
         // フォーカスショットダメージ
         "enhanced_damage": {
             "base": [80,120,160,200,240],
-            "amp": 85
+            "amp": 80
         },
         // フォーカスショット的中時移動速度減少
         "slow": {
@@ -27,7 +27,7 @@ export default {
     "W": {
         // スイープキックダメージ
         "damage": {
-            "base": [30,55,80,105,130],
+            "base": [40,65,90,115,140],
             "amp": 40
         },
         // スイープキック的中時スロウ
@@ -40,7 +40,7 @@ export default {
         // スイープキック中被ダメージ減少
         "damage_reduction": 30,
         // スイープキック的中時クールダウン減少
-        "cooldown_reduction": 15,
+        "cooldown_reduction": 20,
         // バックフリップダメージ
         "enhanced_damage": {
             "base": [130,160,190,220,250],
@@ -48,13 +48,13 @@ export default {
         },
         // バックフリップ的中時エアボーン時間
         "airborne": 0.75,
-        "cooldown": [11,10.5,10,9.5,9]
+        "cooldown": [12,11.5,11,10.5,10]
     },
     "E": {
         // コンバットロールダメージ
         "damage": {
             "base": [50,80,110,140,170],
-            "amp": 55
+            "amp": 60
         },
         // コンバットロール敵実験体的中時クールダウン減少
         "cooldown_reduction": 20,

@@ -30,7 +30,7 @@ export default {
         // チャージ中被ダメージ減少
         "damage_reduction": {
             "duration": 1,
-            "effect": 50
+            "effect": 45
         },
         // チャージ中自己回復発生周期
         "heal_tick": 0.2,
@@ -81,7 +81,7 @@ export default {
     },
     "R": {
         // 的中時束縛時間
-        "bind": 0.8,
+        "bind": 0.7,
         "damage": {
             "base": [75, 150, 225],
             "amp": 40,

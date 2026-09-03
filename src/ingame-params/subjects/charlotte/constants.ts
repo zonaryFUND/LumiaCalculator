@@ -16,7 +16,7 @@ export default {
     "W": {
         "heal": {
             "base": [30,50,70,90,110],
-            "amp": 15
+            "amp": 18
         },
         "cooldown": 8
     },

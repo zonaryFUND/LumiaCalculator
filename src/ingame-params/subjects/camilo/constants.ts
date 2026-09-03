@@ -3,7 +3,7 @@ export default {
         // 通常Qダメージ
         "damage": {
             "base": [10,30,50,70,90],
-            "attack": 70,
+            "attack": 65,
             "basicAttackAmp": 100
         },
         // スタック持続時間

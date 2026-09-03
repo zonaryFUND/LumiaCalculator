@@ -194,7 +194,7 @@ export default {
         },
         // 放送中基本攻撃1ティックあたりダメージ
         "broadcasting_damage": {
-            "attack": 55,
+            "attack": 52,
             "basicAttackAmp": 100
         },
         // 放送中刻印消耗時追加ダメージ

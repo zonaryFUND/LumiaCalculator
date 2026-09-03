@@ -53,8 +53,8 @@ export default {
         "shield": {
             "duration": 2.5,
             "effect": {
-                "base": [30,60,90,120,150],
-                "maxHP": 12
+                "base": [50,75,100,125,150],
+                "maxHP": 13
             }
         },
         // 自身に命中したときの移動速度増加
@@ -80,7 +80,7 @@ export default {
         "duration": 15,
         // 追加体力
         "additional_max_hp": {
-            "base": [150,300,450]
+            "base": [150,325,500]
         },
         "damage": {
             "base": [150,300,450],

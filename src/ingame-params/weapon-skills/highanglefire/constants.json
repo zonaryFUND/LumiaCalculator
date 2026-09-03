@@ -2,7 +2,7 @@
     "first_damage": {
         "base": [80,120,160],
         "additionalAttack": [80,100,120],
-        "amp": [40,50,60]
+        "amp": [35,45,55]
     },
     "first_slow": {
         "duration": 1,
@@ -12,11 +12,11 @@
     "second_damage": {
         "base": [60,90,120],
         "additionalAttack": 70,
-        "amp": 30
+        "amp": 25
     },
     "second_slow": {
         "duration": 1,
-        "effect": [40,50,60]
+        "effect": [30,35,40]
     },
     "cooldown": {
         "constant": 25
