@@ -12,6 +12,10 @@ const SubjectAvator: React.FC = () => {
     const subject = useSubjectStateStore(s => s.config.subject);
     const setSubject = useSubjectStateStore(s => s.setSubject);
     const [selectingSubject, toggleSelectingSubject] = useToggle(false);
+    const onSelect = React.useCallback((code: Parameters<typeof setSubject>[0]) => {
+        setSubject(code);
+        toggleSelectingSubject(false);
+    }, [setSubject]);
 
     return (
         <>
@@ -23,7 +27,7 @@ const SubjectAvator: React.FC = () => {
                 className={subjectsStyle}
                 overlayClassName={common["modal-overlay"]}
             >
-                <SubjectListModal current={subject} onSelect={setSubject} />
+                <SubjectListModal current={subject} onSelect={onSelect} />
             </Modal>
         </>
     )
