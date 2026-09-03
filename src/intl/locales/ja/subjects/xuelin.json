@@ -13,6 +13,9 @@
     "subject.xuelin.r-enhanced": "R強化追加ダメージ",
     "subject.xuelin.r-e-chase": "R中E追加攻撃ダメージ",
     "subject.xuelin.r-e-chase-same-target": "R中E追加攻撃ダメージ(2回目以降)",
-    "subject.xuelin.t-heal": "T回復"
+    "subject.xuelin.t-heal": "T回復",
 
+    "subject.xuelin.w-slow": "無塵剣訣(W) 移動速度減少",
+    "subject.xuelin.e-slow": "流雲剣雨(E) 移動速度減少",
+    "subject.xuelin.r-slow": "万剣帰宗(R) 移動速度減少"
 }

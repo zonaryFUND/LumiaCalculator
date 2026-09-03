@@ -2,5 +2,11 @@
     "subject.xiukai.stack-name": "料理人の情熱",
     "subject.xiukai.w-heal": "W回復",
     "subject.xiukai.r-1hit": "R1ヒット",
-    "subject.xiukai.r-max-hit": "R全ヒット({value})"
+    "subject.xiukai.r-max-hit": "R全ヒット({value})",
+
+    "subject.xiukai.w-defense": "お食事時間(W) 防御力増加",
+    "subject.xiukai.r-healing-reduction": "あっつい！(R) 治癒減少",
+    "subject.xiukai.q-slow": "ソースまみれ(Q) 移動速度減少",
+    "subject.xiukai.e2-slow": "ウォック落とし(E2) 移動速度減少",
+    "subject.xiukai.r-slow": "あっつい！(R) 移動速度減少"
 }

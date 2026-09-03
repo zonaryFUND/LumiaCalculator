@@ -4,5 +4,10 @@
     "subject.yuki.q-aa-dual-sword": "Q中基本攻撃(双剣)",
     "subject.yuki.w-damage-reduction": "W中被ダメージ軽減",
     "subject.yuki.r-slash": "R切り",
-    "subject.yuki.r-mark": "R刻印爆発"
+    "subject.yuki.r-mark": "R刻印爆発",
+
+    "subject.yuki.w-damage-reduction-buff": "襟正し(W) 被ダメージ減少",
+    "subject.yuki.e-attack-speed-down": "打ち落とし！(E) 攻撃速度減少",
+    "subject.yuki.q-slow": "面！(Q) 移動速度減少",
+    "subject.yuki.r-slow": "切り裂き(R) 移動速度減少"
 }

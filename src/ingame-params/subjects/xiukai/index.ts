@@ -7,11 +7,14 @@ import * as W from "./w";
 import * as E from "./e";
 import * as R from "./r";
 import * as T from "./t";
+import { givenBuffDebuff, slowSources } from "./buff-debuff";
 
 
 export default defineSubject({
     code: 13,
     damageTable,
+    givenBuffDebuff,
+    slowSources,
     stackInfo: {
         nameIntlID: stack.StackName,
         max: stack.MaxStack

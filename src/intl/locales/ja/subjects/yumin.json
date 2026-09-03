@@ -6,5 +6,9 @@
     "subject.yumin.w-enhanced": "強化W",
     "subject.yumin.r-first": "R1段目",
     "subject.yumin.r-second": "R2段目",
-    "subject.yumin.t-shield": "Tシールド"
+    "subject.yumin.t-shield": "Tシールド",
+
+    "subject.yumin.t-movement-speed": "仙力(T) 移動速度増加",
+    "subject.yumin.w-slow": "旋風(W) 移動速度減少",
+    "subject.yumin.r-slow": "風流雲散(R) 移動速度減少"
 }
