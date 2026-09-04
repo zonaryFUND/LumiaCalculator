@@ -38,9 +38,7 @@ export const AdditionalHealStrategy: UniqueValueStrategy = ({ config, status, hp
     }
 }
 
-const f: SubjectPerpetualStatus = (config, hpRatio) => {
-    console.log({hpRatio, a: Additional("amp", new Decimal(hpRatio), config.skillLevels.T)})
-    return {
+const f: SubjectPerpetualStatus = (config, hpRatio) => ({
     skillAmp: [
         {
             origin: "perpetual_status",
@@ -48,11 +46,10 @@ const f: SubjectPerpetualStatus = (config, hpRatio) => {
             intlID: "T",
             value: {
                 type: "constant",
-                value: Additional("amp", new Decimal(hpRatio), config.skillLevels.T)
+                value: Additional("amp", new Decimal(100).sub(hpRatio), config.skillLevels.T)
             }
         }
     ]
-}
-};
+});
 
 export default f;
