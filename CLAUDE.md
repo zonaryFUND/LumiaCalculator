@@ -53,9 +53,13 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
 - `yarn update-values` — `nn-api/index.ts update-values` を実行。NimbleNeuron APIからバージョン依存の
   ゲームデータ（実験体の基本ステータス、レベルアップ時ステータス、武器熟練度、武器/防具ステータス）を取得し
   `src/src/params-json/nimbleapi/*.json` に反映する
-- `yarn deploy` — ビルド成果物は含まれない。`deploy.ts` を実行し `src/dist` を GitHub Pages（`gh-pages`、
-  cname: `lumia-calculator.app`）に公開する。実行前に`predeploy`スクリプト（`check-resources.ts`）が
-  自動的に走り、一段上の非公開ディレクトリにある`resources/`の未commit・未pushを警告する
+- `yarn deploy` — ビルド成果物は含まれない。`deploy.ts` を実行し `src/dist` を GitHub Pages（`gh-pages`
+  ブランチ、cname: `lumia-calculator.app`）に公開する。GitHub Pagesの公開設定は独立リポジトリ化後も
+  `ercalc_resources`側（一段上の非公開リポジトリ）のままのため、`deploy.ts`は`gh-pages`パッケージの
+  `repo`オプションで明示的に`zonaryFUND/ercalc_resources.git`を指定している（省略時のデフォルトである
+  「実行時のカレントディレクトリ＝`src/`自身のorigin（`LumiaCalculator`）」ではない点に注意）。
+  実行前に`predeploy`スクリプト（`check-resources.ts`）が自動的に走り、一段上の非公開ディレクトリにある
+  `resources/`の未commit・未pushを警告する
 
 `package.json` には含まれないが `tsx` で実行するその他のスクリプト:
 - `nn-api/index.ts jp` / `nn-api/index.ts kr` — ローカライズ文字列の生データを取得し `jp.txt` / `kr.txt` に出力
