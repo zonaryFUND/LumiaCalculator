@@ -2,6 +2,7 @@ import * as React from "react";
 import Pane from "components/layout/pane/pane";
 import style from "./buff-debuff.module.styl";
 import SelfBuffs from "@app/features/buff-debuff/containers/self-buffs";
+import AutoSelfBuffs from "@app/features/buff-debuff/containers/auto-self-buffs";
 import IncomingBuffs from "@app/features/buff-debuff/containers/incoming-buffs";
 
 const buffDebuffs: React.FC = props => {
@@ -11,6 +12,8 @@ const buffDebuffs: React.FC = props => {
                 <p>バフ・デバフ機能は現在仮実装です。<br />実験体のバフ・デバフのみ実装済み。<br />UIは未調整です。</p>
                 <h3>自己バフ</h3>
                 <SelfBuffs />
+                <h3>自己バフ（自動発動）</h3>
+                <AutoSelfBuffs />
             </section>
             <section>
                 <h3>他者からのバフ・デバフ</h3>

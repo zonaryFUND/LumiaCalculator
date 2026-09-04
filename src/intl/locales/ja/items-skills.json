@@ -21,5 +21,10 @@
     "item-skill.heart-of-fire-heal": "{item}回復",
     "item-skill.attack-power": "{item}攻撃力増加",
     "item-skill.blaze-up-endurance": "予熱 - 忍耐",
-    "item-skill.debilitation-fog": "衰弱の霧"
+    "item-skill.debilitation-fog": "衰弱の霧",
+    "item-skill.awakening": "覚醒",
+    "item-skill.blaze-of-glory": "光輝",
+    "item-skill.blaze-up": "予熱",
+    "item-skill.blaze-up-amplified": "予熱 - 増幅",
+    "item-skill.blaze-up-outburst": "予熱 - 激昂"
 }

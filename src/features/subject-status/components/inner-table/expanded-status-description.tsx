@@ -1,4 +1,5 @@
 import * as React from "react";
+import Decimal from "decimal.js";
 import InnerTable from "components/common/inner-table";
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component";
 import WeaponBaseStatus from "./subject-with-weapon-row";
@@ -12,11 +13,23 @@ type Props = {
     percent?: boolean
 }
 
+// stackが0の自己バフ・他者バフ（origin: "temporary-status"）は、buff-debuff/README.mdの規約により
+// stack=0でも常にStatusValueComponentを返す（それ自体は正しい設計。ingame-params/README.md参照）ため、
+// 何も選択していない状態でも常にこのComponentStatusValueに要素として存在してしまう。それをそのまま展開表示に
+// 出すと「+0」のノイズ行になるので、表示レイヤーでのみ除外する（計算結果自体には影響しない）。
+// value.valueがundefined（status-conversionで未計算）の場合は判断できないため除外しない
+function isNoOpTemporaryStatus(component: StatusValueComponent): boolean {
+    if (component.origin != "temporary-status") return false;
+    const value = component.value.value;
+    if (value == undefined) return false;
+    return new Decimal(value).isZero();
+}
+
 const ExpandedStatusDescription: React.FC<Props> = props => {
     return (
         <InnerTable>
             {
-                props.components.map((component, i) => {
+                props.components.filter(component => !isNoOpTemporaryStatus(component)).map((component, i) => {
                     const labelIntlID: string = (() => {
                         if (component.intlID) return component.intlID;
 

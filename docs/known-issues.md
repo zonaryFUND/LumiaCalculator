@@ -26,6 +26,39 @@
   低優先度・参考程度と判断済み。現在の実装は`buff`ブランチの移植ではなく、現行アーキテクチャをベースに
   新規設計している。
 
+## 「与えるスキルダメージ増加」効果を計算に反映する仕組みがない
+
+`damage-model.md`「スキルダメージ増加効果」に記載の通り、特性「増幅ドローン」・装備スキル「執行人」
+（`equipment-abilities/brute_enforcer`）・「予熱 - 増幅」（`blaze_up_amplified`）・「光輝」
+（`blaze_of_glory`）が持つ「与えるスキルダメージを増加する」効果は、`skillAmp`（スキル増幅）とは別種の
+効果でありながら、これを計算に反映する仕組みが存在しない。`skillAmp`で代用すると数値の意味が変わって
+しまうため誤り（2026-09、`blaze_of_glory`のバフ・デバフ実装時にこの代用を一度行ってしまい、レビューで
+指摘を受けて撤回した）。
+
+- 具体例: 上記4件はいずれも該当。他にも存在する可能性がある（`equipment-abilities/CHECKLIST.md`の
+  該当注記参照）。
+- 設計上の難所: 同じ「スキルダメージ増加」に見えて、実際には適用対象が2系統に分かれる
+  （`damage-model.md`参照）。
+  - 増幅ドローン型: ダメージ種別が「スキルダメージ」であれば適用（装備・戦術スキルのスキルダメージにも
+    適用、ただし雪Q・エイデンQのような「基本攻撃ダメージとして扱われるスキル」には非適用）
+  - 執行人・予熱-増幅型: 発生源が実験体スキル（武器スキル含む）であれば適用（雪Q・エイデンQにも適用、
+    ただし装備・戦術スキルのダメージには非適用）
+  - この判定軸の違いを`core/damage-table/`・`core/value-ratio/`のどこに・どう持たせるかが未検討
+    （`Status`の1フィールドとしては表現できない。ダメージ算出単位ごとに「どちらの系統の増加を受けるか」を
+    判定する必要がある）。
+- 対応: 未着手。まとめて設計してから、該当する自己バフ・パッシブを一括で実装する方針
+  （`equipment-abilities/CHECKLIST.md`参照）。
+- 暫定対応（`blaze_of_glory`・`blaze_up_amplified`）: ダメージ計算には一切反映しないまま、UI上の可視性
+  （バフ欄から効果が消えたまま・発動条件が見えないままにはしたくない）だけを確保する目的で、
+  `EquipmentAbilityModule.givenSkillDamageIncrease`（`(config, currentHPRatio) => {nameIntlID, value}
+  | undefined`。表示専用、ダメージ計算・Statusには不使用）を追加し、「自己バフ（自動発動）」セクション
+  （`features/buff-debuff/containers/auto-self-buffs.tsx`）に「（未実装：ダメージ計算に反映されません）」
+  の注記付きで表示している。`blaze_of_glory`は現在体力割合（第2引数）で判定するが、`blaze_up_amplified`は
+  スタック式（`buffDebuff`側でユーザーが選択した`config.selfBuffs`の自分自身のスタックを、
+  ローカルidから逆引きして参照する）で、第2引数（currentHPRatio）は使わない。上記の一般設計ができ次第、
+  `perpetualStatus`/`buffDebuff`による正式な実装に置き換えてこのフィールド・仕組みごと削除すること
+  （`brute_enforcer`には未適用。対象の体力が条件のため、この仕組み自体では表現できない）。
+
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 
 `features/damage/containers/potency-rows/*`（Simple mode、Zustand直結）と
@@ -52,8 +85,8 @@
 - **`EquipmentBaseStatus`型に定義されているが未使用のキー**: `maxSp`, `spRegenRatio`,
   `weaponCooldownReduction`はAPIレスポンス由来で型定義はあるが、`ComponentStatus`側に対応フィールドがなく
   計算に一切使われていない（スタミナ・武器スキル固有CDRはこの計算機の対象外）。
-- **デバッグ用`console.log`の残存**（2026-08-29再確認、計4箇所）: `core/subject-dynamic/status/
-  calculation.ts`の`statusOf()`内、`ingame-params/subjects/sissela/perpetual-status.ts`、
-  `ingame-params/subjects/hisui/t.ts`、`features/subject-config/containers/equipment-list-modal.tsx`
+- **デバッグ用`console.log`の残存**（2026-09-04再確認、残り2箇所。`calculation.ts`の`statusOf()`内・
+  `ingame-params/subjects/sissela/perpetual-status.ts`は解消済み）: `ingame-params/subjects/hisui/t.ts`、
+  `features/subject-config/containers/equipment-list-modal.tsx`
   （旧`components/modal/equipment-list.tsx`。2026-08-29の再編で`features/subject-config/`へ移動済み）。
   動作に影響はないが削除候補。

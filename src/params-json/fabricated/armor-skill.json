@@ -518,8 +518,8 @@
 		"skillCode": 6048001,
 		"name": "awakening",
 		"values": {
-			"as": 30,
-			"ms": 12
+			"attackSpeed": 30,
+			"moveSpeed": 12
 		}
 	},
 	"202526": {
@@ -790,7 +790,7 @@
 			"healing_reduction"
 		],
 		"values": {
-			"penetration": 0.12
+			"penetrationDefenseRatio": 10
 		}
 	},
 	"204513": {

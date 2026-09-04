@@ -48,12 +48,25 @@ export type EquipmentAbilityModule = {
      */
     givenBuffDebuff?: EquipmentAbilityGivenBuffDebuff
 
+    /**
+     * 「与えるスキルダメージ増加」効果（docs/damage-model.md「スキルダメージ増加効果」参照）のように、
+     * この計算機がまだ計算に反映する仕組みを持たない効果種別を、UI上の可視性のためだけに宣言する
+     * （docs/known-issues.md参照）。`perpetualStatus`と同じ`(config, currentHPRatio)`を受け取るが、
+     * `StatusValueComponent`ではなく単一の数値を返す点が異なる（対象の効果種別自体がStatusの1フィールドとして
+     * 表現できないため）。**ダメージ計算・Statusのいずれにも一切影響しない**、自己バフ欄
+     * （`features/buff-debuff/containers/auto-self-buffs.tsx`）への表示専用の値。計算に反映する仕組みが
+     * でき次第、この宣言は`perpetualStatus`/`buffDebuff`に置き換えて削除すること
+     */
+    givenSkillDamageIncrease?: EquipmentAbilityGivenSkillDamageIncrease
+
     tooltipValues: EquipmentAbilityTooltipValues
 }
 
 export const defineEquipmentAbility = (module: EquipmentAbilityModule) => { return module }
 
 export type EquipmentAbilityPerpetualStatus = (config: SubjectConfig, currentHPRatio: number) => Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>
+
+export type EquipmentAbilityGivenSkillDamageIncrease = (config: SubjectConfig, currentHPRatio: number) => { nameIntlID: string, value: number } | undefined
 
 export type EquipmentAbilitySelfBuffDebuff = (props: { config: SubjectConfig, status: Status } & EquipmentAbilityImportedProps) => Record<string, BuffDebuffDefinition>
 

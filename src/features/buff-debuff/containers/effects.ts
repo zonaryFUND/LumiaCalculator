@@ -5,7 +5,7 @@ import { Effect } from "../components/buff-row.view";
 // "Ratio"サフィックスの命名規則に従わないが、単位自体が％のComponentStatusキー
 // （実験体ステータス画面のColumnで`percent`が指定されているものと対応。`06_misc.tsx`・`05_heal.tsx`・
 // `02_basicattack.tsx`参照）
-const PercentStatusKeys: ReadonlySet<keyof ComponentStatus> = new Set([
+export const PercentStatusKeys: ReadonlySet<keyof ComponentStatus> = new Set([
     "lifeSteal",
     "normalLifeSteal",
     "criticalStrikeChance",

@@ -1,4 +1,5 @@
 {
+    "hp_threshold": 60,
     "damage_amp": 12,
     "cooldown": 1
 }
