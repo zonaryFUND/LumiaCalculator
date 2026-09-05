@@ -4,7 +4,7 @@ import { ComponentStatus, Status } from "core/subject-dynamic/status/type"
 import { ValueRatio } from "core/value-ratio"
 import { DamageTableUnit } from "core/damage-table/unit"
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component"
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type"
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type"
 
 export type EquipmentAbilityImportedProps = {
     importedDamage?: ValueRatio | RangeDependentValueRatio
@@ -49,15 +49,11 @@ export type EquipmentAbilityModule = {
     givenBuffDebuff?: EquipmentAbilityGivenBuffDebuff
 
     /**
-     * 「与えるスキルダメージ増加」効果（docs/damage-model.md「スキルダメージ増加効果」参照）のように、
-     * この計算機がまだ計算に反映する仕組みを持たない効果種別を、UI上の可視性のためだけに宣言する
-     * （docs/known-issues.md参照）。`perpetualStatus`と同じ`(config, currentHPRatio)`を受け取るが、
-     * `StatusValueComponent`ではなく単一の数値を返す点が異なる（対象の効果種別自体がStatusの1フィールドとして
-     * 表現できないため）。**ダメージ計算・Statusのいずれにも一切影響しない**、自己バフ欄
-     * （`features/buff-debuff/containers/auto-self-buffs.tsx`）への表示専用の値。計算に反映する仕組みが
-     * でき次第、この宣言は`perpetualStatus`/`buffDebuff`に置き換えて削除すること
+     * この装備アビリティが持つ移動速度減少（スロウ）効果の一覧。移動速度減少自体は`givenBuffDebuff`に
+     * 個別登録せず、汎用デバフ（`ingame-params/buff-debuff/generic-slow.ts`）1本にまとめる方針のため、
+     * ここには「辞書」表示専用の参照データとして宣言する（`ingame-params/README.md`参照）
      */
-    givenSkillDamageIncrease?: EquipmentAbilityGivenSkillDamageIncrease
+    slowSources?: SlowSourceInfo[]
 
     tooltipValues: EquipmentAbilityTooltipValues
 }
@@ -65,8 +61,6 @@ export type EquipmentAbilityModule = {
 export const defineEquipmentAbility = (module: EquipmentAbilityModule) => { return module }
 
 export type EquipmentAbilityPerpetualStatus = (config: SubjectConfig, currentHPRatio: number) => Partial<Record<keyof ComponentStatus, StatusValueComponent[]>>
-
-export type EquipmentAbilityGivenSkillDamageIncrease = (config: SubjectConfig, currentHPRatio: number) => { nameIntlID: string, value: number } | undefined
 
 export type EquipmentAbilitySelfBuffDebuff = (props: { config: SubjectConfig, status: Status } & EquipmentAbilityImportedProps) => Record<string, BuffDebuffDefinition>
 

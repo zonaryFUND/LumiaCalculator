@@ -14,9 +14,19 @@
 同系統（`- `以下が武器/防具ごとのバリエーション）のグループがある。パッチノート反映時に日本語表記だけを
 手掛かりにすると誤ったディレクトリを編集しかねないので注意。
 
-- **完全に同一の表記**: `circulation`（情熱）と`vigor`（情熱）— ディレクトリ名からは無関係に見えるが
-  日本語表記は全く同じ。`skill.tsx`にも`sanitizedCode`という専用の回避コードがあるほど紛らわしい
-  （`6017006`→`6017005`のコード不一致対応。Vigor-Circulationとコメントされている）
+- **`circulation`と`vigor`は表記としては別物（本チェックリスト冒頭の抽出ミスを訂正）**: 当初どちらも
+  「情熱」で完全同一の表記と記載していたが誤り。`circulation`の実アイテム（203506・203413）のskillCodeは
+  `6017006`で、その`Item/Skills/6017006/Name`は「情熱 - 循環」。しかし`6017006`にはBody/Descの
+  ローカライズテキストが存在せず、`vigor`と同じ`6017005`側にのみ存在する（l10nに古い仕様が混在している
+  ためと見られる）。本チェックリストは`index.ts`の`code`から日本語表記を抽出しているが、`circulation`の
+  `code`はこのBody/Desc解決用の`6017005`だったため、名前も`6017005`（＝`vigor`と同じ「情熱」）を拾って
+  しまっていた。実際のバフ名（ゲーム内でバフアイコンにカーソルを合わせたときの表示は「循環」、アイテムの
+  Name表記は「情熱 - 循環」）とは異なる。`skill.tsx`の`sanitizedCode`（`6017006`→`6017005`）は
+  Body/Desc表示のためのものであり、`damageTable`・`buffDebuff`の解決（`ability.skillCode`を生のまま
+  使う）には適用されないため、`circulation/index.ts`の`code`は`[6017005, 6017006]`の両方を指定している
+  （詳細は`circulation/index.ts`のコメント参照。これにより、これまで実アイテム装備時に一切表示されて
+  いなかった`damageTable`の追加ダメージ表示も同時に修正された）。バフの表示名は`item-skills.json`に
+  「情熱 - 循環」として自力で定義した
 - **「迅速」系統**: `streamlined`（迅速）・`charge_carrier`（迅速 - プラズマ）・
   `rudra_embodied`（迅速 - ルドラの短剣）・`zephyr`（迅速 - そよ風）
 - **「突風」系統**: `whirlwind`（突風）・`rally`（突風 - 結集）・`gust_of_wind`（突風 - 寒気）
@@ -42,30 +52,63 @@
 `Status`上の`origin: "perpetual_status"`な部分要素を`intlID`ごとに集約して表示する読み取り専用の一覧）で
 確保する。
 
-**注記（`blaze_of_glory`は表示専用の宣言のみで、ダメージ計算には未反映）**: 効果は「与えるスキルダメージ増加」
-（`docs/damage-model.md`「スキルダメージ増加効果」参照）であり、`skillAmp`（スキル増幅。別のステータス）
-では代用できない。この効果種別自体を計算に反映する仕組みがこの計算機にまだ存在しない
-（同種の効果を持つ`brute_enforcer`「執行人」・`blaze_up_amplified`「予熱 - 増幅」も同様に未実装。一般的な
-設計・実装は`docs/known-issues.md`「『与えるスキルダメージ増加』効果を計算に反映する仕組みがない」参照。
-増幅ドローン型「ダメージ種別で判定」と執行人型「発生源スキルの種類で判定」という2種の適用条件の区別が
-必要なため、本チェックリストの通常の1件ずつのペースでは進めず別途まとめて設計する）。
+**注記（「与えるスキルダメージ増加」＝新設`increaseSkillDamageRatio`）**: `blaze_of_glory`・
+`blaze_up_amplified`・`brute_enforcer`が持つ「与えるスキルダメージ増加」（`docs/damage-model.md`
+「スキルダメージ増加効果」参照）は、`skillAmp`（スキル増幅。別のステータス）では代用できない。
+`ComponentStatus`に`increaseSkillDamageRatio`フィールドを新設し（`hpHealedIncreaseRatio`と同様、
+`preventDamageRatio`に倣ってインタフェースのみ用意）、3件とも通常の`perpetualStatus`/`buffDebuff`で
+これに書き込む形にしている。**ただしダメージ計算（`core/damage-table/`・`core/value-ratio/`）側でこの
+フィールドを消費する実装はまだ行っていない**（増幅ドローン型「ダメージ種別で判定」と執行人型
+「発生源スキルの種類で判定」という2種の適用条件の区別が必要なため、別途まとめて設計する。
+`docs/known-issues.md`「『与えるスキルダメージ増加』効果を計算に反映する仕組みがない」参照）。
 
-ただし「バフ欄から効果が消える・現在HPの状態が見えない」のは避けたいため、`EquipmentAbilityModule`に
-`givenSkillDamageIncrease`（`perpetualStatus`と同じ`(config, currentHPRatio) => ...`シグネチャだが、
-`StatusValueComponent`ではなく単一の数値を返す。ダメージ計算・Statusには一切影響しない）を追加し、
-`blaze_of_glory`はこれで宣言している。「自己バフ（自動発動）」セクションに、他の行と区別できる注記
-（「（未実装：ダメージ計算に反映されません）」）付きで表示される。計算に反映する仕組みができ次第、
-`perpetualStatus`/`buffDebuff`による正式な実装に置き換えて`givenSkillDamageIncrease`は削除すること。
-ツールチップの体力閾値表記漏れ（`constants.json`の`hp_threshold`欠落）は修正済み。
+- `blaze_of_glory`（光輝）: `perpetualStatus`（現在体力割合で自動判定）。ツールチップの体力閾値表記漏れ
+  （`constants.json`の`hp_threshold`欠落）は修正済み
+- `blaze_up_amplified`（予熱 - 増幅）: `buffDebuff`で1スタックごとに加算。最大スタック時の追加効果
+  （ダメージ吸血または移動速度、装備により異なる）も同じ`buffDebuff`で実装済み
+- `brute_enforcer`（執行人）: 本来の発動条件「対象の残り体力が閾値(40%)以下」は対戦モードでの対象体力
+  連動が必要だが未実装。シンプルモードには仮想敵の概念がなく判定しようがないため、単純なON/OFFの
+  自己バフとして`buffDebuff`に登録し、「発動していたらどうなるか」を確認できるようにした
+  （`brute_enforcer/buff-debuff.ts`のコメント参照。対戦モード対応は将来の課題として保留）
 
 **注記（`blaze_up`系統）**: `blaze_up`（予熱・攻撃速度スタック）と`blaze_up_enhanced`（予熱 - 強化・
 攻撃力スタック）は、ゲーム内表示・`CharacterState`グループIDがともに`6052000`「予熱」で共通の
 武器種違い実装（`awakening`の速度/防御貫通版と同型）のため、`buffDebuff`のローカルidも
-`item-skill.blaze-up`に統一している。`blaze_up_amplified`（予熱 - 増幅）は1スタックごとの「与える
-スキルダメージ増加」を持つため`docs/known-issues.md`「『与えるスキルダメージ増加』効果を計算に反映する
-仕組みがない」の対象（`givenSkillDamageIncrease`による表示専用の暫定対応）。最大スタック時の追加効果
-（ダメージ吸血または移動速度、装備により異なる）は通常の`buffDebuff`で実装済み。`blaze_up_endurance`
-（予熱 - 忍耐）は既存実装がそのまま要件と一致していたため変更なし。
+`item-skill.blaze-up`に統一している。`blaze_up_endurance`（予熱 - 忍耐）は既存実装がそのまま要件と
+一致していたため変更なし。
+
+**注記（`bloodpact`・新規Status項目`hpHealedIncreaseRatio`）**: 「受ける回復量増加」（ゲーム内表記
+`StatType/HpHealedIncreaseRatio`）は既存の`ComponentStatus`にフィールドがなかったため新設した
+（`hpHealedDecreaseRatio`「受ける治癒効果減少」の対になる項目。`core/subject-dynamic/status/type.ts`・
+`calculation.ts`参照）。`preventDamageRatio`・`hpHealedDecreaseRatio`と同様、バフ・デバフ由来の
+Status算出のみ対応し、対戦モードの回復量計算（`core/damage-table/heal-power.ts`）への反映は未実装。
+`hpHealedDecreaseRatio`との併存時の関係（乗算されるか、どちらか一方が優先されるか等）も未検証。
+
+**注記（`charge_carrier`はレベル比例値を持つ初のバフ・デバフ）**: 移動速度増加が固定値ではなくレベル
+比例値のみ（`Constants.movement_speed.level`）のため、他のバフ・デバフでは前例のなかった
+`createComponentValue`（装備由来のレベル比例値と同じ規約、`oneBased: false`）を使って`level-dependent`型の
+`StatusValueComponent`を構築し、最終的な`value`だけをstackで0/1切り替えする実装にした
+（`charge_carrier/buff-debuff.ts`参照）。
+
+**注記（`combat_instinct`）**: アイテムにより効果が異なる（201525は攻撃速度のみ、201701は適合型能力値
+（adaptiveForce）+攻撃速度）。`importedValues`の内容で分岐する単一の`buffDebuff`として実装（`awakening`と
+同型）。要件で挙げられた「705601」は`armor-skill.json`を確認したところ`colossal`（`6016003`）のアイテムで、
+`combat_instinct`（攻撃速度のみ版、`6055001`）の実際のアイテムは`201525`だったため、そちらを使用した。
+
+**注記（`convergence`・装備アビリティ初の`slowSources`宣言＋辞書集約の実装）**: 移動速度減少効果は
+`givenBuffDebuff`に個別登録せず、汎用デバフ（`generic-slow.ts`）にまとめ、`slowSources`は「辞書」表示
+専用の参照データとする方針（`subjects/sissela`等で確立済み）だが、`EquipmentAbilityModule`には
+`slowSources`フィールド自体が存在しなかった。追加し（`equipment-abilities/type.ts`）、
+`EquipmentAbilitySlowSourcesDictionary`（`dictionary.ts`）を新設、`slow-dictionary.ts`の`SlowDictionary`
+（従来`SubjectSlowSourcesDictionary`のみ集約）に合流させた（`ingame-params/buff-debuff/slow-dictionary.ts`の
+既存コメントで「対応するモジュール側の宣言・ここでの集約はまだ未着手」と明記されていた箇所）。
+武器スキル・戦術スキルの`slowSources`集約は引き続き未着手。
+
+**注記（`critical_blow`）**: 「最大体力を超えた回復量が追加体力に変換される」効果は、実際の変換量が
+発動時の現在体力（＝失った体力）に依存するが、`buffDebuff`は現在体力を受け取れない。理論上の最大値
+（失った体力が最大＝現在体力0のときの回復量。`status.maxHp`を「最大の失った体力」の代わりに使う）を
+`maxHp`への自己バフ（ON/OFF）として実装した（`CharacterState/Group/Name/6046010`「最大体力増加」と
+一致する表記で、この解釈の妥当性を裏付け）。
 
 - [x] awakening（覚醒）
 - [x] biotic_infusion（意念）
@@ -77,16 +120,16 @@
 - [x] blaze_up_endurance（予熱 - 忍耐）
 - [x] blaze_up_enhanced（予熱 - 強化）
 - [x] blaze_up_outburst（予熱 - 激昂）
-- [ ] bloodpact（セカンドウインド - 血の契約）
-- [ ] brute_enforcer（執行人）
-- [ ] cataclasm（破裂）
-- [ ] charge_carrier（迅速 - プラズマ）
-- [ ] chasing_needle（ホーミングニードル）
-- [ ] circulation（情熱）
-- [ ] colossal（セカンドウインド - 巨人）
-- [ ] combat_instinct（開始）
-- [ ] convergence（凝集）
-- [ ] critical_blow（クリティカル·ブロウ）
+- [x] bloodpact（セカンドウインド - 血の契約）
+- [x] brute_enforcer（執行人）
+- [x] cataclasm（破裂）
+- [x] charge_carrier（迅速 - プラズマ）
+- [x] chasing_needle（ホーミングニードル）
+- [x] circulation（情熱 - 循環）
+- [x] colossal（セカンドウインド - 巨人）
+- [x] combat_instinct（開始）
+- [x] convergence（凝集）
+- [x] critical_blow（クリティカル·ブロウ）
 - [ ] crushing_blow（シャッターストライク）
 - [ ] debilitation（腐敗）
 - [ ] debilitation_fog（衰弱の霧）

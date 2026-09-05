@@ -296,6 +296,9 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 weaponMasteryStatus?.type == "basic_attack_amp" ? masteryComponent("sum", config.weaponMastery, weaponMasteryStatus.value) : undefined
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
+        // 与えるスキルダメージ増加（整数）。バフ・デバフによってのみ獲得される（例: 装備アビリティ
+        // 「執行人」「予熱 - 増幅」「光輝」）。skillAmpとは別種。ダメージ計算への反映は未実装
+        increaseSkillDamageRatio: { digit: 0, components: [] },
         // 攻撃速度（小数点第2位まで、最大2.5）
         // 武器の基礎攻撃速度（基礎値）x {装備ステータス（%表記）+ 武器熟練度比例ステータス（%表記）}
         attackSpeed: {
@@ -419,6 +422,9 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         // 自身が受ける治癒効果減少（乗算）。バフ・デバフによってのみ獲得される（例: キャシーTの致命的外傷）。
         // 対戦モードの回復量計算への反映は未実装
         hpHealedDecreaseRatio: { digit: 1, components: [] },
+        // 受ける回復量増加（整数）。バフ・デバフによってのみ獲得される（例: 装備アビリティ
+        // 「セカンドウインド - 血の契約」）。対戦モードの回復量計算への反映は未実装
+        hpHealedIncreaseRatio: { digit: 0, components: [] },
         // 自身が与える回復・シールド効果増加（乗算）。バフ・デバフによってのみ獲得される
         // （例: シャーロットT、特性「超再生」）。healerGiveHpHealRatioと異なりシールドにも適用される
         healerGiveHealShieldRatio: { digit: 0, components: [] },

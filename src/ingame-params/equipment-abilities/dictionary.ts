@@ -1,5 +1,5 @@
-import { EquipmentAbilityDamageTableGenerator, EquipmentAbilityGivenBuffDebuff, EquipmentAbilityGivenSkillDamageIncrease, EquipmentAbilityModule, EquipmentAbilityPerpetualStatus, EquipmentAbilitySelfBuffDebuff, EquipmentAbilityTooltipValues } from "./type";
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { EquipmentAbilityDamageTableGenerator, EquipmentAbilityGivenBuffDebuff, EquipmentAbilityModule, EquipmentAbilityPerpetualStatus, EquipmentAbilitySelfBuffDebuff, EquipmentAbilityTooltipValues } from "./type";
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { EquipmentStatusDictionary } from "core/equipment";
 
 export const modules = import.meta.glob<{ default: EquipmentAbilityModule }>("./**/index.ts", {eager: true})
@@ -60,6 +60,17 @@ export const [
 ])
 
 /**
+ * 移動速度減少（スロウ）を持つ装備アビリティの一覧（skillCode単位）。`slow-dictionary.ts`の
+ * `SlowDictionary`が「辞書」表示のために集約する
+ */
+export const EquipmentAbilitySlowSourcesDictionary: Record<number, SlowSourceInfo[]> = Object.values(modules)
+    .reduce((dict, m) => {
+        if (m.default?.slowSources == undefined) return dict;
+        const codes = Array.isArray(m.default.code) ? m.default.code : [m.default.code];
+        return codes.reduce((dict, code) => ({ ...dict, [code]: m.default.slowSources! }), dict);
+    }, {} as Record<number, SlowSourceInfo[]>);
+
+/**
  * 他者（敵）から受けるバフ・デバフの、装備アビリティ由来の全カタログ。`EquipmentAbilityGivenBuffDebuffDictionary`
  * （skillCode単位・未展開の関数）とは別に、全装備アイテムプールを列挙して構築する
  * （`use-item-skills.ts`が「装備中のアイテム」を列挙するのと同じパターンを「全アイテム」に対して行う。
@@ -71,18 +82,6 @@ export const [
  * 呼ばれたか一切知らずに済む。返ってきたローカルidは、このアイテム列挙側で`${itemID}:${localId}`という
  * グローバルに一意なキーへ変換する（`source.ts`の`itemIDFromNamespacedId`がこの形式を前提に発生源を解決する）
  */
-/**
- * 「与えるスキルダメージ増加」効果の、表示専用の宣言（`EquipmentAbilityModule.givenSkillDamageIncrease`
- * 参照）をskillCode単位で集めた辞書。ダメージ計算・Statusには使わず、`auto-self-buffs.tsx`が
- * UI表示のためだけに参照する
- */
-export const EquipmentAbilityGivenSkillDamageIncreaseDictionary: Record<number, EquipmentAbilityGivenSkillDamageIncrease> = Object.values(modules)
-    .reduce((dict, m) => {
-        if (m.default?.givenSkillDamageIncrease == undefined) return dict;
-        const codes = Array.isArray(m.default.code) ? m.default.code : [m.default.code];
-        return codes.reduce((dict, code) => ({ ...dict, [code]: m.default.givenSkillDamageIncrease! }), dict);
-    }, {} as Record<number, EquipmentAbilityGivenSkillDamageIncrease>);
-
 export const EquipmentAbilityIncomingBuffDebuffCatalog: Record<string, BuffDebuffDefinition> = Object.entries(EquipmentStatusDictionary)
     .reduce((catalog, [itemIDString, status]) => {
         const itemID = Number(itemIDString);

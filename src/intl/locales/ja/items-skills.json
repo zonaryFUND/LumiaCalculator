@@ -23,8 +23,14 @@
     "item-skill.blaze-up-endurance": "予熱 - 忍耐",
     "item-skill.debilitation-fog": "衰弱の霧",
     "item-skill.awakening": "覚醒",
-    "item-skill.blaze-of-glory": "光輝",
     "item-skill.blaze-up": "予熱",
     "item-skill.blaze-up-amplified": "予熱 - 増幅",
-    "item-skill.blaze-up-outburst": "予熱 - 激昂"
+    "item-skill.blaze-up-outburst": "予熱 - 激昂",
+    "item-skill.bloodpact-guard": "セカンドウインド - 血の契約（妨害耐性）",
+    "item-skill.bloodpact-adaptive": "セカンドウインド - 血の契約（能力値・回復増加）",
+    "item-skill.brute-enforcer": "執行人",
+    "item-skill.charge-carrier": "迅速 - プラズマ",
+    "item-skill.circulation": "情熱 - 循環",
+    "item-skill.combat-instinct": "開始",
+    "item-skill.critical-blow": "クリティカル·ブロウ"
 }

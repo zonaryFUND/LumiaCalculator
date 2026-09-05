@@ -5,11 +5,6 @@ import { PercentStatusKeys } from "./effects";
 export type AutoBuffGroup = {
     nameIntlID: string
     effects: Effect[]
-    /**
-     * trueの場合、この行はダメージ計算・Statusに一切反映されていない表示専用の値であることを示す
-     * （`given-skill-damage-increase.ts`参照）。`auto-buff-row.view.tsx`がその旨の注記を表示する
-     */
-    unresolved?: boolean
 }
 
 /**

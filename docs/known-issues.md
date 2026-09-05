@@ -46,18 +46,18 @@
   - この判定軸の違いを`core/damage-table/`・`core/value-ratio/`のどこに・どう持たせるかが未検討
     （`Status`の1フィールドとしては表現できない。ダメージ算出単位ごとに「どちらの系統の増加を受けるか」を
     判定する必要がある）。
-- 対応: 未着手。まとめて設計してから、該当する自己バフ・パッシブを一括で実装する方針
+- 対応: `ComponentStatus`に`increaseSkillDamageRatio`（与えるスキルダメージ増加）フィールドを新設し
+  （2026-09、`core/subject-dynamic/status/type.ts`・`calculation.ts`）、`blaze_of_glory`・
+  `blaze_up_amplified`・`brute_enforcer`は通常の`perpetualStatus`/`buffDebuff`でこのフィールドに
+  書き込む形に統一した（旧`givenSkillDamageIncrease`という表示専用の別経路は廃止）。`preventDamageRatio`・
+  `hpHealedIncreaseRatio`と同様、**インタフェース（Status算出）のみ対応で、ダメージ計算
+  （`core/damage-table/`・`core/value-ratio/`）側でこのフィールドを消費する実装はまだ行っていない**
+  （上記「設計上の難所」の解決が先決）。まとめて設計してから、ダメージ計算側の実装に着手する方針
   （`equipment-abilities/CHECKLIST.md`参照）。
-- 暫定対応（`blaze_of_glory`・`blaze_up_amplified`）: ダメージ計算には一切反映しないまま、UI上の可視性
-  （バフ欄から効果が消えたまま・発動条件が見えないままにはしたくない）だけを確保する目的で、
-  `EquipmentAbilityModule.givenSkillDamageIncrease`（`(config, currentHPRatio) => {nameIntlID, value}
-  | undefined`。表示専用、ダメージ計算・Statusには不使用）を追加し、「自己バフ（自動発動）」セクション
-  （`features/buff-debuff/containers/auto-self-buffs.tsx`）に「（未実装：ダメージ計算に反映されません）」
-  の注記付きで表示している。`blaze_of_glory`は現在体力割合（第2引数）で判定するが、`blaze_up_amplified`は
-  スタック式（`buffDebuff`側でユーザーが選択した`config.selfBuffs`の自分自身のスタックを、
-  ローカルidから逆引きして参照する）で、第2引数（currentHPRatio）は使わない。上記の一般設計ができ次第、
-  `perpetualStatus`/`buffDebuff`による正式な実装に置き換えてこのフィールド・仕組みごと削除すること
-  （`brute_enforcer`には未適用。対象の体力が条件のため、この仕組み自体では表現できない）。
+- `brute_enforcer`固有の注記: 本来の発動条件は「対象（敵）の残り体力」だが、シンプルモードには仮想敵の
+  概念がなく判定しようがないため、単純なON/OFFの自己バフとして登録している（`brute_enforcer/
+  buff-debuff.ts`参照）。対戦モードで対象の体力に応じて自動判定する専用実装（`perpetualStatus`の
+  `currentHPRatio`のような「対象の体力を受け取れる仕組み」がターゲット側に必要）は将来の課題として保留。
 
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 

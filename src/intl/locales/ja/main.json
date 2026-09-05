@@ -114,7 +114,6 @@
 
     "app.buff-debuff.no-self-buff": "この実験体は固有の自己バフを持っていません",
     "app.buff-debuff.no-auto-self-buff": "現在発動している自動発動バフはありません",
-    "app.buff-debuff.unresolved-effect": "（未実装：ダメージ計算に反映されません）",
     "app.buff-debuff.add-self-buff": "追加",
     "app.buff-debuff.no-addable-self-buff": "追加できる自己バフはありません",
     "app.buff-debuff.no-incoming-buff": "他者からのバフ・デバフはありません",
