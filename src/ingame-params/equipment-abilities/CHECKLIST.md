@@ -206,6 +206,18 @@ buff-debuff/generic-healing-reduction.ts`（`origin: "generic"`）を新設し�
 `punishment_tracking`との取り違いだったことが確認された。ゲーム内表記・アイテムデータのいずれにも
 移動速度への言及がなく（シールド関連の値のみ）、コード変更なし。
 
+**注記（`rebellion`・`perpetualStatus`による自動発動バフ第2例）**: 失った体力に比例して攻撃力割合が
+増加する（体力100%で0%、`max_hp`（40）%以下で`max_effect`（12）%に飽和、その間は線形補間）永続効果を
+`perpetualStatus`として実装した（`blaze_of_glory`に続く2例目）。「自己バフ（自動発動）」セクションへの
+表示は既存の仕組み（`auto-self-buffs.tsx`）がそのまま対応するため追加実装は不要。l10nに専用の
+CharacterState表記が見当たらないため`item-skills.json`に独自定義。
+
+**注記（`reflection`は`healing_reduction`の汎用デバフに統合、個別実装なし）**: 与える治癒減少効果
+（常に20%固定）が「装備による治癒減少（英雄・伝説）」（`generic-healing-reduction.ts`の
+`generic.healing-reduction.epic-legend`）と完全に一致しているため、個別の`givenBuffDebuff`は実装せず、
+既存の汎用デバフでカバーされているものとみなした（`reflection/index.ts`にコメントで前提を記載。
+この装備の等級や20%という数値が将来変わった場合は要見直し）。
+
 - [x] awakening（覚醒）
 - [x] biotic_infusion（意念）
 - [x] biotic_infusion_vf（意念）
@@ -261,16 +273,16 @@ buff-debuff/generic-healing-reduction.ts`（`origin: "generic"`）を新設し�
 - [x] pulverization（粉砕）
 - [x] punishment（懲罰）
 - [x] punishment_tracking（懲罰 - 追跡）
-- [ ] quickstep（乱舞）
-- [ ] rally（突風 - 結集）
-- [ ] rebellion（反抗）
-- [ ] reflection（リフレクション）
-- [ ] resonance（追い打ち）
-- [ ] rudra_embodied（迅速 - ルドラの短剣）
-- [ ] rush（情熱 - 歓喜）
-- [ ] security_protocol（保護プロトコル）
-- [ ] smolder（発火）
-- [ ] spirit_harvest（魂の収穫）
+- [x] quickstep（乱舞）
+- [x] rally（突風 - 結集）
+- [x] rebellion（反抗）
+- [x] reflection（リフレクション）
+- [x] resonance（追い打ち）
+- [x] rudra_embodied（迅速 - ルドラの短剣）
+- [x] rush（情熱 - 歓喜）
+- [x] security_protocol（保護プロトコル）
+- [x] smolder（発火）
+- [x] spirit_harvest（魂の収穫）
 - [ ] spot_on（命中）
 - [ ] streamlined（迅速）
 - [ ] swift_strides（軽い足取り）
