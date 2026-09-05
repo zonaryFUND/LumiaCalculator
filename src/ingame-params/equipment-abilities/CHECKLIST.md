@@ -194,6 +194,18 @@ buff-debuff/generic-healing-reduction.ts`（`origin: "generic"`）を新設し�
 初めてのバフ・デバフだった）がこれを表面化させた形。`core/README.md`項目12で修正済み
 （`withUltCooldownReduction()`を新設）。
 
+**注記（`pulverization`・moveSpeedへの初の固定値（`sum`）バフ）**: 移動速度バフは既存例すべて`%`
+（`calculationType: "mul"`）で、`docs/status-model.md`のmoveSpeed項目の説明文もバフ・デバフの割合適用を
+前提にした記述だが、`pulverization`の効果（ダメージ後の移動速度増加）はゲーム内表記に`%`が付かない
+固定値（`Constants.ms.effect = 0.06`）。`calculateMovementSpeedValue`（`combine-components.ts`）自体は
+`sum`成分を発生源を問わず汎用的に扱う実装になっている（`calculateDefenseValue`のような発生源別の特別
+処理は不要）ため、`calculationType: "sum"`で実装した。他に前例がない組み合わせのため、実機の挙動と
+食い違いがあれば要修正。
+
+**注記（`punishment`はバフ・デバフなし）**: 「自身に移動速度増加バフ」という当初の要件は
+`punishment_tracking`との取り違いだったことが確認された。ゲーム内表記・アイテムデータのいずれにも
+移動速度への言及がなく（シールド関連の値のみ）、コード変更なし。
+
 - [x] awakening（覚醒）
 - [x] biotic_infusion（意念）
 - [x] biotic_infusion_vf（意念）
@@ -239,16 +251,16 @@ buff-debuff/generic-healing-reduction.ts`（`origin: "generic"`）を新設し�
 - [x] magic_bullet（魔弾）
 - [x] magnetic_midnight（チャージ - 閃光）
 - [x] mana_seed（魔力の種）
-- [ ] master（達人）
-- [ ] necrosis（毒蛇の猛毒）
-- [ ] photon_launcher（フォトンランチャー）
-- [ ] plague_butterfly（疫病の蝶）
-- [ ] prayer_for_the_dead（死者のための祈り）
-- [ ] predation（捕食）
-- [ ] primodal_hex（呪い）
-- [ ] pulverization（粉砕）
-- [ ] punishment（懲罰）
-- [ ] punishment_tracking（懲罰 - 追跡）
+- [x] master（達人）
+- [x] necrosis（毒蛇の猛毒）
+- [x] photon_launcher（フォトンランチャー）
+- [x] plague_butterfly（疫病の蝶）
+- [x] prayer_for_the_dead（死者のための祈り）
+- [x] predation（捕食）
+- [x] primodal_hex（呪い）
+- [x] pulverization（粉砕）
+- [x] punishment（懲罰）
+- [x] punishment_tracking（懲罰 - 追跡）
 - [ ] quickstep（乱舞）
 - [ ] rally（突風 - 結集）
 - [ ] rebellion（反抗）
