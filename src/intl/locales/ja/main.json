@@ -207,6 +207,12 @@
     "buff-debuff.common.percent.115": "115%",
     "buff-debuff.common.percent.120": "120%",
 
+    "buff-debuff.common.stack.0": "0",
+    "buff-debuff.common.stack.25": "25",
+    "buff-debuff.common.stack.50": "50",
+    "buff-debuff.common.stack.75": "75",
+    "buff-debuff.common.stack.100": "100",
+
     "buff-debuff.common.skill-key.q": "Q",
     "buff-debuff.common.skill-key.w": "W",
     "buff-debuff.common.skill-key.e": "E",

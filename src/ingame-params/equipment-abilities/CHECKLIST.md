@@ -218,6 +218,30 @@ CharacterState表記が見当たらないため`item-skills.json`に独自定義
 既存の汎用デバフでカバーされているものとみなした（`reflection/index.ts`にコメントで前提を記載。
 この装備の等級や20%という数値が将来変わった場合は要見直し）。
 
+**注記（`swift_strides`・`swift_strides_vf`・25刻みの粗いスタック表現）**: 最大100スタックだが1スタック
+単位で管理する要求ではなかったため、`stackLabels`を使い0/25/50/75/100の5段階（内部の`maxStack`は4、
+選択したインデックス×25が実際のスタック数）で表現する形にした。既存の`CommonPercentLabels`（%表記）・
+`CommonLevelLabels`（レベル表記）はいずれも単位表記が合わないため、単位なしの素のスタック数を表示する
+`CommonStackLabels`（`ingame-params/buff-debuff/util.ts`）を新設した。
+
+移動速度増加は固定値（`pulverization`に続き2例目の`moveSpeed`固定値=`sum`バフ）で、`swift_strides`は
+装備ごとに異なる最大値（`importedValues.ms`）、`swift_strides_vf`はすべての装備で共通（`Constants.ms`）。
+
+スロウ効果（近接武器は常時付与、防具は着用実験体が近接のときのみ発生）は、`givenBuffDebuff`が発生源側の
+`config`を保持できない（受信側は発生源の武器種・近接遠隔を判定できない）という既存の制約により、条件分岐
+込みで正確に表現することはできない。他のスロウと同様`slowSources`（辞書表示専用の参照値、装備により
+20%/25%/30%の3種類）としてのみ宣言し、実際の適用判断はユーザー側に委ねる。`swift_strides_vf`は武器種
+VF義手(vf_prosthetic)にのみ付与され常に近接扱いのため、この条件分岐自体が不要（`swift_strides`との
+唯一の実装差）。
+
+**注記（`taser_gun`・`increaseSkillDamageRatio`の4例目）**: 「与えるスキルダメージ増加」効果を持つ
+（`blaze_of_glory`・`blaze_up_amplified`・`brute_enforcer`に続く4例目。ダメージ計算への反映は
+未実装のまま、docs/known-issues.md参照）。
+
+**注記（`time_edge`はバフ・デバフなし）**: `constants.json`に`cooldown_reduction`があるが、実際の効果は
+「基本攻撃的中時に基本スキルの残りクールダウンを一度だけ%分減少させる」という単発のタイマー操作であり、
+継続するステータス増加（cooldownReduction自己バフ）ではないため対象外。
+
 - [x] awakening（覚醒）
 - [x] biotic_infusion（意念）
 - [x] biotic_infusion_vf（意念）
@@ -283,16 +307,16 @@ CharacterState表記が見当たらないため`item-skills.json`に独自定義
 - [x] security_protocol（保護プロトコル）
 - [x] smolder（発火）
 - [x] spirit_harvest（魂の収穫）
-- [ ] spot_on（命中）
-- [ ] streamlined（迅速）
-- [ ] swift_strides（軽い足取り）
-- [ ] swift_strides_vf（軽い足取り）
-- [ ] tailwind（追い風）
-- [ ] targeting_pod（照準ポッド）
-- [ ] taser_gun（テーザー銃）
-- [ ] taser_gun_surge（テーザー銃 - 跳躍）
-- [ ] thunder_ruling（雷鳴の審判）
-- [ ] time_edge（タイムエッジ）
+- [x] spot_on（命中）
+- [x] streamlined（迅速）
+- [x] swift_strides（軽い足取り）
+- [x] swift_strides_vf（軽い足取り）
+- [x] tailwind（追い風）
+- [x] targeting_pod（照準ポッド）
+- [x] taser_gun（テーザー銃）
+- [x] taser_gun_surge（テーザー銃 - 跳躍）
+- [x] thunder_ruling（雷鳴の審判）
+- [x] time_edge（タイムエッジ）
 - [ ] tranquility（明鏡止水）
 - [ ] turbulence（激動）
 - [ ] two_sides（二つの仮面）

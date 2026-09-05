@@ -26,6 +26,16 @@ export const CommonPercentLabels = (max: number, step: number): string[] =>
     Array.from({ length: max / step + 1 }, (_, i) => `buff-debuff.common.percent.${i * step}`)
 
 /**
+ * 「N刻みのスタック数」をstackとして表現するバフ・デバフの`stackLabels`（0=0、maxStack=max）。
+ * `CommonPercentLabels`と似ているが、単位が％ではなく素のスタック数（例: 装備アビリティ「軽い足取り」の
+ * 最大100スタックを、1刻みではなく25刻みの5段階で選択させる。`CommonPercentLabels(100, 25)`だと
+ * 「25%」のような誤った単位表記になってしまうため専用に用意）。`buff-debuff.common.stack.0`〜
+ * （`main.json`）を使う
+ */
+export const CommonStackLabels = (max: number, step: number): string[] =>
+    Array.from({ length: max / step + 1 }, (_, i) => `buff-debuff.common.stack.${i * step}`)
+
+/**
  * 実験体固有スキルのホットキー表記（Q/W/E/R/T）のIntlメッセージID。`SlowSourceInfo.nameIntlID`のように、
  * 「発生源（実験体名）は別途表示されるので、どのスキルかだけ示せればよい」場面で使う
  * （`buff-debuff.common.skill-key.q`〜`.t`、`main.json`）
