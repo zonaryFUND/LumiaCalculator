@@ -100,6 +100,26 @@ export type SubjectModules = {
     slowSources?: SlowSourceInfo[]
 
     weaponSkillLevelOverride?: (mastery: number) => number
+
+    /**
+     * `weaponRangeOf`（`core/subject-dynamic/config/function.ts`）が返す近接/遠隔区分を上書きする。
+     * ほとんどの実験体は「装備できる武器種の近接/遠隔区分＝実験体の近接/遠隔区分」（未装備でも適用）という
+     * 共通ルールで正しく判定できるため、このフィールドは以下のような例外を持つ実験体だけが定義する:
+     *
+     * - 常に固定（武器種によらない）: アデラ・ティア（近接武器のみ装備可能だが常に遠隔実験体として扱う）
+     * - 能動的に切り替える変身型（アレックス以外）: イレム（イレム=遠隔/ネコ=近接、`config.selfBuffs`の
+     *   `"subject.irem.t-mode"`で判定）、シルヴィア（人間=遠隔/バイク=近接、`"subject.silvia.r-mode"`で判定）。
+     *   `weaponRangeOf`という共通関数に実験体固有のバフ判定を直接書くのは依存関係として不適切なため、
+     *   実験体側にこの関数を定義させ、`weaponRangeOf`側は`SubjectWeaponRangeOverrideDictionary`
+     *   （`dictionary.ts`）を経由して間接的に参照する
+     * - 近接・遠隔両方の武器を装備できるアレックスのみ、未装備時のデフォルト（近接）がここで必要
+     *   （装備中は共通ルール通り現在の武器種で判定できるため、このケースだけ`undefined`を返す）
+     *
+     * デビー＆マーリン（変身型だが両形態とも武器種が両手剣＝近接で共通ルールのまま正しい）・ヴァーニャ
+     * （事実上近接実験体と見なされているが内部処理・武器種＝アルカナは遠隔のまま）は、共通ルールのまま
+     * 変更しないため、このフィールドを定義しない
+     */
+    weaponRangeOverride?: (config: SubjectConfig) => "melee" | "range" | undefined
 }
 
 export function defineSubject(module: SubjectModules): SubjectModules { return module };

@@ -1,5 +1,5 @@
 import Constants from "./constants";
-import { SubjectSelfBuffDebuff } from "../type";
+import { SubjectModules, SubjectSelfBuffDebuff } from "../type";
 import { SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 
 // シルヴィアはRスキルで能動的に人間状態・バイク状態を切り替えられる（イレムの持続効果と異なり、
@@ -63,3 +63,12 @@ export const selfBuffDebuff: SubjectSelfBuffDebuff = config => ({
 export const slowSources: SlowSourceInfo[] = [
     { nameIntlID: "subject.silvia.humanw-slow", values: [Constants.HumanW.slow.effect] }
 ];
+
+// 能動的に近接（バイク）/遠隔（人間）モードを切り替える変身型実験体。武器未装備の場合は現在のモードに
+// よらず近接扱いになる（ゲーム内検証済み）。武器装備中は"subject.silvia.r-mode"の現在のスタック
+// （1=人間/2=バイク。excludeNoneOptionのため0は取らない想定だが念のためデフォルト1＝人間として扱う）で判定
+export const weaponRangeOverride: SubjectModules["weaponRangeOverride"] = config => {
+    if (config.equipment.Weapon == null) return "melee";
+    const mode = config.selfBuffs.find(s => s.id == "subject.silvia.r-mode")?.stack ?? 1;
+    return mode == 2 ? "melee" : "range";
+};

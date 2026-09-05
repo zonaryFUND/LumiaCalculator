@@ -12,8 +12,9 @@
     "subject.irem.cat-e": "ネコE",
     "subject.irem.cat-r-shield": "ネコRシールド",
 
+    "subject.irem.mode": "ネコ変身！／イレム登場～(R) 現在の状態",
+    "subject.irem.mode.irem": "イレム",
+    "subject.irem.mode.cat": "ネコ",
     "subject.irem.t-mode": "猫の習性(T) 地域に慣れた際のステータス補正",
-    "subject.irem.t-mode.irem": "イレム",
-    "subject.irem.t-mode.cat": "ネコ",
     "subject.irem.w-slow": "こっちだよ～(W) 移動速度減少"
 }

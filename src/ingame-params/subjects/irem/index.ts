@@ -10,7 +10,7 @@ import * as CatE from "./cate";
 import * as IremR from "./iremr";
 import * as CatR from "./catr";
 import * as T from "./t";
-import { selfBuffDebuff, slowSources } from "./buff-debuff";
+import { selfBuffDebuff, slowSources, weaponRangeOverride } from "./buff-debuff";
 
 
 export default defineSubject({
@@ -19,6 +19,7 @@ export default defineSubject({
     perpetualStatus,
     buffDebuff: selfBuffDebuff,
     slowSources,
+    weaponRangeOverride,
 
     skills: {
         listExpression: () => ({

@@ -1,4 +1,5 @@
 import { SubjectCode } from "core/subject-static";
+import { SubjectConfig } from "core/subject-dynamic/config";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectSelfBuffDebuff, SubjectStackInfo, SummonInfo } from "./type";
@@ -16,7 +17,8 @@ export const [
     SubjectBuffDebuffDictionary,
     SubjectIncomingBuffDebuffCatalog,
     SubjectIncomingBuffDebuffSubjectCode,
-    SubjectSlowSourcesDictionary
+    SubjectSlowSourcesDictionary,
+    SubjectWeaponRangeOverrideDictionary
 ] = Object.entries(modules).reduce(([
         skillLists,
         tooltips,
@@ -29,7 +31,8 @@ export const [
         buffDebuff,
         incomingCatalog,
         incomingSubjectCode,
-        slowSources
+        slowSources,
+        weaponRangeOverride
     ], [key, m]) => {
     const subjectCode = m.default.code;
     return [
@@ -44,7 +47,8 @@ export const [
         {...buffDebuff, ...(m.default.buffDebuff ? { [subjectCode]: m.default.buffDebuff } : {})},
         {...incomingCatalog, ...(m.default.givenBuffDebuff ?? {})},
         {...incomingSubjectCode, ...Object.fromEntries(Object.keys(m.default.givenBuffDebuff ?? {}).map(id => [id, subjectCode]))},
-        {...slowSources, ...(m.default.slowSources ? { [subjectCode]: m.default.slowSources } : {})}
+        {...slowSources, ...(m.default.slowSources ? { [subjectCode]: m.default.slowSources } : {})},
+        {...weaponRangeOverride, ...(m.default.weaponRangeOverride ? { [subjectCode]: m.default.weaponRangeOverride } : {})}
     ]
 }, [
     {} as Record<SubjectCode, SkillListHook>,
@@ -59,4 +63,5 @@ export const [
     {} as Record<string, BuffDebuffDefinition>,
     {} as Record<string, SubjectCode>,
     {} as Record<SubjectCode, SlowSourceInfo[]>,
+    {} as Record<SubjectCode, (config: SubjectConfig) => "melee" | "range" | undefined>,
 ])

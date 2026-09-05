@@ -15,6 +15,9 @@ export default defineSubject({
     perpetualStatus,
     buffDebuff: selfBuffDebuff,
     slowSources,
+    // 近接武器（バット）のみ装備可能だが、スキル仕様上常に遠隔実験体として扱われる特別枠
+    // （core/README.mdの近接/遠隔判定の項目参照）
+    weaponRangeOverride: () => "range",
 
     skills: {
         listExpression: () => ({

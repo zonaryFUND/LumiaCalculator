@@ -19,6 +19,10 @@ export default defineSubject({
     perpetualStatus,
     buffDebuff: selfBuffDebuff,
     slowSources,
+    // 近接・遠隔両方の武器を装備できる唯一の実験体。装備中は現在の武器種で共通規則通り一意に決まるため
+    // undefinedを返し（共通ロジックに委ねる）、未装備時のデフォルト（近接）だけ上書きする
+    // （core/README.mdの近接/遠隔判定の項目参照）
+    weaponRangeOverride: config => config.equipment.Weapon == null ? "melee" : undefined,
 
     skills: {
         listExpression: (config) => {
