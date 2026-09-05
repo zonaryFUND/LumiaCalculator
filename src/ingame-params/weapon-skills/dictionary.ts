@@ -1,6 +1,6 @@
 import { WeaponTypeID } from "core/equipment/weapon";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { WeaponSkillDamageTableGenerator, WeaponSkillModule, WeaponSkillSelfBuffDebuff } from "./type";
 
 const modules = import.meta.glob<{ default: WeaponSkillModule }>("./**/index.ts", {eager: true});
@@ -52,4 +52,11 @@ export const [
     {} as Record<string, BuffDebuffDefinition>,
     {} as Record<string, WeaponTypeID>
 ])
+
+/**
+ * 移動速度減少（スロウ）を持つ武器スキルの一覧（skillCode単位）。`slow-dictionary.ts`の
+ * `SlowDictionary`が「辞書」表示のために集約する
+ */
+export const WeaponSkillSlowSourcesDictionary: Record<number, SlowSourceInfo[]> = Object.values(modules)
+    .reduce((dict, m) => m.default.slowSources == undefined ? dict : { ...dict, [m.default.code]: m.default.slowSources }, {} as Record<number, SlowSourceInfo[]>);
 

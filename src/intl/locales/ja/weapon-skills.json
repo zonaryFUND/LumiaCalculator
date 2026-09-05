@@ -26,6 +26,7 @@
     "weapon-skill.high-angle-fire.outer": "D外側",
 
     "weapon-skill.hammer.defense-down": "防御力減少",
+    "weapon-skill.nunchaku.charge-self-slow": "猛龍過江 チャージ中自己移動速度減少",
     "weapon-skill.pistol.movement-speed-up": "移動速度増加",
     "weapon-skill.pistol.attack-speed-up": "攻撃速度増加"
 }

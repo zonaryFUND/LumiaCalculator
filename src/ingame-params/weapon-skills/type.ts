@@ -4,7 +4,7 @@ import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props"
 import { IntlShape } from "react-intl"
 import { SubjectConfig } from "core/subject-dynamic/config"
 import { Status } from "core/subject-dynamic/status/type"
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type"
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type"
 
 export type WeaponSkillDamageTableUnit = Omit<DamageTableUnit, "origin">;
 
@@ -29,6 +29,13 @@ export type WeaponSkillModule = {
      * 発生源（どの武器種か）の識別に迷いはないため、装備アビリティのようなアイテム単位の名前空間付与は不要
      */
     givenBuffDebuff?: Record<string, BuffDebuffDefinition>
+
+    /**
+     * この武器スキルが持つ移動速度減少（スロウ）効果の一覧。移動速度減少自体は`givenBuffDebuff`に個別登録
+     * せず、汎用デバフ（`ingame-params/buff-debuff/generic-slow.ts`）1本にまとめる方針のため、ここには
+     * 「辞書」表示専用の参照データとして宣言する（`ingame-params/README.md`参照）
+     */
+    slowSources?: SlowSourceInfo[]
 }
 export type WeaponSkillDamageTableGenerator = (props: {intl: IntlShape}) => WeaponSkillDamageTableUnit[];
 export type WeaponSkillSelfBuffDebuff = (config: SubjectConfig, status: Status) => Record<string, BuffDebuffDefinition>

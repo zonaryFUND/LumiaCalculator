@@ -57,9 +57,15 @@ buff: stack => ({
 
 ## バフ・デバフ実装の現状と残課題
 
-実験体固有スキル（`subjects/`）分については、[subjects/CHECKLIST.md](subjects/CHECKLIST.md)に基づく
-アルファベット順の要件確認・実装・レビューのパスが全実験体完了している（2026-09時点）。ただし以下は
-対象外・未着手のまま残っている:
+アルファベット順の要件確認・実装・レビューのパス（[subjects/CHECKLIST.md](subjects/CHECKLIST.md)・
+[equipment-abilities/CHECKLIST.md](equipment-abilities/CHECKLIST.md)・
+[weapon-skills/CHECKLIST.md](weapon-skills/CHECKLIST.md)）は、実験体固有スキル（`subjects/`）・
+装備アビリティ（`equipment-abilities/`）・武器スキル（`weapon-skills/`）の3カテゴリで完了している
+（2026-09時点）。特性（`augment/`）・戦術スキル（`tactical-skill/`）・オブジェクト討伐バフ
+（`perpetual-outer-buffs/`）は同様のパスをこれから行う予定だが、まだ着手していない。実装方法自体
+（`buff(stack)`の規約、`SlowSourceInfo`によるスロウの一本化）はこのREADMEに従う想定。
+
+以下は各カテゴリで対象外・未対応のまま残っている項目:
 
 - **`rio`（莉央）のQ（替弓）皆中バフ**: 短弓時の自己移動速度・攻撃速度増加、和弓時の自己基本攻撃射程増加
   （既存の`fix`では正しく表現できない可能性がある「Qのパッシブで指定射程に変更した上でさらに増加を受ける」
@@ -67,8 +73,8 @@ buff: stack => ({
   切り替え条件の特殊性から専用インタフェースの設計が必要と判断し、後回しにしている
   （`subjects/rio/buff-debuff.ts`の詳細コメント参照）。莉央は既に基本攻撃威力について特別な計算式
   （`subjects/rio/t.ts`のRioTStrategy）の対象になっており、Qの皆中バフも同様の専用実装が必要になる見込み。
-- **武器スキル（`weapon-skills/`）・装備アビリティ（`equipment-abilities/`）・特性（`augment/`）・
-  戦術スキル（`tactical-skill/`）・オブジェクト討伐バフ（`perpetual-outer-buffs/`）のバフ・デバフ・
-  スロウ効果**: `subjects/CHECKLIST.md`のパスと同様の要件確認・実装・レビューをこれから行う予定だが、
-  まだ着手していない。実装方法自体（`buff(stack)`の規約、`SlowSourceInfo`によるスロウの一本化）は
-  実験体スキルと共通のこのREADMEに従う想定。
+- **`weapon-skills/camera`の視界減少デバフ**: 効果量（％や距離）を示すl10n・定数が見当たらず未実装
+  （`weapon-skills/CHECKLIST.md`参照）。
+- **`weapon-skills/*/buff-debuff.ts`から`core/value-ratio/extraction.ts`の`extractSkillLevel`を直接
+  importすると循環参照でクラッシュする**: 回避策込みで詳細は`core/README.md`項目13・
+  `weapon-skills/CHECKLIST.md`参照。

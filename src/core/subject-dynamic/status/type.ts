@@ -59,6 +59,15 @@ export type ComponentStatus = {
      */
     basicAttackDamageFinalCorrectionRatio: ComponentStatusValue
     /**
+     * 基本攻撃追加ダメージ（固定値）。旧バージョンで装備固有ステータスとして存在していた
+     * `increaseBasicAttackDamage`（`core/equipment/status.ts`で現在コメントアウトされている
+     * 未使用フィールド）と同名・同種の効果で、`increaseBasicAttackDamageRatio`（％）とは別枠の固定値加算。
+     * バフ・デバフ由来の効果のみで得られる独立した枠（例: 武器スキル「過熱」）。
+     * `increaseSkillDamageRatio`と同様、現時点ではインタフェース（Status算出）のみで、ダメージ計算
+     * （`core/damage-table/`・`core/value-ratio/`）への反映は未実装
+     */
+    increaseBasicAttackDamage: ComponentStatusValue
+    /**
      * 与えるスキルダメージ増加（％）。`skillAmp`（スキル増幅。攻撃力/スキル増幅型のスキル威力そのものを
      * 決定するステータス）とは別種の効果で、`docs/damage-model.md`「スキルダメージ増加効果」に記載の
      * 特性「増幅ドローン」・装備アビリティ「執行人」（`brute_enforcer`）・「予熱 - 増幅」

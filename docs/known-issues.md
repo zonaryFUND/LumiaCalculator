@@ -59,6 +59,19 @@
   buff-debuff.ts`参照）。対戦モードで対象の体力に応じて自動判定する専用実装（`perpetualStatus`の
   `currentHPRatio`のような「対象の体力を受け取れる仕組み」がターゲット側に必要）は将来の課題として保留。
 
+同様に、装備アビリティ・武器スキルのバフ・デバフ実装パスを進める中で、既存の`Status`フィールドでは表現
+できない効果が他にも見つかっており、いずれも`increaseSkillDamageRatio`と同じ方針
+（`ComponentStatus`にインタフェースのみ新設し、ダメージ計算側の消費は未実装のまま保留）で対応している。
+
+- `basicAttackDamageFinalCorrectionRatio`（基本攻撃ダメージに対する最終補正、％）: 装備アビリティ
+  「超集中」（`ultra_focus`）の効果。実機検証の結果、基本攻撃ダメージが「攻撃力×(1+基本攻撃増幅
+  `increaseBasicAttackDamageRatio`)×(致命打倍率)×(1+この補正)」の順で計算されることを確認済み。
+  基本攻撃増幅とは別枠で乗算される点が異なり、`skillAmp`と`increaseSkillDamageRatio`の関係と同型。
+- `increaseBasicAttackDamage`（基本攻撃追加ダメージ、固定値）: 武器スキル「過熱」（`weapon-skills/
+  assault-rifle`）の効果。`increaseBasicAttackDamageRatio`（％）とは別枠の固定値加算。旧バージョンで
+  装備固有ステータスとして存在していた同名フィールド（`core/equipment/status.ts`で現在コメントアウトされて
+  いる未使用フィールド`increaseBasicAttackDamage`）と同種の効果のため、同じ名前を踏襲した。
+
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 
 `features/damage/containers/potency-rows/*`（Simple mode、Zustand直結）と

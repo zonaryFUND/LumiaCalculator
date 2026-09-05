@@ -259,6 +259,36 @@
 合算が必要（`docs/known-issues.md`「既知の軽微なバグ」参照）だが、今回は対象外。現状これを表示するUIが
 なく、かつこのフィールドに書き込むバフ・デバフも現時点で存在しないため実害はない。
 
+### 13. `ingame-params/weapon-skills/*/buff-debuff.ts`から`core/value-ratio/extraction.ts`を直接importすると循環参照でクラッシュする（対応済み・回避策あり）
+
+装備アビリティ・実験体固有スキルのバフ・デバフ実装パスに続き、武器スキル（`ingame-params/weapon-skills/`）の
+バフ・デバフ実装パスに着手した際、「過熱」（`assault-rifle`）の実装で武器スキルレベルの取得に
+`core/value-ratio/extraction.ts`の`extractSkillLevel(config, "D")`を使ったところ、テストで
+`TypeError: extractSkillLevel is not a function`というクラッシュが発生した（`weapon-skill-tooltip.test.tsx`を
+単体実行すると全武器種の全テストがこのエラーで落ちる）。
+
+**原因**: `weapon-skills/dictionary.ts`は`buffDebuff`を含む全武器スキルの`index.ts`を`import.meta.glob`で
+eager評価している。この状態で武器スキル側の1ファイルが`extraction.ts`をimportすると、
+`extraction.ts`→`subjects/dictionary.ts`（全実験体を同様にeager glob）→（いずれかの実験体経由で）
+`core/subject-dynamic/status/calculation.ts`→`self-buff-definitions.ts`→`weapon-skills/dictionary.ts`と
+辿って循環参照が閉じてしまう。ESモジュールの循環参照下では、後から評価される側のモジュールがまだ
+完全に初期化されていない状態で参照されることがあり、今回は`extraction.ts`の関数エクスポートが
+未定義（`undefined`）として観測された。
+
+**対応・回避策**: 武器スキルレベルの取得には、`extractSkillLevel`ではなく`core/subject-dynamic/status/
+weapon-skill-level.ts`の`weaponSkillLevel(config.weaponMastery)`を直接使う（`assault-rifle`・
+`onehandsword`で採用）。ステータス依存の値も含めて計算したい場合は、`core/value-ratio`（集約`index.ts`）
+経由の`calculateValue()`であれば同じ循環参照が発生しないことを確認済み（`pistol`の既存実装が
+`calculateValue(Constants.movement_speed, status, config, "D")`という形でこれを使っており、クラッシュせず
+正常動作している）。`core/value-ratio/extraction.ts`という個別ファイルへの直接importだけがクラッシュを
+引き起こす経路と見られる。
+
+**残課題**: `weaponSkillLevel`直接使用は、現在唯一登録されている実験体別の武器スキルレベル上書き
+（`blair`の`weaponSkillLevelOverride`）が偶然`weaponSkillLevel`そのものと同一関数であるため現状は挙動が
+一致するが、将来異なる上書きを持つ実験体が追加された場合は不正確になる。根本解決（循環参照そのものの解消、
+または`extractSkillLevel`を安全に呼べる形への切り出し）は未着手。詳細は`weapon-skills/CHECKLIST.md`・
+`weapon-skills/assault-rifle/buff-debuff.ts`のコメント参照。
+
 ## 関連ドキュメント
 
 - [docs/known-issues.md](../../docs/known-issues.md) — 「バフ・デバフ効果全般が未実装」の項目。独立化前の
