@@ -1,13 +1,15 @@
 import * as React from "react";
 import style from "./skill.module.styl";
 import { EquipmentAbilityTooltipDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
-import { EquipmentSkill } from "core/equipment";
+import { EquipmentSkill, Tier } from "core/equipment";
 import FormattedText from "components/common/formatted-text";
 import { useIntl } from "react-intl";
 import { useValueContext, useValueContextOptional } from "../value-context";
 import { ExtractAndCalculateValue } from "../extract-tooltip-value";
 
-const skill: React.FC<EquipmentSkill> = props => {
+type Props = EquipmentSkill & { itemGrade: Tier }
+
+const skill: React.FC<Props> = props => {
     const intl = useIntl();
 
     const { config, status, showEquation } = useValueContext();
@@ -21,7 +23,8 @@ const skill: React.FC<EquipmentSkill> = props => {
         showEquation,
         config,
         status,
-        importedDamage: props.dmg, 
+        itemGrade: props.itemGrade,
+        importedDamage: props.dmg,
         importedValues: props.values
     });
 

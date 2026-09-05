@@ -1,4 +1,8 @@
 {
-    "effect": 30,
+    "effect": {
+        "Epic": 20,
+        "Legend": 20,
+        "Mythic": 30
+    },
     "duration": 4
 }

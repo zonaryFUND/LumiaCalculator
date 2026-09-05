@@ -5,6 +5,7 @@ import { ValueRatio } from "core/value-ratio"
 import { DamageTableUnit } from "core/damage-table/unit"
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component"
 import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type"
+import { Tier } from "core/equipment"
 
 export type EquipmentAbilityImportedProps = {
     importedDamage?: ValueRatio | RangeDependentValueRatio
@@ -19,7 +20,7 @@ export type EquipmentAbilityDamageTableUnit = Omit<DamageTableUnit, "label" | "v
 
 export type EquipmentAbilityDamageTableGenerator = (props: EquipmentAbilityImportedProps) => EquipmentAbilityDamageTableUnit[]
 
-export type EquipmentAbilityTooltipValues = (props: { showEquation: boolean, config: SubjectConfig, status: Status } & EquipmentAbilityImportedProps) => TooltipValues
+export type EquipmentAbilityTooltipValues = (props: { showEquation: boolean, config: SubjectConfig, status: Status, itemGrade: Tier } & EquipmentAbilityImportedProps) => TooltipValues
 
 
 export type EquipmentAbilityModule = {

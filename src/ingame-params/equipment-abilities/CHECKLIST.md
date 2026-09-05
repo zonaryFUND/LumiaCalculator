@@ -148,6 +148,52 @@ mitigation.ts`）への反映は未実装（対戦モードでの対応を予定
 攻撃力換算値（`tooltip.ts`の`7: 1`）を`constants.json`の`attack_per_credit_unit`に切り出し、
 バフ・デバフ側と共有した。
 
+**注記（`heavyweight`は既存の`perpetual-status.ts`のバグを修正）**: 既に実装済みだった`perpetualStatus`
+（追加体力の2%ぶんの攻撃力を常時獲得）の`intlID`が、実在しない生の日本語文字列`"鈍重"`になっており、
+`FormattedMessage`のIntlメッセージIDとしては本来無効だった（未登録IDに対するreact-intlのフォールバック
+表示でたまたま正しく見えていただけ）。実在する`CharacterState/Group/Name/6077000`「鈍重 - 攻撃力増加」に
+修正。この修正だけで「自己バフ（自動発動）」セクション（`auto-self-buffs.tsx`、`origin: "perpetual_status"`
+かつ`intlID`を持つ要素を自動的に拾う）に正しく表示されるようになるため、表示のための追加実装は不要だった。
+
+**注記（`healing_reduction`は装備ごとの個別エントリから汎用デバフに変更、かつ等級で効果量が異なる）**:
+当初は他の装備アビリティ同様`givenBuffDebuff`で装備ごとに個別のカタログエントリを作っていたが、この
+アビリティを共有する装備が非常に多いことから、選択肢が同じ内容のデバフで埋め尽くされる問題が判明。
+移動速度減少（`generic-slow.ts`）と同じ「汎用デバフ1本にまとめる」方針に切り替え、`ingame-params/
+buff-debuff/generic-healing-reduction.ts`（`origin: "generic"`）を新設して`incoming-catalog.ts`に
+合流させた。`healing_reduction/index.ts`の`givenBuffDebuff`は削除（コメントで経緯を記載）。
+
+さらに、効果量は当初「常に同一」としていたが誤りで、実際は装備の等級（`EquipmentStatus.itemGrade`）に
+よって英雄・伝説＝20%、神話＝30%と異なる（過去のテコ入れ後の再調整パッチによる）ことが判明したため、
+汎用デバフを2エントリ（`generic.healing-reduction.epic-legend`・`generic.healing-reduction.mythic`）に
+分割した。名称には実験体固有スキル・特性由来の治癒効果減少との混同を避けるため「装備による」を含めている。
+また`healing_reduction/tooltip.ts`（個別装備のツールチップ本文）も、装備の等級に応じた値を表示できるよう
+修正が必要だった。`EquipmentAbilityTooltipValues`は元々装備の等級を受け取れない仕様だったため、
+`itemGrade`を新たに追加し、呼び出し元（`components/tooltip/item/skill.tsx`・`item-tooltip.tsx`）から
+`EquipmentStatus.itemGrade`を渡す配線を追加した（この情報を必要とする既存の他アビリティは今のところ
+ないため、後方互換の問題はない）。
+
+**注記（`lead_shell`・`magnetic_midnight`は「チャージ」系統でCharacterStateを共有）**: いずれもスロウを持つが
+発動源が別（`lead_shell`は次の基本攻撃、`magnetic_midnight`も同様）で、`slowSources`のnameIntlIDには
+共通の`CharacterState/Group/Name/6013010`「チャージ：スロー」を使う。`magnetic_midnight`は装備により
+効果量が異なる（20%/25%の2種類を`armor-skill.json`・`weapon-skill.json`から確認）。
+
+**注記（`lichs_grasp`・`weapon-skill.json`側にのみ実アイテムが存在）**: `code: [6019001, 6019002,
+6019005]`のうち、`armor-skill.json`には`6019002`（スロウのみ、装備2件）しか見つからなかったが、
+`weapon-skill.json`側に`6019001`（スロウ+攻撃速度減少、武器5件）が存在した（`6019005`＝攻撃速度のみ版は
+現時点で実アイテムなし）。要件にあった「女帝 寒波 攻撃速度減少部分」という表記は、`incoming-buffs.tsx`が
+`nameIntlID`の前に発生源アイテム名（`incomingBuffSourceIntlID`経由の`sourceIntlID`）を自動的に付与する
+既存の仕組みにより、`nameIntlID`側は「寒波 - 攻撃速度減少部分」だけを定義すれば自動的に実現される
+（`self-buffs.tsx`の自己バフと同じ「発生源名は別枠で表示」という設計。`item-skills.json`に独自定義）。
+スロウ部分は装備により25%・99%の2種類を確認、`slowSources`に反映した。
+
+**注記（`mana_seed`・`iteration`が既存の`ultCooldownReduction`計算バグを表面化）**: `mana_seed`（最大
+スタック時にクールダウン減少+20）を装備した状態でスタックを最大にすると、通常のクールダウン減少は
+正しく反映される一方、究極技クールダウン減少の表示が負の値になる不具合をユーザーが発見。原因は
+`calculation.ts`側にあり（装備由来の通常CDRだけを個別に複製する設計で、バフ・デバフ由来の通常CDRが
+究極技側に一切反映されていなかった）、`mana_seed`・`iteration`（ともに`cooldownReduction`へ書き込む
+初めてのバフ・デバフだった）がこれを表面化させた形。`core/README.md`項目12で修正済み
+（`withUltCooldownReduction()`を新設）。
+
 - [x] awakening（覚醒）
 - [x] biotic_infusion（意念）
 - [x] biotic_infusion_vf（意念）
@@ -183,16 +229,16 @@ mitigation.ts`）への反映は未実装（対戦モードでの対応を予定
 - [x] gold_pouch（金貨袋）
 - [x] guard_punch（ガードパンチ）
 - [x] gust_of_wind（突風 - 寒気）
-- [ ] healing_reduction（治癒減少）
-- [ ] heart_of_fire（劫火の心臓）
-- [ ] heavyweight（鈍重）
-- [ ] in_full_bloom（満開）
-- [ ] iteration（リピートアクション）
-- [ ] lead_shell（チャージ - 鉄丸）
-- [ ] lichs_grasp（寒波）
-- [ ] magic_bullet（魔弾）
-- [ ] magnetic_midnight（チャージ - 閃光）
-- [ ] mana_seed（魔力の種）
+- [x] healing_reduction（治癒減少）
+- [x] heart_of_fire（劫火の心臓）
+- [x] heavyweight（鈍重）
+- [x] in_full_bloom（満開）
+- [x] iteration（リピートアクション）
+- [x] lead_shell（チャージ - 鉄丸）
+- [x] lichs_grasp（寒波）
+- [x] magic_bullet（魔弾）
+- [x] magnetic_midnight（チャージ - 閃光）
+- [x] mana_seed（魔力の種）
 - [ ] master（達人）
 - [ ] necrosis（毒蛇の猛毒）
 - [ ] photon_launcher（フォトンランチャー）

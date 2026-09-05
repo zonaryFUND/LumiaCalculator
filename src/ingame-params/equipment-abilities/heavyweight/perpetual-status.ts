@@ -5,7 +5,7 @@ const f: EquipmentAbilityPerpetualStatus = () => ({
     attackPower: [{
         origin: "perpetual_status",
         calculationType: "sum",
-        intlID: "鈍重",
+        intlID: "CharacterState/Group/Name/6077000",
         value: {
             type: "status-conversion",
             func: status => status.maxHp.additionalValue.percent(Constants.attack.additionalMaxHP).floor()

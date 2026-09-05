@@ -1,3 +1,5 @@
 {
-    "generic.slow": "移動速度減少"
+    "generic.slow": "移動速度減少",
+    "generic.healing-reduction.epic-legend": "装備による治癒減少（英雄・伝説）",
+    "generic.healing-reduction.mythic": "装備による治癒減少（神話）"
 }

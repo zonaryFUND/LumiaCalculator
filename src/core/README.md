@@ -228,6 +228,37 @@
   （事実上近接実験体と見なされているが内部処理・武器種＝アルカナは遠隔のまま）はoverrideを持たず、
   共通ルールのまま変更していない
 
+### 12. バフ・デバフ由来の通常クールダウン減少が、究極技クールダウン減少に反映されていなかった（対応済み）
+
+装備アビリティ「魔力の種」（`mana_seed`。最大スタック時にクールダウン減少+20を得る自己バフ）を実装した
+ところ、ユーザーからスタック最大時に「クールダウン減少は正しく20（16%）になる一方、究極技クールダウン
+減少が-20になる」という報告があった。
+
+原因は`ultCooldownReductionComponents`（`calculation.ts`）の構成方法にあった。以前は
+`baseComponentStatus`構築時点で、装備由来の通常クールダウン減少（`sumOfEquipmentStatus
+("cooldownReduction")`）を個別に複製し、装備由来の究極技専用クールダウン減少と合算したものを固定で
+使っていた。この複製は装備ステータスのみを対象としており、バフ・デバフ由来の通常クールダウン減少
+（`origin: "temporary-status"`の`cooldownReduction`コンポーネント。「魔力の種」やこれと同時に実装した
+「リピートアクション」`iteration`が該当）は一切反映されない設計だった。
+
+表示側（`03_skill.tsx`）は「究極技クールダウン減少の`rawHasteValue`から通常クールダウン減少の
+`rawHasteValue`を引いた差分」を究極技専用の増分として表示する実装になっているため、バフ由来の通常CDRが
+究極技側に反映されないと、この差分が負の値（今回の例では装備由来の究極技専用CDRが0のため、
+0 - 20 = -20）になっていた。実際の計算値（`ultCooldownReduction.calculatedValue`、実際のRクールダウン
+計算に使われる値）も同様に、バフ由来の通常CDRを欠いたまま算出されており、表示だけでなく機能上の不具合
+だった。
+
+**対応**: 装備由来の通常CDRの複製をやめ、代わりに「その時点で確定している通常クールダウン減少の
+構成要素（全発生源）をそのまま複製し、装備由来の究極技専用の追加分だけを別途加える」
+`withUltCooldownReduction()`ヘルパーを新設した。通常クールダウン減少は自己バフ解決前後
+（`componentStatusWithoutSelfBuffs`・`componentStatus`）の2箇所で内容が変わりうるため、
+`ultCooldownReduction`の算出（`statusForSelfBuffs`・`statusWithoutConversion`・`finalStatus`の3箇所）は
+いずれもこのヘルパー経由で都度組み立て直す形にした。
+
+**関連する既知の課題**: `tacticalSkillCooldownReduction`（戦術スキルクールダウン減少）も本来は通常CDRとの
+合算が必要（`docs/known-issues.md`「既知の軽微なバグ」参照）だが、今回は対象外。現状これを表示するUIが
+なく、かつこのフィールドに書き込むバフ・デバフも現時点で存在しないため実害はない。
+
 ## 関連ドキュメント
 
 - [docs/known-issues.md](../../docs/known-issues.md) — 「バフ・デバフ効果全般が未実装」の項目。独立化前の

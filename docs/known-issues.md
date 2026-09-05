@@ -74,10 +74,11 @@
 ## 既知の軽微なバグ（現時点で実害なし・未対応）
 
 - **`tacticalSkillCooldownReduction`**（戦術スキルクールダウン減少）: `ultCooldownReduction`（究極技クールダウン減少）は
-  通常のクールダウン減少（`cooldownReduction`）と合算した上で減少率を計算しているのに対し、
+  通常のクールダウン減少（`cooldownReduction`、全発生源）と合算した上で減少率を計算する
+  （`withUltCooldownReduction()`、`core/README.md`項目12参照）のに対し、
   `tacticalSkillCooldownReduction`は`tacticalCooldownReduction`単体でしか計算されておらず、通常CDRとの合算が
   行われていない（`src/core/subject-dynamic/status/calculation.ts`）。
-  現状、戦術スキルのクールダウンを表示するUIが存在しないため実害なし。
+  現状、戦術スキルのクールダウンを表示するUIがなく、このフィールドに書き込むバフ・デバフも存在しないため実害なし。
 - **`slowResist`**（移動速度減少耐性）: ステータスとしてはゲーム側で廃止されているが、計算ロジック自体は
   `calculation.ts`に残っている（デッドコード）。
 - **`ValueRatio`の`criticalDamage`キー**: 型定義のみ存在し、`calculateValue`のswitch文にcaseがなく未実装。

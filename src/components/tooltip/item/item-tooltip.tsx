@@ -68,7 +68,7 @@ const itemTooltip: React.FC<Props> = props => {
                 <Options {...status} />
                 <ValueContext.Provider value={props}>
                     {/* config/status/showEquationはpropsではなくValueContext経由でSkillへ渡している */}
-                    {status.skill ? status.skill.map(op => <Skill key={op.skillCode} {...op} />) : null}
+                    {status.skill ? status.skill.map(op => <Skill key={op.skillCode} {...op} itemGrade={status.itemGrade} />) : null}
                 </ValueContext.Provider>
             </div>
         </div>

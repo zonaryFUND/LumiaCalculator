@@ -197,19 +197,25 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         }
     });
 
-    const ultCooldownReductionComponents = (() => {
-        const standard: StatusValueComponent | undefined = (() => {
-            const component = equipmentComponent("sum", {base: sumOfEquipmentStatus("cooldownReduction")});
-            return component ? {...component, intlID: "装備（通常クールダウン減少）"} : undefined;
-        })();
-
-        const ult: StatusValueComponent | undefined = (() => {
-            const component = equipmentComponent("sum", {base: sumOfEquipmentStatus("ultCooldownReduction")});
-            return component ? {...component, intlID: "装備（究極技クールダウン減少）"} : undefined;
-        })();
-
-        return [standard, ult].filter((c): c is StatusValueComponent => c != undefined);
+    // 究極技クールダウン減少専用の追加分（装備のみ）。通常のクールダウン減少（全発生源）は
+    // withUltCooldownReduction()が都度複製するため、ここには含めない（後述）
+    const ultOnlyCooldownReductionComponents: StatusValueComponent[] = (() => {
+        const component = equipmentComponent("sum", {base: sumOfEquipmentStatus("ultCooldownReduction")});
+        return component ? [{...component, intlID: "装備（究極技クールダウン減少）"}] : [];
     })();
+
+    // 究極技クールダウン減少（ultCooldownReduction）は「通常のクールダウン減少（全発生源）+ 究極技専用の
+    // 追加分（装備のみ）」として算出する必要がある（docs/status-model.mdのultCooldownReduction項目参照）。
+    // 通常のクールダウン減少の最終的な構成要素をそのまま複製することで、バフ・デバフ由来の通常CDR
+    // （例: 装備アビリティ「魔力の種」「リピートアクション」）もRに正しく反映されるようにする。
+    // 以前は装備由来の通常CDRだけを個別に複製していたため、バフ・デバフ由来の通常CDRがRの
+    // クールダウン減少（rawHasteValue）に反映されず、UI側の表示計算
+    // （`ultCooldownReduction.rawHasteValue - cooldownReduction.rawHasteValue`。03_skill.tsx）が
+    // 負の値になる不具合があった
+    const withUltCooldownReduction = (cooldownReduction: ComponentStatusValue): ComponentStatusValue => ({
+        digit: 0,
+        components: [...cooldownReduction.components, ...ultOnlyCooldownReductionComponents]
+    });
 
     const baseComponentStatus: ComponentStatus = {
         // 最大体力（整数）
@@ -363,10 +369,11 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         },
         // 究極技クールダウン減少（整数）
         // 実際の究極技クールダウン減少量はこの値からさらに100/(100+クールダウン減少+究極技クールダウン減少)によって算出される
-        // 装備ステータスで獲得
+        // ここではプレースホルダのみ（実際の構成要素はwithUltCooldownReduction()経由で通常のクールダウン
+        // 減少が確定してから都度組み立てる。上記コメント参照）
         ultCooldownReduction: {
             digit: 0,
-            components: ultCooldownReductionComponents
+            components: ultOnlyCooldownReductionComponents
         },
         // 戦術スキルクールダウン減少（整数）
         // 実際の戦術スキルクールダウン減少量はこの値からさらに100/(100+戦術スキルクールダウン減少)によって算出される
@@ -537,7 +544,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     const statusForSelfBuffs: Status = {
         ...es.mapValues(es.omit(componentStatusWithoutSelfBuffs, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed", "defense"]), v => calculateStatusValue(v)),
         cooldownReduction: calculateCooldownValue(componentStatusWithoutSelfBuffs.cooldownReduction),
-        ultCooldownReduction: calculateCooldownValue(componentStatusWithoutSelfBuffs.ultCooldownReduction),
+        ultCooldownReduction: calculateCooldownValue(withUltCooldownReduction(componentStatusWithoutSelfBuffs.cooldownReduction)),
         tacticalSkillCooldownReduction: calculateCooldownValue(componentStatusWithoutSelfBuffs.tacticalSkillCooldownReduction),
         moveSpeed: calculateMovementSpeedValue(componentStatusWithoutSelfBuffs.moveSpeed),
         defense: calculateDefenseValue(componentStatusWithoutSelfBuffs.defense)
@@ -558,7 +565,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     const statusWithoutConversion: Status = {
         ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed", "defense"]), v => calculateStatusValue(v)),
         cooldownReduction: calculateCooldownValue(componentStatus.cooldownReduction),
-        ultCooldownReduction: calculateCooldownValue(componentStatus.ultCooldownReduction),
+        ultCooldownReduction: calculateCooldownValue(withUltCooldownReduction(componentStatus.cooldownReduction)),
         tacticalSkillCooldownReduction: calculateCooldownValue(componentStatus.tacticalSkillCooldownReduction),
         moveSpeed: calculateMovementSpeedValue(componentStatus.moveSpeed),
         defense: calculateDefenseValue(componentStatus.defense)
@@ -568,7 +575,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     const finalStatus: Status = {
         ...es.mapValues(es.omit(componentStatus, ["cooldownReduction", "ultCooldownReduction", "tacticalSkillCooldownReduction", "moveSpeed", "defense"]), v => calculateStatusValue(v, statusWithoutConversion)),
         cooldownReduction: calculateCooldownValue(componentStatus.cooldownReduction, statusWithoutConversion),
-        ultCooldownReduction: calculateCooldownValue(componentStatus.ultCooldownReduction, statusWithoutConversion),
+        ultCooldownReduction: calculateCooldownValue(withUltCooldownReduction(componentStatus.cooldownReduction), statusWithoutConversion),
         tacticalSkillCooldownReduction: calculateCooldownValue(componentStatus.tacticalSkillCooldownReduction, statusWithoutConversion),
         moveSpeed: calculateMovementSpeedValue(componentStatus.moveSpeed, statusWithoutConversion),
         defense: calculateDefenseValue(componentStatus.defense, statusWithoutConversion)
