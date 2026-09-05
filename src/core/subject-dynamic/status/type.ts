@@ -40,6 +40,14 @@ export type ComponentStatus = {
      * mitigation.ts`）への反映は未実装
      */
     preventDamageRatio: ComponentStatusValue
+    /**
+     * ダメージタイプ（基本攻撃・スキル）を問わない被ダメージ増加（％）。`preventDamageRatio`（被ダメージ
+     * 減少）とは逆方向の効果で、バフ・デバフ由来の効果のみで得られる独立した枠（例: 装備アビリティ
+     * 「次元亀裂」の付与するデバフ「次元不安定」）。`preventDamageRatio`と同様、現時点ではインタフェース
+     * （Status算出）のみで、対戦モードのダメージ計算（`core/damage-table/mitigation.ts`）への反映は
+     * 未実装（対戦モードでの対応を予定）
+     */
+    increaseDamagedRatio: ComponentStatusValue
     attackPower: ComponentStatusValue
     increaseBasicAttackDamageRatio: ComponentStatusValue
     /**

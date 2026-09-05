@@ -270,6 +270,9 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         // ダメージタイプを問わない被ダメージ減少（乗算）。バフ・デバフによってのみ獲得される
         // （例: アロンソW）。対戦モードのダメージ軽減計算への反映は未実装
         preventDamageRatio: { digit: 1, components: [] },
+        // 被ダメージ増加（乗算）。バフ・デバフによってのみ獲得される（例: 装備アビリティ「次元亀裂」の
+        // 「次元不安定」）。対戦モードのダメージ計算への反映は未実装
+        increaseDamagedRatio: { digit: 1, components: [] },
 
         // 攻撃力（整数）
         // 基礎ステータス+レベル比例ステータス+装備ステータス（定数値+レベル比例ステータス）

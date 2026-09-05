@@ -71,7 +71,8 @@ export const EquipmentAbilitySlowSourcesDictionary: Record<number, SlowSourceInf
     }, {} as Record<number, SlowSourceInfo[]>);
 
 /**
- * 他者（敵）から受けるバフ・デバフの、装備アビリティ由来の全カタログ。`EquipmentAbilityGivenBuffDebuffDictionary`
+ * 他者（敵または味方）から受けるバフ・デバフの、装備アビリティ由来の全カタログ。
+ * `EquipmentAbilityGivenBuffDebuffDictionary`
  * （skillCode単位・未展開の関数）とは別に、全装備アイテムプールを列挙して構築する
  * （`use-item-skills.ts`が「装備中のアイテム」を列挙するのと同じパターンを「全アイテム」に対して行う。
  * 他者バフは自分の装備とは無関係な、任意の敵の装備から受けうるため）。

@@ -40,7 +40,8 @@ export type EquipmentAbilityModule = {
     buffDebuff?: EquipmentAbilitySelfBuffDebuff
 
     /**
-     * 装備アビリティが他者（敵）に与えるバフ・デバフの定義。`SubjectModules.givenBuffDebuff`と異なり、
+     * 装備アビリティが他者（敵または味方。例: `encourage`は自分以外の味方が対象）に与えるバフ・デバフの
+     * 定義。`SubjectModules.givenBuffDebuff`と異なり、
      * 装備アビリティは同一skillCodeを複数アイテムが共有しうる・かつアイテムごとに内容が異なりうるため、
      * `buffDebuff`と同様`EquipmentAbilityImportedProps`を受け取る関数として定義する（configは引数に含めない。
      * 受信側の計算機は発生源のconfigを保持していないため）。返すRecordのキーはこのアビリティ内でのみ

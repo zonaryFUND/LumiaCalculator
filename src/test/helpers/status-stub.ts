@@ -47,6 +47,7 @@ export function stubStatus(overrides: Partial<Status> = {}): Status {
         preventBasicAttackDamaged: statusValue(),
         preventSkillDamagedRatio: statusValue(),
         preventDamageRatio: statusValue(),
+        increaseDamagedRatio: statusValue(),
         attackPower: statusValue(),
         increaseBasicAttackDamageRatio: statusValue(),
         attackSpeed: statusValue(),

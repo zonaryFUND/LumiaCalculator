@@ -104,10 +104,10 @@
 **注記**: 上記の順序は、上述「要素の合成順序」節の一般規則（単純加算に分類される要素は発生源
 （実験体自身/装備/バフ）を問わずすべて合算されたあとに、乗算に分類される要素が適用される）と矛盾する。
 防御力の場合、バフ・デバフ由来の**固定値**増減だけが例外的に乗算の後に適用され、要素A・要素B（実験体自身・
-装備による固定値）は引き続き乗算の前に合算される。現状の計算エンジン（`calculateStatusValue`、
-`combine-components.ts`）はsum成分を発生源によらず一括で合算する設計のため、この「一部のsum成分だけ
-乗算の後」という順序をそのままでは表現できない。防御力に対する固定値タイプのバフ・デバフを実装する際は
-要修正（詳細は[core/README.md](../src/core/README.md)参照）。
+装備による固定値）は引き続き乗算の前に合算される。この例外は`calculateStatusValue`（汎用ロジック）とは
+別に専用の`calculateDefenseValue`（`combine-components.ts`）で対応済み（sum成分を発生源
+（`subject-status`/`equipment` = 要素A・B、それ以外 = バフ・デバフ由来の要素C）で分離し、後者だけを
+乗算の後に加算する）。実装経緯は[core/README.md](../src/core/README.md)項目9参照。
 
 #### preventBasicAttackDamagedRatio（基本攻撃被ダメージ減少率）
 

@@ -149,15 +149,14 @@
 防御力の場合、バフ・デバフ由来の**固定値**増減だけが例外的に乗算の後に適用され、実験体自身・装備による
 固定値は引き続き乗算の前に合算される。
 
-現状の`calculateStatusValue`（`subject-dynamic/status/combine-components.ts`）は、sum成分を発生源によらず
-一括で合算してからmul成分を適用する設計であり、この「一部のsum成分だけ乗算の後」という順序をそのままでは
-表現できない。防御力に対する固定値タイプのバフ・デバフ（今回試験実装中のものを含む）を正式に実装する際は、
-`defense`専用の合成関数を新設する（`calculateMovementSpeedValue`・`calculateCooldownValue`が既に
-`calculateStatusValue`とは別の専用ロジックを持っている前例に倣う）などの対応が必要になる見込み。
-ステータス計算エンジンの汎用合成順序自体（`defense`以外のステータスに影響する部分）は変更しない方針で
-対応できるはず。
-
-現時点ではドキュメント化のみを行い、実装対応は未着手。
+`calculateStatusValue`（汎用ロジック）は、sum成分を発生源によらず一括で合算してからmul成分を適用する設計
+であり、この「一部のsum成分だけ乗算の後」という順序をそのままでは表現できない。**対応済み**:
+`calculateMovementSpeedValue`・`calculateCooldownValue`と同様、`defense`専用の合成関数
+`calculateDefenseValue`（`combine-components.ts`）を新設し、sum成分を発生源（`subject-status`/
+`equipment` = 実験体自身・装備による固定値、それ以外 = バフ・デバフ由来の要素C）で分離したうえで、
+バフ・デバフ由来の分だけを乗算結果に対して加算する形にした。ステータス計算エンジンの汎用合成順序自体
+（`defense`以外のステータスに影響する部分）は変更していない。実装例:
+`equipment-abilities/fáfnir's_scales`（防御力の固定値スタックバフ）。
 
 ### 10. 自己バフの効果量がStatusを参照する場合、バフ同士の依存関係が解決されない（精度を落として実装済み）
 

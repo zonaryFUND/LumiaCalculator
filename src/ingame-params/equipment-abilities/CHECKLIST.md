@@ -110,6 +110,44 @@ Status算出のみ対応し、対戦モードの回復量計算（`core/damage-t
 `maxHp`への自己バフ（ON/OFF）として実装した（`CharacterState/Group/Name/6046010`「最大体力増加」と
 一致する表記で、この解釈の妥当性を裏付け）。
 
+**注記（`deferral`は意図的に未実装）**: 「受けたダメージの20%を3秒間かけて後払いで受ける」というダメージ
+遅延効果は、この計算機の静的な計算モデル（時間経過を扱わない）上での表現が難しく、厳密に表記する必要性も
+低いと判断し、実装しない方針とした（`rio`のQと同様、要件確認は完了したうえでの意図的な非実装）。
+
+**注記（`dimensional_rift`・新規Status項目`increaseDamagedRatio`）**: 「被ダメージ増加」（付与される
+デバフ「次元不安定」、`preventDamageRatio`「被ダメージ減少」の逆方向）に対応するフィールドが
+`ComponentStatus`になかったため新設した（`core/subject-dynamic/status/type.ts`・`calculation.ts`参照）。
+`preventDamageRatio`と同様インタフェースのみで、対戦モードのダメージ計算（`core/damage-table/
+mitigation.ts`）への反映は未実装（対戦モードでの対応を予定）。
+
+**注記（`encourage`・味方に対する初の`givenBuffDebuff`、発生源レベル依存のstack表現）**: 効果対象が
+敵ではなく味方（自分以外に治癒/シールドを与えた対象）である点が、これまでの`givenBuffDebuff`実装例
+（型定義のコメントは「装備アビリティが他者（敵）に与える」）と異なる。`incomingBuffs`/
+`IncomingBuffDebuffCatalog`の仕組み自体は敵味方を区別しないため無改修で問題なく、`type.ts`のコメントは
+実態に合わせて修正した。adaptiveForceの増加量は発生源（装備者）のレベルに応じて変化するため、
+`tactical-skill`の「プロトコル違反」と同じパターン（`stack`を1〜20＝レベルそのもの、0＝付与なしとして
+表現し、`CommonLevelLabels(20)`を使う）を装備アビリティとしては初めて適用した。
+
+**注記（`fáfnir's_scales`・防御力の固定値バフ、`combine-components.ts`のドキュメント更新）**: 防御力への
+固定値バフ・デバフは、`docs/status-model.md`・`core/README.md`に「現状の合成エンジンでは表現できない
+（要修正）」という未解決の既知課題として記載されていたが、実際には`calculateDefenseValue`
+（`combine-components.ts`）が既に発生源で`sum`成分を分離し正しい順序（乗算の後に加算）で計算する形に
+対応済みだった（ドキュメントが更新されていなかっただけ）。今回の実装にあたり両ドキュメントの記載を
+「対応済み」に修正した。
+
+**注記（`gap`・距離を扱えないための近似）**: 効果は「ダメージ発生源との距離に比例した被ダメージ減少」だが、
+この計算機は実験体間の距離を扱わないため、距離が最大（効果量最大）の場合を仮定した`preventDamageRatio`
+（既存の「被ダメージ減少、種別問わず」の枠）への自己バフ（ON/OFF）として近似した。最大減少量は
+近接/遠隔武器で異なる（`weaponRangeOf(config)`で分岐）。l10nに専用のCharacterState表記が見当たらないため
+`item-skills.json`に独自定義。
+
+**注記（`gold_pouch`・野生動物処置量を扱えないための近似）**: 効果は「野生動物処置で得たクレジットに応じて
+永続的に攻撃力増加（クレジット15につき+1）」だが、この計算機は野生動物処置量・獲得クレジットを扱わない。
+処置量そのものではなく「獲得済みの攻撃力増加量」を`stack`として直接選択する形にした（1スタック=攻撃力+1、
+最大20スタックで現実的な範囲をカバー）。あわせて、ツールチップ側でハードコードされていた
+攻撃力換算値（`tooltip.ts`の`7: 1`）を`constants.json`の`attack_per_credit_unit`に切り出し、
+バフ・デバフ側と共有した。
+
 - [x] awakening（覚醒）
 - [x] biotic_infusion（意念）
 - [x] biotic_infusion_vf（意念）
@@ -130,21 +168,21 @@ Status算出のみ対応し、対戦モードの回復量計算（`core/damage-t
 - [x] combat_instinct（開始）
 - [x] convergence（凝集）
 - [x] critical_blow（クリティカル·ブロウ）
-- [ ] crushing_blow（シャッターストライク）
-- [ ] debilitation（腐敗）
-- [ ] debilitation_fog（衰弱の霧）
-- [ ] deferral（猶予）
-- [ ] dimensional_rift（次元亀裂）
-- [ ] electric_shock（電撃）
-- [ ] encourage（激励）
-- [ ] extended_fury（バレル延長）
-- [ ] fáfnir's_scales（ファフニールの鱗）
-- [ ] flame_barrier（炎の結界）
-- [ ] flame_barrier_vf（炎の結界）
-- [ ] gap（間隔）
-- [ ] gold_pouch（金貨袋）
-- [ ] guard_punch（ガードパンチ）
-- [ ] gust_of_wind（突風 - 寒気）
+- [x] crushing_blow（シャッターストライク）
+- [x] debilitation（腐敗）
+- [x] debilitation_fog（衰弱の霧）
+- [x] deferral（猶予）
+- [x] dimensional_rift（次元亀裂）
+- [x] electric_shock（電撃）
+- [x] encourage（激励）
+- [x] extended_fury（バレル延長）
+- [x] fáfnir's_scales（ファフニールの鱗）
+- [x] flame_barrier（炎の結界）
+- [x] flame_barrier_vf（炎の結界）
+- [x] gap（間隔）
+- [x] gold_pouch（金貨袋）
+- [x] guard_punch（ガードパンチ）
+- [x] gust_of_wind（突風 - 寒気）
 - [ ] healing_reduction（治癒減少）
 - [ ] heart_of_fire（劫火の心臓）
 - [ ] heavyweight（鈍重）

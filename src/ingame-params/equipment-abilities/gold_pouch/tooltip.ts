@@ -8,7 +8,7 @@ const values: EquipmentAbilityTooltipValues = ({ showEquation }) => ({
     4: Constants.hound_boar_crow,
     5: Constants.chick_bat,
     6: Constants.credits_for_1_attack,
-    7: 1
+    7: Constants.attack_per_credit_unit
 })
 
 export default values;
