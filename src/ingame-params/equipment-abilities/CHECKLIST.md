@@ -242,6 +242,62 @@ VF義手(vf_prosthetic)にのみ付与され常に近接扱いのため、この
 「基本攻撃的中時に基本スキルの残りクールダウンを一度だけ%分減少させる」という単発のタイマー操作であり、
 継続するステータス増加（cooldownReduction自己バフ）ではないため対象外。
 
+**注記（`tranquility`・`turbulence`はバフ・デバフなし）**: いずれもシールド/ダメージのみの効果で、
+`damageTable`は既存実装済み。継続するステータス変化を持たないため対象外。
+
+**注記（`two_sides`・装備アビリティ初の`excludeNoneOption`択一バフ）**: 常に「安定」「内面の怒り」の
+いずれかにあり「どちらでもない」状態は存在しないため、`subjects/irem`で確立した`excludeNoneOption`付き
+択一バフのパターンを装備アビリティ側で初めて使用した。ただし`irem`のように「状態識別用バフ」と「効果用
+バフ」を分離する必要はない（`weaponRangeOverride`のような外部参照が不要なため）ので、`buff(stack)`内で
+直接スタック値により防御力増加（安定）／攻撃力割合増加+ダメージ吸血増加（内面の怒り）を分岐する単一バフ
+として実装した。体力50%以下でも一定時間経過で「安定」に戻る仕様のためHPは参照しない（ユーザー要件通り）。
+バフ名は実在の`CharacterState/Group/Name/6067000`（二つの仮面 - 安定）・`.../6067010`（二つの仮面 -
+内面の怒り）を使用。
+
+**注記（`ultra_focus`・新設`basicAttackDamageFinalCorrectionRatio`）**: 実機検証の結果、このバフの効果は
+既存の基本攻撃増幅（`increaseBasicAttackDamageRatio`）とは別枠で、基本攻撃ダメージが「攻撃力×
+(1+基本攻撃増幅)×(致命打倍率)×(1+超集中のバフ量)」の順で計算されることを確認。`ComponentStatus`に
+`basicAttackDamageFinalCorrectionRatio`フィールドを新設し（`increaseSkillDamageRatio`と同様、インタ
+フェースのみ用意）、この自己バフで書き込む。ダメージ計算式側の反映は後回し（ユーザー指示）。
+
+**注記（`vanguard`・`6027001`系の`CharacterState`名を再利用）**: 実アイテム（202507）の`skillCode`は
+`6027101`だが、専用の`CharacterState/Group/Name`は見つからず、l10nに残る旧バージョン（未使用の
+`6027001`。トリガー条件が「追加体力を一定以上獲得」で異なる、実アイテムなし）の汎用バフ/デバフ名
+`6027010`（先鋒 - バフ効果）・`6027020`（先鋒 - デバフ効果）を再利用した（同じ「先鋒」という能力の
+リニューアル版と見られ、具体的な数値を含まない汎用名のため転用に支障はないと判断）。自己バフ（被ダメージ
+割合減少、`preventDamageRatio`、近接15%/遠隔10%で`weaponRangeOf`で分岐、`gap`と同様のパターン）と、
+敵への`givenBuffDebuff`（攻撃速度減少30%）の両方を実装。
+
+**注記（`verdict`はバフ・デバフなし）**: ダメージのみの効果で、継続するステータス変化を持たない。
+
+**注記（`vf_control_enhancement`は実装対象外）**: エキオンの実験体固有スキル（デスアダー切替）として
+実験体側で実装済みのため、この装備アビリティ側での実装はなし。
+
+**注記（`vigor`・スタック+最大スタック追加効果、装備ごとの値差）**: 情熱スタック1につき攻撃速度%増加
+（`mul`）、最大スタック到達時にのみ攻撃力（`sum`、常時）+移動速度（`sum`、装備によっては存在しない）を
+追加獲得する。`blaze_up_amplified`と同様「最大スタック時のみ追加効果を同じbuffDebuffに乗せる」パターンで
+実装。最大スタック数（3または4、装備により異なる）・スタックあたりの攻撃速度・最大スタック時の攻撃力/移動
+速度は、いずれも`importedValues`（`as`・`stack`・`max.ad`・`max.ms`）経由で装備ごとに注入される。バフ名は
+実在の`CharacterState/Group/Name/6017000`（情熱）・`.../6017010`（情熱 - 最大スタック状態）を使用。移動
+速度の追加値（`0.06`〜`0.1`程度）は%表記なしの固定値表示のため、`pulverization`・`swift_strides`に続き
+3例目の`moveSpeed`固定値（`calculationType: "sum"`）バフとして実装した。
+
+なお、`code: [6017001, 6017002]`と同一のBody/Desc文面を持つ未使用コード（`6017003`・`6017004`・
+`6017008`・`6017009`）がl10nに残っているが、実アイテムでの使用は確認できなかったため`code`には含めていない
+（`circulation`のケースと異なり実害なし）。
+
+**注記（`vitality_strike`・`whirlwind`はバフ・デバフなし）**: いずれもダメージ/回復のみの効果で、
+継続するステータス変化を持たない。
+
+**注記（`zephyr`・当初「バフ・デバフなし」との回答を訂正）**: ユーザーの初回回答では対象外とされたが、
+l10n本文（`Item/Skills/6015010/Body`）に「ダメージ発生から一定時間以内に基本攻撃/スキルで規定回数命中
+すると、一定時間移動速度%増加+シールド獲得」とあり、同系統の`rudra_embodied`（迅速 - ルドラの短剣、
+`CharacterState/Group/Name/6015010`を共有する同じ「迅速」ファミリー）に実装済みの移動速度自己バフと同種の
+効果であることが判明。ユーザーに確認の上、`rudra_embodied`との取り違えだったことが確定し実装した。
+`rudra_embodied`と異なり移動速度増加量は装備間で共通の固定値（当初`constants.json`の`ms`キーは
+`importedValues.ms`と紛らわしいため、ユーザー指示で`movement_speed`に改名）で、`importedValues`は使用
+しない。シールド部分は既存の`damageTable`で対応済み。
+
 - [x] awakening（覚醒）
 - [x] biotic_infusion（意念）
 - [x] biotic_infusion_vf（意念）
@@ -317,14 +373,14 @@ VF義手(vf_prosthetic)にのみ付与され常に近接扱いのため、この
 - [x] taser_gun_surge（テーザー銃 - 跳躍）
 - [x] thunder_ruling（雷鳴の審判）
 - [x] time_edge（タイムエッジ）
-- [ ] tranquility（明鏡止水）
-- [ ] turbulence（激動）
-- [ ] two_sides（二つの仮面）
-- [ ] ultra_focus（超集中）
-- [ ] vanguard（先鋒）
-- [ ] verdict（宣告）
-- [ ] vf_control_enhancement（VF制御強化）
-- [ ] vigor（情熱）
-- [ ] vitality_strike（再生の一撃）
-- [ ] whirlwind（突風）
-- [ ] zephyr（迅速 - そよ風）
+- [x] tranquility（明鏡止水）
+- [x] turbulence（激動）
+- [x] two_sides（二つの仮面）
+- [x] ultra_focus（超集中）
+- [x] vanguard（先鋒）
+- [x] verdict（宣告）
+- [x] vf_control_enhancement（VF制御強化）
+- [x] vigor（情熱）
+- [x] vitality_strike（再生の一撃）
+- [x] whirlwind（突風）
+- [x] zephyr（迅速 - そよ風）

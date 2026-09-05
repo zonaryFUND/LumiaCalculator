@@ -51,6 +51,14 @@ export type ComponentStatus = {
     attackPower: ComponentStatusValue
     increaseBasicAttackDamageRatio: ComponentStatusValue
     /**
+     * 基本攻撃ダメージに対する最終補正（％）。`increaseBasicAttackDamageRatio`（基本攻撃増幅）とは
+     * 別枠で乗算される効果で、実機検証の結果、基本攻撃ダメージが「攻撃力×(1+基本攻撃増幅)×(致命打倍率)
+     * ×(1+この補正)」の順で計算されることを確認済み（例: 装備アビリティ「超集中」）。バフ・デバフ由来の
+     * 効果のみで得られる独立した枠。`increaseSkillDamageRatio`と同様、現時点ではインタフェース（Status
+     * 算出）のみで、ダメージ計算（`core/damage-table/`・`core/value-ratio/`）への反映は未実装
+     */
+    basicAttackDamageFinalCorrectionRatio: ComponentStatusValue
+    /**
      * 与えるスキルダメージ増加（％）。`skillAmp`（スキル増幅。攻撃力/スキル増幅型のスキル威力そのものを
      * 決定するステータス）とは別種の効果で、`docs/damage-model.md`「スキルダメージ増加効果」に記載の
      * 特性「増幅ドローン」・装備アビリティ「執行人」（`brute_enforcer`）・「予熱 - 増幅」

@@ -308,6 +308,9 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         // 与えるスキルダメージ増加（整数）。バフ・デバフによってのみ獲得される（例: 装備アビリティ
         // 「執行人」「予熱 - 増幅」「光輝」）。skillAmpとは別種。ダメージ計算への反映は未実装
         increaseSkillDamageRatio: { digit: 0, components: [] },
+        // 基本攻撃ダメージに対する最終補正（整数）。バフ・デバフによってのみ獲得される（例: 装備アビリティ
+        // 「超集中」）。increaseBasicAttackDamageRatioとは別枠。ダメージ計算への反映は未実装
+        basicAttackDamageFinalCorrectionRatio: { digit: 0, components: [] },
         // 攻撃速度（小数点第2位まで、最大2.5）
         // 武器の基礎攻撃速度（基礎値）x {装備ステータス（%表記）+ 武器熟練度比例ステータス（%表記）}
         attackSpeed: {

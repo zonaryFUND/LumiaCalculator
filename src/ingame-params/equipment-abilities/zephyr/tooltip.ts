@@ -7,9 +7,9 @@ const values: EquipmentAbilityTooltipValues = ({ showEquation }) => ({
     1: Constants.threshold,
     2: Constants.cooldown,
     3: Constants.duration,
-    4: Constants.ms,
+    4: Constants.movement_speed,
     10: showEquation ? Constants.shield.base : Constants.shield,
-    11: Constants.ms,
+    11: Constants.movement_speed,
     13: Constants.shield.level,
     15: RatioPercent(Constants.shield.amp),
     20: Constants.dot_trigger_period
