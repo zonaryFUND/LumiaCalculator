@@ -125,6 +125,8 @@
     "buff-debuff.common.none": "なし",
     "buff-debuff.common.min": "最小",
     "buff-debuff.common.max": "最大",
+    "buff-debuff.common.melee": "近接",
+    "buff-debuff.common.range": "遠隔",
 
     "buff-debuff.common.skill-level.1": "Lv1",
     "buff-debuff.common.skill-level.2": "Lv2",
@@ -230,6 +232,7 @@
     "buff-debuff.common.stack.85": "85",
     "buff-debuff.common.stack.90": "90",
     "buff-debuff.common.stack.95": "95",
+    "buff-debuff.common.stack.99": "99",
     "buff-debuff.common.stack.100": "100",
 
     "buff-debuff.common.skill-key.q": "Q",

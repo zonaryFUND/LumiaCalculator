@@ -1,4 +1,35 @@
 {
     "tactical-skill.protocol-violation.lv1": "プロトコル違反 Lv.1",
-    "tactical-skill.protocol-violation.lv2": "プロトコル違反 Lv.2"
+    "tactical-skill.protocol-violation.lv2": "プロトコル違反 Lv.2",
+
+    "tactical-skill.blink.lv2": "ブリンク Lv.2",
+
+    "tactical-skill.electric-shift.lv1": "赤嵐 Lv.1",
+    "tactical-skill.electric-shift.lv2": "赤嵐 Lv.2",
+
+    "tactical-skill.force-field.lv2": "超越 Lv.2",
+
+    "tactical-skill.nullification-movement-speed.lv1": "無効化 - 移動速度増加 Lv.1",
+    "tactical-skill.nullification-movement-speed.lv2": "無効化 - 移動速度増加 Lv.2",
+    "tactical-skill.nullification.debuff-cleanse-bonus": "無効化 - デバフ解除時追加移動速度増加",
+    "tactical-skill.nullification.ally-tenacity": "無効化 - 妨害耐性増加 Lv.2",
+
+    "tactical-skill.soul-stealer.lv1": "強い絆 Lv.1",
+    "tactical-skill.soul-stealer.lv2": "強い絆 Lv.2",
+
+    "tactical-skill.the-strider.on-use": "ストライダー - A13 - 使用時移動速度増加",
+    "tactical-skill.the-strider-after-attack.lv1": "ストライダー - A13 - 攻撃時移動速度増加 Lv.1",
+    "tactical-skill.the-strider-after-attack.lv2": "ストライダー - A13 - 攻撃時移動速度増加 Lv.2",
+    "tactical-skill.the-strider.slow": "ストライダー - A13 - スロウ Lv.2",
+
+    "tactical-skill.blader-of-truth.lv1": "真実の刃 Lv.1",
+    "tactical-skill.blader-of-truth.lv2": "真実の刃 Lv.2",
+
+    "tactical-skill.wings-of-light.lv1": "ライトウィング Lv.1",
+    "tactical-skill.wings-of-light.lv2": "ライトウィング Lv.2",
+
+    "tactical-skill.quake.slow": "クエイク - スロウ",
+
+    "tactical-skill.plasma-dash.defense-down": "プラズマダッシュ - 防御力減少 Lv.2",
+    "tactical-skill.plasma-dash.slow": "プラズマダッシュ - スロウ"
 }
