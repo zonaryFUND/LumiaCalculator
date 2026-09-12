@@ -11,5 +11,22 @@
     "augment.game-time.9": "5日目夜",
     "augment.game-time.10": "6日目昼",
     "augment.game-time.11": "6日目夜",
-    "augment.game-time.12": "7日目"
+    "augment.game-time.12": "7日目",
+
+    "augment.tempering.day2-noon": "2日目昼開始",
+    "augment.tempering.plus.1": "+1",
+    "augment.tempering.plus.2": "+2",
+    "augment.tempering.plus.3": "+3",
+    "augment.tempering.plus.4": "+4",
+    "augment.tempering.plus.5": "+5",
+    "augment.tempering.plus.6": "+6",
+    "augment.tempering.plus.7": "+7",
+    "augment.tempering.plus.8": "+8",
+    "augment.tempering.plus.9": "+9",
+    "augment.tempering.plus.10": "+10",
+    "augment.tempering.plus.11": "+11",
+    "augment.tempering.plus.12": "+12",
+    "augment.tempering.plus.13": "+13",
+    "augment.tempering.plus.14": "+14",
+    "augment.tempering.plus.15": "+15"
 }

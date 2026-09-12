@@ -1,8 +1,11 @@
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { CommonPercentLabels, CommonStackLabels } from "@app/ingame-params/buff-debuff/util";
 import { SubjectConfig, weaponRangeOf } from "core/subject-dynamic/config";
 import { Status } from "core/subject-dynamic/status/type";
 import Havoc from "./havoc";
+
+// 破壊系特性にスロウを持つものは存在しない
+export const HavocSlowSources: SlowSourceInfo[] = [];
 
 // 特性「劣勢克服」のスタック刻み（％）。本来は自身の最大体力に対する対象の最大体力超過割合に応じて
 // 連続的に変化する効果（`Havoc.dismantleGoliath`のmin/max/multiplier参照）だが、シンプルモードには

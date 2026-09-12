@@ -1,6 +1,9 @@
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { SubjectConfig } from "core/subject-dynamic/config";
 import { Status } from "core/subject-dynamic/status/type";
+
+// サポート系特性は未着手（着手時、スロウを持つ特性があればここに追加する）
+export const SupportSlowSources: SlowSourceInfo[] = [];
 
 /**
  * サポート系特性（`support.ts`）由来の選択式自己バフ（`origin: "augment"`）。`buff-debuff.ts`の

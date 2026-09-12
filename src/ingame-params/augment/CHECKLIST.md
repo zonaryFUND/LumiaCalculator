@@ -181,25 +181,49 @@ status.defense`・`Fortification.ironclad.status.preventDamageRatio`/`status.ten
   5個必要なため無効）、神話の個数=1→lifeStealのみ有効（tenacityは2個必要なため無効）、
   装備欄5/5で埋まっている→heroicボーナスも有効、という期待通りの組み合わせになることを確認
 
-## 抵抗系（fortification.ts）— 未着手
+## 抵抗系（fortification.ts）
+
+**注記（`augment/`のスロウ集約配線を新設）**: `diamondShard`・`bitterRetribution`のスロウ実装にあわせて、
+`weapon-skills/*`と同様の「`slowSources`（辞書UI表示専用の参照データ）→カテゴリ別ファイルでexport→
+`augment/dictionary.ts`の`AugmentSlowSourcesDictionary`で集約→`slow-dictionary.ts`の`SlowDictionary`に
+合流」という配線を新設した。特性は`nameIntlID`（トレイト名）単体で発生源が特定できるため、
+`sourceIntlID`は個々のトレイトではなく`TacticalSkillGivenBuffDebuff`と同じ「カテゴリ名で束ねる」方式
+（`"app.augment"`）を採用（`weapon-skills`・`equipment-abilities`のような「複数アイテムが同じ効果を共有し
+うるため個別の発生源表示が必要」という事情がないため）。
 
 ### メイン特性
-- [ ] `diamondShard`（金剛）
-- [ ] `ironclad`（不壊）
-- [ ] `heavyKneepads`（光の守護）
-- [ ] `bitterRetribution`（応報）
+- [x] `diamondShard`（金剛）— 自己バフ、防御力増加（flat、レベル依存、`Fortification.diamondShard.status.
+  defense`を`calculateValue`で解決）。敵へのスロウは`FortificationSlowSources`に登録（`slowSources`
+  集約の初適用例）
+- [x] `ironclad`（不壊）— 自己バフ、被ダメージ減少（`preventDamageRatio`）+妨害耐性増加（`tenacity`）。
+  近接/遠隔で効果量が異なり（`weaponRangeOf`）、妨害耐性は防御力比例のValueRatio
+  （`{base, defense}`＝`defense`キーが`status.defense.calculatedValue`の％を加算する`calculateValue`の
+  組み込みキー）のため`calculateValue`で解決する
+- [x] `heavyKneepads`（光の守護）— 自己バフ、移動速度増加50%固定
+- [x] `bitterRetribution`（応報）— 失った体力1%ごとに1スタック（最大30、消耗体力30%で飽和）を自動獲得し、
+  スタックごとに被ダメージ減少0.2%を得る効果。実際のゲーム内スタックは被ダメージの累積というイベント履歴に
+  依存し追跡できないが、レビューで指摘を受け、`currentHPRatio`（体力スライダー）から`Math.min(Math.floor(
+  (100 - currentHPRatio) * stackPerLostHp), max_stack)`として想定スタック数を逆算する形に修正した
+  （`frenzy`・`bitter-retribution`（旧実装）で使った「未知の状態はON/OFFのみで近似する」パターンより、
+  既に実在する体力スライダー入力から正確に算出できる場合はそちらを優先すべきだった）。ユーザー操作は
+  このバフ自体のON/OFFのみ（スタック数は選択不可）。敵へのスロウは`FortificationSlowSources`に登録
+  （データ上`melee_slow`のみ存在し、近接実験体限定の効果と見られる。遠隔向けの対応する効果は見当たらない）
 
 ### サブ特性（左）
-- [ ] `embolden`（大胆）
-- [ ] `painkiller`（鎮痛剤）
-- [ ] `unwaveringMentality`（不屈）
-- [ ] `caution`（警戒心）
+- [x] `embolden`（大胆）— 自己バフ、防御力増加（flat、レベル依存、`calculateValue`で解決）
+- [x] `painkiller`（鎮痛剤）— 自己バフ、自身の失った体力に比例した防御力増加（`painkillerDefense()`。
+  満タンで0、残り体力40%で`maxStatus.defense`に到達し飽和）。`frenzy`と同型のcurrentHPRatio依存パターン
+- [x] `unwaveringMentality`（不屈）— バフ・デバフなし（シールド効果のみ、`table-value.ts`で対応済み）
+- [x] `caution`（警戒心）— 自己バフ、被ダメージ減少（レベル依存のValueRatio、`calculateValue`で解決）
 
 ### サブ特性（右）
 - [x] `steadfast`（堅固）— 実装済み（サンプル）
-- [ ] `dineNDash`（食いしん坊）
-- [ ] `cavalcade`（特攻隊）
-- [ ] `tempering`（熱処理）
+- [x] `dineNDash`（食いしん坊）— バフ・デバフなし
+- [x] `cavalcade`（特攻隊）— 自己バフ、被ダメージ減少（固定値4%。本来は周辺に味方がいない場合のみ発動する
+  条件付き効果だが、ユーザー指示により単純なON/OFFとして実装）
+- [x] `tempering`（熱処理）— 自己バフ、2日目昼開始で防御力+3、以降80秒サイクルごとに+1（最大+15、
+  ユーザー指定の上限）。「なし」「2日目昼開始」「+1」〜「+15」の17択プルダウン（`TemperingStackLabels`。
+  表示名は`augment.json`に新設）。`huntingMaskValue`と同型の「選択/経過数」分解パターン（`temperingDefense`）
 
 ## サポート系（support.ts）— 未着手
 

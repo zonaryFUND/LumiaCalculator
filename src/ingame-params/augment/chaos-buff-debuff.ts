@@ -1,11 +1,14 @@
 import Decimal from "decimal.js";
-import { BuffDebuffDefinition } from "@app/ingame-params/buff-debuff/type";
+import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { SubjectConfig, weaponRangeOf } from "core/subject-dynamic/config";
 import { Status } from "core/subject-dynamic/status/type";
 import { calculateValue, resolveDynamicValue } from "core/value-ratio";
 import { EquipmentID, EquipmentStatusDictionary } from "core/equipment";
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component";
 import Chaos from "./chaos";
+
+// カオス系特性にスロウを持つものは存在しない
+export const ChaosSlowSources: SlowSourceInfo[] = [];
 
 /**
  * 特性「渦流」の回復によるオーバーヒール（最大体力を超えた回復分の一時的な最大体力への変換）量。
