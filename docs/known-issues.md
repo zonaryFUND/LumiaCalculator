@@ -71,6 +71,11 @@
   assault-rifle`）の効果。`increaseBasicAttackDamageRatio`（％）とは別枠の固定値加算。旧バージョンで
   装備固有ステータスとして存在していた同名フィールド（`core/equipment/status.ts`で現在コメントアウトされて
   いる未使用フィールド`increaseBasicAttackDamage`）と同種の効果のため、同じ名前を踏襲した。
+- `increaseDamageRatio`（与えるダメージ増加、％）: 特性「劣勢克服」（`dismantleGoliath`）の効果。
+  `increaseBasicAttackDamageRatio`（基本攻撃のみ）・`increaseSkillDamageRatio`（スキルのみ）と異なり、
+  ダメージ種別を問わず適用される点が特徴。本来の発動条件（自身と対象の最大体力比較）は対戦モード専用の
+  ロジックが必要なため、当面はスタック可変（0/2.5/5/7.5/10%）の選択式自己バフとして実装している
+  （`augment/CHECKLIST.md`の`dismantleGoliath`注記参照）。
 
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 

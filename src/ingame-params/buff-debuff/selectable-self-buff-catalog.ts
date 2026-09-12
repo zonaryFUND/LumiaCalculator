@@ -12,13 +12,15 @@ import { BuffDebuffDefinition } from "./type";
  * 特性・戦術スキル・その他恒久バフを持ちうる）ため、実験体・装備の変更に連動して自動投入・削除されることは
  * ない（`self-buff-definitions.ts`の`reconcileSelfBuffs`参照）。
  *
- * 3つの発生源のうち`augment`のみ効果量がレベルに依存する（例: 「堅固」の妨害耐性）ため`config`を受け取る。
- * `status`は将来的に実験体自身のステータス（例: 最大体力）に依存する効果を持つ発生源のために引数として
- * 用意してあるが、現時点ではどの発生源も参照していない
+ * 3つの発生源のうち`augment`のみ効果量がレベル・自身の現在体力割合に依存する（例:「堅固」の妨害耐性、
+ * 「狂奔」の生命力吸収）ため`config`・`currentHPRatio`を受け取る。`currentHPRatio`は`SubjectPerpetualStatus`・
+ * `EquipmentAbilityPerpetualStatus`と同様に`statusOf()`の引数がそのまま素通しされる
+ * （`self-buff-definitions.ts`参照）。`status`は将来的に実験体自身のステータス（例: 最大体力）に依存する
+ * 効果を持つ発生源のために引数として用意してあるが、現時点ではどの発生源も参照していない
  */
-export function selectableSelfBuffCatalogOf(config: SubjectConfig, status: Status): Record<string, BuffDebuffDefinition> {
+export function selectableSelfBuffCatalogOf(config: SubjectConfig, status: Status, currentHPRatio: number): Record<string, BuffDebuffDefinition> {
     return {
-        ...AugmentBuffDebuff(config),
+        ...AugmentBuffDebuff(config, currentHPRatio),
         ...TacticalSkillBuffDebuff(config, status),
         ...MiscBuffDebuff
     };

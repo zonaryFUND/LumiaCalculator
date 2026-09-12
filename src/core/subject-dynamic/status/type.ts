@@ -78,6 +78,14 @@ export type ComponentStatus = {
      * 計算に反映する仕組みがない」参照。増幅ドローン型/執行人型の適用対象の違いの設計が必要）
      */
     increaseSkillDamageRatio: ComponentStatusValue
+    /**
+     * 与えるダメージ増加（％）。`increaseBasicAttackDamageRatio`（基本攻撃のみ）・`increaseSkillDamageRatio`
+     * （スキルのみ）とは異なり、基本攻撃・スキルを問わず適用される与ダメージ増加。バフ・デバフ由来の効果のみで
+     * 得られる独立した枠（例: 特性「劣勢克服」）。`increaseDamagedRatio`（被ダメージ増加。逆方向）と対をなす。
+     * `increaseSkillDamageRatio`と同様、現時点ではインタフェース（Status算出）のみで、ダメージ計算
+     * （`core/damage-table/`・`core/value-ratio/`）への反映は未実装（`docs/known-issues.md`参照）
+     */
+    increaseDamageRatio: ComponentStatusValue
     attackSpeed: ComponentStatusValue
     criticalStrikeChance: ComponentStatusValue
     criticalStrikeDamage: ComponentStatusValue

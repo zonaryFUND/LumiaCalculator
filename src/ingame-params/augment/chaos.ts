@@ -1,185 +1,248 @@
+// カオス系特性　数値
 export default {
+    // メイン特性
     // ステラチャージ
-    "stellar_charge": {
-        "time_bound": 5,
-        "max_stack": 3,
-        "duration": 5,
-        "damage": {
-            "base": 30,
-            "level": 2
+    stellarCharge: {
+        // ステラスタック持続時間
+        timeBound: 5,
+        // ステラスタック最大値
+        maxStack: 3,
+        // 効果発動後持続時間
+        duration: 5,
+        // ダメージ
+        damage: {
+            base: 30,
+            level: 2
         },
-        "cooldown_reduction": 35,
-        "cooldown": 15,
-        "animal_damage_multiplier": 2,
-        "animal_cooldown_reduction": 15
+        // 効果発動時基本スキルクールダウン減少
+        cooldownReduction: 35,
+        // ステラチャージクールダウン
+        cooldown: 15,
+        // 野生動物に発動したときの追加ダメージ倍率
+        animalDamageMultiplier: 2,
+        // 野生動物に発動したときの基本スキルクールダウン減少
+        animalCooldownReduction: 15,
+        // 野生動物に発動したときのステラチャージクールダウン
+        animalCooldown: 6
     },
     // 鬼火
-    "ghost_light": {
-        "threshold": {
-            "hp": 30,
-            "time": 3
+    ghostLight: {
+        // 発動条件
+        threshold: {
+            // 発動させるために与えるダメージ（敵最大体力比）
+            hp: 30,
+            // この時間（秒）以内に敵体力を減らす
+            time: 3
         },
-        "damage": {
-            "base": 50,
-            "level": 10,
-            "additionalAttack": 70,
-            "amp": 20
+        // ダメージ
+        damage: {
+            base: 50,
+            level: 10,
+            additionalAttack: 70,
+            amp: 20
         },
-        "healing_reduction": 30,
-        "duration": 5,
-        "cooldown_acceleration": 5,
-        "cooldown": 30
+        // 治癒減少効果量
+        healingReduction: 30,
+        // 持続時間
+        duration: 5,
+        // この秒数以上敵に攻撃しない場合、クールダウン減少が2倍に加速
+        cooldownAcceleration: 5,
+        // クールダウン
+        cooldown: 30
     },
     // 霹靂
-    "red_sprite": {
-        "damage": {
-            "base": 30,
-            "level": 2,
-            "additionalAttack": 45,
-            "amp": 26
+    redSprite: {
+        damage: {
+            base: 30,
+            level: 2,
+            additionalAttack: 45,
+            amp: 26
         },
-        "cooldown": 10,
-        "damage_amp": {
-            "range": 5,
-            "effect": 20
+        cooldown: 9,
+        // 一定距離以上離れている敵に発動時、ダメージ増加
+        damageAmp: {
+            // 必要な距離
+            range: 5,
+            // 効果量
+            effect: 20
         },
-        "transport": {
-            "range": 4,
-            "damage_reduction": 20
+        // 発動対象の敵の近くに別の敵がいる場合、転移
+        transport: {
+            // 転移範囲
+            range: 4,
+            // 転移ダメージの元ダメージからの減少量
+            damageReduction: 20
         },
-        "cooldown_reduction": {
-            "single_target": 12,
-            "aoe": 5,
-            "dot": 2
+        // 敵にスキルダメージを与えるごとの霹靂クールダウン減少
+        cooldownReduction: {
+            // 単体対象スキル
+            singleTarget: 12,
+            // 範囲スキル
+            aoe: 5,
+            // 持続スキル
+            dot: 2
         }
     },
     // 渦流
-    "syphon_maelstorm": {
-        "time_bound": 3,
-        "threshold": 2,
-        "duration": 2.5,
-        "movement_speed": {
-            "melee": 10,
-            "range": 5
+    syphonMaelstorm: {
+        // 発動させるために条件を満たす時間の制限
+        timeBound: 3,
+        // 発動に必要な攻撃的中回数
+        threshold: 2,
+        // 持続時間
+        duration: 2.5,
+        // 移動速度減少
+        movementSpeed: {
+            melee: 10,
+            range: 5
         },
-        "damage": {
-            "level": 5,
-            "additionalAttack": 80,
-            "amp": 40
+        damage: {
+            level: 5,
+            additionalAttack: 80,
+            amp: 40
         },
-        "heal": {
-            "additionalAttack": 70,
-            "amp": 20,
-            "maxHP": 7,
-            "lostHP": 10
+        // 自己回復量
+        heal: {
+            additionalAttack: 70,
+            amp: 20,
+            maxHP: 7,
+            lostHP: 10
         },
-        "additional_heal_per_hit": 40,
-        "additional_heal_max": 80,
-        "overheal_duration": 5,
-        "cooldown": 20
+        // 過流が複数人に的中したときの追加人数ごとの回復量増加
+        additionalHealPerHit: 40,
+        // 追加的中による回復量増加の上限
+        additionalHealMax: 80,
+        // 最大体力を超えて回復するぶんの持続時間
+        overhealDuration: 5,
+        cooldown: 20
     },
+
+    // サブ特性（左）
     // サーキュラーシステム
-    "circular_system": {
-        "heal": {
-            "base": 10,
-            "level": 1,
-            "maxHP": 0.3
+    circularSystem: {
+        // HoTの総回復量
+        heal: {
+            base: 10,
+            level: 1,
+            maxHP: 0.3
         },
-        "duration": 3
+        // HoTの持続時間
+        duration: 3
     },
     // 傷の悪化
-    "open_wounds": {
-        "damage": {
-            "base": 10,
-            "level": 2,
-            "targetHP": 8
+    openWounds: {
+        // DoTの総ダメージ量
+        damage: {
+            base: 10,
+            level: 2,
+            targetHP: 8
         },
-        "duration": 2,
-        "cooldown": 10
-    },
-    // 速射
-    "quick_draw": {
-        "time_bound": 3,
-        "duration": 5,
-        "adaptive": {
-            "base": 2,
-            "level": 0.5
-        },
-        "attack_speed": 15,
-        "cooldown": 15
+        // DoTの持続時間
+        duration: 2,
+        // クールダウン
+        cooldown: 10
     },
     // 徹甲弾
-    "stopping_power": {
-        "armor_penetration": {
-            "effect": 6,
-            "duration": 4
+    stoppingPower: {
+        // 持続時間
+        duration: 6,
+        // 獲得ステータス
+        effect: {
+            penetrationDefense: 6
         },
-        "cooldown": 12
+        cooldown: 12
     },
+    // 速射
+    quickDraw: {
+        // スキル使用後、発動のために基本攻撃を的中させるまでの猶予
+        timeBound: 3,
+        // 追加バフ持続時間
+        duration: 5,
+        status: {
+            adaptiveForce: {
+                base: 2,
+                level: 0.5
+            },
+            attackSpeed: 15,
+        },
+        cooldown: 15
+    },
+
+    // サブ特性（右）
     // 力の蓄積
-    "power_crescendo": {
-        "adaptive": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            6,
-            8,
-            10,
-            12,
-            14,
-            16,
-            16,
-            16
+    powerCrescendo: {
+        // ゲーム内時刻ごとの適合能力値獲得量
+        adaptiveForce: [
+            0,  // 1日目昼
+            1,  // 1日目夜
+            2,  // 2日目昼
+            3,  // 2日目夜
+            4,  // 3日目昼
+            6,  // 3日目夜
+            8,  // 4日目昼
+            10, // 4日目夜
+            12, // 5日目昼
+            14, // 5日目夜
+            16, // 6日目昼
+            16, // 6日目夜
+            16  // 7日目
         ]
     },
     // オーバーウォッチ
-    "overwatch": {
-        "cooldown": 5,
-        "threshold": 40,
-        "adaptive": 5
+    overwatch: {
+        // バフ効果
+        status: {
+            cooldownReduction: 5,
+        },
+        // 追加バフ獲得に必要なクールダウン減少
+        threshold: 40,
+        // 追加バフ効果
+        additionalStatus: {
+            adaptiveForce: 5
+        }
     },
     // R_echarger
-    "r_echarger": {
-        "effect": 15,
-        "r_buff": {
-            "duration": 5,
-            "adaptive": {
-                "base": 5,
-                "level": 0.5
+    r_echarger: {
+        effect: {
+            ultCooldownReduction: 15
+        },
+        rActivateBuffDuration: 5,
+        rActivateBuff: {
+            adaptiveForce: {
+                base: 5,
+                level: 0.5
             }
         },
-        "cooldown": 20
+        cooldown: 20
     },
     // 極上のコレクション
-    "celestial_collection": {
-        "all_heroic": {
-            "adaptiveForce": 2
+    celestialCollection: {
+        allHeroic: {
+            adaptiveForce: 2
         },
-        "legendary": {
+        legendary: {
             1: {
-                "adaptiveForce": 3
+                adaptiveForce: 3
             },
             2: {
-                "defense": 2
+                defense: 2
             },
             3: {
-                "maxHP": 40
+                maxHP: 40
             },
             4: {
-                "movement_speed": 1
+                movementSpeed: 1
             },
             5: {
-                "armor_penetration_ratio": 1
+                penetrationDefenseRatio: 1
             }
         },
-        "mythic": {
+        mythic: {
             1: {
-                "omnisyphon": 3
+                lifeSteal: 3
             },
-            "2_or_more": {
-                "tenacity": 5
+            twoOrMore: {
+                tenacity: 5
             }
         }
     }

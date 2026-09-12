@@ -308,6 +308,9 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         // 与えるスキルダメージ増加（整数）。バフ・デバフによってのみ獲得される（例: 装備アビリティ
         // 「執行人」「予熱 - 増幅」「光輝」）。skillAmpとは別種。ダメージ計算への反映は未実装
         increaseSkillDamageRatio: { digit: 0, components: [] },
+        // 与えるダメージ増加（小数点第1位まで）。バフ・デバフによってのみ獲得される（例: 特性「劣勢克服」）。
+        // 基本攻撃・スキルを問わない点がincreaseSkillDamageRatioと異なる。ダメージ計算への反映は未実装
+        increaseDamageRatio: { digit: 1, components: [] },
         // 基本攻撃ダメージに対する最終補正（整数）。バフ・デバフによってのみ獲得される（例: 装備アビリティ
         // 「超集中」）。increaseBasicAttackDamageRatioとは別枠。ダメージ計算への反映は未実装
         basicAttackDamageFinalCorrectionRatio: { digit: 0, components: [] },
@@ -559,7 +562,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     // 実験体固有スキル・武器スキル・装備アビリティによる自己バフ。origin: "temporary-status"（ユーザーが
     // スタックを切り替えられる）でStatusValueComponentを注入する（origin: "perpetual_status"の恒久パッシブ
     // とは区別する）
-    const selfBuffDefinitions = selfBuffDefinitionsOf(config, statusForSelfBuffs);
+    const selfBuffDefinitions = selfBuffDefinitionsOf(config, statusForSelfBuffs, currentHPRatio);
     const selfBuffStatus = config.selfBuffs.flatMap(state => {
         const def = selfBuffDefinitions[state.id];
         return def ? [resolveAdaptiveForceBuff(def.buff(state.stack))] : [];

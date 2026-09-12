@@ -20,11 +20,12 @@ import style from "./self-buffs.module.styl";
 const SelfBuffs: React.FC = () => {
     const config = useSubjectStateStore(s => s.config);
     const status = useSubjectStateStore(s => s.status);
+    const hpRatio = useSubjectStateStore(s => s.hpRatio);
     const setSelfBuffs = useSubjectStateStore(s => s.setSelfBuffs);
     const [adding, toggleAdding] = useToggle(false);
 
-    const definitions = selfBuffDefinitionsOf(config, status);
-    const catalog = selectableSelfBuffCatalogOf(config, status);
+    const definitions = selfBuffDefinitionsOf(config, status, hpRatio);
+    const catalog = selectableSelfBuffCatalogOf(config, status, hpRatio);
     const addedIds = new Set(config.selfBuffs.map(s => s.id));
     const addableEntries = Object.entries(catalog).filter(([id]) => !addedIds.has(id));
 

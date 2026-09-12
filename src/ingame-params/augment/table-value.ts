@@ -35,8 +35,8 @@ const acceleratorStrategy: UniqueValueStrategy = ({ config, status }) => {
 }
 
 const redSpriteStrategy: UniqueValueStrategy = ({ config, status }) => {
-    const {amp, ...attackBased} = Chaos.red_sprite.damage;
-    const {additionalAttack, ...ampBased} = Chaos.red_sprite.damage;
+    const {amp, ...attackBased} = Chaos.redSprite.damage;
+    const {additionalAttack, ...ampBased} = Chaos.redSprite.damage;
 
     const attackBasedDamage = calculateValue(attackBased, status, config, "other").static;
     const ampBasedDamage = calculateValue(ampBased, status, config, "other").static;
@@ -53,11 +53,11 @@ const redSpriteStrategy: UniqueValueStrategy = ({ config, status }) => {
             {
                 expression: [
                     {ratioKey: "base"},
-                    `${Chaos.red_sprite.damage.base} + `,
+                    `${Chaos.redSprite.damage.base} + `,
                     {ratioKey: "level"},
-                    `${config.level} x ${Chaos.red_sprite.damage.level} + `,
+                    `${config.level} x ${Chaos.redSprite.damage.level} + `,
                     {ratioKey: attackIsBigger ? "additionalAttack" : "amp"},
-                    `${(attackIsBigger ? status.attackPower.additionalValue : status.skillAmp.calculatedValue)?.toString()} x ${attackIsBigger ? Chaos.red_sprite.damage.additionalAttack : Chaos.red_sprite.damage.amp}`
+                    `${(attackIsBigger ? status.attackPower.additionalValue : status.skillAmp.calculatedValue)?.toString()} x ${attackIsBigger ? Chaos.redSprite.damage.additionalAttack : Chaos.redSprite.damage.amp}`
                 ]
             }
         ]
@@ -71,39 +71,39 @@ type AugmentDamageTableUnit = Omit<DamageTableUnit, "value" | "origin"> & {
 export function AugmentTableValues(intl: IntlShape, config: SubjectConfig): AugmentDamageTableUnit[][] {
     return [
         [
-            {label: intl.formatMessage({id: "絶対武力ダメージ"}), value: Havoc.frailty_infliction.damage, type: {type: "true"}},
+            {label: intl.formatMessage({id: "絶対武力ダメージ"}), value: Havoc.frailtyInfliction.damage, type: {type: "true"}},
             {label: "アクセルレート3回目追加ダメージ", value: acceleratorStrategy},
         ],
         [
-            {label: "ステラチャージ追加ダメージ", value: Chaos.stellar_charge.damage, type: {type: "true"}},
-            {label: "鬼火", value: Chaos.ghost_light.damage, type: {type: "true"}},
+            {label: "ステラチャージ追加ダメージ", value: Chaos.stellarCharge.damage, type: {type: "true"}},
+            {label: "鬼火", value: Chaos.ghostLight.damage, type: {type: "true"}},
             {label: "霹靂", value: redSpriteStrategy},
-            {label: "霹靂(遠距離強化)", value: redSpriteStrategy, multiplier: Chaos.red_sprite.damage_amp.effect + 100},
-            {label: "渦流ダメージ", value: Chaos.syphon_maelstorm.damage},
-            {label: "渦流回復(1人ヒット)", value: Chaos.syphon_maelstorm.heal, type: {type: "heal", target: "self"}},
-            {label: "渦流回復(3人ヒット)", value: Chaos.syphon_maelstorm.heal, type: {type: "heal", target: "self"}, multiplier: 100 + Chaos.syphon_maelstorm.additional_heal_max},
-            {label: "傷の悪化", value: Chaos.open_wounds.damage},
-            {label: "サーキュラーシステム回復", value: Chaos.circular_system.heal, type: {type: "heal", target: "self"}}
+            {label: "霹靂(遠距離強化)", value: redSpriteStrategy, multiplier: Chaos.redSprite.damageAmp.effect + 100},
+            {label: "渦流ダメージ", value: Chaos.syphonMaelstorm.damage},
+            {label: "渦流回復(1人ヒット)", value: Chaos.syphonMaelstorm.heal, type: {type: "heal", target: "self"}},
+            {label: "渦流回復(3人ヒット)", value: Chaos.syphonMaelstorm.heal, type: {type: "heal", target: "self"}, multiplier: 100 + Chaos.syphonMaelstorm.additionalHealMax},
+            {label: "傷の悪化", value: Chaos.openWounds.damage},
+            {label: "サーキュラーシステム回復", value: Chaos.circularSystem.heal, type: {type: "heal", target: "self"}}
         ],
         [
-            {label: "金剛防御力上昇", value: Fortification.diamond_shard.defense.effect, type: {type: "misc"}},
-            {label: "金剛ダメージ", value: Fortification.diamond_shard.damage},
-            {label: "不壊被ダメージ減少", value: Fortification.ironclad.damage_reduction, type: {type: "misc", percentExpression: true}},
-            {label: "不壊妨害耐性上昇", value: Fortification.ironclad.tenacity, type: {type: "misc", percentExpression: true}},
-            {label: "光の守護シールド", value: Fortification.heavy_kneepads.shield, type: {type: "shield", target: "self"}},
-            {label: "応報ダメージ", value: Fortification.bitter_retribution.damage},
-            {label: "大胆防御力上昇", value: Fortification.embolden.defense, type: {type: "misc"}},
-            {label: "不屈シールド", value: Fortification.unwavering_mentality.shield, type: {type: "shield", target: "self"}}
+            {label: "金剛防御力上昇", value: Fortification.diamondShard.status.defense, type: {type: "misc"}},
+            {label: "金剛ダメージ", value: Fortification.diamondShard.damage},
+            {label: "不壊被ダメージ減少", value: Fortification.ironclad.status.preventDamageRatio, type: {type: "misc", percentExpression: true}},
+            {label: "不壊妨害耐性上昇", value: Fortification.ironclad.status.tenacity, type: {type: "misc", percentExpression: true}},
+            {label: "光の守護シールド", value: Fortification.heavyKneepads.shield, type: {type: "shield", target: "self"}},
+            {label: "応報ダメージ", value: Fortification.bitterRetribution.damage},
+            {label: "大胆防御力上昇", value: Fortification.embolden.status.defense, type: {type: "misc"}},
+            {label: "不屈シールド", value: Fortification.unwaveringMentality.shield, type: {type: "shield", target: "self"}}
         ],
         [
-            {label: "増幅ドローン移動速度上昇", value: Support.amplification_drone.movement_speed, type: {type: "misc", percentExpression: true}},
-            {label: "増幅ドローン威力上昇", value: Support.amplification_drone.skill_damage_amp, type: {type: "misc", percentExpression: true}},
-            {label: "治癒ドローン", value: Support.healing_drone.heal, type: {type: "heal", target: "any"}},
+            {label: "増幅ドローン移動速度上昇", value: Support.amplificationDrone.status.movementSpeed, type: {type: "misc", percentExpression: true}},
+            {label: "増幅ドローン威力上昇", value: Support.amplificationDrone.status.skillDamageMultiplierRatio, type: {type: "misc", percentExpression: true}},
+            {label: "治癒ドローン", value: Support.healingDrone.heal, type: {type: "heal", target: "any"}},
             {label: "献身シールド1回分", value: Support.sentinel.shield, type: {type: "shield", target: "any"}},
-            {label: "狩りの戦慄回復最小値", value: Support.thrill_of_the_hant.heal_min, type: {type: "heal", target: "self"}},
-            {label: "狩りの戦慄回復最大値", value: Support.thrill_of_the_hant.heal_min, type: {type: "heal", target: "self"}, multiplier: 100 * Support.thrill_of_the_hant.heal_max_multiplier},
-            {label: "サボテン爆弾", value: Support.blast_cactus.damage},
-            {label: "サボテン爆弾不発", value: Support.blast_cactus.damage, multiplier: 100 - Support.blast_cactus.unexploded_decline},
+            {label: "狩りの戦慄回復最小値", value: Support.thrillOfTheHant.heal_min, type: {type: "heal", target: "self"}},
+            {label: "狩りの戦慄回復最大値", value: Support.thrillOfTheHant.heal_min, type: {type: "heal", target: "self"}, multiplier: 100 * Support.thrillOfTheHant.heal_max_multiplier},
+            {label: "サボテン爆弾", value: Support.blastCactus.damage},
+            {label: "サボテン爆弾不発", value: Support.blastCactus.damage, multiplier: 100 - Support.blastCactus.unexploded_decline},
         ]
     ];
 }

@@ -53,9 +53,13 @@ function autoSelfBuffDefinitionsOf(config: SubjectConfig, status: Status): Recor
  * ユーザーが選択して追加・削除する定義（`selectableSelfBuffCatalogOf`。特性・戦術スキル・オブジェクト討伐）
  * をマージして返す。`statusOf()`・`self-buffs.tsx`の両方から共通で参照する（発生源が増えるたびに個別に
  * 書くと、一方だけ更新し忘れて自己バフが計算には反映されるのにUIに出ない、といった食い違いが起きるため）
+ *
+ * @param currentHPRatio `selectableSelfBuffCatalogOf`（特性の現在体力依存効果、例:「狂奔」）にそのまま
+ * 素通しする。`statusOf()`から呼ぶ場合はその引数、UI表示目的で呼ぶ場合はStoreの`hpRatio`を渡す
+ * （`self-buffs.tsx`参照）
  */
-export function selfBuffDefinitionsOf(config: SubjectConfig, status: Status): Record<string, BuffDebuffDefinition> {
-    return { ...autoSelfBuffDefinitionsOf(config, status), ...selectableSelfBuffCatalogOf(config, status) };
+export function selfBuffDefinitionsOf(config: SubjectConfig, status: Status, currentHPRatio: number): Record<string, BuffDebuffDefinition> {
+    return { ...autoSelfBuffDefinitionsOf(config, status), ...selectableSelfBuffCatalogOf(config, status, currentHPRatio) };
 }
 
 /**

@@ -67,6 +67,7 @@ export function stubStatus(overrides: Partial<Status> = {}): Status {
         hpHealedDecreaseRatio: statusValue(),
         hpHealedIncreaseRatio: statusValue(),
         increaseSkillDamageRatio: statusValue(),
+        increaseDamageRatio: statusValue(),
         healerGiveHealShieldRatio: statusValue(),
         tenacity: statusValue(),
         moveSpeed: movementSpeedValue(),

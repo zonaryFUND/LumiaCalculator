@@ -1,115 +1,168 @@
+// サポート系特性 数値
 export default {
-    // 超再生
-    "healing_factor": {
-        "enhance": 6,
-        "duration": 2
+    // メイン特性
+    // サボテン爆弾
+    blastCactus : {
+        // 持続時間
+        duration: 4,
+        //クールダウン
+        cooldown: 8,
+        // 威力
+        damage: {
+            level: 8,
+            targetMaxHP: 5
+        },
+        // 起爆しなかったときの威力減少
+        unexploded_decline: 50,
+        // 野生動物を対象としたときの威力比
+        animal_damage: 150,
+        // 爆弾付着対象を攻撃した味方への移動速度バフ
+        ally_movement_speed: {
+            duration: 2,
+            effect: 15
+        }
     },
     // 増幅ドローン
-    "amplification_drone": {
-        "duration": 4.5,
-        "movement_speed": {
-            "base": 10,
-            "level": 0.6
+    amplificationDrone: {
+        // 効果範囲
+        range: 4,
+        // 持続時間
+        duration: 4.5,
+        // ステータスバフ
+        status: {
+            movementSpeed: {
+                base: 10,
+                level: 0.6
+            },
+            // 「与えるスキルダメージ種の割合増加」効果
+            // 増幅ドローン専用
+            skillDamageMultiplierRatio: {
+                base: 8,
+                level: 0.5
+            },
         },
-        "skill_damage_amp": {
-            "base": 8,
-            "level": 0.5
-        },
-        "cooldown": 30
+        cooldown: 30
     },
     // 治癒ドローン
-    "healing_drone": {
-        "range": 4,
-        "threshold": 40,
-        "duration": 3,
-        "heal": {
-            "lostHP": {
-                "base": 3,
-                "level": 0.3
+    healingDrone: {
+        // 効果範囲
+        range: 4,
+        // 発動に必要な自分または味方の現在体力割合
+        threshold: 40,
+        // 効果時間
+        duration: 3,
+        heal: {
+            lostHP: {
+                base: 3,
+                level: 0.3
             }
         },
-        "cooldown": 30,
-        "multiple_reduction": 50
+        cooldown: 30,
+        // 複数発動時の回復量減少率
+        multiple_reduction: 50
     },
     // 献身
-    "sentinel": {
-        "range": 8,
-        "duration": 6,
-        "cooldown": 6,
-        "shield_amp": {
-            "threshold": 30,
-            "effect": 1.5
+    sentinel: {
+        // 効果範囲
+        range: 8,
+        // シールド持続時間
+        duration: 6,
+        cooldown: 6,
+        // 体力が減った対象へのシールド増加率
+        shieldAmp: {
+            // シールド増加発動しきい値
+            threshold: 30,
+            // 増加率
+            effect: 1.5
         },
-        "max_shield": 35,
-        "shield": {
-            "base": 40,
-            "level": 5
+        // 対象の最大体力比シールド最大値
+        maxShield: 35,
+        shield: {
+            base: 40,
+            level: 5
         }
     },
+
+    // サブ特性（左）
     // 狩りの戦慄
-    "thrill_of_the_hant": {
-        "damage_increase": 20,
-        "heal_min": {
-            "base": 60,
-            "attack": 5,
-            "amp": 3
+    thrillOfTheHant: {
+        // 野生動物に対するダメージ増加
+        damage_increase: 20,
+        // 野生動物処置関与時自己回復（最小値）
+        heal_min: {
+            base: 60,
+            attack: 5,
+            amp: 3
         },
-        "heal_max_multiplier": 3,
-        "movement_speed": {
-            "effect": 12,
-            "duration": 2
+        // 自己回復最大倍率
+        heal_max_multiplier: 3,
+        // バフ持続時間
+        duration: 2,
+        // バフ効果
+        status: {
+            movementSpeed: 12
         },
-        "cooldown": 3
+        // クールダウン
+        cooldown: 3
     },
     // イバラの棘
-    "thorn_shackles": {
-        "effect": 5,
-        "duration": 5,
-        "cooldown": 2,
-        "healing_reduction": 20
+    thornShackles: {
+        duration: 5,
+        // 対象に与えるデバフ
+        status: {
+            hpHealedDecreaseRatio: 20,
+            increaseDamagedRatio: 5
+        },
+        cooldown: 2
     },
     // 威圧感
-    "power_of_intimidation": {
-        "range": 3,
-        "damage_increase": 4,
-        "max_stack": 3,
-        "effect_decline": 25
-    },
-    // サボテン爆弾
-    "blast_cactus": {
-        "duration": 4,
-        "cooldown": 8,
-        "damage": {
-            "level": 8,
-            "targetMaxHP": 5
+    powerOfIntimidation: {
+        // 効果範囲
+        range: 3,
+        // 対象に与えるデバフ
+        status: {
+            increaseDamagedRatio: 4
         },
-        "unexploded_decline": 50,
-        "animal_damage": 150,
-        "ally_movement_speed": {
-            "duration": 2,
-            "effect": 15
+        // 最大スタック数
+        max_stack: 3,
+        // スタックあたりの効果減少率
+        effect_decline: 25
+    },
+    // 超再生
+    healingFactor: {
+        // 獲得すてーたうs
+        status: {
+            healerGiveHealShieldRatio: 6
         }
     },
-    //　コイントス
-    "coin_toss": {
-        "coin": [
+    
+    // サブ特性（右）
+    // 後方支援
+    logistics: {
+        // 毎晩の望遠カメラ獲得数
+        amount: 2
+    },
+    // コイントス
+    coinToss: {
+        // キル関与時クレジット追加獲得数（ランダム）
+        coin: [
             7,
             12
         ]
     },
-    // キャンピングガイド
-    "camping_guide": {
-        "movement_speed": {
-            "effect": 0.8,
-            "duration": 5
-        }
-    },
-    // 後方支援
-    "logistics": {
-        "amount": 2
-    },
     // 割引券
-    "penny_pitcher": {
-        "amount": 20
+    pennyPitcher: {
+        // Kioskで買い物するときの値引き量
+        amount: 20
+    },
+    // キャンピングガイド
+    campingGuide: {
+        // 毎晩のガジェットエネルギー追加獲得量
+        gadgetEnergy: 10,
+        // 料理直後のバフ
+        movementSpeed: {
+            effect: 0.8,
+            duration: 5
+        }
     }
 }
