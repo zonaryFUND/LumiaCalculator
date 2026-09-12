@@ -1,3 +1,15 @@
 {
-    "augment.frailty_infliction": "絶対武力"
+    "augment.game-time.0": "1日目昼",
+    "augment.game-time.1": "1日目夜",
+    "augment.game-time.2": "2日目昼",
+    "augment.game-time.3": "2日目夜",
+    "augment.game-time.4": "3日目昼",
+    "augment.game-time.5": "3日目夜",
+    "augment.game-time.6": "4日目昼",
+    "augment.game-time.7": "4日目夜",
+    "augment.game-time.8": "5日目昼",
+    "augment.game-time.9": "5日目夜",
+    "augment.game-time.10": "6日目昼",
+    "augment.game-time.11": "6日目夜",
+    "augment.game-time.12": "7日目"
 }

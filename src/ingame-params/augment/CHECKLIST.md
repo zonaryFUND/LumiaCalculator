@@ -1,8 +1,15 @@
 # 特性 バフ・デバフ実装チェックリスト
 
 特性は4カテゴリ（破壊系`havoc.ts`・カオス系`chaos.ts`・抵抗系`fortification.ts`・サポート系`support.ts`）に
-分かれるが、UI上はカテゴリを問わず1つの選択式自己バフカタログとして扱う（`buff-debuff.ts`の
-`AugmentBuffDebuff`。id命名は`augment.<特性名>`）。実装は**破壊系から順に**進める。
+分かれるが、UI上はカテゴリを問わず1つの選択式自己バフカタログとして扱う（id命名は`augment.<特性名>`）。
+実装は**破壊系から順に**進める。
+
+バフ・デバフ実装のソースはカテゴリごとに`<category>-buff-debuff.ts`（`havoc-buff-debuff.ts`・
+`chaos-buff-debuff.ts`・`fortification-buff-debuff.ts`・`support-buff-debuff.ts`）に分割されており、
+それぞれ`<Category>BuffDebuff(config, status, currentHPRatio)`（自己バフ）・`<Category>GivenBuffDebuff`
+（他者に与えるバフ・デバフ、定数カタログ）をexportする。`buff-debuff.ts`はこれら4カテゴリを集約して
+`AugmentBuffDebuff`・`AugmentGivenBuffDebuff`という1つの辞書にまとめるだけの役割で、個々の特性の実装は
+持たない（当初は1ファイルにまとめる想定だったが、各特性の効果が想定より複雑だったため分割した）。
 
 進め方は[subjects/CHECKLIST.md](../subjects/CHECKLIST.md)・[equipment-abilities/CHECKLIST.md]
 (../equipment-abilities/CHECKLIST.md)・[weapon-skills/CHECKLIST.md](../weapon-skills/CHECKLIST.md)と同様
@@ -29,7 +36,8 @@
 calculation.ts の statusOf(config, currentHPRatio)
   → selfBuffDefinitionsOf(config, status, currentHPRatio)
     → selectableSelfBuffCatalogOf(config, status, currentHPRatio)
-      → AugmentBuffDebuff(config, currentHPRatio)
+      → AugmentBuffDebuff(config, status, currentHPRatio)
+        → Havoc/Chaos/Fortification/SupportBuffDebuff(config, status, currentHPRatio)
 ```
 
 UI表示側（`self-buffs.tsx`）は、Storeが持つ`hpRatio`（体力スライダーの選択値）を同じ経路で渡す。
@@ -109,25 +117,69 @@ status.defense`・`Fortification.ironclad.status.preventDamageRatio`/`status.ten
   「base + effect×8」という自然な延長のみで、追加の隠しボーナスは実装していない（該当データがあれば
   追加対応）
 
-## カオス系（chaos.ts）— 未着手
+## カオス系（chaos.ts）
 
 ### メイン特性
-- [ ] `stellarCharge`（ステラチャージ）
-- [ ] `ghostLight`（鬼火）
-- [ ] `redSprite`（霹靂）
-- [ ] `syphonMaelstorm`（渦流）
+- [x] `stellarCharge`（ステラチャージ）— バフ・デバフなし
+- [x] `ghostLight`（鬼火）— 外向きデバフ、`hpHealedDecreaseRatio`（受ける治癒効果減少）30%固定
+- [x] `redSprite`（霹靂）— バフ・デバフなし
+- [x] `syphonMaelstorm`（渦流）— 2つの自己バフとして実装:
+  1. `augment.syphon-maelstorm-movement-speed`: 移動速度増加（近接10%/遠隔5%、`weaponRangeOf`分岐）
+  2. `augment.syphon-maelstorm-overheal`: 回復（`Chaos.syphonMaelstorm.heal`。additionalAttack/amp/maxHP/
+     lostHPの4項目`ValueRatio`）が自身の失った体力を上回った場合、その差分が一時的な最大体力として追加される
+     効果をON/OFFの選択式自己バフとして近似（`syphonMaelstormOverheal()`）。
+
+     この実装は直前の`frenzy`のアーキテクチャ変更（`AugmentBuffDebuff`への`currentHPRatio`の追加）を
+     さらに活用する形で、`status`も新たに受け取れるように拡張した（`AugmentBuffDebuff(config, status,
+     currentHPRatio)`）。`critical_blow`（装備アビリティ、同種の「回復による最大体力変換」効果）は
+     `currentHPRatio`を受け取れなかった当時の制約により理論上の最大値（失った体力=最大体力と仮定）で
+     近似していたが、こちらは実際に選択中の体力スライダー（`currentHPRatio`）から実際の失った体力を算出し、
+     `calculateValue()` + `resolveDynamicValue()`で回復量（`lostHP`という動的レシオを含む）を正しく解決した
+     上で差分を求めており、より正確。`calculateValue`は`core/value-ratio`の集約indexから利用しており
+     （`pistol`の前例と同様、`weapon-skills/dictionary.ts`のeager globチェーンに含まれない`augment/`からは
+     問題なく呼べる）、`origin: "other"`のため`extractSkillLevel`は即座に`undefined`を返すだけで安全
 
 ### サブ特性（左）
-- [ ] `circularSystem`（サーキュラーシステム）
-- [ ] `openWounds`（傷の悪化）
-- [ ] `stoppingPower`（徹甲弾）
-- [ ] `quickDraw`（速射）
+- [x] `circularSystem`（サーキュラーシステム）— バフ・デバフなし
+- [x] `openWounds`（傷の悪化）— バフ・デバフなし
+- [x] `stoppingPower`（徹甲弾）— 自己バフ、防御貫通（割合、`penetrationDefenseRatio`）増加。
+  l10n上"徹甲弾"という同名の`Trait/Name`が2件（`7010101`/`7310401`）存在するが、`7310401`が
+  `chaos.ts`サブ特性右の番号帯（overwatch:7310301、quickDraw:7310601、celestialCollection:7310701）と
+  連続しているためこちらを採用（`7010101`は破壊系の番号帯で無関係）
+- [x] `quickDraw`（速射）— 自己バフ、適合能力値（レベル依存）+攻撃速度増加
 
 ### サブ特性（右）
-- [ ] `powerCrescendo`（力の蓄積）
-- [ ] `overwatch`（オーバーウォッチ）
-- [ ] `r_echarger`（R_echarger）
-- [ ] `celestialCollection`（極上のコレクション）
+- [x] `powerCrescendo`（力の蓄積）— 自己バフ、ゲーム内時刻（13択、`Chaos.powerCrescendo.adaptiveForce`の
+  配列インデックス）に応じた適合能力値増加。時刻ラベルは`intl/locales/ja/augment.json`に新設
+  （`augment.game-time.0`〜`.12`）。同ファイルにあった旧設計の残骸`augment.frailty_infliction`
+  （どこからも参照されていなかった）は削除
+- [x] `overwatch`（オーバーウォッチ）— 自己バフ、クールダウン減少（`cooldownReduction`）。合計クールダウン
+  減少がしきい値（40%）を超えると追加で適合能力値+5。しきい値判定は自己バフ自身を含まない中間状態の
+  `status.cooldownReduction.calculatedValue`（ヘイスト値からの変換済み％）にこの特性自身の5%を単純加算した
+  近似値で行っており、他に同時選択中のクールダウン減少系自己バフがある場合の正確なヘイスト再計算は
+  行えていない（既知の近似、`overwatchThresholdMet()`参照）
+- [x] `r_echarger`（R_echarger）— 2つの自己バフとして実装:
+  1. `augment.r-echarger-cooldown`: 究極技クールダウン減少（`ultCooldownReduction`）15%固定
+  2. `augment.r-echarger-adaptive-force`: 適合能力値増加（レベル依存）。本来はR使用後一定時間のみ有効な
+     バフだが、他の一時条件付き自己バフ（`brute_enforcer`等）と同様、発動中を仮定したON/OFFとして登録
+- [x] `celestialCollection`（極上のコレクション）— 装備の等級（英雄<伝説<神話）に応じた累積ボーナス。
+  当初は「この計算機は装備の等級情報を持たない」と誤認し、伝説・神話の個数をユーザーの自己申告制
+  （選択式スタック）にする設計で実装したが、レビューで指摘を受け訂正: 実際には装備ID
+  （`config.equipment`）から`EquipmentStatusDictionary`を引いた`EquipmentStatus.itemGrade`
+  （`core/equipment/status.ts`の`Tier` = `"Epic"`(英雄)/`"Legend"`(伝説)/`"Mythic"`(神話)）で正確に
+  判別可能なため、`celestialCollectionCounts()`が装備構成から英雄以上/伝説以上/神話の個数をすべて自動集計する
+  形に修正した。最終的に`augment.celestial-collection`という単一のON/OFF自己バフ（トレイト選択の有無のみ
+  ユーザー操作、しきい値判定はすべて自動）にまとめられた。
+
+  さらにレビューで、英雄装備のみの段階でも7項目すべて（一部0%）が表示されるのは冗長との指摘を受け、
+  しきい値未達の項目は値0の`StatusValueComponent`ではなくキーごと結果オブジェクトから除外する形に変更した
+  （`effectsOf()`は`buff()`の返り値のキー数だけ表示行を作るため、値を0にするだけでは行自体は消えない）。
+  `stack == 0`のときも同様に空オブジェクトを返す。
+
+  ユーザー提示の検証例（神話1・伝説3・英雄1＝計5個）で動作確認: 伝説以上の個数=4（神話1+伝説3）→
+  しきい値1〜4のボーナス（adaptiveForce/defense/maxHP/movementSpeed）が有効（penetrationDefenseRatioは
+  5個必要なため無効）、神話の個数=1→lifeStealのみ有効（tenacityは2個必要なため無効）、
+  装備欄5/5で埋まっている→heroicボーナスも有効、という期待通りの組み合わせになることを確認
 
 ## 抵抗系（fortification.ts）— 未着手
 

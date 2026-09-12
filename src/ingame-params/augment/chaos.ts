@@ -217,8 +217,10 @@ export default {
     },
     // 極上のコレクション
     celestialCollection: {
-        allHeroic: {
-            adaptiveForce: 2
+        heroic: {
+            5: {
+                adaptiveForce: 2
+            }
         },
         legendary: {
             1: {
@@ -241,7 +243,7 @@ export default {
             1: {
                 lifeSteal: 3
             },
-            twoOrMore: {
+            2: {
                 tenacity: 5
             }
         }
