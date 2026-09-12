@@ -59,11 +59,13 @@ buff: stack => ({
 
 アルファベット順の要件確認・実装・レビューのパス（[subjects/CHECKLIST.md](subjects/CHECKLIST.md)・
 [equipment-abilities/CHECKLIST.md](equipment-abilities/CHECKLIST.md)・
-[weapon-skills/CHECKLIST.md](weapon-skills/CHECKLIST.md)）は、実験体固有スキル（`subjects/`）・
-装備アビリティ（`equipment-abilities/`）・武器スキル（`weapon-skills/`）の3カテゴリで完了している
-（2026-09時点）。特性（`augment/`）・戦術スキル（`tactical-skill/`）・オブジェクト討伐バフ
-（`perpetual-outer-buffs/`）は同様のパスをこれから行う予定だが、まだ着手していない。実装方法自体
-（`buff(stack)`の規約、`SlowSourceInfo`によるスロウの一本化）はこのREADMEに従う想定。
+[weapon-skills/CHECKLIST.md](weapon-skills/CHECKLIST.md)・[augment/CHECKLIST.md](augment/CHECKLIST.md)）は、
+実験体固有スキル（`subjects/`）・装備アビリティ（`equipment-abilities/`）・武器スキル（`weapon-skills/`）・
+特性（`augment/`）の4カテゴリで完了している（2026-09時点）。オブジェクト討伐バフ
+（`perpetual-outer-buffs/`）も別方式（`constants.ts`を単一の情報源とする「辞書登録+配線」実装。
+`perpetual-outer-buffs/index.ts`参照）で完了済み。戦術スキル（`tactical-skill/`）のみ同様のパスを
+これから行う予定だが、まだ着手していない。実装方法自体（`buff(stack)`の規約、`SlowSourceInfo`による
+スロウの一本化）はこのREADMEに従う想定。
 
 以下は各カテゴリで対象外・未対応のまま残っている項目:
 
@@ -78,3 +80,12 @@ buff: stack => ({
 - **`weapon-skills/*/buff-debuff.ts`から`core/value-ratio/extraction.ts`の`extractSkillLevel`を直接
   importすると循環参照でクラッシュする**: 回避策込みで詳細は`core/README.md`項目13・
   `weapon-skills/CHECKLIST.md`参照。
+- **`increaseSkillDamageRatio`・`increaseSkillTypeDamageRatio`（与えるスキルダメージ増加、判定軸違いの
+  2フィールド）・`increaseDamageRatio`（与えるダメージ増加）・`preventDamageRatio`等、`augment/`パスで
+  Statusに新設した各種フィールドはいずれもインタフェース（Status算出）のみで、ダメージ計算側の消費は
+  未実装**: `docs/known-issues.md`参照。
+- **`augment/`特有の近似パターン**: 対象の状態に依存する効果は対象状態を仮定したON/OFF（例:
+  `contemptForTheWeak`）、自身の現在体力に依存する効果は`currentHPRatio`から実際に算出（例: `frenzy`・
+  `painkiller`・`bitterRetribution`）、装備の等級に依存する効果は`EquipmentStatusDictionary`の
+  `itemGrade`から自動判定（`celestialCollection`）、他者バフがレベル依存の場合は`stack`を発生源レベルとして
+  表現（`amplificationDrone`）。いずれも`augment/CHECKLIST.md`の各注記に詳細あり。

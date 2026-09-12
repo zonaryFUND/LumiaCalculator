@@ -46,14 +46,18 @@
   - この判定軸の違いを`core/damage-table/`・`core/value-ratio/`のどこに・どう持たせるかが未検討
     （`Status`の1フィールドとしては表現できない。ダメージ算出単位ごとに「どちらの系統の増加を受けるか」を
     判定する必要がある）。
-- 対応: `ComponentStatus`に`increaseSkillDamageRatio`（与えるスキルダメージ増加）フィールドを新設し
-  （2026-09、`core/subject-dynamic/status/type.ts`・`calculation.ts`）、`blaze_of_glory`・
-  `blaze_up_amplified`・`brute_enforcer`は通常の`perpetualStatus`/`buffDebuff`でこのフィールドに
-  書き込む形に統一した（旧`givenSkillDamageIncrease`という表示専用の別経路は廃止）。`preventDamageRatio`・
-  `hpHealedIncreaseRatio`と同様、**インタフェース（Status算出）のみ対応で、ダメージ計算
-  （`core/damage-table/`・`core/value-ratio/`）側でこのフィールドを消費する実装はまだ行っていない**
-  （上記「設計上の難所」の解決が先決）。まとめて設計してから、ダメージ計算側の実装に着手する方針
-  （`equipment-abilities/CHECKLIST.md`参照）。
+- 対応: 当初は両系統を`increaseSkillDamageRatio`という1フィールドに統合する想定だったが（2026-09、
+  `core/subject-dynamic/status/type.ts`・`calculation.ts`）、`augment/`のバフ・デバフ実装パスで実際に
+  「増幅ドローン」に着手した際、両者が本当に別々のフィールドを要する別効果であることが改めて確認された
+  ため、`increaseSkillDamageRatio`（発生源基準＝執行人・予熱-増幅型。`blaze_of_glory`・
+  `blaze_up_amplified`・`brute_enforcer`が使用）と`increaseSkillTypeDamageRatio`（ダメージ種別基準＝
+  増幅ドローン型。特性「増幅ドローン」が使用）の2フィールドに分離した。`blaze_of_glory`等は通常の
+  `perpetualStatus`/`buffDebuff`で前者に書き込む形に統一済み（旧`givenSkillDamageIncrease`という表示専用の
+  別経路は廃止）。`preventDamageRatio`・`hpHealedIncreaseRatio`と同様、**両フィールドともインタフェース
+  （Status算出）のみ対応で、ダメージ計算（`core/damage-table/`・`core/value-ratio/`）側でこれらを消費する
+  実装はまだ行っていない**（上記「設計上の難所」に記載の、ダメージ算出単位ごとの判定軸の実装が先決）。
+  まとめて設計してから、ダメージ計算側の実装に着手する方針（`equipment-abilities/CHECKLIST.md`・
+  `augment/CHECKLIST.md`参照）。
 - `brute_enforcer`固有の注記: 本来の発動条件は「対象（敵）の残り体力」だが、シンプルモードには仮想敵の
   概念がなく判定しようがないため、単純なON/OFFの自己バフとして登録している（`brute_enforcer/
   buff-debuff.ts`参照）。対戦モードで対象の体力に応じて自動判定する専用実装（`perpetualStatus`の

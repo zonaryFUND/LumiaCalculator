@@ -225,22 +225,47 @@ status.defense`・`Fortification.ironclad.status.preventDamageRatio`/`status.ten
   ユーザー指定の上限）。「なし」「2日目昼開始」「+1」〜「+15」の17択プルダウン（`TemperingStackLabels`。
   表示名は`augment.json`に新設）。`huntingMaskValue`と同型の「選択/経過数」分解パターン（`temperingDefense`）
 
-## サポート系（support.ts）— 未着手
+## サポート系（support.ts）
+
+**注記（`increaseSkillTypeDamageRatio`フィールドを新設。`increaseSkillDamageRatio`とは別効果と判明）**:
+`amplificationDrone`着手時、`docs/damage-model.md`「スキルダメージ増加効果」の指摘通り、この特性の
+与えるスキルダメージ増加は既存の`increaseSkillDamageRatio`（発生源基準＝執行人・予熱-増幅型。
+`brute_enforcer`等が使用）とは判定軸が異なる別効果（ダメージ種別基準＝増幅ドローン型）であることが
+レビューで確認された。`ComponentStatus`に`increaseSkillTypeDamageRatio`を新設し分離した
+（`docs/known-issues.md`参照）。
+
+**注記（`amplificationDrone`の他者バフはレベル依存だが、`stack`を発生源レベルとして表現）**: 移動速度・
+スキルダメージ増加とも`{base, level}`のValueRatioで発生源（実験体）のレベルに依存するが、他者バフ・デバフは
+受信側が発生源の`config`を保持していないため`config.level`を参照できない。`tactical-skill`の
+「プロトコル違反」と同じ解決策（`stack`を発生源のレベルそのもの、1〜20として使う。`CommonLevelLabels(20)`）
+を採用した。
 
 ### メイン特性
-- [ ] `blastCactus`（サボテン爆弾）
-- [ ] `amplificationDrone`（増幅ドローン）
-- [ ] `healingDrone`（治癒ドローン）
-- [ ] `sentinel`（献身）
+- [x] `blastCactus`（サボテン爆弾）— 外向き、爆弾付着対象を攻撃した味方への移動速度増加バフ（固定値15%）
+- [x] `amplificationDrone`（増幅ドローン）— 外向き、移動速度増加+与えるスキルダメージ増加（新設した
+  `increaseSkillTypeDamageRatio`に書き込む）。ゲーム内では1つのバフが両方の効果を持つため
+  `augment.amplification-drone`という1エントリにまとめる（当初は2エントリに分けて実装したが、
+  レビューで指摘を受け統合した）。`stack`=発生源レベルとして表現（上記注記参照）
+- [x] `healingDrone`（治癒ドローン）— バフ・デバフなし
+- [x] `sentinel`（献身）— バフ・デバフなし
 
 ### サブ特性（左）
-- [ ] `thrillOfTheHant`（狩りの戦慄）
-- [ ] `thornShackles`（イバラの棘）
-- [ ] `powerOfIntimidation`（威圧感）
-- [ ] `healingFactor`（超再生）
+- [x] `thrillOfTheHant`（狩りの戦慄）— 自己バフ、移動速度増加（固定値12%）
+- [x] `thornShackles`（イバラの棘）— 外向きデバフ、受ける治癒効果減少（20%）+被ダメージ増加（5%）、
+  いずれも固定値
+- [x] `powerOfIntimidation`（威圧感）— 外向きデバフ、被ダメージ増加。チーム内の複数人が持つと最大3まで
+  スタックしうるが、1スタック追加につき寄与が25%ずつ逓減する累積計算（`powerOfIntimidationValue()`。
+  1スタック目=4%、2スタック目=4+3=7%、3スタック目=4+3+2=9%とユーザー提示の想定値と一致することを確認）
+- [x] `healingFactor`（超再生）— 自己バフ、与えるシールド・回復量増加（`healerGiveHealShieldRatio`、
+  固定値6%）
 
 ### サブ特性（右）
-- [ ] `logistics`（後方支援）
-- [ ] `coinToss`（コイントス）
-- [ ] `pennyPitcher`（割引券）
-- [ ] `campingGuide`（キャンピングガイド）
+- [x] `logistics`（後方支援）— バフ・デバフなし
+- [x] `coinToss`（コイントス）— バフ・デバフなし
+- [x] `pennyPitcher`（割引券）— バフ・デバフなし
+- [x] `campingGuide`（キャンピングガイド）— 自己バフ、移動速度増加（flat固定値）
+
+## 全体完了
+
+特性（`augment/`）の破壊系・カオス系・抵抗系・サポート系、4カテゴリすべてのバフ・デバフ実装チェックリスト
+パスが完了した（2026-09時点）。`ingame-params/README.md`「バフ・デバフ実装の現状と残課題」の更新が必要。

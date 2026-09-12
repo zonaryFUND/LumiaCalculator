@@ -305,9 +305,12 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
                 weaponMasteryStatus?.type == "basic_attack_amp" ? masteryComponent("sum", config.weaponMastery, weaponMasteryStatus.value) : undefined
             ].filter((c): c is StatusValueComponent => c != undefined)
         },
-        // 与えるスキルダメージ増加（整数）。バフ・デバフによってのみ獲得される（例: 装備アビリティ
-        // 「執行人」「予熱 - 増幅」「光輝」）。skillAmpとは別種。ダメージ計算への反映は未実装
+        // 与えるスキルダメージ増加（整数、発生源基準）。バフ・デバフによってのみ獲得される（例: 装備
+        // アビリティ「執行人」「予熱 - 増幅」「光輝」）。skillAmpとは別種。ダメージ計算への反映は未実装
         increaseSkillDamageRatio: { digit: 0, components: [] },
+        // 与えるスキルダメージ増加（整数、ダメージ種別基準）。increaseSkillDamageRatioとは判定軸が異なる
+        // 別効果（例: 特性「増幅ドローン」）。ダメージ計算への反映は未実装
+        increaseSkillTypeDamageRatio: { digit: 0, components: [] },
         // 与えるダメージ増加（小数点第1位まで）。バフ・デバフによってのみ獲得される（例: 特性「劣勢克服」）。
         // 基本攻撃・スキルを問わない点がincreaseSkillDamageRatioと異なる。ダメージ計算への反映は未実装
         increaseDamageRatio: { digit: 1, components: [] },

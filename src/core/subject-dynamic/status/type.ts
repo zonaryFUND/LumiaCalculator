@@ -68,16 +68,31 @@ export type ComponentStatus = {
      */
     increaseBasicAttackDamage: ComponentStatusValue
     /**
-     * 与えるスキルダメージ増加（％）。`skillAmp`（スキル増幅。攻撃力/スキル増幅型のスキル威力そのものを
-     * 決定するステータス）とは別種の効果で、`docs/damage-model.md`「スキルダメージ増加効果」に記載の
-     * 特性「増幅ドローン」・装備アビリティ「執行人」（`brute_enforcer`）・「予熱 - 増幅」
-     * （`blaze_up_amplified`）・「光輝」（`blaze_of_glory`）が持つ。バフ・デバフ由来の効果のみで得られる
-     * 独立した枠（`increaseBasicAttackDamageRatio`の基本攻撃版に対するスキル版に相当）。
+     * 与えるスキルダメージ増加（％、発生源基準）。`skillAmp`（スキル増幅。攻撃力/スキル増幅型のスキル威力
+     * そのものを決定するステータス）とは別種の効果で、`docs/damage-model.md`「スキルダメージ増加効果」に
+     * 記載の「執行人・予熱-増幅型」（発生源が実験体スキル・武器スキルであれば適用。雪Q・エイデンQのような
+     * 「基本攻撃ダメージとして扱われるスキル」にも適用されるが、装備・戦術スキルのダメージには非適用）に
+     * 対応する。装備アビリティ「執行人」（`brute_enforcer`）・「予熱 - 増幅」（`blaze_up_amplified`）・
+     * 「光輝」（`blaze_of_glory`）が持つ。「増幅ドローン型」（ダメージ種別基準、雪Q・エイデンQには非適用だが
+     * 装備・戦術スキルのダメージには適用）は判定軸が異なる別効果のため`increaseSkillTypeDamageRatio`に
+     * 分離している（2026-09、検証により両者が別効果と判明したため分離。それまでは本フィールドの
+     * ドキュメントに誤って増幅ドローンも含めていた）。バフ・デバフ由来の効果のみで得られる独立した枠
+     * （`increaseBasicAttackDamageRatio`の基本攻撃版に対するスキル版に相当）。
      * **現時点ではインタフェース（Status算出）のみで、ダメージ計算（`core/damage-table/`・
      * `core/value-ratio/`）への反映は未実装**（`docs/known-issues.md`「『与えるスキルダメージ増加』効果を
-     * 計算に反映する仕組みがない」参照。増幅ドローン型/執行人型の適用対象の違いの設計が必要）
+     * 計算に反映する仕組みがない」参照）
      */
     increaseSkillDamageRatio: ComponentStatusValue
+    /**
+     * 与えるスキルダメージ増加（％、ダメージ種別基準）。`increaseSkillDamageRatio`（発生源基準、
+     * 「執行人・予熱-増幅型」）とは判定軸が異なる別効果（`docs/damage-model.md`「スキルダメージ増加効果」の
+     * 「増幅ドローン型」）で、ダメージ種別が「スキルダメージ」に分類されるものであれば発生源を問わず適用
+     * される（装備・戦術スキルのスキルダメージにも適用）が、雪Q・エイデンQのような「基本攻撃ダメージとして
+     * 扱われるスキル」には非適用（`increaseSkillDamageRatio`とは逆）。特性「増幅ドローン」が持つ。
+     * バフ・デバフ由来の効果のみで得られる独立した枠。現時点ではインタフェース（Status算出）のみで、
+     * ダメージ計算（`core/damage-table/`・`core/value-ratio/`）への反映は未実装（`docs/known-issues.md`参照）
+     */
+    increaseSkillTypeDamageRatio: ComponentStatusValue
     /**
      * 与えるダメージ増加（％）。`increaseBasicAttackDamageRatio`（基本攻撃のみ）・`increaseSkillDamageRatio`
      * （スキルのみ）とは異なり、基本攻撃・スキルを問わず適用される与ダメージ増加。バフ・デバフ由来の効果のみで
