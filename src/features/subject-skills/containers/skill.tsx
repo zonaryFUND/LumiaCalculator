@@ -9,18 +9,28 @@ const Skill: React.FC<{code?: number}> = ({code}) => {
     const uiType = useResponsiveUIType();
     const side = React.useContext(TooltipSubjectSideContext);
     const tooltipContext = React.useContext(TooltipContext);
+    const clickCountRef = React.useRef(0);
 
     const latest = useLatest({ code, side });
+    // 装備アイテム（equipment-icon.view.tsx）と挙動を揃えるため、モバイル版はダブルタップでツールチップを
+    // 表示する。スキル自体にはシングルタップに割り当てられた操作がないため、1回目のタップは単に何もしない
     const onClick: React.MouseEventHandler<HTMLElement> = React.useCallback(event => {
         if (uiType != "mobile" || latest.current.code == undefined) {
-            // モバイル版UIかつスキルがブランクでない場合のみクリックによってツールチップが表示される
             return
         }
 
-        tooltipContext?.openModalSkill.current({
-            skillCode: latest.current.code,
-            subjectSide: latest.current.side
-        });
+        clickCountRef.current++;
+        if (clickCountRef.current < 2) {
+            setTimeout(() => {
+                if (clickCountRef.current >= 2) {
+                    tooltipContext?.openModalSkill.current({
+                        skillCode: latest.current.code!,
+                        subjectSide: latest.current.side
+                    });
+                }
+                clickCountRef.current = 0;
+            }, 200);
+        }
     }, [])
 
     return (

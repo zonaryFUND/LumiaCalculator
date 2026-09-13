@@ -4,3 +4,9 @@
     header
         :nth-child(2)
             margin-bottom: 4px
+
+// react-tooltipの既定z-indexのままだと、このアプリのヘッダー・ナビゲーション（`components/layout/`側で
+// z-index: 10〜100を明示的に設定している）の下に隠れてしまう。`components/tooltip/tooltip.module.styl`の
+// `.root`（スキル・装備アイテムのツールチップ）と同じ値で揃える
+.tooltip
+    z-index: 1000

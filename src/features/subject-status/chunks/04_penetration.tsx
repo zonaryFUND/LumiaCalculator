@@ -30,6 +30,7 @@ const penetration: React.FC = () => {
                 value={penetrationDefense.calculatedValue}
                 baseline={withoutBuffs.penetrationDefense.calculatedValue}
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.armor-penetration-constant"
             />
             <Column
                 name={<><ShieldSlash /><FormattedMessage id="status.armor-penetration-ratio" /></>}
@@ -41,6 +42,7 @@ const penetration: React.FC = () => {
                 }
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.armor-penetration-ratio"
             />
         </tbody>
     );

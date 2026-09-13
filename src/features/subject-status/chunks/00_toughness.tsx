@@ -39,6 +39,7 @@ const toughness: React.FC = () => {
                     baseline={withoutBuffs.maxHp.calculatedValue}
                     expand={<ExpandStatus {...maxHp} />}
                     isHidden={hidden}
+                    descriptionIntlID="tooltip.status.maxhp"
                 />
                 <Column
                     name={<><FirstAid /><FormattedMessage id="status.hpregen"/></>}
@@ -46,6 +47,7 @@ const toughness: React.FC = () => {
                     baseline={withoutBuffs.hpRegen.calculatedValue}
                     expand={<ExpandStatus {...hpRegen} />}
                     isHidden={hidden}
+                    descriptionIntlID="tooltip.status.hpregen"
                 />
                 <Column
                     name={<><Shield /><FormattedMessage id="status.defense"/></>}
@@ -53,9 +55,10 @@ const toughness: React.FC = () => {
                     baseline={withoutBuffs.defense.calculatedValue}
                     isHidden={hidden}
                     expand={<ExpandStatus {...defense} />}
+                    descriptionIntlID="tooltip.status.defense"
                 />
-                <Column 
-                    name={<><span className={style.reduction}><Shield /><Sword /></span><FormattedMessage id="status.basic-attack-damage-reduction" /></>} 
+                <Column
+                    name={<><span className={style.reduction}><Shield /><Sword /></span><FormattedMessage id="status.basic-attack-damage-reduction" /></>}
                     value={
                         preventBasicAttackDamaged.calculatedValue.greaterThan(0) ?
                         <>
@@ -64,23 +67,25 @@ const toughness: React.FC = () => {
                             {preventBasicAttackDamaged.calculatedValue.toString()}
                         </> :
                         preventBasicAttackDamagedRatio.calculatedValue
-                    } 
-                    percent 
+                    }
+                    percent
                     isHidden={hidden}
                     expand={
-                        <ExpandStatus 
-                            {...preventBasicAttackDamagedRatio} 
-                            components={[...preventBasicAttackDamagedRatio.components, ...preventBasicAttackDamaged.components.map(c => ({...c, percent: false}))]} 
-                            percent 
+                        <ExpandStatus
+                            {...preventBasicAttackDamagedRatio}
+                            components={[...preventBasicAttackDamagedRatio.components, ...preventBasicAttackDamaged.components.map(c => ({...c, percent: false}))]}
+                            percent
                         />
                     }
+                    descriptionIntlID="tooltip.status.basic-attack-damage-reduction"
                 />
-                <Column 
-                    name={<><span className={style.reduction}><Shield /><ArrowFatLinesUp weight="fill" /></span><FormattedMessage id="status.skill-damage-reduction" /></>} 
-                    value={preventSkillDamagedRatio.calculatedValue} 
-                    percent 
+                <Column
+                    name={<><span className={style.reduction}><Shield /><ArrowFatLinesUp weight="fill" /></span><FormattedMessage id="status.skill-damage-reduction" /></>}
+                    value={preventSkillDamagedRatio.calculatedValue}
+                    percent
                     isHidden={hidden}
                     expand={<ExpandStatus {...preventSkillDamagedRatio} percent />}
+                    descriptionIntlID="tooltip.status.skill-damage-reduction"
                 />
         </tbody>
     )

@@ -24,7 +24,7 @@ const damages: React.FC = props => {
                 <h3>
                     スキル<span>
                         {
-                            uiType == "mobile" ? "タップでツールチップを表示" : "マウスオーバーでツールチップを表示"
+                            uiType == "mobile" ? "ダブルタップでツールチップを表示" : "マウスオーバーでツールチップを表示"
                         }
                     </span>
                 </h3>

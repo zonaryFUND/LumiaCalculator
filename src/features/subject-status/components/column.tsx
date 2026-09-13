@@ -15,6 +15,11 @@ type ColumnProps = {
     percent?: boolean
     expand?: React.ReactNode
     isHidden?: boolean
+    /**
+     * この項目の説明ツールチップの内容を示すreact-intlメッセージID（`components/common/table-row.tsx`の
+     * `Props.descriptionIntlID`参照）。指定するとPC版は長めのホバー、モバイル版はダブルタップで表示する
+     */
+    descriptionIntlID?: string
 }
 
 const column: React.FC<ColumnProps> = props => {
@@ -34,6 +39,7 @@ const column: React.FC<ColumnProps> = props => {
         }
         expand={props.expand}
         isHidden={props.isHidden}
+        descriptionIntlID={props.descriptionIntlID}
     />
 }
 

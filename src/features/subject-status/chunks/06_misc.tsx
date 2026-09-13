@@ -39,6 +39,7 @@ const misc: React.FC = () => {
                 }
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.tenacity"
             />
             <Column
                 name={<><SneakerMove /><FormattedMessage id="status.movement-speed" /></>}
@@ -51,6 +52,7 @@ const misc: React.FC = () => {
                     />
                 }
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.movement-speed"
             />
             <Column
                 name={<><Boot />移動速度減少耐性</>}
@@ -58,6 +60,7 @@ const misc: React.FC = () => {
                 baseline={withoutBuffs.slowResist.calculatedValue}
                 isHidden={hidden}
                 percent
+                descriptionIntlID="tooltip.status.slow-resist"
             />
             <Column
                 name={<><Eye /><FormattedMessage id="status.vision" /></>}
@@ -69,6 +72,7 @@ const misc: React.FC = () => {
                     : null
                 }
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.vision"
             />
             <Column
                 name={<><ArrowFatLineRight />基本攻撃射程</>}
@@ -80,6 +84,7 @@ const misc: React.FC = () => {
                     : null
                 }
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.attack-range"
             />
         </tbody>
     );

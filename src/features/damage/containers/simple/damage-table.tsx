@@ -11,9 +11,11 @@ import useTacticalSkill from "../../use-tactical-skill";
 import useAugment from "../../use-augment";
 import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictionary";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
+import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
 
 const damageTable: React.FC = () => {
     const intl = useIntl();
+    const uiType = useResponsiveUIType();
     const config = useSubjectStateStore(s => s.config);
     const status = useSubjectStateStore(s => s.status);
 
@@ -32,7 +34,15 @@ const damageTable: React.FC = () => {
 
     return (
         <section className={style.damage}>
-            <h3>ダメージ</h3>
+            <h3>
+                ダメージ
+                <span>
+                    {
+                        uiType == "mobile" ? "タップで計算式表示" : "クリックで計算式表示"
+                    }
+                </span>
+
+            </h3>
             <div className={table["table-base"]}>
                 <table>
                     <BasicAttack

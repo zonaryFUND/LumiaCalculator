@@ -35,16 +35,17 @@ const skill: React.FC = () => {
                     <ExpandStatus {...skillAmp} />
                 }
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.skill-amp"
             />
-            
-            <Column 
-                name={<><Hourglass /><FormattedMessage id="StatType/CooldownReduction" /></>} 
-                value={<>{cooldownReduction.rawHasteValue.toString()}({cooldownReduction.calculatedValue.floor().toString()}%)</>} 
+
+            <Column
+                name={<><Hourglass /><FormattedMessage id="StatType/CooldownReduction" /></>}
+                value={<>{cooldownReduction.rawHasteValue.toString()}({cooldownReduction.calculatedValue.floor().toString()}%)</>}
                 isHidden={hidden}
-                
+                descriptionIntlID="tooltip.status.cooldown-reduction"
             />
-            <Column 
-                name={<><Hourglass /><FormattedMessage id="StatType/UltCooldownReduction" /></>} 
+            <Column
+                name={<><Hourglass /><FormattedMessage id="StatType/UltCooldownReduction" /></>}
                 value={
                     <>
                         {ultCooldownReduction.rawHasteValue.sub(cooldownReduction.rawHasteValue).toString()}({ultCooldownReduction.calculatedValue.floor().toString()}%)</>
@@ -53,11 +54,13 @@ const skill: React.FC = () => {
                     <ExpandStatus {...ultCooldownReduction} />
                 }
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.ult-cooldown-reduction"
             />
-            <Column 
-                name={<><Hourglass /><FormattedMessage id="StatType/TacticalCooldownReduction" /></>} 
-                value={<>{tacticalSkillCooldownReduction.rawHasteValue.toString()}({tacticalSkillCooldownReduction.calculatedValue.floor().toString()}%)</>} 
+            <Column
+                name={<><Hourglass /><FormattedMessage id="StatType/TacticalCooldownReduction" /></>}
+                value={<>{tacticalSkillCooldownReduction.rawHasteValue.toString()}({tacticalSkillCooldownReduction.calculatedValue.floor().toString()}%)</>}
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.tactical-cooldown-reduction"
             />
         </tbody>
     );

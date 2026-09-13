@@ -35,6 +35,7 @@ const basicAttack: React.FC = () => {
                 baseline={withoutBuffs.attackPower.calculatedValue}
                 expand={<ExpandStatus {...attackPower} />}
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.attack-power"
             />
             <Column
                 name={<><span className={style.basic_attack_amp}><Sword /><Plus weight="bold" /></span><FormattedMessage id="status.basic-attack-amp" /></>}
@@ -46,6 +47,7 @@ const basicAttack: React.FC = () => {
                 }
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.basic-attack-amp"
             />
             <Column
                 name={<><AttackSpeed /><FormattedMessage id="status.attack-speed" /></>}
@@ -53,6 +55,7 @@ const basicAttack: React.FC = () => {
                 baseline={withoutBuffs.attackSpeed.calculatedValue}
                 expand={<ExpandStatus {...attackSpeed} />}
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.attack-speed"
             />
             <Column
                 name={<><Crosshair /><FormattedMessage id="status.critical-chance" /></>}
@@ -64,6 +67,7 @@ const basicAttack: React.FC = () => {
                 }
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.critical-chance"
             />
             <Column
                 name={<><span className={style.critical_damage}><Crosshair /><Plus weight="bold" /></span><FormattedMessage id="status.critical-damage" /></>}
@@ -71,6 +75,7 @@ const basicAttack: React.FC = () => {
                 baseline={withoutBuffs.criticalStrikeDamage.calculatedValue}
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.critical-damage"
             />
         </tbody>
     );

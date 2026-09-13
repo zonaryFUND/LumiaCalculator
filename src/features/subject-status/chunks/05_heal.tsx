@@ -30,6 +30,7 @@ const heal: React.FC = () => {
                 baseline={withoutBuffs.normalLifeSteal.calculatedValue}
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.lifesteal"
             />
             <Column
                 name={<><Drop /><FormattedMessage id="status.omnisyphon" /></>}
@@ -37,6 +38,7 @@ const heal: React.FC = () => {
                 baseline={withoutBuffs.lifeSteal.calculatedValue}
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.omnisyphon"
             />
             <Column
                 name={<><FirstAidKit /><FormattedMessage id="status.heal-power" /></>}
@@ -44,6 +46,7 @@ const heal: React.FC = () => {
                 baseline={withoutBuffs.healerGiveHpHealRatio.calculatedValue}
                 percent
                 isHidden={hidden}
+                descriptionIntlID="tooltip.status.heal-power"
             />
         </tbody>
     );
