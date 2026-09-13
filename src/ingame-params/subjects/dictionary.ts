@@ -3,7 +3,7 @@ import { SubjectConfig } from "core/subject-dynamic/config";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectSelfBuffDebuff, SubjectStackInfo, SummonInfo } from "./type";
-import { registerSubjectPerpetualStatuses, registerSubjectSummonInfos, registerSubjectWeaponRangeOverrides } from "core/subject-dynamic/subject-dictionary-registry";
+import { registerSubjectPerpetualStatuses, registerSubjectSkillLists, registerSubjectSummonInfos, registerSubjectWeaponRangeOverrides } from "core/subject-dynamic/subject-dictionary-registry";
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});
 export const [
@@ -74,3 +74,4 @@ export const [
 registerSubjectWeaponRangeOverrides(SubjectWeaponRangeOverrideDictionary);
 registerSubjectPerpetualStatuses(SubjectPerpetualStatusDictionary);
 registerSubjectSummonInfos(SubjectSummonInfoDictionary);
+registerSubjectSkillLists(SubjectSkillListExpressionDictionary);

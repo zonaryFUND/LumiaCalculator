@@ -1,6 +1,6 @@
 import type { SubjectCode } from "core/subject-static";
 import type { SubjectConfig } from "./config";
-import type { SubjectPerpetualStatus, SummonInfo } from "@app/ingame-params/subjects/type";
+import type { SkillListHook, SubjectPerpetualStatus, SummonInfo } from "@app/ingame-params/subjects/type";
 
 /**
  * `ingame-params/subjects/dictionary.ts`が持つ辞書のうち、`core/`側からも参照する必要があるものを仲介する
@@ -47,4 +47,14 @@ export function registerSubjectSummonInfos(dict: Partial<Record<SubjectCode, Sum
 
 export function subjectSummonInfoOf(subject: SubjectCode): SummonInfo[] | undefined {
     return summonInfos[subject];
+}
+
+let skillLists: Partial<Record<SubjectCode, SkillListHook>> = {};
+
+export function registerSubjectSkillLists(dict: Partial<Record<SubjectCode, SkillListHook>>): void {
+    skillLists = dict;
+}
+
+export function subjectSkillListOf(subject: SubjectCode): SkillListHook | undefined {
+    return skillLists[subject];
 }
