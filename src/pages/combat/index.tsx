@@ -13,7 +13,7 @@ import TooltipPresenter from "components/tooltip";
 import Preference from "./preference";
 import preferenceStyle from "./preference.module.styl";
 import useStorageBoolean from "@app/storage/boolean";
-import { DetailedTooltipKey } from "@app/storage/common";
+import { DetailedTooltipKey, HideZeroStatusKey } from "@app/storage/common";
 import { CombatCurrentLeftConfigKey, CombatCurrentRightConfigKey, CombatMasterySyncKey } from "@app/storage/combat";
 import { useToggle } from "react-use";
 import { useStore } from "zustand";
@@ -21,6 +21,7 @@ import Content from "components/layout/base/content";
 import { NavigationButtonContext } from "components/layout/navigation";
 import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
 import { TooltipSubjectSideContext } from "components/tooltip/subject-side-context";
+import { HideZeroValueContext } from "components/common/table-row";
 
 const index: React.FC = props => {
     const navigation = React.useContext(NavigationButtonContext);
@@ -38,6 +39,7 @@ const index: React.FC = props => {
 
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
     const {value: makeMasteryAlign, setValue: setMakeMasteryAlign} = useStorageBoolean(CombatMasterySyncKey);
+    const {value: hideZeroStatus, setValue: setHideZeroStatus} = useStorageBoolean(HideZeroStatusKey);
 
     // 中央のダメージ計算結果カラムが左右両方のconfig/statusを同時に参照できるよう、
     // storeはこのページ側で生成する。<Subject>にはSubjectConfigStoreProvider経由で
@@ -85,6 +87,7 @@ const index: React.FC = props => {
                 </header>
             }
         >
+            <HideZeroValueContext.Provider value={hideZeroStatus}>
             <CollapsiblePanes tabs={["左実験体", "ダメージ", "右実験体"]}>
                 <TooltipSubjectSideContext.Provider value="left">
                     <SubjectConfigStoreProvider store={leftStore}>
@@ -105,6 +108,7 @@ const index: React.FC = props => {
                     </SubjectConfigStoreProvider>
                 </TooltipSubjectSideContext.Provider>
             </CollapsiblePanes>
+            </HideZeroValueContext.Provider>
             <TooltipPresenter
                 showEquation={damageInFormula}
                 subject={[
@@ -122,6 +126,7 @@ const index: React.FC = props => {
                 <Preference
                     damageInFormula={[damageInFormula, setDamageInFormula]}
                     makeMasteryAlign={[makeMasteryAlign, setMakeMasteryAlign]}
+                    hideZeroStatus={[hideZeroStatus, setHideZeroStatus]}
                 />
             </Modal>
         </Content>

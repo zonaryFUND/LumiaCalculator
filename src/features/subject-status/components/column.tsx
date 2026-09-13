@@ -1,6 +1,6 @@
 import * as React from "react";
 import Decimal from "decimal.js";
-import TableRow from "components/common/table-row";
+import TableRow, { HideZeroValueContext } from "components/common/table-row";
 import style from "components/common/table.module.styl";
 import BuffDelta from "./buff-delta.view";
 
@@ -23,6 +23,11 @@ type ColumnProps = {
 }
 
 const column: React.FC<ColumnProps> = props => {
+    const hideZeroValue = React.useContext(HideZeroValueContext);
+
+    // ReactElement（クールダウン系の複合表示など）は「値がゼロか」を一般的に判定できないため対象外とする
+    const isZeroValue = !("props" in props.value) && props.value.isZero();
+
     return <TableRow
         content={
             <>
@@ -38,7 +43,7 @@ const column: React.FC<ColumnProps> = props => {
             </>
         }
         expand={props.expand}
-        isHidden={props.isHidden}
+        isHidden={props.isHidden || (hideZeroValue && isZeroValue)}
         descriptionIntlID={props.descriptionIntlID}
     />
 }

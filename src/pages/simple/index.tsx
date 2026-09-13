@@ -21,8 +21,9 @@ import { styles } from "@app/util/style";
 import { PresetWithKey, usePresetStorage as usePresetStorage } from "@app/storage/preset";
 import { WeaponTypeID } from "core/equipment/weapon";
 import useStorageBoolean from "@app/storage/boolean";
-import { DetailedTooltipKey } from "@app/storage/common";
+import { DetailedTooltipKey, HideZeroStatusKey } from "@app/storage/common";
 import { NavigationButtonContext } from "components/layout/navigation";
+import { HideZeroValueContext } from "components/common/table-row";
 
 import Content from "components/layout/base/content";
 import { createSubjectConfigStore, SubjectConfigStoreProvider } from "@app/features/subject-config/store";
@@ -48,6 +49,7 @@ const index: React.FC = props => {
     const status = useStore(store, s => s.status);
 
     const {value: damageInFormula, setValue: setDamageInFormula} = useStorageBoolean(DetailedTooltipKey);
+    const {value: hideZeroStatus, setValue: setHideZeroStatus} = useStorageBoolean(HideZeroStatusKey);
 
     const [showingPreference, toggleShowingPreference] = useToggle(false);
 
@@ -63,11 +65,13 @@ const index: React.FC = props => {
                 </header>
             }
         >
+            <HideZeroValueContext.Provider value={hideZeroStatus}>
             <CollapsiblePanes tabs={["実験体", "ダメージ", "バフ・デバフ"]}>
                 <Subject />
                 <Damage />
                 <BuffDebuffs />
             </CollapsiblePanes>
+            </HideZeroValueContext.Provider>
             <TooltipPresenter
                 showEquation={damageInFormula}
                 subject={{config, status}}
@@ -79,7 +83,10 @@ const index: React.FC = props => {
                 className={preferenceStyle.preference}
                 overlayClassName={common["modal-overlay"]}
             >
-                <Preference damageInFormula={[damageInFormula, setDamageInFormula]} />
+                <Preference
+                    damageInFormula={[damageInFormula, setDamageInFormula]}
+                    hideZeroStatus={[hideZeroStatus, setHideZeroStatus]}
+                />
             </Modal>
         </Content>
         </SubjectConfigStoreProvider>

@@ -3,11 +3,12 @@ import Switch from "components/common/switch";
 
 type Props = {
     damageInFormula: [boolean, (to: boolean) => void]
+    hideZeroStatus: [boolean, (to: boolean) => void]
 }
 
 const preference: React.FC<Props> = props => {
     return (
-        <div>
+        <>
             <label>
                 <div>
                     <h3>
@@ -19,8 +20,18 @@ const preference: React.FC<Props> = props => {
                 </div>
                 <Switch {...props.damageInFormula} />
             </label>
-            
-        </div>
+            <label>
+                <div>
+                    <h3>
+                        0のステータス項目を表示しない
+                    </h3>
+                    <p>
+                        計算されたステータスの表について、0または0%である値のセルを非表示にします
+                    </p>
+                </div>
+                <Switch {...props.hideZeroStatus} />
+            </label>
+        </>
     )
 };
 

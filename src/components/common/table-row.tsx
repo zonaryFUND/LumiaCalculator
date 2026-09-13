@@ -15,6 +15,15 @@ export const MaxColContext = React.createContext(0);
  */
 export const TableRowTooltipContext = React.createContext<React.RefObject<TooltipRefProps | null> | null>(null);
 
+/**
+ * 「0のステータス項目を表示しない」設定の現在値（`storage/common.ts`の`HideZeroStatusKey`）。
+ * シンプル・対戦モードいずれも、値の読み書きを1インスタンスの`useStorageBoolean`に一元化する必要がある
+ * （`react-use`の`useLocalStorage`は同一キーの複数インスタンス間で自動同期しないため、Preference側の
+ * トグルとステータス表側の参照が食い違う）。ページ側（`pages/simple/index.tsx`等）が唯一の
+ * `useStorageBoolean`呼び出し元となり、この値をProviderで供給する。既定値は`false`
+ */
+export const HideZeroValueContext = React.createContext(false);
+
 type Props = {
     content: React.ReactNode
     expand?: React.ReactNode

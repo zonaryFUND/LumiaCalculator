@@ -5,6 +5,7 @@ import { StateProps } from "@app/util/state";
 type Props = {
     damageInFormula: [boolean, (to: boolean) => void]
     makeMasteryAlign: [boolean, (to: boolean) => void]
+    hideZeroStatus: [boolean, (to: boolean) => void]
 }
 
 const preference: React.FC<Props> = props => {
@@ -31,6 +32,17 @@ const preference: React.FC<Props> = props => {
                     </p>
                 </div>
                 <Switch {...props.makeMasteryAlign} />
+            </label>
+            <label>
+                <div>
+                    <h3>
+                        0のステータス項目を表示しない
+                    </h3>
+                    <p>
+                        計算されたステータスの表について、0または0%である値のセルを非表示にします
+                    </p>
+                </div>
+                <Switch {...props.hideZeroStatus} />
             </label>
         </>
     )
