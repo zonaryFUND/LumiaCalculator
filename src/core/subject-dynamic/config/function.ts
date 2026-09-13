@@ -2,7 +2,7 @@ import { meleeOrRange, WeaponTypeID } from "core/equipment/weapon";
 import { SubjectConfig } from "./type";
 import { EquipmentStatusDictionary } from "core/equipment";
 import { WeaponMasteryStatus } from "core/subject-static";
-import { SubjectWeaponRangeOverrideDictionary } from "@app/ingame-params/subjects/dictionary";
+import { weaponRangeOverrideOf } from "core/subject-dynamic/subject-dictionary-registry";
 
 /**
  * 実験体設定から現在装備中の武器種IDを抽出する
@@ -48,7 +48,7 @@ export function adaptiveForceTargetOf(config: SubjectConfig): "attackPower" | "s
  * @returns `melee`（近接）または`range`（遠隔）
  */
 export function weaponRangeOf(config: SubjectConfig): "melee" | "range" {
-    const override = SubjectWeaponRangeOverrideDictionary[config.subject]?.(config);
+    const override = weaponRangeOverrideOf(config.subject)?.(config);
     if (override != undefined) return override;
 
     if (config.equipment.Weapon != null) {

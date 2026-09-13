@@ -153,6 +153,34 @@
   旧仕様の値のまま保存されているケースは今回未対応。実験体・スキルごとに現在の最大レベルを判定する仕組みが
   別途必要なため、装備アイテムID・バフIDより対応コストが高いと判断し後回しにしている。
 
+## `core/`から`ingame-params/subjects/dictionary.ts`への直接importによる循環参照クラッシュ（対応済み、2026-09）
+
+`ingame-params/subjects/dictionary.ts`は全実験体の`index.ts`を`import.meta.glob(..., {eager: true})`で
+一括読み込みしてから13個の辞書を構築する。`core/`側のファイルがこの辞書を直接importすると、実験体モジュール
+側が（直接・間接問わず）そのcore側ファイルを再びimportしていた場合にESMの循環参照が発生し、モジュール
+初期化順序によっては未初期化状態の実験体モジュール（`m.default`が`undefined`）を参照してクラッシュする。
+
+- 発見の経緯: `src/test/{item,subject-skill,weapon-skill}-tooltip.test.tsx`を`toMatchSnapshot()`による
+  厳密一致検証からsmoke test（クラッシュしないことのみ確認）に切り替えたところ（「実データ全量スナップショット
+  テストの位置づけ」参照）、`subject-skill-tooltip.test.tsx`がファイル収集の時点で丸ごとクラッシュしている
+  ことが発覚した。従来は`toMatchSnapshot()`の不一致で全件「失敗」表示になっていたため、この収集時クラッシュ
+  （0件収集）がテスト内容の失敗に紛れて気づかれていなかった。
+- 実際に確認できた発生源は3箇所: `core/value-ratio/extraction.ts`（`SubjectWeaponSkillOverrideDictionary`）・
+  `core/subject-dynamic/config/function.ts`（`SubjectWeaponRangeOverrideDictionary`）・
+  `core/subject-dynamic/status/calculation.ts`（`SubjectPerpetualStatusDictionary`・
+  `SubjectSummonInfoDictionary`）。
+- **対応**: `extraction.ts`は、現在唯一登録されている上書き（`blair`の`weaponSkillLevelOverride`）が素の
+  `weaponSkillLevel`と同一関数であるため、辞書参照自体を削除して`weaponSkillLevel`を直接使うよう変更した
+  （`weapon-skills`配下の各`buff-debuff.ts`が既に採用している、項目13のワークアラウンドと同じ考え方）。
+  残る2箇所（`function.ts`・`calculation.ts`）は、参照している上書き・実験体固有データが実際に実験体ごとに
+  異なる本物のロジックであり、同じ回避策が使えないため、`core/subject-dynamic/subject-dictionary-registry.ts`
+  という依存を持たない中立な仲介ファイルを新設した。`subjects/dictionary.ts`が辞書の構築完了後にこの
+  レジストリへ登録し、`core/`側はレジストリ経由でのみ参照する（`subjects/dictionary.ts`を一切importしない）
+  ことで、`dictionary.ts → レジストリ ← core/側`という一方向の依存関係にし、循環を構造的に断った。
+  呼び出し側のAPI（`weaponRangeOf`等の関数シグネチャ）は変更していない。
+- 対応の結果、`src/test/*-tooltip.test.tsx`3ファイル・全2065件が緑になった（対応前は
+  `subject-skill-tooltip.test.tsx`が0件収集でファイル自体が赤だった）。
+
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 
 `features/damage/containers/potency-rows/*`（Simple mode、Zustand直結）と

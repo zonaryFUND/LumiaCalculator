@@ -283,11 +283,20 @@ weapon-skill-level.ts`の`weaponSkillLevel(config.weaponMastery)`を直接使う
 正常動作している）。`core/value-ratio/extraction.ts`という個別ファイルへの直接importだけがクラッシュを
 引き起こす経路と見られる。
 
-**残課題**: `weaponSkillLevel`直接使用は、現在唯一登録されている実験体別の武器スキルレベル上書き
-（`blair`の`weaponSkillLevelOverride`）が偶然`weaponSkillLevel`そのものと同一関数であるため現状は挙動が
-一致するが、将来異なる上書きを持つ実験体が追加された場合は不正確になる。根本解決（循環参照そのものの解消、
-または`extractSkillLevel`を安全に呼べる形への切り出し）は未着手。詳細は`weapon-skills/CHECKLIST.md`・
-`weapon-skills/assault-rifle/buff-debuff.ts`のコメント参照。
+**残課題（2026-09、根本解決済み）**: `weaponSkillLevel`直接使用は、現在唯一登録されている実験体別の武器
+スキルレベル上書き（`blair`の`weaponSkillLevelOverride`）が偶然`weaponSkillLevel`そのものと同一関数である
+ため現状は挙動が一致するが、将来異なる上書きを持つ実験体が追加された場合は不正確になる、という限定的な
+ワークアラウンドだった。その後、`toMatchSnapshot()`のsmoke test化（`docs/testing-guidelines.md`参照）を
+きっかけに、`extraction.ts`以外にも`core/subject-dynamic/config/function.ts`・
+`core/subject-dynamic/status/calculation.ts`が同種の循環参照を抱えていることが判明し
+（`subject-skill-tooltip.test.tsx`のファイル収集自体がクラッシュしていた）、`core/subject-dynamic/
+subject-dictionary-registry.ts`という依存を持たない仲介ファイルを新設して`core/`側3箇所すべてから
+`subjects/dictionary.ts`への直接importを解消した（詳細は`docs/known-issues.md`「`core/`から
+`ingame-params/subjects/dictionary.ts`への直接importによる循環参照クラッシュ」参照）。`extraction.ts`は
+結果的に`weaponSkillLevel`直接使用のままだが、循環参照の根本原因自体は解消されたため、`weapon-skills/
+assault-rifle`等が`extractSkillLevel`ではなく`weaponSkillLevel`を直接使っているワークアラウンドも
+本来は不要になった可能性が高い（未検証・未実施。詳細は`weapon-skills/CHECKLIST.md`・
+`weapon-skills/assault-rifle/buff-debuff.ts`のコメント参照）。
 
 ## 関連ドキュメント
 

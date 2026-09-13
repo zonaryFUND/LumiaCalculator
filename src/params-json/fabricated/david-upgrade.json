@@ -197,5 +197,10 @@
         "name": "反逆の意志",
         "maxHp": 50,
         "defense": 4
+    },
+    "202531": {
+        "name": "凍て風の胸甲",
+        "maxHpByLv": 3,
+        "defense": 4
     }
 }

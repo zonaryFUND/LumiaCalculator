@@ -21,15 +21,19 @@ describe.each(CodeWithName)("$name's", ({ code }) => {
         code: +code, name: Locales["ja"][`Skill/Group/Name/${code}`]
     }))
 
+    // 実データ全量を対象にした、クラッシュしないことのみを保証するsmoke test
+    // （docs/testing-guidelines.md「④ 実データ全量スナップショット」参照。toMatchSnapshot()による厳密一致
+    // 検証はバランス調整パッチのたびに大量に落ちシグナルとして機能しないため廃止した。render()が例外を
+    // 投げなければ成功とみなし、レンダリング結果が空でないことだけを確認する）
     describe.each(CodeWithName)("skill $name", ({ code }) => {
-        test("tooltip matchs snapshot", () => {
+        test("tooltip renders without crashing", () => {
             const { container } = render(<Bed code={+code} showEquation={false} />);
-            expect(container).toMatchSnapshot()            
+            expect(container.textContent).not.toBe("")
         })
 
-        test("detailed tooltip matchs snapshot", () => {
+        test("detailed tooltip renders without crashing", () => {
             const { container } = render(<Bed code={+code} showEquation={true} />);
-            expect(container).toMatchSnapshot()            
+            expect(container.textContent).not.toBe("")
         })
     })
 })

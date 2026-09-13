@@ -9,7 +9,7 @@ import { createComponentValue, StatusValueComponent } from "./value-component/co
 import { BaseBasicAttackRange, BaseVision, BasicAttackReductionPerMastery, MovementSpeedPerMastery, SkillReductionPerMastery } from "./standard-values";
 import { calculateCooldownValue, calculateDefenseValue, calculateMovementSpeedValue, calculateStatusValue } from "./combine-components";
 import * as es from "es-toolkit";
-import { SubjectPerpetualStatusDictionary, SubjectSummonInfoDictionary } from "@app/ingame-params/subjects/dictionary";
+import { subjectPerpetualStatusOf, subjectSummonInfoOf } from "core/subject-dynamic/subject-dictionary-registry";
 import { EquipmentAbilityPerpetualStatusDictionary } from "@app/ingame-params/equipment-abilities/dictionary";
 import { IncomingBuffDebuffCatalog } from "@app/ingame-params/buff-debuff/incoming-catalog";
 import { selfBuffDefinitionsOf } from "@app/ingame-params/buff-debuff/self-buff-definitions";
@@ -529,7 +529,7 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
     }
 
     // クールダウン減少->スキル増幅　などのステータス変換パッシブスキルを持つ実験体の場合、変換によるステータス獲得量がこの工程で加算される
-    const subjectPerpetulStatus = SubjectPerpetualStatusDictionary[config.subject] ? SubjectPerpetualStatusDictionary[config.subject](config, currentHPRatio) : {};
+    const subjectPerpetulStatus = subjectPerpetualStatusOf(config.subject)?.(config, currentHPRatio) ?? {};
     const {isChestDavid, ...equipment} = config.equipment;
     const equipmentPerpetualStatus = Object.entries(equipment)
         .flatMap(([slot, equipment]) => {
@@ -593,11 +593,11 @@ export function statusOf(config: SubjectConfig, currentHPRatio: number): Status 
         defense: calculateDefenseValue(componentStatus.defense, statusWithoutConversion)
     };
 
-    const summonedInfo = SubjectSummonInfoDictionary[config.subject];
+    const summonedInfo = subjectSummonInfoOf(config.subject);
 
     return {
         ...finalStatus,
-        summoned: (summonedInfo?.length ?? 0) > 0 ?
+        summoned: summonedInfo != undefined && summonedInfo.length > 0 ?
             summonedInfo.map(info => ({
                 nameIntlID: info.nameIntlID,
                 status: info.status(finalStatus, config)

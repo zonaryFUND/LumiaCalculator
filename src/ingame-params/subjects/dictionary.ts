@@ -3,6 +3,7 @@ import { SubjectConfig } from "core/subject-dynamic/config";
 import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type";
 import { DamageTableGenerator, SkillListHook, SubjectGaugeInfo, SubjectModules, SubjectPerpetualStatus, SubjectSelfBuffDebuff, SubjectStackInfo, SummonInfo } from "./type";
+import { registerSubjectPerpetualStatuses, registerSubjectSummonInfos, registerSubjectWeaponRangeOverrides } from "core/subject-dynamic/subject-dictionary-registry";
 
 const modules = import.meta.glob<{default: SubjectModules}>("./*/index.ts", {eager: true});
 export const [
@@ -65,3 +66,11 @@ export const [
     {} as Record<SubjectCode, SlowSourceInfo[]>,
     {} as Record<SubjectCode, (config: SubjectConfig) => "melee" | "range" | undefined>,
 ])
+
+// core/側が全実験体モジュールのeager globを巻き込まずに参照できるよう、依存を持たない中立な仲介
+// （core/subject-dynamic/subject-dictionary-registry.ts）へ、辞書の構築完了後にここで登録する。
+// core/側からこのファイルを直接importすると、実験体モジュール経由でここへ再びimportが戻ってくる場合に
+// ESMの循環参照でクラッシュしうるため（詳細はレジストリ側のコメント参照）
+registerSubjectWeaponRangeOverrides(SubjectWeaponRangeOverrideDictionary);
+registerSubjectPerpetualStatuses(SubjectPerpetualStatusDictionary);
+registerSubjectSummonInfos(SubjectSummonInfoDictionary);

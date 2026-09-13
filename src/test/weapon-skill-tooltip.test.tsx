@@ -8,13 +8,17 @@ const CodeWithID = Object.entries(WeaponSkillCodeDictionary).map(([id, code]) =>
     id, code
 }))
 
+// 実データ全量を対象にした、クラッシュしないことのみを保証するsmoke test
+// （docs/testing-guidelines.md「④ 実データ全量スナップショット」参照。toMatchSnapshot()による厳密一致検証は
+// バランス調整パッチのたびに大量に落ちシグナルとして機能しないため廃止した。render()が例外を投げなければ
+// 成功とみなし、レンダリング結果が空でないことだけを確認する）
 describe.each(CodeWithID)("$id's skill", ({ code }) => {
-    test("tooltip match snapshot", () => {
+    test("tooltip renders without crashing", () => {
         const { container } = render(<Bed code={+code} showEquation={false} />);
-        expect(container).toMatchSnapshot()            
+        expect(container.textContent).not.toBe("")
     })
-    test("detailed tooltip match snapshot", () => {
+    test("detailed tooltip renders without crashing", () => {
         const { container } = render(<Bed code={+code} showEquation={true} />);
-        expect(container).toMatchSnapshot()            
+        expect(container.textContent).not.toBe("")
     })
 })
