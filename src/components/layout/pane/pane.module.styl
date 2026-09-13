@@ -20,12 +20,16 @@
 
     h3
         display: flex
-        justify-content: space-between
         align-items: center
+        gap: 4px
         font-size: 1.2rem
         margin-bottom: 2px
 
+        // ヘルプアイコン（components/common/help-icon.tsx）等、ラベル直後に置きたい要素は
+        // この間隔（gap）で隣接させる。ヒントテキストのspanだけmargin-left: autoで右端に押し出す
+        // （旧justify-content: space-betweenは2要素前提だったため、3要素以上でも成立するこの形に変更）
         span
+            margin-left: auto
             text-align: right
             font-size: 0.8rem
 

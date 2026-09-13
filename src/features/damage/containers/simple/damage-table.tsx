@@ -12,6 +12,7 @@ import useAugment from "../../use-augment";
 import { SubjectDamageTableDictionary } from "@app/ingame-params/subjects/dictionary";
 import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { useResponsiveUIType } from "@app/hooks/use-responsive-ui-type";
+import HelpIcon from "components/common/help-icon";
 
 const damageTable: React.FC = () => {
     const intl = useIntl();
@@ -36,6 +37,16 @@ const damageTable: React.FC = () => {
         <section className={style.damage}>
             <h3>
                 ダメージ
+                <HelpIcon>
+                    <p>文字色でダメージ・効果の種類を示しています。</p>
+                    <ul>
+                        <li><span style={{color: "rgb(180,20,25)"}}>■</span> 基本攻撃ダメージ</li>
+                        <li><span style={{color: "rgb(125,20,160)"}}>■</span> スキルダメージ</li>
+                        <li><span style={{color: "rgb(24,150,40)"}}>■</span> 回復</li>
+                        <li><span style={{color: "rgb(200,180,40)"}}>■</span> シールド</li>
+                        <li>固定ダメージ・その他効果量：特別な色分けなし（表内では通常の文字色）</li>
+                    </ul>
+                </HelpIcon>
                 <span>
                     {
                         uiType == "mobile" ? "タップで計算式表示" : "クリックで計算式表示"
