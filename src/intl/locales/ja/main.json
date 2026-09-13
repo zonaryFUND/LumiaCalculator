@@ -65,6 +65,7 @@
     "status.lifesteal": "生命力吸収",
     "status.omnisyphon": "ダメージ吸血",
     "status.heal-power": "与える回復増加",
+    "status.damage-increase": "与えるダメージ増加",
     "status.tenacity": "行動妨害耐性",
     "status.movement-speed": "移動速度",
     "status.vision": "視界範囲",

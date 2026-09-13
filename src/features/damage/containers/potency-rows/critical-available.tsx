@@ -11,21 +11,28 @@ import { useSubjectStateStore } from "@app/features/subject-config/store";
 import { calculateValue, extractSkillLevel } from "core/value-ratio";
 import { criticalMultiplier, expectedMultiplier } from "core/damage-table/critical";
 import { extractMultiplier } from "core/damage-table/multiplier";
+import { damageIncreaseRatiosOf, applyDamageIncrease, damageIncreaseSteps } from "core/damage-table/damage-increase";
+import DamageIncrease from "../../components/potency-subrows/damage-increase";
 
 /**
  * 致命打の可能性があるダメージ（致命打無効になっていない基本攻撃ダメージ属性）について、
  * 基礎値・致命打・期待値の3値をそれぞれセルで表示する効果量表示行、
  * および計算式サブセルを構成する
- * 
+ *
  * 通常の基本攻撃や、カミロQWなどの威力表示に用いる
  */
 const criticalAvailable: React.FC<DamageTableUnit> = props => {
     const config = useSubjectStateStore(state => state.config);
     const status = useSubjectStateStore(state => state.status);
 
-    // 通常ヒットダメージ
-    const regularDamage = calculateValue(props.value, status, config, props.origin).static;
-    
+    // 通常ヒットダメージ（与ダメージ増加効果の適用前）
+    // このコンポーネントは常に基本攻撃ダメージ属性の効果のみを表示するため、`type`を明示的に渡す
+    const rawRegularDamage = calculateValue(props.value, status, config, props.origin).static;
+    const damageIncreaseRatios = damageIncreaseRatiosOf(status, props.origin, {type: "basic"});
+    // 通常ヒットダメージ。乗算は交換法則が成り立つため、ここで適用しておけば致命打倍率・期待値倍率にも
+    // 正しく反映される（超集中の実機検証式「攻撃力×基本攻撃増幅×致命打倍率×この補正」とも矛盾しない）
+    const regularDamage = applyDamageIncrease(rawRegularDamage, damageIncreaseRatios);
+
     const criticalChance = status.criticalStrikeChance.calculatedValue;
     const damageMultiplier = criticalMultiplier(status.criticalStrikeDamage.calculatedValue);
     // 致命打の計算式行（<CriticalHit>）が表示する「175% + 追加分」の内訳のうち、追加分のみの割合
@@ -54,8 +61,9 @@ const criticalAvailable: React.FC<DamageTableUnit> = props => {
                             label={<FormattedMessage id="app.standard-value" />}
                             origin={props.origin}
                             ratio={props.value}
-                            calculated={<>{regularDamage.floor().toString()}</>}
+                            calculated={<>{rawRegularDamage.floor().toString()}</>}
                         />
+                        {damageIncreaseSteps(rawRegularDamage, damageIncreaseRatios).map(({entry, baseValue}, i) => <DamageIncrease key={`damageincrease-${i}`} baseValue={baseValue} labelIntlID={entry.labelIntlID} ratio={entry.ratio} />)}
                         <CriticalHit
                             regularDamage={regularDamage}
                             criticalDamage={criticalDamage.floor()}

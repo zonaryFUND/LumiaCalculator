@@ -26,12 +26,12 @@
   低優先度・参考程度と判断済み。現在の実装は`buff`ブランチの移植ではなく、現行アーキテクチャをベースに
   新規設計している。
 
-## 「与えるスキルダメージ増加」効果を計算に反映する仕組みがない
+## 「与えるスキルダメージ増加」効果を計算に反映する仕組みがない（シンプルモードは対応済み、2026-09）
 
 `damage-model.md`「スキルダメージ増加効果」に記載の通り、特性「増幅ドローン」・装備スキル「執行人」
 （`equipment-abilities/brute_enforcer`）・「予熱 - 増幅」（`blaze_up_amplified`）・「光輝」
 （`blaze_of_glory`）が持つ「与えるスキルダメージを増加する」効果は、`skillAmp`（スキル増幅）とは別種の
-効果でありながら、これを計算に反映する仕組みが存在しない。`skillAmp`で代用すると数値の意味が変わって
+効果でありながら、これを計算に反映する仕組みが存在しなかった。`skillAmp`で代用すると数値の意味が変わって
 しまうため誤り（2026-09、`blaze_of_glory`のバフ・デバフ実装時にこの代用を一度行ってしまい、レビューで
 指摘を受けて撤回した）。
 
@@ -43,43 +43,73 @@
     適用、ただし雪Q・エイデンQのような「基本攻撃ダメージとして扱われるスキル」には非適用）
   - 執行人・予熱-増幅型: 発生源が実験体スキル（武器スキル含む）であれば適用（雪Q・エイデンQにも適用、
     ただし装備・戦術スキルのダメージには非適用）
-  - この判定軸の違いを`core/damage-table/`・`core/value-ratio/`のどこに・どう持たせるかが未検討
-    （`Status`の1フィールドとしては表現できない。ダメージ算出単位ごとに「どちらの系統の増加を受けるか」を
-    判定する必要がある）。
-- 対応: 当初は両系統を`increaseSkillDamageRatio`という1フィールドに統合する想定だったが（2026-09、
-  `core/subject-dynamic/status/type.ts`・`calculation.ts`）、`augment/`のバフ・デバフ実装パスで実際に
-  「増幅ドローン」に着手した際、両者が本当に別々のフィールドを要する別効果であることが改めて確認された
-  ため、`increaseSkillDamageRatio`（発生源基準＝執行人・予熱-増幅型。`blaze_of_glory`・
-  `blaze_up_amplified`・`brute_enforcer`が使用）と`increaseSkillTypeDamageRatio`（ダメージ種別基準＝
-  増幅ドローン型。特性「増幅ドローン」が使用）の2フィールドに分離した。`blaze_of_glory`等は通常の
-  `perpetualStatus`/`buffDebuff`で前者に書き込む形に統一済み（旧`givenSkillDamageIncrease`という表示専用の
-  別経路は廃止）。`preventDamageRatio`・`hpHealedIncreaseRatio`と同様、**両フィールドともインタフェース
-  （Status算出）のみ対応で、ダメージ計算（`core/damage-table/`・`core/value-ratio/`）側でこれらを消費する
-  実装はまだ行っていない**（上記「設計上の難所」に記載の、ダメージ算出単位ごとの判定軸の実装が先決）。
-  まとめて設計してから、ダメージ計算側の実装に着手する方針（`equipment-abilities/CHECKLIST.md`・
-  `augment/CHECKLIST.md`参照）。
+  - 当初は両系統を`increaseSkillDamageRatio`という1フィールドに統合する想定だったが（2026-09、
+    `core/subject-dynamic/status/type.ts`・`calculation.ts`）、`augment/`のバフ・デバフ実装パスで実際に
+    「増幅ドローン」に着手した際、両者が本当に別々のフィールドを要する別効果であることが改めて確認された
+    ため、`increaseSkillDamageRatio`（発生源基準＝執行人・予熱-増幅型。`blaze_of_glory`・
+    `blaze_up_amplified`・`brute_enforcer`が使用）と`increaseSkillTypeDamageRatio`（ダメージ種別基準＝
+    増幅ドローン型。特性「増幅ドローン」が使用）の2フィールドに分離した。
+- **対応（シンプルモード、2026-09）**: `core/damage-table/damage-increase.ts`の`damageIncreaseRatiosOf()`
+  / `applyDamageIncrease()`が、`DamageTableUnit`の`origin`（発生源）・`type`（ダメージ種別）から上記2系統の
+  判定軸を含めて一括で判定する。`increaseSkillDamageRatio`・`increaseSkillTypeDamageRatio`に加え、
+  `increaseDamageRatio`（劣勢克服型、後述）・`basicAttackDamageFinalCorrectionRatio`（超集中型、後述）も
+  同じ関数で判定する。`features/damage/containers/potency-rows/{standard-damage,critical-available,
+  unique-expression}.tsx`（Simpleモードの威力行コンポーネント全種）に配線済み。**実機検証の結果、固定
+  ダメージ（`type.type == "true"`）はこれらいずれの効果も一切受け付けないことを確認済み**のため、
+  `damageIncreaseRatiosOf()`は`true`を無条件で対象外にしている。
+  - Combatモード（`features/damage/containers/combat/subtables/rows/*`）へは未配線（対象実験体のステータス
+    軽減計算まで含めた設計が別途必要なため。「Simple/Combatダメージ表示の行コンポーネントが未統合」の項
+    参照）。
+  - `preventDamageRatio`・`increaseDamagedRatio`（被ダメージ側の増減）は対象の立場が必要なためCombat
+    モード専用として引き続き未着手。
+  - **同一フィールドへの複数発生源対応（2026-09）**: 執行人と予熱-増幅（いずれも`increaseSkillDamageRatio`
+    に書き込む）、あるいは増幅ドローンとクチュリエの予熱-増幅（`increaseSkillTypeDamageRatio`と
+    `increaseSkillDamageRatio`）のように、複数の発生源が同時に成立しうる。実機検証の結果、これらは
+    合算してから1回だけ乗算されるのではなく、発生源ごとに独立して乗算されることを確認済み（例:
+    15%増+15%増が同時発動すると1.15×1.15倍になり、合算した1.30倍にはならない）。このため
+    `damageIncreaseRatiosOf()`は、`ComponentStatusValue`の合算済み`calculatedValue`ではなく、集計前の
+    `components`（発生源ごとの`StatusValueComponent`。通常のステータス合成では同一フィールドの`sum`
+    成分は単純加算されるが、この規則とは異なる）から発生源ごとに1件ずつ`DamageIncreaseEntry`
+    （`labelIntlID`はバフ定義の`intlID`をそのまま使用）を取り出す設計にした。計算式展開（`SubRowsTable`・
+    `critical-available.tsx`）でも発生源ごとに行を分けて表示し、同一の汎用ラベルを複数行で共有しない
+    （React keyの一意性という実装上の要請だけでなく、UI上どの発生源による増加か判別できるようにする意図も
+    兼ねる）。
 - `brute_enforcer`固有の注記: 本来の発動条件は「対象（敵）の残り体力」だが、シンプルモードには仮想敵の
   概念がなく判定しようがないため、単純なON/OFFの自己バフとして登録している（`brute_enforcer/
   buff-debuff.ts`参照）。対戦モードで対象の体力に応じて自動判定する専用実装（`perpetualStatus`の
   `currentHPRatio`のような「対象の体力を受け取れる仕組み」がターゲット側に必要）は将来の課題として保留。
 
 同様に、装備アビリティ・武器スキルのバフ・デバフ実装パスを進める中で、既存の`Status`フィールドでは表現
-できない効果が他にも見つかっており、いずれも`increaseSkillDamageRatio`と同じ方針
-（`ComponentStatus`にインタフェースのみ新設し、ダメージ計算側の消費は未実装のまま保留）で対応している。
+できない効果が他にも見つかっている。
 
 - `basicAttackDamageFinalCorrectionRatio`（基本攻撃ダメージに対する最終補正、％）: 装備アビリティ
   「超集中」（`ultra_focus`）の効果。実機検証の結果、基本攻撃ダメージが「攻撃力×(1+基本攻撃増幅
   `increaseBasicAttackDamageRatio`)×(致命打倍率)×(1+この補正)」の順で計算されることを確認済み。
   基本攻撃増幅とは別枠で乗算される点が異なり、`skillAmp`と`increaseSkillDamageRatio`の関係と同型。
+  **シンプルモード対応済み**（`damageIncreaseRatiosOf()`、上記参照。乗算は交換法則が成り立つため、
+  `critical-available.tsx`では致命打倍率適用前の基礎値に対して先に適用しても、実機検証式（致命打倍率適用後
+  に乗算）と数値上矛盾しない）。
 - `increaseBasicAttackDamage`（基本攻撃追加ダメージ、固定値）: 武器スキル「過熱」（`weapon-skills/
   assault-rifle`）の効果。`increaseBasicAttackDamageRatio`（％）とは別枠の固定値加算。旧バージョンで
   装備固有ステータスとして存在していた同名フィールド（`core/equipment/status.ts`で現在コメントアウトされて
-  いる未使用フィールド`increaseBasicAttackDamage`）と同種の効果のため、同じ名前を踏襲した。
+  いる未使用フィールド`increaseBasicAttackDamage`）と同種の効果のため、同じ名前を踏襲した。**未対応
+  （2026-09時点で意図的に後回し）**: この加算値は防御力・防御熟練度による軽減を受けないという特性があり
+  （実機検証済み）、単純に基礎値へ加算するとこの非軽減特性が表現できない。表示上も「100+10」のように
+  軽減対象外の内訳を分離して見せたい意図があり、対応には基本攻撃ダメージの表示・計算構造そのものへの
+  手当てが必要なため、他のフィールドとは別扱いで保留。
 - `increaseDamageRatio`（与えるダメージ増加、％）: 特性「劣勢克服」（`dismantleGoliath`）の効果。
   `increaseBasicAttackDamageRatio`（基本攻撃のみ）・`increaseSkillDamageRatio`（スキルのみ）と異なり、
-  ダメージ種別を問わず適用される点が特徴。本来の発動条件（自身と対象の最大体力比較）は対戦モード専用の
-  ロジックが必要なため、当面はスタック可変（0/2.5/5/7.5/10%）の選択式自己バフとして実装している
-  （`augment/CHECKLIST.md`の`dismantleGoliath`注記参照）。
+  ダメージ種別を問わず適用される点が特徴（ただし固定ダメージには非適用。上記参照）。本来の発動条件
+  （自身と対象の最大体力比較）は対戦モード専用のロジックが必要なため、当面はスタック可変
+  （0/2.5/5/7.5/10%）の選択式自己バフとして実装している（`augment/CHECKLIST.md`の`dismantleGoliath`
+  注記参照）。**シンプルモード対応済み**（`damageIncreaseRatiosOf()`、上記参照）。
+- `hpHealedIncreaseRatio`・`hpHealedDecreaseRatio`（自身が受ける回復量増加・治癒効果減少、％）:
+  受け手側の効果だが、シンプルモードには対象（相手）実験体の概念がないため、本来は反映しようがないはず
+  だった。しかし、アイザックTのような「対象を必要としない自己回復」（`type.target == "self"`）の場合は
+  発生源＝受け手が同一実験体であることが確定するため、シンプルモードでも意味のある値になる。**対応済み
+  （2026-09）**: `core/damage-table/heal-power.ts`の`healPowerRatiosOf()`が、`type.target == "self"`の
+  場合のみこの2フィールドも判定に含めるよう拡張した（`target == "any" | "ally"`は受け手が発生源自身とは
+  限らないため引き続き対象外）。
 
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 

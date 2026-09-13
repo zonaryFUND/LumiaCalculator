@@ -44,6 +44,29 @@ describe("healPowerRatiosOf", () => {
         const result = healPowerRatiosOf(status, { type: "heal", target: "self" });
         expect(result.map(v => v.toNumber())).toEqual([30, 20]);
     });
+
+    test("自己回復（target: self）には受け手側の割合（hpHealedIncreaseRatio/hpHealedDecreaseRatio）も適用する（アイザックTのような対象不要の自己回復の例）", () => {
+        const status = stubStatus({ hpHealedIncreaseRatio: statusValue(25) });
+        const result = healPowerRatiosOf(status, { type: "heal", target: "self" });
+        expect(result.map(v => v.toNumber())).toEqual([25]);
+    });
+
+    test("hpHealedDecreaseRatio（受ける治癒効果減少）は負の割合として返す", () => {
+        const status = stubStatus({ hpHealedDecreaseRatio: statusValue(10) });
+        const result = healPowerRatiosOf(status, { type: "heal", target: "self" });
+        expect(result.map(v => v.toNumber())).toEqual([-10]);
+    });
+
+    test("target: any/allyには受け手側の割合を適用しない（受け手が発生源自身とは限らないため）", () => {
+        const status = stubStatus({ hpHealedIncreaseRatio: statusValue(25), hpHealedDecreaseRatio: statusValue(10) });
+        expect(healPowerRatiosOf(status, { type: "heal", target: "any" })).toEqual([]);
+        expect(healPowerRatiosOf(status, { type: "heal", target: "ally" })).toEqual([]);
+    });
+
+    test("シールドには受け手側の割合（回復専用のため）を適用しない", () => {
+        const status = stubStatus({ hpHealedIncreaseRatio: statusValue(25) });
+        expect(healPowerRatiosOf(status, { type: "shield", target: "self" })).toEqual([]);
+    });
 });
 
 describe("applyHealPower", () => {

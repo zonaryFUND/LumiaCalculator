@@ -82,9 +82,12 @@ buff: stack => ({
   importすると循環参照でクラッシュする**: 回避策込みで詳細は`core/README.md`項目13・
   `weapon-skills/CHECKLIST.md`参照。
 - **`increaseSkillDamageRatio`・`increaseSkillTypeDamageRatio`（与えるスキルダメージ増加、判定軸違いの
-  2フィールド）・`increaseDamageRatio`（与えるダメージ増加）・`preventDamageRatio`等、`augment/`パスで
-  Statusに新設した各種フィールドはいずれもインタフェース（Status算出）のみで、ダメージ計算側の消費は
-  未実装**: `docs/known-issues.md`参照。
+  2フィールド）・`increaseDamageRatio`（与えるダメージ増加）・`basicAttackDamageFinalCorrectionRatio`・
+  `hpHealedIncreaseRatio`/`hpHealedDecreaseRatio`（自身が受ける回復量増減、`target: "self"`のみ）は
+  シンプルモードのダメージ計算への反映が完了した（2026-09、`core/damage-table/damage-increase.ts`・
+  `heal-power.ts`）。Combatモード（対象実験体が必要な`preventDamageRatio`等の被ダメージ側含む）は
+  未対応。`increaseBasicAttackDamage`（防御力軽減を受けない固定加算値）は表示構造の設計が必要なため
+  意図的に保留**: `docs/known-issues.md`参照。
 - **`augment/`特有の近似パターン**: 対象の状態に依存する効果は対象状態を仮定したON/OFF（例:
   `contemptForTheWeak`）、自身の現在体力に依存する効果は`currentHPRatio`から実際に算出（例: `frenzy`・
   `painkiller`・`bitterRetribution`）、装備の等級に依存する効果は`EquipmentStatusDictionary`の
