@@ -111,6 +111,48 @@
   場合のみこの2フィールドも判定に含めるよう拡張した（`target == "any" | "ally"`は受け手が発生源自身とは
   限らないため引き続き対象外）。
 
+## localStorage復元時、存在しなくなった装備アイテムIDによるクラッシュ（対応済み、2026-09）
+
+バランス調整パッチでゲーム内要素が削除・変更されることがあり（エターナルリターンの実績として、実験体
+自体の削除は前例がないが、装備アイテム自体の削除はアーリーアクセス時代に、装備アイテムに付与された
+スキルの差し替え・特性/戦術スキルの削除は正式サービス後も含めそれなりの頻度で発生している）、localStorage
+に保存された古いビルド・プリセットが、削除された装備アイテムIDを保持したまま残ることがある。バフ・デバフ
+機能の実装（`config.selfBuffs`/`incomingBuffs`の追加）によって、この種の非互換データが発生する確率が
+上がったことを契機に調査した。
+
+- 具体的なリスク: `EquipmentStatusDictionary[itemID].xxx`という無条件アクセスが、計算エンジン
+  （`core/subject-dynamic/status/calculation.ts`・`core/subject-dynamic/config/function.ts`等）・
+  UI（`components/tooltip/item/item-tooltip.tsx`・`features/subject-config/components/
+  equipment-icon.view.tsx`等）・バフ・デバフ定義（`self-buff-definitions.ts`・`augment/
+  chaos-buff-debuff.ts`の`celestialCollection`等）を含め10箇所以上に存在する。存在しないitemIDを
+  引くと`EquipmentStatusDictionary[itemID]`が`undefined`になり、`.type`等へのアクセスでTypeErrorに
+  よりクラッシュする。
+- 一方、`config.selfBuffs`/`incomingBuffs`のid解決は、計算（`calculation.ts`の`selfBuffStatus`/
+  `incomingBuffStatus`）・UI（`features/buff-debuff/containers/{self-buffs,incoming-buffs}.tsx`）の
+  いずれも`definitions[id]`が`undefined`のときを既に安全に無視する実装になっており（存在しなくなった
+  idは単に効果を及ぼさず一覧にも表示されなくなるだけ）、この種のクラッシュは起きない。ただし
+  `config.selfBuffs`（`incomingBuffs`は対象外。ユーザーが自らカタログから選ぶだけで実験体・装備に連動しない
+  ため、そもそも自動追加・削除という概念がない）については、「実験体固有スキル・装備アビリティの仕様が
+  改変され、旧バフのidが新idに変わる、または完全に削除される」ケースで、理想的な挙動（旧idは自動的に
+  削除され、新idはスタック0で自動的に追加される）になっているかを別途確認した。**対応（2026-09）**:
+  新idの自動追加は元々`reconcileSelfBuffs`（`self-buff-definitions.ts`）が正しく行っていたが、
+  「`origin: "skill" | "equipment-ability"`ではない＝ユーザーが自ら選択する特性・戦術スキル」という条件
+  だけで残す・残さないを判別していたため、削除された特性・戦術スキルのidや、旧skill/equipment-ability由来の
+  孤立したidが、選択式カタログにも存在しないにも関わらずいつまでも保持され続ける抜け穴があった（クラッシュ
+  はしないが、`config.selfBuffs`に永久にゴミが残る）。現在は`selectableSelfBuffCatalogOf`にも同時に
+  照合し、自動投入対象・選択式カタログのどちらにも存在しないidは削除するよう`reconcileSelfBuffs`を修正した。
+- **対応**: `core/subject-dynamic/config/sanitize.ts`の`sanitizeConfig()`が、現在のコード上の
+  `EquipmentStatusDictionary`と照合して存在しない装備アイテムIDを`null`（未装備）に戻す。個々の参照箇所を
+  都度ガードするのではなく、`features/subject-config/store.tsx`の`_updateConfig`（`setConfig`によるプリセット
+  読み込みも含め、実質すべての`set*`系アクションが通る集約点）と`persist`の`merge`（起動時のlocalStorage
+  復元）の2箇所だけに差し込むことで、既存の`reconcileSelfBuffs`と同じ「境界で1回だけ正規化する」方針を
+  踏襲した。`merge`では`statusOf()`を呼ぶより前（`reconcileSelfBuffs`の呼び出しより前）に適用する必要がある
+  点に注意（`statusOf()`内部でも装備IDへの無条件アクセスがあるため、先にサニタイズしないと`merge`自体が
+  クラッシュする）。
+- **未対応（将来の課題）**: スキルレベル（`config.skillLevels`）が、パッチによる最大レベル変更後も
+  旧仕様の値のまま保存されているケースは今回未対応。実験体・スキルごとに現在の最大レベルを判定する仕組みが
+  別途必要なため、装備アイテムID・バフIDより対応コストが高いと判断し後回しにしている。
+
 ## Simple/Combatダメージ表示の行コンポーネントが未統合
 
 `features/damage/containers/potency-rows/*`（Simple mode、Zustand直結）と

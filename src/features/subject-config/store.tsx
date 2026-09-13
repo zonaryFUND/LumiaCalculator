@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BuffDebuffState, Equipment, SkillLevels, SubjectConfig, SubjectConfigDefault } from "core/subject-dynamic/config";
+import { BuffDebuffState, Equipment, SkillLevels, SubjectConfig, SubjectConfigDefault, sanitizeConfig } from "core/subject-dynamic/config";
 import { SubjectCode } from "core/subject-static";
 import { createContext, useContext } from "react";
 import { createStore, useStore } from "zustand";
@@ -41,7 +41,9 @@ export function createSubjectConfigStore(storageKey: string) {
                 status: statusOf(SubjectConfigDefault, 100),
                 hpRatio: 100,
                 _updateConfig: updater => set(prev => {
-                    const config = updater(prev.config);
+                    // すべての更新経路（setConfig経由のプリセット読み込みも含む）で、存在しなくなった
+                    // 装備アイテムIDなどを安全な既定値に戻す（core/subject-dynamic/config/sanitize.ts参照）
+                    const config = sanitizeConfig(updater(prev.config));
                     return {
                         config,
                         status: statusOf(config, prev.hpRatio)
@@ -70,7 +72,7 @@ export function createSubjectConfigStore(storageKey: string) {
                     // 実験体固有の自己バフを、スタック0の状態であらためて投入する。reconcileSelfBuffsは
                     // 効果量の数値ではなくキー集合しか見ないため、この時点のnext（selfBuffsはまだリセット
                     // 直後の空配列）から計算したpreliminaryなStatusで十分
-                    return { ...next, selfBuffs: reconcileSelfBuffs(next, statusOf(next, 100)) };
+                    return { ...next, selfBuffs: reconcileSelfBuffs(next, statusOf(next, 100), 100) };
                 }),
                 setEquipment: (equipment: React.SetStateAction<Equipment>) => get()._updateConfig(prev => {
                     const nextEquipment = typeof equipment === "function" ? equipment(prev.equipment) : equipment;
@@ -78,7 +80,7 @@ export function createSubjectConfigStore(storageKey: string) {
 
                     // 装備由来の自己バフを、新しい装備構成に応じてselfBuffsへ追加・削除する
                     // （外れた装備の自己バフはselfBuffDefinitionsOf(next)に含まれなくなるため自動的に取り除かれる）
-                    return { ...next, selfBuffs: reconcileSelfBuffs(next, statusOf(next, 100)) };
+                    return { ...next, selfBuffs: reconcileSelfBuffs(next, statusOf(next, 100), 100) };
                 }),
                 setLevel: (level: number) => get()._updateConfig(prev => ({
                     ...prev,
@@ -154,16 +156,19 @@ export function createSubjectConfigStore(storageKey: string) {
                 partialize: state => ({ config: state.config }),
                 merge: (persistedState: any, currentState) => {
                     // 保存済みデータに存在しないフィールドはSubjectConfigDefault側の値で補う
-                    // （SubjectConfigへの新規フィールド追加時、古いデータを読み込んでも欠落しないようにする防御）
+                    // （SubjectConfigへの新規フィールド追加時、古いデータを読み込んでも欠落しないようにする防御）。
+                    // sanitizeConfigで、存在しなくなった装備アイテムIDなども併せて安全な既定値に戻す
+                    // （statusOf()に渡す前に行う必要がある。装備アイテムIDへの参照はstatusOf内部でも
+                    // 無条件に行われるため、ここで正規化しないとreconcileSelfBuffsの呼び出しでクラッシュしうる）
                     const restoredConfig = persistedState.config
-                        ? { ...SubjectConfigDefault, ...persistedState.config }
+                        ? sanitizeConfig({ ...SubjectConfigDefault, ...persistedState.config })
                         : currentState.config;
 
                     // 保存済みのselfBuffsを、現在のコード上の自己バフ定義と突き合わせて再構築する。
                     // 保存後に対象実験体・装着中の装備へ新しい自己バフ定義が追加された場合でも、
                     // 実験体・装備を選び直すまで反映されないままになるのを防ぐ（selfBuffsは
                     // setSubject/setEquipment経由でしか更新されないため、復元時にも同じ導出をかけ直す必要がある）
-                    const config = { ...restoredConfig, selfBuffs: reconcileSelfBuffs(restoredConfig, statusOf(restoredConfig, 100)) };
+                    const config = { ...restoredConfig, selfBuffs: reconcileSelfBuffs(restoredConfig, statusOf(restoredConfig, 100), 100) };
 
                     return {
                         ...currentState,

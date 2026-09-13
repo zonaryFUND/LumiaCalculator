@@ -69,14 +69,18 @@ export function selfBuffDefinitionsOf(config: SubjectConfig, status: Status, cur
  * 実験体・装備の変更時（`setSubject`/`setEquipment`）だけでなく、localStorageから復元した直後
  * （persistの`merge`）にも呼び出す。復元直後に呼ばないと、「保存済みビルドの実験体に、保存後のアップデートで
  * 新しい自己バフ定義が追加された」場合に、次回起動時もselfBuffsが古いまま（空、または一部欠けたまま）に
- * なってしまう（実験体・装備を選び直すまで一切投入されない）
+ * なってしまう（実験体・装備を選び直すまで一切投入されない）。パッチによる実験体スキル・装備アビリティの
+ * 大幅改変（バフのid自体が変わる、または完全に削除される）にも同じ理由で対応する: 新idはstack 0で自動追加
+ * され、旧idはそれが現在も解決可能（`autoDefinitions`または`selectableSelfBuffCatalogOf`のいずれかに
+ * 存在する）でない限り取り除かれる
  *
  * @param status 呼び出し側（`store.tsx`）が`statusOf(config, 100)`で計算したものを渡す
  * （このファイルは`calculation.ts`をimportできない。`calculation.ts`が既に`selfBuffDefinitionsOf`を
  * importしており循環importになるため）。ここでは「どんなidが存在しうるか」というキー集合の算出にしか
  * 使わないため、多少古いStatusでも実害はない
+ * @param currentHPRatio `selectableSelfBuffCatalogOf`にそのまま素通しする。同上の理由で多少古い値でも実害はない
  */
-export function reconcileSelfBuffs(config: SubjectConfig, status: Status): BuffDebuffState[] {
+export function reconcileSelfBuffs(config: SubjectConfig, status: Status, currentHPRatio: number): BuffDebuffState[] {
     const autoDefinitions = autoSelfBuffDefinitionsOf(config, status);
     const reconciledAuto = Object.keys(autoDefinitions).map(id =>
         config.selfBuffs.find(s => s.id == id) ?? { id, stack: autoDefinitions[id].excludeNoneOption ? 1 : 0 }
@@ -84,8 +88,13 @@ export function reconcileSelfBuffs(config: SubjectConfig, status: Status): BuffD
 
     // 特性・戦術スキル・オブジェクト討伐由来（`autoDefinitions`に含まれない = origin: "skill" |
     // "equipment-ability"ではない）の自己バフは、ユーザーが自らincomingBuffsと同様に追加・削除するもので
-    // あり、実験体・装備の変更に連動して自動投入・削除してはいけないため、既存の要素をそのまま保持する
-    const preservedSelectable = config.selfBuffs.filter(s => autoDefinitions[s.id] == undefined);
+    // あり、実験体・装備の変更に連動して自動投入・削除してはいけないため、既存の要素は基本的にそのまま
+    // 保持する。ただし、パッチでそのバフ自体が削除された場合（`selectableSelfBuffCatalogOf`にも存在しない
+    // ＝もはやどこからも解決できないid）は、いつまでも残り続けないよう取り除く
+    const selectableDefinitions = selectableSelfBuffCatalogOf(config, status, currentHPRatio);
+    const preservedSelectable = config.selfBuffs.filter(s =>
+        autoDefinitions[s.id] == undefined && selectableDefinitions[s.id] != undefined
+    );
 
     return [...reconciledAuto, ...preservedSelectable];
 }
