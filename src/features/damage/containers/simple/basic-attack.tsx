@@ -98,6 +98,7 @@ const BasicAttack: React.FC<Props> = (props) => {
     return (
         <SubTable
             label={<FormattedMessage id="app.basic-attack" />}
+            storageKey="basic-attack"
             labelColSpan={displayCriticalHead ? undefined : 3}
             valueHeaders={
                 displayCriticalHead ? [

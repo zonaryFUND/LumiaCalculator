@@ -12,6 +12,7 @@ type Unit = Omit<DamageTableUnit, "value"> & {
 
 type Props = {
     label: React.ReactNode
+    storageKey: string
     unitsChunks: Unit[][]
 }
 
@@ -49,6 +50,7 @@ const GenericSubTable: React.FC<Props> = props => {
     return (
         <SubTable
             label={props.label}
+            storageKey={props.storageKey}
             valueHeaders={[{content: "ダメージ / 効果量", colSpan: 3}]}
             unitsChunks={renderedUnitsChunks}
         />

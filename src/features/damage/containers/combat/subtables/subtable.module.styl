@@ -1,0 +1,13 @@
+.header
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    gap: 4px
+
+    svg
+        transition: transform 0.2s ease
+        flex-shrink: 0
+        transform: rotate(90deg)
+
+    &.collapsed svg
+        transform: rotate(0deg)

@@ -1,5 +1,8 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
+import style from "./subtable.module.styl";
+import { CaretRight } from "@phosphor-icons/react";
+import useStorageBoolean from "@app/storage/boolean";
 import { DamageTableUnit } from "core/damage-table/unit";
 import { SubjectConfig } from "core/subject-dynamic/config";
 import { Status } from "core/subject-dynamic/status/type";
@@ -12,6 +15,11 @@ import { SubjectDamageTableUnit } from "@app/ingame-params/subjects/type";
 
 type Props = {
     label: string
+    /**
+     * カテゴリの開閉状態をlocalStorageに永続化するためのキー（`damage-table/combat/<storageKey>`）。
+     * カテゴリごとに一意な値を呼び出し側が指定する
+     */
+    storageKey: string
     elements: (SubjectDamageTableUnit | Omit<DamageTableUnit, "value"> & {value: ValueRatio | UniqueValueStrategy})[][]
     from: {
         config: SubjectConfig
@@ -22,6 +30,7 @@ type Props = {
 
 const subTable: React.FC<Props> = props => {
     const { ltr } = useCombatHPContext();
+    const { value: collapsed, toggleValue: toggleCollapsed } = useStorageBoolean(`damage-table/combat/${props.storageKey}`);
     const hpRatioHeader = [
         <td key="self">←体力比</td>,
         <td key="effect">効果量</td>,
@@ -30,12 +39,17 @@ const subTable: React.FC<Props> = props => {
 
     return (
         <tbody>
-            <tr className={table.separator}>
-                <td>{props.label}</td>
+            <tr className={table.separator} onClick={toggleCollapsed}>
+                <td>
+                    <div className={collapsed ? `${style.header} ${style.collapsed}` : style.header}>
+                        <CaretRight weight="bold" />
+                        {props.label}
+                    </div>
+                </td>
                 {hpRatioHeader}
             </tr>
             {
-                props.elements.flatMap((chunk, index) => {
+                collapsed ? null : props.elements.flatMap((chunk, index) => {
                     const separator = index == 0 || chunk.length == 0 ? 
                         null :
                         <tr key={`separator-${index}`} className={table.border}><td colSpan={5}></td></tr>;

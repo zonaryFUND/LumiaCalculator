@@ -49,18 +49,22 @@ const damageTable: React.FC = () => {
                     />
                     <GenericSubTable
                         label="武器スキル"
+                        storageKey="weapon-skill"
                         unitsChunks={[weaponSkill.regular]}
                     />
                     <GenericSubTable
                         label="アイテムスキル"
+                        storageKey="item-skill"
                         unitsChunks={[itemSkills.regular]}
                     />
                     <GenericSubTable
                         label="特性"
+                        storageKey="augment"
                         unitsChunks={augments}
                     />
                     <GenericSubTable
                         label="戦術スキル"
+                        storageKey="tactical-skill"
                         unitsChunks={tacticalSkills}
                     />
                 </table>

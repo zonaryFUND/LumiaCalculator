@@ -74,26 +74,31 @@ const damageTable: React.FC<Props> = props => {
                     />
                     <SubTable
                         label="実験体スキル"
+                        storageKey="subject-skill"
                         elements={subject.skill}
                         from={from}
                     />
                     <SubTable
                         label="武器スキル"
+                        storageKey="weapon-skill"
                         elements={[weaponSkill.regular]}
                         from={from}
                     />
                     <SubTable
                         label="アイテムスキル"
+                        storageKey="item-skill"
                         elements={[itemSkills.regular]}
                         from={from}
                     />
                     <SubTable
                         label="特性"
+                        storageKey="augment"
                         elements={augments}
                         from={from}
                     />
                     <SubTable
                         label="戦術スキル"
+                        storageKey="tactical-skill"
                         elements={tacticalSkills}
                         from={from}
                     />

@@ -1,5 +1,8 @@
 import * as React from "react";
 import table from "components/common/table.module.styl";
+import style from "./subtable.module.styl";
+import { CaretRight } from "@phosphor-icons/react";
+import useStorageBoolean from "@app/storage/boolean";
 
 type HeaderCell = {
     content: React.ReactNode
@@ -14,6 +17,12 @@ type Props = {
      * サブテーブルのラベル（呼び出し側で<FormattedMessage>等を組み立てて渡す）
      */
     label: React.ReactNode
+
+    /**
+     * カテゴリの開閉状態をlocalStorageに永続化するためのキー（`damage-table/simple/<storageKey>`）。
+     * カテゴリごとに一意な値を呼び出し側が指定する
+     */
+    storageKey: string
 
     /**
      * ラベルセルのcolSpan（省略時1）
@@ -37,18 +46,28 @@ type Props = {
  *
  * カテゴリ（基本攻撃・実験体スキル・武器スキル等）に依存しない共通View。
  * カテゴリ固有のヘッダー列数・raw unitからのReactElement変換は呼び出し側が担う。
+ *
+ * ヘッダー行はクリックでカテゴリ全体を開閉できる（`subject-status`のカテゴリ開閉と同じ`useStorageBoolean`
+ * 永続化パターンだが、シェブロンをヘッダー左側に配置し回転アニメーションを付けている点が異なる）
  */
 const SubTable: React.FC<Props> = props => {
+    const { value: collapsed, toggleValue: toggleCollapsed } = useStorageBoolean(`damage-table/simple/${props.storageKey}`);
+
     return (
         <tbody>
-            <tr className={table.separator}>
-                <td colSpan={props.labelColSpan}>{props.label}</td>
+            <tr className={table.separator} onClick={toggleCollapsed}>
+                <td colSpan={props.labelColSpan}>
+                    <div className={collapsed ? `${style.header} ${style.collapsed}` : style.header}>
+                        <CaretRight weight="bold" />
+                        {props.label}
+                    </div>
+                </td>
                 {props.valueHeaders.map((header, index) => (
                     <td key={index} colSpan={header.colSpan}>{header.content}</td>
                 ))}
             </tr>
             {
-                props.unitsChunks.flatMap((units, index) => {
+                collapsed ? null : props.unitsChunks.flatMap((units, index) => {
                     // 直前までのチャンクの内容に関わらず、このチャンク自体が1件も描画しない場合は
                     // 区切り線だけが浮いてしまうため、そのチャンクの区切り線は省略する
                     if (index > 0 && units.length > 0) {

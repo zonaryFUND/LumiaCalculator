@@ -52,6 +52,7 @@ const basicAttack: React.FC<Props> = props => {
 
     return <SubTable
         label="基本攻撃"
+        storageKey="basic-attack"
         elements={sanitizedElements}
         from={props.from}
     />

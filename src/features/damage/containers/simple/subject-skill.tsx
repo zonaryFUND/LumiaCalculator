@@ -49,6 +49,7 @@ const SubjectSkill: React.FC<Props> = props => {
     return (
         <SubTable
             label="実験体スキル"
+            storageKey="subject-skill"
             valueHeaders={[{content: "ダメージ / 効果量", colSpan: 3}]}
             unitsChunks={renderedUnitsChunks}
         />
