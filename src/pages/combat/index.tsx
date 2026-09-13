@@ -78,9 +78,10 @@ const index: React.FC = props => {
         <Content
             pcHeader={
                 <header className={style.header}>
-                    <div className={style.config}>
-                        <Gear fontSize={44} weight="fill" onClick={toggleShowingPreference}  />
-                    </div>
+                    <button className={style.config} onClick={toggleShowingPreference}>
+                        <Gear fontSize={20} weight="fill" />
+                        <p>設定</p>
+                    </button>
                 </header>
             }
         >
