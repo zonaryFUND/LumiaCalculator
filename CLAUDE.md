@@ -162,7 +162,7 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
   各featureの現状は[features/README.md](src/features/README.md)を参照。
 - `src/src/App.tsx` — ルートコンポーネント。`import.meta.glob` で `intl/locales/**/*.json` をすべて読み込み、
   `IntlProvider`（ロケールは `"ja"` に固定）でアプリ全体をラップし、`/` と `/simple` をSimpleページ、
-  `/combat` をCombatページにルーティングする。
+  `/combat` をCombatページ、`/dev/tooltips`配下を開発用ツール2（後述）にルーティングする。
 - `src/src/pages/simple/` と `src/src/pages/combat/` — アプリの2つのモード。前者は単一実験体の簡易ステータス
   計算、後者はより詳細な戦闘/ダメージ比較用。共通のページ枠組み（ナビゲーション、ベースレイアウト、
   レスポンシブなタブ/カラム切り替え）は `src/src/components/layout/` にある。`src/src/components/` 配下の
@@ -177,6 +177,26 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
 - パスエイリアス（`tsconfig.json` と `vite.config.ts` の両方で定義されている。変更時は両者を同期させること）:
   `@app/*` → `src/`、`components/*` → `src/components/`、`core/*` → `src/core/`、
   `util/*` → `src/util/`、`resources/*` → リポジトリルートの `resources/`、`@params-json` → `src/params-json`。
+
+### 開発用ツール（ツールチップの過不足検出・目視検査）
+
+NimbleNeuronのAPIはツールチップの手動記述数値を提供しないため（上記「データモデル」参照）、ローカライズ
+テキスト側（`l10.json`、ゲーム内原文からの再取得で都度更新される）と`SkillTooltipProps`/
+`EquipmentAbilityTooltipValues`側の実装が、パッチ対象になっていない実験体・装備でも独立に細かくずれる
+ことがある（翻訳表現の修正、情報の追記など）。この不整合を検出・目視するための開発用ツールが2種類ある。
+
+1. **`src/test/tooltip-placeholder-consistency.test.tsx`**（vitestテスト）: 実験体スキル・武器スキル・
+   装備アビリティ全件について、ツールチップ本文（`Skill/Group/{Desc,Coef}`・`Item/Skills/{code}/{Body,Desc}`・
+   `Skill/Group/ExpansionTip`）中の`{0}`のような数値プレースホルダの集合と、`values()`/`expansion.tipValues`
+   が返すオブジェクトのキー集合を突き合わせ、過不足を検出する。2026-09の初回実行で852件中483件の不一致
+   （表示上「{n}」が生の文字列として残る「不足」60件、未使用キーが残っている「過剰」1958件）が見つかった
+   ため、既知の不一致は`src/test/tooltip-placeholder-known-mismatches.json`にベースラインとして記録し、
+   通常実行ではベースラインにない新規の不一致のみを失敗として報告する。ベースラインの再生成は
+   `TOOLTIP_BASELINE_REGENERATE=1 yarn test --run src/test/tooltip-placeholder-consistency.test.tsx`。
+2. **`/dev/tooltips`配下のページ**（`src/src/pages/dev-tooltips/`）: 実験体スキル・武器スキル・装備アイテム
+   全件のツールチップを、実験体・装備の切り替えやマウスオーバーなしに一覧表示し、目視検査するための
+   開発用ページ。ナビゲーションメニューには未リンクで、URLを直接開いてアクセスする（`/dev/tooltips`が
+   索引、`/dev/tooltips/{subjects,weapon-skills,items}`が各一覧、`?page=`でページ送り）。
 
 ### ローカライズ
 
