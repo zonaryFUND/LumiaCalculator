@@ -43,7 +43,7 @@ export default {
         "duration": 5,
         "damage": {
             "base": [60, 90, 120, 150, 180],
-            "amp": 50
+            "amp": 55
         },
         "cooldown": {
             "constant": [11, 10.5, 10, 9.5, 9]

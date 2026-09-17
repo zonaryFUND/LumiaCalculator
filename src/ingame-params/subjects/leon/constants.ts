@@ -24,7 +24,7 @@ export default {
     "E": {
         "damage": {
             "base": [60, 95, 130, 165, 200],
-            "amp": 75
+            "amp": 65
         },
         // エアボーン時間
         "airborne": 0.7,

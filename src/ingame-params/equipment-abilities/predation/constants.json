@@ -7,7 +7,7 @@
     },
     "heal": {
         "base": 30,
-        "additionalMaxHp": 12,
+        "additionalMaxHp": 8,
         "lostHP": 4
     },
     "movement_speed": {

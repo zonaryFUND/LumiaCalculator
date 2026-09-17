@@ -38,7 +38,7 @@ export default {
             "amp": 80
         },
         // 水晶付与対象的中時気絶時間
-        "stun": 0.7,
+        "stun": 0.8,
         "cooldown": [70,60,50]
     },
     "T": {
@@ -50,7 +50,7 @@ export default {
         },
         // 水晶消費時移動速度増加
         "movement_speed": {
-            "duration": 0.75,
+            "duration": 1,
             "effect": [10,20,30]
         },
         // 水晶付与対象基本攻撃時攻撃速度増加

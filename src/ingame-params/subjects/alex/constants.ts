@@ -50,7 +50,7 @@ export default {
     "RangeW": {
         "damage": {
             "base": [45,75,105,135,165],
-            "attack": 80
+            "attack": 70
         },
         // 的中時対象視界獲得・自己射程距離増加時間
         "duration": [2,2.5,3,3.5,4,4],

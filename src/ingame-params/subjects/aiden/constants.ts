@@ -70,8 +70,8 @@ export default {
     "R": {
         // 落雷1発目周囲ダメージ
         "first_damage": {
-            "base": [60,90,120],
-            "attack": 75
+            "base": [70,100,130],
+            "attack": 80
         },
         // 落雷1発目周囲的中時移動速度減少
         "first_slow": {
@@ -87,8 +87,8 @@ export default {
         "stun": 1,
         // 落雷2発目ダメージ
         "second_damage": {
-            "base": [70,115,150],
-            "attack": 80
+            "base": [70,115,160],
+            "attack": 90
         },
         // 落雷2発目的中時移動速度減少
         "second_slow": {

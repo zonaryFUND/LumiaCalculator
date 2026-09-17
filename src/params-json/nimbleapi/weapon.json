@@ -123,7 +123,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 53,
+        "attackPower": 55,
         "attackSpeedRatio": 0.2,
         "code": 102409,
         "weaponType": "TwoHandSword",
@@ -146,7 +146,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 69,
+        "attackPower": 71,
         "attackSpeedRatio": 0.38,
         "sightRange": 1,
         "code": 102412,
@@ -394,7 +394,7 @@
     },
     {
         "attackPower": 78,
-        "attackSpeedRatio": 0.25,
+        "attackSpeedRatio": 0.3,
         "code": 105406,
         "weaponType": "Axe",
         "itemGrade": "Epic"
@@ -606,7 +606,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 65,
+        "skillAmp": 68,
         "cooldownReduction": 10,
         "code": 109401,
         "weaponType": "Whip",
@@ -614,7 +614,7 @@
     },
     {
         "attackPower": 40,
-        "skillAmp": 78,
+        "skillAmp": 82,
         "moveSpeedRatio": 0.02,
         "code": 109403,
         "weaponType": "Whip",
@@ -720,7 +720,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 59,
+        "attackPower": 60,
         "criticalStrikeChance": 0.2,
         "criticalStrikeDamage": 0.05,
         "code": 110411,
@@ -864,7 +864,7 @@
     },
     {
         "attackPower": 76,
-        "attackSpeedRatio": 0.2,
+        "attackSpeedRatio": 0.25,
         "code": 112401,
         "weaponType": "HighAngleFire",
         "itemGrade": "Epic"
@@ -966,7 +966,7 @@
     },
     {
         "attackPower": 30,
-        "skillAmp": 64,
+        "skillAmp": 66,
         "cooldownReduction": 10,
         "code": 113409,
         "weaponType": "DirectFire",
@@ -1036,7 +1036,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 63,
+        "attackPower": 65,
         "attackSpeedRatio": 0.4,
         "normalLifeSteal": 0.1,
         "code": 114405,
@@ -1052,7 +1052,7 @@
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 70,
+        "attackPower": 72,
         "attackSpeedRatio": 0.3,
         "moveSpeedRatio": 0.02,
         "code": 114406,
@@ -1290,7 +1290,7 @@
     },
     {
         "attackPower": 35,
-        "skillAmp": 78,
+        "skillAmp": 82,
         "attackSpeedRatio": 0.25,
         "code": 117407,
         "weaponType": "AssaultRifle",
@@ -1427,7 +1427,7 @@
     },
     {
         "attackPower": 35,
-        "skillAmp": 66,
+        "skillAmp": 68,
         "cooldownReduction": 10,
         "code": 119401,
         "weaponType": "Nunchaku",
@@ -1490,7 +1490,7 @@
     },
     {
         "attackPower": 25,
-        "skillAmp": 69,
+        "skillAmp": 71,
         "cooldownReduction": 10,
         "code": 120302,
         "weaponType": "Rapier",
@@ -1600,7 +1600,7 @@
     },
     {
         "attackPower": 42,
-        "skillAmp": 70,
+        "skillAmp": 72,
         "cooldownReduction": 10,
         "code": 121401,
         "weaponType": "Guitar",
@@ -1685,14 +1685,14 @@
     },
     {
         "attackPower": 25,
-        "skillAmp": 77,
+        "skillAmp": 80,
         "sightRange": 1,
         "code": 122401,
         "weaponType": "Camera",
         "itemGrade": "Epic"
     },
     {
-        "attackPower": 55,
+        "attackPower": 58,
         "attackSpeedRatio": 0.2,
         "cooldownReduction": 15,
         "sightRange": 1,
@@ -1964,7 +1964,7 @@
         "shard": "blue"
     },
     {
-        "attackPower": 82,
+        "attackPower": 84,
         "attackSpeedRatio": 0.4,
         "penetrationDefenseRatio": 0.07,
         "code": 102701,

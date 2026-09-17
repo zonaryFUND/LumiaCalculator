@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [20, 60, 100, 140, 180],
-            "attack": 70
+            "attack": 80
         },
         "cooldown": [10, 9, 8, 7, 6]
     },

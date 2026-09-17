@@ -17,7 +17,7 @@ export default {
                 "gauge": 20
             },
             // 気絶時間
-            "stun": 0.65,
+            "stun": 0.7,
             // 余震
             "after_effect": {
                 // ダメージ発生周期
@@ -82,7 +82,7 @@ export default {
         "enhance": {
             // 追加ダメージ
             "additional_damage": {
-                "gauge": 40
+                "gauge": 50
             },
             // ノックバック距離
             "knockback": 2.5

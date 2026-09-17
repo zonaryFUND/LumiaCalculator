@@ -21,7 +21,7 @@ export default {
             "constant": 0.3
         },
         "charge": {
-            "time": [13,12.5,12,11.5,11],
+            "time": [14,13.5,13,12.5,12],
             "max": 2
         }
     },

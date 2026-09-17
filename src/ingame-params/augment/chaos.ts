@@ -36,7 +36,7 @@ export default {
         },
         // ダメージ
         damage: {
-            base: 50,
+            base: 70,
             level: 10,
             additionalAttack: 70,
             amp: 20
@@ -157,7 +157,7 @@ export default {
         // スキル使用後、発動のために基本攻撃を的中させるまでの猶予
         timeBound: 3,
         // 追加バフ持続時間
-        duration: 5,
+        duration: 6,
         status: {
             adaptiveForce: {
                 base: 2,

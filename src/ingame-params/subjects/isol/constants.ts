@@ -63,7 +63,7 @@ export default {
         "damage": {
             "base": [100, 200, 300],
             "attack": 40,
-            "amp": 65,
+            "amp": 70,
             "targetHP": 12
         },
         "charge": {

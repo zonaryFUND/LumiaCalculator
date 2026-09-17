@@ -61,7 +61,7 @@ export default {
         // 防御力減少
         "defense_down": {
             "duration": 3,
-            "effect": 15
+            "effect": 12
         },
         // もう一つの可能性ダメージ
         "variable_damage": {

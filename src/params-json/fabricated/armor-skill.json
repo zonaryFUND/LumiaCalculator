@@ -790,7 +790,7 @@
 			"healing_reduction"
 		],
 		"values": {
-			"penetrationDefenseRatio": 10
+			"penetration": 0.12
 		}
 	},
 	"204513": {
@@ -814,6 +814,10 @@
 			"base": 25,
 			"amp": 10
 		}
+	},
+	"205305": {
+		"skillCode": 6008201,
+		"name": "healing_reduction"
 	},
 	"205306": {
 		"skillCode": 6082001,

@@ -88,7 +88,7 @@ export default {
         "attack_speed": [40, 45, 50],
         // 短気状態基本攻撃追加ダメージ
         "damage": {
-            "base": [60, 85, 110],
+            "base": [60, 80, 100],
             "amp": 35
         }
     }

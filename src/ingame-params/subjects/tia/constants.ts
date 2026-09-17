@@ -104,7 +104,7 @@ export default {
         "by": {
             "damage": {
                 "base": [50, 90, 130, 170, 210],
-                "amp": 95
+                "amp": 90
             },
             // 束縛時間
             "bind": 1.25

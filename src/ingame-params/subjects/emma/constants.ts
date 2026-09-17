@@ -56,7 +56,7 @@ export default {
         },
         "E": {
             // 変身時間
-            "morph": 1,
+            "morph": 0.9,
             "damage": {
                 "base": [40,70,100],
                 "amp": 20

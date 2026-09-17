@@ -21,7 +21,7 @@ export default {
     // カプセル - 生命
     capsuleEssence: {
         maxHp: 130,
-        tenacity: 10
+        tenacity: 5
     },
     // カプセル - 鮮血
     capsuleSanguine: {

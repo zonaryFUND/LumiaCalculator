@@ -53,11 +53,11 @@ export default {
         "untargetable": 0.7,
         "damage": {
             "base": [150,275,400],
-            "amp": 85
+            "amp": 95
         },
         // 的中時移動速度減少
         "slow": {
-            "duration": 0.2,
+            "duration": 0.3,
             "effect": 99
         },
         // 座標維持時間

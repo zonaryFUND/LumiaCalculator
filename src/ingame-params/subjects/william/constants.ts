@@ -69,7 +69,7 @@ export default {
         },
         // ボール拾得後の次の基本攻撃ダメージ
         "damage": {
-            "attack": [110, 117, 124],
+            "attack": [110, 115, 120],
             "basicAttackAmp": 100
         },
         // キャッチボールスタック持続時間

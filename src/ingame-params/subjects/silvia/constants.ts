@@ -30,12 +30,12 @@ export default {
         // 最小ダメージ
         "min_damage": {
             "base": [110, 130, 150, 170, 190],
-            "amp": 50
+            "amp": 60
         },
         // 最大ダメージ
         "max_damage": {
             "base": [242, 286, 330, 374, 418],
-            "amp": 110
+            "amp": 132
         },
         // ノックバック効果が発生する最低距離
         "knockback_threshold": 3,

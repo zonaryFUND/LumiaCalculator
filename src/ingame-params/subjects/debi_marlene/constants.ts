@@ -49,7 +49,7 @@ export default {
             "additionalAttack": 70
         },
         // デビー的中時エアボーン時間
-        "airborne": 0.5,
+        "airborne": 0.55,
         "cooldown": {
             "constant": [15,14,13,12,11]
         }
@@ -93,7 +93,7 @@ export default {
             "additionalAttack": 70
         },
         // デビー的中時エアボーン時間
-        "airborne": 0.5,
+        "airborne": 0.55,
         // マーリン待機時間
         "marlene_remain": 5,
         // マーリン爆発ダメージ

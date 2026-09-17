@@ -104,9 +104,9 @@ export default {
     "R2": {
         // 1発目ダメージ
         "damage": {
-            "base": [50,120,175,220],
+            "base": [50,120,160,200],
             "attack": 80,
-            "additionalMaxHP": 14
+            "additionalMaxHP": 10
         },
         // 2発目発生までの時間
         "second": 0.85,

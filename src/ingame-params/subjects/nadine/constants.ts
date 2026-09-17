@@ -75,7 +75,7 @@ export default {
         // 攻撃速度減少（％）
         "attack_speed": 10,
         // 移動速度減少（％）
-        "movement_speed": 30,
+        "movement_speed": 25,
         // キル関与時持続時間延長
         "extend": 3,
         "cooldown": [80, 70, 60]
