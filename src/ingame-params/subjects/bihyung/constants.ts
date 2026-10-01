@@ -83,7 +83,7 @@ export default {
             "base": [150,325,500]
         },
         "damage": {
-            "base": [150,300,450],
+            "base": [120,270,420],
             "additionalAttack": 170,
             "targetMaxHP": 10
         },

@@ -46,7 +46,7 @@ export default {
         // 短弓時移動速度減少
         "hankyu_slow": {
             "duration": 1.5,
-            "effect": 30
+            "effect": 25
         },
         // 短弓時複数の矢的中時2本目以降のダメージ量（元ダメージ比％）
         "multiple_hit": 20,
@@ -110,7 +110,7 @@ export default {
         // 短弓時ノックバック距離
         "hankyu_knockback": 4,
         // 短弓時壁衝突気絶時間
-        "hankyu_stun": 1.2,
+        "hankyu_stun": 1,
         // 長弓時ダメージ
         "daikyu_damage": {
             "base": [200, 340, 480],

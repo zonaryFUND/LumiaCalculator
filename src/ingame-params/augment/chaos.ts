@@ -55,7 +55,7 @@ export default {
         damage: {
             base: 30,
             level: 2,
-            additionalAttack: 45,
+            additionalAttack: 65,
             amp: 26
         },
         cooldown: 9,
@@ -105,7 +105,7 @@ export default {
         heal: {
             additionalAttack: 70,
             amp: 20,
-            maxHP: 7,
+            maxHP: 8,
             lostHP: 10
         },
         // 過流が複数人に的中したときの追加人数ごとの回復量増加

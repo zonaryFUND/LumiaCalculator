@@ -1,0 +1,24 @@
+import Constants from "./constants";
+import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
+import { RatioPercent } from "@app/ingame-params/valueratio-to-string";
+
+export const code = 1091300;
+
+export const info: SkillTooltipProps = {
+    skillKey: "W",
+    cooldown: Constants.W.cooldown,
+    values: ({ }) => ({
+        0: Constants.W.damage,
+        1: Constants.W.slow.duration,
+        2: RatioPercent(Constants.W.slow.effect),
+        20: Constants.W.damage.base,
+        21: RatioPercent(Constants.W.damage.amp),
+        22: RatioPercent(Constants.W.damage.additionalMaxHP)
+    }),
+    expansion: () => ({
+        enumeratedValues: [
+            { labelIntlID: "ToolTipType/Damage", values: Constants.W.damage.base },
+            { labelIntlID: "ToolTipType/CoolTime", values: Constants.W.cooldown },
+        ]
+    })
+}

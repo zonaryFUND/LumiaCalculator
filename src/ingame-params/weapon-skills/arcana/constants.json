@@ -2,7 +2,7 @@
     "count": 3,
     "damage": {
         "base": [20,40,60],
-        "amp": 18
+        "amp": 20
     },
     "animal_enhance": 50,
     "cooldown": {

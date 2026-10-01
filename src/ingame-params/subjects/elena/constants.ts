@@ -3,14 +3,14 @@ export default {
         // 1撃目ダメージ
         "first_damage": {
             "base": [20,35,50,65,80],
-            "amp": 25,
+            "amp": 35,
             "additionalMaxHP": 10
         },
         // 2撃目ダメージ
         "second_damage": {
             "base": [40,70,100,130,160],
-            "amp": 35,
-            "additionalMaxHP": 10
+            "amp": 40,
+            "additionalMaxHP": 12
         },
         // 2撃目命中時Qクールダウン減少
         "cooldown_reduction": 50,

@@ -71,7 +71,7 @@ export default {
         // 空中静止時間
         "airborne": 1,
         "damage": {
-            "base": [150,235,320],
+            "base": [130,205,280],
             "amp": 70
         },
         // 与ダメージ比自己回復

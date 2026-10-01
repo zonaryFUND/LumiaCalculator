@@ -1851,7 +1851,7 @@
     {
         "attackPower": 50,
         "maxHpByLv": 4,
-        "lifeSteal": 0.1,
+        "lifeSteal": 0.08,
         "code": 131402,
         "weaponType": "VFArm",
         "itemGrade": "Epic"
@@ -1896,7 +1896,7 @@
     {
         "attackPower": 52,
         "maxHpByLv": 6,
-        "lifeSteal": 0.1,
+        "lifeSteal": 0.08,
         "code": 131504,
         "weaponType": "VFArm",
         "itemGrade": "Legend"

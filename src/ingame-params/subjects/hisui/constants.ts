@@ -3,12 +3,12 @@ export default {
         // 1撃目ダメージ
         "first_damage": {
             "base": [70, 75, 80, 85, 90],
-            "additionalAttack": [70, 75, 80, 85, 90]
+            "additionalAttack": [75, 80, 85, 90, 95]
         },
         // 2撃目ダメージ
         "second_damage": {
             "base": [70, 85, 100, 115, 130],
-            "additionalAttack": [100, 105, 110, 115, 120]
+            "additionalAttack": [105, 110, 115, 120, 125]
         },
         // 2撃目的中時移動速度減少
         "slow": {

@@ -28,7 +28,7 @@ export default {
         "shield_duration": 2.5,
         "shield": {
             "base": [80, 110, 140, 170, 200],
-            "amp": 40
+            "amp": 35
         },
         // 失明時間
         "blind_duration": [1.1, 1.15, 1.2, 1.25, 1.3],

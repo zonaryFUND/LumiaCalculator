@@ -2,7 +2,7 @@
     "damage": {
         "base": [50,75,100],
         "additionalAttack": [50,65,80],
-        "amp": 25,
+        "amp": 30,
         "targetMaxHP": 6
     },
     "heal": 60,

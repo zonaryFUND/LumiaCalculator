@@ -91,7 +91,7 @@ export default {
         },
         "W": {
             "damage": {
-                "base": [200,250,300],
+                "base": [200,300,400],
                 "amp": 85,
                 "targetMaxHP": 20
             },
@@ -105,7 +105,7 @@ export default {
             // 的中時自己移動速度増加量
             "movement_speed": {
                 "duration": 2,
-                "effect": 40
+                "effect": 50
             }
         },
         "E": {

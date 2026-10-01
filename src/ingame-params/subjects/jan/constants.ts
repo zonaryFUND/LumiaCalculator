@@ -15,7 +15,7 @@ export default {
         // ニーストライク強化時防御力減少
         "defense_reduction": {
             "duration": 4,
-            "effect": 15
+            "effect": 20
         },
         // リッピング・ニーストライクダメージ
         "Q2_damage": {

@@ -43,9 +43,9 @@ export default {
         // 壁ヒット時追加ダメージ
         "wall_damage": {
             "base": [20, 40, 60, 80, 100],
-            "additionalAttack": 30,
-            "amp": 30,
-            "targetMaxHP": 7
+            "additionalAttack": 40,
+            "amp": 35,
+            "targetMaxHP": 8
         },
         // 突き飛ばし距離
         "knockback": 3,

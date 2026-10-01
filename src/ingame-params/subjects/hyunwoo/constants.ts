@@ -1,7 +1,7 @@
 export default {
     "Q": {
         "damage": {
-            "base": [50, 100, 150, 200, 250],
+            "base": [90, 130, 170, 210, 250],
             "additionalAttack": 60,
             "amp": 85
         },
@@ -15,7 +15,7 @@ export default {
             "duration": 2,
             "effect": [12, 14, 16, 18, 20]
         },
-        "cooldown": [9, 8, 7, 6, 5]
+        "cooldown": [7, 6.5, 6, 5.5, 5]
     },
     "W": {
         // 防御力上昇時間

@@ -213,7 +213,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 57,
+        "skillAmp": 50,
         "maxHp": 200,
         "cooldownReduction": 10,
         "code": 201507,
@@ -378,7 +378,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 70,
+        "skillAmp": 75,
         "cooldownReduction": 15,
         "healerGiveHpHealRatio": 0.06,
         "code": 201536,
@@ -670,7 +670,7 @@
     },
     {
         "defense": 25,
-        "skillAmp": 22,
+        "skillAmp": 14,
         "skillAmpByLevel": 5,
         "code": 202511,
         "armorType": "Chest",
@@ -1186,8 +1186,8 @@
     },
     {
         "defense": 10,
-        "skillAmp": 85,
-        "maxHp": 250,
+        "skillAmp": 80,
+        "maxHp": 230,
         "cooldownReduction": 15,
         "code": 705619,
         "armorType": "Arm",
@@ -1475,7 +1475,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 55,
+        "skillAmp": 60,
         "maxHp": 100,
         "cooldownReduction": 15,
         "healerGiveHpHealRatio": 0.1,
@@ -1484,7 +1484,7 @@
         "itemGrade": "Legend"
     },
     {
-        "defense": 13,
+        "defense": 11,
         "maxHpByLv": 17,
         "cooldownReduction": 15,
         "code": 705607,

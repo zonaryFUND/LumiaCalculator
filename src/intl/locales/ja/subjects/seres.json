@@ -1,0 +1,13 @@
+{
+    "subject.seres.q1-shield": "Q1瞬駆 シールド",
+    "subject.seres.q1-damage": "Q1瞬駆 ダメージ",
+    "subject.seres.q2-damage": "Q2 貫突",
+    "subject.seres.e-takeover": "E 肩代わり割合",
+    "subject.seres.e-lucia-takeover": "E (ルチア対象) 肩代わり割合",
+    "subject.seres.r-shield": "Rシールド(1ティック)",
+    "subject.seres.passive1": "T総ダメージ(1スタック)",
+    "subject.seres.passive2": "T総ダメージ(2スタック)",
+
+    "subject.seres.e-movement-speed": "E 移動速度増加",
+    "subject.seres.w-slow": "W 移動速度減少"
+}

@@ -2,7 +2,7 @@ export default {
     "Q": {
         // 1発目の弾丸基本攻撃ダメージ
         "first_damage": {
-            "attack": 100,
+            "attack": 110,
             "basicAttackAmp": 100
         },
         // 2発目の弾丸スキルダメージ
@@ -28,7 +28,7 @@ export default {
         // 弾丸1個当たりダメージ
         "damage": {
             "base": [30,40,50,60,70],
-            "attack": 50,
+            "attack": 55,
             "amp": [30,35,40,45,50]
         },
         // 弾丸が1発増加するのに必要な追加攻撃速度（％）

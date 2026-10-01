@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [40, 80, 120, 160, 200],
-            "attack": 100
+            "attack": 90
         },
         // 移動速度減少
         "slow": {
@@ -12,7 +12,7 @@ export default {
         // もう一つの可能性基礎ダメージ
         "variable_damage": {
             "base": [40, 80, 120, 160, 200],
-            "attack": 100
+            "attack": 90
         },
         // もう一つの可能性ダメージが強化される対象体力（％）
         "enhance_target_hp_threshold": 20,
