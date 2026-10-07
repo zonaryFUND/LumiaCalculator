@@ -45,16 +45,16 @@ export default {
         duration: 3,
         // 肩代わりダメージ割合
         take_over: {
-            base: [12,13,14,15,16],
+            base: [8,9,10,11,12],
             additionalMaxHP: 1
         },
         // 警護対象が受けたダメージに対する回復量
-        heal: 25,
+        heal: 20,
         // ルチアを対象とする場合の射程増加
         lucia_additional_range: 1.5,
         // 警護対象がルチアであった場合の肩代わりダメージ割合
         lucia_take_over: {
-            base: [16,17,18,19,20],
+            base: [12,13,14,15,16],
             additionalMaxHP: 1
         },
         // 警護対象がルチアであった場合の回復量
@@ -66,16 +66,16 @@ export default {
             duration: 1.5,
             effect: 20
         },
-        cooldown: [12,11.5,11,10.5,10]
+        cooldown: [13,12.5,12,11.5,11]
     },
     R: {
         // 阻止不可時間
         unstoppable: 2.5,
         // 発動時付与シールド
         first_shield: {
-            base: [15,30,45],
+            base: [24,36,48],
             amp: 5,
-            maxHP: 1.5
+            maxHP: 1.2
         },
         // シールド追加周期
         tick: 0.25,
