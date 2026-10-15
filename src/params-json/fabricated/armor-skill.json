@@ -392,10 +392,7 @@
 	},
 	"202421": {
 		"skillCode": 6069001,
-		"name": "guard_punch",
-		"values": {
-			"ms": 20
-		}
+		"name": "guard_punch"
 	},
 	"202501": {
 		"skillCode": 6008201,
@@ -931,10 +928,7 @@
 	},
 	"705614": {
 		"skillCode": 6068001,
-		"name": "thunder_ruling",
-		"values": {
-			"ms": 25
-		}
+		"name": "thunder_ruling"
 	},
 	"705620": {
 		"skillCode": 6028001,

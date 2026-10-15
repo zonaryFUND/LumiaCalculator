@@ -348,11 +348,9 @@ function list() {
     }
 }
 
-function keyPaths(v: unknown, prefix = ""): string[] {
-    if (v === null || typeof v != "object" || Array.isArray(v)) return [prefix];
-    return Object.entries(v).flatMap(([k, child]) => keyPaths(child, prefix ? `${prefix}.${k}` : k));
-}
-
+// 同じスキルの装備間でdmg/valuesのキー構成が揃っているかは検査しない。dmgは係数の組み合わせが装備ごとに
+// 異なるのが普通で、valuesにも任意キー（vigorのmax.ms等）があり、ほぼ誤検出になるため。
+// キー名の誤り・古いキーの残存は「コード側が読まないキー」の検査で検出する
 function check(): boolean {
     const errors: string[] = [];
     const warnings: string[] = [];
@@ -393,24 +391,6 @@ function check(): boolean {
                 if (name != dir) errors.push(`${label}: name "${name}" が skillCode ${skillCode} の実ディレクトリ "${dir}" と異なる`);
                 if (ability.requiresDamage && entry.dmg === undefined) errors.push(`${label}: ${dir} は importedDamage を必須とするが dmg がない`);
                 if (ability.requiresValues && entry.values === undefined) errors.push(`${label}: ${dir} は importedValues を必須とするが values がない`);
-            }
-        }
-    }
-
-    // 同じディレクトリの装備間でdmg/valuesのキー構成が異なるものを報告する。
-    // 装備ごとに得られる効果自体が異なる（awakening等）正当なケースもあるため警告扱い
-    for (const a of abilities) {
-        const list = holders(a.dir);
-        if (list.length < 2) continue;
-        for (const field of ["dmg", "values"] as const) {
-            const groups = new Map<string, number[]>();
-            for (const i of list) {
-                const key = keyPaths(i.fabricated![field]).sort().join(",");
-                groups.set(key, [...(groups.get(key) ?? []), i.code]);
-            }
-            if (groups.size > 1) {
-                const detail = [...groups].map(([k, codes]) => `{${k || "なし"}}: ${codes.join(",")}`).join(" | ");
-                warnings.push(`${a.dir}: ${field} のキー構成が装備間で異なる → ${detail}`);
             }
         }
     }

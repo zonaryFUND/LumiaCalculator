@@ -1027,9 +1027,6 @@
 		"dmg": {
 			"amp": 30,
 			"targetMaxHP": 8
-		},
-		"values": {
-			"heal": 50
 		}
 	},
 	"116407": {
@@ -1105,9 +1102,6 @@
 		"dmg": {
 			"amp": 30,
 			"targetMaxHP": 8
-		},
-		"values": {
-			"heal": 50
 		}
 	},
 	"117403": {
@@ -1462,7 +1456,6 @@
 		"skillCode": 6019001,
 		"name": "lichs_grasp",
 		"values": {
-			"type": "skill",
 			"slow": 25,
 			"duration": 1,
 			"as": 30,
@@ -1485,7 +1478,6 @@
 		"skillCode": 6019001,
 		"name": "lichs_grasp",
 		"values": {
-			"type": "skill",
 			"slow": 25,
 			"duration": 1,
 			"as": 30,
