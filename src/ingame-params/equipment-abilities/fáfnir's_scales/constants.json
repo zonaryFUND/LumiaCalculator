@@ -1,5 +1,5 @@
 {
-    "damage_per_stack": 350,
+    "damage_per_stack": 400,
     "duration": 12,
     "max_stack": 8,
     "defense_per_stack": 3,
@@ -10,5 +10,5 @@
             "additionalMaxHP": 100
         }
     },
-    "movement_speed": 10
+    "movement_speed": 8
 }
