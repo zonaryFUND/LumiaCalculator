@@ -53,6 +53,13 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
 - `yarn update-values` — `nn-api/index.ts update-values` を実行。NimbleNeuron APIからバージョン依存の
   ゲームデータ（実験体の基本ステータス、レベルアップ時ステータス、武器熟練度、武器/防具ステータス）を取得し
   `src/src/params-json/nimbleapi/*.json` に反映する
+- `yarn equip <クエリ>` — `scripts/equip-lookup.ts`。装備スキル（`equipment-abilities/`）の逆引き。
+  日本語の装備名・スキル名（パッチノートの1行をそのまま渡してもよい）、ディレクトリ名、装備ID、スキルコードから、
+  装備ID・スキルコード・ディレクトリ・`constants.json`の中身・`fabricated/*.json`上の装備ごとの値（JSONパス付き）・
+  同スキルを持つ他装備の値を一度に表示する。l10n・`fabricated/*.json`・各`index.ts`を手作業で突き合わせる
+  代わりに必ずこれを使う。`--desc`（ツールチップ本文も表示）、`--file <md>`（パッチノート全体から装備行を抽出）、
+  `--list`（ディレクトリ↔日本語スキル名↔コード一覧）、`--check`（`fabricated/*.json`の整合性検証。
+  エラー時は終了コード1）
 - `yarn deploy` — ビルド成果物は含まれない。`deploy.ts` を実行し `src/dist` を GitHub Pages（`gh-pages`
   ブランチ、cname: `lumia-calculator.app`）に公開する。GitHub Pagesの公開設定は独立リポジトリ化後も
   `ercalc_resources`側（一段上の非公開リポジトリ）のままのため、`deploy.ts`は`gh-pages`パッケージの
@@ -79,7 +86,9 @@ React/TypeScript製SPA。`gh-pages` により `lumia-calculator.app` にデプ�
    これらのファイルは手動編集しない（更新は `yarn update-values` の再実行で行う想定）。
    NimbleNeuronのAPIが公開していない一部の値は、`src/src/params-json/fabricated/*.json` 以下に手動で
    記述されている（例: マイのパッシブによるDavid装備アップグレード時の差分ステータス、固有アビリティを持つ
-   武器/防具のID対応と個別の効果量など）。装備ステータスのうち、APIレスポンスが小数表記（例: `0.1`）で
+   武器/防具のID対応と個別の効果量など）。`fabricated/*.json`はリポジトリ内で直接編集する正のデータ
+   （2026-10以前は外部スプレッドシートから生成していたが廃止した）。`{weapon,armor}-skill.json`を編集したら
+   `yarn equip --check`を実行すること。装備ステータスのうち、APIレスポンスが小数表記（例: `0.1`）で
    返す一部のキーはゲーム内の％表記（`10`）に変換する必要があり、`equipment/status.ts`の
    `IsPercentExpressedEquipmentStatusKey()`がキー名（`Ratio`/`criticalStrike`/`ifeSteal`（大文字小文字の
    `L`/`l`両対応のためあえて先頭を欠いた部分一致）のいずれかを含むか、または`uniqueTenacity`）から

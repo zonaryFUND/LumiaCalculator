@@ -11,6 +11,7 @@
     "deploy": "tsx ./deploy.ts",
     "check-resources": "tsx ./check-resources.ts",
     "update-values": "tsx ./nn-api/index.ts update-values",
+    "equip": "tsx ./scripts/equip-lookup.ts",
     "test": "vitest"
   },
   "author": "zonaryFUND",

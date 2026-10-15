@@ -423,7 +423,7 @@
 	},
 	"202505": {
 		"skillCode": 6049001,
-		"name": "deferral "
+		"name": "deferral"
 	},
 	"202506": {
 		"skillCode": 6054001,
@@ -508,7 +508,7 @@
 	},
 	"202523": {
 		"skillCode": 6052002,
-		"name": "blaze_up "
+		"name": "blaze_up"
 	},
 	"202524": {
 		"skillCode": 6036002,
@@ -790,7 +790,7 @@
 			"healing_reduction"
 		],
 		"values": {
-			"penetration": 0.12
+			"penetrationDefenseRatio": 12
 		}
 	},
 	"204513": {
@@ -842,7 +842,7 @@
 	},
 	"205407": {
 		"skillCode": 6073101,
-		"name": "tracking"
+		"name": "punishment_tracking"
 	},
 	"205408": {
 		"skillCode": 6017026,
