@@ -82,7 +82,7 @@ export default {
         // 攻撃速度が増加する基本攻撃の回数
         count: 3,
         // 追加攻撃速度（攻撃速度上限無視）
-        attackSpeed: 120,
+        attackSpeed: 130,
         // 追加攻撃速度バフ持続時間
         duration: 3,
         damage: {

@@ -43,7 +43,7 @@ export default {
         "cooldown_reduction": 5,
         // Eで範囲内に移動したときの持続時間延長
         "e_extend": 1,
-        "cooldown": 11
+        "cooldown": 12
     },
     "E": {
         // 詠唱時間

@@ -48,7 +48,7 @@ export default {
         // シールド量基礎値
         "shield": {
             "base": [40, 60, 80, 100, 120],
-            "amp": 35
+            "amp": 40
         },
         // ダメージ基礎値
         "damage": {

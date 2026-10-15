@@ -10,7 +10,7 @@
         "amp": 30
     },
     "knockback": 4,
-    "stun": [0.8,0.9,1],
+    "stun": [0.7,0.8,0.9],
     "cooldown": {
         "constant": 25
     }

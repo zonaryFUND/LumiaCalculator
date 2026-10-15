@@ -16,7 +16,7 @@
     },
     "second_slow": {
         "duration": 1,
-        "effect": [30,35,40]
+        "effect": [20,25,30]
     },
     "cooldown": {
         "constant": 25

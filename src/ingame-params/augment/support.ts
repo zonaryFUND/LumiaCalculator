@@ -10,7 +10,7 @@ export default {
         // 威力
         damage: {
             level: 8,
-            targetMaxHP: 6
+            targetMaxHP: 7
         },
         // 起爆しなかったときの威力減少
         unexploded_decline: 50,

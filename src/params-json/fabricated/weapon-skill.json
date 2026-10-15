@@ -310,10 +310,10 @@
 		},
 		"values": {
 			"duration": 5,
-			"as": 12,
-			"stack": 3,
+			"as": 8,
+			"stack": 4,
 			"max": {
-				"ad": 12,
+				"ad": 10,
 				"ms": 0.1
 			}
 		}
@@ -451,10 +451,10 @@
 		},
 		"values": {
 			"duration": 5,
-			"as": 12,
-			"stack": 3,
+			"as": 8,
+			"stack": 4,
 			"max": {
-				"ad": 12,
+				"ad": 10,
 				"ms": 0.1
 			}
 		}

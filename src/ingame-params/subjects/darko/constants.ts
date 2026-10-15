@@ -19,7 +19,7 @@ export default {
     "W": {
         "shield": {
             "base": [50,85,120,155,190],
-            "attack": 55
+            "attack": 65
         },
         // シールド持続時間
         "shield_duration": 3,
@@ -44,7 +44,7 @@ export default {
     "E": {
         "damage": {
             "base": [70,115,160,205,250],
-            "attack": 85
+            "attack": 95
         },
         // エアボーン時間
         "airborne": 0.7,

@@ -68,7 +68,7 @@ export default {
         // 挑発時間
         "taunt": [0.8,0.85,0.9,0.95,1],
         "damage": {
-            "base": [80,110,140,170,200],
+            "base": [60,90,120,150,180],
             "attack": 100
         },
         "cooldown": [15,14,13,12,11]
@@ -107,7 +107,7 @@ export default {
         "damage": {
             "base": [16,24,32],
             "additionalAttack": 40,
-            "targetMaxHP": [1,2,3]
+            "targetMaxHP": [0.8,1.6,2.4]
         },
         // 移動速度減少耐性
         "slow_resistance": [5,10,15]

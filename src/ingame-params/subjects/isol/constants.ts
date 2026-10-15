@@ -62,8 +62,8 @@ export default {
         "lifetime": 45,
         "damage": {
             "base": [100, 200, 300],
-            "attack": 40,
-            "amp": 70,
+            "attack": 50,
+            "amp": 75,
             "targetHP": 12
         },
         "charge": {

@@ -100,8 +100,8 @@ export default {
         // E星コンジャンクション効果（秒間回復量）
         "star_conjunction": {
             "heal": {
-                "base": [20,30,40,50],
-                "amp": 6
+                "base": [26,36,46,56],
+                "amp": 7
             }
         },
         "cooldown": {

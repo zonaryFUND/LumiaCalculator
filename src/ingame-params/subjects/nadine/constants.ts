@@ -10,14 +10,14 @@ export default {
         "min_damage": {
             "base": [60, 95, 130, 165, 200],
             "additionalAttack": 110,
-            "amp": 65,
+            "amp": 70,
             "stack": 1
         },
         // 最大ダメージ
         "max_damage": {
             "base": [120, 190, 260, 330, 400],
             "additionalAttack": 220,
-            "amp": 130,
+            "amp": 140,
             "stack": 1
         },
         // 発動キャンセル時クールダウン返還（％） 

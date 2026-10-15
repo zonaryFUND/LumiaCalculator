@@ -1,15 +1,15 @@
 export default {
     "Q": {
         "damage": {
-            "base": [30, 40, 50, 60, 70],
+            "base": [10, 20, 30, 40, 50],
             "attack": [170, 175, 180, 185, 190]
         },
         // 最大スタック時追加ダメージ（元ダメージ比％）
         "max_stack_damage": 25,
         // 最大スタック時の的中対象1体あたり自己回復（失った体力比）
-        "max_stack_heal": 10,
+        "max_stack_heal": 8,
         // 最大スタック時の自己回復量最大値
-        "max_stack_heal_max": 25,
+        "max_stack_heal_max": 20,
         "cooldown": [10, 9, 8, 7, 6]
     },
     "W": {
@@ -42,7 +42,7 @@ export default {
         "damage_conversion": 20,
         // 効果時間中の最初の基本攻撃追加ダメージ
         "damage": {
-            "base": [8, 16, 24, 32, 40],
+            "base": [4, 8, 12, 16, 20],
             "attack": 25
         },
         // 効果時間中の最初の基本攻撃的中時クールダウン減少（％）

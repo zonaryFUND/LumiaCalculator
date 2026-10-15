@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [20, 40, 60, 80, 100],
-            "attack": 70
+            "attack": 80
         },
         // 使用可能回数
         "count": 3,
@@ -10,8 +10,8 @@ export default {
         "bac": 40,
         // 酔拳発動時ダメージ
         "enhanced_damage": {
-            "base": [40, 65, 90, 115, 140],
-            "attack": 85
+            "base": [30, 60, 90, 120, 150],
+            "attack": 95
         },
         "cooldown": [13, 12.5, 12, 11.5, 11]
     },
@@ -21,7 +21,7 @@ export default {
         // 酔いゲージ獲得量
         "bac": 45,
         // 飲酒中被ダメージ減少（％）
-        "damage_reduction": [45, 50, 55, 60, 65],
+        "damage_reduction": [50, 55, 60, 65, 70],
         // 基本攻撃時クールダウン減少
         "cooldown_reduction": 0.5,
         // 次の基本攻撃時ダメージ増加最大値

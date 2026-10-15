@@ -17,7 +17,7 @@ export default {
         "damage": {
             "base": [40,70,100,130,160],
             "additionalAttack": 75,
-            "targetMaxHP": [5,5.5,6,6.5,7]
+            "targetMaxHP": [4,4.5,5,5.5,6]
         },
         "cooldown": 12
     },

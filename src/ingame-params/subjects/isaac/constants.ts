@@ -12,7 +12,7 @@ export default {
             "attack": 65
         },
         // このスキルで強化した攻撃が搾取効果を発動させたときのクールダウン減少（％）
-        "cooldown_reduction": 25,
+        "cooldown_reduction": 30,
         "cooldown": [9, 7.5, 6, 4.5, 3]
     },
     "E": {

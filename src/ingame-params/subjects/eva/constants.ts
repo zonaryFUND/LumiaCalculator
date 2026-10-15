@@ -40,7 +40,7 @@ export default {
     "E": {
         "movement_speed": {
             "duration": 0.65,
-            "effect": [120,125,130,135,140]
+            "effect": [110,115,120,125,130]
         },
         "vitalforce": 30,
         "vision_duration": 3,

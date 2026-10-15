@@ -61,7 +61,7 @@ export default {
         // 移動速度が最大になるまでの発動からの時間（秒）
         "max_speed": 2,
         "damage": {
-            "base": [100, 250, 400],
+            "base": [100, 300, 500],
             "additionalAttack": 150,
             "amp": 90,
             "targetHP": 30

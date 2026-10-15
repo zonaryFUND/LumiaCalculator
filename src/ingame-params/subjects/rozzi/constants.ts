@@ -75,7 +75,7 @@ export default {
         },
         // ダブルショット2発目ダメージ
         "second_damage": {
-            "attack": [50, 55, 60],
+            "attack": [55, 60, 65],
             "basicAttackAmp": 100
         },
         "attack": {

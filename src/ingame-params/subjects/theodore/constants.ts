@@ -44,7 +44,7 @@ export default {
         // 的中時移動速度減少
         "slow": {
             "duration": 2,
-            "effect": [2, 4, 6, 8, 10]
+            "effect": [12, 14, 16, 18, 20]
         },
         // 標的持続時間
         "target_duration": 4,

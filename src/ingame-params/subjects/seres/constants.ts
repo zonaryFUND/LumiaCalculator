@@ -71,20 +71,14 @@ export default {
     R: {
         // 阻止不可時間
         unstoppable: 2.5,
-        // 発動時付与シールド
-        first_shield: {
+        // 発動時および周期ごとに付与されるシールド（両者は同量）
+        shield: {
             base: [24,36,48],
             amp: 5,
-            maxHP: 1.2
+            maxHP: 1
         },
         // シールド追加周期
         tick: 0.25,
-        // 追加シールド
-        additional_shield: {
-            base: [15,30,45],
-            amp: 5,
-            maxHP: 1.5
-        },
         // 終了後シールド持続時間
         shield_aftereffect: 0.75,
         // スキル使用後キャンセル可能になるまでの時間

@@ -109,8 +109,8 @@ export default {
     },
     // 強い絆
     soulStealer: {
-        // 1エネルギー獲得に必要な体力消耗
-        energyPerLoss: [1.5,1.2],
+        // 失った体力1%あたりの獲得エネルギー
+        energyPerLoss: [2,1.5],
         // 蓄積可能な最大エネルギー
         maxEnergy: [70,99],
         // エネルギー蓄積持続時間
