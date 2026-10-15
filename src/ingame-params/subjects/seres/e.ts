@@ -19,9 +19,8 @@ export const info: SkillTooltipProps = {
         8: RatioPercent(Constants.E.movement_speed.effect),
         20: Constants.E.take_over.base,
         21: RatioPercent(Constants.E.take_over.additionalMaxHP),
-        22: Constants.E.lucia_additional_range,
-        23: RatioPercent(Constants.E.lucia_take_over),
-        24: RatioPercent(Constants.E.lucia_take_over.additionalMaxHP)
+        22: Constants.E.lucia_take_over.base,
+        23: RatioPercent(Constants.E.lucia_take_over.additionalMaxHP)
     }),
     expansion: () => ({
         enumeratedValues: [

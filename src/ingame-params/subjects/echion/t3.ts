@@ -13,7 +13,8 @@ export const info: SkillTooltipProps = {
     values: ({ showEquation, config }) => ({
         0: showEquation ? RatioPercent(Constants.T3_2.damage.attack) : Constants.T3_2.damage,
         1: Constants.T3_2.attack_speed_duration,
-        2: RatioPercent(Constants.R3.attack_speed[config.skillLevels.R])
+        2: RatioPercent(Constants.R3.attack_speed[config.skillLevels.R]),
+        3: Constants.T3_2.max_stack
     }),
     expansion: () => ({
         enumeratedValues: [] 

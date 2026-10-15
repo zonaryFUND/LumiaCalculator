@@ -36,6 +36,8 @@ import { SkillTooltipProps } from "@app/ingame-params/skill-tooltip-props";
 //   tooltip-placeholder-known-mismatches.jsonにベースラインとして記録し、このテストはベースラインに
 //   ない「新規の」不一致のみを失敗として報告する（＝今後のパッチ対応で新たに不一致が発生した場合のみ
 //   検知する回帰ガード）。ベースラインの再生成は下記参照
+// - 2026-10、通常表示/数式表示の片方でしか使わないキーを未使用扱いしないよう変更し（diffKeys参照）、
+//   ベースラインを875件から223件に再生成した
 
 const config = SubjectConfigDefault;
 const status = statusOf(config, 100);
@@ -64,10 +66,16 @@ function placeholderIndices(text: string | undefined): number[] {
     return [...text.matchAll(/\{(\d+)\}/g)].map(m => Number(m[1])).sort((a, b) => a - b);
 }
 
-function diffKeys(textIndices: number[], valueKeys: number[]): MismatchSet {
+// 通常表示（Desc/Body）と数式表示（Coef/Desc）のテキストは、同じ数値に別々のプレースホルダ番号を割り当てて
+// 完全に分離されていることが多い。その場合、values()でshowEquationによる分岐をせず両方のキーを一律に返す
+// 実装を意図的に許容している（実験体によってテキストの書き方がまちまちなため）。
+// そこで、片方のテキストに現れないキーでも、もう片方のテキストで使われていれば「未使用」とは扱わない。
+// どちらのテキストにも現れないキー（ゲーム側でテキストから項目が消えた等。例: 食事アイテムの「高級」区分の
+// 削除に伴うシウカイTの補足表示）は引き続き未使用として検出する
+function diffKeys(textIndices: number[], valueKeys: number[], counterpartIndices: number[] = []): MismatchSet {
     return {
         missing: textIndices.filter(i => !valueKeys.includes(i)),
-        excess: valueKeys.filter(i => !textIndices.includes(i))
+        excess: valueKeys.filter(i => !textIndices.includes(i) && !counterpartIndices.includes(i))
     };
 }
 
@@ -76,8 +84,8 @@ function diffKeys(textIndices: number[], valueKeys: number[]): MismatchSet {
  * textKey自体（コードを含み一意）で足りるが、装備アビリティは同一skillCodeを複数アイテムが共有し
  * dmg/valuesがアイテムごとに異なるため、呼び出し側でitemIDを含めた識別子を渡す
  */
-function checkMismatch(baselineKey: string, textKey: string, text: string, valueKeys: number[]) {
-    const { missing, excess } = diffKeys(placeholderIndices(text), valueKeys);
+function checkMismatch(baselineKey: string, textKey: string, text: string, valueKeys: number[], counterpartText?: string) {
+    const { missing, excess } = diffKeys(placeholderIndices(text), valueKeys, placeholderIndices(counterpartText));
 
     if (regenerateBaseline) {
         if (missing.length || excess.length) collectedBaseline[baselineKey] = { missing, excess };
@@ -88,8 +96,8 @@ function checkMismatch(baselineKey: string, textKey: string, text: string, value
     const newMissing = missing.filter(i => !known.missing.includes(i));
     const newExcess = excess.filter(i => !known.excess.includes(i));
 
-    expect(newMissing, `${textKey}: 新規に検出された未定義プレースホルダ {${newMissing}}（表示上「{n}」が生のまま残る）`).toEqual([]);
-    expect(newExcess, `${textKey}: 新規に検出された未使用キー [${newExcess}]`).toEqual([]);
+    expect.soft(newMissing, `${textKey}: 新規に検出された未定義プレースホルダ {${newMissing}}（表示上「{n}」が生のまま残る）`).toEqual([]);
+    expect.soft(newExcess, `${textKey}: 新規に検出された未使用キー [${newExcess}]`).toEqual([]);
 }
 
 /**
@@ -103,8 +111,10 @@ function checkSkillTooltip(code: number, info: SkillTooltipProps) {
         const text = Locales["ja"][textKey];
         if (text == undefined) continue; // 本文自体が存在しない場合は別の問題としてこのテストの対象外
 
+        const counterpartKey = (!showEquation ? info.overrideIntlID?.coef : info.overrideIntlID?.desc)
+            ?? `Skill/Group/${!showEquation ? "Coef" : "Desc"}/${code}`;
         const values = info.values({ showEquation, config, status });
-        checkMismatch(textKey, textKey, text, Object.keys(values).map(Number));
+        checkMismatch(textKey, textKey, text, Object.keys(values).map(Number), Locales["ja"][counterpartKey]);
     }
 
     const expansionTextKey = `Skill/Group/ExpansionTip/${code}`;
@@ -181,7 +191,8 @@ describe("装備アビリティのツールチップ", () => {
             }), {
                 wrapper: ({ children }) => <ValueContext.Provider value={{ showEquation, config, status }}>{children}</ValueContext.Provider>
             });
-            checkMismatch(`${textKey}#item${itemID}`, textKey, text, Object.keys(result.current).map(Number));
+            const counterpartText = Locales["ja"][`Item/Skills/${sanitizedCode}/${!showEquation ? "Desc" : "Body"}`];
+            checkMismatch(`${textKey}#item${itemID}`, textKey, text, Object.keys(result.current).map(Number), counterpartText);
         }
     });
 });

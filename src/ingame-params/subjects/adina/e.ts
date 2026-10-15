@@ -28,11 +28,13 @@ export const info: SkillTooltipProps = {
             return {
                 ...base,
                 0: Constants.E.damage.base,
+                1: Constants.E.drop_damage.base,
                 7: Constants.E.sun.base,
                 9: RatioPercent(Constants.E.star),
                 11: conjunctionHp.base,
                 12: RatioPercent(conjunctionHp.amp),
                 13: RatioPercent(Constants.E.damage.amp),
+                14: RatioPercent(Constants.E.drop_damage.amp),
                 16: RatioPercent(Constants.E.sun.amp),
             } as Record<number, number | string | ValueRatio>
         } else {
@@ -41,6 +43,7 @@ export const info: SkillTooltipProps = {
                 20: Constants.E.damage,
                 21: Constants.E.sun,
                 22: starHeal,
+                26: Constants.E.drop_damage,
                 24: conjunctionHp,
             } as Record<number, number | string | ValueRatio>
         }

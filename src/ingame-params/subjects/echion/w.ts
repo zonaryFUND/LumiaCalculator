@@ -46,7 +46,8 @@ export const info: SkillTooltipProps = {
         2: showEquation ? RatioPercent(Constants.W.shield.attack) : RatioPercent(Constants.W.multiplier),
         3: showEquation ? RatioPercent(Constants.W.multiplier) : RatioPercent(Constants.W.return_threshold),
         4: showEquation ? RatioPercent(Constants.W.return_threshold) : RatioPercent(Constants.W.return_gauge),
-        5: RatioPercent(Constants.W.return_gauge)
+        5: showEquation ? RatioPercent(Constants.W.return_gauge) : Constants.W.shield_duration,
+        6: Constants.W.shield_duration
     }),
     expansion: () => ({
         enumeratedValues: [

@@ -24,6 +24,8 @@ export default {
     "W": {
         // VFゲージ最大消耗量
         "gauge_max_consumption": 50,
+        // シールド持続時間
+        "shield_duration": 2,
         "shield": {
             "base": [20,40,60,80,100],
             "attack": 50
@@ -150,6 +152,8 @@ export default {
     "T3_2": {
         // 戦闘狂スタック持続時間
         "attack_speed_duration": 5,
+        // 戦闘狂最大スタック数
+        "max_stack": 4,
         // VF暴走状態時基本攻撃追加ダメージ
         "damage": {
             "attack": 40,

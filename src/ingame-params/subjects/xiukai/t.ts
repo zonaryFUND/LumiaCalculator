@@ -15,7 +15,6 @@ export const info: SkillTooltipProps = {
     }),
     expansion: () => ({
         tipValues: {
-            2: Constants.T.stack_gain.uncommon,
             3: Constants.T.stack_gain.rare,
             4: Constants.T.stack_gain.epic,
             5: Constants.T.stack_gain.legendary

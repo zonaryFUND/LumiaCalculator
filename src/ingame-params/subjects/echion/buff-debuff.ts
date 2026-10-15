@@ -50,7 +50,7 @@ export const selfBuffDebuff: SubjectSelfBuffDebuff = (config) => ({
         "subject.echion.t3-attack-speed": {
             origin: "skill",
             nameIntlID: "subject.echion.t3-attack-speed",
-            maxStack: 4,
+            maxStack: Constants.T3_2.max_stack,
             buff: (stack: number) => ({
                 attackSpeed: [{
                     origin: "temporary-status",
