@@ -2,7 +2,7 @@ export default {
     "Q": {
         "damage": {
             "base": [90, 130, 170, 210, 250],
-            "additionalAttack": 60,
+            "additionalAttack": 90,
             "amp": 85
         },
         // 移動速度減少
@@ -53,13 +53,13 @@ export default {
         // 最小チャージ時ダメージ
         "min_damage": {
             "base": [100, 140, 180],
-            "additionalAttack": 35,
+            "additionalAttack": 50,
             "amp": 75
         },
         // 最大チャージ時ダメージ
         "max_damage": {
             "base": [300, 420, 540],
-            "additionalAttack": 105,
+            "additionalAttack": 150,
             "amp": 225
         },
         // 防御力減少

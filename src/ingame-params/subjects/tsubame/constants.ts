@@ -30,7 +30,7 @@ export default {
         // 移動速度増加時間
         "ms_duration": 2,
         // 攻撃速度増加（％）
-        "attack_speed": [20, 25, 30, 35, 40],
+        "attack_speed": [25, 30, 35, 40, 45],
         // 攻撃速度増加時間
         "as_duration": 3,
         // 基本攻撃的中時クールダウン減少

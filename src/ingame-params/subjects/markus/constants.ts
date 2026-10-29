@@ -7,7 +7,7 @@ export default {
         // 追加ダメージ
         "damage": {
             "base": [10, 20, 30, 40, 50],
-            "additionalMaxHP": 18
+            "additionalMaxHP": 16
         },
         // 追加与ダメージ比自己回復（％）
         "heal": 120,

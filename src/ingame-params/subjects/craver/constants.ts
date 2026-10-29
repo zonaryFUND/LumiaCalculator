@@ -44,7 +44,7 @@ export default {
         // バックフリップダメージ
         "enhanced_damage": {
             "base": [130,160,190,220,250],
-            "amp": 85
+            "amp": 90
         },
         // バックフリップ的中時エアボーン時間
         "airborne": 0.75,
@@ -57,7 +57,7 @@ export default {
             "amp": 60
         },
         // コンバットロール敵実験体的中時クールダウン減少
-        "cooldown_reduction": 20,
+        "cooldown_reduction": 25,
         // コンバットロール野生動物的中時クールダウン減少
         "cooldown_reduction_animal": 10,
         // クイックステップダメージ

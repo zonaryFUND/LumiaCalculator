@@ -11,8 +11,8 @@ export default {
         },
         // 2発目（引き裂き）ダメージ
         "second_damage": {
-            "base": [20,50,80,110,140],
-            "additionalAttack": [90,100,110,120,130]
+            "base": [10,40,70,100,130],
+            "additionalAttack": [80,90,100,110,120]
         },
         "cooldown": [10,9.5,9,8.5,8],
         "vp_cost": [60,55,50,45,40]

@@ -7,7 +7,7 @@ export default {
         // 輝くロマンダメージ
         "enhanced_damage": {
             "base": [80, 115, 150, 185, 220],
-            "amp": 80
+            "amp": 75
         },
         // 輝くロマン的中時移動速度減少
         "slow": {

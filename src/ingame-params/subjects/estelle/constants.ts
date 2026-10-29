@@ -69,7 +69,7 @@ export default {
             "shield": {
                 "base": [100,150,200],
                 "amp": 55,
-                "lostHP": 20
+                "lostHP": 25
             },
             // シールド持続時間
             "duration": 2.5,
@@ -89,7 +89,7 @@ export default {
         // 味方に使用時効果
         "ally": {
             "shield": {
-                "base": [100,200,300],
+                "base": [150,250,350],
                 "amp": 55,
                 "targetLostHP": 15
             },

@@ -6,7 +6,7 @@ export default {
     "Q": {
         "damage": {
             "base": [60, 100, 140, 180, 220],
-            "amp": 80
+            "amp": 85
         },
         "cooldown": [5, 4.5, 4, 3.5, 3]
     },

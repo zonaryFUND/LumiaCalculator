@@ -69,7 +69,7 @@ export default {
             // 使用距離増加
             "range": [4,4.5,5],
             // 次元の通路持続時間
-            "duration": 5
+            "duration": 4
         },
         "cooldown": [20,18,16]
     },
@@ -79,7 +79,7 @@ export default {
         // 考古学的分析発動時回復量
         "heal": {
             "base": [50,85,120],
-            "amp": 10
+            "amp": 12
         }
     }
 }

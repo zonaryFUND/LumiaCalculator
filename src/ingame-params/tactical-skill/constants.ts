@@ -174,7 +174,8 @@ export default {
             base: 20,
             // ダメージを与えた敵1体あたりの増加量（最大3体まで）
             perHit: [5,10]
-        }
+        },
+        cooldown: [9, 7]
     },
     // ライトウィング
     wingsOfLight: {

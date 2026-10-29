@@ -1044,7 +1044,7 @@
     {
         "attackPower": 35,
         "cooldownReduction": 20,
-        "penetrationDefense": 12,
+        "penetrationDefense": 13,
         "code": 203511,
         "armorType": "Arm",
         "itemGrade": "Legend"

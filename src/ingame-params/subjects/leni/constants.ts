@@ -33,8 +33,8 @@ export default {
         "movement_speed": {
             "duration": 1.5,
             "effect": {
-                "base": [12,14,16,18,20],
-                "amp": 2.5
+                "base": [7,9,11,13,15],
+                "amp": 3.5
             }
         },
         "cooldown": [16, 15, 14, 13, 12]
@@ -51,8 +51,8 @@ export default {
         "duration": 2.5,
         "shield": {
             "base": [50, 65, 80, 95, 110],
-            "level": 3,
-            "amp": 25
+            "level": 2,
+            "amp": 30
         },
         "cooldown": 9
     },

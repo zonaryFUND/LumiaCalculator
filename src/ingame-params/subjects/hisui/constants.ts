@@ -53,7 +53,7 @@ export default {
                 "additionalAttack": 140
             },
             // 最後に的中した対象へのエアボーン時間
-            "airborne": 0.5
+            "airborne": 0.6
         },
         // W3：日輪乱舞
         "W3": {
