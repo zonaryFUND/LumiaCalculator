@@ -255,6 +255,10 @@ function lookup(query: string): boolean {
 // 装備名の行で「現在の装備」を切り替え、以降の行でその装備が持つスキル名が現れたらスキル調整として扱う。
 // スキル名の判定を装備名より先に行うのは、「ファフニールの鱗」（スキル）が装備名「ファフニール」を含むため
 const isChangeLine = (line: string) => /→|->|新規|削除/.test(line);
+// 実験体・武器スキルの節の見出し行（「ピコピコハンマー！(W)」「ダブルクリーヴ(双剣Q)」「ニムルドの門(RE)」等）。
+// 装備と同名のスキルがあるため、ホットキー表記を含む行は装備名の行とみなさず、現在の装備も解除する
+const isSkillHeaderLine = (line: string) => /\([^()]*[QWERDP]\d?\)/.test(line);
+const isSectionHeaderLine = (line: string) => /^(実験体|特性|戦術スキル|武器スキル)$/.test(line);
 
 type Block = { line: number, item: Item, name: string, ability?: Ability, changes: string[] }
 
@@ -284,6 +288,11 @@ function parseFile(text: string) {
             }
             current.ability = ability;
             if (isChangeLine(line)) current.changes.push(line);
+            return;
+        }
+
+        if (isSkillHeaderLine(line) || isSectionHeaderLine(line)) {
+            current = undefined;
             return;
         }
 
