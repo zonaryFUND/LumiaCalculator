@@ -16,6 +16,8 @@
     "item-skill.dot-1-stack-true": "{item}1スタック時固定ダメージ/秒",
     "item-skill.dot-max-stack-true": "{item}最大スタック({value})時固定ダメージ/秒",
     "item-skill.spirit-harvest-add": "{item}刻印付与時追加ダメージ",
+    "item-skill.lock-on-basic-attack": "{item}基本攻撃命中時ダメージ",
+    "item-skill.lock-on-mark": "{item}マーク消費時追加ダメージ",
     "item-skill.spirit-harvest-remove": "{item}刻印消化時追加ダメージ",
     "item-skill.heart-of-fire-damage": "{item}ダメージ",
     "item-skill.heart-of-fire-heal": "{item}回復",
@@ -40,5 +42,8 @@
     "item-skill.gold-pouch": "金貨袋",
     "item-skill.lichs-grasp-attack-speed": "寒波 - 攻撃速度減少部分",
     "item-skill.rebellion": "反抗",
-    "item-skill.two-sides": "二つの仮面"
+    "item-skill.two-sides": "二つの仮面",
+    "item-skill.whittle": "削り取り",
+    "item-skill.keep-your-distance": "距離の利",
+    "item-skill.hone": "練磨"
 }

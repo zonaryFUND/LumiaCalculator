@@ -42,7 +42,7 @@ export default {
         // 風雲地帯持続時間
         "duration": 5,
         "damage": {
-            "base": [60, 90, 120, 150, 180],
+            "base": [60, 85, 110, 135, 160],
             "amp": 55
         },
         "cooldown": {

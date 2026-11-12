@@ -1,0 +1,11 @@
+{
+    "time_bound": 3,
+    "threshold": 2,
+    "duration": 5,
+    "damage": {
+        "base": 30,
+        "attack": 25,
+        "level": 2
+    },
+    "cooldown": 3
+}

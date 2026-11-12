@@ -1,0 +1,13 @@
+{
+    "attack_speed": {
+        "duration": 5,
+        "effect": 5,
+        "max_stack": 4
+    },
+    "amp": {
+        "duration": 5,
+        "effect": 2.5,
+        "max_stack": 4
+    },
+    "ms": 6
+}

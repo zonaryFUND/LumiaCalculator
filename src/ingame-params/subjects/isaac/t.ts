@@ -20,6 +20,7 @@ export const info: SkillTooltipProps = {
                 6: Constants.T.duration,
                 7: RatioPercent(Constants.T.heal),
                 9: RatioPercent(Constants.T.animal),
+                10: RatioPercent(Constants.T.damage.targetMaxHP),
             } as Record<number, number | string | ValueRatio>
         } else {
             return {
@@ -43,6 +44,5 @@ export const info: SkillTooltipProps = {
             { labelIntlID: "ToolTipType/HpRegenRatio", values: Constants.T.heal, percent: true },
             { labelIntlID: "ToolTipType/MoveSpeedUpRatio", values: Constants.T.movement_speed, percent: true }
         ]
-    }),
-    calculatorMessage: "日本語翻訳ファイルでは詳細ツールチップに対象最大体力比例ダメージが記載されていません"
+    })
 }

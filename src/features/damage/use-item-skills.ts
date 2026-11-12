@@ -5,10 +5,16 @@ import * as React from "react";
 import { useIntl } from "react-intl";
 import { EquipmentStatusDictionary } from "core/equipment";
 import { ignorePseudoTag } from "@app/util/ignore-pseudo-tag";
+import { ValueRatio } from "core/value-ratio";
+import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy";
+
+type Unit = Omit<DamageTableUnit, "value"> & {
+    value: ValueRatio | UniqueValueStrategy
+}
 
 type Response = {
     basicAttackTriggered: DamageTableUnit[]
-    regular: DamageTableUnit[]
+    regular: Unit[]
 }
 
 export default function useItemSkills(config: SubjectConfig): Response {
@@ -32,15 +38,19 @@ export default function useItemSkills(config: SubjectConfig): Response {
                         }).map(entry => {
                             const itemWithSkillName = `${ignorePseudoTag(intl.formatMessage({id: `Item/Skills/${ability.skillCode}/Name`}))}(${intl.formatMessage({id: `Item/Name/${id}${position == "Chest" && isChestDavid ? "_D" : ""}`})})`;
                             const label = entry.labelIntlID ? intl.formatMessage({id: entry.labelIntlID}, {item: itemWithSkillName, value: entry.intlValue}) : itemWithSkillName;
-                            const value = "melee" in entry.value ? entry.value[range] : entry.value;
-                            return {...entry, label, value, origin: "other"} satisfies DamageTableUnit
+                            const value = typeof entry.value != "function" && "melee" in entry.value ? entry.value[range] : entry.value;
+                            return {...entry, label, value, origin: "other"} satisfies Unit
                         }) ?? [];
                     });
             })
             .reduce((prev, entry) => {
                 if (entry.triggeredOnBasicAttack) {
+                    const { value } = entry;
+                    if (typeof value == "function") {
+                        throw new Error(`UniqueValueStrategy is not supported for basic-attack-triggered item skills: ${entry.label}`);
+                    }
                     return {
-                        basicAttackTriggered: prev.basicAttackTriggered.concat(entry),
+                        basicAttackTriggered: prev.basicAttackTriggered.concat({...entry, value}),
                         regular: prev.regular
                     }
                 } else {
@@ -49,6 +59,6 @@ export default function useItemSkills(config: SubjectConfig): Response {
                         regular: prev.regular.concat(entry)   
                     }
                 }
-            }, {basicAttackTriggered: [] as DamageTableUnit[], regular: [] as DamageTableUnit[]});
+            }, {basicAttackTriggered: [] as DamageTableUnit[], regular: [] as Unit[]});
     }, [range, config.equipment])
 }

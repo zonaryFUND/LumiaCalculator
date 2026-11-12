@@ -6,6 +6,7 @@ import { DamageTableUnit } from "core/damage-table/unit"
 import { StatusValueComponent } from "core/subject-dynamic/status/value-component/component"
 import { BuffDebuffDefinition, SlowSourceInfo } from "@app/ingame-params/buff-debuff/type"
 import { Tier } from "core/equipment"
+import { UniqueValueStrategy } from "@app/ingame-params/subjects/unique-value-strategy"
 
 export type EquipmentAbilityImportedProps = {
     importedDamage?: ValueRatio | RangeDependentValueRatio
@@ -15,7 +16,11 @@ export type EquipmentAbilityImportedProps = {
 export type EquipmentAbilityDamageTableUnit = Omit<DamageTableUnit, "label" | "value" | "origin"> & { 
     labelIntlID?: string 
     intlValue?: string
-    value: ValueRatio | RangeDependentValueRatio 
+    /**
+     * `UniqueValueStrategy`は「アイテムスキル」欄（`triggeredOnBasicAttack`でない項目）でのみ使用できる。
+     * 基本攻撃欄の行コンポーネントは`ValueRatio`のみを扱うため
+     */
+    value: ValueRatio | RangeDependentValueRatio | UniqueValueStrategy
 };
 
 export type EquipmentAbilityDamageTableGenerator = (props: EquipmentAbilityImportedProps) => EquipmentAbilityDamageTableUnit[]

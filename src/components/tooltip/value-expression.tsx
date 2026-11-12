@@ -28,6 +28,7 @@ const defaultDictionary: {[key: string]: {key: string, className: string}} = {
     additionalAttack: {key: "app.value.additional-attack", className: style.attack},
     basicAttackAmp: {key: "app.value.basic-attack-amp", className: style.attack},
     criticalChance: {key: "app.value.critical-chance", className: style.critical},
+    penetrationDefense: {key: "app.value.penetration-defense", className: style.critical},
     amp: {key: "app.value.skill-amp", className: style.amp},
     stack: {key: "app.value.stack", className: style.strong},
     targetMaxHP: {key: "app.value.target-maxhp", className: style.maxhp},

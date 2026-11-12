@@ -69,6 +69,11 @@ export type ValueRatio = {
     additionalAttackSpeed?: ValueElement
 
     /**
+     * 防御貫通（固定値）比例値
+     */
+    penetrationDefense?: ValueElement
+
+    /**
      * スキル増幅比例値
      */
     amp?: ValueElement

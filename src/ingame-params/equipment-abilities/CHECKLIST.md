@@ -311,8 +311,10 @@ l10n本文（`Item/Skills/6015010/Body`）に「ダメージ発生から一定�
 - [x] blaze_up_enhanced（予熱 - 強化）
 - [x] blaze_up_outburst（予熱 - 激昂）
 - [x] bloodpact（セカンドウインド - 血の契約）
+- [ ] bond（団結）
 - [x] brute_enforcer（執行人）
 - [x] cataclasm（破裂）
+- [ ] chain_strike（連撃）
 - [x] charge_carrier（迅速 - プラズマ）
 - [x] chasing_needle（ホーミングニードル）
 - [x] circulation（情熱 - 循環）
@@ -331,22 +333,29 @@ l10n本文（`Item/Skills/6015010/Body`）に「ダメージ発生から一定�
 - [x] fáfnir's_scales（ファフニールの鱗）
 - [x] flame_barrier（炎の結界）
 - [x] flame_barrier_vf（炎の結界）
+- [ ] full_throttle（フルスロットル）
 - [x] gap（間隔）
 - [x] gold_pouch（金貨袋）
 - [x] guard_punch（ガードパンチ）
+- [ ] guardian_protocol（ガーディアンプロトコル）
 - [x] gust_of_wind（突風 - 寒気）
 - [x] healing_reduction（治癒減少）
 - [x] heart_of_fire（劫火の心臓）
 - [x] heavyweight（鈍重）
+- [ ] hone（練磨）
 - [x] in_full_bloom（満開）
 - [x] iteration（リピートアクション）
+- [ ] keep_your_distance（距離の利）
+- [ ] laceration（刺傷）
 - [x] lead_shell（チャージ - 鉄丸）
 - [x] lichs_grasp（寒波）
+- [ ] lock_on（ロックオン）
 - [x] magic_bullet（魔弾）
 - [x] magnetic_midnight（チャージ - 閃光）
 - [x] mana_seed（魔力の種）
 - [x] master（達人）
 - [x] necrosis（毒蛇の猛毒）
+- [ ] overload（リミットブレイク）
 - [x] photon_launcher（フォトンランチャー）
 - [x] plague_butterfly（疫病の蝶）
 - [x] prayer_for_the_dead（死者のための祈り）
@@ -355,6 +364,7 @@ l10n本文（`Item/Skills/6015010/Body`）に「ダメージ発生から一定�
 - [x] pulverization（粉砕）
 - [x] punishment（懲罰）
 - [x] punishment_tracking（懲罰 - 追跡）
+- [ ] quick_reflexes（即応態勢）
 - [x] quickstep（乱舞）
 - [x] rally（突風 - 結集）
 - [x] rebellion（反抗）
@@ -385,4 +395,5 @@ l10n本文（`Item/Skills/6015010/Body`）に「ダメージ発生から一定�
 - [x] vigor（情熱）
 - [x] vitality_strike（再生の一撃）
 - [x] whirlwind（突風）
+- [ ] whittle（削り取り）
 - [x] zephyr（迅速 - そよ風）

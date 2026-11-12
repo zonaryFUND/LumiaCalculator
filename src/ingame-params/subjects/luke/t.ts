@@ -27,7 +27,6 @@ export const info: SkillTooltipProps = {
             3: Constants.T.subject,
             4: Constants.T.alpha_omega,
             5: Constants.T.wickline,
-            6: Constants.T.food_box,
             7: Constants.T.epic_box,
             8: Constants.T.legendary_box
         },

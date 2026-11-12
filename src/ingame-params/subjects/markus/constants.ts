@@ -48,7 +48,7 @@ export default {
         "tectonic_rift": 3,
         "damage": {
             "base": [150, 300, 450],
-            "attack": 70
+            "attack": 85
         },
         // 移動速度減少
         "slow": {

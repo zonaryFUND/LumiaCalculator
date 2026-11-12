@@ -202,5 +202,11 @@
         "name": "凍て風の胸甲",
         "maxHpByLv": 3,
         "defense": 4
+    },
+    "202532": {
+        "name": "ジェネレーター",
+        "defense": 2,
+        "skillAmp": 4,
+        "attackSpeedRatio": 5
     }
 }

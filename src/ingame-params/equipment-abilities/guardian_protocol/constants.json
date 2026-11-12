@@ -1,0 +1,10 @@
+{
+    "range": 10,
+    "duration": 2.5,
+    "shield": {
+        "base": 30,
+        "additionalMaxHP": 6,
+        "level": 3
+    },
+    "cooldown": 8
+}

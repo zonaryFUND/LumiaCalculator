@@ -104,6 +104,7 @@
     "app.value.attack": "攻撃力の{ratio}%",
     "app.value.basic-attack-amp": "基本攻撃増幅",
     "app.value.critical-chance": "致命打確率の{ratio}%",
+    "app.value.penetration-defense": "防御貫通の{ratio}%",
     "app.value.skill-amp": "スキル増幅の{ratio}%",
     "app.value.additional-attack": "追加攻撃力の{ratio}%",
     "app.value.target-maxhp": "対象の最大体力の{ratio}%",
@@ -158,6 +159,10 @@
 
     "buff-debuff.common.percent.0": "0%",
     "buff-debuff.common.percent.2.5": "2.5%",
+    "buff-debuff.common.percent.1": "1%",
+    "buff-debuff.common.percent.2": "2%",
+    "buff-debuff.common.percent.3": "3%",
+    "buff-debuff.common.percent.4": "4%",
     "buff-debuff.common.percent.5": "5%",
     "buff-debuff.common.percent.6": "6%",
     "buff-debuff.common.percent.7": "7%",

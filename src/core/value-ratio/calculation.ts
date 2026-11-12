@@ -75,6 +75,8 @@ export function calculateValue(ratio: ValueRatio, status: Status, config: Subjec
                     return prev.static.addPercent(status.criticalStrikeChance.calculatedValue.percent(selectedValue));
                 case "additionalAttackSpeed":
                     return prev.static.add(status.attackSpeed.additionalValue?.percent(selectedValue) ?? 0);
+                case "penetrationDefense":
+                    return prev.static.add(status.penetrationDefense.calculatedValue.percent(selectedValue));
                 case "amp":
                     return prev.static.add(status.skillAmp.calculatedValue.percent(selectedValue));
                 case "stack":

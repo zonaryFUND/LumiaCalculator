@@ -43,7 +43,7 @@ export default {
         // もう一つの可能性的中時自己回復量最小値
         "heal": {
             "base": [40, 50, 60, 70, 80],
-            "attack": 60
+            "attack": 70
         },
         // もう一つの可能性最大回復量（最小値比）
         "heal_max_multiplier": 1.5,

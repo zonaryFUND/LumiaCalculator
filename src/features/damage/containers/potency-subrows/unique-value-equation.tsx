@@ -57,6 +57,8 @@ const UniqueValueEquation: React.FC<Props> = props => {
                                     return <FormattedMessage id="app.stack" />;
                                 case "additionalAttackSpeed":
                                     return <FormattedMessage id="StatType/AttackSpeedRatioValue" />;
+                                case "penetrationDefense":
+                                    return <FormattedMessage id="StatType/PenetrationDefense" />;
                                 case "gauge":
                                     return <FormattedMessage id="app.gauge" />;
                             }

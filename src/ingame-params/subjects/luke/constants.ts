@@ -114,11 +114,9 @@ export default {
         "alpha_omega": 10,
         // ウィクライン処置時の掃除完了スタック獲得数
         "wickline": 10,
-        // 食料補給箱獲得時の掃除完了スタック獲得数
-        "food_box": 2,
         // 英雄等級補給箱獲得時の掃除完了スタック獲得数
-        "epic_box": 4,
+        "epic_box": 5,
         // 伝説補給箱獲得時の掃除完了スタック獲得数
-        "legendary_box": 6
+        "legendary_box": 7
     }
 }

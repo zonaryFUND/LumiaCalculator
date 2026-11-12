@@ -1,0 +1,12 @@
+{
+    "time_bound": 5,
+    "threshold": 3,
+    "damage": {
+        "base": 10,
+        "penetrationDefense": 50,
+        "additionalAttack": 10
+    },
+    "duration": 4,
+    "ms": 8,
+    "cooldown": 12
+}

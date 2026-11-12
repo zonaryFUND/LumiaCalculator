@@ -1,7 +1,6 @@
-import Constants from "./constants.json";
 import { EquipmentAbilitySelfBuffDebuff } from "../type";
 
-export const buffDebuff: EquipmentAbilitySelfBuffDebuff = () => ({
+export const buffDebuff: EquipmentAbilitySelfBuffDebuff = ({ importedValues }) => ({
     "item-skill.streamlined": {
         origin: "equipment-ability",
         nameIntlID: "CharacterState/Group/Name/6015010",
@@ -13,7 +12,7 @@ export const buffDebuff: EquipmentAbilitySelfBuffDebuff = () => ({
                 intlID: "CharacterState/Group/Name/6015010",
                 value: {
                     type: "constant",
-                    value: Constants.ms * stack
+                    value: (importedValues?.ms ?? 0) * stack
                 }
             }]
         })

@@ -26,6 +26,7 @@ export function joinEquationStrategy(key: keyof ValueRatio): "add" | "multiply" 
         case "attack":
         case "additionalAttack":
         case "additionalAttackSpeed":
+        case "penetrationDefense":
         case "amp":
             return "add";
 
@@ -69,7 +70,7 @@ export default function equationExpressionOf(
         case "gauge":
             return <EquationUnit labelIntlID="app.gauge" ratio={ratioElement} currentValue={config.gauge} />;
 
-        // 最大体力、追加最大体力、攻撃力、追加攻撃力、攻撃速度、スキル増幅、致命打確率は百分率で表示
+        // 最大体力、追加最大体力、攻撃力、追加攻撃力、攻撃速度、防御貫通、スキル増幅、致命打確率は百分率で表示
         case "maxHP":
             return <EquationUnit labelIntlID="StatType/MaxHp" ratio={ratioElement} currentValue={status.maxHp.calculatedValue} percent  />;
         case "additionalMaxHP":
@@ -82,6 +83,8 @@ export default function equationExpressionOf(
             return <EquationUnit labelIntlID="ToolTipType/AddAttackPower" ratio={ratioElement} currentValue={status.attackPower.additionalValue} percent />;
         case "additionalAttackSpeed":
             return <EquationUnit labelIntlID="ToolTipType/AddAttackSpeedRatio" ratio={ratioElement} currentValue={status.attackSpeed.additionalValue} percent />;
+        case "penetrationDefense":
+            return <EquationUnit labelIntlID="StatType/PenetrationDefense" ratio={ratioElement} currentValue={status.penetrationDefense.calculatedValue} percent />;
         case "amp":
             return <EquationUnit labelIntlID="StatType/IncreaseSkillDamageRatio" ratio={ratioElement} currentValue={status.skillAmp.calculatedValue} percent />;
         case "criticalChance":

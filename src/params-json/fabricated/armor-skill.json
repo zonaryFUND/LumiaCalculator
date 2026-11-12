@@ -129,8 +129,8 @@
 		"skillCode": 6033002,
 		"name": "photon_launcher",
 		"dmg": {
-			"base": 20,
-			"amp": 30
+			"base": 25,
+			"amp": 25
 		},
 		"values": {
 			"heal": 30
@@ -359,7 +359,7 @@
 			}
 		}
 	},
-	"202406": {
+	"202405": {
 		"skillCode": 6008201,
 		"name": "healing_reduction"
 	},
@@ -439,8 +439,14 @@
 		"name": "blaze_up_enhanced"
 	},
 	"202510": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": [
+			6092001,
+			6008201
+		],
+		"name": [
+			"lock_on",
+			"healing_reduction"
+		]
 	},
 	"202511": {
 		"skillCode": 6030001,
@@ -455,10 +461,6 @@
 	"202512": {
 		"skillCode": 6050001,
 		"name": "rebellion"
-	},
-	"202513": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
 	},
 	"202514": {
 		"skillCode": 6053001,
@@ -579,7 +581,7 @@
 		"skillCode": 6015007,
 		"name": "streamlined",
 		"values": {
-			"ms": 20
+			"ms": 30
 		}
 	},
 	"203405": {
@@ -695,8 +697,14 @@
 		"name": "healing_reduction"
 	},
 	"203512": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": [
+			6087001,
+			6008201
+		],
+		"name": [
+			"whittle",
+			"healing_reduction"
+		]
 	},
 	"203513": {
 		"skillCode": 6028001,
@@ -718,8 +726,14 @@
 		}
 	},
 	"203515": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
+		"skillCode": [
+			6087001,
+			6008201
+		],
+		"name": [
+			"whittle",
+			"healing_reduction"
+		]
 	},
 	"203516": {
 		"skillCode": [
@@ -805,16 +819,11 @@
 		"name": "tailwind"
 	},
 	"205201": {
-		"skillCode": 6014001,
-		"name": "primodal_hex",
-		"dmg": {
-			"base": 25,
-			"amp": 10
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 18
 		}
-	},
-	"205305": {
-		"skillCode": 6008201,
-		"name": "healing_reduction"
 	},
 	"205306": {
 		"skillCode": 6082001,
@@ -846,11 +855,10 @@
 		"name": "rush"
 	},
 	"205502": {
-		"skillCode": 6014001,
-		"name": "primodal_hex",
-		"dmg": {
-			"base": 50,
-			"amp": 15
+		"skillCode": 6015007,
+		"name": "streamlined",
+		"values": {
+			"ms": 30
 		}
 	},
 	"205504": {
@@ -867,13 +875,6 @@
 	"205507": {
 		"skillCode": 6008201,
 		"name": "healing_reduction"
-	},
-	"205508": {
-		"skillCode": 6015007,
-		"name": "streamlined",
-		"values": {
-			"ms": 20
-		}
 	},
 	"205601": {
 		"skillCode": 6008201,
@@ -933,5 +934,41 @@
 	"705620": {
 		"skillCode": 6028001,
 		"name": "pulverization"
+	},
+	"202532": {
+		"skillCode": 6090001,
+		"name": "full_throttle"
+	},
+	"202513": {
+		"skillCode": 6086001,
+		"name": "laceration"
+	},
+	"201538": {
+		"skillCode": 6093001,
+		"name": "chain_strike"
+	},
+	"201415": {
+		"skillCode": 6085001,
+		"name": "guardian_protocol"
+	},
+	"205305": {
+		"skillCode": 6091001,
+		"name": "keep_your_distance"
+	},
+	"705604": {
+		"skillCode": 6089001,
+		"name": "bond"
+	},
+	"205508": {
+		"skillCode": 6083001,
+		"name": "overload"
+	},
+	"204515": {
+		"skillCode": 6084001,
+		"name": "quick_reflexes"
+	},
+	"204508": {
+		"skillCode": 6088001,
+		"name": "hone"
 	}
 }
