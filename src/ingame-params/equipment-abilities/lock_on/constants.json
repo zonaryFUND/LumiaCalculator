@@ -1,7 +1,7 @@
 {
-    "cooldown": 8,
+    "cooldown": 10,
     "damage": {
-        "base": 30,
+        "base": 25,
         "attack": 10
     },
     "mark_duration": 5,
@@ -12,6 +12,6 @@
     },
     "ms": {
         "duration": 2,
-        "effect": 10
+        "effect": 8
     }
 }

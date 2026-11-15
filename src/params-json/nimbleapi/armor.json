@@ -198,7 +198,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 80,
+        "skillAmp": 85,
         "attackSpeedRatio": 0.35,
         "cooldownReduction": 10,
         "code": 201505,
