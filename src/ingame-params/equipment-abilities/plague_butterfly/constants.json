@@ -1,7 +1,7 @@
 {
     "damage": {
         "base": 20,
-        "amp": 30,
+        "amp": 25,
         "level": 3
     },
     "range": 4,

@@ -37,8 +37,8 @@ export default {
             "max_stack": 2
         },
         // 鏡で強化されたQ的中時クールダウン減少
-        "cooldown_reduction": [20,25,30],
-        "cooldown": 6
+        "cooldown_reduction": [15,20,25],
+        "cooldown": 7
     },
     "E": {
         // 通常ダメージ

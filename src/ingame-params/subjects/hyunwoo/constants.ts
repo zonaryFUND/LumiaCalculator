@@ -77,7 +77,7 @@ export default {
     },
     "T": {
         // ドッグファイト活性化に必要なスタック数
-        "stack_threshold": [10, 9, 8],
+        "stack_threshold": [9, 8, 7],
         // ドッグファイト活性化後次の攻撃追加ダメージ
         "damage": {
             "base": [40, 70, 100],

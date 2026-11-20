@@ -1077,7 +1077,7 @@
         "itemGrade": "Legend"
     },
     {
-        "skillAmp": 73,
+        "skillAmp": 70,
         "cooldownReduction": 15,
         "code": 203512,
         "armorType": "Arm",
@@ -1205,7 +1205,7 @@
         "itemGrade": "Legend"
     },
     {
-        "attackPower": 15,
+        "attackPower": 16,
         "attackSpeedRatio": 0.3,
         "criticalStrikeChance": 0.35,
         "code": 205305,

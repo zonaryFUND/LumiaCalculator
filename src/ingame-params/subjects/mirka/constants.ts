@@ -102,7 +102,7 @@ export default {
             "targetMaxHP": 15
         },
         // エアボーン時間
-        "airborne": 0.8,
+        "airborne": 1,
         "cooldown": [80, 70, 60]
     },
     "T": {

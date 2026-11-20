@@ -1,13 +1,13 @@
 {
     "cooldown": 10,
     "damage": {
-        "base": 25,
+        "base": 10,
         "attack": 10
     },
     "mark_duration": 5,
     "mark_damage": {
         "base": 40,
-        "attack": 30,
+        "attack": 25,
         "criticalChance": 50
     },
     "ms": {
